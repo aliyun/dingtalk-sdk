@@ -112,10 +112,6 @@ public class GroupAddRequest extends TeaModel {
     @NameInMap("enableOutsideRemark")
     public Boolean enableOutsideRemark;
 
-    /**
-     * <strong>example:</strong>
-     * <p>true</p>
-     */
     @NameInMap("enablePositionBle")
     public Boolean enablePositionBle;
 
@@ -187,6 +183,9 @@ public class GroupAddRequest extends TeaModel {
      */
     @NameInMap("offset")
     public Integer offset;
+
+    @NameInMap("onlyMachineCheck")
+    public Boolean onlyMachineCheck;
 
     @NameInMap("openCameraCheck")
     public Boolean openCameraCheck;
@@ -508,6 +507,14 @@ public class GroupAddRequest extends TeaModel {
     }
     public Integer getOffset() {
         return this.offset;
+    }
+
+    public GroupAddRequest setOnlyMachineCheck(Boolean onlyMachineCheck) {
+        this.onlyMachineCheck = onlyMachineCheck;
+        return this;
+    }
+    public Boolean getOnlyMachineCheck() {
+        return this.onlyMachineCheck;
     }
 
     public GroupAddRequest setOpenCameraCheck(Boolean openCameraCheck) {

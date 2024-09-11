@@ -47,9 +47,6 @@ public class PremiumGetDoneTasksResponseBody extends TeaModel {
         @NameInMap("originatorPhoto")
         public String originatorPhoto;
 
-        @NameInMap("pcUrl")
-        public String pcUrl;
-
         /**
          * <p>Use the UTC time format: yyyy-MM-ddTHH:mmZ</p>
          */
@@ -87,6 +84,9 @@ public class PremiumGetDoneTasksResponseBody extends TeaModel {
 
         @NameInMap("title")
         public String title;
+
+        @NameInMap("url")
+        public String url;
 
         public static PremiumGetDoneTasksResponseBodyResultList build(java.util.Map<String, ?> map) throws Exception {
             PremiumGetDoneTasksResponseBodyResultList self = new PremiumGetDoneTasksResponseBodyResultList();
@@ -131,14 +131,6 @@ public class PremiumGetDoneTasksResponseBody extends TeaModel {
         }
         public String getOriginatorPhoto() {
             return this.originatorPhoto;
-        }
-
-        public PremiumGetDoneTasksResponseBodyResultList setPcUrl(String pcUrl) {
-            this.pcUrl = pcUrl;
-            return this;
-        }
-        public String getPcUrl() {
-            return this.pcUrl;
         }
 
         public PremiumGetDoneTasksResponseBodyResultList setProcessCreateTime(String processCreateTime) {
@@ -203,6 +195,14 @@ public class PremiumGetDoneTasksResponseBody extends TeaModel {
         }
         public String getTitle() {
             return this.title;
+        }
+
+        public PremiumGetDoneTasksResponseBodyResultList setUrl(String url) {
+            this.url = url;
+            return this;
+        }
+        public String getUrl() {
+            return this.url;
         }
 
     }

@@ -1993,6 +1993,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("offset", request.offset);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.onlyMachineCheck)) {
+            body.put("onlyMachineCheck", request.onlyMachineCheck);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.openCameraCheck)) {
             body.put("openCameraCheck", request.openCameraCheck);
         }
@@ -2185,6 +2189,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.offset)) {
             body.put("offset", request.offset);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.onlyMachineCheck)) {
+            body.put("onlyMachineCheck", request.onlyMachineCheck);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.openCameraCheck)) {

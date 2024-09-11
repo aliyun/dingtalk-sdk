@@ -26,13 +26,18 @@ public class AgoalCreateProgressRequest extends TeaModel {
     public String objectiveId;
 
     /**
-     * <p>This parameter is required.</p>
-     * 
      * <strong>example:</strong>
      * <p>这是一条目标进展文本</p>
      */
     @NameInMap("plainText")
     public String plainText;
+
+    /**
+     * <strong>example:</strong>
+     * <p>30</p>
+     */
+    @NameInMap("progress")
+    public Integer progress;
 
     /**
      * <strong>example:</strong>
@@ -76,6 +81,14 @@ public class AgoalCreateProgressRequest extends TeaModel {
     }
     public String getPlainText() {
         return this.plainText;
+    }
+
+    public AgoalCreateProgressRequest setProgress(Integer progress) {
+        this.progress = progress;
+        return this;
+    }
+    public Integer getProgress() {
+        return this.progress;
     }
 
     public AgoalCreateProgressRequest setProgressMergePeriod(String progressMergePeriod) {

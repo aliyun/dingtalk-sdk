@@ -59,13 +59,6 @@ public class PremiumGetTodoTasksResponseBody extends TeaModel {
 
         /**
          * <strong>example:</strong>
-         * <p>agree</p>
-         */
-        @NameInMap("result")
-        public String result;
-
-        /**
-         * <strong>example:</strong>
          * <p>RUNNING</p>
          */
         @NameInMap("status")
@@ -163,14 +156,6 @@ public class PremiumGetTodoTasksResponseBody extends TeaModel {
         }
         public Integer getProcessType() {
             return this.processType;
-        }
-
-        public PremiumGetTodoTasksResponseBodyResultList setResult(String result) {
-            this.result = result;
-            return this;
-        }
-        public String getResult() {
-            return this.result;
         }
 
         public PremiumGetTodoTasksResponseBodyResultList setStatus(String status) {

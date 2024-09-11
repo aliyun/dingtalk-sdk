@@ -2268,6 +2268,76 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>获取上传信息</p>
+     * 
+     * @param request GetResourceUploadInfoRequest
+     * @param headers GetResourceUploadInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetResourceUploadInfoResponse
+     */
+    public GetResourceUploadInfoResponse getResourceUploadInfoWithOptions(String docId, GetResourceUploadInfoRequest request, GetResourceUploadInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.mediaType)) {
+            body.put("mediaType", request.mediaType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.resourceName)) {
+            body.put("resourceName", request.resourceName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.size)) {
+            body.put("size", request.size);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetResourceUploadInfo"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/docs/resources/" + docId + "/uploadInfos/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetResourceUploadInfoResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取上传信息</p>
+     * 
+     * @param request GetResourceUploadInfoRequest
+     * @return GetResourceUploadInfoResponse
+     */
+    public GetResourceUploadInfoResponse getResourceUploadInfo(String docId, GetResourceUploadInfoRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetResourceUploadInfoHeaders headers = new GetResourceUploadInfoHeaders();
+        return this.getResourceUploadInfoWithOptions(docId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取工作表</p>
      * 
      * @param request GetSheetRequest

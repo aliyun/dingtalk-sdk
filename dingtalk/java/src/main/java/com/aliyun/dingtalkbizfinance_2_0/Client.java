@@ -547,6 +547,138 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>订单开票</p>
+     * 
+     * @param request OrderBillingRequest
+     * @param headers OrderBillingHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return OrderBillingResponse
+     */
+    public OrderBillingResponse orderBillingWithOptions(OrderBillingRequest request, OrderBillingHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.additionInfos)) {
+            body.put("additionInfos", request.additionInfos);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.appKey)) {
+            body.put("appKey", request.appKey);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.applyPerson)) {
+            body.put("applyPerson", request.applyPerson);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.invoiceRemark)) {
+            body.put("invoiceRemark", request.invoiceRemark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.invoiceType)) {
+            body.put("invoiceType", request.invoiceType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.isNaturalPerson)) {
+            body.put("isNaturalPerson", request.isNaturalPerson);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operator)) {
+            body.put("operator", request.operator);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orderId)) {
+            body.put("orderId", request.orderId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.payee)) {
+            body.put("payee", request.payee);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.phone)) {
+            body.put("phone", request.phone);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.products)) {
+            body.put("products", request.products);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.purchaserAddress)) {
+            body.put("purchaserAddress", request.purchaserAddress);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.purchaserBankAccount)) {
+            body.put("purchaserBankAccount", request.purchaserBankAccount);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.purchaserBankName)) {
+            body.put("purchaserBankName", request.purchaserBankName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.purchaserName)) {
+            body.put("purchaserName", request.purchaserName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.purchaserTaxNo)) {
+            body.put("purchaserTaxNo", request.purchaserTaxNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.purchaserTel)) {
+            body.put("purchaserTel", request.purchaserTel);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.remark)) {
+            body.put("remark", request.remark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.reviewer)) {
+            body.put("reviewer", request.reviewer);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taxSign)) {
+            body.put("taxSign", request.taxSign);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "OrderBilling"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/billings/order"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new OrderBillingResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>订单开票</p>
+     * 
+     * @param request OrderBillingRequest
+     * @return OrderBillingResponse
+     */
+    public OrderBillingResponse orderBilling(OrderBillingRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        OrderBillingHeaders headers = new OrderBillingHeaders();
+        return this.orderBillingWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>批量获取费用类别</p>
      * 
      * @param request QueryCategoryByPageRequest

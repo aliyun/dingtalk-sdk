@@ -5,8 +5,6 @@ import com.aliyun.tea.*;
 
 public class AttachmentsMapValue extends TeaModel {
     /**
-     * <p>This parameter is required.</p>
-     * 
      * <strong>example:</strong>
      * <p>upload_key</p>
      */
@@ -14,8 +12,6 @@ public class AttachmentsMapValue extends TeaModel {
     public String uploadKey;
 
     /**
-     * <p>This parameter is required.</p>
-     * 
      * <strong>example:</strong>
      * <p>name</p>
      */
@@ -28,6 +24,9 @@ public class AttachmentsMapValue extends TeaModel {
      */
     @NameInMap("mediaType")
     public String mediaType;
+
+    @NameInMap("resourceId")
+    public String resourceId;
 
     public static AttachmentsMapValue build(java.util.Map<String, ?> map) throws Exception {
         AttachmentsMapValue self = new AttachmentsMapValue();
@@ -56,6 +55,14 @@ public class AttachmentsMapValue extends TeaModel {
     }
     public String getMediaType() {
         return this.mediaType;
+    }
+
+    public AttachmentsMapValue setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+        return this;
+    }
+    public String getResourceId() {
+        return this.resourceId;
     }
 
 }

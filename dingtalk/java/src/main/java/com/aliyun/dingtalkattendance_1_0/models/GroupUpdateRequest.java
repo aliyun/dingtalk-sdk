@@ -132,6 +132,9 @@ public class GroupUpdateRequest extends TeaModel {
     @NameInMap("offset")
     public Integer offset;
 
+    @NameInMap("onlyMachineCheck")
+    public Boolean onlyMachineCheck;
+
     @NameInMap("openCameraCheck")
     public Boolean openCameraCheck;
 
@@ -361,6 +364,14 @@ public class GroupUpdateRequest extends TeaModel {
     }
     public Integer getOffset() {
         return this.offset;
+    }
+
+    public GroupUpdateRequest setOnlyMachineCheck(Boolean onlyMachineCheck) {
+        this.onlyMachineCheck = onlyMachineCheck;
+        return this;
+    }
+    public Boolean getOnlyMachineCheck() {
+        return this.onlyMachineCheck;
     }
 
     public GroupUpdateRequest setOpenCameraCheck(Boolean openCameraCheck) {

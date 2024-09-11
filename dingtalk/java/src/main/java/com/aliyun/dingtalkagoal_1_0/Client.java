@@ -46,6 +46,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("plainText", request.plainText);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.progress)) {
+            body.put("progress", request.progress);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.progressMergePeriod)) {
             body.put("progressMergePeriod", request.progressMergePeriod);
         }
@@ -440,5 +444,61 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         AgoalUserObjectiveListHeaders headers = new AgoalUserObjectiveListHeaders();
         return this.agoalUserObjectiveListWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取Agoal子管理员列表</p>
+     * 
+     * @param request AgoalUserSubAdminListRequest
+     * @param headers AgoalUserSubAdminListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AgoalUserSubAdminListResponse
+     */
+    public AgoalUserSubAdminListResponse agoalUserSubAdminListWithOptions(AgoalUserSubAdminListRequest request, AgoalUserSubAdminListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.funcPermissionGroup)) {
+            query.put("funcPermissionGroup", request.funcPermissionGroup);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AgoalUserSubAdminList"),
+            new TeaPair("version", "agoal_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/agoal/administrators/sub/lists"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AgoalUserSubAdminListResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取Agoal子管理员列表</p>
+     * 
+     * @param request AgoalUserSubAdminListRequest
+     * @return AgoalUserSubAdminListResponse
+     */
+    public AgoalUserSubAdminListResponse agoalUserSubAdminList(AgoalUserSubAdminListRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AgoalUserSubAdminListHeaders headers = new AgoalUserSubAdminListHeaders();
+        return this.agoalUserSubAdminListWithOptions(request, headers, runtime);
     }
 }

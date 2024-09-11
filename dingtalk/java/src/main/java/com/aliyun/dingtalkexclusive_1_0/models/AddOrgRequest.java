@@ -4,6 +4,15 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class AddOrgRequest extends TeaModel {
+    @NameInMap("city")
+    public String city;
+
+    @NameInMap("industry")
+    public String industry;
+
+    @NameInMap("industryCode")
+    public Integer industryCode;
+
     /**
      * <p>This parameter is required.</p>
      * 
@@ -22,9 +31,36 @@ public class AddOrgRequest extends TeaModel {
     @NameInMap("name")
     public String name;
 
+    @NameInMap("province")
+    public String province;
+
     public static AddOrgRequest build(java.util.Map<String, ?> map) throws Exception {
         AddOrgRequest self = new AddOrgRequest();
         return TeaModel.build(map, self);
+    }
+
+    public AddOrgRequest setCity(String city) {
+        this.city = city;
+        return this;
+    }
+    public String getCity() {
+        return this.city;
+    }
+
+    public AddOrgRequest setIndustry(String industry) {
+        this.industry = industry;
+        return this;
+    }
+    public String getIndustry() {
+        return this.industry;
+    }
+
+    public AddOrgRequest setIndustryCode(Integer industryCode) {
+        this.industryCode = industryCode;
+        return this;
+    }
+    public Integer getIndustryCode() {
+        return this.industryCode;
     }
 
     public AddOrgRequest setMobileNum(String mobileNum) {
@@ -41,6 +77,14 @@ public class AddOrgRequest extends TeaModel {
     }
     public String getName() {
         return this.name;
+    }
+
+    public AddOrgRequest setProvince(String province) {
+        this.province = province;
+        return this;
+    }
+    public String getProvince() {
+        return this.province;
     }
 
 }
