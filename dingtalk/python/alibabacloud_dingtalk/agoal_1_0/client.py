@@ -50,6 +50,8 @@ class Client(OpenApiClient):
             body['objectiveId'] = request.objective_id
         if not UtilClient.is_unset(request.plain_text):
             body['plainText'] = request.plain_text
+        if not UtilClient.is_unset(request.progress):
+            body['progress'] = request.progress
         if not UtilClient.is_unset(request.progress_merge_period):
             body['progressMergePeriod'] = request.progress_merge_period
         real_headers = {}
@@ -101,6 +103,8 @@ class Client(OpenApiClient):
             body['objectiveId'] = request.objective_id
         if not UtilClient.is_unset(request.plain_text):
             body['plainText'] = request.plain_text
+        if not UtilClient.is_unset(request.progress):
+            body['progress'] = request.progress
         if not UtilClient.is_unset(request.progress_merge_period):
             body['progressMergePeriod'] = request.progress_merge_period
         real_headers = {}
@@ -831,3 +835,117 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkagoal__1__0_models.AgoalUserObjectiveListHeaders()
         return await self.agoal_user_objective_list_with_options_async(request, headers, runtime)
+
+    def agoal_user_sub_admin_list_with_options(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalUserSubAdminListRequest,
+        headers: dingtalkagoal__1__0_models.AgoalUserSubAdminListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalUserSubAdminListResponse:
+        """
+        @summary 获取Agoal子管理员列表
+        
+        @param request: AgoalUserSubAdminListRequest
+        @param headers: AgoalUserSubAdminListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalUserSubAdminListResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.func_permission_group):
+            query['funcPermissionGroup'] = request.func_permission_group
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AgoalUserSubAdminList',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/administrators/sub/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalUserSubAdminListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def agoal_user_sub_admin_list_with_options_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalUserSubAdminListRequest,
+        headers: dingtalkagoal__1__0_models.AgoalUserSubAdminListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalUserSubAdminListResponse:
+        """
+        @summary 获取Agoal子管理员列表
+        
+        @param request: AgoalUserSubAdminListRequest
+        @param headers: AgoalUserSubAdminListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalUserSubAdminListResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.func_permission_group):
+            query['funcPermissionGroup'] = request.func_permission_group
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AgoalUserSubAdminList',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/administrators/sub/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalUserSubAdminListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def agoal_user_sub_admin_list(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalUserSubAdminListRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalUserSubAdminListResponse:
+        """
+        @summary 获取Agoal子管理员列表
+        
+        @param request: AgoalUserSubAdminListRequest
+        @return: AgoalUserSubAdminListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalUserSubAdminListHeaders()
+        return self.agoal_user_sub_admin_list_with_options(request, headers, runtime)
+
+    async def agoal_user_sub_admin_list_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalUserSubAdminListRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalUserSubAdminListResponse:
+        """
+        @summary 获取Agoal子管理员列表
+        
+        @param request: AgoalUserSubAdminListRequest
+        @return: AgoalUserSubAdminListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalUserSubAdminListHeaders()
+        return await self.agoal_user_sub_admin_list_with_options_async(request, headers, runtime)

@@ -42,10 +42,18 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.city):
+            body['city'] = request.city
+        if not UtilClient.is_unset(request.industry):
+            body['industry'] = request.industry
+        if not UtilClient.is_unset(request.industry_code):
+            body['industryCode'] = request.industry_code
         if not UtilClient.is_unset(request.mobile_num):
             body['mobileNum'] = request.mobile_num
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
+        if not UtilClient.is_unset(request.province):
+            body['province'] = request.province
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -87,10 +95,18 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.city):
+            body['city'] = request.city
+        if not UtilClient.is_unset(request.industry):
+            body['industry'] = request.industry
+        if not UtilClient.is_unset(request.industry_code):
+            body['industryCode'] = request.industry_code
         if not UtilClient.is_unset(request.mobile_num):
             body['mobileNum'] = request.mobile_num
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
+        if not UtilClient.is_unset(request.province):
+            body['province'] = request.province
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -3877,6 +3893,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.GetConversationCategoryHeaders()
         return await self.get_conversation_category_with_options_async(headers, runtime)
+
+    def get_conversation_detail_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetConversationDetailRequest,
+        headers: dingtalkexclusive__1__0_models.GetConversationDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetConversationDetailResponse:
+        """
+        @summary 获取会话分组详情
+        
+        @param request: GetConversationDetailRequest
+        @param headers: GetConversationDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetConversationDetailResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetConversationDetail',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/categories/conversations/details/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetConversationDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_conversation_detail_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetConversationDetailRequest,
+        headers: dingtalkexclusive__1__0_models.GetConversationDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetConversationDetailResponse:
+        """
+        @summary 获取会话分组详情
+        
+        @param request: GetConversationDetailRequest
+        @param headers: GetConversationDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetConversationDetailResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetConversationDetail',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/categories/conversations/details/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetConversationDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_conversation_detail(
+        self,
+        request: dingtalkexclusive__1__0_models.GetConversationDetailRequest,
+    ) -> dingtalkexclusive__1__0_models.GetConversationDetailResponse:
+        """
+        @summary 获取会话分组详情
+        
+        @param request: GetConversationDetailRequest
+        @return: GetConversationDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetConversationDetailHeaders()
+        return self.get_conversation_detail_with_options(request, headers, runtime)
+
+    async def get_conversation_detail_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetConversationDetailRequest,
+    ) -> dingtalkexclusive__1__0_models.GetConversationDetailResponse:
+        """
+        @summary 获取会话分组详情
+        
+        @param request: GetConversationDetailRequest
+        @return: GetConversationDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetConversationDetailHeaders()
+        return await self.get_conversation_detail_with_options_async(request, headers, runtime)
 
     def get_ding_report_dept_summary_with_options(
         self,
@@ -9117,6 +9247,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.QueryChannelStaffInfoByMobileHeaders()
         return await self.query_channel_staff_info_by_mobile_with_options_async(request, headers, runtime)
+
+    def query_conversation_page_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.QueryConversationPageRequest,
+        headers: dingtalkexclusive__1__0_models.QueryConversationPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.QueryConversationPageResponse:
+        """
+        @summary 获取分组下会话列表
+        
+        @param request: QueryConversationPageRequest
+        @param headers: QueryConversationPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryConversationPageResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.category_id):
+            query['categoryId'] = request.category_id
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryConversationPage',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/categories/conversations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.QueryConversationPageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_conversation_page_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.QueryConversationPageRequest,
+        headers: dingtalkexclusive__1__0_models.QueryConversationPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.QueryConversationPageResponse:
+        """
+        @summary 获取分组下会话列表
+        
+        @param request: QueryConversationPageRequest
+        @param headers: QueryConversationPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryConversationPageResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.category_id):
+            query['categoryId'] = request.category_id
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryConversationPage',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/categories/conversations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.QueryConversationPageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_conversation_page(
+        self,
+        request: dingtalkexclusive__1__0_models.QueryConversationPageRequest,
+    ) -> dingtalkexclusive__1__0_models.QueryConversationPageResponse:
+        """
+        @summary 获取分组下会话列表
+        
+        @param request: QueryConversationPageRequest
+        @return: QueryConversationPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.QueryConversationPageHeaders()
+        return self.query_conversation_page_with_options(request, headers, runtime)
+
+    async def query_conversation_page_async(
+        self,
+        request: dingtalkexclusive__1__0_models.QueryConversationPageRequest,
+    ) -> dingtalkexclusive__1__0_models.QueryConversationPageResponse:
+        """
+        @summary 获取分组下会话列表
+        
+        @param request: QueryConversationPageRequest
+        @return: QueryConversationPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.QueryConversationPageHeaders()
+        return await self.query_conversation_page_with_options_async(request, headers, runtime)
 
     def query_exclusive_benefits_with_options(
         self,

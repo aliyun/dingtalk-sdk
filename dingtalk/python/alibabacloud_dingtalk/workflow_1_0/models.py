@@ -9283,14 +9283,10 @@ class PremiumGetDoneTasksHeaders(TeaModel):
 class PremiumGetDoneTasksRequest(TeaModel):
     def __init__(
         self,
-        ding_client_id: str = None,
-        keyword: str = None,
         page_number: int = None,
         page_size: int = None,
         user_id: str = None,
     ):
-        self.ding_client_id = ding_client_id
-        self.keyword = keyword
         # This parameter is required.
         self.page_number = page_number
         # This parameter is required.
@@ -9307,10 +9303,6 @@ class PremiumGetDoneTasksRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.ding_client_id is not None:
-            result['dingClientId'] = self.ding_client_id
-        if self.keyword is not None:
-            result['keyword'] = self.keyword
         if self.page_number is not None:
             result['pageNumber'] = self.page_number
         if self.page_size is not None:
@@ -9321,10 +9313,6 @@ class PremiumGetDoneTasksRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('dingClientId') is not None:
-            self.ding_client_id = m.get('dingClientId')
-        if m.get('keyword') is not None:
-            self.keyword = m.get('keyword')
         if m.get('pageNumber') is not None:
             self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:
@@ -9342,7 +9330,6 @@ class PremiumGetDoneTasksResponseBodyResultList(TeaModel):
         originator_id: str = None,
         originator_name: str = None,
         originator_photo: str = None,
-        pc_url: str = None,
         process_create_time: str = None,
         process_end_time: str = None,
         process_instance_id: str = None,
@@ -9351,13 +9338,13 @@ class PremiumGetDoneTasksResponseBodyResultList(TeaModel):
         status: str = None,
         task_id: str = None,
         title: str = None,
+        url: str = None,
     ):
         self.activity_id = activity_id
         self.form_massage = form_massage
         self.originator_id = originator_id
         self.originator_name = originator_name
         self.originator_photo = originator_photo
-        self.pc_url = pc_url
         # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.process_create_time = process_create_time
         # Use the UTC time format: yyyy-MM-ddTHH:mmZ
@@ -9368,6 +9355,7 @@ class PremiumGetDoneTasksResponseBodyResultList(TeaModel):
         self.status = status
         self.task_id = task_id
         self.title = title
+        self.url = url
 
     def validate(self):
         pass
@@ -9388,8 +9376,6 @@ class PremiumGetDoneTasksResponseBodyResultList(TeaModel):
             result['originatorName'] = self.originator_name
         if self.originator_photo is not None:
             result['originatorPhoto'] = self.originator_photo
-        if self.pc_url is not None:
-            result['pcUrl'] = self.pc_url
         if self.process_create_time is not None:
             result['processCreateTime'] = self.process_create_time
         if self.process_end_time is not None:
@@ -9406,6 +9392,8 @@ class PremiumGetDoneTasksResponseBodyResultList(TeaModel):
             result['taskId'] = self.task_id
         if self.title is not None:
             result['title'] = self.title
+        if self.url is not None:
+            result['url'] = self.url
         return result
 
     def from_map(self, m: dict = None):
@@ -9420,8 +9408,6 @@ class PremiumGetDoneTasksResponseBodyResultList(TeaModel):
             self.originator_name = m.get('originatorName')
         if m.get('originatorPhoto') is not None:
             self.originator_photo = m.get('originatorPhoto')
-        if m.get('pcUrl') is not None:
-            self.pc_url = m.get('pcUrl')
         if m.get('processCreateTime') is not None:
             self.process_create_time = m.get('processCreateTime')
         if m.get('processEndTime') is not None:
@@ -9438,6 +9424,8 @@ class PremiumGetDoneTasksResponseBodyResultList(TeaModel):
             self.task_id = m.get('taskId')
         if m.get('title') is not None:
             self.title = m.get('title')
+        if m.get('url') is not None:
+            self.url = m.get('url')
         return self
 
 
@@ -9796,14 +9784,10 @@ class PremiumGetNoticedInstancesHeaders(TeaModel):
 class PremiumGetNoticedInstancesRequest(TeaModel):
     def __init__(
         self,
-        ding_client_id: str = None,
-        keyword: str = None,
         page_number: int = None,
         page_size: int = None,
         user_id: str = None,
     ):
-        self.ding_client_id = ding_client_id
-        self.keyword = keyword
         # This parameter is required.
         self.page_number = page_number
         # This parameter is required.
@@ -9820,10 +9804,6 @@ class PremiumGetNoticedInstancesRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.ding_client_id is not None:
-            result['dingClientId'] = self.ding_client_id
-        if self.keyword is not None:
-            result['keyword'] = self.keyword
         if self.page_number is not None:
             result['pageNumber'] = self.page_number
         if self.page_size is not None:
@@ -9834,10 +9814,6 @@ class PremiumGetNoticedInstancesRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('dingClientId') is not None:
-            self.ding_client_id = m.get('dingClientId')
-        if m.get('keyword') is not None:
-            self.keyword = m.get('keyword')
         if m.get('pageNumber') is not None:
             self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:
@@ -10680,14 +10656,10 @@ class PremiumGetSubmittedInstancesHeaders(TeaModel):
 class PremiumGetSubmittedInstancesRequest(TeaModel):
     def __init__(
         self,
-        ding_client_id: str = None,
-        keyword: str = None,
         page_number: int = None,
         page_size: int = None,
         user_id: str = None,
     ):
-        self.ding_client_id = ding_client_id
-        self.keyword = keyword
         # This parameter is required.
         self.page_number = page_number
         # This parameter is required.
@@ -10704,10 +10676,6 @@ class PremiumGetSubmittedInstancesRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.ding_client_id is not None:
-            result['dingClientId'] = self.ding_client_id
-        if self.keyword is not None:
-            result['keyword'] = self.keyword
         if self.page_number is not None:
             result['pageNumber'] = self.page_number
         if self.page_size is not None:
@@ -10718,10 +10686,6 @@ class PremiumGetSubmittedInstancesRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('dingClientId') is not None:
-            self.ding_client_id = m.get('dingClientId')
-        if m.get('keyword') is not None:
-            self.keyword = m.get('keyword')
         if m.get('pageNumber') is not None:
             self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:
@@ -10986,14 +10950,12 @@ class PremiumGetTodoTasksRequest(TeaModel):
     def __init__(
         self,
         create_before: str = None,
-        keyword: str = None,
         page_number: int = None,
         page_size: int = None,
         user_id: str = None,
     ):
         # Use the UTC time format: yyyy-MM-ddTHH:mmZ
         self.create_before = create_before
-        self.keyword = keyword
         # This parameter is required.
         self.page_number = page_number
         # This parameter is required.
@@ -11012,8 +10974,6 @@ class PremiumGetTodoTasksRequest(TeaModel):
         result = dict()
         if self.create_before is not None:
             result['createBefore'] = self.create_before
-        if self.keyword is not None:
-            result['keyword'] = self.keyword
         if self.page_number is not None:
             result['pageNumber'] = self.page_number
         if self.page_size is not None:
@@ -11026,8 +10986,6 @@ class PremiumGetTodoTasksRequest(TeaModel):
         m = m or dict()
         if m.get('createBefore') is not None:
             self.create_before = m.get('createBefore')
-        if m.get('keyword') is not None:
-            self.keyword = m.get('keyword')
         if m.get('pageNumber') is not None:
             self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:
@@ -11050,7 +11008,6 @@ class PremiumGetTodoTasksResponseBodyResultList(TeaModel):
         process_end_time: str = None,
         process_instance_id: str = None,
         process_type: int = None,
-        result: str = None,
         status: str = None,
         task_id: str = None,
         title: str = None,
@@ -11068,7 +11025,6 @@ class PremiumGetTodoTasksResponseBodyResultList(TeaModel):
         self.process_end_time = process_end_time
         self.process_instance_id = process_instance_id
         self.process_type = process_type
-        self.result = result
         self.status = status
         self.task_id = task_id
         self.title = title
@@ -11103,8 +11059,6 @@ class PremiumGetTodoTasksResponseBodyResultList(TeaModel):
             result['processInstanceId'] = self.process_instance_id
         if self.process_type is not None:
             result['processType'] = self.process_type
-        if self.result is not None:
-            result['result'] = self.result
         if self.status is not None:
             result['status'] = self.status
         if self.task_id is not None:
@@ -11137,8 +11091,6 @@ class PremiumGetTodoTasksResponseBodyResultList(TeaModel):
             self.process_instance_id = m.get('processInstanceId')
         if m.get('processType') is not None:
             self.process_type = m.get('processType')
-        if m.get('result') is not None:
-            self.result = m.get('result')
         if m.get('status') is not None:
             self.status = m.get('status')
         if m.get('taskId') is not None:

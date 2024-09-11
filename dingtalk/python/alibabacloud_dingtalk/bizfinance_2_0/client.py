@@ -1074,6 +1074,196 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.LinkCommonInvokeHeaders()
         return await self.link_common_invoke_with_options_async(request, headers, runtime)
 
+    def order_billing_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.OrderBillingRequest,
+        headers: dingtalkbizfinance__2__0_models.OrderBillingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.OrderBillingResponse:
+        """
+        @summary 订单开票
+        
+        @param request: OrderBillingRequest
+        @param headers: OrderBillingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OrderBillingResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.addition_infos):
+            body['additionInfos'] = request.addition_infos
+        if not UtilClient.is_unset(request.app_key):
+            body['appKey'] = request.app_key
+        if not UtilClient.is_unset(request.apply_person):
+            body['applyPerson'] = request.apply_person
+        if not UtilClient.is_unset(request.invoice_remark):
+            body['invoiceRemark'] = request.invoice_remark
+        if not UtilClient.is_unset(request.invoice_type):
+            body['invoiceType'] = request.invoice_type
+        if not UtilClient.is_unset(request.is_natural_person):
+            body['isNaturalPerson'] = request.is_natural_person
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.order_id):
+            body['orderId'] = request.order_id
+        if not UtilClient.is_unset(request.payee):
+            body['payee'] = request.payee
+        if not UtilClient.is_unset(request.phone):
+            body['phone'] = request.phone
+        if not UtilClient.is_unset(request.products):
+            body['products'] = request.products
+        if not UtilClient.is_unset(request.purchaser_address):
+            body['purchaserAddress'] = request.purchaser_address
+        if not UtilClient.is_unset(request.purchaser_bank_account):
+            body['purchaserBankAccount'] = request.purchaser_bank_account
+        if not UtilClient.is_unset(request.purchaser_bank_name):
+            body['purchaserBankName'] = request.purchaser_bank_name
+        if not UtilClient.is_unset(request.purchaser_name):
+            body['purchaserName'] = request.purchaser_name
+        if not UtilClient.is_unset(request.purchaser_tax_no):
+            body['purchaserTaxNo'] = request.purchaser_tax_no
+        if not UtilClient.is_unset(request.purchaser_tel):
+            body['purchaserTel'] = request.purchaser_tel
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.reviewer):
+            body['reviewer'] = request.reviewer
+        if not UtilClient.is_unset(request.tax_sign):
+            body['taxSign'] = request.tax_sign
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OrderBilling',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/billings/order',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.OrderBillingResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def order_billing_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.OrderBillingRequest,
+        headers: dingtalkbizfinance__2__0_models.OrderBillingHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.OrderBillingResponse:
+        """
+        @summary 订单开票
+        
+        @param request: OrderBillingRequest
+        @param headers: OrderBillingHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OrderBillingResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.addition_infos):
+            body['additionInfos'] = request.addition_infos
+        if not UtilClient.is_unset(request.app_key):
+            body['appKey'] = request.app_key
+        if not UtilClient.is_unset(request.apply_person):
+            body['applyPerson'] = request.apply_person
+        if not UtilClient.is_unset(request.invoice_remark):
+            body['invoiceRemark'] = request.invoice_remark
+        if not UtilClient.is_unset(request.invoice_type):
+            body['invoiceType'] = request.invoice_type
+        if not UtilClient.is_unset(request.is_natural_person):
+            body['isNaturalPerson'] = request.is_natural_person
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.order_id):
+            body['orderId'] = request.order_id
+        if not UtilClient.is_unset(request.payee):
+            body['payee'] = request.payee
+        if not UtilClient.is_unset(request.phone):
+            body['phone'] = request.phone
+        if not UtilClient.is_unset(request.products):
+            body['products'] = request.products
+        if not UtilClient.is_unset(request.purchaser_address):
+            body['purchaserAddress'] = request.purchaser_address
+        if not UtilClient.is_unset(request.purchaser_bank_account):
+            body['purchaserBankAccount'] = request.purchaser_bank_account
+        if not UtilClient.is_unset(request.purchaser_bank_name):
+            body['purchaserBankName'] = request.purchaser_bank_name
+        if not UtilClient.is_unset(request.purchaser_name):
+            body['purchaserName'] = request.purchaser_name
+        if not UtilClient.is_unset(request.purchaser_tax_no):
+            body['purchaserTaxNo'] = request.purchaser_tax_no
+        if not UtilClient.is_unset(request.purchaser_tel):
+            body['purchaserTel'] = request.purchaser_tel
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.reviewer):
+            body['reviewer'] = request.reviewer
+        if not UtilClient.is_unset(request.tax_sign):
+            body['taxSign'] = request.tax_sign
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OrderBilling',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/billings/order',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.OrderBillingResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def order_billing(
+        self,
+        request: dingtalkbizfinance__2__0_models.OrderBillingRequest,
+    ) -> dingtalkbizfinance__2__0_models.OrderBillingResponse:
+        """
+        @summary 订单开票
+        
+        @param request: OrderBillingRequest
+        @return: OrderBillingResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.OrderBillingHeaders()
+        return self.order_billing_with_options(request, headers, runtime)
+
+    async def order_billing_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.OrderBillingRequest,
+    ) -> dingtalkbizfinance__2__0_models.OrderBillingResponse:
+        """
+        @summary 订单开票
+        
+        @param request: OrderBillingRequest
+        @return: OrderBillingResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.OrderBillingHeaders()
+        return await self.order_billing_with_options_async(request, headers, runtime)
+
     def query_category_by_page_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.QueryCategoryByPageRequest,

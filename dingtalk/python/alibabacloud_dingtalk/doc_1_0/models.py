@@ -10,12 +10,12 @@ class AttachmentsMapValue(TeaModel):
         upload_key: str = None,
         name: str = None,
         media_type: str = None,
+        resource_id: str = None,
     ):
-        # This parameter is required.
         self.upload_key = upload_key
-        # This parameter is required.
         self.name = name
         self.media_type = media_type
+        self.resource_id = resource_id
 
     def validate(self):
         pass
@@ -32,6 +32,8 @@ class AttachmentsMapValue(TeaModel):
             result['name'] = self.name
         if self.media_type is not None:
             result['mediaType'] = self.media_type
+        if self.resource_id is not None:
+            result['resourceId'] = self.resource_id
         return result
 
     def from_map(self, m: dict = None):
@@ -42,6 +44,8 @@ class AttachmentsMapValue(TeaModel):
             self.name = m.get('name')
         if m.get('mediaType') is not None:
             self.media_type = m.get('mediaType')
+        if m.get('resourceId') is not None:
+            self.resource_id = m.get('resourceId')
         return self
 
 
@@ -6561,6 +6565,197 @@ class GetRelatedWorkspacesResponse(TeaModel):
         return self
 
 
+class GetResourceUploadInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetResourceUploadInfoRequest(TeaModel):
+    def __init__(
+        self,
+        media_type: str = None,
+        resource_name: str = None,
+        size: int = None,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.media_type = media_type
+        # This parameter is required.
+        self.resource_name = resource_name
+        # This parameter is required.
+        self.size = size
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.media_type is not None:
+            result['mediaType'] = self.media_type
+        if self.resource_name is not None:
+            result['resourceName'] = self.resource_name
+        if self.size is not None:
+            result['size'] = self.size
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('mediaType') is not None:
+            self.media_type = m.get('mediaType')
+        if m.get('resourceName') is not None:
+            self.resource_name = m.get('resourceName')
+        if m.get('size') is not None:
+            self.size = m.get('size')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class GetResourceUploadInfoResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        resource_id: str = None,
+        upload_url: str = None,
+    ):
+        self.resource_id = resource_id
+        self.upload_url = upload_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.resource_id is not None:
+            result['resourceId'] = self.resource_id
+        if self.upload_url is not None:
+            result['uploadUrl'] = self.upload_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('resourceId') is not None:
+            self.resource_id = m.get('resourceId')
+        if m.get('uploadUrl') is not None:
+            self.upload_url = m.get('uploadUrl')
+        return self
+
+
+class GetResourceUploadInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetResourceUploadInfoResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetResourceUploadInfoResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetResourceUploadInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetResourceUploadInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetResourceUploadInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetSheetHeaders(TeaModel):
     def __init__(
         self,
@@ -7348,8 +7543,10 @@ class InitDocumentRequest(TeaModel):
 class InitDocumentResponseBody(TeaModel):
     def __init__(
         self,
+        result: Dict[str, Any] = None,
         success: bool = None,
     ):
+        self.result = result
         self.success = success
 
     def validate(self):
@@ -7361,12 +7558,16 @@ class InitDocumentResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.result is not None:
+            result['result'] = self.result
         if self.success is not None:
             result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
         if m.get('success') is not None:
             self.success = m.get('success')
         return self

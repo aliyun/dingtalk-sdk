@@ -3575,6 +3575,8 @@ class Client(OpenApiClient):
             body['modifyMember'] = request.modify_member
         if not UtilClient.is_unset(request.offset):
             body['offset'] = request.offset
+        if not UtilClient.is_unset(request.only_machine_check):
+            body['onlyMachineCheck'] = request.only_machine_check
         if not UtilClient.is_unset(request.open_camera_check):
             body['openCameraCheck'] = request.open_camera_check
         if not UtilClient.is_unset(request.open_face_check):
@@ -3706,6 +3708,8 @@ class Client(OpenApiClient):
             body['modifyMember'] = request.modify_member
         if not UtilClient.is_unset(request.offset):
             body['offset'] = request.offset
+        if not UtilClient.is_unset(request.only_machine_check):
+            body['onlyMachineCheck'] = request.only_machine_check
         if not UtilClient.is_unset(request.open_camera_check):
             body['openCameraCheck'] = request.open_camera_check
         if not UtilClient.is_unset(request.open_face_check):
@@ -3847,6 +3851,8 @@ class Client(OpenApiClient):
             body['managerList'] = request.manager_list
         if not UtilClient.is_unset(request.offset):
             body['offset'] = request.offset
+        if not UtilClient.is_unset(request.only_machine_check):
+            body['onlyMachineCheck'] = request.only_machine_check
         if not UtilClient.is_unset(request.open_camera_check):
             body['openCameraCheck'] = request.open_camera_check
         if not UtilClient.is_unset(request.open_face_check):
@@ -3954,6 +3960,8 @@ class Client(OpenApiClient):
             body['managerList'] = request.manager_list
         if not UtilClient.is_unset(request.offset):
             body['offset'] = request.offset
+        if not UtilClient.is_unset(request.only_machine_check):
+            body['onlyMachineCheck'] = request.only_machine_check
         if not UtilClient.is_unset(request.open_camera_check):
             body['openCameraCheck'] = request.open_camera_check
         if not UtilClient.is_unset(request.open_face_check):

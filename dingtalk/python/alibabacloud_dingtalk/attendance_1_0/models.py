@@ -8439,6 +8439,7 @@ class GroupAddRequest(TeaModel):
         members: List[GroupAddRequestMembers] = None,
         modify_member: bool = None,
         offset: int = None,
+        only_machine_check: bool = None,
         open_camera_check: bool = None,
         open_face_check: bool = None,
         outside_check_approve_mode_id: int = None,
@@ -8486,6 +8487,7 @@ class GroupAddRequest(TeaModel):
         self.members = members
         self.modify_member = modify_member
         self.offset = offset
+        self.only_machine_check = only_machine_check
         self.open_camera_check = open_camera_check
         self.open_face_check = open_face_check
         self.outside_check_approve_mode_id = outside_check_approve_mode_id
@@ -8596,6 +8598,8 @@ class GroupAddRequest(TeaModel):
             result['modifyMember'] = self.modify_member
         if self.offset is not None:
             result['offset'] = self.offset
+        if self.only_machine_check is not None:
+            result['onlyMachineCheck'] = self.only_machine_check
         if self.open_camera_check is not None:
             result['openCameraCheck'] = self.open_camera_check
         if self.open_face_check is not None:
@@ -8701,6 +8705,8 @@ class GroupAddRequest(TeaModel):
             self.modify_member = m.get('modifyMember')
         if m.get('offset') is not None:
             self.offset = m.get('offset')
+        if m.get('onlyMachineCheck') is not None:
+            self.only_machine_check = m.get('onlyMachineCheck')
         if m.get('openCameraCheck') is not None:
             self.open_camera_check = m.get('openCameraCheck')
         if m.get('openFaceCheck') is not None:
@@ -9054,6 +9060,7 @@ class GroupUpdateRequest(TeaModel):
         group_name: str = None,
         manager_list: List[str] = None,
         offset: int = None,
+        only_machine_check: bool = None,
         open_camera_check: bool = None,
         open_face_check: bool = None,
         outside_check_approve_mode_id: int = None,
@@ -9087,6 +9094,7 @@ class GroupUpdateRequest(TeaModel):
         self.group_name = group_name
         self.manager_list = manager_list
         self.offset = offset
+        self.only_machine_check = only_machine_check
         self.open_camera_check = open_camera_check
         self.open_face_check = open_face_check
         self.outside_check_approve_mode_id = outside_check_approve_mode_id
@@ -9159,6 +9167,8 @@ class GroupUpdateRequest(TeaModel):
             result['managerList'] = self.manager_list
         if self.offset is not None:
             result['offset'] = self.offset
+        if self.only_machine_check is not None:
+            result['onlyMachineCheck'] = self.only_machine_check
         if self.open_camera_check is not None:
             result['openCameraCheck'] = self.open_camera_check
         if self.open_face_check is not None:
@@ -9232,6 +9242,8 @@ class GroupUpdateRequest(TeaModel):
             self.manager_list = m.get('managerList')
         if m.get('offset') is not None:
             self.offset = m.get('offset')
+        if m.get('onlyMachineCheck') is not None:
+            self.only_machine_check = m.get('onlyMachineCheck')
         if m.get('openCameraCheck') is not None:
             self.open_camera_check = m.get('openCameraCheck')
         if m.get('openFaceCheck') is not None:

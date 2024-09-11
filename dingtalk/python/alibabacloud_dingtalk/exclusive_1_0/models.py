@@ -40,13 +40,21 @@ class AddOrgHeaders(TeaModel):
 class AddOrgRequest(TeaModel):
     def __init__(
         self,
+        city: str = None,
+        industry: str = None,
+        industry_code: int = None,
         mobile_num: str = None,
         name: str = None,
+        province: str = None,
     ):
+        self.city = city
+        self.industry = industry
+        self.industry_code = industry_code
         # This parameter is required.
         self.mobile_num = mobile_num
         # This parameter is required.
         self.name = name
+        self.province = province
 
     def validate(self):
         pass
@@ -57,18 +65,34 @@ class AddOrgRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.city is not None:
+            result['city'] = self.city
+        if self.industry is not None:
+            result['industry'] = self.industry
+        if self.industry_code is not None:
+            result['industryCode'] = self.industry_code
         if self.mobile_num is not None:
             result['mobileNum'] = self.mobile_num
         if self.name is not None:
             result['name'] = self.name
+        if self.province is not None:
+            result['province'] = self.province
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('city') is not None:
+            self.city = m.get('city')
+        if m.get('industry') is not None:
+            self.industry = m.get('industry')
+        if m.get('industryCode') is not None:
+            self.industry_code = m.get('industryCode')
         if m.get('mobileNum') is not None:
             self.mobile_num = m.get('mobileNum')
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('province') is not None:
+            self.province = m.get('province')
         return self
 
 
@@ -5685,6 +5709,237 @@ class GetConversationCategoryResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetConversationCategoryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetConversationDetailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetConversationDetailRequest(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+    ):
+        # This parameter is required.
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class GetConversationDetailResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        category_id: int = None,
+        category_name: str = None,
+        group_code: str = None,
+        group_members_cnt: int = None,
+        group_name: str = None,
+        group_owner_name: str = None,
+        group_owner_user_id: str = None,
+        is_kp_conversation: bool = None,
+        manage_sign: int = None,
+        open_conversation_id: str = None,
+        order: int = None,
+        status: int = None,
+    ):
+        self.category_id = category_id
+        self.category_name = category_name
+        self.group_code = group_code
+        self.group_members_cnt = group_members_cnt
+        self.group_name = group_name
+        self.group_owner_name = group_owner_name
+        self.group_owner_user_id = group_owner_user_id
+        self.is_kp_conversation = is_kp_conversation
+        self.manage_sign = manage_sign
+        # This parameter is required.
+        self.open_conversation_id = open_conversation_id
+        self.order = order
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_id is not None:
+            result['categoryId'] = self.category_id
+        if self.category_name is not None:
+            result['categoryName'] = self.category_name
+        if self.group_code is not None:
+            result['groupCode'] = self.group_code
+        if self.group_members_cnt is not None:
+            result['groupMembersCnt'] = self.group_members_cnt
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.group_owner_name is not None:
+            result['groupOwnerName'] = self.group_owner_name
+        if self.group_owner_user_id is not None:
+            result['groupOwnerUserId'] = self.group_owner_user_id
+        if self.is_kp_conversation is not None:
+            result['isKpConversation'] = self.is_kp_conversation
+        if self.manage_sign is not None:
+            result['manageSign'] = self.manage_sign
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.order is not None:
+            result['order'] = self.order
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryId') is not None:
+            self.category_id = m.get('categoryId')
+        if m.get('categoryName') is not None:
+            self.category_name = m.get('categoryName')
+        if m.get('groupCode') is not None:
+            self.group_code = m.get('groupCode')
+        if m.get('groupMembersCnt') is not None:
+            self.group_members_cnt = m.get('groupMembersCnt')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('groupOwnerName') is not None:
+            self.group_owner_name = m.get('groupOwnerName')
+        if m.get('groupOwnerUserId') is not None:
+            self.group_owner_user_id = m.get('groupOwnerUserId')
+        if m.get('isKpConversation') is not None:
+            self.is_kp_conversation = m.get('isKpConversation')
+        if m.get('manageSign') is not None:
+            self.manage_sign = m.get('manageSign')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class GetConversationDetailResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetConversationDetailResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetConversationDetailResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetConversationDetailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetConversationDetailResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetConversationDetailResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -14918,6 +15173,303 @@ class QueryChannelStaffInfoByMobileResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryChannelStaffInfoByMobileResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryConversationPageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryConversationPageRequest(TeaModel):
+    def __init__(
+        self,
+        category_id: int = None,
+        max_results: int = None,
+        next_token: str = None,
+    ):
+        # This parameter is required.
+        self.category_id = category_id
+        # This parameter is required.
+        self.max_results = max_results
+        # This parameter is required.
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_id is not None:
+            result['categoryId'] = self.category_id
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryId') is not None:
+            self.category_id = m.get('categoryId')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class QueryConversationPageResponseBodyResultData(TeaModel):
+    def __init__(
+        self,
+        category_id: int = None,
+        category_name: str = None,
+        group_code: str = None,
+        group_members_cnt: int = None,
+        group_name: str = None,
+        group_owner_name: str = None,
+        group_owner_user_id: str = None,
+        is_kp_conversation: bool = None,
+        manage_sign: int = None,
+        open_conversation_id: str = None,
+        order: int = None,
+        status: int = None,
+    ):
+        self.category_id = category_id
+        self.category_name = category_name
+        self.group_code = group_code
+        self.group_members_cnt = group_members_cnt
+        self.group_name = group_name
+        self.group_owner_name = group_owner_name
+        self.group_owner_user_id = group_owner_user_id
+        self.is_kp_conversation = is_kp_conversation
+        self.manage_sign = manage_sign
+        self.open_conversation_id = open_conversation_id
+        self.order = order
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.category_id is not None:
+            result['categoryId'] = self.category_id
+        if self.category_name is not None:
+            result['categoryName'] = self.category_name
+        if self.group_code is not None:
+            result['groupCode'] = self.group_code
+        if self.group_members_cnt is not None:
+            result['groupMembersCnt'] = self.group_members_cnt
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.group_owner_name is not None:
+            result['groupOwnerName'] = self.group_owner_name
+        if self.group_owner_user_id is not None:
+            result['groupOwnerUserId'] = self.group_owner_user_id
+        if self.is_kp_conversation is not None:
+            result['isKpConversation'] = self.is_kp_conversation
+        if self.manage_sign is not None:
+            result['manageSign'] = self.manage_sign
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.order is not None:
+            result['order'] = self.order
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('categoryId') is not None:
+            self.category_id = m.get('categoryId')
+        if m.get('categoryName') is not None:
+            self.category_name = m.get('categoryName')
+        if m.get('groupCode') is not None:
+            self.group_code = m.get('groupCode')
+        if m.get('groupMembersCnt') is not None:
+            self.group_members_cnt = m.get('groupMembersCnt')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('groupOwnerName') is not None:
+            self.group_owner_name = m.get('groupOwnerName')
+        if m.get('groupOwnerUserId') is not None:
+            self.group_owner_user_id = m.get('groupOwnerUserId')
+        if m.get('isKpConversation') is not None:
+            self.is_kp_conversation = m.get('isKpConversation')
+        if m.get('manageSign') is not None:
+            self.manage_sign = m.get('manageSign')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class QueryConversationPageResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        data: List[QueryConversationPageResponseBodyResultData] = None,
+        max_results: int = None,
+        next_token: str = None,
+        total_count: int = None,
+    ):
+        self.data = data
+        self.max_results = max_results
+        self.next_token = next_token
+        self.total_count = total_count
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = QueryConversationPageResponseBodyResultData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryConversationPageResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryConversationPageResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryConversationPageResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryConversationPageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryConversationPageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryConversationPageResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

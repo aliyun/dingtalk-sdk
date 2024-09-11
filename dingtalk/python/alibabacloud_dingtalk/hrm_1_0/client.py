@@ -1602,6 +1602,124 @@ class Client(OpenApiClient):
         headers = dingtalkhrm__1__0_models.HrmBenefitQueryHeaders()
         return await self.hrm_benefit_query_with_options_async(request, headers, runtime)
 
+    def hrm_corp_config_query_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.HrmCorpConfigQueryRequest,
+        headers: dingtalkhrm__1__0_models.HrmCorpConfigQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.HrmCorpConfigQueryResponse:
+        """
+        @summary 查询企业配置信息
+        
+        @param request: HrmCorpConfigQueryRequest
+        @param headers: HrmCorpConfigQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrmCorpConfigQueryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.sub_type):
+            body['subType'] = request.sub_type
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrmCorpConfigQuery',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/corp/configs/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.HrmCorpConfigQueryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrm_corp_config_query_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.HrmCorpConfigQueryRequest,
+        headers: dingtalkhrm__1__0_models.HrmCorpConfigQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.HrmCorpConfigQueryResponse:
+        """
+        @summary 查询企业配置信息
+        
+        @param request: HrmCorpConfigQueryRequest
+        @param headers: HrmCorpConfigQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrmCorpConfigQueryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.sub_type):
+            body['subType'] = request.sub_type
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrmCorpConfigQuery',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/corp/configs/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.HrmCorpConfigQueryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrm_corp_config_query(
+        self,
+        request: dingtalkhrm__1__0_models.HrmCorpConfigQueryRequest,
+    ) -> dingtalkhrm__1__0_models.HrmCorpConfigQueryResponse:
+        """
+        @summary 查询企业配置信息
+        
+        @param request: HrmCorpConfigQueryRequest
+        @return: HrmCorpConfigQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.HrmCorpConfigQueryHeaders()
+        return self.hrm_corp_config_query_with_options(request, headers, runtime)
+
+    async def hrm_corp_config_query_async(
+        self,
+        request: dingtalkhrm__1__0_models.HrmCorpConfigQueryRequest,
+    ) -> dingtalkhrm__1__0_models.HrmCorpConfigQueryResponse:
+        """
+        @summary 查询企业配置信息
+        
+        @param request: HrmCorpConfigQueryRequest
+        @return: HrmCorpConfigQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.HrmCorpConfigQueryHeaders()
+        return await self.hrm_corp_config_query_with_options_async(request, headers, runtime)
+
     def hrm_mail_send_with_options(
         self,
         request: dingtalkhrm__1__0_models.HrmMailSendRequest,

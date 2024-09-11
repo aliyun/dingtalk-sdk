@@ -1504,6 +1504,367 @@ class LinkCommonInvokeResponse(TeaModel):
         return self
 
 
+class OrderBillingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class OrderBillingRequestAdditionInfos(TeaModel):
+    def __init__(
+        self,
+        addition_content: str = None,
+        addition_name: str = None,
+        data_type: int = None,
+    ):
+        self.addition_content = addition_content
+        self.addition_name = addition_name
+        self.data_type = data_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.addition_content is not None:
+            result['additionContent'] = self.addition_content
+        if self.addition_name is not None:
+            result['additionName'] = self.addition_name
+        if self.data_type is not None:
+            result['dataType'] = self.data_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('additionContent') is not None:
+            self.addition_content = m.get('additionContent')
+        if m.get('additionName') is not None:
+            self.addition_name = m.get('additionName')
+        if m.get('dataType') is not None:
+            self.data_type = m.get('dataType')
+        return self
+
+
+class OrderBillingRequestProducts(TeaModel):
+    def __init__(
+        self,
+        amount_with_tax: str = None,
+        product_name: str = None,
+        quantity: str = None,
+        revenue_code: str = None,
+        specification: str = None,
+        unit: str = None,
+        unit_price: str = None,
+    ):
+        self.amount_with_tax = amount_with_tax
+        self.product_name = product_name
+        self.quantity = quantity
+        self.revenue_code = revenue_code
+        self.specification = specification
+        self.unit = unit
+        self.unit_price = unit_price
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount_with_tax is not None:
+            result['amountWithTax'] = self.amount_with_tax
+        if self.product_name is not None:
+            result['productName'] = self.product_name
+        if self.quantity is not None:
+            result['quantity'] = self.quantity
+        if self.revenue_code is not None:
+            result['revenueCode'] = self.revenue_code
+        if self.specification is not None:
+            result['specification'] = self.specification
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.unit_price is not None:
+            result['unitPrice'] = self.unit_price
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amountWithTax') is not None:
+            self.amount_with_tax = m.get('amountWithTax')
+        if m.get('productName') is not None:
+            self.product_name = m.get('productName')
+        if m.get('quantity') is not None:
+            self.quantity = m.get('quantity')
+        if m.get('revenueCode') is not None:
+            self.revenue_code = m.get('revenueCode')
+        if m.get('specification') is not None:
+            self.specification = m.get('specification')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('unitPrice') is not None:
+            self.unit_price = m.get('unitPrice')
+        return self
+
+
+class OrderBillingRequest(TeaModel):
+    def __init__(
+        self,
+        addition_infos: List[OrderBillingRequestAdditionInfos] = None,
+        app_key: str = None,
+        apply_person: str = None,
+        invoice_remark: str = None,
+        invoice_type: str = None,
+        is_natural_person: bool = None,
+        operator: str = None,
+        order_id: str = None,
+        payee: str = None,
+        phone: str = None,
+        products: List[OrderBillingRequestProducts] = None,
+        purchaser_address: str = None,
+        purchaser_bank_account: str = None,
+        purchaser_bank_name: str = None,
+        purchaser_name: str = None,
+        purchaser_tax_no: str = None,
+        purchaser_tel: str = None,
+        remark: str = None,
+        reviewer: str = None,
+        tax_sign: int = None,
+    ):
+        self.addition_infos = addition_infos
+        self.app_key = app_key
+        self.apply_person = apply_person
+        self.invoice_remark = invoice_remark
+        self.invoice_type = invoice_type
+        self.is_natural_person = is_natural_person
+        self.operator = operator
+        self.order_id = order_id
+        self.payee = payee
+        self.phone = phone
+        self.products = products
+        self.purchaser_address = purchaser_address
+        self.purchaser_bank_account = purchaser_bank_account
+        self.purchaser_bank_name = purchaser_bank_name
+        self.purchaser_name = purchaser_name
+        self.purchaser_tax_no = purchaser_tax_no
+        self.purchaser_tel = purchaser_tel
+        self.remark = remark
+        self.reviewer = reviewer
+        self.tax_sign = tax_sign
+
+    def validate(self):
+        if self.addition_infos:
+            for k in self.addition_infos:
+                if k:
+                    k.validate()
+        if self.products:
+            for k in self.products:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['additionInfos'] = []
+        if self.addition_infos is not None:
+            for k in self.addition_infos:
+                result['additionInfos'].append(k.to_map() if k else None)
+        if self.app_key is not None:
+            result['appKey'] = self.app_key
+        if self.apply_person is not None:
+            result['applyPerson'] = self.apply_person
+        if self.invoice_remark is not None:
+            result['invoiceRemark'] = self.invoice_remark
+        if self.invoice_type is not None:
+            result['invoiceType'] = self.invoice_type
+        if self.is_natural_person is not None:
+            result['isNaturalPerson'] = self.is_natural_person
+        if self.operator is not None:
+            result['operator'] = self.operator
+        if self.order_id is not None:
+            result['orderId'] = self.order_id
+        if self.payee is not None:
+            result['payee'] = self.payee
+        if self.phone is not None:
+            result['phone'] = self.phone
+        result['products'] = []
+        if self.products is not None:
+            for k in self.products:
+                result['products'].append(k.to_map() if k else None)
+        if self.purchaser_address is not None:
+            result['purchaserAddress'] = self.purchaser_address
+        if self.purchaser_bank_account is not None:
+            result['purchaserBankAccount'] = self.purchaser_bank_account
+        if self.purchaser_bank_name is not None:
+            result['purchaserBankName'] = self.purchaser_bank_name
+        if self.purchaser_name is not None:
+            result['purchaserName'] = self.purchaser_name
+        if self.purchaser_tax_no is not None:
+            result['purchaserTaxNo'] = self.purchaser_tax_no
+        if self.purchaser_tel is not None:
+            result['purchaserTel'] = self.purchaser_tel
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.reviewer is not None:
+            result['reviewer'] = self.reviewer
+        if self.tax_sign is not None:
+            result['taxSign'] = self.tax_sign
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.addition_infos = []
+        if m.get('additionInfos') is not None:
+            for k in m.get('additionInfos'):
+                temp_model = OrderBillingRequestAdditionInfos()
+                self.addition_infos.append(temp_model.from_map(k))
+        if m.get('appKey') is not None:
+            self.app_key = m.get('appKey')
+        if m.get('applyPerson') is not None:
+            self.apply_person = m.get('applyPerson')
+        if m.get('invoiceRemark') is not None:
+            self.invoice_remark = m.get('invoiceRemark')
+        if m.get('invoiceType') is not None:
+            self.invoice_type = m.get('invoiceType')
+        if m.get('isNaturalPerson') is not None:
+            self.is_natural_person = m.get('isNaturalPerson')
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        if m.get('orderId') is not None:
+            self.order_id = m.get('orderId')
+        if m.get('payee') is not None:
+            self.payee = m.get('payee')
+        if m.get('phone') is not None:
+            self.phone = m.get('phone')
+        self.products = []
+        if m.get('products') is not None:
+            for k in m.get('products'):
+                temp_model = OrderBillingRequestProducts()
+                self.products.append(temp_model.from_map(k))
+        if m.get('purchaserAddress') is not None:
+            self.purchaser_address = m.get('purchaserAddress')
+        if m.get('purchaserBankAccount') is not None:
+            self.purchaser_bank_account = m.get('purchaserBankAccount')
+        if m.get('purchaserBankName') is not None:
+            self.purchaser_bank_name = m.get('purchaserBankName')
+        if m.get('purchaserName') is not None:
+            self.purchaser_name = m.get('purchaserName')
+        if m.get('purchaserTaxNo') is not None:
+            self.purchaser_tax_no = m.get('purchaserTaxNo')
+        if m.get('purchaserTel') is not None:
+            self.purchaser_tel = m.get('purchaserTel')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('reviewer') is not None:
+            self.reviewer = m.get('reviewer')
+        if m.get('taxSign') is not None:
+            self.tax_sign = m.get('taxSign')
+        return self
+
+
+class OrderBillingResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class OrderBillingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: OrderBillingResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = OrderBillingResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryCategoryByPageHeaders(TeaModel):
     def __init__(
         self,

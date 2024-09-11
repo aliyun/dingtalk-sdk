@@ -4610,6 +4610,140 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__1__0_models.GetRelatedWorkspacesHeaders()
         return await self.get_related_workspaces_with_options_async(request, headers, runtime)
 
+    def get_resource_upload_info_with_options(
+        self,
+        doc_id: str,
+        request: dingtalkdoc__1__0_models.GetResourceUploadInfoRequest,
+        headers: dingtalkdoc__1__0_models.GetResourceUploadInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetResourceUploadInfoResponse:
+        """
+        @summary 获取上传信息
+        
+        @param request: GetResourceUploadInfoRequest
+        @param headers: GetResourceUploadInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetResourceUploadInfoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.media_type):
+            body['mediaType'] = request.media_type
+        if not UtilClient.is_unset(request.resource_name):
+            body['resourceName'] = request.resource_name
+        if not UtilClient.is_unset(request.size):
+            body['size'] = request.size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetResourceUploadInfo',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/docs/resources/{doc_id}/uploadInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetResourceUploadInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_resource_upload_info_with_options_async(
+        self,
+        doc_id: str,
+        request: dingtalkdoc__1__0_models.GetResourceUploadInfoRequest,
+        headers: dingtalkdoc__1__0_models.GetResourceUploadInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetResourceUploadInfoResponse:
+        """
+        @summary 获取上传信息
+        
+        @param request: GetResourceUploadInfoRequest
+        @param headers: GetResourceUploadInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetResourceUploadInfoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.media_type):
+            body['mediaType'] = request.media_type
+        if not UtilClient.is_unset(request.resource_name):
+            body['resourceName'] = request.resource_name
+        if not UtilClient.is_unset(request.size):
+            body['size'] = request.size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetResourceUploadInfo',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/docs/resources/{doc_id}/uploadInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetResourceUploadInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_resource_upload_info(
+        self,
+        doc_id: str,
+        request: dingtalkdoc__1__0_models.GetResourceUploadInfoRequest,
+    ) -> dingtalkdoc__1__0_models.GetResourceUploadInfoResponse:
+        """
+        @summary 获取上传信息
+        
+        @param request: GetResourceUploadInfoRequest
+        @return: GetResourceUploadInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetResourceUploadInfoHeaders()
+        return self.get_resource_upload_info_with_options(doc_id, request, headers, runtime)
+
+    async def get_resource_upload_info_async(
+        self,
+        doc_id: str,
+        request: dingtalkdoc__1__0_models.GetResourceUploadInfoRequest,
+    ) -> dingtalkdoc__1__0_models.GetResourceUploadInfoResponse:
+        """
+        @summary 获取上传信息
+        
+        @param request: GetResourceUploadInfoRequest
+        @return: GetResourceUploadInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetResourceUploadInfoHeaders()
+        return await self.get_resource_upload_info_with_options_async(doc_id, request, headers, runtime)
+
     def get_sheet_with_options(
         self,
         workbook_id: str,

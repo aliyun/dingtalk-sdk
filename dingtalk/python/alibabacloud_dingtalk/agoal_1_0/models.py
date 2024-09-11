@@ -656,6 +656,55 @@ class OpenUserAdminDTO(TeaModel):
         return self
 
 
+class OpenUserSubAdminDTO(TeaModel):
+    def __init__(
+        self,
+        dept_ids: List[str] = None,
+        ding_corp_id: str = None,
+        ding_user_id: str = None,
+        permission_group_codes: List[str] = None,
+    ):
+        # This parameter is required.
+        self.dept_ids = dept_ids
+        # This parameter is required.
+        self.ding_corp_id = ding_corp_id
+        # This parameter is required.
+        self.ding_user_id = ding_user_id
+        # This parameter is required.
+        self.permission_group_codes = permission_group_codes
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_ids is not None:
+            result['deptIds'] = self.dept_ids
+        if self.ding_corp_id is not None:
+            result['dingCorpId'] = self.ding_corp_id
+        if self.ding_user_id is not None:
+            result['dingUserId'] = self.ding_user_id
+        if self.permission_group_codes is not None:
+            result['permissionGroupCodes'] = self.permission_group_codes
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptIds') is not None:
+            self.dept_ids = m.get('deptIds')
+        if m.get('dingCorpId') is not None:
+            self.ding_corp_id = m.get('dingCorpId')
+        if m.get('dingUserId') is not None:
+            self.ding_user_id = m.get('dingUserId')
+        if m.get('permissionGroupCodes') is not None:
+            self.permission_group_codes = m.get('permissionGroupCodes')
+        return self
+
+
 class AgoalCreateProgressHeaders(TeaModel):
     def __init__(
         self,
@@ -696,13 +745,14 @@ class AgoalCreateProgressRequest(TeaModel):
         merge_into_latest_progress: bool = None,
         objective_id: str = None,
         plain_text: str = None,
+        progress: int = None,
         progress_merge_period: str = None,
     ):
         self.kr_id = kr_id
         self.merge_into_latest_progress = merge_into_latest_progress
         self.objective_id = objective_id
-        # This parameter is required.
         self.plain_text = plain_text
+        self.progress = progress
         self.progress_merge_period = progress_merge_period
 
     def validate(self):
@@ -722,6 +772,8 @@ class AgoalCreateProgressRequest(TeaModel):
             result['objectiveId'] = self.objective_id
         if self.plain_text is not None:
             result['plainText'] = self.plain_text
+        if self.progress is not None:
+            result['progress'] = self.progress
         if self.progress_merge_period is not None:
             result['progressMergePeriod'] = self.progress_merge_period
         return result
@@ -736,6 +788,8 @@ class AgoalCreateProgressRequest(TeaModel):
             self.objective_id = m.get('objectiveId')
         if m.get('plainText') is not None:
             self.plain_text = m.get('plainText')
+        if m.get('progress') is not None:
+            self.progress = m.get('progress')
         if m.get('progressMergePeriod') is not None:
             self.progress_merge_period = m.get('progressMergePeriod')
         return self
@@ -1723,6 +1777,154 @@ class AgoalUserObjectiveListResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AgoalUserObjectiveListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AgoalUserSubAdminListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AgoalUserSubAdminListRequest(TeaModel):
+    def __init__(
+        self,
+        func_permission_group: str = None,
+    ):
+        self.func_permission_group = func_permission_group
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.func_permission_group is not None:
+            result['funcPermissionGroup'] = self.func_permission_group
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('funcPermissionGroup') is not None:
+            self.func_permission_group = m.get('funcPermissionGroup')
+        return self
+
+
+class AgoalUserSubAdminListResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[OpenUserSubAdminDTO] = None,
+        request_id: str = None,
+        success: bool = None,
+    ):
+        self.content = content
+        self.request_id = request_id
+        self.success = success
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = OpenUserSubAdminDTO()
+                self.content.append(temp_model.from_map(k))
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AgoalUserSubAdminListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AgoalUserSubAdminListResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AgoalUserSubAdminListResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

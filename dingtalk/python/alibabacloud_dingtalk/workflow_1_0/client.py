@@ -4412,10 +4412,6 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.ding_client_id):
-            query['dingClientId'] = request.ding_client_id
-        if not UtilClient.is_unset(request.keyword):
-            query['keyword'] = request.keyword
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
@@ -4463,10 +4459,6 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.ding_client_id):
-            query['dingClientId'] = request.ding_client_id
-        if not UtilClient.is_unset(request.keyword):
-            query['keyword'] = request.keyword
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
@@ -4660,10 +4652,6 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.ding_client_id):
-            query['dingClientId'] = request.ding_client_id
-        if not UtilClient.is_unset(request.keyword):
-            query['keyword'] = request.keyword
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
@@ -4711,10 +4699,6 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.ding_client_id):
-            query['dingClientId'] = request.ding_client_id
-        if not UtilClient.is_unset(request.keyword):
-            query['keyword'] = request.keyword
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
@@ -4924,10 +4908,6 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.ding_client_id):
-            query['dingClientId'] = request.ding_client_id
-        if not UtilClient.is_unset(request.keyword):
-            query['keyword'] = request.keyword
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
@@ -4975,10 +4955,6 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.ding_client_id):
-            query['dingClientId'] = request.ding_client_id
-        if not UtilClient.is_unset(request.keyword):
-            query['keyword'] = request.keyword
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
@@ -5056,8 +5032,6 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.create_before):
             query['createBefore'] = request.create_before
-        if not UtilClient.is_unset(request.keyword):
-            query['keyword'] = request.keyword
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
@@ -5107,8 +5081,6 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.create_before):
             query['createBefore'] = request.create_before
-        if not UtilClient.is_unset(request.keyword):
-            query['keyword'] = request.keyword
         if not UtilClient.is_unset(request.page_number):
             query['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
