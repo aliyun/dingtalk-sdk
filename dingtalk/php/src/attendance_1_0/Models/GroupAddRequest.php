@@ -125,8 +125,6 @@ class GroupAddRequest extends Model
     public $enableOutsideRemark;
 
     /**
-     * @example true
-     *
      * @var bool
      */
     public $enablePositionBle;
@@ -208,6 +206,11 @@ class GroupAddRequest extends Model
      * @var int
      */
     public $offset;
+
+    /**
+     * @var bool
+     */
+    public $onlyMachineCheck;
 
     /**
      * @var bool
@@ -335,6 +338,7 @@ class GroupAddRequest extends Model
         'members'                        => 'members',
         'modifyMember'                   => 'modifyMember',
         'offset'                         => 'offset',
+        'onlyMachineCheck'               => 'onlyMachineCheck',
         'openCameraCheck'                => 'openCameraCheck',
         'openFaceCheck'                  => 'openFaceCheck',
         'outsideCheckApproveModeId'      => 'outsideCheckApproveModeId',
@@ -457,6 +461,9 @@ class GroupAddRequest extends Model
         }
         if (null !== $this->offset) {
             $res['offset'] = $this->offset;
+        }
+        if (null !== $this->onlyMachineCheck) {
+            $res['onlyMachineCheck'] = $this->onlyMachineCheck;
         }
         if (null !== $this->openCameraCheck) {
             $res['openCameraCheck'] = $this->openCameraCheck;
@@ -635,6 +642,9 @@ class GroupAddRequest extends Model
         }
         if (isset($map['offset'])) {
             $model->offset = $map['offset'];
+        }
+        if (isset($map['onlyMachineCheck'])) {
+            $model->onlyMachineCheck = $map['onlyMachineCheck'];
         }
         if (isset($map['openCameraCheck'])) {
             $model->openCameraCheck = $map['openCameraCheck'];

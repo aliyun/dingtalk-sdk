@@ -113,6 +113,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRecentOpenDocsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRelatedWorkspacesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRelatedWorkspacesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRelatedWorkspacesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetResourceUploadInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetResourceUploadInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetResourceUploadInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetSheetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetSheetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetSheetResponse;
@@ -2545,6 +2548,76 @@ class Dingtalk extends OpenApiClient
         $headers = new GetRelatedWorkspacesHeaders([]);
 
         return $this->getRelatedWorkspacesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取上传信息
+     *  *
+     * @param string                       $docId
+     * @param GetResourceUploadInfoRequest $request GetResourceUploadInfoRequest
+     * @param GetResourceUploadInfoHeaders $headers GetResourceUploadInfoHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetResourceUploadInfoResponse GetResourceUploadInfoResponse
+     */
+    public function getResourceUploadInfoWithOptions($docId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->mediaType)) {
+            $body['mediaType'] = $request->mediaType;
+        }
+        if (!Utils::isUnset($request->resourceName)) {
+            $body['resourceName'] = $request->resourceName;
+        }
+        if (!Utils::isUnset($request->size)) {
+            $body['size'] = $request->size;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetResourceUploadInfo',
+            'version'     => 'doc_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/doc/docs/resources/' . $docId . '/uploadInfos/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetResourceUploadInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取上传信息
+     *  *
+     * @param string                       $docId
+     * @param GetResourceUploadInfoRequest $request GetResourceUploadInfoRequest
+     *
+     * @return GetResourceUploadInfoResponse GetResourceUploadInfoResponse
+     */
+    public function getResourceUploadInfo($docId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetResourceUploadInfoHeaders([]);
+
+        return $this->getResourceUploadInfoWithOptions($docId, $request, $headers, $runtime);
     }
 
     /**

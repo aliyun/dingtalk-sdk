@@ -2491,12 +2491,6 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->dingClientId)) {
-            $query['dingClientId'] = $request->dingClientId;
-        }
-        if (!Utils::isUnset($request->keyword)) {
-            $query['keyword'] = $request->keyword;
-        }
         if (!Utils::isUnset($request->pageNumber)) {
             $query['pageNumber'] = $request->pageNumber;
         }
@@ -2620,12 +2614,6 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->dingClientId)) {
-            $query['dingClientId'] = $request->dingClientId;
-        }
-        if (!Utils::isUnset($request->keyword)) {
-            $query['keyword'] = $request->keyword;
-        }
         if (!Utils::isUnset($request->pageNumber)) {
             $query['pageNumber'] = $request->pageNumber;
         }
@@ -2761,12 +2749,6 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
-        if (!Utils::isUnset($request->dingClientId)) {
-            $query['dingClientId'] = $request->dingClientId;
-        }
-        if (!Utils::isUnset($request->keyword)) {
-            $query['keyword'] = $request->keyword;
-        }
         if (!Utils::isUnset($request->pageNumber)) {
             $query['pageNumber'] = $request->pageNumber;
         }
@@ -2832,9 +2814,6 @@ class Dingtalk extends OpenApiClient
         $query = [];
         if (!Utils::isUnset($request->createBefore)) {
             $query['createBefore'] = $request->createBefore;
-        }
-        if (!Utils::isUnset($request->keyword)) {
-            $query['keyword'] = $request->keyword;
         }
         if (!Utils::isUnset($request->pageNumber)) {
             $query['pageNumber'] = $request->pageNumber;

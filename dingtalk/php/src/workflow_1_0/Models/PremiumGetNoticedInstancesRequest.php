@@ -9,16 +9,6 @@ use AlibabaCloud\Tea\Model;
 class PremiumGetNoticedInstancesRequest extends Model
 {
     /**
-     * @var string
-     */
-    public $dingClientId;
-
-    /**
-     * @var string
-     */
-    public $keyword;
-
-    /**
      * @description This parameter is required.
      *
      * @example 1
@@ -45,11 +35,9 @@ class PremiumGetNoticedInstancesRequest extends Model
      */
     public $userId;
     protected $_name = [
-        'dingClientId' => 'dingClientId',
-        'keyword'      => 'keyword',
-        'pageNumber'   => 'pageNumber',
-        'pageSize'     => 'pageSize',
-        'userId'       => 'userId',
+        'pageNumber' => 'pageNumber',
+        'pageSize'   => 'pageSize',
+        'userId'     => 'userId',
     ];
 
     public function validate()
@@ -59,12 +47,6 @@ class PremiumGetNoticedInstancesRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->dingClientId) {
-            $res['dingClientId'] = $this->dingClientId;
-        }
-        if (null !== $this->keyword) {
-            $res['keyword'] = $this->keyword;
-        }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
         }
@@ -86,12 +68,6 @@ class PremiumGetNoticedInstancesRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['dingClientId'])) {
-            $model->dingClientId = $map['dingClientId'];
-        }
-        if (isset($map['keyword'])) {
-            $model->keyword = $map['keyword'];
-        }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];
         }

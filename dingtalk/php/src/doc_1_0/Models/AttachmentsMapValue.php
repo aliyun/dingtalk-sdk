@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class AttachmentsMapValue extends Model
 {
     /**
-     * @description This parameter is required.
-     *
      * @example upload_key
      *
      * @var string
@@ -18,8 +16,6 @@ class AttachmentsMapValue extends Model
     public $uploadKey;
 
     /**
-     * @description This parameter is required.
-     *
      * @example name
      *
      * @var string
@@ -32,10 +28,16 @@ class AttachmentsMapValue extends Model
      * @var string
      */
     public $mediaType;
+
+    /**
+     * @var string
+     */
+    public $resourceId;
     protected $_name = [
-        'uploadKey' => 'uploadKey',
-        'name'      => 'name',
-        'mediaType' => 'mediaType',
+        'uploadKey'  => 'uploadKey',
+        'name'       => 'name',
+        'mediaType'  => 'mediaType',
+        'resourceId' => 'resourceId',
     ];
 
     public function validate()
@@ -53,6 +55,9 @@ class AttachmentsMapValue extends Model
         }
         if (null !== $this->mediaType) {
             $res['mediaType'] = $this->mediaType;
+        }
+        if (null !== $this->resourceId) {
+            $res['resourceId'] = $this->resourceId;
         }
 
         return $res;
@@ -74,6 +79,9 @@ class AttachmentsMapValue extends Model
         }
         if (isset($map['mediaType'])) {
             $model->mediaType = $map['mediaType'];
+        }
+        if (isset($map['resourceId'])) {
+            $model->resourceId = $map['resourceId'];
         }
 
         return $model;

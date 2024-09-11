@@ -34,11 +34,6 @@ class list_ extends Model
     public $originatorPhoto;
 
     /**
-     * @var string
-     */
-    public $pcUrl;
-
-    /**
      * @description Use the UTC time format: yyyy-MM-ddTHH:mmZ
      *
      * @var string
@@ -85,13 +80,17 @@ class list_ extends Model
      * @var string
      */
     public $title;
+
+    /**
+     * @var string
+     */
+    public $url;
     protected $_name = [
         'activityId'        => 'activityId',
         'formMassage'       => 'formMassage',
         'originatorId'      => 'originatorId',
         'originatorName'    => 'originatorName',
         'originatorPhoto'   => 'originatorPhoto',
-        'pcUrl'             => 'pcUrl',
         'processCreateTime' => 'processCreateTime',
         'processEndTime'    => 'processEndTime',
         'processInstanceId' => 'processInstanceId',
@@ -100,6 +99,7 @@ class list_ extends Model
         'status'            => 'status',
         'taskId'            => 'taskId',
         'title'             => 'title',
+        'url'               => 'url',
     ];
 
     public function validate()
@@ -124,9 +124,6 @@ class list_ extends Model
         if (null !== $this->originatorPhoto) {
             $res['originatorPhoto'] = $this->originatorPhoto;
         }
-        if (null !== $this->pcUrl) {
-            $res['pcUrl'] = $this->pcUrl;
-        }
         if (null !== $this->processCreateTime) {
             $res['processCreateTime'] = $this->processCreateTime;
         }
@@ -150,6 +147,9 @@ class list_ extends Model
         }
         if (null !== $this->title) {
             $res['title'] = $this->title;
+        }
+        if (null !== $this->url) {
+            $res['url'] = $this->url;
         }
 
         return $res;
@@ -178,9 +178,6 @@ class list_ extends Model
         if (isset($map['originatorPhoto'])) {
             $model->originatorPhoto = $map['originatorPhoto'];
         }
-        if (isset($map['pcUrl'])) {
-            $model->pcUrl = $map['pcUrl'];
-        }
         if (isset($map['processCreateTime'])) {
             $model->processCreateTime = $map['processCreateTime'];
         }
@@ -204,6 +201,9 @@ class list_ extends Model
         }
         if (isset($map['title'])) {
             $model->title = $map['title'];
+        }
+        if (isset($map['url'])) {
+            $model->url = $map['url'];
         }
 
         return $model;

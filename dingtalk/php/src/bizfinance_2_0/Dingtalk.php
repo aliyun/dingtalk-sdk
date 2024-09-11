@@ -32,6 +32,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetSupplierResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\LinkCommonInvokeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\LinkCommonInvokeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\LinkCommonInvokeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\OrderBillingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\OrderBillingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\OrderBillingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCategoryByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCategoryByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCategoryByPageResponse;
@@ -611,6 +614,120 @@ class Dingtalk extends OpenApiClient
         $headers = new LinkCommonInvokeHeaders([]);
 
         return $this->linkCommonInvokeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 订单开票
+     *  *
+     * @param OrderBillingRequest $request OrderBillingRequest
+     * @param OrderBillingHeaders $headers OrderBillingHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OrderBillingResponse OrderBillingResponse
+     */
+    public function orderBillingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->additionInfos)) {
+            $body['additionInfos'] = $request->additionInfos;
+        }
+        if (!Utils::isUnset($request->appKey)) {
+            $body['appKey'] = $request->appKey;
+        }
+        if (!Utils::isUnset($request->applyPerson)) {
+            $body['applyPerson'] = $request->applyPerson;
+        }
+        if (!Utils::isUnset($request->invoiceRemark)) {
+            $body['invoiceRemark'] = $request->invoiceRemark;
+        }
+        if (!Utils::isUnset($request->invoiceType)) {
+            $body['invoiceType'] = $request->invoiceType;
+        }
+        if (!Utils::isUnset($request->isNaturalPerson)) {
+            $body['isNaturalPerson'] = $request->isNaturalPerson;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            $body['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->orderId)) {
+            $body['orderId'] = $request->orderId;
+        }
+        if (!Utils::isUnset($request->payee)) {
+            $body['payee'] = $request->payee;
+        }
+        if (!Utils::isUnset($request->phone)) {
+            $body['phone'] = $request->phone;
+        }
+        if (!Utils::isUnset($request->products)) {
+            $body['products'] = $request->products;
+        }
+        if (!Utils::isUnset($request->purchaserAddress)) {
+            $body['purchaserAddress'] = $request->purchaserAddress;
+        }
+        if (!Utils::isUnset($request->purchaserBankAccount)) {
+            $body['purchaserBankAccount'] = $request->purchaserBankAccount;
+        }
+        if (!Utils::isUnset($request->purchaserBankName)) {
+            $body['purchaserBankName'] = $request->purchaserBankName;
+        }
+        if (!Utils::isUnset($request->purchaserName)) {
+            $body['purchaserName'] = $request->purchaserName;
+        }
+        if (!Utils::isUnset($request->purchaserTaxNo)) {
+            $body['purchaserTaxNo'] = $request->purchaserTaxNo;
+        }
+        if (!Utils::isUnset($request->purchaserTel)) {
+            $body['purchaserTel'] = $request->purchaserTel;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->reviewer)) {
+            $body['reviewer'] = $request->reviewer;
+        }
+        if (!Utils::isUnset($request->taxSign)) {
+            $body['taxSign'] = $request->taxSign;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'OrderBilling',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/billings/order',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OrderBillingResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 订单开票
+     *  *
+     * @param OrderBillingRequest $request OrderBillingRequest
+     *
+     * @return OrderBillingResponse OrderBillingResponse
+     */
+    public function orderBilling($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OrderBillingHeaders([]);
+
+        return $this->orderBillingWithOptions($request, $headers, $runtime);
     }
 
     /**

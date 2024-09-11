@@ -148,6 +148,11 @@ class GroupUpdateRequest extends Model
     /**
      * @var bool
      */
+    public $onlyMachineCheck;
+
+    /**
+     * @var bool
+     */
     public $openCameraCheck;
 
     /**
@@ -241,6 +246,7 @@ class GroupUpdateRequest extends Model
         'groupName'                      => 'groupName',
         'managerList'                    => 'managerList',
         'offset'                         => 'offset',
+        'onlyMachineCheck'               => 'onlyMachineCheck',
         'openCameraCheck'                => 'openCameraCheck',
         'openFaceCheck'                  => 'openFaceCheck',
         'outsideCheckApproveModeId'      => 'outsideCheckApproveModeId',
@@ -321,6 +327,9 @@ class GroupUpdateRequest extends Model
         }
         if (null !== $this->offset) {
             $res['offset'] = $this->offset;
+        }
+        if (null !== $this->onlyMachineCheck) {
+            $res['onlyMachineCheck'] = $this->onlyMachineCheck;
         }
         if (null !== $this->openCameraCheck) {
             $res['openCameraCheck'] = $this->openCameraCheck;
@@ -443,6 +452,9 @@ class GroupUpdateRequest extends Model
         }
         if (isset($map['offset'])) {
             $model->offset = $map['offset'];
+        }
+        if (isset($map['onlyMachineCheck'])) {
+            $model->onlyMachineCheck = $map['onlyMachineCheck'];
         }
         if (isset($map['openCameraCheck'])) {
             $model->openCameraCheck = $map['openCameraCheck'];

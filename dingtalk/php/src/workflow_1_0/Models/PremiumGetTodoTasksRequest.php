@@ -16,11 +16,6 @@ class PremiumGetTodoTasksRequest extends Model
     public $createBefore;
 
     /**
-     * @var string
-     */
-    public $keyword;
-
-    /**
      * @description This parameter is required.
      *
      * @example 1
@@ -48,7 +43,6 @@ class PremiumGetTodoTasksRequest extends Model
     public $userId;
     protected $_name = [
         'createBefore' => 'createBefore',
-        'keyword'      => 'keyword',
         'pageNumber'   => 'pageNumber',
         'pageSize'     => 'pageSize',
         'userId'       => 'userId',
@@ -63,9 +57,6 @@ class PremiumGetTodoTasksRequest extends Model
         $res = [];
         if (null !== $this->createBefore) {
             $res['createBefore'] = $this->createBefore;
-        }
-        if (null !== $this->keyword) {
-            $res['keyword'] = $this->keyword;
         }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
@@ -90,9 +81,6 @@ class PremiumGetTodoTasksRequest extends Model
         $model = new self();
         if (isset($map['createBefore'])) {
             $model->createBefore = $map['createBefore'];
-        }
-        if (isset($map['keyword'])) {
-            $model->keyword = $map['keyword'];
         }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];

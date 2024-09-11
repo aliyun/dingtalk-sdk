@@ -2,23 +2,17 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class InitDocumentResponseBody extends Model
+class OrderBillingResponseBody extends Model
 {
-    /**
-     * @var mixed[]
-     */
-    public $result;
-
     /**
      * @var bool
      */
     public $success;
     protected $_name = [
-        'result'  => 'result',
         'success' => 'success',
     ];
 
@@ -29,9 +23,6 @@ class InitDocumentResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->result) {
-            $res['result'] = $this->result;
-        }
         if (null !== $this->success) {
             $res['success'] = $this->success;
         }
@@ -42,14 +33,11 @@ class InitDocumentResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return InitDocumentResponseBody
+     * @return OrderBillingResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['result'])) {
-            $model->result = $map['result'];
-        }
         if (isset($map['success'])) {
             $model->success = $map['success'];
         }

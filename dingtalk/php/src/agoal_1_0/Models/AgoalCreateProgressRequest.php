@@ -28,13 +28,18 @@ class AgoalCreateProgressRequest extends Model
     public $objectiveId;
 
     /**
-     * @description This parameter is required.
-     *
      * @example 这是一条目标进展文本
      *
      * @var string
      */
     public $plainText;
+
+    /**
+     * @example 30
+     *
+     * @var int
+     */
+    public $progress;
 
     /**
      * @example naturalWeek
@@ -47,6 +52,7 @@ class AgoalCreateProgressRequest extends Model
         'mergeIntoLatestProgress' => 'mergeIntoLatestProgress',
         'objectiveId'             => 'objectiveId',
         'plainText'               => 'plainText',
+        'progress'                => 'progress',
         'progressMergePeriod'     => 'progressMergePeriod',
     ];
 
@@ -68,6 +74,9 @@ class AgoalCreateProgressRequest extends Model
         }
         if (null !== $this->plainText) {
             $res['plainText'] = $this->plainText;
+        }
+        if (null !== $this->progress) {
+            $res['progress'] = $this->progress;
         }
         if (null !== $this->progressMergePeriod) {
             $res['progressMergePeriod'] = $this->progressMergePeriod;
@@ -95,6 +104,9 @@ class AgoalCreateProgressRequest extends Model
         }
         if (isset($map['plainText'])) {
             $model->plainText = $map['plainText'];
+        }
+        if (isset($map['progress'])) {
+            $model->progress = $map['progress'];
         }
         if (isset($map['progressMergePeriod'])) {
             $model->progressMergePeriod = $map['progressMergePeriod'];

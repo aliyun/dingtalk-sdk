@@ -2,14 +2,15 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConversationDetailResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
-class InitDocumentResponseBody extends Model
+class GetConversationDetailResponseBody extends Model
 {
     /**
-     * @var mixed[]
+     * @var result
      */
     public $result;
 
@@ -30,7 +31,7 @@ class InitDocumentResponseBody extends Model
     {
         $res = [];
         if (null !== $this->result) {
-            $res['result'] = $this->result;
+            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
         }
         if (null !== $this->success) {
             $res['success'] = $this->success;
@@ -42,13 +43,13 @@ class InitDocumentResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return InitDocumentResponseBody
+     * @return GetConversationDetailResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
         if (isset($map['result'])) {
-            $model->result = $map['result'];
+            $model->result = result::fromMap($map['result']);
         }
         if (isset($map['success'])) {
             $model->success = $map['success'];

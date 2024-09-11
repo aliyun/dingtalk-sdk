@@ -24,6 +24,9 @@ use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalUserAdminListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalUserObjectiveListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalUserObjectiveListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalUserObjectiveListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalUserSubAdminListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalUserSubAdminListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalUserSubAdminListResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -68,6 +71,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->plainText)) {
             $body['plainText'] = $request->plainText;
+        }
+        if (!Utils::isUnset($request->progress)) {
+            $body['progress'] = $request->progress;
         }
         if (!Utils::isUnset($request->progressMergePeriod)) {
             $body['progressMergePeriod'] = $request->progressMergePeriod;
@@ -462,5 +468,62 @@ class Dingtalk extends OpenApiClient
         $headers = new AgoalUserObjectiveListHeaders([]);
 
         return $this->agoalUserObjectiveListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取Agoal子管理员列表
+     *  *
+     * @param AgoalUserSubAdminListRequest $request AgoalUserSubAdminListRequest
+     * @param AgoalUserSubAdminListHeaders $headers AgoalUserSubAdminListHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AgoalUserSubAdminListResponse AgoalUserSubAdminListResponse
+     */
+    public function agoalUserSubAdminListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->funcPermissionGroup)) {
+            $query['funcPermissionGroup'] = $request->funcPermissionGroup;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'AgoalUserSubAdminList',
+            'version'     => 'agoal_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/agoal/administrators/sub/lists',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AgoalUserSubAdminListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取Agoal子管理员列表
+     *  *
+     * @param AgoalUserSubAdminListRequest $request AgoalUserSubAdminListRequest
+     *
+     * @return AgoalUserSubAdminListResponse AgoalUserSubAdminListResponse
+     */
+    public function agoalUserSubAdminList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AgoalUserSubAdminListHeaders([]);
+
+        return $this->agoalUserSubAdminListWithOptions($request, $headers, $runtime);
     }
 }

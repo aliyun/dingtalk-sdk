@@ -63,13 +63,6 @@ class list_ extends Model
     public $processType;
 
     /**
-     * @example agree
-     *
-     * @var string
-     */
-    public $result;
-
-    /**
      * @example RUNNING
      *
      * @var string
@@ -101,7 +94,6 @@ class list_ extends Model
         'processEndTime'    => 'processEndTime',
         'processInstanceId' => 'processInstanceId',
         'processType'       => 'processType',
-        'result'            => 'result',
         'status'            => 'status',
         'taskId'            => 'taskId',
         'title'             => 'title',
@@ -144,9 +136,6 @@ class list_ extends Model
         }
         if (null !== $this->processType) {
             $res['processType'] = $this->processType;
-        }
-        if (null !== $this->result) {
-            $res['result'] = $this->result;
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
@@ -201,9 +190,6 @@ class list_ extends Model
         }
         if (isset($map['processType'])) {
             $model->processType = $map['processType'];
-        }
-        if (isset($map['result'])) {
-            $model->result = $map['result'];
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];

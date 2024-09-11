@@ -97,6 +97,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConferenceDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConferenceDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConversationCategoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConversationCategoryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConversationDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConversationDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConversationDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDingReportDeptSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDingReportDeptSummaryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetDingReportDeptSummaryResponse;
@@ -223,6 +226,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryAcrossCloudStroageConfi
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryChannelStaffInfoByMobileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryChannelStaffInfoByMobileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryChannelStaffInfoByMobileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryConversationPageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryConversationPageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryConversationPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryExclusiveBenefitsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryExclusiveBenefitsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryPartnerInfoHeaders;
@@ -353,11 +359,23 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->city)) {
+            $body['city'] = $request->city;
+        }
+        if (!Utils::isUnset($request->industry)) {
+            $body['industry'] = $request->industry;
+        }
+        if (!Utils::isUnset($request->industryCode)) {
+            $body['industryCode'] = $request->industryCode;
+        }
         if (!Utils::isUnset($request->mobileNum)) {
             $body['mobileNum'] = $request->mobileNum;
         }
         if (!Utils::isUnset($request->name)) {
             $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->province)) {
+            $body['province'] = $request->province;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -2322,6 +2340,63 @@ class Dingtalk extends OpenApiClient
         $headers = new GetConversationCategoryHeaders([]);
 
         return $this->getConversationCategoryWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @summary 获取会话分组详情
+     *  *
+     * @param GetConversationDetailRequest $request GetConversationDetailRequest
+     * @param GetConversationDetailHeaders $headers GetConversationDetailHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetConversationDetailResponse GetConversationDetailResponse
+     */
+    public function getConversationDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetConversationDetail',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/categories/conversations/details/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetConversationDetailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取会话分组详情
+     *  *
+     * @param GetConversationDetailRequest $request GetConversationDetailRequest
+     *
+     * @return GetConversationDetailResponse GetConversationDetailResponse
+     */
+    public function getConversationDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetConversationDetailHeaders([]);
+
+        return $this->getConversationDetailWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -5042,6 +5117,69 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryChannelStaffInfoByMobileHeaders([]);
 
         return $this->queryChannelStaffInfoByMobileWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取分组下会话列表
+     *  *
+     * @param QueryConversationPageRequest $request QueryConversationPageRequest
+     * @param QueryConversationPageHeaders $headers QueryConversationPageHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryConversationPageResponse QueryConversationPageResponse
+     */
+    public function queryConversationPageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->categoryId)) {
+            $query['categoryId'] = $request->categoryId;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryConversationPage',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/categories/conversations',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryConversationPageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取分组下会话列表
+     *  *
+     * @param QueryConversationPageRequest $request QueryConversationPageRequest
+     *
+     * @return QueryConversationPageResponse QueryConversationPageResponse
+     */
+    public function queryConversationPage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryConversationPageHeaders([]);
+
+        return $this->queryConversationPageWithOptions($request, $headers, $runtime);
     }
 
     /**

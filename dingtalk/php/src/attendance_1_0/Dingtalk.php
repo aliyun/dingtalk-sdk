@@ -2063,6 +2063,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->offset)) {
             $body['offset'] = $request->offset;
         }
+        if (!Utils::isUnset($request->onlyMachineCheck)) {
+            $body['onlyMachineCheck'] = $request->onlyMachineCheck;
+        }
         if (!Utils::isUnset($request->openCameraCheck)) {
             $body['openCameraCheck'] = $request->openCameraCheck;
         }
@@ -2223,6 +2226,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->offset)) {
             $body['offset'] = $request->offset;
+        }
+        if (!Utils::isUnset($request->onlyMachineCheck)) {
+            $body['onlyMachineCheck'] = $request->onlyMachineCheck;
         }
         if (!Utils::isUnset($request->openCameraCheck)) {
             $body['openCameraCheck'] = $request->openCameraCheck;

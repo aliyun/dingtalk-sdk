@@ -40,6 +40,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmAuthResourcesQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmBenefitQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmBenefitQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmBenefitQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmCorpConfigQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmCorpConfigQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmCorpConfigQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmMailSendHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmMailSendRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmMailSendResponse;
@@ -986,6 +989,66 @@ class Dingtalk extends OpenApiClient
         $headers = new HrmBenefitQueryHeaders([]);
 
         return $this->hrmBenefitQueryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询企业配置信息
+     *  *
+     * @param HrmCorpConfigQueryRequest $request HrmCorpConfigQueryRequest
+     * @param HrmCorpConfigQueryHeaders $headers HrmCorpConfigQueryHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return HrmCorpConfigQueryResponse HrmCorpConfigQueryResponse
+     */
+    public function hrmCorpConfigQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->subType)) {
+            $body['subType'] = $request->subType;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'HrmCorpConfigQuery',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/corp/configs/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return HrmCorpConfigQueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询企业配置信息
+     *  *
+     * @param HrmCorpConfigQueryRequest $request HrmCorpConfigQueryRequest
+     *
+     * @return HrmCorpConfigQueryResponse HrmCorpConfigQueryResponse
+     */
+    public function hrmCorpConfigQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new HrmCorpConfigQueryHeaders([]);
+
+        return $this->hrmCorpConfigQueryWithOptions($request, $headers, $runtime);
     }
 
     /**

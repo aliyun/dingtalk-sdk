@@ -4,12 +4,13 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetResourceUploadInfoResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
-class InitDocumentResponseBody extends Model
+class GetResourceUploadInfoResponseBody extends Model
 {
     /**
-     * @var mixed[]
+     * @var result
      */
     public $result;
 
@@ -30,7 +31,7 @@ class InitDocumentResponseBody extends Model
     {
         $res = [];
         if (null !== $this->result) {
-            $res['result'] = $this->result;
+            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
         }
         if (null !== $this->success) {
             $res['success'] = $this->success;
@@ -42,13 +43,13 @@ class InitDocumentResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return InitDocumentResponseBody
+     * @return GetResourceUploadInfoResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
         if (isset($map['result'])) {
-            $model->result = $map['result'];
+            $model->result = result::fromMap($map['result']);
         }
         if (isset($map['success'])) {
             $model->success = $map['success'];
