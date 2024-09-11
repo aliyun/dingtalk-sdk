@@ -4313,8 +4313,6 @@ export class PremiumGetDoneTasksHeaders extends $tea.Model {
 }
 
 export class PremiumGetDoneTasksRequest extends $tea.Model {
-  dingClientId?: string;
-  keyword?: string;
   /**
    * @remarks
    * This parameter is required.
@@ -4341,8 +4339,6 @@ export class PremiumGetDoneTasksRequest extends $tea.Model {
   userId?: string;
   static names(): { [key: string]: string } {
     return {
-      dingClientId: 'dingClientId',
-      keyword: 'keyword',
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
       userId: 'userId',
@@ -4351,8 +4347,6 @@ export class PremiumGetDoneTasksRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      dingClientId: 'string',
-      keyword: 'string',
       pageNumber: 'number',
       pageSize: 'number',
       userId: 'string',
@@ -4543,8 +4537,6 @@ export class PremiumGetNoticedInstancesHeaders extends $tea.Model {
 }
 
 export class PremiumGetNoticedInstancesRequest extends $tea.Model {
-  dingClientId?: string;
-  keyword?: string;
   /**
    * @remarks
    * This parameter is required.
@@ -4571,8 +4563,6 @@ export class PremiumGetNoticedInstancesRequest extends $tea.Model {
   userId?: string;
   static names(): { [key: string]: string } {
     return {
-      dingClientId: 'dingClientId',
-      keyword: 'keyword',
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
       userId: 'userId',
@@ -4581,8 +4571,6 @@ export class PremiumGetNoticedInstancesRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      dingClientId: 'string',
-      keyword: 'string',
       pageNumber: 'number',
       pageSize: 'number',
       userId: 'string',
@@ -4797,8 +4785,6 @@ export class PremiumGetSubmittedInstancesHeaders extends $tea.Model {
 }
 
 export class PremiumGetSubmittedInstancesRequest extends $tea.Model {
-  dingClientId?: string;
-  keyword?: string;
   /**
    * @remarks
    * This parameter is required.
@@ -4825,8 +4811,6 @@ export class PremiumGetSubmittedInstancesRequest extends $tea.Model {
   userId?: string;
   static names(): { [key: string]: string } {
     return {
-      dingClientId: 'dingClientId',
-      keyword: 'keyword',
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
       userId: 'userId',
@@ -4835,8 +4819,6 @@ export class PremiumGetSubmittedInstancesRequest extends $tea.Model {
 
   static types(): { [key: string]: any } {
     return {
-      dingClientId: 'string',
-      keyword: 'string',
       pageNumber: 'number',
       pageSize: 'number',
       userId: 'string',
@@ -4923,7 +4905,6 @@ export class PremiumGetTodoTasksRequest extends $tea.Model {
    * Use the UTC time format: yyyy-MM-ddTHH:mmZ
    */
   createBefore?: string;
-  keyword?: string;
   /**
    * @remarks
    * This parameter is required.
@@ -4951,7 +4932,6 @@ export class PremiumGetTodoTasksRequest extends $tea.Model {
   static names(): { [key: string]: string } {
     return {
       createBefore: 'createBefore',
-      keyword: 'keyword',
       pageNumber: 'pageNumber',
       pageSize: 'pageSize',
       userId: 'userId',
@@ -4961,7 +4941,6 @@ export class PremiumGetTodoTasksRequest extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       createBefore: 'string',
-      keyword: 'string',
       pageNumber: 'number',
       pageSize: 'number',
       userId: 'string',
@@ -10808,7 +10787,6 @@ export class PremiumGetDoneTasksResponseBodyResultList extends $tea.Model {
   originatorId?: string;
   originatorName?: string;
   originatorPhoto?: string;
-  pcUrl?: string;
   /**
    * @remarks
    * Use the UTC time format: yyyy-MM-ddTHH:mmZ
@@ -10833,6 +10811,7 @@ export class PremiumGetDoneTasksResponseBodyResultList extends $tea.Model {
   status?: string;
   taskId?: string;
   title?: string;
+  url?: string;
   static names(): { [key: string]: string } {
     return {
       activityId: 'activityId',
@@ -10840,7 +10819,6 @@ export class PremiumGetDoneTasksResponseBodyResultList extends $tea.Model {
       originatorId: 'originatorId',
       originatorName: 'originatorName',
       originatorPhoto: 'originatorPhoto',
-      pcUrl: 'pcUrl',
       processCreateTime: 'processCreateTime',
       processEndTime: 'processEndTime',
       processInstanceId: 'processInstanceId',
@@ -10849,6 +10827,7 @@ export class PremiumGetDoneTasksResponseBodyResultList extends $tea.Model {
       status: 'status',
       taskId: 'taskId',
       title: 'title',
+      url: 'url',
     };
   }
 
@@ -10859,7 +10838,6 @@ export class PremiumGetDoneTasksResponseBodyResultList extends $tea.Model {
       originatorId: 'string',
       originatorName: 'string',
       originatorPhoto: 'string',
-      pcUrl: 'string',
       processCreateTime: 'string',
       processEndTime: 'string',
       processInstanceId: 'string',
@@ -10868,6 +10846,7 @@ export class PremiumGetDoneTasksResponseBodyResultList extends $tea.Model {
       status: 'string',
       taskId: 'string',
       title: 'string',
+      url: 'string',
     };
   }
 
@@ -11566,11 +11545,6 @@ export class PremiumGetTodoTasksResponseBodyResultList extends $tea.Model {
   processType?: number;
   /**
    * @example
-   * agree
-   */
-  result?: string;
-  /**
-   * @example
    * RUNNING
    */
   status?: string;
@@ -11589,7 +11563,6 @@ export class PremiumGetTodoTasksResponseBodyResultList extends $tea.Model {
       processEndTime: 'processEndTime',
       processInstanceId: 'processInstanceId',
       processType: 'processType',
-      result: 'result',
       status: 'status',
       taskId: 'taskId',
       title: 'title',
@@ -11609,7 +11582,6 @@ export class PremiumGetTodoTasksResponseBodyResultList extends $tea.Model {
       processEndTime: 'string',
       processInstanceId: 'string',
       processType: 'number',
-      result: 'string',
       status: 'string',
       taskId: 'string',
       title: 'string',
@@ -17638,14 +17610,6 @@ export default class Client extends OpenApi {
   async premiumGetDoneTasksWithOptions(request: PremiumGetDoneTasksRequest, headers: PremiumGetDoneTasksHeaders, runtime: $Util.RuntimeOptions): Promise<PremiumGetDoneTasksResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.dingClientId)) {
-      query["dingClientId"] = request.dingClientId;
-    }
-
-    if (!Util.isUnset(request.keyword)) {
-      query["keyword"] = request.keyword;
-    }
-
     if (!Util.isUnset(request.pageNumber)) {
       query["pageNumber"] = request.pageNumber;
     }
@@ -17766,14 +17730,6 @@ export default class Client extends OpenApi {
   async premiumGetNoticedInstancesWithOptions(request: PremiumGetNoticedInstancesRequest, headers: PremiumGetNoticedInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<PremiumGetNoticedInstancesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.dingClientId)) {
-      query["dingClientId"] = request.dingClientId;
-    }
-
-    if (!Util.isUnset(request.keyword)) {
-      query["keyword"] = request.keyword;
-    }
-
     if (!Util.isUnset(request.pageNumber)) {
       query["pageNumber"] = request.pageNumber;
     }
@@ -17910,14 +17866,6 @@ export default class Client extends OpenApi {
   async premiumGetSubmittedInstancesWithOptions(request: PremiumGetSubmittedInstancesRequest, headers: PremiumGetSubmittedInstancesHeaders, runtime: $Util.RuntimeOptions): Promise<PremiumGetSubmittedInstancesResponse> {
     Util.validateModel(request);
     let query : {[key: string ]: any} = { };
-    if (!Util.isUnset(request.dingClientId)) {
-      query["dingClientId"] = request.dingClientId;
-    }
-
-    if (!Util.isUnset(request.keyword)) {
-      query["keyword"] = request.keyword;
-    }
-
     if (!Util.isUnset(request.pageNumber)) {
       query["pageNumber"] = request.pageNumber;
     }
@@ -17982,10 +17930,6 @@ export default class Client extends OpenApi {
     let query : {[key: string ]: any} = { };
     if (!Util.isUnset(request.createBefore)) {
       query["createBefore"] = request.createBefore;
-    }
-
-    if (!Util.isUnset(request.keyword)) {
-      query["keyword"] = request.keyword;
     }
 
     if (!Util.isUnset(request.pageNumber)) {

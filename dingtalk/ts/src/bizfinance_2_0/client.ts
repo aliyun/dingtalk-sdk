@@ -1158,6 +1158,168 @@ export class LinkCommonInvokeResponse extends $tea.Model {
   }
 }
 
+export class OrderBillingHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OrderBillingRequest extends $tea.Model {
+  additionInfos?: OrderBillingRequestAdditionInfos[];
+  /**
+   * @example
+   * abc
+   */
+  appKey?: string;
+  applyPerson?: string;
+  invoiceRemark?: string;
+  /**
+   * @example
+   * VAT_NORMAL_E
+   */
+  invoiceType?: string;
+  isNaturalPerson?: boolean;
+  operator?: string;
+  /**
+   * @example
+   * abc
+   */
+  orderId?: string;
+  payee?: string;
+  phone?: string;
+  products?: OrderBillingRequestProducts[];
+  /**
+   * @example
+   * 浙江省杭州市XXX街道
+   */
+  purchaserAddress?: string;
+  purchaserBankAccount?: string;
+  purchaserBankName?: string;
+  /**
+   * @example
+   * XXX公司
+   */
+  purchaserName?: string;
+  purchaserTaxNo?: string;
+  purchaserTel?: string;
+  remark?: string;
+  reviewer?: string;
+  taxSign?: number;
+  static names(): { [key: string]: string } {
+    return {
+      additionInfos: 'additionInfos',
+      appKey: 'appKey',
+      applyPerson: 'applyPerson',
+      invoiceRemark: 'invoiceRemark',
+      invoiceType: 'invoiceType',
+      isNaturalPerson: 'isNaturalPerson',
+      operator: 'operator',
+      orderId: 'orderId',
+      payee: 'payee',
+      phone: 'phone',
+      products: 'products',
+      purchaserAddress: 'purchaserAddress',
+      purchaserBankAccount: 'purchaserBankAccount',
+      purchaserBankName: 'purchaserBankName',
+      purchaserName: 'purchaserName',
+      purchaserTaxNo: 'purchaserTaxNo',
+      purchaserTel: 'purchaserTel',
+      remark: 'remark',
+      reviewer: 'reviewer',
+      taxSign: 'taxSign',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      additionInfos: { 'type': 'array', 'itemType': OrderBillingRequestAdditionInfos },
+      appKey: 'string',
+      applyPerson: 'string',
+      invoiceRemark: 'string',
+      invoiceType: 'string',
+      isNaturalPerson: 'boolean',
+      operator: 'string',
+      orderId: 'string',
+      payee: 'string',
+      phone: 'string',
+      products: { 'type': 'array', 'itemType': OrderBillingRequestProducts },
+      purchaserAddress: 'string',
+      purchaserBankAccount: 'string',
+      purchaserBankName: 'string',
+      purchaserName: 'string',
+      purchaserTaxNo: 'string',
+      purchaserTel: 'string',
+      remark: 'string',
+      reviewer: 'string',
+      taxSign: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OrderBillingResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OrderBillingResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OrderBillingResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: OrderBillingResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCategoryByPageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2419,6 +2581,88 @@ export class BatchSyncBankReceiptRequestBody extends $tea.Model {
   }
 }
 
+export class OrderBillingRequestAdditionInfos extends $tea.Model {
+  additionContent?: string;
+  additionName?: string;
+  dataType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      additionContent: 'additionContent',
+      additionName: 'additionName',
+      dataType: 'dataType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      additionContent: 'string',
+      additionName: 'string',
+      dataType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OrderBillingRequestProducts extends $tea.Model {
+  /**
+   * @example
+   * 12.55
+   */
+  amountWithTax?: string;
+  /**
+   * @example
+   * 面包
+   */
+  productName?: string;
+  /**
+   * @example
+   * 5
+   */
+  quantity?: string;
+  revenueCode?: string;
+  specification?: string;
+  /**
+   * @example
+   * 个
+   */
+  unit?: string;
+  /**
+   * @example
+   * 19.99
+   */
+  unitPrice?: string;
+  static names(): { [key: string]: string } {
+    return {
+      amountWithTax: 'amountWithTax',
+      productName: 'productName',
+      quantity: 'quantity',
+      revenueCode: 'revenueCode',
+      specification: 'specification',
+      unit: 'unit',
+      unitPrice: 'unitPrice',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      amountWithTax: 'string',
+      productName: 'string',
+      quantity: 'string',
+      revenueCode: 'string',
+      specification: 'string',
+      unit: 'string',
+      unitPrice: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryCategoryByPageResponseBodyList extends $tea.Model {
   /**
    * @remarks
@@ -3536,6 +3780,136 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new LinkCommonInvokeHeaders({ });
     return await this.linkCommonInvokeWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 订单开票
+   * 
+   * @param request - OrderBillingRequest
+   * @param headers - OrderBillingHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns OrderBillingResponse
+   */
+  async orderBillingWithOptions(request: OrderBillingRequest, headers: OrderBillingHeaders, runtime: $Util.RuntimeOptions): Promise<OrderBillingResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.additionInfos)) {
+      body["additionInfos"] = request.additionInfos;
+    }
+
+    if (!Util.isUnset(request.appKey)) {
+      body["appKey"] = request.appKey;
+    }
+
+    if (!Util.isUnset(request.applyPerson)) {
+      body["applyPerson"] = request.applyPerson;
+    }
+
+    if (!Util.isUnset(request.invoiceRemark)) {
+      body["invoiceRemark"] = request.invoiceRemark;
+    }
+
+    if (!Util.isUnset(request.invoiceType)) {
+      body["invoiceType"] = request.invoiceType;
+    }
+
+    if (!Util.isUnset(request.isNaturalPerson)) {
+      body["isNaturalPerson"] = request.isNaturalPerson;
+    }
+
+    if (!Util.isUnset(request.operator)) {
+      body["operator"] = request.operator;
+    }
+
+    if (!Util.isUnset(request.orderId)) {
+      body["orderId"] = request.orderId;
+    }
+
+    if (!Util.isUnset(request.payee)) {
+      body["payee"] = request.payee;
+    }
+
+    if (!Util.isUnset(request.phone)) {
+      body["phone"] = request.phone;
+    }
+
+    if (!Util.isUnset(request.products)) {
+      body["products"] = request.products;
+    }
+
+    if (!Util.isUnset(request.purchaserAddress)) {
+      body["purchaserAddress"] = request.purchaserAddress;
+    }
+
+    if (!Util.isUnset(request.purchaserBankAccount)) {
+      body["purchaserBankAccount"] = request.purchaserBankAccount;
+    }
+
+    if (!Util.isUnset(request.purchaserBankName)) {
+      body["purchaserBankName"] = request.purchaserBankName;
+    }
+
+    if (!Util.isUnset(request.purchaserName)) {
+      body["purchaserName"] = request.purchaserName;
+    }
+
+    if (!Util.isUnset(request.purchaserTaxNo)) {
+      body["purchaserTaxNo"] = request.purchaserTaxNo;
+    }
+
+    if (!Util.isUnset(request.purchaserTel)) {
+      body["purchaserTel"] = request.purchaserTel;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      body["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.reviewer)) {
+      body["reviewer"] = request.reviewer;
+    }
+
+    if (!Util.isUnset(request.taxSign)) {
+      body["taxSign"] = request.taxSign;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "OrderBilling",
+      version: "bizfinance_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/bizfinance/billings/order`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<OrderBillingResponse>(await this.execute(params, req, runtime), new OrderBillingResponse({}));
+  }
+
+  /**
+   * 订单开票
+   * 
+   * @param request - OrderBillingRequest
+   * @returns OrderBillingResponse
+   */
+  async orderBilling(request: OrderBillingRequest): Promise<OrderBillingResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new OrderBillingHeaders({ });
+    return await this.orderBillingWithOptions(request, headers, runtime);
   }
 
   /**

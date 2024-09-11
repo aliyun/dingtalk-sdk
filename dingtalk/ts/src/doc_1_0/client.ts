@@ -9,17 +9,11 @@ import * as $tea from '@alicloud/tea-typescript';
 
 export class AttachmentsMapValue extends $tea.Model {
   /**
-   * @remarks
-   * This parameter is required.
-   * 
    * @example
    * upload_key
    */
   uploadKey?: string;
   /**
-   * @remarks
-   * This parameter is required.
-   * 
    * @example
    * name
    */
@@ -29,11 +23,13 @@ export class AttachmentsMapValue extends $tea.Model {
    * media_type
    */
   mediaType?: string;
+  resourceId?: string;
   static names(): { [key: string]: string } {
     return {
       uploadKey: 'uploadKey',
       name: 'name',
       mediaType: 'mediaType',
+      resourceId: 'resourceId',
     };
   }
 
@@ -42,6 +38,7 @@ export class AttachmentsMapValue extends $tea.Model {
       uploadKey: 'string',
       name: 'string',
       mediaType: 'string',
+      resourceId: 'string',
     };
   }
 
@@ -3700,6 +3697,122 @@ export class GetRelatedWorkspacesResponse extends $tea.Model {
   }
 }
 
+export class GetResourceUploadInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetResourceUploadInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  mediaType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  resourceName?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  size?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
+  operatorId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      mediaType: 'mediaType',
+      resourceName: 'resourceName',
+      size: 'size',
+      operatorId: 'operatorId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      mediaType: 'string',
+      resourceName: 'string',
+      size: 'number',
+      operatorId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetResourceUploadInfoResponseBody extends $tea.Model {
+  result?: GetResourceUploadInfoResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetResourceUploadInfoResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetResourceUploadInfoResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetResourceUploadInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetResourceUploadInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetSheetHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -4214,15 +4327,18 @@ export class InitDocumentRequest extends $tea.Model {
 }
 
 export class InitDocumentResponseBody extends $tea.Model {
+  result?: { [key: string]: any };
   success?: boolean;
   static names(): { [key: string]: string } {
     return {
+      result: 'result',
       success: 'success',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      result: { 'type': 'map', 'keyType': 'string', 'valueType': 'any' },
       success: 'boolean',
     };
   }
@@ -7342,6 +7458,28 @@ export class GetRelatedWorkspacesResponseBodyWorkspaces extends $tea.Model {
   }
 }
 
+export class GetResourceUploadInfoResponseBodyResult extends $tea.Model {
+  resourceId?: string;
+  uploadUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      resourceId: 'resourceId',
+      uploadUrl: 'uploadUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      resourceId: 'string',
+      uploadUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetWorkspaceNodeResponseBodyNodeBO extends $tea.Model {
   docType?: string;
   lastEditTime?: number;
@@ -10178,6 +10316,74 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetRelatedWorkspacesHeaders({ });
     return await this.getRelatedWorkspacesWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 获取上传信息
+   * 
+   * @param request - GetResourceUploadInfoRequest
+   * @param headers - GetResourceUploadInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetResourceUploadInfoResponse
+   */
+  async getResourceUploadInfoWithOptions(docId: string, request: GetResourceUploadInfoRequest, headers: GetResourceUploadInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetResourceUploadInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.operatorId)) {
+      query["operatorId"] = request.operatorId;
+    }
+
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.mediaType)) {
+      body["mediaType"] = request.mediaType;
+    }
+
+    if (!Util.isUnset(request.resourceName)) {
+      body["resourceName"] = request.resourceName;
+    }
+
+    if (!Util.isUnset(request.size)) {
+      body["size"] = request.size;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetResourceUploadInfo",
+      version: "doc_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/doc/docs/resources/${docId}/uploadInfos/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetResourceUploadInfoResponse>(await this.execute(params, req, runtime), new GetResourceUploadInfoResponse({}));
+  }
+
+  /**
+   * 获取上传信息
+   * 
+   * @param request - GetResourceUploadInfoRequest
+   * @returns GetResourceUploadInfoResponse
+   */
+  async getResourceUploadInfo(docId: string, request: GetResourceUploadInfoRequest): Promise<GetResourceUploadInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetResourceUploadInfoHeaders({ });
+    return await this.getResourceUploadInfoWithOptions(docId, request, headers, runtime);
   }
 
   /**

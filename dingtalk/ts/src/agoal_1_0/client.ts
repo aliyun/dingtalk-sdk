@@ -599,6 +599,56 @@ export class OpenUserAdminDTO extends $tea.Model {
   }
 }
 
+export class OpenUserSubAdminDTO extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  deptIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingxxxxe3d8c283bb4aa39a90f97fcb1e09
+   */
+  dingCorpId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 211042291978xxxx
+   */
+  dingUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  permissionGroupCodes?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      deptIds: 'deptIds',
+      dingCorpId: 'dingCorpId',
+      dingUserId: 'dingUserId',
+      permissionGroupCodes: 'permissionGroupCodes',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptIds: { 'type': 'array', 'itemType': 'string' },
+      dingCorpId: 'string',
+      dingUserId: 'string',
+      permissionGroupCodes: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class TitleMention extends $tea.Model {
   /**
    * @remarks
@@ -681,13 +731,15 @@ export class AgoalCreateProgressRequest extends $tea.Model {
    */
   objectiveId?: string;
   /**
-   * @remarks
-   * This parameter is required.
-   * 
    * @example
    * 这是一条目标进展文本
    */
   plainText?: string;
+  /**
+   * @example
+   * 30
+   */
+  progress?: number;
   /**
    * @example
    * naturalWeek
@@ -699,6 +751,7 @@ export class AgoalCreateProgressRequest extends $tea.Model {
       mergeIntoLatestProgress: 'mergeIntoLatestProgress',
       objectiveId: 'objectiveId',
       plainText: 'plainText',
+      progress: 'progress',
       progressMergePeriod: 'progressMergePeriod',
     };
   }
@@ -709,6 +762,7 @@ export class AgoalCreateProgressRequest extends $tea.Model {
       mergeIntoLatestProgress: 'boolean',
       objectiveId: 'string',
       plainText: 'string',
+      progress: 'number',
       progressMergePeriod: 'string',
     };
   }
@@ -1452,6 +1506,105 @@ export class AgoalUserObjectiveListResponse extends $tea.Model {
   }
 }
 
+export class AgoalUserSubAdminListHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AgoalUserSubAdminListRequest extends $tea.Model {
+  /**
+   * @example
+   * ACCOUNT
+   */
+  funcPermissionGroup?: string;
+  static names(): { [key: string]: string } {
+    return {
+      funcPermissionGroup: 'funcPermissionGroup',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      funcPermissionGroup: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AgoalUserSubAdminListResponseBody extends $tea.Model {
+  content?: OpenUserSubAdminDTO[];
+  /**
+   * @example
+   * 7478B23C-80E8-1AD6-BE8C-09D480E0xxxx
+   */
+  requestId?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      requestId: 'requestId',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: { 'type': 'array', 'itemType': OpenUserSubAdminDTO },
+      requestId: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AgoalUserSubAdminListResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AgoalUserSubAdminListResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AgoalUserSubAdminListResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 
 export default class Client extends OpenApi {
 
@@ -1492,6 +1645,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.plainText)) {
       body["plainText"] = request.plainText;
+    }
+
+    if (!Util.isUnset(request.progress)) {
+      body["progress"] = request.progress;
     }
 
     if (!Util.isUnset(request.progressMergePeriod)) {
@@ -1875,6 +2032,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AgoalUserObjectiveListHeaders({ });
     return await this.agoalUserObjectiveListWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 获取Agoal子管理员列表
+   * 
+   * @param request - AgoalUserSubAdminListRequest
+   * @param headers - AgoalUserSubAdminListHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AgoalUserSubAdminListResponse
+   */
+  async agoalUserSubAdminListWithOptions(request: AgoalUserSubAdminListRequest, headers: AgoalUserSubAdminListHeaders, runtime: $Util.RuntimeOptions): Promise<AgoalUserSubAdminListResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.funcPermissionGroup)) {
+      query["funcPermissionGroup"] = request.funcPermissionGroup;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "AgoalUserSubAdminList",
+      version: "agoal_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/agoal/administrators/sub/lists`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AgoalUserSubAdminListResponse>(await this.execute(params, req, runtime), new AgoalUserSubAdminListResponse({}));
+  }
+
+  /**
+   * 获取Agoal子管理员列表
+   * 
+   * @param request - AgoalUserSubAdminListRequest
+   * @returns AgoalUserSubAdminListResponse
+   */
+  async agoalUserSubAdminList(request: AgoalUserSubAdminListRequest): Promise<AgoalUserSubAdminListResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AgoalUserSubAdminListHeaders({ });
+    return await this.agoalUserSubAdminListWithOptions(request, headers, runtime);
   }
 
 }

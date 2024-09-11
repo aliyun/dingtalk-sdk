@@ -3282,10 +3282,6 @@ export class GroupAddRequest extends $tea.Model {
    * true
    */
   enableOutsideRemark?: boolean;
-  /**
-   * @example
-   * true
-   */
   enablePositionBle?: boolean;
   enableTrimDistance?: boolean;
   /**
@@ -3334,6 +3330,7 @@ export class GroupAddRequest extends $tea.Model {
    * 500
    */
   offset?: number;
+  onlyMachineCheck?: boolean;
   openCameraCheck?: boolean;
   /**
    * @example
@@ -3422,6 +3419,7 @@ export class GroupAddRequest extends $tea.Model {
       members: 'members',
       modifyMember: 'modifyMember',
       offset: 'offset',
+      onlyMachineCheck: 'onlyMachineCheck',
       openCameraCheck: 'openCameraCheck',
       openFaceCheck: 'openFaceCheck',
       outsideCheckApproveModeId: 'outsideCheckApproveModeId',
@@ -3471,6 +3469,7 @@ export class GroupAddRequest extends $tea.Model {
       members: { 'type': 'array', 'itemType': GroupAddRequestMembers },
       modifyMember: 'boolean',
       offset: 'number',
+      onlyMachineCheck: 'boolean',
       openCameraCheck: 'boolean',
       openFaceCheck: 'boolean',
       outsideCheckApproveModeId: 'number',
@@ -3652,6 +3651,7 @@ export class GroupUpdateRequest extends $tea.Model {
    * 500
    */
   offset?: number;
+  onlyMachineCheck?: boolean;
   openCameraCheck?: boolean;
   /**
    * @example
@@ -3717,6 +3717,7 @@ export class GroupUpdateRequest extends $tea.Model {
       groupName: 'groupName',
       managerList: 'managerList',
       offset: 'offset',
+      onlyMachineCheck: 'onlyMachineCheck',
       openCameraCheck: 'openCameraCheck',
       openFaceCheck: 'openFaceCheck',
       outsideCheckApproveModeId: 'outsideCheckApproveModeId',
@@ -3754,6 +3755,7 @@ export class GroupUpdateRequest extends $tea.Model {
       groupName: 'string',
       managerList: { 'type': 'array', 'itemType': 'string' },
       offset: 'number',
+      onlyMachineCheck: 'boolean',
       openCameraCheck: 'boolean',
       openFaceCheck: 'boolean',
       outsideCheckApproveModeId: 'number',
@@ -11928,6 +11930,10 @@ export default class Client extends OpenApi {
       body["offset"] = request.offset;
     }
 
+    if (!Util.isUnset(request.onlyMachineCheck)) {
+      body["onlyMachineCheck"] = request.onlyMachineCheck;
+    }
+
     if (!Util.isUnset(request.openCameraCheck)) {
       body["openCameraCheck"] = request.openCameraCheck;
     }
@@ -12118,6 +12124,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.offset)) {
       body["offset"] = request.offset;
+    }
+
+    if (!Util.isUnset(request.onlyMachineCheck)) {
+      body["onlyMachineCheck"] = request.onlyMachineCheck;
     }
 
     if (!Util.isUnset(request.openCameraCheck)) {

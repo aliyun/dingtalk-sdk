@@ -30,6 +30,9 @@ export class AddOrgHeaders extends $tea.Model {
 }
 
 export class AddOrgRequest extends $tea.Model {
+  city?: string;
+  industry?: string;
+  industryCode?: number;
   /**
    * @remarks
    * This parameter is required.
@@ -46,17 +49,26 @@ export class AddOrgRequest extends $tea.Model {
    * 测试组织
    */
   name?: string;
+  province?: string;
   static names(): { [key: string]: string } {
     return {
+      city: 'city',
+      industry: 'industry',
+      industryCode: 'industryCode',
       mobileNum: 'mobileNum',
       name: 'name',
+      province: 'province',
     };
   }
 
   static types(): { [key: string]: any } {
     return {
+      city: 'string',
+      industry: 'string',
+      industryCode: 'number',
       mobileNum: 'string',
       name: 'string',
+      province: 'string',
     };
   }
 
@@ -3402,6 +3414,101 @@ export class GetConversationCategoryResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: GetConversationCategoryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConversationDetailHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConversationDetailRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cid123xxx
+   */
+  openConversationId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConversationDetailResponseBody extends $tea.Model {
+  result?: GetConversationDetailResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetConversationDetailResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetConversationDetailResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetConversationDetailResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetConversationDetailResponseBody,
     };
   }
 
@@ -8242,6 +8349,121 @@ export class QueryChannelStaffInfoByMobileResponse extends $tea.Model {
   }
 }
 
+export class QueryConversationPageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryConversationPageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * -1
+   */
+  categoryId?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
+  maxResults?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 0
+   */
+  nextToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      categoryId: 'categoryId',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      categoryId: 'number',
+      maxResults: 'number',
+      nextToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryConversationPageResponseBody extends $tea.Model {
+  result?: QueryConversationPageResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryConversationPageResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryConversationPageResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryConversationPageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryConversationPageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryExclusiveBenefitsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -12945,6 +13167,97 @@ export class GetConversationCategoryResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetConversationDetailResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * -1
+   */
+  categoryId?: number;
+  /**
+   * @example
+   * categoryName
+   */
+  categoryName?: string;
+  groupCode?: string;
+  /**
+   * @example
+   * 5
+   */
+  groupMembersCnt?: number;
+  /**
+   * @example
+   * 5
+   */
+  groupName?: string;
+  /**
+   * @example
+   * groupOwnerName
+   */
+  groupOwnerName?: string;
+  /**
+   * @example
+   * groupOwnerUserId
+   */
+  groupOwnerUserId?: string;
+  isKpConversation?: boolean;
+  /**
+   * @example
+   * 1
+   */
+  manageSign?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidxxx
+   */
+  openConversationId?: string;
+  /**
+   * @example
+   * 1
+   */
+  order?: number;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      categoryId: 'categoryId',
+      categoryName: 'categoryName',
+      groupCode: 'groupCode',
+      groupMembersCnt: 'groupMembersCnt',
+      groupName: 'groupName',
+      groupOwnerName: 'groupOwnerName',
+      groupOwnerUserId: 'groupOwnerUserId',
+      isKpConversation: 'isKpConversation',
+      manageSign: 'manageSign',
+      openConversationId: 'openConversationId',
+      order: 'order',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      categoryId: 'number',
+      categoryName: 'string',
+      groupCode: 'string',
+      groupMembersCnt: 'number',
+      groupName: 'string',
+      groupOwnerName: 'string',
+      groupOwnerUserId: 'string',
+      isKpConversation: 'boolean',
+      manageSign: 'number',
+      openConversationId: 'string',
+      order: 'number',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetDingReportDeptSummaryResponseBodyData extends $tea.Model {
   /**
    * @example
@@ -15187,6 +15500,126 @@ export class QueryChannelStaffInfoByMobileResponseBodyExclusiveAccountEmpInfoLis
   }
 }
 
+export class QueryConversationPageResponseBodyResultData extends $tea.Model {
+  categoryId?: number;
+  /**
+   * @example
+   * 未分组
+   */
+  categoryName?: string;
+  /**
+   * @example
+   * S24A01123
+   */
+  groupCode?: string;
+  groupMembersCnt?: number;
+  /**
+   * @example
+   * 群聊
+   */
+  groupName?: string;
+  /**
+   * @example
+   * ownername
+   */
+  groupOwnerName?: string;
+  /**
+   * @example
+   * useridxxx
+   */
+  groupOwnerUserId?: string;
+  isKpConversation?: boolean;
+  /**
+   * @example
+   * 1
+   */
+  manageSign?: number;
+  /**
+   * @example
+   * cid123xxxxxx
+   */
+  openConversationId?: string;
+  order?: number;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      categoryId: 'categoryId',
+      categoryName: 'categoryName',
+      groupCode: 'groupCode',
+      groupMembersCnt: 'groupMembersCnt',
+      groupName: 'groupName',
+      groupOwnerName: 'groupOwnerName',
+      groupOwnerUserId: 'groupOwnerUserId',
+      isKpConversation: 'isKpConversation',
+      manageSign: 'manageSign',
+      openConversationId: 'openConversationId',
+      order: 'order',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      categoryId: 'number',
+      categoryName: 'string',
+      groupCode: 'string',
+      groupMembersCnt: 'number',
+      groupName: 'string',
+      groupOwnerName: 'string',
+      groupOwnerUserId: 'string',
+      isKpConversation: 'boolean',
+      manageSign: 'number',
+      openConversationId: 'string',
+      order: 'number',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryConversationPageResponseBodyResult extends $tea.Model {
+  data?: QueryConversationPageResponseBodyResultData[];
+  /**
+   * @example
+   * 10
+   */
+  maxResults?: number;
+  /**
+   * @example
+   * 10
+   */
+  nextToken?: string;
+  /**
+   * @example
+   * 999
+   */
+  totalCount?: number;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      maxResults: 'maxResults',
+      nextToken: 'nextToken',
+      totalCount: 'totalCount',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: { 'type': 'array', 'itemType': QueryConversationPageResponseBodyResultData },
+      maxResults: 'number',
+      nextToken: 'string',
+      totalCount: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryPartnerInfoResponseBodyPartnerDeptListPartnerLabelModelLevel1 extends $tea.Model {
   labelId?: number;
   labelname?: string;
@@ -16277,12 +16710,28 @@ export default class Client extends OpenApi {
   async addOrgWithOptions(request: AddOrgRequest, headers: AddOrgHeaders, runtime: $Util.RuntimeOptions): Promise<AddOrgResponse> {
     Util.validateModel(request);
     let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.city)) {
+      body["city"] = request.city;
+    }
+
+    if (!Util.isUnset(request.industry)) {
+      body["industry"] = request.industry;
+    }
+
+    if (!Util.isUnset(request.industryCode)) {
+      body["industryCode"] = request.industryCode;
+    }
+
     if (!Util.isUnset(request.mobileNum)) {
       body["mobileNum"] = request.mobileNum;
     }
 
     if (!Util.isUnset(request.name)) {
       body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.province)) {
+      body["province"] = request.province;
     }
 
     let realHeaders : {[key: string ]: string} = { };
@@ -18172,6 +18621,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetConversationCategoryHeaders({ });
     return await this.getConversationCategoryWithOptions(headers, runtime);
+  }
+
+  /**
+   * 获取会话分组详情
+   * 
+   * @param request - GetConversationDetailRequest
+   * @param headers - GetConversationDetailHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetConversationDetailResponse
+   */
+  async getConversationDetailWithOptions(request: GetConversationDetailRequest, headers: GetConversationDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetConversationDetailResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetConversationDetail",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/categories/conversations/details/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetConversationDetailResponse>(await this.execute(params, req, runtime), new GetConversationDetailResponse({}));
+  }
+
+  /**
+   * 获取会话分组详情
+   * 
+   * @param request - GetConversationDetailRequest
+   * @returns GetConversationDetailResponse
+   */
+  async getConversationDetail(request: GetConversationDetailRequest): Promise<GetConversationDetailResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetConversationDetailHeaders({ });
+    return await this.getConversationDetailWithOptions(request, headers, runtime);
   }
 
   /**
@@ -20828,6 +21331,68 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryChannelStaffInfoByMobileHeaders({ });
     return await this.queryChannelStaffInfoByMobileWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 获取分组下会话列表
+   * 
+   * @param request - QueryConversationPageRequest
+   * @param headers - QueryConversationPageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryConversationPageResponse
+   */
+  async queryConversationPageWithOptions(request: QueryConversationPageRequest, headers: QueryConversationPageHeaders, runtime: $Util.RuntimeOptions): Promise<QueryConversationPageResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.categoryId)) {
+      query["categoryId"] = request.categoryId;
+    }
+
+    if (!Util.isUnset(request.maxResults)) {
+      query["maxResults"] = request.maxResults;
+    }
+
+    if (!Util.isUnset(request.nextToken)) {
+      query["nextToken"] = request.nextToken;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryConversationPage",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/categories/conversations`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryConversationPageResponse>(await this.execute(params, req, runtime), new QueryConversationPageResponse({}));
+  }
+
+  /**
+   * 获取分组下会话列表
+   * 
+   * @param request - QueryConversationPageRequest
+   * @returns QueryConversationPageResponse
+   */
+  async queryConversationPage(request: QueryConversationPageRequest): Promise<QueryConversationPageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryConversationPageHeaders({ });
+    return await this.queryConversationPageWithOptions(request, headers, runtime);
   }
 
   /**
