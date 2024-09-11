@@ -1770,6 +1770,130 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
         }
 
         /**
+         * @summary 查询企业配置信息
+         *
+         * @param request HrmCorpConfigQueryRequest
+         * @param headers HrmCorpConfigQueryHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return HrmCorpConfigQueryResponse
+         */
+        public HrmCorpConfigQueryResponse HrmCorpConfigQueryWithOptions(HrmCorpConfigQueryRequest request, HrmCorpConfigQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubType))
+            {
+                body["subType"] = request.SubType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrmCorpConfigQuery",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/corp/configs/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrmCorpConfigQueryResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询企业配置信息
+         *
+         * @param request HrmCorpConfigQueryRequest
+         * @param headers HrmCorpConfigQueryHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return HrmCorpConfigQueryResponse
+         */
+        public async Task<HrmCorpConfigQueryResponse> HrmCorpConfigQueryWithOptionsAsync(HrmCorpConfigQueryRequest request, HrmCorpConfigQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubType))
+            {
+                body["subType"] = request.SubType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "HrmCorpConfigQuery",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/corp/configs/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<HrmCorpConfigQueryResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 查询企业配置信息
+         *
+         * @param request HrmCorpConfigQueryRequest
+         * @return HrmCorpConfigQueryResponse
+         */
+        public HrmCorpConfigQueryResponse HrmCorpConfigQuery(HrmCorpConfigQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrmCorpConfigQueryHeaders headers = new HrmCorpConfigQueryHeaders();
+            return HrmCorpConfigQueryWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 查询企业配置信息
+         *
+         * @param request HrmCorpConfigQueryRequest
+         * @return HrmCorpConfigQueryResponse
+         */
+        public async Task<HrmCorpConfigQueryResponse> HrmCorpConfigQueryAsync(HrmCorpConfigQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            HrmCorpConfigQueryHeaders headers = new HrmCorpConfigQueryHeaders();
+            return await HrmCorpConfigQueryWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 智能人事邮件发送
          *
          * @param request HrmMailSendRequest

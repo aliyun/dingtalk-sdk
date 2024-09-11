@@ -6,36 +6,36 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
 {
-    public class PremiumGetTodoTasksRequest : TeaModel {
+    public class OpenUserSubAdminDTO : TeaModel {
         /// <summary>
-        /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        /// This parameter is required.
         /// </summary>
-        [NameInMap("createBefore")]
+        [NameInMap("deptIds")]
         [Validation(Required=false)]
-        public string CreateBefore { get; set; }
+        public List<string> DeptIds { get; set; }
 
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("pageNumber")]
+        [NameInMap("dingCorpId")]
         [Validation(Required=false)]
-        public int? PageNumber { get; set; }
+        public string DingCorpId { get; set; }
 
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("pageSize")]
+        [NameInMap("dingUserId")]
         [Validation(Required=false)]
-        public int? PageSize { get; set; }
+        public string DingUserId { get; set; }
 
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("userId")]
+        [NameInMap("permissionGroupCodes")]
         [Validation(Required=false)]
-        public string UserId { get; set; }
+        public List<string> PermissionGroupCodes { get; set; }
 
     }
 

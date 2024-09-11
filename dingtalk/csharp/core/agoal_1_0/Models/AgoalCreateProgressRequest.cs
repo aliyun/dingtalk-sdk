@@ -21,12 +21,13 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
         [Validation(Required=false)]
         public string ObjectiveId { get; set; }
 
-        /// <summary>
-        /// This parameter is required.
-        /// </summary>
         [NameInMap("plainText")]
         [Validation(Required=false)]
         public string PlainText { get; set; }
+
+        [NameInMap("progress")]
+        [Validation(Required=false)]
+        public int? Progress { get; set; }
 
         [NameInMap("progressMergePeriod")]
         [Validation(Required=false)]

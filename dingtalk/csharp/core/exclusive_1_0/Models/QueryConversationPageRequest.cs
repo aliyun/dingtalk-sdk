@@ -6,29 +6,29 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
-    public class PremiumGetNoticedInstancesRequest : TeaModel {
+    public class QueryConversationPageRequest : TeaModel {
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("pageNumber")]
+        [NameInMap("categoryId")]
         [Validation(Required=false)]
-        public int? PageNumber { get; set; }
+        public long? CategoryId { get; set; }
 
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("pageSize")]
+        [NameInMap("maxResults")]
         [Validation(Required=false)]
-        public int? PageSize { get; set; }
+        public int? MaxResults { get; set; }
 
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("userId")]
+        [NameInMap("nextToken")]
         [Validation(Required=false)]
-        public string UserId { get; set; }
+        public string NextToken { get; set; }
 
     }
 

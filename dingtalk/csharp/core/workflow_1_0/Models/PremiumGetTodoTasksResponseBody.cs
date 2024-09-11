@@ -67,10 +67,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                 [Validation(Required=false)]
                 public int? ProcessType { get; set; }
 
-                [NameInMap("result")]
-                [Validation(Required=false)]
-                public string Result { get; set; }
-
                 [NameInMap("status")]
                 [Validation(Required=false)]
                 public string Status { get; set; }

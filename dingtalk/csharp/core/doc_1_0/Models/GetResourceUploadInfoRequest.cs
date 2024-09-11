@@ -6,36 +6,36 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
-    public class PremiumGetTodoTasksRequest : TeaModel {
+    public class GetResourceUploadInfoRequest : TeaModel {
         /// <summary>
-        /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        /// This parameter is required.
         /// </summary>
-        [NameInMap("createBefore")]
+        [NameInMap("mediaType")]
         [Validation(Required=false)]
-        public string CreateBefore { get; set; }
+        public string MediaType { get; set; }
 
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("pageNumber")]
+        [NameInMap("resourceName")]
         [Validation(Required=false)]
-        public int? PageNumber { get; set; }
+        public string ResourceName { get; set; }
 
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("pageSize")]
+        [NameInMap("size")]
         [Validation(Required=false)]
-        public int? PageSize { get; set; }
+        public long? Size { get; set; }
 
         /// <summary>
         /// This parameter is required.
         /// </summary>
-        [NameInMap("userId")]
+        [NameInMap("operatorId")]
         [Validation(Required=false)]
-        public string UserId { get; set; }
+        public string OperatorId { get; set; }
 
     }
 

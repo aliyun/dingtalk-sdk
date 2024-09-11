@@ -41,10 +41,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                 [Validation(Required=false)]
                 public string OriginatorPhoto { get; set; }
 
-                [NameInMap("pcUrl")]
-                [Validation(Required=false)]
-                public string PcUrl { get; set; }
-
                 /// <summary>
                 /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
                 /// </summary>
@@ -82,6 +78,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                 [NameInMap("title")]
                 [Validation(Required=false)]
                 public string Title { get; set; }
+
+                [NameInMap("url")]
+                [Validation(Required=false)]
+                public string Url { get; set; }
 
             }
 

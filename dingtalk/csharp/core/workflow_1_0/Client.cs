@@ -4770,14 +4770,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
-            {
-                query["dingClientId"] = request.DingClientId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Keyword))
-            {
-                query["keyword"] = request.Keyword;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
                 query["pageNumber"] = request.PageNumber;
@@ -4831,14 +4823,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
-            {
-                query["dingClientId"] = request.DingClientId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Keyword))
-            {
-                query["keyword"] = request.Keyword;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
                 query["pageNumber"] = request.PageNumber;
@@ -5042,14 +5026,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
-            {
-                query["dingClientId"] = request.DingClientId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Keyword))
-            {
-                query["keyword"] = request.Keyword;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
                 query["pageNumber"] = request.PageNumber;
@@ -5103,14 +5079,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
-            {
-                query["dingClientId"] = request.DingClientId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Keyword))
-            {
-                query["keyword"] = request.Keyword;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
                 query["pageNumber"] = request.PageNumber;
@@ -5346,14 +5314,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
-            {
-                query["dingClientId"] = request.DingClientId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Keyword))
-            {
-                query["keyword"] = request.Keyword;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
                 query["pageNumber"] = request.PageNumber;
@@ -5407,14 +5367,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingClientId))
-            {
-                query["dingClientId"] = request.DingClientId;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Keyword))
-            {
-                query["keyword"] = request.Keyword;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
                 query["pageNumber"] = request.PageNumber;
@@ -5498,10 +5450,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             {
                 query["createBefore"] = request.CreateBefore;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Keyword))
-            {
-                query["keyword"] = request.Keyword;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
                 query["pageNumber"] = request.PageNumber;
@@ -5558,10 +5506,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateBefore))
             {
                 query["createBefore"] = request.CreateBefore;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Keyword))
-            {
-                query["keyword"] = request.Keyword;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {

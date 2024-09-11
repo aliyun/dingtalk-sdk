@@ -56,6 +56,10 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             {
                 body["plainText"] = request.PlainText;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Progress))
+            {
+                body["progress"] = request.Progress;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProgressMergePeriod))
             {
                 body["progressMergePeriod"] = request.ProgressMergePeriod;
@@ -116,6 +120,10 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PlainText))
             {
                 body["plainText"] = request.PlainText;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Progress))
+            {
+                body["progress"] = request.Progress;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProgressMergePeriod))
             {
@@ -906,6 +914,122 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             AgoalUserObjectiveListHeaders headers = new AgoalUserObjectiveListHeaders();
             return await AgoalUserObjectiveListWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取Agoal子管理员列表
+         *
+         * @param request AgoalUserSubAdminListRequest
+         * @param headers AgoalUserSubAdminListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AgoalUserSubAdminListResponse
+         */
+        public AgoalUserSubAdminListResponse AgoalUserSubAdminListWithOptions(AgoalUserSubAdminListRequest request, AgoalUserSubAdminListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FuncPermissionGroup))
+            {
+                query["funcPermissionGroup"] = request.FuncPermissionGroup;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalUserSubAdminList",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/administrators/sub/lists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalUserSubAdminListResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取Agoal子管理员列表
+         *
+         * @param request AgoalUserSubAdminListRequest
+         * @param headers AgoalUserSubAdminListHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AgoalUserSubAdminListResponse
+         */
+        public async Task<AgoalUserSubAdminListResponse> AgoalUserSubAdminListWithOptionsAsync(AgoalUserSubAdminListRequest request, AgoalUserSubAdminListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FuncPermissionGroup))
+            {
+                query["funcPermissionGroup"] = request.FuncPermissionGroup;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalUserSubAdminList",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/administrators/sub/lists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalUserSubAdminListResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取Agoal子管理员列表
+         *
+         * @param request AgoalUserSubAdminListRequest
+         * @return AgoalUserSubAdminListResponse
+         */
+        public AgoalUserSubAdminListResponse AgoalUserSubAdminList(AgoalUserSubAdminListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalUserSubAdminListHeaders headers = new AgoalUserSubAdminListHeaders();
+            return AgoalUserSubAdminListWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取Agoal子管理员列表
+         *
+         * @param request AgoalUserSubAdminListRequest
+         * @return AgoalUserSubAdminListResponse
+         */
+        public async Task<AgoalUserSubAdminListResponse> AgoalUserSubAdminListAsync(AgoalUserSubAdminListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalUserSubAdminListHeaders headers = new AgoalUserSubAdminListHeaders();
+            return await AgoalUserSubAdminListWithOptionsAsync(request, headers, runtime);
         }
 
     }

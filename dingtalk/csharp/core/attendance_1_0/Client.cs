@@ -3961,6 +3961,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["offset"] = request.Offset;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlyMachineCheck))
+            {
+                body["onlyMachineCheck"] = request.OnlyMachineCheck;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenCameraCheck))
             {
                 body["openCameraCheck"] = request.OpenCameraCheck;
@@ -4180,6 +4184,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["offset"] = request.Offset;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlyMachineCheck))
+            {
+                body["onlyMachineCheck"] = request.OnlyMachineCheck;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenCameraCheck))
             {
                 body["openCameraCheck"] = request.OpenCameraCheck;
@@ -4389,6 +4397,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["offset"] = request.Offset;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlyMachineCheck))
+            {
+                body["onlyMachineCheck"] = request.OnlyMachineCheck;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenCameraCheck))
             {
                 body["openCameraCheck"] = request.OpenCameraCheck;
@@ -4559,6 +4571,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Offset))
             {
                 body["offset"] = request.Offset;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OnlyMachineCheck))
+            {
+                body["onlyMachineCheck"] = request.OnlyMachineCheck;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenCameraCheck))
             {

@@ -9,14 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class PremiumGetSubmittedInstancesRequest : TeaModel {
-        [NameInMap("dingClientId")]
-        [Validation(Required=false)]
-        public string DingClientId { get; set; }
-
-        [NameInMap("keyword")]
-        [Validation(Required=false)]
-        public string Keyword { get; set; }
-
         /// <summary>
         /// This parameter is required.
         /// </summary>
