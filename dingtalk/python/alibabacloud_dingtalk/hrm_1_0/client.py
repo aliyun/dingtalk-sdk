@@ -6119,3 +6119,121 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrm__1__0_models.UpdateIsvCardMessageHeaders()
         return await self.update_isv_card_message_with_options_async(request, headers, runtime)
+
+    def upload_attachment_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.UploadAttachmentRequest,
+        headers: dingtalkhrm__1__0_models.UploadAttachmentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.UploadAttachmentResponse:
+        """
+        @summary 上传附件材料
+        
+        @param request: UploadAttachmentRequest
+        @param headers: UploadAttachmentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UploadAttachmentResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UploadAttachment',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/attachments/upload',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.UploadAttachmentResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def upload_attachment_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.UploadAttachmentRequest,
+        headers: dingtalkhrm__1__0_models.UploadAttachmentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.UploadAttachmentResponse:
+        """
+        @summary 上传附件材料
+        
+        @param request: UploadAttachmentRequest
+        @param headers: UploadAttachmentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UploadAttachmentResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UploadAttachment',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/attachments/upload',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.UploadAttachmentResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def upload_attachment(
+        self,
+        request: dingtalkhrm__1__0_models.UploadAttachmentRequest,
+    ) -> dingtalkhrm__1__0_models.UploadAttachmentResponse:
+        """
+        @summary 上传附件材料
+        
+        @param request: UploadAttachmentRequest
+        @return: UploadAttachmentResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.UploadAttachmentHeaders()
+        return self.upload_attachment_with_options(request, headers, runtime)
+
+    async def upload_attachment_async(
+        self,
+        request: dingtalkhrm__1__0_models.UploadAttachmentRequest,
+    ) -> dingtalkhrm__1__0_models.UploadAttachmentResponse:
+        """
+        @summary 上传附件材料
+        
+        @param request: UploadAttachmentRequest
+        @return: UploadAttachmentResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.UploadAttachmentHeaders()
+        return await self.upload_attachment_with_options_async(request, headers, runtime)

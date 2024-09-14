@@ -1661,6 +1661,7 @@ class OrderBillingRequest(TeaModel):
         purchaser_tel: str = None,
         remark: str = None,
         reviewer: str = None,
+        signature: str = None,
         tax_sign: int = None,
     ):
         self.addition_infos = addition_infos
@@ -1682,6 +1683,7 @@ class OrderBillingRequest(TeaModel):
         self.purchaser_tel = purchaser_tel
         self.remark = remark
         self.reviewer = reviewer
+        self.signature = signature
         self.tax_sign = tax_sign
 
     def validate(self):
@@ -1742,6 +1744,8 @@ class OrderBillingRequest(TeaModel):
             result['remark'] = self.remark
         if self.reviewer is not None:
             result['reviewer'] = self.reviewer
+        if self.signature is not None:
+            result['signature'] = self.signature
         if self.tax_sign is not None:
             result['taxSign'] = self.tax_sign
         return result
@@ -1792,6 +1796,8 @@ class OrderBillingRequest(TeaModel):
             self.remark = m.get('remark')
         if m.get('reviewer') is not None:
             self.reviewer = m.get('reviewer')
+        if m.get('signature') is not None:
+            self.signature = m.get('signature')
         if m.get('taxSign') is not None:
             self.tax_sign = m.get('taxSign')
         return self

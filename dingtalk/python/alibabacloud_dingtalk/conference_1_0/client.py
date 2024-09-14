@@ -660,6 +660,8 @@ class Client(OpenApiClient):
             body['creatorUnionId'] = request.creator_union_id
         if not UtilClient.is_unset(request.end_time):
             body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.schedule_conf_setting_model):
+            body['scheduleConfSettingModel'] = request.schedule_conf_setting_model
         if not UtilClient.is_unset(request.start_time):
             body['startTime'] = request.start_time
         if not UtilClient.is_unset(request.title):
@@ -709,6 +711,8 @@ class Client(OpenApiClient):
             body['creatorUnionId'] = request.creator_union_id
         if not UtilClient.is_unset(request.end_time):
             body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.schedule_conf_setting_model):
+            body['scheduleConfSettingModel'] = request.schedule_conf_setting_model
         if not UtilClient.is_unset(request.start_time):
             body['startTime'] = request.start_time
         if not UtilClient.is_unset(request.title):

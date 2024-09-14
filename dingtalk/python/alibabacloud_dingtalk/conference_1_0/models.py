@@ -1060,11 +1060,271 @@ class CreateScheduleConferenceHeaders(TeaModel):
         return self
 
 
+class CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfOpenRecordSetting(TeaModel):
+    def __init__(
+        self,
+        is_follow_host: bool = None,
+        mode: str = None,
+        record_auto_start: int = None,
+        record_auto_start_type: int = None,
+    ):
+        self.is_follow_host = is_follow_host
+        self.mode = mode
+        self.record_auto_start = record_auto_start
+        self.record_auto_start_type = record_auto_start_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.is_follow_host is not None:
+            result['isFollowHost'] = self.is_follow_host
+        if self.mode is not None:
+            result['mode'] = self.mode
+        if self.record_auto_start is not None:
+            result['recordAutoStart'] = self.record_auto_start
+        if self.record_auto_start_type is not None:
+            result['recordAutoStartType'] = self.record_auto_start_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('isFollowHost') is not None:
+            self.is_follow_host = m.get('isFollowHost')
+        if m.get('mode') is not None:
+            self.mode = m.get('mode')
+        if m.get('recordAutoStart') is not None:
+            self.record_auto_start = m.get('recordAutoStart')
+        if m.get('recordAutoStartType') is not None:
+            self.record_auto_start_type = m.get('recordAutoStartType')
+        return self
+
+
+class CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings(TeaModel):
+    def __init__(
+        self,
+        auto_open_mode: int = None,
+        cool_app_code: str = None,
+        extension_app_biz_data: str = None,
+    ):
+        self.auto_open_mode = auto_open_mode
+        self.cool_app_code = cool_app_code
+        self.extension_app_biz_data = extension_app_biz_data
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auto_open_mode is not None:
+            result['autoOpenMode'] = self.auto_open_mode
+        if self.cool_app_code is not None:
+            result['coolAppCode'] = self.cool_app_code
+        if self.extension_app_biz_data is not None:
+            result['extensionAppBizData'] = self.extension_app_biz_data
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('autoOpenMode') is not None:
+            self.auto_open_mode = m.get('autoOpenMode')
+        if m.get('coolAppCode') is not None:
+            self.cool_app_code = m.get('coolAppCode')
+        if m.get('extensionAppBizData') is not None:
+            self.extension_app_biz_data = m.get('extensionAppBizData')
+        return self
+
+
+class CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfVirtualExtraSetting(TeaModel):
+    def __init__(
+        self,
+        cloud_record_owner_union_id: str = None,
+        enable_chat: int = None,
+        enable_web_anonymous_join: bool = None,
+        join_before_host: int = None,
+        lock_media_status_mic_mute: int = None,
+        lock_nick: int = None,
+        minutes_owner_union_id: str = None,
+        mozi_conf_extension_app_settings: List[CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings] = None,
+        push_all_meeting_records: bool = None,
+        push_cloud_record_card: bool = None,
+        push_minutes_card: bool = None,
+        waiting_room: int = None,
+    ):
+        self.cloud_record_owner_union_id = cloud_record_owner_union_id
+        self.enable_chat = enable_chat
+        self.enable_web_anonymous_join = enable_web_anonymous_join
+        self.join_before_host = join_before_host
+        self.lock_media_status_mic_mute = lock_media_status_mic_mute
+        self.lock_nick = lock_nick
+        self.minutes_owner_union_id = minutes_owner_union_id
+        self.mozi_conf_extension_app_settings = mozi_conf_extension_app_settings
+        self.push_all_meeting_records = push_all_meeting_records
+        self.push_cloud_record_card = push_cloud_record_card
+        self.push_minutes_card = push_minutes_card
+        self.waiting_room = waiting_room
+
+    def validate(self):
+        if self.mozi_conf_extension_app_settings:
+            for k in self.mozi_conf_extension_app_settings:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cloud_record_owner_union_id is not None:
+            result['cloudRecordOwnerUnionId'] = self.cloud_record_owner_union_id
+        if self.enable_chat is not None:
+            result['enableChat'] = self.enable_chat
+        if self.enable_web_anonymous_join is not None:
+            result['enableWebAnonymousJoin'] = self.enable_web_anonymous_join
+        if self.join_before_host is not None:
+            result['joinBeforeHost'] = self.join_before_host
+        if self.lock_media_status_mic_mute is not None:
+            result['lockMediaStatusMicMute'] = self.lock_media_status_mic_mute
+        if self.lock_nick is not None:
+            result['lockNick'] = self.lock_nick
+        if self.minutes_owner_union_id is not None:
+            result['minutesOwnerUnionId'] = self.minutes_owner_union_id
+        result['moziConfExtensionAppSettings'] = []
+        if self.mozi_conf_extension_app_settings is not None:
+            for k in self.mozi_conf_extension_app_settings:
+                result['moziConfExtensionAppSettings'].append(k.to_map() if k else None)
+        if self.push_all_meeting_records is not None:
+            result['pushAllMeetingRecords'] = self.push_all_meeting_records
+        if self.push_cloud_record_card is not None:
+            result['pushCloudRecordCard'] = self.push_cloud_record_card
+        if self.push_minutes_card is not None:
+            result['pushMinutesCard'] = self.push_minutes_card
+        if self.waiting_room is not None:
+            result['waitingRoom'] = self.waiting_room
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cloudRecordOwnerUnionId') is not None:
+            self.cloud_record_owner_union_id = m.get('cloudRecordOwnerUnionId')
+        if m.get('enableChat') is not None:
+            self.enable_chat = m.get('enableChat')
+        if m.get('enableWebAnonymousJoin') is not None:
+            self.enable_web_anonymous_join = m.get('enableWebAnonymousJoin')
+        if m.get('joinBeforeHost') is not None:
+            self.join_before_host = m.get('joinBeforeHost')
+        if m.get('lockMediaStatusMicMute') is not None:
+            self.lock_media_status_mic_mute = m.get('lockMediaStatusMicMute')
+        if m.get('lockNick') is not None:
+            self.lock_nick = m.get('lockNick')
+        if m.get('minutesOwnerUnionId') is not None:
+            self.minutes_owner_union_id = m.get('minutesOwnerUnionId')
+        self.mozi_conf_extension_app_settings = []
+        if m.get('moziConfExtensionAppSettings') is not None:
+            for k in m.get('moziConfExtensionAppSettings'):
+                temp_model = CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings()
+                self.mozi_conf_extension_app_settings.append(temp_model.from_map(k))
+        if m.get('pushAllMeetingRecords') is not None:
+            self.push_all_meeting_records = m.get('pushAllMeetingRecords')
+        if m.get('pushCloudRecordCard') is not None:
+            self.push_cloud_record_card = m.get('pushCloudRecordCard')
+        if m.get('pushMinutesCard') is not None:
+            self.push_minutes_card = m.get('pushMinutesCard')
+        if m.get('waitingRoom') is not None:
+            self.waiting_room = m.get('waitingRoom')
+        return self
+
+
+class CreateScheduleConferenceRequestScheduleConfSettingModel(TeaModel):
+    def __init__(
+        self,
+        cohost_union_ids: List[str] = None,
+        conf_allowed_corp_id: str = None,
+        host_union_id: str = None,
+        lock_room: int = None,
+        mozi_conf_open_record_setting: CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfOpenRecordSetting = None,
+        mozi_conf_virtual_extra_setting: CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfVirtualExtraSetting = None,
+        mute_on_join: int = None,
+        screen_share_forbidden: int = None,
+    ):
+        self.cohost_union_ids = cohost_union_ids
+        self.conf_allowed_corp_id = conf_allowed_corp_id
+        self.host_union_id = host_union_id
+        self.lock_room = lock_room
+        self.mozi_conf_open_record_setting = mozi_conf_open_record_setting
+        self.mozi_conf_virtual_extra_setting = mozi_conf_virtual_extra_setting
+        self.mute_on_join = mute_on_join
+        self.screen_share_forbidden = screen_share_forbidden
+
+    def validate(self):
+        if self.mozi_conf_open_record_setting:
+            self.mozi_conf_open_record_setting.validate()
+        if self.mozi_conf_virtual_extra_setting:
+            self.mozi_conf_virtual_extra_setting.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cohost_union_ids is not None:
+            result['cohostUnionIds'] = self.cohost_union_ids
+        if self.conf_allowed_corp_id is not None:
+            result['confAllowedCorpId'] = self.conf_allowed_corp_id
+        if self.host_union_id is not None:
+            result['hostUnionId'] = self.host_union_id
+        if self.lock_room is not None:
+            result['lockRoom'] = self.lock_room
+        if self.mozi_conf_open_record_setting is not None:
+            result['moziConfOpenRecordSetting'] = self.mozi_conf_open_record_setting.to_map()
+        if self.mozi_conf_virtual_extra_setting is not None:
+            result['moziConfVirtualExtraSetting'] = self.mozi_conf_virtual_extra_setting.to_map()
+        if self.mute_on_join is not None:
+            result['muteOnJoin'] = self.mute_on_join
+        if self.screen_share_forbidden is not None:
+            result['screenShareForbidden'] = self.screen_share_forbidden
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cohostUnionIds') is not None:
+            self.cohost_union_ids = m.get('cohostUnionIds')
+        if m.get('confAllowedCorpId') is not None:
+            self.conf_allowed_corp_id = m.get('confAllowedCorpId')
+        if m.get('hostUnionId') is not None:
+            self.host_union_id = m.get('hostUnionId')
+        if m.get('lockRoom') is not None:
+            self.lock_room = m.get('lockRoom')
+        if m.get('moziConfOpenRecordSetting') is not None:
+            temp_model = CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfOpenRecordSetting()
+            self.mozi_conf_open_record_setting = temp_model.from_map(m['moziConfOpenRecordSetting'])
+        if m.get('moziConfVirtualExtraSetting') is not None:
+            temp_model = CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfVirtualExtraSetting()
+            self.mozi_conf_virtual_extra_setting = temp_model.from_map(m['moziConfVirtualExtraSetting'])
+        if m.get('muteOnJoin') is not None:
+            self.mute_on_join = m.get('muteOnJoin')
+        if m.get('screenShareForbidden') is not None:
+            self.screen_share_forbidden = m.get('screenShareForbidden')
+        return self
+
+
 class CreateScheduleConferenceRequest(TeaModel):
     def __init__(
         self,
         creator_union_id: str = None,
         end_time: int = None,
+        schedule_conf_setting_model: CreateScheduleConferenceRequestScheduleConfSettingModel = None,
         start_time: int = None,
         title: str = None,
     ):
@@ -1072,13 +1332,15 @@ class CreateScheduleConferenceRequest(TeaModel):
         self.creator_union_id = creator_union_id
         # This parameter is required.
         self.end_time = end_time
+        self.schedule_conf_setting_model = schedule_conf_setting_model
         # This parameter is required.
         self.start_time = start_time
         # This parameter is required.
         self.title = title
 
     def validate(self):
-        pass
+        if self.schedule_conf_setting_model:
+            self.schedule_conf_setting_model.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1090,6 +1352,8 @@ class CreateScheduleConferenceRequest(TeaModel):
             result['creatorUnionId'] = self.creator_union_id
         if self.end_time is not None:
             result['endTime'] = self.end_time
+        if self.schedule_conf_setting_model is not None:
+            result['scheduleConfSettingModel'] = self.schedule_conf_setting_model.to_map()
         if self.start_time is not None:
             result['startTime'] = self.start_time
         if self.title is not None:
@@ -1102,6 +1366,9 @@ class CreateScheduleConferenceRequest(TeaModel):
             self.creator_union_id = m.get('creatorUnionId')
         if m.get('endTime') is not None:
             self.end_time = m.get('endTime')
+        if m.get('scheduleConfSettingModel') is not None:
+            temp_model = CreateScheduleConferenceRequestScheduleConfSettingModel()
+            self.schedule_conf_setting_model = temp_model.from_map(m['scheduleConfSettingModel'])
         if m.get('startTime') is not None:
             self.start_time = m.get('startTime')
         if m.get('title') is not None:
@@ -4293,39 +4560,101 @@ class QueryConferenceInfoHeaders(TeaModel):
         return self
 
 
+class QueryConferenceInfoResponseBodyConfInfoExtensionAppSettings(TeaModel):
+    def __init__(
+        self,
+        app_code: str = None,
+        app_id: str = None,
+        auto_open_mode: int = None,
+        extension_app_biz_data: str = None,
+    ):
+        self.app_code = app_code
+        self.app_id = app_id
+        self.auto_open_mode = auto_open_mode
+        self.extension_app_biz_data = extension_app_biz_data
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_code is not None:
+            result['appCode'] = self.app_code
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.auto_open_mode is not None:
+            result['autoOpenMode'] = self.auto_open_mode
+        if self.extension_app_biz_data is not None:
+            result['extensionAppBizData'] = self.extension_app_biz_data
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appCode') is not None:
+            self.app_code = m.get('appCode')
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('autoOpenMode') is not None:
+            self.auto_open_mode = m.get('autoOpenMode')
+        if m.get('extensionAppBizData') is not None:
+            self.extension_app_biz_data = m.get('extensionAppBizData')
+        return self
+
+
 class QueryConferenceInfoResponseBodyConfInfo(TeaModel):
     def __init__(
         self,
         active_num: int = None,
         attend_num: int = None,
+        biz_type: str = None,
+        cloud_record_owner_union_id: str = None,
+        cloud_record_status: int = None,
         conf_duration: int = None,
         conference_id: str = None,
         creator_id: str = None,
         creator_nick: str = None,
         end_time: int = None,
+        extension_app_settings: List[QueryConferenceInfoResponseBodyConfInfoExtensionAppSettings] = None,
         external_link_url: str = None,
         invited_num: int = None,
+        minutes_owner_union_id: str = None,
+        minutes_status: int = None,
         room_code: str = None,
+        schedule_conference_id: str = None,
         start_time: int = None,
         status: int = None,
         title: str = None,
     ):
         self.active_num = active_num
         self.attend_num = attend_num
+        self.biz_type = biz_type
+        self.cloud_record_owner_union_id = cloud_record_owner_union_id
+        self.cloud_record_status = cloud_record_status
         self.conf_duration = conf_duration
         self.conference_id = conference_id
         self.creator_id = creator_id
         self.creator_nick = creator_nick
         self.end_time = end_time
+        self.extension_app_settings = extension_app_settings
         self.external_link_url = external_link_url
         self.invited_num = invited_num
+        self.minutes_owner_union_id = minutes_owner_union_id
+        self.minutes_status = minutes_status
         self.room_code = room_code
+        self.schedule_conference_id = schedule_conference_id
         self.start_time = start_time
         self.status = status
         self.title = title
 
     def validate(self):
-        pass
+        if self.extension_app_settings:
+            for k in self.extension_app_settings:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -4337,6 +4666,12 @@ class QueryConferenceInfoResponseBodyConfInfo(TeaModel):
             result['activeNum'] = self.active_num
         if self.attend_num is not None:
             result['attendNum'] = self.attend_num
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.cloud_record_owner_union_id is not None:
+            result['cloudRecordOwnerUnionId'] = self.cloud_record_owner_union_id
+        if self.cloud_record_status is not None:
+            result['cloudRecordStatus'] = self.cloud_record_status
         if self.conf_duration is not None:
             result['confDuration'] = self.conf_duration
         if self.conference_id is not None:
@@ -4347,12 +4682,22 @@ class QueryConferenceInfoResponseBodyConfInfo(TeaModel):
             result['creatorNick'] = self.creator_nick
         if self.end_time is not None:
             result['endTime'] = self.end_time
+        result['extensionAppSettings'] = []
+        if self.extension_app_settings is not None:
+            for k in self.extension_app_settings:
+                result['extensionAppSettings'].append(k.to_map() if k else None)
         if self.external_link_url is not None:
             result['externalLinkUrl'] = self.external_link_url
         if self.invited_num is not None:
             result['invitedNum'] = self.invited_num
+        if self.minutes_owner_union_id is not None:
+            result['minutesOwnerUnionId'] = self.minutes_owner_union_id
+        if self.minutes_status is not None:
+            result['minutesStatus'] = self.minutes_status
         if self.room_code is not None:
             result['roomCode'] = self.room_code
+        if self.schedule_conference_id is not None:
+            result['scheduleConferenceId'] = self.schedule_conference_id
         if self.start_time is not None:
             result['startTime'] = self.start_time
         if self.status is not None:
@@ -4367,6 +4712,12 @@ class QueryConferenceInfoResponseBodyConfInfo(TeaModel):
             self.active_num = m.get('activeNum')
         if m.get('attendNum') is not None:
             self.attend_num = m.get('attendNum')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('cloudRecordOwnerUnionId') is not None:
+            self.cloud_record_owner_union_id = m.get('cloudRecordOwnerUnionId')
+        if m.get('cloudRecordStatus') is not None:
+            self.cloud_record_status = m.get('cloudRecordStatus')
         if m.get('confDuration') is not None:
             self.conf_duration = m.get('confDuration')
         if m.get('conferenceId') is not None:
@@ -4377,12 +4728,23 @@ class QueryConferenceInfoResponseBodyConfInfo(TeaModel):
             self.creator_nick = m.get('creatorNick')
         if m.get('endTime') is not None:
             self.end_time = m.get('endTime')
+        self.extension_app_settings = []
+        if m.get('extensionAppSettings') is not None:
+            for k in m.get('extensionAppSettings'):
+                temp_model = QueryConferenceInfoResponseBodyConfInfoExtensionAppSettings()
+                self.extension_app_settings.append(temp_model.from_map(k))
         if m.get('externalLinkUrl') is not None:
             self.external_link_url = m.get('externalLinkUrl')
         if m.get('invitedNum') is not None:
             self.invited_num = m.get('invitedNum')
+        if m.get('minutesOwnerUnionId') is not None:
+            self.minutes_owner_union_id = m.get('minutesOwnerUnionId')
+        if m.get('minutesStatus') is not None:
+            self.minutes_status = m.get('minutesStatus')
         if m.get('roomCode') is not None:
             self.room_code = m.get('roomCode')
+        if m.get('scheduleConferenceId') is not None:
+            self.schedule_conference_id = m.get('scheduleConferenceId')
         if m.get('startTime') is not None:
             self.start_time = m.get('startTime')
         if m.get('status') is not None:
@@ -7886,6 +8248,51 @@ class UpdateScheduleConfSettingsHeaders(TeaModel):
         return self
 
 
+class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecordSetting(TeaModel):
+    def __init__(
+        self,
+        is_follow_host: bool = None,
+        mode: str = None,
+        record_auto_start: int = None,
+        record_auto_start_type: int = None,
+    ):
+        self.is_follow_host = is_follow_host
+        self.mode = mode
+        self.record_auto_start = record_auto_start
+        self.record_auto_start_type = record_auto_start_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.is_follow_host is not None:
+            result['isFollowHost'] = self.is_follow_host
+        if self.mode is not None:
+            result['mode'] = self.mode
+        if self.record_auto_start is not None:
+            result['recordAutoStart'] = self.record_auto_start
+        if self.record_auto_start_type is not None:
+            result['recordAutoStartType'] = self.record_auto_start_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('isFollowHost') is not None:
+            self.is_follow_host = m.get('isFollowHost')
+        if m.get('mode') is not None:
+            self.mode = m.get('mode')
+        if m.get('recordAutoStart') is not None:
+            self.record_auto_start = m.get('recordAutoStart')
+        if m.get('recordAutoStartType') is not None:
+            self.record_auto_start_type = m.get('recordAutoStartType')
+        return self
+
+
 class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings(TeaModel):
     def __init__(
         self,
@@ -8033,6 +8440,7 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModel(TeaModel):
         conf_allowed_corp_id: str = None,
         host_union_id: str = None,
         lock_room: int = None,
+        mozi_conf_open_record_setting: UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecordSetting = None,
         mozi_conf_virtual_extra_setting: UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting = None,
         mute_on_join: int = None,
         screen_share_forbidden: int = None,
@@ -8041,11 +8449,14 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModel(TeaModel):
         self.conf_allowed_corp_id = conf_allowed_corp_id
         self.host_union_id = host_union_id
         self.lock_room = lock_room
+        self.mozi_conf_open_record_setting = mozi_conf_open_record_setting
         self.mozi_conf_virtual_extra_setting = mozi_conf_virtual_extra_setting
         self.mute_on_join = mute_on_join
         self.screen_share_forbidden = screen_share_forbidden
 
     def validate(self):
+        if self.mozi_conf_open_record_setting:
+            self.mozi_conf_open_record_setting.validate()
         if self.mozi_conf_virtual_extra_setting:
             self.mozi_conf_virtual_extra_setting.validate()
 
@@ -8063,6 +8474,8 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModel(TeaModel):
             result['hostUnionId'] = self.host_union_id
         if self.lock_room is not None:
             result['lockRoom'] = self.lock_room
+        if self.mozi_conf_open_record_setting is not None:
+            result['moziConfOpenRecordSetting'] = self.mozi_conf_open_record_setting.to_map()
         if self.mozi_conf_virtual_extra_setting is not None:
             result['moziConfVirtualExtraSetting'] = self.mozi_conf_virtual_extra_setting.to_map()
         if self.mute_on_join is not None:
@@ -8081,6 +8494,9 @@ class UpdateScheduleConfSettingsRequestScheduleConfSettingModel(TeaModel):
             self.host_union_id = m.get('hostUnionId')
         if m.get('lockRoom') is not None:
             self.lock_room = m.get('lockRoom')
+        if m.get('moziConfOpenRecordSetting') is not None:
+            temp_model = UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecordSetting()
+            self.mozi_conf_open_record_setting = temp_model.from_map(m['moziConfOpenRecordSetting'])
         if m.get('moziConfVirtualExtraSetting') is not None:
             temp_model = UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting()
             self.mozi_conf_virtual_extra_setting = temp_model.from_map(m['moziConfVirtualExtraSetting'])

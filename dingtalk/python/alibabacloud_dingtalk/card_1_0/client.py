@@ -286,6 +286,120 @@ class Client(OpenApiClient):
         headers = dingtalkcard__1__0_models.AppendSpaceWithDelegateHeaders()
         return await self.append_space_with_delegate_with_options_async(request, headers, runtime)
 
+    def copy_template_with_options(
+        self,
+        request: dingtalkcard__1__0_models.CopyTemplateRequest,
+        headers: dingtalkcard__1__0_models.CopyTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.CopyTemplateResponse:
+        """
+        @summary 复制模板
+        
+        @param request: CopyTemplateRequest
+        @param headers: CopyTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CopyTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CopyTemplate',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/templates/copy',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.CopyTemplateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def copy_template_with_options_async(
+        self,
+        request: dingtalkcard__1__0_models.CopyTemplateRequest,
+        headers: dingtalkcard__1__0_models.CopyTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.CopyTemplateResponse:
+        """
+        @summary 复制模板
+        
+        @param request: CopyTemplateRequest
+        @param headers: CopyTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CopyTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CopyTemplate',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/templates/copy',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.CopyTemplateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def copy_template(
+        self,
+        request: dingtalkcard__1__0_models.CopyTemplateRequest,
+    ) -> dingtalkcard__1__0_models.CopyTemplateResponse:
+        """
+        @summary 复制模板
+        
+        @param request: CopyTemplateRequest
+        @return: CopyTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.CopyTemplateHeaders()
+        return self.copy_template_with_options(request, headers, runtime)
+
+    async def copy_template_async(
+        self,
+        request: dingtalkcard__1__0_models.CopyTemplateRequest,
+    ) -> dingtalkcard__1__0_models.CopyTemplateResponse:
+        """
+        @summary 复制模板
+        
+        @param request: CopyTemplateRequest
+        @return: CopyTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.CopyTemplateHeaders()
+        return await self.copy_template_with_options_async(request, headers, runtime)
+
     def create_and_deliver_with_options(
         self,
         request: dingtalkcard__1__0_models.CreateAndDeliverRequest,
@@ -1006,6 +1120,250 @@ class Client(OpenApiClient):
         headers = dingtalkcard__1__0_models.CreateCardWithDelegateHeaders()
         return await self.create_card_with_delegate_with_options_async(request, headers, runtime)
 
+    def create_template_with_options(
+        self,
+        request: dingtalkcard__1__0_models.CreateTemplateRequest,
+        headers: dingtalkcard__1__0_models.CreateTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.CreateTemplateResponse:
+        """
+        @summary 创建模板
+        
+        @param request: CreateTemplateRequest
+        @param headers: CreateTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.creator_id):
+            body['creatorId'] = request.creator_id
+        if not UtilClient.is_unset(request.extend_type):
+            body['extendType'] = request.extend_type
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateTemplate',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/templates',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.CreateTemplateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_template_with_options_async(
+        self,
+        request: dingtalkcard__1__0_models.CreateTemplateRequest,
+        headers: dingtalkcard__1__0_models.CreateTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.CreateTemplateResponse:
+        """
+        @summary 创建模板
+        
+        @param request: CreateTemplateRequest
+        @param headers: CreateTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.creator_id):
+            body['creatorId'] = request.creator_id
+        if not UtilClient.is_unset(request.extend_type):
+            body['extendType'] = request.extend_type
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateTemplate',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/templates',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.CreateTemplateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_template(
+        self,
+        request: dingtalkcard__1__0_models.CreateTemplateRequest,
+    ) -> dingtalkcard__1__0_models.CreateTemplateResponse:
+        """
+        @summary 创建模板
+        
+        @param request: CreateTemplateRequest
+        @return: CreateTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.CreateTemplateHeaders()
+        return self.create_template_with_options(request, headers, runtime)
+
+    async def create_template_async(
+        self,
+        request: dingtalkcard__1__0_models.CreateTemplateRequest,
+    ) -> dingtalkcard__1__0_models.CreateTemplateResponse:
+        """
+        @summary 创建模板
+        
+        @param request: CreateTemplateRequest
+        @return: CreateTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.CreateTemplateHeaders()
+        return await self.create_template_with_options_async(request, headers, runtime)
+
+    def delete_template_with_options(
+        self,
+        request: dingtalkcard__1__0_models.DeleteTemplateRequest,
+        headers: dingtalkcard__1__0_models.DeleteTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.DeleteTemplateResponse:
+        """
+        @summary 删除模板
+        
+        @param request: DeleteTemplateRequest
+        @param headers: DeleteTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteTemplate',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/templates/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.DeleteTemplateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_template_with_options_async(
+        self,
+        request: dingtalkcard__1__0_models.DeleteTemplateRequest,
+        headers: dingtalkcard__1__0_models.DeleteTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.DeleteTemplateResponse:
+        """
+        @summary 删除模板
+        
+        @param request: DeleteTemplateRequest
+        @param headers: DeleteTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteTemplate',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/templates/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.DeleteTemplateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_template(
+        self,
+        request: dingtalkcard__1__0_models.DeleteTemplateRequest,
+    ) -> dingtalkcard__1__0_models.DeleteTemplateResponse:
+        """
+        @summary 删除模板
+        
+        @param request: DeleteTemplateRequest
+        @return: DeleteTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.DeleteTemplateHeaders()
+        return self.delete_template_with_options(request, headers, runtime)
+
+    async def delete_template_async(
+        self,
+        request: dingtalkcard__1__0_models.DeleteTemplateRequest,
+    ) -> dingtalkcard__1__0_models.DeleteTemplateResponse:
+        """
+        @summary 删除模板
+        
+        @param request: DeleteTemplateRequest
+        @return: DeleteTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.DeleteTemplateHeaders()
+        return await self.delete_template_with_options_async(request, headers, runtime)
+
     def deliver_card_with_options(
         self,
         request: dingtalkcard__1__0_models.DeliverCardRequest,
@@ -1298,6 +1656,242 @@ class Client(OpenApiClient):
         headers = dingtalkcard__1__0_models.DeliverCardWithDelegateHeaders()
         return await self.deliver_card_with_delegate_with_options_async(request, headers, runtime)
 
+    def get_template_with_options(
+        self,
+        request: dingtalkcard__1__0_models.GetTemplateRequest,
+        headers: dingtalkcard__1__0_models.GetTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.GetTemplateResponse:
+        """
+        @summary 获取模板信息
+        
+        @param request: GetTemplateRequest
+        @param headers: GetTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.template_id):
+            query['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetTemplate',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/templates',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.GetTemplateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_template_with_options_async(
+        self,
+        request: dingtalkcard__1__0_models.GetTemplateRequest,
+        headers: dingtalkcard__1__0_models.GetTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.GetTemplateResponse:
+        """
+        @summary 获取模板信息
+        
+        @param request: GetTemplateRequest
+        @param headers: GetTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.template_id):
+            query['templateId'] = request.template_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetTemplate',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/templates',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.GetTemplateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_template(
+        self,
+        request: dingtalkcard__1__0_models.GetTemplateRequest,
+    ) -> dingtalkcard__1__0_models.GetTemplateResponse:
+        """
+        @summary 获取模板信息
+        
+        @param request: GetTemplateRequest
+        @return: GetTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.GetTemplateHeaders()
+        return self.get_template_with_options(request, headers, runtime)
+
+    async def get_template_async(
+        self,
+        request: dingtalkcard__1__0_models.GetTemplateRequest,
+    ) -> dingtalkcard__1__0_models.GetTemplateResponse:
+        """
+        @summary 获取模板信息
+        
+        @param request: GetTemplateRequest
+        @return: GetTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.GetTemplateHeaders()
+        return await self.get_template_with_options_async(request, headers, runtime)
+
+    def publish_template_with_options(
+        self,
+        request: dingtalkcard__1__0_models.PublishTemplateRequest,
+        headers: dingtalkcard__1__0_models.PublishTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.PublishTemplateResponse:
+        """
+        @summary 发布模板
+        
+        @param request: PublishTemplateRequest
+        @param headers: PublishTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PublishTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.template_source):
+            body['templateSource'] = request.template_source
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PublishTemplate',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/templates/publish',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.PublishTemplateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def publish_template_with_options_async(
+        self,
+        request: dingtalkcard__1__0_models.PublishTemplateRequest,
+        headers: dingtalkcard__1__0_models.PublishTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.PublishTemplateResponse:
+        """
+        @summary 发布模板
+        
+        @param request: PublishTemplateRequest
+        @param headers: PublishTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PublishTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.template_source):
+            body['templateSource'] = request.template_source
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PublishTemplate',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/templates/publish',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.PublishTemplateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def publish_template(
+        self,
+        request: dingtalkcard__1__0_models.PublishTemplateRequest,
+    ) -> dingtalkcard__1__0_models.PublishTemplateResponse:
+        """
+        @summary 发布模板
+        
+        @param request: PublishTemplateRequest
+        @return: PublishTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.PublishTemplateHeaders()
+        return self.publish_template_with_options(request, headers, runtime)
+
+    async def publish_template_async(
+        self,
+        request: dingtalkcard__1__0_models.PublishTemplateRequest,
+    ) -> dingtalkcard__1__0_models.PublishTemplateResponse:
+        """
+        @summary 发布模板
+        
+        @param request: PublishTemplateRequest
+        @return: PublishTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.PublishTemplateHeaders()
+        return await self.publish_template_with_options_async(request, headers, runtime)
+
     def register_callback_with_options(
         self,
         request: dingtalkcard__1__0_models.RegisterCallbackRequest,
@@ -1549,6 +2143,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkcard__1__0_models.RegisterCallbackWithDelegateHeaders()
         return await self.register_callback_with_delegate_with_options_async(request, headers, runtime)
+
+    def save_template_with_options(
+        self,
+        request: dingtalkcard__1__0_models.SaveTemplateRequest,
+        headers: dingtalkcard__1__0_models.SaveTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.SaveTemplateResponse:
+        """
+        @summary 保存模板
+        
+        @param request: SaveTemplateRequest
+        @param headers: SaveTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.template_source):
+            body['templateSource'] = request.template_source
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SaveTemplate',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/templates/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.SaveTemplateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def save_template_with_options_async(
+        self,
+        request: dingtalkcard__1__0_models.SaveTemplateRequest,
+        headers: dingtalkcard__1__0_models.SaveTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.SaveTemplateResponse:
+        """
+        @summary 保存模板
+        
+        @param request: SaveTemplateRequest
+        @param headers: SaveTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SaveTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.template_id):
+            body['templateId'] = request.template_id
+        if not UtilClient.is_unset(request.template_source):
+            body['templateSource'] = request.template_source
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SaveTemplate',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/templates/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.SaveTemplateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def save_template(
+        self,
+        request: dingtalkcard__1__0_models.SaveTemplateRequest,
+    ) -> dingtalkcard__1__0_models.SaveTemplateResponse:
+        """
+        @summary 保存模板
+        
+        @param request: SaveTemplateRequest
+        @return: SaveTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.SaveTemplateHeaders()
+        return self.save_template_with_options(request, headers, runtime)
+
+    async def save_template_async(
+        self,
+        request: dingtalkcard__1__0_models.SaveTemplateRequest,
+    ) -> dingtalkcard__1__0_models.SaveTemplateResponse:
+        """
+        @summary 保存模板
+        
+        @param request: SaveTemplateRequest
+        @return: SaveTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.SaveTemplateHeaders()
+        return await self.save_template_with_options_async(request, headers, runtime)
 
     def streaming_update_with_options(
         self,

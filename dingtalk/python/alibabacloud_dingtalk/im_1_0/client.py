@@ -7216,6 +7216,124 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.QueryOpenGroupBaseInfoHeaders()
         return await self.query_open_group_base_info_with_options_async(request, headers, runtime)
 
+    def query_personal_message_read_status_with_options(
+        self,
+        request: dingtalkim__1__0_models.QueryPersonalMessageReadStatusRequest,
+        headers: dingtalkim__1__0_models.QueryPersonalMessageReadStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryPersonalMessageReadStatusResponse:
+        """
+        @summary 用户身份查询消息已读未读状态
+        
+        @param request: QueryPersonalMessageReadStatusRequest
+        @param headers: QueryPersonalMessageReadStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPersonalMessageReadStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_message_id):
+            body['openMessageId'] = request.open_message_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryPersonalMessageReadStatus',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/me/messages/readStatuses/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryPersonalMessageReadStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_personal_message_read_status_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.QueryPersonalMessageReadStatusRequest,
+        headers: dingtalkim__1__0_models.QueryPersonalMessageReadStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.QueryPersonalMessageReadStatusResponse:
+        """
+        @summary 用户身份查询消息已读未读状态
+        
+        @param request: QueryPersonalMessageReadStatusRequest
+        @param headers: QueryPersonalMessageReadStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPersonalMessageReadStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.open_message_id):
+            body['openMessageId'] = request.open_message_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryPersonalMessageReadStatus',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/me/messages/readStatuses/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.QueryPersonalMessageReadStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_personal_message_read_status(
+        self,
+        request: dingtalkim__1__0_models.QueryPersonalMessageReadStatusRequest,
+    ) -> dingtalkim__1__0_models.QueryPersonalMessageReadStatusResponse:
+        """
+        @summary 用户身份查询消息已读未读状态
+        
+        @param request: QueryPersonalMessageReadStatusRequest
+        @return: QueryPersonalMessageReadStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryPersonalMessageReadStatusHeaders()
+        return self.query_personal_message_read_status_with_options(request, headers, runtime)
+
+    async def query_personal_message_read_status_async(
+        self,
+        request: dingtalkim__1__0_models.QueryPersonalMessageReadStatusRequest,
+    ) -> dingtalkim__1__0_models.QueryPersonalMessageReadStatusResponse:
+        """
+        @summary 用户身份查询消息已读未读状态
+        
+        @param request: QueryPersonalMessageReadStatusRequest
+        @return: QueryPersonalMessageReadStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.QueryPersonalMessageReadStatusHeaders()
+        return await self.query_personal_message_read_status_with_options_async(request, headers, runtime)
+
     def query_recent_conversations_with_options(
         self,
         request: dingtalkim__1__0_models.QueryRecentConversationsRequest,

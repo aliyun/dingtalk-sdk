@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List
+from typing import Dict, List, Any
 
 
 class PrivateDataValue(TeaModel):
@@ -963,6 +963,170 @@ class AppendSpaceWithDelegateResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AppendSpaceWithDelegateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CopyTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CopyTemplateRequest(TeaModel):
+    def __init__(
+        self,
+        template_id: str = None,
+    ):
+        # This parameter is required.
+        self.template_id = template_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        return self
+
+
+class CopyTemplateResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        template_id: str = None,
+    ):
+        self.template_id = template_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        return self
+
+
+class CopyTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: CopyTemplateResponseBodyData = None,
+        success: bool = None,
+    ):
+        self.data = data
+        self.success = success
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = CopyTemplateResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CopyTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CopyTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CopyTemplateResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -4945,6 +5109,324 @@ class CreateCardWithDelegateResponse(TeaModel):
         return self
 
 
+class CreateTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateTemplateRequest(TeaModel):
+    def __init__(
+        self,
+        app_id: str = None,
+        creator_id: str = None,
+        extend_type: str = None,
+        name: str = None,
+        type: str = None,
+    ):
+        self.app_id = app_id
+        self.creator_id = creator_id
+        # This parameter is required.
+        self.extend_type = extend_type
+        # This parameter is required.
+        self.name = name
+        # This parameter is required.
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.extend_type is not None:
+            result['extendType'] = self.extend_type
+        if self.name is not None:
+            result['name'] = self.name
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('extendType') is not None:
+            self.extend_type = m.get('extendType')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class CreateTemplateResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        template_id: str = None,
+    ):
+        self.template_id = template_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        return self
+
+
+class CreateTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: CreateTemplateResponseBodyData = None,
+        success: bool = None,
+    ):
+        self.data = data
+        self.success = success
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = CreateTemplateResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateTemplateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteTemplateRequest(TeaModel):
+    def __init__(
+        self,
+        template_id: str = None,
+    ):
+        self.template_id = template_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        return self
+
+
+class DeleteTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DeleteTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteTemplateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeliverCardHeaders(TeaModel):
     def __init__(
         self,
@@ -5897,6 +6379,471 @@ class DeliverCardWithDelegateResponse(TeaModel):
         return self
 
 
+class GetTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetTemplateRequest(TeaModel):
+    def __init__(
+        self,
+        template_id: str = None,
+    ):
+        self.template_id = template_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        return self
+
+
+class GetTemplateResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        common_variable_list: Any = None,
+        creator_id: str = None,
+        exp_variable_list: Any = None,
+        gmt_create: str = None,
+        gmt_modified: str = None,
+        local_variable_list: Any = None,
+        name: str = None,
+        preview: str = None,
+        status: str = None,
+        template_id: str = None,
+        type: str = None,
+    ):
+        self.common_variable_list = common_variable_list
+        self.creator_id = creator_id
+        self.exp_variable_list = exp_variable_list
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+        self.local_variable_list = local_variable_list
+        self.name = name
+        self.preview = preview
+        self.status = status
+        self.template_id = template_id
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_variable_list is not None:
+            result['commonVariableList'] = self.common_variable_list
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.exp_variable_list is not None:
+            result['expVariableList'] = self.exp_variable_list
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.local_variable_list is not None:
+            result['localVariableList'] = self.local_variable_list
+        if self.name is not None:
+            result['name'] = self.name
+        if self.preview is not None:
+            result['preview'] = self.preview
+        if self.status is not None:
+            result['status'] = self.status
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonVariableList') is not None:
+            self.common_variable_list = m.get('commonVariableList')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('expVariableList') is not None:
+            self.exp_variable_list = m.get('expVariableList')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('localVariableList') is not None:
+            self.local_variable_list = m.get('localVariableList')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('preview') is not None:
+            self.preview = m.get('preview')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class GetTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: GetTemplateResponseBodyData = None,
+        success: bool = None,
+    ):
+        self.data = data
+        self.success = success
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = GetTemplateResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetTemplateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PublishTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PublishTemplateRequest(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        template_id: str = None,
+        template_source: str = None,
+    ):
+        self.name = name
+        # This parameter is required.
+        self.template_id = template_id
+        self.template_source = template_source
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.template_source is not None:
+            result['templateSource'] = self.template_source
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('templateSource') is not None:
+            self.template_source = m.get('templateSource')
+        return self
+
+
+class PublishTemplateResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        common_variable_list: Any = None,
+        creator_id: str = None,
+        exp_variable_list: Any = None,
+        extend_type: str = None,
+        gmt_create: str = None,
+        gmt_modified: str = None,
+        local_variable_list: Any = None,
+        name: str = None,
+        preview: str = None,
+        status: str = None,
+        template_id: str = None,
+        type: str = None,
+    ):
+        self.common_variable_list = common_variable_list
+        self.creator_id = creator_id
+        self.exp_variable_list = exp_variable_list
+        self.extend_type = extend_type
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+        self.local_variable_list = local_variable_list
+        self.name = name
+        self.preview = preview
+        self.status = status
+        self.template_id = template_id
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_variable_list is not None:
+            result['commonVariableList'] = self.common_variable_list
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.exp_variable_list is not None:
+            result['expVariableList'] = self.exp_variable_list
+        if self.extend_type is not None:
+            result['extendType'] = self.extend_type
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.local_variable_list is not None:
+            result['localVariableList'] = self.local_variable_list
+        if self.name is not None:
+            result['name'] = self.name
+        if self.preview is not None:
+            result['preview'] = self.preview
+        if self.status is not None:
+            result['status'] = self.status
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonVariableList') is not None:
+            self.common_variable_list = m.get('commonVariableList')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('expVariableList') is not None:
+            self.exp_variable_list = m.get('expVariableList')
+        if m.get('extendType') is not None:
+            self.extend_type = m.get('extendType')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('localVariableList') is not None:
+            self.local_variable_list = m.get('localVariableList')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('preview') is not None:
+            self.preview = m.get('preview')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class PublishTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: PublishTemplateResponseBodyData = None,
+        success: bool = None,
+    ):
+        self.data = data
+        self.success = success
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = PublishTemplateResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PublishTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PublishTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PublishTemplateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class RegisterCallbackHeaders(TeaModel):
     def __init__(
         self,
@@ -6271,6 +7218,247 @@ class RegisterCallbackWithDelegateResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = RegisterCallbackWithDelegateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SaveTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SaveTemplateRequest(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        template_id: str = None,
+        template_source: str = None,
+    ):
+        self.name = name
+        self.template_id = template_id
+        self.template_source = template_source
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.template_source is not None:
+            result['templateSource'] = self.template_source
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('templateSource') is not None:
+            self.template_source = m.get('templateSource')
+        return self
+
+
+class SaveTemplateResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        common_variable_list: Any = None,
+        creator_id: str = None,
+        exp_variable_list: Any = None,
+        extend_type: str = None,
+        gmt_create: str = None,
+        gmt_modified: str = None,
+        local_variable_list: Any = None,
+        name: str = None,
+        preview: str = None,
+        status: str = None,
+        template_id: str = None,
+        type: str = None,
+    ):
+        self.common_variable_list = common_variable_list
+        self.creator_id = creator_id
+        self.exp_variable_list = exp_variable_list
+        self.extend_type = extend_type
+        self.gmt_create = gmt_create
+        self.gmt_modified = gmt_modified
+        self.local_variable_list = local_variable_list
+        self.name = name
+        self.preview = preview
+        self.status = status
+        self.template_id = template_id
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_variable_list is not None:
+            result['commonVariableList'] = self.common_variable_list
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.exp_variable_list is not None:
+            result['expVariableList'] = self.exp_variable_list
+        if self.extend_type is not None:
+            result['extendType'] = self.extend_type
+        if self.gmt_create is not None:
+            result['gmtCreate'] = self.gmt_create
+        if self.gmt_modified is not None:
+            result['gmtModified'] = self.gmt_modified
+        if self.local_variable_list is not None:
+            result['localVariableList'] = self.local_variable_list
+        if self.name is not None:
+            result['name'] = self.name
+        if self.preview is not None:
+            result['preview'] = self.preview
+        if self.status is not None:
+            result['status'] = self.status
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonVariableList') is not None:
+            self.common_variable_list = m.get('commonVariableList')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('expVariableList') is not None:
+            self.exp_variable_list = m.get('expVariableList')
+        if m.get('extendType') is not None:
+            self.extend_type = m.get('extendType')
+        if m.get('gmtCreate') is not None:
+            self.gmt_create = m.get('gmtCreate')
+        if m.get('gmtModified') is not None:
+            self.gmt_modified = m.get('gmtModified')
+        if m.get('localVariableList') is not None:
+            self.local_variable_list = m.get('localVariableList')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('preview') is not None:
+            self.preview = m.get('preview')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class SaveTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: SaveTemplateResponseBodyData = None,
+        success: bool = None,
+    ):
+        self.data = data
+        self.success = success
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = SaveTemplateResponseBodyData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SaveTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SaveTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SaveTemplateResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

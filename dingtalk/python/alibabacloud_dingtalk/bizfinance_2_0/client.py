@@ -1128,6 +1128,8 @@ class Client(OpenApiClient):
             body['remark'] = request.remark
         if not UtilClient.is_unset(request.reviewer):
             body['reviewer'] = request.reviewer
+        if not UtilClient.is_unset(request.signature):
+            body['signature'] = request.signature
         if not UtilClient.is_unset(request.tax_sign):
             body['taxSign'] = request.tax_sign
         real_headers = {}
@@ -1209,6 +1211,8 @@ class Client(OpenApiClient):
             body['remark'] = request.remark
         if not UtilClient.is_unset(request.reviewer):
             body['reviewer'] = request.reviewer
+        if not UtilClient.is_unset(request.signature):
+            body['signature'] = request.signature
         if not UtilClient.is_unset(request.tax_sign):
             body['taxSign'] = request.tax_sign
         real_headers = {}
