@@ -861,6 +861,7 @@ export class CreateScheduleConferenceRequest extends $tea.Model {
    * 1687928400000
    */
   endTime?: number;
+  scheduleConfSettingModel?: CreateScheduleConferenceRequestScheduleConfSettingModel;
   /**
    * @remarks
    * This parameter is required.
@@ -881,6 +882,7 @@ export class CreateScheduleConferenceRequest extends $tea.Model {
     return {
       creatorUnionId: 'creatorUnionId',
       endTime: 'endTime',
+      scheduleConfSettingModel: 'scheduleConfSettingModel',
       startTime: 'startTime',
       title: 'title',
     };
@@ -890,6 +892,7 @@ export class CreateScheduleConferenceRequest extends $tea.Model {
     return {
       creatorUnionId: 'string',
       endTime: 'number',
+      scheduleConfSettingModel: CreateScheduleConferenceRequestScheduleConfSettingModel,
       startTime: 'number',
       title: 'string',
     };
@@ -4822,6 +4825,231 @@ export class CreateCustomShortLinkResponseBodyResult extends $tea.Model {
   }
 }
 
+export class CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfOpenRecordSetting extends $tea.Model {
+  /**
+   * @example
+   * true：跟随 false：不跟随
+   */
+  isFollowHost?: boolean;
+  /**
+   * @example
+   * grid：宫格模式,默认9宫格(3x3) speech：演讲者模式 full_screen：全屏模式 auto_grid：自动宫格模式，默认最大4x4宫格 screen_cast：屏幕共享模式，仅放置屏幕共享流 p2p：双人通话模式 full_screen_and_speaker：共享内容+发言人模式
+   */
+  mode?: string;
+  /**
+   * @example
+   * 0：不自动开启 1：自动开启
+   */
+  recordAutoStart?: number;
+  /**
+   * @example
+   * 0：我以主持人身份入会后自动开启 1：其他人以联席主持人身份入会后开启 2：任何人以任何身份入会后开启
+   */
+  recordAutoStartType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      isFollowHost: 'isFollowHost',
+      mode: 'mode',
+      recordAutoStart: 'recordAutoStart',
+      recordAutoStartType: 'recordAutoStartType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isFollowHost: 'boolean',
+      mode: 'string',
+      recordAutoStart: 'number',
+      recordAutoStartType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings extends $tea.Model {
+  /**
+   * @example
+   * 0：不自动打开 1：仅主持人/联席主持人自动打开 2：全员自动打开
+   */
+  autoOpenMode?: number;
+  /**
+   * @example
+   * COOLAPP-0-1026633886192127xxxB000W
+   */
+  coolAppCode?: string;
+  /**
+   * @example
+   * bizData
+   */
+  extensionAppBizData?: string;
+  static names(): { [key: string]: string } {
+    return {
+      autoOpenMode: 'autoOpenMode',
+      coolAppCode: 'coolAppCode',
+      extensionAppBizData: 'extensionAppBizData',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      autoOpenMode: 'number',
+      coolAppCode: 'string',
+      extensionAppBizData: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfVirtualExtraSetting extends $tea.Model {
+  /**
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
+  cloudRecordOwnerUnionId?: string;
+  /**
+   * @example
+   * 0：未开启 1：开启
+   */
+  enableChat?: number;
+  /**
+   * @example
+   * true：允许匿名登录入会 false：不允许匿名登录入会
+   */
+  enableWebAnonymousJoin?: boolean;
+  /**
+   * @example
+   * 0：未开启 1：开启
+   */
+  joinBeforeHost?: number;
+  /**
+   * @example
+   * 0：未开启 1：开启
+   */
+  lockMediaStatusMicMute?: number;
+  /**
+   * @example
+   * 0：未开启 1：开启
+   */
+  lockNick?: number;
+  /**
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
+  minutesOwnerUnionId?: string;
+  moziConfExtensionAppSettings?: CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings[];
+  pushAllMeetingRecords?: boolean;
+  pushCloudRecordCard?: boolean;
+  pushMinutesCard?: boolean;
+  /**
+   * @example
+   * 0：未开启 1：开启
+   */
+  waitingRoom?: number;
+  static names(): { [key: string]: string } {
+    return {
+      cloudRecordOwnerUnionId: 'cloudRecordOwnerUnionId',
+      enableChat: 'enableChat',
+      enableWebAnonymousJoin: 'enableWebAnonymousJoin',
+      joinBeforeHost: 'joinBeforeHost',
+      lockMediaStatusMicMute: 'lockMediaStatusMicMute',
+      lockNick: 'lockNick',
+      minutesOwnerUnionId: 'minutesOwnerUnionId',
+      moziConfExtensionAppSettings: 'moziConfExtensionAppSettings',
+      pushAllMeetingRecords: 'pushAllMeetingRecords',
+      pushCloudRecordCard: 'pushCloudRecordCard',
+      pushMinutesCard: 'pushMinutesCard',
+      waitingRoom: 'waitingRoom',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cloudRecordOwnerUnionId: 'string',
+      enableChat: 'number',
+      enableWebAnonymousJoin: 'boolean',
+      joinBeforeHost: 'number',
+      lockMediaStatusMicMute: 'number',
+      lockNick: 'number',
+      minutesOwnerUnionId: 'string',
+      moziConfExtensionAppSettings: { 'type': 'array', 'itemType': CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings },
+      pushAllMeetingRecords: 'boolean',
+      pushCloudRecordCard: 'boolean',
+      pushMinutesCard: 'boolean',
+      waitingRoom: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateScheduleConferenceRequestScheduleConfSettingModel extends $tea.Model {
+  cohostUnionIds?: string[];
+  /**
+   * @example
+   * dingc02f685fa06381c44ac5d6980864d335
+   */
+  confAllowedCorpId?: string;
+  /**
+   * @example
+   * 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
+   */
+  hostUnionId?: string;
+  /**
+   * @example
+   * 0：取消锁定 1：锁定
+   */
+  lockRoom?: number;
+  moziConfOpenRecordSetting?: CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfOpenRecordSetting;
+  moziConfVirtualExtraSetting?: CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfVirtualExtraSetting;
+  /**
+   * @example
+   * -1：未开启 1：开启 6：超过6人自动开启静音
+   */
+  muteOnJoin?: number;
+  /**
+   * @example
+   * 0：允许共享 1：禁止共享
+   */
+  screenShareForbidden?: number;
+  static names(): { [key: string]: string } {
+    return {
+      cohostUnionIds: 'cohostUnionIds',
+      confAllowedCorpId: 'confAllowedCorpId',
+      hostUnionId: 'hostUnionId',
+      lockRoom: 'lockRoom',
+      moziConfOpenRecordSetting: 'moziConfOpenRecordSetting',
+      moziConfVirtualExtraSetting: 'moziConfVirtualExtraSetting',
+      muteOnJoin: 'muteOnJoin',
+      screenShareForbidden: 'screenShareForbidden',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      cohostUnionIds: { 'type': 'array', 'itemType': 'string' },
+      confAllowedCorpId: 'string',
+      hostUnionId: 'string',
+      lockRoom: 'number',
+      moziConfOpenRecordSetting: CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfOpenRecordSetting,
+      moziConfVirtualExtraSetting: CreateScheduleConferenceRequestScheduleConfSettingModelMoziConfVirtualExtraSetting,
+      muteOnJoin: 'number',
+      screenShareForbidden: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetConfDetailDataResponseBodyList extends $tea.Model {
   /**
    * @example
@@ -5573,6 +5801,34 @@ export class QueryCloudRecordVideoResponseBodyVideoList extends $tea.Model {
   }
 }
 
+export class QueryConferenceInfoResponseBodyConfInfoExtensionAppSettings extends $tea.Model {
+  appCode?: string;
+  appId?: string;
+  autoOpenMode?: number;
+  extensionAppBizData?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appCode: 'appCode',
+      appId: 'appId',
+      autoOpenMode: 'autoOpenMode',
+      extensionAppBizData: 'extensionAppBizData',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appCode: 'string',
+      appId: 'string',
+      autoOpenMode: 'number',
+      extensionAppBizData: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryConferenceInfoResponseBodyConfInfo extends $tea.Model {
   /**
    * @example
@@ -5584,6 +5840,9 @@ export class QueryConferenceInfoResponseBodyConfInfo extends $tea.Model {
    * 15
    */
   attendNum?: number;
+  bizType?: string;
+  cloudRecordOwnerUnionId?: string;
+  cloudRecordStatus?: number;
   /**
    * @example
    * 1000000
@@ -5605,6 +5864,7 @@ export class QueryConferenceInfoResponseBodyConfInfo extends $tea.Model {
    */
   creatorNick?: string;
   endTime?: number;
+  extensionAppSettings?: QueryConferenceInfoResponseBodyConfInfoExtensionAppSettings[];
   /**
    * @example
    * https://meeting.dingtalk.com/app?roomCode=42726033559&token=1_7ac974ac-6e4f-47c3-b82b-bfb32fd94d2c
@@ -5615,11 +5875,14 @@ export class QueryConferenceInfoResponseBodyConfInfo extends $tea.Model {
    * 20
    */
   invitedNum?: number;
+  minutesOwnerUnionId?: string;
+  minutesStatus?: number;
   /**
    * @example
    * 42726033559
    */
   roomCode?: string;
+  scheduleConferenceId?: string;
   /**
    * @example
    * 1663293270000
@@ -5639,14 +5902,21 @@ export class QueryConferenceInfoResponseBodyConfInfo extends $tea.Model {
     return {
       activeNum: 'activeNum',
       attendNum: 'attendNum',
+      bizType: 'bizType',
+      cloudRecordOwnerUnionId: 'cloudRecordOwnerUnionId',
+      cloudRecordStatus: 'cloudRecordStatus',
       confDuration: 'confDuration',
       conferenceId: 'conferenceId',
       creatorId: 'creatorId',
       creatorNick: 'creatorNick',
       endTime: 'endTime',
+      extensionAppSettings: 'extensionAppSettings',
       externalLinkUrl: 'externalLinkUrl',
       invitedNum: 'invitedNum',
+      minutesOwnerUnionId: 'minutesOwnerUnionId',
+      minutesStatus: 'minutesStatus',
       roomCode: 'roomCode',
+      scheduleConferenceId: 'scheduleConferenceId',
       startTime: 'startTime',
       status: 'status',
       title: 'title',
@@ -5657,14 +5927,21 @@ export class QueryConferenceInfoResponseBodyConfInfo extends $tea.Model {
     return {
       activeNum: 'number',
       attendNum: 'number',
+      bizType: 'string',
+      cloudRecordOwnerUnionId: 'string',
+      cloudRecordStatus: 'number',
       confDuration: 'number',
       conferenceId: 'string',
       creatorId: 'string',
       creatorNick: 'string',
       endTime: 'number',
+      extensionAppSettings: { 'type': 'array', 'itemType': QueryConferenceInfoResponseBodyConfInfoExtensionAppSettings },
       externalLinkUrl: 'string',
       invitedNum: 'number',
+      minutesOwnerUnionId: 'string',
+      minutesStatus: 'number',
       roomCode: 'string',
+      scheduleConferenceId: 'string',
       startTime: 'number',
       status: 'number',
       title: 'string',
@@ -6391,6 +6668,50 @@ export class QueryScheduleConferenceInfoResponseBodyConferenceList extends $tea.
   }
 }
 
+export class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecordSetting extends $tea.Model {
+  /**
+   * @example
+   * true：跟随 false：不跟随
+   */
+  isFollowHost?: boolean;
+  /**
+   * @example
+   * grid：宫格模式,默认9宫格(3x3) speech：演讲者模式 full_screen：全屏模式 auto_grid：自动宫格模式，默认最大4x4宫格 screen_cast：屏幕共享模式，仅放置屏幕共享流 p2p：双人通话模式 full_screen_and_speaker：共享内容+发言人模式
+   */
+  mode?: string;
+  /**
+   * @example
+   * 0：不自动开启 1：自动开启
+   */
+  recordAutoStart?: number;
+  /**
+   * @example
+   * 0：我以主持人身份入会后自动开启 1：其他人以联席主持人身份入会后开启 2：任何人以任何身份入会后开启
+   */
+  recordAutoStartType?: number;
+  static names(): { [key: string]: string } {
+    return {
+      isFollowHost: 'isFollowHost',
+      mode: 'mode',
+      recordAutoStart: 'recordAutoStart',
+      recordAutoStartType: 'recordAutoStartType',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      isFollowHost: 'boolean',
+      mode: 'string',
+      recordAutoStart: 'number',
+      recordAutoStartType: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings extends $tea.Model {
   /**
    * @example
@@ -6529,6 +6850,7 @@ export class UpdateScheduleConfSettingsRequestScheduleConfSettingModel extends $
    * 0：取消锁定 1：锁定
    */
   lockRoom?: number;
+  moziConfOpenRecordSetting?: UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecordSetting;
   moziConfVirtualExtraSetting?: UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting;
   /**
    * @example
@@ -6546,6 +6868,7 @@ export class UpdateScheduleConfSettingsRequestScheduleConfSettingModel extends $
       confAllowedCorpId: 'confAllowedCorpId',
       hostUnionId: 'hostUnionId',
       lockRoom: 'lockRoom',
+      moziConfOpenRecordSetting: 'moziConfOpenRecordSetting',
       moziConfVirtualExtraSetting: 'moziConfVirtualExtraSetting',
       muteOnJoin: 'muteOnJoin',
       screenShareForbidden: 'screenShareForbidden',
@@ -6558,6 +6881,7 @@ export class UpdateScheduleConfSettingsRequestScheduleConfSettingModel extends $
       confAllowedCorpId: 'string',
       hostUnionId: 'string',
       lockRoom: 'number',
+      moziConfOpenRecordSetting: UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecordSetting,
       moziConfVirtualExtraSetting: UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting,
       muteOnJoin: 'number',
       screenShareForbidden: 'number',
@@ -6903,6 +7227,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.endTime)) {
       body["endTime"] = request.endTime;
+    }
+
+    if (!Util.isUnset(request.scheduleConfSettingModel)) {
+      body["scheduleConfSettingModel"] = request.scheduleConfSettingModel;
     }
 
     if (!Util.isUnset(request.startTime)) {

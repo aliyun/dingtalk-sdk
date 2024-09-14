@@ -1220,6 +1220,7 @@ export class OrderBillingRequest extends $tea.Model {
   purchaserTel?: string;
   remark?: string;
   reviewer?: string;
+  signature?: string;
   taxSign?: number;
   static names(): { [key: string]: string } {
     return {
@@ -1242,6 +1243,7 @@ export class OrderBillingRequest extends $tea.Model {
       purchaserTel: 'purchaserTel',
       remark: 'remark',
       reviewer: 'reviewer',
+      signature: 'signature',
       taxSign: 'taxSign',
     };
   }
@@ -1267,6 +1269,7 @@ export class OrderBillingRequest extends $tea.Model {
       purchaserTel: 'string',
       remark: 'string',
       reviewer: 'string',
+      signature: 'string',
       taxSign: 'number',
     };
   }
@@ -3867,6 +3870,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.reviewer)) {
       body["reviewer"] = request.reviewer;
+    }
+
+    if (!Util.isUnset(request.signature)) {
+      body["signature"] = request.signature;
     }
 
     if (!Util.isUnset(request.taxSign)) {

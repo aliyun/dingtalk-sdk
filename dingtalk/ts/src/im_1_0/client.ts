@@ -6809,6 +6809,111 @@ export class QueryOpenGroupBaseInfoResponse extends $tea.Model {
   }
 }
 
+export class QueryPersonalMessageReadStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPersonalMessageReadStatusRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cidQGfKJCXMfVxZxxx3ZL0Qlw==
+   */
+  openConversationId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * msghnezLi8wb6pGqMsadhj9n0yw==
+   */
+  openMessageId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openConversationId: 'openConversationId',
+      openMessageId: 'openMessageId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openConversationId: 'string',
+      openMessageId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPersonalMessageReadStatusResponseBody extends $tea.Model {
+  result?: QueryPersonalMessageReadStatusResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryPersonalMessageReadStatusResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPersonalMessageReadStatusResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryPersonalMessageReadStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryPersonalMessageReadStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryRecentConversationsHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -11898,6 +12003,47 @@ export class QueryOpenGroupBaseInfoResponseBodyResult extends $tea.Model {
   }
 }
 
+export class QueryPersonalMessageReadStatusResponseBodyResultMessageReadInfoList extends $tea.Model {
+  readStatus?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      readStatus: 'readStatus',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      readStatus: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPersonalMessageReadStatusResponseBodyResult extends $tea.Model {
+  messageReadInfoList?: QueryPersonalMessageReadStatusResponseBodyResultMessageReadInfoList[];
+  static names(): { [key: string]: string } {
+    return {
+      messageReadInfoList: 'messageReadInfoList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      messageReadInfoList: { 'type': 'array', 'itemType': QueryPersonalMessageReadStatusResponseBodyResultMessageReadInfoList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryRecentConversationsResponseBodyResultConversationList extends $tea.Model {
   /**
    * @remarks
@@ -16321,6 +16467,64 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryOpenGroupBaseInfoHeaders({ });
     return await this.queryOpenGroupBaseInfoWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 用户身份查询消息已读未读状态
+   * 
+   * @param request - QueryPersonalMessageReadStatusRequest
+   * @param headers - QueryPersonalMessageReadStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryPersonalMessageReadStatusResponse
+   */
+  async queryPersonalMessageReadStatusWithOptions(request: QueryPersonalMessageReadStatusRequest, headers: QueryPersonalMessageReadStatusHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPersonalMessageReadStatusResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.openMessageId)) {
+      body["openMessageId"] = request.openMessageId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryPersonalMessageReadStatus",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/me/messages/readStatuses/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryPersonalMessageReadStatusResponse>(await this.execute(params, req, runtime), new QueryPersonalMessageReadStatusResponse({}));
+  }
+
+  /**
+   * 用户身份查询消息已读未读状态
+   * 
+   * @param request - QueryPersonalMessageReadStatusRequest
+   * @returns QueryPersonalMessageReadStatusResponse
+   */
+  async queryPersonalMessageReadStatus(request: QueryPersonalMessageReadStatusRequest): Promise<QueryPersonalMessageReadStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryPersonalMessageReadStatusHeaders({ });
+    return await this.queryPersonalMessageReadStatusWithOptions(request, headers, runtime);
   }
 
   /**

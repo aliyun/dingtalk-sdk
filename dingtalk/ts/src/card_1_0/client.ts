@@ -240,6 +240,98 @@ export class AppendSpaceWithDelegateResponse extends $tea.Model {
   }
 }
 
+export class CopyTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CopyTemplateRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  templateId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      templateId: 'templateId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      templateId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CopyTemplateResponseBody extends $tea.Model {
+  data?: CopyTemplateResponseBodyData;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: CopyTemplateResponseBodyData,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CopyTemplateResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CopyTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CopyTemplateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateAndDeliverHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -896,6 +988,203 @@ export class CreateCardWithDelegateResponse extends $tea.Model {
   }
 }
 
+export class CreateTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTemplateRequest extends $tea.Model {
+  appId?: string;
+  creatorId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  extendType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appId: 'appId',
+      creatorId: 'creatorId',
+      extendType: 'extendType',
+      name: 'name',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appId: 'string',
+      creatorId: 'string',
+      extendType: 'string',
+      name: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTemplateResponseBody extends $tea.Model {
+  data?: CreateTemplateResponseBodyData;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: CreateTemplateResponseBodyData,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateTemplateResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateTemplateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteTemplateRequest extends $tea.Model {
+  templateId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      templateId: 'templateId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      templateId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteTemplateResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class DeleteTemplateResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: DeleteTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: DeleteTemplateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeliverCardHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1156,6 +1445,192 @@ export class DeliverCardWithDelegateResponse extends $tea.Model {
   }
 }
 
+export class GetTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTemplateRequest extends $tea.Model {
+  templateId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      templateId: 'templateId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      templateId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTemplateResponseBody extends $tea.Model {
+  data?: GetTemplateResponseBodyData;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: GetTemplateResponseBodyData,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetTemplateResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetTemplateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PublishTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PublishTemplateRequest extends $tea.Model {
+  name?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  templateId?: string;
+  templateSource?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      templateId: 'templateId',
+      templateSource: 'templateSource',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      templateId: 'string',
+      templateSource: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PublishTemplateResponseBody extends $tea.Model {
+  data?: PublishTemplateResponseBodyData;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: PublishTemplateResponseBodyData,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PublishTemplateResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: PublishTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: PublishTemplateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RegisterCallbackHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -1378,6 +1853,100 @@ export class RegisterCallbackWithDelegateResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: RegisterCallbackWithDelegateResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveTemplateHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveTemplateRequest extends $tea.Model {
+  name?: string;
+  templateId?: string;
+  templateSource?: string;
+  static names(): { [key: string]: string } {
+    return {
+      name: 'name',
+      templateId: 'templateId',
+      templateSource: 'templateSource',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      name: 'string',
+      templateId: 'string',
+      templateSource: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveTemplateResponseBody extends $tea.Model {
+  data?: SaveTemplateResponseBodyData;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      data: 'data',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      data: SaveTemplateResponseBodyData,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveTemplateResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SaveTemplateResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SaveTemplateResponseBody,
     };
   }
 
@@ -2170,6 +2739,25 @@ export class AppendSpaceWithDelegateRequestTopOpenSpaceModel extends $tea.Model 
   static types(): { [key: string]: any } {
     return {
       spaceType: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CopyTemplateResponseBodyData extends $tea.Model {
+  templateId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      templateId: 'templateId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      templateId: 'string',
     };
   }
 
@@ -4264,6 +4852,25 @@ export class CreateCardWithDelegateRequestTopOpenSpaceModel extends $tea.Model {
   }
 }
 
+export class CreateTemplateResponseBodyData extends $tea.Model {
+  templateId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      templateId: 'templateId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      templateId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class DeliverCardRequestCoFeedOpenDeliverModel extends $tea.Model {
   /**
    * @example
@@ -4696,6 +5303,107 @@ export class DeliverCardWithDelegateResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetTemplateResponseBodyData extends $tea.Model {
+  commonVariableList?: any;
+  creatorId?: string;
+  expVariableList?: any;
+  gmtCreate?: string;
+  gmtModified?: string;
+  localVariableList?: any;
+  name?: string;
+  preview?: string;
+  status?: string;
+  templateId?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonVariableList: 'commonVariableList',
+      creatorId: 'creatorId',
+      expVariableList: 'expVariableList',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+      localVariableList: 'localVariableList',
+      name: 'name',
+      preview: 'preview',
+      status: 'status',
+      templateId: 'templateId',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonVariableList: 'any',
+      creatorId: 'string',
+      expVariableList: 'any',
+      gmtCreate: 'string',
+      gmtModified: 'string',
+      localVariableList: 'any',
+      name: 'string',
+      preview: 'string',
+      status: 'string',
+      templateId: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class PublishTemplateResponseBodyData extends $tea.Model {
+  commonVariableList?: any;
+  creatorId?: string;
+  expVariableList?: any;
+  extendType?: string;
+  gmtCreate?: string;
+  gmtModified?: string;
+  localVariableList?: any;
+  name?: string;
+  preview?: string;
+  status?: string;
+  templateId?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonVariableList: 'commonVariableList',
+      creatorId: 'creatorId',
+      expVariableList: 'expVariableList',
+      extendType: 'extendType',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+      localVariableList: 'localVariableList',
+      name: 'name',
+      preview: 'preview',
+      status: 'status',
+      templateId: 'templateId',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonVariableList: 'any',
+      creatorId: 'string',
+      expVariableList: 'any',
+      extendType: 'string',
+      gmtCreate: 'string',
+      gmtModified: 'string',
+      localVariableList: 'any',
+      name: 'string',
+      preview: 'string',
+      status: 'string',
+      templateId: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class RegisterCallbackResponseBodyResult extends $tea.Model {
   apiSecret?: string;
   callbackUrl?: string;
@@ -4732,6 +5440,58 @@ export class RegisterCallbackWithDelegateResponseBodyResult extends $tea.Model {
     return {
       apiSecret: 'string',
       callbackUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SaveTemplateResponseBodyData extends $tea.Model {
+  commonVariableList?: any;
+  creatorId?: string;
+  expVariableList?: any;
+  extendType?: string;
+  gmtCreate?: string;
+  gmtModified?: string;
+  localVariableList?: any;
+  name?: string;
+  preview?: string;
+  status?: string;
+  templateId?: string;
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonVariableList: 'commonVariableList',
+      creatorId: 'creatorId',
+      expVariableList: 'expVariableList',
+      extendType: 'extendType',
+      gmtCreate: 'gmtCreate',
+      gmtModified: 'gmtModified',
+      localVariableList: 'localVariableList',
+      name: 'name',
+      preview: 'preview',
+      status: 'status',
+      templateId: 'templateId',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonVariableList: 'any',
+      creatorId: 'string',
+      expVariableList: 'any',
+      extendType: 'string',
+      gmtCreate: 'string',
+      gmtModified: 'string',
+      localVariableList: 'any',
+      name: 'string',
+      preview: 'string',
+      status: 'string',
+      templateId: 'string',
+      type: 'string',
     };
   }
 
@@ -4975,6 +5735,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AppendSpaceWithDelegateHeaders({ });
     return await this.appendSpaceWithDelegateWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 复制模板
+   * 
+   * @param request - CopyTemplateRequest
+   * @param headers - CopyTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CopyTemplateResponse
+   */
+  async copyTemplateWithOptions(request: CopyTemplateRequest, headers: CopyTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<CopyTemplateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.templateId)) {
+      body["templateId"] = request.templateId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CopyTemplate",
+      version: "card_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/card/templates/copy`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CopyTemplateResponse>(await this.execute(params, req, runtime), new CopyTemplateResponse({}));
+  }
+
+  /**
+   * 复制模板
+   * 
+   * @param request - CopyTemplateRequest
+   * @returns CopyTemplateResponse
+   */
+  async copyTemplate(request: CopyTemplateRequest): Promise<CopyTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CopyTemplateHeaders({ });
+    return await this.copyTemplateWithOptions(request, headers, runtime);
   }
 
   /**
@@ -5458,6 +6272,130 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * 创建模板
+   * 
+   * @param request - CreateTemplateRequest
+   * @param headers - CreateTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateTemplateResponse
+   */
+  async createTemplateWithOptions(request: CreateTemplateRequest, headers: CreateTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<CreateTemplateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.appId)) {
+      body["appId"] = request.appId;
+    }
+
+    if (!Util.isUnset(request.creatorId)) {
+      body["creatorId"] = request.creatorId;
+    }
+
+    if (!Util.isUnset(request.extendType)) {
+      body["extendType"] = request.extendType;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.type)) {
+      body["type"] = request.type;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateTemplate",
+      version: "card_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/card/templates`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateTemplateResponse>(await this.execute(params, req, runtime), new CreateTemplateResponse({}));
+  }
+
+  /**
+   * 创建模板
+   * 
+   * @param request - CreateTemplateRequest
+   * @returns CreateTemplateResponse
+   */
+  async createTemplate(request: CreateTemplateRequest): Promise<CreateTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateTemplateHeaders({ });
+    return await this.createTemplateWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 删除模板
+   * 
+   * @param request - DeleteTemplateRequest
+   * @param headers - DeleteTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns DeleteTemplateResponse
+   */
+  async deleteTemplateWithOptions(request: DeleteTemplateRequest, headers: DeleteTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<DeleteTemplateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.templateId)) {
+      body["templateId"] = request.templateId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "DeleteTemplate",
+      version: "card_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/card/templates/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<DeleteTemplateResponse>(await this.execute(params, req, runtime), new DeleteTemplateResponse({}));
+  }
+
+  /**
+   * 删除模板
+   * 
+   * @param request - DeleteTemplateRequest
+   * @returns DeleteTemplateResponse
+   */
+  async deleteTemplate(request: DeleteTemplateRequest): Promise<DeleteTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new DeleteTemplateHeaders({ });
+    return await this.deleteTemplateWithOptions(request, headers, runtime);
+  }
+
+  /**
    * 投放卡片
    * 
    * @param request - DeliverCardRequest
@@ -5630,6 +6568,122 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * 获取模板信息
+   * 
+   * @param request - GetTemplateRequest
+   * @param headers - GetTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetTemplateResponse
+   */
+  async getTemplateWithOptions(request: GetTemplateRequest, headers: GetTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<GetTemplateResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.templateId)) {
+      query["templateId"] = request.templateId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetTemplate",
+      version: "card_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/card/templates`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetTemplateResponse>(await this.execute(params, req, runtime), new GetTemplateResponse({}));
+  }
+
+  /**
+   * 获取模板信息
+   * 
+   * @param request - GetTemplateRequest
+   * @returns GetTemplateResponse
+   */
+  async getTemplate(request: GetTemplateRequest): Promise<GetTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetTemplateHeaders({ });
+    return await this.getTemplateWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 发布模板
+   * 
+   * @param request - PublishTemplateRequest
+   * @param headers - PublishTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns PublishTemplateResponse
+   */
+  async publishTemplateWithOptions(request: PublishTemplateRequest, headers: PublishTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<PublishTemplateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.templateId)) {
+      body["templateId"] = request.templateId;
+    }
+
+    if (!Util.isUnset(request.templateSource)) {
+      body["templateSource"] = request.templateSource;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "PublishTemplate",
+      version: "card_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/card/templates/publish`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<PublishTemplateResponse>(await this.execute(params, req, runtime), new PublishTemplateResponse({}));
+  }
+
+  /**
+   * 发布模板
+   * 
+   * @param request - PublishTemplateRequest
+   * @returns PublishTemplateResponse
+   */
+  async publishTemplate(request: PublishTemplateRequest): Promise<PublishTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new PublishTemplateHeaders({ });
+    return await this.publishTemplateWithOptions(request, headers, runtime);
+  }
+
+  /**
    * 注册卡片回调地址
    * 
    * @param request - RegisterCallbackRequest
@@ -5759,6 +6813,68 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new RegisterCallbackWithDelegateHeaders({ });
     return await this.registerCallbackWithDelegateWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 保存模板
+   * 
+   * @param request - SaveTemplateRequest
+   * @param headers - SaveTemplateHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SaveTemplateResponse
+   */
+  async saveTemplateWithOptions(request: SaveTemplateRequest, headers: SaveTemplateHeaders, runtime: $Util.RuntimeOptions): Promise<SaveTemplateResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.templateId)) {
+      body["templateId"] = request.templateId;
+    }
+
+    if (!Util.isUnset(request.templateSource)) {
+      body["templateSource"] = request.templateSource;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SaveTemplate",
+      version: "card_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/card/templates/save`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SaveTemplateResponse>(await this.execute(params, req, runtime), new SaveTemplateResponse({}));
+  }
+
+  /**
+   * 保存模板
+   * 
+   * @param request - SaveTemplateRequest
+   * @returns SaveTemplateResponse
+   */
+  async saveTemplate(request: SaveTemplateRequest): Promise<SaveTemplateResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SaveTemplateHeaders({ });
+    return await this.saveTemplateWithOptions(request, headers, runtime);
   }
 
   /**

@@ -5787,6 +5787,105 @@ export class UpdateIsvCardMessageResponse extends $tea.Model {
   }
 }
 
+export class UploadAttachmentHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadAttachmentRequest extends $tea.Model {
+  /**
+   * @example
+   * @dsa8d87y7c8d8c
+   */
+  mediaId?: string;
+  /**
+   * @example
+   * 16768800278994283
+   */
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      mediaId: 'mediaId',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      mediaId: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadAttachmentResponseBody extends $tea.Model {
+  result?: string;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'string',
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UploadAttachmentResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UploadAttachmentResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UploadAttachmentResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddHrmLegalEntityRequestExtManageAddress extends $tea.Model {
   /**
    * @example
@@ -12210,6 +12309,64 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateIsvCardMessageHeaders({ });
     return await this.updateIsvCardMessageWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 上传附件材料
+   * 
+   * @param request - UploadAttachmentRequest
+   * @param headers - UploadAttachmentHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UploadAttachmentResponse
+   */
+  async uploadAttachmentWithOptions(request: UploadAttachmentRequest, headers: UploadAttachmentHeaders, runtime: $Util.RuntimeOptions): Promise<UploadAttachmentResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.mediaId)) {
+      body["mediaId"] = request.mediaId;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      body["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UploadAttachment",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/attachments/upload`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UploadAttachmentResponse>(await this.execute(params, req, runtime), new UploadAttachmentResponse({}));
+  }
+
+  /**
+   * 上传附件材料
+   * 
+   * @param request - UploadAttachmentRequest
+   * @returns UploadAttachmentResponse
+   */
+  async uploadAttachment(request: UploadAttachmentRequest): Promise<UploadAttachmentResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UploadAttachmentHeaders({ });
+    return await this.uploadAttachmentWithOptions(request, headers, runtime);
   }
 
 }
