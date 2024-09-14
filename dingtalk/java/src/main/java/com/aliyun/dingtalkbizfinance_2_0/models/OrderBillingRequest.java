@@ -81,6 +81,9 @@ public class OrderBillingRequest extends TeaModel {
     @NameInMap("reviewer")
     public String reviewer;
 
+    @NameInMap("signature")
+    public String signature;
+
     @NameInMap("taxSign")
     public Integer taxSign;
 
@@ -239,6 +242,14 @@ public class OrderBillingRequest extends TeaModel {
     }
     public String getReviewer() {
         return this.reviewer;
+    }
+
+    public OrderBillingRequest setSignature(String signature) {
+        this.signature = signature;
+        return this;
+    }
+    public String getSignature() {
+        return this.signature;
     }
 
     public OrderBillingRequest setTaxSign(Integer taxSign) {

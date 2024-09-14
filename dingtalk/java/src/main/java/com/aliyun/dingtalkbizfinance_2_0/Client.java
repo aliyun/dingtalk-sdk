@@ -633,6 +633,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("reviewer", request.reviewer);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.signature)) {
+            body.put("signature", request.signature);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.taxSign)) {
             body.put("taxSign", request.taxSign);
         }

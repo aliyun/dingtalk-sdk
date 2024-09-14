@@ -50,6 +50,74 @@ public class UpdateScheduleConfSettingsRequest extends TeaModel {
         return this.scheduleConferenceId;
     }
 
+    public static class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecordSetting extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>true：跟随 false：不跟随</p>
+         */
+        @NameInMap("isFollowHost")
+        public Boolean isFollowHost;
+
+        /**
+         * <strong>example:</strong>
+         * <p>grid：宫格模式,默认9宫格(3x3) speech：演讲者模式 full_screen：全屏模式 auto_grid：自动宫格模式，默认最大4x4宫格 screen_cast：屏幕共享模式，仅放置屏幕共享流 p2p：双人通话模式 full_screen_and_speaker：共享内容+发言人模式</p>
+         */
+        @NameInMap("mode")
+        public String mode;
+
+        /**
+         * <strong>example:</strong>
+         * <p>0：不自动开启 1：自动开启</p>
+         */
+        @NameInMap("recordAutoStart")
+        public Integer recordAutoStart;
+
+        /**
+         * <strong>example:</strong>
+         * <p>0：我以主持人身份入会后自动开启 1：其他人以联席主持人身份入会后开启 2：任何人以任何身份入会后开启</p>
+         */
+        @NameInMap("recordAutoStartType")
+        public Integer recordAutoStartType;
+
+        public static UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecordSetting build(java.util.Map<String, ?> map) throws Exception {
+            UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecordSetting self = new UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecordSetting();
+            return TeaModel.build(map, self);
+        }
+
+        public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecordSetting setIsFollowHost(Boolean isFollowHost) {
+            this.isFollowHost = isFollowHost;
+            return this;
+        }
+        public Boolean getIsFollowHost() {
+            return this.isFollowHost;
+        }
+
+        public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecordSetting setMode(String mode) {
+            this.mode = mode;
+            return this;
+        }
+        public String getMode() {
+            return this.mode;
+        }
+
+        public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecordSetting setRecordAutoStart(Integer recordAutoStart) {
+            this.recordAutoStart = recordAutoStart;
+            return this;
+        }
+        public Integer getRecordAutoStart() {
+            return this.recordAutoStart;
+        }
+
+        public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecordSetting setRecordAutoStartType(Integer recordAutoStartType) {
+            this.recordAutoStartType = recordAutoStartType;
+            return this;
+        }
+        public Integer getRecordAutoStartType() {
+            return this.recordAutoStartType;
+        }
+
+    }
+
     public static class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSettingMoziConfExtensionAppSettings extends TeaModel {
         /**
          * <strong>example:</strong>
@@ -300,6 +368,9 @@ public class UpdateScheduleConfSettingsRequest extends TeaModel {
         @NameInMap("lockRoom")
         public Integer lockRoom;
 
+        @NameInMap("moziConfOpenRecordSetting")
+        public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecordSetting moziConfOpenRecordSetting;
+
         @NameInMap("moziConfVirtualExtraSetting")
         public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting moziConfVirtualExtraSetting;
 
@@ -352,6 +423,14 @@ public class UpdateScheduleConfSettingsRequest extends TeaModel {
         }
         public Integer getLockRoom() {
             return this.lockRoom;
+        }
+
+        public UpdateScheduleConfSettingsRequestScheduleConfSettingModel setMoziConfOpenRecordSetting(UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecordSetting moziConfOpenRecordSetting) {
+            this.moziConfOpenRecordSetting = moziConfOpenRecordSetting;
+            return this;
+        }
+        public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecordSetting getMoziConfOpenRecordSetting() {
+            return this.moziConfOpenRecordSetting;
         }
 
         public UpdateScheduleConfSettingsRequestScheduleConfSettingModel setMoziConfVirtualExtraSetting(UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting moziConfVirtualExtraSetting) {

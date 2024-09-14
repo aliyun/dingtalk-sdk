@@ -350,6 +350,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("endTime", request.endTime);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.scheduleConfSettingModel)) {
+            body.put("scheduleConfSettingModel", request.scheduleConfSettingModel);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
             body.put("startTime", request.startTime);
         }

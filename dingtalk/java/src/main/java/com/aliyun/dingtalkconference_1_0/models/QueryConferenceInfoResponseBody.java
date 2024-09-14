@@ -20,6 +20,58 @@ public class QueryConferenceInfoResponseBody extends TeaModel {
         return this.confInfo;
     }
 
+    public static class QueryConferenceInfoResponseBodyConfInfoExtensionAppSettings extends TeaModel {
+        @NameInMap("appCode")
+        public String appCode;
+
+        @NameInMap("appId")
+        public String appId;
+
+        @NameInMap("autoOpenMode")
+        public Integer autoOpenMode;
+
+        @NameInMap("extensionAppBizData")
+        public String extensionAppBizData;
+
+        public static QueryConferenceInfoResponseBodyConfInfoExtensionAppSettings build(java.util.Map<String, ?> map) throws Exception {
+            QueryConferenceInfoResponseBodyConfInfoExtensionAppSettings self = new QueryConferenceInfoResponseBodyConfInfoExtensionAppSettings();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryConferenceInfoResponseBodyConfInfoExtensionAppSettings setAppCode(String appCode) {
+            this.appCode = appCode;
+            return this;
+        }
+        public String getAppCode() {
+            return this.appCode;
+        }
+
+        public QueryConferenceInfoResponseBodyConfInfoExtensionAppSettings setAppId(String appId) {
+            this.appId = appId;
+            return this;
+        }
+        public String getAppId() {
+            return this.appId;
+        }
+
+        public QueryConferenceInfoResponseBodyConfInfoExtensionAppSettings setAutoOpenMode(Integer autoOpenMode) {
+            this.autoOpenMode = autoOpenMode;
+            return this;
+        }
+        public Integer getAutoOpenMode() {
+            return this.autoOpenMode;
+        }
+
+        public QueryConferenceInfoResponseBodyConfInfoExtensionAppSettings setExtensionAppBizData(String extensionAppBizData) {
+            this.extensionAppBizData = extensionAppBizData;
+            return this;
+        }
+        public String getExtensionAppBizData() {
+            return this.extensionAppBizData;
+        }
+
+    }
+
     public static class QueryConferenceInfoResponseBodyConfInfo extends TeaModel {
         /**
          * <strong>example:</strong>
@@ -34,6 +86,15 @@ public class QueryConferenceInfoResponseBody extends TeaModel {
          */
         @NameInMap("attendNum")
         public Integer attendNum;
+
+        @NameInMap("bizType")
+        public String bizType;
+
+        @NameInMap("cloudRecordOwnerUnionId")
+        public String cloudRecordOwnerUnionId;
+
+        @NameInMap("cloudRecordStatus")
+        public Integer cloudRecordStatus;
 
         /**
          * <strong>example:</strong>
@@ -66,6 +127,9 @@ public class QueryConferenceInfoResponseBody extends TeaModel {
         @NameInMap("endTime")
         public Long endTime;
 
+        @NameInMap("extensionAppSettings")
+        public java.util.List<QueryConferenceInfoResponseBodyConfInfoExtensionAppSettings> extensionAppSettings;
+
         /**
          * <strong>example:</strong>
          * <p><a href="https://meeting.dingtalk.com/app?roomCode=42726033559&token=1_7ac974ac-6e4f-47c3-b82b-bfb32fd94d2c">https://meeting.dingtalk.com/app?roomCode=42726033559&amp;token=1_7ac974ac-6e4f-47c3-b82b-bfb32fd94d2c</a></p>
@@ -80,12 +144,21 @@ public class QueryConferenceInfoResponseBody extends TeaModel {
         @NameInMap("invitedNum")
         public Integer invitedNum;
 
+        @NameInMap("minutesOwnerUnionId")
+        public String minutesOwnerUnionId;
+
+        @NameInMap("minutesStatus")
+        public Integer minutesStatus;
+
         /**
          * <strong>example:</strong>
          * <p>42726033559</p>
          */
         @NameInMap("roomCode")
         public String roomCode;
+
+        @NameInMap("scheduleConferenceId")
+        public String scheduleConferenceId;
 
         /**
          * <strong>example:</strong>
@@ -129,6 +202,30 @@ public class QueryConferenceInfoResponseBody extends TeaModel {
             return this.attendNum;
         }
 
+        public QueryConferenceInfoResponseBodyConfInfo setBizType(String bizType) {
+            this.bizType = bizType;
+            return this;
+        }
+        public String getBizType() {
+            return this.bizType;
+        }
+
+        public QueryConferenceInfoResponseBodyConfInfo setCloudRecordOwnerUnionId(String cloudRecordOwnerUnionId) {
+            this.cloudRecordOwnerUnionId = cloudRecordOwnerUnionId;
+            return this;
+        }
+        public String getCloudRecordOwnerUnionId() {
+            return this.cloudRecordOwnerUnionId;
+        }
+
+        public QueryConferenceInfoResponseBodyConfInfo setCloudRecordStatus(Integer cloudRecordStatus) {
+            this.cloudRecordStatus = cloudRecordStatus;
+            return this;
+        }
+        public Integer getCloudRecordStatus() {
+            return this.cloudRecordStatus;
+        }
+
         public QueryConferenceInfoResponseBodyConfInfo setConfDuration(Long confDuration) {
             this.confDuration = confDuration;
             return this;
@@ -169,6 +266,14 @@ public class QueryConferenceInfoResponseBody extends TeaModel {
             return this.endTime;
         }
 
+        public QueryConferenceInfoResponseBodyConfInfo setExtensionAppSettings(java.util.List<QueryConferenceInfoResponseBodyConfInfoExtensionAppSettings> extensionAppSettings) {
+            this.extensionAppSettings = extensionAppSettings;
+            return this;
+        }
+        public java.util.List<QueryConferenceInfoResponseBodyConfInfoExtensionAppSettings> getExtensionAppSettings() {
+            return this.extensionAppSettings;
+        }
+
         public QueryConferenceInfoResponseBodyConfInfo setExternalLinkUrl(String externalLinkUrl) {
             this.externalLinkUrl = externalLinkUrl;
             return this;
@@ -185,12 +290,36 @@ public class QueryConferenceInfoResponseBody extends TeaModel {
             return this.invitedNum;
         }
 
+        public QueryConferenceInfoResponseBodyConfInfo setMinutesOwnerUnionId(String minutesOwnerUnionId) {
+            this.minutesOwnerUnionId = minutesOwnerUnionId;
+            return this;
+        }
+        public String getMinutesOwnerUnionId() {
+            return this.minutesOwnerUnionId;
+        }
+
+        public QueryConferenceInfoResponseBodyConfInfo setMinutesStatus(Integer minutesStatus) {
+            this.minutesStatus = minutesStatus;
+            return this;
+        }
+        public Integer getMinutesStatus() {
+            return this.minutesStatus;
+        }
+
         public QueryConferenceInfoResponseBodyConfInfo setRoomCode(String roomCode) {
             this.roomCode = roomCode;
             return this;
         }
         public String getRoomCode() {
             return this.roomCode;
+        }
+
+        public QueryConferenceInfoResponseBodyConfInfo setScheduleConferenceId(String scheduleConferenceId) {
+            this.scheduleConferenceId = scheduleConferenceId;
+            return this;
+        }
+        public String getScheduleConferenceId() {
+            return this.scheduleConferenceId;
         }
 
         public QueryConferenceInfoResponseBodyConfInfo setStartTime(Long startTime) {
