@@ -33,6 +33,28 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
             [Validation(Required=false)]
             public int? LockRoom { get; set; }
 
+            [NameInMap("moziConfOpenRecordSetting")]
+            [Validation(Required=false)]
+            public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecordSetting MoziConfOpenRecordSetting { get; set; }
+            public class UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfOpenRecordSetting : TeaModel {
+                [NameInMap("isFollowHost")]
+                [Validation(Required=false)]
+                public bool? IsFollowHost { get; set; }
+
+                [NameInMap("mode")]
+                [Validation(Required=false)]
+                public string Mode { get; set; }
+
+                [NameInMap("recordAutoStart")]
+                [Validation(Required=false)]
+                public int? RecordAutoStart { get; set; }
+
+                [NameInMap("recordAutoStartType")]
+                [Validation(Required=false)]
+                public int? RecordAutoStartType { get; set; }
+
+            }
+
             [NameInMap("moziConfVirtualExtraSetting")]
             [Validation(Required=false)]
             public UpdateScheduleConfSettingsRequestScheduleConfSettingModelMoziConfVirtualExtraSetting MoziConfVirtualExtraSetting { get; set; }

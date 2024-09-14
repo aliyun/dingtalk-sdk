@@ -1206,6 +1206,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             {
                 body["reviewer"] = request.Reviewer;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Signature))
+            {
+                body["signature"] = request.Signature;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaxSign))
             {
                 body["taxSign"] = request.TaxSign;
@@ -1326,6 +1330,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Reviewer))
             {
                 body["reviewer"] = request.Reviewer;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Signature))
+            {
+                body["signature"] = request.Signature;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaxSign))
             {

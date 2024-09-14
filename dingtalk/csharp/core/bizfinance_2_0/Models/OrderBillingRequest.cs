@@ -129,6 +129,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
         [Validation(Required=false)]
         public string Reviewer { get; set; }
 
+        [NameInMap("signature")]
+        [Validation(Required=false)]
+        public string Signature { get; set; }
+
         [NameInMap("taxSign")]
         [Validation(Required=false)]
         public int? TaxSign { get; set; }

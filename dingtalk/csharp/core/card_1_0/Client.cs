@@ -325,6 +325,122 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
         }
 
         /**
+         * @summary 复制模板
+         *
+         * @param request CopyTemplateRequest
+         * @param headers CopyTemplateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CopyTemplateResponse
+         */
+        public CopyTemplateResponse CopyTemplateWithOptions(CopyTemplateRequest request, CopyTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CopyTemplate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/templates/copy",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CopyTemplateResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 复制模板
+         *
+         * @param request CopyTemplateRequest
+         * @param headers CopyTemplateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CopyTemplateResponse
+         */
+        public async Task<CopyTemplateResponse> CopyTemplateWithOptionsAsync(CopyTemplateRequest request, CopyTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CopyTemplate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/templates/copy",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CopyTemplateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 复制模板
+         *
+         * @param request CopyTemplateRequest
+         * @return CopyTemplateResponse
+         */
+        public CopyTemplateResponse CopyTemplate(CopyTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CopyTemplateHeaders headers = new CopyTemplateHeaders();
+            return CopyTemplateWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 复制模板
+         *
+         * @param request CopyTemplateRequest
+         * @return CopyTemplateResponse
+         */
+        public async Task<CopyTemplateResponse> CopyTemplateAsync(CopyTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CopyTemplateHeaders headers = new CopyTemplateHeaders();
+            return await CopyTemplateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 创建并投放卡片
          *
          * @param request CreateAndDeliverRequest
@@ -1317,6 +1433,270 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
         }
 
         /**
+         * @summary 创建模板
+         *
+         * @param request CreateTemplateRequest
+         * @param headers CreateTemplateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateTemplateResponse
+         */
+        public CreateTemplateResponse CreateTemplateWithOptions(CreateTemplateRequest request, CreateTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorId))
+            {
+                body["creatorId"] = request.CreatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExtendType))
+            {
+                body["extendType"] = request.ExtendType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateTemplate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/templates",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateTemplateResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建模板
+         *
+         * @param request CreateTemplateRequest
+         * @param headers CreateTemplateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateTemplateResponse
+         */
+        public async Task<CreateTemplateResponse> CreateTemplateWithOptionsAsync(CreateTemplateRequest request, CreateTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AppId))
+            {
+                body["appId"] = request.AppId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreatorId))
+            {
+                body["creatorId"] = request.CreatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExtendType))
+            {
+                body["extendType"] = request.ExtendType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateTemplate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/templates",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateTemplateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建模板
+         *
+         * @param request CreateTemplateRequest
+         * @return CreateTemplateResponse
+         */
+        public CreateTemplateResponse CreateTemplate(CreateTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateTemplateHeaders headers = new CreateTemplateHeaders();
+            return CreateTemplateWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 创建模板
+         *
+         * @param request CreateTemplateRequest
+         * @return CreateTemplateResponse
+         */
+        public async Task<CreateTemplateResponse> CreateTemplateAsync(CreateTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateTemplateHeaders headers = new CreateTemplateHeaders();
+            return await CreateTemplateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 删除模板
+         *
+         * @param request DeleteTemplateRequest
+         * @param headers DeleteTemplateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteTemplateResponse
+         */
+        public DeleteTemplateResponse DeleteTemplateWithOptions(DeleteTemplateRequest request, DeleteTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteTemplate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/templates/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteTemplateResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 删除模板
+         *
+         * @param request DeleteTemplateRequest
+         * @param headers DeleteTemplateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return DeleteTemplateResponse
+         */
+        public async Task<DeleteTemplateResponse> DeleteTemplateWithOptionsAsync(DeleteTemplateRequest request, DeleteTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteTemplate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/templates/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteTemplateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 删除模板
+         *
+         * @param request DeleteTemplateRequest
+         * @return DeleteTemplateResponse
+         */
+        public DeleteTemplateResponse DeleteTemplate(DeleteTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteTemplateHeaders headers = new DeleteTemplateHeaders();
+            return DeleteTemplateWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 删除模板
+         *
+         * @param request DeleteTemplateRequest
+         * @return DeleteTemplateResponse
+         */
+        public async Task<DeleteTemplateResponse> DeleteTemplateAsync(DeleteTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteTemplateHeaders headers = new DeleteTemplateHeaders();
+            return await DeleteTemplateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 投放卡片
          *
          * @param request DeliverCardRequest
@@ -1677,6 +2057,254 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
         }
 
         /**
+         * @summary 获取模板信息
+         *
+         * @param request GetTemplateRequest
+         * @param headers GetTemplateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetTemplateResponse
+         */
+        public GetTemplateResponse GetTemplateWithOptions(GetTemplateRequest request, GetTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                query["templateId"] = request.TemplateId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetTemplate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/templates",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetTemplateResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取模板信息
+         *
+         * @param request GetTemplateRequest
+         * @param headers GetTemplateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetTemplateResponse
+         */
+        public async Task<GetTemplateResponse> GetTemplateWithOptionsAsync(GetTemplateRequest request, GetTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                query["templateId"] = request.TemplateId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetTemplate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/templates",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetTemplateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取模板信息
+         *
+         * @param request GetTemplateRequest
+         * @return GetTemplateResponse
+         */
+        public GetTemplateResponse GetTemplate(GetTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetTemplateHeaders headers = new GetTemplateHeaders();
+            return GetTemplateWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取模板信息
+         *
+         * @param request GetTemplateRequest
+         * @return GetTemplateResponse
+         */
+        public async Task<GetTemplateResponse> GetTemplateAsync(GetTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetTemplateHeaders headers = new GetTemplateHeaders();
+            return await GetTemplateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 发布模板
+         *
+         * @param request PublishTemplateRequest
+         * @param headers PublishTemplateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PublishTemplateResponse
+         */
+        public PublishTemplateResponse PublishTemplateWithOptions(PublishTemplateRequest request, PublishTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateSource))
+            {
+                body["templateSource"] = request.TemplateSource;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PublishTemplate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/templates/publish",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PublishTemplateResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 发布模板
+         *
+         * @param request PublishTemplateRequest
+         * @param headers PublishTemplateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return PublishTemplateResponse
+         */
+        public async Task<PublishTemplateResponse> PublishTemplateWithOptionsAsync(PublishTemplateRequest request, PublishTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateSource))
+            {
+                body["templateSource"] = request.TemplateSource;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PublishTemplate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/templates/publish",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PublishTemplateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 发布模板
+         *
+         * @param request PublishTemplateRequest
+         * @return PublishTemplateResponse
+         */
+        public PublishTemplateResponse PublishTemplate(PublishTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PublishTemplateHeaders headers = new PublishTemplateHeaders();
+            return PublishTemplateWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 发布模板
+         *
+         * @param request PublishTemplateRequest
+         * @return PublishTemplateResponse
+         */
+        public async Task<PublishTemplateResponse> PublishTemplateAsync(PublishTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PublishTemplateHeaders headers = new PublishTemplateHeaders();
+            return await PublishTemplateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 注册卡片回调地址
          *
          * @param request RegisterCallbackRequest
@@ -1954,6 +2582,138 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             RegisterCallbackWithDelegateHeaders headers = new RegisterCallbackWithDelegateHeaders();
             return await RegisterCallbackWithDelegateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 保存模板
+         *
+         * @param request SaveTemplateRequest
+         * @param headers SaveTemplateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SaveTemplateResponse
+         */
+        public SaveTemplateResponse SaveTemplateWithOptions(SaveTemplateRequest request, SaveTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateSource))
+            {
+                body["templateSource"] = request.TemplateSource;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SaveTemplate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/templates/save",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SaveTemplateResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 保存模板
+         *
+         * @param request SaveTemplateRequest
+         * @param headers SaveTemplateHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return SaveTemplateResponse
+         */
+        public async Task<SaveTemplateResponse> SaveTemplateWithOptionsAsync(SaveTemplateRequest request, SaveTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateId))
+            {
+                body["templateId"] = request.TemplateId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateSource))
+            {
+                body["templateSource"] = request.TemplateSource;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SaveTemplate",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/templates/save",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SaveTemplateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 保存模板
+         *
+         * @param request SaveTemplateRequest
+         * @return SaveTemplateResponse
+         */
+        public SaveTemplateResponse SaveTemplate(SaveTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SaveTemplateHeaders headers = new SaveTemplateHeaders();
+            return SaveTemplateWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 保存模板
+         *
+         * @param request SaveTemplateRequest
+         * @return SaveTemplateResponse
+         */
+        public async Task<SaveTemplateResponse> SaveTemplateAsync(SaveTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SaveTemplateHeaders headers = new SaveTemplateHeaders();
+            return await SaveTemplateWithOptionsAsync(request, headers, runtime);
         }
 
         /**

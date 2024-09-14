@@ -6845,5 +6845,129 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             return await UpdateIsvCardMessageWithOptionsAsync(request, headers, runtime);
         }
 
+        /**
+         * @summary 上传附件材料
+         *
+         * @param request UploadAttachmentRequest
+         * @param headers UploadAttachmentHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UploadAttachmentResponse
+         */
+        public UploadAttachmentResponse UploadAttachmentWithOptions(UploadAttachmentRequest request, UploadAttachmentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaId))
+            {
+                body["mediaId"] = request.MediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UploadAttachment",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/attachments/upload",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UploadAttachmentResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 上传附件材料
+         *
+         * @param request UploadAttachmentRequest
+         * @param headers UploadAttachmentHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UploadAttachmentResponse
+         */
+        public async Task<UploadAttachmentResponse> UploadAttachmentWithOptionsAsync(UploadAttachmentRequest request, UploadAttachmentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaId))
+            {
+                body["mediaId"] = request.MediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UploadAttachment",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/attachments/upload",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UploadAttachmentResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 上传附件材料
+         *
+         * @param request UploadAttachmentRequest
+         * @return UploadAttachmentResponse
+         */
+        public UploadAttachmentResponse UploadAttachment(UploadAttachmentRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UploadAttachmentHeaders headers = new UploadAttachmentHeaders();
+            return UploadAttachmentWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 上传附件材料
+         *
+         * @param request UploadAttachmentRequest
+         * @return UploadAttachmentResponse
+         */
+        public async Task<UploadAttachmentResponse> UploadAttachmentAsync(UploadAttachmentRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UploadAttachmentHeaders headers = new UploadAttachmentHeaders();
+            return await UploadAttachmentWithOptionsAsync(request, headers, runtime);
+        }
+
     }
 }

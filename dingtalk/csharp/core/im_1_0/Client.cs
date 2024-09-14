@@ -7975,6 +7975,130 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
         }
 
         /**
+         * @summary 用户身份查询消息已读未读状态
+         *
+         * @param request QueryPersonalMessageReadStatusRequest
+         * @param headers QueryPersonalMessageReadStatusHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryPersonalMessageReadStatusResponse
+         */
+        public QueryPersonalMessageReadStatusResponse QueryPersonalMessageReadStatusWithOptions(QueryPersonalMessageReadStatusRequest request, QueryPersonalMessageReadStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenMessageId))
+            {
+                body["openMessageId"] = request.OpenMessageId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPersonalMessageReadStatus",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/me/messages/readStatuses/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPersonalMessageReadStatusResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 用户身份查询消息已读未读状态
+         *
+         * @param request QueryPersonalMessageReadStatusRequest
+         * @param headers QueryPersonalMessageReadStatusHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryPersonalMessageReadStatusResponse
+         */
+        public async Task<QueryPersonalMessageReadStatusResponse> QueryPersonalMessageReadStatusWithOptionsAsync(QueryPersonalMessageReadStatusRequest request, QueryPersonalMessageReadStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenMessageId))
+            {
+                body["openMessageId"] = request.OpenMessageId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPersonalMessageReadStatus",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/me/messages/readStatuses/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPersonalMessageReadStatusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 用户身份查询消息已读未读状态
+         *
+         * @param request QueryPersonalMessageReadStatusRequest
+         * @return QueryPersonalMessageReadStatusResponse
+         */
+        public QueryPersonalMessageReadStatusResponse QueryPersonalMessageReadStatus(QueryPersonalMessageReadStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryPersonalMessageReadStatusHeaders headers = new QueryPersonalMessageReadStatusHeaders();
+            return QueryPersonalMessageReadStatusWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 用户身份查询消息已读未读状态
+         *
+         * @param request QueryPersonalMessageReadStatusRequest
+         * @return QueryPersonalMessageReadStatusResponse
+         */
+        public async Task<QueryPersonalMessageReadStatusResponse> QueryPersonalMessageReadStatusAsync(QueryPersonalMessageReadStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryPersonalMessageReadStatusHeaders headers = new QueryPersonalMessageReadStatusHeaders();
+            return await QueryPersonalMessageReadStatusWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 获取最近联系人及群组
          *
          * @param request QueryRecentConversationsRequest

@@ -21,6 +21,18 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
             [Validation(Required=false)]
             public int? AttendNum { get; set; }
 
+            [NameInMap("bizType")]
+            [Validation(Required=false)]
+            public string BizType { get; set; }
+
+            [NameInMap("cloudRecordOwnerUnionId")]
+            [Validation(Required=false)]
+            public string CloudRecordOwnerUnionId { get; set; }
+
+            [NameInMap("cloudRecordStatus")]
+            [Validation(Required=false)]
+            public int? CloudRecordStatus { get; set; }
+
             [NameInMap("confDuration")]
             [Validation(Required=false)]
             public long? ConfDuration { get; set; }
@@ -41,6 +53,28 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
             [Validation(Required=false)]
             public long? EndTime { get; set; }
 
+            [NameInMap("extensionAppSettings")]
+            [Validation(Required=false)]
+            public List<QueryConferenceInfoResponseBodyConfInfoExtensionAppSettings> ExtensionAppSettings { get; set; }
+            public class QueryConferenceInfoResponseBodyConfInfoExtensionAppSettings : TeaModel {
+                [NameInMap("appCode")]
+                [Validation(Required=false)]
+                public string AppCode { get; set; }
+
+                [NameInMap("appId")]
+                [Validation(Required=false)]
+                public string AppId { get; set; }
+
+                [NameInMap("autoOpenMode")]
+                [Validation(Required=false)]
+                public int? AutoOpenMode { get; set; }
+
+                [NameInMap("extensionAppBizData")]
+                [Validation(Required=false)]
+                public string ExtensionAppBizData { get; set; }
+
+            }
+
             [NameInMap("externalLinkUrl")]
             [Validation(Required=false)]
             public string ExternalLinkUrl { get; set; }
@@ -49,9 +83,21 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
             [Validation(Required=false)]
             public int? InvitedNum { get; set; }
 
+            [NameInMap("minutesOwnerUnionId")]
+            [Validation(Required=false)]
+            public string MinutesOwnerUnionId { get; set; }
+
+            [NameInMap("minutesStatus")]
+            [Validation(Required=false)]
+            public int? MinutesStatus { get; set; }
+
             [NameInMap("roomCode")]
             [Validation(Required=false)]
             public string RoomCode { get; set; }
+
+            [NameInMap("scheduleConferenceId")]
+            [Validation(Required=false)]
+            public string ScheduleConferenceId { get; set; }
 
             [NameInMap("startTime")]
             [Validation(Required=false)]
