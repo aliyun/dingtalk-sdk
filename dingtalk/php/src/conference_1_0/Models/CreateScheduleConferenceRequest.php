@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CreateScheduleConferenceRequest\scheduleConfSettingModel;
 use AlibabaCloud\Tea\Model;
 
 class CreateScheduleConferenceRequest extends Model
@@ -27,6 +28,11 @@ class CreateScheduleConferenceRequest extends Model
     public $endTime;
 
     /**
+     * @var scheduleConfSettingModel
+     */
+    public $scheduleConfSettingModel;
+
+    /**
      * @description This parameter is required.
      *
      * @example 1687924800000
@@ -44,10 +50,11 @@ class CreateScheduleConferenceRequest extends Model
      */
     public $title;
     protected $_name = [
-        'creatorUnionId' => 'creatorUnionId',
-        'endTime'        => 'endTime',
-        'startTime'      => 'startTime',
-        'title'          => 'title',
+        'creatorUnionId'           => 'creatorUnionId',
+        'endTime'                  => 'endTime',
+        'scheduleConfSettingModel' => 'scheduleConfSettingModel',
+        'startTime'                => 'startTime',
+        'title'                    => 'title',
     ];
 
     public function validate()
@@ -62,6 +69,9 @@ class CreateScheduleConferenceRequest extends Model
         }
         if (null !== $this->endTime) {
             $res['endTime'] = $this->endTime;
+        }
+        if (null !== $this->scheduleConfSettingModel) {
+            $res['scheduleConfSettingModel'] = null !== $this->scheduleConfSettingModel ? $this->scheduleConfSettingModel->toMap() : null;
         }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
@@ -86,6 +96,9 @@ class CreateScheduleConferenceRequest extends Model
         }
         if (isset($map['endTime'])) {
             $model->endTime = $map['endTime'];
+        }
+        if (isset($map['scheduleConfSettingModel'])) {
+            $model->scheduleConfSettingModel = scheduleConfSettingModel::fromMap($map['scheduleConfSettingModel']);
         }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];

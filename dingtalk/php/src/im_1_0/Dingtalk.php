@@ -179,6 +179,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryOpenConversationReceiveUserRes
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryOpenGroupBaseInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryOpenGroupBaseInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryOpenGroupBaseInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryPersonalMessageReadStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryPersonalMessageReadStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryPersonalMessageReadStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryRecentConversationsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryRecentConversationsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\QueryRecentConversationsResponse;
@@ -4052,6 +4055,66 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryOpenGroupBaseInfoHeaders([]);
 
         return $this->queryOpenGroupBaseInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 用户身份查询消息已读未读状态
+     *  *
+     * @param QueryPersonalMessageReadStatusRequest $request QueryPersonalMessageReadStatusRequest
+     * @param QueryPersonalMessageReadStatusHeaders $headers QueryPersonalMessageReadStatusHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryPersonalMessageReadStatusResponse QueryPersonalMessageReadStatusResponse
+     */
+    public function queryPersonalMessageReadStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->openMessageId)) {
+            $body['openMessageId'] = $request->openMessageId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryPersonalMessageReadStatus',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/me/messages/readStatuses/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryPersonalMessageReadStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 用户身份查询消息已读未读状态
+     *  *
+     * @param QueryPersonalMessageReadStatusRequest $request QueryPersonalMessageReadStatusRequest
+     *
+     * @return QueryPersonalMessageReadStatusResponse QueryPersonalMessageReadStatusResponse
+     */
+    public function queryPersonalMessageReadStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryPersonalMessageReadStatusHeaders([]);
+
+        return $this->queryPersonalMessageReadStatusWithOptions($request, $headers, $runtime);
     }
 
     /**

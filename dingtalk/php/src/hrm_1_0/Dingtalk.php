@@ -146,6 +146,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateHrmVersionRollBackStatusResp
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateIsvCardMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateIsvCardMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateIsvCardMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UploadAttachmentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UploadAttachmentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UploadAttachmentResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -3370,5 +3373,65 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateIsvCardMessageHeaders([]);
 
         return $this->updateIsvCardMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 上传附件材料
+     *  *
+     * @param UploadAttachmentRequest $request UploadAttachmentRequest
+     * @param UploadAttachmentHeaders $headers UploadAttachmentHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UploadAttachmentResponse UploadAttachmentResponse
+     */
+    public function uploadAttachmentWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->mediaId)) {
+            $body['mediaId'] = $request->mediaId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UploadAttachment',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/attachments/upload',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UploadAttachmentResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 上传附件材料
+     *  *
+     * @param UploadAttachmentRequest $request UploadAttachmentRequest
+     *
+     * @return UploadAttachmentResponse UploadAttachmentResponse
+     */
+    public function uploadAttachment($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UploadAttachmentHeaders([]);
+
+        return $this->uploadAttachmentWithOptions($request, $headers, $runtime);
     }
 }

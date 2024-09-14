@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceInfoResponseBody;
 
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceInfoResponseBody\confInfo\extensionAppSettings;
 use AlibabaCloud\Tea\Model;
 
 class confInfo extends Model
@@ -21,6 +22,21 @@ class confInfo extends Model
      * @var int
      */
     public $attendNum;
+
+    /**
+     * @var string
+     */
+    public $bizType;
+
+    /**
+     * @var string
+     */
+    public $cloudRecordOwnerUnionId;
+
+    /**
+     * @var int
+     */
+    public $cloudRecordStatus;
 
     /**
      * @example 1000000
@@ -56,6 +72,11 @@ class confInfo extends Model
     public $endTime;
 
     /**
+     * @var extensionAppSettings[]
+     */
+    public $extensionAppSettings;
+
+    /**
      * @example https://meeting.dingtalk.com/app?roomCode=42726033559&token=1_7ac974ac-6e4f-47c3-b82b-bfb32fd94d2c
      *
      * @var string
@@ -70,11 +91,26 @@ class confInfo extends Model
     public $invitedNum;
 
     /**
+     * @var string
+     */
+    public $minutesOwnerUnionId;
+
+    /**
+     * @var int
+     */
+    public $minutesStatus;
+
+    /**
      * @example 42726033559
      *
      * @var string
      */
     public $roomCode;
+
+    /**
+     * @var string
+     */
+    public $scheduleConferenceId;
 
     /**
      * @example 1663293270000
@@ -97,19 +133,26 @@ class confInfo extends Model
      */
     public $title;
     protected $_name = [
-        'activeNum'       => 'activeNum',
-        'attendNum'       => 'attendNum',
-        'confDuration'    => 'confDuration',
-        'conferenceId'    => 'conferenceId',
-        'creatorId'       => 'creatorId',
-        'creatorNick'     => 'creatorNick',
-        'endTime'         => 'endTime',
-        'externalLinkUrl' => 'externalLinkUrl',
-        'invitedNum'      => 'invitedNum',
-        'roomCode'        => 'roomCode',
-        'startTime'       => 'startTime',
-        'status'          => 'status',
-        'title'           => 'title',
+        'activeNum'               => 'activeNum',
+        'attendNum'               => 'attendNum',
+        'bizType'                 => 'bizType',
+        'cloudRecordOwnerUnionId' => 'cloudRecordOwnerUnionId',
+        'cloudRecordStatus'       => 'cloudRecordStatus',
+        'confDuration'            => 'confDuration',
+        'conferenceId'            => 'conferenceId',
+        'creatorId'               => 'creatorId',
+        'creatorNick'             => 'creatorNick',
+        'endTime'                 => 'endTime',
+        'extensionAppSettings'    => 'extensionAppSettings',
+        'externalLinkUrl'         => 'externalLinkUrl',
+        'invitedNum'              => 'invitedNum',
+        'minutesOwnerUnionId'     => 'minutesOwnerUnionId',
+        'minutesStatus'           => 'minutesStatus',
+        'roomCode'                => 'roomCode',
+        'scheduleConferenceId'    => 'scheduleConferenceId',
+        'startTime'               => 'startTime',
+        'status'                  => 'status',
+        'title'                   => 'title',
     ];
 
     public function validate()
@@ -124,6 +167,15 @@ class confInfo extends Model
         }
         if (null !== $this->attendNum) {
             $res['attendNum'] = $this->attendNum;
+        }
+        if (null !== $this->bizType) {
+            $res['bizType'] = $this->bizType;
+        }
+        if (null !== $this->cloudRecordOwnerUnionId) {
+            $res['cloudRecordOwnerUnionId'] = $this->cloudRecordOwnerUnionId;
+        }
+        if (null !== $this->cloudRecordStatus) {
+            $res['cloudRecordStatus'] = $this->cloudRecordStatus;
         }
         if (null !== $this->confDuration) {
             $res['confDuration'] = $this->confDuration;
@@ -140,14 +192,32 @@ class confInfo extends Model
         if (null !== $this->endTime) {
             $res['endTime'] = $this->endTime;
         }
+        if (null !== $this->extensionAppSettings) {
+            $res['extensionAppSettings'] = [];
+            if (null !== $this->extensionAppSettings && \is_array($this->extensionAppSettings)) {
+                $n = 0;
+                foreach ($this->extensionAppSettings as $item) {
+                    $res['extensionAppSettings'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->externalLinkUrl) {
             $res['externalLinkUrl'] = $this->externalLinkUrl;
         }
         if (null !== $this->invitedNum) {
             $res['invitedNum'] = $this->invitedNum;
         }
+        if (null !== $this->minutesOwnerUnionId) {
+            $res['minutesOwnerUnionId'] = $this->minutesOwnerUnionId;
+        }
+        if (null !== $this->minutesStatus) {
+            $res['minutesStatus'] = $this->minutesStatus;
+        }
         if (null !== $this->roomCode) {
             $res['roomCode'] = $this->roomCode;
+        }
+        if (null !== $this->scheduleConferenceId) {
+            $res['scheduleConferenceId'] = $this->scheduleConferenceId;
         }
         if (null !== $this->startTime) {
             $res['startTime'] = $this->startTime;
@@ -176,6 +246,15 @@ class confInfo extends Model
         if (isset($map['attendNum'])) {
             $model->attendNum = $map['attendNum'];
         }
+        if (isset($map['bizType'])) {
+            $model->bizType = $map['bizType'];
+        }
+        if (isset($map['cloudRecordOwnerUnionId'])) {
+            $model->cloudRecordOwnerUnionId = $map['cloudRecordOwnerUnionId'];
+        }
+        if (isset($map['cloudRecordStatus'])) {
+            $model->cloudRecordStatus = $map['cloudRecordStatus'];
+        }
         if (isset($map['confDuration'])) {
             $model->confDuration = $map['confDuration'];
         }
@@ -191,14 +270,32 @@ class confInfo extends Model
         if (isset($map['endTime'])) {
             $model->endTime = $map['endTime'];
         }
+        if (isset($map['extensionAppSettings'])) {
+            if (!empty($map['extensionAppSettings'])) {
+                $model->extensionAppSettings = [];
+                $n                           = 0;
+                foreach ($map['extensionAppSettings'] as $item) {
+                    $model->extensionAppSettings[$n++] = null !== $item ? extensionAppSettings::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['externalLinkUrl'])) {
             $model->externalLinkUrl = $map['externalLinkUrl'];
         }
         if (isset($map['invitedNum'])) {
             $model->invitedNum = $map['invitedNum'];
         }
+        if (isset($map['minutesOwnerUnionId'])) {
+            $model->minutesOwnerUnionId = $map['minutesOwnerUnionId'];
+        }
+        if (isset($map['minutesStatus'])) {
+            $model->minutesStatus = $map['minutesStatus'];
+        }
         if (isset($map['roomCode'])) {
             $model->roomCode = $map['roomCode'];
+        }
+        if (isset($map['scheduleConferenceId'])) {
+            $model->scheduleConferenceId = $map['scheduleConferenceId'];
         }
         if (isset($map['startTime'])) {
             $model->startTime = $map['startTime'];

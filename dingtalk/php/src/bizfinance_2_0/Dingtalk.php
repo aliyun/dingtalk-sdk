@@ -686,6 +686,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->reviewer)) {
             $body['reviewer'] = $request->reviewer;
         }
+        if (!Utils::isUnset($request->signature)) {
+            $body['signature'] = $request->signature;
+        }
         if (!Utils::isUnset($request->taxSign)) {
             $body['taxSign'] = $request->taxSign;
         }

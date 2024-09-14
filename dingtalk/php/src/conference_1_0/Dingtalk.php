@@ -483,6 +483,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->endTime)) {
             $body['endTime'] = $request->endTime;
         }
+        if (!Utils::isUnset($request->scheduleConfSettingModel)) {
+            $body['scheduleConfSettingModel'] = $request->scheduleConfSettingModel;
+        }
         if (!Utils::isUnset($request->startTime)) {
             $body['startTime'] = $request->startTime;
         }

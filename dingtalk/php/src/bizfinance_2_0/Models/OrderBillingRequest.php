@@ -116,6 +116,11 @@ class OrderBillingRequest extends Model
     public $reviewer;
 
     /**
+     * @var string
+     */
+    public $signature;
+
+    /**
      * @var int
      */
     public $taxSign;
@@ -139,6 +144,7 @@ class OrderBillingRequest extends Model
         'purchaserTel'         => 'purchaserTel',
         'remark'               => 'remark',
         'reviewer'             => 'reviewer',
+        'signature'            => 'signature',
         'taxSign'              => 'taxSign',
     ];
 
@@ -217,6 +223,9 @@ class OrderBillingRequest extends Model
         }
         if (null !== $this->reviewer) {
             $res['reviewer'] = $this->reviewer;
+        }
+        if (null !== $this->signature) {
+            $res['signature'] = $this->signature;
         }
         if (null !== $this->taxSign) {
             $res['taxSign'] = $this->taxSign;
@@ -301,6 +310,9 @@ class OrderBillingRequest extends Model
         }
         if (isset($map['reviewer'])) {
             $model->reviewer = $map['reviewer'];
+        }
+        if (isset($map['signature'])) {
+            $model->signature = $map['signature'];
         }
         if (isset($map['taxSign'])) {
             $model->taxSign = $map['taxSign'];

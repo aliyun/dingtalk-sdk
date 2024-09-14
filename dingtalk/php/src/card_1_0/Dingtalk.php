@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceWithDelegateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceWithDelegateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceWithDelegateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CopyTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CopyTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CopyTemplateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateAndDeliverResponse;
@@ -23,18 +26,33 @@ use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardWithDelegateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardWithDelegateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateCardWithDelegateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CreateTemplateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeleteTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeleteTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeleteTemplateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardWithDelegateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardWithDelegateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardWithDelegateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\GetTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\GetTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\GetTemplateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\PublishTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\PublishTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\PublishTemplateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\RegisterCallbackHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\RegisterCallbackRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\RegisterCallbackResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\RegisterCallbackWithDelegateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\RegisterCallbackWithDelegateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\RegisterCallbackWithDelegateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\SaveTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\SaveTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\SaveTemplateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\StreamingUpdateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\StreamingUpdateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\StreamingUpdateResponse;
@@ -200,6 +218,63 @@ class Dingtalk extends OpenApiClient
         $headers = new AppendSpaceWithDelegateHeaders([]);
 
         return $this->appendSpaceWithDelegateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 复制模板
+     *  *
+     * @param CopyTemplateRequest $request CopyTemplateRequest
+     * @param CopyTemplateHeaders $headers CopyTemplateHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CopyTemplateResponse CopyTemplateResponse
+     */
+    public function copyTemplateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->templateId)) {
+            $body['templateId'] = $request->templateId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CopyTemplate',
+            'version'     => 'card_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/card/templates/copy',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CopyTemplateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 复制模板
+     *  *
+     * @param CopyTemplateRequest $request CopyTemplateRequest
+     *
+     * @return CopyTemplateResponse CopyTemplateResponse
+     */
+    public function copyTemplate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CopyTemplateHeaders([]);
+
+        return $this->copyTemplateWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -629,6 +704,132 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建模板
+     *  *
+     * @param CreateTemplateRequest $request CreateTemplateRequest
+     * @param CreateTemplateHeaders $headers CreateTemplateHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateTemplateResponse CreateTemplateResponse
+     */
+    public function createTemplateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appId)) {
+            $body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->creatorId)) {
+            $body['creatorId'] = $request->creatorId;
+        }
+        if (!Utils::isUnset($request->extendType)) {
+            $body['extendType'] = $request->extendType;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateTemplate',
+            'version'     => 'card_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/card/templates',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateTemplateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建模板
+     *  *
+     * @param CreateTemplateRequest $request CreateTemplateRequest
+     *
+     * @return CreateTemplateResponse CreateTemplateResponse
+     */
+    public function createTemplate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateTemplateHeaders([]);
+
+        return $this->createTemplateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除模板
+     *  *
+     * @param DeleteTemplateRequest $request DeleteTemplateRequest
+     * @param DeleteTemplateHeaders $headers DeleteTemplateHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteTemplateResponse DeleteTemplateResponse
+     */
+    public function deleteTemplateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->templateId)) {
+            $body['templateId'] = $request->templateId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteTemplate',
+            'version'     => 'card_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/card/templates/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DeleteTemplateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除模板
+     *  *
+     * @param DeleteTemplateRequest $request DeleteTemplateRequest
+     *
+     * @return DeleteTemplateResponse DeleteTemplateResponse
+     */
+    public function deleteTemplate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteTemplateHeaders([]);
+
+        return $this->deleteTemplateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 投放卡片
      *  *
      * @param DeliverCardRequest $request DeliverCardRequest
@@ -791,6 +992,126 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取模板信息
+     *  *
+     * @param GetTemplateRequest $request GetTemplateRequest
+     * @param GetTemplateHeaders $headers GetTemplateHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetTemplateResponse GetTemplateResponse
+     */
+    public function getTemplateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->templateId)) {
+            $query['templateId'] = $request->templateId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetTemplate',
+            'version'     => 'card_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/card/templates',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetTemplateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取模板信息
+     *  *
+     * @param GetTemplateRequest $request GetTemplateRequest
+     *
+     * @return GetTemplateResponse GetTemplateResponse
+     */
+    public function getTemplate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTemplateHeaders([]);
+
+        return $this->getTemplateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 发布模板
+     *  *
+     * @param PublishTemplateRequest $request PublishTemplateRequest
+     * @param PublishTemplateHeaders $headers PublishTemplateHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PublishTemplateResponse PublishTemplateResponse
+     */
+    public function publishTemplateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            $body['templateId'] = $request->templateId;
+        }
+        if (!Utils::isUnset($request->templateSource)) {
+            $body['templateSource'] = $request->templateSource;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PublishTemplate',
+            'version'     => 'card_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/card/templates/publish',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PublishTemplateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 发布模板
+     *  *
+     * @param PublishTemplateRequest $request PublishTemplateRequest
+     *
+     * @return PublishTemplateResponse PublishTemplateResponse
+     */
+    public function publishTemplate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PublishTemplateHeaders([]);
+
+        return $this->publishTemplateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 注册卡片回调地址
      *  *
      * @param RegisterCallbackRequest $request RegisterCallbackRequest
@@ -920,6 +1241,69 @@ class Dingtalk extends OpenApiClient
         $headers = new RegisterCallbackWithDelegateHeaders([]);
 
         return $this->registerCallbackWithDelegateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 保存模板
+     *  *
+     * @param SaveTemplateRequest $request SaveTemplateRequest
+     * @param SaveTemplateHeaders $headers SaveTemplateHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SaveTemplateResponse SaveTemplateResponse
+     */
+    public function saveTemplateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->templateId)) {
+            $body['templateId'] = $request->templateId;
+        }
+        if (!Utils::isUnset($request->templateSource)) {
+            $body['templateSource'] = $request->templateSource;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SaveTemplate',
+            'version'     => 'card_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/card/templates/save',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SaveTemplateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 保存模板
+     *  *
+     * @param SaveTemplateRequest $request SaveTemplateRequest
+     *
+     * @return SaveTemplateResponse SaveTemplateResponse
+     */
+    public function saveTemplate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SaveTemplateHeaders([]);
+
+        return $this->saveTemplateWithOptions($request, $headers, $runtime);
     }
 
     /**
