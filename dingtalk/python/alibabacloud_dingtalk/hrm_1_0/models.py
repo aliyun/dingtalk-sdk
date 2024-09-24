@@ -2828,6 +2828,255 @@ class GetFileTemplateListResponse(TeaModel):
         return self
 
 
+class GetSignRecordByIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetSignRecordByIdRequest(TeaModel):
+    def __init__(
+        self,
+        body: List[str] = None,
+    ):
+        # This parameter is required.
+        self.body = body
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body is not None:
+            result['body'] = self.body
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            self.body = m.get('body')
+        return self
+
+
+class GetSignRecordByIdResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        remark: str = None,
+        sign_expire_time: int = None,
+        sign_file_name: str = None,
+        sign_finish_time: int = None,
+        sign_legal_entity_name: str = None,
+        sign_record_id: str = None,
+        sign_start_time: int = None,
+        sign_status: str = None,
+        sign_status_remarks: str = None,
+        sign_template_type: str = None,
+        sign_user_id: str = None,
+        sign_user_name: str = None,
+        sign_way: str = None,
+    ):
+        self.corp_id = corp_id
+        self.remark = remark
+        self.sign_expire_time = sign_expire_time
+        self.sign_file_name = sign_file_name
+        self.sign_finish_time = sign_finish_time
+        self.sign_legal_entity_name = sign_legal_entity_name
+        self.sign_record_id = sign_record_id
+        self.sign_start_time = sign_start_time
+        self.sign_status = sign_status
+        self.sign_status_remarks = sign_status_remarks
+        self.sign_template_type = sign_template_type
+        self.sign_user_id = sign_user_id
+        self.sign_user_name = sign_user_name
+        self.sign_way = sign_way
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.sign_expire_time is not None:
+            result['signExpireTime'] = self.sign_expire_time
+        if self.sign_file_name is not None:
+            result['signFileName'] = self.sign_file_name
+        if self.sign_finish_time is not None:
+            result['signFinishTime'] = self.sign_finish_time
+        if self.sign_legal_entity_name is not None:
+            result['signLegalEntityName'] = self.sign_legal_entity_name
+        if self.sign_record_id is not None:
+            result['signRecordId'] = self.sign_record_id
+        if self.sign_start_time is not None:
+            result['signStartTime'] = self.sign_start_time
+        if self.sign_status is not None:
+            result['signStatus'] = self.sign_status
+        if self.sign_status_remarks is not None:
+            result['signStatusRemarks'] = self.sign_status_remarks
+        if self.sign_template_type is not None:
+            result['signTemplateType'] = self.sign_template_type
+        if self.sign_user_id is not None:
+            result['signUserId'] = self.sign_user_id
+        if self.sign_user_name is not None:
+            result['signUserName'] = self.sign_user_name
+        if self.sign_way is not None:
+            result['signWay'] = self.sign_way
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('signExpireTime') is not None:
+            self.sign_expire_time = m.get('signExpireTime')
+        if m.get('signFileName') is not None:
+            self.sign_file_name = m.get('signFileName')
+        if m.get('signFinishTime') is not None:
+            self.sign_finish_time = m.get('signFinishTime')
+        if m.get('signLegalEntityName') is not None:
+            self.sign_legal_entity_name = m.get('signLegalEntityName')
+        if m.get('signRecordId') is not None:
+            self.sign_record_id = m.get('signRecordId')
+        if m.get('signStartTime') is not None:
+            self.sign_start_time = m.get('signStartTime')
+        if m.get('signStatus') is not None:
+            self.sign_status = m.get('signStatus')
+        if m.get('signStatusRemarks') is not None:
+            self.sign_status_remarks = m.get('signStatusRemarks')
+        if m.get('signTemplateType') is not None:
+            self.sign_template_type = m.get('signTemplateType')
+        if m.get('signUserId') is not None:
+            self.sign_user_id = m.get('signUserId')
+        if m.get('signUserName') is not None:
+            self.sign_user_name = m.get('signUserName')
+        if m.get('signWay') is not None:
+            self.sign_way = m.get('signWay')
+        return self
+
+
+class GetSignRecordByIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetSignRecordByIdResponseBodyResult] = None,
+        success: bool = None,
+    ):
+        self.result = result
+        # This parameter is required.
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetSignRecordByIdResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetSignRecordByIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetSignRecordByIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetSignRecordByIdResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetSignRecordByUserIdHeaders(TeaModel):
     def __init__(
         self,
@@ -5226,6 +5475,268 @@ class HrmPtsServiceResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = HrmPtsServiceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class InvalidSignRecordsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class InvalidSignRecordsRequest(TeaModel):
+    def __init__(
+        self,
+        invalid_user_id: str = None,
+        sign_record_ids: List[str] = None,
+        status_remark: str = None,
+    ):
+        # This parameter is required.
+        self.invalid_user_id = invalid_user_id
+        # This parameter is required.
+        self.sign_record_ids = sign_record_ids
+        # This parameter is required.
+        self.status_remark = status_remark
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.invalid_user_id is not None:
+            result['invalidUserId'] = self.invalid_user_id
+        if self.sign_record_ids is not None:
+            result['signRecordIds'] = self.sign_record_ids
+        if self.status_remark is not None:
+            result['statusRemark'] = self.status_remark
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('invalidUserId') is not None:
+            self.invalid_user_id = m.get('invalidUserId')
+        if m.get('signRecordIds') is not None:
+            self.sign_record_ids = m.get('signRecordIds')
+        if m.get('statusRemark') is not None:
+            self.status_remark = m.get('statusRemark')
+        return self
+
+
+class InvalidSignRecordsResponseBodyResultFailItems(TeaModel):
+    def __init__(
+        self,
+        item_id: str = None,
+        type: str = None,
+    ):
+        self.item_id = item_id
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.item_id is not None:
+            result['itemId'] = self.item_id
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('itemId') is not None:
+            self.item_id = m.get('itemId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class InvalidSignRecordsResponseBodyResultSuccessItems(TeaModel):
+    def __init__(
+        self,
+        item_id: str = None,
+    ):
+        self.item_id = item_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.item_id is not None:
+            result['itemId'] = self.item_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('itemId') is not None:
+            self.item_id = m.get('itemId')
+        return self
+
+
+class InvalidSignRecordsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        fail_items: List[InvalidSignRecordsResponseBodyResultFailItems] = None,
+        success_items: List[InvalidSignRecordsResponseBodyResultSuccessItems] = None,
+    ):
+        self.fail_items = fail_items
+        self.success_items = success_items
+
+    def validate(self):
+        if self.fail_items:
+            for k in self.fail_items:
+                if k:
+                    k.validate()
+        if self.success_items:
+            for k in self.success_items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['failItems'] = []
+        if self.fail_items is not None:
+            for k in self.fail_items:
+                result['failItems'].append(k.to_map() if k else None)
+        result['successItems'] = []
+        if self.success_items is not None:
+            for k in self.success_items:
+                result['successItems'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.fail_items = []
+        if m.get('failItems') is not None:
+            for k in m.get('failItems'):
+                temp_model = InvalidSignRecordsResponseBodyResultFailItems()
+                self.fail_items.append(temp_model.from_map(k))
+        self.success_items = []
+        if m.get('successItems') is not None:
+            for k in m.get('successItems'):
+                temp_model = InvalidSignRecordsResponseBodyResultSuccessItems()
+                self.success_items.append(temp_model.from_map(k))
+        return self
+
+
+class InvalidSignRecordsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: InvalidSignRecordsResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        # This parameter is required.
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = InvalidSignRecordsResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class InvalidSignRecordsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: InvalidSignRecordsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = InvalidSignRecordsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -9047,6 +9558,268 @@ class QueryPositionsResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryPositionsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class RevokeSignRecordsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RevokeSignRecordsRequest(TeaModel):
+    def __init__(
+        self,
+        revoke_user_id: str = None,
+        sign_record_ids: List[str] = None,
+        status_remark: str = None,
+    ):
+        # This parameter is required.
+        self.revoke_user_id = revoke_user_id
+        # This parameter is required.
+        self.sign_record_ids = sign_record_ids
+        # This parameter is required.
+        self.status_remark = status_remark
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.revoke_user_id is not None:
+            result['revokeUserId'] = self.revoke_user_id
+        if self.sign_record_ids is not None:
+            result['signRecordIds'] = self.sign_record_ids
+        if self.status_remark is not None:
+            result['statusRemark'] = self.status_remark
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('revokeUserId') is not None:
+            self.revoke_user_id = m.get('revokeUserId')
+        if m.get('signRecordIds') is not None:
+            self.sign_record_ids = m.get('signRecordIds')
+        if m.get('statusRemark') is not None:
+            self.status_remark = m.get('statusRemark')
+        return self
+
+
+class RevokeSignRecordsResponseBodyResultFailItems(TeaModel):
+    def __init__(
+        self,
+        item_id: str = None,
+        type: str = None,
+    ):
+        self.item_id = item_id
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.item_id is not None:
+            result['itemId'] = self.item_id
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('itemId') is not None:
+            self.item_id = m.get('itemId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class RevokeSignRecordsResponseBodyResultSuccessItems(TeaModel):
+    def __init__(
+        self,
+        item_id: str = None,
+    ):
+        self.item_id = item_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.item_id is not None:
+            result['itemId'] = self.item_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('itemId') is not None:
+            self.item_id = m.get('itemId')
+        return self
+
+
+class RevokeSignRecordsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        fail_items: List[RevokeSignRecordsResponseBodyResultFailItems] = None,
+        success_items: List[RevokeSignRecordsResponseBodyResultSuccessItems] = None,
+    ):
+        self.fail_items = fail_items
+        self.success_items = success_items
+
+    def validate(self):
+        if self.fail_items:
+            for k in self.fail_items:
+                if k:
+                    k.validate()
+        if self.success_items:
+            for k in self.success_items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['failItems'] = []
+        if self.fail_items is not None:
+            for k in self.fail_items:
+                result['failItems'].append(k.to_map() if k else None)
+        result['successItems'] = []
+        if self.success_items is not None:
+            for k in self.success_items:
+                result['successItems'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.fail_items = []
+        if m.get('failItems') is not None:
+            for k in m.get('failItems'):
+                temp_model = RevokeSignRecordsResponseBodyResultFailItems()
+                self.fail_items.append(temp_model.from_map(k))
+        self.success_items = []
+        if m.get('successItems') is not None:
+            for k in m.get('successItems'):
+                temp_model = RevokeSignRecordsResponseBodyResultSuccessItems()
+                self.success_items.append(temp_model.from_map(k))
+        return self
+
+
+class RevokeSignRecordsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: RevokeSignRecordsResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        # This parameter is required.
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = RevokeSignRecordsResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class RevokeSignRecordsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: RevokeSignRecordsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = RevokeSignRecordsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

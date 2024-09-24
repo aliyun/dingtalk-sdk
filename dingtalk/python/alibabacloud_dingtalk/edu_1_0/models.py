@@ -632,6 +632,823 @@ class AddCollegeAlumniUserInfoResponse(TeaModel):
         return self
 
 
+class AddCollegeContactExclusiveHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddCollegeContactExclusiveRequestDeptOrderList(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        order: int = None,
+    ):
+        self.dept_id = dept_id
+        self.order = order
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.order is not None:
+            result['order'] = self.order
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        return self
+
+
+class AddCollegeContactExclusiveRequestDeptTitleList(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        title: str = None,
+    ):
+        self.dept_id = dept_id
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class AddCollegeContactExclusiveRequest(TeaModel):
+    def __init__(
+        self,
+        avatar_media_id: str = None,
+        dept_id_list: List[int] = None,
+        dept_order_list: List[AddCollegeContactExclusiveRequestDeptOrderList] = None,
+        dept_title_list: List[AddCollegeContactExclusiveRequestDeptTitleList] = None,
+        email: str = None,
+        emp_type: str = None,
+        exclusive_account: bool = None,
+        exclusive_account_type: str = None,
+        extension: Dict[str, str] = None,
+        hired_date: int = None,
+        init_password: str = None,
+        job_number: str = None,
+        login_id_type: str = None,
+        main_dept_id: int = None,
+        manager_userid: str = None,
+        mobile: str = None,
+        name: str = None,
+        nickname: str = None,
+        org_email: str = None,
+        org_email_type: str = None,
+        remark: str = None,
+        send_active_sms: bool = None,
+        senior_mode: bool = None,
+        telephone: str = None,
+        title: str = None,
+        userid: str = None,
+        work_place: str = None,
+    ):
+        self.avatar_media_id = avatar_media_id
+        # This parameter is required.
+        self.dept_id_list = dept_id_list
+        self.dept_order_list = dept_order_list
+        self.dept_title_list = dept_title_list
+        self.email = email
+        # This parameter is required.
+        self.emp_type = emp_type
+        # This parameter is required.
+        self.exclusive_account = exclusive_account
+        # This parameter is required.
+        self.exclusive_account_type = exclusive_account_type
+        self.extension = extension
+        self.hired_date = hired_date
+        # This parameter is required.
+        self.init_password = init_password
+        self.job_number = job_number
+        # This parameter is required.
+        self.login_id_type = login_id_type
+        # This parameter is required.
+        self.main_dept_id = main_dept_id
+        self.manager_userid = manager_userid
+        self.mobile = mobile
+        # This parameter is required.
+        self.name = name
+        self.nickname = nickname
+        self.org_email = org_email
+        self.org_email_type = org_email_type
+        self.remark = remark
+        self.send_active_sms = send_active_sms
+        self.senior_mode = senior_mode
+        self.telephone = telephone
+        self.title = title
+        self.userid = userid
+        self.work_place = work_place
+
+    def validate(self):
+        if self.dept_order_list:
+            for k in self.dept_order_list:
+                if k:
+                    k.validate()
+        if self.dept_title_list:
+            for k in self.dept_title_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.avatar_media_id is not None:
+            result['avatarMediaId'] = self.avatar_media_id
+        if self.dept_id_list is not None:
+            result['deptIdList'] = self.dept_id_list
+        result['deptOrderList'] = []
+        if self.dept_order_list is not None:
+            for k in self.dept_order_list:
+                result['deptOrderList'].append(k.to_map() if k else None)
+        result['deptTitleList'] = []
+        if self.dept_title_list is not None:
+            for k in self.dept_title_list:
+                result['deptTitleList'].append(k.to_map() if k else None)
+        if self.email is not None:
+            result['email'] = self.email
+        if self.emp_type is not None:
+            result['empType'] = self.emp_type
+        if self.exclusive_account is not None:
+            result['exclusiveAccount'] = self.exclusive_account
+        if self.exclusive_account_type is not None:
+            result['exclusiveAccountType'] = self.exclusive_account_type
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.hired_date is not None:
+            result['hiredDate'] = self.hired_date
+        if self.init_password is not None:
+            result['initPassword'] = self.init_password
+        if self.job_number is not None:
+            result['jobNumber'] = self.job_number
+        if self.login_id_type is not None:
+            result['loginIdType'] = self.login_id_type
+        if self.main_dept_id is not None:
+            result['mainDeptId'] = self.main_dept_id
+        if self.manager_userid is not None:
+            result['managerUserid'] = self.manager_userid
+        if self.mobile is not None:
+            result['mobile'] = self.mobile
+        if self.name is not None:
+            result['name'] = self.name
+        if self.nickname is not None:
+            result['nickname'] = self.nickname
+        if self.org_email is not None:
+            result['orgEmail'] = self.org_email
+        if self.org_email_type is not None:
+            result['orgEmailType'] = self.org_email_type
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.send_active_sms is not None:
+            result['sendActiveSms'] = self.send_active_sms
+        if self.senior_mode is not None:
+            result['seniorMode'] = self.senior_mode
+        if self.telephone is not None:
+            result['telephone'] = self.telephone
+        if self.title is not None:
+            result['title'] = self.title
+        if self.userid is not None:
+            result['userid'] = self.userid
+        if self.work_place is not None:
+            result['workPlace'] = self.work_place
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('avatarMediaId') is not None:
+            self.avatar_media_id = m.get('avatarMediaId')
+        if m.get('deptIdList') is not None:
+            self.dept_id_list = m.get('deptIdList')
+        self.dept_order_list = []
+        if m.get('deptOrderList') is not None:
+            for k in m.get('deptOrderList'):
+                temp_model = AddCollegeContactExclusiveRequestDeptOrderList()
+                self.dept_order_list.append(temp_model.from_map(k))
+        self.dept_title_list = []
+        if m.get('deptTitleList') is not None:
+            for k in m.get('deptTitleList'):
+                temp_model = AddCollegeContactExclusiveRequestDeptTitleList()
+                self.dept_title_list.append(temp_model.from_map(k))
+        if m.get('email') is not None:
+            self.email = m.get('email')
+        if m.get('empType') is not None:
+            self.emp_type = m.get('empType')
+        if m.get('exclusiveAccount') is not None:
+            self.exclusive_account = m.get('exclusiveAccount')
+        if m.get('exclusiveAccountType') is not None:
+            self.exclusive_account_type = m.get('exclusiveAccountType')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('hiredDate') is not None:
+            self.hired_date = m.get('hiredDate')
+        if m.get('initPassword') is not None:
+            self.init_password = m.get('initPassword')
+        if m.get('jobNumber') is not None:
+            self.job_number = m.get('jobNumber')
+        if m.get('loginIdType') is not None:
+            self.login_id_type = m.get('loginIdType')
+        if m.get('mainDeptId') is not None:
+            self.main_dept_id = m.get('mainDeptId')
+        if m.get('managerUserid') is not None:
+            self.manager_userid = m.get('managerUserid')
+        if m.get('mobile') is not None:
+            self.mobile = m.get('mobile')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('nickname') is not None:
+            self.nickname = m.get('nickname')
+        if m.get('orgEmail') is not None:
+            self.org_email = m.get('orgEmail')
+        if m.get('orgEmailType') is not None:
+            self.org_email_type = m.get('orgEmailType')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('sendActiveSms') is not None:
+            self.send_active_sms = m.get('sendActiveSms')
+        if m.get('seniorMode') is not None:
+            self.senior_mode = m.get('seniorMode')
+        if m.get('telephone') is not None:
+            self.telephone = m.get('telephone')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userid') is not None:
+            self.userid = m.get('userid')
+        if m.get('workPlace') is not None:
+            self.work_place = m.get('workPlace')
+        return self
+
+
+class AddCollegeContactExclusiveResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        create_result: int = None,
+        union_id: str = None,
+        userid: str = None,
+    ):
+        self.create_result = create_result
+        self.union_id = union_id
+        self.userid = userid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.create_result is not None:
+            result['createResult'] = self.create_result
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.userid is not None:
+            result['userid'] = self.userid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('createResult') is not None:
+            self.create_result = m.get('createResult')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('userid') is not None:
+            self.userid = m.get('userid')
+        return self
+
+
+class AddCollegeContactExclusiveResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: AddCollegeContactExclusiveResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = AddCollegeContactExclusiveResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AddCollegeContactExclusiveResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AddCollegeContactExclusiveResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AddCollegeContactExclusiveResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AddCollegeContactUserHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddCollegeContactUserRequestDeptOrderList(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        order: int = None,
+    ):
+        self.dept_id = dept_id
+        self.order = order
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.order is not None:
+            result['order'] = self.order
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        return self
+
+
+class AddCollegeContactUserRequestDeptTitleList(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        title: str = None,
+    ):
+        self.dept_id = dept_id
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class AddCollegeContactUserRequest(TeaModel):
+    def __init__(
+        self,
+        dept_id_list: List[int] = None,
+        dept_order_list: List[AddCollegeContactUserRequestDeptOrderList] = None,
+        dept_title_list: List[AddCollegeContactUserRequestDeptTitleList] = None,
+        email: str = None,
+        emp_type: str = None,
+        extension: Dict[str, str] = None,
+        hide_mobile: bool = None,
+        hired_date: int = None,
+        job_number: str = None,
+        login_email: str = None,
+        main_dept_id: int = None,
+        manager_userid: str = None,
+        mobile: str = None,
+        name: str = None,
+        org_email: str = None,
+        org_email_type: str = None,
+        remark: str = None,
+        send_active_sms: bool = None,
+        senior_mode: bool = None,
+        telephone: str = None,
+        title: str = None,
+        userid: str = None,
+        work_place: str = None,
+    ):
+        # This parameter is required.
+        self.dept_id_list = dept_id_list
+        self.dept_order_list = dept_order_list
+        self.dept_title_list = dept_title_list
+        self.email = email
+        # This parameter is required.
+        self.emp_type = emp_type
+        self.extension = extension
+        self.hide_mobile = hide_mobile
+        self.hired_date = hired_date
+        self.job_number = job_number
+        self.login_email = login_email
+        # This parameter is required.
+        self.main_dept_id = main_dept_id
+        self.manager_userid = manager_userid
+        # This parameter is required.
+        self.mobile = mobile
+        # This parameter is required.
+        self.name = name
+        self.org_email = org_email
+        self.org_email_type = org_email_type
+        self.remark = remark
+        self.send_active_sms = send_active_sms
+        self.senior_mode = senior_mode
+        self.telephone = telephone
+        self.title = title
+        self.userid = userid
+        self.work_place = work_place
+
+    def validate(self):
+        if self.dept_order_list:
+            for k in self.dept_order_list:
+                if k:
+                    k.validate()
+        if self.dept_title_list:
+            for k in self.dept_title_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id_list is not None:
+            result['deptIdList'] = self.dept_id_list
+        result['deptOrderList'] = []
+        if self.dept_order_list is not None:
+            for k in self.dept_order_list:
+                result['deptOrderList'].append(k.to_map() if k else None)
+        result['deptTitleList'] = []
+        if self.dept_title_list is not None:
+            for k in self.dept_title_list:
+                result['deptTitleList'].append(k.to_map() if k else None)
+        if self.email is not None:
+            result['email'] = self.email
+        if self.emp_type is not None:
+            result['empType'] = self.emp_type
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.hide_mobile is not None:
+            result['hideMobile'] = self.hide_mobile
+        if self.hired_date is not None:
+            result['hiredDate'] = self.hired_date
+        if self.job_number is not None:
+            result['jobNumber'] = self.job_number
+        if self.login_email is not None:
+            result['loginEmail'] = self.login_email
+        if self.main_dept_id is not None:
+            result['mainDeptId'] = self.main_dept_id
+        if self.manager_userid is not None:
+            result['managerUserid'] = self.manager_userid
+        if self.mobile is not None:
+            result['mobile'] = self.mobile
+        if self.name is not None:
+            result['name'] = self.name
+        if self.org_email is not None:
+            result['orgEmail'] = self.org_email
+        if self.org_email_type is not None:
+            result['orgEmailType'] = self.org_email_type
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.send_active_sms is not None:
+            result['sendActiveSms'] = self.send_active_sms
+        if self.senior_mode is not None:
+            result['seniorMode'] = self.senior_mode
+        if self.telephone is not None:
+            result['telephone'] = self.telephone
+        if self.title is not None:
+            result['title'] = self.title
+        if self.userid is not None:
+            result['userid'] = self.userid
+        if self.work_place is not None:
+            result['workPlace'] = self.work_place
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptIdList') is not None:
+            self.dept_id_list = m.get('deptIdList')
+        self.dept_order_list = []
+        if m.get('deptOrderList') is not None:
+            for k in m.get('deptOrderList'):
+                temp_model = AddCollegeContactUserRequestDeptOrderList()
+                self.dept_order_list.append(temp_model.from_map(k))
+        self.dept_title_list = []
+        if m.get('deptTitleList') is not None:
+            for k in m.get('deptTitleList'):
+                temp_model = AddCollegeContactUserRequestDeptTitleList()
+                self.dept_title_list.append(temp_model.from_map(k))
+        if m.get('email') is not None:
+            self.email = m.get('email')
+        if m.get('empType') is not None:
+            self.emp_type = m.get('empType')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('hideMobile') is not None:
+            self.hide_mobile = m.get('hideMobile')
+        if m.get('hiredDate') is not None:
+            self.hired_date = m.get('hiredDate')
+        if m.get('jobNumber') is not None:
+            self.job_number = m.get('jobNumber')
+        if m.get('loginEmail') is not None:
+            self.login_email = m.get('loginEmail')
+        if m.get('mainDeptId') is not None:
+            self.main_dept_id = m.get('mainDeptId')
+        if m.get('managerUserid') is not None:
+            self.manager_userid = m.get('managerUserid')
+        if m.get('mobile') is not None:
+            self.mobile = m.get('mobile')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('orgEmail') is not None:
+            self.org_email = m.get('orgEmail')
+        if m.get('orgEmailType') is not None:
+            self.org_email_type = m.get('orgEmailType')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('sendActiveSms') is not None:
+            self.send_active_sms = m.get('sendActiveSms')
+        if m.get('seniorMode') is not None:
+            self.senior_mode = m.get('seniorMode')
+        if m.get('telephone') is not None:
+            self.telephone = m.get('telephone')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userid') is not None:
+            self.userid = m.get('userid')
+        if m.get('workPlace') is not None:
+            self.work_place = m.get('workPlace')
+        return self
+
+
+class AddCollegeContactUserResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        create_result: int = None,
+        union_id: str = None,
+        userid: str = None,
+    ):
+        self.create_result = create_result
+        self.union_id = union_id
+        self.userid = userid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.create_result is not None:
+            result['createResult'] = self.create_result
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.userid is not None:
+            result['userid'] = self.userid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('createResult') is not None:
+            self.create_result = m.get('createResult')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('userid') is not None:
+            self.userid = m.get('userid')
+        return self
+
+
+class AddCollegeContactUserResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: AddCollegeContactUserResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = AddCollegeContactUserResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AddCollegeContactUserResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AddCollegeContactUserResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AddCollegeContactUserResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AddCompetitionRecordHeaders(TeaModel):
     def __init__(
         self,
@@ -5379,6 +6196,412 @@ class CreateAppOrderResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateAppOrderResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateCollegeContactDeptHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateCollegeContactDeptRequestHideSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+        chatbox_subtitle: bool = None,
+        node_list: bool = None,
+        profile: bool = None,
+        search: bool = None,
+    ):
+        self.active = active
+        self.chatbox_subtitle = chatbox_subtitle
+        self.node_list = node_list
+        self.profile = profile
+        self.search = search
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        if self.chatbox_subtitle is not None:
+            result['chatboxSubtitle'] = self.chatbox_subtitle
+        if self.node_list is not None:
+            result['nodeList'] = self.node_list
+        if self.profile is not None:
+            result['profile'] = self.profile
+        if self.search is not None:
+            result['search'] = self.search
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        if m.get('chatboxSubtitle') is not None:
+            self.chatbox_subtitle = m.get('chatboxSubtitle')
+        if m.get('nodeList') is not None:
+            self.node_list = m.get('nodeList')
+        if m.get('profile') is not None:
+            self.profile = m.get('profile')
+        if m.get('search') is not None:
+            self.search = m.get('search')
+        return self
+
+
+class CreateCollegeContactDeptRequestOuterSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+        chatbox_subtitle: bool = None,
+        node_list: bool = None,
+        profile: bool = None,
+        search: bool = None,
+    ):
+        self.active = active
+        self.chatbox_subtitle = chatbox_subtitle
+        self.node_list = node_list
+        self.profile = profile
+        self.search = search
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        if self.chatbox_subtitle is not None:
+            result['chatboxSubtitle'] = self.chatbox_subtitle
+        if self.node_list is not None:
+            result['nodeList'] = self.node_list
+        if self.profile is not None:
+            result['profile'] = self.profile
+        if self.search is not None:
+            result['search'] = self.search
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        if m.get('chatboxSubtitle') is not None:
+            self.chatbox_subtitle = m.get('chatboxSubtitle')
+        if m.get('nodeList') is not None:
+            self.node_list = m.get('nodeList')
+        if m.get('profile') is not None:
+            self.profile = m.get('profile')
+        if m.get('search') is not None:
+            self.search = m.get('search')
+        return self
+
+
+class CreateCollegeContactDeptRequest(TeaModel):
+    def __init__(
+        self,
+        auto_approve_apply: bool = None,
+        brief: str = None,
+        code: str = None,
+        create_dept_group: bool = None,
+        dept_code: str = None,
+        dept_permits: List[int] = None,
+        dept_type: str = None,
+        emp_apply_join_dept: bool = None,
+        extension: Dict[str, str] = None,
+        hide_dept: bool = None,
+        hide_scene_config: CreateCollegeContactDeptRequestHideSceneConfig = None,
+        name: str = None,
+        order: int = None,
+        outer_dept: bool = None,
+        outer_dept_only_self: bool = None,
+        outer_permit_depts: List[int] = None,
+        outer_permit_users: List[str] = None,
+        outer_scene_config: CreateCollegeContactDeptRequestOuterSceneConfig = None,
+        parent_id: int = None,
+        source_identifier: str = None,
+        stru_id: int = None,
+        telephone: str = None,
+        user_permits: List[str] = None,
+    ):
+        self.auto_approve_apply = auto_approve_apply
+        self.brief = brief
+        self.code = code
+        self.create_dept_group = create_dept_group
+        self.dept_code = dept_code
+        self.dept_permits = dept_permits
+        # This parameter is required.
+        self.dept_type = dept_type
+        self.emp_apply_join_dept = emp_apply_join_dept
+        self.extension = extension
+        self.hide_dept = hide_dept
+        self.hide_scene_config = hide_scene_config
+        # This parameter is required.
+        self.name = name
+        self.order = order
+        self.outer_dept = outer_dept
+        self.outer_dept_only_self = outer_dept_only_self
+        self.outer_permit_depts = outer_permit_depts
+        self.outer_permit_users = outer_permit_users
+        self.outer_scene_config = outer_scene_config
+        # This parameter is required.
+        self.parent_id = parent_id
+        self.source_identifier = source_identifier
+        # This parameter is required.
+        self.stru_id = stru_id
+        self.telephone = telephone
+        self.user_permits = user_permits
+
+    def validate(self):
+        if self.hide_scene_config:
+            self.hide_scene_config.validate()
+        if self.outer_scene_config:
+            self.outer_scene_config.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auto_approve_apply is not None:
+            result['autoApproveApply'] = self.auto_approve_apply
+        if self.brief is not None:
+            result['brief'] = self.brief
+        if self.code is not None:
+            result['code'] = self.code
+        if self.create_dept_group is not None:
+            result['createDeptGroup'] = self.create_dept_group
+        if self.dept_code is not None:
+            result['deptCode'] = self.dept_code
+        if self.dept_permits is not None:
+            result['deptPermits'] = self.dept_permits
+        if self.dept_type is not None:
+            result['deptType'] = self.dept_type
+        if self.emp_apply_join_dept is not None:
+            result['empApplyJoinDept'] = self.emp_apply_join_dept
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.hide_dept is not None:
+            result['hideDept'] = self.hide_dept
+        if self.hide_scene_config is not None:
+            result['hideSceneConfig'] = self.hide_scene_config.to_map()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.order is not None:
+            result['order'] = self.order
+        if self.outer_dept is not None:
+            result['outerDept'] = self.outer_dept
+        if self.outer_dept_only_self is not None:
+            result['outerDeptOnlySelf'] = self.outer_dept_only_self
+        if self.outer_permit_depts is not None:
+            result['outerPermitDepts'] = self.outer_permit_depts
+        if self.outer_permit_users is not None:
+            result['outerPermitUsers'] = self.outer_permit_users
+        if self.outer_scene_config is not None:
+            result['outerSceneConfig'] = self.outer_scene_config.to_map()
+        if self.parent_id is not None:
+            result['parentId'] = self.parent_id
+        if self.source_identifier is not None:
+            result['sourceIdentifier'] = self.source_identifier
+        if self.stru_id is not None:
+            result['struId'] = self.stru_id
+        if self.telephone is not None:
+            result['telephone'] = self.telephone
+        if self.user_permits is not None:
+            result['userPermits'] = self.user_permits
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('autoApproveApply') is not None:
+            self.auto_approve_apply = m.get('autoApproveApply')
+        if m.get('brief') is not None:
+            self.brief = m.get('brief')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('createDeptGroup') is not None:
+            self.create_dept_group = m.get('createDeptGroup')
+        if m.get('deptCode') is not None:
+            self.dept_code = m.get('deptCode')
+        if m.get('deptPermits') is not None:
+            self.dept_permits = m.get('deptPermits')
+        if m.get('deptType') is not None:
+            self.dept_type = m.get('deptType')
+        if m.get('empApplyJoinDept') is not None:
+            self.emp_apply_join_dept = m.get('empApplyJoinDept')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('hideDept') is not None:
+            self.hide_dept = m.get('hideDept')
+        if m.get('hideSceneConfig') is not None:
+            temp_model = CreateCollegeContactDeptRequestHideSceneConfig()
+            self.hide_scene_config = temp_model.from_map(m['hideSceneConfig'])
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        if m.get('outerDept') is not None:
+            self.outer_dept = m.get('outerDept')
+        if m.get('outerDeptOnlySelf') is not None:
+            self.outer_dept_only_self = m.get('outerDeptOnlySelf')
+        if m.get('outerPermitDepts') is not None:
+            self.outer_permit_depts = m.get('outerPermitDepts')
+        if m.get('outerPermitUsers') is not None:
+            self.outer_permit_users = m.get('outerPermitUsers')
+        if m.get('outerSceneConfig') is not None:
+            temp_model = CreateCollegeContactDeptRequestOuterSceneConfig()
+            self.outer_scene_config = temp_model.from_map(m['outerSceneConfig'])
+        if m.get('parentId') is not None:
+            self.parent_id = m.get('parentId')
+        if m.get('sourceIdentifier') is not None:
+            self.source_identifier = m.get('sourceIdentifier')
+        if m.get('struId') is not None:
+            self.stru_id = m.get('struId')
+        if m.get('telephone') is not None:
+            self.telephone = m.get('telephone')
+        if m.get('userPermits') is not None:
+            self.user_permits = m.get('userPermits')
+        return self
+
+
+class CreateCollegeContactDeptResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+    ):
+        self.dept_id = dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        return self
+
+
+class CreateCollegeContactDeptResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CreateCollegeContactDeptResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CreateCollegeContactDeptResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateCollegeContactDeptResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateCollegeContactDeptResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateCollegeContactDeptResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -13498,6 +14721,632 @@ class GetCollegeAlumniUserInfoResponse(TeaModel):
         return self
 
 
+class GetCollegeContactDeptDetailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetCollegeContactDeptDetailRequest(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        language: str = None,
+    ):
+        # This parameter is required.
+        self.dept_id = dept_id
+        self.language = language
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.language is not None:
+            result['language'] = self.language
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('language') is not None:
+            self.language = m.get('language')
+        return self
+
+
+class GetCollegeContactDeptDetailResponseBodyResultHideSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+        chatbox_subtitle: bool = None,
+        node_list: bool = None,
+        profile: bool = None,
+        search: bool = None,
+    ):
+        self.active = active
+        self.chatbox_subtitle = chatbox_subtitle
+        self.node_list = node_list
+        self.profile = profile
+        self.search = search
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        if self.chatbox_subtitle is not None:
+            result['chatboxSubtitle'] = self.chatbox_subtitle
+        if self.node_list is not None:
+            result['nodeList'] = self.node_list
+        if self.profile is not None:
+            result['profile'] = self.profile
+        if self.search is not None:
+            result['search'] = self.search
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        if m.get('chatboxSubtitle') is not None:
+            self.chatbox_subtitle = m.get('chatboxSubtitle')
+        if m.get('nodeList') is not None:
+            self.node_list = m.get('nodeList')
+        if m.get('profile') is not None:
+            self.profile = m.get('profile')
+        if m.get('search') is not None:
+            self.search = m.get('search')
+        return self
+
+
+class GetCollegeContactDeptDetailResponseBodyResultOuterSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+        chatbox_subtitle: bool = None,
+        node_list: bool = None,
+        profile: bool = None,
+        search: bool = None,
+    ):
+        self.active = active
+        self.chatbox_subtitle = chatbox_subtitle
+        self.node_list = node_list
+        self.profile = profile
+        self.search = search
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        if self.chatbox_subtitle is not None:
+            result['chatboxSubtitle'] = self.chatbox_subtitle
+        if self.node_list is not None:
+            result['nodeList'] = self.node_list
+        if self.profile is not None:
+            result['profile'] = self.profile
+        if self.search is not None:
+            result['search'] = self.search
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        if m.get('chatboxSubtitle') is not None:
+            self.chatbox_subtitle = m.get('chatboxSubtitle')
+        if m.get('nodeList') is not None:
+            self.node_list = m.get('nodeList')
+        if m.get('profile') is not None:
+            self.profile = m.get('profile')
+        if m.get('search') is not None:
+            self.search = m.get('search')
+        return self
+
+
+class GetCollegeContactDeptDetailResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        auto_add_user: bool = None,
+        auto_approve_apply: bool = None,
+        brief: str = None,
+        code: str = None,
+        create_dept_group: bool = None,
+        dept_code: str = None,
+        dept_group_chat_id: str = None,
+        dept_id: int = None,
+        dept_manager_userid_list: List[str] = None,
+        dept_permits: List[int] = None,
+        dept_type: str = None,
+        emp_apply_join_dept: bool = None,
+        extension: str = None,
+        from_union_org: bool = None,
+        group_contain_sub_dept: bool = None,
+        hide_dept: bool = None,
+        hide_scene_config: GetCollegeContactDeptDetailResponseBodyResultHideSceneConfig = None,
+        name: str = None,
+        order: int = None,
+        org_dept_owner: str = None,
+        outer_dept: bool = None,
+        outer_permit_depts: List[int] = None,
+        outer_permit_users: List[str] = None,
+        outer_scene_config: GetCollegeContactDeptDetailResponseBodyResultOuterSceneConfig = None,
+        parent_id: int = None,
+        source_identifier: str = None,
+        stru_id: int = None,
+        tags: str = None,
+        telephone: str = None,
+        user_permits: List[str] = None,
+    ):
+        self.auto_add_user = auto_add_user
+        self.auto_approve_apply = auto_approve_apply
+        self.brief = brief
+        self.code = code
+        self.create_dept_group = create_dept_group
+        self.dept_code = dept_code
+        self.dept_group_chat_id = dept_group_chat_id
+        self.dept_id = dept_id
+        self.dept_manager_userid_list = dept_manager_userid_list
+        self.dept_permits = dept_permits
+        self.dept_type = dept_type
+        self.emp_apply_join_dept = emp_apply_join_dept
+        self.extension = extension
+        self.from_union_org = from_union_org
+        self.group_contain_sub_dept = group_contain_sub_dept
+        self.hide_dept = hide_dept
+        self.hide_scene_config = hide_scene_config
+        self.name = name
+        self.order = order
+        self.org_dept_owner = org_dept_owner
+        self.outer_dept = outer_dept
+        self.outer_permit_depts = outer_permit_depts
+        self.outer_permit_users = outer_permit_users
+        self.outer_scene_config = outer_scene_config
+        self.parent_id = parent_id
+        self.source_identifier = source_identifier
+        self.stru_id = stru_id
+        self.tags = tags
+        self.telephone = telephone
+        self.user_permits = user_permits
+
+    def validate(self):
+        if self.hide_scene_config:
+            self.hide_scene_config.validate()
+        if self.outer_scene_config:
+            self.outer_scene_config.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auto_add_user is not None:
+            result['autoAddUser'] = self.auto_add_user
+        if self.auto_approve_apply is not None:
+            result['autoApproveApply'] = self.auto_approve_apply
+        if self.brief is not None:
+            result['brief'] = self.brief
+        if self.code is not None:
+            result['code'] = self.code
+        if self.create_dept_group is not None:
+            result['createDeptGroup'] = self.create_dept_group
+        if self.dept_code is not None:
+            result['deptCode'] = self.dept_code
+        if self.dept_group_chat_id is not None:
+            result['deptGroupChatId'] = self.dept_group_chat_id
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.dept_manager_userid_list is not None:
+            result['deptManagerUseridList'] = self.dept_manager_userid_list
+        if self.dept_permits is not None:
+            result['deptPermits'] = self.dept_permits
+        if self.dept_type is not None:
+            result['deptType'] = self.dept_type
+        if self.emp_apply_join_dept is not None:
+            result['empApplyJoinDept'] = self.emp_apply_join_dept
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.from_union_org is not None:
+            result['fromUnionOrg'] = self.from_union_org
+        if self.group_contain_sub_dept is not None:
+            result['groupContainSubDept'] = self.group_contain_sub_dept
+        if self.hide_dept is not None:
+            result['hideDept'] = self.hide_dept
+        if self.hide_scene_config is not None:
+            result['hideSceneConfig'] = self.hide_scene_config.to_map()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.order is not None:
+            result['order'] = self.order
+        if self.org_dept_owner is not None:
+            result['orgDeptOwner'] = self.org_dept_owner
+        if self.outer_dept is not None:
+            result['outerDept'] = self.outer_dept
+        if self.outer_permit_depts is not None:
+            result['outerPermitDepts'] = self.outer_permit_depts
+        if self.outer_permit_users is not None:
+            result['outerPermitUsers'] = self.outer_permit_users
+        if self.outer_scene_config is not None:
+            result['outerSceneConfig'] = self.outer_scene_config.to_map()
+        if self.parent_id is not None:
+            result['parentId'] = self.parent_id
+        if self.source_identifier is not None:
+            result['sourceIdentifier'] = self.source_identifier
+        if self.stru_id is not None:
+            result['struId'] = self.stru_id
+        if self.tags is not None:
+            result['tags'] = self.tags
+        if self.telephone is not None:
+            result['telephone'] = self.telephone
+        if self.user_permits is not None:
+            result['userPermits'] = self.user_permits
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('autoAddUser') is not None:
+            self.auto_add_user = m.get('autoAddUser')
+        if m.get('autoApproveApply') is not None:
+            self.auto_approve_apply = m.get('autoApproveApply')
+        if m.get('brief') is not None:
+            self.brief = m.get('brief')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('createDeptGroup') is not None:
+            self.create_dept_group = m.get('createDeptGroup')
+        if m.get('deptCode') is not None:
+            self.dept_code = m.get('deptCode')
+        if m.get('deptGroupChatId') is not None:
+            self.dept_group_chat_id = m.get('deptGroupChatId')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('deptManagerUseridList') is not None:
+            self.dept_manager_userid_list = m.get('deptManagerUseridList')
+        if m.get('deptPermits') is not None:
+            self.dept_permits = m.get('deptPermits')
+        if m.get('deptType') is not None:
+            self.dept_type = m.get('deptType')
+        if m.get('empApplyJoinDept') is not None:
+            self.emp_apply_join_dept = m.get('empApplyJoinDept')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('fromUnionOrg') is not None:
+            self.from_union_org = m.get('fromUnionOrg')
+        if m.get('groupContainSubDept') is not None:
+            self.group_contain_sub_dept = m.get('groupContainSubDept')
+        if m.get('hideDept') is not None:
+            self.hide_dept = m.get('hideDept')
+        if m.get('hideSceneConfig') is not None:
+            temp_model = GetCollegeContactDeptDetailResponseBodyResultHideSceneConfig()
+            self.hide_scene_config = temp_model.from_map(m['hideSceneConfig'])
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        if m.get('orgDeptOwner') is not None:
+            self.org_dept_owner = m.get('orgDeptOwner')
+        if m.get('outerDept') is not None:
+            self.outer_dept = m.get('outerDept')
+        if m.get('outerPermitDepts') is not None:
+            self.outer_permit_depts = m.get('outerPermitDepts')
+        if m.get('outerPermitUsers') is not None:
+            self.outer_permit_users = m.get('outerPermitUsers')
+        if m.get('outerSceneConfig') is not None:
+            temp_model = GetCollegeContactDeptDetailResponseBodyResultOuterSceneConfig()
+            self.outer_scene_config = temp_model.from_map(m['outerSceneConfig'])
+        if m.get('parentId') is not None:
+            self.parent_id = m.get('parentId')
+        if m.get('sourceIdentifier') is not None:
+            self.source_identifier = m.get('sourceIdentifier')
+        if m.get('struId') is not None:
+            self.stru_id = m.get('struId')
+        if m.get('tags') is not None:
+            self.tags = m.get('tags')
+        if m.get('telephone') is not None:
+            self.telephone = m.get('telephone')
+        if m.get('userPermits') is not None:
+            self.user_permits = m.get('userPermits')
+        return self
+
+
+class GetCollegeContactDeptDetailResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetCollegeContactDeptDetailResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetCollegeContactDeptDetailResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetCollegeContactDeptDetailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetCollegeContactDeptDetailResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetCollegeContactDeptDetailResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetCollegeContactStandardStruDeptDetailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetCollegeContactStandardStruDeptDetailRequest(TeaModel):
+    def __init__(
+        self,
+        language: str = None,
+    ):
+        self.language = language
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.language is not None:
+            result['language'] = self.language
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('language') is not None:
+            self.language = m.get('language')
+        return self
+
+
+class GetCollegeContactStandardStruDeptDetailResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        stru_id: int = None,
+        student_dept_id: int = None,
+        teacher_dept_id: int = None,
+    ):
+        self.stru_id = stru_id
+        self.student_dept_id = student_dept_id
+        self.teacher_dept_id = teacher_dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.stru_id is not None:
+            result['struId'] = self.stru_id
+        if self.student_dept_id is not None:
+            result['studentDeptId'] = self.student_dept_id
+        if self.teacher_dept_id is not None:
+            result['teacherDeptId'] = self.teacher_dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('struId') is not None:
+            self.stru_id = m.get('struId')
+        if m.get('studentDeptId') is not None:
+            self.student_dept_id = m.get('studentDeptId')
+        if m.get('teacherDeptId') is not None:
+            self.teacher_dept_id = m.get('teacherDeptId')
+        return self
+
+
+class GetCollegeContactStandardStruDeptDetailResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetCollegeContactStandardStruDeptDetailResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetCollegeContactStandardStruDeptDetailResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetCollegeContactStandardStruDeptDetailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetCollegeContactStandardStruDeptDetailResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetCollegeContactStandardStruDeptDetailResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetDefaultChildHeaders(TeaModel):
     def __init__(
         self,
@@ -17470,6 +19319,429 @@ class IsvMetadataQueryResponse(TeaModel):
         return self
 
 
+class ListCollegeContactDeptTypeConfigHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListCollegeContactDeptTypeConfigRequest(TeaModel):
+    def __init__(
+        self,
+        language: str = None,
+    ):
+        self.language = language
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.language is not None:
+            result['language'] = self.language
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('language') is not None:
+            self.language = m.get('language')
+        return self
+
+
+class ListCollegeContactDeptTypeConfigResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        dept_type: str = None,
+        name: str = None,
+        user_def: bool = None,
+    ):
+        self.dept_type = dept_type
+        self.name = name
+        self.user_def = user_def
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_type is not None:
+            result['deptType'] = self.dept_type
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_def is not None:
+            result['userDef'] = self.user_def
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptType') is not None:
+            self.dept_type = m.get('deptType')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userDef') is not None:
+            self.user_def = m.get('userDef')
+        return self
+
+
+class ListCollegeContactDeptTypeConfigResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[ListCollegeContactDeptTypeConfigResponseBodyResult] = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = ListCollegeContactDeptTypeConfigResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ListCollegeContactDeptTypeConfigResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListCollegeContactDeptTypeConfigResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListCollegeContactDeptTypeConfigResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListCollegeContactSubDeptsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListCollegeContactSubDeptsRequest(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        language: str = None,
+    ):
+        # This parameter is required.
+        self.dept_id = dept_id
+        self.language = language
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.language is not None:
+            result['language'] = self.language
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('language') is not None:
+            self.language = m.get('language')
+        return self
+
+
+class ListCollegeContactSubDeptsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        auto_add_user: bool = None,
+        create_dept_group: bool = None,
+        dept_code: str = None,
+        dept_id: int = None,
+        dept_type: str = None,
+        extension: str = None,
+        from_union_org: bool = None,
+        name: str = None,
+        parent_id: int = None,
+        source_identifier: str = None,
+        stru_id: int = None,
+        tags: str = None,
+    ):
+        self.auto_add_user = auto_add_user
+        self.create_dept_group = create_dept_group
+        self.dept_code = dept_code
+        self.dept_id = dept_id
+        self.dept_type = dept_type
+        self.extension = extension
+        self.from_union_org = from_union_org
+        self.name = name
+        self.parent_id = parent_id
+        self.source_identifier = source_identifier
+        self.stru_id = stru_id
+        self.tags = tags
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auto_add_user is not None:
+            result['autoAddUser'] = self.auto_add_user
+        if self.create_dept_group is not None:
+            result['createDeptGroup'] = self.create_dept_group
+        if self.dept_code is not None:
+            result['deptCode'] = self.dept_code
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.dept_type is not None:
+            result['deptType'] = self.dept_type
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.from_union_org is not None:
+            result['fromUnionOrg'] = self.from_union_org
+        if self.name is not None:
+            result['name'] = self.name
+        if self.parent_id is not None:
+            result['parentId'] = self.parent_id
+        if self.source_identifier is not None:
+            result['sourceIdentifier'] = self.source_identifier
+        if self.stru_id is not None:
+            result['struId'] = self.stru_id
+        if self.tags is not None:
+            result['tags'] = self.tags
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('autoAddUser') is not None:
+            self.auto_add_user = m.get('autoAddUser')
+        if m.get('createDeptGroup') is not None:
+            self.create_dept_group = m.get('createDeptGroup')
+        if m.get('deptCode') is not None:
+            self.dept_code = m.get('deptCode')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('deptType') is not None:
+            self.dept_type = m.get('deptType')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('fromUnionOrg') is not None:
+            self.from_union_org = m.get('fromUnionOrg')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('parentId') is not None:
+            self.parent_id = m.get('parentId')
+        if m.get('sourceIdentifier') is not None:
+            self.source_identifier = m.get('sourceIdentifier')
+        if m.get('struId') is not None:
+            self.stru_id = m.get('struId')
+        if m.get('tags') is not None:
+            self.tags = m.get('tags')
+        return self
+
+
+class ListCollegeContactSubDeptsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[ListCollegeContactSubDeptsResponseBodyResult] = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = ListCollegeContactSubDeptsResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ListCollegeContactSubDeptsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListCollegeContactSubDeptsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListCollegeContactSubDeptsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListOrderHeaders(TeaModel):
     def __init__(
         self,
@@ -20738,6 +23010,666 @@ class QueryClassScheduleConfigResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryClassScheduleConfigResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryCollegeContactUserDetailHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryCollegeContactUserDetailRequest(TeaModel):
+    def __init__(
+        self,
+        language: str = None,
+        userid: str = None,
+    ):
+        self.language = language
+        # This parameter is required.
+        self.userid = userid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.language is not None:
+            result['language'] = self.language
+        if self.userid is not None:
+            result['userid'] = self.userid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('language') is not None:
+            self.language = m.get('language')
+        if m.get('userid') is not None:
+            self.userid = m.get('userid')
+        return self
+
+
+class QueryCollegeContactUserDetailResponseBodyResultDeptOrderList(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        order: int = None,
+    ):
+        self.dept_id = dept_id
+        self.order = order
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.order is not None:
+            result['order'] = self.order
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        return self
+
+
+class QueryCollegeContactUserDetailResponseBodyResultDeptTypeSet(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        dept_name: str = None,
+        dept_struct_type: str = None,
+        dept_type: str = None,
+        struct_dept_id: int = None,
+    ):
+        self.dept_id = dept_id
+        self.dept_name = dept_name
+        self.dept_struct_type = dept_struct_type
+        self.dept_type = dept_type
+        self.struct_dept_id = struct_dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.dept_struct_type is not None:
+            result['deptStructType'] = self.dept_struct_type
+        if self.dept_type is not None:
+            result['deptType'] = self.dept_type
+        if self.struct_dept_id is not None:
+            result['structDeptId'] = self.struct_dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('deptStructType') is not None:
+            self.dept_struct_type = m.get('deptStructType')
+        if m.get('deptType') is not None:
+            self.dept_type = m.get('deptType')
+        if m.get('structDeptId') is not None:
+            self.struct_dept_id = m.get('structDeptId')
+        return self
+
+
+class QueryCollegeContactUserDetailResponseBodyResultLeaderInDept(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        leader: bool = None,
+    ):
+        self.dept_id = dept_id
+        self.leader = leader
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.leader is not None:
+            result['leader'] = self.leader
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('leader') is not None:
+            self.leader = m.get('leader')
+        return self
+
+
+class QueryCollegeContactUserDetailResponseBodyResultRoleList(TeaModel):
+    def __init__(
+        self,
+        group_name: str = None,
+        id: int = None,
+        name: str = None,
+    ):
+        self.group_name = group_name
+        self.id = id
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class QueryCollegeContactUserDetailResponseBodyResultUnionEmpExtUnionEmpMapList(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        userid: str = None,
+    ):
+        self.corp_id = corp_id
+        self.userid = userid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.userid is not None:
+            result['userid'] = self.userid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('userid') is not None:
+            self.userid = m.get('userid')
+        return self
+
+
+class QueryCollegeContactUserDetailResponseBodyResultUnionEmpExt(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        union_emp_map_list: List[QueryCollegeContactUserDetailResponseBodyResultUnionEmpExtUnionEmpMapList] = None,
+        userid: str = None,
+    ):
+        self.corp_id = corp_id
+        self.union_emp_map_list = union_emp_map_list
+        self.userid = userid
+
+    def validate(self):
+        if self.union_emp_map_list:
+            for k in self.union_emp_map_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        result['unionEmpMapList'] = []
+        if self.union_emp_map_list is not None:
+            for k in self.union_emp_map_list:
+                result['unionEmpMapList'].append(k.to_map() if k else None)
+        if self.userid is not None:
+            result['userid'] = self.userid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        self.union_emp_map_list = []
+        if m.get('unionEmpMapList') is not None:
+            for k in m.get('unionEmpMapList'):
+                temp_model = QueryCollegeContactUserDetailResponseBodyResultUnionEmpExtUnionEmpMapList()
+                self.union_emp_map_list.append(temp_model.from_map(k))
+        if m.get('userid') is not None:
+            self.userid = m.get('userid')
+        return self
+
+
+class QueryCollegeContactUserDetailResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+        admin: bool = None,
+        avatar: str = None,
+        boss: bool = None,
+        dept_id_list: List[int] = None,
+        dept_order_list: List[QueryCollegeContactUserDetailResponseBodyResultDeptOrderList] = None,
+        dept_type_set: List[QueryCollegeContactUserDetailResponseBodyResultDeptTypeSet] = None,
+        email: str = None,
+        emp_type: str = None,
+        exclusive_account: bool = None,
+        exclusive_account_corp_id: str = None,
+        exclusive_account_corp_name: str = None,
+        exclusive_account_type: str = None,
+        extension: str = None,
+        hide_mobile: bool = None,
+        hired_date: int = None,
+        job_number: str = None,
+        leader_in_dept: List[QueryCollegeContactUserDetailResponseBodyResultLeaderInDept] = None,
+        login_id: str = None,
+        login_type: str = None,
+        main_dept_id: int = None,
+        manager_userid: str = None,
+        mobile: str = None,
+        name: str = None,
+        org_email: str = None,
+        org_email_type: str = None,
+        real_authed: bool = None,
+        remark: str = None,
+        role_list: List[QueryCollegeContactUserDetailResponseBodyResultRoleList] = None,
+        senior: bool = None,
+        state_code: str = None,
+        telephone: str = None,
+        title: str = None,
+        union_emp_ext: QueryCollegeContactUserDetailResponseBodyResultUnionEmpExt = None,
+        union_id: str = None,
+        userid: str = None,
+        work_place: str = None,
+    ):
+        self.active = active
+        self.admin = admin
+        self.avatar = avatar
+        self.boss = boss
+        self.dept_id_list = dept_id_list
+        self.dept_order_list = dept_order_list
+        self.dept_type_set = dept_type_set
+        self.email = email
+        self.emp_type = emp_type
+        self.exclusive_account = exclusive_account
+        self.exclusive_account_corp_id = exclusive_account_corp_id
+        self.exclusive_account_corp_name = exclusive_account_corp_name
+        self.exclusive_account_type = exclusive_account_type
+        self.extension = extension
+        self.hide_mobile = hide_mobile
+        self.hired_date = hired_date
+        self.job_number = job_number
+        self.leader_in_dept = leader_in_dept
+        self.login_id = login_id
+        self.login_type = login_type
+        self.main_dept_id = main_dept_id
+        self.manager_userid = manager_userid
+        self.mobile = mobile
+        self.name = name
+        self.org_email = org_email
+        self.org_email_type = org_email_type
+        self.real_authed = real_authed
+        self.remark = remark
+        self.role_list = role_list
+        self.senior = senior
+        self.state_code = state_code
+        self.telephone = telephone
+        self.title = title
+        self.union_emp_ext = union_emp_ext
+        self.union_id = union_id
+        self.userid = userid
+        self.work_place = work_place
+
+    def validate(self):
+        if self.dept_order_list:
+            for k in self.dept_order_list:
+                if k:
+                    k.validate()
+        if self.dept_type_set:
+            for k in self.dept_type_set:
+                if k:
+                    k.validate()
+        if self.leader_in_dept:
+            for k in self.leader_in_dept:
+                if k:
+                    k.validate()
+        if self.role_list:
+            for k in self.role_list:
+                if k:
+                    k.validate()
+        if self.union_emp_ext:
+            self.union_emp_ext.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        if self.admin is not None:
+            result['admin'] = self.admin
+        if self.avatar is not None:
+            result['avatar'] = self.avatar
+        if self.boss is not None:
+            result['boss'] = self.boss
+        if self.dept_id_list is not None:
+            result['deptIdList'] = self.dept_id_list
+        result['deptOrderList'] = []
+        if self.dept_order_list is not None:
+            for k in self.dept_order_list:
+                result['deptOrderList'].append(k.to_map() if k else None)
+        result['deptTypeSet'] = []
+        if self.dept_type_set is not None:
+            for k in self.dept_type_set:
+                result['deptTypeSet'].append(k.to_map() if k else None)
+        if self.email is not None:
+            result['email'] = self.email
+        if self.emp_type is not None:
+            result['empType'] = self.emp_type
+        if self.exclusive_account is not None:
+            result['exclusiveAccount'] = self.exclusive_account
+        if self.exclusive_account_corp_id is not None:
+            result['exclusiveAccountCorpId'] = self.exclusive_account_corp_id
+        if self.exclusive_account_corp_name is not None:
+            result['exclusiveAccountCorpName'] = self.exclusive_account_corp_name
+        if self.exclusive_account_type is not None:
+            result['exclusiveAccountType'] = self.exclusive_account_type
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.hide_mobile is not None:
+            result['hideMobile'] = self.hide_mobile
+        if self.hired_date is not None:
+            result['hiredDate'] = self.hired_date
+        if self.job_number is not None:
+            result['jobNumber'] = self.job_number
+        result['leaderInDept'] = []
+        if self.leader_in_dept is not None:
+            for k in self.leader_in_dept:
+                result['leaderInDept'].append(k.to_map() if k else None)
+        if self.login_id is not None:
+            result['loginId'] = self.login_id
+        if self.login_type is not None:
+            result['loginType'] = self.login_type
+        if self.main_dept_id is not None:
+            result['mainDeptId'] = self.main_dept_id
+        if self.manager_userid is not None:
+            result['managerUserid'] = self.manager_userid
+        if self.mobile is not None:
+            result['mobile'] = self.mobile
+        if self.name is not None:
+            result['name'] = self.name
+        if self.org_email is not None:
+            result['orgEmail'] = self.org_email
+        if self.org_email_type is not None:
+            result['orgEmailType'] = self.org_email_type
+        if self.real_authed is not None:
+            result['realAuthed'] = self.real_authed
+        if self.remark is not None:
+            result['remark'] = self.remark
+        result['roleList'] = []
+        if self.role_list is not None:
+            for k in self.role_list:
+                result['roleList'].append(k.to_map() if k else None)
+        if self.senior is not None:
+            result['senior'] = self.senior
+        if self.state_code is not None:
+            result['stateCode'] = self.state_code
+        if self.telephone is not None:
+            result['telephone'] = self.telephone
+        if self.title is not None:
+            result['title'] = self.title
+        if self.union_emp_ext is not None:
+            result['unionEmpExt'] = self.union_emp_ext.to_map()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.userid is not None:
+            result['userid'] = self.userid
+        if self.work_place is not None:
+            result['workPlace'] = self.work_place
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        if m.get('admin') is not None:
+            self.admin = m.get('admin')
+        if m.get('avatar') is not None:
+            self.avatar = m.get('avatar')
+        if m.get('boss') is not None:
+            self.boss = m.get('boss')
+        if m.get('deptIdList') is not None:
+            self.dept_id_list = m.get('deptIdList')
+        self.dept_order_list = []
+        if m.get('deptOrderList') is not None:
+            for k in m.get('deptOrderList'):
+                temp_model = QueryCollegeContactUserDetailResponseBodyResultDeptOrderList()
+                self.dept_order_list.append(temp_model.from_map(k))
+        self.dept_type_set = []
+        if m.get('deptTypeSet') is not None:
+            for k in m.get('deptTypeSet'):
+                temp_model = QueryCollegeContactUserDetailResponseBodyResultDeptTypeSet()
+                self.dept_type_set.append(temp_model.from_map(k))
+        if m.get('email') is not None:
+            self.email = m.get('email')
+        if m.get('empType') is not None:
+            self.emp_type = m.get('empType')
+        if m.get('exclusiveAccount') is not None:
+            self.exclusive_account = m.get('exclusiveAccount')
+        if m.get('exclusiveAccountCorpId') is not None:
+            self.exclusive_account_corp_id = m.get('exclusiveAccountCorpId')
+        if m.get('exclusiveAccountCorpName') is not None:
+            self.exclusive_account_corp_name = m.get('exclusiveAccountCorpName')
+        if m.get('exclusiveAccountType') is not None:
+            self.exclusive_account_type = m.get('exclusiveAccountType')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('hideMobile') is not None:
+            self.hide_mobile = m.get('hideMobile')
+        if m.get('hiredDate') is not None:
+            self.hired_date = m.get('hiredDate')
+        if m.get('jobNumber') is not None:
+            self.job_number = m.get('jobNumber')
+        self.leader_in_dept = []
+        if m.get('leaderInDept') is not None:
+            for k in m.get('leaderInDept'):
+                temp_model = QueryCollegeContactUserDetailResponseBodyResultLeaderInDept()
+                self.leader_in_dept.append(temp_model.from_map(k))
+        if m.get('loginId') is not None:
+            self.login_id = m.get('loginId')
+        if m.get('loginType') is not None:
+            self.login_type = m.get('loginType')
+        if m.get('mainDeptId') is not None:
+            self.main_dept_id = m.get('mainDeptId')
+        if m.get('managerUserid') is not None:
+            self.manager_userid = m.get('managerUserid')
+        if m.get('mobile') is not None:
+            self.mobile = m.get('mobile')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('orgEmail') is not None:
+            self.org_email = m.get('orgEmail')
+        if m.get('orgEmailType') is not None:
+            self.org_email_type = m.get('orgEmailType')
+        if m.get('realAuthed') is not None:
+            self.real_authed = m.get('realAuthed')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        self.role_list = []
+        if m.get('roleList') is not None:
+            for k in m.get('roleList'):
+                temp_model = QueryCollegeContactUserDetailResponseBodyResultRoleList()
+                self.role_list.append(temp_model.from_map(k))
+        if m.get('senior') is not None:
+            self.senior = m.get('senior')
+        if m.get('stateCode') is not None:
+            self.state_code = m.get('stateCode')
+        if m.get('telephone') is not None:
+            self.telephone = m.get('telephone')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('unionEmpExt') is not None:
+            temp_model = QueryCollegeContactUserDetailResponseBodyResultUnionEmpExt()
+            self.union_emp_ext = temp_model.from_map(m['unionEmpExt'])
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('userid') is not None:
+            self.userid = m.get('userid')
+        if m.get('workPlace') is not None:
+            self.work_place = m.get('workPlace')
+        return self
+
+
+class QueryCollegeContactUserDetailResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryCollegeContactUserDetailResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryCollegeContactUserDetailResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryCollegeContactUserDetailResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryCollegeContactUserDetailResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryCollegeContactUserDetailResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -27473,6 +30405,1252 @@ class UpdateCollegeAlumniUserInfoResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateCollegeAlumniUserInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateCollegeContactDeptHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateCollegeContactDeptRequestHideSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+        chatbox_subtitle: bool = None,
+        node_list: bool = None,
+        profile: bool = None,
+        search: bool = None,
+    ):
+        self.active = active
+        self.chatbox_subtitle = chatbox_subtitle
+        self.node_list = node_list
+        self.profile = profile
+        self.search = search
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        if self.chatbox_subtitle is not None:
+            result['chatboxSubtitle'] = self.chatbox_subtitle
+        if self.node_list is not None:
+            result['nodeList'] = self.node_list
+        if self.profile is not None:
+            result['profile'] = self.profile
+        if self.search is not None:
+            result['search'] = self.search
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        if m.get('chatboxSubtitle') is not None:
+            self.chatbox_subtitle = m.get('chatboxSubtitle')
+        if m.get('nodeList') is not None:
+            self.node_list = m.get('nodeList')
+        if m.get('profile') is not None:
+            self.profile = m.get('profile')
+        if m.get('search') is not None:
+            self.search = m.get('search')
+        return self
+
+
+class UpdateCollegeContactDeptRequestOuterSceneConfig(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+        chatbox_subtitle: bool = None,
+        node_list: bool = None,
+        profile: bool = None,
+        search: bool = None,
+    ):
+        self.active = active
+        self.chatbox_subtitle = chatbox_subtitle
+        self.node_list = node_list
+        self.profile = profile
+        self.search = search
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        if self.chatbox_subtitle is not None:
+            result['chatboxSubtitle'] = self.chatbox_subtitle
+        if self.node_list is not None:
+            result['nodeList'] = self.node_list
+        if self.profile is not None:
+            result['profile'] = self.profile
+        if self.search is not None:
+            result['search'] = self.search
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        if m.get('chatboxSubtitle') is not None:
+            self.chatbox_subtitle = m.get('chatboxSubtitle')
+        if m.get('nodeList') is not None:
+            self.node_list = m.get('nodeList')
+        if m.get('profile') is not None:
+            self.profile = m.get('profile')
+        if m.get('search') is not None:
+            self.search = m.get('search')
+        return self
+
+
+class UpdateCollegeContactDeptRequest(TeaModel):
+    def __init__(
+        self,
+        auto_add_user: bool = None,
+        auto_approve_apply: bool = None,
+        brief: str = None,
+        code: str = None,
+        create_dept_group: bool = None,
+        dept_code: str = None,
+        dept_id: int = None,
+        dept_manager_userid_list: List[str] = None,
+        dept_permits: List[int] = None,
+        dept_type: str = None,
+        emp_apply_join_dept: bool = None,
+        extension: Dict[str, str] = None,
+        force_update_fields: List[str] = None,
+        group_contain_hidden_dept: bool = None,
+        group_contain_outer_dept: bool = None,
+        group_contain_sub_dept: bool = None,
+        hide_dept: bool = None,
+        hide_scene_config: UpdateCollegeContactDeptRequestHideSceneConfig = None,
+        language: str = None,
+        name: str = None,
+        order: int = None,
+        org_dept_owner: str = None,
+        outer_dept: bool = None,
+        outer_dept_only_self: bool = None,
+        outer_permit_depts: List[int] = None,
+        outer_permit_users: List[str] = None,
+        outer_scene_config: UpdateCollegeContactDeptRequestOuterSceneConfig = None,
+        parent_id: int = None,
+        source_identifier: str = None,
+        telephone: str = None,
+        user_permits: List[str] = None,
+    ):
+        self.auto_add_user = auto_add_user
+        self.auto_approve_apply = auto_approve_apply
+        self.brief = brief
+        self.code = code
+        self.create_dept_group = create_dept_group
+        self.dept_code = dept_code
+        # This parameter is required.
+        self.dept_id = dept_id
+        self.dept_manager_userid_list = dept_manager_userid_list
+        self.dept_permits = dept_permits
+        self.dept_type = dept_type
+        self.emp_apply_join_dept = emp_apply_join_dept
+        self.extension = extension
+        self.force_update_fields = force_update_fields
+        self.group_contain_hidden_dept = group_contain_hidden_dept
+        self.group_contain_outer_dept = group_contain_outer_dept
+        self.group_contain_sub_dept = group_contain_sub_dept
+        self.hide_dept = hide_dept
+        self.hide_scene_config = hide_scene_config
+        self.language = language
+        self.name = name
+        self.order = order
+        self.org_dept_owner = org_dept_owner
+        self.outer_dept = outer_dept
+        self.outer_dept_only_self = outer_dept_only_self
+        self.outer_permit_depts = outer_permit_depts
+        self.outer_permit_users = outer_permit_users
+        self.outer_scene_config = outer_scene_config
+        self.parent_id = parent_id
+        self.source_identifier = source_identifier
+        self.telephone = telephone
+        self.user_permits = user_permits
+
+    def validate(self):
+        if self.hide_scene_config:
+            self.hide_scene_config.validate()
+        if self.outer_scene_config:
+            self.outer_scene_config.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.auto_add_user is not None:
+            result['autoAddUser'] = self.auto_add_user
+        if self.auto_approve_apply is not None:
+            result['autoApproveApply'] = self.auto_approve_apply
+        if self.brief is not None:
+            result['brief'] = self.brief
+        if self.code is not None:
+            result['code'] = self.code
+        if self.create_dept_group is not None:
+            result['createDeptGroup'] = self.create_dept_group
+        if self.dept_code is not None:
+            result['deptCode'] = self.dept_code
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.dept_manager_userid_list is not None:
+            result['deptManagerUseridList'] = self.dept_manager_userid_list
+        if self.dept_permits is not None:
+            result['deptPermits'] = self.dept_permits
+        if self.dept_type is not None:
+            result['deptType'] = self.dept_type
+        if self.emp_apply_join_dept is not None:
+            result['empApplyJoinDept'] = self.emp_apply_join_dept
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.force_update_fields is not None:
+            result['forceUpdateFields'] = self.force_update_fields
+        if self.group_contain_hidden_dept is not None:
+            result['groupContainHiddenDept'] = self.group_contain_hidden_dept
+        if self.group_contain_outer_dept is not None:
+            result['groupContainOuterDept'] = self.group_contain_outer_dept
+        if self.group_contain_sub_dept is not None:
+            result['groupContainSubDept'] = self.group_contain_sub_dept
+        if self.hide_dept is not None:
+            result['hideDept'] = self.hide_dept
+        if self.hide_scene_config is not None:
+            result['hideSceneConfig'] = self.hide_scene_config.to_map()
+        if self.language is not None:
+            result['language'] = self.language
+        if self.name is not None:
+            result['name'] = self.name
+        if self.order is not None:
+            result['order'] = self.order
+        if self.org_dept_owner is not None:
+            result['orgDeptOwner'] = self.org_dept_owner
+        if self.outer_dept is not None:
+            result['outerDept'] = self.outer_dept
+        if self.outer_dept_only_self is not None:
+            result['outerDeptOnlySelf'] = self.outer_dept_only_self
+        if self.outer_permit_depts is not None:
+            result['outerPermitDepts'] = self.outer_permit_depts
+        if self.outer_permit_users is not None:
+            result['outerPermitUsers'] = self.outer_permit_users
+        if self.outer_scene_config is not None:
+            result['outerSceneConfig'] = self.outer_scene_config.to_map()
+        if self.parent_id is not None:
+            result['parentId'] = self.parent_id
+        if self.source_identifier is not None:
+            result['sourceIdentifier'] = self.source_identifier
+        if self.telephone is not None:
+            result['telephone'] = self.telephone
+        if self.user_permits is not None:
+            result['userPermits'] = self.user_permits
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('autoAddUser') is not None:
+            self.auto_add_user = m.get('autoAddUser')
+        if m.get('autoApproveApply') is not None:
+            self.auto_approve_apply = m.get('autoApproveApply')
+        if m.get('brief') is not None:
+            self.brief = m.get('brief')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('createDeptGroup') is not None:
+            self.create_dept_group = m.get('createDeptGroup')
+        if m.get('deptCode') is not None:
+            self.dept_code = m.get('deptCode')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('deptManagerUseridList') is not None:
+            self.dept_manager_userid_list = m.get('deptManagerUseridList')
+        if m.get('deptPermits') is not None:
+            self.dept_permits = m.get('deptPermits')
+        if m.get('deptType') is not None:
+            self.dept_type = m.get('deptType')
+        if m.get('empApplyJoinDept') is not None:
+            self.emp_apply_join_dept = m.get('empApplyJoinDept')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('forceUpdateFields') is not None:
+            self.force_update_fields = m.get('forceUpdateFields')
+        if m.get('groupContainHiddenDept') is not None:
+            self.group_contain_hidden_dept = m.get('groupContainHiddenDept')
+        if m.get('groupContainOuterDept') is not None:
+            self.group_contain_outer_dept = m.get('groupContainOuterDept')
+        if m.get('groupContainSubDept') is not None:
+            self.group_contain_sub_dept = m.get('groupContainSubDept')
+        if m.get('hideDept') is not None:
+            self.hide_dept = m.get('hideDept')
+        if m.get('hideSceneConfig') is not None:
+            temp_model = UpdateCollegeContactDeptRequestHideSceneConfig()
+            self.hide_scene_config = temp_model.from_map(m['hideSceneConfig'])
+        if m.get('language') is not None:
+            self.language = m.get('language')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        if m.get('orgDeptOwner') is not None:
+            self.org_dept_owner = m.get('orgDeptOwner')
+        if m.get('outerDept') is not None:
+            self.outer_dept = m.get('outerDept')
+        if m.get('outerDeptOnlySelf') is not None:
+            self.outer_dept_only_self = m.get('outerDeptOnlySelf')
+        if m.get('outerPermitDepts') is not None:
+            self.outer_permit_depts = m.get('outerPermitDepts')
+        if m.get('outerPermitUsers') is not None:
+            self.outer_permit_users = m.get('outerPermitUsers')
+        if m.get('outerSceneConfig') is not None:
+            temp_model = UpdateCollegeContactDeptRequestOuterSceneConfig()
+            self.outer_scene_config = temp_model.from_map(m['outerSceneConfig'])
+        if m.get('parentId') is not None:
+            self.parent_id = m.get('parentId')
+        if m.get('sourceIdentifier') is not None:
+            self.source_identifier = m.get('sourceIdentifier')
+        if m.get('telephone') is not None:
+            self.telephone = m.get('telephone')
+        if m.get('userPermits') is not None:
+            self.user_permits = m.get('userPermits')
+        return self
+
+
+class UpdateCollegeContactDeptResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateCollegeContactDeptResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateCollegeContactDeptResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateCollegeContactDeptResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateCollegeContactExclusiveHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateCollegeContactExclusiveRequestDeptOrderList(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        order: int = None,
+    ):
+        self.dept_id = dept_id
+        self.order = order
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.order is not None:
+            result['order'] = self.order
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        return self
+
+
+class UpdateCollegeContactExclusiveRequestDeptTitleList(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        title: str = None,
+    ):
+        self.dept_id = dept_id
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class UpdateCollegeContactExclusiveRequest(TeaModel):
+    def __init__(
+        self,
+        avatar_media_id: str = None,
+        dept_id_list: List[int] = None,
+        dept_order_list: List[UpdateCollegeContactExclusiveRequestDeptOrderList] = None,
+        dept_title_list: List[UpdateCollegeContactExclusiveRequestDeptTitleList] = None,
+        email: str = None,
+        emp_type: str = None,
+        extension: Dict[str, str] = None,
+        force_update_fields: str = None,
+        hide_mobile: bool = None,
+        hired_date: int = None,
+        job_number: str = None,
+        language: str = None,
+        login_id_type: str = None,
+        main_dept_id: int = None,
+        manager_userid: str = None,
+        mobile: str = None,
+        name: str = None,
+        nickname: str = None,
+        org_email: str = None,
+        org_email_type: str = None,
+        remark: str = None,
+        senior_mode: bool = None,
+        telephone: str = None,
+        title: str = None,
+        userid: str = None,
+        work_place: str = None,
+    ):
+        self.avatar_media_id = avatar_media_id
+        self.dept_id_list = dept_id_list
+        self.dept_order_list = dept_order_list
+        self.dept_title_list = dept_title_list
+        self.email = email
+        self.emp_type = emp_type
+        self.extension = extension
+        self.force_update_fields = force_update_fields
+        self.hide_mobile = hide_mobile
+        self.hired_date = hired_date
+        self.job_number = job_number
+        self.language = language
+        self.login_id_type = login_id_type
+        self.main_dept_id = main_dept_id
+        self.manager_userid = manager_userid
+        self.mobile = mobile
+        self.name = name
+        self.nickname = nickname
+        self.org_email = org_email
+        self.org_email_type = org_email_type
+        self.remark = remark
+        self.senior_mode = senior_mode
+        self.telephone = telephone
+        self.title = title
+        # This parameter is required.
+        self.userid = userid
+        self.work_place = work_place
+
+    def validate(self):
+        if self.dept_order_list:
+            for k in self.dept_order_list:
+                if k:
+                    k.validate()
+        if self.dept_title_list:
+            for k in self.dept_title_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.avatar_media_id is not None:
+            result['avatarMediaId'] = self.avatar_media_id
+        if self.dept_id_list is not None:
+            result['deptIdList'] = self.dept_id_list
+        result['deptOrderList'] = []
+        if self.dept_order_list is not None:
+            for k in self.dept_order_list:
+                result['deptOrderList'].append(k.to_map() if k else None)
+        result['deptTitleList'] = []
+        if self.dept_title_list is not None:
+            for k in self.dept_title_list:
+                result['deptTitleList'].append(k.to_map() if k else None)
+        if self.email is not None:
+            result['email'] = self.email
+        if self.emp_type is not None:
+            result['empType'] = self.emp_type
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.force_update_fields is not None:
+            result['forceUpdateFields'] = self.force_update_fields
+        if self.hide_mobile is not None:
+            result['hideMobile'] = self.hide_mobile
+        if self.hired_date is not None:
+            result['hiredDate'] = self.hired_date
+        if self.job_number is not None:
+            result['jobNumber'] = self.job_number
+        if self.language is not None:
+            result['language'] = self.language
+        if self.login_id_type is not None:
+            result['loginIdType'] = self.login_id_type
+        if self.main_dept_id is not None:
+            result['mainDeptId'] = self.main_dept_id
+        if self.manager_userid is not None:
+            result['managerUserid'] = self.manager_userid
+        if self.mobile is not None:
+            result['mobile'] = self.mobile
+        if self.name is not None:
+            result['name'] = self.name
+        if self.nickname is not None:
+            result['nickname'] = self.nickname
+        if self.org_email is not None:
+            result['orgEmail'] = self.org_email
+        if self.org_email_type is not None:
+            result['orgEmailType'] = self.org_email_type
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.senior_mode is not None:
+            result['seniorMode'] = self.senior_mode
+        if self.telephone is not None:
+            result['telephone'] = self.telephone
+        if self.title is not None:
+            result['title'] = self.title
+        if self.userid is not None:
+            result['userid'] = self.userid
+        if self.work_place is not None:
+            result['workPlace'] = self.work_place
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('avatarMediaId') is not None:
+            self.avatar_media_id = m.get('avatarMediaId')
+        if m.get('deptIdList') is not None:
+            self.dept_id_list = m.get('deptIdList')
+        self.dept_order_list = []
+        if m.get('deptOrderList') is not None:
+            for k in m.get('deptOrderList'):
+                temp_model = UpdateCollegeContactExclusiveRequestDeptOrderList()
+                self.dept_order_list.append(temp_model.from_map(k))
+        self.dept_title_list = []
+        if m.get('deptTitleList') is not None:
+            for k in m.get('deptTitleList'):
+                temp_model = UpdateCollegeContactExclusiveRequestDeptTitleList()
+                self.dept_title_list.append(temp_model.from_map(k))
+        if m.get('email') is not None:
+            self.email = m.get('email')
+        if m.get('empType') is not None:
+            self.emp_type = m.get('empType')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('forceUpdateFields') is not None:
+            self.force_update_fields = m.get('forceUpdateFields')
+        if m.get('hideMobile') is not None:
+            self.hide_mobile = m.get('hideMobile')
+        if m.get('hiredDate') is not None:
+            self.hired_date = m.get('hiredDate')
+        if m.get('jobNumber') is not None:
+            self.job_number = m.get('jobNumber')
+        if m.get('language') is not None:
+            self.language = m.get('language')
+        if m.get('loginIdType') is not None:
+            self.login_id_type = m.get('loginIdType')
+        if m.get('mainDeptId') is not None:
+            self.main_dept_id = m.get('mainDeptId')
+        if m.get('managerUserid') is not None:
+            self.manager_userid = m.get('managerUserid')
+        if m.get('mobile') is not None:
+            self.mobile = m.get('mobile')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('nickname') is not None:
+            self.nickname = m.get('nickname')
+        if m.get('orgEmail') is not None:
+            self.org_email = m.get('orgEmail')
+        if m.get('orgEmailType') is not None:
+            self.org_email_type = m.get('orgEmailType')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('seniorMode') is not None:
+            self.senior_mode = m.get('seniorMode')
+        if m.get('telephone') is not None:
+            self.telephone = m.get('telephone')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userid') is not None:
+            self.userid = m.get('userid')
+        if m.get('workPlace') is not None:
+            self.work_place = m.get('workPlace')
+        return self
+
+
+class UpdateCollegeContactExclusiveResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateCollegeContactExclusiveResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateCollegeContactExclusiveResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateCollegeContactExclusiveResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateCollegeContactUserHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateCollegeContactUserRequestDeptOrderList(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        order: int = None,
+    ):
+        self.dept_id = dept_id
+        self.order = order
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.order is not None:
+            result['order'] = self.order
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        return self
+
+
+class UpdateCollegeContactUserRequestDeptTitleList(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        title: str = None,
+    ):
+        self.dept_id = dept_id
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class UpdateCollegeContactUserRequest(TeaModel):
+    def __init__(
+        self,
+        dept_id_list: List[int] = None,
+        dept_order_list: List[UpdateCollegeContactUserRequestDeptOrderList] = None,
+        dept_title_list: List[UpdateCollegeContactUserRequestDeptTitleList] = None,
+        email: str = None,
+        emp_type: str = None,
+        extension: Dict[str, str] = None,
+        force_update_fields: str = None,
+        hide_mobile: bool = None,
+        hired_date: int = None,
+        job_number: str = None,
+        language: str = None,
+        main_dept_id: int = None,
+        manager_userid: str = None,
+        name: str = None,
+        org_email: str = None,
+        remark: str = None,
+        senior_mode: bool = None,
+        telephone: str = None,
+        title: str = None,
+        userid: str = None,
+        work_place: str = None,
+    ):
+        self.dept_id_list = dept_id_list
+        self.dept_order_list = dept_order_list
+        self.dept_title_list = dept_title_list
+        self.email = email
+        self.emp_type = emp_type
+        self.extension = extension
+        self.force_update_fields = force_update_fields
+        self.hide_mobile = hide_mobile
+        self.hired_date = hired_date
+        self.job_number = job_number
+        self.language = language
+        self.main_dept_id = main_dept_id
+        self.manager_userid = manager_userid
+        self.name = name
+        self.org_email = org_email
+        self.remark = remark
+        self.senior_mode = senior_mode
+        self.telephone = telephone
+        self.title = title
+        # This parameter is required.
+        self.userid = userid
+        self.work_place = work_place
+
+    def validate(self):
+        if self.dept_order_list:
+            for k in self.dept_order_list:
+                if k:
+                    k.validate()
+        if self.dept_title_list:
+            for k in self.dept_title_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id_list is not None:
+            result['deptIdList'] = self.dept_id_list
+        result['deptOrderList'] = []
+        if self.dept_order_list is not None:
+            for k in self.dept_order_list:
+                result['deptOrderList'].append(k.to_map() if k else None)
+        result['deptTitleList'] = []
+        if self.dept_title_list is not None:
+            for k in self.dept_title_list:
+                result['deptTitleList'].append(k.to_map() if k else None)
+        if self.email is not None:
+            result['email'] = self.email
+        if self.emp_type is not None:
+            result['empType'] = self.emp_type
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.force_update_fields is not None:
+            result['forceUpdateFields'] = self.force_update_fields
+        if self.hide_mobile is not None:
+            result['hideMobile'] = self.hide_mobile
+        if self.hired_date is not None:
+            result['hiredDate'] = self.hired_date
+        if self.job_number is not None:
+            result['jobNumber'] = self.job_number
+        if self.language is not None:
+            result['language'] = self.language
+        if self.main_dept_id is not None:
+            result['mainDeptId'] = self.main_dept_id
+        if self.manager_userid is not None:
+            result['managerUserid'] = self.manager_userid
+        if self.name is not None:
+            result['name'] = self.name
+        if self.org_email is not None:
+            result['orgEmail'] = self.org_email
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.senior_mode is not None:
+            result['seniorMode'] = self.senior_mode
+        if self.telephone is not None:
+            result['telephone'] = self.telephone
+        if self.title is not None:
+            result['title'] = self.title
+        if self.userid is not None:
+            result['userid'] = self.userid
+        if self.work_place is not None:
+            result['workPlace'] = self.work_place
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptIdList') is not None:
+            self.dept_id_list = m.get('deptIdList')
+        self.dept_order_list = []
+        if m.get('deptOrderList') is not None:
+            for k in m.get('deptOrderList'):
+                temp_model = UpdateCollegeContactUserRequestDeptOrderList()
+                self.dept_order_list.append(temp_model.from_map(k))
+        self.dept_title_list = []
+        if m.get('deptTitleList') is not None:
+            for k in m.get('deptTitleList'):
+                temp_model = UpdateCollegeContactUserRequestDeptTitleList()
+                self.dept_title_list.append(temp_model.from_map(k))
+        if m.get('email') is not None:
+            self.email = m.get('email')
+        if m.get('empType') is not None:
+            self.emp_type = m.get('empType')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('forceUpdateFields') is not None:
+            self.force_update_fields = m.get('forceUpdateFields')
+        if m.get('hideMobile') is not None:
+            self.hide_mobile = m.get('hideMobile')
+        if m.get('hiredDate') is not None:
+            self.hired_date = m.get('hiredDate')
+        if m.get('jobNumber') is not None:
+            self.job_number = m.get('jobNumber')
+        if m.get('language') is not None:
+            self.language = m.get('language')
+        if m.get('mainDeptId') is not None:
+            self.main_dept_id = m.get('mainDeptId')
+        if m.get('managerUserid') is not None:
+            self.manager_userid = m.get('managerUserid')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('orgEmail') is not None:
+            self.org_email = m.get('orgEmail')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('seniorMode') is not None:
+            self.senior_mode = m.get('seniorMode')
+        if m.get('telephone') is not None:
+            self.telephone = m.get('telephone')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('userid') is not None:
+            self.userid = m.get('userid')
+        if m.get('workPlace') is not None:
+            self.work_place = m.get('workPlace')
+        return self
+
+
+class UpdateCollegeContactUserResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateCollegeContactUserResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateCollegeContactUserResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateCollegeContactUserResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateCollegeUserEmpTypeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateCollegeUserEmpTypeRequest(TeaModel):
+    def __init__(
+        self,
+        emp_type: str = None,
+        userid: str = None,
+    ):
+        # This parameter is required.
+        self.emp_type = emp_type
+        # This parameter is required.
+        self.userid = userid
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.emp_type is not None:
+            result['empType'] = self.emp_type
+        if self.userid is not None:
+            result['userid'] = self.userid
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('empType') is not None:
+            self.emp_type = m.get('empType')
+        if m.get('userid') is not None:
+            self.userid = m.get('userid')
+        return self
+
+
+class UpdateCollegeUserEmpTypeResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateCollegeUserEmpTypeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateCollegeUserEmpTypeResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateCollegeUserEmpTypeResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

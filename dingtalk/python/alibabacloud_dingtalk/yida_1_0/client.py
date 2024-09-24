@@ -11612,6 +11612,8 @@ class Client(OpenApiClient):
             body['formUuid'] = request.form_uuid
         if not UtilClient.is_unset(request.language):
             body['language'] = request.language
+        if not UtilClient.is_unset(request.logic_operator):
+            body['logicOperator'] = request.logic_operator
         if not UtilClient.is_unset(request.modified_from_time_gmt):
             body['modifiedFromTimeGMT'] = request.modified_from_time_gmt
         if not UtilClient.is_unset(request.modified_to_time_gmt):
@@ -11681,6 +11683,8 @@ class Client(OpenApiClient):
             body['formUuid'] = request.form_uuid
         if not UtilClient.is_unset(request.language):
             body['language'] = request.language
+        if not UtilClient.is_unset(request.logic_operator):
+            body['logicOperator'] = request.logic_operator
         if not UtilClient.is_unset(request.modified_from_time_gmt):
             body['modifiedFromTimeGMT'] = request.modified_from_time_gmt
         if not UtilClient.is_unset(request.modified_to_time_gmt):

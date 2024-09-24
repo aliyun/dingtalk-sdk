@@ -174,6 +174,8 @@ class Client(OpenApiClient):
             body['generalInvoiceVOList'] = request.general_invoice_volist
         if not UtilClient.is_unset(request.operator):
             body['operator'] = request.operator
+        if not UtilClient.is_unset(request.order_id):
+            body['orderId'] = request.order_id
         if not UtilClient.is_unset(request.source):
             body['source'] = request.source
         real_headers = {}
@@ -223,6 +225,8 @@ class Client(OpenApiClient):
             body['generalInvoiceVOList'] = request.general_invoice_volist
         if not UtilClient.is_unset(request.operator):
             body['operator'] = request.operator
+        if not UtilClient.is_unset(request.order_id):
+            body['orderId'] = request.order_id
         if not UtilClient.is_unset(request.source):
             body['source'] = request.source
         real_headers = {}

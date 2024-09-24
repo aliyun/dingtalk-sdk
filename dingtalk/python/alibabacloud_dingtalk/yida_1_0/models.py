@@ -13505,6 +13505,7 @@ class ListApplicationResponseBodyData(TeaModel):
         icon: str = None,
         inexistence: str = None,
         name: str = None,
+        release_to_ding_status: str = None,
         sub_corp_id: str = None,
         system_token: str = None,
     ):
@@ -13517,6 +13518,7 @@ class ListApplicationResponseBodyData(TeaModel):
         self.icon = icon
         self.inexistence = inexistence
         self.name = name
+        self.release_to_ding_status = release_to_ding_status
         self.sub_corp_id = sub_corp_id
         self.system_token = system_token
 
@@ -13547,6 +13549,8 @@ class ListApplicationResponseBodyData(TeaModel):
             result['inexistence'] = self.inexistence
         if self.name is not None:
             result['name'] = self.name
+        if self.release_to_ding_status is not None:
+            result['releaseToDingStatus'] = self.release_to_ding_status
         if self.sub_corp_id is not None:
             result['subCorpId'] = self.sub_corp_id
         if self.system_token is not None:
@@ -13573,6 +13577,8 @@ class ListApplicationResponseBodyData(TeaModel):
             self.inexistence = m.get('inexistence')
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('releaseToDingStatus') is not None:
+            self.release_to_ding_status = m.get('releaseToDingStatus')
         if m.get('subCorpId') is not None:
             self.sub_corp_id = m.get('subCorpId')
         if m.get('systemToken') is not None:
@@ -21064,6 +21070,7 @@ class SearchFormDatasRequest(TeaModel):
         dynamic_order: str = None,
         form_uuid: str = None,
         language: str = None,
+        logic_operator: str = None,
         modified_from_time_gmt: str = None,
         modified_to_time_gmt: str = None,
         originator_id: str = None,
@@ -21081,6 +21088,7 @@ class SearchFormDatasRequest(TeaModel):
         # This parameter is required.
         self.form_uuid = form_uuid
         self.language = language
+        self.logic_operator = logic_operator
         self.modified_from_time_gmt = modified_from_time_gmt
         self.modified_to_time_gmt = modified_to_time_gmt
         self.originator_id = originator_id
@@ -21114,6 +21122,8 @@ class SearchFormDatasRequest(TeaModel):
             result['formUuid'] = self.form_uuid
         if self.language is not None:
             result['language'] = self.language
+        if self.logic_operator is not None:
+            result['logicOperator'] = self.logic_operator
         if self.modified_from_time_gmt is not None:
             result['modifiedFromTimeGMT'] = self.modified_from_time_gmt
         if self.modified_to_time_gmt is not None:
@@ -21146,6 +21156,8 @@ class SearchFormDatasRequest(TeaModel):
             self.form_uuid = m.get('formUuid')
         if m.get('language') is not None:
             self.language = m.get('language')
+        if m.get('logicOperator') is not None:
+            self.logic_operator = m.get('logicOperator')
         if m.get('modifiedFromTimeGMT') is not None:
             self.modified_from_time_gmt = m.get('modifiedFromTimeGMT')
         if m.get('modifiedToTimeGMT') is not None:

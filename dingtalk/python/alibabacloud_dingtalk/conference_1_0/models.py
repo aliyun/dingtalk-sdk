@@ -5324,6 +5324,236 @@ class QueryConferenceMembersResponse(TeaModel):
         return self
 
 
+class QueryFlashMinutesSummaryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryFlashMinutesSummaryRequest(TeaModel):
+    def __init__(
+        self,
+        biz_type: str = None,
+        recorder_union_id: str = None,
+    ):
+        # This parameter is required.
+        self.biz_type = biz_type
+        # This parameter is required.
+        self.recorder_union_id = recorder_union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.recorder_union_id is not None:
+            result['recorderUnionId'] = self.recorder_union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('recorderUnionId') is not None:
+            self.recorder_union_id = m.get('recorderUnionId')
+        return self
+
+
+class QueryFlashMinutesSummaryResponseBodyFlashMinutesSummarySummary(TeaModel):
+    def __init__(
+        self,
+        end: int = None,
+        headline: str = None,
+        id: int = None,
+        start: int = None,
+        summary: str = None,
+    ):
+        self.end = end
+        self.headline = headline
+        self.id = id
+        self.start = start
+        self.summary = summary
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end is not None:
+            result['end'] = self.end
+        if self.headline is not None:
+            result['headline'] = self.headline
+        if self.id is not None:
+            result['id'] = self.id
+        if self.start is not None:
+            result['start'] = self.start
+        if self.summary is not None:
+            result['summary'] = self.summary
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('end') is not None:
+            self.end = m.get('end')
+        if m.get('headline') is not None:
+            self.headline = m.get('headline')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('start') is not None:
+            self.start = m.get('start')
+        if m.get('summary') is not None:
+            self.summary = m.get('summary')
+        return self
+
+
+class QueryFlashMinutesSummaryResponseBodyFlashMinutesSummary(TeaModel):
+    def __init__(
+        self,
+        status: int = None,
+        summary: List[QueryFlashMinutesSummaryResponseBodyFlashMinutesSummarySummary] = None,
+    ):
+        self.status = status
+        self.summary = summary
+
+    def validate(self):
+        if self.summary:
+            for k in self.summary:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.status is not None:
+            result['status'] = self.status
+        result['summary'] = []
+        if self.summary is not None:
+            for k in self.summary:
+                result['summary'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        self.summary = []
+        if m.get('summary') is not None:
+            for k in m.get('summary'):
+                temp_model = QueryFlashMinutesSummaryResponseBodyFlashMinutesSummarySummary()
+                self.summary.append(temp_model.from_map(k))
+        return self
+
+
+class QueryFlashMinutesSummaryResponseBody(TeaModel):
+    def __init__(
+        self,
+        flash_minutes_summary: QueryFlashMinutesSummaryResponseBodyFlashMinutesSummary = None,
+    ):
+        self.flash_minutes_summary = flash_minutes_summary
+
+    def validate(self):
+        if self.flash_minutes_summary:
+            self.flash_minutes_summary.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.flash_minutes_summary is not None:
+            result['flashMinutesSummary'] = self.flash_minutes_summary.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('flashMinutesSummary') is not None:
+            temp_model = QueryFlashMinutesSummaryResponseBodyFlashMinutesSummary()
+            self.flash_minutes_summary = temp_model.from_map(m['flashMinutesSummary'])
+        return self
+
+
+class QueryFlashMinutesSummaryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryFlashMinutesSummaryResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryFlashMinutesSummaryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryMinutesAudioHeaders(TeaModel):
     def __init__(
         self,

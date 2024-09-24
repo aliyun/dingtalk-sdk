@@ -1124,11 +1124,13 @@ class BatchAddInvoiceRequest(TeaModel):
         company_code: str = None,
         general_invoice_volist: List[BatchAddInvoiceRequestGeneralInvoiceVOList] = None,
         operator: str = None,
+        order_id: str = None,
         source: str = None,
     ):
         self.company_code = company_code
         self.general_invoice_volist = general_invoice_volist
         self.operator = operator
+        self.order_id = order_id
         self.source = source
 
     def validate(self):
@@ -1151,6 +1153,8 @@ class BatchAddInvoiceRequest(TeaModel):
                 result['generalInvoiceVOList'].append(k.to_map() if k else None)
         if self.operator is not None:
             result['operator'] = self.operator
+        if self.order_id is not None:
+            result['orderId'] = self.order_id
         if self.source is not None:
             result['source'] = self.source
         return result
@@ -1166,6 +1170,8 @@ class BatchAddInvoiceRequest(TeaModel):
                 self.general_invoice_volist.append(temp_model.from_map(k))
         if m.get('operator') is not None:
             self.operator = m.get('operator')
+        if m.get('orderId') is not None:
+            self.order_id = m.get('orderId')
         if m.get('source') is not None:
             self.source = m.get('source')
         return self

@@ -420,6 +420,426 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.AddCollegeAlumniUserInfoHeaders()
         return await self.add_college_alumni_user_info_with_options_async(request, headers, runtime)
 
+    def add_college_contact_exclusive_with_options(
+        self,
+        request: dingtalkedu__1__0_models.AddCollegeContactExclusiveRequest,
+        headers: dingtalkedu__1__0_models.AddCollegeContactExclusiveHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AddCollegeContactExclusiveResponse:
+        """
+        @summary 创建高校账号用户
+        
+        @param request: AddCollegeContactExclusiveRequest
+        @param headers: AddCollegeContactExclusiveHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCollegeContactExclusiveResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.avatar_media_id):
+            body['avatarMediaId'] = request.avatar_media_id
+        if not UtilClient.is_unset(request.dept_id_list):
+            body['deptIdList'] = request.dept_id_list
+        if not UtilClient.is_unset(request.dept_order_list):
+            body['deptOrderList'] = request.dept_order_list
+        if not UtilClient.is_unset(request.dept_title_list):
+            body['deptTitleList'] = request.dept_title_list
+        if not UtilClient.is_unset(request.email):
+            body['email'] = request.email
+        if not UtilClient.is_unset(request.emp_type):
+            body['empType'] = request.emp_type
+        if not UtilClient.is_unset(request.exclusive_account):
+            body['exclusiveAccount'] = request.exclusive_account
+        if not UtilClient.is_unset(request.exclusive_account_type):
+            body['exclusiveAccountType'] = request.exclusive_account_type
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.hired_date):
+            body['hiredDate'] = request.hired_date
+        if not UtilClient.is_unset(request.init_password):
+            body['initPassword'] = request.init_password
+        if not UtilClient.is_unset(request.job_number):
+            body['jobNumber'] = request.job_number
+        if not UtilClient.is_unset(request.login_id_type):
+            body['loginIdType'] = request.login_id_type
+        if not UtilClient.is_unset(request.main_dept_id):
+            body['mainDeptId'] = request.main_dept_id
+        if not UtilClient.is_unset(request.manager_userid):
+            body['managerUserid'] = request.manager_userid
+        if not UtilClient.is_unset(request.mobile):
+            body['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.nickname):
+            body['nickname'] = request.nickname
+        if not UtilClient.is_unset(request.org_email):
+            body['orgEmail'] = request.org_email
+        if not UtilClient.is_unset(request.org_email_type):
+            body['orgEmailType'] = request.org_email_type
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.send_active_sms):
+            body['sendActiveSms'] = request.send_active_sms
+        if not UtilClient.is_unset(request.senior_mode):
+            body['seniorMode'] = request.senior_mode
+        if not UtilClient.is_unset(request.telephone):
+            body['telephone'] = request.telephone
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.userid):
+            body['userid'] = request.userid
+        if not UtilClient.is_unset(request.work_place):
+            body['workPlace'] = request.work_place
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddCollegeContactExclusive',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/exclusiveAccounts/users',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AddCollegeContactExclusiveResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_college_contact_exclusive_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.AddCollegeContactExclusiveRequest,
+        headers: dingtalkedu__1__0_models.AddCollegeContactExclusiveHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AddCollegeContactExclusiveResponse:
+        """
+        @summary 创建高校账号用户
+        
+        @param request: AddCollegeContactExclusiveRequest
+        @param headers: AddCollegeContactExclusiveHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCollegeContactExclusiveResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.avatar_media_id):
+            body['avatarMediaId'] = request.avatar_media_id
+        if not UtilClient.is_unset(request.dept_id_list):
+            body['deptIdList'] = request.dept_id_list
+        if not UtilClient.is_unset(request.dept_order_list):
+            body['deptOrderList'] = request.dept_order_list
+        if not UtilClient.is_unset(request.dept_title_list):
+            body['deptTitleList'] = request.dept_title_list
+        if not UtilClient.is_unset(request.email):
+            body['email'] = request.email
+        if not UtilClient.is_unset(request.emp_type):
+            body['empType'] = request.emp_type
+        if not UtilClient.is_unset(request.exclusive_account):
+            body['exclusiveAccount'] = request.exclusive_account
+        if not UtilClient.is_unset(request.exclusive_account_type):
+            body['exclusiveAccountType'] = request.exclusive_account_type
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.hired_date):
+            body['hiredDate'] = request.hired_date
+        if not UtilClient.is_unset(request.init_password):
+            body['initPassword'] = request.init_password
+        if not UtilClient.is_unset(request.job_number):
+            body['jobNumber'] = request.job_number
+        if not UtilClient.is_unset(request.login_id_type):
+            body['loginIdType'] = request.login_id_type
+        if not UtilClient.is_unset(request.main_dept_id):
+            body['mainDeptId'] = request.main_dept_id
+        if not UtilClient.is_unset(request.manager_userid):
+            body['managerUserid'] = request.manager_userid
+        if not UtilClient.is_unset(request.mobile):
+            body['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.nickname):
+            body['nickname'] = request.nickname
+        if not UtilClient.is_unset(request.org_email):
+            body['orgEmail'] = request.org_email
+        if not UtilClient.is_unset(request.org_email_type):
+            body['orgEmailType'] = request.org_email_type
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.send_active_sms):
+            body['sendActiveSms'] = request.send_active_sms
+        if not UtilClient.is_unset(request.senior_mode):
+            body['seniorMode'] = request.senior_mode
+        if not UtilClient.is_unset(request.telephone):
+            body['telephone'] = request.telephone
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.userid):
+            body['userid'] = request.userid
+        if not UtilClient.is_unset(request.work_place):
+            body['workPlace'] = request.work_place
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddCollegeContactExclusive',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/exclusiveAccounts/users',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AddCollegeContactExclusiveResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_college_contact_exclusive(
+        self,
+        request: dingtalkedu__1__0_models.AddCollegeContactExclusiveRequest,
+    ) -> dingtalkedu__1__0_models.AddCollegeContactExclusiveResponse:
+        """
+        @summary 创建高校账号用户
+        
+        @param request: AddCollegeContactExclusiveRequest
+        @return: AddCollegeContactExclusiveResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AddCollegeContactExclusiveHeaders()
+        return self.add_college_contact_exclusive_with_options(request, headers, runtime)
+
+    async def add_college_contact_exclusive_async(
+        self,
+        request: dingtalkedu__1__0_models.AddCollegeContactExclusiveRequest,
+    ) -> dingtalkedu__1__0_models.AddCollegeContactExclusiveResponse:
+        """
+        @summary 创建高校账号用户
+        
+        @param request: AddCollegeContactExclusiveRequest
+        @return: AddCollegeContactExclusiveResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AddCollegeContactExclusiveHeaders()
+        return await self.add_college_contact_exclusive_with_options_async(request, headers, runtime)
+
+    def add_college_contact_user_with_options(
+        self,
+        request: dingtalkedu__1__0_models.AddCollegeContactUserRequest,
+        headers: dingtalkedu__1__0_models.AddCollegeContactUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AddCollegeContactUserResponse:
+        """
+        @summary 创建个人账号用户
+        
+        @param request: AddCollegeContactUserRequest
+        @param headers: AddCollegeContactUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCollegeContactUserResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_id_list):
+            body['deptIdList'] = request.dept_id_list
+        if not UtilClient.is_unset(request.dept_order_list):
+            body['deptOrderList'] = request.dept_order_list
+        if not UtilClient.is_unset(request.dept_title_list):
+            body['deptTitleList'] = request.dept_title_list
+        if not UtilClient.is_unset(request.email):
+            body['email'] = request.email
+        if not UtilClient.is_unset(request.emp_type):
+            body['empType'] = request.emp_type
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.hide_mobile):
+            body['hideMobile'] = request.hide_mobile
+        if not UtilClient.is_unset(request.hired_date):
+            body['hiredDate'] = request.hired_date
+        if not UtilClient.is_unset(request.job_number):
+            body['jobNumber'] = request.job_number
+        if not UtilClient.is_unset(request.login_email):
+            body['loginEmail'] = request.login_email
+        if not UtilClient.is_unset(request.main_dept_id):
+            body['mainDeptId'] = request.main_dept_id
+        if not UtilClient.is_unset(request.manager_userid):
+            body['managerUserid'] = request.manager_userid
+        if not UtilClient.is_unset(request.mobile):
+            body['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.org_email):
+            body['orgEmail'] = request.org_email
+        if not UtilClient.is_unset(request.org_email_type):
+            body['orgEmailType'] = request.org_email_type
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.send_active_sms):
+            body['sendActiveSms'] = request.send_active_sms
+        if not UtilClient.is_unset(request.senior_mode):
+            body['seniorMode'] = request.senior_mode
+        if not UtilClient.is_unset(request.telephone):
+            body['telephone'] = request.telephone
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.userid):
+            body['userid'] = request.userid
+        if not UtilClient.is_unset(request.work_place):
+            body['workPlace'] = request.work_place
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddCollegeContactUser',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/personalAccounts/users',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AddCollegeContactUserResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_college_contact_user_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.AddCollegeContactUserRequest,
+        headers: dingtalkedu__1__0_models.AddCollegeContactUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AddCollegeContactUserResponse:
+        """
+        @summary 创建个人账号用户
+        
+        @param request: AddCollegeContactUserRequest
+        @param headers: AddCollegeContactUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCollegeContactUserResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_id_list):
+            body['deptIdList'] = request.dept_id_list
+        if not UtilClient.is_unset(request.dept_order_list):
+            body['deptOrderList'] = request.dept_order_list
+        if not UtilClient.is_unset(request.dept_title_list):
+            body['deptTitleList'] = request.dept_title_list
+        if not UtilClient.is_unset(request.email):
+            body['email'] = request.email
+        if not UtilClient.is_unset(request.emp_type):
+            body['empType'] = request.emp_type
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.hide_mobile):
+            body['hideMobile'] = request.hide_mobile
+        if not UtilClient.is_unset(request.hired_date):
+            body['hiredDate'] = request.hired_date
+        if not UtilClient.is_unset(request.job_number):
+            body['jobNumber'] = request.job_number
+        if not UtilClient.is_unset(request.login_email):
+            body['loginEmail'] = request.login_email
+        if not UtilClient.is_unset(request.main_dept_id):
+            body['mainDeptId'] = request.main_dept_id
+        if not UtilClient.is_unset(request.manager_userid):
+            body['managerUserid'] = request.manager_userid
+        if not UtilClient.is_unset(request.mobile):
+            body['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.org_email):
+            body['orgEmail'] = request.org_email
+        if not UtilClient.is_unset(request.org_email_type):
+            body['orgEmailType'] = request.org_email_type
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.send_active_sms):
+            body['sendActiveSms'] = request.send_active_sms
+        if not UtilClient.is_unset(request.senior_mode):
+            body['seniorMode'] = request.senior_mode
+        if not UtilClient.is_unset(request.telephone):
+            body['telephone'] = request.telephone
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.userid):
+            body['userid'] = request.userid
+        if not UtilClient.is_unset(request.work_place):
+            body['workPlace'] = request.work_place
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddCollegeContactUser',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/personalAccounts/users',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AddCollegeContactUserResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_college_contact_user(
+        self,
+        request: dingtalkedu__1__0_models.AddCollegeContactUserRequest,
+    ) -> dingtalkedu__1__0_models.AddCollegeContactUserResponse:
+        """
+        @summary 创建个人账号用户
+        
+        @param request: AddCollegeContactUserRequest
+        @return: AddCollegeContactUserResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AddCollegeContactUserHeaders()
+        return self.add_college_contact_user_with_options(request, headers, runtime)
+
+    async def add_college_contact_user_async(
+        self,
+        request: dingtalkedu__1__0_models.AddCollegeContactUserRequest,
+    ) -> dingtalkedu__1__0_models.AddCollegeContactUserResponse:
+        """
+        @summary 创建个人账号用户
+        
+        @param request: AddCollegeContactUserRequest
+        @return: AddCollegeContactUserResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AddCollegeContactUserHeaders()
+        return await self.add_college_contact_user_with_options_async(request, headers, runtime)
+
     def add_competition_record_with_options(
         self,
         request: dingtalkedu__1__0_models.AddCompetitionRecordRequest,
@@ -2973,6 +3393,208 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.CreateAppOrderHeaders()
         return await self.create_app_order_with_options_async(request, headers, runtime)
+
+    def create_college_contact_dept_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CreateCollegeContactDeptRequest,
+        headers: dingtalkedu__1__0_models.CreateCollegeContactDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateCollegeContactDeptResponse:
+        """
+        @summary 创建高校通讯录组织单元
+        
+        @param request: CreateCollegeContactDeptRequest
+        @param headers: CreateCollegeContactDeptHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCollegeContactDeptResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.auto_approve_apply):
+            body['autoApproveApply'] = request.auto_approve_apply
+        if not UtilClient.is_unset(request.brief):
+            body['brief'] = request.brief
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.create_dept_group):
+            body['createDeptGroup'] = request.create_dept_group
+        if not UtilClient.is_unset(request.dept_code):
+            body['deptCode'] = request.dept_code
+        if not UtilClient.is_unset(request.dept_permits):
+            body['deptPermits'] = request.dept_permits
+        if not UtilClient.is_unset(request.dept_type):
+            body['deptType'] = request.dept_type
+        if not UtilClient.is_unset(request.emp_apply_join_dept):
+            body['empApplyJoinDept'] = request.emp_apply_join_dept
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.hide_dept):
+            body['hideDept'] = request.hide_dept
+        if not UtilClient.is_unset(request.hide_scene_config):
+            body['hideSceneConfig'] = request.hide_scene_config
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.order):
+            body['order'] = request.order
+        if not UtilClient.is_unset(request.outer_dept):
+            body['outerDept'] = request.outer_dept
+        if not UtilClient.is_unset(request.outer_dept_only_self):
+            body['outerDeptOnlySelf'] = request.outer_dept_only_self
+        if not UtilClient.is_unset(request.outer_permit_depts):
+            body['outerPermitDepts'] = request.outer_permit_depts
+        if not UtilClient.is_unset(request.outer_permit_users):
+            body['outerPermitUsers'] = request.outer_permit_users
+        if not UtilClient.is_unset(request.outer_scene_config):
+            body['outerSceneConfig'] = request.outer_scene_config
+        if not UtilClient.is_unset(request.parent_id):
+            body['parentId'] = request.parent_id
+        if not UtilClient.is_unset(request.source_identifier):
+            body['sourceIdentifier'] = request.source_identifier
+        if not UtilClient.is_unset(request.stru_id):
+            body['struId'] = request.stru_id
+        if not UtilClient.is_unset(request.telephone):
+            body['telephone'] = request.telephone
+        if not UtilClient.is_unset(request.user_permits):
+            body['userPermits'] = request.user_permits
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateCollegeContactDept',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/depts',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateCollegeContactDeptResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_college_contact_dept_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateCollegeContactDeptRequest,
+        headers: dingtalkedu__1__0_models.CreateCollegeContactDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateCollegeContactDeptResponse:
+        """
+        @summary 创建高校通讯录组织单元
+        
+        @param request: CreateCollegeContactDeptRequest
+        @param headers: CreateCollegeContactDeptHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCollegeContactDeptResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.auto_approve_apply):
+            body['autoApproveApply'] = request.auto_approve_apply
+        if not UtilClient.is_unset(request.brief):
+            body['brief'] = request.brief
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.create_dept_group):
+            body['createDeptGroup'] = request.create_dept_group
+        if not UtilClient.is_unset(request.dept_code):
+            body['deptCode'] = request.dept_code
+        if not UtilClient.is_unset(request.dept_permits):
+            body['deptPermits'] = request.dept_permits
+        if not UtilClient.is_unset(request.dept_type):
+            body['deptType'] = request.dept_type
+        if not UtilClient.is_unset(request.emp_apply_join_dept):
+            body['empApplyJoinDept'] = request.emp_apply_join_dept
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.hide_dept):
+            body['hideDept'] = request.hide_dept
+        if not UtilClient.is_unset(request.hide_scene_config):
+            body['hideSceneConfig'] = request.hide_scene_config
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.order):
+            body['order'] = request.order
+        if not UtilClient.is_unset(request.outer_dept):
+            body['outerDept'] = request.outer_dept
+        if not UtilClient.is_unset(request.outer_dept_only_self):
+            body['outerDeptOnlySelf'] = request.outer_dept_only_self
+        if not UtilClient.is_unset(request.outer_permit_depts):
+            body['outerPermitDepts'] = request.outer_permit_depts
+        if not UtilClient.is_unset(request.outer_permit_users):
+            body['outerPermitUsers'] = request.outer_permit_users
+        if not UtilClient.is_unset(request.outer_scene_config):
+            body['outerSceneConfig'] = request.outer_scene_config
+        if not UtilClient.is_unset(request.parent_id):
+            body['parentId'] = request.parent_id
+        if not UtilClient.is_unset(request.source_identifier):
+            body['sourceIdentifier'] = request.source_identifier
+        if not UtilClient.is_unset(request.stru_id):
+            body['struId'] = request.stru_id
+        if not UtilClient.is_unset(request.telephone):
+            body['telephone'] = request.telephone
+        if not UtilClient.is_unset(request.user_permits):
+            body['userPermits'] = request.user_permits
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateCollegeContactDept',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/depts',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateCollegeContactDeptResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_college_contact_dept(
+        self,
+        request: dingtalkedu__1__0_models.CreateCollegeContactDeptRequest,
+    ) -> dingtalkedu__1__0_models.CreateCollegeContactDeptResponse:
+        """
+        @summary 创建高校通讯录组织单元
+        
+        @param request: CreateCollegeContactDeptRequest
+        @return: CreateCollegeContactDeptResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateCollegeContactDeptHeaders()
+        return self.create_college_contact_dept_with_options(request, headers, runtime)
+
+    async def create_college_contact_dept_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateCollegeContactDeptRequest,
+    ) -> dingtalkedu__1__0_models.CreateCollegeContactDeptResponse:
+        """
+        @summary 创建高校通讯录组织单元
+        
+        @param request: CreateCollegeContactDeptRequest
+        @return: CreateCollegeContactDeptResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateCollegeContactDeptHeaders()
+        return await self.create_college_contact_dept_with_options_async(request, headers, runtime)
 
     def create_custom_class_with_options(
         self,
@@ -8350,6 +8972,238 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.GetCollegeAlumniUserInfoHeaders()
         return await self.get_college_alumni_user_info_with_options_async(request, headers, runtime)
 
+    def get_college_contact_dept_detail_with_options(
+        self,
+        request: dingtalkedu__1__0_models.GetCollegeContactDeptDetailRequest,
+        headers: dingtalkedu__1__0_models.GetCollegeContactDeptDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetCollegeContactDeptDetailResponse:
+        """
+        @summary 获取高校通讯录组织单元详情
+        
+        @param request: GetCollegeContactDeptDetailRequest
+        @param headers: GetCollegeContactDeptDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCollegeContactDeptDetailResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetCollegeContactDeptDetail',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/depts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetCollegeContactDeptDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_college_contact_dept_detail_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.GetCollegeContactDeptDetailRequest,
+        headers: dingtalkedu__1__0_models.GetCollegeContactDeptDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetCollegeContactDeptDetailResponse:
+        """
+        @summary 获取高校通讯录组织单元详情
+        
+        @param request: GetCollegeContactDeptDetailRequest
+        @param headers: GetCollegeContactDeptDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCollegeContactDeptDetailResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetCollegeContactDeptDetail',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/depts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetCollegeContactDeptDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_college_contact_dept_detail(
+        self,
+        request: dingtalkedu__1__0_models.GetCollegeContactDeptDetailRequest,
+    ) -> dingtalkedu__1__0_models.GetCollegeContactDeptDetailResponse:
+        """
+        @summary 获取高校通讯录组织单元详情
+        
+        @param request: GetCollegeContactDeptDetailRequest
+        @return: GetCollegeContactDeptDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetCollegeContactDeptDetailHeaders()
+        return self.get_college_contact_dept_detail_with_options(request, headers, runtime)
+
+    async def get_college_contact_dept_detail_async(
+        self,
+        request: dingtalkedu__1__0_models.GetCollegeContactDeptDetailRequest,
+    ) -> dingtalkedu__1__0_models.GetCollegeContactDeptDetailResponse:
+        """
+        @summary 获取高校通讯录组织单元详情
+        
+        @param request: GetCollegeContactDeptDetailRequest
+        @return: GetCollegeContactDeptDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetCollegeContactDeptDetailHeaders()
+        return await self.get_college_contact_dept_detail_with_options_async(request, headers, runtime)
+
+    def get_college_contact_standard_stru_dept_detail_with_options(
+        self,
+        request: dingtalkedu__1__0_models.GetCollegeContactStandardStruDeptDetailRequest,
+        headers: dingtalkedu__1__0_models.GetCollegeContactStandardStruDeptDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetCollegeContactStandardStruDeptDetailResponse:
+        """
+        @summary 获取行政组织架构信息
+        
+        @param request: GetCollegeContactStandardStruDeptDetailRequest
+        @param headers: GetCollegeContactStandardStruDeptDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCollegeContactStandardStruDeptDetailResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetCollegeContactStandardStruDeptDetail',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/depts/structures/standards',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetCollegeContactStandardStruDeptDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_college_contact_standard_stru_dept_detail_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.GetCollegeContactStandardStruDeptDetailRequest,
+        headers: dingtalkedu__1__0_models.GetCollegeContactStandardStruDeptDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetCollegeContactStandardStruDeptDetailResponse:
+        """
+        @summary 获取行政组织架构信息
+        
+        @param request: GetCollegeContactStandardStruDeptDetailRequest
+        @param headers: GetCollegeContactStandardStruDeptDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCollegeContactStandardStruDeptDetailResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetCollegeContactStandardStruDeptDetail',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/depts/structures/standards',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetCollegeContactStandardStruDeptDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_college_contact_standard_stru_dept_detail(
+        self,
+        request: dingtalkedu__1__0_models.GetCollegeContactStandardStruDeptDetailRequest,
+    ) -> dingtalkedu__1__0_models.GetCollegeContactStandardStruDeptDetailResponse:
+        """
+        @summary 获取行政组织架构信息
+        
+        @param request: GetCollegeContactStandardStruDeptDetailRequest
+        @return: GetCollegeContactStandardStruDeptDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetCollegeContactStandardStruDeptDetailHeaders()
+        return self.get_college_contact_standard_stru_dept_detail_with_options(request, headers, runtime)
+
+    async def get_college_contact_standard_stru_dept_detail_async(
+        self,
+        request: dingtalkedu__1__0_models.GetCollegeContactStandardStruDeptDetailRequest,
+    ) -> dingtalkedu__1__0_models.GetCollegeContactStandardStruDeptDetailResponse:
+        """
+        @summary 获取行政组织架构信息
+        
+        @param request: GetCollegeContactStandardStruDeptDetailRequest
+        @return: GetCollegeContactStandardStruDeptDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetCollegeContactStandardStruDeptDetailHeaders()
+        return await self.get_college_contact_standard_stru_dept_detail_with_options_async(request, headers, runtime)
+
     def get_default_child_with_options(
         self,
         headers: dingtalkedu__1__0_models.GetDefaultChildHeaders,
@@ -10320,6 +11174,238 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.IsvMetadataQueryHeaders()
         return await self.isv_metadata_query_with_options_async(request, headers, runtime)
 
+    def list_college_contact_dept_type_config_with_options(
+        self,
+        request: dingtalkedu__1__0_models.ListCollegeContactDeptTypeConfigRequest,
+        headers: dingtalkedu__1__0_models.ListCollegeContactDeptTypeConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.ListCollegeContactDeptTypeConfigResponse:
+        """
+        @summary 获取高校组织单元类型
+        
+        @param request: ListCollegeContactDeptTypeConfigRequest
+        @param headers: ListCollegeContactDeptTypeConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListCollegeContactDeptTypeConfigResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListCollegeContactDeptTypeConfig',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/configs/deptTypes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.ListCollegeContactDeptTypeConfigResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_college_contact_dept_type_config_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.ListCollegeContactDeptTypeConfigRequest,
+        headers: dingtalkedu__1__0_models.ListCollegeContactDeptTypeConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.ListCollegeContactDeptTypeConfigResponse:
+        """
+        @summary 获取高校组织单元类型
+        
+        @param request: ListCollegeContactDeptTypeConfigRequest
+        @param headers: ListCollegeContactDeptTypeConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListCollegeContactDeptTypeConfigResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListCollegeContactDeptTypeConfig',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/configs/deptTypes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.ListCollegeContactDeptTypeConfigResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_college_contact_dept_type_config(
+        self,
+        request: dingtalkedu__1__0_models.ListCollegeContactDeptTypeConfigRequest,
+    ) -> dingtalkedu__1__0_models.ListCollegeContactDeptTypeConfigResponse:
+        """
+        @summary 获取高校组织单元类型
+        
+        @param request: ListCollegeContactDeptTypeConfigRequest
+        @return: ListCollegeContactDeptTypeConfigResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.ListCollegeContactDeptTypeConfigHeaders()
+        return self.list_college_contact_dept_type_config_with_options(request, headers, runtime)
+
+    async def list_college_contact_dept_type_config_async(
+        self,
+        request: dingtalkedu__1__0_models.ListCollegeContactDeptTypeConfigRequest,
+    ) -> dingtalkedu__1__0_models.ListCollegeContactDeptTypeConfigResponse:
+        """
+        @summary 获取高校组织单元类型
+        
+        @param request: ListCollegeContactDeptTypeConfigRequest
+        @return: ListCollegeContactDeptTypeConfigResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.ListCollegeContactDeptTypeConfigHeaders()
+        return await self.list_college_contact_dept_type_config_with_options_async(request, headers, runtime)
+
+    def list_college_contact_sub_depts_with_options(
+        self,
+        request: dingtalkedu__1__0_models.ListCollegeContactSubDeptsRequest,
+        headers: dingtalkedu__1__0_models.ListCollegeContactSubDeptsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.ListCollegeContactSubDeptsResponse:
+        """
+        @summary 获取高校通讯录子组织单元列表
+        
+        @param request: ListCollegeContactSubDeptsRequest
+        @param headers: ListCollegeContactSubDeptsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListCollegeContactSubDeptsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListCollegeContactSubDepts',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/subDepts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.ListCollegeContactSubDeptsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_college_contact_sub_depts_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.ListCollegeContactSubDeptsRequest,
+        headers: dingtalkedu__1__0_models.ListCollegeContactSubDeptsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.ListCollegeContactSubDeptsResponse:
+        """
+        @summary 获取高校通讯录子组织单元列表
+        
+        @param request: ListCollegeContactSubDeptsRequest
+        @param headers: ListCollegeContactSubDeptsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListCollegeContactSubDeptsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dept_id):
+            query['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListCollegeContactSubDepts',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/subDepts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.ListCollegeContactSubDeptsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_college_contact_sub_depts(
+        self,
+        request: dingtalkedu__1__0_models.ListCollegeContactSubDeptsRequest,
+    ) -> dingtalkedu__1__0_models.ListCollegeContactSubDeptsResponse:
+        """
+        @summary 获取高校通讯录子组织单元列表
+        
+        @param request: ListCollegeContactSubDeptsRequest
+        @return: ListCollegeContactSubDeptsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.ListCollegeContactSubDeptsHeaders()
+        return self.list_college_contact_sub_depts_with_options(request, headers, runtime)
+
+    async def list_college_contact_sub_depts_async(
+        self,
+        request: dingtalkedu__1__0_models.ListCollegeContactSubDeptsRequest,
+    ) -> dingtalkedu__1__0_models.ListCollegeContactSubDeptsResponse:
+        """
+        @summary 获取高校通讯录子组织单元列表
+        
+        @param request: ListCollegeContactSubDeptsRequest
+        @return: ListCollegeContactSubDeptsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.ListCollegeContactSubDeptsHeaders()
+        return await self.list_college_contact_sub_depts_with_options_async(request, headers, runtime)
+
     def list_order_with_options(
         self,
         request: dingtalkedu__1__0_models.ListOrderRequest,
@@ -11745,6 +12831,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.QueryClassScheduleConfigHeaders()
         return await self.query_class_schedule_config_with_options_async(request, headers, runtime)
+
+    def query_college_contact_user_detail_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QueryCollegeContactUserDetailRequest,
+        headers: dingtalkedu__1__0_models.QueryCollegeContactUserDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryCollegeContactUserDetailResponse:
+        """
+        @summary 获取用户详情(包含高校账号)
+        
+        @param request: QueryCollegeContactUserDetailRequest
+        @param headers: QueryCollegeContactUserDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCollegeContactUserDetailResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
+        if not UtilClient.is_unset(request.userid):
+            query['userid'] = request.userid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryCollegeContactUserDetail',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/users',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryCollegeContactUserDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_college_contact_user_detail_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryCollegeContactUserDetailRequest,
+        headers: dingtalkedu__1__0_models.QueryCollegeContactUserDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryCollegeContactUserDetailResponse:
+        """
+        @summary 获取用户详情(包含高校账号)
+        
+        @param request: QueryCollegeContactUserDetailRequest
+        @param headers: QueryCollegeContactUserDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCollegeContactUserDetailResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
+        if not UtilClient.is_unset(request.userid):
+            query['userid'] = request.userid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryCollegeContactUserDetail',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/users',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryCollegeContactUserDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_college_contact_user_detail(
+        self,
+        request: dingtalkedu__1__0_models.QueryCollegeContactUserDetailRequest,
+    ) -> dingtalkedu__1__0_models.QueryCollegeContactUserDetailResponse:
+        """
+        @summary 获取用户详情(包含高校账号)
+        
+        @param request: QueryCollegeContactUserDetailRequest
+        @return: QueryCollegeContactUserDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryCollegeContactUserDetailHeaders()
+        return self.query_college_contact_user_detail_with_options(request, headers, runtime)
+
+    async def query_college_contact_user_detail_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryCollegeContactUserDetailRequest,
+    ) -> dingtalkedu__1__0_models.QueryCollegeContactUserDetailResponse:
+        """
+        @summary 获取用户详情(包含高校账号)
+        
+        @param request: QueryCollegeContactUserDetailRequest
+        @return: QueryCollegeContactUserDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryCollegeContactUserDetailHeaders()
+        return await self.query_college_contact_user_detail_with_options_async(request, headers, runtime)
 
     def query_device_with_options(
         self,
@@ -15885,6 +17089,766 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.UpdateCollegeAlumniUserInfoHeaders()
         return await self.update_college_alumni_user_info_with_options_async(request, headers, runtime)
+
+    def update_college_contact_dept_with_options(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeContactDeptRequest,
+        headers: dingtalkedu__1__0_models.UpdateCollegeContactDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeContactDeptResponse:
+        """
+        @summary 更新高校通讯录组织单元
+        
+        @param request: UpdateCollegeContactDeptRequest
+        @param headers: UpdateCollegeContactDeptHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCollegeContactDeptResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.auto_add_user):
+            body['autoAddUser'] = request.auto_add_user
+        if not UtilClient.is_unset(request.auto_approve_apply):
+            body['autoApproveApply'] = request.auto_approve_apply
+        if not UtilClient.is_unset(request.brief):
+            body['brief'] = request.brief
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.create_dept_group):
+            body['createDeptGroup'] = request.create_dept_group
+        if not UtilClient.is_unset(request.dept_code):
+            body['deptCode'] = request.dept_code
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.dept_manager_userid_list):
+            body['deptManagerUseridList'] = request.dept_manager_userid_list
+        if not UtilClient.is_unset(request.dept_permits):
+            body['deptPermits'] = request.dept_permits
+        if not UtilClient.is_unset(request.dept_type):
+            body['deptType'] = request.dept_type
+        if not UtilClient.is_unset(request.emp_apply_join_dept):
+            body['empApplyJoinDept'] = request.emp_apply_join_dept
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.force_update_fields):
+            body['forceUpdateFields'] = request.force_update_fields
+        if not UtilClient.is_unset(request.group_contain_hidden_dept):
+            body['groupContainHiddenDept'] = request.group_contain_hidden_dept
+        if not UtilClient.is_unset(request.group_contain_outer_dept):
+            body['groupContainOuterDept'] = request.group_contain_outer_dept
+        if not UtilClient.is_unset(request.group_contain_sub_dept):
+            body['groupContainSubDept'] = request.group_contain_sub_dept
+        if not UtilClient.is_unset(request.hide_dept):
+            body['hideDept'] = request.hide_dept
+        if not UtilClient.is_unset(request.hide_scene_config):
+            body['hideSceneConfig'] = request.hide_scene_config
+        if not UtilClient.is_unset(request.language):
+            body['language'] = request.language
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.order):
+            body['order'] = request.order
+        if not UtilClient.is_unset(request.org_dept_owner):
+            body['orgDeptOwner'] = request.org_dept_owner
+        if not UtilClient.is_unset(request.outer_dept):
+            body['outerDept'] = request.outer_dept
+        if not UtilClient.is_unset(request.outer_dept_only_self):
+            body['outerDeptOnlySelf'] = request.outer_dept_only_self
+        if not UtilClient.is_unset(request.outer_permit_depts):
+            body['outerPermitDepts'] = request.outer_permit_depts
+        if not UtilClient.is_unset(request.outer_permit_users):
+            body['outerPermitUsers'] = request.outer_permit_users
+        if not UtilClient.is_unset(request.outer_scene_config):
+            body['outerSceneConfig'] = request.outer_scene_config
+        if not UtilClient.is_unset(request.parent_id):
+            body['parentId'] = request.parent_id
+        if not UtilClient.is_unset(request.source_identifier):
+            body['sourceIdentifier'] = request.source_identifier
+        if not UtilClient.is_unset(request.telephone):
+            body['telephone'] = request.telephone
+        if not UtilClient.is_unset(request.user_permits):
+            body['userPermits'] = request.user_permits
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCollegeContactDept',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/depts',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateCollegeContactDeptResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_college_contact_dept_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeContactDeptRequest,
+        headers: dingtalkedu__1__0_models.UpdateCollegeContactDeptHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeContactDeptResponse:
+        """
+        @summary 更新高校通讯录组织单元
+        
+        @param request: UpdateCollegeContactDeptRequest
+        @param headers: UpdateCollegeContactDeptHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCollegeContactDeptResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.auto_add_user):
+            body['autoAddUser'] = request.auto_add_user
+        if not UtilClient.is_unset(request.auto_approve_apply):
+            body['autoApproveApply'] = request.auto_approve_apply
+        if not UtilClient.is_unset(request.brief):
+            body['brief'] = request.brief
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.create_dept_group):
+            body['createDeptGroup'] = request.create_dept_group
+        if not UtilClient.is_unset(request.dept_code):
+            body['deptCode'] = request.dept_code
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.dept_manager_userid_list):
+            body['deptManagerUseridList'] = request.dept_manager_userid_list
+        if not UtilClient.is_unset(request.dept_permits):
+            body['deptPermits'] = request.dept_permits
+        if not UtilClient.is_unset(request.dept_type):
+            body['deptType'] = request.dept_type
+        if not UtilClient.is_unset(request.emp_apply_join_dept):
+            body['empApplyJoinDept'] = request.emp_apply_join_dept
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.force_update_fields):
+            body['forceUpdateFields'] = request.force_update_fields
+        if not UtilClient.is_unset(request.group_contain_hidden_dept):
+            body['groupContainHiddenDept'] = request.group_contain_hidden_dept
+        if not UtilClient.is_unset(request.group_contain_outer_dept):
+            body['groupContainOuterDept'] = request.group_contain_outer_dept
+        if not UtilClient.is_unset(request.group_contain_sub_dept):
+            body['groupContainSubDept'] = request.group_contain_sub_dept
+        if not UtilClient.is_unset(request.hide_dept):
+            body['hideDept'] = request.hide_dept
+        if not UtilClient.is_unset(request.hide_scene_config):
+            body['hideSceneConfig'] = request.hide_scene_config
+        if not UtilClient.is_unset(request.language):
+            body['language'] = request.language
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.order):
+            body['order'] = request.order
+        if not UtilClient.is_unset(request.org_dept_owner):
+            body['orgDeptOwner'] = request.org_dept_owner
+        if not UtilClient.is_unset(request.outer_dept):
+            body['outerDept'] = request.outer_dept
+        if not UtilClient.is_unset(request.outer_dept_only_self):
+            body['outerDeptOnlySelf'] = request.outer_dept_only_self
+        if not UtilClient.is_unset(request.outer_permit_depts):
+            body['outerPermitDepts'] = request.outer_permit_depts
+        if not UtilClient.is_unset(request.outer_permit_users):
+            body['outerPermitUsers'] = request.outer_permit_users
+        if not UtilClient.is_unset(request.outer_scene_config):
+            body['outerSceneConfig'] = request.outer_scene_config
+        if not UtilClient.is_unset(request.parent_id):
+            body['parentId'] = request.parent_id
+        if not UtilClient.is_unset(request.source_identifier):
+            body['sourceIdentifier'] = request.source_identifier
+        if not UtilClient.is_unset(request.telephone):
+            body['telephone'] = request.telephone
+        if not UtilClient.is_unset(request.user_permits):
+            body['userPermits'] = request.user_permits
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCollegeContactDept',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/depts',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateCollegeContactDeptResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_college_contact_dept(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeContactDeptRequest,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeContactDeptResponse:
+        """
+        @summary 更新高校通讯录组织单元
+        
+        @param request: UpdateCollegeContactDeptRequest
+        @return: UpdateCollegeContactDeptResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateCollegeContactDeptHeaders()
+        return self.update_college_contact_dept_with_options(request, headers, runtime)
+
+    async def update_college_contact_dept_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeContactDeptRequest,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeContactDeptResponse:
+        """
+        @summary 更新高校通讯录组织单元
+        
+        @param request: UpdateCollegeContactDeptRequest
+        @return: UpdateCollegeContactDeptResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateCollegeContactDeptHeaders()
+        return await self.update_college_contact_dept_with_options_async(request, headers, runtime)
+
+    def update_college_contact_exclusive_with_options(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeContactExclusiveRequest,
+        headers: dingtalkedu__1__0_models.UpdateCollegeContactExclusiveHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeContactExclusiveResponse:
+        """
+        @summary 更新高校账号用户
+        
+        @param request: UpdateCollegeContactExclusiveRequest
+        @param headers: UpdateCollegeContactExclusiveHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCollegeContactExclusiveResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.avatar_media_id):
+            body['avatarMediaId'] = request.avatar_media_id
+        if not UtilClient.is_unset(request.dept_id_list):
+            body['deptIdList'] = request.dept_id_list
+        if not UtilClient.is_unset(request.dept_order_list):
+            body['deptOrderList'] = request.dept_order_list
+        if not UtilClient.is_unset(request.dept_title_list):
+            body['deptTitleList'] = request.dept_title_list
+        if not UtilClient.is_unset(request.email):
+            body['email'] = request.email
+        if not UtilClient.is_unset(request.emp_type):
+            body['empType'] = request.emp_type
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.force_update_fields):
+            body['forceUpdateFields'] = request.force_update_fields
+        if not UtilClient.is_unset(request.hide_mobile):
+            body['hideMobile'] = request.hide_mobile
+        if not UtilClient.is_unset(request.hired_date):
+            body['hiredDate'] = request.hired_date
+        if not UtilClient.is_unset(request.job_number):
+            body['jobNumber'] = request.job_number
+        if not UtilClient.is_unset(request.language):
+            body['language'] = request.language
+        if not UtilClient.is_unset(request.login_id_type):
+            body['loginIdType'] = request.login_id_type
+        if not UtilClient.is_unset(request.main_dept_id):
+            body['mainDeptId'] = request.main_dept_id
+        if not UtilClient.is_unset(request.manager_userid):
+            body['managerUserid'] = request.manager_userid
+        if not UtilClient.is_unset(request.mobile):
+            body['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.nickname):
+            body['nickname'] = request.nickname
+        if not UtilClient.is_unset(request.org_email):
+            body['orgEmail'] = request.org_email
+        if not UtilClient.is_unset(request.org_email_type):
+            body['orgEmailType'] = request.org_email_type
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.senior_mode):
+            body['seniorMode'] = request.senior_mode
+        if not UtilClient.is_unset(request.telephone):
+            body['telephone'] = request.telephone
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.userid):
+            body['userid'] = request.userid
+        if not UtilClient.is_unset(request.work_place):
+            body['workPlace'] = request.work_place
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCollegeContactExclusive',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/exclusiveAccounts/users',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateCollegeContactExclusiveResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_college_contact_exclusive_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeContactExclusiveRequest,
+        headers: dingtalkedu__1__0_models.UpdateCollegeContactExclusiveHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeContactExclusiveResponse:
+        """
+        @summary 更新高校账号用户
+        
+        @param request: UpdateCollegeContactExclusiveRequest
+        @param headers: UpdateCollegeContactExclusiveHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCollegeContactExclusiveResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.avatar_media_id):
+            body['avatarMediaId'] = request.avatar_media_id
+        if not UtilClient.is_unset(request.dept_id_list):
+            body['deptIdList'] = request.dept_id_list
+        if not UtilClient.is_unset(request.dept_order_list):
+            body['deptOrderList'] = request.dept_order_list
+        if not UtilClient.is_unset(request.dept_title_list):
+            body['deptTitleList'] = request.dept_title_list
+        if not UtilClient.is_unset(request.email):
+            body['email'] = request.email
+        if not UtilClient.is_unset(request.emp_type):
+            body['empType'] = request.emp_type
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.force_update_fields):
+            body['forceUpdateFields'] = request.force_update_fields
+        if not UtilClient.is_unset(request.hide_mobile):
+            body['hideMobile'] = request.hide_mobile
+        if not UtilClient.is_unset(request.hired_date):
+            body['hiredDate'] = request.hired_date
+        if not UtilClient.is_unset(request.job_number):
+            body['jobNumber'] = request.job_number
+        if not UtilClient.is_unset(request.language):
+            body['language'] = request.language
+        if not UtilClient.is_unset(request.login_id_type):
+            body['loginIdType'] = request.login_id_type
+        if not UtilClient.is_unset(request.main_dept_id):
+            body['mainDeptId'] = request.main_dept_id
+        if not UtilClient.is_unset(request.manager_userid):
+            body['managerUserid'] = request.manager_userid
+        if not UtilClient.is_unset(request.mobile):
+            body['mobile'] = request.mobile
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.nickname):
+            body['nickname'] = request.nickname
+        if not UtilClient.is_unset(request.org_email):
+            body['orgEmail'] = request.org_email
+        if not UtilClient.is_unset(request.org_email_type):
+            body['orgEmailType'] = request.org_email_type
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.senior_mode):
+            body['seniorMode'] = request.senior_mode
+        if not UtilClient.is_unset(request.telephone):
+            body['telephone'] = request.telephone
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.userid):
+            body['userid'] = request.userid
+        if not UtilClient.is_unset(request.work_place):
+            body['workPlace'] = request.work_place
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCollegeContactExclusive',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/exclusiveAccounts/users',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateCollegeContactExclusiveResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_college_contact_exclusive(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeContactExclusiveRequest,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeContactExclusiveResponse:
+        """
+        @summary 更新高校账号用户
+        
+        @param request: UpdateCollegeContactExclusiveRequest
+        @return: UpdateCollegeContactExclusiveResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateCollegeContactExclusiveHeaders()
+        return self.update_college_contact_exclusive_with_options(request, headers, runtime)
+
+    async def update_college_contact_exclusive_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeContactExclusiveRequest,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeContactExclusiveResponse:
+        """
+        @summary 更新高校账号用户
+        
+        @param request: UpdateCollegeContactExclusiveRequest
+        @return: UpdateCollegeContactExclusiveResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateCollegeContactExclusiveHeaders()
+        return await self.update_college_contact_exclusive_with_options_async(request, headers, runtime)
+
+    def update_college_contact_user_with_options(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeContactUserRequest,
+        headers: dingtalkedu__1__0_models.UpdateCollegeContactUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeContactUserResponse:
+        """
+        @summary 更新个人账号用户
+        
+        @param request: UpdateCollegeContactUserRequest
+        @param headers: UpdateCollegeContactUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCollegeContactUserResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_id_list):
+            body['deptIdList'] = request.dept_id_list
+        if not UtilClient.is_unset(request.dept_order_list):
+            body['deptOrderList'] = request.dept_order_list
+        if not UtilClient.is_unset(request.dept_title_list):
+            body['deptTitleList'] = request.dept_title_list
+        if not UtilClient.is_unset(request.email):
+            body['email'] = request.email
+        if not UtilClient.is_unset(request.emp_type):
+            body['empType'] = request.emp_type
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.force_update_fields):
+            body['forceUpdateFields'] = request.force_update_fields
+        if not UtilClient.is_unset(request.hide_mobile):
+            body['hideMobile'] = request.hide_mobile
+        if not UtilClient.is_unset(request.hired_date):
+            body['hiredDate'] = request.hired_date
+        if not UtilClient.is_unset(request.job_number):
+            body['jobNumber'] = request.job_number
+        if not UtilClient.is_unset(request.language):
+            body['language'] = request.language
+        if not UtilClient.is_unset(request.main_dept_id):
+            body['mainDeptId'] = request.main_dept_id
+        if not UtilClient.is_unset(request.manager_userid):
+            body['managerUserid'] = request.manager_userid
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.org_email):
+            body['orgEmail'] = request.org_email
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.senior_mode):
+            body['seniorMode'] = request.senior_mode
+        if not UtilClient.is_unset(request.telephone):
+            body['telephone'] = request.telephone
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.userid):
+            body['userid'] = request.userid
+        if not UtilClient.is_unset(request.work_place):
+            body['workPlace'] = request.work_place
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCollegeContactUser',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/personalAccounts/users',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateCollegeContactUserResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_college_contact_user_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeContactUserRequest,
+        headers: dingtalkedu__1__0_models.UpdateCollegeContactUserHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeContactUserResponse:
+        """
+        @summary 更新个人账号用户
+        
+        @param request: UpdateCollegeContactUserRequest
+        @param headers: UpdateCollegeContactUserHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCollegeContactUserResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dept_id_list):
+            body['deptIdList'] = request.dept_id_list
+        if not UtilClient.is_unset(request.dept_order_list):
+            body['deptOrderList'] = request.dept_order_list
+        if not UtilClient.is_unset(request.dept_title_list):
+            body['deptTitleList'] = request.dept_title_list
+        if not UtilClient.is_unset(request.email):
+            body['email'] = request.email
+        if not UtilClient.is_unset(request.emp_type):
+            body['empType'] = request.emp_type
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.force_update_fields):
+            body['forceUpdateFields'] = request.force_update_fields
+        if not UtilClient.is_unset(request.hide_mobile):
+            body['hideMobile'] = request.hide_mobile
+        if not UtilClient.is_unset(request.hired_date):
+            body['hiredDate'] = request.hired_date
+        if not UtilClient.is_unset(request.job_number):
+            body['jobNumber'] = request.job_number
+        if not UtilClient.is_unset(request.language):
+            body['language'] = request.language
+        if not UtilClient.is_unset(request.main_dept_id):
+            body['mainDeptId'] = request.main_dept_id
+        if not UtilClient.is_unset(request.manager_userid):
+            body['managerUserid'] = request.manager_userid
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.org_email):
+            body['orgEmail'] = request.org_email
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.senior_mode):
+            body['seniorMode'] = request.senior_mode
+        if not UtilClient.is_unset(request.telephone):
+            body['telephone'] = request.telephone
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        if not UtilClient.is_unset(request.userid):
+            body['userid'] = request.userid
+        if not UtilClient.is_unset(request.work_place):
+            body['workPlace'] = request.work_place
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCollegeContactUser',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/personalAccounts/users',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateCollegeContactUserResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_college_contact_user(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeContactUserRequest,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeContactUserResponse:
+        """
+        @summary 更新个人账号用户
+        
+        @param request: UpdateCollegeContactUserRequest
+        @return: UpdateCollegeContactUserResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateCollegeContactUserHeaders()
+        return self.update_college_contact_user_with_options(request, headers, runtime)
+
+    async def update_college_contact_user_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeContactUserRequest,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeContactUserResponse:
+        """
+        @summary 更新个人账号用户
+        
+        @param request: UpdateCollegeContactUserRequest
+        @return: UpdateCollegeContactUserResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateCollegeContactUserHeaders()
+        return await self.update_college_contact_user_with_options_async(request, headers, runtime)
+
+    def update_college_user_emp_type_with_options(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeUserEmpTypeRequest,
+        headers: dingtalkedu__1__0_models.UpdateCollegeUserEmpTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeUserEmpTypeResponse:
+        """
+        @summary 修改用户成员类型
+        
+        @param request: UpdateCollegeUserEmpTypeRequest
+        @param headers: UpdateCollegeUserEmpTypeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCollegeUserEmpTypeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.emp_type):
+            body['empType'] = request.emp_type
+        if not UtilClient.is_unset(request.userid):
+            body['userid'] = request.userid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCollegeUserEmpType',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/empTypes/change',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateCollegeUserEmpTypeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_college_user_emp_type_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeUserEmpTypeRequest,
+        headers: dingtalkedu__1__0_models.UpdateCollegeUserEmpTypeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeUserEmpTypeResponse:
+        """
+        @summary 修改用户成员类型
+        
+        @param request: UpdateCollegeUserEmpTypeRequest
+        @param headers: UpdateCollegeUserEmpTypeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCollegeUserEmpTypeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.emp_type):
+            body['empType'] = request.emp_type
+        if not UtilClient.is_unset(request.userid):
+            body['userid'] = request.userid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCollegeUserEmpType',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/empTypes/change',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateCollegeUserEmpTypeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_college_user_emp_type(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeUserEmpTypeRequest,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeUserEmpTypeResponse:
+        """
+        @summary 修改用户成员类型
+        
+        @param request: UpdateCollegeUserEmpTypeRequest
+        @return: UpdateCollegeUserEmpTypeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateCollegeUserEmpTypeHeaders()
+        return self.update_college_user_emp_type_with_options(request, headers, runtime)
+
+    async def update_college_user_emp_type_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeUserEmpTypeRequest,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeUserEmpTypeResponse:
+        """
+        @summary 修改用户成员类型
+        
+        @param request: UpdateCollegeUserEmpTypeRequest
+        @return: UpdateCollegeUserEmpTypeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateCollegeUserEmpTypeHeaders()
+        return await self.update_college_user_emp_type_with_options_async(request, headers, runtime)
 
     def update_courses_of_class_with_options(
         self,

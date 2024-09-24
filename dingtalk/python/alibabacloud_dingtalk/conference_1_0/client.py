@@ -2976,6 +2976,128 @@ class Client(OpenApiClient):
         headers = dingtalkconference__1__0_models.QueryConferenceMembersHeaders()
         return await self.query_conference_members_with_options_async(conference_id, request, headers, runtime)
 
+    def query_flash_minutes_summary_with_options(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryFlashMinutesSummaryRequest,
+        headers: dingtalkconference__1__0_models.QueryFlashMinutesSummaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.QueryFlashMinutesSummaryResponse:
+        """
+        @summary 查询云录制摘要请求
+        
+        @param request: QueryFlashMinutesSummaryRequest
+        @param headers: QueryFlashMinutesSummaryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryFlashMinutesSummaryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_type):
+            query['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.recorder_union_id):
+            query['recorderUnionId'] = request.recorder_union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryFlashMinutesSummary',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/flashMinutes/summaries',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.QueryFlashMinutesSummaryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_flash_minutes_summary_with_options_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryFlashMinutesSummaryRequest,
+        headers: dingtalkconference__1__0_models.QueryFlashMinutesSummaryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.QueryFlashMinutesSummaryResponse:
+        """
+        @summary 查询云录制摘要请求
+        
+        @param request: QueryFlashMinutesSummaryRequest
+        @param headers: QueryFlashMinutesSummaryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryFlashMinutesSummaryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_type):
+            query['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.recorder_union_id):
+            query['recorderUnionId'] = request.recorder_union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryFlashMinutesSummary',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/flashMinutes/summaries',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.QueryFlashMinutesSummaryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_flash_minutes_summary(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryFlashMinutesSummaryRequest,
+    ) -> dingtalkconference__1__0_models.QueryFlashMinutesSummaryResponse:
+        """
+        @summary 查询云录制摘要请求
+        
+        @param request: QueryFlashMinutesSummaryRequest
+        @return: QueryFlashMinutesSummaryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.QueryFlashMinutesSummaryHeaders()
+        return self.query_flash_minutes_summary_with_options(conference_id, request, headers, runtime)
+
+    async def query_flash_minutes_summary_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.QueryFlashMinutesSummaryRequest,
+    ) -> dingtalkconference__1__0_models.QueryFlashMinutesSummaryResponse:
+        """
+        @summary 查询云录制摘要请求
+        
+        @param request: QueryFlashMinutesSummaryRequest
+        @return: QueryFlashMinutesSummaryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.QueryFlashMinutesSummaryHeaders()
+        return await self.query_flash_minutes_summary_with_options_async(conference_id, request, headers, runtime)
+
     def query_minutes_audio_with_options(
         self,
         conference_id: str,

@@ -1840,6 +1840,132 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.DistributePartnerAppHeaders()
         return await self.distribute_partner_app_with_options_async(request, headers, runtime)
 
+    def edit_security_config_member_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.EditSecurityConfigMemberRequest,
+        headers: dingtalkexclusive__1__0_models.EditSecurityConfigMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.EditSecurityConfigMemberResponse:
+        """
+        @summary 编辑安全卡片管控成员
+        
+        @param request: EditSecurityConfigMemberRequest
+        @param headers: EditSecurityConfigMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditSecurityConfigMemberResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.config_key):
+            body['configKey'] = request.config_key
+        if not UtilClient.is_unset(request.operate_type):
+            body['operateType'] = request.operate_type
+        if not UtilClient.is_unset(request.operate_user_id):
+            body['operateUserId'] = request.operate_user_id
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EditSecurityConfigMember',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/securities/configs/members',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.EditSecurityConfigMemberResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def edit_security_config_member_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.EditSecurityConfigMemberRequest,
+        headers: dingtalkexclusive__1__0_models.EditSecurityConfigMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.EditSecurityConfigMemberResponse:
+        """
+        @summary 编辑安全卡片管控成员
+        
+        @param request: EditSecurityConfigMemberRequest
+        @param headers: EditSecurityConfigMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EditSecurityConfigMemberResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.config_key):
+            body['configKey'] = request.config_key
+        if not UtilClient.is_unset(request.operate_type):
+            body['operateType'] = request.operate_type
+        if not UtilClient.is_unset(request.operate_user_id):
+            body['operateUserId'] = request.operate_user_id
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EditSecurityConfigMember',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/securities/configs/members',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.EditSecurityConfigMemberResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def edit_security_config_member(
+        self,
+        request: dingtalkexclusive__1__0_models.EditSecurityConfigMemberRequest,
+    ) -> dingtalkexclusive__1__0_models.EditSecurityConfigMemberResponse:
+        """
+        @summary 编辑安全卡片管控成员
+        
+        @param request: EditSecurityConfigMemberRequest
+        @return: EditSecurityConfigMemberResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.EditSecurityConfigMemberHeaders()
+        return self.edit_security_config_member_with_options(request, headers, runtime)
+
+    async def edit_security_config_member_async(
+        self,
+        request: dingtalkexclusive__1__0_models.EditSecurityConfigMemberRequest,
+    ) -> dingtalkexclusive__1__0_models.EditSecurityConfigMemberResponse:
+        """
+        @summary 编辑安全卡片管控成员
+        
+        @param request: EditSecurityConfigMemberRequest
+        @return: EditSecurityConfigMemberResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.EditSecurityConfigMemberHeaders()
+        return await self.edit_security_config_member_with_options_async(request, headers, runtime)
+
     def exchange_main_admin_with_options(
         self,
         request: dingtalkexclusive__1__0_models.ExchangeMainAdminRequest,
@@ -6448,6 +6574,128 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.GetRecognizeRecordsHeaders()
         return await self.get_recognize_records_with_options_async(request, headers, runtime)
 
+    def get_security_config_member_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetSecurityConfigMemberRequest,
+        headers: dingtalkexclusive__1__0_models.GetSecurityConfigMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetSecurityConfigMemberResponse:
+        """
+        @summary 获取安全管控卡片成员
+        
+        @param request: GetSecurityConfigMemberRequest
+        @param headers: GetSecurityConfigMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSecurityConfigMemberResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.config_key):
+            body['configKey'] = request.config_key
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetSecurityConfigMember',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/securities/configs/members/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetSecurityConfigMemberResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_security_config_member_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetSecurityConfigMemberRequest,
+        headers: dingtalkexclusive__1__0_models.GetSecurityConfigMemberHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetSecurityConfigMemberResponse:
+        """
+        @summary 获取安全管控卡片成员
+        
+        @param request: GetSecurityConfigMemberRequest
+        @param headers: GetSecurityConfigMemberHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSecurityConfigMemberResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.config_key):
+            body['configKey'] = request.config_key
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetSecurityConfigMember',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/securities/configs/members/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetSecurityConfigMemberResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_security_config_member(
+        self,
+        request: dingtalkexclusive__1__0_models.GetSecurityConfigMemberRequest,
+    ) -> dingtalkexclusive__1__0_models.GetSecurityConfigMemberResponse:
+        """
+        @summary 获取安全管控卡片成员
+        
+        @param request: GetSecurityConfigMemberRequest
+        @return: GetSecurityConfigMemberResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetSecurityConfigMemberHeaders()
+        return self.get_security_config_member_with_options(request, headers, runtime)
+
+    async def get_security_config_member_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetSecurityConfigMemberRequest,
+    ) -> dingtalkexclusive__1__0_models.GetSecurityConfigMemberResponse:
+        """
+        @summary 获取安全管控卡片成员
+        
+        @param request: GetSecurityConfigMemberRequest
+        @return: GetSecurityConfigMemberResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetSecurityConfigMemberHeaders()
+        return await self.get_security_config_member_with_options_async(request, headers, runtime)
+
     def get_signed_detail_by_page_with_options(
         self,
         request: dingtalkexclusive__1__0_models.GetSignedDetailByPageRequest,
@@ -7305,6 +7553,262 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.GetVirusScanResultHeaders()
         return await self.get_virus_scan_result_with_options_async(request, headers, runtime)
+
+    def group_query_by_attr_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GroupQueryByAttrRequest,
+        headers: dingtalkexclusive__1__0_models.GroupQueryByAttrHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GroupQueryByAttrResponse:
+        """
+        @summary 根据群属性查询群ID
+        
+        @param request: GroupQueryByAttrRequest
+        @param headers: GroupQueryByAttrHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GroupQueryByAttrResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.group_topic):
+            body['groupTopic'] = request.group_topic
+        if not UtilClient.is_unset(request.group_type):
+            body['groupType'] = request.group_type
+        if not UtilClient.is_unset(request.list_dynamic_attr):
+            body['listDynamicAttr'] = request.list_dynamic_attr
+        if not UtilClient.is_unset(request.page_index):
+            body['pageIndex'] = request.page_index
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.secret_key):
+            body['secretKey'] = request.secret_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GroupQueryByAttr',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/portals/groups/queryGroup',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GroupQueryByAttrResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def group_query_by_attr_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GroupQueryByAttrRequest,
+        headers: dingtalkexclusive__1__0_models.GroupQueryByAttrHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GroupQueryByAttrResponse:
+        """
+        @summary 根据群属性查询群ID
+        
+        @param request: GroupQueryByAttrRequest
+        @param headers: GroupQueryByAttrHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GroupQueryByAttrResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.group_topic):
+            body['groupTopic'] = request.group_topic
+        if not UtilClient.is_unset(request.group_type):
+            body['groupType'] = request.group_type
+        if not UtilClient.is_unset(request.list_dynamic_attr):
+            body['listDynamicAttr'] = request.list_dynamic_attr
+        if not UtilClient.is_unset(request.page_index):
+            body['pageIndex'] = request.page_index
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.secret_key):
+            body['secretKey'] = request.secret_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GroupQueryByAttr',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/portals/groups/queryGroup',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GroupQueryByAttrResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def group_query_by_attr(
+        self,
+        request: dingtalkexclusive__1__0_models.GroupQueryByAttrRequest,
+    ) -> dingtalkexclusive__1__0_models.GroupQueryByAttrResponse:
+        """
+        @summary 根据群属性查询群ID
+        
+        @param request: GroupQueryByAttrRequest
+        @return: GroupQueryByAttrResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GroupQueryByAttrHeaders()
+        return self.group_query_by_attr_with_options(request, headers, runtime)
+
+    async def group_query_by_attr_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GroupQueryByAttrRequest,
+    ) -> dingtalkexclusive__1__0_models.GroupQueryByAttrResponse:
+        """
+        @summary 根据群属性查询群ID
+        
+        @param request: GroupQueryByAttrRequest
+        @return: GroupQueryByAttrResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GroupQueryByAttrHeaders()
+        return await self.group_query_by_attr_with_options_async(request, headers, runtime)
+
+    def group_query_by_open_id_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GroupQueryByOpenIdRequest,
+        headers: dingtalkexclusive__1__0_models.GroupQueryByOpenIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GroupQueryByOpenIdResponse:
+        """
+        @summary 根据群ID查询群属性
+        
+        @param request: GroupQueryByOpenIdRequest
+        @param headers: GroupQueryByOpenIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GroupQueryByOpenIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.secret_key):
+            body['secretKey'] = request.secret_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GroupQueryByOpenId',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/portals/groups/getGroupByOpenConversationId',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GroupQueryByOpenIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def group_query_by_open_id_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GroupQueryByOpenIdRequest,
+        headers: dingtalkexclusive__1__0_models.GroupQueryByOpenIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GroupQueryByOpenIdResponse:
+        """
+        @summary 根据群ID查询群属性
+        
+        @param request: GroupQueryByOpenIdRequest
+        @param headers: GroupQueryByOpenIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GroupQueryByOpenIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.secret_key):
+            body['secretKey'] = request.secret_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GroupQueryByOpenId',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/portals/groups/getGroupByOpenConversationId',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GroupQueryByOpenIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def group_query_by_open_id(
+        self,
+        request: dingtalkexclusive__1__0_models.GroupQueryByOpenIdRequest,
+    ) -> dingtalkexclusive__1__0_models.GroupQueryByOpenIdResponse:
+        """
+        @summary 根据群ID查询群属性
+        
+        @param request: GroupQueryByOpenIdRequest
+        @return: GroupQueryByOpenIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GroupQueryByOpenIdHeaders()
+        return self.group_query_by_open_id_with_options(request, headers, runtime)
+
+    async def group_query_by_open_id_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GroupQueryByOpenIdRequest,
+    ) -> dingtalkexclusive__1__0_models.GroupQueryByOpenIdResponse:
+        """
+        @summary 根据群ID查询群属性
+        
+        @param request: GroupQueryByOpenIdRequest
+        @return: GroupQueryByOpenIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GroupQueryByOpenIdHeaders()
+        return await self.group_query_by_open_id_with_options_async(request, headers, runtime)
 
     def list_audit_log_with_options(
         self,
