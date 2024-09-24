@@ -240,6 +240,310 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>创建高校账号用户</p>
+     * 
+     * @param request AddCollegeContactExclusiveRequest
+     * @param headers AddCollegeContactExclusiveHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddCollegeContactExclusiveResponse
+     */
+    public AddCollegeContactExclusiveResponse addCollegeContactExclusiveWithOptions(AddCollegeContactExclusiveRequest request, AddCollegeContactExclusiveHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.avatarMediaId)) {
+            body.put("avatarMediaId", request.avatarMediaId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptIdList)) {
+            body.put("deptIdList", request.deptIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptOrderList)) {
+            body.put("deptOrderList", request.deptOrderList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptTitleList)) {
+            body.put("deptTitleList", request.deptTitleList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.email)) {
+            body.put("email", request.email);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.empType)) {
+            body.put("empType", request.empType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.exclusiveAccount)) {
+            body.put("exclusiveAccount", request.exclusiveAccount);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.exclusiveAccountType)) {
+            body.put("exclusiveAccountType", request.exclusiveAccountType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extension)) {
+            body.put("extension", request.extension);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hiredDate)) {
+            body.put("hiredDate", request.hiredDate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.initPassword)) {
+            body.put("initPassword", request.initPassword);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.jobNumber)) {
+            body.put("jobNumber", request.jobNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.loginIdType)) {
+            body.put("loginIdType", request.loginIdType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mainDeptId)) {
+            body.put("mainDeptId", request.mainDeptId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.managerUserid)) {
+            body.put("managerUserid", request.managerUserid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mobile)) {
+            body.put("mobile", request.mobile);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nickname)) {
+            body.put("nickname", request.nickname);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orgEmail)) {
+            body.put("orgEmail", request.orgEmail);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orgEmailType)) {
+            body.put("orgEmailType", request.orgEmailType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.remark)) {
+            body.put("remark", request.remark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sendActiveSms)) {
+            body.put("sendActiveSms", request.sendActiveSms);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.seniorMode)) {
+            body.put("seniorMode", request.seniorMode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.telephone)) {
+            body.put("telephone", request.telephone);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.title)) {
+            body.put("title", request.title);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userid)) {
+            body.put("userid", request.userid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.workPlace)) {
+            body.put("workPlace", request.workPlace);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddCollegeContactExclusive"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/collegeContact/exclusiveAccounts/users"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddCollegeContactExclusiveResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建高校账号用户</p>
+     * 
+     * @param request AddCollegeContactExclusiveRequest
+     * @return AddCollegeContactExclusiveResponse
+     */
+    public AddCollegeContactExclusiveResponse addCollegeContactExclusive(AddCollegeContactExclusiveRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AddCollegeContactExclusiveHeaders headers = new AddCollegeContactExclusiveHeaders();
+        return this.addCollegeContactExclusiveWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建个人账号用户</p>
+     * 
+     * @param request AddCollegeContactUserRequest
+     * @param headers AddCollegeContactUserHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddCollegeContactUserResponse
+     */
+    public AddCollegeContactUserResponse addCollegeContactUserWithOptions(AddCollegeContactUserRequest request, AddCollegeContactUserHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deptIdList)) {
+            body.put("deptIdList", request.deptIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptOrderList)) {
+            body.put("deptOrderList", request.deptOrderList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptTitleList)) {
+            body.put("deptTitleList", request.deptTitleList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.email)) {
+            body.put("email", request.email);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.empType)) {
+            body.put("empType", request.empType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extension)) {
+            body.put("extension", request.extension);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hideMobile)) {
+            body.put("hideMobile", request.hideMobile);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hiredDate)) {
+            body.put("hiredDate", request.hiredDate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.jobNumber)) {
+            body.put("jobNumber", request.jobNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.loginEmail)) {
+            body.put("loginEmail", request.loginEmail);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mainDeptId)) {
+            body.put("mainDeptId", request.mainDeptId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.managerUserid)) {
+            body.put("managerUserid", request.managerUserid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mobile)) {
+            body.put("mobile", request.mobile);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orgEmail)) {
+            body.put("orgEmail", request.orgEmail);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orgEmailType)) {
+            body.put("orgEmailType", request.orgEmailType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.remark)) {
+            body.put("remark", request.remark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sendActiveSms)) {
+            body.put("sendActiveSms", request.sendActiveSms);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.seniorMode)) {
+            body.put("seniorMode", request.seniorMode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.telephone)) {
+            body.put("telephone", request.telephone);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.title)) {
+            body.put("title", request.title);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userid)) {
+            body.put("userid", request.userid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.workPlace)) {
+            body.put("workPlace", request.workPlace);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddCollegeContactUser"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/collegeContact/personalAccounts/users"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddCollegeContactUserResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建个人账号用户</p>
+     * 
+     * @param request AddCollegeContactUserRequest
+     * @return AddCollegeContactUserResponse
+     */
+    public AddCollegeContactUserResponse addCollegeContactUser(AddCollegeContactUserRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AddCollegeContactUserHeaders headers = new AddCollegeContactUserHeaders();
+        return this.addCollegeContactUserWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>增加赛事记录</p>
      * 
      * @param request AddCompetitionRecordRequest
@@ -1688,6 +1992,150 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateAppOrderHeaders headers = new CreateAppOrderHeaders();
         return this.createAppOrderWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建高校通讯录组织单元</p>
+     * 
+     * @param request CreateCollegeContactDeptRequest
+     * @param headers CreateCollegeContactDeptHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateCollegeContactDeptResponse
+     */
+    public CreateCollegeContactDeptResponse createCollegeContactDeptWithOptions(CreateCollegeContactDeptRequest request, CreateCollegeContactDeptHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.autoApproveApply)) {
+            body.put("autoApproveApply", request.autoApproveApply);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.brief)) {
+            body.put("brief", request.brief);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.code)) {
+            body.put("code", request.code);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.createDeptGroup)) {
+            body.put("createDeptGroup", request.createDeptGroup);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptCode)) {
+            body.put("deptCode", request.deptCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptPermits)) {
+            body.put("deptPermits", request.deptPermits);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptType)) {
+            body.put("deptType", request.deptType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.empApplyJoinDept)) {
+            body.put("empApplyJoinDept", request.empApplyJoinDept);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extension)) {
+            body.put("extension", request.extension);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hideDept)) {
+            body.put("hideDept", request.hideDept);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hideSceneConfig)) {
+            body.put("hideSceneConfig", request.hideSceneConfig);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.order)) {
+            body.put("order", request.order);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outerDept)) {
+            body.put("outerDept", request.outerDept);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outerDeptOnlySelf)) {
+            body.put("outerDeptOnlySelf", request.outerDeptOnlySelf);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outerPermitDepts)) {
+            body.put("outerPermitDepts", request.outerPermitDepts);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outerPermitUsers)) {
+            body.put("outerPermitUsers", request.outerPermitUsers);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outerSceneConfig)) {
+            body.put("outerSceneConfig", request.outerSceneConfig);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.parentId)) {
+            body.put("parentId", request.parentId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sourceIdentifier)) {
+            body.put("sourceIdentifier", request.sourceIdentifier);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.struId)) {
+            body.put("struId", request.struId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.telephone)) {
+            body.put("telephone", request.telephone);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userPermits)) {
+            body.put("userPermits", request.userPermits);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateCollegeContactDept"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/collegeContact/depts"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateCollegeContactDeptResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建高校通讯录组织单元</p>
+     * 
+     * @param request CreateCollegeContactDeptRequest
+     * @return CreateCollegeContactDeptResponse
+     */
+    public CreateCollegeContactDeptResponse createCollegeContactDept(CreateCollegeContactDeptRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateCollegeContactDeptHeaders headers = new CreateCollegeContactDeptHeaders();
+        return this.createCollegeContactDeptWithOptions(request, headers, runtime);
     }
 
     /**
@@ -4590,6 +5038,122 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>获取高校通讯录组织单元详情</p>
+     * 
+     * @param request GetCollegeContactDeptDetailRequest
+     * @param headers GetCollegeContactDeptDetailHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetCollegeContactDeptDetailResponse
+     */
+    public GetCollegeContactDeptDetailResponse getCollegeContactDeptDetailWithOptions(GetCollegeContactDeptDetailRequest request, GetCollegeContactDeptDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deptId)) {
+            query.put("deptId", request.deptId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.language)) {
+            query.put("language", request.language);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetCollegeContactDeptDetail"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/collegeContact/depts"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetCollegeContactDeptDetailResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取高校通讯录组织单元详情</p>
+     * 
+     * @param request GetCollegeContactDeptDetailRequest
+     * @return GetCollegeContactDeptDetailResponse
+     */
+    public GetCollegeContactDeptDetailResponse getCollegeContactDeptDetail(GetCollegeContactDeptDetailRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetCollegeContactDeptDetailHeaders headers = new GetCollegeContactDeptDetailHeaders();
+        return this.getCollegeContactDeptDetailWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取行政组织架构信息</p>
+     * 
+     * @param request GetCollegeContactStandardStruDeptDetailRequest
+     * @param headers GetCollegeContactStandardStruDeptDetailHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetCollegeContactStandardStruDeptDetailResponse
+     */
+    public GetCollegeContactStandardStruDeptDetailResponse getCollegeContactStandardStruDeptDetailWithOptions(GetCollegeContactStandardStruDeptDetailRequest request, GetCollegeContactStandardStruDeptDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.language)) {
+            query.put("language", request.language);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetCollegeContactStandardStruDeptDetail"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/collegeContact/depts/structures/standards"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetCollegeContactStandardStruDeptDetailResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取行政组织架构信息</p>
+     * 
+     * @param request GetCollegeContactStandardStruDeptDetailRequest
+     * @return GetCollegeContactStandardStruDeptDetailResponse
+     */
+    public GetCollegeContactStandardStruDeptDetailResponse getCollegeContactStandardStruDeptDetail(GetCollegeContactStandardStruDeptDetailRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetCollegeContactStandardStruDeptDetailHeaders headers = new GetCollegeContactStandardStruDeptDetailHeaders();
+        return this.getCollegeContactStandardStruDeptDetailWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取默认孩子信息</p>
      * 
      * @param headers GetDefaultChildHeaders
@@ -5592,6 +6156,122 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>获取高校组织单元类型</p>
+     * 
+     * @param request ListCollegeContactDeptTypeConfigRequest
+     * @param headers ListCollegeContactDeptTypeConfigHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListCollegeContactDeptTypeConfigResponse
+     */
+    public ListCollegeContactDeptTypeConfigResponse listCollegeContactDeptTypeConfigWithOptions(ListCollegeContactDeptTypeConfigRequest request, ListCollegeContactDeptTypeConfigHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.language)) {
+            query.put("language", request.language);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListCollegeContactDeptTypeConfig"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/collegeContact/configs/deptTypes"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListCollegeContactDeptTypeConfigResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取高校组织单元类型</p>
+     * 
+     * @param request ListCollegeContactDeptTypeConfigRequest
+     * @return ListCollegeContactDeptTypeConfigResponse
+     */
+    public ListCollegeContactDeptTypeConfigResponse listCollegeContactDeptTypeConfig(ListCollegeContactDeptTypeConfigRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListCollegeContactDeptTypeConfigHeaders headers = new ListCollegeContactDeptTypeConfigHeaders();
+        return this.listCollegeContactDeptTypeConfigWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取高校通讯录子组织单元列表</p>
+     * 
+     * @param request ListCollegeContactSubDeptsRequest
+     * @param headers ListCollegeContactSubDeptsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListCollegeContactSubDeptsResponse
+     */
+    public ListCollegeContactSubDeptsResponse listCollegeContactSubDeptsWithOptions(ListCollegeContactSubDeptsRequest request, ListCollegeContactSubDeptsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deptId)) {
+            query.put("deptId", request.deptId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.language)) {
+            query.put("language", request.language);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListCollegeContactSubDepts"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/collegeContact/subDepts"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListCollegeContactSubDeptsResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取高校通讯录子组织单元列表</p>
+     * 
+     * @param request ListCollegeContactSubDeptsRequest
+     * @return ListCollegeContactSubDeptsResponse
+     */
+    public ListCollegeContactSubDeptsResponse listCollegeContactSubDepts(ListCollegeContactSubDeptsRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListCollegeContactSubDeptsHeaders headers = new ListCollegeContactSubDeptsHeaders();
+        return this.listCollegeContactSubDeptsWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>查询订单</p>
      * 
      * @param request ListOrderRequest
@@ -6370,6 +7050,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryClassScheduleConfigHeaders headers = new QueryClassScheduleConfigHeaders();
         return this.queryClassScheduleConfigWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取用户详情(包含高校账号)</p>
+     * 
+     * @param request QueryCollegeContactUserDetailRequest
+     * @param headers QueryCollegeContactUserDetailHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryCollegeContactUserDetailResponse
+     */
+    public QueryCollegeContactUserDetailResponse queryCollegeContactUserDetailWithOptions(QueryCollegeContactUserDetailRequest request, QueryCollegeContactUserDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.language)) {
+            query.put("language", request.language);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userid)) {
+            query.put("userid", request.userid);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryCollegeContactUserDetail"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/collegeContact/users"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryCollegeContactUserDetailResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取用户详情(包含高校账号)</p>
+     * 
+     * @param request QueryCollegeContactUserDetailRequest
+     * @return QueryCollegeContactUserDetailResponse
+     */
+    public QueryCollegeContactUserDetailResponse queryCollegeContactUserDetail(QueryCollegeContactUserDetailRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryCollegeContactUserDetailHeaders headers = new QueryCollegeContactUserDetailHeaders();
+        return this.queryCollegeContactUserDetailWithOptions(request, headers, runtime);
     }
 
     /**
@@ -8598,6 +9338,534 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateCollegeAlumniUserInfoHeaders headers = new UpdateCollegeAlumniUserInfoHeaders();
         return this.updateCollegeAlumniUserInfoWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新高校通讯录组织单元</p>
+     * 
+     * @param request UpdateCollegeContactDeptRequest
+     * @param headers UpdateCollegeContactDeptHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateCollegeContactDeptResponse
+     */
+    public UpdateCollegeContactDeptResponse updateCollegeContactDeptWithOptions(UpdateCollegeContactDeptRequest request, UpdateCollegeContactDeptHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.autoAddUser)) {
+            body.put("autoAddUser", request.autoAddUser);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.autoApproveApply)) {
+            body.put("autoApproveApply", request.autoApproveApply);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.brief)) {
+            body.put("brief", request.brief);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.code)) {
+            body.put("code", request.code);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.createDeptGroup)) {
+            body.put("createDeptGroup", request.createDeptGroup);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptCode)) {
+            body.put("deptCode", request.deptCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptId)) {
+            body.put("deptId", request.deptId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptManagerUseridList)) {
+            body.put("deptManagerUseridList", request.deptManagerUseridList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptPermits)) {
+            body.put("deptPermits", request.deptPermits);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptType)) {
+            body.put("deptType", request.deptType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.empApplyJoinDept)) {
+            body.put("empApplyJoinDept", request.empApplyJoinDept);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extension)) {
+            body.put("extension", request.extension);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.forceUpdateFields)) {
+            body.put("forceUpdateFields", request.forceUpdateFields);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groupContainHiddenDept)) {
+            body.put("groupContainHiddenDept", request.groupContainHiddenDept);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groupContainOuterDept)) {
+            body.put("groupContainOuterDept", request.groupContainOuterDept);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.groupContainSubDept)) {
+            body.put("groupContainSubDept", request.groupContainSubDept);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hideDept)) {
+            body.put("hideDept", request.hideDept);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hideSceneConfig)) {
+            body.put("hideSceneConfig", request.hideSceneConfig);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.language)) {
+            body.put("language", request.language);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.order)) {
+            body.put("order", request.order);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orgDeptOwner)) {
+            body.put("orgDeptOwner", request.orgDeptOwner);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outerDept)) {
+            body.put("outerDept", request.outerDept);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outerDeptOnlySelf)) {
+            body.put("outerDeptOnlySelf", request.outerDeptOnlySelf);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outerPermitDepts)) {
+            body.put("outerPermitDepts", request.outerPermitDepts);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outerPermitUsers)) {
+            body.put("outerPermitUsers", request.outerPermitUsers);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outerSceneConfig)) {
+            body.put("outerSceneConfig", request.outerSceneConfig);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.parentId)) {
+            body.put("parentId", request.parentId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sourceIdentifier)) {
+            body.put("sourceIdentifier", request.sourceIdentifier);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.telephone)) {
+            body.put("telephone", request.telephone);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userPermits)) {
+            body.put("userPermits", request.userPermits);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateCollegeContactDept"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/collegeContact/depts"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateCollegeContactDeptResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新高校通讯录组织单元</p>
+     * 
+     * @param request UpdateCollegeContactDeptRequest
+     * @return UpdateCollegeContactDeptResponse
+     */
+    public UpdateCollegeContactDeptResponse updateCollegeContactDept(UpdateCollegeContactDeptRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateCollegeContactDeptHeaders headers = new UpdateCollegeContactDeptHeaders();
+        return this.updateCollegeContactDeptWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新高校账号用户</p>
+     * 
+     * @param request UpdateCollegeContactExclusiveRequest
+     * @param headers UpdateCollegeContactExclusiveHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateCollegeContactExclusiveResponse
+     */
+    public UpdateCollegeContactExclusiveResponse updateCollegeContactExclusiveWithOptions(UpdateCollegeContactExclusiveRequest request, UpdateCollegeContactExclusiveHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.avatarMediaId)) {
+            body.put("avatarMediaId", request.avatarMediaId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptIdList)) {
+            body.put("deptIdList", request.deptIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptOrderList)) {
+            body.put("deptOrderList", request.deptOrderList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptTitleList)) {
+            body.put("deptTitleList", request.deptTitleList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.email)) {
+            body.put("email", request.email);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.empType)) {
+            body.put("empType", request.empType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extension)) {
+            body.put("extension", request.extension);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.forceUpdateFields)) {
+            body.put("forceUpdateFields", request.forceUpdateFields);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hideMobile)) {
+            body.put("hideMobile", request.hideMobile);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hiredDate)) {
+            body.put("hiredDate", request.hiredDate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.jobNumber)) {
+            body.put("jobNumber", request.jobNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.language)) {
+            body.put("language", request.language);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.loginIdType)) {
+            body.put("loginIdType", request.loginIdType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mainDeptId)) {
+            body.put("mainDeptId", request.mainDeptId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.managerUserid)) {
+            body.put("managerUserid", request.managerUserid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mobile)) {
+            body.put("mobile", request.mobile);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nickname)) {
+            body.put("nickname", request.nickname);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orgEmail)) {
+            body.put("orgEmail", request.orgEmail);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orgEmailType)) {
+            body.put("orgEmailType", request.orgEmailType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.remark)) {
+            body.put("remark", request.remark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.seniorMode)) {
+            body.put("seniorMode", request.seniorMode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.telephone)) {
+            body.put("telephone", request.telephone);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.title)) {
+            body.put("title", request.title);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userid)) {
+            body.put("userid", request.userid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.workPlace)) {
+            body.put("workPlace", request.workPlace);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateCollegeContactExclusive"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/collegeContact/exclusiveAccounts/users"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateCollegeContactExclusiveResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新高校账号用户</p>
+     * 
+     * @param request UpdateCollegeContactExclusiveRequest
+     * @return UpdateCollegeContactExclusiveResponse
+     */
+    public UpdateCollegeContactExclusiveResponse updateCollegeContactExclusive(UpdateCollegeContactExclusiveRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateCollegeContactExclusiveHeaders headers = new UpdateCollegeContactExclusiveHeaders();
+        return this.updateCollegeContactExclusiveWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新个人账号用户</p>
+     * 
+     * @param request UpdateCollegeContactUserRequest
+     * @param headers UpdateCollegeContactUserHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateCollegeContactUserResponse
+     */
+    public UpdateCollegeContactUserResponse updateCollegeContactUserWithOptions(UpdateCollegeContactUserRequest request, UpdateCollegeContactUserHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.deptIdList)) {
+            body.put("deptIdList", request.deptIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptOrderList)) {
+            body.put("deptOrderList", request.deptOrderList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.deptTitleList)) {
+            body.put("deptTitleList", request.deptTitleList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.email)) {
+            body.put("email", request.email);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.empType)) {
+            body.put("empType", request.empType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.extension)) {
+            body.put("extension", request.extension);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.forceUpdateFields)) {
+            body.put("forceUpdateFields", request.forceUpdateFields);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hideMobile)) {
+            body.put("hideMobile", request.hideMobile);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.hiredDate)) {
+            body.put("hiredDate", request.hiredDate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.jobNumber)) {
+            body.put("jobNumber", request.jobNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.language)) {
+            body.put("language", request.language);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mainDeptId)) {
+            body.put("mainDeptId", request.mainDeptId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.managerUserid)) {
+            body.put("managerUserid", request.managerUserid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orgEmail)) {
+            body.put("orgEmail", request.orgEmail);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.remark)) {
+            body.put("remark", request.remark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.seniorMode)) {
+            body.put("seniorMode", request.seniorMode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.telephone)) {
+            body.put("telephone", request.telephone);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.title)) {
+            body.put("title", request.title);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userid)) {
+            body.put("userid", request.userid);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.workPlace)) {
+            body.put("workPlace", request.workPlace);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateCollegeContactUser"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/collegeContact/personalAccounts/users"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateCollegeContactUserResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新个人账号用户</p>
+     * 
+     * @param request UpdateCollegeContactUserRequest
+     * @return UpdateCollegeContactUserResponse
+     */
+    public UpdateCollegeContactUserResponse updateCollegeContactUser(UpdateCollegeContactUserRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateCollegeContactUserHeaders headers = new UpdateCollegeContactUserHeaders();
+        return this.updateCollegeContactUserWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改用户成员类型</p>
+     * 
+     * @param request UpdateCollegeUserEmpTypeRequest
+     * @param headers UpdateCollegeUserEmpTypeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateCollegeUserEmpTypeResponse
+     */
+    public UpdateCollegeUserEmpTypeResponse updateCollegeUserEmpTypeWithOptions(UpdateCollegeUserEmpTypeRequest request, UpdateCollegeUserEmpTypeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.empType)) {
+            body.put("empType", request.empType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userid)) {
+            body.put("userid", request.userid);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateCollegeUserEmpType"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/collegeContact/empTypes/change"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateCollegeUserEmpTypeResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改用户成员类型</p>
+     * 
+     * @param request UpdateCollegeUserEmpTypeRequest
+     * @return UpdateCollegeUserEmpTypeResponse
+     */
+    public UpdateCollegeUserEmpTypeResponse updateCollegeUserEmpType(UpdateCollegeUserEmpTypeRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateCollegeUserEmpTypeHeaders headers = new UpdateCollegeUserEmpTypeHeaders();
+        return this.updateCollegeUserEmpTypeWithOptions(request, headers, runtime);
     }
 
     /**

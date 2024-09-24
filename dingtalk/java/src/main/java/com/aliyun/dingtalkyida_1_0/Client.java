@@ -6638,6 +6638,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("language", request.language);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.logicOperator)) {
+            body.put("logicOperator", request.logicOperator);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.modifiedFromTimeGMT)) {
             body.put("modifiedFromTimeGMT", request.modifiedFromTimeGMT);
         }

@@ -679,6 +679,57 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>通过签署记录id查询指定的电子签署记录</p>
+     * 
+     * @param request GetSignRecordByIdRequest
+     * @param headers GetSignRecordByIdHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetSignRecordByIdResponse
+     */
+    public GetSignRecordByIdResponse getSignRecordByIdWithOptions(GetSignRecordByIdRequest request, GetSignRecordByIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", request.body)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetSignRecordById"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/masters/signCenters/records/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetSignRecordByIdResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>通过签署记录id查询指定的电子签署记录</p>
+     * 
+     * @param request GetSignRecordByIdRequest
+     * @return GetSignRecordByIdResponse
+     */
+    public GetSignRecordByIdResponse getSignRecordById(GetSignRecordByIdRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetSignRecordByIdHeaders headers = new GetSignRecordByIdHeaders();
+        return this.getSignRecordByIdWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>查询指定用户的电子签署记录，并返回签署记录的基本数据及已签署完成的文件预览地址</p>
      * 
      * @param request GetSignRecordByUserIdRequest
@@ -1483,6 +1534,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         HrmPtsServiceHeaders headers = new HrmPtsServiceHeaders();
         return this.hrmPtsServiceWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>作废签署记录</p>
+     * 
+     * @param request InvalidSignRecordsRequest
+     * @param headers InvalidSignRecordsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return InvalidSignRecordsResponse
+     */
+    public InvalidSignRecordsResponse invalidSignRecordsWithOptions(InvalidSignRecordsRequest request, InvalidSignRecordsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.invalidUserId)) {
+            body.put("invalidUserId", request.invalidUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.signRecordIds)) {
+            body.put("signRecordIds", request.signRecordIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.statusRemark)) {
+            body.put("statusRemark", request.statusRemark);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "InvalidSignRecords"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/masters/signCenters/records/invalid"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new InvalidSignRecordsResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>作废签署记录</p>
+     * 
+     * @param request InvalidSignRecordsRequest
+     * @return InvalidSignRecordsResponse
+     */
+    public InvalidSignRecordsResponse invalidSignRecords(InvalidSignRecordsRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        InvalidSignRecordsHeaders headers = new InvalidSignRecordsHeaders();
+        return this.invalidSignRecordsWithOptions(request, headers, runtime);
     }
 
     /**
@@ -2469,6 +2584,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryPositionsHeaders headers = new QueryPositionsHeaders();
         return this.queryPositionsWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>撤回电子签署中的签署记录</p>
+     * 
+     * @param request RevokeSignRecordsRequest
+     * @param headers RevokeSignRecordsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RevokeSignRecordsResponse
+     */
+    public RevokeSignRecordsResponse revokeSignRecordsWithOptions(RevokeSignRecordsRequest request, RevokeSignRecordsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.revokeUserId)) {
+            body.put("revokeUserId", request.revokeUserId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.signRecordIds)) {
+            body.put("signRecordIds", request.signRecordIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.statusRemark)) {
+            body.put("statusRemark", request.statusRemark);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "RevokeSignRecords"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/masters/signCenters/records/revoke"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new RevokeSignRecordsResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>撤回电子签署中的签署记录</p>
+     * 
+     * @param request RevokeSignRecordsRequest
+     * @return RevokeSignRecordsResponse
+     */
+    public RevokeSignRecordsResponse revokeSignRecords(RevokeSignRecordsRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        RevokeSignRecordsHeaders headers = new RevokeSignRecordsHeaders();
+        return this.revokeSignRecordsWithOptions(request, headers, runtime);
     }
 
     /**

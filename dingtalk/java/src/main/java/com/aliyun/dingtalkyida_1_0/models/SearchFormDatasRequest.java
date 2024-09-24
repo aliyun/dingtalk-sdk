@@ -57,6 +57,9 @@ public class SearchFormDatasRequest extends TeaModel {
     @NameInMap("language")
     public String language;
 
+    @NameInMap("logicOperator")
+    public String logicOperator;
+
     /**
      * <strong>example:</strong>
      * <p>2018-01-01</p>
@@ -165,6 +168,14 @@ public class SearchFormDatasRequest extends TeaModel {
     }
     public String getLanguage() {
         return this.language;
+    }
+
+    public SearchFormDatasRequest setLogicOperator(String logicOperator) {
+        this.logicOperator = logicOperator;
+        return this;
+    }
+    public String getLogicOperator() {
+        return this.logicOperator;
     }
 
     public SearchFormDatasRequest setModifiedFromTimeGMT(String modifiedFromTimeGMT) {

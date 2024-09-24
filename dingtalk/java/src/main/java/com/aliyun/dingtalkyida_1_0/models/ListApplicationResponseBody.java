@@ -116,6 +116,13 @@ public class ListApplicationResponseBody extends TeaModel {
 
         /**
          * <strong>example:</strong>
+         * <p>离线:offline,在线：online</p>
+         */
+        @NameInMap("releaseToDingStatus")
+        public String releaseToDingStatus;
+
+        /**
+         * <strong>example:</strong>
          * <p>ding8eaadfkksj45343wksff334</p>
          */
         @NameInMap("subCorpId")
@@ -199,6 +206,14 @@ public class ListApplicationResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
+        }
+
+        public ListApplicationResponseBodyData setReleaseToDingStatus(String releaseToDingStatus) {
+            this.releaseToDingStatus = releaseToDingStatus;
+            return this;
+        }
+        public String getReleaseToDingStatus() {
+            return this.releaseToDingStatus;
         }
 
         public ListApplicationResponseBodyData setSubCorpId(String subCorpId) {

@@ -23,6 +23,13 @@ public class BatchAddInvoiceRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
+     * <p>XXX</p>
+     */
+    @NameInMap("orderId")
+    public String orderId;
+
+    /**
+     * <strong>example:</strong>
      * <p>APPROVAL</p>
      */
     @NameInMap("source")
@@ -55,6 +62,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
     }
     public String getOperator() {
         return this.operator;
+    }
+
+    public BatchAddInvoiceRequest setOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+    public String getOrderId() {
+        return this.orderId;
     }
 
     public BatchAddInvoiceRequest setSource(String source) {

@@ -1514,6 +1514,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询云录制摘要请求</p>
+     * 
+     * @param request QueryFlashMinutesSummaryRequest
+     * @param headers QueryFlashMinutesSummaryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryFlashMinutesSummaryResponse
+     */
+    public QueryFlashMinutesSummaryResponse queryFlashMinutesSummaryWithOptions(String conferenceId, QueryFlashMinutesSummaryRequest request, QueryFlashMinutesSummaryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizType)) {
+            query.put("bizType", request.bizType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.recorderUnionId)) {
+            query.put("recorderUnionId", request.recorderUnionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryFlashMinutesSummary"),
+            new TeaPair("version", "conference_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/conference/videoConferences/" + conferenceId + "/flashMinutes/summaries"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryFlashMinutesSummaryResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询云录制摘要请求</p>
+     * 
+     * @param request QueryFlashMinutesSummaryRequest
+     * @return QueryFlashMinutesSummaryResponse
+     */
+    public QueryFlashMinutesSummaryResponse queryFlashMinutesSummary(String conferenceId, QueryFlashMinutesSummaryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryFlashMinutesSummaryHeaders headers = new QueryFlashMinutesSummaryHeaders();
+        return this.queryFlashMinutesSummaryWithOptions(conferenceId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>查询会议闪记的音频信息</p>
      * 
      * @param request QueryMinutesAudioRequest
