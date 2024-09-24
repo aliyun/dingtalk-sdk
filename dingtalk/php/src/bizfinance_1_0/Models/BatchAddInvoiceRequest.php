@@ -29,6 +29,13 @@ class BatchAddInvoiceRequest extends Model
     public $operator;
 
     /**
+     * @example XXX
+     *
+     * @var string
+     */
+    public $orderId;
+
+    /**
      * @example APPROVAL
      *
      * @var string
@@ -38,6 +45,7 @@ class BatchAddInvoiceRequest extends Model
         'companyCode'          => 'companyCode',
         'generalInvoiceVOList' => 'generalInvoiceVOList',
         'operator'             => 'operator',
+        'orderId'              => 'orderId',
         'source'               => 'source',
     ];
 
@@ -62,6 +70,9 @@ class BatchAddInvoiceRequest extends Model
         }
         if (null !== $this->operator) {
             $res['operator'] = $this->operator;
+        }
+        if (null !== $this->orderId) {
+            $res['orderId'] = $this->orderId;
         }
         if (null !== $this->source) {
             $res['source'] = $this->source;
@@ -92,6 +103,9 @@ class BatchAddInvoiceRequest extends Model
         }
         if (isset($map['operator'])) {
             $model->operator = $map['operator'];
+        }
+        if (isset($map['orderId'])) {
+            $model->orderId = $map['orderId'];
         }
         if (isset($map['source'])) {
             $model->source = $map['source'];

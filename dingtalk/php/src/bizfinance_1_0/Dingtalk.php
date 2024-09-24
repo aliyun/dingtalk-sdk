@@ -197,6 +197,7 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_productId    = 'dingtalk';
         $gatewayClient       = new Client();
         $this->_spi          = $gatewayClient;
         $this->_endpointRule = '';
@@ -291,6 +292,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->operator)) {
             $body['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->orderId)) {
+            $body['orderId'] = $request->orderId;
         }
         if (!Utils::isUnset($request->source)) {
             $body['source'] = $request->source;

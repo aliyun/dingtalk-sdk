@@ -31,6 +31,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetEmployeeRosterByFieldResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetFileTemplateListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetFileTemplateListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetFileTemplateListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetSignRecordByIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetSignRecordByIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetSignRecordByIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetSignRecordByUserIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetSignRecordByUserIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetSignRecordByUserIdResponse;
@@ -67,6 +70,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmProcessUpdateTerminationInfoRes
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmPtsServiceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmPtsServiceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\HrmPtsServiceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\InvalidSignRecordsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\InvalidSignRecordsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\InvalidSignRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataDeleteHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataDeleteRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\MasterDataDeleteResponse;
@@ -113,6 +119,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryMicroAppViewResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RevokeSignRecordsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RevokeSignRecordsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RevokeSignRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaAvailableFieldListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaAvailableFieldListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaAvailableFieldListResponse;
@@ -161,10 +170,10 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient             = new Client();
-        $this->_spi                = $gatewayClient;
-        $this->_signatureAlgorithm = 'v2';
-        $this->_endpointRule       = '';
+        $this->_productId    = 'dingtalk';
+        $gatewayClient       = new Client();
+        $this->_spi          = $gatewayClient;
+        $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
@@ -434,7 +443,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return DeviceMarketManagerResponse::fromMap($this->execute($params, $req, $runtime));
+        return DeviceMarketManagerResponse::fromMap($this->doROARequestWithForm($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
     }
 
     /**
@@ -475,7 +484,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return DeviceMarketOrderManagerResponse::fromMap($this->execute($params, $req, $runtime));
+        return DeviceMarketOrderManagerResponse::fromMap($this->doROARequestWithForm($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
     }
 
     /**
@@ -809,6 +818,59 @@ class Dingtalk extends OpenApiClient
         $headers = new GetFileTemplateListHeaders([]);
 
         return $this->getFileTemplateListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 通过签署记录id查询指定的电子签署记录
+     *  *
+     * @param GetSignRecordByIdRequest $request GetSignRecordByIdRequest
+     * @param GetSignRecordByIdHeaders $headers GetSignRecordByIdHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetSignRecordByIdResponse GetSignRecordByIdResponse
+     */
+    public function getSignRecordByIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => $request->body,
+        ]);
+        $params = new Params([
+            'action'      => 'GetSignRecordById',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/masters/signCenters/records/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetSignRecordByIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 通过签署记录id查询指定的电子签署记录
+     *  *
+     * @param GetSignRecordByIdRequest $request GetSignRecordByIdRequest
+     *
+     * @return GetSignRecordByIdResponse GetSignRecordByIdResponse
+     */
+    public function getSignRecordById($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSignRecordByIdHeaders([]);
+
+        return $this->getSignRecordByIdWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1595,6 +1657,69 @@ class Dingtalk extends OpenApiClient
         $headers = new HrmPtsServiceHeaders([]);
 
         return $this->hrmPtsServiceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 作废签署记录
+     *  *
+     * @param InvalidSignRecordsRequest $request InvalidSignRecordsRequest
+     * @param InvalidSignRecordsHeaders $headers InvalidSignRecordsHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return InvalidSignRecordsResponse InvalidSignRecordsResponse
+     */
+    public function invalidSignRecordsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->invalidUserId)) {
+            $body['invalidUserId'] = $request->invalidUserId;
+        }
+        if (!Utils::isUnset($request->signRecordIds)) {
+            $body['signRecordIds'] = $request->signRecordIds;
+        }
+        if (!Utils::isUnset($request->statusRemark)) {
+            $body['statusRemark'] = $request->statusRemark;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'InvalidSignRecords',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/masters/signCenters/records/invalid',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return InvalidSignRecordsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 作废签署记录
+     *  *
+     * @param InvalidSignRecordsRequest $request InvalidSignRecordsRequest
+     *
+     * @return InvalidSignRecordsResponse InvalidSignRecordsResponse
+     */
+    public function invalidSignRecords($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InvalidSignRecordsHeaders([]);
+
+        return $this->invalidSignRecordsWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2561,6 +2686,69 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryPositionsHeaders([]);
 
         return $this->queryPositionsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 撤回电子签署中的签署记录
+     *  *
+     * @param RevokeSignRecordsRequest $request RevokeSignRecordsRequest
+     * @param RevokeSignRecordsHeaders $headers RevokeSignRecordsHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return RevokeSignRecordsResponse RevokeSignRecordsResponse
+     */
+    public function revokeSignRecordsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->revokeUserId)) {
+            $body['revokeUserId'] = $request->revokeUserId;
+        }
+        if (!Utils::isUnset($request->signRecordIds)) {
+            $body['signRecordIds'] = $request->signRecordIds;
+        }
+        if (!Utils::isUnset($request->statusRemark)) {
+            $body['statusRemark'] = $request->statusRemark;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'RevokeSignRecords',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/masters/signCenters/records/revoke',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return RevokeSignRecordsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 撤回电子签署中的签署记录
+     *  *
+     * @param RevokeSignRecordsRequest $request RevokeSignRecordsRequest
+     *
+     * @return RevokeSignRecordsResponse RevokeSignRecordsResponse
+     */
+    public function revokeSignRecords($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RevokeSignRecordsHeaders([]);
+
+        return $this->revokeSignRecordsWithOptions($request, $headers, $runtime);
     }
 
     /**

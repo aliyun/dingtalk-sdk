@@ -111,10 +111,10 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient             = new Client();
-        $this->_spi                = $gatewayClient;
-        $this->_signatureAlgorithm = 'v2';
-        $this->_endpointRule       = '';
+        $this->_productId    = 'dingtalk';
+        $gatewayClient       = new Client();
+        $this->_spi          = $gatewayClient;
+        $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
@@ -348,7 +348,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return AnheiPResponse::fromMap($this->execute($params, $req, $runtime));
+        return AnheiPResponse::fromMap($this->doROARequestWithForm($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
     }
 
     /**
@@ -389,7 +389,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return AnheiTest888Response::fromMap($this->execute($params, $req, $runtime));
+        return AnheiTest888Response::fromMap($this->doROARequestWithForm($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
     }
 
     /**
@@ -430,7 +430,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return AnheiTestBResponse::fromMap($this->execute($params, $req, $runtime));
+        return AnheiTestBResponse::fromMap($this->doROARequestWithForm($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
     }
 
     /**
@@ -471,7 +471,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return AnheiTestNineResponse::fromMap($this->execute($params, $req, $runtime));
+        return AnheiTestNineResponse::fromMap($this->doROARequestWithForm($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
     }
 
     /**
@@ -519,7 +519,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return AppStatusManagerTestResponse::fromMap($this->execute($params, $req, $runtime));
+        return AppStatusManagerTestResponse::fromMap($this->doROARequestWithForm($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
     }
 
     /**
@@ -562,7 +562,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return AyunTestResponse::fromMap($this->execute($params, $req, $runtime));
+        return AyunTestResponse::fromMap($this->doROARequestWithForm($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
     }
 
     /**
@@ -603,7 +603,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return AyunTestOnlineResponse::fromMap($this->execute($params, $req, $runtime));
+        return AyunTestOnlineResponse::fromMap($this->doROARequestWithForm($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
     }
 
     /**

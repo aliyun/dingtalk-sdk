@@ -48,6 +48,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DeleteTrustedDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DistributePartnerAppHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DistributePartnerAppRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\DistributePartnerAppResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\EditSecurityConfigMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\EditSecurityConfigMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\EditSecurityConfigMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExchangeMainAdminHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExchangeMainAdminRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ExchangeMainAdminResponse;
@@ -156,6 +159,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetRealPeopleRecordsResponse
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetRecognizeRecordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetRecognizeRecordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetRecognizeRecordsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetSecurityConfigMemberHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetSecurityConfigMemberRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetSecurityConfigMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetSignedDetailByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetSignedDetailByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetSignedDetailByPageResponse;
@@ -177,6 +183,12 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetUserStayLengthResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetVirusScanResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetVirusScanResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetVirusScanResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GroupQueryByAttrHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GroupQueryByAttrRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GroupQueryByAttrResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GroupQueryByOpenIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GroupQueryByOpenIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GroupQueryByOpenIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogResponse;
@@ -338,6 +350,7 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_productId    = 'dingtalk';
         $gatewayClient       = new Client();
         $this->_spi          = $gatewayClient;
         $this->_endpointRule = '';
@@ -1285,6 +1298,72 @@ class Dingtalk extends OpenApiClient
         $headers = new DistributePartnerAppHeaders([]);
 
         return $this->distributePartnerAppWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 编辑安全卡片管控成员
+     *  *
+     * @param EditSecurityConfigMemberRequest $request EditSecurityConfigMemberRequest
+     * @param EditSecurityConfigMemberHeaders $headers EditSecurityConfigMemberHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return EditSecurityConfigMemberResponse EditSecurityConfigMemberResponse
+     */
+    public function editSecurityConfigMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->configKey)) {
+            $body['configKey'] = $request->configKey;
+        }
+        if (!Utils::isUnset($request->operateType)) {
+            $body['operateType'] = $request->operateType;
+        }
+        if (!Utils::isUnset($request->operateUserId)) {
+            $body['operateUserId'] = $request->operateUserId;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            $body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'EditSecurityConfigMember',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/securities/configs/members',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return EditSecurityConfigMemberResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 编辑安全卡片管控成员
+     *  *
+     * @param EditSecurityConfigMemberRequest $request EditSecurityConfigMemberRequest
+     *
+     * @return EditSecurityConfigMemberResponse EditSecurityConfigMemberResponse
+     */
+    public function editSecurityConfigMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EditSecurityConfigMemberHeaders([]);
+
+        return $this->editSecurityConfigMemberWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3674,6 +3753,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取安全管控卡片成员
+     *  *
+     * @param GetSecurityConfigMemberRequest $request GetSecurityConfigMemberRequest
+     * @param GetSecurityConfigMemberHeaders $headers GetSecurityConfigMemberHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetSecurityConfigMemberResponse GetSecurityConfigMemberResponse
+     */
+    public function getSecurityConfigMemberWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->configKey)) {
+            $body['configKey'] = $request->configKey;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetSecurityConfigMember',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/securities/configs/members/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetSecurityConfigMemberResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取安全管控卡片成员
+     *  *
+     * @param GetSecurityConfigMemberRequest $request GetSecurityConfigMemberRequest
+     *
+     * @return GetSecurityConfigMemberResponse GetSecurityConfigMemberResponse
+     */
+    public function getSecurityConfigMember($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSecurityConfigMemberHeaders([]);
+
+        return $this->getSecurityConfigMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取审计协议签署人员信息
      *  *
      * @param GetSignedDetailByPageRequest $request GetSignedDetailByPageRequest
@@ -4114,6 +4256,141 @@ class Dingtalk extends OpenApiClient
         $headers = new GetVirusScanResultHeaders([]);
 
         return $this->getVirusScanResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据群属性查询群ID
+     *  *
+     * @param GroupQueryByAttrRequest $request GroupQueryByAttrRequest
+     * @param GroupQueryByAttrHeaders $headers GroupQueryByAttrHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GroupQueryByAttrResponse GroupQueryByAttrResponse
+     */
+    public function groupQueryByAttrWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->groupTopic)) {
+            $body['groupTopic'] = $request->groupTopic;
+        }
+        if (!Utils::isUnset($request->groupType)) {
+            $body['groupType'] = $request->groupType;
+        }
+        if (!Utils::isUnset($request->listDynamicAttr)) {
+            $body['listDynamicAttr'] = $request->listDynamicAttr;
+        }
+        if (!Utils::isUnset($request->pageIndex)) {
+            $body['pageIndex'] = $request->pageIndex;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->secretKey)) {
+            $body['secretKey'] = $request->secretKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GroupQueryByAttr',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/portals/groups/queryGroup',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GroupQueryByAttrResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据群属性查询群ID
+     *  *
+     * @param GroupQueryByAttrRequest $request GroupQueryByAttrRequest
+     *
+     * @return GroupQueryByAttrResponse GroupQueryByAttrResponse
+     */
+    public function groupQueryByAttr($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GroupQueryByAttrHeaders([]);
+
+        return $this->groupQueryByAttrWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据群ID查询群属性
+     *  *
+     * @param GroupQueryByOpenIdRequest $request GroupQueryByOpenIdRequest
+     * @param GroupQueryByOpenIdHeaders $headers GroupQueryByOpenIdHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GroupQueryByOpenIdResponse GroupQueryByOpenIdResponse
+     */
+    public function groupQueryByOpenIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->secretKey)) {
+            $body['secretKey'] = $request->secretKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GroupQueryByOpenId',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/portals/groups/getGroupByOpenConversationId',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GroupQueryByOpenIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据群ID查询群属性
+     *  *
+     * @param GroupQueryByOpenIdRequest $request GroupQueryByOpenIdRequest
+     *
+     * @return GroupQueryByOpenIdResponse GroupQueryByOpenIdResponse
+     */
+    public function groupQueryByOpenId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GroupQueryByOpenIdHeaders([]);
+
+        return $this->groupQueryByOpenIdWithOptions($request, $headers, $runtime);
     }
 
     /**

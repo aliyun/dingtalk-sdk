@@ -235,6 +235,7 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_productId    = 'dingtalk';
         $gatewayClient       = new Client();
         $this->_spi          = $gatewayClient;
         $this->_endpointRule = '';
@@ -4739,7 +4740,7 @@ class Dingtalk extends OpenApiClient
             'method'      => 'POST',
             'authType'    => 'AK',
             'style'       => 'ROA',
-            'reqBodyType' => 'json',
+            'reqBodyType' => 'none',
             'bodyType'    => 'json',
         ]);
 

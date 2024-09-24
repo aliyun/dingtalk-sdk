@@ -62,6 +62,11 @@ class SearchFormDatasRequest extends Model
     public $language;
 
     /**
+     * @var string
+     */
+    public $logicOperator;
+
+    /**
      * @example 2018-01-01
      *
      * @var string
@@ -119,6 +124,7 @@ class SearchFormDatasRequest extends Model
         'dynamicOrder'        => 'dynamicOrder',
         'formUuid'            => 'formUuid',
         'language'            => 'language',
+        'logicOperator'       => 'logicOperator',
         'modifiedFromTimeGMT' => 'modifiedFromTimeGMT',
         'modifiedToTimeGMT'   => 'modifiedToTimeGMT',
         'originatorId'        => 'originatorId',
@@ -155,6 +161,9 @@ class SearchFormDatasRequest extends Model
         }
         if (null !== $this->language) {
             $res['language'] = $this->language;
+        }
+        if (null !== $this->logicOperator) {
+            $res['logicOperator'] = $this->logicOperator;
         }
         if (null !== $this->modifiedFromTimeGMT) {
             $res['modifiedFromTimeGMT'] = $this->modifiedFromTimeGMT;
@@ -209,6 +218,9 @@ class SearchFormDatasRequest extends Model
         }
         if (isset($map['language'])) {
             $model->language = $map['language'];
+        }
+        if (isset($map['logicOperator'])) {
+            $model->logicOperator = $map['logicOperator'];
         }
         if (isset($map['modifiedFromTimeGMT'])) {
             $model->modifiedFromTimeGMT = $map['modifiedFromTimeGMT'];

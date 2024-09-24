@@ -314,6 +314,7 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_productId    = 'dingtalk';
         $gatewayClient       = new Client();
         $this->_spi          = $gatewayClient;
         $this->_endpointRule = '';
@@ -6600,6 +6601,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->language)) {
             $body['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->logicOperator)) {
+            $body['logicOperator'] = $request->logicOperator;
         }
         if (!Utils::isUnset($request->modifiedFromTimeGMT)) {
             $body['modifiedFromTimeGMT'] = $request->modifiedFromTimeGMT;

@@ -14,6 +14,12 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeAlumniDeptsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeAlumniUserInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeAlumniUserInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeAlumniUserInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeContactExclusiveHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeContactExclusiveRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeContactExclusiveResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeContactUserHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeContactUserRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeContactUserResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCompetitionRecordHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCompetitionRecordRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCompetitionRecordResponse;
@@ -71,6 +77,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CourseSchedulingComplimentNoticeRe
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateAppOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateAppOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateAppOrderResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCollegeContactDeptHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCollegeContactDeptRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCollegeContactDeptResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomClassHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomClassRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomClassResponse;
@@ -197,6 +206,12 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeAlumniDeptsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeAlumniUserInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeAlumniUserInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeAlumniUserInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeContactDeptDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeContactDeptDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeContactDeptDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeContactStandardStruDeptDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeContactStandardStruDeptDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeContactStandardStruDeptDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetDefaultChildHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetDefaultChildResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetEduUserIdentityHeaders;
@@ -245,6 +260,12 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsvDataWriteResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsvMetadataQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsvMetadataQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsvMetadataQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListCollegeContactDeptTypeConfigHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListCollegeContactDeptTypeConfigRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListCollegeContactDeptTypeConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListCollegeContactSubDeptsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListCollegeContactSubDeptsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListCollegeContactSubDeptsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListOrderResponse;
@@ -280,6 +301,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassScheduleConfigShrinkRequ
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassScheduleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassScheduleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryCollegeContactUserDetailHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryCollegeContactUserDetailRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryCollegeContactUserDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryDeviceListByCorpIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryDeviceListByCorpIdRequest;
@@ -378,6 +402,18 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UnsubscribeUniversityCourseGroupRe
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeAlumniUserInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeAlumniUserInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeAlumniUserInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeContactDeptHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeContactDeptRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeContactDeptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeContactExclusiveHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeContactExclusiveRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeContactExclusiveResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeContactUserHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeContactUserRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeContactUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeUserEmpTypeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeUserEmpTypeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeUserEmpTypeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassResponse;
@@ -417,6 +453,7 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_productId    = 'dingtalk';
         $gatewayClient       = new Client();
         $this->_spi          = $gatewayClient;
         $this->_endpointRule = '';
@@ -633,6 +670,264 @@ class Dingtalk extends OpenApiClient
         $headers = new AddCollegeAlumniUserInfoHeaders([]);
 
         return $this->addCollegeAlumniUserInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建高校账号用户
+     *  *
+     * @param AddCollegeContactExclusiveRequest $request AddCollegeContactExclusiveRequest
+     * @param AddCollegeContactExclusiveHeaders $headers AddCollegeContactExclusiveHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddCollegeContactExclusiveResponse AddCollegeContactExclusiveResponse
+     */
+    public function addCollegeContactExclusiveWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->avatarMediaId)) {
+            $body['avatarMediaId'] = $request->avatarMediaId;
+        }
+        if (!Utils::isUnset($request->deptIdList)) {
+            $body['deptIdList'] = $request->deptIdList;
+        }
+        if (!Utils::isUnset($request->deptOrderList)) {
+            $body['deptOrderList'] = $request->deptOrderList;
+        }
+        if (!Utils::isUnset($request->deptTitleList)) {
+            $body['deptTitleList'] = $request->deptTitleList;
+        }
+        if (!Utils::isUnset($request->email)) {
+            $body['email'] = $request->email;
+        }
+        if (!Utils::isUnset($request->empType)) {
+            $body['empType'] = $request->empType;
+        }
+        if (!Utils::isUnset($request->exclusiveAccount)) {
+            $body['exclusiveAccount'] = $request->exclusiveAccount;
+        }
+        if (!Utils::isUnset($request->exclusiveAccountType)) {
+            $body['exclusiveAccountType'] = $request->exclusiveAccountType;
+        }
+        if (!Utils::isUnset($request->extension)) {
+            $body['extension'] = $request->extension;
+        }
+        if (!Utils::isUnset($request->hiredDate)) {
+            $body['hiredDate'] = $request->hiredDate;
+        }
+        if (!Utils::isUnset($request->initPassword)) {
+            $body['initPassword'] = $request->initPassword;
+        }
+        if (!Utils::isUnset($request->jobNumber)) {
+            $body['jobNumber'] = $request->jobNumber;
+        }
+        if (!Utils::isUnset($request->loginIdType)) {
+            $body['loginIdType'] = $request->loginIdType;
+        }
+        if (!Utils::isUnset($request->mainDeptId)) {
+            $body['mainDeptId'] = $request->mainDeptId;
+        }
+        if (!Utils::isUnset($request->managerUserid)) {
+            $body['managerUserid'] = $request->managerUserid;
+        }
+        if (!Utils::isUnset($request->mobile)) {
+            $body['mobile'] = $request->mobile;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->nickname)) {
+            $body['nickname'] = $request->nickname;
+        }
+        if (!Utils::isUnset($request->orgEmail)) {
+            $body['orgEmail'] = $request->orgEmail;
+        }
+        if (!Utils::isUnset($request->orgEmailType)) {
+            $body['orgEmailType'] = $request->orgEmailType;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->sendActiveSms)) {
+            $body['sendActiveSms'] = $request->sendActiveSms;
+        }
+        if (!Utils::isUnset($request->seniorMode)) {
+            $body['seniorMode'] = $request->seniorMode;
+        }
+        if (!Utils::isUnset($request->telephone)) {
+            $body['telephone'] = $request->telephone;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->userid)) {
+            $body['userid'] = $request->userid;
+        }
+        if (!Utils::isUnset($request->workPlace)) {
+            $body['workPlace'] = $request->workPlace;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddCollegeContactExclusive',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeContact/exclusiveAccounts/users',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddCollegeContactExclusiveResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建高校账号用户
+     *  *
+     * @param AddCollegeContactExclusiveRequest $request AddCollegeContactExclusiveRequest
+     *
+     * @return AddCollegeContactExclusiveResponse AddCollegeContactExclusiveResponse
+     */
+    public function addCollegeContactExclusive($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddCollegeContactExclusiveHeaders([]);
+
+        return $this->addCollegeContactExclusiveWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建个人账号用户
+     *  *
+     * @param AddCollegeContactUserRequest $request AddCollegeContactUserRequest
+     * @param AddCollegeContactUserHeaders $headers AddCollegeContactUserHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddCollegeContactUserResponse AddCollegeContactUserResponse
+     */
+    public function addCollegeContactUserWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deptIdList)) {
+            $body['deptIdList'] = $request->deptIdList;
+        }
+        if (!Utils::isUnset($request->deptOrderList)) {
+            $body['deptOrderList'] = $request->deptOrderList;
+        }
+        if (!Utils::isUnset($request->deptTitleList)) {
+            $body['deptTitleList'] = $request->deptTitleList;
+        }
+        if (!Utils::isUnset($request->email)) {
+            $body['email'] = $request->email;
+        }
+        if (!Utils::isUnset($request->empType)) {
+            $body['empType'] = $request->empType;
+        }
+        if (!Utils::isUnset($request->extension)) {
+            $body['extension'] = $request->extension;
+        }
+        if (!Utils::isUnset($request->hideMobile)) {
+            $body['hideMobile'] = $request->hideMobile;
+        }
+        if (!Utils::isUnset($request->hiredDate)) {
+            $body['hiredDate'] = $request->hiredDate;
+        }
+        if (!Utils::isUnset($request->jobNumber)) {
+            $body['jobNumber'] = $request->jobNumber;
+        }
+        if (!Utils::isUnset($request->loginEmail)) {
+            $body['loginEmail'] = $request->loginEmail;
+        }
+        if (!Utils::isUnset($request->mainDeptId)) {
+            $body['mainDeptId'] = $request->mainDeptId;
+        }
+        if (!Utils::isUnset($request->managerUserid)) {
+            $body['managerUserid'] = $request->managerUserid;
+        }
+        if (!Utils::isUnset($request->mobile)) {
+            $body['mobile'] = $request->mobile;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->orgEmail)) {
+            $body['orgEmail'] = $request->orgEmail;
+        }
+        if (!Utils::isUnset($request->orgEmailType)) {
+            $body['orgEmailType'] = $request->orgEmailType;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->sendActiveSms)) {
+            $body['sendActiveSms'] = $request->sendActiveSms;
+        }
+        if (!Utils::isUnset($request->seniorMode)) {
+            $body['seniorMode'] = $request->seniorMode;
+        }
+        if (!Utils::isUnset($request->telephone)) {
+            $body['telephone'] = $request->telephone;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->userid)) {
+            $body['userid'] = $request->userid;
+        }
+        if (!Utils::isUnset($request->workPlace)) {
+            $body['workPlace'] = $request->workPlace;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddCollegeContactUser',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeContact/personalAccounts/users',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddCollegeContactUserResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建个人账号用户
+     *  *
+     * @param AddCollegeContactUserRequest $request AddCollegeContactUserRequest
+     *
+     * @return AddCollegeContactUserResponse AddCollegeContactUserResponse
+     */
+    public function addCollegeContactUser($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddCollegeContactUserHeaders([]);
+
+        return $this->addCollegeContactUserWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2007,6 +2302,129 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateAppOrderHeaders([]);
 
         return $this->createAppOrderWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建高校通讯录组织单元
+     *  *
+     * @param CreateCollegeContactDeptRequest $request CreateCollegeContactDeptRequest
+     * @param CreateCollegeContactDeptHeaders $headers CreateCollegeContactDeptHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateCollegeContactDeptResponse CreateCollegeContactDeptResponse
+     */
+    public function createCollegeContactDeptWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->autoApproveApply)) {
+            $body['autoApproveApply'] = $request->autoApproveApply;
+        }
+        if (!Utils::isUnset($request->brief)) {
+            $body['brief'] = $request->brief;
+        }
+        if (!Utils::isUnset($request->code)) {
+            $body['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->createDeptGroup)) {
+            $body['createDeptGroup'] = $request->createDeptGroup;
+        }
+        if (!Utils::isUnset($request->deptCode)) {
+            $body['deptCode'] = $request->deptCode;
+        }
+        if (!Utils::isUnset($request->deptPermits)) {
+            $body['deptPermits'] = $request->deptPermits;
+        }
+        if (!Utils::isUnset($request->deptType)) {
+            $body['deptType'] = $request->deptType;
+        }
+        if (!Utils::isUnset($request->empApplyJoinDept)) {
+            $body['empApplyJoinDept'] = $request->empApplyJoinDept;
+        }
+        if (!Utils::isUnset($request->extension)) {
+            $body['extension'] = $request->extension;
+        }
+        if (!Utils::isUnset($request->hideDept)) {
+            $body['hideDept'] = $request->hideDept;
+        }
+        if (!Utils::isUnset($request->hideSceneConfig)) {
+            $body['hideSceneConfig'] = $request->hideSceneConfig;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->order)) {
+            $body['order'] = $request->order;
+        }
+        if (!Utils::isUnset($request->outerDept)) {
+            $body['outerDept'] = $request->outerDept;
+        }
+        if (!Utils::isUnset($request->outerDeptOnlySelf)) {
+            $body['outerDeptOnlySelf'] = $request->outerDeptOnlySelf;
+        }
+        if (!Utils::isUnset($request->outerPermitDepts)) {
+            $body['outerPermitDepts'] = $request->outerPermitDepts;
+        }
+        if (!Utils::isUnset($request->outerPermitUsers)) {
+            $body['outerPermitUsers'] = $request->outerPermitUsers;
+        }
+        if (!Utils::isUnset($request->outerSceneConfig)) {
+            $body['outerSceneConfig'] = $request->outerSceneConfig;
+        }
+        if (!Utils::isUnset($request->parentId)) {
+            $body['parentId'] = $request->parentId;
+        }
+        if (!Utils::isUnset($request->sourceIdentifier)) {
+            $body['sourceIdentifier'] = $request->sourceIdentifier;
+        }
+        if (!Utils::isUnset($request->struId)) {
+            $body['struId'] = $request->struId;
+        }
+        if (!Utils::isUnset($request->telephone)) {
+            $body['telephone'] = $request->telephone;
+        }
+        if (!Utils::isUnset($request->userPermits)) {
+            $body['userPermits'] = $request->userPermits;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateCollegeContactDept',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeContact/depts',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateCollegeContactDeptResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建高校通讯录组织单元
+     *  *
+     * @param CreateCollegeContactDeptRequest $request CreateCollegeContactDeptRequest
+     *
+     * @return CreateCollegeContactDeptResponse CreateCollegeContactDeptResponse
+     */
+    public function createCollegeContactDept($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateCollegeContactDeptHeaders([]);
+
+        return $this->createCollegeContactDeptWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -4832,6 +5250,123 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取高校通讯录组织单元详情
+     *  *
+     * @param GetCollegeContactDeptDetailRequest $request GetCollegeContactDeptDetailRequest
+     * @param GetCollegeContactDeptDetailHeaders $headers GetCollegeContactDeptDetailHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetCollegeContactDeptDetailResponse GetCollegeContactDeptDetailResponse
+     */
+    public function getCollegeContactDeptDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            $query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->language)) {
+            $query['language'] = $request->language;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetCollegeContactDeptDetail',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeContact/depts',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetCollegeContactDeptDetailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取高校通讯录组织单元详情
+     *  *
+     * @param GetCollegeContactDeptDetailRequest $request GetCollegeContactDeptDetailRequest
+     *
+     * @return GetCollegeContactDeptDetailResponse GetCollegeContactDeptDetailResponse
+     */
+    public function getCollegeContactDeptDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCollegeContactDeptDetailHeaders([]);
+
+        return $this->getCollegeContactDeptDetailWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取行政组织架构信息
+     *  *
+     * @param GetCollegeContactStandardStruDeptDetailRequest $request GetCollegeContactStandardStruDeptDetailRequest
+     * @param GetCollegeContactStandardStruDeptDetailHeaders $headers GetCollegeContactStandardStruDeptDetailHeaders
+     * @param RuntimeOptions                                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetCollegeContactStandardStruDeptDetailResponse GetCollegeContactStandardStruDeptDetailResponse
+     */
+    public function getCollegeContactStandardStruDeptDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->language)) {
+            $query['language'] = $request->language;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetCollegeContactStandardStruDeptDetail',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeContact/depts/structures/standards',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetCollegeContactStandardStruDeptDetailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取行政组织架构信息
+     *  *
+     * @param GetCollegeContactStandardStruDeptDetailRequest $request GetCollegeContactStandardStruDeptDetailRequest
+     *
+     * @return GetCollegeContactStandardStruDeptDetailResponse GetCollegeContactStandardStruDeptDetailResponse
+     */
+    public function getCollegeContactStandardStruDeptDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCollegeContactStandardStruDeptDetailHeaders([]);
+
+        return $this->getCollegeContactStandardStruDeptDetailWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取默认孩子信息
      *  *
      * @param GetDefaultChildHeaders $headers GetDefaultChildHeaders
@@ -5844,6 +6379,123 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取高校组织单元类型
+     *  *
+     * @param ListCollegeContactDeptTypeConfigRequest $request ListCollegeContactDeptTypeConfigRequest
+     * @param ListCollegeContactDeptTypeConfigHeaders $headers ListCollegeContactDeptTypeConfigHeaders
+     * @param RuntimeOptions                          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListCollegeContactDeptTypeConfigResponse ListCollegeContactDeptTypeConfigResponse
+     */
+    public function listCollegeContactDeptTypeConfigWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->language)) {
+            $query['language'] = $request->language;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ListCollegeContactDeptTypeConfig',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeContact/configs/deptTypes',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListCollegeContactDeptTypeConfigResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取高校组织单元类型
+     *  *
+     * @param ListCollegeContactDeptTypeConfigRequest $request ListCollegeContactDeptTypeConfigRequest
+     *
+     * @return ListCollegeContactDeptTypeConfigResponse ListCollegeContactDeptTypeConfigResponse
+     */
+    public function listCollegeContactDeptTypeConfig($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListCollegeContactDeptTypeConfigHeaders([]);
+
+        return $this->listCollegeContactDeptTypeConfigWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取高校通讯录子组织单元列表
+     *  *
+     * @param ListCollegeContactSubDeptsRequest $request ListCollegeContactSubDeptsRequest
+     * @param ListCollegeContactSubDeptsHeaders $headers ListCollegeContactSubDeptsHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListCollegeContactSubDeptsResponse ListCollegeContactSubDeptsResponse
+     */
+    public function listCollegeContactSubDeptsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->deptId)) {
+            $query['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->language)) {
+            $query['language'] = $request->language;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ListCollegeContactSubDepts',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeContact/subDepts',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListCollegeContactSubDeptsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取高校通讯录子组织单元列表
+     *  *
+     * @param ListCollegeContactSubDeptsRequest $request ListCollegeContactSubDeptsRequest
+     *
+     * @return ListCollegeContactSubDeptsResponse ListCollegeContactSubDeptsResponse
+     */
+    public function listCollegeContactSubDepts($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListCollegeContactSubDeptsHeaders([]);
+
+        return $this->listCollegeContactSubDeptsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询订单
      *  *
      * @param ListOrderRequest $request ListOrderRequest
@@ -6594,6 +7246,66 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryClassScheduleConfigHeaders([]);
 
         return $this->queryClassScheduleConfigWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取用户详情(包含高校账号)
+     *  *
+     * @param QueryCollegeContactUserDetailRequest $request QueryCollegeContactUserDetailRequest
+     * @param QueryCollegeContactUserDetailHeaders $headers QueryCollegeContactUserDetailHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryCollegeContactUserDetailResponse QueryCollegeContactUserDetailResponse
+     */
+    public function queryCollegeContactUserDetailWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->language)) {
+            $query['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->userid)) {
+            $query['userid'] = $request->userid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryCollegeContactUserDetail',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeContact/users',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryCollegeContactUserDetailResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取用户详情(包含高校账号)
+     *  *
+     * @param QueryCollegeContactUserDetailRequest $request QueryCollegeContactUserDetailRequest
+     *
+     * @return QueryCollegeContactUserDetailResponse QueryCollegeContactUserDetailResponse
+     */
+    public function queryCollegeContactUserDetail($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryCollegeContactUserDetailHeaders([]);
+
+        return $this->queryCollegeContactUserDetailWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -8761,6 +9473,462 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateCollegeAlumniUserInfoHeaders([]);
 
         return $this->updateCollegeAlumniUserInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新高校通讯录组织单元
+     *  *
+     * @param UpdateCollegeContactDeptRequest $request UpdateCollegeContactDeptRequest
+     * @param UpdateCollegeContactDeptHeaders $headers UpdateCollegeContactDeptHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateCollegeContactDeptResponse UpdateCollegeContactDeptResponse
+     */
+    public function updateCollegeContactDeptWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->autoAddUser)) {
+            $body['autoAddUser'] = $request->autoAddUser;
+        }
+        if (!Utils::isUnset($request->autoApproveApply)) {
+            $body['autoApproveApply'] = $request->autoApproveApply;
+        }
+        if (!Utils::isUnset($request->brief)) {
+            $body['brief'] = $request->brief;
+        }
+        if (!Utils::isUnset($request->code)) {
+            $body['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->createDeptGroup)) {
+            $body['createDeptGroup'] = $request->createDeptGroup;
+        }
+        if (!Utils::isUnset($request->deptCode)) {
+            $body['deptCode'] = $request->deptCode;
+        }
+        if (!Utils::isUnset($request->deptId)) {
+            $body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->deptManagerUseridList)) {
+            $body['deptManagerUseridList'] = $request->deptManagerUseridList;
+        }
+        if (!Utils::isUnset($request->deptPermits)) {
+            $body['deptPermits'] = $request->deptPermits;
+        }
+        if (!Utils::isUnset($request->deptType)) {
+            $body['deptType'] = $request->deptType;
+        }
+        if (!Utils::isUnset($request->empApplyJoinDept)) {
+            $body['empApplyJoinDept'] = $request->empApplyJoinDept;
+        }
+        if (!Utils::isUnset($request->extension)) {
+            $body['extension'] = $request->extension;
+        }
+        if (!Utils::isUnset($request->forceUpdateFields)) {
+            $body['forceUpdateFields'] = $request->forceUpdateFields;
+        }
+        if (!Utils::isUnset($request->groupContainHiddenDept)) {
+            $body['groupContainHiddenDept'] = $request->groupContainHiddenDept;
+        }
+        if (!Utils::isUnset($request->groupContainOuterDept)) {
+            $body['groupContainOuterDept'] = $request->groupContainOuterDept;
+        }
+        if (!Utils::isUnset($request->groupContainSubDept)) {
+            $body['groupContainSubDept'] = $request->groupContainSubDept;
+        }
+        if (!Utils::isUnset($request->hideDept)) {
+            $body['hideDept'] = $request->hideDept;
+        }
+        if (!Utils::isUnset($request->hideSceneConfig)) {
+            $body['hideSceneConfig'] = $request->hideSceneConfig;
+        }
+        if (!Utils::isUnset($request->language)) {
+            $body['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->order)) {
+            $body['order'] = $request->order;
+        }
+        if (!Utils::isUnset($request->orgDeptOwner)) {
+            $body['orgDeptOwner'] = $request->orgDeptOwner;
+        }
+        if (!Utils::isUnset($request->outerDept)) {
+            $body['outerDept'] = $request->outerDept;
+        }
+        if (!Utils::isUnset($request->outerDeptOnlySelf)) {
+            $body['outerDeptOnlySelf'] = $request->outerDeptOnlySelf;
+        }
+        if (!Utils::isUnset($request->outerPermitDepts)) {
+            $body['outerPermitDepts'] = $request->outerPermitDepts;
+        }
+        if (!Utils::isUnset($request->outerPermitUsers)) {
+            $body['outerPermitUsers'] = $request->outerPermitUsers;
+        }
+        if (!Utils::isUnset($request->outerSceneConfig)) {
+            $body['outerSceneConfig'] = $request->outerSceneConfig;
+        }
+        if (!Utils::isUnset($request->parentId)) {
+            $body['parentId'] = $request->parentId;
+        }
+        if (!Utils::isUnset($request->sourceIdentifier)) {
+            $body['sourceIdentifier'] = $request->sourceIdentifier;
+        }
+        if (!Utils::isUnset($request->telephone)) {
+            $body['telephone'] = $request->telephone;
+        }
+        if (!Utils::isUnset($request->userPermits)) {
+            $body['userPermits'] = $request->userPermits;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateCollegeContactDept',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeContact/depts',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateCollegeContactDeptResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新高校通讯录组织单元
+     *  *
+     * @param UpdateCollegeContactDeptRequest $request UpdateCollegeContactDeptRequest
+     *
+     * @return UpdateCollegeContactDeptResponse UpdateCollegeContactDeptResponse
+     */
+    public function updateCollegeContactDept($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateCollegeContactDeptHeaders([]);
+
+        return $this->updateCollegeContactDeptWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新高校账号用户
+     *  *
+     * @param UpdateCollegeContactExclusiveRequest $request UpdateCollegeContactExclusiveRequest
+     * @param UpdateCollegeContactExclusiveHeaders $headers UpdateCollegeContactExclusiveHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateCollegeContactExclusiveResponse UpdateCollegeContactExclusiveResponse
+     */
+    public function updateCollegeContactExclusiveWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->avatarMediaId)) {
+            $body['avatarMediaId'] = $request->avatarMediaId;
+        }
+        if (!Utils::isUnset($request->deptIdList)) {
+            $body['deptIdList'] = $request->deptIdList;
+        }
+        if (!Utils::isUnset($request->deptOrderList)) {
+            $body['deptOrderList'] = $request->deptOrderList;
+        }
+        if (!Utils::isUnset($request->deptTitleList)) {
+            $body['deptTitleList'] = $request->deptTitleList;
+        }
+        if (!Utils::isUnset($request->email)) {
+            $body['email'] = $request->email;
+        }
+        if (!Utils::isUnset($request->empType)) {
+            $body['empType'] = $request->empType;
+        }
+        if (!Utils::isUnset($request->extension)) {
+            $body['extension'] = $request->extension;
+        }
+        if (!Utils::isUnset($request->forceUpdateFields)) {
+            $body['forceUpdateFields'] = $request->forceUpdateFields;
+        }
+        if (!Utils::isUnset($request->hideMobile)) {
+            $body['hideMobile'] = $request->hideMobile;
+        }
+        if (!Utils::isUnset($request->hiredDate)) {
+            $body['hiredDate'] = $request->hiredDate;
+        }
+        if (!Utils::isUnset($request->jobNumber)) {
+            $body['jobNumber'] = $request->jobNumber;
+        }
+        if (!Utils::isUnset($request->language)) {
+            $body['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->loginIdType)) {
+            $body['loginIdType'] = $request->loginIdType;
+        }
+        if (!Utils::isUnset($request->mainDeptId)) {
+            $body['mainDeptId'] = $request->mainDeptId;
+        }
+        if (!Utils::isUnset($request->managerUserid)) {
+            $body['managerUserid'] = $request->managerUserid;
+        }
+        if (!Utils::isUnset($request->mobile)) {
+            $body['mobile'] = $request->mobile;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->nickname)) {
+            $body['nickname'] = $request->nickname;
+        }
+        if (!Utils::isUnset($request->orgEmail)) {
+            $body['orgEmail'] = $request->orgEmail;
+        }
+        if (!Utils::isUnset($request->orgEmailType)) {
+            $body['orgEmailType'] = $request->orgEmailType;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->seniorMode)) {
+            $body['seniorMode'] = $request->seniorMode;
+        }
+        if (!Utils::isUnset($request->telephone)) {
+            $body['telephone'] = $request->telephone;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->userid)) {
+            $body['userid'] = $request->userid;
+        }
+        if (!Utils::isUnset($request->workPlace)) {
+            $body['workPlace'] = $request->workPlace;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateCollegeContactExclusive',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeContact/exclusiveAccounts/users',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateCollegeContactExclusiveResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新高校账号用户
+     *  *
+     * @param UpdateCollegeContactExclusiveRequest $request UpdateCollegeContactExclusiveRequest
+     *
+     * @return UpdateCollegeContactExclusiveResponse UpdateCollegeContactExclusiveResponse
+     */
+    public function updateCollegeContactExclusive($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateCollegeContactExclusiveHeaders([]);
+
+        return $this->updateCollegeContactExclusiveWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新个人账号用户
+     *  *
+     * @param UpdateCollegeContactUserRequest $request UpdateCollegeContactUserRequest
+     * @param UpdateCollegeContactUserHeaders $headers UpdateCollegeContactUserHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateCollegeContactUserResponse UpdateCollegeContactUserResponse
+     */
+    public function updateCollegeContactUserWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->deptIdList)) {
+            $body['deptIdList'] = $request->deptIdList;
+        }
+        if (!Utils::isUnset($request->deptOrderList)) {
+            $body['deptOrderList'] = $request->deptOrderList;
+        }
+        if (!Utils::isUnset($request->deptTitleList)) {
+            $body['deptTitleList'] = $request->deptTitleList;
+        }
+        if (!Utils::isUnset($request->email)) {
+            $body['email'] = $request->email;
+        }
+        if (!Utils::isUnset($request->empType)) {
+            $body['empType'] = $request->empType;
+        }
+        if (!Utils::isUnset($request->extension)) {
+            $body['extension'] = $request->extension;
+        }
+        if (!Utils::isUnset($request->forceUpdateFields)) {
+            $body['forceUpdateFields'] = $request->forceUpdateFields;
+        }
+        if (!Utils::isUnset($request->hideMobile)) {
+            $body['hideMobile'] = $request->hideMobile;
+        }
+        if (!Utils::isUnset($request->hiredDate)) {
+            $body['hiredDate'] = $request->hiredDate;
+        }
+        if (!Utils::isUnset($request->jobNumber)) {
+            $body['jobNumber'] = $request->jobNumber;
+        }
+        if (!Utils::isUnset($request->language)) {
+            $body['language'] = $request->language;
+        }
+        if (!Utils::isUnset($request->mainDeptId)) {
+            $body['mainDeptId'] = $request->mainDeptId;
+        }
+        if (!Utils::isUnset($request->managerUserid)) {
+            $body['managerUserid'] = $request->managerUserid;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->orgEmail)) {
+            $body['orgEmail'] = $request->orgEmail;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->seniorMode)) {
+            $body['seniorMode'] = $request->seniorMode;
+        }
+        if (!Utils::isUnset($request->telephone)) {
+            $body['telephone'] = $request->telephone;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
+        if (!Utils::isUnset($request->userid)) {
+            $body['userid'] = $request->userid;
+        }
+        if (!Utils::isUnset($request->workPlace)) {
+            $body['workPlace'] = $request->workPlace;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateCollegeContactUser',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeContact/personalAccounts/users',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateCollegeContactUserResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新个人账号用户
+     *  *
+     * @param UpdateCollegeContactUserRequest $request UpdateCollegeContactUserRequest
+     *
+     * @return UpdateCollegeContactUserResponse UpdateCollegeContactUserResponse
+     */
+    public function updateCollegeContactUser($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateCollegeContactUserHeaders([]);
+
+        return $this->updateCollegeContactUserWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 修改用户成员类型
+     *  *
+     * @param UpdateCollegeUserEmpTypeRequest $request UpdateCollegeUserEmpTypeRequest
+     * @param UpdateCollegeUserEmpTypeHeaders $headers UpdateCollegeUserEmpTypeHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateCollegeUserEmpTypeResponse UpdateCollegeUserEmpTypeResponse
+     */
+    public function updateCollegeUserEmpTypeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->empType)) {
+            $body['empType'] = $request->empType;
+        }
+        if (!Utils::isUnset($request->userid)) {
+            $body['userid'] = $request->userid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateCollegeUserEmpType',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeContact/empTypes/change',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateCollegeUserEmpTypeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 修改用户成员类型
+     *  *
+     * @param UpdateCollegeUserEmpTypeRequest $request UpdateCollegeUserEmpTypeRequest
+     *
+     * @return UpdateCollegeUserEmpTypeResponse UpdateCollegeUserEmpTypeResponse
+     */
+    public function updateCollegeUserEmpType($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateCollegeUserEmpTypeHeaders([]);
+
+        return $this->updateCollegeUserEmpTypeWithOptions($request, $headers, $runtime);
     }
 
     /**

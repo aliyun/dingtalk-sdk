@@ -76,6 +76,9 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceInfoResponse
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryFlashMinutesSummaryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryFlashMinutesSummaryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryFlashMinutesSummaryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesAudioHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesAudioRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesAudioResponse;
@@ -141,6 +144,7 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
+        $this->_productId    = 'dingtalk';
         $gatewayClient       = new Client();
         $this->_spi          = $gatewayClient;
         $this->_endpointRule = '';
@@ -1663,6 +1667,68 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryConferenceMembersHeaders([]);
 
         return $this->queryConferenceMembersWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询云录制摘要请求
+     *  *
+     * @param string                          $conferenceId
+     * @param QueryFlashMinutesSummaryRequest $request      QueryFlashMinutesSummaryRequest
+     * @param QueryFlashMinutesSummaryHeaders $headers      QueryFlashMinutesSummaryHeaders
+     * @param RuntimeOptions                  $runtime      runtime options for this request RuntimeOptions
+     *
+     * @return QueryFlashMinutesSummaryResponse QueryFlashMinutesSummaryResponse
+     */
+    public function queryFlashMinutesSummaryWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizType)) {
+            $query['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->recorderUnionId)) {
+            $query['recorderUnionId'] = $request->recorderUnionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryFlashMinutesSummary',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/flashMinutes/summaries',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryFlashMinutesSummaryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询云录制摘要请求
+     *  *
+     * @param string                          $conferenceId
+     * @param QueryFlashMinutesSummaryRequest $request      QueryFlashMinutesSummaryRequest
+     *
+     * @return QueryFlashMinutesSummaryResponse QueryFlashMinutesSummaryResponse
+     */
+    public function queryFlashMinutesSummary($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryFlashMinutesSummaryHeaders([]);
+
+        return $this->queryFlashMinutesSummaryWithOptions($conferenceId, $request, $headers, $runtime);
     }
 
     /**

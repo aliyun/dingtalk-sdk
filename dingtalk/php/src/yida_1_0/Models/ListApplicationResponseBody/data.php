@@ -72,6 +72,13 @@ class data extends Model
     public $name;
 
     /**
+     * @example 离线:offline,在线：online
+     *
+     * @var string
+     */
+    public $releaseToDingStatus;
+
+    /**
      * @example ding8eaadfkksj45343wksff334
      *
      * @var string
@@ -83,17 +90,18 @@ class data extends Model
      */
     public $systemToken;
     protected $_name = [
-        'appConfig'         => 'appConfig',
-        'appType'           => 'appType',
-        'applicationStatus' => 'applicationStatus',
-        'corpId'            => 'corpId',
-        'creatorUserId'     => 'creatorUserId',
-        'description'       => 'description',
-        'icon'              => 'icon',
-        'inexistence'       => 'inexistence',
-        'name'              => 'name',
-        'subCorpId'         => 'subCorpId',
-        'systemToken'       => 'systemToken',
+        'appConfig'           => 'appConfig',
+        'appType'             => 'appType',
+        'applicationStatus'   => 'applicationStatus',
+        'corpId'              => 'corpId',
+        'creatorUserId'       => 'creatorUserId',
+        'description'         => 'description',
+        'icon'                => 'icon',
+        'inexistence'         => 'inexistence',
+        'name'                => 'name',
+        'releaseToDingStatus' => 'releaseToDingStatus',
+        'subCorpId'           => 'subCorpId',
+        'systemToken'         => 'systemToken',
     ];
 
     public function validate()
@@ -129,6 +137,9 @@ class data extends Model
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->releaseToDingStatus) {
+            $res['releaseToDingStatus'] = $this->releaseToDingStatus;
         }
         if (null !== $this->subCorpId) {
             $res['subCorpId'] = $this->subCorpId;
@@ -174,6 +185,9 @@ class data extends Model
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['releaseToDingStatus'])) {
+            $model->releaseToDingStatus = $map['releaseToDingStatus'];
         }
         if (isset($map['subCorpId'])) {
             $model->subCorpId = $map['subCorpId'];

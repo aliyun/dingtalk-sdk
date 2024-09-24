@@ -58,10 +58,10 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient             = new Client();
-        $this->_spi                = $gatewayClient;
-        $this->_signatureAlgorithm = 'v2';
-        $this->_endpointRule       = '';
+        $this->_productId    = 'dingtalk';
+        $gatewayClient       = new Client();
+        $this->_spi          = $gatewayClient;
+        $this->_endpointRule = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
@@ -99,7 +99,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return AyunOnlienTestResponse::fromMap($this->execute($params, $req, $runtime));
+        return AyunOnlienTestResponse::fromMap($this->doROARequestWithForm($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
     }
 
     /**
@@ -517,7 +517,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return DiotMamaResponse::fromMap($this->execute($params, $req, $runtime));
+        return DiotMamaResponse::fromMap($this->doROARequestWithForm($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
     }
 
     /**
@@ -558,7 +558,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return DiotMarketManagerTestResponse::fromMap($this->execute($params, $req, $runtime));
+        return DiotMarketManagerTestResponse::fromMap($this->doROARequestWithForm($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
     }
 
     /**
@@ -599,7 +599,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return DiotSystemMarkTestResponse::fromMap($this->execute($params, $req, $runtime));
+        return DiotSystemMarkTestResponse::fromMap($this->doROARequestWithForm($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
     }
 
     /**
@@ -640,7 +640,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return DiotMarketManagerResponse::fromMap($this->execute($params, $req, $runtime));
+        return DiotMarketManagerResponse::fromMap($this->doROARequestWithForm($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
     }
 
     /**
@@ -1053,7 +1053,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return UpgradeDeviceResponse::fromMap($this->execute($params, $req, $runtime));
+        return UpgradeDeviceResponse::fromMap($this->doROARequestWithForm($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
     }
 
     /**
@@ -1094,7 +1094,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return WorkbenchTransformInfoResponse::fromMap($this->execute($params, $req, $runtime));
+        return WorkbenchTransformInfoResponse::fromMap($this->doROARequestWithForm($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
     }
 
     /**
