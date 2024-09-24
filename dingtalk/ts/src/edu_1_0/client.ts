@@ -366,6 +366,509 @@ export class AddCollegeAlumniUserInfoResponse extends $tea.Model {
   }
 }
 
+export class AddCollegeContactExclusiveHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeContactExclusiveRequest extends $tea.Model {
+  /**
+   * @example
+   * @lALPDfmVUw19YdrNA-jNA-g
+   */
+  avatarMediaId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  deptIdList?: number[];
+  deptOrderList?: AddCollegeContactExclusiveRequestDeptOrderList[];
+  deptTitleList?: AddCollegeContactExclusiveRequestDeptTitleList[];
+  /**
+   * @example
+   * test@xxx.com
+   */
+  email?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * college_student
+   */
+  empType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  exclusiveAccount?: boolean;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * dingtalk
+   */
+  exclusiveAccountType?: string;
+  extension?: { [key: string]: string };
+  /**
+   * @example
+   * 1597573616828
+   */
+  hiredDate?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  initPassword?: string;
+  /**
+   * @example
+   * 666666
+   */
+  jobNumber?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * studentNo
+   */
+  loginIdType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
+  mainDeptId?: number;
+  /**
+   * @example
+   * 001
+   */
+  managerUserid?: string;
+  /**
+   * @example
+   * 185xxxx8888
+   */
+  mobile?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   */
+  name?: string;
+  /**
+   * @example
+   * 昵称
+   */
+  nickname?: string;
+  /**
+   * @example
+   * test@xxx.com
+   */
+  orgEmail?: string;
+  /**
+   * @example
+   * profession
+   */
+  orgEmailType?: string;
+  /**
+   * @example
+   * 备注
+   */
+  remark?: string;
+  sendActiveSms?: boolean;
+  seniorMode?: boolean;
+  /**
+   * @example
+   * 010-86123456-2345
+   */
+  telephone?: string;
+  /**
+   * @example
+   * 学生会主席
+   */
+  title?: string;
+  /**
+   * @example
+   * zhangsan666
+   */
+  userid?: string;
+  /**
+   * @example
+   * 阿里巴巴c区
+   */
+  workPlace?: string;
+  static names(): { [key: string]: string } {
+    return {
+      avatarMediaId: 'avatarMediaId',
+      deptIdList: 'deptIdList',
+      deptOrderList: 'deptOrderList',
+      deptTitleList: 'deptTitleList',
+      email: 'email',
+      empType: 'empType',
+      exclusiveAccount: 'exclusiveAccount',
+      exclusiveAccountType: 'exclusiveAccountType',
+      extension: 'extension',
+      hiredDate: 'hiredDate',
+      initPassword: 'initPassword',
+      jobNumber: 'jobNumber',
+      loginIdType: 'loginIdType',
+      mainDeptId: 'mainDeptId',
+      managerUserid: 'managerUserid',
+      mobile: 'mobile',
+      name: 'name',
+      nickname: 'nickname',
+      orgEmail: 'orgEmail',
+      orgEmailType: 'orgEmailType',
+      remark: 'remark',
+      sendActiveSms: 'sendActiveSms',
+      seniorMode: 'seniorMode',
+      telephone: 'telephone',
+      title: 'title',
+      userid: 'userid',
+      workPlace: 'workPlace',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      avatarMediaId: 'string',
+      deptIdList: { 'type': 'array', 'itemType': 'number' },
+      deptOrderList: { 'type': 'array', 'itemType': AddCollegeContactExclusiveRequestDeptOrderList },
+      deptTitleList: { 'type': 'array', 'itemType': AddCollegeContactExclusiveRequestDeptTitleList },
+      email: 'string',
+      empType: 'string',
+      exclusiveAccount: 'boolean',
+      exclusiveAccountType: 'string',
+      extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      hiredDate: 'number',
+      initPassword: 'string',
+      jobNumber: 'string',
+      loginIdType: 'string',
+      mainDeptId: 'number',
+      managerUserid: 'string',
+      mobile: 'string',
+      name: 'string',
+      nickname: 'string',
+      orgEmail: 'string',
+      orgEmailType: 'string',
+      remark: 'string',
+      sendActiveSms: 'boolean',
+      seniorMode: 'boolean',
+      telephone: 'string',
+      title: 'string',
+      userid: 'string',
+      workPlace: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeContactExclusiveResponseBody extends $tea.Model {
+  result?: AddCollegeContactExclusiveResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: AddCollegeContactExclusiveResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeContactExclusiveResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AddCollegeContactExclusiveResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AddCollegeContactExclusiveResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeContactUserHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeContactUserRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  deptIdList?: number[];
+  deptOrderList?: AddCollegeContactUserRequestDeptOrderList[];
+  deptTitleList?: AddCollegeContactUserRequestDeptTitleList[];
+  /**
+   * @example
+   * test@xxx.com
+   */
+  email?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * college_student
+   */
+  empType?: string;
+  extension?: { [key: string]: string };
+  hideMobile?: boolean;
+  /**
+   * @example
+   * 1597573616828
+   */
+  hiredDate?: number;
+  /**
+   * @example
+   * 666666
+   */
+  jobNumber?: string;
+  /**
+   * @example
+   * test@xxx.com
+   */
+  loginEmail?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
+  mainDeptId?: number;
+  /**
+   * @example
+   * 001
+   */
+  managerUserid?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 185xxxx8888
+   */
+  mobile?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 张三
+   */
+  name?: string;
+  /**
+   * @example
+   * test@xxx.com
+   */
+  orgEmail?: string;
+  /**
+   * @example
+   * profession
+   */
+  orgEmailType?: string;
+  /**
+   * @example
+   * 备注
+   */
+  remark?: string;
+  sendActiveSms?: boolean;
+  seniorMode?: boolean;
+  /**
+   * @example
+   * 010-86123456-2345
+   */
+  telephone?: string;
+  /**
+   * @example
+   * 学工处处长
+   */
+  title?: string;
+  /**
+   * @example
+   * zhangsan666
+   */
+  userid?: string;
+  /**
+   * @example
+   * 阿里巴巴c区
+   */
+  workPlace?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptIdList: 'deptIdList',
+      deptOrderList: 'deptOrderList',
+      deptTitleList: 'deptTitleList',
+      email: 'email',
+      empType: 'empType',
+      extension: 'extension',
+      hideMobile: 'hideMobile',
+      hiredDate: 'hiredDate',
+      jobNumber: 'jobNumber',
+      loginEmail: 'loginEmail',
+      mainDeptId: 'mainDeptId',
+      managerUserid: 'managerUserid',
+      mobile: 'mobile',
+      name: 'name',
+      orgEmail: 'orgEmail',
+      orgEmailType: 'orgEmailType',
+      remark: 'remark',
+      sendActiveSms: 'sendActiveSms',
+      seniorMode: 'seniorMode',
+      telephone: 'telephone',
+      title: 'title',
+      userid: 'userid',
+      workPlace: 'workPlace',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptIdList: { 'type': 'array', 'itemType': 'number' },
+      deptOrderList: { 'type': 'array', 'itemType': AddCollegeContactUserRequestDeptOrderList },
+      deptTitleList: { 'type': 'array', 'itemType': AddCollegeContactUserRequestDeptTitleList },
+      email: 'string',
+      empType: 'string',
+      extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      hideMobile: 'boolean',
+      hiredDate: 'number',
+      jobNumber: 'string',
+      loginEmail: 'string',
+      mainDeptId: 'number',
+      managerUserid: 'string',
+      mobile: 'string',
+      name: 'string',
+      orgEmail: 'string',
+      orgEmailType: 'string',
+      remark: 'string',
+      sendActiveSms: 'boolean',
+      seniorMode: 'boolean',
+      telephone: 'string',
+      title: 'string',
+      userid: 'string',
+      workPlace: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeContactUserResponseBody extends $tea.Model {
+  result?: AddCollegeContactUserResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: AddCollegeContactUserResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeContactUserResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: AddCollegeContactUserResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: AddCollegeContactUserResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class AddCompetitionRecordHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3111,6 +3614,212 @@ export class CreateAppOrderResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: CreateAppOrderResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCollegeContactDeptHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCollegeContactDeptRequest extends $tea.Model {
+  autoApproveApply?: boolean;
+  /**
+   * @example
+   * 这是组织单元简介
+   */
+  brief?: string;
+  /**
+   * @example
+   * 20000
+   */
+  code?: string;
+  createDeptGroup?: boolean;
+  /**
+   * @example
+   * dept456
+   */
+  deptCode?: string;
+  deptPermits?: number[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * contact_class_dept
+   */
+  deptType?: string;
+  empApplyJoinDept?: boolean;
+  extension?: { [key: string]: string };
+  hideDept?: boolean;
+  hideSceneConfig?: CreateCollegeContactDeptRequestHideSceneConfig;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 软件工程
+   */
+  name?: string;
+  /**
+   * @example
+   * 20
+   */
+  order?: number;
+  outerDept?: boolean;
+  outerDeptOnlySelf?: boolean;
+  outerPermitDepts?: number[];
+  outerPermitUsers?: string[];
+  outerSceneConfig?: CreateCollegeContactDeptRequestOuterSceneConfig;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
+  parentId?: number;
+  /**
+   * @example
+   * 软件工程标识
+   */
+  sourceIdentifier?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 10
+   */
+  struId?: number;
+  /**
+   * @example
+   * 138xxxx0000
+   */
+  telephone?: string;
+  userPermits?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      autoApproveApply: 'autoApproveApply',
+      brief: 'brief',
+      code: 'code',
+      createDeptGroup: 'createDeptGroup',
+      deptCode: 'deptCode',
+      deptPermits: 'deptPermits',
+      deptType: 'deptType',
+      empApplyJoinDept: 'empApplyJoinDept',
+      extension: 'extension',
+      hideDept: 'hideDept',
+      hideSceneConfig: 'hideSceneConfig',
+      name: 'name',
+      order: 'order',
+      outerDept: 'outerDept',
+      outerDeptOnlySelf: 'outerDeptOnlySelf',
+      outerPermitDepts: 'outerPermitDepts',
+      outerPermitUsers: 'outerPermitUsers',
+      outerSceneConfig: 'outerSceneConfig',
+      parentId: 'parentId',
+      sourceIdentifier: 'sourceIdentifier',
+      struId: 'struId',
+      telephone: 'telephone',
+      userPermits: 'userPermits',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      autoApproveApply: 'boolean',
+      brief: 'string',
+      code: 'string',
+      createDeptGroup: 'boolean',
+      deptCode: 'string',
+      deptPermits: { 'type': 'array', 'itemType': 'number' },
+      deptType: 'string',
+      empApplyJoinDept: 'boolean',
+      extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      hideDept: 'boolean',
+      hideSceneConfig: CreateCollegeContactDeptRequestHideSceneConfig,
+      name: 'string',
+      order: 'number',
+      outerDept: 'boolean',
+      outerDeptOnlySelf: 'boolean',
+      outerPermitDepts: { 'type': 'array', 'itemType': 'number' },
+      outerPermitUsers: { 'type': 'array', 'itemType': 'string' },
+      outerSceneConfig: CreateCollegeContactDeptRequestOuterSceneConfig,
+      parentId: 'number',
+      sourceIdentifier: 'string',
+      struId: 'number',
+      telephone: 'string',
+      userPermits: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCollegeContactDeptResponseBody extends $tea.Model {
+  result?: CreateCollegeContactDeptResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: CreateCollegeContactDeptResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCollegeContactDeptResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CreateCollegeContactDeptResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CreateCollegeContactDeptResponseBody,
     };
   }
 
@@ -8390,6 +9099,200 @@ export class GetCollegeAlumniUserInfoResponse extends $tea.Model {
   }
 }
 
+export class GetCollegeContactDeptDetailHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCollegeContactDeptDetailRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 20
+   */
+  deptId?: number;
+  /**
+   * @example
+   * zh_CN
+   */
+  language?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      language: 'language',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      language: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCollegeContactDeptDetailResponseBody extends $tea.Model {
+  result?: GetCollegeContactDeptDetailResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetCollegeContactDeptDetailResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCollegeContactDeptDetailResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetCollegeContactDeptDetailResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetCollegeContactDeptDetailResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCollegeContactStandardStruDeptDetailHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCollegeContactStandardStruDeptDetailRequest extends $tea.Model {
+  /**
+   * @example
+   * zh_CN
+   */
+  language?: string;
+  static names(): { [key: string]: string } {
+    return {
+      language: 'language',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      language: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCollegeContactStandardStruDeptDetailResponseBody extends $tea.Model {
+  result?: GetCollegeContactStandardStruDeptDetailResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: GetCollegeContactStandardStruDeptDetailResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCollegeContactStandardStruDeptDetailResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetCollegeContactStandardStruDeptDetailResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetCollegeContactStandardStruDeptDetailResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetDefaultChildHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -10200,6 +11103,200 @@ export class IsvMetadataQueryResponse extends $tea.Model {
   }
 }
 
+export class ListCollegeContactDeptTypeConfigHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListCollegeContactDeptTypeConfigRequest extends $tea.Model {
+  /**
+   * @example
+   * zh_CN
+   */
+  language?: string;
+  static names(): { [key: string]: string } {
+    return {
+      language: 'language',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      language: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListCollegeContactDeptTypeConfigResponseBody extends $tea.Model {
+  result?: ListCollegeContactDeptTypeConfigResponseBodyResult[];
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': ListCollegeContactDeptTypeConfigResponseBodyResult },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListCollegeContactDeptTypeConfigResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListCollegeContactDeptTypeConfigResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ListCollegeContactDeptTypeConfigResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListCollegeContactSubDeptsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListCollegeContactSubDeptsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 200
+   */
+  deptId?: number;
+  /**
+   * @example
+   * zh_CN
+   */
+  language?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      language: 'language',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      language: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListCollegeContactSubDeptsResponseBody extends $tea.Model {
+  result?: ListCollegeContactSubDeptsResponseBodyResult[];
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': ListCollegeContactSubDeptsResponseBodyResult },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListCollegeContactSubDeptsResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListCollegeContactSubDeptsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ListCollegeContactSubDeptsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListOrderHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -11604,6 +12701,108 @@ export class QueryClassScheduleConfigResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: QueryClassScheduleConfigResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCollegeContactUserDetailHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCollegeContactUserDetailRequest extends $tea.Model {
+  /**
+   * @example
+   * zh_CN
+   */
+  language?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * zhangsan666
+   */
+  userid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      language: 'language',
+      userid: 'userid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      language: 'string',
+      userid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCollegeContactUserDetailResponseBody extends $tea.Model {
+  result?: QueryCollegeContactUserDetailResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: QueryCollegeContactUserDetailResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCollegeContactUserDetailResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryCollegeContactUserDetailResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryCollegeContactUserDetailResponseBody,
     };
   }
 
@@ -15976,6 +17175,785 @@ export class UpdateCollegeAlumniUserInfoResponse extends $tea.Model {
   }
 }
 
+export class UpdateCollegeContactDeptHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeContactDeptRequest extends $tea.Model {
+  autoAddUser?: boolean;
+  autoApproveApply?: boolean;
+  /**
+   * @example
+   * 这是组织单元简介
+   */
+  brief?: string;
+  /**
+   * @example
+   * 20000
+   */
+  code?: string;
+  createDeptGroup?: boolean;
+  /**
+   * @example
+   * dept456
+   */
+  deptCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 200
+   */
+  deptId?: number;
+  deptManagerUseridList?: string[];
+  deptPermits?: number[];
+  /**
+   * @example
+   * contact_class_dept
+   */
+  deptType?: string;
+  empApplyJoinDept?: boolean;
+  extension?: { [key: string]: string };
+  forceUpdateFields?: string[];
+  groupContainHiddenDept?: boolean;
+  groupContainOuterDept?: boolean;
+  groupContainSubDept?: boolean;
+  hideDept?: boolean;
+  hideSceneConfig?: UpdateCollegeContactDeptRequestHideSceneConfig;
+  /**
+   * @example
+   * zh_CN
+   */
+  language?: string;
+  /**
+   * @example
+   * 软件工程
+   */
+  name?: string;
+  /**
+   * @example
+   * 20
+   */
+  order?: number;
+  /**
+   * @example
+   * user234
+   */
+  orgDeptOwner?: string;
+  outerDept?: boolean;
+  outerDeptOnlySelf?: boolean;
+  outerPermitDepts?: number[];
+  outerPermitUsers?: string[];
+  outerSceneConfig?: UpdateCollegeContactDeptRequestOuterSceneConfig;
+  /**
+   * @example
+   * 20
+   */
+  parentId?: number;
+  /**
+   * @example
+   * 软件工程标识
+   */
+  sourceIdentifier?: string;
+  /**
+   * @example
+   * 138xxxx0000
+   */
+  telephone?: string;
+  userPermits?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      autoAddUser: 'autoAddUser',
+      autoApproveApply: 'autoApproveApply',
+      brief: 'brief',
+      code: 'code',
+      createDeptGroup: 'createDeptGroup',
+      deptCode: 'deptCode',
+      deptId: 'deptId',
+      deptManagerUseridList: 'deptManagerUseridList',
+      deptPermits: 'deptPermits',
+      deptType: 'deptType',
+      empApplyJoinDept: 'empApplyJoinDept',
+      extension: 'extension',
+      forceUpdateFields: 'forceUpdateFields',
+      groupContainHiddenDept: 'groupContainHiddenDept',
+      groupContainOuterDept: 'groupContainOuterDept',
+      groupContainSubDept: 'groupContainSubDept',
+      hideDept: 'hideDept',
+      hideSceneConfig: 'hideSceneConfig',
+      language: 'language',
+      name: 'name',
+      order: 'order',
+      orgDeptOwner: 'orgDeptOwner',
+      outerDept: 'outerDept',
+      outerDeptOnlySelf: 'outerDeptOnlySelf',
+      outerPermitDepts: 'outerPermitDepts',
+      outerPermitUsers: 'outerPermitUsers',
+      outerSceneConfig: 'outerSceneConfig',
+      parentId: 'parentId',
+      sourceIdentifier: 'sourceIdentifier',
+      telephone: 'telephone',
+      userPermits: 'userPermits',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      autoAddUser: 'boolean',
+      autoApproveApply: 'boolean',
+      brief: 'string',
+      code: 'string',
+      createDeptGroup: 'boolean',
+      deptCode: 'string',
+      deptId: 'number',
+      deptManagerUseridList: { 'type': 'array', 'itemType': 'string' },
+      deptPermits: { 'type': 'array', 'itemType': 'number' },
+      deptType: 'string',
+      empApplyJoinDept: 'boolean',
+      extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      forceUpdateFields: { 'type': 'array', 'itemType': 'string' },
+      groupContainHiddenDept: 'boolean',
+      groupContainOuterDept: 'boolean',
+      groupContainSubDept: 'boolean',
+      hideDept: 'boolean',
+      hideSceneConfig: UpdateCollegeContactDeptRequestHideSceneConfig,
+      language: 'string',
+      name: 'string',
+      order: 'number',
+      orgDeptOwner: 'string',
+      outerDept: 'boolean',
+      outerDeptOnlySelf: 'boolean',
+      outerPermitDepts: { 'type': 'array', 'itemType': 'number' },
+      outerPermitUsers: { 'type': 'array', 'itemType': 'string' },
+      outerSceneConfig: UpdateCollegeContactDeptRequestOuterSceneConfig,
+      parentId: 'number',
+      sourceIdentifier: 'string',
+      telephone: 'string',
+      userPermits: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeContactDeptResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeContactDeptResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateCollegeContactDeptResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateCollegeContactDeptResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeContactExclusiveHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeContactExclusiveRequest extends $tea.Model {
+  /**
+   * @example
+   * @lALPDfmVUw19YdrNA-jNA-g
+   */
+  avatarMediaId?: string;
+  deptIdList?: number[];
+  deptOrderList?: UpdateCollegeContactExclusiveRequestDeptOrderList[];
+  deptTitleList?: UpdateCollegeContactExclusiveRequestDeptTitleList[];
+  /**
+   * @example
+   * test@xxx.com
+   */
+  email?: string;
+  /**
+   * @example
+   * college_student
+   */
+  empType?: string;
+  extension?: { [key: string]: string };
+  /**
+   * @example
+   * manager_userid
+   */
+  forceUpdateFields?: string;
+  hideMobile?: boolean;
+  /**
+   * @example
+   * 1597573616828
+   */
+  hiredDate?: number;
+  /**
+   * @example
+   * 666666
+   */
+  jobNumber?: string;
+  /**
+   * @example
+   * zh_CN
+   */
+  language?: string;
+  /**
+   * @example
+   * studentNo
+   */
+  loginIdType?: string;
+  /**
+   * @example
+   * 123456
+   */
+  mainDeptId?: number;
+  /**
+   * @example
+   * 001
+   */
+  managerUserid?: string;
+  /**
+   * @example
+   * 185xxxx8888
+   */
+  mobile?: string;
+  /**
+   * @example
+   * 张三
+   */
+  name?: string;
+  /**
+   * @example
+   * 昵称
+   */
+  nickname?: string;
+  /**
+   * @example
+   * test@xxx.com
+   */
+  orgEmail?: string;
+  /**
+   * @example
+   * profession
+   */
+  orgEmailType?: string;
+  /**
+   * @example
+   * 备注
+   */
+  remark?: string;
+  seniorMode?: boolean;
+  /**
+   * @example
+   * 010-86123456-2345
+   */
+  telephone?: string;
+  /**
+   * @example
+   * 学生会主席
+   */
+  title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * zhangsan666
+   */
+  userid?: string;
+  /**
+   * @example
+   * 阿里巴巴c区
+   */
+  workPlace?: string;
+  static names(): { [key: string]: string } {
+    return {
+      avatarMediaId: 'avatarMediaId',
+      deptIdList: 'deptIdList',
+      deptOrderList: 'deptOrderList',
+      deptTitleList: 'deptTitleList',
+      email: 'email',
+      empType: 'empType',
+      extension: 'extension',
+      forceUpdateFields: 'forceUpdateFields',
+      hideMobile: 'hideMobile',
+      hiredDate: 'hiredDate',
+      jobNumber: 'jobNumber',
+      language: 'language',
+      loginIdType: 'loginIdType',
+      mainDeptId: 'mainDeptId',
+      managerUserid: 'managerUserid',
+      mobile: 'mobile',
+      name: 'name',
+      nickname: 'nickname',
+      orgEmail: 'orgEmail',
+      orgEmailType: 'orgEmailType',
+      remark: 'remark',
+      seniorMode: 'seniorMode',
+      telephone: 'telephone',
+      title: 'title',
+      userid: 'userid',
+      workPlace: 'workPlace',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      avatarMediaId: 'string',
+      deptIdList: { 'type': 'array', 'itemType': 'number' },
+      deptOrderList: { 'type': 'array', 'itemType': UpdateCollegeContactExclusiveRequestDeptOrderList },
+      deptTitleList: { 'type': 'array', 'itemType': UpdateCollegeContactExclusiveRequestDeptTitleList },
+      email: 'string',
+      empType: 'string',
+      extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      forceUpdateFields: 'string',
+      hideMobile: 'boolean',
+      hiredDate: 'number',
+      jobNumber: 'string',
+      language: 'string',
+      loginIdType: 'string',
+      mainDeptId: 'number',
+      managerUserid: 'string',
+      mobile: 'string',
+      name: 'string',
+      nickname: 'string',
+      orgEmail: 'string',
+      orgEmailType: 'string',
+      remark: 'string',
+      seniorMode: 'boolean',
+      telephone: 'string',
+      title: 'string',
+      userid: 'string',
+      workPlace: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeContactExclusiveResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeContactExclusiveResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateCollegeContactExclusiveResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateCollegeContactExclusiveResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeContactUserHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeContactUserRequest extends $tea.Model {
+  deptIdList?: number[];
+  deptOrderList?: UpdateCollegeContactUserRequestDeptOrderList[];
+  deptTitleList?: UpdateCollegeContactUserRequestDeptTitleList[];
+  /**
+   * @example
+   * test@xxx.com
+   */
+  email?: string;
+  /**
+   * @example
+   * college_student
+   */
+  empType?: string;
+  extension?: { [key: string]: string };
+  /**
+   * @example
+   * manager_userid
+   */
+  forceUpdateFields?: string;
+  hideMobile?: boolean;
+  /**
+   * @example
+   * 1597573616828
+   */
+  hiredDate?: number;
+  /**
+   * @example
+   * 666666
+   */
+  jobNumber?: string;
+  /**
+   * @example
+   * zh_CN
+   */
+  language?: string;
+  /**
+   * @example
+   * 123456
+   */
+  mainDeptId?: number;
+  /**
+   * @example
+   * 001
+   */
+  managerUserid?: string;
+  /**
+   * @example
+   * 张三
+   */
+  name?: string;
+  /**
+   * @example
+   * test@xxx.com
+   */
+  orgEmail?: string;
+  /**
+   * @example
+   * 备注
+   */
+  remark?: string;
+  seniorMode?: boolean;
+  /**
+   * @example
+   * 010-86123456-2345
+   */
+  telephone?: string;
+  /**
+   * @example
+   * 学工处处长
+   */
+  title?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * zhangsan666
+   */
+  userid?: string;
+  /**
+   * @example
+   * 阿里巴巴c区
+   */
+  workPlace?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptIdList: 'deptIdList',
+      deptOrderList: 'deptOrderList',
+      deptTitleList: 'deptTitleList',
+      email: 'email',
+      empType: 'empType',
+      extension: 'extension',
+      forceUpdateFields: 'forceUpdateFields',
+      hideMobile: 'hideMobile',
+      hiredDate: 'hiredDate',
+      jobNumber: 'jobNumber',
+      language: 'language',
+      mainDeptId: 'mainDeptId',
+      managerUserid: 'managerUserid',
+      name: 'name',
+      orgEmail: 'orgEmail',
+      remark: 'remark',
+      seniorMode: 'seniorMode',
+      telephone: 'telephone',
+      title: 'title',
+      userid: 'userid',
+      workPlace: 'workPlace',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptIdList: { 'type': 'array', 'itemType': 'number' },
+      deptOrderList: { 'type': 'array', 'itemType': UpdateCollegeContactUserRequestDeptOrderList },
+      deptTitleList: { 'type': 'array', 'itemType': UpdateCollegeContactUserRequestDeptTitleList },
+      email: 'string',
+      empType: 'string',
+      extension: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      forceUpdateFields: 'string',
+      hideMobile: 'boolean',
+      hiredDate: 'number',
+      jobNumber: 'string',
+      language: 'string',
+      mainDeptId: 'number',
+      managerUserid: 'string',
+      name: 'string',
+      orgEmail: 'string',
+      remark: 'string',
+      seniorMode: 'boolean',
+      telephone: 'string',
+      title: 'string',
+      userid: 'string',
+      workPlace: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeContactUserResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeContactUserResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateCollegeContactUserResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateCollegeContactUserResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeUserEmpTypeHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeUserEmpTypeRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * college_student
+   */
+  empType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * zhangsan666
+   */
+  userid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      empType: 'empType',
+      userid: 'userid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      empType: 'string',
+      userid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeUserEmpTypeResponseBody extends $tea.Model {
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeUserEmpTypeResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: UpdateCollegeUserEmpTypeResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: UpdateCollegeUserEmpTypeResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateCoursesOfClassHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -17171,6 +19149,176 @@ export class AddCollegeAlumniUserInfoResponseBodyResult extends $tea.Model {
   }
 }
 
+export class AddCollegeContactExclusiveRequestDeptOrderList extends $tea.Model {
+  /**
+   * @example
+   * 123456
+   */
+  deptId?: number;
+  /**
+   * @example
+   * 1
+   */
+  order?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      order: 'order',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      order: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeContactExclusiveRequestDeptTitleList extends $tea.Model {
+  /**
+   * @example
+   * 123456
+   */
+  deptId?: number;
+  /**
+   * @example
+   * 学工处处长
+   */
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeContactExclusiveResponseBodyResult extends $tea.Model {
+  createResult?: number;
+  unionId?: string;
+  userid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      createResult: 'createResult',
+      unionId: 'unionId',
+      userid: 'userid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      createResult: 'number',
+      unionId: 'string',
+      userid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeContactUserRequestDeptOrderList extends $tea.Model {
+  /**
+   * @example
+   * 123456
+   */
+  deptId?: number;
+  /**
+   * @example
+   * 1
+   */
+  order?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      order: 'order',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      order: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeContactUserRequestDeptTitleList extends $tea.Model {
+  /**
+   * @example
+   * 123456
+   */
+  deptId?: number;
+  /**
+   * @example
+   * 学工处处长
+   */
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class AddCollegeContactUserResponseBodyResult extends $tea.Model {
+  createResult?: number;
+  unionId?: string;
+  userid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      createResult: 'createResult',
+      unionId: 'unionId',
+      userid: 'userid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      createResult: 'number',
+      unionId: 'string',
+      userid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class BatchCreateRequestDataCardRuleItemParamList extends $tea.Model {
   cardRuleAttr?: string;
   cardTaskCode?: string;
@@ -18314,6 +20462,91 @@ export class CreateAppOrderRequestDetailList extends $tea.Model {
       goodsName: 'string',
       goodsPrice: 'number',
       goodsQuantity: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCollegeContactDeptRequestHideSceneConfig extends $tea.Model {
+  active?: boolean;
+  chatboxSubtitle?: boolean;
+  nodeList?: boolean;
+  profile?: boolean;
+  search?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+      chatboxSubtitle: 'chatboxSubtitle',
+      nodeList: 'nodeList',
+      profile: 'profile',
+      search: 'search',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+      chatboxSubtitle: 'boolean',
+      nodeList: 'boolean',
+      profile: 'boolean',
+      search: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCollegeContactDeptRequestOuterSceneConfig extends $tea.Model {
+  active?: boolean;
+  chatboxSubtitle?: boolean;
+  nodeList?: boolean;
+  profile?: boolean;
+  search?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+      chatboxSubtitle: 'chatboxSubtitle',
+      nodeList: 'nodeList',
+      profile: 'profile',
+      search: 'search',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+      chatboxSubtitle: 'boolean',
+      nodeList: 'boolean',
+      profile: 'boolean',
+      search: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CreateCollegeContactDeptResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 20
+   */
+  deptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
     };
   }
 
@@ -19684,6 +21917,271 @@ export class GetCollegeAlumniUserInfoResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetCollegeContactDeptDetailResponseBodyResultHideSceneConfig extends $tea.Model {
+  active?: boolean;
+  chatboxSubtitle?: boolean;
+  nodeList?: boolean;
+  profile?: boolean;
+  search?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+      chatboxSubtitle: 'chatboxSubtitle',
+      nodeList: 'nodeList',
+      profile: 'profile',
+      search: 'search',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+      chatboxSubtitle: 'boolean',
+      nodeList: 'boolean',
+      profile: 'boolean',
+      search: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCollegeContactDeptDetailResponseBodyResultOuterSceneConfig extends $tea.Model {
+  active?: boolean;
+  chatboxSubtitle?: boolean;
+  nodeList?: boolean;
+  profile?: boolean;
+  search?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+      chatboxSubtitle: 'chatboxSubtitle',
+      nodeList: 'nodeList',
+      profile: 'profile',
+      search: 'search',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+      chatboxSubtitle: 'boolean',
+      nodeList: 'boolean',
+      profile: 'boolean',
+      search: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCollegeContactDeptDetailResponseBodyResult extends $tea.Model {
+  autoAddUser?: boolean;
+  autoApproveApply?: boolean;
+  /**
+   * @example
+   * 这是简介
+   */
+  brief?: string;
+  /**
+   * @example
+   * 10000
+   */
+  code?: string;
+  createDeptGroup?: boolean;
+  /**
+   * @example
+   * dept456
+   */
+  deptCode?: string;
+  /**
+   * @example
+   * chat234
+   */
+  deptGroupChatId?: string;
+  /**
+   * @example
+   * 200
+   */
+  deptId?: number;
+  deptManagerUseridList?: string[];
+  deptPermits?: number[];
+  /**
+   * @example
+   * contact_class_dept
+   */
+  deptType?: string;
+  empApplyJoinDept?: boolean;
+  /**
+   * @example
+   * {}
+   */
+  extension?: string;
+  fromUnionOrg?: boolean;
+  groupContainSubDept?: boolean;
+  hideDept?: boolean;
+  hideSceneConfig?: GetCollegeContactDeptDetailResponseBodyResultHideSceneConfig;
+  /**
+   * @example
+   * 软件工程
+   */
+  name?: string;
+  /**
+   * @example
+   * 200
+   */
+  order?: number;
+  /**
+   * @example
+   * user345
+   */
+  orgDeptOwner?: string;
+  outerDept?: boolean;
+  outerPermitDepts?: number[];
+  outerPermitUsers?: string[];
+  outerSceneConfig?: GetCollegeContactDeptDetailResponseBodyResultOuterSceneConfig;
+  /**
+   * @example
+   * 200
+   */
+  parentId?: number;
+  /**
+   * @example
+   * 软件工程标识
+   */
+  sourceIdentifier?: string;
+  /**
+   * @example
+   * 200
+   */
+  struId?: number;
+  /**
+   * @example
+   * campus
+   */
+  tags?: string;
+  /**
+   * @example
+   * 138xxxx0000
+   */
+  telephone?: string;
+  userPermits?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      autoAddUser: 'autoAddUser',
+      autoApproveApply: 'autoApproveApply',
+      brief: 'brief',
+      code: 'code',
+      createDeptGroup: 'createDeptGroup',
+      deptCode: 'deptCode',
+      deptGroupChatId: 'deptGroupChatId',
+      deptId: 'deptId',
+      deptManagerUseridList: 'deptManagerUseridList',
+      deptPermits: 'deptPermits',
+      deptType: 'deptType',
+      empApplyJoinDept: 'empApplyJoinDept',
+      extension: 'extension',
+      fromUnionOrg: 'fromUnionOrg',
+      groupContainSubDept: 'groupContainSubDept',
+      hideDept: 'hideDept',
+      hideSceneConfig: 'hideSceneConfig',
+      name: 'name',
+      order: 'order',
+      orgDeptOwner: 'orgDeptOwner',
+      outerDept: 'outerDept',
+      outerPermitDepts: 'outerPermitDepts',
+      outerPermitUsers: 'outerPermitUsers',
+      outerSceneConfig: 'outerSceneConfig',
+      parentId: 'parentId',
+      sourceIdentifier: 'sourceIdentifier',
+      struId: 'struId',
+      tags: 'tags',
+      telephone: 'telephone',
+      userPermits: 'userPermits',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      autoAddUser: 'boolean',
+      autoApproveApply: 'boolean',
+      brief: 'string',
+      code: 'string',
+      createDeptGroup: 'boolean',
+      deptCode: 'string',
+      deptGroupChatId: 'string',
+      deptId: 'number',
+      deptManagerUseridList: { 'type': 'array', 'itemType': 'string' },
+      deptPermits: { 'type': 'array', 'itemType': 'number' },
+      deptType: 'string',
+      empApplyJoinDept: 'boolean',
+      extension: 'string',
+      fromUnionOrg: 'boolean',
+      groupContainSubDept: 'boolean',
+      hideDept: 'boolean',
+      hideSceneConfig: GetCollegeContactDeptDetailResponseBodyResultHideSceneConfig,
+      name: 'string',
+      order: 'number',
+      orgDeptOwner: 'string',
+      outerDept: 'boolean',
+      outerPermitDepts: { 'type': 'array', 'itemType': 'number' },
+      outerPermitUsers: { 'type': 'array', 'itemType': 'string' },
+      outerSceneConfig: GetCollegeContactDeptDetailResponseBodyResultOuterSceneConfig,
+      parentId: 'number',
+      sourceIdentifier: 'string',
+      struId: 'number',
+      tags: 'string',
+      telephone: 'string',
+      userPermits: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetCollegeContactStandardStruDeptDetailResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * 456
+   */
+  struId?: number;
+  /**
+   * @example
+   * 890
+   */
+  studentDeptId?: number;
+  /**
+   * @example
+   * 678
+   */
+  teacherDeptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      struId: 'struId',
+      studentDeptId: 'studentDeptId',
+      teacherDeptId: 'teacherDeptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      struId: 'number',
+      studentDeptId: 'number',
+      teacherDeptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetDefaultChildResponseBodyBindStudents extends $tea.Model {
   classId?: number;
   /**
@@ -20981,6 +23479,127 @@ export class IsvMetadataQueryResponseBodyResult extends $tea.Model {
   }
 }
 
+export class ListCollegeContactDeptTypeConfigResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * contact_class_dept
+   */
+  deptType?: string;
+  /**
+   * @example
+   * 班级
+   */
+  name?: string;
+  userDef?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      deptType: 'deptType',
+      name: 'name',
+      userDef: 'userDef',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptType: 'string',
+      name: 'string',
+      userDef: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListCollegeContactSubDeptsResponseBodyResult extends $tea.Model {
+  autoAddUser?: boolean;
+  createDeptGroup?: boolean;
+  /**
+   * @example
+   * dept456
+   */
+  deptCode?: string;
+  /**
+   * @example
+   * 456
+   */
+  deptId?: number;
+  /**
+   * @example
+   * contact_class_dept
+   */
+  deptType?: string;
+  /**
+   * @example
+   * {}
+   */
+  extension?: string;
+  fromUnionOrg?: boolean;
+  /**
+   * @example
+   * 软件工程
+   */
+  name?: string;
+  /**
+   * @example
+   * 200
+   */
+  parentId?: number;
+  /**
+   * @example
+   * 软件工程标识
+   */
+  sourceIdentifier?: string;
+  /**
+   * @example
+   * 200
+   */
+  struId?: number;
+  /**
+   * @example
+   * campus
+   */
+  tags?: string;
+  static names(): { [key: string]: string } {
+    return {
+      autoAddUser: 'autoAddUser',
+      createDeptGroup: 'createDeptGroup',
+      deptCode: 'deptCode',
+      deptId: 'deptId',
+      deptType: 'deptType',
+      extension: 'extension',
+      fromUnionOrg: 'fromUnionOrg',
+      name: 'name',
+      parentId: 'parentId',
+      sourceIdentifier: 'sourceIdentifier',
+      struId: 'struId',
+      tags: 'tags',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      autoAddUser: 'boolean',
+      createDeptGroup: 'boolean',
+      deptCode: 'string',
+      deptId: 'number',
+      deptType: 'string',
+      extension: 'string',
+      fromUnionOrg: 'boolean',
+      name: 'string',
+      parentId: 'number',
+      sourceIdentifier: 'string',
+      struId: 'number',
+      tags: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListOrderResponseBodyList extends $tea.Model {
   /**
    * @remarks
@@ -22204,6 +24823,432 @@ export class QueryClassScheduleConfigResponseBodyResult extends $tea.Model {
   }
 }
 
+export class QueryCollegeContactUserDetailResponseBodyResultDeptOrderList extends $tea.Model {
+  /**
+   * @example
+   * 123456
+   */
+  deptId?: number;
+  /**
+   * @example
+   * 1
+   */
+  order?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      order: 'order',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      order: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCollegeContactUserDetailResponseBodyResultDeptTypeSet extends $tea.Model {
+  /**
+   * @example
+   * 123456
+   */
+  deptId?: number;
+  /**
+   * @example
+   * 土木202班
+   */
+  deptName?: string;
+  /**
+   * @example
+   * stru_standard_dept
+   */
+  deptStructType?: string;
+  /**
+   * @example
+   * contact_class_dept
+   */
+  deptType?: string;
+  /**
+   * @example
+   * 10000
+   */
+  structDeptId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      deptName: 'deptName',
+      deptStructType: 'deptStructType',
+      deptType: 'deptType',
+      structDeptId: 'structDeptId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      deptName: 'string',
+      deptStructType: 'string',
+      deptType: 'string',
+      structDeptId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCollegeContactUserDetailResponseBodyResultLeaderInDept extends $tea.Model {
+  /**
+   * @example
+   * 123456
+   */
+  deptId?: number;
+  leader?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      leader: 'leader',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      leader: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCollegeContactUserDetailResponseBodyResultRoleList extends $tea.Model {
+  /**
+   * @example
+   * 职务
+   */
+  groupName?: string;
+  /**
+   * @example
+   * 100
+   */
+  id?: number;
+  /**
+   * @example
+   * 宿舍长
+   */
+  name?: string;
+  static names(): { [key: string]: string } {
+    return {
+      groupName: 'groupName',
+      id: 'id',
+      name: 'name',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      groupName: 'string',
+      id: 'number',
+      name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCollegeContactUserDetailResponseBodyResultUnionEmpExtUnionEmpMapList extends $tea.Model {
+  /**
+   * @example
+   * dingxxx
+   */
+  corpId?: string;
+  /**
+   * @example
+   * 5000
+   */
+  userid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      userid: 'userid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      userid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCollegeContactUserDetailResponseBodyResultUnionEmpExt extends $tea.Model {
+  /**
+   * @example
+   * dingxxx
+   */
+  corpId?: string;
+  unionEmpMapList?: QueryCollegeContactUserDetailResponseBodyResultUnionEmpExtUnionEmpMapList[];
+  /**
+   * @example
+   * 500
+   */
+  userid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      unionEmpMapList: 'unionEmpMapList',
+      userid: 'userid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      unionEmpMapList: { 'type': 'array', 'itemType': QueryCollegeContactUserDetailResponseBodyResultUnionEmpExtUnionEmpMapList },
+      userid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryCollegeContactUserDetailResponseBodyResult extends $tea.Model {
+  active?: boolean;
+  admin?: boolean;
+  /**
+   * @example
+   * xxxxxx
+   */
+  avatar?: string;
+  boss?: boolean;
+  deptIdList?: number[];
+  deptOrderList?: QueryCollegeContactUserDetailResponseBodyResultDeptOrderList[];
+  deptTypeSet?: QueryCollegeContactUserDetailResponseBodyResultDeptTypeSet[];
+  /**
+   * @example
+   * test@xxx.com
+   */
+  email?: string;
+  /**
+   * @example
+   * college_student
+   */
+  empType?: string;
+  exclusiveAccount?: boolean;
+  exclusiveAccountCorpId?: string;
+  /**
+   * @example
+   * 组织名称
+   */
+  exclusiveAccountCorpName?: string;
+  /**
+   * @example
+   * dingtalk
+   */
+  exclusiveAccountType?: string;
+  /**
+   * @example
+   * {"学号":"12122294","在校状态":"新生","学生类别":"本科生","考生号":"999888"}
+   */
+  extension?: string;
+  hideMobile?: boolean;
+  /**
+   * @example
+   * 1597573616828
+   */
+  hiredDate?: number;
+  /**
+   * @example
+   * 12122294
+   */
+  jobNumber?: string;
+  leaderInDept?: QueryCollegeContactUserDetailResponseBodyResultLeaderInDept[];
+  /**
+   * @example
+   * 12122294
+   */
+  loginId?: string;
+  /**
+   * @example
+   * studentNo
+   */
+  loginType?: string;
+  /**
+   * @example
+   * 123456
+   */
+  mainDeptId?: number;
+  /**
+   * @example
+   * 111111
+   */
+  managerUserid?: string;
+  /**
+   * @example
+   * 188****4567
+   */
+  mobile?: string;
+  /**
+   * @example
+   * 张三
+   */
+  name?: string;
+  /**
+   * @example
+   * test@xxx.com
+   */
+  orgEmail?: string;
+  /**
+   * @example
+   * profession
+   */
+  orgEmailType?: string;
+  realAuthed?: boolean;
+  /**
+   * @example
+   * 这是一个备注
+   */
+  remark?: string;
+  roleList?: QueryCollegeContactUserDetailResponseBodyResultRoleList[];
+  senior?: boolean;
+  /**
+   * @example
+   * 86
+   */
+  stateCode?: string;
+  /**
+   * @example
+   * 010-86123456-2345
+   */
+  telephone?: string;
+  /**
+   * @example
+   * 寝室长
+   */
+  title?: string;
+  unionEmpExt?: QueryCollegeContactUserDetailResponseBodyResultUnionEmpExt;
+  /**
+   * @example
+   * z21HjQliSzpw0YWCNxmii6u2Os62cZ62iSZ
+   */
+  unionId?: string;
+  /**
+   * @example
+   * zhangsan666
+   */
+  userid?: string;
+  /**
+   * @example
+   * 勤奋楼
+   */
+  workPlace?: string;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+      admin: 'admin',
+      avatar: 'avatar',
+      boss: 'boss',
+      deptIdList: 'deptIdList',
+      deptOrderList: 'deptOrderList',
+      deptTypeSet: 'deptTypeSet',
+      email: 'email',
+      empType: 'empType',
+      exclusiveAccount: 'exclusiveAccount',
+      exclusiveAccountCorpId: 'exclusiveAccountCorpId',
+      exclusiveAccountCorpName: 'exclusiveAccountCorpName',
+      exclusiveAccountType: 'exclusiveAccountType',
+      extension: 'extension',
+      hideMobile: 'hideMobile',
+      hiredDate: 'hiredDate',
+      jobNumber: 'jobNumber',
+      leaderInDept: 'leaderInDept',
+      loginId: 'loginId',
+      loginType: 'loginType',
+      mainDeptId: 'mainDeptId',
+      managerUserid: 'managerUserid',
+      mobile: 'mobile',
+      name: 'name',
+      orgEmail: 'orgEmail',
+      orgEmailType: 'orgEmailType',
+      realAuthed: 'realAuthed',
+      remark: 'remark',
+      roleList: 'roleList',
+      senior: 'senior',
+      stateCode: 'stateCode',
+      telephone: 'telephone',
+      title: 'title',
+      unionEmpExt: 'unionEmpExt',
+      unionId: 'unionId',
+      userid: 'userid',
+      workPlace: 'workPlace',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+      admin: 'boolean',
+      avatar: 'string',
+      boss: 'boolean',
+      deptIdList: { 'type': 'array', 'itemType': 'number' },
+      deptOrderList: { 'type': 'array', 'itemType': QueryCollegeContactUserDetailResponseBodyResultDeptOrderList },
+      deptTypeSet: { 'type': 'array', 'itemType': QueryCollegeContactUserDetailResponseBodyResultDeptTypeSet },
+      email: 'string',
+      empType: 'string',
+      exclusiveAccount: 'boolean',
+      exclusiveAccountCorpId: 'string',
+      exclusiveAccountCorpName: 'string',
+      exclusiveAccountType: 'string',
+      extension: 'string',
+      hideMobile: 'boolean',
+      hiredDate: 'number',
+      jobNumber: 'string',
+      leaderInDept: { 'type': 'array', 'itemType': QueryCollegeContactUserDetailResponseBodyResultLeaderInDept },
+      loginId: 'string',
+      loginType: 'string',
+      mainDeptId: 'number',
+      managerUserid: 'string',
+      mobile: 'string',
+      name: 'string',
+      orgEmail: 'string',
+      orgEmailType: 'string',
+      realAuthed: 'boolean',
+      remark: 'string',
+      roleList: { 'type': 'array', 'itemType': QueryCollegeContactUserDetailResponseBodyResultRoleList },
+      senior: 'boolean',
+      stateCode: 'string',
+      telephone: 'string',
+      title: 'string',
+      unionEmpExt: QueryCollegeContactUserDetailResponseBodyResultUnionEmpExt,
+      unionId: 'string',
+      userid: 'string',
+      workPlace: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryDeviceListByCorpIdResponseBodyResultList extends $tea.Model {
   /**
    * @remarks
@@ -23398,6 +26443,188 @@ export class StartCoursePrepareResponseBodyUniversityCourseCommonResponse extend
   }
 }
 
+export class UpdateCollegeContactDeptRequestHideSceneConfig extends $tea.Model {
+  active?: boolean;
+  chatboxSubtitle?: boolean;
+  nodeList?: boolean;
+  profile?: boolean;
+  search?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+      chatboxSubtitle: 'chatboxSubtitle',
+      nodeList: 'nodeList',
+      profile: 'profile',
+      search: 'search',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+      chatboxSubtitle: 'boolean',
+      nodeList: 'boolean',
+      profile: 'boolean',
+      search: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeContactDeptRequestOuterSceneConfig extends $tea.Model {
+  active?: boolean;
+  chatboxSubtitle?: boolean;
+  nodeList?: boolean;
+  profile?: boolean;
+  search?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      active: 'active',
+      chatboxSubtitle: 'chatboxSubtitle',
+      nodeList: 'nodeList',
+      profile: 'profile',
+      search: 'search',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      active: 'boolean',
+      chatboxSubtitle: 'boolean',
+      nodeList: 'boolean',
+      profile: 'boolean',
+      search: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeContactExclusiveRequestDeptOrderList extends $tea.Model {
+  /**
+   * @example
+   * 123456
+   */
+  deptId?: number;
+  /**
+   * @example
+   * 1
+   */
+  order?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      order: 'order',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      order: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeContactExclusiveRequestDeptTitleList extends $tea.Model {
+  /**
+   * @example
+   * 123456
+   */
+  deptId?: number;
+  /**
+   * @example
+   * 学工处处长
+   */
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeContactUserRequestDeptOrderList extends $tea.Model {
+  /**
+   * @example
+   * 123456
+   */
+  deptId?: number;
+  /**
+   * @example
+   * 1
+   */
+  order?: number;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      order: 'order',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      order: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class UpdateCollegeContactUserRequestDeptTitleList extends $tea.Model {
+  /**
+   * @example
+   * 123456
+   */
+  deptId?: number;
+  /**
+   * @example
+   * 学工处处长
+   */
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'number',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class UpdateCoursesOfClassRequestCoursesDateModel extends $tea.Model {
   /**
    * @remarks
@@ -24160,6 +27387,306 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new AddCollegeAlumniUserInfoHeaders({ });
     return await this.addCollegeAlumniUserInfoWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 创建高校账号用户
+   * 
+   * @param request - AddCollegeContactExclusiveRequest
+   * @param headers - AddCollegeContactExclusiveHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddCollegeContactExclusiveResponse
+   */
+  async addCollegeContactExclusiveWithOptions(request: AddCollegeContactExclusiveRequest, headers: AddCollegeContactExclusiveHeaders, runtime: $Util.RuntimeOptions): Promise<AddCollegeContactExclusiveResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.avatarMediaId)) {
+      body["avatarMediaId"] = request.avatarMediaId;
+    }
+
+    if (!Util.isUnset(request.deptIdList)) {
+      body["deptIdList"] = request.deptIdList;
+    }
+
+    if (!Util.isUnset(request.deptOrderList)) {
+      body["deptOrderList"] = request.deptOrderList;
+    }
+
+    if (!Util.isUnset(request.deptTitleList)) {
+      body["deptTitleList"] = request.deptTitleList;
+    }
+
+    if (!Util.isUnset(request.email)) {
+      body["email"] = request.email;
+    }
+
+    if (!Util.isUnset(request.empType)) {
+      body["empType"] = request.empType;
+    }
+
+    if (!Util.isUnset(request.exclusiveAccount)) {
+      body["exclusiveAccount"] = request.exclusiveAccount;
+    }
+
+    if (!Util.isUnset(request.exclusiveAccountType)) {
+      body["exclusiveAccountType"] = request.exclusiveAccountType;
+    }
+
+    if (!Util.isUnset(request.extension)) {
+      body["extension"] = request.extension;
+    }
+
+    if (!Util.isUnset(request.hiredDate)) {
+      body["hiredDate"] = request.hiredDate;
+    }
+
+    if (!Util.isUnset(request.initPassword)) {
+      body["initPassword"] = request.initPassword;
+    }
+
+    if (!Util.isUnset(request.jobNumber)) {
+      body["jobNumber"] = request.jobNumber;
+    }
+
+    if (!Util.isUnset(request.loginIdType)) {
+      body["loginIdType"] = request.loginIdType;
+    }
+
+    if (!Util.isUnset(request.mainDeptId)) {
+      body["mainDeptId"] = request.mainDeptId;
+    }
+
+    if (!Util.isUnset(request.managerUserid)) {
+      body["managerUserid"] = request.managerUserid;
+    }
+
+    if (!Util.isUnset(request.mobile)) {
+      body["mobile"] = request.mobile;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.nickname)) {
+      body["nickname"] = request.nickname;
+    }
+
+    if (!Util.isUnset(request.orgEmail)) {
+      body["orgEmail"] = request.orgEmail;
+    }
+
+    if (!Util.isUnset(request.orgEmailType)) {
+      body["orgEmailType"] = request.orgEmailType;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      body["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.sendActiveSms)) {
+      body["sendActiveSms"] = request.sendActiveSms;
+    }
+
+    if (!Util.isUnset(request.seniorMode)) {
+      body["seniorMode"] = request.seniorMode;
+    }
+
+    if (!Util.isUnset(request.telephone)) {
+      body["telephone"] = request.telephone;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.userid)) {
+      body["userid"] = request.userid;
+    }
+
+    if (!Util.isUnset(request.workPlace)) {
+      body["workPlace"] = request.workPlace;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AddCollegeContactExclusive",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/collegeContact/exclusiveAccounts/users`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddCollegeContactExclusiveResponse>(await this.execute(params, req, runtime), new AddCollegeContactExclusiveResponse({}));
+  }
+
+  /**
+   * 创建高校账号用户
+   * 
+   * @param request - AddCollegeContactExclusiveRequest
+   * @returns AddCollegeContactExclusiveResponse
+   */
+  async addCollegeContactExclusive(request: AddCollegeContactExclusiveRequest): Promise<AddCollegeContactExclusiveResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddCollegeContactExclusiveHeaders({ });
+    return await this.addCollegeContactExclusiveWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 创建个人账号用户
+   * 
+   * @param request - AddCollegeContactUserRequest
+   * @param headers - AddCollegeContactUserHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns AddCollegeContactUserResponse
+   */
+  async addCollegeContactUserWithOptions(request: AddCollegeContactUserRequest, headers: AddCollegeContactUserHeaders, runtime: $Util.RuntimeOptions): Promise<AddCollegeContactUserResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptIdList)) {
+      body["deptIdList"] = request.deptIdList;
+    }
+
+    if (!Util.isUnset(request.deptOrderList)) {
+      body["deptOrderList"] = request.deptOrderList;
+    }
+
+    if (!Util.isUnset(request.deptTitleList)) {
+      body["deptTitleList"] = request.deptTitleList;
+    }
+
+    if (!Util.isUnset(request.email)) {
+      body["email"] = request.email;
+    }
+
+    if (!Util.isUnset(request.empType)) {
+      body["empType"] = request.empType;
+    }
+
+    if (!Util.isUnset(request.extension)) {
+      body["extension"] = request.extension;
+    }
+
+    if (!Util.isUnset(request.hideMobile)) {
+      body["hideMobile"] = request.hideMobile;
+    }
+
+    if (!Util.isUnset(request.hiredDate)) {
+      body["hiredDate"] = request.hiredDate;
+    }
+
+    if (!Util.isUnset(request.jobNumber)) {
+      body["jobNumber"] = request.jobNumber;
+    }
+
+    if (!Util.isUnset(request.loginEmail)) {
+      body["loginEmail"] = request.loginEmail;
+    }
+
+    if (!Util.isUnset(request.mainDeptId)) {
+      body["mainDeptId"] = request.mainDeptId;
+    }
+
+    if (!Util.isUnset(request.managerUserid)) {
+      body["managerUserid"] = request.managerUserid;
+    }
+
+    if (!Util.isUnset(request.mobile)) {
+      body["mobile"] = request.mobile;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.orgEmail)) {
+      body["orgEmail"] = request.orgEmail;
+    }
+
+    if (!Util.isUnset(request.orgEmailType)) {
+      body["orgEmailType"] = request.orgEmailType;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      body["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.sendActiveSms)) {
+      body["sendActiveSms"] = request.sendActiveSms;
+    }
+
+    if (!Util.isUnset(request.seniorMode)) {
+      body["seniorMode"] = request.seniorMode;
+    }
+
+    if (!Util.isUnset(request.telephone)) {
+      body["telephone"] = request.telephone;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.userid)) {
+      body["userid"] = request.userid;
+    }
+
+    if (!Util.isUnset(request.workPlace)) {
+      body["workPlace"] = request.workPlace;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "AddCollegeContactUser",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/collegeContact/personalAccounts/users`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<AddCollegeContactUserResponse>(await this.execute(params, req, runtime), new AddCollegeContactUserResponse({}));
+  }
+
+  /**
+   * 创建个人账号用户
+   * 
+   * @param request - AddCollegeContactUserRequest
+   * @returns AddCollegeContactUserResponse
+   */
+  async addCollegeContactUser(request: AddCollegeContactUserRequest): Promise<AddCollegeContactUserResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new AddCollegeContactUserHeaders({ });
+    return await this.addCollegeContactUserWithOptions(request, headers, runtime);
   }
 
   /**
@@ -25574,6 +29101,148 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CreateAppOrderHeaders({ });
     return await this.createAppOrderWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 创建高校通讯录组织单元
+   * 
+   * @param request - CreateCollegeContactDeptRequest
+   * @param headers - CreateCollegeContactDeptHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CreateCollegeContactDeptResponse
+   */
+  async createCollegeContactDeptWithOptions(request: CreateCollegeContactDeptRequest, headers: CreateCollegeContactDeptHeaders, runtime: $Util.RuntimeOptions): Promise<CreateCollegeContactDeptResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.autoApproveApply)) {
+      body["autoApproveApply"] = request.autoApproveApply;
+    }
+
+    if (!Util.isUnset(request.brief)) {
+      body["brief"] = request.brief;
+    }
+
+    if (!Util.isUnset(request.code)) {
+      body["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.createDeptGroup)) {
+      body["createDeptGroup"] = request.createDeptGroup;
+    }
+
+    if (!Util.isUnset(request.deptCode)) {
+      body["deptCode"] = request.deptCode;
+    }
+
+    if (!Util.isUnset(request.deptPermits)) {
+      body["deptPermits"] = request.deptPermits;
+    }
+
+    if (!Util.isUnset(request.deptType)) {
+      body["deptType"] = request.deptType;
+    }
+
+    if (!Util.isUnset(request.empApplyJoinDept)) {
+      body["empApplyJoinDept"] = request.empApplyJoinDept;
+    }
+
+    if (!Util.isUnset(request.extension)) {
+      body["extension"] = request.extension;
+    }
+
+    if (!Util.isUnset(request.hideDept)) {
+      body["hideDept"] = request.hideDept;
+    }
+
+    if (!Util.isUnset(request.hideSceneConfig)) {
+      body["hideSceneConfig"] = request.hideSceneConfig;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.order)) {
+      body["order"] = request.order;
+    }
+
+    if (!Util.isUnset(request.outerDept)) {
+      body["outerDept"] = request.outerDept;
+    }
+
+    if (!Util.isUnset(request.outerDeptOnlySelf)) {
+      body["outerDeptOnlySelf"] = request.outerDeptOnlySelf;
+    }
+
+    if (!Util.isUnset(request.outerPermitDepts)) {
+      body["outerPermitDepts"] = request.outerPermitDepts;
+    }
+
+    if (!Util.isUnset(request.outerPermitUsers)) {
+      body["outerPermitUsers"] = request.outerPermitUsers;
+    }
+
+    if (!Util.isUnset(request.outerSceneConfig)) {
+      body["outerSceneConfig"] = request.outerSceneConfig;
+    }
+
+    if (!Util.isUnset(request.parentId)) {
+      body["parentId"] = request.parentId;
+    }
+
+    if (!Util.isUnset(request.sourceIdentifier)) {
+      body["sourceIdentifier"] = request.sourceIdentifier;
+    }
+
+    if (!Util.isUnset(request.struId)) {
+      body["struId"] = request.struId;
+    }
+
+    if (!Util.isUnset(request.telephone)) {
+      body["telephone"] = request.telephone;
+    }
+
+    if (!Util.isUnset(request.userPermits)) {
+      body["userPermits"] = request.userPermits;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CreateCollegeContactDept",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/collegeContact/depts`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CreateCollegeContactDeptResponse>(await this.execute(params, req, runtime), new CreateCollegeContactDeptResponse({}));
+  }
+
+  /**
+   * 创建高校通讯录组织单元
+   * 
+   * @param request - CreateCollegeContactDeptRequest
+   * @returns CreateCollegeContactDeptResponse
+   */
+  async createCollegeContactDept(request: CreateCollegeContactDeptRequest): Promise<CreateCollegeContactDeptResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CreateCollegeContactDeptHeaders({ });
+    return await this.createCollegeContactDeptWithOptions(request, headers, runtime);
   }
 
   /**
@@ -28391,6 +32060,118 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * 获取高校通讯录组织单元详情
+   * 
+   * @param request - GetCollegeContactDeptDetailRequest
+   * @param headers - GetCollegeContactDeptDetailHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetCollegeContactDeptDetailResponse
+   */
+  async getCollegeContactDeptDetailWithOptions(request: GetCollegeContactDeptDetailRequest, headers: GetCollegeContactDeptDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetCollegeContactDeptDetailResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.language)) {
+      query["language"] = request.language;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetCollegeContactDeptDetail",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/collegeContact/depts`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCollegeContactDeptDetailResponse>(await this.execute(params, req, runtime), new GetCollegeContactDeptDetailResponse({}));
+  }
+
+  /**
+   * 获取高校通讯录组织单元详情
+   * 
+   * @param request - GetCollegeContactDeptDetailRequest
+   * @returns GetCollegeContactDeptDetailResponse
+   */
+  async getCollegeContactDeptDetail(request: GetCollegeContactDeptDetailRequest): Promise<GetCollegeContactDeptDetailResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetCollegeContactDeptDetailHeaders({ });
+    return await this.getCollegeContactDeptDetailWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 获取行政组织架构信息
+   * 
+   * @param request - GetCollegeContactStandardStruDeptDetailRequest
+   * @param headers - GetCollegeContactStandardStruDeptDetailHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetCollegeContactStandardStruDeptDetailResponse
+   */
+  async getCollegeContactStandardStruDeptDetailWithOptions(request: GetCollegeContactStandardStruDeptDetailRequest, headers: GetCollegeContactStandardStruDeptDetailHeaders, runtime: $Util.RuntimeOptions): Promise<GetCollegeContactStandardStruDeptDetailResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.language)) {
+      query["language"] = request.language;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetCollegeContactStandardStruDeptDetail",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/collegeContact/depts/structures/standards`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetCollegeContactStandardStruDeptDetailResponse>(await this.execute(params, req, runtime), new GetCollegeContactStandardStruDeptDetailResponse({}));
+  }
+
+  /**
+   * 获取行政组织架构信息
+   * 
+   * @param request - GetCollegeContactStandardStruDeptDetailRequest
+   * @returns GetCollegeContactStandardStruDeptDetailResponse
+   */
+  async getCollegeContactStandardStruDeptDetail(request: GetCollegeContactStandardStruDeptDetailRequest): Promise<GetCollegeContactStandardStruDeptDetailResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetCollegeContactStandardStruDeptDetailHeaders({ });
+    return await this.getCollegeContactStandardStruDeptDetailWithOptions(request, headers, runtime);
+  }
+
+  /**
    * 获取默认孩子信息
    * 
    * @param headers - GetDefaultChildHeaders
@@ -29359,6 +33140,118 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * 获取高校组织单元类型
+   * 
+   * @param request - ListCollegeContactDeptTypeConfigRequest
+   * @param headers - ListCollegeContactDeptTypeConfigHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListCollegeContactDeptTypeConfigResponse
+   */
+  async listCollegeContactDeptTypeConfigWithOptions(request: ListCollegeContactDeptTypeConfigRequest, headers: ListCollegeContactDeptTypeConfigHeaders, runtime: $Util.RuntimeOptions): Promise<ListCollegeContactDeptTypeConfigResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.language)) {
+      query["language"] = request.language;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ListCollegeContactDeptTypeConfig",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/collegeContact/configs/deptTypes`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListCollegeContactDeptTypeConfigResponse>(await this.execute(params, req, runtime), new ListCollegeContactDeptTypeConfigResponse({}));
+  }
+
+  /**
+   * 获取高校组织单元类型
+   * 
+   * @param request - ListCollegeContactDeptTypeConfigRequest
+   * @returns ListCollegeContactDeptTypeConfigResponse
+   */
+  async listCollegeContactDeptTypeConfig(request: ListCollegeContactDeptTypeConfigRequest): Promise<ListCollegeContactDeptTypeConfigResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListCollegeContactDeptTypeConfigHeaders({ });
+    return await this.listCollegeContactDeptTypeConfigWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 获取高校通讯录子组织单元列表
+   * 
+   * @param request - ListCollegeContactSubDeptsRequest
+   * @param headers - ListCollegeContactSubDeptsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListCollegeContactSubDeptsResponse
+   */
+  async listCollegeContactSubDeptsWithOptions(request: ListCollegeContactSubDeptsRequest, headers: ListCollegeContactSubDeptsHeaders, runtime: $Util.RuntimeOptions): Promise<ListCollegeContactSubDeptsResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptId)) {
+      query["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.language)) {
+      query["language"] = request.language;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ListCollegeContactSubDepts",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/collegeContact/subDepts`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListCollegeContactSubDeptsResponse>(await this.execute(params, req, runtime), new ListCollegeContactSubDeptsResponse({}));
+  }
+
+  /**
+   * 获取高校通讯录子组织单元列表
+   * 
+   * @param request - ListCollegeContactSubDeptsRequest
+   * @returns ListCollegeContactSubDeptsResponse
+   */
+  async listCollegeContactSubDepts(request: ListCollegeContactSubDeptsRequest): Promise<ListCollegeContactSubDeptsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListCollegeContactSubDeptsHeaders({ });
+    return await this.listCollegeContactSubDeptsWithOptions(request, headers, runtime);
+  }
+
+  /**
    * 查询订单
    * 
    * @param request - ListOrderRequest
@@ -30116,6 +34009,64 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryClassScheduleConfigHeaders({ });
     return await this.queryClassScheduleConfigWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 获取用户详情(包含高校账号)
+   * 
+   * @param request - QueryCollegeContactUserDetailRequest
+   * @param headers - QueryCollegeContactUserDetailHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryCollegeContactUserDetailResponse
+   */
+  async queryCollegeContactUserDetailWithOptions(request: QueryCollegeContactUserDetailRequest, headers: QueryCollegeContactUserDetailHeaders, runtime: $Util.RuntimeOptions): Promise<QueryCollegeContactUserDetailResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.language)) {
+      query["language"] = request.language;
+    }
+
+    if (!Util.isUnset(request.userid)) {
+      query["userid"] = request.userid;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryCollegeContactUserDetail",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/collegeContact/users`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryCollegeContactUserDetailResponse>(await this.execute(params, req, runtime), new QueryCollegeContactUserDetailResponse({}));
+  }
+
+  /**
+   * 获取用户详情(包含高校账号)
+   * 
+   * @param request - QueryCollegeContactUserDetailRequest
+   * @returns QueryCollegeContactUserDetailResponse
+   */
+  async queryCollegeContactUserDetail(request: QueryCollegeContactUserDetailRequest): Promise<QueryCollegeContactUserDetailResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryCollegeContactUserDetailHeaders({ });
+    return await this.queryCollegeContactUserDetailWithOptions(request, headers, runtime);
   }
 
   /**
@@ -32278,6 +36229,526 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new UpdateCollegeAlumniUserInfoHeaders({ });
     return await this.updateCollegeAlumniUserInfoWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 更新高校通讯录组织单元
+   * 
+   * @param request - UpdateCollegeContactDeptRequest
+   * @param headers - UpdateCollegeContactDeptHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateCollegeContactDeptResponse
+   */
+  async updateCollegeContactDeptWithOptions(request: UpdateCollegeContactDeptRequest, headers: UpdateCollegeContactDeptHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCollegeContactDeptResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.autoAddUser)) {
+      body["autoAddUser"] = request.autoAddUser;
+    }
+
+    if (!Util.isUnset(request.autoApproveApply)) {
+      body["autoApproveApply"] = request.autoApproveApply;
+    }
+
+    if (!Util.isUnset(request.brief)) {
+      body["brief"] = request.brief;
+    }
+
+    if (!Util.isUnset(request.code)) {
+      body["code"] = request.code;
+    }
+
+    if (!Util.isUnset(request.createDeptGroup)) {
+      body["createDeptGroup"] = request.createDeptGroup;
+    }
+
+    if (!Util.isUnset(request.deptCode)) {
+      body["deptCode"] = request.deptCode;
+    }
+
+    if (!Util.isUnset(request.deptId)) {
+      body["deptId"] = request.deptId;
+    }
+
+    if (!Util.isUnset(request.deptManagerUseridList)) {
+      body["deptManagerUseridList"] = request.deptManagerUseridList;
+    }
+
+    if (!Util.isUnset(request.deptPermits)) {
+      body["deptPermits"] = request.deptPermits;
+    }
+
+    if (!Util.isUnset(request.deptType)) {
+      body["deptType"] = request.deptType;
+    }
+
+    if (!Util.isUnset(request.empApplyJoinDept)) {
+      body["empApplyJoinDept"] = request.empApplyJoinDept;
+    }
+
+    if (!Util.isUnset(request.extension)) {
+      body["extension"] = request.extension;
+    }
+
+    if (!Util.isUnset(request.forceUpdateFields)) {
+      body["forceUpdateFields"] = request.forceUpdateFields;
+    }
+
+    if (!Util.isUnset(request.groupContainHiddenDept)) {
+      body["groupContainHiddenDept"] = request.groupContainHiddenDept;
+    }
+
+    if (!Util.isUnset(request.groupContainOuterDept)) {
+      body["groupContainOuterDept"] = request.groupContainOuterDept;
+    }
+
+    if (!Util.isUnset(request.groupContainSubDept)) {
+      body["groupContainSubDept"] = request.groupContainSubDept;
+    }
+
+    if (!Util.isUnset(request.hideDept)) {
+      body["hideDept"] = request.hideDept;
+    }
+
+    if (!Util.isUnset(request.hideSceneConfig)) {
+      body["hideSceneConfig"] = request.hideSceneConfig;
+    }
+
+    if (!Util.isUnset(request.language)) {
+      body["language"] = request.language;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.order)) {
+      body["order"] = request.order;
+    }
+
+    if (!Util.isUnset(request.orgDeptOwner)) {
+      body["orgDeptOwner"] = request.orgDeptOwner;
+    }
+
+    if (!Util.isUnset(request.outerDept)) {
+      body["outerDept"] = request.outerDept;
+    }
+
+    if (!Util.isUnset(request.outerDeptOnlySelf)) {
+      body["outerDeptOnlySelf"] = request.outerDeptOnlySelf;
+    }
+
+    if (!Util.isUnset(request.outerPermitDepts)) {
+      body["outerPermitDepts"] = request.outerPermitDepts;
+    }
+
+    if (!Util.isUnset(request.outerPermitUsers)) {
+      body["outerPermitUsers"] = request.outerPermitUsers;
+    }
+
+    if (!Util.isUnset(request.outerSceneConfig)) {
+      body["outerSceneConfig"] = request.outerSceneConfig;
+    }
+
+    if (!Util.isUnset(request.parentId)) {
+      body["parentId"] = request.parentId;
+    }
+
+    if (!Util.isUnset(request.sourceIdentifier)) {
+      body["sourceIdentifier"] = request.sourceIdentifier;
+    }
+
+    if (!Util.isUnset(request.telephone)) {
+      body["telephone"] = request.telephone;
+    }
+
+    if (!Util.isUnset(request.userPermits)) {
+      body["userPermits"] = request.userPermits;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateCollegeContactDept",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/collegeContact/depts`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateCollegeContactDeptResponse>(await this.execute(params, req, runtime), new UpdateCollegeContactDeptResponse({}));
+  }
+
+  /**
+   * 更新高校通讯录组织单元
+   * 
+   * @param request - UpdateCollegeContactDeptRequest
+   * @returns UpdateCollegeContactDeptResponse
+   */
+  async updateCollegeContactDept(request: UpdateCollegeContactDeptRequest): Promise<UpdateCollegeContactDeptResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateCollegeContactDeptHeaders({ });
+    return await this.updateCollegeContactDeptWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 更新高校账号用户
+   * 
+   * @param request - UpdateCollegeContactExclusiveRequest
+   * @param headers - UpdateCollegeContactExclusiveHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateCollegeContactExclusiveResponse
+   */
+  async updateCollegeContactExclusiveWithOptions(request: UpdateCollegeContactExclusiveRequest, headers: UpdateCollegeContactExclusiveHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCollegeContactExclusiveResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.avatarMediaId)) {
+      body["avatarMediaId"] = request.avatarMediaId;
+    }
+
+    if (!Util.isUnset(request.deptIdList)) {
+      body["deptIdList"] = request.deptIdList;
+    }
+
+    if (!Util.isUnset(request.deptOrderList)) {
+      body["deptOrderList"] = request.deptOrderList;
+    }
+
+    if (!Util.isUnset(request.deptTitleList)) {
+      body["deptTitleList"] = request.deptTitleList;
+    }
+
+    if (!Util.isUnset(request.email)) {
+      body["email"] = request.email;
+    }
+
+    if (!Util.isUnset(request.empType)) {
+      body["empType"] = request.empType;
+    }
+
+    if (!Util.isUnset(request.extension)) {
+      body["extension"] = request.extension;
+    }
+
+    if (!Util.isUnset(request.forceUpdateFields)) {
+      body["forceUpdateFields"] = request.forceUpdateFields;
+    }
+
+    if (!Util.isUnset(request.hideMobile)) {
+      body["hideMobile"] = request.hideMobile;
+    }
+
+    if (!Util.isUnset(request.hiredDate)) {
+      body["hiredDate"] = request.hiredDate;
+    }
+
+    if (!Util.isUnset(request.jobNumber)) {
+      body["jobNumber"] = request.jobNumber;
+    }
+
+    if (!Util.isUnset(request.language)) {
+      body["language"] = request.language;
+    }
+
+    if (!Util.isUnset(request.loginIdType)) {
+      body["loginIdType"] = request.loginIdType;
+    }
+
+    if (!Util.isUnset(request.mainDeptId)) {
+      body["mainDeptId"] = request.mainDeptId;
+    }
+
+    if (!Util.isUnset(request.managerUserid)) {
+      body["managerUserid"] = request.managerUserid;
+    }
+
+    if (!Util.isUnset(request.mobile)) {
+      body["mobile"] = request.mobile;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.nickname)) {
+      body["nickname"] = request.nickname;
+    }
+
+    if (!Util.isUnset(request.orgEmail)) {
+      body["orgEmail"] = request.orgEmail;
+    }
+
+    if (!Util.isUnset(request.orgEmailType)) {
+      body["orgEmailType"] = request.orgEmailType;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      body["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.seniorMode)) {
+      body["seniorMode"] = request.seniorMode;
+    }
+
+    if (!Util.isUnset(request.telephone)) {
+      body["telephone"] = request.telephone;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.userid)) {
+      body["userid"] = request.userid;
+    }
+
+    if (!Util.isUnset(request.workPlace)) {
+      body["workPlace"] = request.workPlace;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateCollegeContactExclusive",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/collegeContact/exclusiveAccounts/users`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateCollegeContactExclusiveResponse>(await this.execute(params, req, runtime), new UpdateCollegeContactExclusiveResponse({}));
+  }
+
+  /**
+   * 更新高校账号用户
+   * 
+   * @param request - UpdateCollegeContactExclusiveRequest
+   * @returns UpdateCollegeContactExclusiveResponse
+   */
+  async updateCollegeContactExclusive(request: UpdateCollegeContactExclusiveRequest): Promise<UpdateCollegeContactExclusiveResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateCollegeContactExclusiveHeaders({ });
+    return await this.updateCollegeContactExclusiveWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 更新个人账号用户
+   * 
+   * @param request - UpdateCollegeContactUserRequest
+   * @param headers - UpdateCollegeContactUserHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateCollegeContactUserResponse
+   */
+  async updateCollegeContactUserWithOptions(request: UpdateCollegeContactUserRequest, headers: UpdateCollegeContactUserHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCollegeContactUserResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.deptIdList)) {
+      body["deptIdList"] = request.deptIdList;
+    }
+
+    if (!Util.isUnset(request.deptOrderList)) {
+      body["deptOrderList"] = request.deptOrderList;
+    }
+
+    if (!Util.isUnset(request.deptTitleList)) {
+      body["deptTitleList"] = request.deptTitleList;
+    }
+
+    if (!Util.isUnset(request.email)) {
+      body["email"] = request.email;
+    }
+
+    if (!Util.isUnset(request.empType)) {
+      body["empType"] = request.empType;
+    }
+
+    if (!Util.isUnset(request.extension)) {
+      body["extension"] = request.extension;
+    }
+
+    if (!Util.isUnset(request.forceUpdateFields)) {
+      body["forceUpdateFields"] = request.forceUpdateFields;
+    }
+
+    if (!Util.isUnset(request.hideMobile)) {
+      body["hideMobile"] = request.hideMobile;
+    }
+
+    if (!Util.isUnset(request.hiredDate)) {
+      body["hiredDate"] = request.hiredDate;
+    }
+
+    if (!Util.isUnset(request.jobNumber)) {
+      body["jobNumber"] = request.jobNumber;
+    }
+
+    if (!Util.isUnset(request.language)) {
+      body["language"] = request.language;
+    }
+
+    if (!Util.isUnset(request.mainDeptId)) {
+      body["mainDeptId"] = request.mainDeptId;
+    }
+
+    if (!Util.isUnset(request.managerUserid)) {
+      body["managerUserid"] = request.managerUserid;
+    }
+
+    if (!Util.isUnset(request.name)) {
+      body["name"] = request.name;
+    }
+
+    if (!Util.isUnset(request.orgEmail)) {
+      body["orgEmail"] = request.orgEmail;
+    }
+
+    if (!Util.isUnset(request.remark)) {
+      body["remark"] = request.remark;
+    }
+
+    if (!Util.isUnset(request.seniorMode)) {
+      body["seniorMode"] = request.seniorMode;
+    }
+
+    if (!Util.isUnset(request.telephone)) {
+      body["telephone"] = request.telephone;
+    }
+
+    if (!Util.isUnset(request.title)) {
+      body["title"] = request.title;
+    }
+
+    if (!Util.isUnset(request.userid)) {
+      body["userid"] = request.userid;
+    }
+
+    if (!Util.isUnset(request.workPlace)) {
+      body["workPlace"] = request.workPlace;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateCollegeContactUser",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/collegeContact/personalAccounts/users`,
+      method: "PUT",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateCollegeContactUserResponse>(await this.execute(params, req, runtime), new UpdateCollegeContactUserResponse({}));
+  }
+
+  /**
+   * 更新个人账号用户
+   * 
+   * @param request - UpdateCollegeContactUserRequest
+   * @returns UpdateCollegeContactUserResponse
+   */
+  async updateCollegeContactUser(request: UpdateCollegeContactUserRequest): Promise<UpdateCollegeContactUserResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateCollegeContactUserHeaders({ });
+    return await this.updateCollegeContactUserWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 修改用户成员类型
+   * 
+   * @param request - UpdateCollegeUserEmpTypeRequest
+   * @param headers - UpdateCollegeUserEmpTypeHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns UpdateCollegeUserEmpTypeResponse
+   */
+  async updateCollegeUserEmpTypeWithOptions(request: UpdateCollegeUserEmpTypeRequest, headers: UpdateCollegeUserEmpTypeHeaders, runtime: $Util.RuntimeOptions): Promise<UpdateCollegeUserEmpTypeResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.empType)) {
+      body["empType"] = request.empType;
+    }
+
+    if (!Util.isUnset(request.userid)) {
+      body["userid"] = request.userid;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "UpdateCollegeUserEmpType",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/collegeContact/empTypes/change`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<UpdateCollegeUserEmpTypeResponse>(await this.execute(params, req, runtime), new UpdateCollegeUserEmpTypeResponse({}));
+  }
+
+  /**
+   * 修改用户成员类型
+   * 
+   * @param request - UpdateCollegeUserEmpTypeRequest
+   * @returns UpdateCollegeUserEmpTypeResponse
+   */
+  async updateCollegeUserEmpType(request: UpdateCollegeUserEmpTypeRequest): Promise<UpdateCollegeUserEmpTypeResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new UpdateCollegeUserEmpTypeHeaders({ });
+    return await this.updateCollegeUserEmpTypeWithOptions(request, headers, runtime);
   }
 
   /**

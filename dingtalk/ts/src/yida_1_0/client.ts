@@ -11460,6 +11460,7 @@ export class SearchFormDatasRequest extends $tea.Model {
    * zh_CN
    */
   language?: string;
+  logicOperator?: string;
   /**
    * @example
    * 2018-01-01
@@ -11506,6 +11507,7 @@ export class SearchFormDatasRequest extends $tea.Model {
       dynamicOrder: 'dynamicOrder',
       formUuid: 'formUuid',
       language: 'language',
+      logicOperator: 'logicOperator',
       modifiedFromTimeGMT: 'modifiedFromTimeGMT',
       modifiedToTimeGMT: 'modifiedToTimeGMT',
       originatorId: 'originatorId',
@@ -11525,6 +11527,7 @@ export class SearchFormDatasRequest extends $tea.Model {
       dynamicOrder: 'string',
       formUuid: 'string',
       language: 'string',
+      logicOperator: 'string',
       modifiedFromTimeGMT: 'string',
       modifiedToTimeGMT: 'string',
       originatorId: 'string',
@@ -16277,6 +16280,11 @@ export class ListApplicationResponseBodyData extends $tea.Model {
   name?: string;
   /**
    * @example
+   * 离线:offline,在线：online
+   */
+  releaseToDingStatus?: string;
+  /**
+   * @example
    * ding8eaadfkksj45343wksff334
    */
   subCorpId?: string;
@@ -16292,6 +16300,7 @@ export class ListApplicationResponseBodyData extends $tea.Model {
       icon: 'icon',
       inexistence: 'inexistence',
       name: 'name',
+      releaseToDingStatus: 'releaseToDingStatus',
       subCorpId: 'subCorpId',
       systemToken: 'systemToken',
     };
@@ -16308,6 +16317,7 @@ export class ListApplicationResponseBodyData extends $tea.Model {
       icon: 'string',
       inexistence: 'string',
       name: 'string',
+      releaseToDingStatus: 'string',
       subCorpId: 'string',
       systemToken: 'string',
     };
@@ -24372,6 +24382,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.language)) {
       body["language"] = request.language;
+    }
+
+    if (!Util.isUnset(request.logicOperator)) {
+      body["logicOperator"] = request.logicOperator;
     }
 
     if (!Util.isUnset(request.modifiedFromTimeGMT)) {

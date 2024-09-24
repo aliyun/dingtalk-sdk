@@ -2903,6 +2903,108 @@ export class QueryConferenceMembersResponse extends $tea.Model {
   }
 }
 
+export class QueryFlashMinutesSummaryHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryFlashMinutesSummaryRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cloud_record
+   */
+  bizType?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * lJcRnm39OsU4jlFVmRG9KXXXX
+   */
+  recorderUnionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizType: 'bizType',
+      recorderUnionId: 'recorderUnionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizType: 'string',
+      recorderUnionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryFlashMinutesSummaryResponseBody extends $tea.Model {
+  flashMinutesSummary?: QueryFlashMinutesSummaryResponseBodyFlashMinutesSummary;
+  static names(): { [key: string]: string } {
+    return {
+      flashMinutesSummary: 'flashMinutesSummary',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      flashMinutesSummary: QueryFlashMinutesSummaryResponseBodyFlashMinutesSummary,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryFlashMinutesSummaryResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryFlashMinutesSummaryResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryFlashMinutesSummaryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryMinutesAudioHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -6110,6 +6212,59 @@ export class QueryConferenceMembersResponseBodyMemberModels extends $tea.Model {
   }
 }
 
+export class QueryFlashMinutesSummaryResponseBodyFlashMinutesSummarySummary extends $tea.Model {
+  end?: number;
+  headline?: string;
+  id?: number;
+  start?: number;
+  summary?: string;
+  static names(): { [key: string]: string } {
+    return {
+      end: 'end',
+      headline: 'headline',
+      id: 'id',
+      start: 'start',
+      summary: 'summary',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      end: 'number',
+      headline: 'string',
+      id: 'number',
+      start: 'number',
+      summary: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryFlashMinutesSummaryResponseBodyFlashMinutesSummary extends $tea.Model {
+  status?: number;
+  summary?: QueryFlashMinutesSummaryResponseBodyFlashMinutesSummarySummary[];
+  static names(): { [key: string]: string } {
+    return {
+      status: 'status',
+      summary: 'summary',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      status: 'number',
+      summary: { 'type': 'array', 'itemType': QueryFlashMinutesSummaryResponseBodyFlashMinutesSummarySummary },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryMinutesAudioResponseBodyAudioList extends $tea.Model {
   /**
    * @example
@@ -8352,6 +8507,64 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryConferenceMembersHeaders({ });
     return await this.queryConferenceMembersWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  /**
+   * 查询云录制摘要请求
+   * 
+   * @param request - QueryFlashMinutesSummaryRequest
+   * @param headers - QueryFlashMinutesSummaryHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryFlashMinutesSummaryResponse
+   */
+  async queryFlashMinutesSummaryWithOptions(conferenceId: string, request: QueryFlashMinutesSummaryRequest, headers: QueryFlashMinutesSummaryHeaders, runtime: $Util.RuntimeOptions): Promise<QueryFlashMinutesSummaryResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizType)) {
+      query["bizType"] = request.bizType;
+    }
+
+    if (!Util.isUnset(request.recorderUnionId)) {
+      query["recorderUnionId"] = request.recorderUnionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryFlashMinutesSummary",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/videoConferences/${conferenceId}/flashMinutes/summaries`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryFlashMinutesSummaryResponse>(await this.execute(params, req, runtime), new QueryFlashMinutesSummaryResponse({}));
+  }
+
+  /**
+   * 查询云录制摘要请求
+   * 
+   * @param request - QueryFlashMinutesSummaryRequest
+   * @returns QueryFlashMinutesSummaryResponse
+   */
+  async queryFlashMinutesSummary(conferenceId: string, request: QueryFlashMinutesSummaryRequest): Promise<QueryFlashMinutesSummaryResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryFlashMinutesSummaryHeaders({ });
+    return await this.queryFlashMinutesSummaryWithOptions(conferenceId, request, headers, runtime);
   }
 
   /**

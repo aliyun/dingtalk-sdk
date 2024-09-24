@@ -91,6 +91,7 @@ import * as storage_1_0 from './storage_1_0/client';
 import * as storage_2_0 from './storage_2_0/client';
 import * as swform_1_0 from './swform_1_0/client';
 import * as todo_1_0 from './todo_1_0/client';
+import * as todo_e_e_1_0 from './todo_e_e_1_0/client';
 import * as trade_1_0 from './trade_1_0/client';
 import * as trajectory_1_0 from './trajectory_1_0/client';
 import * as transcribe_1_0 from './transcribe_1_0/client';
@@ -104,6 +105,7 @@ import * as workbench_1_0 from './workbench_1_0/client';
 import * as workflow_1_0 from './workflow_1_0/client';
 import * as workrecord_1_0 from './workrecord_1_0/client';
 import * as yida_1_0 from './yida_1_0/client';
+import * as yida_2_0 from './yida_2_0/client';
 import * as yun_shu_1_0 from './yun_shu_1_0/client';
 
 export = {
@@ -200,6 +202,7 @@ export = {
   storage_2_0,
   swform_1_0,
   todo_1_0,
+  todo_e_e_1_0,
   trade_1_0,
   trajectory_1_0,
   transcribe_1_0,
@@ -213,5 +216,6 @@ export = {
   workflow_1_0,
   workrecord_1_0,
   yida_1_0,
+  yida_2_0,
   yun_shu_1_0,
 }

@@ -1141,6 +1141,102 @@ export class GetFileTemplateListResponse extends $tea.Model {
   }
 }
 
+export class GetSignRecordByIdHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSignRecordByIdRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  body?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      body: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSignRecordByIdResponseBody extends $tea.Model {
+  result?: GetSignRecordByIdResponseBodyResult[];
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: { 'type': 'array', 'itemType': GetSignRecordByIdResponseBodyResult },
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetSignRecordByIdResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetSignRecordByIdResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetSignRecordByIdResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetSignRecordByUserIdHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2526,6 +2622,122 @@ export class HrmPtsServiceResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: HrmPtsServiceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InvalidSignRecordsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InvalidSignRecordsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 123456
+   */
+  invalidUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  signRecordIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 作废测试
+   */
+  statusRemark?: string;
+  static names(): { [key: string]: string } {
+    return {
+      invalidUserId: 'invalidUserId',
+      signRecordIds: 'signRecordIds',
+      statusRemark: 'statusRemark',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      invalidUserId: 'string',
+      signRecordIds: { 'type': 'array', 'itemType': 'string' },
+      statusRemark: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InvalidSignRecordsResponseBody extends $tea.Model {
+  result?: InvalidSignRecordsResponseBodyResult;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: InvalidSignRecordsResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InvalidSignRecordsResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: InvalidSignRecordsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: InvalidSignRecordsResponseBody,
     };
   }
 
@@ -4275,6 +4487,122 @@ export class QueryPositionsResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: QueryPositionsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RevokeSignRecordsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RevokeSignRecordsRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 12345
+   */
+  revokeUserId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  signRecordIds?: string[];
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 撤销签署
+   */
+  statusRemark?: string;
+  static names(): { [key: string]: string } {
+    return {
+      revokeUserId: 'revokeUserId',
+      signRecordIds: 'signRecordIds',
+      statusRemark: 'statusRemark',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      revokeUserId: 'string',
+      signRecordIds: { 'type': 'array', 'itemType': 'string' },
+      statusRemark: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RevokeSignRecordsResponseBody extends $tea.Model {
+  result?: RevokeSignRecordsResponseBodyResult;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: RevokeSignRecordsResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RevokeSignRecordsResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RevokeSignRecordsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: RevokeSignRecordsResponseBody,
     };
   }
 
@@ -6941,6 +7269,120 @@ export class GetFileTemplateListResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetSignRecordByIdResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * ding12345678
+   */
+  corpId?: string;
+  /**
+   * @example
+   * 员工签署中
+   */
+  remark?: string;
+  /**
+   * @example
+   * 1723534265000
+   */
+  signExpireTime?: number;
+  /**
+   * @example
+   * xxxx-合同文件.pdf
+   */
+  signFileName?: string;
+  /**
+   * @example
+   * 1723534265000
+   */
+  signFinishTime?: number;
+  /**
+   * @example
+   * xxxx有限公司
+   */
+  signLegalEntityName?: string;
+  /**
+   * @example
+   * 6fe06f57ab5a45078f3219be8fd829c6
+   */
+  signRecordId?: string;
+  /**
+   * @example
+   * 1723534265000
+   */
+  signStartTime?: number;
+  /**
+   * @example
+   * SIGNING
+   */
+  signStatus?: string;
+  /**
+   * @example
+   * 签署中
+   */
+  signStatusRemarks?: string;
+  /**
+   * @example
+   * CONTRACT
+   */
+  signTemplateType?: string;
+  /**
+   * @example
+   * 400873120394
+   */
+  signUserId?: string;
+  /**
+   * @example
+   * xiaoming
+   */
+  signUserName?: string;
+  /**
+   * @example
+   * ON_LINE
+   */
+  signWay?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      remark: 'remark',
+      signExpireTime: 'signExpireTime',
+      signFileName: 'signFileName',
+      signFinishTime: 'signFinishTime',
+      signLegalEntityName: 'signLegalEntityName',
+      signRecordId: 'signRecordId',
+      signStartTime: 'signStartTime',
+      signStatus: 'signStatus',
+      signStatusRemarks: 'signStatusRemarks',
+      signTemplateType: 'signTemplateType',
+      signUserId: 'signUserId',
+      signUserName: 'signUserName',
+      signWay: 'signWay',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      remark: 'string',
+      signExpireTime: 'number',
+      signFileName: 'string',
+      signFinishTime: 'number',
+      signLegalEntityName: 'string',
+      signRecordId: 'string',
+      signStartTime: 'number',
+      signStatus: 'string',
+      signStatusRemarks: 'string',
+      signTemplateType: 'string',
+      signUserId: 'string',
+      signUserName: 'string',
+      signWay: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetSignRecordByUserIdResponseBodyResultData extends $tea.Model {
   /**
    * @example
@@ -7484,6 +7926,81 @@ export class HrmMailSendRequestOperator extends $tea.Model {
       bizId: 'string',
       mailAccountType: 'string',
       token: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InvalidSignRecordsResponseBodyResultFailItems extends $tea.Model {
+  /**
+   * @example
+   * 1234566789
+   */
+  itemId?: string;
+  /**
+   * @example
+   * 电子签状态变更不合法
+   */
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      itemId: 'itemId',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      itemId: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InvalidSignRecordsResponseBodyResultSuccessItems extends $tea.Model {
+  /**
+   * @example
+   * 123456789
+   */
+  itemId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      itemId: 'itemId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      itemId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class InvalidSignRecordsResponseBodyResult extends $tea.Model {
+  failItems?: InvalidSignRecordsResponseBodyResultFailItems[];
+  successItems?: InvalidSignRecordsResponseBodyResultSuccessItems[];
+  static names(): { [key: string]: string } {
+    return {
+      failItems: 'failItems',
+      successItems: 'successItems',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      failItems: { 'type': 'array', 'itemType': InvalidSignRecordsResponseBodyResultFailItems },
+      successItems: { 'type': 'array', 'itemType': InvalidSignRecordsResponseBodyResultSuccessItems },
     };
   }
 
@@ -8596,6 +9113,81 @@ export class QueryPositionsResponseBodyList extends $tea.Model {
       positionName: 'string',
       rankIdList: { 'type': 'array', 'itemType': 'string' },
       status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RevokeSignRecordsResponseBodyResultFailItems extends $tea.Model {
+  /**
+   * @example
+   * 6fe06f57ab5a45078f3219be8fd829c6
+   */
+  itemId?: string;
+  /**
+   * @example
+   * 电子签状态变更不合法
+   */
+  type?: string;
+  static names(): { [key: string]: string } {
+    return {
+      itemId: 'itemId',
+      type: 'type',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      itemId: 'string',
+      type: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RevokeSignRecordsResponseBodyResultSuccessItems extends $tea.Model {
+  /**
+   * @example
+   * 6fe06f57ab5a45078f3219be8fd829c6
+   */
+  itemId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      itemId: 'itemId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      itemId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RevokeSignRecordsResponseBodyResult extends $tea.Model {
+  failItems?: RevokeSignRecordsResponseBodyResultFailItems[];
+  successItems?: RevokeSignRecordsResponseBodyResultSuccessItems[];
+  static names(): { [key: string]: string } {
+    return {
+      failItems: 'failItems',
+      successItems: 'successItems',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      failItems: { 'type': 'array', 'itemType': RevokeSignRecordsResponseBodyResultFailItems },
+      successItems: { 'type': 'array', 'itemType': RevokeSignRecordsResponseBodyResultSuccessItems },
     };
   }
 
@@ -9736,6 +10328,55 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * 通过签署记录id查询指定的电子签署记录
+   * 
+   * @param request - GetSignRecordByIdRequest
+   * @param headers - GetSignRecordByIdHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetSignRecordByIdResponse
+   */
+  async getSignRecordByIdWithOptions(request: GetSignRecordByIdRequest, headers: GetSignRecordByIdHeaders, runtime: $Util.RuntimeOptions): Promise<GetSignRecordByIdResponse> {
+    Util.validateModel(request);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: request.body,
+    });
+    let params = new $OpenApi.Params({
+      action: "GetSignRecordById",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/masters/signCenters/records/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetSignRecordByIdResponse>(await this.execute(params, req, runtime), new GetSignRecordByIdResponse({}));
+  }
+
+  /**
+   * 通过签署记录id查询指定的电子签署记录
+   * 
+   * @param request - GetSignRecordByIdRequest
+   * @returns GetSignRecordByIdResponse
+   */
+  async getSignRecordById(request: GetSignRecordByIdRequest): Promise<GetSignRecordByIdResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetSignRecordByIdHeaders({ });
+    return await this.getSignRecordByIdWithOptions(request, headers, runtime);
+  }
+
+  /**
    * 查询指定用户的电子签署记录，并返回签署记录的基本数据及已签署完成的文件预览地址
    * 
    * @param request - GetSignRecordByUserIdRequest
@@ -10517,6 +11158,68 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new HrmPtsServiceHeaders({ });
     return await this.hrmPtsServiceWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 作废签署记录
+   * 
+   * @param request - InvalidSignRecordsRequest
+   * @param headers - InvalidSignRecordsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns InvalidSignRecordsResponse
+   */
+  async invalidSignRecordsWithOptions(request: InvalidSignRecordsRequest, headers: InvalidSignRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<InvalidSignRecordsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.invalidUserId)) {
+      body["invalidUserId"] = request.invalidUserId;
+    }
+
+    if (!Util.isUnset(request.signRecordIds)) {
+      body["signRecordIds"] = request.signRecordIds;
+    }
+
+    if (!Util.isUnset(request.statusRemark)) {
+      body["statusRemark"] = request.statusRemark;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "InvalidSignRecords",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/masters/signCenters/records/invalid`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<InvalidSignRecordsResponse>(await this.execute(params, req, runtime), new InvalidSignRecordsResponse({}));
+  }
+
+  /**
+   * 作废签署记录
+   * 
+   * @param request - InvalidSignRecordsRequest
+   * @returns InvalidSignRecordsResponse
+   */
+  async invalidSignRecords(request: InvalidSignRecordsRequest): Promise<InvalidSignRecordsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new InvalidSignRecordsHeaders({ });
+    return await this.invalidSignRecordsWithOptions(request, headers, runtime);
   }
 
   /**
@@ -11473,6 +12176,68 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryPositionsHeaders({ });
     return await this.queryPositionsWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 撤回电子签署中的签署记录
+   * 
+   * @param request - RevokeSignRecordsRequest
+   * @param headers - RevokeSignRecordsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RevokeSignRecordsResponse
+   */
+  async revokeSignRecordsWithOptions(request: RevokeSignRecordsRequest, headers: RevokeSignRecordsHeaders, runtime: $Util.RuntimeOptions): Promise<RevokeSignRecordsResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.revokeUserId)) {
+      body["revokeUserId"] = request.revokeUserId;
+    }
+
+    if (!Util.isUnset(request.signRecordIds)) {
+      body["signRecordIds"] = request.signRecordIds;
+    }
+
+    if (!Util.isUnset(request.statusRemark)) {
+      body["statusRemark"] = request.statusRemark;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "RevokeSignRecords",
+      version: "hrm_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/hrm/masters/signCenters/records/revoke`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RevokeSignRecordsResponse>(await this.execute(params, req, runtime), new RevokeSignRecordsResponse({}));
+  }
+
+  /**
+   * 撤回电子签署中的签署记录
+   * 
+   * @param request - RevokeSignRecordsRequest
+   * @returns RevokeSignRecordsResponse
+   */
+  async revokeSignRecords(request: RevokeSignRecordsRequest): Promise<RevokeSignRecordsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RevokeSignRecordsHeaders({ });
+    return await this.revokeSignRecordsWithOptions(request, headers, runtime);
   }
 
   /**

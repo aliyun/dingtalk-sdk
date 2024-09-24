@@ -190,6 +190,11 @@ export class BatchAddInvoiceRequest extends $tea.Model {
   operator?: string;
   /**
    * @example
+   * XXX
+   */
+  orderId?: string;
+  /**
+   * @example
    * APPROVAL
    */
   source?: string;
@@ -198,6 +203,7 @@ export class BatchAddInvoiceRequest extends $tea.Model {
       companyCode: 'companyCode',
       generalInvoiceVOList: 'generalInvoiceVOList',
       operator: 'operator',
+      orderId: 'orderId',
       source: 'source',
     };
   }
@@ -207,6 +213,7 @@ export class BatchAddInvoiceRequest extends $tea.Model {
       companyCode: 'string',
       generalInvoiceVOList: { 'type': 'array', 'itemType': BatchAddInvoiceRequestGeneralInvoiceVOList },
       operator: 'string',
+      orderId: 'string',
       source: 'string',
     };
   }
@@ -14262,6 +14269,10 @@ export default class Client extends OpenApi {
 
     if (!Util.isUnset(request.operator)) {
       body["operator"] = request.operator;
+    }
+
+    if (!Util.isUnset(request.orderId)) {
+      body["orderId"] = request.orderId;
     }
 
     if (!Util.isUnset(request.source)) {
