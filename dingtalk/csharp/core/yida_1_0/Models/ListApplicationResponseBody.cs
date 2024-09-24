@@ -49,6 +49,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public string Name { get; set; }
 
+            [NameInMap("releaseToDingStatus")]
+            [Validation(Required=false)]
+            public string ReleaseToDingStatus { get; set; }
+
             [NameInMap("subCorpId")]
             [Validation(Required=false)]
             public string SubCorpId { get; set; }

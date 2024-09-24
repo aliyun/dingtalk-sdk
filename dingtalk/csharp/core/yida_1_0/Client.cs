@@ -13564,6 +13564,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             {
                 body["language"] = request.Language;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LogicOperator))
+            {
+                body["logicOperator"] = request.LogicOperator;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ModifiedFromTimeGMT))
             {
                 body["modifiedFromTimeGMT"] = request.ModifiedFromTimeGMT;
@@ -13660,6 +13664,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
             {
                 body["language"] = request.Language;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LogicOperator))
+            {
+                body["logicOperator"] = request.LogicOperator;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ModifiedFromTimeGMT))
             {

@@ -188,6 +188,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             {
                 body["operator"] = request.Operator;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderId))
+            {
+                body["orderId"] = request.OrderId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Source))
             {
                 body["source"] = request.Source;
@@ -244,6 +248,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
             {
                 body["operator"] = request.Operator;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderId))
+            {
+                body["orderId"] = request.OrderId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Source))
             {

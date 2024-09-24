@@ -1390,6 +1390,112 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
         }
 
         /**
+         * @summary 通过签署记录id查询指定的电子签署记录
+         *
+         * @param request GetSignRecordByIdRequest
+         * @param headers GetSignRecordByIdHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSignRecordByIdResponse
+         */
+        public GetSignRecordByIdResponse GetSignRecordByIdWithOptions(GetSignRecordByIdRequest request, GetSignRecordByIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = request.Body,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSignRecordById",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/signCenters/records/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSignRecordByIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 通过签署记录id查询指定的电子签署记录
+         *
+         * @param request GetSignRecordByIdRequest
+         * @param headers GetSignRecordByIdHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetSignRecordByIdResponse
+         */
+        public async Task<GetSignRecordByIdResponse> GetSignRecordByIdWithOptionsAsync(GetSignRecordByIdRequest request, GetSignRecordByIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = request.Body,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSignRecordById",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/signCenters/records/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSignRecordByIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 通过签署记录id查询指定的电子签署记录
+         *
+         * @param request GetSignRecordByIdRequest
+         * @return GetSignRecordByIdResponse
+         */
+        public GetSignRecordByIdResponse GetSignRecordById(GetSignRecordByIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetSignRecordByIdHeaders headers = new GetSignRecordByIdHeaders();
+            return GetSignRecordByIdWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 通过签署记录id查询指定的电子签署记录
+         *
+         * @param request GetSignRecordByIdRequest
+         * @return GetSignRecordByIdResponse
+         */
+        public async Task<GetSignRecordByIdResponse> GetSignRecordByIdAsync(GetSignRecordByIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetSignRecordByIdHeaders headers = new GetSignRecordByIdHeaders();
+            return await GetSignRecordByIdWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 查询指定用户的电子签署记录，并返回签署记录的基本数据及已签署完成的文件预览地址
          *
          * @param request GetSignRecordByUserIdRequest
@@ -3051,6 +3157,138 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             HrmPtsServiceHeaders headers = new HrmPtsServiceHeaders();
             return await HrmPtsServiceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 作废签署记录
+         *
+         * @param request InvalidSignRecordsRequest
+         * @param headers InvalidSignRecordsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return InvalidSignRecordsResponse
+         */
+        public InvalidSignRecordsResponse InvalidSignRecordsWithOptions(InvalidSignRecordsRequest request, InvalidSignRecordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvalidUserId))
+            {
+                body["invalidUserId"] = request.InvalidUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignRecordIds))
+            {
+                body["signRecordIds"] = request.SignRecordIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StatusRemark))
+            {
+                body["statusRemark"] = request.StatusRemark;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "InvalidSignRecords",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/signCenters/records/invalid",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<InvalidSignRecordsResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 作废签署记录
+         *
+         * @param request InvalidSignRecordsRequest
+         * @param headers InvalidSignRecordsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return InvalidSignRecordsResponse
+         */
+        public async Task<InvalidSignRecordsResponse> InvalidSignRecordsWithOptionsAsync(InvalidSignRecordsRequest request, InvalidSignRecordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvalidUserId))
+            {
+                body["invalidUserId"] = request.InvalidUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignRecordIds))
+            {
+                body["signRecordIds"] = request.SignRecordIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StatusRemark))
+            {
+                body["statusRemark"] = request.StatusRemark;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "InvalidSignRecords",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/signCenters/records/invalid",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<InvalidSignRecordsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 作废签署记录
+         *
+         * @param request InvalidSignRecordsRequest
+         * @return InvalidSignRecordsResponse
+         */
+        public InvalidSignRecordsResponse InvalidSignRecords(InvalidSignRecordsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            InvalidSignRecordsHeaders headers = new InvalidSignRecordsHeaders();
+            return InvalidSignRecordsWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 作废签署记录
+         *
+         * @param request InvalidSignRecordsRequest
+         * @return InvalidSignRecordsResponse
+         */
+        public async Task<InvalidSignRecordsResponse> InvalidSignRecordsAsync(InvalidSignRecordsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            InvalidSignRecordsHeaders headers = new InvalidSignRecordsHeaders();
+            return await InvalidSignRecordsWithOptionsAsync(request, headers, runtime);
         }
 
         /**
@@ -5083,6 +5321,138 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryPositionsHeaders headers = new QueryPositionsHeaders();
             return await QueryPositionsWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 撤回电子签署中的签署记录
+         *
+         * @param request RevokeSignRecordsRequest
+         * @param headers RevokeSignRecordsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return RevokeSignRecordsResponse
+         */
+        public RevokeSignRecordsResponse RevokeSignRecordsWithOptions(RevokeSignRecordsRequest request, RevokeSignRecordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RevokeUserId))
+            {
+                body["revokeUserId"] = request.RevokeUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignRecordIds))
+            {
+                body["signRecordIds"] = request.SignRecordIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StatusRemark))
+            {
+                body["statusRemark"] = request.StatusRemark;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RevokeSignRecords",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/signCenters/records/revoke",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RevokeSignRecordsResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 撤回电子签署中的签署记录
+         *
+         * @param request RevokeSignRecordsRequest
+         * @param headers RevokeSignRecordsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return RevokeSignRecordsResponse
+         */
+        public async Task<RevokeSignRecordsResponse> RevokeSignRecordsWithOptionsAsync(RevokeSignRecordsRequest request, RevokeSignRecordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RevokeUserId))
+            {
+                body["revokeUserId"] = request.RevokeUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignRecordIds))
+            {
+                body["signRecordIds"] = request.SignRecordIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StatusRemark))
+            {
+                body["statusRemark"] = request.StatusRemark;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RevokeSignRecords",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/masters/signCenters/records/revoke",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RevokeSignRecordsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 撤回电子签署中的签署记录
+         *
+         * @param request RevokeSignRecordsRequest
+         * @return RevokeSignRecordsResponse
+         */
+        public RevokeSignRecordsResponse RevokeSignRecords(RevokeSignRecordsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RevokeSignRecordsHeaders headers = new RevokeSignRecordsHeaders();
+            return RevokeSignRecordsWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 撤回电子签署中的签署记录
+         *
+         * @param request RevokeSignRecordsRequest
+         * @return RevokeSignRecordsResponse
+         */
+        public async Task<RevokeSignRecordsResponse> RevokeSignRecordsAsync(RevokeSignRecordsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RevokeSignRecordsHeaders headers = new RevokeSignRecordsHeaders();
+            return await RevokeSignRecordsWithOptionsAsync(request, headers, runtime);
         }
 
         /**

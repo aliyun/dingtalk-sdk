@@ -435,6 +435,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public string Operator { get; set; }
 
+        [NameInMap("orderId")]
+        [Validation(Required=false)]
+        public string OrderId { get; set; }
+
         [NameInMap("source")]
         [Validation(Required=false)]
         public string Source { get; set; }

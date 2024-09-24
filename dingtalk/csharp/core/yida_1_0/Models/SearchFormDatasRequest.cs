@@ -43,6 +43,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [Validation(Required=false)]
         public string Language { get; set; }
 
+        [NameInMap("logicOperator")]
+        [Validation(Required=false)]
+        public string LogicOperator { get; set; }
+
         [NameInMap("modifiedFromTimeGMT")]
         [Validation(Required=false)]
         public string ModifiedFromTimeGMT { get; set; }

@@ -481,6 +481,622 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         }
 
         /**
+         * @summary 创建高校账号用户
+         *
+         * @param request AddCollegeContactExclusiveRequest
+         * @param headers AddCollegeContactExclusiveHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddCollegeContactExclusiveResponse
+         */
+        public AddCollegeContactExclusiveResponse AddCollegeContactExclusiveWithOptions(AddCollegeContactExclusiveRequest request, AddCollegeContactExclusiveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AvatarMediaId))
+            {
+                body["avatarMediaId"] = request.AvatarMediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIdList))
+            {
+                body["deptIdList"] = request.DeptIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptOrderList))
+            {
+                body["deptOrderList"] = request.DeptOrderList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptTitleList))
+            {
+                body["deptTitleList"] = request.DeptTitleList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Email))
+            {
+                body["email"] = request.Email;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmpType))
+            {
+                body["empType"] = request.EmpType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExclusiveAccount))
+            {
+                body["exclusiveAccount"] = request.ExclusiveAccount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExclusiveAccountType))
+            {
+                body["exclusiveAccountType"] = request.ExclusiveAccountType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HiredDate))
+            {
+                body["hiredDate"] = request.HiredDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InitPassword))
+            {
+                body["initPassword"] = request.InitPassword;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobNumber))
+            {
+                body["jobNumber"] = request.JobNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LoginIdType))
+            {
+                body["loginIdType"] = request.LoginIdType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MainDeptId))
+            {
+                body["mainDeptId"] = request.MainDeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManagerUserid))
+            {
+                body["managerUserid"] = request.ManagerUserid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Mobile))
+            {
+                body["mobile"] = request.Mobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Nickname))
+            {
+                body["nickname"] = request.Nickname;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgEmail))
+            {
+                body["orgEmail"] = request.OrgEmail;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgEmailType))
+            {
+                body["orgEmailType"] = request.OrgEmailType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SendActiveSms))
+            {
+                body["sendActiveSms"] = request.SendActiveSms;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SeniorMode))
+            {
+                body["seniorMode"] = request.SeniorMode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Telephone))
+            {
+                body["telephone"] = request.Telephone;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Userid))
+            {
+                body["userid"] = request.Userid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkPlace))
+            {
+                body["workPlace"] = request.WorkPlace;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddCollegeContactExclusive",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/exclusiveAccounts/users",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddCollegeContactExclusiveResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建高校账号用户
+         *
+         * @param request AddCollegeContactExclusiveRequest
+         * @param headers AddCollegeContactExclusiveHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddCollegeContactExclusiveResponse
+         */
+        public async Task<AddCollegeContactExclusiveResponse> AddCollegeContactExclusiveWithOptionsAsync(AddCollegeContactExclusiveRequest request, AddCollegeContactExclusiveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AvatarMediaId))
+            {
+                body["avatarMediaId"] = request.AvatarMediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIdList))
+            {
+                body["deptIdList"] = request.DeptIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptOrderList))
+            {
+                body["deptOrderList"] = request.DeptOrderList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptTitleList))
+            {
+                body["deptTitleList"] = request.DeptTitleList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Email))
+            {
+                body["email"] = request.Email;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmpType))
+            {
+                body["empType"] = request.EmpType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExclusiveAccount))
+            {
+                body["exclusiveAccount"] = request.ExclusiveAccount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExclusiveAccountType))
+            {
+                body["exclusiveAccountType"] = request.ExclusiveAccountType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HiredDate))
+            {
+                body["hiredDate"] = request.HiredDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InitPassword))
+            {
+                body["initPassword"] = request.InitPassword;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobNumber))
+            {
+                body["jobNumber"] = request.JobNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LoginIdType))
+            {
+                body["loginIdType"] = request.LoginIdType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MainDeptId))
+            {
+                body["mainDeptId"] = request.MainDeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManagerUserid))
+            {
+                body["managerUserid"] = request.ManagerUserid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Mobile))
+            {
+                body["mobile"] = request.Mobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Nickname))
+            {
+                body["nickname"] = request.Nickname;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgEmail))
+            {
+                body["orgEmail"] = request.OrgEmail;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgEmailType))
+            {
+                body["orgEmailType"] = request.OrgEmailType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SendActiveSms))
+            {
+                body["sendActiveSms"] = request.SendActiveSms;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SeniorMode))
+            {
+                body["seniorMode"] = request.SeniorMode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Telephone))
+            {
+                body["telephone"] = request.Telephone;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Userid))
+            {
+                body["userid"] = request.Userid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkPlace))
+            {
+                body["workPlace"] = request.WorkPlace;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddCollegeContactExclusive",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/exclusiveAccounts/users",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddCollegeContactExclusiveResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建高校账号用户
+         *
+         * @param request AddCollegeContactExclusiveRequest
+         * @return AddCollegeContactExclusiveResponse
+         */
+        public AddCollegeContactExclusiveResponse AddCollegeContactExclusive(AddCollegeContactExclusiveRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddCollegeContactExclusiveHeaders headers = new AddCollegeContactExclusiveHeaders();
+            return AddCollegeContactExclusiveWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 创建高校账号用户
+         *
+         * @param request AddCollegeContactExclusiveRequest
+         * @return AddCollegeContactExclusiveResponse
+         */
+        public async Task<AddCollegeContactExclusiveResponse> AddCollegeContactExclusiveAsync(AddCollegeContactExclusiveRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddCollegeContactExclusiveHeaders headers = new AddCollegeContactExclusiveHeaders();
+            return await AddCollegeContactExclusiveWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 创建个人账号用户
+         *
+         * @param request AddCollegeContactUserRequest
+         * @param headers AddCollegeContactUserHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddCollegeContactUserResponse
+         */
+        public AddCollegeContactUserResponse AddCollegeContactUserWithOptions(AddCollegeContactUserRequest request, AddCollegeContactUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIdList))
+            {
+                body["deptIdList"] = request.DeptIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptOrderList))
+            {
+                body["deptOrderList"] = request.DeptOrderList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptTitleList))
+            {
+                body["deptTitleList"] = request.DeptTitleList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Email))
+            {
+                body["email"] = request.Email;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmpType))
+            {
+                body["empType"] = request.EmpType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideMobile))
+            {
+                body["hideMobile"] = request.HideMobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HiredDate))
+            {
+                body["hiredDate"] = request.HiredDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobNumber))
+            {
+                body["jobNumber"] = request.JobNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LoginEmail))
+            {
+                body["loginEmail"] = request.LoginEmail;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MainDeptId))
+            {
+                body["mainDeptId"] = request.MainDeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManagerUserid))
+            {
+                body["managerUserid"] = request.ManagerUserid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Mobile))
+            {
+                body["mobile"] = request.Mobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgEmail))
+            {
+                body["orgEmail"] = request.OrgEmail;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgEmailType))
+            {
+                body["orgEmailType"] = request.OrgEmailType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SendActiveSms))
+            {
+                body["sendActiveSms"] = request.SendActiveSms;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SeniorMode))
+            {
+                body["seniorMode"] = request.SeniorMode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Telephone))
+            {
+                body["telephone"] = request.Telephone;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Userid))
+            {
+                body["userid"] = request.Userid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkPlace))
+            {
+                body["workPlace"] = request.WorkPlace;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddCollegeContactUser",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/personalAccounts/users",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddCollegeContactUserResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建个人账号用户
+         *
+         * @param request AddCollegeContactUserRequest
+         * @param headers AddCollegeContactUserHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return AddCollegeContactUserResponse
+         */
+        public async Task<AddCollegeContactUserResponse> AddCollegeContactUserWithOptionsAsync(AddCollegeContactUserRequest request, AddCollegeContactUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIdList))
+            {
+                body["deptIdList"] = request.DeptIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptOrderList))
+            {
+                body["deptOrderList"] = request.DeptOrderList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptTitleList))
+            {
+                body["deptTitleList"] = request.DeptTitleList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Email))
+            {
+                body["email"] = request.Email;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmpType))
+            {
+                body["empType"] = request.EmpType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideMobile))
+            {
+                body["hideMobile"] = request.HideMobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HiredDate))
+            {
+                body["hiredDate"] = request.HiredDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobNumber))
+            {
+                body["jobNumber"] = request.JobNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LoginEmail))
+            {
+                body["loginEmail"] = request.LoginEmail;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MainDeptId))
+            {
+                body["mainDeptId"] = request.MainDeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManagerUserid))
+            {
+                body["managerUserid"] = request.ManagerUserid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Mobile))
+            {
+                body["mobile"] = request.Mobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgEmail))
+            {
+                body["orgEmail"] = request.OrgEmail;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgEmailType))
+            {
+                body["orgEmailType"] = request.OrgEmailType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SendActiveSms))
+            {
+                body["sendActiveSms"] = request.SendActiveSms;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SeniorMode))
+            {
+                body["seniorMode"] = request.SeniorMode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Telephone))
+            {
+                body["telephone"] = request.Telephone;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Userid))
+            {
+                body["userid"] = request.Userid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkPlace))
+            {
+                body["workPlace"] = request.WorkPlace;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddCollegeContactUser",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/personalAccounts/users",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddCollegeContactUserResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建个人账号用户
+         *
+         * @param request AddCollegeContactUserRequest
+         * @return AddCollegeContactUserResponse
+         */
+        public AddCollegeContactUserResponse AddCollegeContactUser(AddCollegeContactUserRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddCollegeContactUserHeaders headers = new AddCollegeContactUserHeaders();
+            return AddCollegeContactUserWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 创建个人账号用户
+         *
+         * @param request AddCollegeContactUserRequest
+         * @return AddCollegeContactUserResponse
+         */
+        public async Task<AddCollegeContactUserResponse> AddCollegeContactUserAsync(AddCollegeContactUserRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddCollegeContactUserHeaders headers = new AddCollegeContactUserHeaders();
+            return await AddCollegeContactUserWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 增加赛事记录
          *
          * @param request AddCompetitionRecordRequest
@@ -3458,6 +4074,298 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             CreateAppOrderHeaders headers = new CreateAppOrderHeaders();
             return await CreateAppOrderWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 创建高校通讯录组织单元
+         *
+         * @param request CreateCollegeContactDeptRequest
+         * @param headers CreateCollegeContactDeptHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateCollegeContactDeptResponse
+         */
+        public CreateCollegeContactDeptResponse CreateCollegeContactDeptWithOptions(CreateCollegeContactDeptRequest request, CreateCollegeContactDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AutoApproveApply))
+            {
+                body["autoApproveApply"] = request.AutoApproveApply;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Brief))
+            {
+                body["brief"] = request.Brief;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                body["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateDeptGroup))
+            {
+                body["createDeptGroup"] = request.CreateDeptGroup;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptCode))
+            {
+                body["deptCode"] = request.DeptCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptPermits))
+            {
+                body["deptPermits"] = request.DeptPermits;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptType))
+            {
+                body["deptType"] = request.DeptType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmpApplyJoinDept))
+            {
+                body["empApplyJoinDept"] = request.EmpApplyJoinDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideDept))
+            {
+                body["hideDept"] = request.HideDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideSceneConfig))
+            {
+                body["hideSceneConfig"] = request.HideSceneConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Order))
+            {
+                body["order"] = request.Order;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterDept))
+            {
+                body["outerDept"] = request.OuterDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterDeptOnlySelf))
+            {
+                body["outerDeptOnlySelf"] = request.OuterDeptOnlySelf;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterPermitDepts))
+            {
+                body["outerPermitDepts"] = request.OuterPermitDepts;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterPermitUsers))
+            {
+                body["outerPermitUsers"] = request.OuterPermitUsers;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterSceneConfig))
+            {
+                body["outerSceneConfig"] = request.OuterSceneConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentId))
+            {
+                body["parentId"] = request.ParentId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceIdentifier))
+            {
+                body["sourceIdentifier"] = request.SourceIdentifier;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruId))
+            {
+                body["struId"] = request.StruId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Telephone))
+            {
+                body["telephone"] = request.Telephone;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserPermits))
+            {
+                body["userPermits"] = request.UserPermits;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateCollegeContactDept",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/depts",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateCollegeContactDeptResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建高校通讯录组织单元
+         *
+         * @param request CreateCollegeContactDeptRequest
+         * @param headers CreateCollegeContactDeptHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return CreateCollegeContactDeptResponse
+         */
+        public async Task<CreateCollegeContactDeptResponse> CreateCollegeContactDeptWithOptionsAsync(CreateCollegeContactDeptRequest request, CreateCollegeContactDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AutoApproveApply))
+            {
+                body["autoApproveApply"] = request.AutoApproveApply;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Brief))
+            {
+                body["brief"] = request.Brief;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                body["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateDeptGroup))
+            {
+                body["createDeptGroup"] = request.CreateDeptGroup;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptCode))
+            {
+                body["deptCode"] = request.DeptCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptPermits))
+            {
+                body["deptPermits"] = request.DeptPermits;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptType))
+            {
+                body["deptType"] = request.DeptType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmpApplyJoinDept))
+            {
+                body["empApplyJoinDept"] = request.EmpApplyJoinDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideDept))
+            {
+                body["hideDept"] = request.HideDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideSceneConfig))
+            {
+                body["hideSceneConfig"] = request.HideSceneConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Order))
+            {
+                body["order"] = request.Order;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterDept))
+            {
+                body["outerDept"] = request.OuterDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterDeptOnlySelf))
+            {
+                body["outerDeptOnlySelf"] = request.OuterDeptOnlySelf;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterPermitDepts))
+            {
+                body["outerPermitDepts"] = request.OuterPermitDepts;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterPermitUsers))
+            {
+                body["outerPermitUsers"] = request.OuterPermitUsers;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterSceneConfig))
+            {
+                body["outerSceneConfig"] = request.OuterSceneConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentId))
+            {
+                body["parentId"] = request.ParentId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceIdentifier))
+            {
+                body["sourceIdentifier"] = request.SourceIdentifier;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruId))
+            {
+                body["struId"] = request.StruId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Telephone))
+            {
+                body["telephone"] = request.Telephone;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserPermits))
+            {
+                body["userPermits"] = request.UserPermits;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateCollegeContactDept",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/depts",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateCollegeContactDeptResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 创建高校通讯录组织单元
+         *
+         * @param request CreateCollegeContactDeptRequest
+         * @return CreateCollegeContactDeptResponse
+         */
+        public CreateCollegeContactDeptResponse CreateCollegeContactDept(CreateCollegeContactDeptRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateCollegeContactDeptHeaders headers = new CreateCollegeContactDeptHeaders();
+            return CreateCollegeContactDeptWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 创建高校通讯录组织单元
+         *
+         * @param request CreateCollegeContactDeptRequest
+         * @return CreateCollegeContactDeptResponse
+         */
+        public async Task<CreateCollegeContactDeptResponse> CreateCollegeContactDeptAsync(CreateCollegeContactDeptRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateCollegeContactDeptHeaders headers = new CreateCollegeContactDeptHeaders();
+            return await CreateCollegeContactDeptWithOptionsAsync(request, headers, runtime);
         }
 
         /**
@@ -9425,6 +10333,246 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         }
 
         /**
+         * @summary 获取高校通讯录组织单元详情
+         *
+         * @param request GetCollegeContactDeptDetailRequest
+         * @param headers GetCollegeContactDeptDetailHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetCollegeContactDeptDetailResponse
+         */
+        public GetCollegeContactDeptDetailResponse GetCollegeContactDeptDetailWithOptions(GetCollegeContactDeptDetailRequest request, GetCollegeContactDeptDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                query["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
+            {
+                query["language"] = request.Language;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCollegeContactDeptDetail",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/depts",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCollegeContactDeptDetailResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取高校通讯录组织单元详情
+         *
+         * @param request GetCollegeContactDeptDetailRequest
+         * @param headers GetCollegeContactDeptDetailHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetCollegeContactDeptDetailResponse
+         */
+        public async Task<GetCollegeContactDeptDetailResponse> GetCollegeContactDeptDetailWithOptionsAsync(GetCollegeContactDeptDetailRequest request, GetCollegeContactDeptDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                query["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
+            {
+                query["language"] = request.Language;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCollegeContactDeptDetail",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/depts",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCollegeContactDeptDetailResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取高校通讯录组织单元详情
+         *
+         * @param request GetCollegeContactDeptDetailRequest
+         * @return GetCollegeContactDeptDetailResponse
+         */
+        public GetCollegeContactDeptDetailResponse GetCollegeContactDeptDetail(GetCollegeContactDeptDetailRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCollegeContactDeptDetailHeaders headers = new GetCollegeContactDeptDetailHeaders();
+            return GetCollegeContactDeptDetailWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取高校通讯录组织单元详情
+         *
+         * @param request GetCollegeContactDeptDetailRequest
+         * @return GetCollegeContactDeptDetailResponse
+         */
+        public async Task<GetCollegeContactDeptDetailResponse> GetCollegeContactDeptDetailAsync(GetCollegeContactDeptDetailRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCollegeContactDeptDetailHeaders headers = new GetCollegeContactDeptDetailHeaders();
+            return await GetCollegeContactDeptDetailWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取行政组织架构信息
+         *
+         * @param request GetCollegeContactStandardStruDeptDetailRequest
+         * @param headers GetCollegeContactStandardStruDeptDetailHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetCollegeContactStandardStruDeptDetailResponse
+         */
+        public GetCollegeContactStandardStruDeptDetailResponse GetCollegeContactStandardStruDeptDetailWithOptions(GetCollegeContactStandardStruDeptDetailRequest request, GetCollegeContactStandardStruDeptDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
+            {
+                query["language"] = request.Language;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCollegeContactStandardStruDeptDetail",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/depts/structures/standards",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCollegeContactStandardStruDeptDetailResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取行政组织架构信息
+         *
+         * @param request GetCollegeContactStandardStruDeptDetailRequest
+         * @param headers GetCollegeContactStandardStruDeptDetailHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return GetCollegeContactStandardStruDeptDetailResponse
+         */
+        public async Task<GetCollegeContactStandardStruDeptDetailResponse> GetCollegeContactStandardStruDeptDetailWithOptionsAsync(GetCollegeContactStandardStruDeptDetailRequest request, GetCollegeContactStandardStruDeptDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
+            {
+                query["language"] = request.Language;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetCollegeContactStandardStruDeptDetail",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/depts/structures/standards",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetCollegeContactStandardStruDeptDetailResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取行政组织架构信息
+         *
+         * @param request GetCollegeContactStandardStruDeptDetailRequest
+         * @return GetCollegeContactStandardStruDeptDetailResponse
+         */
+        public GetCollegeContactStandardStruDeptDetailResponse GetCollegeContactStandardStruDeptDetail(GetCollegeContactStandardStruDeptDetailRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCollegeContactStandardStruDeptDetailHeaders headers = new GetCollegeContactStandardStruDeptDetailHeaders();
+            return GetCollegeContactStandardStruDeptDetailWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取行政组织架构信息
+         *
+         * @param request GetCollegeContactStandardStruDeptDetailRequest
+         * @return GetCollegeContactStandardStruDeptDetailResponse
+         */
+        public async Task<GetCollegeContactStandardStruDeptDetailResponse> GetCollegeContactStandardStruDeptDetailAsync(GetCollegeContactStandardStruDeptDetailRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetCollegeContactStandardStruDeptDetailHeaders headers = new GetCollegeContactStandardStruDeptDetailHeaders();
+            return await GetCollegeContactStandardStruDeptDetailWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 获取默认孩子信息
          *
          * @param headers GetDefaultChildHeaders
@@ -11505,6 +12653,246 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         }
 
         /**
+         * @summary 获取高校组织单元类型
+         *
+         * @param request ListCollegeContactDeptTypeConfigRequest
+         * @param headers ListCollegeContactDeptTypeConfigHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListCollegeContactDeptTypeConfigResponse
+         */
+        public ListCollegeContactDeptTypeConfigResponse ListCollegeContactDeptTypeConfigWithOptions(ListCollegeContactDeptTypeConfigRequest request, ListCollegeContactDeptTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
+            {
+                query["language"] = request.Language;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListCollegeContactDeptTypeConfig",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/configs/deptTypes",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListCollegeContactDeptTypeConfigResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取高校组织单元类型
+         *
+         * @param request ListCollegeContactDeptTypeConfigRequest
+         * @param headers ListCollegeContactDeptTypeConfigHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListCollegeContactDeptTypeConfigResponse
+         */
+        public async Task<ListCollegeContactDeptTypeConfigResponse> ListCollegeContactDeptTypeConfigWithOptionsAsync(ListCollegeContactDeptTypeConfigRequest request, ListCollegeContactDeptTypeConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
+            {
+                query["language"] = request.Language;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListCollegeContactDeptTypeConfig",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/configs/deptTypes",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListCollegeContactDeptTypeConfigResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取高校组织单元类型
+         *
+         * @param request ListCollegeContactDeptTypeConfigRequest
+         * @return ListCollegeContactDeptTypeConfigResponse
+         */
+        public ListCollegeContactDeptTypeConfigResponse ListCollegeContactDeptTypeConfig(ListCollegeContactDeptTypeConfigRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListCollegeContactDeptTypeConfigHeaders headers = new ListCollegeContactDeptTypeConfigHeaders();
+            return ListCollegeContactDeptTypeConfigWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取高校组织单元类型
+         *
+         * @param request ListCollegeContactDeptTypeConfigRequest
+         * @return ListCollegeContactDeptTypeConfigResponse
+         */
+        public async Task<ListCollegeContactDeptTypeConfigResponse> ListCollegeContactDeptTypeConfigAsync(ListCollegeContactDeptTypeConfigRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListCollegeContactDeptTypeConfigHeaders headers = new ListCollegeContactDeptTypeConfigHeaders();
+            return await ListCollegeContactDeptTypeConfigWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取高校通讯录子组织单元列表
+         *
+         * @param request ListCollegeContactSubDeptsRequest
+         * @param headers ListCollegeContactSubDeptsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListCollegeContactSubDeptsResponse
+         */
+        public ListCollegeContactSubDeptsResponse ListCollegeContactSubDeptsWithOptions(ListCollegeContactSubDeptsRequest request, ListCollegeContactSubDeptsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                query["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
+            {
+                query["language"] = request.Language;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListCollegeContactSubDepts",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/subDepts",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListCollegeContactSubDeptsResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取高校通讯录子组织单元列表
+         *
+         * @param request ListCollegeContactSubDeptsRequest
+         * @param headers ListCollegeContactSubDeptsHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return ListCollegeContactSubDeptsResponse
+         */
+        public async Task<ListCollegeContactSubDeptsResponse> ListCollegeContactSubDeptsWithOptionsAsync(ListCollegeContactSubDeptsRequest request, ListCollegeContactSubDeptsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                query["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
+            {
+                query["language"] = request.Language;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListCollegeContactSubDepts",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/subDepts",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListCollegeContactSubDeptsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取高校通讯录子组织单元列表
+         *
+         * @param request ListCollegeContactSubDeptsRequest
+         * @return ListCollegeContactSubDeptsResponse
+         */
+        public ListCollegeContactSubDeptsResponse ListCollegeContactSubDepts(ListCollegeContactSubDeptsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListCollegeContactSubDeptsHeaders headers = new ListCollegeContactSubDeptsHeaders();
+            return ListCollegeContactSubDeptsWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取高校通讯录子组织单元列表
+         *
+         * @param request ListCollegeContactSubDeptsRequest
+         * @return ListCollegeContactSubDeptsResponse
+         */
+        public async Task<ListCollegeContactSubDeptsResponse> ListCollegeContactSubDeptsAsync(ListCollegeContactSubDeptsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListCollegeContactSubDeptsHeaders headers = new ListCollegeContactSubDeptsHeaders();
+            return await ListCollegeContactSubDeptsWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
          * @summary 查询订单
          *
          * @param request ListOrderRequest
@@ -13110,6 +14498,130 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryClassScheduleConfigHeaders headers = new QueryClassScheduleConfigHeaders();
             return await QueryClassScheduleConfigWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取用户详情(包含高校账号)
+         *
+         * @param request QueryCollegeContactUserDetailRequest
+         * @param headers QueryCollegeContactUserDetailHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryCollegeContactUserDetailResponse
+         */
+        public QueryCollegeContactUserDetailResponse QueryCollegeContactUserDetailWithOptions(QueryCollegeContactUserDetailRequest request, QueryCollegeContactUserDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
+            {
+                query["language"] = request.Language;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Userid))
+            {
+                query["userid"] = request.Userid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCollegeContactUserDetail",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/users",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCollegeContactUserDetailResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取用户详情(包含高校账号)
+         *
+         * @param request QueryCollegeContactUserDetailRequest
+         * @param headers QueryCollegeContactUserDetailHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return QueryCollegeContactUserDetailResponse
+         */
+        public async Task<QueryCollegeContactUserDetailResponse> QueryCollegeContactUserDetailWithOptionsAsync(QueryCollegeContactUserDetailRequest request, QueryCollegeContactUserDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
+            {
+                query["language"] = request.Language;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Userid))
+            {
+                query["userid"] = request.Userid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryCollegeContactUserDetail",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/users",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryCollegeContactUserDetailResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 获取用户详情(包含高校账号)
+         *
+         * @param request QueryCollegeContactUserDetailRequest
+         * @return QueryCollegeContactUserDetailResponse
+         */
+        public QueryCollegeContactUserDetailResponse QueryCollegeContactUserDetail(QueryCollegeContactUserDetailRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryCollegeContactUserDetailHeaders headers = new QueryCollegeContactUserDetailHeaders();
+            return QueryCollegeContactUserDetailWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 获取用户详情(包含高校账号)
+         *
+         * @param request QueryCollegeContactUserDetailRequest
+         * @return QueryCollegeContactUserDetailResponse
+         */
+        public async Task<QueryCollegeContactUserDetailResponse> QueryCollegeContactUserDetailAsync(QueryCollegeContactUserDetailRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryCollegeContactUserDetailHeaders headers = new QueryCollegeContactUserDetailHeaders();
+            return await QueryCollegeContactUserDetailWithOptionsAsync(request, headers, runtime);
         }
 
         /**
@@ -17700,6 +19212,1078 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateCollegeAlumniUserInfoHeaders headers = new UpdateCollegeAlumniUserInfoHeaders();
             return await UpdateCollegeAlumniUserInfoWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 更新高校通讯录组织单元
+         *
+         * @param request UpdateCollegeContactDeptRequest
+         * @param headers UpdateCollegeContactDeptHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateCollegeContactDeptResponse
+         */
+        public UpdateCollegeContactDeptResponse UpdateCollegeContactDeptWithOptions(UpdateCollegeContactDeptRequest request, UpdateCollegeContactDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AutoAddUser))
+            {
+                body["autoAddUser"] = request.AutoAddUser;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AutoApproveApply))
+            {
+                body["autoApproveApply"] = request.AutoApproveApply;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Brief))
+            {
+                body["brief"] = request.Brief;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                body["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateDeptGroup))
+            {
+                body["createDeptGroup"] = request.CreateDeptGroup;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptCode))
+            {
+                body["deptCode"] = request.DeptCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptManagerUseridList))
+            {
+                body["deptManagerUseridList"] = request.DeptManagerUseridList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptPermits))
+            {
+                body["deptPermits"] = request.DeptPermits;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptType))
+            {
+                body["deptType"] = request.DeptType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmpApplyJoinDept))
+            {
+                body["empApplyJoinDept"] = request.EmpApplyJoinDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ForceUpdateFields))
+            {
+                body["forceUpdateFields"] = request.ForceUpdateFields;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupContainHiddenDept))
+            {
+                body["groupContainHiddenDept"] = request.GroupContainHiddenDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupContainOuterDept))
+            {
+                body["groupContainOuterDept"] = request.GroupContainOuterDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupContainSubDept))
+            {
+                body["groupContainSubDept"] = request.GroupContainSubDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideDept))
+            {
+                body["hideDept"] = request.HideDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideSceneConfig))
+            {
+                body["hideSceneConfig"] = request.HideSceneConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
+            {
+                body["language"] = request.Language;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Order))
+            {
+                body["order"] = request.Order;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgDeptOwner))
+            {
+                body["orgDeptOwner"] = request.OrgDeptOwner;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterDept))
+            {
+                body["outerDept"] = request.OuterDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterDeptOnlySelf))
+            {
+                body["outerDeptOnlySelf"] = request.OuterDeptOnlySelf;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterPermitDepts))
+            {
+                body["outerPermitDepts"] = request.OuterPermitDepts;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterPermitUsers))
+            {
+                body["outerPermitUsers"] = request.OuterPermitUsers;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterSceneConfig))
+            {
+                body["outerSceneConfig"] = request.OuterSceneConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentId))
+            {
+                body["parentId"] = request.ParentId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceIdentifier))
+            {
+                body["sourceIdentifier"] = request.SourceIdentifier;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Telephone))
+            {
+                body["telephone"] = request.Telephone;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserPermits))
+            {
+                body["userPermits"] = request.UserPermits;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCollegeContactDept",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/depts",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCollegeContactDeptResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 更新高校通讯录组织单元
+         *
+         * @param request UpdateCollegeContactDeptRequest
+         * @param headers UpdateCollegeContactDeptHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateCollegeContactDeptResponse
+         */
+        public async Task<UpdateCollegeContactDeptResponse> UpdateCollegeContactDeptWithOptionsAsync(UpdateCollegeContactDeptRequest request, UpdateCollegeContactDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AutoAddUser))
+            {
+                body["autoAddUser"] = request.AutoAddUser;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AutoApproveApply))
+            {
+                body["autoApproveApply"] = request.AutoApproveApply;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Brief))
+            {
+                body["brief"] = request.Brief;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Code))
+            {
+                body["code"] = request.Code;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateDeptGroup))
+            {
+                body["createDeptGroup"] = request.CreateDeptGroup;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptCode))
+            {
+                body["deptCode"] = request.DeptCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptId))
+            {
+                body["deptId"] = request.DeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptManagerUseridList))
+            {
+                body["deptManagerUseridList"] = request.DeptManagerUseridList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptPermits))
+            {
+                body["deptPermits"] = request.DeptPermits;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptType))
+            {
+                body["deptType"] = request.DeptType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmpApplyJoinDept))
+            {
+                body["empApplyJoinDept"] = request.EmpApplyJoinDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ForceUpdateFields))
+            {
+                body["forceUpdateFields"] = request.ForceUpdateFields;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupContainHiddenDept))
+            {
+                body["groupContainHiddenDept"] = request.GroupContainHiddenDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupContainOuterDept))
+            {
+                body["groupContainOuterDept"] = request.GroupContainOuterDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GroupContainSubDept))
+            {
+                body["groupContainSubDept"] = request.GroupContainSubDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideDept))
+            {
+                body["hideDept"] = request.HideDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideSceneConfig))
+            {
+                body["hideSceneConfig"] = request.HideSceneConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
+            {
+                body["language"] = request.Language;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Order))
+            {
+                body["order"] = request.Order;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgDeptOwner))
+            {
+                body["orgDeptOwner"] = request.OrgDeptOwner;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterDept))
+            {
+                body["outerDept"] = request.OuterDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterDeptOnlySelf))
+            {
+                body["outerDeptOnlySelf"] = request.OuterDeptOnlySelf;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterPermitDepts))
+            {
+                body["outerPermitDepts"] = request.OuterPermitDepts;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterPermitUsers))
+            {
+                body["outerPermitUsers"] = request.OuterPermitUsers;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OuterSceneConfig))
+            {
+                body["outerSceneConfig"] = request.OuterSceneConfig;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentId))
+            {
+                body["parentId"] = request.ParentId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceIdentifier))
+            {
+                body["sourceIdentifier"] = request.SourceIdentifier;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Telephone))
+            {
+                body["telephone"] = request.Telephone;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserPermits))
+            {
+                body["userPermits"] = request.UserPermits;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCollegeContactDept",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/depts",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCollegeContactDeptResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 更新高校通讯录组织单元
+         *
+         * @param request UpdateCollegeContactDeptRequest
+         * @return UpdateCollegeContactDeptResponse
+         */
+        public UpdateCollegeContactDeptResponse UpdateCollegeContactDept(UpdateCollegeContactDeptRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCollegeContactDeptHeaders headers = new UpdateCollegeContactDeptHeaders();
+            return UpdateCollegeContactDeptWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 更新高校通讯录组织单元
+         *
+         * @param request UpdateCollegeContactDeptRequest
+         * @return UpdateCollegeContactDeptResponse
+         */
+        public async Task<UpdateCollegeContactDeptResponse> UpdateCollegeContactDeptAsync(UpdateCollegeContactDeptRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCollegeContactDeptHeaders headers = new UpdateCollegeContactDeptHeaders();
+            return await UpdateCollegeContactDeptWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 更新高校账号用户
+         *
+         * @param request UpdateCollegeContactExclusiveRequest
+         * @param headers UpdateCollegeContactExclusiveHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateCollegeContactExclusiveResponse
+         */
+        public UpdateCollegeContactExclusiveResponse UpdateCollegeContactExclusiveWithOptions(UpdateCollegeContactExclusiveRequest request, UpdateCollegeContactExclusiveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AvatarMediaId))
+            {
+                body["avatarMediaId"] = request.AvatarMediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIdList))
+            {
+                body["deptIdList"] = request.DeptIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptOrderList))
+            {
+                body["deptOrderList"] = request.DeptOrderList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptTitleList))
+            {
+                body["deptTitleList"] = request.DeptTitleList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Email))
+            {
+                body["email"] = request.Email;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmpType))
+            {
+                body["empType"] = request.EmpType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ForceUpdateFields))
+            {
+                body["forceUpdateFields"] = request.ForceUpdateFields;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideMobile))
+            {
+                body["hideMobile"] = request.HideMobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HiredDate))
+            {
+                body["hiredDate"] = request.HiredDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobNumber))
+            {
+                body["jobNumber"] = request.JobNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
+            {
+                body["language"] = request.Language;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LoginIdType))
+            {
+                body["loginIdType"] = request.LoginIdType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MainDeptId))
+            {
+                body["mainDeptId"] = request.MainDeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManagerUserid))
+            {
+                body["managerUserid"] = request.ManagerUserid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Mobile))
+            {
+                body["mobile"] = request.Mobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Nickname))
+            {
+                body["nickname"] = request.Nickname;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgEmail))
+            {
+                body["orgEmail"] = request.OrgEmail;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgEmailType))
+            {
+                body["orgEmailType"] = request.OrgEmailType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SeniorMode))
+            {
+                body["seniorMode"] = request.SeniorMode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Telephone))
+            {
+                body["telephone"] = request.Telephone;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Userid))
+            {
+                body["userid"] = request.Userid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkPlace))
+            {
+                body["workPlace"] = request.WorkPlace;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCollegeContactExclusive",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/exclusiveAccounts/users",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCollegeContactExclusiveResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 更新高校账号用户
+         *
+         * @param request UpdateCollegeContactExclusiveRequest
+         * @param headers UpdateCollegeContactExclusiveHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateCollegeContactExclusiveResponse
+         */
+        public async Task<UpdateCollegeContactExclusiveResponse> UpdateCollegeContactExclusiveWithOptionsAsync(UpdateCollegeContactExclusiveRequest request, UpdateCollegeContactExclusiveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AvatarMediaId))
+            {
+                body["avatarMediaId"] = request.AvatarMediaId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIdList))
+            {
+                body["deptIdList"] = request.DeptIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptOrderList))
+            {
+                body["deptOrderList"] = request.DeptOrderList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptTitleList))
+            {
+                body["deptTitleList"] = request.DeptTitleList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Email))
+            {
+                body["email"] = request.Email;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmpType))
+            {
+                body["empType"] = request.EmpType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ForceUpdateFields))
+            {
+                body["forceUpdateFields"] = request.ForceUpdateFields;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideMobile))
+            {
+                body["hideMobile"] = request.HideMobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HiredDate))
+            {
+                body["hiredDate"] = request.HiredDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobNumber))
+            {
+                body["jobNumber"] = request.JobNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
+            {
+                body["language"] = request.Language;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LoginIdType))
+            {
+                body["loginIdType"] = request.LoginIdType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MainDeptId))
+            {
+                body["mainDeptId"] = request.MainDeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManagerUserid))
+            {
+                body["managerUserid"] = request.ManagerUserid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Mobile))
+            {
+                body["mobile"] = request.Mobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Nickname))
+            {
+                body["nickname"] = request.Nickname;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgEmail))
+            {
+                body["orgEmail"] = request.OrgEmail;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgEmailType))
+            {
+                body["orgEmailType"] = request.OrgEmailType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SeniorMode))
+            {
+                body["seniorMode"] = request.SeniorMode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Telephone))
+            {
+                body["telephone"] = request.Telephone;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Userid))
+            {
+                body["userid"] = request.Userid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkPlace))
+            {
+                body["workPlace"] = request.WorkPlace;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCollegeContactExclusive",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/exclusiveAccounts/users",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCollegeContactExclusiveResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 更新高校账号用户
+         *
+         * @param request UpdateCollegeContactExclusiveRequest
+         * @return UpdateCollegeContactExclusiveResponse
+         */
+        public UpdateCollegeContactExclusiveResponse UpdateCollegeContactExclusive(UpdateCollegeContactExclusiveRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCollegeContactExclusiveHeaders headers = new UpdateCollegeContactExclusiveHeaders();
+            return UpdateCollegeContactExclusiveWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 更新高校账号用户
+         *
+         * @param request UpdateCollegeContactExclusiveRequest
+         * @return UpdateCollegeContactExclusiveResponse
+         */
+        public async Task<UpdateCollegeContactExclusiveResponse> UpdateCollegeContactExclusiveAsync(UpdateCollegeContactExclusiveRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCollegeContactExclusiveHeaders headers = new UpdateCollegeContactExclusiveHeaders();
+            return await UpdateCollegeContactExclusiveWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 更新个人账号用户
+         *
+         * @param request UpdateCollegeContactUserRequest
+         * @param headers UpdateCollegeContactUserHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateCollegeContactUserResponse
+         */
+        public UpdateCollegeContactUserResponse UpdateCollegeContactUserWithOptions(UpdateCollegeContactUserRequest request, UpdateCollegeContactUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIdList))
+            {
+                body["deptIdList"] = request.DeptIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptOrderList))
+            {
+                body["deptOrderList"] = request.DeptOrderList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptTitleList))
+            {
+                body["deptTitleList"] = request.DeptTitleList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Email))
+            {
+                body["email"] = request.Email;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmpType))
+            {
+                body["empType"] = request.EmpType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ForceUpdateFields))
+            {
+                body["forceUpdateFields"] = request.ForceUpdateFields;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideMobile))
+            {
+                body["hideMobile"] = request.HideMobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HiredDate))
+            {
+                body["hiredDate"] = request.HiredDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobNumber))
+            {
+                body["jobNumber"] = request.JobNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
+            {
+                body["language"] = request.Language;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MainDeptId))
+            {
+                body["mainDeptId"] = request.MainDeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManagerUserid))
+            {
+                body["managerUserid"] = request.ManagerUserid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgEmail))
+            {
+                body["orgEmail"] = request.OrgEmail;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SeniorMode))
+            {
+                body["seniorMode"] = request.SeniorMode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Telephone))
+            {
+                body["telephone"] = request.Telephone;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Userid))
+            {
+                body["userid"] = request.Userid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkPlace))
+            {
+                body["workPlace"] = request.WorkPlace;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCollegeContactUser",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/personalAccounts/users",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCollegeContactUserResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 更新个人账号用户
+         *
+         * @param request UpdateCollegeContactUserRequest
+         * @param headers UpdateCollegeContactUserHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateCollegeContactUserResponse
+         */
+        public async Task<UpdateCollegeContactUserResponse> UpdateCollegeContactUserWithOptionsAsync(UpdateCollegeContactUserRequest request, UpdateCollegeContactUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptIdList))
+            {
+                body["deptIdList"] = request.DeptIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptOrderList))
+            {
+                body["deptOrderList"] = request.DeptOrderList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptTitleList))
+            {
+                body["deptTitleList"] = request.DeptTitleList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Email))
+            {
+                body["email"] = request.Email;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmpType))
+            {
+                body["empType"] = request.EmpType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ForceUpdateFields))
+            {
+                body["forceUpdateFields"] = request.ForceUpdateFields;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HideMobile))
+            {
+                body["hideMobile"] = request.HideMobile;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HiredDate))
+            {
+                body["hiredDate"] = request.HiredDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobNumber))
+            {
+                body["jobNumber"] = request.JobNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
+            {
+                body["language"] = request.Language;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MainDeptId))
+            {
+                body["mainDeptId"] = request.MainDeptId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ManagerUserid))
+            {
+                body["managerUserid"] = request.ManagerUserid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrgEmail))
+            {
+                body["orgEmail"] = request.OrgEmail;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SeniorMode))
+            {
+                body["seniorMode"] = request.SeniorMode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Telephone))
+            {
+                body["telephone"] = request.Telephone;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Userid))
+            {
+                body["userid"] = request.Userid;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkPlace))
+            {
+                body["workPlace"] = request.WorkPlace;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCollegeContactUser",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/personalAccounts/users",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCollegeContactUserResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 更新个人账号用户
+         *
+         * @param request UpdateCollegeContactUserRequest
+         * @return UpdateCollegeContactUserResponse
+         */
+        public UpdateCollegeContactUserResponse UpdateCollegeContactUser(UpdateCollegeContactUserRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCollegeContactUserHeaders headers = new UpdateCollegeContactUserHeaders();
+            return UpdateCollegeContactUserWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 更新个人账号用户
+         *
+         * @param request UpdateCollegeContactUserRequest
+         * @return UpdateCollegeContactUserResponse
+         */
+        public async Task<UpdateCollegeContactUserResponse> UpdateCollegeContactUserAsync(UpdateCollegeContactUserRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCollegeContactUserHeaders headers = new UpdateCollegeContactUserHeaders();
+            return await UpdateCollegeContactUserWithOptionsAsync(request, headers, runtime);
+        }
+
+        /**
+         * @summary 修改用户成员类型
+         *
+         * @param request UpdateCollegeUserEmpTypeRequest
+         * @param headers UpdateCollegeUserEmpTypeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateCollegeUserEmpTypeResponse
+         */
+        public UpdateCollegeUserEmpTypeResponse UpdateCollegeUserEmpTypeWithOptions(UpdateCollegeUserEmpTypeRequest request, UpdateCollegeUserEmpTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmpType))
+            {
+                body["empType"] = request.EmpType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Userid))
+            {
+                body["userid"] = request.Userid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCollegeUserEmpType",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/empTypes/change",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCollegeUserEmpTypeResponse>(Execute(params_, req, runtime));
+        }
+
+        /**
+         * @summary 修改用户成员类型
+         *
+         * @param request UpdateCollegeUserEmpTypeRequest
+         * @param headers UpdateCollegeUserEmpTypeHeaders
+         * @param runtime runtime options for this request RuntimeOptions
+         * @return UpdateCollegeUserEmpTypeResponse
+         */
+        public async Task<UpdateCollegeUserEmpTypeResponse> UpdateCollegeUserEmpTypeWithOptionsAsync(UpdateCollegeUserEmpTypeRequest request, UpdateCollegeUserEmpTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EmpType))
+            {
+                body["empType"] = request.EmpType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Userid))
+            {
+                body["userid"] = request.Userid;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCollegeUserEmpType",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/empTypes/change",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCollegeUserEmpTypeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /**
+         * @summary 修改用户成员类型
+         *
+         * @param request UpdateCollegeUserEmpTypeRequest
+         * @return UpdateCollegeUserEmpTypeResponse
+         */
+        public UpdateCollegeUserEmpTypeResponse UpdateCollegeUserEmpType(UpdateCollegeUserEmpTypeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCollegeUserEmpTypeHeaders headers = new UpdateCollegeUserEmpTypeHeaders();
+            return UpdateCollegeUserEmpTypeWithOptions(request, headers, runtime);
+        }
+
+        /**
+         * @summary 修改用户成员类型
+         *
+         * @param request UpdateCollegeUserEmpTypeRequest
+         * @return UpdateCollegeUserEmpTypeResponse
+         */
+        public async Task<UpdateCollegeUserEmpTypeResponse> UpdateCollegeUserEmpTypeAsync(UpdateCollegeUserEmpTypeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCollegeUserEmpTypeHeaders headers = new UpdateCollegeUserEmpTypeHeaders();
+            return await UpdateCollegeUserEmpTypeWithOptionsAsync(request, headers, runtime);
         }
 
         /**
