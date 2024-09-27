@@ -1018,6 +1018,132 @@ class Client(OpenApiClient):
         headers = dingtalkconference__1__0_models.FocusHeaders()
         return await self.focus_with_options_async(conference_id, request, headers, runtime)
 
+    def generate_flash_minutes_document_url_with_options(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.GenerateFlashMinutesDocumentUrlRequest,
+        headers: dingtalkconference__1__0_models.GenerateFlashMinutesDocumentUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.GenerateFlashMinutesDocumentUrlResponse:
+        """
+        @summary 生成会议闪记文档的下载链接
+        
+        @param request: GenerateFlashMinutesDocumentUrlRequest
+        @param headers: GenerateFlashMinutesDocumentUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GenerateFlashMinutesDocumentUrlResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_type):
+            query['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.expire_time):
+            query['expireTime'] = request.expire_time
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GenerateFlashMinutesDocumentUrl',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/flashMinutes/document/generate',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.GenerateFlashMinutesDocumentUrlResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def generate_flash_minutes_document_url_with_options_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.GenerateFlashMinutesDocumentUrlRequest,
+        headers: dingtalkconference__1__0_models.GenerateFlashMinutesDocumentUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.GenerateFlashMinutesDocumentUrlResponse:
+        """
+        @summary 生成会议闪记文档的下载链接
+        
+        @param request: GenerateFlashMinutesDocumentUrlRequest
+        @param headers: GenerateFlashMinutesDocumentUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GenerateFlashMinutesDocumentUrlResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_type):
+            query['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.expire_time):
+            query['expireTime'] = request.expire_time
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GenerateFlashMinutesDocumentUrl',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/videoConferences/{conference_id}/flashMinutes/document/generate',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.GenerateFlashMinutesDocumentUrlResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def generate_flash_minutes_document_url(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.GenerateFlashMinutesDocumentUrlRequest,
+    ) -> dingtalkconference__1__0_models.GenerateFlashMinutesDocumentUrlResponse:
+        """
+        @summary 生成会议闪记文档的下载链接
+        
+        @param request: GenerateFlashMinutesDocumentUrlRequest
+        @return: GenerateFlashMinutesDocumentUrlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.GenerateFlashMinutesDocumentUrlHeaders()
+        return self.generate_flash_minutes_document_url_with_options(conference_id, request, headers, runtime)
+
+    async def generate_flash_minutes_document_url_async(
+        self,
+        conference_id: str,
+        request: dingtalkconference__1__0_models.GenerateFlashMinutesDocumentUrlRequest,
+    ) -> dingtalkconference__1__0_models.GenerateFlashMinutesDocumentUrlResponse:
+        """
+        @summary 生成会议闪记文档的下载链接
+        
+        @param request: GenerateFlashMinutesDocumentUrlRequest
+        @return: GenerateFlashMinutesDocumentUrlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.GenerateFlashMinutesDocumentUrlHeaders()
+        return await self.generate_flash_minutes_document_url_with_options_async(conference_id, request, headers, runtime)
+
     def get_conf_data_by_conference_id_with_options(
         self,
         conference_id: str,

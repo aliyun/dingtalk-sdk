@@ -8740,6 +8740,132 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.SendOTOInteractiveCardHeaders()
         return await self.send_otointeractive_card_with_options_async(request, headers, runtime)
 
+    def send_personal_message_with_options(
+        self,
+        request: dingtalkim__1__0_models.SendPersonalMessageRequest,
+        headers: dingtalkim__1__0_models.SendPersonalMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.SendPersonalMessageResponse:
+        """
+        @summary 委托权限发消息
+        
+        @param request: SendPersonalMessageRequest
+        @param headers: SendPersonalMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendPersonalMessageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.msg_type):
+            body['msgType'] = request.msg_type
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.receiver_uid):
+            body['receiverUid'] = request.receiver_uid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SendPersonalMessage',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/me/messages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.SendPersonalMessageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def send_personal_message_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.SendPersonalMessageRequest,
+        headers: dingtalkim__1__0_models.SendPersonalMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.SendPersonalMessageResponse:
+        """
+        @summary 委托权限发消息
+        
+        @param request: SendPersonalMessageRequest
+        @param headers: SendPersonalMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendPersonalMessageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.msg_type):
+            body['msgType'] = request.msg_type
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.receiver_uid):
+            body['receiverUid'] = request.receiver_uid
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SendPersonalMessage',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/me/messages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.SendPersonalMessageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def send_personal_message(
+        self,
+        request: dingtalkim__1__0_models.SendPersonalMessageRequest,
+    ) -> dingtalkim__1__0_models.SendPersonalMessageResponse:
+        """
+        @summary 委托权限发消息
+        
+        @param request: SendPersonalMessageRequest
+        @return: SendPersonalMessageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.SendPersonalMessageHeaders()
+        return self.send_personal_message_with_options(request, headers, runtime)
+
+    async def send_personal_message_async(
+        self,
+        request: dingtalkim__1__0_models.SendPersonalMessageRequest,
+    ) -> dingtalkim__1__0_models.SendPersonalMessageResponse:
+        """
+        @summary 委托权限发消息
+        
+        @param request: SendPersonalMessageRequest
+        @return: SendPersonalMessageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.SendPersonalMessageHeaders()
+        return await self.send_personal_message_with_options_async(request, headers, runtime)
+
     def send_robot_interactive_card_with_options(
         self,
         request: dingtalkim__1__0_models.SendRobotInteractiveCardRequest,

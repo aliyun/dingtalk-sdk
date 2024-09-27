@@ -2722,6 +2722,372 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.CampusUpdateRenterMemberHeaders()
         return await self.campus_update_renter_member_with_options_async(request, headers, runtime)
 
+    def chat_aiadd_dataset_permission_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatAIAddDatasetPermissionRequest,
+        headers: dingtalkindustry__1__0_models.ChatAIAddDatasetPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatAIAddDatasetPermissionResponse:
+        """
+        @summary 添加数据集权限
+        
+        @param request: ChatAIAddDatasetPermissionRequest
+        @param headers: ChatAIAddDatasetPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatAIAddDatasetPermissionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.authorization_type):
+            body['authorizationType'] = request.authorization_type
+        if not UtilClient.is_unset(request.authorized_object_id):
+            body['authorizedObjectId'] = request.authorized_object_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.opt_user):
+            body['optUser'] = request.opt_user
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatAIAddDatasetPermission',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatai/dataset/permissions/add',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatAIAddDatasetPermissionResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_aiadd_dataset_permission_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatAIAddDatasetPermissionRequest,
+        headers: dingtalkindustry__1__0_models.ChatAIAddDatasetPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatAIAddDatasetPermissionResponse:
+        """
+        @summary 添加数据集权限
+        
+        @param request: ChatAIAddDatasetPermissionRequest
+        @param headers: ChatAIAddDatasetPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatAIAddDatasetPermissionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.authorization_type):
+            body['authorizationType'] = request.authorization_type
+        if not UtilClient.is_unset(request.authorized_object_id):
+            body['authorizedObjectId'] = request.authorized_object_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.opt_user):
+            body['optUser'] = request.opt_user
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatAIAddDatasetPermission',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatai/dataset/permissions/add',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatAIAddDatasetPermissionResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_aiadd_dataset_permission(
+        self,
+        request: dingtalkindustry__1__0_models.ChatAIAddDatasetPermissionRequest,
+    ) -> dingtalkindustry__1__0_models.ChatAIAddDatasetPermissionResponse:
+        """
+        @summary 添加数据集权限
+        
+        @param request: ChatAIAddDatasetPermissionRequest
+        @return: ChatAIAddDatasetPermissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatAIAddDatasetPermissionHeaders()
+        return self.chat_aiadd_dataset_permission_with_options(request, headers, runtime)
+
+    async def chat_aiadd_dataset_permission_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatAIAddDatasetPermissionRequest,
+    ) -> dingtalkindustry__1__0_models.ChatAIAddDatasetPermissionResponse:
+        """
+        @summary 添加数据集权限
+        
+        @param request: ChatAIAddDatasetPermissionRequest
+        @return: ChatAIAddDatasetPermissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatAIAddDatasetPermissionHeaders()
+        return await self.chat_aiadd_dataset_permission_with_options_async(request, headers, runtime)
+
+    def chat_aiquery_dataset_permission_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatAIQueryDatasetPermissionRequest,
+        headers: dingtalkindustry__1__0_models.ChatAIQueryDatasetPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatAIQueryDatasetPermissionResponse:
+        """
+        @summary 查询数据集权限明细
+        
+        @param request: ChatAIQueryDatasetPermissionRequest
+        @param headers: ChatAIQueryDatasetPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatAIQueryDatasetPermissionResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dataset_id):
+            query['datasetId'] = request.dataset_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ChatAIQueryDatasetPermission',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatai/dataset/permissions',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatAIQueryDatasetPermissionResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_aiquery_dataset_permission_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatAIQueryDatasetPermissionRequest,
+        headers: dingtalkindustry__1__0_models.ChatAIQueryDatasetPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatAIQueryDatasetPermissionResponse:
+        """
+        @summary 查询数据集权限明细
+        
+        @param request: ChatAIQueryDatasetPermissionRequest
+        @param headers: ChatAIQueryDatasetPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatAIQueryDatasetPermissionResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.dataset_id):
+            query['datasetId'] = request.dataset_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ChatAIQueryDatasetPermission',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatai/dataset/permissions',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatAIQueryDatasetPermissionResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_aiquery_dataset_permission(
+        self,
+        request: dingtalkindustry__1__0_models.ChatAIQueryDatasetPermissionRequest,
+    ) -> dingtalkindustry__1__0_models.ChatAIQueryDatasetPermissionResponse:
+        """
+        @summary 查询数据集权限明细
+        
+        @param request: ChatAIQueryDatasetPermissionRequest
+        @return: ChatAIQueryDatasetPermissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatAIQueryDatasetPermissionHeaders()
+        return self.chat_aiquery_dataset_permission_with_options(request, headers, runtime)
+
+    async def chat_aiquery_dataset_permission_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatAIQueryDatasetPermissionRequest,
+    ) -> dingtalkindustry__1__0_models.ChatAIQueryDatasetPermissionResponse:
+        """
+        @summary 查询数据集权限明细
+        
+        @param request: ChatAIQueryDatasetPermissionRequest
+        @return: ChatAIQueryDatasetPermissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatAIQueryDatasetPermissionHeaders()
+        return await self.chat_aiquery_dataset_permission_with_options_async(request, headers, runtime)
+
+    def chat_airemove_dataset_permission_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatAIRemoveDatasetPermissionRequest,
+        headers: dingtalkindustry__1__0_models.ChatAIRemoveDatasetPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatAIRemoveDatasetPermissionResponse:
+        """
+        @summary 删除数据集权限
+        
+        @param request: ChatAIRemoveDatasetPermissionRequest
+        @param headers: ChatAIRemoveDatasetPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatAIRemoveDatasetPermissionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.authorization_type):
+            body['authorizationType'] = request.authorization_type
+        if not UtilClient.is_unset(request.authorized_object_id):
+            body['authorizedObjectId'] = request.authorized_object_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.opt_user):
+            body['optUser'] = request.opt_user
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatAIRemoveDatasetPermission',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatai/dataset/permissions/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatAIRemoveDatasetPermissionResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_airemove_dataset_permission_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatAIRemoveDatasetPermissionRequest,
+        headers: dingtalkindustry__1__0_models.ChatAIRemoveDatasetPermissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatAIRemoveDatasetPermissionResponse:
+        """
+        @summary 删除数据集权限
+        
+        @param request: ChatAIRemoveDatasetPermissionRequest
+        @param headers: ChatAIRemoveDatasetPermissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatAIRemoveDatasetPermissionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.authorization_type):
+            body['authorizationType'] = request.authorization_type
+        if not UtilClient.is_unset(request.authorized_object_id):
+            body['authorizedObjectId'] = request.authorized_object_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.opt_user):
+            body['optUser'] = request.opt_user
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatAIRemoveDatasetPermission',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatai/dataset/permissions/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatAIRemoveDatasetPermissionResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_airemove_dataset_permission(
+        self,
+        request: dingtalkindustry__1__0_models.ChatAIRemoveDatasetPermissionRequest,
+    ) -> dingtalkindustry__1__0_models.ChatAIRemoveDatasetPermissionResponse:
+        """
+        @summary 删除数据集权限
+        
+        @param request: ChatAIRemoveDatasetPermissionRequest
+        @return: ChatAIRemoveDatasetPermissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatAIRemoveDatasetPermissionHeaders()
+        return self.chat_airemove_dataset_permission_with_options(request, headers, runtime)
+
+    async def chat_airemove_dataset_permission_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatAIRemoveDatasetPermissionRequest,
+    ) -> dingtalkindustry__1__0_models.ChatAIRemoveDatasetPermissionResponse:
+        """
+        @summary 删除数据集权限
+        
+        @param request: ChatAIRemoveDatasetPermissionRequest
+        @return: ChatAIRemoveDatasetPermissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatAIRemoveDatasetPermissionHeaders()
+        return await self.chat_airemove_dataset_permission_with_options_async(request, headers, runtime)
+
     def chat_ai_travel_list_with_options(
         self,
         request: dingtalkindustry__1__0_models.ChatAiTravelListRequest,

@@ -19743,6 +19743,8 @@ class ListAvailableBenefitResponseBodyResult(TeaModel):
         quota: int = None,
         start_time: int = None,
         used_quota: int = None,
+        version: str = None,
+        version_name: str = None,
     ):
         # This parameter is required.
         self.benefit_code = benefit_code
@@ -19750,6 +19752,8 @@ class ListAvailableBenefitResponseBodyResult(TeaModel):
         self.quota = quota
         self.start_time = start_time
         self.used_quota = used_quota
+        self.version = version
+        self.version_name = version_name
 
     def validate(self):
         pass
@@ -19770,6 +19774,10 @@ class ListAvailableBenefitResponseBodyResult(TeaModel):
             result['startTime'] = self.start_time
         if self.used_quota is not None:
             result['usedQuota'] = self.used_quota
+        if self.version is not None:
+            result['version'] = self.version
+        if self.version_name is not None:
+            result['versionName'] = self.version_name
         return result
 
     def from_map(self, m: dict = None):
@@ -19784,6 +19792,10 @@ class ListAvailableBenefitResponseBodyResult(TeaModel):
             self.start_time = m.get('startTime')
         if m.get('usedQuota') is not None:
             self.used_quota = m.get('usedQuota')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        if m.get('versionName') is not None:
+            self.version_name = m.get('versionName')
         return self
 
 

@@ -3810,6 +3810,467 @@ class CampusUpdateRenterMemberResponse(TeaModel):
         return self
 
 
+class ChatAIAddDatasetPermissionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ChatAIAddDatasetPermissionRequest(TeaModel):
+    def __init__(
+        self,
+        authorization_type: str = None,
+        authorized_object_id: List[str] = None,
+        dataset_id: int = None,
+        opt_user: str = None,
+    ):
+        self.authorization_type = authorization_type
+        self.authorized_object_id = authorized_object_id
+        self.dataset_id = dataset_id
+        self.opt_user = opt_user
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.authorization_type is not None:
+            result['authorizationType'] = self.authorization_type
+        if self.authorized_object_id is not None:
+            result['authorizedObjectId'] = self.authorized_object_id
+        if self.dataset_id is not None:
+            result['datasetId'] = self.dataset_id
+        if self.opt_user is not None:
+            result['optUser'] = self.opt_user
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authorizationType') is not None:
+            self.authorization_type = m.get('authorizationType')
+        if m.get('authorizedObjectId') is not None:
+            self.authorized_object_id = m.get('authorizedObjectId')
+        if m.get('datasetId') is not None:
+            self.dataset_id = m.get('datasetId')
+        if m.get('optUser') is not None:
+            self.opt_user = m.get('optUser')
+        return self
+
+
+class ChatAIAddDatasetPermissionResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class ChatAIAddDatasetPermissionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ChatAIAddDatasetPermissionResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ChatAIAddDatasetPermissionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ChatAIQueryDatasetPermissionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ChatAIQueryDatasetPermissionRequest(TeaModel):
+    def __init__(
+        self,
+        dataset_id: str = None,
+    ):
+        self.dataset_id = dataset_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dataset_id is not None:
+            result['datasetId'] = self.dataset_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('datasetId') is not None:
+            self.dataset_id = m.get('datasetId')
+        return self
+
+
+class ChatAIQueryDatasetPermissionResponseBodyPermissionInfos(TeaModel):
+    def __init__(
+        self,
+        permission_type: str = None,
+        permission_values: List[str] = None,
+    ):
+        self.permission_type = permission_type
+        self.permission_values = permission_values
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.permission_type is not None:
+            result['permissionType'] = self.permission_type
+        if self.permission_values is not None:
+            result['permissionValues'] = self.permission_values
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('permissionType') is not None:
+            self.permission_type = m.get('permissionType')
+        if m.get('permissionValues') is not None:
+            self.permission_values = m.get('permissionValues')
+        return self
+
+
+class ChatAIQueryDatasetPermissionResponseBody(TeaModel):
+    def __init__(
+        self,
+        permission_infos: List[ChatAIQueryDatasetPermissionResponseBodyPermissionInfos] = None,
+    ):
+        self.permission_infos = permission_infos
+
+    def validate(self):
+        if self.permission_infos:
+            for k in self.permission_infos:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['permissionInfos'] = []
+        if self.permission_infos is not None:
+            for k in self.permission_infos:
+                result['permissionInfos'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.permission_infos = []
+        if m.get('permissionInfos') is not None:
+            for k in m.get('permissionInfos'):
+                temp_model = ChatAIQueryDatasetPermissionResponseBodyPermissionInfos()
+                self.permission_infos.append(temp_model.from_map(k))
+        return self
+
+
+class ChatAIQueryDatasetPermissionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ChatAIQueryDatasetPermissionResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ChatAIQueryDatasetPermissionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ChatAIRemoveDatasetPermissionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ChatAIRemoveDatasetPermissionRequest(TeaModel):
+    def __init__(
+        self,
+        authorization_type: str = None,
+        authorized_object_id: List[str] = None,
+        dataset_id: int = None,
+        opt_user: str = None,
+    ):
+        self.authorization_type = authorization_type
+        self.authorized_object_id = authorized_object_id
+        self.dataset_id = dataset_id
+        self.opt_user = opt_user
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.authorization_type is not None:
+            result['authorizationType'] = self.authorization_type
+        if self.authorized_object_id is not None:
+            result['authorizedObjectId'] = self.authorized_object_id
+        if self.dataset_id is not None:
+            result['datasetId'] = self.dataset_id
+        if self.opt_user is not None:
+            result['optUser'] = self.opt_user
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('authorizationType') is not None:
+            self.authorization_type = m.get('authorizationType')
+        if m.get('authorizedObjectId') is not None:
+            self.authorized_object_id = m.get('authorizedObjectId')
+        if m.get('datasetId') is not None:
+            self.dataset_id = m.get('datasetId')
+        if m.get('optUser') is not None:
+            self.opt_user = m.get('optUser')
+        return self
+
+
+class ChatAIRemoveDatasetPermissionResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class ChatAIRemoveDatasetPermissionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ChatAIRemoveDatasetPermissionResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ChatAIRemoveDatasetPermissionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ChatAiTravelListHeaders(TeaModel):
     def __init__(
         self,
