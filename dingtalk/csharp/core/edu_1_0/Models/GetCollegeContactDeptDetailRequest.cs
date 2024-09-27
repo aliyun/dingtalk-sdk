@@ -10,12 +10,19 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class GetCollegeContactDeptDetailRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>20</para>
         /// </summary>
         [NameInMap("deptId")]
         [Validation(Required=false)]
         public long? DeptId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>zh_CN</para>
+        /// </summary>
         [NameInMap("language")]
         [Validation(Required=false)]
         public string Language { get; set; }

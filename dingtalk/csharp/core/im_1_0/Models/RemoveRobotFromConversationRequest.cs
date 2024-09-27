@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class RemoveRobotFromConversationRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123</para>
         /// </summary>
         [NameInMap("chatBotUserId")]
         [Validation(Required=false)]
         public string ChatBotUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>cid123cd</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]

@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class ListEmpAttributeVisibilityResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>true</para>
         /// </summary>
         [NameInMap("hasMore")]
         [Validation(Required=false)]
@@ -52,6 +55,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             [Validation(Required=false)]
             public List<string> HideFields { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>10001</para>
+            /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public long? Id { get; set; }
@@ -75,7 +82,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("nextCursor")]
         [Validation(Required=false)]

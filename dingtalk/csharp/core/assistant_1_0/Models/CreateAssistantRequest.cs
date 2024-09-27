@@ -10,35 +10,35 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0.Models
 {
     public class CreateAssistantRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("description")]
         [Validation(Required=false)]
         public string Description { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("icon")]
         [Validation(Required=false)]
         public string Icon { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("instructions")]
         [Validation(Required=false)]
         public string Instructions { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("operatorUnionId")]
         [Validation(Required=false)]
@@ -49,7 +49,7 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0.Models
         public List<string> RecommendPrompts { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("welcomeContent")]
         [Validation(Required=false)]

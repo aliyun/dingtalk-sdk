@@ -17,12 +17,20 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public List<string> List { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>10</para>
+            /// </summary>
             [NameInMap("nextToken")]
             [Validation(Required=false)]
             public string NextToken { get; set; }
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

@@ -10,18 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class HrmPtsServiceRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>dev  or online</para>
         /// </summary>
         [NameInMap("env")]
         [Validation(Required=false)]
         public string Env { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>GET/POST</para>
+        /// </summary>
         [NameInMap("method")]
         [Validation(Required=false)]
         public string Method { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>abd123213</para>
         /// </summary>
         [NameInMap("outerId")]
         [Validation(Required=false)]
@@ -32,7 +42,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         public object Params { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>/user/role/get</para>
         /// </summary>
         [NameInMap("path")]
         [Validation(Required=false)]

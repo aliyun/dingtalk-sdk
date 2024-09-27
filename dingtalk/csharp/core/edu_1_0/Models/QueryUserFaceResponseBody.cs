@@ -10,28 +10,40 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class QueryUserFaceResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>dingding123</para>
         /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]
         public string CorpId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>30001</para>
         /// </summary>
         [NameInMap("faceId")]
         [Validation(Required=false)]
         public string FaceId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>小明</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>40001</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

@@ -10,21 +10,27 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class InvalidSignRecordsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123456</para>
         /// </summary>
         [NameInMap("invalidUserId")]
         [Validation(Required=false)]
         public string InvalidUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("signRecordIds")]
         [Validation(Required=false)]
         public List<string> SignRecordIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>作废测试</para>
         /// </summary>
         [NameInMap("statusRemark")]
         [Validation(Required=false)]

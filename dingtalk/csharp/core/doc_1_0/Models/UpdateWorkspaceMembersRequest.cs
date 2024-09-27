@@ -10,28 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class UpdateWorkspaceMembersRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("members")]
         [Validation(Required=false)]
         public List<UpdateWorkspaceMembersRequestMembers> Members { get; set; }
         public class UpdateWorkspaceMembersRequestMembers : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("memberId")]
             [Validation(Required=false)]
             public string MemberId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("memberType")]
             [Validation(Required=false)]
             public string MemberType { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("roleType")]
             [Validation(Required=false)]
@@ -40,7 +40,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
 {
     public class AddResidentUsersResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1234</para>
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]

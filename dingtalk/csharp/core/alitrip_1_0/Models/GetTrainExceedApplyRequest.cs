@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkalitrip_1_0.Models
 {
     public class GetTrainExceedApplyRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>12345</para>
         /// </summary>
         [NameInMap("applyId")]
         [Validation(Required=false)]
         public string ApplyId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ding1234</para>
         /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]

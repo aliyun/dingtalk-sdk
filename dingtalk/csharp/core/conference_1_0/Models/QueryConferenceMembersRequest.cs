@@ -9,10 +9,18 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
     public class QueryConferenceMembersRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>20</para>
+        /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>0</para>
+        /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public string NextToken { get; set; }

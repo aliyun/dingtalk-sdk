@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0.Models
 {
     public class GetSpaceRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>open_conversation_id</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

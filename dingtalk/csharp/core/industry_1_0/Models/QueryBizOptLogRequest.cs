@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>10000</para>
+        /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public long? NextToken { get; set; }

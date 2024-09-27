@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
 {
     public class ModifyFeedWhiteListRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1</para>
         /// </summary>
         [NameInMap("action")]
         [Validation(Required=false)]
@@ -21,7 +24,10 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
         public List<string> ModifyUserList { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1206186351746728</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

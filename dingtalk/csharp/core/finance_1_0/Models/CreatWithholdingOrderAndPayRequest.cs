@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
 {
     public class CreatWithholdingOrderAndPayRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>10.01</para>
         /// </summary>
         [NameInMap("amount")]
         [Validation(Required=false)]
         public string Amount { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>202111090001</para>
         /// </summary>
         [NameInMap("instId")]
         [Validation(Required=false)]
@@ -28,21 +34,27 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         public List<CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoList> OtherPayChannelDetailInfoList { get; set; }
         public class CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>5.00</para>
             /// </summary>
             [NameInMap("amount")]
             [Validation(Required=false)]
             public string Amount { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("fundToolDetailInfoList")]
             [Validation(Required=false)]
             public List<CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoListFundToolDetailInfoList> FundToolDetailInfoList { get; set; }
             public class CreatWithholdingOrderAndPayRequestOtherPayChannelDetailInfoListFundToolDetailInfoList : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>5.00</para>
                 /// </summary>
                 [NameInMap("amount")]
                 [Validation(Required=false)]
@@ -53,28 +65,40 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
                 public string ExtInfo { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>余额</para>
                 /// </summary>
                 [NameInMap("fundToolName")]
                 [Validation(Required=false)]
                 public string FundToolName { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>2021-11-15 10:10:10</para>
                 /// </summary>
                 [NameInMap("gmtCreate")]
                 [Validation(Required=false)]
                 public string GmtCreate { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>2021-11-15 10:10:11</para>
                 /// </summary>
                 [NameInMap("gmtFinish")]
                 [Validation(Required=false)]
                 public string GmtFinish { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>false</para>
                 /// </summary>
                 [NameInMap("promotionFundTool")]
                 [Validation(Required=false)]
@@ -83,28 +107,40 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
             }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>支付宝</para>
             /// </summary>
             [NameInMap("payChannelName")]
             [Validation(Required=false)]
             public string PayChannelName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>2021110100001</para>
             /// </summary>
             [NameInMap("payChannelOrderNo")]
             [Validation(Required=false)]
             public string PayChannelOrderNo { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>ALIPAY</para>
             /// </summary>
             [NameInMap("payChannelType")]
             [Validation(Required=false)]
             public string PayChannelType { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>4.00</para>
             /// </summary>
             [NameInMap("promotionAmount")]
             [Validation(Required=false)]
@@ -113,43 +149,66 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>2021113000001</para>
         /// </summary>
         [NameInMap("outTradeNo")]
         [Validation(Required=false)]
         public string OutTradeNo { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ALIPAY</para>
         /// </summary>
         [NameInMap("payChannel")]
         [Validation(Required=false)]
         public string PayChannel { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>2120493284</para>
         /// </summary>
         [NameInMap("payerUserId")]
         [Validation(Required=false)]
         public string PayerUserId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>备注</para>
+        /// </summary>
         [NameInMap("remark")]
         [Validation(Required=false)]
         public string Remark { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1001</para>
         /// </summary>
         [NameInMap("subInstId")]
         [Validation(Required=false)]
         public string SubInstId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>15m</para>
+        /// </summary>
         [NameInMap("timeOutExpress")]
         [Validation(Required=false)]
         public string TimeOutExpress { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>餐费</para>
         /// </summary>
         [NameInMap("title")]
         [Validation(Required=false)]

@@ -9,12 +9,19 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class SetDisableRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>reasonYYY</para>
+        /// </summary>
         [NameInMap("reason")]
         [Validation(Required=false)]
         public string Reason { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>userIdXXX</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

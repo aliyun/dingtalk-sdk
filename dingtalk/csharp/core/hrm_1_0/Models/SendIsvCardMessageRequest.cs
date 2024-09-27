@@ -10,49 +10,58 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class SendIsvCardMessageRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("agentId")]
         [Validation(Required=false)]
         public long? AgentId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("bizId")]
         [Validation(Required=false)]
         public string BizId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("messageType")]
         [Validation(Required=false)]
         public string MessageType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("receiverUserIds")]
         [Validation(Required=false)]
         public List<string> ReceiverUserIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>16690147049882572</para>
         /// </summary>
         [NameInMap("sceneType")]
         [Validation(Required=false)]
         public string SceneType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>同意转正</para>
         /// </summary>
         [NameInMap("scope")]
         [Validation(Required=false)]
         public string Scope { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>16690147049882572</para>
         /// </summary>
         [NameInMap("senderUserId")]
         [Validation(Required=false)]

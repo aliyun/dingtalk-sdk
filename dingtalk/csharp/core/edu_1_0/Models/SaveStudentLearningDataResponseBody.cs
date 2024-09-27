@@ -21,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public List<SaveStudentLearningDataResponseBodyResultWrongQuestions> WrongQuestions { get; set; }
             public class SaveStudentLearningDataResponseBodyResultWrongQuestions : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>1</para>
+                /// </summary>
                 [NameInMap("questionNo")]
                 [Validation(Required=false)]
                 public string QuestionNo { get; set; }

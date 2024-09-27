@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
 {
     public class AddShareCidListResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("hasShareSuccess")]
         [Validation(Required=false)]
         public bool? HasShareSuccess { get; set; }

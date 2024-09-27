@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
 {
     public class EditFeedReplayRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1617356058000</para>
         /// </summary>
         [NameInMap("editEndTime")]
         [Validation(Required=false)]
         public long? EditEndTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1617336058000</para>
         /// </summary>
         [NameInMap("editStartTime")]
         [Validation(Required=false)]
         public long? EditStartTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1206186351746728</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

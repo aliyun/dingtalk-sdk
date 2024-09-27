@@ -14,14 +14,20 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<QueryUserRolesResponseBodyContent> Content { get; set; }
         public class QueryUserRolesResponseBodyContent : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>roleCode</para>
             /// </summary>
             [NameInMap("roleCode")]
             [Validation(Required=false)]
             public string RoleCode { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>roleNem</para>
             /// </summary>
             [NameInMap("roleName")]
             [Validation(Required=false)]

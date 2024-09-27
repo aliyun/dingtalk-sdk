@@ -10,35 +10,38 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class GetRunningTaskListRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("appType")]
         [Validation(Required=false)]
         public string AppType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>xaff,afdfaf,fdsfasdf</para>
         /// </summary>
         [NameInMap("processInstanceIdList")]
         [Validation(Required=false)]
         public string ProcessInstanceIdList { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("systemToken")]
         [Validation(Required=false)]
         public string SystemToken { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userCorpId")]
         [Validation(Required=false)]
         public string UserCorpId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

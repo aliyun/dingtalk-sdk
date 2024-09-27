@@ -10,12 +10,16 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class ListCategorysRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("body")]
         [Validation(Required=false)]
         public ListCategorysRequestBody Body { get; set; }
         public class ListCategorysRequestBody : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1</para>
+            /// </summary>
             [NameInMap("status")]
             [Validation(Required=false)]
             public long? Status { get; set; }

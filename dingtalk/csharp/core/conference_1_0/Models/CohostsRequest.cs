@@ -10,21 +10,27 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
     public class CohostsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>add</para>
         /// </summary>
         [NameInMap("action")]
         [Validation(Required=false)]
         public string Action { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userList")]
         [Validation(Required=false)]
         public List<CohostsRequestUserList> UserList { get; set; }
         public class CohostsRequestUserList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>qzR1iSMDvzR9iP7Pxxxxxxxxxxxxxxx</para>
             /// </summary>
             [NameInMap("unionId")]
             [Validation(Required=false)]

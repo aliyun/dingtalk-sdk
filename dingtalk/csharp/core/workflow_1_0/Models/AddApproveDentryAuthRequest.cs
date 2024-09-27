@@ -10,21 +10,27 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class AddApproveDentryAuthRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("fileInfos")]
         [Validation(Required=false)]
         public List<AddApproveDentryAuthRequestFileInfos> FileInfos { get; set; }
         public class AddApproveDentryAuthRequestFileInfos : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>B1oQixxxx</para>
             /// </summary>
             [NameInMap("fileId")]
             [Validation(Required=false)]
             public string FileId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>111</para>
             /// </summary>
             [NameInMap("spaceId")]
             [Validation(Required=false)]
@@ -33,7 +39,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>user123</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public string CurrentOperatorUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
@@ -28,6 +28,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string QueryDsl { get; set; }
 
+        /// <summary>
+        /// <b>if can be null:</b>
+        /// <c>false</c>
+        /// </summary>
         [NameInMap("relationType")]
         [Validation(Required=false)]
         public string RelationType { get; set; }

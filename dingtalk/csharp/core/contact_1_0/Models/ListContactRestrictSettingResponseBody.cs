@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class ListContactRestrictSettingResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("hasMore")]
         [Validation(Required=false)]
         public bool? HasMore { get; set; }
@@ -17,10 +21,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [Validation(Required=false)]
         public List<ListContactRestrictSettingResponseBodyList> List { get; set; }
         public class ListContactRestrictSettingResponseBodyList : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>true</para>
+            /// </summary>
             [NameInMap("active")]
             [Validation(Required=false)]
             public bool? Active { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>description</para>
+            /// </summary>
             [NameInMap("description")]
             [Validation(Required=false)]
             public string Description { get; set; }
@@ -37,10 +49,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             [Validation(Required=false)]
             public List<string> ExcludeUserIds { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1001</para>
+            /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public long? Id { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>contact restrict name</para>
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }

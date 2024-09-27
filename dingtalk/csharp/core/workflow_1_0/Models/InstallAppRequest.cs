@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         public string BizGroup { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("installOption")]
         [Validation(Required=false)]
@@ -27,7 +27,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>finance</para>
         /// </summary>
         [NameInMap("sourceDirName")]
         [Validation(Required=false)]

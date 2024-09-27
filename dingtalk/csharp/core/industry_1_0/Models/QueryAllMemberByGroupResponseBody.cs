@@ -14,21 +14,30 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<QueryAllMemberByGroupResponseBodyContent> Content { get; set; }
         public class QueryAllMemberByGroupResponseBodyContent : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>0001</para>
             /// </summary>
             [NameInMap("jobNum")]
             [Validation(Required=false)]
             public string JobNum { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>u0398812938821</para>
             /// </summary>
             [NameInMap("uid")]
             [Validation(Required=false)]
             public string Uid { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>用户名称</para>
             /// </summary>
             [NameInMap("userName")]
             [Validation(Required=false)]
@@ -37,21 +46,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("currentPage")]
         [Validation(Required=false)]
         public int? CurrentPage { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("totalCount")]
         [Validation(Required=false)]
         public long? TotalCount { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>32</para>
         /// </summary>
         [NameInMap("totalPages")]
         [Validation(Required=false)]

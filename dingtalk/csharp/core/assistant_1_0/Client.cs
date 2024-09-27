@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
         }
 
 
-        /**
-         * @summary 助理添加专业词汇
-         *
-         * @param request AddDomainWordsRequest
-         * @param headers AddDomainWordsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AddDomainWordsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>助理添加专业词汇</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddDomainWordsRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddDomainWordsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddDomainWordsResponse
+        /// </returns>
         public AddDomainWordsResponse AddDomainWordsWithOptions(AddDomainWordsRequest request, AddDomainWordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -77,14 +88,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<AddDomainWordsResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 助理添加专业词汇
-         *
-         * @param request AddDomainWordsRequest
-         * @param headers AddDomainWordsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AddDomainWordsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>助理添加专业词汇</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddDomainWordsRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddDomainWordsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddDomainWordsResponse
+        /// </returns>
         public async Task<AddDomainWordsResponse> AddDomainWordsWithOptionsAsync(AddDomainWordsRequest request, AddDomainWordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -126,12 +147,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<AddDomainWordsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 助理添加专业词汇
-         *
-         * @param request AddDomainWordsRequest
-         * @return AddDomainWordsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>助理添加专业词汇</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddDomainWordsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddDomainWordsResponse
+        /// </returns>
         public AddDomainWordsResponse AddDomainWords(AddDomainWordsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -139,12 +166,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return AddDomainWordsWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 助理添加专业词汇
-         *
-         * @param request AddDomainWordsRequest
-         * @return AddDomainWordsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>助理添加专业词汇</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddDomainWordsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddDomainWordsResponse
+        /// </returns>
         public async Task<AddDomainWordsResponse> AddDomainWordsAsync(AddDomainWordsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -152,14 +185,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await AddDomainWordsWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建AI助理
-         *
-         * @param request CreateAssistantRequest
-         * @param headers CreateAssistantHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateAssistantResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建AI助理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAssistantRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateAssistantHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAssistantResponse
+        /// </returns>
         public CreateAssistantResponse CreateAssistantWithOptions(CreateAssistantRequest request, CreateAssistantHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -221,14 +264,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<CreateAssistantResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建AI助理
-         *
-         * @param request CreateAssistantRequest
-         * @param headers CreateAssistantHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateAssistantResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建AI助理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAssistantRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateAssistantHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAssistantResponse
+        /// </returns>
         public async Task<CreateAssistantResponse> CreateAssistantWithOptionsAsync(CreateAssistantRequest request, CreateAssistantHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -290,12 +343,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<CreateAssistantResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建AI助理
-         *
-         * @param request CreateAssistantRequest
-         * @return CreateAssistantResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建AI助理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAssistantRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAssistantResponse
+        /// </returns>
         public CreateAssistantResponse CreateAssistant(CreateAssistantRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -303,12 +362,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return CreateAssistantWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建AI助理
-         *
-         * @param request CreateAssistantRequest
-         * @return CreateAssistantResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建AI助理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAssistantRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAssistantResponse
+        /// </returns>
         public async Task<CreateAssistantResponse> CreateAssistantAsync(CreateAssistantRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -316,14 +381,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await CreateAssistantWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建AI助理的消息体
-         *
-         * @param request CreateAssistantMessageRequest
-         * @param headers CreateAssistantMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateAssistantMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建AI助理的消息体</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAssistantMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateAssistantMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAssistantMessageResponse
+        /// </returns>
         public CreateAssistantMessageResponse CreateAssistantMessageWithOptions(string threadId, CreateAssistantMessageRequest request, CreateAssistantMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -369,14 +444,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<CreateAssistantMessageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建AI助理的消息体
-         *
-         * @param request CreateAssistantMessageRequest
-         * @param headers CreateAssistantMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateAssistantMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建AI助理的消息体</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAssistantMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateAssistantMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAssistantMessageResponse
+        /// </returns>
         public async Task<CreateAssistantMessageResponse> CreateAssistantMessageWithOptionsAsync(string threadId, CreateAssistantMessageRequest request, CreateAssistantMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -422,12 +507,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<CreateAssistantMessageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建AI助理的消息体
-         *
-         * @param request CreateAssistantMessageRequest
-         * @return CreateAssistantMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建AI助理的消息体</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAssistantMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAssistantMessageResponse
+        /// </returns>
         public CreateAssistantMessageResponse CreateAssistantMessage(string threadId, CreateAssistantMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -435,12 +526,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return CreateAssistantMessageWithOptions(threadId, request, headers, runtime);
         }
 
-        /**
-         * @summary 创建AI助理的消息体
-         *
-         * @param request CreateAssistantMessageRequest
-         * @return CreateAssistantMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建AI助理的消息体</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAssistantMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAssistantMessageResponse
+        /// </returns>
         public async Task<CreateAssistantMessageResponse> CreateAssistantMessageAsync(string threadId, CreateAssistantMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -448,14 +545,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await CreateAssistantMessageWithOptionsAsync(threadId, request, headers, runtime);
         }
 
-        /**
-         * @summary 创建AI助理的运行任务
-         *
-         * @param request CreateAssistantRunRequest
-         * @param headers CreateAssistantRunHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateAssistantRunResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建AI助理的运行任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAssistantRunRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateAssistantRunHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAssistantRunResponse
+        /// </returns>
         public CreateAssistantRunResponse CreateAssistantRunWithOptions(string threadId, CreateAssistantRunRequest request, CreateAssistantRunHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -505,14 +612,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<CreateAssistantRunResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建AI助理的运行任务
-         *
-         * @param request CreateAssistantRunRequest
-         * @param headers CreateAssistantRunHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateAssistantRunResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建AI助理的运行任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAssistantRunRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateAssistantRunHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAssistantRunResponse
+        /// </returns>
         public async Task<CreateAssistantRunResponse> CreateAssistantRunWithOptionsAsync(string threadId, CreateAssistantRunRequest request, CreateAssistantRunHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -562,12 +679,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<CreateAssistantRunResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建AI助理的运行任务
-         *
-         * @param request CreateAssistantRunRequest
-         * @return CreateAssistantRunResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建AI助理的运行任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAssistantRunRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAssistantRunResponse
+        /// </returns>
         public CreateAssistantRunResponse CreateAssistantRun(string threadId, CreateAssistantRunRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -575,12 +698,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return CreateAssistantRunWithOptions(threadId, request, headers, runtime);
         }
 
-        /**
-         * @summary 创建AI助理的运行任务
-         *
-         * @param request CreateAssistantRunRequest
-         * @return CreateAssistantRunResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建AI助理的运行任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAssistantRunRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAssistantRunResponse
+        /// </returns>
         public async Task<CreateAssistantRunResponse> CreateAssistantRunAsync(string threadId, CreateAssistantRunRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -588,14 +717,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await CreateAssistantRunWithOptionsAsync(threadId, request, headers, runtime);
         }
 
-        /**
-         * @summary 创建AI助理线程实例
-         *
-         * @param request CreateAssistantThreadRequest
-         * @param headers CreateAssistantThreadHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateAssistantThreadResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建AI助理线程实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAssistantThreadRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateAssistantThreadHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAssistantThreadResponse
+        /// </returns>
         public CreateAssistantThreadResponse CreateAssistantThreadWithOptions(CreateAssistantThreadRequest request, CreateAssistantThreadHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -633,14 +772,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<CreateAssistantThreadResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建AI助理线程实例
-         *
-         * @param request CreateAssistantThreadRequest
-         * @param headers CreateAssistantThreadHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateAssistantThreadResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建AI助理线程实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAssistantThreadRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateAssistantThreadHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAssistantThreadResponse
+        /// </returns>
         public async Task<CreateAssistantThreadResponse> CreateAssistantThreadWithOptionsAsync(CreateAssistantThreadRequest request, CreateAssistantThreadHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -678,12 +827,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<CreateAssistantThreadResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建AI助理线程实例
-         *
-         * @param request CreateAssistantThreadRequest
-         * @return CreateAssistantThreadResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建AI助理线程实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAssistantThreadRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAssistantThreadResponse
+        /// </returns>
         public CreateAssistantThreadResponse CreateAssistantThread(CreateAssistantThreadRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -691,12 +846,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return CreateAssistantThreadWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建AI助理线程实例
-         *
-         * @param request CreateAssistantThreadRequest
-         * @return CreateAssistantThreadResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建AI助理线程实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateAssistantThreadRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateAssistantThreadResponse
+        /// </returns>
         public async Task<CreateAssistantThreadResponse> CreateAssistantThreadAsync(CreateAssistantThreadRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -704,14 +865,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await CreateAssistantThreadWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除AI助理
-         *
-         * @param request DeleteAssistantRequest
-         * @param headers DeleteAssistantHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteAssistantResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除AI助理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteAssistantRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteAssistantHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteAssistantResponse
+        /// </returns>
         public DeleteAssistantResponse DeleteAssistantWithOptions(DeleteAssistantRequest request, DeleteAssistantHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -753,14 +924,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<DeleteAssistantResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除AI助理
-         *
-         * @param request DeleteAssistantRequest
-         * @param headers DeleteAssistantHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteAssistantResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除AI助理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteAssistantRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteAssistantHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteAssistantResponse
+        /// </returns>
         public async Task<DeleteAssistantResponse> DeleteAssistantWithOptionsAsync(DeleteAssistantRequest request, DeleteAssistantHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -802,12 +983,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<DeleteAssistantResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除AI助理
-         *
-         * @param request DeleteAssistantRequest
-         * @return DeleteAssistantResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除AI助理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteAssistantRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteAssistantResponse
+        /// </returns>
         public DeleteAssistantResponse DeleteAssistant(DeleteAssistantRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -815,12 +1002,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return DeleteAssistantWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除AI助理
-         *
-         * @param request DeleteAssistantRequest
-         * @return DeleteAssistantResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除AI助理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteAssistantRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteAssistantResponse
+        /// </returns>
         public async Task<DeleteAssistantResponse> DeleteAssistantAsync(DeleteAssistantRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -828,13 +1021,21 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await DeleteAssistantWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除AI助理的消息体
-         *
-         * @param headers DeleteAssistantMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteAssistantMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除AI助理的消息体</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// DeleteAssistantMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteAssistantMessageResponse
+        /// </returns>
         public DeleteAssistantMessageResponse DeleteAssistantMessageWithOptions(string threadId, string messageId, DeleteAssistantMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -865,13 +1066,21 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<DeleteAssistantMessageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除AI助理的消息体
-         *
-         * @param headers DeleteAssistantMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteAssistantMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除AI助理的消息体</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// DeleteAssistantMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteAssistantMessageResponse
+        /// </returns>
         public async Task<DeleteAssistantMessageResponse> DeleteAssistantMessageWithOptionsAsync(string threadId, string messageId, DeleteAssistantMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -902,11 +1111,14 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<DeleteAssistantMessageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除AI助理的消息体
-         *
-         * @return DeleteAssistantMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除AI助理的消息体</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// DeleteAssistantMessageResponse
+        /// </returns>
         public DeleteAssistantMessageResponse DeleteAssistantMessage(string threadId, string messageId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -914,11 +1126,14 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return DeleteAssistantMessageWithOptions(threadId, messageId, headers, runtime);
         }
 
-        /**
-         * @summary 删除AI助理的消息体
-         *
-         * @return DeleteAssistantMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除AI助理的消息体</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// DeleteAssistantMessageResponse
+        /// </returns>
         public async Task<DeleteAssistantMessageResponse> DeleteAssistantMessageAsync(string threadId, string messageId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -926,13 +1141,21 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await DeleteAssistantMessageWithOptionsAsync(threadId, messageId, headers, runtime);
         }
 
-        /**
-         * @summary 删除AI助理线程实例
-         *
-         * @param headers DeleteAssistantThreadHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteAssistantThreadResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除AI助理线程实例</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// DeleteAssistantThreadHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteAssistantThreadResponse
+        /// </returns>
         public DeleteAssistantThreadResponse DeleteAssistantThreadWithOptions(string threadId, DeleteAssistantThreadHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -963,13 +1186,21 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<DeleteAssistantThreadResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除AI助理线程实例
-         *
-         * @param headers DeleteAssistantThreadHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteAssistantThreadResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除AI助理线程实例</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// DeleteAssistantThreadHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteAssistantThreadResponse
+        /// </returns>
         public async Task<DeleteAssistantThreadResponse> DeleteAssistantThreadWithOptionsAsync(string threadId, DeleteAssistantThreadHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1000,11 +1231,14 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<DeleteAssistantThreadResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除AI助理线程实例
-         *
-         * @return DeleteAssistantThreadResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除AI助理线程实例</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// DeleteAssistantThreadResponse
+        /// </returns>
         public DeleteAssistantThreadResponse DeleteAssistantThread(string threadId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1012,11 +1246,14 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return DeleteAssistantThreadWithOptions(threadId, headers, runtime);
         }
 
-        /**
-         * @summary 删除AI助理线程实例
-         *
-         * @return DeleteAssistantThreadResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除AI助理线程实例</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// DeleteAssistantThreadResponse
+        /// </returns>
         public async Task<DeleteAssistantThreadResponse> DeleteAssistantThreadAsync(string threadId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1024,14 +1261,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await DeleteAssistantThreadWithOptionsAsync(threadId, headers, runtime);
         }
 
-        /**
-         * @summary 助理删除专业词汇
-         *
-         * @param request DeleteDomainWordsRequest
-         * @param headers DeleteDomainWordsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteDomainWordsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>助理删除专业词汇</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteDomainWordsRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteDomainWordsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteDomainWordsResponse
+        /// </returns>
         public DeleteDomainWordsResponse DeleteDomainWordsWithOptions(DeleteDomainWordsRequest request, DeleteDomainWordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1073,14 +1320,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<DeleteDomainWordsResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 助理删除专业词汇
-         *
-         * @param request DeleteDomainWordsRequest
-         * @param headers DeleteDomainWordsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteDomainWordsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>助理删除专业词汇</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteDomainWordsRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteDomainWordsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteDomainWordsResponse
+        /// </returns>
         public async Task<DeleteDomainWordsResponse> DeleteDomainWordsWithOptionsAsync(DeleteDomainWordsRequest request, DeleteDomainWordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1122,12 +1379,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<DeleteDomainWordsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 助理删除专业词汇
-         *
-         * @param request DeleteDomainWordsRequest
-         * @return DeleteDomainWordsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>助理删除专业词汇</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteDomainWordsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteDomainWordsResponse
+        /// </returns>
         public DeleteDomainWordsResponse DeleteDomainWords(DeleteDomainWordsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1135,12 +1398,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return DeleteDomainWordsWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 助理删除专业词汇
-         *
-         * @param request DeleteDomainWordsRequest
-         * @return DeleteDomainWordsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>助理删除专业词汇</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteDomainWordsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteDomainWordsResponse
+        /// </returns>
         public async Task<DeleteDomainWordsResponse> DeleteDomainWordsAsync(DeleteDomainWordsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1148,14 +1417,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await DeleteDomainWordsWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除助理知识
-         *
-         * @param request DeleteKnowledgeRequest
-         * @param headers DeleteKnowledgeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteKnowledgeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除助理知识</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteKnowledgeRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteKnowledgeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteKnowledgeResponse
+        /// </returns>
         public DeleteKnowledgeResponse DeleteKnowledgeWithOptions(DeleteKnowledgeRequest request, DeleteKnowledgeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1197,14 +1476,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<DeleteKnowledgeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除助理知识
-         *
-         * @param request DeleteKnowledgeRequest
-         * @param headers DeleteKnowledgeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteKnowledgeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除助理知识</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteKnowledgeRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteKnowledgeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteKnowledgeResponse
+        /// </returns>
         public async Task<DeleteKnowledgeResponse> DeleteKnowledgeWithOptionsAsync(DeleteKnowledgeRequest request, DeleteKnowledgeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1246,12 +1535,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<DeleteKnowledgeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除助理知识
-         *
-         * @param request DeleteKnowledgeRequest
-         * @return DeleteKnowledgeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除助理知识</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteKnowledgeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteKnowledgeResponse
+        /// </returns>
         public DeleteKnowledgeResponse DeleteKnowledge(DeleteKnowledgeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1259,12 +1554,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return DeleteKnowledgeWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除助理知识
-         *
-         * @param request DeleteKnowledgeRequest
-         * @return DeleteKnowledgeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除助理知识</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteKnowledgeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteKnowledgeResponse
+        /// </returns>
         public async Task<DeleteKnowledgeResponse> DeleteKnowledgeAsync(DeleteKnowledgeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1272,14 +1573,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await DeleteKnowledgeWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取助理问答明细
-         *
-         * @param request GetAskDetailRequest
-         * @param headers GetAskDetailHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetAskDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取助理问答明细</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAskDetailRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetAskDetailHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAskDetailResponse
+        /// </returns>
         public GetAskDetailResponse GetAskDetailWithOptions(GetAskDetailRequest request, GetAskDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1333,14 +1644,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<GetAskDetailResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取助理问答明细
-         *
-         * @param request GetAskDetailRequest
-         * @param headers GetAskDetailHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetAskDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取助理问答明细</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAskDetailRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetAskDetailHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAskDetailResponse
+        /// </returns>
         public async Task<GetAskDetailResponse> GetAskDetailWithOptionsAsync(GetAskDetailRequest request, GetAskDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1394,12 +1715,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<GetAskDetailResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取助理问答明细
-         *
-         * @param request GetAskDetailRequest
-         * @return GetAskDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取助理问答明细</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAskDetailRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAskDetailResponse
+        /// </returns>
         public GetAskDetailResponse GetAskDetail(GetAskDetailRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1407,12 +1734,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return GetAskDetailWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取助理问答明细
-         *
-         * @param request GetAskDetailRequest
-         * @return GetAskDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取助理问答明细</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAskDetailRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAskDetailResponse
+        /// </returns>
         public async Task<GetAskDetailResponse> GetAskDetailAsync(GetAskDetailRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1420,14 +1753,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await GetAskDetailWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取助理专业词汇
-         *
-         * @param request GetDomainWordsRequest
-         * @param headers GetDomainWordsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetDomainWordsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取助理专业词汇</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDomainWordsRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetDomainWordsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDomainWordsResponse
+        /// </returns>
         public GetDomainWordsResponse GetDomainWordsWithOptions(GetDomainWordsRequest request, GetDomainWordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1465,14 +1808,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<GetDomainWordsResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取助理专业词汇
-         *
-         * @param request GetDomainWordsRequest
-         * @param headers GetDomainWordsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetDomainWordsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取助理专业词汇</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDomainWordsRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetDomainWordsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDomainWordsResponse
+        /// </returns>
         public async Task<GetDomainWordsResponse> GetDomainWordsWithOptionsAsync(GetDomainWordsRequest request, GetDomainWordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1510,12 +1863,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<GetDomainWordsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取助理专业词汇
-         *
-         * @param request GetDomainWordsRequest
-         * @return GetDomainWordsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取助理专业词汇</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDomainWordsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDomainWordsResponse
+        /// </returns>
         public GetDomainWordsResponse GetDomainWords(GetDomainWordsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1523,12 +1882,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return GetDomainWordsWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取助理专业词汇
-         *
-         * @param request GetDomainWordsRequest
-         * @return GetDomainWordsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取助理专业词汇</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDomainWordsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDomainWordsResponse
+        /// </returns>
         public async Task<GetDomainWordsResponse> GetDomainWordsAsync(GetDomainWordsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1536,14 +1901,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await GetDomainWordsWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取助理知识列表
-         *
-         * @param request GetKnowledgeListRequest
-         * @param headers GetKnowledgeListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetKnowledgeListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取助理知识列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetKnowledgeListRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetKnowledgeListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetKnowledgeListResponse
+        /// </returns>
         public GetKnowledgeListResponse GetKnowledgeListWithOptions(GetKnowledgeListRequest request, GetKnowledgeListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1581,14 +1956,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<GetKnowledgeListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取助理知识列表
-         *
-         * @param request GetKnowledgeListRequest
-         * @param headers GetKnowledgeListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetKnowledgeListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取助理知识列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetKnowledgeListRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetKnowledgeListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetKnowledgeListResponse
+        /// </returns>
         public async Task<GetKnowledgeListResponse> GetKnowledgeListWithOptionsAsync(GetKnowledgeListRequest request, GetKnowledgeListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1626,12 +2011,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<GetKnowledgeListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取助理知识列表
-         *
-         * @param request GetKnowledgeListRequest
-         * @return GetKnowledgeListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取助理知识列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetKnowledgeListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetKnowledgeListResponse
+        /// </returns>
         public GetKnowledgeListResponse GetKnowledgeList(GetKnowledgeListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1639,12 +2030,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return GetKnowledgeListWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取助理知识列表
-         *
-         * @param request GetKnowledgeListRequest
-         * @return GetKnowledgeListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取助理知识列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetKnowledgeListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetKnowledgeListResponse
+        /// </returns>
         public async Task<GetKnowledgeListResponse> GetKnowledgeListAsync(GetKnowledgeListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1652,14 +2049,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await GetKnowledgeListWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 安装助理
-         *
-         * @param request InstallAssistantRequest
-         * @param headers InstallAssistantHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return InstallAssistantResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>安装助理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// InstallAssistantRequest
+        /// </param>
+        /// <param name="headers">
+        /// InstallAssistantHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// InstallAssistantResponse
+        /// </returns>
         public InstallAssistantResponse InstallAssistantWithOptions(InstallAssistantRequest request, InstallAssistantHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1697,14 +2104,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<InstallAssistantResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 安装助理
-         *
-         * @param request InstallAssistantRequest
-         * @param headers InstallAssistantHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return InstallAssistantResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>安装助理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// InstallAssistantRequest
+        /// </param>
+        /// <param name="headers">
+        /// InstallAssistantHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// InstallAssistantResponse
+        /// </returns>
         public async Task<InstallAssistantResponse> InstallAssistantWithOptionsAsync(InstallAssistantRequest request, InstallAssistantHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1742,12 +2159,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<InstallAssistantResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 安装助理
-         *
-         * @param request InstallAssistantRequest
-         * @return InstallAssistantResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>安装助理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// InstallAssistantRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// InstallAssistantResponse
+        /// </returns>
         public InstallAssistantResponse InstallAssistant(InstallAssistantRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1755,12 +2178,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return InstallAssistantWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 安装助理
-         *
-         * @param request InstallAssistantRequest
-         * @return InstallAssistantResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>安装助理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// InstallAssistantRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// InstallAssistantResponse
+        /// </returns>
         public async Task<InstallAssistantResponse> InstallAssistantAsync(InstallAssistantRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1768,14 +2197,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await InstallAssistantWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 助理学习知识
-         *
-         * @param request LearnKnowledgeRequest
-         * @param headers LearnKnowledgeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return LearnKnowledgeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>助理学习知识</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// LearnKnowledgeRequest
+        /// </param>
+        /// <param name="headers">
+        /// LearnKnowledgeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// LearnKnowledgeResponse
+        /// </returns>
         public LearnKnowledgeResponse LearnKnowledgeWithOptions(LearnKnowledgeRequest request, LearnKnowledgeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1817,14 +2256,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<LearnKnowledgeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 助理学习知识
-         *
-         * @param request LearnKnowledgeRequest
-         * @param headers LearnKnowledgeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return LearnKnowledgeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>助理学习知识</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// LearnKnowledgeRequest
+        /// </param>
+        /// <param name="headers">
+        /// LearnKnowledgeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// LearnKnowledgeResponse
+        /// </returns>
         public async Task<LearnKnowledgeResponse> LearnKnowledgeWithOptionsAsync(LearnKnowledgeRequest request, LearnKnowledgeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1866,12 +2315,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<LearnKnowledgeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 助理学习知识
-         *
-         * @param request LearnKnowledgeRequest
-         * @return LearnKnowledgeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>助理学习知识</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// LearnKnowledgeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// LearnKnowledgeResponse
+        /// </returns>
         public LearnKnowledgeResponse LearnKnowledge(LearnKnowledgeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1879,12 +2334,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return LearnKnowledgeWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 助理学习知识
-         *
-         * @param request LearnKnowledgeRequest
-         * @return LearnKnowledgeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>助理学习知识</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// LearnKnowledgeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// LearnKnowledgeResponse
+        /// </returns>
         public async Task<LearnKnowledgeResponse> LearnKnowledgeAsync(LearnKnowledgeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1892,14 +2353,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await LearnKnowledgeWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取AI助理列表
-         *
-         * @param request ListAssistantRequest
-         * @param headers ListAssistantHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListAssistantResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取AI助理列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListAssistantRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListAssistantHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAssistantResponse
+        /// </returns>
         public ListAssistantResponse ListAssistantWithOptions(ListAssistantRequest request, ListAssistantHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1945,14 +2416,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<ListAssistantResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取AI助理列表
-         *
-         * @param request ListAssistantRequest
-         * @param headers ListAssistantHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListAssistantResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取AI助理列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListAssistantRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListAssistantHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAssistantResponse
+        /// </returns>
         public async Task<ListAssistantResponse> ListAssistantWithOptionsAsync(ListAssistantRequest request, ListAssistantHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1998,12 +2479,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<ListAssistantResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取AI助理列表
-         *
-         * @param request ListAssistantRequest
-         * @return ListAssistantResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取AI助理列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListAssistantRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAssistantResponse
+        /// </returns>
         public ListAssistantResponse ListAssistant(ListAssistantRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2011,12 +2498,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return ListAssistantWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取AI助理列表
-         *
-         * @param request ListAssistantRequest
-         * @return ListAssistantResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取AI助理列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListAssistantRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAssistantResponse
+        /// </returns>
         public async Task<ListAssistantResponse> ListAssistantAsync(ListAssistantRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2024,14 +2517,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await ListAssistantWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取AI助理消息列表
-         *
-         * @param request ListAssistantMessageRequest
-         * @param headers ListAssistantMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListAssistantMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取AI助理消息列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListAssistantMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListAssistantMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAssistantMessageResponse
+        /// </returns>
         public ListAssistantMessageResponse ListAssistantMessageWithOptions(string threadId, ListAssistantMessageRequest request, ListAssistantMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2077,14 +2580,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<ListAssistantMessageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取AI助理消息列表
-         *
-         * @param request ListAssistantMessageRequest
-         * @param headers ListAssistantMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListAssistantMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取AI助理消息列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListAssistantMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListAssistantMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAssistantMessageResponse
+        /// </returns>
         public async Task<ListAssistantMessageResponse> ListAssistantMessageWithOptionsAsync(string threadId, ListAssistantMessageRequest request, ListAssistantMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2130,12 +2643,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<ListAssistantMessageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取AI助理消息列表
-         *
-         * @param request ListAssistantMessageRequest
-         * @return ListAssistantMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取AI助理消息列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListAssistantMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAssistantMessageResponse
+        /// </returns>
         public ListAssistantMessageResponse ListAssistantMessage(string threadId, ListAssistantMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2143,12 +2662,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return ListAssistantMessageWithOptions(threadId, request, headers, runtime);
         }
 
-        /**
-         * @summary 获取AI助理消息列表
-         *
-         * @param request ListAssistantMessageRequest
-         * @return ListAssistantMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取AI助理消息列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListAssistantMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAssistantMessageResponse
+        /// </returns>
         public async Task<ListAssistantMessageResponse> ListAssistantMessageAsync(string threadId, ListAssistantMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2156,14 +2681,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await ListAssistantMessageWithOptionsAsync(threadId, request, headers, runtime);
         }
 
-        /**
-         * @summary 获取AI助理的运行任务的列表
-         *
-         * @param request ListAssistantRunRequest
-         * @param headers ListAssistantRunHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListAssistantRunResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取AI助理的运行任务的列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListAssistantRunRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListAssistantRunHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAssistantRunResponse
+        /// </returns>
         public ListAssistantRunResponse ListAssistantRunWithOptions(string threadId, ListAssistantRunRequest request, ListAssistantRunHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2205,14 +2740,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<ListAssistantRunResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取AI助理的运行任务的列表
-         *
-         * @param request ListAssistantRunRequest
-         * @param headers ListAssistantRunHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListAssistantRunResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取AI助理的运行任务的列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListAssistantRunRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListAssistantRunHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAssistantRunResponse
+        /// </returns>
         public async Task<ListAssistantRunResponse> ListAssistantRunWithOptionsAsync(string threadId, ListAssistantRunRequest request, ListAssistantRunHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2254,12 +2799,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<ListAssistantRunResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取AI助理的运行任务的列表
-         *
-         * @param request ListAssistantRunRequest
-         * @return ListAssistantRunResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取AI助理的运行任务的列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListAssistantRunRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAssistantRunResponse
+        /// </returns>
         public ListAssistantRunResponse ListAssistantRun(string threadId, ListAssistantRunRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2267,12 +2818,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return ListAssistantRunWithOptions(threadId, request, headers, runtime);
         }
 
-        /**
-         * @summary 获取AI助理的运行任务的列表
-         *
-         * @param request ListAssistantRunRequest
-         * @return ListAssistantRunResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取AI助理的运行任务的列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListAssistantRunRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAssistantRunResponse
+        /// </returns>
         public async Task<ListAssistantRunResponse> ListAssistantRunAsync(string threadId, ListAssistantRunRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2280,14 +2837,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await ListAssistantRunWithOptionsAsync(threadId, request, headers, runtime);
         }
 
-        /**
-         * @summary 获取用户可见范围的AI助理列表
-         *
-         * @param request ListVisibleAssistantRequest
-         * @param headers ListVisibleAssistantHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListVisibleAssistantResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户可见范围的AI助理列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListVisibleAssistantRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListVisibleAssistantHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListVisibleAssistantResponse
+        /// </returns>
         public ListVisibleAssistantResponse ListVisibleAssistantWithOptions(ListVisibleAssistantRequest request, ListVisibleAssistantHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2333,14 +2900,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<ListVisibleAssistantResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取用户可见范围的AI助理列表
-         *
-         * @param request ListVisibleAssistantRequest
-         * @param headers ListVisibleAssistantHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListVisibleAssistantResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户可见范围的AI助理列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListVisibleAssistantRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListVisibleAssistantHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListVisibleAssistantResponse
+        /// </returns>
         public async Task<ListVisibleAssistantResponse> ListVisibleAssistantWithOptionsAsync(ListVisibleAssistantRequest request, ListVisibleAssistantHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2386,12 +2963,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<ListVisibleAssistantResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取用户可见范围的AI助理列表
-         *
-         * @param request ListVisibleAssistantRequest
-         * @return ListVisibleAssistantResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户可见范围的AI助理列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListVisibleAssistantRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListVisibleAssistantResponse
+        /// </returns>
         public ListVisibleAssistantResponse ListVisibleAssistant(ListVisibleAssistantRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2399,12 +2982,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return ListVisibleAssistantWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取用户可见范围的AI助理列表
-         *
-         * @param request ListVisibleAssistantRequest
-         * @return ListVisibleAssistantResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户可见范围的AI助理列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListVisibleAssistantRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListVisibleAssistantResponse
+        /// </returns>
         public async Task<ListVisibleAssistantResponse> ListVisibleAssistantAsync(ListVisibleAssistantRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2412,14 +3001,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await ListVisibleAssistantWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 助理学习增量知识
-         *
-         * @param request RelearnKnowledgeRequest
-         * @param headers RelearnKnowledgeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return RelearnKnowledgeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>助理学习增量知识</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RelearnKnowledgeRequest
+        /// </param>
+        /// <param name="headers">
+        /// RelearnKnowledgeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RelearnKnowledgeResponse
+        /// </returns>
         public RelearnKnowledgeResponse RelearnKnowledgeWithOptions(RelearnKnowledgeRequest request, RelearnKnowledgeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2457,14 +3056,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<RelearnKnowledgeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 助理学习增量知识
-         *
-         * @param request RelearnKnowledgeRequest
-         * @param headers RelearnKnowledgeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return RelearnKnowledgeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>助理学习增量知识</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RelearnKnowledgeRequest
+        /// </param>
+        /// <param name="headers">
+        /// RelearnKnowledgeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RelearnKnowledgeResponse
+        /// </returns>
         public async Task<RelearnKnowledgeResponse> RelearnKnowledgeWithOptionsAsync(RelearnKnowledgeRequest request, RelearnKnowledgeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2502,12 +3111,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<RelearnKnowledgeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 助理学习增量知识
-         *
-         * @param request RelearnKnowledgeRequest
-         * @return RelearnKnowledgeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>助理学习增量知识</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RelearnKnowledgeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RelearnKnowledgeResponse
+        /// </returns>
         public RelearnKnowledgeResponse RelearnKnowledge(RelearnKnowledgeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2515,12 +3130,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return RelearnKnowledgeWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 助理学习增量知识
-         *
-         * @param request RelearnKnowledgeRequest
-         * @return RelearnKnowledgeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>助理学习增量知识</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RelearnKnowledgeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RelearnKnowledgeResponse
+        /// </returns>
         public async Task<RelearnKnowledgeResponse> RelearnKnowledgeAsync(RelearnKnowledgeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2528,14 +3149,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await RelearnKnowledgeWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询 AI 助理的基本信息
-         *
-         * @param request RetrieveAssistantBasicInfoRequest
-         * @param headers RetrieveAssistantBasicInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return RetrieveAssistantBasicInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询 AI 助理的基本信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RetrieveAssistantBasicInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// RetrieveAssistantBasicInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RetrieveAssistantBasicInfoResponse
+        /// </returns>
         public RetrieveAssistantBasicInfoResponse RetrieveAssistantBasicInfoWithOptions(RetrieveAssistantBasicInfoRequest request, RetrieveAssistantBasicInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2577,14 +3208,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<RetrieveAssistantBasicInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询 AI 助理的基本信息
-         *
-         * @param request RetrieveAssistantBasicInfoRequest
-         * @param headers RetrieveAssistantBasicInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return RetrieveAssistantBasicInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询 AI 助理的基本信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RetrieveAssistantBasicInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// RetrieveAssistantBasicInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RetrieveAssistantBasicInfoResponse
+        /// </returns>
         public async Task<RetrieveAssistantBasicInfoResponse> RetrieveAssistantBasicInfoWithOptionsAsync(RetrieveAssistantBasicInfoRequest request, RetrieveAssistantBasicInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2626,12 +3267,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<RetrieveAssistantBasicInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询 AI 助理的基本信息
-         *
-         * @param request RetrieveAssistantBasicInfoRequest
-         * @return RetrieveAssistantBasicInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询 AI 助理的基本信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RetrieveAssistantBasicInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RetrieveAssistantBasicInfoResponse
+        /// </returns>
         public RetrieveAssistantBasicInfoResponse RetrieveAssistantBasicInfo(RetrieveAssistantBasicInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2639,12 +3286,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return RetrieveAssistantBasicInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询 AI 助理的基本信息
-         *
-         * @param request RetrieveAssistantBasicInfoRequest
-         * @return RetrieveAssistantBasicInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询 AI 助理的基本信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RetrieveAssistantBasicInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RetrieveAssistantBasicInfoResponse
+        /// </returns>
         public async Task<RetrieveAssistantBasicInfoResponse> RetrieveAssistantBasicInfoAsync(RetrieveAssistantBasicInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2652,13 +3305,21 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await RetrieveAssistantBasicInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取AI助理的消息体
-         *
-         * @param headers RetrieveAssistantMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return RetrieveAssistantMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取AI助理的消息体</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// RetrieveAssistantMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RetrieveAssistantMessageResponse
+        /// </returns>
         public RetrieveAssistantMessageResponse RetrieveAssistantMessageWithOptions(string threadId, string messageId, RetrieveAssistantMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -2689,13 +3350,21 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<RetrieveAssistantMessageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取AI助理的消息体
-         *
-         * @param headers RetrieveAssistantMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return RetrieveAssistantMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取AI助理的消息体</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// RetrieveAssistantMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RetrieveAssistantMessageResponse
+        /// </returns>
         public async Task<RetrieveAssistantMessageResponse> RetrieveAssistantMessageWithOptionsAsync(string threadId, string messageId, RetrieveAssistantMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -2726,11 +3395,14 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<RetrieveAssistantMessageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取AI助理的消息体
-         *
-         * @return RetrieveAssistantMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取AI助理的消息体</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// RetrieveAssistantMessageResponse
+        /// </returns>
         public RetrieveAssistantMessageResponse RetrieveAssistantMessage(string threadId, string messageId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2738,11 +3410,14 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return RetrieveAssistantMessageWithOptions(threadId, messageId, headers, runtime);
         }
 
-        /**
-         * @summary 获取AI助理的消息体
-         *
-         * @return RetrieveAssistantMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取AI助理的消息体</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// RetrieveAssistantMessageResponse
+        /// </returns>
         public async Task<RetrieveAssistantMessageResponse> RetrieveAssistantMessageAsync(string threadId, string messageId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2750,13 +3425,21 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await RetrieveAssistantMessageWithOptionsAsync(threadId, messageId, headers, runtime);
         }
 
-        /**
-         * @summary 检索AI助理的运行任务
-         *
-         * @param headers RetrieveAssistantRunHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return RetrieveAssistantRunResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>检索AI助理的运行任务</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// RetrieveAssistantRunHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RetrieveAssistantRunResponse
+        /// </returns>
         public RetrieveAssistantRunResponse RetrieveAssistantRunWithOptions(string threadId, string runId, RetrieveAssistantRunHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -2787,13 +3470,21 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<RetrieveAssistantRunResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 检索AI助理的运行任务
-         *
-         * @param headers RetrieveAssistantRunHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return RetrieveAssistantRunResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>检索AI助理的运行任务</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// RetrieveAssistantRunHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RetrieveAssistantRunResponse
+        /// </returns>
         public async Task<RetrieveAssistantRunResponse> RetrieveAssistantRunWithOptionsAsync(string threadId, string runId, RetrieveAssistantRunHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -2824,11 +3515,14 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<RetrieveAssistantRunResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 检索AI助理的运行任务
-         *
-         * @return RetrieveAssistantRunResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>检索AI助理的运行任务</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// RetrieveAssistantRunResponse
+        /// </returns>
         public RetrieveAssistantRunResponse RetrieveAssistantRun(string threadId, string runId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2836,11 +3530,14 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return RetrieveAssistantRunWithOptions(threadId, runId, headers, runtime);
         }
 
-        /**
-         * @summary 检索AI助理的运行任务
-         *
-         * @return RetrieveAssistantRunResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>检索AI助理的运行任务</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// RetrieveAssistantRunResponse
+        /// </returns>
         public async Task<RetrieveAssistantRunResponse> RetrieveAssistantRunAsync(string threadId, string runId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2848,14 +3545,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await RetrieveAssistantRunWithOptionsAsync(threadId, runId, headers, runtime);
         }
 
-        /**
-         * @summary 获取助理的使用范围
-         *
-         * @param request RetrieveAssistantScopeRequest
-         * @param headers RetrieveAssistantScopeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return RetrieveAssistantScopeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取助理的使用范围</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RetrieveAssistantScopeRequest
+        /// </param>
+        /// <param name="headers">
+        /// RetrieveAssistantScopeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RetrieveAssistantScopeResponse
+        /// </returns>
         public RetrieveAssistantScopeResponse RetrieveAssistantScopeWithOptions(RetrieveAssistantScopeRequest request, RetrieveAssistantScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2893,14 +3600,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<RetrieveAssistantScopeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取助理的使用范围
-         *
-         * @param request RetrieveAssistantScopeRequest
-         * @param headers RetrieveAssistantScopeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return RetrieveAssistantScopeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取助理的使用范围</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RetrieveAssistantScopeRequest
+        /// </param>
+        /// <param name="headers">
+        /// RetrieveAssistantScopeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RetrieveAssistantScopeResponse
+        /// </returns>
         public async Task<RetrieveAssistantScopeResponse> RetrieveAssistantScopeWithOptionsAsync(RetrieveAssistantScopeRequest request, RetrieveAssistantScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2938,12 +3655,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<RetrieveAssistantScopeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取助理的使用范围
-         *
-         * @param request RetrieveAssistantScopeRequest
-         * @return RetrieveAssistantScopeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取助理的使用范围</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RetrieveAssistantScopeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RetrieveAssistantScopeResponse
+        /// </returns>
         public RetrieveAssistantScopeResponse RetrieveAssistantScope(RetrieveAssistantScopeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2951,12 +3674,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return RetrieveAssistantScopeWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取助理的使用范围
-         *
-         * @param request RetrieveAssistantScopeRequest
-         * @return RetrieveAssistantScopeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取助理的使用范围</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RetrieveAssistantScopeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RetrieveAssistantScopeResponse
+        /// </returns>
         public async Task<RetrieveAssistantScopeResponse> RetrieveAssistantScopeAsync(RetrieveAssistantScopeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2964,13 +3693,21 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await RetrieveAssistantScopeWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 检索AI助理线程实例
-         *
-         * @param headers RetrieveAssistantThreadHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return RetrieveAssistantThreadResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>检索AI助理线程实例</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// RetrieveAssistantThreadHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RetrieveAssistantThreadResponse
+        /// </returns>
         public RetrieveAssistantThreadResponse RetrieveAssistantThreadWithOptions(string threadId, RetrieveAssistantThreadHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -3001,13 +3738,21 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<RetrieveAssistantThreadResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 检索AI助理线程实例
-         *
-         * @param headers RetrieveAssistantThreadHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return RetrieveAssistantThreadResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>检索AI助理线程实例</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// RetrieveAssistantThreadHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RetrieveAssistantThreadResponse
+        /// </returns>
         public async Task<RetrieveAssistantThreadResponse> RetrieveAssistantThreadWithOptionsAsync(string threadId, RetrieveAssistantThreadHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -3038,11 +3783,14 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<RetrieveAssistantThreadResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 检索AI助理线程实例
-         *
-         * @return RetrieveAssistantThreadResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>检索AI助理线程实例</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// RetrieveAssistantThreadResponse
+        /// </returns>
         public RetrieveAssistantThreadResponse RetrieveAssistantThread(string threadId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3050,11 +3798,14 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return RetrieveAssistantThreadWithOptions(threadId, headers, runtime);
         }
 
-        /**
-         * @summary 检索AI助理线程实例
-         *
-         * @return RetrieveAssistantThreadResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>检索AI助理线程实例</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// RetrieveAssistantThreadResponse
+        /// </returns>
         public async Task<RetrieveAssistantThreadResponse> RetrieveAssistantThreadAsync(string threadId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3062,14 +3813,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await RetrieveAssistantThreadWithOptionsAsync(threadId, headers, runtime);
         }
 
-        /**
-         * @summary 更新AI助理基础信息
-         *
-         * @param request UpdateAssistantBasicInfoRequest
-         * @param headers UpdateAssistantBasicInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateAssistantBasicInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新AI助理基础信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateAssistantBasicInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateAssistantBasicInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateAssistantBasicInfoResponse
+        /// </returns>
         public UpdateAssistantBasicInfoResponse UpdateAssistantBasicInfoWithOptions(UpdateAssistantBasicInfoRequest request, UpdateAssistantBasicInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3139,14 +3900,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<UpdateAssistantBasicInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新AI助理基础信息
-         *
-         * @param request UpdateAssistantBasicInfoRequest
-         * @param headers UpdateAssistantBasicInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateAssistantBasicInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新AI助理基础信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateAssistantBasicInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateAssistantBasicInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateAssistantBasicInfoResponse
+        /// </returns>
         public async Task<UpdateAssistantBasicInfoResponse> UpdateAssistantBasicInfoWithOptionsAsync(UpdateAssistantBasicInfoRequest request, UpdateAssistantBasicInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3216,12 +3987,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<UpdateAssistantBasicInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新AI助理基础信息
-         *
-         * @param request UpdateAssistantBasicInfoRequest
-         * @return UpdateAssistantBasicInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新AI助理基础信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateAssistantBasicInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateAssistantBasicInfoResponse
+        /// </returns>
         public UpdateAssistantBasicInfoResponse UpdateAssistantBasicInfo(UpdateAssistantBasicInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3229,12 +4006,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return UpdateAssistantBasicInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新AI助理基础信息
-         *
-         * @param request UpdateAssistantBasicInfoRequest
-         * @return UpdateAssistantBasicInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新AI助理基础信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateAssistantBasicInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateAssistantBasicInfoResponse
+        /// </returns>
         public async Task<UpdateAssistantBasicInfoResponse> UpdateAssistantBasicInfoAsync(UpdateAssistantBasicInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3242,14 +4025,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return await UpdateAssistantBasicInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新 AI 助理使用范围
-         *
-         * @param request UpdateAssistantScopeRequest
-         * @param headers UpdateAssistantScopeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateAssistantScopeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新 AI 助理使用范围</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateAssistantScopeRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateAssistantScopeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateAssistantScopeResponse
+        /// </returns>
         public UpdateAssistantScopeResponse UpdateAssistantScopeWithOptions(UpdateAssistantScopeRequest request, UpdateAssistantScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3299,14 +4092,24 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<UpdateAssistantScopeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新 AI 助理使用范围
-         *
-         * @param request UpdateAssistantScopeRequest
-         * @param headers UpdateAssistantScopeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateAssistantScopeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新 AI 助理使用范围</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateAssistantScopeRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateAssistantScopeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateAssistantScopeResponse
+        /// </returns>
         public async Task<UpdateAssistantScopeResponse> UpdateAssistantScopeWithOptionsAsync(UpdateAssistantScopeRequest request, UpdateAssistantScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3356,12 +4159,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return TeaModel.ToObject<UpdateAssistantScopeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新 AI 助理使用范围
-         *
-         * @param request UpdateAssistantScopeRequest
-         * @return UpdateAssistantScopeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新 AI 助理使用范围</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateAssistantScopeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateAssistantScopeResponse
+        /// </returns>
         public UpdateAssistantScopeResponse UpdateAssistantScope(UpdateAssistantScopeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3369,12 +4178,18 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             return UpdateAssistantScopeWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新 AI 助理使用范围
-         *
-         * @param request UpdateAssistantScopeRequest
-         * @return UpdateAssistantScopeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新 AI 助理使用范围</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateAssistantScopeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateAssistantScopeResponse
+        /// </returns>
         public async Task<UpdateAssistantScopeResponse> UpdateAssistantScopeAsync(UpdateAssistantScopeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

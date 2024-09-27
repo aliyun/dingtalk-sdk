@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class OpenGroupRoleAddRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("roleName")]
         [Validation(Required=false)]
         public string RoleName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

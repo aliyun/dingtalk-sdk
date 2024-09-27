@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class ListPermissionsResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("members")]
         [Validation(Required=false)]
         public List<ListPermissionsResponseBodyMembers> Members { get; set; }
         public class ListPermissionsResponseBodyMembers : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("extend")]
             [Validation(Required=false)]
             public bool? Extend { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("member")]
             [Validation(Required=false)]
@@ -43,7 +43,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
                 public string MemberName { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("memberType")]
                 [Validation(Required=false)]
@@ -52,7 +52,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("role")]
             [Validation(Required=false)]
@@ -61,21 +61,21 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("outMembers")]
         [Validation(Required=false)]
         public List<ListPermissionsResponseBodyOutMembers> OutMembers { get; set; }
         public class ListPermissionsResponseBodyOutMembers : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("extend")]
             [Validation(Required=false)]
             public bool? Extend { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("member")]
             [Validation(Required=false)]
@@ -94,7 +94,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
                 public string MemberName { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("memberType")]
                 [Validation(Required=false)]
@@ -103,7 +103,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("role")]
             [Validation(Required=false)]

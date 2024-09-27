@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class ListSpacesRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
@@ -21,14 +21,14 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public string NextToken { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("spaceType")]
         [Validation(Required=false)]
         public string SpaceType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

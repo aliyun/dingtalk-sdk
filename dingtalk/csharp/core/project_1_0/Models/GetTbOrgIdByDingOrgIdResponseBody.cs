@@ -10,14 +10,17 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class GetTbOrgIdByDingOrgIdResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public GetTbOrgIdByDingOrgIdResponseBodyResult Result { get; set; }
         public class GetTbOrgIdByDingOrgIdResponseBodyResult : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>50c32afae8cf1439xxxx</para>
             /// </summary>
             [NameInMap("tbOrganizationId")]
             [Validation(Required=false)]

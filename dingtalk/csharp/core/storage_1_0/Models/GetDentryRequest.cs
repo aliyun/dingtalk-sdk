@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
             [Validation(Required=false)]
             public List<string> AppIdsForAppProperties { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>true</para>
+            /// </summary>
             [NameInMap("withThumbnail")]
             [Validation(Required=false)]
             public bool? WithThumbnail { get; set; }
@@ -24,7 +28,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

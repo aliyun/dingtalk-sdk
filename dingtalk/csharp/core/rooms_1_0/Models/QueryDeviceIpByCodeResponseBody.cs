@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
         [Validation(Required=false)]
         public QueryDeviceIpByCodeResponseBodyResult Result { get; set; }
         public class QueryDeviceIpByCodeResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>30.12.1.100</para>
+            /// </summary>
             [NameInMap("deviceIp")]
             [Validation(Required=false)]
             public string DeviceIp { get; set; }

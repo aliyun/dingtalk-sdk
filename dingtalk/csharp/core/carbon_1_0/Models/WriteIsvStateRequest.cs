@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkcarbon_1_0.Models
 {
     public class WriteIsvStateRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ISV</para>
         /// </summary>
         [NameInMap("isvName")]
         [Validation(Required=false)]
         public string IsvName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>20220328</para>
         /// </summary>
         [NameInMap("statDate")]
         [Validation(Required=false)]

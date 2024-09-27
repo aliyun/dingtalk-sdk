@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
         }
 
 
-        /**
-         * @summary 关闭企业自建应用H5离线包
-         *
-         * @param request CloseHPackageRequest
-         * @param headers CloseHPackageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CloseHPackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>关闭企业自建应用H5离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CloseHPackageRequest
+        /// </param>
+        /// <param name="headers">
+        /// CloseHPackageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CloseHPackageResponse
+        /// </returns>
         public CloseHPackageResponse CloseHPackageWithOptions(CloseHPackageRequest request, CloseHPackageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -73,14 +84,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<CloseHPackageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 关闭企业自建应用H5离线包
-         *
-         * @param request CloseHPackageRequest
-         * @param headers CloseHPackageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CloseHPackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>关闭企业自建应用H5离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CloseHPackageRequest
+        /// </param>
+        /// <param name="headers">
+        /// CloseHPackageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CloseHPackageResponse
+        /// </returns>
         public async Task<CloseHPackageResponse> CloseHPackageWithOptionsAsync(CloseHPackageRequest request, CloseHPackageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -118,12 +139,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<CloseHPackageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 关闭企业自建应用H5离线包
-         *
-         * @param request CloseHPackageRequest
-         * @return CloseHPackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>关闭企业自建应用H5离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CloseHPackageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CloseHPackageResponse
+        /// </returns>
         public CloseHPackageResponse CloseHPackage(CloseHPackageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -131,12 +158,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return CloseHPackageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 关闭企业自建应用H5离线包
-         *
-         * @param request CloseHPackageRequest
-         * @return CloseHPackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>关闭企业自建应用H5离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CloseHPackageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CloseHPackageResponse
+        /// </returns>
         public async Task<CloseHPackageResponse> CloseHPackageAsync(CloseHPackageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -144,14 +177,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return await CloseHPackageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取离线包上传凭证
-         *
-         * @param request GetUploadTokenRequest
-         * @param headers GetUploadTokenHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetUploadTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取离线包上传凭证</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUploadTokenRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetUploadTokenHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUploadTokenResponse
+        /// </returns>
         public GetUploadTokenResponse GetUploadTokenWithOptions(GetUploadTokenRequest request, GetUploadTokenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -189,14 +232,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<GetUploadTokenResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取离线包上传凭证
-         *
-         * @param request GetUploadTokenRequest
-         * @param headers GetUploadTokenHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetUploadTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取离线包上传凭证</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUploadTokenRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetUploadTokenHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUploadTokenResponse
+        /// </returns>
         public async Task<GetUploadTokenResponse> GetUploadTokenWithOptionsAsync(GetUploadTokenRequest request, GetUploadTokenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -234,12 +287,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<GetUploadTokenResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取离线包上传凭证
-         *
-         * @param request GetUploadTokenRequest
-         * @return GetUploadTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取离线包上传凭证</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUploadTokenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUploadTokenResponse
+        /// </returns>
         public GetUploadTokenResponse GetUploadToken(GetUploadTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -247,12 +306,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return GetUploadTokenWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取离线包上传凭证
-         *
-         * @param request GetUploadTokenRequest
-         * @return GetUploadTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取离线包上传凭证</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUploadTokenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUploadTokenResponse
+        /// </returns>
         public async Task<GetUploadTokenResponse> GetUploadTokenAsync(GetUploadTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -260,14 +325,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return await GetUploadTokenWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取H5离线包版本列表
-         *
-         * @param request HPackageListGetRequest
-         * @param headers HPackageListGetHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HPackageListGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取H5离线包版本列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HPackageListGetRequest
+        /// </param>
+        /// <param name="headers">
+        /// HPackageListGetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HPackageListGetResponse
+        /// </returns>
         public HPackageListGetResponse HPackageListGetWithOptions(HPackageListGetRequest request, HPackageListGetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -313,14 +388,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<HPackageListGetResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取H5离线包版本列表
-         *
-         * @param request HPackageListGetRequest
-         * @param headers HPackageListGetHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HPackageListGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取H5离线包版本列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HPackageListGetRequest
+        /// </param>
+        /// <param name="headers">
+        /// HPackageListGetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HPackageListGetResponse
+        /// </returns>
         public async Task<HPackageListGetResponse> HPackageListGetWithOptionsAsync(HPackageListGetRequest request, HPackageListGetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -366,12 +451,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<HPackageListGetResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取H5离线包版本列表
-         *
-         * @param request HPackageListGetRequest
-         * @return HPackageListGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取H5离线包版本列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HPackageListGetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HPackageListGetResponse
+        /// </returns>
         public HPackageListGetResponse HPackageListGet(HPackageListGetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -379,12 +470,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return HPackageListGetWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取H5离线包版本列表
-         *
-         * @param request HPackageListGetRequest
-         * @return HPackageListGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取H5离线包版本列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HPackageListGetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HPackageListGetResponse
+        /// </returns>
         public async Task<HPackageListGetResponse> HPackageListGetAsync(HPackageListGetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -392,14 +489,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return await HPackageListGetWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 发布离线包
-         *
-         * @param request HPublishPackageRequest
-         * @param headers HPublishPackageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HPublishPackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发布离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HPublishPackageRequest
+        /// </param>
+        /// <param name="headers">
+        /// HPublishPackageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HPublishPackageResponse
+        /// </returns>
         public HPublishPackageResponse HPublishPackageWithOptions(HPublishPackageRequest request, HPublishPackageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -441,14 +548,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<HPublishPackageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 发布离线包
-         *
-         * @param request HPublishPackageRequest
-         * @param headers HPublishPackageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HPublishPackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发布离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HPublishPackageRequest
+        /// </param>
+        /// <param name="headers">
+        /// HPublishPackageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HPublishPackageResponse
+        /// </returns>
         public async Task<HPublishPackageResponse> HPublishPackageWithOptionsAsync(HPublishPackageRequest request, HPublishPackageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -490,12 +607,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<HPublishPackageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 发布离线包
-         *
-         * @param request HPublishPackageRequest
-         * @return HPublishPackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发布离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HPublishPackageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HPublishPackageResponse
+        /// </returns>
         public HPublishPackageResponse HPublishPackage(HPublishPackageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -503,12 +626,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return HPublishPackageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 发布离线包
-         *
-         * @param request HPublishPackageRequest
-         * @return HPublishPackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发布离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HPublishPackageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HPublishPackageResponse
+        /// </returns>
         public async Task<HPublishPackageResponse> HPublishPackageAsync(HPublishPackageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -516,14 +645,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return await HPublishPackageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 上传H5离线包
-         *
-         * @param request HUploadPackageRequest
-         * @param headers HUploadPackageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HUploadPackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>上传H5离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HUploadPackageRequest
+        /// </param>
+        /// <param name="headers">
+        /// HUploadPackageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HUploadPackageResponse
+        /// </returns>
         public HUploadPackageResponse HUploadPackageWithOptions(HUploadPackageRequest request, HUploadPackageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -565,14 +704,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<HUploadPackageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 上传H5离线包
-         *
-         * @param request HUploadPackageRequest
-         * @param headers HUploadPackageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HUploadPackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>上传H5离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HUploadPackageRequest
+        /// </param>
+        /// <param name="headers">
+        /// HUploadPackageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HUploadPackageResponse
+        /// </returns>
         public async Task<HUploadPackageResponse> HUploadPackageWithOptionsAsync(HUploadPackageRequest request, HUploadPackageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -614,12 +763,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<HUploadPackageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 上传H5离线包
-         *
-         * @param request HUploadPackageRequest
-         * @return HUploadPackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>上传H5离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HUploadPackageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HUploadPackageResponse
+        /// </returns>
         public HUploadPackageResponse HUploadPackage(HUploadPackageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -627,12 +782,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return HUploadPackageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 上传H5离线包
-         *
-         * @param request HUploadPackageRequest
-         * @return HUploadPackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>上传H5离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HUploadPackageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HUploadPackageResponse
+        /// </returns>
         public async Task<HUploadPackageResponse> HUploadPackageAsync(HUploadPackageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -640,14 +801,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return await HUploadPackageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 上传H5离线包进度
-         *
-         * @param request HUploadPackageStatusRequest
-         * @param headers HUploadPackageStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HUploadPackageStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>上传H5离线包进度</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HUploadPackageStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// HUploadPackageStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HUploadPackageStatusResponse
+        /// </returns>
         public HUploadPackageStatusResponse HUploadPackageStatusWithOptions(HUploadPackageStatusRequest request, HUploadPackageStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -689,14 +860,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<HUploadPackageStatusResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 上传H5离线包进度
-         *
-         * @param request HUploadPackageStatusRequest
-         * @param headers HUploadPackageStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HUploadPackageStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>上传H5离线包进度</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HUploadPackageStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// HUploadPackageStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HUploadPackageStatusResponse
+        /// </returns>
         public async Task<HUploadPackageStatusResponse> HUploadPackageStatusWithOptionsAsync(HUploadPackageStatusRequest request, HUploadPackageStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -738,12 +919,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<HUploadPackageStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 上传H5离线包进度
-         *
-         * @param request HUploadPackageStatusRequest
-         * @return HUploadPackageStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>上传H5离线包进度</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HUploadPackageStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HUploadPackageStatusResponse
+        /// </returns>
         public HUploadPackageStatusResponse HUploadPackageStatus(HUploadPackageStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -751,12 +938,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return HUploadPackageStatusWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 上传H5离线包进度
-         *
-         * @param request HUploadPackageStatusRequest
-         * @return HUploadPackageStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>上传H5离线包进度</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HUploadPackageStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HUploadPackageStatusResponse
+        /// </returns>
         public async Task<HUploadPackageStatusResponse> HUploadPackageStatusAsync(HUploadPackageStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -764,14 +957,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return await HUploadPackageStatusWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 开启企业自建应用H5离线包
-         *
-         * @param request OpenMicroAppPackageRequest
-         * @param headers OpenMicroAppPackageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return OpenMicroAppPackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>开启企业自建应用H5离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OpenMicroAppPackageRequest
+        /// </param>
+        /// <param name="headers">
+        /// OpenMicroAppPackageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// OpenMicroAppPackageResponse
+        /// </returns>
         public OpenMicroAppPackageResponse OpenMicroAppPackageWithOptions(OpenMicroAppPackageRequest request, OpenMicroAppPackageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -809,14 +1012,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<OpenMicroAppPackageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 开启企业自建应用H5离线包
-         *
-         * @param request OpenMicroAppPackageRequest
-         * @param headers OpenMicroAppPackageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return OpenMicroAppPackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>开启企业自建应用H5离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OpenMicroAppPackageRequest
+        /// </param>
+        /// <param name="headers">
+        /// OpenMicroAppPackageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// OpenMicroAppPackageResponse
+        /// </returns>
         public async Task<OpenMicroAppPackageResponse> OpenMicroAppPackageWithOptionsAsync(OpenMicroAppPackageRequest request, OpenMicroAppPackageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -854,12 +1067,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<OpenMicroAppPackageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 开启企业自建应用H5离线包
-         *
-         * @param request OpenMicroAppPackageRequest
-         * @return OpenMicroAppPackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>开启企业自建应用H5离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OpenMicroAppPackageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// OpenMicroAppPackageResponse
+        /// </returns>
         public OpenMicroAppPackageResponse OpenMicroAppPackage(OpenMicroAppPackageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -867,12 +1086,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return OpenMicroAppPackageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 开启企业自建应用H5离线包
-         *
-         * @param request OpenMicroAppPackageRequest
-         * @return OpenMicroAppPackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>开启企业自建应用H5离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OpenMicroAppPackageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// OpenMicroAppPackageResponse
+        /// </returns>
         public async Task<OpenMicroAppPackageResponse> OpenMicroAppPackageAsync(OpenMicroAppPackageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -880,14 +1105,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return await OpenMicroAppPackageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 发布离线包到灰度
-         *
-         * @param request ReleaseGrayDeployRequest
-         * @param headers ReleaseGrayDeployHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ReleaseGrayDeployResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发布离线包到灰度</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayDeployRequest
+        /// </param>
+        /// <param name="headers">
+        /// ReleaseGrayDeployHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayDeployResponse
+        /// </returns>
         public ReleaseGrayDeployResponse ReleaseGrayDeployWithOptions(ReleaseGrayDeployRequest request, ReleaseGrayDeployHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -929,14 +1164,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<ReleaseGrayDeployResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 发布离线包到灰度
-         *
-         * @param request ReleaseGrayDeployRequest
-         * @param headers ReleaseGrayDeployHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ReleaseGrayDeployResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发布离线包到灰度</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayDeployRequest
+        /// </param>
+        /// <param name="headers">
+        /// ReleaseGrayDeployHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayDeployResponse
+        /// </returns>
         public async Task<ReleaseGrayDeployResponse> ReleaseGrayDeployWithOptionsAsync(ReleaseGrayDeployRequest request, ReleaseGrayDeployHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -978,12 +1223,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<ReleaseGrayDeployResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 发布离线包到灰度
-         *
-         * @param request ReleaseGrayDeployRequest
-         * @return ReleaseGrayDeployResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发布离线包到灰度</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayDeployRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayDeployResponse
+        /// </returns>
         public ReleaseGrayDeployResponse ReleaseGrayDeploy(ReleaseGrayDeployRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -991,12 +1242,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return ReleaseGrayDeployWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 发布离线包到灰度
-         *
-         * @param request ReleaseGrayDeployRequest
-         * @return ReleaseGrayDeployResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发布离线包到灰度</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayDeployRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayDeployResponse
+        /// </returns>
         public async Task<ReleaseGrayDeployResponse> ReleaseGrayDeployAsync(ReleaseGrayDeployRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1004,14 +1261,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return await ReleaseGrayDeployWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 退出灰度
-         *
-         * @param request ReleaseGrayExitRequest
-         * @param headers ReleaseGrayExitHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ReleaseGrayExitResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>退出灰度</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayExitRequest
+        /// </param>
+        /// <param name="headers">
+        /// ReleaseGrayExitHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayExitResponse
+        /// </returns>
         public ReleaseGrayExitResponse ReleaseGrayExitWithOptions(ReleaseGrayExitRequest request, ReleaseGrayExitHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1053,14 +1320,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<ReleaseGrayExitResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 退出灰度
-         *
-         * @param request ReleaseGrayExitRequest
-         * @param headers ReleaseGrayExitHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ReleaseGrayExitResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>退出灰度</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayExitRequest
+        /// </param>
+        /// <param name="headers">
+        /// ReleaseGrayExitHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayExitResponse
+        /// </returns>
         public async Task<ReleaseGrayExitResponse> ReleaseGrayExitWithOptionsAsync(ReleaseGrayExitRequest request, ReleaseGrayExitHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1102,12 +1379,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<ReleaseGrayExitResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 退出灰度
-         *
-         * @param request ReleaseGrayExitRequest
-         * @return ReleaseGrayExitResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>退出灰度</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayExitRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayExitResponse
+        /// </returns>
         public ReleaseGrayExitResponse ReleaseGrayExit(ReleaseGrayExitRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1115,12 +1398,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return ReleaseGrayExitWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 退出灰度
-         *
-         * @param request ReleaseGrayExitRequest
-         * @return ReleaseGrayExitResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>退出灰度</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayExitRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayExitResponse
+        /// </returns>
         public async Task<ReleaseGrayExitResponse> ReleaseGrayExitAsync(ReleaseGrayExitRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1128,14 +1417,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return await ReleaseGrayExitWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取企业灰度白名单
-         *
-         * @param request ReleaseGrayOrgGetRequest
-         * @param headers ReleaseGrayOrgGetHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ReleaseGrayOrgGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业灰度白名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayOrgGetRequest
+        /// </param>
+        /// <param name="headers">
+        /// ReleaseGrayOrgGetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayOrgGetResponse
+        /// </returns>
         public ReleaseGrayOrgGetResponse ReleaseGrayOrgGetWithOptions(ReleaseGrayOrgGetRequest request, ReleaseGrayOrgGetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1177,14 +1476,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<ReleaseGrayOrgGetResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取企业灰度白名单
-         *
-         * @param request ReleaseGrayOrgGetRequest
-         * @param headers ReleaseGrayOrgGetHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ReleaseGrayOrgGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业灰度白名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayOrgGetRequest
+        /// </param>
+        /// <param name="headers">
+        /// ReleaseGrayOrgGetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayOrgGetResponse
+        /// </returns>
         public async Task<ReleaseGrayOrgGetResponse> ReleaseGrayOrgGetWithOptionsAsync(ReleaseGrayOrgGetRequest request, ReleaseGrayOrgGetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1226,12 +1535,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<ReleaseGrayOrgGetResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取企业灰度白名单
-         *
-         * @param request ReleaseGrayOrgGetRequest
-         * @return ReleaseGrayOrgGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业灰度白名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayOrgGetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayOrgGetResponse
+        /// </returns>
         public ReleaseGrayOrgGetResponse ReleaseGrayOrgGet(ReleaseGrayOrgGetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1239,12 +1554,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return ReleaseGrayOrgGetWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取企业灰度白名单
-         *
-         * @param request ReleaseGrayOrgGetRequest
-         * @return ReleaseGrayOrgGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业灰度白名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayOrgGetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayOrgGetResponse
+        /// </returns>
         public async Task<ReleaseGrayOrgGetResponse> ReleaseGrayOrgGetAsync(ReleaseGrayOrgGetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1252,14 +1573,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return await ReleaseGrayOrgGetWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 设置企业灰度白名单
-         *
-         * @param request ReleaseGrayOrgSetRequest
-         * @param headers ReleaseGrayOrgSetHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ReleaseGrayOrgSetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置企业灰度白名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayOrgSetRequest
+        /// </param>
+        /// <param name="headers">
+        /// ReleaseGrayOrgSetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayOrgSetResponse
+        /// </returns>
         public ReleaseGrayOrgSetResponse ReleaseGrayOrgSetWithOptions(ReleaseGrayOrgSetRequest request, ReleaseGrayOrgSetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1305,14 +1636,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<ReleaseGrayOrgSetResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 设置企业灰度白名单
-         *
-         * @param request ReleaseGrayOrgSetRequest
-         * @param headers ReleaseGrayOrgSetHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ReleaseGrayOrgSetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置企业灰度白名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayOrgSetRequest
+        /// </param>
+        /// <param name="headers">
+        /// ReleaseGrayOrgSetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayOrgSetResponse
+        /// </returns>
         public async Task<ReleaseGrayOrgSetResponse> ReleaseGrayOrgSetWithOptionsAsync(ReleaseGrayOrgSetRequest request, ReleaseGrayOrgSetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1358,12 +1699,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<ReleaseGrayOrgSetResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 设置企业灰度白名单
-         *
-         * @param request ReleaseGrayOrgSetRequest
-         * @return ReleaseGrayOrgSetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置企业灰度白名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayOrgSetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayOrgSetResponse
+        /// </returns>
         public ReleaseGrayOrgSetResponse ReleaseGrayOrgSet(ReleaseGrayOrgSetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1371,12 +1718,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return ReleaseGrayOrgSetWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 设置企业灰度白名单
-         *
-         * @param request ReleaseGrayOrgSetRequest
-         * @return ReleaseGrayOrgSetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置企业灰度白名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayOrgSetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayOrgSetResponse
+        /// </returns>
         public async Task<ReleaseGrayOrgSetResponse> ReleaseGrayOrgSetAsync(ReleaseGrayOrgSetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1384,14 +1737,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return await ReleaseGrayOrgSetWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取灰度离线包百分比值
-         *
-         * @param request ReleaseGrayPercentGetRequest
-         * @param headers ReleaseGrayPercentGetHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ReleaseGrayPercentGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取灰度离线包百分比值</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayPercentGetRequest
+        /// </param>
+        /// <param name="headers">
+        /// ReleaseGrayPercentGetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayPercentGetResponse
+        /// </returns>
         public ReleaseGrayPercentGetResponse ReleaseGrayPercentGetWithOptions(ReleaseGrayPercentGetRequest request, ReleaseGrayPercentGetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1433,14 +1796,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<ReleaseGrayPercentGetResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取灰度离线包百分比值
-         *
-         * @param request ReleaseGrayPercentGetRequest
-         * @param headers ReleaseGrayPercentGetHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ReleaseGrayPercentGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取灰度离线包百分比值</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayPercentGetRequest
+        /// </param>
+        /// <param name="headers">
+        /// ReleaseGrayPercentGetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayPercentGetResponse
+        /// </returns>
         public async Task<ReleaseGrayPercentGetResponse> ReleaseGrayPercentGetWithOptionsAsync(ReleaseGrayPercentGetRequest request, ReleaseGrayPercentGetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1482,12 +1855,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<ReleaseGrayPercentGetResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取灰度离线包百分比值
-         *
-         * @param request ReleaseGrayPercentGetRequest
-         * @return ReleaseGrayPercentGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取灰度离线包百分比值</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayPercentGetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayPercentGetResponse
+        /// </returns>
         public ReleaseGrayPercentGetResponse ReleaseGrayPercentGet(ReleaseGrayPercentGetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1495,12 +1874,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return ReleaseGrayPercentGetWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取灰度离线包百分比值
-         *
-         * @param request ReleaseGrayPercentGetRequest
-         * @return ReleaseGrayPercentGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取灰度离线包百分比值</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayPercentGetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayPercentGetResponse
+        /// </returns>
         public async Task<ReleaseGrayPercentGetResponse> ReleaseGrayPercentGetAsync(ReleaseGrayPercentGetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1508,14 +1893,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return await ReleaseGrayPercentGetWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 设置灰度离线包百分比值
-         *
-         * @param request ReleaseGrayPercentSetRequest
-         * @param headers ReleaseGrayPercentSetHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ReleaseGrayPercentSetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置灰度离线包百分比值</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayPercentSetRequest
+        /// </param>
+        /// <param name="headers">
+        /// ReleaseGrayPercentSetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayPercentSetResponse
+        /// </returns>
         public ReleaseGrayPercentSetResponse ReleaseGrayPercentSetWithOptions(ReleaseGrayPercentSetRequest request, ReleaseGrayPercentSetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1561,14 +1956,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<ReleaseGrayPercentSetResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 设置灰度离线包百分比值
-         *
-         * @param request ReleaseGrayPercentSetRequest
-         * @param headers ReleaseGrayPercentSetHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ReleaseGrayPercentSetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置灰度离线包百分比值</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayPercentSetRequest
+        /// </param>
+        /// <param name="headers">
+        /// ReleaseGrayPercentSetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayPercentSetResponse
+        /// </returns>
         public async Task<ReleaseGrayPercentSetResponse> ReleaseGrayPercentSetWithOptionsAsync(ReleaseGrayPercentSetRequest request, ReleaseGrayPercentSetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1614,12 +2019,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<ReleaseGrayPercentSetResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 设置灰度离线包百分比值
-         *
-         * @param request ReleaseGrayPercentSetRequest
-         * @return ReleaseGrayPercentSetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置灰度离线包百分比值</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayPercentSetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayPercentSetResponse
+        /// </returns>
         public ReleaseGrayPercentSetResponse ReleaseGrayPercentSet(ReleaseGrayPercentSetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1627,12 +2038,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return ReleaseGrayPercentSetWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 设置灰度离线包百分比值
-         *
-         * @param request ReleaseGrayPercentSetRequest
-         * @return ReleaseGrayPercentSetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置灰度离线包百分比值</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayPercentSetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayPercentSetResponse
+        /// </returns>
         public async Task<ReleaseGrayPercentSetResponse> ReleaseGrayPercentSetAsync(ReleaseGrayPercentSetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1640,14 +2057,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return await ReleaseGrayPercentSetWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取用户灰度名单
-         *
-         * @param request ReleaseGrayUserIdGetRequest
-         * @param headers ReleaseGrayUserIdGetHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ReleaseGrayUserIdGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户灰度名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayUserIdGetRequest
+        /// </param>
+        /// <param name="headers">
+        /// ReleaseGrayUserIdGetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayUserIdGetResponse
+        /// </returns>
         public ReleaseGrayUserIdGetResponse ReleaseGrayUserIdGetWithOptions(ReleaseGrayUserIdGetRequest request, ReleaseGrayUserIdGetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1689,14 +2116,24 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<ReleaseGrayUserIdGetResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取用户灰度名单
-         *
-         * @param request ReleaseGrayUserIdGetRequest
-         * @param headers ReleaseGrayUserIdGetHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ReleaseGrayUserIdGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户灰度名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayUserIdGetRequest
+        /// </param>
+        /// <param name="headers">
+        /// ReleaseGrayUserIdGetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayUserIdGetResponse
+        /// </returns>
         public async Task<ReleaseGrayUserIdGetResponse> ReleaseGrayUserIdGetWithOptionsAsync(ReleaseGrayUserIdGetRequest request, ReleaseGrayUserIdGetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1738,12 +2175,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return TeaModel.ToObject<ReleaseGrayUserIdGetResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取用户灰度名单
-         *
-         * @param request ReleaseGrayUserIdGetRequest
-         * @return ReleaseGrayUserIdGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户灰度名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayUserIdGetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayUserIdGetResponse
+        /// </returns>
         public ReleaseGrayUserIdGetResponse ReleaseGrayUserIdGet(ReleaseGrayUserIdGetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1751,12 +2194,18 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0
             return ReleaseGrayUserIdGetWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取用户灰度名单
-         *
-         * @param request ReleaseGrayUserIdGetRequest
-         * @return ReleaseGrayUserIdGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户灰度名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ReleaseGrayUserIdGetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ReleaseGrayUserIdGetResponse
+        /// </returns>
         public async Task<ReleaseGrayUserIdGetResponse> ReleaseGrayUserIdGetAsync(ReleaseGrayUserIdGetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

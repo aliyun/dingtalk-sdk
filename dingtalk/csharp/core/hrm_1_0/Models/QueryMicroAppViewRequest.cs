@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         [Validation(Required=false)]
         public List<long?> TenantIdList { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>2163515669935611</para>
+        /// </summary>
         [NameInMap("viewUserId")]
         [Validation(Required=false)]
         public string ViewUserId { get; set; }

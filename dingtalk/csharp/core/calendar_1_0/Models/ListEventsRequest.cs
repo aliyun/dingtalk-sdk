@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 {
     public class ListEventsRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>100</para>
+        /// </summary>
         [NameInMap("maxAttendees")]
         [Validation(Required=false)]
         public int? MaxAttendees { get; set; }
@@ -34,14 +38,14 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         public string SyncToken { get; set; }
 
         /// <summary>
-        /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
         /// </summary>
         [NameInMap("timeMax")]
         [Validation(Required=false)]
         public string TimeMax { get; set; }
 
         /// <summary>
-        /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
         /// </summary>
         [NameInMap("timeMin")]
         [Validation(Required=false)]

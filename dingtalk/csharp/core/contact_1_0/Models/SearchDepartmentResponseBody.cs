@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class SearchDepartmentResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("hasMore")]
         [Validation(Required=false)]
@@ -21,7 +21,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public List<long?> List { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("totalCount")]
         [Validation(Required=false)]

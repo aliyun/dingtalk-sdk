@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class QueryPayResultResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>状态，取值：10：待支付，11：关单，20：支付成功</para>
+        /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]
         public int? Status { get; set; }

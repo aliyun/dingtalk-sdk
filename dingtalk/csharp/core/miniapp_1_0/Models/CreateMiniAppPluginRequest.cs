@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0.Models
 {
     public class CreateMiniAppPluginRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("bizId")]
         [Validation(Required=false)]
         public string BizId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("bizType")]
         [Validation(Required=false)]
@@ -28,21 +28,21 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0.Models
         public string BundleId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("desc")]
         [Validation(Required=false)]
         public string Desc { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("icon")]
         [Validation(Required=false)]
         public string Icon { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]

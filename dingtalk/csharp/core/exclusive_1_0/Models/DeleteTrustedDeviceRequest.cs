@@ -14,18 +14,28 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public long? Id { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>false</para>
         /// </summary>
         [NameInMap("kickOff")]
         [Validation(Required=false)]
         public bool? KickOff { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>88:92:5a:1f:e8:24</para>
+        /// </summary>
         [NameInMap("macAddress")]
         [Validation(Required=false)]
         public string MacAddress { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>0119194439361061403</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

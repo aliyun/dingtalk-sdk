@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcool_app_1_0.Models
 {
     public class InstallCoolAppOrderToGroupRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>cidxxx</para>
+        /// </summary>
         [NameInMap("conversationId")]
         [Validation(Required=false)]
         public string ConversationId { get; set; }
@@ -17,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkcool_app_1_0.Models
         [Validation(Required=false)]
         public List<long?> SortedPluginIdList { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>template-id-xxx</para>
+        /// </summary>
         [NameInMap("templateId")]
         [Validation(Required=false)]
         public string TemplateId { get; set; }

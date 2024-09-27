@@ -10,35 +10,41 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class AppLoginCodeGenRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("appKey")]
         [Validation(Required=false)]
         public string AppKey { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("signTimestampStr")]
         [Validation(Required=false)]
         public string SignTimestampStr { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("signature")]
         [Validation(Required=false)]
         public string Signature { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para><a href="https://www.aliwork.com/APP_xx/workbench">https://www.aliwork.com/APP_xx/workbench</a></para>
         /// </summary>
         [NameInMap("fullUrl")]
         [Validation(Required=false)]
         public string FullUrl { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123456</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

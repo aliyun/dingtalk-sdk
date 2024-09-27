@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class GetUserByUnionIdResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("contactType")]
         [Validation(Required=false)]
         public int? ContactType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

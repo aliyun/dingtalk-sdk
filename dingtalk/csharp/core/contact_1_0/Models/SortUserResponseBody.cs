@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class SortUserResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userIdList")]
         [Validation(Required=false)]

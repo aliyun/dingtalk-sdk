@@ -18,14 +18,14 @@ namespace AlibabaCloud.SDK.Dingtalkcool_ops_1_0.Models
             public string IsvCorpId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("microAppId")]
             [Validation(Required=false)]
             public string MicroAppId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
@@ -40,42 +40,42 @@ namespace AlibabaCloud.SDK.Dingtalkcool_ops_1_0.Models
             public string OperCorpId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("operName")]
             [Validation(Required=false)]
             public string OperName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("operTime")]
             [Validation(Required=false)]
             public string OperTime { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("operUserId")]
             [Validation(Required=false)]
             public string OperUserId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("oppSourceCorpId")]
             [Validation(Required=false)]
             public string OppSourceCorpId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("opportunityStatus")]
             [Validation(Required=false)]
             public string OpportunityStatus { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]

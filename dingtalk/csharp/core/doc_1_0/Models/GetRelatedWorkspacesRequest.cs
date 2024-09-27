@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         public bool? IncludeRecent { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

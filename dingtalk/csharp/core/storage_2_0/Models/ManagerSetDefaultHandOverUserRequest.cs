@@ -9,12 +9,19 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkstorage_2_0.Models
 {
     public class ManagerSetDefaultHandOverUserRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>staff_id</para>
+        /// </summary>
         [NameInMap("defaultHandoverUserId")]
         [Validation(Required=false)]
         public string DefaultHandoverUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

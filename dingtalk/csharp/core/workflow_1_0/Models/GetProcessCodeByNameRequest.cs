@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class GetProcessCodeByNameRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>abc</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]

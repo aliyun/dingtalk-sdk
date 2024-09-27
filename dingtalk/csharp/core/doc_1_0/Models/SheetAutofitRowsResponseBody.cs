@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class SheetAutofitRowsResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>stxxxx</para>
         /// </summary>
         [NameInMap("id")]
         [Validation(Required=false)]

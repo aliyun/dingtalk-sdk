@@ -10,35 +10,50 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class SendInvitationRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1234</para>
         /// </summary>
         [NameInMap("deptId")]
         [Validation(Required=false)]
         public string DeptId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>钉开放组织别名</para>
         /// </summary>
         [NameInMap("orgAlias")]
         [Validation(Required=false)]
         public string OrgAlias { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1234</para>
         /// </summary>
         [NameInMap("partnerLabelId")]
         [Validation(Required=false)]
         public long? PartnerLabelId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1234</para>
         /// </summary>
         [NameInMap("partnerNum")]
         [Validation(Required=false)]
         public string PartnerNum { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>133XXXXXX57</para>
         /// </summary>
         [NameInMap("phone")]
         [Validation(Required=false)]

@@ -14,14 +14,20 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         public List<GetConditionFormComponentResponseBodyResult> Result { get; set; }
         public class GetConditionFormComponentResponseBodyResult : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>TextField</para>
             /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public string Id { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>输入框</para>
             /// </summary>
             [NameInMap("label")]
             [Validation(Required=false)]

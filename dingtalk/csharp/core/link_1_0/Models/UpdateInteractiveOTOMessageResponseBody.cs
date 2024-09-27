@@ -14,14 +14,14 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
         public string RequestId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public UpdateInteractiveOTOMessageResponseBodyResult Result { get; set; }
         public class UpdateInteractiveOTOMessageResponseBodyResult : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("openPushId")]
             [Validation(Required=false)]

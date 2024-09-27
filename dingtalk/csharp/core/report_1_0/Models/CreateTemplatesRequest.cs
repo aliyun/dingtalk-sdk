@@ -30,7 +30,10 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0.Models
         public List<string> AuthUserIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>182942</para>
         /// </summary>
         [NameInMap("creator")]
         [Validation(Required=false)]
@@ -49,14 +52,17 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0.Models
         public List<string> DefaultReceivers { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("fields")]
         [Validation(Required=false)]
         public List<CreateTemplatesRequestFields> Fields { get; set; }
         public class CreateTemplatesRequestFields : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1</para>
             /// </summary>
             [NameInMap("dataType")]
             [Validation(Required=false)]
@@ -74,6 +80,10 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0.Models
                     [Validation(Required=false)]
                     public Dictionary<string, string> Attribute { get; set; }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>abc</para>
+                    /// </summary>
                     [NameInMap("openId")]
                     [Validation(Required=false)]
                     public string OpenId { get; set; }
@@ -91,28 +101,34 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0.Models
             }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("fieldName")]
             [Validation(Required=false)]
             public string FieldName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("need")]
             [Validation(Required=false)]
             public bool? Need { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1</para>
             /// </summary>
             [NameInMap("order")]
             [Validation(Required=false)]
             public int? Order { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1</para>
             /// </summary>
             [NameInMap("sort")]
             [Validation(Required=false)]
@@ -120,20 +136,41 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para><a href="https://xxx.jpg">https://xxx.jpg</a></para>
+        /// </summary>
         [NameInMap("logo")]
         [Validation(Required=false)]
         public string Logo { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1000</para>
+        /// 
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
         [NameInMap("maxWordCount")]
         [Validation(Required=false)]
         public int? MaxWordCount { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// 
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
         [NameInMap("minWordCount")]
         [Validation(Required=false)]
         public int? MinWordCount { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>工作日报</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]

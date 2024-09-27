@@ -17,10 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public bool? HasMore { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>100</para>
+            /// </summary>
             [NameInMap("maxResults")]
             [Validation(Required=false)]
             public long? MaxResults { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>0</para>
+            /// </summary>
             [NameInMap("nextToken")]
             [Validation(Required=false)]
             public string NextToken { get; set; }
@@ -29,10 +37,18 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public List<GetObjectDataResponseBodyResultValues> Values { get; set; }
             public class GetObjectDataResponseBodyResultValues : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>张xx</para>
+                /// </summary>
                 [NameInMap("creatorNick")]
                 [Validation(Required=false)]
                 public string CreatorNick { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>user01</para>
+                /// </summary>
                 [NameInMap("creatorUserId")]
                 [Validation(Required=false)]
                 public string CreatorUserId { get; set; }
@@ -45,18 +61,34 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 [Validation(Required=false)]
                 public Dictionary<string, object> ExtendData { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>2023-11-25 15:33:12</para>
+                /// </summary>
                 [NameInMap("gmtCreate")]
                 [Validation(Required=false)]
                 public string GmtCreate { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>2023-12-25 15:33:12</para>
+                /// </summary>
                 [NameInMap("gmtModified")]
                 [Validation(Required=false)]
                 public string GmtModified { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>INST_XX</para>
+                /// </summary>
                 [NameInMap("instanceId")]
                 [Validation(Required=false)]
                 public string InstanceId { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>crm_contact</para>
+                /// </summary>
                 [NameInMap("objectType")]
                 [Validation(Required=false)]
                 public string ObjectType { get; set; }
@@ -75,10 +107,18 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 
                 }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>COMPLETE</para>
+                /// </summary>
                 [NameInMap("procInstStatus")]
                 [Validation(Required=false)]
                 public string ProcInstStatus { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>agree</para>
+                /// </summary>
                 [NameInMap("procOutResult")]
                 [Validation(Required=false)]
                 public string ProcOutResult { get; set; }

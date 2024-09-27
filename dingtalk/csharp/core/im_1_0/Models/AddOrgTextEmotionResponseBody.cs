@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public AddOrgTextEmotionResponseBodyResult Result { get; set; }
         public class AddOrgTextEmotionResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>corp_123456</para>
+            /// </summary>
             [NameInMap("emotionId")]
             [Validation(Required=false)]
             public string EmotionId { get; set; }

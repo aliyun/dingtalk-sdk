@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             [Validation(Required=false)]
             public bool? Authorized { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>/signSetting/manage/*</para>
+            /// </summary>
             [NameInMap("resourceId")]
             [Validation(Required=false)]
             public string ResourceId { get; set; }

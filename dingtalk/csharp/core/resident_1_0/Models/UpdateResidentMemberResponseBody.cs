@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
 {
     public class UpdateResidentMemberResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

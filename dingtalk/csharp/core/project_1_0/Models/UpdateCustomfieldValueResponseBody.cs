@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             [Validation(Required=false)]
             public List<UpdateCustomfieldValueResponseBodyResultCustomFields> CustomFields { get; set; }
             public class UpdateCustomfieldValueResponseBodyResultCustomFields : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>62fb0b77xxxxx</para>
+                /// </summary>
                 [NameInMap("customFieldId")]
                 [Validation(Required=false)]
                 public string CustomFieldId { get; set; }
@@ -25,6 +29,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
                 [Validation(Required=false)]
                 public List<UpdateCustomfieldValueResponseBodyResultCustomFieldsValue> Value { get; set; }
                 public class UpdateCustomfieldValueResponseBodyResultCustomFieldsValue : TeaModel {
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>我是具体显示值</para>
+                    /// </summary>
                     [NameInMap("title")]
                     [Validation(Required=false)]
                     public string Title { get; set; }

@@ -17,10 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public string ErrorMsg { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public bool? Result { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

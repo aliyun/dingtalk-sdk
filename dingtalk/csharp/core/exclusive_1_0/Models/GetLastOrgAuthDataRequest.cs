@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class GetLastOrgAuthDataRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ding77b8cac4e026cc123xxxxxxxxeb6378f</para>
         /// </summary>
         [NameInMap("targetCorpId")]
         [Validation(Required=false)]

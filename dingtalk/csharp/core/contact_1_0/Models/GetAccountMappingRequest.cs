@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class GetAccountMappingRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>BizName1</para>
         /// </summary>
         [NameInMap("domain")]
         [Validation(Required=false)]
         public string Domain { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>id_123</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

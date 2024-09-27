@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class UpdateGroupNameRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("groupName")]
         [Validation(Required=false)]
         public string GroupName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]

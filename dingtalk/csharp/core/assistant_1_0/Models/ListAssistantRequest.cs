@@ -14,14 +14,14 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0.Models
         public long? Cursor { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public int? PageSize { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

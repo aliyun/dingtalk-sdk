@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
 {
     public class PreCheckTemplateRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ding60f2b247ac1cb24024f2f5cc6abecb85</para>
         /// </summary>
         [NameInMap("customerCorpId")]
         [Validation(Required=false)]

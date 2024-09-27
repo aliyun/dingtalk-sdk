@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0.Models
 {
     public class SubscribeEventRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>SPACE</para>
         /// </summary>
         [NameInMap("scope")]
         [Validation(Required=false)]
         public string Scope { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>scope_id</para>
         /// </summary>
         [NameInMap("scopeId")]
         [Validation(Required=false)]
         public string ScopeId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

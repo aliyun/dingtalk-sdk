@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
     public class GetClosingAccountsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userIds")]
         [Validation(Required=false)]

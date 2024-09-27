@@ -10,19 +10,26 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class SaveBenefitLicenseRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>B_ACCOUNT_NUMBER</para>
         /// </summary>
         [NameInMap("domain")]
         [Validation(Required=false)]
         public string Domain { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("licenses")]
         [Validation(Required=false)]
         public List<SaveBenefitLicenseRequestLicenses> Licenses { get; set; }
         public class SaveBenefitLicenseRequestLicenses : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>licenseStaffId</para>
+            /// </summary>
             [NameInMap("licenseUserId")]
             [Validation(Required=false)]
             public string LicenseUserId { get; set; }
@@ -30,7 +37,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>staffId</para>
         /// </summary>
         [NameInMap("saveUserId")]
         [Validation(Required=false)]

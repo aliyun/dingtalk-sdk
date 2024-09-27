@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class PageFormBaseInfosRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>APP_PBKT0MFBEBTDO8T7SLVP</para>
         /// </summary>
         [NameInMap("appKey")]
         [Validation(Required=false)]
@@ -25,28 +28,34 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string Language { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("pageIndex")]
         [Validation(Required=false)]
         public int? PageIndex { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public int? PageSize { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>hexxx</para>
         /// </summary>
         [NameInMap("systemToken")]
         [Validation(Required=false)]
         public string SystemToken { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>david123</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

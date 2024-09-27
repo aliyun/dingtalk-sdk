@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class PushHistoricalReceiptsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("bizId")]
         [Validation(Required=false)]
@@ -25,14 +25,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         public bool? ForcedIgnoreDup { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("formCodeList")]
         [Validation(Required=false)]
         public List<string> FormCodeList { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("startTime")]
         [Validation(Required=false)]

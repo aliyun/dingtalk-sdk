@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkrecord_1_0.Models
 {
     public class CountWorkRecordResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>10</para>
         /// </summary>
         [NameInMap("undoCount")]
         [Validation(Required=false)]

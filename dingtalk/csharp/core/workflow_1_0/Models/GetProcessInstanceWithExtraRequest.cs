@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class GetProcessInstanceWithExtraRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>a171de6c-8bxxxx</para>
         /// </summary>
         [NameInMap("processInstanceId")]
         [Validation(Required=false)]

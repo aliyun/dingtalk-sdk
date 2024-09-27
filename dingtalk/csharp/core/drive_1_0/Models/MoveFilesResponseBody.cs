@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class MoveFilesResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("files")]
         [Validation(Required=false)]
@@ -21,9 +21,8 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public string ContentType { get; set; }
 
             /// <summary>
-            /// This parameter is required.
-            /// 
-            /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+            /// <para>This parameter is required.</para>
+            /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
             /// </summary>
             [NameInMap("createTime")]
             [Validation(Required=false)]
@@ -38,21 +37,21 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public string FileExtension { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("fileId")]
             [Validation(Required=false)]
             public string FileId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("fileName")]
             [Validation(Required=false)]
             public string FileName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("filePath")]
             [Validation(Required=false)]
@@ -63,7 +62,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public long? FileSize { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("fileType")]
             [Validation(Required=false)]
@@ -74,9 +73,8 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public string Modifier { get; set; }
 
             /// <summary>
-            /// This parameter is required.
-            /// 
-            /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+            /// <para>This parameter is required.</para>
+            /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
             /// </summary>
             [NameInMap("modifyTime")]
             [Validation(Required=false)]
@@ -87,7 +85,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public string ParentId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("spaceId")]
             [Validation(Required=false)]

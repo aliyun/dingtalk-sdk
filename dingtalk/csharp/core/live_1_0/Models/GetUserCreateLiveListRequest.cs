@@ -26,18 +26,28 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
         public string Title { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>20</para>
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>&quot;&quot;</para>
+        /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public string NextToken { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>5yAiiJDWiiCJpd3Thhx7P5fgiEiE</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

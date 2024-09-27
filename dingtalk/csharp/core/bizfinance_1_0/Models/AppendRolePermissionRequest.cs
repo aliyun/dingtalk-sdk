@@ -21,18 +21,30 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [Validation(Required=false)]
                 public List<string> ActionIdList { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>/invoice</para>
+                /// </summary>
                 [NameInMap("resourceIdentity")]
                 [Validation(Required=false)]
                 public string ResourceIdentity { get; set; }
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>financeManager</para>
+            /// </summary>
             [NameInMap("roleCode")]
             [Validation(Required=false)]
             public string RoleCode { get; set; }
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>5041234</para>
+        /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }

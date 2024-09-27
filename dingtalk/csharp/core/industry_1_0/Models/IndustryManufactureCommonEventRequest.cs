@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class IndustryManufactureCommonEventRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("action")]
         [Validation(Required=false)]
         public string Action { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("appKey")]
         [Validation(Required=false)]
@@ -28,7 +28,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public Dictionary<string, object> BizData { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("eventType")]
         [Validation(Required=false)]

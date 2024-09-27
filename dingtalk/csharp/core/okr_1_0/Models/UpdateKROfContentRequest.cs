@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class UpdateKROfContentRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>更新内容</para>
         /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
@@ -21,14 +24,20 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         public List<string> UpdateQuoteList { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>46GM2</para>
         /// </summary>
         [NameInMap("krId")]
         [Validation(Required=false)]
         public string KrId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>0115396701752283</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class UpdateGroupAvatarResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("newGroupAvatar")]
         [Validation(Required=false)]

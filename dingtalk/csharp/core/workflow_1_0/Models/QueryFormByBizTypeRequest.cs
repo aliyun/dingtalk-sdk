@@ -10,14 +10,17 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class QueryFormByBizTypeRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>SWAPP-abcdef-example</para>
         /// </summary>
         [NameInMap("appUuid")]
         [Validation(Required=false)]
         public string AppUuid { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("bizTypes")]
         [Validation(Required=false)]

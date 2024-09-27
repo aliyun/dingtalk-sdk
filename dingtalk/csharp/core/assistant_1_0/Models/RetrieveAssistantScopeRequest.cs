@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0.Models
 {
     public class RetrieveAssistantScopeRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("assistantId")]
         [Validation(Required=false)]

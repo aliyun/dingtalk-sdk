@@ -10,28 +10,57 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class CreateOrganizationTaskRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>明天12点前完成周报撰写</para>
         /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
         public string Content { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>2021-08-13T07:36:50.318Z</para>
+        /// </summary>
         [NameInMap("createTime")]
         [Validation(Required=false)]
         public string CreateTime { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>false</para>
+        /// 
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
         [NameInMap("disableActivity")]
         [Validation(Required=false)]
         public bool? DisableActivity { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>false</para>
+        /// 
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
         [NameInMap("disableNotification")]
         [Validation(Required=false)]
         public bool? DisableNotification { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>2021-08-13T07:36:50.318Z</para>
+        /// </summary>
         [NameInMap("dueDate")]
         [Validation(Required=false)]
         public string DueDate { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>173xxxx</para>
+        /// </summary>
         [NameInMap("executorId")]
         [Validation(Required=false)]
         public string ExecutorId { get; set; }
@@ -40,19 +69,29 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public List<string> InvolveMembers { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>我是一条任务备注</para>
+        /// </summary>
         [NameInMap("note")]
         [Validation(Required=false)]
         public string Note { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>-10</para>
         /// </summary>
         [NameInMap("priority")]
         [Validation(Required=false)]
         public int? Priority { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>members</para>
         /// </summary>
         [NameInMap("visible")]
         [Validation(Required=false)]

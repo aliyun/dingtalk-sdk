@@ -10,49 +10,61 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class GetOpenCourseDetailResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>fdjakl-fdaf-ds</para>
         /// </summary>
         [NameInMap("courseId")]
         [Validation(Required=false)]
         public string CourseId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>0</para>
         /// </summary>
         [NameInMap("courseType")]
         [Validation(Required=false)]
         public long? CourseType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para><a href="https://static.dingtalk.com/media/lALPDgCwRt4FagzMi8yZ_153_139.png">https://static.dingtalk.com/media/lALPDgCwRt4FagzMi8yZ_153_139.png</a></para>
         /// </summary>
         [NameInMap("coverUrl")]
         [Validation(Required=false)]
         public string CoverUrl { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>开学的第一堂课</para>
         /// </summary>
         [NameInMap("introduction")]
         [Validation(Required=false)]
         public string Introduction { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("pushModel")]
         [Validation(Required=false)]
         public GetOpenCourseDetailResponseBodyPushModel PushModel { get; set; }
         public class GetOpenCourseDetailResponseBodyPushModel : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("pushOrgNameList")]
             [Validation(Required=false)]
             public List<string> PushOrgNameList { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("pushRoleNameList")]
             [Validation(Required=false)]
@@ -61,28 +73,40 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1618369786000</para>
         /// </summary>
         [NameInMap("startTime")]
         [Validation(Required=false)]
         public long? StartTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123124312314</para>
         /// </summary>
         [NameInMap("teacherId")]
         [Validation(Required=false)]
         public string TeacherId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>张老师</para>
         /// </summary>
         [NameInMap("teacherName")]
         [Validation(Required=false)]
         public string TeacherName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>开学第一课</para>
         /// </summary>
         [NameInMap("title")]
         [Validation(Required=false)]

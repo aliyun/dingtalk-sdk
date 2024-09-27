@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
 {
     public class CreateBadgeNotifyResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>SUCCESS</para>
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]

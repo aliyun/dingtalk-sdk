@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class LogoutRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1</para>
         /// </summary>
         [NameInMap("deviceType")]
         [Validation(Required=false)]
         public string DeviceType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>a523641</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

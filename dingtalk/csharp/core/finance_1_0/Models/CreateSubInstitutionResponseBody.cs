@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
 {
     public class CreateSubInstitutionResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>202110110000001</para>
         /// </summary>
         [NameInMap("orderId")]
         [Validation(Required=false)]

@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class HrmCorpConfigQueryRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>policy</para>
         /// </summary>
         [NameInMap("subType")]
         [Validation(Required=false)]
         public string SubType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>hrm_ai</para>
         /// </summary>
         [NameInMap("type")]
         [Validation(Required=false)]

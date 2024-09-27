@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class PublishRuleRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]
         public long? Status { get; set; }

@@ -9,16 +9,24 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
 {
     public class CreateCardWithDelegateRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>routekey-7931</para>
+        /// </summary>
         [NameInMap("callbackRouteKey")]
         [Validation(Required=false)]
         public string CallbackRouteKey { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>STREAM</para>
+        /// </summary>
         [NameInMap("callbackType")]
         [Validation(Required=false)]
         public string CallbackType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("cardData")]
         [Validation(Required=false)]
@@ -31,7 +39,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>b0aa776f-79ac-4e13-f838-749aae913bc7</para>
         /// </summary>
         [NameInMap("cardTemplateId")]
         [Validation(Required=false)]
@@ -59,6 +70,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
             [Validation(Required=false)]
             public CreateCardWithDelegateRequestImGroupOpenSpaceModelNotification Notification { get; set; }
             public class CreateCardWithDelegateRequestImGroupOpenSpaceModelNotification : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>你收到1条新消息</para>
+                /// </summary>
                 [NameInMap("alertContent")]
                 [Validation(Required=false)]
                 public string AlertContent { get; set; }
@@ -77,10 +92,18 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
                 [Validation(Required=false)]
                 public string SearchDesc { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>@lALPDgQ9q8hFhlHNAXzNAqI</para>
+                /// </summary>
                 [NameInMap("searchIcon")]
                 [Validation(Required=false)]
                 public string SearchIcon { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>{&quot;zh_CN&quot;:&quot;待办&quot;,&quot;zh_TW&quot;:&quot;待辦&quot;,&quot;en_US&quot;:&quot;ToDo&quot;}</para>
+                /// </summary>
                 [NameInMap("searchTypeName")]
                 [Validation(Required=false)]
                 public string SearchTypeName { get; set; }
@@ -123,10 +146,18 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
                 [Validation(Required=false)]
                 public string SearchDesc { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>@lALPDgQ9q8hFhlHNAXzNAqI</para>
+                /// </summary>
                 [NameInMap("searchIcon")]
                 [Validation(Required=false)]
                 public string SearchIcon { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>{&quot;zh_CN&quot;:&quot;待办&quot;,&quot;zh_TW&quot;:&quot;待辦&quot;,&quot;en_US&quot;:&quot;ToDo&quot;}</para>
+                /// </summary>
                 [NameInMap("searchTypeName")]
                 [Validation(Required=false)]
                 public string SearchTypeName { get; set; }
@@ -169,10 +200,18 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
                 [Validation(Required=false)]
                 public string SearchDesc { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>@lALPDgQ9q8hFhlHNAXzNAqI</para>
+                /// </summary>
                 [NameInMap("searchIcon")]
                 [Validation(Required=false)]
                 public string SearchIcon { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>{&quot;zh_CN&quot;:&quot;待办&quot;,&quot;zh_TW&quot;:&quot;待辦&quot;,&quot;en_US&quot;:&quot;ToDo&quot;}</para>
+                /// </summary>
                 [NameInMap("searchTypeName")]
                 [Validation(Required=false)]
                 public string SearchTypeName { get; set; }
@@ -197,6 +236,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
                 [Validation(Required=false)]
                 public Dictionary<string, string> ConstParams { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>ds-01</para>
+                /// </summary>
                 [NameInMap("dynamicDataSourceId")]
                 [Validation(Required=false)]
                 public string DynamicDataSourceId { get; set; }
@@ -209,10 +252,18 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
                     [Validation(Required=false)]
                     public int? Interval { get; set; }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>INTERVAL</para>
+                    /// </summary>
                     [NameInMap("pullStrategy")]
                     [Validation(Required=false)]
                     public string PullStrategy { get; set; }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>SECONDS</para>
+                    /// </summary>
                     [NameInMap("timeUnit")]
                     [Validation(Required=false)]
                     public string TimeUnit { get; set; }
@@ -224,7 +275,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>mycard-07921</para>
         /// </summary>
         [NameInMap("outTrackId")]
         [Validation(Required=false)]
@@ -244,6 +298,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>manager1234</para>
+        /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }

@@ -17,25 +17,44 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public string CoolAppCode { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1850042969000</para>
+        /// </summary>
         [NameInMap("expiredTime")]
         [Validation(Required=false)]
         public long? ExpiredTime { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>xxxx</para>
+        /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>xxxx</para>
         /// </summary>
         [NameInMap("outTrackId")]
         [Validation(Required=false)]
         public string OutTrackId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>ios|win</para>
+        /// </summary>
         [NameInMap("platforms")]
         [Validation(Required=false)]
         public string Platforms { get; set; }
 
+        /// <summary>
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
         [NameInMap("receiverUserIdList")]
         [Validation(Required=false)]
         public List<string> ReceiverUserIdList { get; set; }

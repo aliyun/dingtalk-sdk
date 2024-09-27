@@ -17,10 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         [Validation(Required=false)]
         public List<QueryJobRanksResponseBodyList> List { get; set; }
         public class QueryJobRanksResponseBodyList : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>30</para>
+            /// </summary>
             [NameInMap("maxJobGrade")]
             [Validation(Required=false)]
             public int? MaxJobGrade { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1</para>
+            /// </summary>
             [NameInMap("minJobGrade")]
             [Validation(Required=false)]
             public int? MinJobGrade { get; set; }

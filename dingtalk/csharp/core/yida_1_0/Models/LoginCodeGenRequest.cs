@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class LoginCodeGenRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>zs123</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

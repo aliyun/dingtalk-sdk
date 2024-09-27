@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
     public class QueryRecordMinutesUrlRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>cloud_record</para>
         /// </summary>
         [NameInMap("bizType")]
         [Validation(Required=false)]
         public string BizType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>lJcRnm39OsU4jlFVmRG9KXXXX</para>
         /// </summary>
         [NameInMap("recorderUnionId")]
         [Validation(Required=false)]

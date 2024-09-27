@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class CreateGroupResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("chatId")]
         [Validation(Required=false)]
         public string ChatId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("conversationId")]
         [Validation(Required=false)]
         public string ConversationId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("createTime")]
         [Validation(Required=false)]

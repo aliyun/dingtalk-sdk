@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class QueryOfficialAccountUserBasicInfoRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("bindingToken")]
         [Validation(Required=false)]
         public string BindingToken { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

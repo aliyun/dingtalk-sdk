@@ -10,42 +10,54 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
     public class StartStreamOutRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>grip</para>
         /// </summary>
         [NameInMap("mode")]
         [Validation(Required=false)]
         public string Mode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>true</para>
         /// </summary>
         [NameInMap("needHostJoin")]
         [Validation(Required=false)]
         public bool? NeedHostJoin { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("smallWindowPosition")]
         [Validation(Required=false)]
         public string SmallWindowPosition { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>推流名称</para>
         /// </summary>
         [NameInMap("streamName")]
         [Validation(Required=false)]
         public string StreamName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("streamUrlList")]
         [Validation(Required=false)]
         public List<string> StreamUrlList { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>27SaQ3iiHLN0uwqcPisedfreNwiEiE</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

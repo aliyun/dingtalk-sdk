@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 {
     public class RespondEventRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("responseStatus")]
         [Validation(Required=false)]

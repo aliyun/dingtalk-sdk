@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class CardGetCardRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>80264668258</para>
         /// </summary>
         [NameInMap("cardId")]
         [Validation(Required=false)]
         public long? CardId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>YUFANAI</para>
         /// </summary>
         [NameInMap("sourceType")]
         [Validation(Required=false)]

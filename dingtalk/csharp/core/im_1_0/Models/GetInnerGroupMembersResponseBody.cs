@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public bool? HasMore { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>UZr*****</para>
+        /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public string NextToken { get; set; }

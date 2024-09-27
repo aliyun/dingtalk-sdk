@@ -10,28 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_1_0.Models
 {
     public class WikiWordsParseResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public List<WikiWordsParseResponseBodyData> Data { get; set; }
         public class WikiWordsParseResponseBodyData : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("endIndex")]
             [Validation(Required=false)]
             public long? EndIndex { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("startIndex")]
             [Validation(Required=false)]
             public long? StartIndex { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("wordName")]
             [Validation(Required=false)]
@@ -40,7 +40,7 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("errMsg")]
         [Validation(Required=false)]

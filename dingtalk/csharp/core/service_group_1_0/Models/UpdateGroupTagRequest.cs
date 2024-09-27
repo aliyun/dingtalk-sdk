@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class UpdateGroupTagRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("openConversationIds")]
         [Validation(Required=false)]
@@ -21,7 +21,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public List<string> TagNames { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("updateType")]
         [Validation(Required=false)]

@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class GetRelationUkSettingRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>crm_customer</para>
         /// </summary>
         [NameInMap("relationType")]
         [Validation(Required=false)]

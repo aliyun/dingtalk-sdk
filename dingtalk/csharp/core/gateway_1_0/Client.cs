@@ -18,9 +18,9 @@ namespace AlibabaCloud.SDK.Dingtalkgateway_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
-            this._signatureAlgorithm = "v2";
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -29,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkgateway_1_0
         }
 
 
-        /**
-         * @summary 云上网关注册长连接
-         *
-         * @param request OpenConnectionRequest
-         * @param headers map
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return OpenConnectionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>云上网关注册长连接</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OpenConnectionRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// OpenConnectionResponse
+        /// </returns>
         public OpenConnectionResponse OpenConnectionWithOptions(OpenConnectionRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -78,17 +88,27 @@ namespace AlibabaCloud.SDK.Dingtalkgateway_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<OpenConnectionResponse>(Execute(params_, req, runtime));
+            return TeaModel.ToObject<OpenConnectionResponse>(DoROARequestWithForm(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
         }
 
-        /**
-         * @summary 云上网关注册长连接
-         *
-         * @param request OpenConnectionRequest
-         * @param headers map
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return OpenConnectionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>云上网关注册长连接</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OpenConnectionRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// OpenConnectionResponse
+        /// </returns>
         public async Task<OpenConnectionResponse> OpenConnectionWithOptionsAsync(OpenConnectionRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -130,15 +150,21 @@ namespace AlibabaCloud.SDK.Dingtalkgateway_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<OpenConnectionResponse>(await ExecuteAsync(params_, req, runtime));
+            return TeaModel.ToObject<OpenConnectionResponse>(await DoROARequestWithFormAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
         }
 
-        /**
-         * @summary 云上网关注册长连接
-         *
-         * @param request OpenConnectionRequest
-         * @return OpenConnectionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>云上网关注册长连接</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OpenConnectionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// OpenConnectionResponse
+        /// </returns>
         public OpenConnectionResponse OpenConnection(OpenConnectionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -146,12 +172,18 @@ namespace AlibabaCloud.SDK.Dingtalkgateway_1_0
             return OpenConnectionWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 云上网关注册长连接
-         *
-         * @param request OpenConnectionRequest
-         * @return OpenConnectionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>云上网关注册长连接</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OpenConnectionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// OpenConnectionResponse
+        /// </returns>
         public async Task<OpenConnectionResponse> OpenConnectionAsync(OpenConnectionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

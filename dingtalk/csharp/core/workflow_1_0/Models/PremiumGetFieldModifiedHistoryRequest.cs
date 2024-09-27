@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class PremiumGetFieldModifiedHistoryRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>TextField-abcd</para>
         /// </summary>
         [NameInMap("fieldId")]
         [Validation(Required=false)]
         public string FieldId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>proc-FF6Y2xxxx</para>
         /// </summary>
         [NameInMap("processInstanceId")]
         [Validation(Required=false)]

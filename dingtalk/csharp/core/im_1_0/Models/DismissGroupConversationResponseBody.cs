@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class DismissGroupConversationResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>14da****2760</para>
+        /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }

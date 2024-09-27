@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
 {
     public class CopyTemplateRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("templateId")]
         [Validation(Required=false)]

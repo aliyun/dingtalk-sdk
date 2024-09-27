@@ -9,10 +9,18 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class QueryCustomEntryProcessesRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>20，最大为100，不填默认为100</para>
+        /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>默认为0</para>
+        /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public int? NextToken { get; set; }

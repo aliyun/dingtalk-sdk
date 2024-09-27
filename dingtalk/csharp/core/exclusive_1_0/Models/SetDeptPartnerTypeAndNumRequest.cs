@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class SetDeptPartnerTypeAndNumRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1234</para>
         /// </summary>
         [NameInMap("deptId")]
         [Validation(Required=false)]
@@ -20,6 +23,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [Validation(Required=false)]
         public List<string> LabelIds { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1234</para>
+        /// </summary>
         [NameInMap("partnerNum")]
         [Validation(Required=false)]
         public string PartnerNum { get; set; }

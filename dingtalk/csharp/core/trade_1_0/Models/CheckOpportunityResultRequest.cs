@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0.Models
 {
     public class CheckOpportunityResultRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("belongToPhoneNum")]
         [Validation(Required=false)]
         public string BelongToPhoneNum { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("contactPhoneNum")]
         [Validation(Required=false)]
         public string ContactPhoneNum { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]
@@ -35,7 +35,7 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0.Models
         public long? DeptId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("marketCode")]
         [Validation(Required=false)]

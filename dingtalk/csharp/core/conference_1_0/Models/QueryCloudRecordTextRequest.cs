@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
     public class QueryCloudRecordTextRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("direction")]
         [Validation(Required=false)]
         public string Direction { get; set; }

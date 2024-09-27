@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 {
     public class HandoverTeamWithoutAuthRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("param")]
         [Validation(Required=false)]
@@ -21,7 +21,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
             public bool? Leave { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("newOwner")]
             [Validation(Required=false)]
@@ -32,7 +32,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
             public bool? Notify { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("teamId")]
             [Validation(Required=false)]

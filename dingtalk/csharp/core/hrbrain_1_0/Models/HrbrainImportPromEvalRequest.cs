@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
 {
     public class HrbrainImportPromEvalRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("body")]
         [Validation(Required=false)]
@@ -21,7 +21,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             public string Comment { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("effectiveDate")]
             [Validation(Required=false)]
@@ -32,21 +32,21 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             public Dictionary<string, object> ExtendInfo { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("newJobLevel")]
             [Validation(Required=false)]
             public string NewJobLevel { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("period")]
             [Validation(Required=false)]
@@ -61,14 +61,14 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             public string PeriodStartDate { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("preJobLevel")]
             [Validation(Required=false)]
             public string PreJobLevel { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("workNo")]
             [Validation(Required=false)]
@@ -77,7 +77,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]

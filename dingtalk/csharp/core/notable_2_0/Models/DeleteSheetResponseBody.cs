@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalknotable_2_0.Models
 {
     public class DeleteSheetResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

@@ -10,28 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
 {
     public class HrbrainImportLabelBaseRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("body")]
         [Validation(Required=false)]
         public List<HrbrainImportLabelBaseRequestBody> Body { get; set; }
         public class HrbrainImportLabelBaseRequestBody : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("extendInfo")]
             [Validation(Required=false)]
             public Dictionary<string, object> ExtendInfo { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("workNo")]
             [Validation(Required=false)]
@@ -40,7 +40,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]

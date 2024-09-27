@@ -9,12 +9,19 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
 {
     public class FinishBeginnerTaskRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>advancedBeginnerTask</para>
+        /// </summary>
         [NameInMap("scope")]
         [Validation(Required=false)]
         public string Scope { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>manager5875</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

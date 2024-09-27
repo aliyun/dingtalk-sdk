@@ -10,28 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
 {
     public class GetDingMeBaseDataResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("fromCache")]
         [Validation(Required=false)]
         public bool? FromCache { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("rawset")]
         [Validation(Required=false)]
         public List<Dictionary<string, string>> Rawset { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("runtime")]
         [Validation(Required=false)]
         public long? Runtime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("tips")]
         [Validation(Required=false)]

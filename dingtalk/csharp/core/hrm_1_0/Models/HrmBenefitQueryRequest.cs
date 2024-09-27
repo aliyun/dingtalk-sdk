@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class HrmBenefitQueryRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("benefitCodes")]
         [Validation(Required=false)]

@@ -13,10 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0.Models
         [Validation(Required=false)]
         public List<ListWorkBenchGroupResponseBodyGroupList> GroupList { get; set; }
         public class ListWorkBenchGroupResponseBodyGroupList : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>desc</para>
+            /// </summary>
             [NameInMap("componentId")]
             [Validation(Required=false)]
             public string ComponentId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>name</para>
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }

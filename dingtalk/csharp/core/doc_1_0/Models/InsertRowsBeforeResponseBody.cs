@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class InsertRowsBeforeResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>sheet_id</para>
+        /// </summary>
         [NameInMap("id")]
         [Validation(Required=false)]
         public string Id { get; set; }

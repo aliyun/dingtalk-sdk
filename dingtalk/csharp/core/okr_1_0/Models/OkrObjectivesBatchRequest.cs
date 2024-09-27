@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class OkrObjectivesBatchRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>dingOKR</para>
+        /// </summary>
         [NameInMap("goodsCode")]
         [Validation(Required=false)]
         public string GoodsCode { get; set; }

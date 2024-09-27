@@ -17,10 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public bool? IsRoleGroup { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>123</para>
+            /// </summary>
             [NameInMap("roleId")]
             [Validation(Required=false)]
             public string RoleId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>老板</para>
+            /// </summary>
             [NameInMap("roleName")]
             [Validation(Required=false)]
             public string RoleName { get; set; }

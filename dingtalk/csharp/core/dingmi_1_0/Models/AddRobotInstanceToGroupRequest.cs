@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
 {
     public class AddRobotInstanceToGroupRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>abcd123</para>
         /// </summary>
         [NameInMap("chatbotId")]
         [Validation(Required=false)]
         public string ChatbotId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>cidxxxx</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]

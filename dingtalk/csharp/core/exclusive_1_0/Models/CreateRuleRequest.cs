@@ -21,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public List<long?> DeptIds { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>test</para>
+            /// </summary>
             [NameInMap("planName")]
             [Validation(Required=false)]
             public string PlanName { get; set; }

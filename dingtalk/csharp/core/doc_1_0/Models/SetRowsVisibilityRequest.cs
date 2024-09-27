@@ -10,28 +10,40 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class SetRowsVisibilityRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>row</para>
         /// </summary>
         [NameInMap("row")]
         [Validation(Required=false)]
         public long? Row { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>row_count</para>
         /// </summary>
         [NameInMap("rowCount")]
         [Validation(Required=false)]
         public long? RowCount { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>visible</para>
         /// </summary>
         [NameInMap("visibility")]
         [Validation(Required=false)]
         public string Visibility { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

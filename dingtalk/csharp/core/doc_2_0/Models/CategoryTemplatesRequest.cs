@@ -13,10 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [Validation(Required=false)]
         public CategoryTemplatesRequestOption Option { get; set; }
         public class CategoryTemplatesRequestOption : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1</para>
+            /// </summary>
             [NameInMap("categoryStatus")]
             [Validation(Required=false)]
             public int? CategoryStatus { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1</para>
+            /// </summary>
             [NameInMap("templateStatus")]
             [Validation(Required=false)]
             public int? TemplateStatus { get; set; }
@@ -24,14 +32,17 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("param")]
         [Validation(Required=false)]
         public CategoryTemplatesRequestParam Param { get; set; }
         public class CategoryTemplatesRequestParam : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>categoryId</para>
             /// </summary>
             [NameInMap("categoryId")]
             [Validation(Required=false)]
@@ -40,7 +51,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

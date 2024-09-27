@@ -60,7 +60,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         }
 
         /// <summary>
-        /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
         /// </summary>
         [NameInMap("createTime")]
         [Validation(Required=false)]
@@ -241,7 +241,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             public GetEventResponseBodyRecurrenceRange Range { get; set; }
             public class GetEventResponseBodyRecurrenceRange : TeaModel {
                 /// <summary>
-                /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
                 /// </summary>
                 [NameInMap("endDate")]
                 [Validation(Required=false)]
@@ -306,7 +306,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>已取消、删除的日程是cancelled</para>
         /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]
@@ -331,7 +334,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         }
 
         /// <summary>
-        /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
         /// </summary>
         [NameInMap("updateTime")]
         [Validation(Required=false)]

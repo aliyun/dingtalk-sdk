@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class InsertColumnsBeforeRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>column</para>
         /// </summary>
         [NameInMap("column")]
         [Validation(Required=false)]
         public long? Column { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>column_count</para>
         /// </summary>
         [NameInMap("columnCount")]
         [Validation(Required=false)]
         public long? ColumnCount { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

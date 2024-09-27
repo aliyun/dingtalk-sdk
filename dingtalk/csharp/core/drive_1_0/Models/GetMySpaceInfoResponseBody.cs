@@ -10,18 +10,16 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class GetMySpaceInfoResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
-        /// 
-        /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        /// <para>This parameter is required.</para>
+        /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
         /// </summary>
         [NameInMap("createTime")]
         [Validation(Required=false)]
         public string CreateTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
-        /// 
-        /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        /// <para>This parameter is required.</para>
+        /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
         /// </summary>
         [NameInMap("modifyTime")]
         [Validation(Required=false)]
@@ -32,35 +30,35 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public string PermissionMode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("quota")]
         [Validation(Required=false)]
         public long? Quota { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("spaceId")]
         [Validation(Required=false)]
         public string SpaceId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("spaceName")]
         [Validation(Required=false)]
         public string SpaceName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("spaceType")]
         [Validation(Required=false)]
         public string SpaceType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("usedQuota")]
         [Validation(Required=false)]

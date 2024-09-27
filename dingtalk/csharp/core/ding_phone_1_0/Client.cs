@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkding_phone_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkding_phone_1_0
         }
 
 
-        /**
-         * @summary 添加外呼码号配置
-         *
-         * @param request AddCallConfigRequest
-         * @param headers AddCallConfigHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AddCallConfigResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加外呼码号配置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddCallConfigRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddCallConfigHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddCallConfigResponse
+        /// </returns>
         public AddCallConfigResponse AddCallConfigWithOptions(AddCallConfigRequest request, AddCallConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -85,14 +96,24 @@ namespace AlibabaCloud.SDK.Dingtalkding_phone_1_0
             return TeaModel.ToObject<AddCallConfigResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 添加外呼码号配置
-         *
-         * @param request AddCallConfigRequest
-         * @param headers AddCallConfigHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AddCallConfigResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加外呼码号配置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddCallConfigRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddCallConfigHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddCallConfigResponse
+        /// </returns>
         public async Task<AddCallConfigResponse> AddCallConfigWithOptionsAsync(AddCallConfigRequest request, AddCallConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -142,12 +163,18 @@ namespace AlibabaCloud.SDK.Dingtalkding_phone_1_0
             return TeaModel.ToObject<AddCallConfigResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 添加外呼码号配置
-         *
-         * @param request AddCallConfigRequest
-         * @return AddCallConfigResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加外呼码号配置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddCallConfigRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddCallConfigResponse
+        /// </returns>
         public AddCallConfigResponse AddCallConfig(AddCallConfigRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -155,12 +182,18 @@ namespace AlibabaCloud.SDK.Dingtalkding_phone_1_0
             return AddCallConfigWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 添加外呼码号配置
-         *
-         * @param request AddCallConfigRequest
-         * @return AddCallConfigResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加外呼码号配置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddCallConfigRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddCallConfigResponse
+        /// </returns>
         public async Task<AddCallConfigResponse> AddCallConfigAsync(AddCallConfigRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -168,14 +201,24 @@ namespace AlibabaCloud.SDK.Dingtalkding_phone_1_0
             return await AddCallConfigWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除码号配置
-         *
-         * @param request DelCallConfigRequest
-         * @param headers DelCallConfigHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DelCallConfigResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除码号配置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DelCallConfigRequest
+        /// </param>
+        /// <param name="headers">
+        /// DelCallConfigHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DelCallConfigResponse
+        /// </returns>
         public DelCallConfigResponse DelCallConfigWithOptions(DelCallConfigRequest request, DelCallConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -221,14 +264,24 @@ namespace AlibabaCloud.SDK.Dingtalkding_phone_1_0
             return TeaModel.ToObject<DelCallConfigResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除码号配置
-         *
-         * @param request DelCallConfigRequest
-         * @param headers DelCallConfigHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DelCallConfigResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除码号配置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DelCallConfigRequest
+        /// </param>
+        /// <param name="headers">
+        /// DelCallConfigHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DelCallConfigResponse
+        /// </returns>
         public async Task<DelCallConfigResponse> DelCallConfigWithOptionsAsync(DelCallConfigRequest request, DelCallConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -274,12 +327,18 @@ namespace AlibabaCloud.SDK.Dingtalkding_phone_1_0
             return TeaModel.ToObject<DelCallConfigResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除码号配置
-         *
-         * @param request DelCallConfigRequest
-         * @return DelCallConfigResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除码号配置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DelCallConfigRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DelCallConfigResponse
+        /// </returns>
         public DelCallConfigResponse DelCallConfig(DelCallConfigRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -287,12 +346,18 @@ namespace AlibabaCloud.SDK.Dingtalkding_phone_1_0
             return DelCallConfigWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除码号配置
-         *
-         * @param request DelCallConfigRequest
-         * @return DelCallConfigResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除码号配置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DelCallConfigRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DelCallConfigResponse
+        /// </returns>
         public async Task<DelCallConfigResponse> DelCallConfigAsync(DelCallConfigRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -300,14 +365,24 @@ namespace AlibabaCloud.SDK.Dingtalkding_phone_1_0
             return await DelCallConfigWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询外呼码号配置
-         *
-         * @param request QueryCallConfigRequest
-         * @param headers QueryCallConfigHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryCallConfigResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询外呼码号配置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCallConfigRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryCallConfigHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCallConfigResponse
+        /// </returns>
         public QueryCallConfigResponse QueryCallConfigWithOptions(QueryCallConfigRequest request, QueryCallConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -357,14 +432,24 @@ namespace AlibabaCloud.SDK.Dingtalkding_phone_1_0
             return TeaModel.ToObject<QueryCallConfigResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询外呼码号配置
-         *
-         * @param request QueryCallConfigRequest
-         * @param headers QueryCallConfigHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryCallConfigResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询外呼码号配置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCallConfigRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryCallConfigHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCallConfigResponse
+        /// </returns>
         public async Task<QueryCallConfigResponse> QueryCallConfigWithOptionsAsync(QueryCallConfigRequest request, QueryCallConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -414,12 +499,18 @@ namespace AlibabaCloud.SDK.Dingtalkding_phone_1_0
             return TeaModel.ToObject<QueryCallConfigResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询外呼码号配置
-         *
-         * @param request QueryCallConfigRequest
-         * @return QueryCallConfigResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询外呼码号配置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCallConfigRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCallConfigResponse
+        /// </returns>
         public QueryCallConfigResponse QueryCallConfig(QueryCallConfigRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -427,12 +518,18 @@ namespace AlibabaCloud.SDK.Dingtalkding_phone_1_0
             return QueryCallConfigWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询外呼码号配置
-         *
-         * @param request QueryCallConfigRequest
-         * @return QueryCallConfigResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询外呼码号配置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCallConfigRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCallConfigResponse
+        /// </returns>
         public async Task<QueryCallConfigResponse> QueryCallConfigAsync(QueryCallConfigRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

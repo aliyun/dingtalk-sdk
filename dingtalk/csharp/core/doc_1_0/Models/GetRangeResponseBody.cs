@@ -13,18 +13,34 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public List<List<GetRangeResponseBodyBackgroundColors>> BackgroundColors { get; set; }
         public class GetRangeResponseBodyBackgroundColors : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>red_value</para>
+            /// </summary>
             [NameInMap("red")]
             [Validation(Required=false)]
             public int? Red { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>green_value</para>
+            /// </summary>
             [NameInMap("green")]
             [Validation(Required=false)]
             public int? Green { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>blue_value</para>
+            /// </summary>
             [NameInMap("blue")]
             [Validation(Required=false)]
             public int? Blue { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>hex_string_value</para>
+            /// </summary>
             [NameInMap("hexString")]
             [Validation(Required=false)]
             public string HexString { get; set; }

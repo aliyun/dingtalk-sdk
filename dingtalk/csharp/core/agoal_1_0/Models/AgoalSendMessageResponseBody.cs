@@ -10,21 +10,24 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
 {
     public class AgoalSendMessageResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
         public bool? Content { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>7478B23C-80E8-1AD6-BE8C-09D480E0xxxx</para>
         /// </summary>
         [NameInMap("requestId")]
         [Validation(Required=false)]
         public string RequestId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

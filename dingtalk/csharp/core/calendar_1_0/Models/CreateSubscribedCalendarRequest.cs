@@ -18,14 +18,14 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         public List<string> Managers { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("subscribeScope")]
         [Validation(Required=false)]

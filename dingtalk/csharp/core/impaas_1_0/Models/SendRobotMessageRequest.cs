@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class SendRobotMessageRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>false</para>
+        /// </summary>
         [NameInMap("atAll")]
         [Validation(Required=false)]
         public bool? AtAll { get; set; }
@@ -29,18 +33,34 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
         [Validation(Required=false)]
         public List<string> AtUsers { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123</para>
+        /// </summary>
         [NameInMap("channel")]
         [Validation(Required=false)]
         public string Channel { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>{&quot;pic1&quot;:&quot;@123&quot;,&quot;pic2&quot;:&quot;@456&quot;}</para>
+        /// </summary>
         [NameInMap("msgMediaIdParamMap")]
         [Validation(Required=false)]
         public Dictionary<string, object> MsgMediaIdParamMap { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>{&quot;text1&quot;:&quot;hello&quot;,&quot;text2&quot;:&quot;world&quot;}</para>
+        /// </summary>
         [NameInMap("msgParamMap")]
         [Validation(Required=false)]
         public Dictionary<string, object> MsgParamMap { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123</para>
+        /// </summary>
         [NameInMap("msgTemplateId")]
         [Validation(Required=false)]
         public string MsgTemplateId { get; set; }
@@ -61,10 +81,18 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
         [Validation(Required=false)]
         public List<string> ReceiverUserIds { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123</para>
+        /// </summary>
         [NameInMap("robotCode")]
         [Validation(Required=false)]
         public string RobotCode { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123</para>
+        /// </summary>
         [NameInMap("targetOpenConversationId")]
         [Validation(Required=false)]
         public string TargetOpenConversationId { get; set; }

@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class UpdateGroupOwnerRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("conversationId")]
         [Validation(Required=false)]
@@ -21,7 +21,7 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
         public string OperatorUid { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("ownerUid")]
         [Validation(Required=false)]

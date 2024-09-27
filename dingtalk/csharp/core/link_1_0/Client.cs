@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
         }
 
 
-        /**
-         * @summary 发送用户授权信息申请
-         *
-         * @param request ApplyFollowerAuthInfoRequest
-         * @param headers ApplyFollowerAuthInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ApplyFollowerAuthInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送用户授权信息申请</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ApplyFollowerAuthInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// ApplyFollowerAuthInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ApplyFollowerAuthInfoResponse
+        /// </returns>
         public ApplyFollowerAuthInfoResponse ApplyFollowerAuthInfoWithOptions(ApplyFollowerAuthInfoRequest request, ApplyFollowerAuthInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -85,14 +96,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<ApplyFollowerAuthInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 发送用户授权信息申请
-         *
-         * @param request ApplyFollowerAuthInfoRequest
-         * @param headers ApplyFollowerAuthInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ApplyFollowerAuthInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送用户授权信息申请</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ApplyFollowerAuthInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// ApplyFollowerAuthInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ApplyFollowerAuthInfoResponse
+        /// </returns>
         public async Task<ApplyFollowerAuthInfoResponse> ApplyFollowerAuthInfoWithOptionsAsync(ApplyFollowerAuthInfoRequest request, ApplyFollowerAuthInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -142,12 +163,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<ApplyFollowerAuthInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 发送用户授权信息申请
-         *
-         * @param request ApplyFollowerAuthInfoRequest
-         * @return ApplyFollowerAuthInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送用户授权信息申请</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ApplyFollowerAuthInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ApplyFollowerAuthInfoResponse
+        /// </returns>
         public ApplyFollowerAuthInfoResponse ApplyFollowerAuthInfo(ApplyFollowerAuthInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -155,12 +182,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return ApplyFollowerAuthInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 发送用户授权信息申请
-         *
-         * @param request ApplyFollowerAuthInfoRequest
-         * @return ApplyFollowerAuthInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送用户授权信息申请</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ApplyFollowerAuthInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ApplyFollowerAuthInfoResponse
+        /// </returns>
         public async Task<ApplyFollowerAuthInfoResponse> ApplyFollowerAuthInfoAsync(ApplyFollowerAuthInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -168,14 +201,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return await ApplyFollowerAuthInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 注册服务窗消息回调服务
-         *
-         * @param request CallbackRegiesterRequest
-         * @param headers CallbackRegiesterHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CallbackRegiesterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>注册服务窗消息回调服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CallbackRegiesterRequest
+        /// </param>
+        /// <param name="headers">
+        /// CallbackRegiesterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CallbackRegiesterResponse
+        /// </returns>
         public CallbackRegiesterResponse CallbackRegiesterWithOptions(CallbackRegiesterRequest request, CallbackRegiesterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -225,14 +268,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<CallbackRegiesterResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 注册服务窗消息回调服务
-         *
-         * @param request CallbackRegiesterRequest
-         * @param headers CallbackRegiesterHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CallbackRegiesterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>注册服务窗消息回调服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CallbackRegiesterRequest
+        /// </param>
+        /// <param name="headers">
+        /// CallbackRegiesterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CallbackRegiesterResponse
+        /// </returns>
         public async Task<CallbackRegiesterResponse> CallbackRegiesterWithOptionsAsync(CallbackRegiesterRequest request, CallbackRegiesterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -282,12 +335,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<CallbackRegiesterResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 注册服务窗消息回调服务
-         *
-         * @param request CallbackRegiesterRequest
-         * @return CallbackRegiesterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>注册服务窗消息回调服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CallbackRegiesterRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CallbackRegiesterResponse
+        /// </returns>
         public CallbackRegiesterResponse CallbackRegiester(CallbackRegiesterRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -295,12 +354,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return CallbackRegiesterWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 注册服务窗消息回调服务
-         *
-         * @param request CallbackRegiesterRequest
-         * @return CallbackRegiesterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>注册服务窗消息回调服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CallbackRegiesterRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CallbackRegiesterResponse
+        /// </returns>
         public async Task<CallbackRegiesterResponse> CallbackRegiesterAsync(CallbackRegiesterRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -308,14 +373,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return await CallbackRegiesterWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 服务窗吊顶卡片关闭接口
-         *
-         * @param request CloseTopBoxInteractiveOTOMessageRequest
-         * @param headers CloseTopBoxInteractiveOTOMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CloseTopBoxInteractiveOTOMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗吊顶卡片关闭接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CloseTopBoxInteractiveOTOMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// CloseTopBoxInteractiveOTOMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CloseTopBoxInteractiveOTOMessageResponse
+        /// </returns>
         public CloseTopBoxInteractiveOTOMessageResponse CloseTopBoxInteractiveOTOMessageWithOptions(CloseTopBoxInteractiveOTOMessageRequest request, CloseTopBoxInteractiveOTOMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -353,14 +428,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<CloseTopBoxInteractiveOTOMessageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 服务窗吊顶卡片关闭接口
-         *
-         * @param request CloseTopBoxInteractiveOTOMessageRequest
-         * @param headers CloseTopBoxInteractiveOTOMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CloseTopBoxInteractiveOTOMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗吊顶卡片关闭接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CloseTopBoxInteractiveOTOMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// CloseTopBoxInteractiveOTOMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CloseTopBoxInteractiveOTOMessageResponse
+        /// </returns>
         public async Task<CloseTopBoxInteractiveOTOMessageResponse> CloseTopBoxInteractiveOTOMessageWithOptionsAsync(CloseTopBoxInteractiveOTOMessageRequest request, CloseTopBoxInteractiveOTOMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -398,12 +483,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<CloseTopBoxInteractiveOTOMessageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 服务窗吊顶卡片关闭接口
-         *
-         * @param request CloseTopBoxInteractiveOTOMessageRequest
-         * @return CloseTopBoxInteractiveOTOMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗吊顶卡片关闭接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CloseTopBoxInteractiveOTOMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CloseTopBoxInteractiveOTOMessageResponse
+        /// </returns>
         public CloseTopBoxInteractiveOTOMessageResponse CloseTopBoxInteractiveOTOMessage(CloseTopBoxInteractiveOTOMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -411,12 +502,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return CloseTopBoxInteractiveOTOMessageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 服务窗吊顶卡片关闭接口
-         *
-         * @param request CloseTopBoxInteractiveOTOMessageRequest
-         * @return CloseTopBoxInteractiveOTOMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗吊顶卡片关闭接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CloseTopBoxInteractiveOTOMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CloseTopBoxInteractiveOTOMessageResponse
+        /// </returns>
         public async Task<CloseTopBoxInteractiveOTOMessageResponse> CloseTopBoxInteractiveOTOMessageAsync(CloseTopBoxInteractiveOTOMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -424,14 +521,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return await CloseTopBoxInteractiveOTOMessageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取用户授权信息
-         *
-         * @param request GetFollowerAuthInfoRequest
-         * @param headers GetFollowerAuthInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetFollowerAuthInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户授权信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFollowerAuthInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFollowerAuthInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFollowerAuthInfoResponse
+        /// </returns>
         public GetFollowerAuthInfoResponse GetFollowerAuthInfoWithOptions(GetFollowerAuthInfoRequest request, GetFollowerAuthInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -473,14 +580,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<GetFollowerAuthInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取用户授权信息
-         *
-         * @param request GetFollowerAuthInfoRequest
-         * @param headers GetFollowerAuthInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetFollowerAuthInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户授权信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFollowerAuthInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFollowerAuthInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFollowerAuthInfoResponse
+        /// </returns>
         public async Task<GetFollowerAuthInfoResponse> GetFollowerAuthInfoWithOptionsAsync(GetFollowerAuthInfoRequest request, GetFollowerAuthInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -522,12 +639,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<GetFollowerAuthInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取用户授权信息
-         *
-         * @param request GetFollowerAuthInfoRequest
-         * @return GetFollowerAuthInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户授权信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFollowerAuthInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFollowerAuthInfoResponse
+        /// </returns>
         public GetFollowerAuthInfoResponse GetFollowerAuthInfo(GetFollowerAuthInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -535,12 +658,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return GetFollowerAuthInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取用户授权信息
-         *
-         * @param request GetFollowerAuthInfoRequest
-         * @return GetFollowerAuthInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户授权信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFollowerAuthInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFollowerAuthInfoResponse
+        /// </returns>
         public async Task<GetFollowerAuthInfoResponse> GetFollowerAuthInfoAsync(GetFollowerAuthInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -548,14 +677,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return await GetFollowerAuthInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取服务窗关注人信息
-         *
-         * @param request GetFollowerInfoRequest
-         * @param headers GetFollowerInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetFollowerInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取服务窗关注人信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFollowerInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFollowerInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFollowerInfoResponse
+        /// </returns>
         public GetFollowerInfoResponse GetFollowerInfoWithOptions(GetFollowerInfoRequest request, GetFollowerInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -601,14 +740,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<GetFollowerInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取服务窗关注人信息
-         *
-         * @param request GetFollowerInfoRequest
-         * @param headers GetFollowerInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetFollowerInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取服务窗关注人信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFollowerInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFollowerInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFollowerInfoResponse
+        /// </returns>
         public async Task<GetFollowerInfoResponse> GetFollowerInfoWithOptionsAsync(GetFollowerInfoRequest request, GetFollowerInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -654,12 +803,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<GetFollowerInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取服务窗关注人信息
-         *
-         * @param request GetFollowerInfoRequest
-         * @return GetFollowerInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取服务窗关注人信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFollowerInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFollowerInfoResponse
+        /// </returns>
         public GetFollowerInfoResponse GetFollowerInfo(GetFollowerInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -667,12 +822,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return GetFollowerInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取服务窗关注人信息
-         *
-         * @param request GetFollowerInfoRequest
-         * @return GetFollowerInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取服务窗关注人信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFollowerInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFollowerInfoResponse
+        /// </returns>
         public async Task<GetFollowerInfoResponse> GetFollowerInfoAsync(GetFollowerInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -680,14 +841,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return await GetFollowerInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 服务窗图片消息下载地址获取接口
-         *
-         * @param request GetPictureDownloadUrlRequest
-         * @param headers GetPictureDownloadUrlHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetPictureDownloadUrlResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗图片消息下载地址获取接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetPictureDownloadUrlRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetPictureDownloadUrlHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPictureDownloadUrlResponse
+        /// </returns>
         public GetPictureDownloadUrlResponse GetPictureDownloadUrlWithOptions(GetPictureDownloadUrlRequest request, GetPictureDownloadUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -729,14 +900,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<GetPictureDownloadUrlResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 服务窗图片消息下载地址获取接口
-         *
-         * @param request GetPictureDownloadUrlRequest
-         * @param headers GetPictureDownloadUrlHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetPictureDownloadUrlResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗图片消息下载地址获取接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetPictureDownloadUrlRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetPictureDownloadUrlHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPictureDownloadUrlResponse
+        /// </returns>
         public async Task<GetPictureDownloadUrlResponse> GetPictureDownloadUrlWithOptionsAsync(GetPictureDownloadUrlRequest request, GetPictureDownloadUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -778,12 +959,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<GetPictureDownloadUrlResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 服务窗图片消息下载地址获取接口
-         *
-         * @param request GetPictureDownloadUrlRequest
-         * @return GetPictureDownloadUrlResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗图片消息下载地址获取接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetPictureDownloadUrlRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPictureDownloadUrlResponse
+        /// </returns>
         public GetPictureDownloadUrlResponse GetPictureDownloadUrl(GetPictureDownloadUrlRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -791,12 +978,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return GetPictureDownloadUrlWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 服务窗图片消息下载地址获取接口
-         *
-         * @param request GetPictureDownloadUrlRequest
-         * @return GetPictureDownloadUrlResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗图片消息下载地址获取接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetPictureDownloadUrlRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPictureDownloadUrlResponse
+        /// </returns>
         public async Task<GetPictureDownloadUrlResponse> GetPictureDownloadUrlAsync(GetPictureDownloadUrlRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -804,14 +997,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return await GetPictureDownloadUrlWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取用户关注状态
-         *
-         * @param request GetUserFollowStatusRequest
-         * @param headers GetUserFollowStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetUserFollowStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户关注状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserFollowStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetUserFollowStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserFollowStatusResponse
+        /// </returns>
         public GetUserFollowStatusResponse GetUserFollowStatusWithOptions(GetUserFollowStatusRequest request, GetUserFollowStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -857,14 +1060,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<GetUserFollowStatusResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取用户关注状态
-         *
-         * @param request GetUserFollowStatusRequest
-         * @param headers GetUserFollowStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetUserFollowStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户关注状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserFollowStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetUserFollowStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserFollowStatusResponse
+        /// </returns>
         public async Task<GetUserFollowStatusResponse> GetUserFollowStatusWithOptionsAsync(GetUserFollowStatusRequest request, GetUserFollowStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -910,12 +1123,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<GetUserFollowStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取用户关注状态
-         *
-         * @param request GetUserFollowStatusRequest
-         * @return GetUserFollowStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户关注状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserFollowStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserFollowStatusResponse
+        /// </returns>
         public GetUserFollowStatusResponse GetUserFollowStatus(GetUserFollowStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -923,12 +1142,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return GetUserFollowStatusWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取用户关注状态
-         *
-         * @param request GetUserFollowStatusRequest
-         * @return GetUserFollowStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户关注状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserFollowStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserFollowStatusResponse
+        /// </returns>
         public async Task<GetUserFollowStatusResponse> GetUserFollowStatusAsync(GetUserFollowStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -936,13 +1161,21 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return await GetUserFollowStatusWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取企业下服务窗帐号列表
-         *
-         * @param headers ListAccountHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListAccountResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业下服务窗帐号列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// ListAccountHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAccountResponse
+        /// </returns>
         public ListAccountResponse ListAccountWithOptions(ListAccountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -973,13 +1206,21 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<ListAccountResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取企业下服务窗帐号列表
-         *
-         * @param headers ListAccountHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListAccountResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业下服务窗帐号列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// ListAccountHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAccountResponse
+        /// </returns>
         public async Task<ListAccountResponse> ListAccountWithOptionsAsync(ListAccountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1010,11 +1251,14 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<ListAccountResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取企业下服务窗帐号列表
-         *
-         * @return ListAccountResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业下服务窗帐号列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// ListAccountResponse
+        /// </returns>
         public ListAccountResponse ListAccount()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1022,11 +1266,14 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return ListAccountWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 获取企业下服务窗帐号列表
-         *
-         * @return ListAccountResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业下服务窗帐号列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// ListAccountResponse
+        /// </returns>
         public async Task<ListAccountResponse> ListAccountAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1034,13 +1281,21 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return await ListAccountWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 第三方企业应用查询服务窗帐号列表
-         *
-         * @param headers ListAccountInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListAccountInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>第三方企业应用查询服务窗帐号列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// ListAccountInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAccountInfoResponse
+        /// </returns>
         public ListAccountInfoResponse ListAccountInfoWithOptions(ListAccountInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1071,13 +1326,21 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<ListAccountInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 第三方企业应用查询服务窗帐号列表
-         *
-         * @param headers ListAccountInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListAccountInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>第三方企业应用查询服务窗帐号列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// ListAccountInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAccountInfoResponse
+        /// </returns>
         public async Task<ListAccountInfoResponse> ListAccountInfoWithOptionsAsync(ListAccountInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1108,11 +1371,14 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<ListAccountInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 第三方企业应用查询服务窗帐号列表
-         *
-         * @return ListAccountInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>第三方企业应用查询服务窗帐号列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// ListAccountInfoResponse
+        /// </returns>
         public ListAccountInfoResponse ListAccountInfo()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1120,11 +1386,14 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return ListAccountInfoWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 第三方企业应用查询服务窗帐号列表
-         *
-         * @return ListAccountInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>第三方企业应用查询服务窗帐号列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// ListAccountInfoResponse
+        /// </returns>
         public async Task<ListAccountInfoResponse> ListAccountInfoAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1132,14 +1401,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return await ListAccountInfoWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 批量获取服务窗关注人列表
-         *
-         * @param request ListFollowerRequest
-         * @param headers ListFollowerHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListFollowerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取服务窗关注人列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListFollowerRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListFollowerHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListFollowerResponse
+        /// </returns>
         public ListFollowerResponse ListFollowerWithOptions(ListFollowerRequest request, ListFollowerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1185,14 +1464,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<ListFollowerResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 批量获取服务窗关注人列表
-         *
-         * @param request ListFollowerRequest
-         * @param headers ListFollowerHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListFollowerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取服务窗关注人列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListFollowerRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListFollowerHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListFollowerResponse
+        /// </returns>
         public async Task<ListFollowerResponse> ListFollowerWithOptionsAsync(ListFollowerRequest request, ListFollowerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1238,12 +1527,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<ListFollowerResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 批量获取服务窗关注人列表
-         *
-         * @param request ListFollowerRequest
-         * @return ListFollowerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取服务窗关注人列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListFollowerRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListFollowerResponse
+        /// </returns>
         public ListFollowerResponse ListFollower(ListFollowerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1251,12 +1546,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return ListFollowerWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 批量获取服务窗关注人列表
-         *
-         * @param request ListFollowerRequest
-         * @return ListFollowerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取服务窗关注人列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListFollowerRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListFollowerResponse
+        /// </returns>
         public async Task<ListFollowerResponse> ListFollowerAsync(ListFollowerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1264,14 +1565,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return await ListFollowerWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 第三方企业应用查询用户是否关注服务窗
-         *
-         * @param request QueryUserFollowStatusRequest
-         * @param headers QueryUserFollowStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryUserFollowStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>第三方企业应用查询用户是否关注服务窗</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserFollowStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryUserFollowStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserFollowStatusResponse
+        /// </returns>
         public QueryUserFollowStatusResponse QueryUserFollowStatusWithOptions(QueryUserFollowStatusRequest request, QueryUserFollowStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1313,14 +1624,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<QueryUserFollowStatusResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 第三方企业应用查询用户是否关注服务窗
-         *
-         * @param request QueryUserFollowStatusRequest
-         * @param headers QueryUserFollowStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryUserFollowStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>第三方企业应用查询用户是否关注服务窗</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserFollowStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryUserFollowStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserFollowStatusResponse
+        /// </returns>
         public async Task<QueryUserFollowStatusResponse> QueryUserFollowStatusWithOptionsAsync(QueryUserFollowStatusRequest request, QueryUserFollowStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1362,12 +1683,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<QueryUserFollowStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 第三方企业应用查询用户是否关注服务窗
-         *
-         * @param request QueryUserFollowStatusRequest
-         * @return QueryUserFollowStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>第三方企业应用查询用户是否关注服务窗</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserFollowStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserFollowStatusResponse
+        /// </returns>
         public QueryUserFollowStatusResponse QueryUserFollowStatus(QueryUserFollowStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1375,12 +1702,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return QueryUserFollowStatusWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 第三方企业应用查询用户是否关注服务窗
-         *
-         * @param request QueryUserFollowStatusRequest
-         * @return QueryUserFollowStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>第三方企业应用查询用户是否关注服务窗</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserFollowStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserFollowStatusResponse
+        /// </returns>
         public async Task<QueryUserFollowStatusResponse> QueryUserFollowStatusAsync(QueryUserFollowStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1388,14 +1721,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return await QueryUserFollowStatusWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 发送服务窗客服消息
-         *
-         * @param request SendAgentOTOMessageRequest
-         * @param headers SendAgentOTOMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SendAgentOTOMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送服务窗客服消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendAgentOTOMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendAgentOTOMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendAgentOTOMessageResponse
+        /// </returns>
         public SendAgentOTOMessageResponse SendAgentOTOMessageWithOptions(SendAgentOTOMessageRequest request, SendAgentOTOMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1433,14 +1776,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<SendAgentOTOMessageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 发送服务窗客服消息
-         *
-         * @param request SendAgentOTOMessageRequest
-         * @param headers SendAgentOTOMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SendAgentOTOMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送服务窗客服消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendAgentOTOMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendAgentOTOMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendAgentOTOMessageResponse
+        /// </returns>
         public async Task<SendAgentOTOMessageResponse> SendAgentOTOMessageWithOptionsAsync(SendAgentOTOMessageRequest request, SendAgentOTOMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1478,12 +1831,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<SendAgentOTOMessageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 发送服务窗客服消息
-         *
-         * @param request SendAgentOTOMessageRequest
-         * @return SendAgentOTOMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送服务窗客服消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendAgentOTOMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendAgentOTOMessageResponse
+        /// </returns>
         public SendAgentOTOMessageResponse SendAgentOTOMessage(SendAgentOTOMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1491,12 +1850,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return SendAgentOTOMessageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 发送服务窗客服消息
-         *
-         * @param request SendAgentOTOMessageRequest
-         * @return SendAgentOTOMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送服务窗客服消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendAgentOTOMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendAgentOTOMessageResponse
+        /// </returns>
         public async Task<SendAgentOTOMessageResponse> SendAgentOTOMessageAsync(SendAgentOTOMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1504,14 +1869,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return await SendAgentOTOMessageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 服务窗互动卡片单发接口
-         *
-         * @param request SendInteractiveOTOMessageRequest
-         * @param headers SendInteractiveOTOMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SendInteractiveOTOMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗互动卡片单发接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendInteractiveOTOMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendInteractiveOTOMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendInteractiveOTOMessageResponse
+        /// </returns>
         public SendInteractiveOTOMessageResponse SendInteractiveOTOMessageWithOptions(SendInteractiveOTOMessageRequest request, SendInteractiveOTOMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1549,14 +1924,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<SendInteractiveOTOMessageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 服务窗互动卡片单发接口
-         *
-         * @param request SendInteractiveOTOMessageRequest
-         * @param headers SendInteractiveOTOMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SendInteractiveOTOMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗互动卡片单发接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendInteractiveOTOMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendInteractiveOTOMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendInteractiveOTOMessageResponse
+        /// </returns>
         public async Task<SendInteractiveOTOMessageResponse> SendInteractiveOTOMessageWithOptionsAsync(SendInteractiveOTOMessageRequest request, SendInteractiveOTOMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1594,12 +1979,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<SendInteractiveOTOMessageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 服务窗互动卡片单发接口
-         *
-         * @param request SendInteractiveOTOMessageRequest
-         * @return SendInteractiveOTOMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗互动卡片单发接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendInteractiveOTOMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendInteractiveOTOMessageResponse
+        /// </returns>
         public SendInteractiveOTOMessageResponse SendInteractiveOTOMessage(SendInteractiveOTOMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1607,12 +1998,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return SendInteractiveOTOMessageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 服务窗互动卡片单发接口
-         *
-         * @param request SendInteractiveOTOMessageRequest
-         * @return SendInteractiveOTOMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗互动卡片单发接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendInteractiveOTOMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendInteractiveOTOMessageResponse
+        /// </returns>
         public async Task<SendInteractiveOTOMessageResponse> SendInteractiveOTOMessageAsync(SendInteractiveOTOMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1620,14 +2017,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return await SendInteractiveOTOMessageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 服务窗吊顶卡片发送接口
-         *
-         * @param request SendTopBoxInteractiveOTOMessageRequest
-         * @param headers SendTopBoxInteractiveOTOMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SendTopBoxInteractiveOTOMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗吊顶卡片发送接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendTopBoxInteractiveOTOMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendTopBoxInteractiveOTOMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendTopBoxInteractiveOTOMessageResponse
+        /// </returns>
         public SendTopBoxInteractiveOTOMessageResponse SendTopBoxInteractiveOTOMessageWithOptions(SendTopBoxInteractiveOTOMessageRequest request, SendTopBoxInteractiveOTOMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1665,14 +2072,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<SendTopBoxInteractiveOTOMessageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 服务窗吊顶卡片发送接口
-         *
-         * @param request SendTopBoxInteractiveOTOMessageRequest
-         * @param headers SendTopBoxInteractiveOTOMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SendTopBoxInteractiveOTOMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗吊顶卡片发送接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendTopBoxInteractiveOTOMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendTopBoxInteractiveOTOMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendTopBoxInteractiveOTOMessageResponse
+        /// </returns>
         public async Task<SendTopBoxInteractiveOTOMessageResponse> SendTopBoxInteractiveOTOMessageWithOptionsAsync(SendTopBoxInteractiveOTOMessageRequest request, SendTopBoxInteractiveOTOMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1710,12 +2127,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<SendTopBoxInteractiveOTOMessageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 服务窗吊顶卡片发送接口
-         *
-         * @param request SendTopBoxInteractiveOTOMessageRequest
-         * @return SendTopBoxInteractiveOTOMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗吊顶卡片发送接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendTopBoxInteractiveOTOMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendTopBoxInteractiveOTOMessageResponse
+        /// </returns>
         public SendTopBoxInteractiveOTOMessageResponse SendTopBoxInteractiveOTOMessage(SendTopBoxInteractiveOTOMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1723,12 +2146,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return SendTopBoxInteractiveOTOMessageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 服务窗吊顶卡片发送接口
-         *
-         * @param request SendTopBoxInteractiveOTOMessageRequest
-         * @return SendTopBoxInteractiveOTOMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗吊顶卡片发送接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendTopBoxInteractiveOTOMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendTopBoxInteractiveOTOMessageResponse
+        /// </returns>
         public async Task<SendTopBoxInteractiveOTOMessageResponse> SendTopBoxInteractiveOTOMessageAsync(SendTopBoxInteractiveOTOMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1736,14 +2165,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return await SendTopBoxInteractiveOTOMessageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 服务窗互动卡片修改接口
-         *
-         * @param request UpdateInteractiveOTOMessageRequest
-         * @param headers UpdateInteractiveOTOMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateInteractiveOTOMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗互动卡片修改接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInteractiveOTOMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateInteractiveOTOMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInteractiveOTOMessageResponse
+        /// </returns>
         public UpdateInteractiveOTOMessageResponse UpdateInteractiveOTOMessageWithOptions(UpdateInteractiveOTOMessageRequest request, UpdateInteractiveOTOMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1781,14 +2220,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<UpdateInteractiveOTOMessageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 服务窗互动卡片修改接口
-         *
-         * @param request UpdateInteractiveOTOMessageRequest
-         * @param headers UpdateInteractiveOTOMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateInteractiveOTOMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗互动卡片修改接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInteractiveOTOMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateInteractiveOTOMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInteractiveOTOMessageResponse
+        /// </returns>
         public async Task<UpdateInteractiveOTOMessageResponse> UpdateInteractiveOTOMessageWithOptionsAsync(UpdateInteractiveOTOMessageRequest request, UpdateInteractiveOTOMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1826,12 +2275,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<UpdateInteractiveOTOMessageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 服务窗互动卡片修改接口
-         *
-         * @param request UpdateInteractiveOTOMessageRequest
-         * @return UpdateInteractiveOTOMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗互动卡片修改接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInteractiveOTOMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInteractiveOTOMessageResponse
+        /// </returns>
         public UpdateInteractiveOTOMessageResponse UpdateInteractiveOTOMessage(UpdateInteractiveOTOMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1839,12 +2294,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return UpdateInteractiveOTOMessageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 服务窗互动卡片修改接口
-         *
-         * @param request UpdateInteractiveOTOMessageRequest
-         * @return UpdateInteractiveOTOMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗互动卡片修改接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInteractiveOTOMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInteractiveOTOMessageResponse
+        /// </returns>
         public async Task<UpdateInteractiveOTOMessageResponse> UpdateInteractiveOTOMessageAsync(UpdateInteractiveOTOMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1852,14 +2313,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return await UpdateInteractiveOTOMessageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 服务窗会话窗口快捷栏配置接口
-         *
-         * @param request UpdateShortcutsRequest
-         * @param headers UpdateShortcutsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateShortcutsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗会话窗口快捷栏配置接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateShortcutsRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateShortcutsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateShortcutsResponse
+        /// </returns>
         public UpdateShortcutsResponse UpdateShortcutsWithOptions(UpdateShortcutsRequest request, UpdateShortcutsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1905,14 +2376,24 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<UpdateShortcutsResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 服务窗会话窗口快捷栏配置接口
-         *
-         * @param request UpdateShortcutsRequest
-         * @param headers UpdateShortcutsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateShortcutsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗会话窗口快捷栏配置接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateShortcutsRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateShortcutsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateShortcutsResponse
+        /// </returns>
         public async Task<UpdateShortcutsResponse> UpdateShortcutsWithOptionsAsync(UpdateShortcutsRequest request, UpdateShortcutsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1958,12 +2439,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return TeaModel.ToObject<UpdateShortcutsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 服务窗会话窗口快捷栏配置接口
-         *
-         * @param request UpdateShortcutsRequest
-         * @return UpdateShortcutsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗会话窗口快捷栏配置接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateShortcutsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateShortcutsResponse
+        /// </returns>
         public UpdateShortcutsResponse UpdateShortcuts(UpdateShortcutsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1971,12 +2458,18 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0
             return UpdateShortcutsWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 服务窗会话窗口快捷栏配置接口
-         *
-         * @param request UpdateShortcutsRequest
-         * @return UpdateShortcutsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>服务窗会话窗口快捷栏配置接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateShortcutsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateShortcutsResponse
+        /// </returns>
         public async Task<UpdateShortcutsResponse> UpdateShortcutsAsync(UpdateShortcutsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

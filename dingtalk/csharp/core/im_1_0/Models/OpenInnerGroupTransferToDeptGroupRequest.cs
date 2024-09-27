@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class OpenInnerGroupTransferToDeptGroupRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>100</para>
         /// </summary>
         [NameInMap("deptId")]
         [Validation(Required=false)]
         public long? DeptId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>cidD2y*****==</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]

@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
 {
     public class TransferUserObjectiveRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("objectiveId")]
         [Validation(Required=false)]
         public string ObjectiveId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("targetUserId")]
         [Validation(Required=false)]

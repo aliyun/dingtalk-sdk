@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
 {
     public class ListIndustryRoleUsersRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>SecurityManager</para>
         /// </summary>
         [NameInMap("tagCode")]
         [Validation(Required=false)]

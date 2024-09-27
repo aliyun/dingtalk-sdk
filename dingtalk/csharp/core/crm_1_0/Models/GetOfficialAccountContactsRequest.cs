@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class GetOfficialAccountContactsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>10</para>
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public long? MaxResults { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123567</para>
         /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]

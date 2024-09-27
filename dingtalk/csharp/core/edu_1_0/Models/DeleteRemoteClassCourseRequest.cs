@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class DeleteRemoteClassCourseRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>bab02f63c1e030fbbxxxx</para>
         /// </summary>
         [NameInMap("authCode")]
         [Validation(Required=false)]

@@ -14,14 +14,17 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
         public List<long?> DeptIdWhiteList { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("roomId")]
         [Validation(Required=false)]
         public string RoomId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>OcMXXXXXM2eRogiEiE</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

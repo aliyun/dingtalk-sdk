@@ -42,14 +42,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                 public string OriginatorPhoto { get; set; }
 
                 /// <summary>
-                /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
                 /// </summary>
                 [NameInMap("processCreateTime")]
                 [Validation(Required=false)]
                 public string ProcessCreateTime { get; set; }
 
                 /// <summary>
-                /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
                 /// </summary>
                 [NameInMap("processEndTime")]
                 [Validation(Required=false)]
@@ -63,10 +63,18 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                 [Validation(Required=false)]
                 public int? ProcessType { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>agree</para>
+                /// </summary>
                 [NameInMap("result")]
                 [Validation(Required=false)]
                 public string Result { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>RUNNING</para>
+                /// </summary>
                 [NameInMap("status")]
                 [Validation(Required=false)]
                 public string Status { get; set; }

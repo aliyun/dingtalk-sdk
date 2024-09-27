@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class QueryBenefitInventoryRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>B_CUSTOMER_CAPACITY</para>
         /// </summary>
         [NameInMap("benefitCode")]
         [Validation(Required=false)]

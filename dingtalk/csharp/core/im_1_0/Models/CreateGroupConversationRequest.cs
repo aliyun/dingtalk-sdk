@@ -13,37 +13,57 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public List<string> AppUserIds { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>http://***.png</para>
+        /// </summary>
         [NameInMap("groupAvatar")]
         [Validation(Required=false)]
         public string GroupAvatar { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>客户群</para>
         /// </summary>
         [NameInMap("groupName")]
         [Validation(Required=false)]
         public string GroupName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1745****8777</para>
         /// </summary>
         [NameInMap("groupOwnerId")]
         [Validation(Required=false)]
         public string GroupOwnerId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>3</para>
+        /// </summary>
         [NameInMap("groupOwnerType")]
         [Validation(Required=false)]
         public int? GroupOwnerType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>8d42****nkld</para>
         /// </summary>
         [NameInMap("groupTemplateId")]
         [Validation(Required=false)]
         public string GroupTemplateId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1745****8777</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

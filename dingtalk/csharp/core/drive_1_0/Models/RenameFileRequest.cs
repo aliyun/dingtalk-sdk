@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class RenameFileRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("newFileName")]
         [Validation(Required=false)]
         public string NewFileName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class QueryCrmGroupChatsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>10</para>
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
@@ -25,7 +28,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public string QueryDsl { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("relationType")]
         [Validation(Required=false)]

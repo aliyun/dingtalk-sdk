@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public int? NoticeToped { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("openGroupSetId")]
         [Validation(Required=false)]

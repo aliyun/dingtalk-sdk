@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class SubscribeUniversityCourseGroupRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>DDS10002</para>
+        /// </summary>
         [NameInMap("courseGroupCode")]
         [Validation(Required=false)]
         public string CourseGroupCode { get; set; }
@@ -17,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public List<string> StudentUserIds { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>manger1234</para>
+        /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]
         public string OpUserId { get; set; }

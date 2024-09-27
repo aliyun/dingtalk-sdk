@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0.Models
 {
     public class SetExtendSettingRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("buildH5Bundle")]
         [Validation(Required=false)]
         public bool? BuildH5Bundle { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("miniAppId")]
         [Validation(Required=false)]

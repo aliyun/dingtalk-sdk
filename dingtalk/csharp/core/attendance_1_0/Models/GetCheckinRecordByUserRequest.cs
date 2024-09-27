@@ -10,42 +10,42 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
     public class GetCheckinRecordByUserRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("endTime")]
         [Validation(Required=false)]
         public long? EndTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public long? MaxResults { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public long? NextToken { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("operatorUserId")]
         [Validation(Required=false)]
         public string OperatorUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("startTime")]
         [Validation(Required=false)]
         public long? StartTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userIdList")]
         [Validation(Required=false)]

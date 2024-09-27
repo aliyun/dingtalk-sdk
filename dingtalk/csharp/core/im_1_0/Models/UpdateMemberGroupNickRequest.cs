@@ -10,21 +10,24 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class UpdateMemberGroupNickRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("groupNick")]
         [Validation(Required=false)]
         public string GroupNick { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>cidXXXXXXX</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

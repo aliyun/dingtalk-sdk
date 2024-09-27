@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
         [Validation(Required=false)]
         public CreateOrgHonorResponseBodyResult Result { get; set; }
         public class CreateOrgHonorResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>10000283</para>
+            /// </summary>
             [NameInMap("honorId")]
             [Validation(Required=false)]
             public string HonorId { get; set; }

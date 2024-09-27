@@ -25,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 [Validation(Required=false)]
                 public List<GetRelatedViewTabDataResponseBodyResultPageList> List { get; set; }
                 public class GetRelatedViewTabDataResponseBodyResultPageList : TeaModel {
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>西游四人组:孙悟空</para>
+                    /// </summary>
                     [NameInMap("abstractMessage")]
                     [Validation(Required=false)]
                     public string AbstractMessage { get; set; }
@@ -33,16 +37,28 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                     [Validation(Required=false)]
                     public long? CreateTime { get; set; }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>王凯提交的楚衣的流程表单2</para>
+                    /// </summary>
                     [NameInMap("title")]
                     [Validation(Required=false)]
                     public string Title { get; set; }
 
                 }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>10</para>
+                /// </summary>
                 [NameInMap("nextToken")]
                 [Validation(Required=false)]
                 public long? NextToken { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>5</para>
+                /// </summary>
                 [NameInMap("totalCount")]
                 [Validation(Required=false)]
                 public long? TotalCount { get; set; }

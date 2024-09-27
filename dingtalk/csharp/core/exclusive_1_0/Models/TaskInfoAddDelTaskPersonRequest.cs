@@ -10,42 +10,42 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class TaskInfoAddDelTaskPersonRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("operateType")]
         [Validation(Required=false)]
         public int? OperateType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("operatorAccount")]
         [Validation(Required=false)]
         public string OperatorAccount { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("outTaskId")]
         [Validation(Required=false)]
         public string OutTaskId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("projId")]
         [Validation(Required=false)]
         public string ProjId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("secretKey")]
         [Validation(Required=false)]
         public string SecretKey { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("taskExecutePersonDTOS")]
         [Validation(Required=false)]

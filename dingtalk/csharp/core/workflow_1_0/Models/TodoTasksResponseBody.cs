@@ -21,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public List<TodoTasksResponseBodyResultList> List { get; set; }
             public class TodoTasksResponseBodyResultList : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>RUNNING</para>
+                /// </summary>
                 [NameInMap("businessId")]
                 [Validation(Required=false)]
                 public string BusinessId { get; set; }
@@ -33,22 +37,42 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                 [Validation(Required=false)]
                 public long? CreateTime { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>act_0001</para>
+                /// </summary>
                 [NameInMap("processCode")]
                 [Validation(Required=false)]
                 public string ProcessCode { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>Siw2WNVZS4KiUt3tTmaNKg04*****809950</para>
+                /// </summary>
                 [NameInMap("processInstanceId")]
                 [Validation(Required=false)]
                 public string ProcessInstanceId { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>1234567</para>
+                /// </summary>
                 [NameInMap("taskId")]
                 [Validation(Required=false)]
                 public long? TaskId { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>manager001</para>
+                /// </summary>
                 [NameInMap("title")]
                 [Validation(Required=false)]
                 public string Title { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>2022-10-17T15:12Z</para>
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }

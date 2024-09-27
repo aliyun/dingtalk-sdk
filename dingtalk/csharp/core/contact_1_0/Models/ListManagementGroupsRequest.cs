@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class ListManagementGroupsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]

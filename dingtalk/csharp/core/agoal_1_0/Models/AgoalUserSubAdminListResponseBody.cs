@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
         [Validation(Required=false)]
         public List<OpenUserSubAdminDTO> Content { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>7478B23C-80E8-1AD6-BE8C-09D480E0xxxx</para>
+        /// </summary>
         [NameInMap("requestId")]
         [Validation(Required=false)]
         public string RequestId { get; set; }

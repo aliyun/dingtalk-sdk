@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class GetExclusiveAccountAllOrgListRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>TBXK65QHiiorHvxxxxxxxxP6giEiE</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

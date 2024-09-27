@@ -10,28 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
     public class CreateApaasAppRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("appDesc")]
         [Validation(Required=false)]
         public string AppDesc { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("appIcon")]
         [Validation(Required=false)]
         public string AppIcon { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("appName")]
         [Validation(Required=false)]
         public string AppName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("bizAppId")]
         [Validation(Required=false)]
@@ -42,7 +42,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         public string HomepageEditLink { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("homepageLink")]
         [Validation(Required=false)]
@@ -57,21 +57,21 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         public string OmpLink { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]
         public string OpUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("pcHomepageEditLink")]
         [Validation(Required=false)]
         public string PcHomepageEditLink { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("pcHomepageLink")]
         [Validation(Required=false)]

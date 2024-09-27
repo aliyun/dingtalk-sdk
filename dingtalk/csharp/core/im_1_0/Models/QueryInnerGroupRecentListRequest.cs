@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class QueryInnerGroupRecentListRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>015*****</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

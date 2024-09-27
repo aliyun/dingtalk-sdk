@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
 {
     public class GetAuthUrlResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("mobileUrl")]
         [Validation(Required=false)]
         public string MobileUrl { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("pcUrl")]
         [Validation(Required=false)]
         public string PcUrl { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("taskId")]
         [Validation(Required=false)]

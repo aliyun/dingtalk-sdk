@@ -9,18 +9,29 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class SaveWhiteAppRequest : TeaModel {
+        /// <term><b>Obsolete</b></term>
         [NameInMap("agentIdList")]
         [Validation(Required=false)]
         [Obsolete]
         public List<long?> AgentIdList { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>{&quot;openShareControl&quot;:[123],&quot;openClipboardPaste&quot;:[123]}</para>
         /// </summary>
         [NameInMap("agentIdMap")]
         [Validation(Required=false)]
         public string AgentIdMap { get; set; }
 
+        /// <term><b>Obsolete</b></term>
+        /// 
+        /// <summary>
+        /// 
+        /// <b>Example:</b>
+        /// <para>add</para>
+        /// </summary>
         [NameInMap("operation")]
         [Validation(Required=false)]
         [Obsolete]

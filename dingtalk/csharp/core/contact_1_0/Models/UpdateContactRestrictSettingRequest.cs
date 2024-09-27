@@ -9,10 +9,18 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class UpdateContactRestrictSettingRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("active")]
         [Validation(Required=false)]
         public bool? Active { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>rule description</para>
+        /// </summary>
         [NameInMap("description")]
         [Validation(Required=false)]
         public string Description { get; set; }
@@ -29,18 +37,34 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [Validation(Required=false)]
         public List<string> ExcludeUserIds { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1000</para>
+        /// </summary>
         [NameInMap("id")]
         [Validation(Required=false)]
         public long? Id { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>contact restrict name</para>
+        /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
         [NameInMap("restrictInSearch")]
         [Validation(Required=false)]
         public bool? RestrictInSearch { get; set; }
 
+        /// <summary>
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
         [NameInMap("restrictInUserProfile")]
         [Validation(Required=false)]
         public bool? RestrictInUserProfile { get; set; }
@@ -58,7 +82,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public List<string> SubjectUserIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("type")]
         [Validation(Required=false)]

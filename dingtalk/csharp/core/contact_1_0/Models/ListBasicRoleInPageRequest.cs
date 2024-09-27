@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class ListBasicRoleInPageRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123</para>
+        /// </summary>
         [NameInMap("agentId")]
         [Validation(Required=false)]
         public string AgentId { get; set; }

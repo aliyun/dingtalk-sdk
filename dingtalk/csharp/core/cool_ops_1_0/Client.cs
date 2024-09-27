@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkcool_ops_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkcool_ops_1_0
         }
 
 
-        /**
-         * @summary ISV批量查询商机标签
-         *
-         * @param request BatchQueryOpportunityTagRequest
-         * @param headers BatchQueryOpportunityTagHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return BatchQueryOpportunityTagResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>ISV批量查询商机标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchQueryOpportunityTagRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchQueryOpportunityTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchQueryOpportunityTagResponse
+        /// </returns>
         public BatchQueryOpportunityTagResponse BatchQueryOpportunityTagWithOptions(BatchQueryOpportunityTagRequest request, BatchQueryOpportunityTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -73,14 +84,24 @@ namespace AlibabaCloud.SDK.Dingtalkcool_ops_1_0
             return TeaModel.ToObject<BatchQueryOpportunityTagResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary ISV批量查询商机标签
-         *
-         * @param request BatchQueryOpportunityTagRequest
-         * @param headers BatchQueryOpportunityTagHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return BatchQueryOpportunityTagResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>ISV批量查询商机标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchQueryOpportunityTagRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchQueryOpportunityTagHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchQueryOpportunityTagResponse
+        /// </returns>
         public async Task<BatchQueryOpportunityTagResponse> BatchQueryOpportunityTagWithOptionsAsync(BatchQueryOpportunityTagRequest request, BatchQueryOpportunityTagHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -118,12 +139,18 @@ namespace AlibabaCloud.SDK.Dingtalkcool_ops_1_0
             return TeaModel.ToObject<BatchQueryOpportunityTagResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary ISV批量查询商机标签
-         *
-         * @param request BatchQueryOpportunityTagRequest
-         * @return BatchQueryOpportunityTagResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>ISV批量查询商机标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchQueryOpportunityTagRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchQueryOpportunityTagResponse
+        /// </returns>
         public BatchQueryOpportunityTagResponse BatchQueryOpportunityTag(BatchQueryOpportunityTagRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -131,12 +158,18 @@ namespace AlibabaCloud.SDK.Dingtalkcool_ops_1_0
             return BatchQueryOpportunityTagWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary ISV批量查询商机标签
-         *
-         * @param request BatchQueryOpportunityTagRequest
-         * @return BatchQueryOpportunityTagResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>ISV批量查询商机标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchQueryOpportunityTagRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchQueryOpportunityTagResponse
+        /// </returns>
         public async Task<BatchQueryOpportunityTagResponse> BatchQueryOpportunityTagAsync(BatchQueryOpportunityTagRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -144,14 +177,24 @@ namespace AlibabaCloud.SDK.Dingtalkcool_ops_1_0
             return await BatchQueryOpportunityTagWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary ISV商机状态同步
-         *
-         * @param request UpdateIsvOppStatusRequest
-         * @param headers UpdateIsvOppStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateIsvOppStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>ISV商机状态同步</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateIsvOppStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateIsvOppStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateIsvOppStatusResponse
+        /// </returns>
         public UpdateIsvOppStatusResponse UpdateIsvOppStatusWithOptions(UpdateIsvOppStatusRequest request, UpdateIsvOppStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -189,14 +232,24 @@ namespace AlibabaCloud.SDK.Dingtalkcool_ops_1_0
             return TeaModel.ToObject<UpdateIsvOppStatusResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary ISV商机状态同步
-         *
-         * @param request UpdateIsvOppStatusRequest
-         * @param headers UpdateIsvOppStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateIsvOppStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>ISV商机状态同步</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateIsvOppStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateIsvOppStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateIsvOppStatusResponse
+        /// </returns>
         public async Task<UpdateIsvOppStatusResponse> UpdateIsvOppStatusWithOptionsAsync(UpdateIsvOppStatusRequest request, UpdateIsvOppStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -234,12 +287,18 @@ namespace AlibabaCloud.SDK.Dingtalkcool_ops_1_0
             return TeaModel.ToObject<UpdateIsvOppStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary ISV商机状态同步
-         *
-         * @param request UpdateIsvOppStatusRequest
-         * @return UpdateIsvOppStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>ISV商机状态同步</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateIsvOppStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateIsvOppStatusResponse
+        /// </returns>
         public UpdateIsvOppStatusResponse UpdateIsvOppStatus(UpdateIsvOppStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -247,12 +306,18 @@ namespace AlibabaCloud.SDK.Dingtalkcool_ops_1_0
             return UpdateIsvOppStatusWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary ISV商机状态同步
-         *
-         * @param request UpdateIsvOppStatusRequest
-         * @return UpdateIsvOppStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>ISV商机状态同步</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateIsvOppStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateIsvOppStatusResponse
+        /// </returns>
         public async Task<UpdateIsvOppStatusResponse> UpdateIsvOppStatusAsync(UpdateIsvOppStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

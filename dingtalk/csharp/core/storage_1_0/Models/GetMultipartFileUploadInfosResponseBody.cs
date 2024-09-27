@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
             [Validation(Required=false)]
             public GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfosHeaderSignatureInfo HeaderSignatureInfo { get; set; }
             public class GetMultipartFileUploadInfosResponseBodyMultipartHeaderSignatureInfosHeaderSignatureInfo : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>900</para>
+                /// </summary>
                 [NameInMap("expirationSeconds")]
                 [Validation(Required=false)]
                 public int? ExpirationSeconds { get; set; }
@@ -29,6 +33,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
                 [Validation(Required=false)]
                 public List<string> InternalResourceUrls { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>ZHANGJIAKOU</para>
+                /// </summary>
                 [NameInMap("region")]
                 [Validation(Required=false)]
                 public string Region { get; set; }

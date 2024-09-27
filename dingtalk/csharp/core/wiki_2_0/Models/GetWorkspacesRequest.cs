@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_2_0.Models
         [Validation(Required=false)]
         public GetWorkspacesRequestOption Option { get; set; }
         public class GetWorkspacesRequestOption : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>false</para>
+            /// </summary>
             [NameInMap("withPermissionRole")]
             [Validation(Required=false)]
             public bool? WithPermissionRole { get; set; }
@@ -20,14 +24,17 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_2_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("workspaceIds")]
         [Validation(Required=false)]
         public List<string> WorkspaceIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

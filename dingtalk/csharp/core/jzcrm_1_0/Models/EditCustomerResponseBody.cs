@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
 {
     public class EditCustomerResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("msgid")]
         [Validation(Required=false)]
         public long? Msgid { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("time")]
         [Validation(Required=false)]

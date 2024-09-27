@@ -10,14 +10,17 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class AddOpenLibraryResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public AddOpenLibraryResponseBodyResult Result { get; set; }
         public class AddOpenLibraryResponseBodyResult : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>22</para>
             /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
@@ -28,7 +31,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             public string Message { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>true</para>
             /// </summary>
             [NameInMap("success")]
             [Validation(Required=false)]
@@ -37,7 +43,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>true</para>
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

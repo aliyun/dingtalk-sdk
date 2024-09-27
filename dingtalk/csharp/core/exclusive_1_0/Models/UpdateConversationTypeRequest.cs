@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class UpdateConversationTypeRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("manageSign")]
         [Validation(Required=false)]
         public int? ManageSign { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]

@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
 {
     public class DecodeBadgeCodeRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("payCode")]
         [Validation(Required=false)]
         public string PayCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("requestId")]
         [Validation(Required=false)]

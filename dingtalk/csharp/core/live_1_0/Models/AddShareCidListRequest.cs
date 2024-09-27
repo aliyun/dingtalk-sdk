@@ -10,21 +10,27 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
 {
     public class AddShareCidListRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>2</para>
         /// </summary>
         [NameInMap("groupIdType")]
         [Validation(Required=false)]
         public long? GroupIdType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("groupIds")]
         [Validation(Required=false)]
         public List<string> GroupIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>214675</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

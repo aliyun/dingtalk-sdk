@@ -1,6 +1,3 @@
-/**
- *
- */
 // This file is auto-generated, don't edit it. Thanks.
 
 using System;
@@ -12,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
 {
     public class PrivateFieldMapValue : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>XXX发了一条闪读消息，请于今天 12:00前查看</para>
+        /// </summary>
         [NameInMap("tipTitle")]
         [Validation(Required=false)]
         public string TipTitle { get; set; }

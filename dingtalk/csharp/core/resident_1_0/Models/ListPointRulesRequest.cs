@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
 {
     public class ListPointRulesRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>false</para>
         /// </summary>
         [NameInMap("isCircle")]
         [Validation(Required=false)]

@@ -9,10 +9,18 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkreport_1_0.Models
 {
     public class GetSubmitStatisticsResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>3</para>
+        /// </summary>
         [NameInMap("shouldRemindTimes")]
         [Validation(Required=false)]
         public int? ShouldRemindTimes { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>日报</para>
+        /// </summary>
         [NameInMap("templateName")]
         [Validation(Required=false)]
         public string TemplateName { get; set; }

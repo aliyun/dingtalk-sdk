@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 {
     public class GetSignInListRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
@@ -21,7 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         public string NextToken { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>check_in</para>
         /// </summary>
         [NameInMap("type")]
         [Validation(Required=false)]

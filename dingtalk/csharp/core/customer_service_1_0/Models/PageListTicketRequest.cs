@@ -18,23 +18,37 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
         public string ForeignId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>10</para>
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>0</para>
         /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public string NextToken { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>default</para>
+        /// </summary>
         [NameInMap("openInstanceId")]
         [Validation(Required=false)]
         public string OpenInstanceId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("productionType")]
         [Validation(Required=false)]
         public int? ProductionType { get; set; }
@@ -48,7 +62,10 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
         public long? StartTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>42</para>
         /// </summary>
         [NameInMap("templateId")]
         [Validation(Required=false)]

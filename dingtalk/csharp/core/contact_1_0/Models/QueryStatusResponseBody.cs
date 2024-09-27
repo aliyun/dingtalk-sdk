@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class QueryStatusResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>false/true</para>
         /// </summary>
         [NameInMap("disable")]
         [Validation(Required=false)]

@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class DocAppendTextRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>text</para>
         /// </summary>
         [NameInMap("text")]
         [Validation(Required=false)]
         public string Text { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

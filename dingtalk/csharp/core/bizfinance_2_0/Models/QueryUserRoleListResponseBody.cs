@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
 {
     public class QueryUserRoleListResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>COM_DEFAULT</para>
+        /// </summary>
         [NameInMap("companyCode")]
         [Validation(Required=false)]
         public string CompanyCode { get; set; }
@@ -39,10 +43,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
         [Validation(Required=false)]
         public List<QueryUserRoleListResponseBodyRoleVOList> RoleVOList { get; set; }
         public class QueryUserRoleListResponseBodyRoleVOList : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>applicationManager</para>
+            /// </summary>
             [NameInMap("roleCode")]
             [Validation(Required=false)]
             public string RoleCode { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>应用管理员</para>
+            /// </summary>
             [NameInMap("roleName")]
             [Validation(Required=false)]
             public string RoleName { get; set; }

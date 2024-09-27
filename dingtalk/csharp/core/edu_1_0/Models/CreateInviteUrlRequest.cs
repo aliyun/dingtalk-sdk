@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class CreateInviteUrlRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("authCode")]
         [Validation(Required=false)]
         public string AuthCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("targetCorpId")]
         [Validation(Required=false)]
         public string TargetCorpId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("targetOperator")]
         [Validation(Required=false)]

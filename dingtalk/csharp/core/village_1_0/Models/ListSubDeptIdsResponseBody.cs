@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class ListSubDeptIdsResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("departmentIdList")]
         [Validation(Required=false)]

@@ -9,16 +9,27 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
 {
     public class QueryMeetingRoomListRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>20</para>
+        /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>124</para>
+        /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public long? NextToken { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>2iPOLbpUNMLzB5LuwggiiqiPwiEiE</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

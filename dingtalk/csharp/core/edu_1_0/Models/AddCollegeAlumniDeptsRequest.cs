@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class AddCollegeAlumniDeptsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("depts")]
         [Validation(Required=false)]
         public List<AddCollegeAlumniDeptsRequestDepts> Depts { get; set; }
         public class AddCollegeAlumniDeptsRequestDepts : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("superId")]
             [Validation(Required=false)]
@@ -33,7 +33,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("operator")]
         [Validation(Required=false)]

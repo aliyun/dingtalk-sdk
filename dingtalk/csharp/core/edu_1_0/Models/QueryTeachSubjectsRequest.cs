@@ -14,7 +14,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public List<long?> ClassIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>24275037451244334</para>
         /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]

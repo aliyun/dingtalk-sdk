@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
 {
     public class PushCustomerGroupMessageRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>cidxxxx</para>
         /// </summary>
         [NameInMap("conversationId")]
         [Validation(Required=false)]
         public string ConversationId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>sampleText</para>
         /// </summary>
         [NameInMap("msgKey")]
         [Validation(Required=false)]
         public string MsgKey { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>eyJjb250ZW50IjogIua1i+ivleWGheWuuSJ9(即{&quot;content&quot;: &quot;测试内容&quot;}的base64编码值)</para>
         /// </summary>
         [NameInMap("msgParam")]
         [Validation(Required=false)]

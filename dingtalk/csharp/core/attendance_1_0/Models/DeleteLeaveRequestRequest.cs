@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
     public class DeleteLeaveRequestRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>zxfgsdfsdfvsd</para>
         /// </summary>
         [NameInMap("outerId")]
         [Validation(Required=false)]

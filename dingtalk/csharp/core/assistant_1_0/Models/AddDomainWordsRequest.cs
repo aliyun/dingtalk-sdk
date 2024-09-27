@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0.Models
 {
     public class AddDomainWordsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("assistantId")]
         [Validation(Required=false)]
         public string AssistantId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("domainWords")]
         [Validation(Required=false)]

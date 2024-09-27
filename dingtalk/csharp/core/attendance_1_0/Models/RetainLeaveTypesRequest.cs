@@ -13,12 +13,19 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public List<string> LeaveCodes { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>manager233</para>
+        /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]
         public string OpUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1</para>
         /// </summary>
         [NameInMap("source")]
         [Validation(Required=false)]

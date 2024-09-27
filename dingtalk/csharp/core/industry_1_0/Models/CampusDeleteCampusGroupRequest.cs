@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class CampusDeleteCampusGroupRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>12345</para>
         /// </summary>
         [NameInMap("campusProjectGroupId")]
         [Validation(Required=false)]

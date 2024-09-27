@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0.Models
 {
     public class ExecuteAgentRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("agentCode")]
         [Validation(Required=false)]
         public string AgentCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("inputs")]
         [Validation(Required=false)]

@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0.Models
 {
     public class CreateAssistantMessageRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
@@ -21,7 +21,7 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0.Models
         public Dictionary<string, object> Metadata { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("role")]
         [Validation(Required=false)]

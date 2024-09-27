@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class GroupQueryByAttrRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]
@@ -29,14 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public List<GroupQueryByAttrRequestListDynamicAttr> ListDynamicAttr { get; set; }
         public class GroupQueryByAttrRequestListDynamicAttr : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("attrCode")]
             [Validation(Required=false)]
             public string AttrCode { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("listAttrOptionsCode")]
             [Validation(Required=false)]
@@ -53,7 +53,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public int? PageSize { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("secretKey")]
         [Validation(Required=false)]

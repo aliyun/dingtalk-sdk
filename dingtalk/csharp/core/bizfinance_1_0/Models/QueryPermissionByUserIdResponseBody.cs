@@ -27,6 +27,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123456789</para>
+        /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }

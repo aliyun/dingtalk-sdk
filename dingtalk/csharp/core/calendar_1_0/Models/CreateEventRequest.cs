@@ -45,14 +45,26 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         [Validation(Required=false)]
         public CreateEventRequestEnd End { get; set; }
         public class CreateEventRequestEnd : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>2020-01-01</para>
+            /// </summary>
             [NameInMap("date")]
             [Validation(Required=false)]
             public string Date { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>2020-01-01T10:15:30+08:00</para>
+            /// </summary>
             [NameInMap("dateTime")]
             [Validation(Required=false)]
             public string DateTime { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>Asia/Shanghai</para>
+            /// </summary>
             [NameInMap("timeZone")]
             [Validation(Required=false)]
             public string TimeZone { get; set; }
@@ -126,7 +138,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             public CreateEventRequestRecurrenceRange Range { get; set; }
             public class CreateEventRequestRecurrenceRange : TeaModel {
                 /// <summary>
-                /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
                 /// </summary>
                 [NameInMap("endDate")]
                 [Validation(Required=false)]
@@ -169,20 +181,32 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("start")]
         [Validation(Required=false)]
         public CreateEventRequestStart Start { get; set; }
         public class CreateEventRequestStart : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>2020-01-01</para>
+            /// </summary>
             [NameInMap("date")]
             [Validation(Required=false)]
             public string Date { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>2020-01-01T10:15:30+08:00</para>
+            /// </summary>
             [NameInMap("dateTime")]
             [Validation(Required=false)]
             public string DateTime { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>Asia/Shanghai</para>
+            /// </summary>
             [NameInMap("timeZone")]
             [Validation(Required=false)]
             public string TimeZone { get; set; }
@@ -190,7 +214,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("summary")]
         [Validation(Required=false)]

@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public string UserExtendKey { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userIds")]
         [Validation(Required=false)]

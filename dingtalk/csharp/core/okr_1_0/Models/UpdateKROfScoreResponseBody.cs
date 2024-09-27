@@ -10,14 +10,17 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class UpdateKROfScoreResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public UpdateKROfScoreResponseBodyData Data { get; set; }
         public class UpdateKROfScoreResponseBodyData : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>50</para>
             /// </summary>
             [NameInMap("objectiveScore")]
             [Validation(Required=false)]
@@ -26,7 +29,10 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>true</para>
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

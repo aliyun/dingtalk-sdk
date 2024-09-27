@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkyun_shu_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkyun_shu_1_0
         }
 
 
-        /**
-         * @summary 生态日志数据互通
-         *
-         * @param request SaveOpenExternalLogRequest
-         * @param headers SaveOpenExternalLogHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SaveOpenExternalLogResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生态日志数据互通</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveOpenExternalLogRequest
+        /// </param>
+        /// <param name="headers">
+        /// SaveOpenExternalLogHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveOpenExternalLogResponse
+        /// </returns>
         public SaveOpenExternalLogResponse SaveOpenExternalLogWithOptions(SaveOpenExternalLogRequest request, SaveOpenExternalLogHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -85,14 +96,24 @@ namespace AlibabaCloud.SDK.Dingtalkyun_shu_1_0
             return TeaModel.ToObject<SaveOpenExternalLogResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 生态日志数据互通
-         *
-         * @param request SaveOpenExternalLogRequest
-         * @param headers SaveOpenExternalLogHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SaveOpenExternalLogResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生态日志数据互通</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveOpenExternalLogRequest
+        /// </param>
+        /// <param name="headers">
+        /// SaveOpenExternalLogHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveOpenExternalLogResponse
+        /// </returns>
         public async Task<SaveOpenExternalLogResponse> SaveOpenExternalLogWithOptionsAsync(SaveOpenExternalLogRequest request, SaveOpenExternalLogHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -142,12 +163,18 @@ namespace AlibabaCloud.SDK.Dingtalkyun_shu_1_0
             return TeaModel.ToObject<SaveOpenExternalLogResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 生态日志数据互通
-         *
-         * @param request SaveOpenExternalLogRequest
-         * @return SaveOpenExternalLogResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生态日志数据互通</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveOpenExternalLogRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveOpenExternalLogResponse
+        /// </returns>
         public SaveOpenExternalLogResponse SaveOpenExternalLog(SaveOpenExternalLogRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -155,12 +182,18 @@ namespace AlibabaCloud.SDK.Dingtalkyun_shu_1_0
             return SaveOpenExternalLogWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 生态日志数据互通
-         *
-         * @param request SaveOpenExternalLogRequest
-         * @return SaveOpenExternalLogResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生态日志数据互通</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveOpenExternalLogRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveOpenExternalLogResponse
+        /// </returns>
         public async Task<SaveOpenExternalLogResponse> SaveOpenExternalLogAsync(SaveOpenExternalLogRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

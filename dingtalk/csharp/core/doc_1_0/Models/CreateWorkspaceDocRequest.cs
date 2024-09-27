@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class CreateWorkspaceDocRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("docType")]
         [Validation(Required=false)]
         public string DocType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]
@@ -38,6 +38,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public string TemplateId { get; set; }
 
+        /// <summary>
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
         [NameInMap("templateType")]
         [Validation(Required=false)]
         public string TemplateType { get; set; }

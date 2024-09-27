@@ -9,40 +9,56 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class AddLeadsRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1669360918000</para>
+        /// </summary>
         [NameInMap("assignTimestamp")]
         [Validation(Required=false)]
         public long? AssignTimestamp { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>manager1234</para>
         /// </summary>
         [NameInMap("assignUserId")]
         [Validation(Required=false)]
         public string AssignUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>manager1234</para>
         /// </summary>
         [NameInMap("assignedUserId")]
         [Validation(Required=false)]
         public string AssignedUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("leads")]
         [Validation(Required=false)]
         public List<AddLeadsRequestLeads> Leads { get; set; }
         public class AddLeadsRequestLeads : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>XX公司</para>
             /// </summary>
             [NameInMap("leadsName")]
             [Validation(Required=false)]
             public string LeadsName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>fasd123125</para>
             /// </summary>
             [NameInMap("outLeadsId")]
             [Validation(Required=false)]
@@ -51,7 +67,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>t123123123</para>
         /// </summary>
         [NameInMap("outTaskId")]
         [Validation(Required=false)]

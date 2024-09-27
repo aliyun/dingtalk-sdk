@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0.Models
 {
     public class GetSsoUserInfoRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]

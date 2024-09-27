@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class ListParentByDeptRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("departmentId")]
         [Validation(Required=false)]
         public long? DepartmentId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("subCorpId")]
         [Validation(Required=false)]

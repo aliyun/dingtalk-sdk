@@ -10,28 +10,37 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class UpdateMemberBanWordsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>300000</para>
         /// </summary>
         [NameInMap("muteDuration")]
         [Validation(Required=false)]
         public long? MuteDuration { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1</para>
         /// </summary>
         [NameInMap("muteStatus")]
         [Validation(Required=false)]
         public int? MuteStatus { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>cid5d5uM3XEw3gxbNc/n7EQ4g==</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userIdList")]
         [Validation(Required=false)]

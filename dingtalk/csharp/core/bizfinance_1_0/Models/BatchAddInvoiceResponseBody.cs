@@ -13,10 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public List<BatchAddInvoiceResponseBodyErrorResult> ErrorResult { get; set; }
         public class BatchAddInvoiceResponseBodyErrorResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>abc</para>
+            /// </summary>
             [NameInMap("errorKey")]
             [Validation(Required=false)]
             public string ErrorKey { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>abc</para>
+            /// </summary>
             [NameInMap("errorMsg")]
             [Validation(Required=false)]
             public string ErrorMsg { get; set; }

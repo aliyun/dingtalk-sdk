@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class QuerySingleGroupRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1745****8777</para>
         /// </summary>
         [NameInMap("groupMembers")]
         [Validation(Required=false)]
         public List<QuerySingleGroupRequestGroupMembers> GroupMembers { get; set; }
         public class QuerySingleGroupRequestGroupMembers : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1107****2120</para>
             /// </summary>
             [NameInMap("appUserId")]
             [Validation(Required=false)]
             public string AppUserId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1745****8778</para>
             /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
@@ -33,7 +42,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>14da****2760</para>
         /// </summary>
         [NameInMap("groupTemplateId")]
         [Validation(Required=false)]

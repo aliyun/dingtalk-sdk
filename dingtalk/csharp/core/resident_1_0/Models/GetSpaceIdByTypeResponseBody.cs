@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
 {
     public class GetSpaceIdByTypeResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>12343</para>
         /// </summary>
         [NameInMap("referId")]
         [Validation(Required=false)]

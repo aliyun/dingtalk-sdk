@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
 {
     public class GetSpaceIdByTypeRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>PROPERTY_STAFF_DEPT</para>
         /// </summary>
         [NameInMap("departmentType")]
         [Validation(Required=false)]

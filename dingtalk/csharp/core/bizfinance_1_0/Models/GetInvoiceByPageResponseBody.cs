@@ -127,6 +127,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [Validation(Required=false)]
                 public string InvoiceNo { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>abc</para>
+                /// </summary>
                 [NameInMap("invoiceStatus")]
                 [Validation(Required=false)]
                 public string InvoiceStatus { get; set; }

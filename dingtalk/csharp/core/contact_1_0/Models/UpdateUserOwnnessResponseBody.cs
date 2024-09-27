@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class UpdateUserOwnnessResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123456</para>
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]

@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         [Validation(Required=false)]
         public List<ListAppRoleScopesResponseBodyDataList> DataList { get; set; }
         public class ListAppRoleScopesResponseBodyDataList : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>false</para>
+            /// </summary>
             [NameInMap("canManageRole")]
             [Validation(Required=false)]
             public bool? CanManageRole { get; set; }
@@ -21,18 +25,34 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
             [Validation(Required=false)]
             public List<long?> DeptIdList { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>123</para>
+            /// </summary>
             [NameInMap("roleId")]
             [Validation(Required=false)]
             public long? RoleId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>财务</para>
+            /// </summary>
             [NameInMap("roleName")]
             [Validation(Required=false)]
             public string RoleName { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>PART_VISIBLE</para>
+            /// </summary>
             [NameInMap("scopeType")]
             [Validation(Required=false)]
             public string ScopeType { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>123</para>
+            /// </summary>
             [NameInMap("scopeVersion")]
             [Validation(Required=false)]
             public long? ScopeVersion { get; set; }
@@ -43,10 +63,18 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("hasMore")]
         [Validation(Required=false)]
         public bool? HasMore { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>0</para>
+        /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public long? NextToken { get; set; }

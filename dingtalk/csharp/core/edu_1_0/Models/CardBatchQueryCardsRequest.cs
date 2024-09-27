@@ -10,28 +10,37 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class CardBatchQueryCardsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>industry_center</para>
         /// </summary>
         [NameInMap("cardBizCode")]
         [Validation(Required=false)]
         public string CardBizCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("cardIds")]
         [Validation(Required=false)]
         public List<long?> CardIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>YUFANAI</para>
         /// </summary>
         [NameInMap("sourceType")]
         [Validation(Required=false)]
         public string SourceType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1678445875001</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

@@ -14,14 +14,14 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public GetUploadInfoResponseBodyHeaderSignatureUploadInfo HeaderSignatureUploadInfo { get; set; }
         public class GetUploadInfoResponseBodyHeaderSignatureUploadInfo : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("expirationSeconds")]
             [Validation(Required=false)]
             public int? ExpirationSeconds { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("headers")]
             [Validation(Required=false)]
@@ -32,14 +32,14 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public string InternalResourceUrl { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("mediaId")]
             [Validation(Required=false)]
             public string MediaId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("resourceUrl")]
             [Validation(Required=false)]
@@ -56,42 +56,42 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public GetUploadInfoResponseBodyStsUploadInfo StsUploadInfo { get; set; }
         public class GetUploadInfoResponseBodyStsUploadInfo : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("accessKeyId")]
             [Validation(Required=false)]
             public string AccessKeyId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("accessKeySecret")]
             [Validation(Required=false)]
             public string AccessKeySecret { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("accessToken")]
             [Validation(Required=false)]
             public string AccessToken { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("accessTokenExpirationMillis")]
             [Validation(Required=false)]
             public long? AccessTokenExpirationMillis { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("bucket")]
             [Validation(Required=false)]
             public string Bucket { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("endPoint")]
             [Validation(Required=false)]
@@ -102,7 +102,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public string InternalEndPoint { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("mediaId")]
             [Validation(Required=false)]

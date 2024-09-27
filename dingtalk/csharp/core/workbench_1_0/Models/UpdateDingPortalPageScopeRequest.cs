@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0.Models
 {
     public class UpdateDingPortalPageScopeRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>false</para>
         /// </summary>
         [NameInMap("allVisible")]
         [Validation(Required=false)]

@@ -10,21 +10,27 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
     public class StopStreamOutRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>true</para>
         /// </summary>
         [NameInMap("stopAllStream")]
         [Validation(Required=false)]
         public bool? StopAllStream { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>27SaQ3iiHLN0uwqcPisedfreNwiEiE</para>
         /// </summary>
         [NameInMap("streamId")]
         [Validation(Required=false)]
         public string StreamId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

@@ -9,10 +9,18 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class DigitalStoreExportCardRecordRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1696917858123</para>
+        /// </summary>
         [NameInMap("beginTime")]
         [Validation(Required=false)]
         public long? BeginTime { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1696918858123</para>
+        /// </summary>
         [NameInMap("endTime")]
         [Validation(Required=false)]
         public long? EndTime { get; set; }
@@ -21,6 +29,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public List<long?> Ids { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>场景卡片名称</para>
+        /// </summary>
         [NameInMap("sceneCardName")]
         [Validation(Required=false)]
         public string SceneCardName { get; set; }

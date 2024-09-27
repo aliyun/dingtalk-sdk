@@ -495,6 +495,10 @@ namespace AlibabaCloud.SDK.Dingtalkjobs_1_0.Models
         [Validation(Required=false)]
         public List<string> Types { get; set; }
 
+        /// <summary>
+        /// <b>if can be null:</b>
+        /// <c>false</c>
+        /// </summary>
         [NameInMap("userIdentify")]
         [Validation(Required=false)]
         public string UserIdentify { get; set; }

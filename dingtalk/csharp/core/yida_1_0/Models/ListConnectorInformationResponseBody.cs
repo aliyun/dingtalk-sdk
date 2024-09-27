@@ -9,10 +9,18 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class ListConnectorInformationResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public int? PageNumber { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>100</para>
+        /// </summary>
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public int? PageSize { get; set; }
@@ -61,6 +69,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>100</para>
+        /// </summary>
         [NameInMap("totalCount")]
         [Validation(Required=false)]
         public long? TotalCount { get; set; }

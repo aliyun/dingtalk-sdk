@@ -18,7 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         public List<GetRecentOpenDocsResponseBodyRecentList> RecentList { get; set; }
         public class GetRecentOpenDocsResponseBodyRecentList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("nodeBO")]
             [Validation(Required=false)]
@@ -37,21 +37,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 public bool? IsDeleted { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("lastOpenTime")]
                 [Validation(Required=false)]
                 public long? LastOpenTime { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("nodeId")]
                 [Validation(Required=false)]
                 public string NodeId { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("nodeName")]
                 [Validation(Required=false)]
@@ -62,7 +62,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 public long? UpdateTime { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("url")]
                 [Validation(Required=false)]
@@ -71,7 +71,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("workspaceBO")]
             [Validation(Required=false)]
@@ -82,14 +82,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 public string Url { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("workspaceId")]
                 [Validation(Required=false)]
                 public string WorkspaceId { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("workspaceName")]
                 [Validation(Required=false)]

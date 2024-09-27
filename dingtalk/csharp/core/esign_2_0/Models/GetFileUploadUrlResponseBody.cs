@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
 {
     public class GetFileUploadUrlResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("fileId")]
         [Validation(Required=false)]
         public string FileId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("uploadUrl")]
         [Validation(Required=false)]

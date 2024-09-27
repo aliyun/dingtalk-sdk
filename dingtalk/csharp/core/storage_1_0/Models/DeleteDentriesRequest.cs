@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 {
     public class DeleteDentriesRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("dentryIds")]
         [Validation(Required=false)]
@@ -20,6 +20,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public DeleteDentriesRequestOption Option { get; set; }
         public class DeleteDentriesRequestOption : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>true</para>
+            /// </summary>
             [NameInMap("toRecycleBin")]
             [Validation(Required=false)]
             public bool? ToRecycleBin { get; set; }
@@ -27,7 +31,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

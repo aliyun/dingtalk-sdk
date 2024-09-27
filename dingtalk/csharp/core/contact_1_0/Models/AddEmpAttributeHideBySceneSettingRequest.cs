@@ -19,6 +19,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>description text</para>
+        /// </summary>
         [NameInMap("description")]
         [Validation(Required=false)]
         public string Description { get; set; }
@@ -39,6 +43,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [Validation(Required=false)]
         public List<string> HideFields { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>test name</para>
+        /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }

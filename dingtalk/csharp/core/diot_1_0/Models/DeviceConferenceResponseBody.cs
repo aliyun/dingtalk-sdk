@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdiot_1_0.Models
 {
     public class DeviceConferenceResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123456789</para>
+        /// </summary>
         [NameInMap("conferenceId")]
         [Validation(Required=false)]
         public string ConferenceId { get; set; }

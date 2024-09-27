@@ -14,21 +14,21 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         public List<long?> DeptIdList { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]
         public string OpUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("scopeType")]
         [Validation(Required=false)]
         public string ScopeType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("scopeVersion")]
         [Validation(Required=false)]

@@ -29,6 +29,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             [Validation(Required=false)]
             public string PositionDes { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>ac67286db74c48e28d787173ccc1a111</para>
+            /// </summary>
             [NameInMap("positionId")]
             [Validation(Required=false)]
             public string PositionId { get; set; }

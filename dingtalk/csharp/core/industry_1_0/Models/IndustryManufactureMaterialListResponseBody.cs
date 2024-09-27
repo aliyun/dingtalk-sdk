@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class IndustryManufactureMaterialListResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("hasMore")]
         [Validation(Required=false)]
@@ -21,84 +21,84 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<IndustryManufactureMaterialListResponseBodyList> List { get; set; }
         public class IndustryManufactureMaterialListResponseBodyList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("category")]
             [Validation(Required=false)]
             public string Category { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("corpId")]
             [Validation(Required=false)]
             public string CorpId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("ext")]
             [Validation(Required=false)]
             public string Ext { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("instanceId")]
             [Validation(Required=false)]
             public string InstanceId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("materialName")]
             [Validation(Required=false)]
             public string MaterialName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("materialNo")]
             [Validation(Required=false)]
             public string MaterialNo { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("processCode")]
             [Validation(Required=false)]
             public string ProcessCode { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("specification")]
             [Validation(Required=false)]
             public string Specification { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("stockMaxWarn")]
             [Validation(Required=false)]
             public float? StockMaxWarn { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("stockMinWarn")]
             [Validation(Required=false)]
             public float? StockMinWarn { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("type")]
             [Validation(Required=false)]
             public string Type { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("unit")]
             [Validation(Required=false)]
@@ -107,14 +107,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("nextCursor")]
         [Validation(Required=false)]
         public long? NextCursor { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("totalCount")]
         [Validation(Required=false)]

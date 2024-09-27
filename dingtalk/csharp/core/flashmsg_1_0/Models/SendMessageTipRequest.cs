@@ -29,6 +29,10 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
             [Validation(Required=false)]
             public string AuthMediaId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>闪读消息卡片1</para>
+            /// </summary>
             [NameInMap("cardTitle")]
             [Validation(Required=false)]
             public string CardTitle { get; set; }
@@ -37,6 +41,10 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
             [Validation(Required=false)]
             public string CardTitleColor { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>查看详情</para>
+            /// </summary>
             [NameInMap("desc")]
             [Validation(Required=false)]
             public string Desc { get; set; }
@@ -53,6 +61,10 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
             [Validation(Required=false)]
             public string Summary { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>闪读消息卡片2</para>
+            /// </summary>
             [NameInMap("title")]
             [Validation(Required=false)]
             public string Title { get; set; }
@@ -60,14 +72,20 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>msg_f9aae78558b34e20a5badead4c29244c_123</para>
         /// </summary>
         [NameInMap("messageId")]
         [Validation(Required=false)]
         public string MessageId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>cidVcYPzxnAySJOMhYX2QDbLwUA==</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
@@ -81,10 +99,18 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
         [Validation(Required=false)]
         public SendMessageTipRequestPublicField PublicField { get; set; }
         public class SendMessageTipRequestPublicField : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>dingtalk://dingtalkclient/page/link33</para>
+            /// </summary>
             [NameInMap("detailUrl")]
             [Validation(Required=false)]
             public string DetailUrl { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>限时阅读5分钟</para>
+            /// </summary>
             [NameInMap("durationDesc")]
             [Validation(Required=false)]
             public string DurationDesc { get; set; }
@@ -97,10 +123,18 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
             [Validation(Required=false)]
             public bool? IsExpired { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>dingtalk://dingtalkclient/page/linkxx</para>
+            /// </summary>
             [NameInMap("readActionUrl")]
             [Validation(Required=false)]
             public string ReadActionUrl { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>已查收 0/1</para>
+            /// </summary>
             [NameInMap("readProgressDesc")]
             [Validation(Required=false)]
             public string ReadProgressDesc { get; set; }
@@ -108,12 +142,16 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("receiverUserId")]
         [Validation(Required=false)]
         public List<string> ReceiverUserId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>0808541222161261721</para>
+        /// </summary>
         [NameInMap("senderUserId")]
         [Validation(Required=false)]
         public string SenderUserId { get; set; }

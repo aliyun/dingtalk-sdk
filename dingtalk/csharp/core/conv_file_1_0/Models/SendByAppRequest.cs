@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalkconv_file_1_0.Models
 {
     public class SendByAppRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>file_id</para>
         /// </summary>
         [NameInMap("dentryId")]
         [Validation(Required=false)]
         public string DentryId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>space_id</para>
         /// </summary>
         [NameInMap("spaceId")]
         [Validation(Required=false)]
         public string SpaceId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

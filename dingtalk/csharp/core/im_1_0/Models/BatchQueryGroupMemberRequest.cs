@@ -14,7 +14,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string CoolAppCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>200</para>
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
@@ -25,7 +28,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string NextToken { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>cidXXXXXXX</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]

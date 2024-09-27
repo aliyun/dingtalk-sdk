@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string GmtModified { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>5</para>
+        /// </summary>
         [NameInMap("groupChatCount")]
         [Validation(Required=false)]
         public int? GroupChatCount { get; set; }
@@ -30,7 +34,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public string LastOpenConversationId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("manager")]
         [Validation(Required=false)]
@@ -75,7 +79,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public string OpenGroupSetId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("owner")]
         [Validation(Required=false)]

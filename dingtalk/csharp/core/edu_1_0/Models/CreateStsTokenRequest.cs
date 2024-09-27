@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class CreateStsTokenRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>fjke/12-131jk</para>
         /// </summary>
         [NameInMap("deviceSn")]
         [Validation(Required=false)]
         public string DeviceSn { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>sls</para>
         /// </summary>
         [NameInMap("stsType")]
         [Validation(Required=false)]

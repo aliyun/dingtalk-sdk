@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0.Models
 {
     public class QueryDeviceVideoConferenceBookResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
         public string Code { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("conferenceId")]
         [Validation(Required=false)]

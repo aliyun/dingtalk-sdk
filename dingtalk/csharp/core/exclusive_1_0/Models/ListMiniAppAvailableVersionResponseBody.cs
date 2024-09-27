@@ -14,14 +14,20 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public List<ListMiniAppAvailableVersionResponseBodyList> List { get; set; }
         public class ListMiniAppAvailableVersionResponseBodyList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1</para>
             /// </summary>
             [NameInMap("buildStatus")]
             [Validation(Required=false)]
             public long? BuildStatus { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>0.0.5</para>
             /// </summary>
             [NameInMap("version")]
             [Validation(Required=false)]

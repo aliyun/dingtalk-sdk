@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class ListRecycleFilesResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public string NextToken { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("recycleItems")]
         [Validation(Required=false)]
@@ -28,51 +28,50 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public string ContentType { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("deleteStaffId")]
             [Validation(Required=false)]
             public string DeleteStaffId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
-            /// 
-            /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+            /// <para>This parameter is required.</para>
+            /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
             /// </summary>
             [NameInMap("deleteTime")]
             [Validation(Required=false)]
             public string DeleteTime { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("fileName")]
             [Validation(Required=false)]
             public string FileName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("filePath")]
             [Validation(Required=false)]
             public string FilePath { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("fileSize")]
             [Validation(Required=false)]
             public long? FileSize { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("fileType")]
             [Validation(Required=false)]
             public string FileType { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("recycleItemId")]
             [Validation(Required=false)]

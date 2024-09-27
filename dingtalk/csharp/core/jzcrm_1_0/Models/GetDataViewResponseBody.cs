@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
 {
     public class GetDataViewResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public GetDataViewResponseBodyData Data { get; set; }
         public class GetDataViewResponseBodyData : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("detail")]
             [Validation(Required=false)]
@@ -26,14 +26,14 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("dataname")]
         [Validation(Required=false)]
         public Dictionary<string, Dictionary<string, object>> Dataname { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("time")]
         [Validation(Required=false)]

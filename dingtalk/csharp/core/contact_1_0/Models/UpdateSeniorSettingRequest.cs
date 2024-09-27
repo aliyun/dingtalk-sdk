@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class UpdateSeniorSettingRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("open")]
         [Validation(Required=false)]
@@ -33,7 +33,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public List<string> ProtectScenes { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("seniorStaffId")]
         [Validation(Required=false)]

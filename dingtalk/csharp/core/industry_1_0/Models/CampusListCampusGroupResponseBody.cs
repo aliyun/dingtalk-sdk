@@ -13,14 +13,26 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public List<CampusListCampusGroupResponseBodyResult> Result { get; set; }
         public class CampusListCampusGroupResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>扩展</para>
+            /// </summary>
             [NameInMap("extend")]
             [Validation(Required=false)]
             public string Extend { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>10101</para>
+            /// </summary>
             [NameInMap("groupDeptId")]
             [Validation(Required=false)]
             public long? GroupDeptId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>测试项目组</para>
+            /// </summary>
             [NameInMap("groupName")]
             [Validation(Required=false)]
             public string GroupName { get; set; }

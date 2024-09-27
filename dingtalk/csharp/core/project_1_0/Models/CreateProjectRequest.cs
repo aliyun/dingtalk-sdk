@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class CreateProjectRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>项目1</para>
+        /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }

@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0.Models
         public string ContactName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("contactPhoneNum")]
         [Validation(Required=false)]
@@ -25,21 +25,24 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0.Models
         public string ContactTitle { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>if can be null:</b>
+        /// <c>false</c>
         /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
         public string Content { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]
         public string CorpId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("inputPhoneNum")]
         [Validation(Required=false)]

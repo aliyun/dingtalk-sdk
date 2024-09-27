@@ -9,16 +9,27 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class UpdateOrganizationTaskStatusRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>false</para>
+        /// </summary>
         [NameInMap("disableActivity")]
         [Validation(Required=false)]
         public bool? DisableActivity { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>false</para>
+        /// </summary>
         [NameInMap("disableNotification")]
         [Validation(Required=false)]
         public bool? DisableNotification { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>true</para>
         /// </summary>
         [NameInMap("isDone")]
         [Validation(Required=false)]

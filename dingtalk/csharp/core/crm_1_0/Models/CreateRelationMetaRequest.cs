@@ -10,42 +10,42 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class CreateRelationMetaRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("operatorUserId")]
         [Validation(Required=false)]
         public string OperatorUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("relationMetaDTO")]
         [Validation(Required=false)]
         public CreateRelationMetaRequestRelationMetaDTO RelationMetaDTO { get; set; }
         public class CreateRelationMetaRequestRelationMetaDTO : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("desc")]
             [Validation(Required=false)]
             public string Desc { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("items")]
             [Validation(Required=false)]
             public List<CreateRelationMetaRequestRelationMetaDTOItems> Items { get; set; }
             public class CreateRelationMetaRequestRelationMetaDTOItems : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("componentName")]
                 [Validation(Required=false)]
                 public string ComponentName { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("props")]
                 [Validation(Required=false)]
@@ -56,7 +56,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                     public string Align { get; set; }
 
                     /// <summary>
-                    /// This parameter is required.
+                    /// <para>This parameter is required.</para>
                     /// </summary>
                     [NameInMap("bizAlias")]
                     [Validation(Required=false)]
@@ -91,7 +91,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                     public bool? Invisible { get; set; }
 
                     /// <summary>
-                    /// This parameter is required.
+                    /// <para>This parameter is required.</para>
                     /// </summary>
                     [NameInMap("label")]
                     [Validation(Required=false)]
@@ -140,7 +140,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                     public string Placeholder { get; set; }
 
                     /// <summary>
-                    /// This parameter is required.
+                    /// <para>This parameter is required.</para>
                     /// </summary>
                     [NameInMap("required")]
                     [Validation(Required=false)]
@@ -163,14 +163,14 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("relationType")]
             [Validation(Required=false)]
@@ -179,7 +179,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("tenant")]
         [Validation(Required=false)]

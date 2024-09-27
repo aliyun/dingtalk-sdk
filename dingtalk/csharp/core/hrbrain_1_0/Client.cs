@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
         }
 
 
-        /**
-         * @summary 集成奖励记录
-         *
-         * @param request HrbrainImportAwardDetailRequest
-         * @param headers HrbrainImportAwardDetailHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportAwardDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成奖励记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportAwardDetailRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportAwardDetailHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportAwardDetailResponse
+        /// </returns>
         public HrbrainImportAwardDetailResponse HrbrainImportAwardDetailWithOptions(HrbrainImportAwardDetailRequest request, HrbrainImportAwardDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -74,14 +85,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportAwardDetailResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成奖励记录
-         *
-         * @param request HrbrainImportAwardDetailRequest
-         * @param headers HrbrainImportAwardDetailHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportAwardDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成奖励记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportAwardDetailRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportAwardDetailHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportAwardDetailResponse
+        /// </returns>
         public async Task<HrbrainImportAwardDetailResponse> HrbrainImportAwardDetailWithOptionsAsync(HrbrainImportAwardDetailRequest request, HrbrainImportAwardDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -120,12 +141,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportAwardDetailResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成奖励记录
-         *
-         * @param request HrbrainImportAwardDetailRequest
-         * @return HrbrainImportAwardDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成奖励记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportAwardDetailRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportAwardDetailResponse
+        /// </returns>
         public HrbrainImportAwardDetailResponse HrbrainImportAwardDetail(HrbrainImportAwardDetailRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -133,12 +160,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return HrbrainImportAwardDetailWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成奖励记录
-         *
-         * @param request HrbrainImportAwardDetailRequest
-         * @return HrbrainImportAwardDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成奖励记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportAwardDetailRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportAwardDetailResponse
+        /// </returns>
         public async Task<HrbrainImportAwardDetailResponse> HrbrainImportAwardDetailAsync(HrbrainImportAwardDetailRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -146,14 +179,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return await HrbrainImportAwardDetailWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成组织架构
-         *
-         * @param request HrbrainImportDeptInfoRequest
-         * @param headers HrbrainImportDeptInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成组织架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportDeptInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportDeptInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportDeptInfoResponse
+        /// </returns>
         public HrbrainImportDeptInfoResponse HrbrainImportDeptInfoWithOptions(HrbrainImportDeptInfoRequest request, HrbrainImportDeptInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -192,14 +235,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportDeptInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成组织架构
-         *
-         * @param request HrbrainImportDeptInfoRequest
-         * @param headers HrbrainImportDeptInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成组织架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportDeptInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportDeptInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportDeptInfoResponse
+        /// </returns>
         public async Task<HrbrainImportDeptInfoResponse> HrbrainImportDeptInfoWithOptionsAsync(HrbrainImportDeptInfoRequest request, HrbrainImportDeptInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -238,12 +291,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportDeptInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成组织架构
-         *
-         * @param request HrbrainImportDeptInfoRequest
-         * @return HrbrainImportDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成组织架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportDeptInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportDeptInfoResponse
+        /// </returns>
         public HrbrainImportDeptInfoResponse HrbrainImportDeptInfo(HrbrainImportDeptInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -251,12 +310,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return HrbrainImportDeptInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成组织架构
-         *
-         * @param request HrbrainImportDeptInfoRequest
-         * @return HrbrainImportDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成组织架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportDeptInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportDeptInfoResponse
+        /// </returns>
         public async Task<HrbrainImportDeptInfoResponse> HrbrainImportDeptInfoAsync(HrbrainImportDeptInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -264,14 +329,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return await HrbrainImportDeptInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成离职信息
-         *
-         * @param request HrbrainImportDimissionRequest
-         * @param headers HrbrainImportDimissionHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportDimissionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成离职信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportDimissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportDimissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportDimissionResponse
+        /// </returns>
         public HrbrainImportDimissionResponse HrbrainImportDimissionWithOptions(HrbrainImportDimissionRequest request, HrbrainImportDimissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -310,14 +385,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportDimissionResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成离职信息
-         *
-         * @param request HrbrainImportDimissionRequest
-         * @param headers HrbrainImportDimissionHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportDimissionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成离职信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportDimissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportDimissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportDimissionResponse
+        /// </returns>
         public async Task<HrbrainImportDimissionResponse> HrbrainImportDimissionWithOptionsAsync(HrbrainImportDimissionRequest request, HrbrainImportDimissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -356,12 +441,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportDimissionResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成离职信息
-         *
-         * @param request HrbrainImportDimissionRequest
-         * @return HrbrainImportDimissionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成离职信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportDimissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportDimissionResponse
+        /// </returns>
         public HrbrainImportDimissionResponse HrbrainImportDimission(HrbrainImportDimissionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -369,12 +460,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return HrbrainImportDimissionWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成离职信息
-         *
-         * @param request HrbrainImportDimissionRequest
-         * @return HrbrainImportDimissionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成离职信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportDimissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportDimissionResponse
+        /// </returns>
         public async Task<HrbrainImportDimissionResponse> HrbrainImportDimissionAsync(HrbrainImportDimissionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -382,14 +479,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return await HrbrainImportDimissionWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成教育经历
-         *
-         * @param request HrbrainImportEduExpRequest
-         * @param headers HrbrainImportEduExpHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportEduExpResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成教育经历</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportEduExpRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportEduExpHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportEduExpResponse
+        /// </returns>
         public HrbrainImportEduExpResponse HrbrainImportEduExpWithOptions(HrbrainImportEduExpRequest request, HrbrainImportEduExpHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -428,14 +535,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportEduExpResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成教育经历
-         *
-         * @param request HrbrainImportEduExpRequest
-         * @param headers HrbrainImportEduExpHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportEduExpResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成教育经历</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportEduExpRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportEduExpHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportEduExpResponse
+        /// </returns>
         public async Task<HrbrainImportEduExpResponse> HrbrainImportEduExpWithOptionsAsync(HrbrainImportEduExpRequest request, HrbrainImportEduExpHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -474,12 +591,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportEduExpResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成教育经历
-         *
-         * @param request HrbrainImportEduExpRequest
-         * @return HrbrainImportEduExpResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成教育经历</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportEduExpRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportEduExpResponse
+        /// </returns>
         public HrbrainImportEduExpResponse HrbrainImportEduExp(HrbrainImportEduExpRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -487,12 +610,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return HrbrainImportEduExpWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成教育经历
-         *
-         * @param request HrbrainImportEduExpRequest
-         * @return HrbrainImportEduExpResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成教育经历</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportEduExpRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportEduExpResponse
+        /// </returns>
         public async Task<HrbrainImportEduExpResponse> HrbrainImportEduExpAsync(HrbrainImportEduExpRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -500,14 +629,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return await HrbrainImportEduExpWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成人员信息
-         *
-         * @param request HrbrainImportEmpInfoRequest
-         * @param headers HrbrainImportEmpInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportEmpInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成人员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportEmpInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportEmpInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportEmpInfoResponse
+        /// </returns>
         public HrbrainImportEmpInfoResponse HrbrainImportEmpInfoWithOptions(HrbrainImportEmpInfoRequest request, HrbrainImportEmpInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -546,14 +685,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportEmpInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成人员信息
-         *
-         * @param request HrbrainImportEmpInfoRequest
-         * @param headers HrbrainImportEmpInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportEmpInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成人员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportEmpInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportEmpInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportEmpInfoResponse
+        /// </returns>
         public async Task<HrbrainImportEmpInfoResponse> HrbrainImportEmpInfoWithOptionsAsync(HrbrainImportEmpInfoRequest request, HrbrainImportEmpInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -592,12 +741,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportEmpInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成人员信息
-         *
-         * @param request HrbrainImportEmpInfoRequest
-         * @return HrbrainImportEmpInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成人员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportEmpInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportEmpInfoResponse
+        /// </returns>
         public HrbrainImportEmpInfoResponse HrbrainImportEmpInfo(HrbrainImportEmpInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -605,12 +760,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return HrbrainImportEmpInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成人员信息
-         *
-         * @param request HrbrainImportEmpInfoRequest
-         * @return HrbrainImportEmpInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成人员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportEmpInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportEmpInfoResponse
+        /// </returns>
         public async Task<HrbrainImportEmpInfoResponse> HrbrainImportEmpInfoAsync(HrbrainImportEmpInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -618,14 +779,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return await HrbrainImportEmpInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成基础标签
-         *
-         * @param request HrbrainImportLabelBaseRequest
-         * @param headers HrbrainImportLabelBaseHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportLabelBaseResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成基础标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportLabelBaseRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportLabelBaseHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportLabelBaseResponse
+        /// </returns>
         public HrbrainImportLabelBaseResponse HrbrainImportLabelBaseWithOptions(HrbrainImportLabelBaseRequest request, HrbrainImportLabelBaseHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -664,14 +835,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportLabelBaseResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成基础标签
-         *
-         * @param request HrbrainImportLabelBaseRequest
-         * @param headers HrbrainImportLabelBaseHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportLabelBaseResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成基础标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportLabelBaseRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportLabelBaseHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportLabelBaseResponse
+        /// </returns>
         public async Task<HrbrainImportLabelBaseResponse> HrbrainImportLabelBaseWithOptionsAsync(HrbrainImportLabelBaseRequest request, HrbrainImportLabelBaseHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -710,12 +891,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportLabelBaseResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成基础标签
-         *
-         * @param request HrbrainImportLabelBaseRequest
-         * @return HrbrainImportLabelBaseResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成基础标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportLabelBaseRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportLabelBaseResponse
+        /// </returns>
         public HrbrainImportLabelBaseResponse HrbrainImportLabelBase(HrbrainImportLabelBaseRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -723,12 +910,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return HrbrainImportLabelBaseWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成基础标签
-         *
-         * @param request HrbrainImportLabelBaseRequest
-         * @return HrbrainImportLabelBaseResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成基础标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportLabelBaseRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportLabelBaseResponse
+        /// </returns>
         public async Task<HrbrainImportLabelBaseResponse> HrbrainImportLabelBaseAsync(HrbrainImportLabelBaseRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -736,14 +929,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return await HrbrainImportLabelBaseWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成自定义标签
-         *
-         * @param request HrbrainImportLabelCustomRequest
-         * @param headers HrbrainImportLabelCustomHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportLabelCustomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成自定义标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportLabelCustomRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportLabelCustomHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportLabelCustomResponse
+        /// </returns>
         public HrbrainImportLabelCustomResponse HrbrainImportLabelCustomWithOptions(HrbrainImportLabelCustomRequest request, HrbrainImportLabelCustomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -782,14 +985,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportLabelCustomResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成自定义标签
-         *
-         * @param request HrbrainImportLabelCustomRequest
-         * @param headers HrbrainImportLabelCustomHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportLabelCustomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成自定义标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportLabelCustomRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportLabelCustomHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportLabelCustomResponse
+        /// </returns>
         public async Task<HrbrainImportLabelCustomResponse> HrbrainImportLabelCustomWithOptionsAsync(HrbrainImportLabelCustomRequest request, HrbrainImportLabelCustomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -828,12 +1041,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportLabelCustomResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成自定义标签
-         *
-         * @param request HrbrainImportLabelCustomRequest
-         * @return HrbrainImportLabelCustomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成自定义标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportLabelCustomRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportLabelCustomResponse
+        /// </returns>
         public HrbrainImportLabelCustomResponse HrbrainImportLabelCustom(HrbrainImportLabelCustomRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -841,12 +1060,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return HrbrainImportLabelCustomWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成自定义标签
-         *
-         * @param request HrbrainImportLabelCustomRequest
-         * @return HrbrainImportLabelCustomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成自定义标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportLabelCustomRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportLabelCustomResponse
+        /// </returns>
         public async Task<HrbrainImportLabelCustomResponse> HrbrainImportLabelCustomAsync(HrbrainImportLabelCustomRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -854,14 +1079,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return await HrbrainImportLabelCustomWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成领域经验
-         *
-         * @param request HrbrainImportLabelIndustryRequest
-         * @param headers HrbrainImportLabelIndustryHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportLabelIndustryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成领域经验</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportLabelIndustryRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportLabelIndustryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportLabelIndustryResponse
+        /// </returns>
         public HrbrainImportLabelIndustryResponse HrbrainImportLabelIndustryWithOptions(HrbrainImportLabelIndustryRequest request, HrbrainImportLabelIndustryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -900,14 +1135,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportLabelIndustryResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成领域经验
-         *
-         * @param request HrbrainImportLabelIndustryRequest
-         * @param headers HrbrainImportLabelIndustryHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportLabelIndustryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成领域经验</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportLabelIndustryRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportLabelIndustryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportLabelIndustryResponse
+        /// </returns>
         public async Task<HrbrainImportLabelIndustryResponse> HrbrainImportLabelIndustryWithOptionsAsync(HrbrainImportLabelIndustryRequest request, HrbrainImportLabelIndustryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -946,12 +1191,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportLabelIndustryResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成领域经验
-         *
-         * @param request HrbrainImportLabelIndustryRequest
-         * @return HrbrainImportLabelIndustryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成领域经验</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportLabelIndustryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportLabelIndustryResponse
+        /// </returns>
         public HrbrainImportLabelIndustryResponse HrbrainImportLabelIndustry(HrbrainImportLabelIndustryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -959,12 +1210,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return HrbrainImportLabelIndustryWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成领域经验
-         *
-         * @param request HrbrainImportLabelIndustryRequest
-         * @return HrbrainImportLabelIndustryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成领域经验</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportLabelIndustryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportLabelIndustryResponse
+        /// </returns>
         public async Task<HrbrainImportLabelIndustryResponse> HrbrainImportLabelIndustryAsync(HrbrainImportLabelIndustryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -972,14 +1229,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return await HrbrainImportLabelIndustryWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成盘点数据
-         *
-         * @param request HrbrainImportLabelInventoryRequest
-         * @param headers HrbrainImportLabelInventoryHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportLabelInventoryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成盘点数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportLabelInventoryRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportLabelInventoryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportLabelInventoryResponse
+        /// </returns>
         public HrbrainImportLabelInventoryResponse HrbrainImportLabelInventoryWithOptions(HrbrainImportLabelInventoryRequest request, HrbrainImportLabelInventoryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1018,14 +1285,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportLabelInventoryResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成盘点数据
-         *
-         * @param request HrbrainImportLabelInventoryRequest
-         * @param headers HrbrainImportLabelInventoryHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportLabelInventoryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成盘点数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportLabelInventoryRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportLabelInventoryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportLabelInventoryResponse
+        /// </returns>
         public async Task<HrbrainImportLabelInventoryResponse> HrbrainImportLabelInventoryWithOptionsAsync(HrbrainImportLabelInventoryRequest request, HrbrainImportLabelInventoryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1064,12 +1341,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportLabelInventoryResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成盘点数据
-         *
-         * @param request HrbrainImportLabelInventoryRequest
-         * @return HrbrainImportLabelInventoryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成盘点数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportLabelInventoryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportLabelInventoryResponse
+        /// </returns>
         public HrbrainImportLabelInventoryResponse HrbrainImportLabelInventory(HrbrainImportLabelInventoryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1077,12 +1360,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return HrbrainImportLabelInventoryWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成盘点数据
-         *
-         * @param request HrbrainImportLabelInventoryRequest
-         * @return HrbrainImportLabelInventoryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成盘点数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportLabelInventoryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportLabelInventoryResponse
+        /// </returns>
         public async Task<HrbrainImportLabelInventoryResponse> HrbrainImportLabelInventoryAsync(HrbrainImportLabelInventoryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1090,14 +1379,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return await HrbrainImportLabelInventoryWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成专业技能
-         *
-         * @param request HrbrainImportLabelProfSkillRequest
-         * @param headers HrbrainImportLabelProfSkillHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportLabelProfSkillResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成专业技能</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportLabelProfSkillRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportLabelProfSkillHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportLabelProfSkillResponse
+        /// </returns>
         public HrbrainImportLabelProfSkillResponse HrbrainImportLabelProfSkillWithOptions(HrbrainImportLabelProfSkillRequest request, HrbrainImportLabelProfSkillHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1136,14 +1435,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportLabelProfSkillResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成专业技能
-         *
-         * @param request HrbrainImportLabelProfSkillRequest
-         * @param headers HrbrainImportLabelProfSkillHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportLabelProfSkillResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成专业技能</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportLabelProfSkillRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportLabelProfSkillHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportLabelProfSkillResponse
+        /// </returns>
         public async Task<HrbrainImportLabelProfSkillResponse> HrbrainImportLabelProfSkillWithOptionsAsync(HrbrainImportLabelProfSkillRequest request, HrbrainImportLabelProfSkillHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1182,12 +1491,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportLabelProfSkillResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成专业技能
-         *
-         * @param request HrbrainImportLabelProfSkillRequest
-         * @return HrbrainImportLabelProfSkillResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成专业技能</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportLabelProfSkillRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportLabelProfSkillResponse
+        /// </returns>
         public HrbrainImportLabelProfSkillResponse HrbrainImportLabelProfSkill(HrbrainImportLabelProfSkillRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1195,12 +1510,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return HrbrainImportLabelProfSkillWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成专业技能
-         *
-         * @param request HrbrainImportLabelProfSkillRequest
-         * @return HrbrainImportLabelProfSkillResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成专业技能</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportLabelProfSkillRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportLabelProfSkillResponse
+        /// </returns>
         public async Task<HrbrainImportLabelProfSkillResponse> HrbrainImportLabelProfSkillAsync(HrbrainImportLabelProfSkillRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1208,14 +1529,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return await HrbrainImportLabelProfSkillWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成绩效记录
-         *
-         * @param request HrbrainImportPerfEvalRequest
-         * @param headers HrbrainImportPerfEvalHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportPerfEvalResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成绩效记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportPerfEvalRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportPerfEvalHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportPerfEvalResponse
+        /// </returns>
         public HrbrainImportPerfEvalResponse HrbrainImportPerfEvalWithOptions(HrbrainImportPerfEvalRequest request, HrbrainImportPerfEvalHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1254,14 +1585,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportPerfEvalResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成绩效记录
-         *
-         * @param request HrbrainImportPerfEvalRequest
-         * @param headers HrbrainImportPerfEvalHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportPerfEvalResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成绩效记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportPerfEvalRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportPerfEvalHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportPerfEvalResponse
+        /// </returns>
         public async Task<HrbrainImportPerfEvalResponse> HrbrainImportPerfEvalWithOptionsAsync(HrbrainImportPerfEvalRequest request, HrbrainImportPerfEvalHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1300,12 +1641,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportPerfEvalResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成绩效记录
-         *
-         * @param request HrbrainImportPerfEvalRequest
-         * @return HrbrainImportPerfEvalResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成绩效记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportPerfEvalRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportPerfEvalResponse
+        /// </returns>
         public HrbrainImportPerfEvalResponse HrbrainImportPerfEval(HrbrainImportPerfEvalRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1313,12 +1660,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return HrbrainImportPerfEvalWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成绩效记录
-         *
-         * @param request HrbrainImportPerfEvalRequest
-         * @return HrbrainImportPerfEvalResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成绩效记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportPerfEvalRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportPerfEvalResponse
+        /// </returns>
         public async Task<HrbrainImportPerfEvalResponse> HrbrainImportPerfEvalAsync(HrbrainImportPerfEvalRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1326,14 +1679,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return await HrbrainImportPerfEvalWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成晋升记录
-         *
-         * @param request HrbrainImportPromEvalRequest
-         * @param headers HrbrainImportPromEvalHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportPromEvalResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成晋升记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportPromEvalRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportPromEvalHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportPromEvalResponse
+        /// </returns>
         public HrbrainImportPromEvalResponse HrbrainImportPromEvalWithOptions(HrbrainImportPromEvalRequest request, HrbrainImportPromEvalHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1372,14 +1735,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportPromEvalResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成晋升记录
-         *
-         * @param request HrbrainImportPromEvalRequest
-         * @param headers HrbrainImportPromEvalHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportPromEvalResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成晋升记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportPromEvalRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportPromEvalHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportPromEvalResponse
+        /// </returns>
         public async Task<HrbrainImportPromEvalResponse> HrbrainImportPromEvalWithOptionsAsync(HrbrainImportPromEvalRequest request, HrbrainImportPromEvalHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1418,12 +1791,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportPromEvalResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成晋升记录
-         *
-         * @param request HrbrainImportPromEvalRequest
-         * @return HrbrainImportPromEvalResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成晋升记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportPromEvalRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportPromEvalResponse
+        /// </returns>
         public HrbrainImportPromEvalResponse HrbrainImportPromEval(HrbrainImportPromEvalRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1431,12 +1810,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return HrbrainImportPromEvalWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成晋升记录
-         *
-         * @param request HrbrainImportPromEvalRequest
-         * @return HrbrainImportPromEvalResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成晋升记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportPromEvalRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportPromEvalResponse
+        /// </returns>
         public async Task<HrbrainImportPromEvalResponse> HrbrainImportPromEvalAsync(HrbrainImportPromEvalRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1444,14 +1829,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return await HrbrainImportPromEvalWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成处分记录
-         *
-         * @param request HrbrainImportPunDetailRequest
-         * @param headers HrbrainImportPunDetailHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportPunDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成处分记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportPunDetailRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportPunDetailHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportPunDetailResponse
+        /// </returns>
         public HrbrainImportPunDetailResponse HrbrainImportPunDetailWithOptions(HrbrainImportPunDetailRequest request, HrbrainImportPunDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1490,14 +1885,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportPunDetailResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成处分记录
-         *
-         * @param request HrbrainImportPunDetailRequest
-         * @param headers HrbrainImportPunDetailHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportPunDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成处分记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportPunDetailRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportPunDetailHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportPunDetailResponse
+        /// </returns>
         public async Task<HrbrainImportPunDetailResponse> HrbrainImportPunDetailWithOptionsAsync(HrbrainImportPunDetailRequest request, HrbrainImportPunDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1536,12 +1941,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportPunDetailResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成处分记录
-         *
-         * @param request HrbrainImportPunDetailRequest
-         * @return HrbrainImportPunDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成处分记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportPunDetailRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportPunDetailResponse
+        /// </returns>
         public HrbrainImportPunDetailResponse HrbrainImportPunDetail(HrbrainImportPunDetailRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1549,12 +1960,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return HrbrainImportPunDetailWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成处分记录
-         *
-         * @param request HrbrainImportPunDetailRequest
-         * @return HrbrainImportPunDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成处分记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportPunDetailRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportPunDetailResponse
+        /// </returns>
         public async Task<HrbrainImportPunDetailResponse> HrbrainImportPunDetailAsync(HrbrainImportPunDetailRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1562,14 +1979,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return await HrbrainImportPunDetailWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成入职信息
-         *
-         * @param request HrbrainImportRegistRequest
-         * @param headers HrbrainImportRegistHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportRegistResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成入职信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportRegistRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportRegistHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportRegistResponse
+        /// </returns>
         public HrbrainImportRegistResponse HrbrainImportRegistWithOptions(HrbrainImportRegistRequest request, HrbrainImportRegistHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1608,14 +2035,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportRegistResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成入职信息
-         *
-         * @param request HrbrainImportRegistRequest
-         * @param headers HrbrainImportRegistHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportRegistResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成入职信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportRegistRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportRegistHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportRegistResponse
+        /// </returns>
         public async Task<HrbrainImportRegistResponse> HrbrainImportRegistWithOptionsAsync(HrbrainImportRegistRequest request, HrbrainImportRegistHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1654,12 +2091,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportRegistResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成入职信息
-         *
-         * @param request HrbrainImportRegistRequest
-         * @return HrbrainImportRegistResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成入职信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportRegistRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportRegistResponse
+        /// </returns>
         public HrbrainImportRegistResponse HrbrainImportRegist(HrbrainImportRegistRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1667,12 +2110,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return HrbrainImportRegistWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成入职信息
-         *
-         * @param request HrbrainImportRegistRequest
-         * @return HrbrainImportRegistResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成入职信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportRegistRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportRegistResponse
+        /// </returns>
         public async Task<HrbrainImportRegistResponse> HrbrainImportRegistAsync(HrbrainImportRegistRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1680,14 +2129,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return await HrbrainImportRegistWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成异动记录
-         *
-         * @param request HrbrainImportTransferEvalRequest
-         * @param headers HrbrainImportTransferEvalHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportTransferEvalResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成异动记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportTransferEvalRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportTransferEvalHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportTransferEvalResponse
+        /// </returns>
         public HrbrainImportTransferEvalResponse HrbrainImportTransferEvalWithOptions(HrbrainImportTransferEvalRequest request, HrbrainImportTransferEvalHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1726,14 +2185,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportTransferEvalResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成异动记录
-         *
-         * @param request HrbrainImportTransferEvalRequest
-         * @param headers HrbrainImportTransferEvalHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportTransferEvalResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成异动记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportTransferEvalRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportTransferEvalHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportTransferEvalResponse
+        /// </returns>
         public async Task<HrbrainImportTransferEvalResponse> HrbrainImportTransferEvalWithOptionsAsync(HrbrainImportTransferEvalRequest request, HrbrainImportTransferEvalHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1772,12 +2241,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportTransferEvalResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成异动记录
-         *
-         * @param request HrbrainImportTransferEvalRequest
-         * @return HrbrainImportTransferEvalResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成异动记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportTransferEvalRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportTransferEvalResponse
+        /// </returns>
         public HrbrainImportTransferEvalResponse HrbrainImportTransferEval(HrbrainImportTransferEvalRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1785,12 +2260,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return HrbrainImportTransferEvalWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成异动记录
-         *
-         * @param request HrbrainImportTransferEvalRequest
-         * @return HrbrainImportTransferEvalResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成异动记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportTransferEvalRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportTransferEvalResponse
+        /// </returns>
         public async Task<HrbrainImportTransferEvalResponse> HrbrainImportTransferEvalAsync(HrbrainImportTransferEvalRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1798,14 +2279,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return await HrbrainImportTransferEvalWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成工作经历
-         *
-         * @param request HrbrainImportWorkExpRequest
-         * @param headers HrbrainImportWorkExpHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportWorkExpResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成工作经历</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportWorkExpRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportWorkExpHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportWorkExpResponse
+        /// </returns>
         public HrbrainImportWorkExpResponse HrbrainImportWorkExpWithOptions(HrbrainImportWorkExpRequest request, HrbrainImportWorkExpHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1844,14 +2335,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportWorkExpResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成工作经历
-         *
-         * @param request HrbrainImportWorkExpRequest
-         * @param headers HrbrainImportWorkExpHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HrbrainImportWorkExpResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成工作经历</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportWorkExpRequest
+        /// </param>
+        /// <param name="headers">
+        /// HrbrainImportWorkExpHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportWorkExpResponse
+        /// </returns>
         public async Task<HrbrainImportWorkExpResponse> HrbrainImportWorkExpWithOptionsAsync(HrbrainImportWorkExpRequest request, HrbrainImportWorkExpHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1890,12 +2391,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<HrbrainImportWorkExpResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 集成工作经历
-         *
-         * @param request HrbrainImportWorkExpRequest
-         * @return HrbrainImportWorkExpResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成工作经历</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportWorkExpRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportWorkExpResponse
+        /// </returns>
         public HrbrainImportWorkExpResponse HrbrainImportWorkExp(HrbrainImportWorkExpRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1903,12 +2410,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return HrbrainImportWorkExpWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 集成工作经历
-         *
-         * @param request HrbrainImportWorkExpRequest
-         * @return HrbrainImportWorkExpResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>集成工作经历</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HrbrainImportWorkExpRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HrbrainImportWorkExpResponse
+        /// </returns>
         public async Task<HrbrainImportWorkExpResponse> HrbrainImportWorkExpAsync(HrbrainImportWorkExpRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1916,14 +2429,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return await HrbrainImportWorkExpWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 人员标签查询
-         *
-         * @param request StaffLabelRecordsQueryRequest
-         * @param headers StaffLabelRecordsQueryHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return StaffLabelRecordsQueryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人员标签查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// StaffLabelRecordsQueryRequest
+        /// </param>
+        /// <param name="headers">
+        /// StaffLabelRecordsQueryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// StaffLabelRecordsQueryResponse
+        /// </returns>
         public StaffLabelRecordsQueryResponse StaffLabelRecordsQueryWithOptions(StaffLabelRecordsQueryRequest request, StaffLabelRecordsQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1970,14 +2493,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<StaffLabelRecordsQueryResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 人员标签查询
-         *
-         * @param request StaffLabelRecordsQueryRequest
-         * @param headers StaffLabelRecordsQueryHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return StaffLabelRecordsQueryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人员标签查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// StaffLabelRecordsQueryRequest
+        /// </param>
+        /// <param name="headers">
+        /// StaffLabelRecordsQueryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// StaffLabelRecordsQueryResponse
+        /// </returns>
         public async Task<StaffLabelRecordsQueryResponse> StaffLabelRecordsQueryWithOptionsAsync(StaffLabelRecordsQueryRequest request, StaffLabelRecordsQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2024,12 +2557,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<StaffLabelRecordsQueryResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 人员标签查询
-         *
-         * @param request StaffLabelRecordsQueryRequest
-         * @return StaffLabelRecordsQueryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人员标签查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// StaffLabelRecordsQueryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// StaffLabelRecordsQueryResponse
+        /// </returns>
         public StaffLabelRecordsQueryResponse StaffLabelRecordsQuery(StaffLabelRecordsQueryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2037,12 +2576,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return StaffLabelRecordsQueryWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 人员标签查询
-         *
-         * @param request StaffLabelRecordsQueryRequest
-         * @return StaffLabelRecordsQueryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人员标签查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// StaffLabelRecordsQueryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// StaffLabelRecordsQueryResponse
+        /// </returns>
         public async Task<StaffLabelRecordsQueryResponse> StaffLabelRecordsQueryAsync(StaffLabelRecordsQueryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2050,14 +2595,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return await StaffLabelRecordsQueryWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 同步统计基础数据
-         *
-         * @param request SyncDataRequest
-         * @param headers SyncDataHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SyncDataResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>同步统计基础数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SyncDataRequest
+        /// </param>
+        /// <param name="headers">
+        /// SyncDataHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SyncDataResponse
+        /// </returns>
         public SyncDataResponse SyncDataWithOptions(SyncDataRequest request, SyncDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2111,14 +2666,24 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<SyncDataResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 同步统计基础数据
-         *
-         * @param request SyncDataRequest
-         * @param headers SyncDataHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SyncDataResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>同步统计基础数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SyncDataRequest
+        /// </param>
+        /// <param name="headers">
+        /// SyncDataHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SyncDataResponse
+        /// </returns>
         public async Task<SyncDataResponse> SyncDataWithOptionsAsync(SyncDataRequest request, SyncDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2172,12 +2737,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return TeaModel.ToObject<SyncDataResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 同步统计基础数据
-         *
-         * @param request SyncDataRequest
-         * @return SyncDataResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>同步统计基础数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SyncDataRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SyncDataResponse
+        /// </returns>
         public SyncDataResponse SyncData(SyncDataRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2185,12 +2756,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0
             return SyncDataWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 同步统计基础数据
-         *
-         * @param request SyncDataRequest
-         * @return SyncDataResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>同步统计基础数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SyncDataRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SyncDataResponse
+        /// </returns>
         public async Task<SyncDataResponse> SyncDataAsync(SyncDataRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

@@ -14,14 +14,14 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public GetDownloadInfoResponseBodyDownloadInfo DownloadInfo { get; set; }
         public class GetDownloadInfoResponseBodyDownloadInfo : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("expirationSeconds")]
             [Validation(Required=false)]
             public int? ExpirationSeconds { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("headers")]
             [Validation(Required=false)]
@@ -32,7 +32,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public string InternalResourceUrl { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("resourceUrl")]
             [Validation(Required=false)]

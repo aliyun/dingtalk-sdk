@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,13 +29,21 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0
         }
 
 
-        /**
-         * @summary 获取闪记任务的概要信息
-         *
-         * @param headers GetTranscribeBriefHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetTranscribeBriefResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取闪记任务的概要信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetTranscribeBriefHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetTranscribeBriefResponse
+        /// </returns>
         public GetTranscribeBriefResponse GetTranscribeBriefWithOptions(string taskUuid, GetTranscribeBriefHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -65,13 +74,21 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0
             return TeaModel.ToObject<GetTranscribeBriefResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取闪记任务的概要信息
-         *
-         * @param headers GetTranscribeBriefHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetTranscribeBriefResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取闪记任务的概要信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetTranscribeBriefHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetTranscribeBriefResponse
+        /// </returns>
         public async Task<GetTranscribeBriefResponse> GetTranscribeBriefWithOptionsAsync(string taskUuid, GetTranscribeBriefHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -102,11 +119,14 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0
             return TeaModel.ToObject<GetTranscribeBriefResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取闪记任务的概要信息
-         *
-         * @return GetTranscribeBriefResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取闪记任务的概要信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetTranscribeBriefResponse
+        /// </returns>
         public GetTranscribeBriefResponse GetTranscribeBrief(string taskUuid)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -114,11 +134,14 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0
             return GetTranscribeBriefWithOptions(taskUuid, headers, runtime);
         }
 
-        /**
-         * @summary 获取闪记任务的概要信息
-         *
-         * @return GetTranscribeBriefResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取闪记任务的概要信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetTranscribeBriefResponse
+        /// </returns>
         public async Task<GetTranscribeBriefResponse> GetTranscribeBriefAsync(string taskUuid)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -126,14 +149,24 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0
             return await GetTranscribeBriefWithOptionsAsync(taskUuid, headers, runtime);
         }
 
-        /**
-         * @summary 移除指定用户对闪记任务的权限
-         *
-         * @param request RemovePermissionRequest
-         * @param headers RemovePermissionHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return RemovePermissionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移除指定用户对闪记任务的权限</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RemovePermissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// RemovePermissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RemovePermissionResponse
+        /// </returns>
         public RemovePermissionResponse RemovePermissionWithOptions(string taskUuid, RemovePermissionRequest request, RemovePermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -183,14 +216,24 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0
             return TeaModel.ToObject<RemovePermissionResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 移除指定用户对闪记任务的权限
-         *
-         * @param request RemovePermissionRequest
-         * @param headers RemovePermissionHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return RemovePermissionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移除指定用户对闪记任务的权限</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RemovePermissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// RemovePermissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RemovePermissionResponse
+        /// </returns>
         public async Task<RemovePermissionResponse> RemovePermissionWithOptionsAsync(string taskUuid, RemovePermissionRequest request, RemovePermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -240,12 +283,18 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0
             return TeaModel.ToObject<RemovePermissionResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 移除指定用户对闪记任务的权限
-         *
-         * @param request RemovePermissionRequest
-         * @return RemovePermissionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移除指定用户对闪记任务的权限</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RemovePermissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RemovePermissionResponse
+        /// </returns>
         public RemovePermissionResponse RemovePermission(string taskUuid, RemovePermissionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -253,12 +302,18 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0
             return RemovePermissionWithOptions(taskUuid, request, headers, runtime);
         }
 
-        /**
-         * @summary 移除指定用户对闪记任务的权限
-         *
-         * @param request RemovePermissionRequest
-         * @return RemovePermissionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移除指定用户对闪记任务的权限</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RemovePermissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RemovePermissionResponse
+        /// </returns>
         public async Task<RemovePermissionResponse> RemovePermissionAsync(string taskUuid, RemovePermissionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -266,14 +321,24 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0
             return await RemovePermissionWithOptionsAsync(taskUuid, request, headers, runtime);
         }
 
-        /**
-         * @summary 针对指定的闪记，修改或者授予指定用户权限
-         *
-         * @param request UpdatePermissionForUsersRequest
-         * @param headers UpdatePermissionForUsersHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdatePermissionForUsersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>针对指定的闪记，修改或者授予指定用户权限</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdatePermissionForUsersRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdatePermissionForUsersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdatePermissionForUsersResponse
+        /// </returns>
         public UpdatePermissionForUsersResponse UpdatePermissionForUsersWithOptions(string taskUuid, UpdatePermissionForUsersRequest request, UpdatePermissionForUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -325,14 +390,24 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0
             return TeaModel.ToObject<UpdatePermissionForUsersResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 针对指定的闪记，修改或者授予指定用户权限
-         *
-         * @param request UpdatePermissionForUsersRequest
-         * @param headers UpdatePermissionForUsersHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdatePermissionForUsersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>针对指定的闪记，修改或者授予指定用户权限</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdatePermissionForUsersRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdatePermissionForUsersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdatePermissionForUsersResponse
+        /// </returns>
         public async Task<UpdatePermissionForUsersResponse> UpdatePermissionForUsersWithOptionsAsync(string taskUuid, UpdatePermissionForUsersRequest request, UpdatePermissionForUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -384,12 +459,18 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0
             return TeaModel.ToObject<UpdatePermissionForUsersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 针对指定的闪记，修改或者授予指定用户权限
-         *
-         * @param request UpdatePermissionForUsersRequest
-         * @return UpdatePermissionForUsersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>针对指定的闪记，修改或者授予指定用户权限</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdatePermissionForUsersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdatePermissionForUsersResponse
+        /// </returns>
         public UpdatePermissionForUsersResponse UpdatePermissionForUsers(string taskUuid, UpdatePermissionForUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -397,12 +478,18 @@ namespace AlibabaCloud.SDK.Dingtalktranscribe_1_0
             return UpdatePermissionForUsersWithOptions(taskUuid, request, headers, runtime);
         }
 
-        /**
-         * @summary 针对指定的闪记，修改或者授予指定用户权限
-         *
-         * @param request UpdatePermissionForUsersRequest
-         * @return UpdatePermissionForUsersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>针对指定的闪记，修改或者授予指定用户权限</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdatePermissionForUsersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdatePermissionForUsersResponse
+        /// </returns>
         public async Task<UpdatePermissionForUsersResponse> UpdatePermissionForUsersAsync(string taskUuid, UpdatePermissionForUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

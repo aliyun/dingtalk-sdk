@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class UpdateGroupPermissionRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>cidXXXXXXX</para>
+        /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }

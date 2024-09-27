@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class UpdateTaskExecutorRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>0517xxxxxxx</para>
+        /// </summary>
         [NameInMap("executorId")]
         [Validation(Required=false)]
         public string ExecutorId { get; set; }

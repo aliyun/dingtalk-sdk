@@ -21,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public List<string> AtUnionIds { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>0</para>
+        /// </summary>
         [NameInMap("btnOrientation")]
         [Validation(Required=false)]
         public string BtnOrientation { get; set; }
@@ -29,10 +33,18 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public List<SendServiceGroupMessageRequestBtns> Btns { get; set; }
         public class SendServiceGroupMessageRequestBtns : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para><a href="http://www.dingtalk.com">http://www.dingtalk.com</a></para>
+            /// </summary>
             [NameInMap("actionURL")]
             [Validation(Required=false)]
             public string ActionURL { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>测试按钮</para>
+            /// </summary>
             [NameInMap("title")]
             [Validation(Required=false)]
             public string Title { get; set; }
@@ -40,22 +52,36 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>你有新的任务待审批</para>
         /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
         public string Content { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>false</para>
+        /// </summary>
         [NameInMap("hasContentLinks")]
         [Validation(Required=false)]
         public bool? HasContentLinks { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>false</para>
+        /// </summary>
         [NameInMap("isAtAll")]
         [Validation(Required=false)]
         public bool? IsAtAll { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>MARKDOWN</para>
         /// </summary>
         [NameInMap("messageType")]
         [Validation(Required=false)]
@@ -74,14 +100,20 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public List<string> ReceiverUnionIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>cidxxxxx==</para>
         /// </summary>
         [NameInMap("targetOpenConversationId")]
         [Validation(Required=false)]
         public string TargetOpenConversationId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>服务提醒</para>
         /// </summary>
         [NameInMap("title")]
         [Validation(Required=false)]

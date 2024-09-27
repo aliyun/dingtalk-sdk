@@ -14,14 +14,20 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public List<long?> ClassIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>行政老师A</para>
         /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]
         public string OpUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>cn_yuwen</para>
         /// </summary>
         [NameInMap("subjectCode")]
         [Validation(Required=false)]

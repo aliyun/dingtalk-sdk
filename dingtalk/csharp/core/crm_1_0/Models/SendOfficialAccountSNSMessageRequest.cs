@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class SendOfficialAccountSNSMessageRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("bindingToken")]
         [Validation(Required=false)]
@@ -21,14 +21,14 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public string BizId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("detail")]
         [Validation(Required=false)]
         public SendOfficialAccountSNSMessageRequestDetail Detail { get; set; }
         public class SendOfficialAccountSNSMessageRequestDetail : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("messageBody")]
             [Validation(Required=false)]
@@ -123,14 +123,17 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>text</para>
             /// </summary>
             [NameInMap("msgType")]
             [Validation(Required=false)]
             public string MsgType { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("uuid")]
             [Validation(Required=false)]

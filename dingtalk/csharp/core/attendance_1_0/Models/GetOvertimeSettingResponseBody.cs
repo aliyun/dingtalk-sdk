@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
     public class GetOvertimeSettingResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
@@ -25,7 +25,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
             public Dictionary<string, ResultDurationSettingsValue> DurationSettings { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]

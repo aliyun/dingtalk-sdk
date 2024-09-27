@@ -21,10 +21,18 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public bool? AutoApproveApply { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>这是简介</para>
+            /// </summary>
             [NameInMap("brief")]
             [Validation(Required=false)]
             public string Brief { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>10000</para>
+            /// </summary>
             [NameInMap("code")]
             [Validation(Required=false)]
             public string Code { get; set; }
@@ -33,14 +41,26 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public bool? CreateDeptGroup { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>dept456</para>
+            /// </summary>
             [NameInMap("deptCode")]
             [Validation(Required=false)]
             public string DeptCode { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>chat234</para>
+            /// </summary>
             [NameInMap("deptGroupChatId")]
             [Validation(Required=false)]
             public string DeptGroupChatId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>200</para>
+            /// </summary>
             [NameInMap("deptId")]
             [Validation(Required=false)]
             public long? DeptId { get; set; }
@@ -53,6 +73,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public List<long?> DeptPermits { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>contact_class_dept</para>
+            /// </summary>
             [NameInMap("deptType")]
             [Validation(Required=false)]
             public string DeptType { get; set; }
@@ -61,6 +85,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public bool? EmpApplyJoinDept { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>{}</para>
+            /// </summary>
             [NameInMap("extension")]
             [Validation(Required=false)]
             public string Extension { get; set; }
@@ -103,14 +131,26 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>软件工程</para>
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>200</para>
+            /// </summary>
             [NameInMap("order")]
             [Validation(Required=false)]
             public long? Order { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>user345</para>
+            /// </summary>
             [NameInMap("orgDeptOwner")]
             [Validation(Required=false)]
             public string OrgDeptOwner { get; set; }
@@ -153,22 +193,42 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>200</para>
+            /// </summary>
             [NameInMap("parentId")]
             [Validation(Required=false)]
             public long? ParentId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>软件工程标识</para>
+            /// </summary>
             [NameInMap("sourceIdentifier")]
             [Validation(Required=false)]
             public string SourceIdentifier { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>200</para>
+            /// </summary>
             [NameInMap("struId")]
             [Validation(Required=false)]
             public long? StruId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>campus</para>
+            /// </summary>
             [NameInMap("tags")]
             [Validation(Required=false)]
             public string Tags { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>138xxxx0000</para>
+            /// </summary>
             [NameInMap("telephone")]
             [Validation(Required=false)]
             public string Telephone { get; set; }

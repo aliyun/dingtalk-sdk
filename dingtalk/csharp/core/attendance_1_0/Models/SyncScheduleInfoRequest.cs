@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
     public class SyncScheduleInfoRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]
         public string OpUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("scheduleInfos")]
         [Validation(Required=false)]
         public List<SyncScheduleInfoRequestScheduleInfos> ScheduleInfos { get; set; }
         public class SyncScheduleInfoRequestScheduleInfos : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("planId")]
             [Validation(Required=false)]

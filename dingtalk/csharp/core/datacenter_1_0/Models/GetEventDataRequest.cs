@@ -14,7 +14,10 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
         public string BizId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>819e50d7c32e9096</para>
         /// </summary>
         [NameInMap("eventUid")]
         [Validation(Required=false)]

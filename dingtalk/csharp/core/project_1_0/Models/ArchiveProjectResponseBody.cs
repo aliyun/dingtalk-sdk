@@ -13,10 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public ArchiveProjectResponseBodyResult Result { get; set; }
         public class ArchiveProjectResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>true</para>
+            /// </summary>
             [NameInMap("isArchived")]
             [Validation(Required=false)]
             public bool? IsArchived { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>2022-07-04T03:29:34.770Z</para>
+            /// </summary>
             [NameInMap("updated")]
             [Validation(Required=false)]
             public string Updated { get; set; }

@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class CreateCategoryAndBindingGroupsResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1</para>
         /// </summary>
         [NameInMap("id")]
         [Validation(Required=false)]

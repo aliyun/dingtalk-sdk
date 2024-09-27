@@ -10,49 +10,49 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
 {
     public class HrbrainImportDimissionRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("body")]
         [Validation(Required=false)]
         public List<HrbrainImportDimissionRequestBody> Body { get; set; }
         public class HrbrainImportDimissionRequestBody : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("deptName")]
             [Validation(Required=false)]
             public string DeptName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("deptNo")]
             [Validation(Required=false)]
             public string DeptNo { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("dimissionDate")]
             [Validation(Required=false)]
             public string DimissionDate { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("dimissionReaasonDesc")]
             [Validation(Required=false)]
             public string DimissionReaasonDesc { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("dimissionReason")]
             [Validation(Required=false)]
             public string DimissionReason { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("empType")]
             [Validation(Required=false)]
@@ -71,7 +71,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             public string JobLevel { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
@@ -82,7 +82,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             public string PostName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("superName")]
             [Validation(Required=false)]
@@ -93,7 +93,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             public string WorkLocAddr { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("workNo")]
             [Validation(Required=false)]
@@ -102,7 +102,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]

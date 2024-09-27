@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class QueryReceiptForInvoiceResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("hasMore")]
         [Validation(Required=false)]
         public string HasMore { get; set; }
@@ -17,26 +21,50 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public List<QueryReceiptForInvoiceResponseBodyList> List { get; set; }
         public class QueryReceiptForInvoiceResponseBodyList : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>abc</para>
+            /// </summary>
             [NameInMap("accountantBookId")]
             [Validation(Required=false)]
             public string AccountantBookId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>5000</para>
+            /// </summary>
             [NameInMap("amount")]
             [Validation(Required=false)]
             public string Amount { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>applied</para>
+            /// </summary>
             [NameInMap("applyStatus")]
             [Validation(Required=false)]
             public string ApplyStatus { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>invoicing</para>
+            /// </summary>
             [NameInMap("bizStatus")]
             [Validation(Required=false)]
             public string BizStatus { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>123</para>
+            /// </summary>
             [NameInMap("businessId")]
             [Validation(Required=false)]
             public string BusinessId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>COM_DEFAULT</para>
+            /// </summary>
             [NameInMap("companyCode")]
             [Validation(Required=false)]
             public string CompanyCode { get; set; }
@@ -49,14 +77,26 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public QueryReceiptForInvoiceResponseBodyListCreator Creator { get; set; }
             public class QueryReceiptForInvoiceResponseBodyListCreator : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para><a href="https://xxxx">https://xxxx</a></para>
+                /// </summary>
                 [NameInMap("avatarUrl")]
                 [Validation(Required=false)]
                 public string AvatarUrl { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>测试名字</para>
+                /// </summary>
                 [NameInMap("nick")]
                 [Validation(Required=false)]
                 public string Nick { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>1231</para>
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
@@ -67,28 +107,52 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public QueryReceiptForInvoiceResponseBodyListCustomer Customer { get; set; }
             public class QueryReceiptForInvoiceResponseBodyListCustomer : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>CUS_xxxxx</para>
+                /// </summary>
                 [NameInMap("code")]
                 [Validation(Required=false)]
                 public string Code { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>李四</para>
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para><a href="http://www.abc.com">www.abc.com</a></para>
+            /// </summary>
             [NameInMap("drawerEmail")]
             [Validation(Required=false)]
             public string DrawerEmail { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>12345678901</para>
+            /// </summary>
             [NameInMap("drawerTelephone")]
             [Validation(Required=false)]
             public string DrawerTelephone { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>增值税发票</para>
+            /// </summary>
             [NameInMap("invoiceType")]
             [Validation(Required=false)]
             public string InvoiceType { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>EM-xxxxx</para>
+            /// </summary>
             [NameInMap("modelId")]
             [Validation(Required=false)]
             public string ModelId { get; set; }
@@ -97,46 +161,90 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public List<QueryReceiptForInvoiceResponseBodyListProductInfoList> ProductInfoList { get; set; }
             public class QueryReceiptForInvoiceResponseBodyListProductInfoList : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>12.3</para>
+                /// </summary>
                 [NameInMap("amountWithTax")]
                 [Validation(Required=false)]
                 public string AmountWithTax { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>100</para>
+                /// </summary>
                 [NameInMap("amountWithoutTax")]
                 [Validation(Required=false)]
                 public string AmountWithoutTax { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>10</para>
+                /// </summary>
                 [NameInMap("discountAmount")]
                 [Validation(Required=false)]
                 public string DiscountAmount { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>鱼</para>
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>2</para>
+                /// </summary>
                 [NameInMap("quantity")]
                 [Validation(Required=false)]
                 public string Quantity { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>大型</para>
+                /// </summary>
                 [NameInMap("specification")]
                 [Validation(Required=false)]
                 public string Specification { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>XXX</para>
+                /// </summary>
                 [NameInMap("taxClassificationCode")]
                 [Validation(Required=false)]
                 public string TaxClassificationCode { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>0.3</para>
+                /// </summary>
                 [NameInMap("taxRate")]
                 [Validation(Required=false)]
                 public string TaxRate { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>千克</para>
+                /// </summary>
                 [NameInMap("unit")]
                 [Validation(Required=false)]
                 public string Unit { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>12.3</para>
+                /// </summary>
                 [NameInMap("unitPriceWithTax")]
                 [Validation(Required=false)]
                 public string UnitPriceWithTax { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>100</para>
+                /// </summary>
                 [NameInMap("unitPriceWithoutTax")]
                 [Validation(Required=false)]
                 public string UnitPriceWithoutTax { get; set; }
@@ -147,56 +255,108 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>abc</para>
+            /// </summary>
             [NameInMap("purchaserAccount")]
             [Validation(Required=false)]
             public string PurchaserAccount { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>杭州市</para>
+            /// </summary>
             [NameInMap("purchaserAddress")]
             [Validation(Required=false)]
             public string PurchaserAddress { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>建设银行</para>
+            /// </summary>
             [NameInMap("purchaserBankName")]
             [Validation(Required=false)]
             public string PurchaserBankName { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>钉有限公司</para>
+            /// </summary>
             [NameInMap("purchaserName")]
             [Validation(Required=false)]
             public string PurchaserName { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>123456</para>
+            /// </summary>
             [NameInMap("purchaserTaxNo")]
             [Validation(Required=false)]
             public string PurchaserTaxNo { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>13333333333</para>
+            /// </summary>
             [NameInMap("purchaserTel")]
             [Validation(Required=false)]
             public string PurchaserTel { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>abc</para>
+            /// </summary>
             [NameInMap("receiptId")]
             [Validation(Required=false)]
             public string ReceiptId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>16000000</para>
+            /// </summary>
             [NameInMap("recordTime")]
             [Validation(Required=false)]
             public string RecordTime { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>备注信息</para>
+            /// </summary>
             [NameInMap("remark")]
             [Validation(Required=false)]
             public string Remark { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>approval</para>
+            /// </summary>
             [NameInMap("source")]
             [Validation(Required=false)]
             public string Source { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>agree</para>
+            /// </summary>
             [NameInMap("status")]
             [Validation(Required=false)]
             public string Status { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>张三提交的开票申请单</para>
+            /// </summary>
             [NameInMap("title")]
             [Validation(Required=false)]
             public string Title { get; set; }
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>500</para>
+        /// </summary>
         [NameInMap("totalCount")]
         [Validation(Required=false)]
         public long? TotalCount { get; set; }

@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class ReadMessageRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("messageId")]
         [Validation(Required=false)]
         public string MessageId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("operatorUid")]
         [Validation(Required=false)]

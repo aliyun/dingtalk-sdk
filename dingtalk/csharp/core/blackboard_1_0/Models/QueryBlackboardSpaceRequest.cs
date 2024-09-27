@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkblackboard_1_0.Models
 {
     public class QueryBlackboardSpaceRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>manager01</para>
         /// </summary>
         [NameInMap("operationUserId")]
         [Validation(Required=false)]

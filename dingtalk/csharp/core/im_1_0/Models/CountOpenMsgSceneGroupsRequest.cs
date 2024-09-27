@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class CountOpenMsgSceneGroupsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>f6xxxxx</para>
         /// </summary>
         [NameInMap("templateId")]
         [Validation(Required=false)]

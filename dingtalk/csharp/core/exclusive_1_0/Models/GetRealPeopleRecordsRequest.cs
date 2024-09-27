@@ -9,36 +9,62 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class GetRealPeopleRecordsRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123333</para>
+        /// </summary>
         [NameInMap("agentId")]
         [Validation(Required=false)]
         public long? AgentId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1667000000</para>
+        /// </summary>
         [NameInMap("fromTime")]
         [Validation(Required=false)]
         public long? FromTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>10</para>
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>0</para>
         /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public long? NextToken { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("personIdentification")]
         [Validation(Required=false)]
         public int? PersonIdentification { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("scene")]
         [Validation(Required=false)]
         public int? Scene { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1669000000</para>
+        /// </summary>
         [NameInMap("toTime")]
         [Validation(Required=false)]
         public long? ToTime { get; set; }

@@ -9,34 +9,55 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class SyncTaskTemplateRequest : TeaModel {
+        /// <summary>
+        /// <b>if can be null:</b>
+        /// <c>false</c>
+        /// </summary>
         [NameInMap("delete")]
         [Validation(Required=false)]
         public bool? Delete { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>培训、薪酬任务模版</para>
+        /// </summary>
         [NameInMap("des")]
         [Validation(Required=false)]
         public string Des { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>{&quot;key&quot;:value}</para>
+        /// </summary>
         [NameInMap("ext")]
         [Validation(Required=false)]
         public string Ext { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>培训模版</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>23234</para>
         /// </summary>
         [NameInMap("optUserId")]
         [Validation(Required=false)]
         public string OptUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>232332</para>
         /// </summary>
         [NameInMap("outerId")]
         [Validation(Required=false)]
@@ -65,14 +86,20 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>PERFORMANCE_TASK、TRAIN_TASK</para>
         /// </summary>
         [NameInMap("taskType")]
         [Validation(Required=false)]
         public string TaskType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>onboarding</para>
         /// </summary>
         [NameInMap("solutionType")]
         [Validation(Required=false)]

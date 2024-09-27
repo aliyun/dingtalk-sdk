@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class GetCollegeAlumniUserInfoRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("operator")]
         [Validation(Required=false)]
         public string Operator { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
         }
 
 
-        /**
-         * @summary 新增或更新表单实例
-         *
-         * @param request CreateOrUpdateFormDataRequest
-         * @param headers CreateOrUpdateFormDataHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateOrUpdateFormDataResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增或更新表单实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateOrUpdateFormDataRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateOrUpdateFormDataHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateOrUpdateFormDataResponse
+        /// </returns>
         public CreateOrUpdateFormDataResponse CreateOrUpdateFormDataWithOptions(CreateOrUpdateFormDataRequest request, CreateOrUpdateFormDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -101,14 +112,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<CreateOrUpdateFormDataResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 新增或更新表单实例
-         *
-         * @param request CreateOrUpdateFormDataRequest
-         * @param headers CreateOrUpdateFormDataHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateOrUpdateFormDataResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增或更新表单实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateOrUpdateFormDataRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateOrUpdateFormDataHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateOrUpdateFormDataResponse
+        /// </returns>
         public async Task<CreateOrUpdateFormDataResponse> CreateOrUpdateFormDataWithOptionsAsync(CreateOrUpdateFormDataRequest request, CreateOrUpdateFormDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -174,12 +195,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<CreateOrUpdateFormDataResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 新增或更新表单实例
-         *
-         * @param request CreateOrUpdateFormDataRequest
-         * @return CreateOrUpdateFormDataResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增或更新表单实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateOrUpdateFormDataRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateOrUpdateFormDataResponse
+        /// </returns>
         public CreateOrUpdateFormDataResponse CreateOrUpdateFormData(CreateOrUpdateFormDataRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -187,12 +214,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return CreateOrUpdateFormDataWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 新增或更新表单实例
-         *
-         * @param request CreateOrUpdateFormDataRequest
-         * @return CreateOrUpdateFormDataResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增或更新表单实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateOrUpdateFormDataRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateOrUpdateFormDataResponse
+        /// </returns>
         public async Task<CreateOrUpdateFormDataResponse> CreateOrUpdateFormDataAsync(CreateOrUpdateFormDataRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -200,14 +233,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return await CreateOrUpdateFormDataWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取表单组件别名列表
-         *
-         * @param request GetFormComponentAliasListRequest
-         * @param headers GetFormComponentAliasListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetFormComponentAliasListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取表单组件别名列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFormComponentAliasListRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFormComponentAliasListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFormComponentAliasListResponse
+        /// </returns>
         public GetFormComponentAliasListResponse GetFormComponentAliasListWithOptions(string appType, string formUuid, GetFormComponentAliasListRequest request, GetFormComponentAliasListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -257,14 +300,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<GetFormComponentAliasListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取表单组件别名列表
-         *
-         * @param request GetFormComponentAliasListRequest
-         * @param headers GetFormComponentAliasListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetFormComponentAliasListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取表单组件别名列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFormComponentAliasListRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFormComponentAliasListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFormComponentAliasListResponse
+        /// </returns>
         public async Task<GetFormComponentAliasListResponse> GetFormComponentAliasListWithOptionsAsync(string appType, string formUuid, GetFormComponentAliasListRequest request, GetFormComponentAliasListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -314,12 +367,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<GetFormComponentAliasListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取表单组件别名列表
-         *
-         * @param request GetFormComponentAliasListRequest
-         * @return GetFormComponentAliasListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取表单组件别名列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFormComponentAliasListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFormComponentAliasListResponse
+        /// </returns>
         public GetFormComponentAliasListResponse GetFormComponentAliasList(string appType, string formUuid, GetFormComponentAliasListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -327,12 +386,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return GetFormComponentAliasListWithOptions(appType, formUuid, request, headers, runtime);
         }
 
-        /**
-         * @summary 获取表单组件别名列表
-         *
-         * @param request GetFormComponentAliasListRequest
-         * @return GetFormComponentAliasListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取表单组件别名列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFormComponentAliasListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFormComponentAliasListResponse
+        /// </returns>
         public async Task<GetFormComponentAliasListResponse> GetFormComponentAliasListAsync(string appType, string formUuid, GetFormComponentAliasListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -340,14 +405,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return await GetFormComponentAliasListWithOptionsAsync(appType, formUuid, request, headers, runtime);
         }
 
-        /**
-         * @summary 根据表单 ID 查询实例详情
-         *
-         * @param request GetFormDataByIDRequest
-         * @param headers GetFormDataByIDHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetFormDataByIDResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据表单 ID 查询实例详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFormDataByIDRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFormDataByIDHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFormDataByIDResponse
+        /// </returns>
         public GetFormDataByIDResponse GetFormDataByIDWithOptions(string id, GetFormDataByIDRequest request, GetFormDataByIDHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -405,14 +480,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<GetFormDataByIDResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据表单 ID 查询实例详情
-         *
-         * @param request GetFormDataByIDRequest
-         * @param headers GetFormDataByIDHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetFormDataByIDResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据表单 ID 查询实例详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFormDataByIDRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFormDataByIDHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFormDataByIDResponse
+        /// </returns>
         public async Task<GetFormDataByIDResponse> GetFormDataByIDWithOptionsAsync(string id, GetFormDataByIDRequest request, GetFormDataByIDHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -470,12 +555,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<GetFormDataByIDResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据表单 ID 查询实例详情
-         *
-         * @param request GetFormDataByIDRequest
-         * @return GetFormDataByIDResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据表单 ID 查询实例详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFormDataByIDRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFormDataByIDResponse
+        /// </returns>
         public GetFormDataByIDResponse GetFormDataByID(string id, GetFormDataByIDRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -483,12 +574,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return GetFormDataByIDWithOptions(id, request, headers, runtime);
         }
 
-        /**
-         * @summary 根据表单 ID 查询实例详情
-         *
-         * @param request GetFormDataByIDRequest
-         * @return GetFormDataByIDResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据表单 ID 查询实例详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFormDataByIDRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFormDataByIDResponse
+        /// </returns>
         public async Task<GetFormDataByIDResponse> GetFormDataByIDAsync(string id, GetFormDataByIDRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -496,14 +593,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return await GetFormDataByIDWithOptionsAsync(id, request, headers, runtime);
         }
 
-        /**
-         * @summary 根据实例 ID 获取流程实例详情
-         *
-         * @param request GetInstanceByIdRequest
-         * @param headers GetInstanceByIdHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetInstanceByIdResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据实例 ID 获取流程实例详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetInstanceByIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetInstanceByIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetInstanceByIdResponse
+        /// </returns>
         public GetInstanceByIdResponse GetInstanceByIdWithOptions(string id, GetInstanceByIdRequest request, GetInstanceByIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -561,14 +668,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<GetInstanceByIdResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据实例 ID 获取流程实例详情
-         *
-         * @param request GetInstanceByIdRequest
-         * @param headers GetInstanceByIdHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetInstanceByIdResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据实例 ID 获取流程实例详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetInstanceByIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetInstanceByIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetInstanceByIdResponse
+        /// </returns>
         public async Task<GetInstanceByIdResponse> GetInstanceByIdWithOptionsAsync(string id, GetInstanceByIdRequest request, GetInstanceByIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -626,12 +743,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<GetInstanceByIdResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据实例 ID 获取流程实例详情
-         *
-         * @param request GetInstanceByIdRequest
-         * @return GetInstanceByIdResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据实例 ID 获取流程实例详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetInstanceByIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetInstanceByIdResponse
+        /// </returns>
         public GetInstanceByIdResponse GetInstanceById(string id, GetInstanceByIdRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -639,12 +762,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return GetInstanceByIdWithOptions(id, request, headers, runtime);
         }
 
-        /**
-         * @summary 根据实例 ID 获取流程实例详情
-         *
-         * @param request GetInstanceByIdRequest
-         * @return GetInstanceByIdResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据实例 ID 获取流程实例详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetInstanceByIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetInstanceByIdResponse
+        /// </returns>
         public async Task<GetInstanceByIdResponse> GetInstanceByIdAsync(string id, GetInstanceByIdRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -652,14 +781,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return await GetInstanceByIdWithOptionsAsync(id, request, headers, runtime);
         }
 
-        /**
-         * @summary 根据条件搜索流程实例 ID
-         *
-         * @param request GetInstanceIdListRequest
-         * @param headers GetInstanceIdListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetInstanceIdListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据条件搜索流程实例 ID</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetInstanceIdListRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetInstanceIdListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetInstanceIdListResponse
+        /// </returns>
         public GetInstanceIdListResponse GetInstanceIdListWithOptions(GetInstanceIdListRequest request, GetInstanceIdListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -763,14 +902,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<GetInstanceIdListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据条件搜索流程实例 ID
-         *
-         * @param request GetInstanceIdListRequest
-         * @param headers GetInstanceIdListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetInstanceIdListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据条件搜索流程实例 ID</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetInstanceIdListRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetInstanceIdListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetInstanceIdListResponse
+        /// </returns>
         public async Task<GetInstanceIdListResponse> GetInstanceIdListWithOptionsAsync(GetInstanceIdListRequest request, GetInstanceIdListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -874,12 +1023,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<GetInstanceIdListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据条件搜索流程实例 ID
-         *
-         * @param request GetInstanceIdListRequest
-         * @return GetInstanceIdListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据条件搜索流程实例 ID</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetInstanceIdListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetInstanceIdListResponse
+        /// </returns>
         public GetInstanceIdListResponse GetInstanceIdList(GetInstanceIdListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -887,12 +1042,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return GetInstanceIdListWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 根据条件搜索流程实例 ID
-         *
-         * @param request GetInstanceIdListRequest
-         * @return GetInstanceIdListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据条件搜索流程实例 ID</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetInstanceIdListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetInstanceIdListResponse
+        /// </returns>
         public async Task<GetInstanceIdListResponse> GetInstanceIdListAsync(GetInstanceIdListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -900,14 +1061,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return await GetInstanceIdListWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 根据搜索条件获取流程表单实例详情
-         *
-         * @param request GetInstancesRequest
-         * @param headers GetInstancesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetInstancesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据搜索条件获取流程表单实例详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetInstancesRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetInstancesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetInstancesResponse
+        /// </returns>
         public GetInstancesResponse GetInstancesWithOptions(GetInstancesRequest request, GetInstancesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1015,14 +1186,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<GetInstancesResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据搜索条件获取流程表单实例详情
-         *
-         * @param request GetInstancesRequest
-         * @param headers GetInstancesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetInstancesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据搜索条件获取流程表单实例详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetInstancesRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetInstancesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetInstancesResponse
+        /// </returns>
         public async Task<GetInstancesResponse> GetInstancesWithOptionsAsync(GetInstancesRequest request, GetInstancesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1130,12 +1311,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<GetInstancesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据搜索条件获取流程表单实例详情
-         *
-         * @param request GetInstancesRequest
-         * @return GetInstancesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据搜索条件获取流程表单实例详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetInstancesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetInstancesResponse
+        /// </returns>
         public GetInstancesResponse GetInstances(GetInstancesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1143,12 +1330,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return GetInstancesWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 根据搜索条件获取流程表单实例详情
-         *
-         * @param request GetInstancesRequest
-         * @return GetInstancesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据搜索条件获取流程表单实例详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetInstancesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetInstancesResponse
+        /// </returns>
         public async Task<GetInstancesResponse> GetInstancesAsync(GetInstancesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1156,14 +1349,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return await GetInstancesWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 新增表单实例
-         *
-         * @param request SaveFormDataRequest
-         * @param headers SaveFormDataHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SaveFormDataResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增表单实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveFormDataRequest
+        /// </param>
+        /// <param name="headers">
+        /// SaveFormDataHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveFormDataResponse
+        /// </returns>
         public SaveFormDataResponse SaveFormDataWithOptions(SaveFormDataRequest request, SaveFormDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1225,14 +1428,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<SaveFormDataResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 新增表单实例
-         *
-         * @param request SaveFormDataRequest
-         * @param headers SaveFormDataHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SaveFormDataResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增表单实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveFormDataRequest
+        /// </param>
+        /// <param name="headers">
+        /// SaveFormDataHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveFormDataResponse
+        /// </returns>
         public async Task<SaveFormDataResponse> SaveFormDataWithOptionsAsync(SaveFormDataRequest request, SaveFormDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1294,12 +1507,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<SaveFormDataResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 新增表单实例
-         *
-         * @param request SaveFormDataRequest
-         * @return SaveFormDataResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增表单实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveFormDataRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveFormDataResponse
+        /// </returns>
         public SaveFormDataResponse SaveFormData(SaveFormDataRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1307,12 +1526,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return SaveFormDataWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 新增表单实例
-         *
-         * @param request SaveFormDataRequest
-         * @return SaveFormDataResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增表单实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveFormDataRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveFormDataResponse
+        /// </returns>
         public async Task<SaveFormDataResponse> SaveFormDataAsync(SaveFormDataRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1320,14 +1545,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return await SaveFormDataWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 根据条件搜索表单实例 ID 列表
-         *
-         * @param request SearchFormDataIdListRequest
-         * @param headers SearchFormDataIdListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SearchFormDataIdListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据条件搜索表单实例 ID 列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchFormDataIdListRequest
+        /// </param>
+        /// <param name="headers">
+        /// SearchFormDataIdListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchFormDataIdListResponse
+        /// </returns>
         public SearchFormDataIdListResponse SearchFormDataIdListWithOptions(string appType, string formUuid, SearchFormDataIdListRequest request, SearchFormDataIdListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1411,14 +1646,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<SearchFormDataIdListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据条件搜索表单实例 ID 列表
-         *
-         * @param request SearchFormDataIdListRequest
-         * @param headers SearchFormDataIdListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SearchFormDataIdListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据条件搜索表单实例 ID 列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchFormDataIdListRequest
+        /// </param>
+        /// <param name="headers">
+        /// SearchFormDataIdListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchFormDataIdListResponse
+        /// </returns>
         public async Task<SearchFormDataIdListResponse> SearchFormDataIdListWithOptionsAsync(string appType, string formUuid, SearchFormDataIdListRequest request, SearchFormDataIdListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1502,12 +1747,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<SearchFormDataIdListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据条件搜索表单实例 ID 列表
-         *
-         * @param request SearchFormDataIdListRequest
-         * @return SearchFormDataIdListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据条件搜索表单实例 ID 列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchFormDataIdListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchFormDataIdListResponse
+        /// </returns>
         public SearchFormDataIdListResponse SearchFormDataIdList(string appType, string formUuid, SearchFormDataIdListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1515,12 +1766,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return SearchFormDataIdListWithOptions(appType, formUuid, request, headers, runtime);
         }
 
-        /**
-         * @summary 根据条件搜索表单实例 ID 列表
-         *
-         * @param request SearchFormDataIdListRequest
-         * @return SearchFormDataIdListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据条件搜索表单实例 ID 列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchFormDataIdListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchFormDataIdListResponse
+        /// </returns>
         public async Task<SearchFormDataIdListResponse> SearchFormDataIdListAsync(string appType, string formUuid, SearchFormDataIdListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1528,14 +1785,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return await SearchFormDataIdListWithOptionsAsync(appType, formUuid, request, headers, runtime);
         }
 
-        /**
-         * @summary 通过高级检索条件查询表单实例
-         *
-         * @param request SearchFormDataSecondGenerationRequest
-         * @param headers SearchFormDataSecondGenerationHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SearchFormDataSecondGenerationResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过高级检索条件查询表单实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchFormDataSecondGenerationRequest
+        /// </param>
+        /// <param name="headers">
+        /// SearchFormDataSecondGenerationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchFormDataSecondGenerationResponse
+        /// </returns>
         public SearchFormDataSecondGenerationResponse SearchFormDataSecondGenerationWithOptions(SearchFormDataSecondGenerationRequest request, SearchFormDataSecondGenerationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1625,14 +1892,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<SearchFormDataSecondGenerationResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 通过高级检索条件查询表单实例
-         *
-         * @param request SearchFormDataSecondGenerationRequest
-         * @param headers SearchFormDataSecondGenerationHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SearchFormDataSecondGenerationResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过高级检索条件查询表单实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchFormDataSecondGenerationRequest
+        /// </param>
+        /// <param name="headers">
+        /// SearchFormDataSecondGenerationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchFormDataSecondGenerationResponse
+        /// </returns>
         public async Task<SearchFormDataSecondGenerationResponse> SearchFormDataSecondGenerationWithOptionsAsync(SearchFormDataSecondGenerationRequest request, SearchFormDataSecondGenerationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1722,12 +1999,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<SearchFormDataSecondGenerationResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 通过高级检索条件查询表单实例
-         *
-         * @param request SearchFormDataSecondGenerationRequest
-         * @return SearchFormDataSecondGenerationResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过高级检索条件查询表单实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchFormDataSecondGenerationRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchFormDataSecondGenerationResponse
+        /// </returns>
         public SearchFormDataSecondGenerationResponse SearchFormDataSecondGeneration(SearchFormDataSecondGenerationRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1735,12 +2018,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return SearchFormDataSecondGenerationWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 通过高级检索条件查询表单实例
-         *
-         * @param request SearchFormDataSecondGenerationRequest
-         * @return SearchFormDataSecondGenerationResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过高级检索条件查询表单实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchFormDataSecondGenerationRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchFormDataSecondGenerationResponse
+        /// </returns>
         public async Task<SearchFormDataSecondGenerationResponse> SearchFormDataSecondGenerationAsync(SearchFormDataSecondGenerationRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1748,14 +2037,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return await SearchFormDataSecondGenerationWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 根据条件搜索表单实例详情列表
-         *
-         * @param request SearchFormDatasRequest
-         * @param headers SearchFormDatasHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SearchFormDatasResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据条件搜索表单实例详情列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchFormDatasRequest
+        /// </param>
+        /// <param name="headers">
+        /// SearchFormDatasHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchFormDatasResponse
+        /// </returns>
         public SearchFormDatasResponse SearchFormDatasWithOptions(SearchFormDatasRequest request, SearchFormDatasHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1849,14 +2148,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<SearchFormDatasResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据条件搜索表单实例详情列表
-         *
-         * @param request SearchFormDatasRequest
-         * @param headers SearchFormDatasHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SearchFormDatasResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据条件搜索表单实例详情列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchFormDatasRequest
+        /// </param>
+        /// <param name="headers">
+        /// SearchFormDatasHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchFormDatasResponse
+        /// </returns>
         public async Task<SearchFormDatasResponse> SearchFormDatasWithOptionsAsync(SearchFormDatasRequest request, SearchFormDatasHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1950,12 +2259,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<SearchFormDatasResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据条件搜索表单实例详情列表
-         *
-         * @param request SearchFormDatasRequest
-         * @return SearchFormDatasResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据条件搜索表单实例详情列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchFormDatasRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchFormDatasResponse
+        /// </returns>
         public SearchFormDatasResponse SearchFormDatas(SearchFormDatasRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1963,12 +2278,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return SearchFormDatasWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 根据条件搜索表单实例详情列表
-         *
-         * @param request SearchFormDatasRequest
-         * @return SearchFormDatasResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据条件搜索表单实例详情列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchFormDatasRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchFormDatasResponse
+        /// </returns>
         public async Task<SearchFormDatasResponse> SearchFormDatasAsync(SearchFormDatasRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1976,14 +2297,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return await SearchFormDatasWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 发起新的流程实例
-         *
-         * @param request StartInstanceRequest
-         * @param headers StartInstanceHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return StartInstanceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发起新的流程实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// StartInstanceRequest
+        /// </param>
+        /// <param name="headers">
+        /// StartInstanceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// StartInstanceResponse
+        /// </returns>
         public StartInstanceResponse StartInstanceWithOptions(StartInstanceRequest request, StartInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2057,14 +2388,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<StartInstanceResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 发起新的流程实例
-         *
-         * @param request StartInstanceRequest
-         * @param headers StartInstanceHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return StartInstanceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发起新的流程实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// StartInstanceRequest
+        /// </param>
+        /// <param name="headers">
+        /// StartInstanceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// StartInstanceResponse
+        /// </returns>
         public async Task<StartInstanceResponse> StartInstanceWithOptionsAsync(StartInstanceRequest request, StartInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2138,12 +2479,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<StartInstanceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 发起新的流程实例
-         *
-         * @param request StartInstanceRequest
-         * @return StartInstanceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发起新的流程实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// StartInstanceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// StartInstanceResponse
+        /// </returns>
         public StartInstanceResponse StartInstance(StartInstanceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2151,12 +2498,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return StartInstanceWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 发起新的流程实例
-         *
-         * @param request StartInstanceRequest
-         * @return StartInstanceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发起新的流程实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// StartInstanceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// StartInstanceResponse
+        /// </returns>
         public async Task<StartInstanceResponse> StartInstanceAsync(StartInstanceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2164,14 +2517,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return await StartInstanceWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新表单实例
-         *
-         * @param request UpdateFormDataRequest
-         * @param headers UpdateFormDataHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateFormDataResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新表单实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFormDataRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateFormDataHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFormDataResponse
+        /// </returns>
         public UpdateFormDataResponse UpdateFormDataWithOptions(UpdateFormDataRequest request, UpdateFormDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2241,14 +2604,24 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<UpdateFormDataResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新表单实例
-         *
-         * @param request UpdateFormDataRequest
-         * @param headers UpdateFormDataHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateFormDataResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新表单实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFormDataRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateFormDataHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFormDataResponse
+        /// </returns>
         public async Task<UpdateFormDataResponse> UpdateFormDataWithOptionsAsync(UpdateFormDataRequest request, UpdateFormDataHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2318,12 +2691,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return TeaModel.ToObject<UpdateFormDataResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新表单实例
-         *
-         * @param request UpdateFormDataRequest
-         * @return UpdateFormDataResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新表单实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFormDataRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFormDataResponse
+        /// </returns>
         public UpdateFormDataResponse UpdateFormData(UpdateFormDataRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2331,12 +2710,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0
             return UpdateFormDataWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新表单实例
-         *
-         * @param request UpdateFormDataRequest
-         * @return UpdateFormDataResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新表单实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFormDataRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFormDataResponse
+        /// </returns>
         public async Task<UpdateFormDataResponse> UpdateFormDataAsync(UpdateFormDataRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

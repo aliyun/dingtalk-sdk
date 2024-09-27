@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkesign_1_0.Models
         public string RedirectUrl { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

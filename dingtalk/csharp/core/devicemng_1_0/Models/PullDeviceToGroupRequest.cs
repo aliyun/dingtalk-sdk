@@ -18,12 +18,19 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
         public List<string> DeviceUuids { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>cide+m5TmAcxA3OU6Un59xxxx==</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>manager1111</para>
+        /// </summary>
         [NameInMap("operator")]
         [Validation(Required=false)]
         public string Operator { get; set; }

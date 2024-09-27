@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         public ListCalendarsResponseBodyResponse Response { get; set; }
         public class ListCalendarsResponseBodyResponse : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("calendars")]
             [Validation(Required=false)]
@@ -25,28 +25,28 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 public string Description { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("eTag")]
                 [Validation(Required=false)]
                 public string ETag { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("id")]
                 [Validation(Required=false)]
                 public string Id { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("privilege")]
                 [Validation(Required=false)]
                 public string Privilege { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("summary")]
                 [Validation(Required=false)]
@@ -57,7 +57,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 public string TimeZone { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("type")]
                 [Validation(Required=false)]

@@ -10,35 +10,44 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class ApproveProcessCallbackRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>sampleKeyId1234</para>
         /// </summary>
         [NameInMap("accessKeyId")]
         [Validation(Required=false)]
         public string AccessKeyId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>sampleSecretId1234</para>
         /// </summary>
         [NameInMap("accessKeySecret")]
         [Validation(Required=false)]
         public string AccessKeySecret { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("request")]
         [Validation(Required=false)]
         public ApproveProcessCallbackRequestRequest Request { get; set; }
         public class ApproveProcessCallbackRequestRequest : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>agree</para>
             /// </summary>
             [NameInMap("approveResult")]
             [Validation(Required=false)]
             public string ApproveResult { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("approveType")]
             [Validation(Required=false)]
@@ -49,21 +58,30 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             public List<string> Approvers { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1495592259000</para>
             /// </summary>
             [NameInMap("createTime")]
             [Validation(Required=false)]
             public long? CreateTime { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>approve_open_group_expansion</para>
             /// </summary>
             [NameInMap("eventType")]
             [Validation(Required=false)]
             public string EventType { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1495592259000</para>
             /// </summary>
             [NameInMap("finishTime")]
             [Validation(Required=false)]
@@ -74,7 +92,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             public string Params { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("processInstanceId")]
             [Validation(Required=false)]
@@ -86,6 +104,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>dingxxxxxxxxxxxx</para>
+        /// </summary>
         [NameInMap("targetCorpId")]
         [Validation(Required=false)]
         public string TargetCorpId { get; set; }

@@ -10,21 +10,24 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
     public class GetApaasAppResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1</para>
         /// </summary>
         [NameInMap("agentId")]
         [Validation(Required=false)]
         public long? AgentId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("bizAppId")]
         [Validation(Required=false)]
         public string BizAppId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("publishStatus")]
         [Validation(Required=false)]

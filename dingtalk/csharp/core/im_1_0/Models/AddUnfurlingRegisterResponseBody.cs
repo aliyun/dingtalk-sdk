@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class AddUnfurlingRegisterResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("id")]
         [Validation(Required=false)]
         public long? Id { get; set; }

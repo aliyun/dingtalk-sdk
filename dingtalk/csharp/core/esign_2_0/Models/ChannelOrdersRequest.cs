@@ -10,28 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
 {
     public class ChannelOrdersRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("itemCode")]
         [Validation(Required=false)]
         public string ItemCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("itemName")]
         [Validation(Required=false)]
         public string ItemName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("orderCreateTime")]
         [Validation(Required=false)]
         public float? OrderCreateTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("orderId")]
         [Validation(Required=false)]
@@ -42,7 +42,7 @@ namespace AlibabaCloud.SDK.Dingtalkesign_2_0.Models
         public float? PayFee { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("quantity")]
         [Validation(Required=false)]

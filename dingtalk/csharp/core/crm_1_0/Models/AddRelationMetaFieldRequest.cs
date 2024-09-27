@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class AddRelationMetaFieldRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("fieldDTOList")]
         [Validation(Required=false)]
         public List<AddRelationMetaFieldRequestFieldDTOList> FieldDTOList { get; set; }
         public class AddRelationMetaFieldRequestFieldDTOList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("componentName")]
             [Validation(Required=false)]
             public string ComponentName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("props")]
             [Validation(Required=false)]
@@ -35,7 +35,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 public string Align { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("bizAlias")]
                 [Validation(Required=false)]
@@ -70,7 +70,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 public bool? Invisible { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("label")]
                 [Validation(Required=false)]
@@ -119,7 +119,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 public string Placeholder { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("required")]
                 [Validation(Required=false)]
@@ -142,21 +142,21 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("operatorUserId")]
         [Validation(Required=false)]
         public string OperatorUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("relationType")]
         [Validation(Required=false)]
         public string RelationType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("tenant")]
         [Validation(Required=false)]

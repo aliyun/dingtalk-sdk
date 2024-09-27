@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         [Validation(Required=false)]
         public List<OpenKeyResultDTO> KeyResults { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>65222640d0e8b868f9f9ae3c</para>
+        /// </summary>
         [NameInMap("objectiveId")]
         [Validation(Required=false)]
         public string ObjectiveId { get; set; }
@@ -25,10 +29,18 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         [Validation(Required=false)]
         public OpenPeriodDTO Period { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>80</para>
+        /// </summary>
         [NameInMap("progress")]
         [Validation(Required=false)]
         public long? Progress { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]
         public long? Status { get; set; }
@@ -37,10 +49,18 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         [Validation(Required=false)]
         public List<OpenTeamDTO> Teams { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>这是一个O的标题</para>
+        /// </summary>
         [NameInMap("title")]
         [Validation(Required=false)]
         public string Title { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>10.00</para>
+        /// </summary>
         [NameInMap("weight")]
         [Validation(Required=false)]
         public double? Weight { get; set; }

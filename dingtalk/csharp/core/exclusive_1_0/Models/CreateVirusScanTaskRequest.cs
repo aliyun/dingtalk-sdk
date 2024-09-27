@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public long? FileSize { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("source")]
         [Validation(Required=false)]
@@ -41,7 +41,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public string SpaceId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

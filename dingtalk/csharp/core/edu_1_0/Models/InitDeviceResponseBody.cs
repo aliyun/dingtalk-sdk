@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class InitDeviceResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>success</para>
         /// </summary>
         [NameInMap("successInfo")]
         [Validation(Required=false)]

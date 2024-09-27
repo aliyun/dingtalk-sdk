@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class GetUserCardHolderListRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]

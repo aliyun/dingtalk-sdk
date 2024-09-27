@@ -50,7 +50,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             public string SendMessageStatus { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("sendTaskTimeStr")]
             [Validation(Required=false)]

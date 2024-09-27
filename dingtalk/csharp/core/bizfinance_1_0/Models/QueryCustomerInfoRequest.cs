@@ -13,10 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public string Keyword { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public long? PageNumber { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>20</para>
+        /// </summary>
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public long? PageSize { get; set; }

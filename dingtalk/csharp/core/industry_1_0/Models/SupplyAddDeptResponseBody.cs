@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public SupplyAddDeptResponseBodyResult Result { get; set; }
         public class SupplyAddDeptResponseBodyResult : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("deptId")]
             [Validation(Required=false)]

@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
         }
 
 
-        /**
-         * @summary 注册应用类目信息
-         *
-         * @param request RegisterCategorySourceConfigRequest
-         * @param headers RegisterCategorySourceConfigHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return RegisterCategorySourceConfigResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>注册应用类目信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RegisterCategorySourceConfigRequest
+        /// </param>
+        /// <param name="headers">
+        /// RegisterCategorySourceConfigHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RegisterCategorySourceConfigResponse
+        /// </returns>
         public RegisterCategorySourceConfigResponse RegisterCategorySourceConfigWithOptions(RegisterCategorySourceConfigRequest request, RegisterCategorySourceConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -81,14 +92,24 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
             return TeaModel.ToObject<RegisterCategorySourceConfigResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 注册应用类目信息
-         *
-         * @param request RegisterCategorySourceConfigRequest
-         * @param headers RegisterCategorySourceConfigHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return RegisterCategorySourceConfigResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>注册应用类目信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RegisterCategorySourceConfigRequest
+        /// </param>
+        /// <param name="headers">
+        /// RegisterCategorySourceConfigHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RegisterCategorySourceConfigResponse
+        /// </returns>
         public async Task<RegisterCategorySourceConfigResponse> RegisterCategorySourceConfigWithOptionsAsync(RegisterCategorySourceConfigRequest request, RegisterCategorySourceConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -134,12 +155,18 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
             return TeaModel.ToObject<RegisterCategorySourceConfigResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 注册应用类目信息
-         *
-         * @param request RegisterCategorySourceConfigRequest
-         * @return RegisterCategorySourceConfigResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>注册应用类目信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RegisterCategorySourceConfigRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RegisterCategorySourceConfigResponse
+        /// </returns>
         public RegisterCategorySourceConfigResponse RegisterCategorySourceConfig(RegisterCategorySourceConfigRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -147,12 +174,18 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
             return RegisterCategorySourceConfigWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 注册应用类目信息
-         *
-         * @param request RegisterCategorySourceConfigRequest
-         * @return RegisterCategorySourceConfigResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>注册应用类目信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RegisterCategorySourceConfigRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RegisterCategorySourceConfigResponse
+        /// </returns>
         public async Task<RegisterCategorySourceConfigResponse> RegisterCategorySourceConfigAsync(RegisterCategorySourceConfigRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

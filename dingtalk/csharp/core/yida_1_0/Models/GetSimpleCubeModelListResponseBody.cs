@@ -37,6 +37,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
                 [Validation(Required=false)]
                 public string FieldCode { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>12345</para>
+                /// </summary>
                 [NameInMap("id")]
                 [Validation(Required=false)]
                 public string Id { get; set; }
@@ -67,6 +71,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>12345</para>
+            /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public string Id { get; set; }

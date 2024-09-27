@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkrcs_call_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkrcs_call_1_0
         }
 
 
-        /**
-         * @summary 主叫方发起免费电话给授权企业人员，关联订单id
-         *
-         * @param request RunCallUserRequest
-         * @param headers RunCallUserHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return RunCallUserResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>主叫方发起免费电话给授权企业人员，关联订单id</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RunCallUserRequest
+        /// </param>
+        /// <param name="headers">
+        /// RunCallUserHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RunCallUserResponse
+        /// </returns>
         public RunCallUserResponse RunCallUserWithOptions(RunCallUserRequest request, RunCallUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -85,14 +96,24 @@ namespace AlibabaCloud.SDK.Dingtalkrcs_call_1_0
             return TeaModel.ToObject<RunCallUserResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 主叫方发起免费电话给授权企业人员，关联订单id
-         *
-         * @param request RunCallUserRequest
-         * @param headers RunCallUserHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return RunCallUserResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>主叫方发起免费电话给授权企业人员，关联订单id</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RunCallUserRequest
+        /// </param>
+        /// <param name="headers">
+        /// RunCallUserHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RunCallUserResponse
+        /// </returns>
         public async Task<RunCallUserResponse> RunCallUserWithOptionsAsync(RunCallUserRequest request, RunCallUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -142,12 +163,18 @@ namespace AlibabaCloud.SDK.Dingtalkrcs_call_1_0
             return TeaModel.ToObject<RunCallUserResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 主叫方发起免费电话给授权企业人员，关联订单id
-         *
-         * @param request RunCallUserRequest
-         * @return RunCallUserResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>主叫方发起免费电话给授权企业人员，关联订单id</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RunCallUserRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RunCallUserResponse
+        /// </returns>
         public RunCallUserResponse RunCallUser(RunCallUserRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -155,12 +182,18 @@ namespace AlibabaCloud.SDK.Dingtalkrcs_call_1_0
             return RunCallUserWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 主叫方发起免费电话给授权企业人员，关联订单id
-         *
-         * @param request RunCallUserRequest
-         * @return RunCallUserResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>主叫方发起免费电话给授权企业人员，关联订单id</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RunCallUserRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RunCallUserResponse
+        /// </returns>
         public async Task<RunCallUserResponse> RunCallUserAsync(RunCallUserRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

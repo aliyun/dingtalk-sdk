@@ -10,21 +10,27 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
 {
     public class AgoalUserObjectiveListRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>211042291978xxxx</para>
         /// </summary>
         [NameInMap("dingUserId")]
         [Validation(Required=false)]
         public string DingUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>6444f5e9a4261c6e699dxxxx</para>
         /// </summary>
         [NameInMap("objectiveRuleId")]
         [Validation(Required=false)]
         public string ObjectiveRuleId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("periodIds")]
         [Validation(Required=false)]

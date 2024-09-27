@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class GetCategoryRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>INCOME_XXX</para>
         /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]

@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
 {
     public class GetDataListResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public List<GetDataListResponseBodyData> Data { get; set; }
         public class GetDataListResponseBodyData : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("detail")]
             [Validation(Required=false)]
@@ -26,35 +26,35 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("dataname")]
         [Validation(Required=false)]
         public Dictionary<string, string> Dataname { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("page")]
         [Validation(Required=false)]
         public long? Page { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public long? PageSize { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("time")]
         [Validation(Required=false)]
         public string Time { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("totalCount")]
         [Validation(Required=false)]

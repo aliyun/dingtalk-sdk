@@ -9,16 +9,24 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
 {
     public class GetWorkCopyrightRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public int? PageNumber { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>10</para>
+        /// </summary>
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public int? PageSize { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("searchKey")]
         [Validation(Required=false)]

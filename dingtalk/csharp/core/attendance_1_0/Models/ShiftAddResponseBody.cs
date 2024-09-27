@@ -13,10 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public ShiftAddResponseBodyResult Result { get; set; }
         public class ShiftAddResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>白班</para>
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1111</para>
+            /// </summary>
             [NameInMap("shiftId")]
             [Validation(Required=false)]
             public long? ShiftId { get; set; }

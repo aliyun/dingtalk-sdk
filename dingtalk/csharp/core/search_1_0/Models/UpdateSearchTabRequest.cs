@@ -13,19 +13,29 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
         [Validation(Required=false)]
         public string DarkIcon { get; set; }
 
+        /// <summary>
+        /// <b>if can be null:</b>
+        /// <c>false</c>
+        /// </summary>
         [NameInMap("icon")]
         [Validation(Required=false)]
         public string Icon { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>专辑</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1</para>
         /// </summary>
         [NameInMap("priority")]
         [Validation(Required=false)]
@@ -36,7 +46,10 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
         public string Source { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1</para>
         /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]

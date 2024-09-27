@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class ListFilesRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
@@ -29,7 +29,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public string ParentId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class GetYongYouOpenApiTokenRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>50411123322</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

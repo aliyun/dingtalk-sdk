@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class SupplAddRoleResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1213</para>
+        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public string Result { get; set; }

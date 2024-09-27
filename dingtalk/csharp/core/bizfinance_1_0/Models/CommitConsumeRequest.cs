@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class CommitConsumeRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>B_SF2_INVOICE_OCR</para>
+        /// </summary>
         [NameInMap("benefitCode")]
         [Validation(Required=false)]
         public string BenefitCode { get; set; }
@@ -17,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public string BizRequestId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("quota")]
         [Validation(Required=false)]
         public long? Quota { get; set; }

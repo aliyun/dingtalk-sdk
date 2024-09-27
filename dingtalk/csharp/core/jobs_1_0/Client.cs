@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkjobs_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkjobs_1_0
         }
 
 
-        /**
-         * @summary 创建简历
-         *
-         * @param request CreateResumeRequest
-         * @param headers CreateResumeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateResumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建简历</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateResumeRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateResumeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateResumeResponse
+        /// </returns>
         public CreateResumeResponse CreateResumeWithOptions(CreateResumeRequest request, CreateResumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -93,14 +104,24 @@ namespace AlibabaCloud.SDK.Dingtalkjobs_1_0
             return TeaModel.ToObject<CreateResumeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建简历
-         *
-         * @param request CreateResumeRequest
-         * @param headers CreateResumeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateResumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建简历</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateResumeRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateResumeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateResumeResponse
+        /// </returns>
         public async Task<CreateResumeResponse> CreateResumeWithOptionsAsync(CreateResumeRequest request, CreateResumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -158,12 +179,18 @@ namespace AlibabaCloud.SDK.Dingtalkjobs_1_0
             return TeaModel.ToObject<CreateResumeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建简历
-         *
-         * @param request CreateResumeRequest
-         * @return CreateResumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建简历</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateResumeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateResumeResponse
+        /// </returns>
         public CreateResumeResponse CreateResume(CreateResumeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -171,12 +198,18 @@ namespace AlibabaCloud.SDK.Dingtalkjobs_1_0
             return CreateResumeWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建简历
-         *
-         * @param request CreateResumeRequest
-         * @return CreateResumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建简历</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateResumeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateResumeResponse
+        /// </returns>
         public async Task<CreateResumeResponse> CreateResumeAsync(CreateResumeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -184,14 +217,24 @@ namespace AlibabaCloud.SDK.Dingtalkjobs_1_0
             return await CreateResumeWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 投递简历
-         *
-         * @param request PostResumeRequest
-         * @param headers PostResumeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return PostResumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>投递简历</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PostResumeRequest
+        /// </param>
+        /// <param name="headers">
+        /// PostResumeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PostResumeResponse
+        /// </returns>
         public PostResumeResponse PostResumeWithOptions(PostResumeRequest request, PostResumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -233,14 +276,24 @@ namespace AlibabaCloud.SDK.Dingtalkjobs_1_0
             return TeaModel.ToObject<PostResumeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 投递简历
-         *
-         * @param request PostResumeRequest
-         * @param headers PostResumeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return PostResumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>投递简历</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PostResumeRequest
+        /// </param>
+        /// <param name="headers">
+        /// PostResumeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PostResumeResponse
+        /// </returns>
         public async Task<PostResumeResponse> PostResumeWithOptionsAsync(PostResumeRequest request, PostResumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -282,12 +335,18 @@ namespace AlibabaCloud.SDK.Dingtalkjobs_1_0
             return TeaModel.ToObject<PostResumeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 投递简历
-         *
-         * @param request PostResumeRequest
-         * @return PostResumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>投递简历</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PostResumeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PostResumeResponse
+        /// </returns>
         public PostResumeResponse PostResume(PostResumeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -295,12 +354,18 @@ namespace AlibabaCloud.SDK.Dingtalkjobs_1_0
             return PostResumeWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 投递简历
-         *
-         * @param request PostResumeRequest
-         * @return PostResumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>投递简历</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PostResumeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PostResumeResponse
+        /// </returns>
         public async Task<PostResumeResponse> PostResumeAsync(PostResumeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

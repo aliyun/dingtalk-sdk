@@ -14,14 +14,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public long? AdminRole { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("avatarUrl")]
         [Validation(Required=false)]
         public string AvatarUrl { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("cardId")]
         [Validation(Required=false)]
@@ -168,14 +168,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public Dictionary<string, object> Introduce { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("orgName")]
         [Validation(Required=false)]

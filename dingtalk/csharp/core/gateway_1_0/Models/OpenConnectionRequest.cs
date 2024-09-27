@@ -1,6 +1,3 @@
-/**
- *
- */
 // This file is auto-generated, don't edit it. Thanks.
 
 using System;
@@ -13,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkgateway_1_0.Models
 {
     public class OpenConnectionRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>suiteudabcd123</para>
         /// </summary>
         [NameInMap("clientId")]
         [Validation(Required=false)]
         public string ClientId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>9W1berqrwfs</para>
         /// </summary>
         [NameInMap("clientSecret")]
         [Validation(Required=false)]
@@ -30,26 +33,36 @@ namespace AlibabaCloud.SDK.Dingtalkgateway_1_0.Models
         [Validation(Required=false)]
         public Dictionary<string, object> Extras { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>32.78.48.10</para>
+        /// </summary>
         [NameInMap("localIp")]
         [Validation(Required=false)]
         public string LocalIp { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("subscriptions")]
         [Validation(Required=false)]
         public List<OpenConnectionRequestSubscriptions> Subscriptions { get; set; }
         public class OpenConnectionRequestSubscriptions : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>/v1.0/im/bot/messages/get</para>
             /// </summary>
             [NameInMap("topic")]
             [Validation(Required=false)]
             public string Topic { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>EVENT</para>
             /// </summary>
             [NameInMap("type")]
             [Validation(Required=false)]

@@ -10,25 +10,38 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class CreateGroupRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>abc</para>
         /// </summary>
         [NameInMap("groupName")]
         [Validation(Required=false)]
         public string GroupName { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>a,b,c</para>
+        /// </summary>
         [NameInMap("memberUserIds")]
         [Validation(Required=false)]
         public string MemberUserIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>abc123</para>
         /// </summary>
         [NameInMap("ownerUserId")]
         [Validation(Required=false)]
         public string OwnerUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>abc</para>
         /// </summary>
         [NameInMap("relationType")]
         [Validation(Required=false)]

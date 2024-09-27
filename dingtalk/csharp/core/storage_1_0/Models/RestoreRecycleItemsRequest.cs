@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public RestoreRecycleItemsRequestOption Option { get; set; }
         public class RestoreRecycleItemsRequestOption : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>AUTO_RENAME</para>
+            /// </summary>
             [NameInMap("conflictStrategy")]
             [Validation(Required=false)]
             public string ConflictStrategy { get; set; }
@@ -20,14 +24,17 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("recycleItemIds")]
         [Validation(Required=false)]
         public List<string> RecycleItemIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

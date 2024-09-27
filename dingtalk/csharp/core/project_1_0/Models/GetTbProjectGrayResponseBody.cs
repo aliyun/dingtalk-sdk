@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public string RequestId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public bool? Result { get; set; }

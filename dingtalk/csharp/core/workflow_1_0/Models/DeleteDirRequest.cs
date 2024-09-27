@@ -9,12 +9,19 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class DeleteDirRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>oaDirIdxxx</para>
+        /// </summary>
         [NameInMap("dirId")]
         [Validation(Required=false)]
         public string DirId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>user001</para>
         /// </summary>
         [NameInMap("operateUserId")]
         [Validation(Required=false)]

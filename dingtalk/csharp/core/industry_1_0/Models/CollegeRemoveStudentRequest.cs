@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class CollegeRemoveStudentRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1111</para>
         /// </summary>
         [NameInMap("deptId")]
         [Validation(Required=false)]
         public long? DeptId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>2222</para>
         /// </summary>
         [NameInMap("studentId")]
         [Validation(Required=false)]

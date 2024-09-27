@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class GetAgentIdByRelatedAppIdRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>10000</para>
         /// </summary>
         [NameInMap("appId")]
         [Validation(Required=false)]
         public long? AppId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ding24f2f5ccxxxxxxxx</para>
         /// </summary>
         [NameInMap("targetCorpId")]
         [Validation(Required=false)]

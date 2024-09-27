@@ -67,6 +67,10 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 
                 }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>BUSY</para>
+                /// </summary>
                 [NameInMap("status")]
                 [Validation(Required=false)]
                 public string Status { get; set; }

@@ -18,7 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string CallbackRouteKey { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("cardData")]
         [Validation(Required=false)]
@@ -41,7 +41,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("cardTemplateId")]
         [Validation(Required=false)]
@@ -52,7 +52,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string OpenConversationId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("outTrackId")]
         [Validation(Required=false)]

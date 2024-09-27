@@ -10,21 +10,27 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class StartCourseResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("universityCourseCommonResponse")]
         [Validation(Required=false)]
         public StartCourseResponseBodyUniversityCourseCommonResponse UniversityCourseCommonResponse { get; set; }
         public class StartCourseResponseBodyUniversityCourseCommonResponse : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>testCourseCode</para>
             /// </summary>
             [NameInMap("courseCode")]
             [Validation(Required=false)]
             public string CourseCode { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>true</para>
             /// </summary>
             [NameInMap("success")]
             [Validation(Required=false)]

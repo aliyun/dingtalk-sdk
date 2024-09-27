@@ -14,21 +14,30 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0.Models
         public List<string> Body { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>10</para>
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>50730********40554</para>
         /// </summary>
         [NameInMap("mcnId")]
         [Validation(Required=false)]
         public string McnId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>10</para>
         /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]

@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalktrajectory_1_0.Models
 {
     public class QueryAppActiveUsersRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>100</para>
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public long? MaxResults { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>true</para>
         /// </summary>
         [NameInMap("needPositionInfo")]
         [Validation(Required=false)]
         public bool? NeedPositionInfo { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>0</para>
         /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]

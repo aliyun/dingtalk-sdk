@@ -147,10 +147,18 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             [Validation(Required=false)]
             public string ActionType { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>standard , nonStandard, 标准卡片和非标准卡片，非标准卡片由第三方接入方自定义</para>
+            /// </summary>
             [NameInMap("cardType")]
             [Validation(Required=false)]
             public string CardType { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>是 icon, 或者checkbox 类型的</para>
+            /// </summary>
             [NameInMap("circleELType")]
             [Validation(Required=false)]
             public string CircleELType { get; set; }

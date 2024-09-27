@@ -9,10 +9,18 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalknotable_1_0.Models
 {
     public class GetRecordsResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("hasMore")]
         [Validation(Required=false)]
         public bool? HasMore { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>nextToken</para>
+        /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public string NextToken { get; set; }

@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class CreateCustomerResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>CUS_xxxxxx</para>
+        /// </summary>
         [NameInMap("customerCode")]
         [Validation(Required=false)]
         public string CustomerCode { get; set; }

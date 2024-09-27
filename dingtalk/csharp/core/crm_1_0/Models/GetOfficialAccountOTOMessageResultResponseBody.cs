@@ -14,21 +14,21 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public string RequestId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public GetOfficialAccountOTOMessageResultResponseBodyResult Result { get; set; }
         public class GetOfficialAccountOTOMessageResultResponseBodyResult : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("readUserIdList")]
             [Validation(Required=false)]
             public List<string> ReadUserIdList { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("status")]
             [Validation(Required=false)]

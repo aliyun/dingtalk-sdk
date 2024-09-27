@@ -13,10 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         [Validation(Required=false)]
         public AlignObjectiveResponseBodyData Data { get; set; }
         public class AlignObjectiveResponseBodyData : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>59YD</para>
+            /// </summary>
             [NameInMap("alignId")]
             [Validation(Required=false)]
             public Stream AlignId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>5dAX8</para>
+            /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public Stream Id { get; set; }
@@ -24,7 +32,10 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>true</para>
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

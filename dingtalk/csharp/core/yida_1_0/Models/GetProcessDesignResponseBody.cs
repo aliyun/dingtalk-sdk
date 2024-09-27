@@ -17,14 +17,26 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public GetProcessDesignResponseBodyApprovalSummaryTitle Title { get; set; }
             public class GetProcessDesignResponseBodyApprovalSummaryTitle : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>zhangsan</para>
+                /// </summary>
                 [NameInMap("en_US")]
                 [Validation(Required=false)]
                 public string EnUS { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>i18n</para>
+                /// </summary>
                 [NameInMap("type")]
                 [Validation(Required=false)]
                 public string Type { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>张三</para>
+                /// </summary>
                 [NameInMap("zh_CN")]
                 [Validation(Required=false)]
                 public string ZhCN { get; set; }
@@ -41,10 +53,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public List<GetProcessDesignResponseBodyFlowConfigSidInstDetail> SidInstDetail { get; set; }
             public class GetProcessDesignResponseBodyFlowConfigSidInstDetail : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>HIDDEN</para>
+                /// </summary>
                 [NameInMap("fieldBehavior")]
                 [Validation(Required=false)]
                 public string FieldBehavior { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>textField_xxx</para>
+                /// </summary>
                 [NameInMap("fieldId")]
                 [Validation(Required=false)]
                 public string FieldId { get; set; }
@@ -65,10 +85,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public List<string> ActivityId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>n</para>
+            /// </summary>
             [NameInMap("block")]
             [Validation(Required=false)]
             public string Block { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>xxx</para>
+            /// </summary>
             [NameInMap("message")]
             [Validation(Required=false)]
             public string Message { get; set; }
@@ -77,16 +105,28 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public GetProcessDesignResponseBodyFormulaRulesName Name { get; set; }
             public class GetProcessDesignResponseBodyFormulaRulesName : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>zhangsan</para>
+                /// </summary>
                 [NameInMap("en_US")]
                 [Validation(Required=false)]
                 public string EnUS { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>张三</para>
+                /// </summary>
                 [NameInMap("zh_CN")]
                 [Validation(Required=false)]
                 public string ZhCN { get; set; }
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>START</para>
+            /// </summary>
             [NameInMap("nodeType")]
             [Validation(Required=false)]
             public string NodeType { get; set; }
@@ -95,24 +135,44 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public GetProcessDesignResponseBodyFormulaRulesRule Rule { get; set; }
             public class GetProcessDesignResponseBodyFormulaRulesRule : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>EQ(#{textField_xxx},1)</para>
+                /// </summary>
                 [NameInMap("content")]
                 [Validation(Required=false)]
                 public string Content { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>EQ(单行文本,1)</para>
+                /// </summary>
                 [NameInMap("displayRule")]
                 [Validation(Required=false)]
                 public string DisplayRule { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>EQ(#{textField_xxx},1)</para>
+                /// </summary>
                 [NameInMap("source")]
                 [Validation(Required=false)]
                 public string Source { get; set; }
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>VALIDATOR</para>
+            /// </summary>
             [NameInMap("ruleType")]
             [Validation(Required=false)]
             public string RuleType { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>null</para>
+            /// </summary>
             [NameInMap("triggerMode")]
             [Validation(Required=false)]
             public string TriggerMode { get; set; }
@@ -127,6 +187,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public List<Dictionary<string, object>> ChildNodes { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>请选择审批人</para>
+            /// </summary>
             [NameInMap("description")]
             [Validation(Required=false)]
             public string Description { get; set; }
@@ -135,10 +199,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public GetProcessDesignResponseBodyNodesName Name { get; set; }
             public class GetProcessDesignResponseBodyNodesName : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>张三</para>
+                /// </summary>
                 [NameInMap("en_US")]
                 [Validation(Required=false)]
                 public string EnUS { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>zhangsan</para>
+                /// </summary>
                 [NameInMap("zh_CN")]
                 [Validation(Required=false)]
                 public string ZhCN { get; set; }
@@ -149,10 +221,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public List<string> NextId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>node_xxx</para>
+            /// </summary>
             [NameInMap("nodeId")]
             [Validation(Required=false)]
             public string NodeId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>node_xxx</para>
+            /// </summary>
             [NameInMap("prevId")]
             [Validation(Required=false)]
             public string PrevId { get; set; }
@@ -161,6 +241,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public Dictionary<string, object> Props { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>approval</para>
+            /// </summary>
             [NameInMap("type")]
             [Validation(Required=false)]
             public string Type { get; set; }
@@ -183,6 +267,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public bool? AllowWithdraw { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>FORM-xxx</para>
+            /// </summary>
             [NameInMap("bindingForm")]
             [Validation(Required=false)]
             public string BindingForm { get; set; }
@@ -191,18 +279,34 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public bool? NoRecordRecall { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>TPROC--BDC66HB1FIPNPCMNE5VV787RY4D5327NBKTZL0</para>
+            /// </summary>
             [NameInMap("processCode")]
             [Validation(Required=false)]
             public string ProcessCode { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para><a href="https://xxx">https://xxx</a></para>
+            /// </summary>
             [NameInMap("processDetailUrl")]
             [Validation(Required=false)]
             public string ProcessDetailUrl { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para><a href="https://xxx">https://xxx</a></para>
+            /// </summary>
             [NameInMap("processInitUrl")]
             [Validation(Required=false)]
             public string ProcessInitUrl { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para><a href="https://xxx">https://xxx</a></para>
+            /// </summary>
             [NameInMap("processMobileDetailUrl")]
             [Validation(Required=false)]
             public string ProcessMobileDetailUrl { get; set; }

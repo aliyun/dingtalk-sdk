@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
 {
     public class StreamingUpdateRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
         public string Content { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("guid")]
         [Validation(Required=false)]
@@ -36,14 +36,14 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         public bool? IsFull { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("key")]
         [Validation(Required=false)]
         public string Key { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("outTrackId")]
         [Validation(Required=false)]

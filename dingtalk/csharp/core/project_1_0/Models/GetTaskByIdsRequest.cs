@@ -9,10 +9,18 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class GetTaskByIdsRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>60a2187eb72xxxxxxx</para>
+        /// </summary>
         [NameInMap("parentTaskId")]
         [Validation(Required=false)]
         public string ParentTaskId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>60a2187eb72xxxxxxx</para>
+        /// </summary>
         [NameInMap("taskId")]
         [Validation(Required=false)]
         public string TaskId { get; set; }

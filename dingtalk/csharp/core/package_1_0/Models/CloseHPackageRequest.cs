@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0.Models
 {
     public class CloseHPackageRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>5000000000000000</para>
         /// </summary>
         [NameInMap("miniAppId")]
         [Validation(Required=false)]

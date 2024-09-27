@@ -14,35 +14,41 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         public long? AgentId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("bizId")]
         [Validation(Required=false)]
         public string BizId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("messageType")]
         [Validation(Required=false)]
         public string MessageType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>16690147049882572</para>
         /// </summary>
         [NameInMap("sceneType")]
         [Validation(Required=false)]
         public string SceneType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>同意转正</para>
         /// </summary>
         [NameInMap("scope")]
         [Validation(Required=false)]
         public string Scope { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("valueMap")]
         [Validation(Required=false)]

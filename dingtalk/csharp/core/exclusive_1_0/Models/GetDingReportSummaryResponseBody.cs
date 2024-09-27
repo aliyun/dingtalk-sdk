@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class GetDingReportSummaryResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>100</para>
         /// </summary>
         [NameInMap("reportCommentUserCnt1d")]
         [Validation(Required=false)]

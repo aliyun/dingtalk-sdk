@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
 {
     public class GetBotListInGroupRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>cidjknasndcbaXXXXX</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]

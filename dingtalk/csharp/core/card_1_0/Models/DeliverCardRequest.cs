@@ -13,10 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public DeliverCardRequestCoFeedOpenDeliverModel CoFeedOpenDeliverModel { get; set; }
         public class DeliverCardRequestCoFeedOpenDeliverModel : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>xxx_biz_tag</para>
+            /// </summary>
             [NameInMap("bizTag")]
             [Validation(Required=false)]
             public string BizTag { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1665473229000</para>
+            /// </summary>
             [NameInMap("gmtTimeLine")]
             [Validation(Required=false)]
             public long? GmtTimeLine { get; set; }
@@ -27,6 +35,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public DeliverCardRequestDocOpenDeliverModel DocOpenDeliverModel { get; set; }
         public class DeliverCardRequestDocOpenDeliverModel : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>xxx_biz_tag</para>
+            /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }
@@ -49,6 +61,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
             [Validation(Required=false)]
             public List<string> Recipients { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>dingg3xmqdkpaojuakm8</para>
+            /// </summary>
             [NameInMap("robotCode")]
             [Validation(Required=false)]
             public string RobotCode { get; set; }
@@ -63,10 +79,18 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
             [Validation(Required=false)]
             public Dictionary<string, string> Extension { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>dingg3xmqdkpaojuakm8</para>
+            /// </summary>
             [NameInMap("robotCode")]
             [Validation(Required=false)]
             public string RobotCode { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>IM_ROBOT</para>
+            /// </summary>
             [NameInMap("spaceType")]
             [Validation(Required=false)]
             public string SpaceType { get; set; }
@@ -88,14 +112,20 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>dtv1.card//im_group.cidp4Gh<em><b><b><b>VCQ==;im_robot.manager</b></b>67;co_feed.manager</b></em><em>67;one_box.cidp4Gh</em>******VCQ==</para>
         /// </summary>
         [NameInMap("openSpaceId")]
         [Validation(Required=false)]
         public string OpenSpaceId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>out_track_id_123456</para>
         /// </summary>
         [NameInMap("outTrackId")]
         [Validation(Required=false)]
@@ -105,6 +135,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public DeliverCardRequestTopOpenDeliverModel TopOpenDeliverModel { get; set; }
         public class DeliverCardRequestTopOpenDeliverModel : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1665473229000</para>
+            /// </summary>
             [NameInMap("expiredTimeMillis")]
             [Validation(Required=false)]
             public long? ExpiredTimeMillis { get; set; }
@@ -119,6 +153,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("userIdType")]
         [Validation(Required=false)]
         public int? UserIdType { get; set; }

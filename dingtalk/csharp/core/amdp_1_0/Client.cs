@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkamdp_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkamdp_1_0
         }
 
 
-        /**
-         * @summary 人员角色数据推送
-         *
-         * @param request AmdpEmpRoleDataPushRequest
-         * @param headers AmdpEmpRoleDataPushHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AmdpEmpRoleDataPushResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人员角色数据推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AmdpEmpRoleDataPushRequest
+        /// </param>
+        /// <param name="headers">
+        /// AmdpEmpRoleDataPushHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AmdpEmpRoleDataPushResponse
+        /// </returns>
         public AmdpEmpRoleDataPushResponse AmdpEmpRoleDataPushWithOptions(AmdpEmpRoleDataPushRequest request, AmdpEmpRoleDataPushHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -73,14 +84,24 @@ namespace AlibabaCloud.SDK.Dingtalkamdp_1_0
             return TeaModel.ToObject<AmdpEmpRoleDataPushResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 人员角色数据推送
-         *
-         * @param request AmdpEmpRoleDataPushRequest
-         * @param headers AmdpEmpRoleDataPushHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AmdpEmpRoleDataPushResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人员角色数据推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AmdpEmpRoleDataPushRequest
+        /// </param>
+        /// <param name="headers">
+        /// AmdpEmpRoleDataPushHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AmdpEmpRoleDataPushResponse
+        /// </returns>
         public async Task<AmdpEmpRoleDataPushResponse> AmdpEmpRoleDataPushWithOptionsAsync(AmdpEmpRoleDataPushRequest request, AmdpEmpRoleDataPushHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -118,12 +139,18 @@ namespace AlibabaCloud.SDK.Dingtalkamdp_1_0
             return TeaModel.ToObject<AmdpEmpRoleDataPushResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 人员角色数据推送
-         *
-         * @param request AmdpEmpRoleDataPushRequest
-         * @return AmdpEmpRoleDataPushResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人员角色数据推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AmdpEmpRoleDataPushRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AmdpEmpRoleDataPushResponse
+        /// </returns>
         public AmdpEmpRoleDataPushResponse AmdpEmpRoleDataPush(AmdpEmpRoleDataPushRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -131,12 +158,18 @@ namespace AlibabaCloud.SDK.Dingtalkamdp_1_0
             return AmdpEmpRoleDataPushWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 人员角色数据推送
-         *
-         * @param request AmdpEmpRoleDataPushRequest
-         * @return AmdpEmpRoleDataPushResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人员角色数据推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AmdpEmpRoleDataPushRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AmdpEmpRoleDataPushResponse
+        /// </returns>
         public async Task<AmdpEmpRoleDataPushResponse> AmdpEmpRoleDataPushAsync(AmdpEmpRoleDataPushRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -144,14 +177,24 @@ namespace AlibabaCloud.SDK.Dingtalkamdp_1_0
             return await AmdpEmpRoleDataPushWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 人员数据推送
-         *
-         * @param request AmdpEmployeeDataPushRequest
-         * @param headers AmdpEmployeeDataPushHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AmdpEmployeeDataPushResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人员数据推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AmdpEmployeeDataPushRequest
+        /// </param>
+        /// <param name="headers">
+        /// AmdpEmployeeDataPushHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AmdpEmployeeDataPushResponse
+        /// </returns>
         public AmdpEmployeeDataPushResponse AmdpEmployeeDataPushWithOptions(AmdpEmployeeDataPushRequest request, AmdpEmployeeDataPushHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -189,14 +232,24 @@ namespace AlibabaCloud.SDK.Dingtalkamdp_1_0
             return TeaModel.ToObject<AmdpEmployeeDataPushResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 人员数据推送
-         *
-         * @param request AmdpEmployeeDataPushRequest
-         * @param headers AmdpEmployeeDataPushHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AmdpEmployeeDataPushResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人员数据推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AmdpEmployeeDataPushRequest
+        /// </param>
+        /// <param name="headers">
+        /// AmdpEmployeeDataPushHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AmdpEmployeeDataPushResponse
+        /// </returns>
         public async Task<AmdpEmployeeDataPushResponse> AmdpEmployeeDataPushWithOptionsAsync(AmdpEmployeeDataPushRequest request, AmdpEmployeeDataPushHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -234,12 +287,18 @@ namespace AlibabaCloud.SDK.Dingtalkamdp_1_0
             return TeaModel.ToObject<AmdpEmployeeDataPushResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 人员数据推送
-         *
-         * @param request AmdpEmployeeDataPushRequest
-         * @return AmdpEmployeeDataPushResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人员数据推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AmdpEmployeeDataPushRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AmdpEmployeeDataPushResponse
+        /// </returns>
         public AmdpEmployeeDataPushResponse AmdpEmployeeDataPush(AmdpEmployeeDataPushRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -247,12 +306,18 @@ namespace AlibabaCloud.SDK.Dingtalkamdp_1_0
             return AmdpEmployeeDataPushWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 人员数据推送
-         *
-         * @param request AmdpEmployeeDataPushRequest
-         * @return AmdpEmployeeDataPushResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>人员数据推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AmdpEmployeeDataPushRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AmdpEmployeeDataPushResponse
+        /// </returns>
         public async Task<AmdpEmployeeDataPushResponse> AmdpEmployeeDataPushAsync(AmdpEmployeeDataPushRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -260,14 +325,24 @@ namespace AlibabaCloud.SDK.Dingtalkamdp_1_0
             return await AmdpEmployeeDataPushWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 任职数据推送
-         *
-         * @param request AmdpJobPositionDataPushRequest
-         * @param headers AmdpJobPositionDataPushHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AmdpJobPositionDataPushResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>任职数据推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AmdpJobPositionDataPushRequest
+        /// </param>
+        /// <param name="headers">
+        /// AmdpJobPositionDataPushHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AmdpJobPositionDataPushResponse
+        /// </returns>
         public AmdpJobPositionDataPushResponse AmdpJobPositionDataPushWithOptions(AmdpJobPositionDataPushRequest request, AmdpJobPositionDataPushHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -305,14 +380,24 @@ namespace AlibabaCloud.SDK.Dingtalkamdp_1_0
             return TeaModel.ToObject<AmdpJobPositionDataPushResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 任职数据推送
-         *
-         * @param request AmdpJobPositionDataPushRequest
-         * @param headers AmdpJobPositionDataPushHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AmdpJobPositionDataPushResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>任职数据推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AmdpJobPositionDataPushRequest
+        /// </param>
+        /// <param name="headers">
+        /// AmdpJobPositionDataPushHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AmdpJobPositionDataPushResponse
+        /// </returns>
         public async Task<AmdpJobPositionDataPushResponse> AmdpJobPositionDataPushWithOptionsAsync(AmdpJobPositionDataPushRequest request, AmdpJobPositionDataPushHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -350,12 +435,18 @@ namespace AlibabaCloud.SDK.Dingtalkamdp_1_0
             return TeaModel.ToObject<AmdpJobPositionDataPushResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 任职数据推送
-         *
-         * @param request AmdpJobPositionDataPushRequest
-         * @return AmdpJobPositionDataPushResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>任职数据推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AmdpJobPositionDataPushRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AmdpJobPositionDataPushResponse
+        /// </returns>
         public AmdpJobPositionDataPushResponse AmdpJobPositionDataPush(AmdpJobPositionDataPushRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -363,12 +454,18 @@ namespace AlibabaCloud.SDK.Dingtalkamdp_1_0
             return AmdpJobPositionDataPushWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 任职数据推送
-         *
-         * @param request AmdpJobPositionDataPushRequest
-         * @return AmdpJobPositionDataPushResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>任职数据推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AmdpJobPositionDataPushRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AmdpJobPositionDataPushResponse
+        /// </returns>
         public async Task<AmdpJobPositionDataPushResponse> AmdpJobPositionDataPushAsync(AmdpJobPositionDataPushRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -376,14 +473,24 @@ namespace AlibabaCloud.SDK.Dingtalkamdp_1_0
             return await AmdpJobPositionDataPushWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 组织部门数据推送
-         *
-         * @param request AmdpOrganizationDataPushRequest
-         * @param headers AmdpOrganizationDataPushHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AmdpOrganizationDataPushResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>组织部门数据推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AmdpOrganizationDataPushRequest
+        /// </param>
+        /// <param name="headers">
+        /// AmdpOrganizationDataPushHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AmdpOrganizationDataPushResponse
+        /// </returns>
         public AmdpOrganizationDataPushResponse AmdpOrganizationDataPushWithOptions(AmdpOrganizationDataPushRequest request, AmdpOrganizationDataPushHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -421,14 +528,24 @@ namespace AlibabaCloud.SDK.Dingtalkamdp_1_0
             return TeaModel.ToObject<AmdpOrganizationDataPushResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 组织部门数据推送
-         *
-         * @param request AmdpOrganizationDataPushRequest
-         * @param headers AmdpOrganizationDataPushHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AmdpOrganizationDataPushResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>组织部门数据推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AmdpOrganizationDataPushRequest
+        /// </param>
+        /// <param name="headers">
+        /// AmdpOrganizationDataPushHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AmdpOrganizationDataPushResponse
+        /// </returns>
         public async Task<AmdpOrganizationDataPushResponse> AmdpOrganizationDataPushWithOptionsAsync(AmdpOrganizationDataPushRequest request, AmdpOrganizationDataPushHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -466,12 +583,18 @@ namespace AlibabaCloud.SDK.Dingtalkamdp_1_0
             return TeaModel.ToObject<AmdpOrganizationDataPushResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 组织部门数据推送
-         *
-         * @param request AmdpOrganizationDataPushRequest
-         * @return AmdpOrganizationDataPushResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>组织部门数据推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AmdpOrganizationDataPushRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AmdpOrganizationDataPushResponse
+        /// </returns>
         public AmdpOrganizationDataPushResponse AmdpOrganizationDataPush(AmdpOrganizationDataPushRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -479,12 +602,18 @@ namespace AlibabaCloud.SDK.Dingtalkamdp_1_0
             return AmdpOrganizationDataPushWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 组织部门数据推送
-         *
-         * @param request AmdpOrganizationDataPushRequest
-         * @return AmdpOrganizationDataPushResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>组织部门数据推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AmdpOrganizationDataPushRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AmdpOrganizationDataPushResponse
+        /// </returns>
         public async Task<AmdpOrganizationDataPushResponse> AmdpOrganizationDataPushAsync(AmdpOrganizationDataPushRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

@@ -14,12 +14,16 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public long? CurrentPage { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public List<GetTrustDeviceListResponseBodyData> Data { get; set; }
         public class GetTrustDeviceListResponseBodyData : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1628650483</para>
+            /// </summary>
             [NameInMap("createTime")]
             [Validation(Required=false)]
             public long? CreateTime { get; set; }
@@ -28,6 +32,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public long? Id { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>88:92:5a:1f:e8:24</para>
+            /// </summary>
             [NameInMap("macAddress")]
             [Validation(Required=false)]
             public string MacAddress { get; set; }
@@ -40,10 +48,18 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public long? ModifiedTime { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>Mac</para>
+            /// </summary>
             [NameInMap("platform")]
             [Validation(Required=false)]
             public string Platform { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>2</para>
+            /// </summary>
             [NameInMap("status")]
             [Validation(Required=false)]
             public int? Status { get; set; }
@@ -53,7 +69,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             public string Title { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>65224157501039784</para>
             /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]

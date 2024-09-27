@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_2_0.Models
 {
     public class SetPermissionInheritanceRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>PASS_ON</para>
         /// </summary>
         [NameInMap("inheritance")]
         [Validation(Required=false)]
         public string Inheritance { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

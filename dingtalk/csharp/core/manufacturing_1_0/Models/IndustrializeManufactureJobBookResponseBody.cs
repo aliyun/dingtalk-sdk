@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0.Models
         [Validation(Required=false)]
         public IndustrializeManufactureJobBookResponseBodyContent Content { get; set; }
         public class IndustrializeManufactureJobBookResponseBodyContent : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1</para>
+            /// </summary>
             [NameInMap("count")]
             [Validation(Required=false)]
             public int? Count { get; set; }
@@ -40,7 +44,7 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0.Models
         public string HttpCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

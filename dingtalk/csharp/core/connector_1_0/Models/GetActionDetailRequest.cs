@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
 {
     public class GetActionDetailRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>dca://ding32fff839a3e0105d.connect.dingtalk.com/ding32fff839a3e0105d/action/G-ACT-101FDEBD3C6E213DB474000P</para>
         /// </summary>
         [NameInMap("connectAssetUri")]
         [Validation(Required=false)]

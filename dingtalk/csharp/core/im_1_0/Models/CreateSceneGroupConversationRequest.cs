@@ -14,19 +14,29 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public Dictionary<string, string> Features { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>客户群</para>
         /// </summary>
         [NameInMap("groupName")]
         [Validation(Required=false)]
         public string GroupName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1107****2120</para>
         /// </summary>
         [NameInMap("groupOwnerId")]
         [Validation(Required=false)]
         public string GroupOwnerId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>http://***.png</para>
+        /// </summary>
         [NameInMap("icon")]
         [Validation(Required=false)]
         public string Icon { get; set; }
@@ -62,7 +72,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>8d42****nkld</para>
         /// </summary>
         [NameInMap("templateId")]
         [Validation(Required=false)]
@@ -72,6 +85,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public List<string> UserIdList { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>asdazxc</para>
+        /// </summary>
         [NameInMap("uuid")]
         [Validation(Required=false)]
         public string Uuid { get; set; }

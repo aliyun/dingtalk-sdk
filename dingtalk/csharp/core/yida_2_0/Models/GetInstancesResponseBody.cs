@@ -29,10 +29,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0.Models
                 [Validation(Required=false)]
                 public GetInstancesResponseBodyDataActionExecutorName Name { get; set; }
                 public class GetInstancesResponseBodyDataActionExecutorName : TeaModel {
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>张三</para>
+                    /// </summary>
                     [NameInMap("nameInChinese")]
                     [Validation(Required=false)]
                     public string NameInChinese { get; set; }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>ZhangSan</para>
+                    /// </summary>
                     [NameInMap("nameInEnglish")]
                     [Validation(Required=false)]
                     public string NameInEnglish { get; set; }
@@ -89,10 +97,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0.Models
                 [Validation(Required=false)]
                 public GetInstancesResponseBodyDataOriginatorName Name { get; set; }
                 public class GetInstancesResponseBodyDataOriginatorName : TeaModel {
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>张三</para>
+                    /// </summary>
                     [NameInMap("nameInChinese")]
                     [Validation(Required=false)]
                     public string NameInChinese { get; set; }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>ZhangSan</para>
+                    /// </summary>
                     [NameInMap("nameInEnglish")]
                     [Validation(Required=false)]
                     public string NameInEnglish { get; set; }
@@ -127,10 +143,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_2_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public long? PageNumber { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>100</para>
+        /// </summary>
         [NameInMap("totalCount")]
         [Validation(Required=false)]
         public long? TotalCount { get; set; }

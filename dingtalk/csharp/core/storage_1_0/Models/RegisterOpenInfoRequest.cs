@@ -10,21 +10,27 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 {
     public class RegisterOpenInfoRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("openInfos")]
         [Validation(Required=false)]
         public List<RegisterOpenInfoRequestOpenInfos> OpenInfos { get; set; }
         public class RegisterOpenInfoRequestOpenInfos : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>PREVIEW</para>
             /// </summary>
             [NameInMap("openType")]
             [Validation(Required=false)]
             public string OpenType { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>url</para>
             /// </summary>
             [NameInMap("url")]
             [Validation(Required=false)]
@@ -33,14 +39,20 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>DINGTALK</para>
         /// </summary>
         [NameInMap("provider")]
         [Validation(Required=false)]
         public string Provider { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

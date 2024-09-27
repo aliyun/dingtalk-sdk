@@ -10,21 +10,24 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class SetColumnWidthRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("column")]
         [Validation(Required=false)]
         public int? Column { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("width")]
         [Validation(Required=false)]
         public int? Width { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ppgAQuHfOoNVpJiStDwWCEgiEiE</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkh5package_1_0.Models
 {
     public class CreatePackageResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1663748308644pjpF</para>
+        /// </summary>
         [NameInMap("taskId")]
         [Validation(Required=false)]
         public string TaskId { get; set; }

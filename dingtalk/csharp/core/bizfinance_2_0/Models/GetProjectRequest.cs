@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
 {
     public class GetProjectRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>PROJ-xxx</para>
         /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]

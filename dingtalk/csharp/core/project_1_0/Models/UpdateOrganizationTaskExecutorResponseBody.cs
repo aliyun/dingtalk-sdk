@@ -17,20 +17,36 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             [Validation(Required=false)]
             public UpdateOrganizationTaskExecutorResponseBodyResultExecutor Executor { get; set; }
             public class UpdateOrganizationTaskExecutorResponseBodyResultExecutor : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para><a href="http://xxxxx">http://xxxxx</a></para>
+                /// </summary>
                 [NameInMap("avatarUrl")]
                 [Validation(Required=false)]
                 public string AvatarUrl { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>鬼斩</para>
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>173xxxx</para>
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>173xxxx</para>
+            /// </summary>
             [NameInMap("executorId")]
             [Validation(Required=false)]
             public string ExecutorId { get; set; }
@@ -39,20 +55,36 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
             [Validation(Required=false)]
             public List<UpdateOrganizationTaskExecutorResponseBodyResultInvolvers> Involvers { get; set; }
             public class UpdateOrganizationTaskExecutorResponseBodyResultInvolvers : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para><a href="http://xxxxx">http://xxxxx</a></para>
+                /// </summary>
                 [NameInMap("avatarUrl")]
                 [Validation(Required=false)]
                 public string AvatarUrl { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>鬼斩</para>
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>173xxxx</para>
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>2022-06-08T03:00:17.031Z</para>
+            /// </summary>
             [NameInMap("updated")]
             [Validation(Required=false)]
             public string Updated { get; set; }

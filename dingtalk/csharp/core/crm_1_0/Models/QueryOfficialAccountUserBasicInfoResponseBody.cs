@@ -14,14 +14,17 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public string RequestId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public QueryOfficialAccountUserBasicInfoResponseBodyResult Result { get; set; }
         public class QueryOfficialAccountUserBasicInfoResponseBodyResult : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>FOLLOWED</para>
             /// </summary>
             [NameInMap("status")]
             [Validation(Required=false)]

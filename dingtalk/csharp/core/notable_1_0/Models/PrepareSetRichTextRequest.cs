@@ -14,7 +14,10 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0.Models
         public string Markdown { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

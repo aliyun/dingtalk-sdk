@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0.Models
 {
     public class HUploadPackageStatusRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>5000000002761167</para>
         /// </summary>
         [NameInMap("miniAppId")]
         [Validation(Required=false)]
         public string MiniAppId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>xxxx</para>
         /// </summary>
         [NameInMap("taskId")]
         [Validation(Required=false)]

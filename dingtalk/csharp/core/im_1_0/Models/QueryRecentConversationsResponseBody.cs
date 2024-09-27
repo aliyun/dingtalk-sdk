@@ -18,56 +18,56 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
             public List<QueryRecentConversationsResponseBodyResultConversationList> ConversationList { get; set; }
             public class QueryRecentConversationsResponseBodyResultConversationList : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("conversationType")]
                 [Validation(Required=false)]
                 public int? ConversationType { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("icon")]
                 [Validation(Required=false)]
                 public string Icon { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("memberCount")]
                 [Validation(Required=false)]
                 public string MemberCount { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("nickName")]
                 [Validation(Required=false)]
                 public string NickName { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("openConversationId")]
                 [Validation(Required=false)]
                 public string OpenConversationId { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("title")]
                 [Validation(Required=false)]
                 public string Title { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]

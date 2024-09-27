@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkai_interaction_1_0.Models
 {
     public class FinishRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("conversationToken")]
         [Validation(Required=false)]

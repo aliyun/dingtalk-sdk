@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_2_0.Models
 {
     public class GetNodesRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("nodeIds")]
         [Validation(Required=false)]
@@ -20,10 +20,18 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_2_0.Models
         [Validation(Required=false)]
         public GetNodesRequestOption Option { get; set; }
         public class GetNodesRequestOption : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>false</para>
+            /// </summary>
             [NameInMap("withPermissionRole")]
             [Validation(Required=false)]
             public bool? WithPermissionRole { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>false</para>
+            /// </summary>
             [NameInMap("withStatisticalInfo")]
             [Validation(Required=false)]
             public bool? WithStatisticalInfo { get; set; }
@@ -31,7 +39,10 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_2_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

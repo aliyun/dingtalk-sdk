@@ -10,28 +10,37 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 {
     public class UpdateDentryAppPropertiesRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("appProperties")]
         [Validation(Required=false)]
         public List<UpdateDentryAppPropertiesRequestAppProperties> AppProperties { get; set; }
         public class UpdateDentryAppPropertiesRequestAppProperties : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>property_name</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>property_value</para>
             /// </summary>
             [NameInMap("value")]
             [Validation(Required=false)]
             public string Value { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>PRIVATE</para>
             /// </summary>
             [NameInMap("visibility")]
             [Validation(Required=false)]
@@ -40,7 +49,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
         }
 
 
-        /**
-         * @summary 追加角色权限点
-         *
-         * @param tmpReq AppendRolePermissionRequest
-         * @param headers AppendRolePermissionHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AppendRolePermissionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>追加角色权限点</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// AppendRolePermissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// AppendRolePermissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AppendRolePermissionResponse
+        /// </returns>
         public AppendRolePermissionResponse AppendRolePermissionWithOptions(AppendRolePermissionRequest tmpReq, AppendRolePermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
@@ -83,14 +94,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<AppendRolePermissionResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 追加角色权限点
-         *
-         * @param tmpReq AppendRolePermissionRequest
-         * @param headers AppendRolePermissionHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AppendRolePermissionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>追加角色权限点</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// AppendRolePermissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// AppendRolePermissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AppendRolePermissionResponse
+        /// </returns>
         public async Task<AppendRolePermissionResponse> AppendRolePermissionWithOptionsAsync(AppendRolePermissionRequest tmpReq, AppendRolePermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
@@ -138,12 +159,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<AppendRolePermissionResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 追加角色权限点
-         *
-         * @param request AppendRolePermissionRequest
-         * @return AppendRolePermissionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>追加角色权限点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AppendRolePermissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AppendRolePermissionResponse
+        /// </returns>
         public AppendRolePermissionResponse AppendRolePermission(AppendRolePermissionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -151,12 +178,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return AppendRolePermissionWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 追加角色权限点
-         *
-         * @param request AppendRolePermissionRequest
-         * @return AppendRolePermissionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>追加角色权限点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AppendRolePermissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AppendRolePermissionResponse
+        /// </returns>
         public async Task<AppendRolePermissionResponse> AppendRolePermissionAsync(AppendRolePermissionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -164,14 +197,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await AppendRolePermissionWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 发票数据批量写入
-         *
-         * @param request BatchAddInvoiceRequest
-         * @param headers BatchAddInvoiceHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return BatchAddInvoiceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发票数据批量写入</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchAddInvoiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchAddInvoiceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchAddInvoiceResponse
+        /// </returns>
         public BatchAddInvoiceResponse BatchAddInvoiceWithOptions(BatchAddInvoiceRequest request, BatchAddInvoiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -225,14 +268,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<BatchAddInvoiceResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 发票数据批量写入
-         *
-         * @param request BatchAddInvoiceRequest
-         * @param headers BatchAddInvoiceHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return BatchAddInvoiceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发票数据批量写入</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchAddInvoiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchAddInvoiceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchAddInvoiceResponse
+        /// </returns>
         public async Task<BatchAddInvoiceResponse> BatchAddInvoiceWithOptionsAsync(BatchAddInvoiceRequest request, BatchAddInvoiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -286,12 +339,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<BatchAddInvoiceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 发票数据批量写入
-         *
-         * @param request BatchAddInvoiceRequest
-         * @return BatchAddInvoiceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发票数据批量写入</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchAddInvoiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchAddInvoiceResponse
+        /// </returns>
         public BatchAddInvoiceResponse BatchAddInvoice(BatchAddInvoiceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -299,12 +358,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return BatchAddInvoiceWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 发票数据批量写入
-         *
-         * @param request BatchAddInvoiceRequest
-         * @return BatchAddInvoiceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发票数据批量写入</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchAddInvoiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchAddInvoiceResponse
+        /// </returns>
         public async Task<BatchAddInvoiceResponse> BatchAddInvoiceAsync(BatchAddInvoiceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -312,14 +377,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await BatchAddInvoiceWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 批量增加用户信息
-         *
-         * @param request BatchCreateCustomerRequest
-         * @param headers BatchCreateCustomerHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return BatchCreateCustomerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量增加用户信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchCreateCustomerRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchCreateCustomerHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchCreateCustomerResponse
+        /// </returns>
         public BatchCreateCustomerResponse BatchCreateCustomerWithOptions(BatchCreateCustomerRequest request, BatchCreateCustomerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -361,14 +436,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<BatchCreateCustomerResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 批量增加用户信息
-         *
-         * @param request BatchCreateCustomerRequest
-         * @param headers BatchCreateCustomerHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return BatchCreateCustomerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量增加用户信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchCreateCustomerRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchCreateCustomerHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchCreateCustomerResponse
+        /// </returns>
         public async Task<BatchCreateCustomerResponse> BatchCreateCustomerWithOptionsAsync(BatchCreateCustomerRequest request, BatchCreateCustomerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -410,12 +495,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<BatchCreateCustomerResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 批量增加用户信息
-         *
-         * @param request BatchCreateCustomerRequest
-         * @return BatchCreateCustomerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量增加用户信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchCreateCustomerRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchCreateCustomerResponse
+        /// </returns>
         public BatchCreateCustomerResponse BatchCreateCustomer(BatchCreateCustomerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -423,12 +514,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return BatchCreateCustomerWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 批量增加用户信息
-         *
-         * @param request BatchCreateCustomerRequest
-         * @return BatchCreateCustomerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量增加用户信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchCreateCustomerRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchCreateCustomerResponse
+        /// </returns>
         public async Task<BatchCreateCustomerResponse> BatchCreateCustomerAsync(BatchCreateCustomerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -436,14 +533,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await BatchCreateCustomerWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 预核销智能财务的权益
-         *
-         * @param request BeginConsumeRequest
-         * @param headers BeginConsumeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return BeginConsumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>预核销智能财务的权益</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BeginConsumeRequest
+        /// </param>
+        /// <param name="headers">
+        /// BeginConsumeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BeginConsumeResponse
+        /// </returns>
         public BeginConsumeResponse BeginConsumeWithOptions(BeginConsumeRequest request, BeginConsumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -493,14 +600,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<BeginConsumeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 预核销智能财务的权益
-         *
-         * @param request BeginConsumeRequest
-         * @param headers BeginConsumeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return BeginConsumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>预核销智能财务的权益</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BeginConsumeRequest
+        /// </param>
+        /// <param name="headers">
+        /// BeginConsumeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BeginConsumeResponse
+        /// </returns>
         public async Task<BeginConsumeResponse> BeginConsumeWithOptionsAsync(BeginConsumeRequest request, BeginConsumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -550,12 +667,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<BeginConsumeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 预核销智能财务的权益
-         *
-         * @param request BeginConsumeRequest
-         * @return BeginConsumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>预核销智能财务的权益</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BeginConsumeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BeginConsumeResponse
+        /// </returns>
         public BeginConsumeResponse BeginConsume(BeginConsumeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -563,12 +686,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return BeginConsumeWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 预核销智能财务的权益
-         *
-         * @param request BeginConsumeRequest
-         * @return BeginConsumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>预核销智能财务的权益</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BeginConsumeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BeginConsumeResponse
+        /// </returns>
         public async Task<BeginConsumeResponse> BeginConsumeAsync(BeginConsumeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -576,14 +705,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await BeginConsumeWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 绑定钉钉智能财务企业主体的账套信息
-         *
-         * @param request BindCompanyAccountantBookRequest
-         * @param headers BindCompanyAccountantBookHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return BindCompanyAccountantBookResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>绑定钉钉智能财务企业主体的账套信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BindCompanyAccountantBookRequest
+        /// </param>
+        /// <param name="headers">
+        /// BindCompanyAccountantBookHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BindCompanyAccountantBookResponse
+        /// </returns>
         public BindCompanyAccountantBookResponse BindCompanyAccountantBookWithOptions(BindCompanyAccountantBookRequest request, BindCompanyAccountantBookHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -625,14 +764,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<BindCompanyAccountantBookResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 绑定钉钉智能财务企业主体的账套信息
-         *
-         * @param request BindCompanyAccountantBookRequest
-         * @param headers BindCompanyAccountantBookHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return BindCompanyAccountantBookResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>绑定钉钉智能财务企业主体的账套信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BindCompanyAccountantBookRequest
+        /// </param>
+        /// <param name="headers">
+        /// BindCompanyAccountantBookHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BindCompanyAccountantBookResponse
+        /// </returns>
         public async Task<BindCompanyAccountantBookResponse> BindCompanyAccountantBookWithOptionsAsync(BindCompanyAccountantBookRequest request, BindCompanyAccountantBookHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -674,12 +823,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<BindCompanyAccountantBookResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 绑定钉钉智能财务企业主体的账套信息
-         *
-         * @param request BindCompanyAccountantBookRequest
-         * @return BindCompanyAccountantBookResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>绑定钉钉智能财务企业主体的账套信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BindCompanyAccountantBookRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BindCompanyAccountantBookResponse
+        /// </returns>
         public BindCompanyAccountantBookResponse BindCompanyAccountantBook(BindCompanyAccountantBookRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -687,12 +842,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return BindCompanyAccountantBookWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 绑定钉钉智能财务企业主体的账套信息
-         *
-         * @param request BindCompanyAccountantBookRequest
-         * @return BindCompanyAccountantBookResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>绑定钉钉智能财务企业主体的账套信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BindCompanyAccountantBookRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BindCompanyAccountantBookResponse
+        /// </returns>
         public async Task<BindCompanyAccountantBookResponse> BindCompanyAccountantBookAsync(BindCompanyAccountantBookRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -700,14 +861,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await BindCompanyAccountantBookWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 取消核销智能财务的权益
-         *
-         * @param request CancelConsumeRequest
-         * @param headers CancelConsumeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CancelConsumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>取消核销智能财务的权益</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CancelConsumeRequest
+        /// </param>
+        /// <param name="headers">
+        /// CancelConsumeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CancelConsumeResponse
+        /// </returns>
         public CancelConsumeResponse CancelConsumeWithOptions(CancelConsumeRequest request, CancelConsumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -757,14 +928,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<CancelConsumeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 取消核销智能财务的权益
-         *
-         * @param request CancelConsumeRequest
-         * @param headers CancelConsumeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CancelConsumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>取消核销智能财务的权益</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CancelConsumeRequest
+        /// </param>
+        /// <param name="headers">
+        /// CancelConsumeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CancelConsumeResponse
+        /// </returns>
         public async Task<CancelConsumeResponse> CancelConsumeWithOptionsAsync(CancelConsumeRequest request, CancelConsumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -814,12 +995,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<CancelConsumeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 取消核销智能财务的权益
-         *
-         * @param request CancelConsumeRequest
-         * @return CancelConsumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>取消核销智能财务的权益</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CancelConsumeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CancelConsumeResponse
+        /// </returns>
         public CancelConsumeResponse CancelConsume(CancelConsumeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -827,12 +1014,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return CancelConsumeWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 取消核销智能财务的权益
-         *
-         * @param request CancelConsumeRequest
-         * @return CancelConsumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>取消核销智能财务的权益</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CancelConsumeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CancelConsumeResponse
+        /// </returns>
         public async Task<CancelConsumeResponse> CancelConsumeAsync(CancelConsumeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -840,14 +1033,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await CancelConsumeWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查验发票是否生成凭证
-         *
-         * @param request CheckVoucherStatusRequest
-         * @param headers CheckVoucherStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CheckVoucherStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查验发票是否生成凭证</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckVoucherStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// CheckVoucherStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckVoucherStatusResponse
+        /// </returns>
         public CheckVoucherStatusResponse CheckVoucherStatusWithOptions(CheckVoucherStatusRequest request, CheckVoucherStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -921,14 +1124,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<CheckVoucherStatusResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查验发票是否生成凭证
-         *
-         * @param request CheckVoucherStatusRequest
-         * @param headers CheckVoucherStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CheckVoucherStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查验发票是否生成凭证</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckVoucherStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// CheckVoucherStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckVoucherStatusResponse
+        /// </returns>
         public async Task<CheckVoucherStatusResponse> CheckVoucherStatusWithOptionsAsync(CheckVoucherStatusRequest request, CheckVoucherStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1002,12 +1215,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<CheckVoucherStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查验发票是否生成凭证
-         *
-         * @param request CheckVoucherStatusRequest
-         * @return CheckVoucherStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查验发票是否生成凭证</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckVoucherStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckVoucherStatusResponse
+        /// </returns>
         public CheckVoucherStatusResponse CheckVoucherStatus(CheckVoucherStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1015,12 +1234,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return CheckVoucherStatusWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查验发票是否生成凭证
-         *
-         * @param request CheckVoucherStatusRequest
-         * @return CheckVoucherStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查验发票是否生成凭证</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckVoucherStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckVoucherStatusResponse
+        /// </returns>
         public async Task<CheckVoucherStatusResponse> CheckVoucherStatusAsync(CheckVoucherStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1028,14 +1253,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await CheckVoucherStatusWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 确认核销智能财务的权益
-         *
-         * @param request CommitConsumeRequest
-         * @param headers CommitConsumeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CommitConsumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>确认核销智能财务的权益</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CommitConsumeRequest
+        /// </param>
+        /// <param name="headers">
+        /// CommitConsumeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CommitConsumeResponse
+        /// </returns>
         public CommitConsumeResponse CommitConsumeWithOptions(CommitConsumeRequest request, CommitConsumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1085,14 +1320,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<CommitConsumeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 确认核销智能财务的权益
-         *
-         * @param request CommitConsumeRequest
-         * @param headers CommitConsumeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CommitConsumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>确认核销智能财务的权益</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CommitConsumeRequest
+        /// </param>
+        /// <param name="headers">
+        /// CommitConsumeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CommitConsumeResponse
+        /// </returns>
         public async Task<CommitConsumeResponse> CommitConsumeWithOptionsAsync(CommitConsumeRequest request, CommitConsumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1142,12 +1387,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<CommitConsumeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 确认核销智能财务的权益
-         *
-         * @param request CommitConsumeRequest
-         * @return CommitConsumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>确认核销智能财务的权益</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CommitConsumeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CommitConsumeResponse
+        /// </returns>
         public CommitConsumeResponse CommitConsume(CommitConsumeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1155,12 +1406,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return CommitConsumeWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 确认核销智能财务的权益
-         *
-         * @param request CommitConsumeRequest
-         * @return CommitConsumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>确认核销智能财务的权益</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CommitConsumeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CommitConsumeResponse
+        /// </returns>
         public async Task<CommitConsumeResponse> CommitConsumeAsync(CommitConsumeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1168,14 +1425,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await CommitConsumeWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建智能财务的客户信息
-         *
-         * @param request CreateCustomerRequest
-         * @param headers CreateCustomerHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateCustomerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建智能财务的客户信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateCustomerRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateCustomerHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateCustomerResponse
+        /// </returns>
         public CreateCustomerResponse CreateCustomerWithOptions(CreateCustomerRequest request, CreateCustomerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1253,14 +1520,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<CreateCustomerResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建智能财务的客户信息
-         *
-         * @param request CreateCustomerRequest
-         * @param headers CreateCustomerHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateCustomerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建智能财务的客户信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateCustomerRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateCustomerHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateCustomerResponse
+        /// </returns>
         public async Task<CreateCustomerResponse> CreateCustomerWithOptionsAsync(CreateCustomerRequest request, CreateCustomerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1338,12 +1615,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<CreateCustomerResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建智能财务的客户信息
-         *
-         * @param request CreateCustomerRequest
-         * @return CreateCustomerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建智能财务的客户信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateCustomerRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateCustomerResponse
+        /// </returns>
         public CreateCustomerResponse CreateCustomer(CreateCustomerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1351,12 +1634,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return CreateCustomerWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建智能财务的客户信息
-         *
-         * @param request CreateCustomerRequest
-         * @return CreateCustomerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建智能财务的客户信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateCustomerRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateCustomerResponse
+        /// </returns>
         public async Task<CreateCustomerResponse> CreateCustomerAsync(CreateCustomerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1364,14 +1653,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await CreateCustomerWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建智能财务单据
-         *
-         * @param request CreateReceiptRequest
-         * @param headers CreateReceiptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateReceiptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建智能财务单据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateReceiptRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateReceiptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateReceiptResponse
+        /// </returns>
         public CreateReceiptResponse CreateReceiptWithOptions(CreateReceiptRequest request, CreateReceiptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1409,14 +1708,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<CreateReceiptResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建智能财务单据
-         *
-         * @param request CreateReceiptRequest
-         * @param headers CreateReceiptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateReceiptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建智能财务单据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateReceiptRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateReceiptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateReceiptResponse
+        /// </returns>
         public async Task<CreateReceiptResponse> CreateReceiptWithOptionsAsync(CreateReceiptRequest request, CreateReceiptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1454,12 +1763,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<CreateReceiptResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建智能财务单据
-         *
-         * @param request CreateReceiptRequest
-         * @return CreateReceiptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建智能财务单据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateReceiptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateReceiptResponse
+        /// </returns>
         public CreateReceiptResponse CreateReceipt(CreateReceiptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1467,12 +1782,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return CreateReceiptWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建智能财务单据
-         *
-         * @param request CreateReceiptRequest
-         * @return CreateReceiptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建智能财务单据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateReceiptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateReceiptResponse
+        /// </returns>
         public async Task<CreateReceiptResponse> CreateReceiptAsync(CreateReceiptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1480,14 +1801,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await CreateReceiptWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除智能财务单据
-         *
-         * @param request DeleteReceiptRequest
-         * @param headers DeleteReceiptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteReceiptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除智能财务单据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteReceiptRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteReceiptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteReceiptResponse
+        /// </returns>
         public DeleteReceiptResponse DeleteReceiptWithOptions(DeleteReceiptRequest request, DeleteReceiptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1525,14 +1856,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<DeleteReceiptResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除智能财务单据
-         *
-         * @param request DeleteReceiptRequest
-         * @param headers DeleteReceiptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteReceiptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除智能财务单据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteReceiptRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteReceiptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteReceiptResponse
+        /// </returns>
         public async Task<DeleteReceiptResponse> DeleteReceiptWithOptionsAsync(DeleteReceiptRequest request, DeleteReceiptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1570,12 +1911,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<DeleteReceiptResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除智能财务单据
-         *
-         * @param request DeleteReceiptRequest
-         * @return DeleteReceiptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除智能财务单据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteReceiptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteReceiptResponse
+        /// </returns>
         public DeleteReceiptResponse DeleteReceipt(DeleteReceiptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1583,12 +1930,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return DeleteReceiptWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除智能财务单据
-         *
-         * @param request DeleteReceiptRequest
-         * @return DeleteReceiptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除智能财务单据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteReceiptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteReceiptResponse
+        /// </returns>
         public async Task<DeleteReceiptResponse> DeleteReceiptAsync(DeleteReceiptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1596,13 +1949,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await DeleteReceiptWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取可以查看账本的用户列表
-         *
-         * @param headers GetBookkeepingUserListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetBookkeepingUserListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取可以查看账本的用户列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetBookkeepingUserListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetBookkeepingUserListResponse
+        /// </returns>
         public GetBookkeepingUserListResponse GetBookkeepingUserListWithOptions(GetBookkeepingUserListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1633,13 +1994,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetBookkeepingUserListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取可以查看账本的用户列表
-         *
-         * @param headers GetBookkeepingUserListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetBookkeepingUserListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取可以查看账本的用户列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetBookkeepingUserListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetBookkeepingUserListResponse
+        /// </returns>
         public async Task<GetBookkeepingUserListResponse> GetBookkeepingUserListWithOptionsAsync(GetBookkeepingUserListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1670,11 +2039,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetBookkeepingUserListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取可以查看账本的用户列表
-         *
-         * @return GetBookkeepingUserListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取可以查看账本的用户列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetBookkeepingUserListResponse
+        /// </returns>
         public GetBookkeepingUserListResponse GetBookkeepingUserList()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1682,11 +2054,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return GetBookkeepingUserListWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 获取可以查看账本的用户列表
-         *
-         * @return GetBookkeepingUserListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取可以查看账本的用户列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetBookkeepingUserListResponse
+        /// </returns>
         public async Task<GetBookkeepingUserListResponse> GetBookkeepingUserListAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1694,14 +2069,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await GetBookkeepingUserListWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 获取费用类别
-         *
-         * @param request GetCategoryRequest
-         * @param headers GetCategoryHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetCategoryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取费用类别</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCategoryRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetCategoryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCategoryResponse
+        /// </returns>
         public GetCategoryResponse GetCategoryWithOptions(GetCategoryRequest request, GetCategoryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1739,14 +2124,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetCategoryResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取费用类别
-         *
-         * @param request GetCategoryRequest
-         * @param headers GetCategoryHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetCategoryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取费用类别</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCategoryRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetCategoryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCategoryResponse
+        /// </returns>
         public async Task<GetCategoryResponse> GetCategoryWithOptionsAsync(GetCategoryRequest request, GetCategoryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1784,12 +2179,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetCategoryResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取费用类别
-         *
-         * @param request GetCategoryRequest
-         * @return GetCategoryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取费用类别</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCategoryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCategoryResponse
+        /// </returns>
         public GetCategoryResponse GetCategory(GetCategoryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1797,12 +2198,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return GetCategoryWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取费用类别
-         *
-         * @param request GetCategoryRequest
-         * @return GetCategoryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取费用类别</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCategoryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCategoryResponse
+        /// </returns>
         public async Task<GetCategoryResponse> GetCategoryAsync(GetCategoryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1810,14 +2217,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await GetCategoryWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取智能财务应用内维护的客户信息
-         *
-         * @param request GetCustomerRequest
-         * @param headers GetCustomerHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetCustomerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取智能财务应用内维护的客户信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCustomerRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetCustomerHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCustomerResponse
+        /// </returns>
         public GetCustomerResponse GetCustomerWithOptions(GetCustomerRequest request, GetCustomerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1855,14 +2272,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetCustomerResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取智能财务应用内维护的客户信息
-         *
-         * @param request GetCustomerRequest
-         * @param headers GetCustomerHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetCustomerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取智能财务应用内维护的客户信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCustomerRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetCustomerHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCustomerResponse
+        /// </returns>
         public async Task<GetCustomerResponse> GetCustomerWithOptionsAsync(GetCustomerRequest request, GetCustomerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1900,12 +2327,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetCustomerResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取智能财务应用内维护的客户信息
-         *
-         * @param request GetCustomerRequest
-         * @return GetCustomerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取智能财务应用内维护的客户信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCustomerRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCustomerResponse
+        /// </returns>
         public GetCustomerResponse GetCustomer(GetCustomerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1913,12 +2346,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return GetCustomerWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取智能财务应用内维护的客户信息
-         *
-         * @param request GetCustomerRequest
-         * @return GetCustomerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取智能财务应用内维护的客户信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCustomerRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCustomerResponse
+        /// </returns>
         public async Task<GetCustomerResponse> GetCustomerAsync(GetCustomerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1926,14 +2365,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await GetCustomerWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取企业账户
-         *
-         * @param request GetFinanceAccountRequest
-         * @param headers GetFinanceAccountHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetFinanceAccountResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业账户</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFinanceAccountRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFinanceAccountHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFinanceAccountResponse
+        /// </returns>
         public GetFinanceAccountResponse GetFinanceAccountWithOptions(GetFinanceAccountRequest request, GetFinanceAccountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1971,14 +2420,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetFinanceAccountResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取企业账户
-         *
-         * @param request GetFinanceAccountRequest
-         * @param headers GetFinanceAccountHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetFinanceAccountResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业账户</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFinanceAccountRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFinanceAccountHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFinanceAccountResponse
+        /// </returns>
         public async Task<GetFinanceAccountResponse> GetFinanceAccountWithOptionsAsync(GetFinanceAccountRequest request, GetFinanceAccountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2016,12 +2475,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetFinanceAccountResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取企业账户
-         *
-         * @param request GetFinanceAccountRequest
-         * @return GetFinanceAccountResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业账户</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFinanceAccountRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFinanceAccountResponse
+        /// </returns>
         public GetFinanceAccountResponse GetFinanceAccount(GetFinanceAccountRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2029,12 +2494,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return GetFinanceAccountWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取企业账户
-         *
-         * @param request GetFinanceAccountRequest
-         * @return GetFinanceAccountResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业账户</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFinanceAccountRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFinanceAccountResponse
+        /// </returns>
         public async Task<GetFinanceAccountResponse> GetFinanceAccountAsync(GetFinanceAccountRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2042,13 +2513,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await GetFinanceAccountWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取智能财务套件模版信息
-         *
-         * @param headers GetFormTemplateInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetFormTemplateInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取智能财务套件模版信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetFormTemplateInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFormTemplateInfoResponse
+        /// </returns>
         public GetFormTemplateInfoResponse GetFormTemplateInfoWithOptions(GetFormTemplateInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -2079,13 +2558,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetFormTemplateInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取智能财务套件模版信息
-         *
-         * @param headers GetFormTemplateInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetFormTemplateInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取智能财务套件模版信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetFormTemplateInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFormTemplateInfoResponse
+        /// </returns>
         public async Task<GetFormTemplateInfoResponse> GetFormTemplateInfoWithOptionsAsync(GetFormTemplateInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -2116,11 +2603,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetFormTemplateInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取智能财务套件模版信息
-         *
-         * @return GetFormTemplateInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取智能财务套件模版信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetFormTemplateInfoResponse
+        /// </returns>
         public GetFormTemplateInfoResponse GetFormTemplateInfo()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2128,11 +2618,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return GetFormTemplateInfoWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 获取智能财务套件模版信息
-         *
-         * @return GetFormTemplateInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取智能财务套件模版信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetFormTemplateInfoResponse
+        /// </returns>
         public async Task<GetFormTemplateInfoResponse> GetFormTemplateInfoAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2140,14 +2633,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await GetFormTemplateInfoWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 发票分页查询接口
-         *
-         * @param tmpReq GetInvoiceByPageRequest
-         * @param headers GetInvoiceByPageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetInvoiceByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发票分页查询接口</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// GetInvoiceByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetInvoiceByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetInvoiceByPageResponse
+        /// </returns>
         public GetInvoiceByPageResponse GetInvoiceByPageWithOptions(GetInvoiceByPageRequest tmpReq, GetInvoiceByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
@@ -2191,14 +2694,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetInvoiceByPageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 发票分页查询接口
-         *
-         * @param tmpReq GetInvoiceByPageRequest
-         * @param headers GetInvoiceByPageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetInvoiceByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发票分页查询接口</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// GetInvoiceByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetInvoiceByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetInvoiceByPageResponse
+        /// </returns>
         public async Task<GetInvoiceByPageResponse> GetInvoiceByPageWithOptionsAsync(GetInvoiceByPageRequest tmpReq, GetInvoiceByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
@@ -2242,12 +2755,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetInvoiceByPageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 发票分页查询接口
-         *
-         * @param request GetInvoiceByPageRequest
-         * @return GetInvoiceByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发票分页查询接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetInvoiceByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetInvoiceByPageResponse
+        /// </returns>
         public GetInvoiceByPageResponse GetInvoiceByPage(GetInvoiceByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2255,12 +2774,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return GetInvoiceByPageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 发票分页查询接口
-         *
-         * @param request GetInvoiceByPageRequest
-         * @return GetInvoiceByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发票分页查询接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetInvoiceByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetInvoiceByPageResponse
+        /// </returns>
         public async Task<GetInvoiceByPageResponse> GetInvoiceByPageAsync(GetInvoiceByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2268,13 +2793,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await GetInvoiceByPageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 用来给isv提供是否使用智能账本的判断接口
-         *
-         * @param headers GetIsNewVersionHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetIsNewVersionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用来给isv提供是否使用智能账本的判断接口</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetIsNewVersionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetIsNewVersionResponse
+        /// </returns>
         public GetIsNewVersionResponse GetIsNewVersionWithOptions(GetIsNewVersionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -2305,13 +2838,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetIsNewVersionResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 用来给isv提供是否使用智能账本的判断接口
-         *
-         * @param headers GetIsNewVersionHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetIsNewVersionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用来给isv提供是否使用智能账本的判断接口</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetIsNewVersionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetIsNewVersionResponse
+        /// </returns>
         public async Task<GetIsNewVersionResponse> GetIsNewVersionWithOptionsAsync(GetIsNewVersionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -2342,11 +2883,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetIsNewVersionResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 用来给isv提供是否使用智能账本的判断接口
-         *
-         * @return GetIsNewVersionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用来给isv提供是否使用智能账本的判断接口</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetIsNewVersionResponse
+        /// </returns>
         public GetIsNewVersionResponse GetIsNewVersion()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2354,11 +2898,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return GetIsNewVersionWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 用来给isv提供是否使用智能账本的判断接口
-         *
-         * @return GetIsNewVersionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用来给isv提供是否使用智能账本的判断接口</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetIsNewVersionResponse
+        /// </returns>
         public async Task<GetIsNewVersionResponse> GetIsNewVersionAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2366,13 +2913,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await GetIsNewVersionWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 根据comanyCode查询钉钉智能财务多主体信息
-         *
-         * @param headers GetMultiCompanyInfoByCodeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetMultiCompanyInfoByCodeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据comanyCode查询钉钉智能财务多主体信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetMultiCompanyInfoByCodeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetMultiCompanyInfoByCodeResponse
+        /// </returns>
         public GetMultiCompanyInfoByCodeResponse GetMultiCompanyInfoByCodeWithOptions(string companyCode, GetMultiCompanyInfoByCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -2403,13 +2958,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetMultiCompanyInfoByCodeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据comanyCode查询钉钉智能财务多主体信息
-         *
-         * @param headers GetMultiCompanyInfoByCodeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetMultiCompanyInfoByCodeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据comanyCode查询钉钉智能财务多主体信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetMultiCompanyInfoByCodeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetMultiCompanyInfoByCodeResponse
+        /// </returns>
         public async Task<GetMultiCompanyInfoByCodeResponse> GetMultiCompanyInfoByCodeWithOptionsAsync(string companyCode, GetMultiCompanyInfoByCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -2440,11 +3003,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetMultiCompanyInfoByCodeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据comanyCode查询钉钉智能财务多主体信息
-         *
-         * @return GetMultiCompanyInfoByCodeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据comanyCode查询钉钉智能财务多主体信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetMultiCompanyInfoByCodeResponse
+        /// </returns>
         public GetMultiCompanyInfoByCodeResponse GetMultiCompanyInfoByCode(string companyCode)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2452,11 +3018,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return GetMultiCompanyInfoByCodeWithOptions(companyCode, headers, runtime);
         }
 
-        /**
-         * @summary 根据comanyCode查询钉钉智能财务多主体信息
-         *
-         * @return GetMultiCompanyInfoByCodeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据comanyCode查询钉钉智能财务多主体信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetMultiCompanyInfoByCodeResponse
+        /// </returns>
         public async Task<GetMultiCompanyInfoByCodeResponse> GetMultiCompanyInfoByCodeAsync(string companyCode)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2464,14 +3033,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await GetMultiCompanyInfoByCodeWithOptionsAsync(companyCode, headers, runtime);
         }
 
-        /**
-         * @summary 获取商品信息
-         *
-         * @param request GetProductRequest
-         * @param headers GetProductHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetProductResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取商品信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetProductRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetProductHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetProductResponse
+        /// </returns>
         public GetProductResponse GetProductWithOptions(GetProductRequest request, GetProductHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2509,14 +3088,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetProductResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取商品信息
-         *
-         * @param request GetProductRequest
-         * @param headers GetProductHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetProductResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取商品信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetProductRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetProductHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetProductResponse
+        /// </returns>
         public async Task<GetProductResponse> GetProductWithOptionsAsync(GetProductRequest request, GetProductHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2554,12 +3143,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetProductResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取商品信息
-         *
-         * @param request GetProductRequest
-         * @return GetProductResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取商品信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetProductRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetProductResponse
+        /// </returns>
         public GetProductResponse GetProduct(GetProductRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2567,12 +3162,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return GetProductWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取商品信息
-         *
-         * @param request GetProductRequest
-         * @return GetProductResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取商品信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetProductRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetProductResponse
+        /// </returns>
         public async Task<GetProductResponse> GetProductAsync(GetProductRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2580,14 +3181,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await GetProductWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取单条项目
-         *
-         * @param request GetProjectRequest
-         * @param headers GetProjectHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetProjectResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取单条项目</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetProjectRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetProjectHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetProjectResponse
+        /// </returns>
         public GetProjectResponse GetProjectWithOptions(GetProjectRequest request, GetProjectHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2625,14 +3236,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetProjectResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取单条项目
-         *
-         * @param request GetProjectRequest
-         * @param headers GetProjectHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetProjectResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取单条项目</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetProjectRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetProjectHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetProjectResponse
+        /// </returns>
         public async Task<GetProjectResponse> GetProjectWithOptionsAsync(GetProjectRequest request, GetProjectHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2670,12 +3291,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetProjectResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取单条项目
-         *
-         * @param request GetProjectRequest
-         * @return GetProjectResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取单条项目</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetProjectRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetProjectResponse
+        /// </returns>
         public GetProjectResponse GetProject(GetProjectRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2683,12 +3310,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return GetProjectWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取单条项目
-         *
-         * @param request GetProjectRequest
-         * @return GetProjectResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取单条项目</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetProjectRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetProjectResponse
+        /// </returns>
         public async Task<GetProjectResponse> GetProjectAsync(GetProjectRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2696,14 +3329,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await GetProjectWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取智能财务单据详情
-         *
-         * @param request GetReceiptRequest
-         * @param headers GetReceiptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetReceiptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取智能财务单据详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetReceiptRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetReceiptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetReceiptResponse
+        /// </returns>
         public GetReceiptResponse GetReceiptWithOptions(GetReceiptRequest request, GetReceiptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2745,14 +3388,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetReceiptResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取智能财务单据详情
-         *
-         * @param request GetReceiptRequest
-         * @param headers GetReceiptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetReceiptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取智能财务单据详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetReceiptRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetReceiptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetReceiptResponse
+        /// </returns>
         public async Task<GetReceiptResponse> GetReceiptWithOptionsAsync(GetReceiptRequest request, GetReceiptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2794,12 +3447,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetReceiptResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取智能财务单据详情
-         *
-         * @param request GetReceiptRequest
-         * @return GetReceiptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取智能财务单据详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetReceiptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetReceiptResponse
+        /// </returns>
         public GetReceiptResponse GetReceipt(GetReceiptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2807,12 +3466,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return GetReceiptWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取智能财务单据详情
-         *
-         * @param request GetReceiptRequest
-         * @return GetReceiptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取智能财务单据详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetReceiptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetReceiptResponse
+        /// </returns>
         public async Task<GetReceiptResponse> GetReceiptAsync(GetReceiptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2820,14 +3485,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await GetReceiptWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取智能财务应用内维护的供应商信息
-         *
-         * @param request GetSupplierRequest
-         * @param headers GetSupplierHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetSupplierResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取智能财务应用内维护的供应商信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSupplierRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetSupplierHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSupplierResponse
+        /// </returns>
         public GetSupplierResponse GetSupplierWithOptions(GetSupplierRequest request, GetSupplierHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2865,14 +3540,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetSupplierResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取智能财务应用内维护的供应商信息
-         *
-         * @param request GetSupplierRequest
-         * @param headers GetSupplierHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetSupplierResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取智能财务应用内维护的供应商信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSupplierRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetSupplierHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSupplierResponse
+        /// </returns>
         public async Task<GetSupplierResponse> GetSupplierWithOptionsAsync(GetSupplierRequest request, GetSupplierHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2910,12 +3595,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetSupplierResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取智能财务应用内维护的供应商信息
-         *
-         * @param request GetSupplierRequest
-         * @return GetSupplierResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取智能财务应用内维护的供应商信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSupplierRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSupplierResponse
+        /// </returns>
         public GetSupplierResponse GetSupplier(GetSupplierRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2923,12 +3614,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return GetSupplierWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取智能财务应用内维护的供应商信息
-         *
-         * @param request GetSupplierRequest
-         * @return GetSupplierResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取智能财务应用内维护的供应商信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSupplierRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSupplierResponse
+        /// </returns>
         public async Task<GetSupplierResponse> GetSupplierAsync(GetSupplierRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2936,14 +3633,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await GetSupplierWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取用友开放平台接口鉴权信息
-         *
-         * @param request GetYongYouOpenApiTokenRequest
-         * @param headers GetYongYouOpenApiTokenHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetYongYouOpenApiTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用友开放平台接口鉴权信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetYongYouOpenApiTokenRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetYongYouOpenApiTokenHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetYongYouOpenApiTokenResponse
+        /// </returns>
         public GetYongYouOpenApiTokenResponse GetYongYouOpenApiTokenWithOptions(GetYongYouOpenApiTokenRequest request, GetYongYouOpenApiTokenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2981,14 +3688,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetYongYouOpenApiTokenResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取用友开放平台接口鉴权信息
-         *
-         * @param request GetYongYouOpenApiTokenRequest
-         * @param headers GetYongYouOpenApiTokenHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetYongYouOpenApiTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用友开放平台接口鉴权信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetYongYouOpenApiTokenRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetYongYouOpenApiTokenHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetYongYouOpenApiTokenResponse
+        /// </returns>
         public async Task<GetYongYouOpenApiTokenResponse> GetYongYouOpenApiTokenWithOptionsAsync(GetYongYouOpenApiTokenRequest request, GetYongYouOpenApiTokenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3026,12 +3743,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetYongYouOpenApiTokenResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取用友开放平台接口鉴权信息
-         *
-         * @param request GetYongYouOpenApiTokenRequest
-         * @return GetYongYouOpenApiTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用友开放平台接口鉴权信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetYongYouOpenApiTokenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetYongYouOpenApiTokenResponse
+        /// </returns>
         public GetYongYouOpenApiTokenResponse GetYongYouOpenApiToken(GetYongYouOpenApiTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3039,12 +3762,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return GetYongYouOpenApiTokenWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取用友开放平台接口鉴权信息
-         *
-         * @param request GetYongYouOpenApiTokenRequest
-         * @return GetYongYouOpenApiTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用友开放平台接口鉴权信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetYongYouOpenApiTokenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetYongYouOpenApiTokenResponse
+        /// </returns>
         public async Task<GetYongYouOpenApiTokenResponse> GetYongYouOpenApiTokenAsync(GetYongYouOpenApiTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3052,13 +3781,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await GetYongYouOpenApiTokenWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询钉钉组织绑定的畅捷通组织
-         *
-         * @param headers GetYongYouOrgRelationHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetYongYouOrgRelationResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询钉钉组织绑定的畅捷通组织</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetYongYouOrgRelationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetYongYouOrgRelationResponse
+        /// </returns>
         public GetYongYouOrgRelationResponse GetYongYouOrgRelationWithOptions(GetYongYouOrgRelationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -3089,13 +3826,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetYongYouOrgRelationResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询钉钉组织绑定的畅捷通组织
-         *
-         * @param headers GetYongYouOrgRelationHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetYongYouOrgRelationResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询钉钉组织绑定的畅捷通组织</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetYongYouOrgRelationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetYongYouOrgRelationResponse
+        /// </returns>
         public async Task<GetYongYouOrgRelationResponse> GetYongYouOrgRelationWithOptionsAsync(GetYongYouOrgRelationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -3126,11 +3871,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<GetYongYouOrgRelationResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询钉钉组织绑定的畅捷通组织
-         *
-         * @return GetYongYouOrgRelationResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询钉钉组织绑定的畅捷通组织</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetYongYouOrgRelationResponse
+        /// </returns>
         public GetYongYouOrgRelationResponse GetYongYouOrgRelation()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3138,11 +3886,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return GetYongYouOrgRelationWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 查询钉钉组织绑定的畅捷通组织
-         *
-         * @return GetYongYouOrgRelationResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询钉钉组织绑定的畅捷通组织</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetYongYouOrgRelationResponse
+        /// </returns>
         public async Task<GetYongYouOrgRelationResponse> GetYongYouOrgRelationAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3150,14 +3901,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await GetYongYouOrgRelationWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 权益核销
-         *
-         * @param request ProfessionBenefitConsumeRequest
-         * @param headers ProfessionBenefitConsumeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ProfessionBenefitConsumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>权益核销</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ProfessionBenefitConsumeRequest
+        /// </param>
+        /// <param name="headers">
+        /// ProfessionBenefitConsumeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ProfessionBenefitConsumeResponse
+        /// </returns>
         public ProfessionBenefitConsumeResponse ProfessionBenefitConsumeWithOptions(ProfessionBenefitConsumeRequest request, ProfessionBenefitConsumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3203,14 +3964,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<ProfessionBenefitConsumeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 权益核销
-         *
-         * @param request ProfessionBenefitConsumeRequest
-         * @param headers ProfessionBenefitConsumeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ProfessionBenefitConsumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>权益核销</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ProfessionBenefitConsumeRequest
+        /// </param>
+        /// <param name="headers">
+        /// ProfessionBenefitConsumeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ProfessionBenefitConsumeResponse
+        /// </returns>
         public async Task<ProfessionBenefitConsumeResponse> ProfessionBenefitConsumeWithOptionsAsync(ProfessionBenefitConsumeRequest request, ProfessionBenefitConsumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3256,12 +4027,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<ProfessionBenefitConsumeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 权益核销
-         *
-         * @param request ProfessionBenefitConsumeRequest
-         * @return ProfessionBenefitConsumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>权益核销</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ProfessionBenefitConsumeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ProfessionBenefitConsumeResponse
+        /// </returns>
         public ProfessionBenefitConsumeResponse ProfessionBenefitConsume(ProfessionBenefitConsumeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3269,12 +4046,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return ProfessionBenefitConsumeWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 权益核销
-         *
-         * @param request ProfessionBenefitConsumeRequest
-         * @return ProfessionBenefitConsumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>权益核销</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ProfessionBenefitConsumeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ProfessionBenefitConsumeResponse
+        /// </returns>
         public async Task<ProfessionBenefitConsumeResponse> ProfessionBenefitConsumeAsync(ProfessionBenefitConsumeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3282,14 +4065,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await ProfessionBenefitConsumeWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 触发单据同步给有成
-         *
-         * @param request PushHistoricalReceiptsRequest
-         * @param headers PushHistoricalReceiptsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return PushHistoricalReceiptsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>触发单据同步给有成</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PushHistoricalReceiptsRequest
+        /// </param>
+        /// <param name="headers">
+        /// PushHistoricalReceiptsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PushHistoricalReceiptsResponse
+        /// </returns>
         public PushHistoricalReceiptsResponse PushHistoricalReceiptsWithOptions(PushHistoricalReceiptsRequest request, PushHistoricalReceiptsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3343,14 +4136,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<PushHistoricalReceiptsResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 触发单据同步给有成
-         *
-         * @param request PushHistoricalReceiptsRequest
-         * @param headers PushHistoricalReceiptsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return PushHistoricalReceiptsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>触发单据同步给有成</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PushHistoricalReceiptsRequest
+        /// </param>
+        /// <param name="headers">
+        /// PushHistoricalReceiptsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PushHistoricalReceiptsResponse
+        /// </returns>
         public async Task<PushHistoricalReceiptsResponse> PushHistoricalReceiptsWithOptionsAsync(PushHistoricalReceiptsRequest request, PushHistoricalReceiptsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3404,12 +4207,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<PushHistoricalReceiptsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 触发单据同步给有成
-         *
-         * @param request PushHistoricalReceiptsRequest
-         * @return PushHistoricalReceiptsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>触发单据同步给有成</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PushHistoricalReceiptsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PushHistoricalReceiptsResponse
+        /// </returns>
         public PushHistoricalReceiptsResponse PushHistoricalReceipts(PushHistoricalReceiptsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3417,12 +4226,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return PushHistoricalReceiptsWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 触发单据同步给有成
-         *
-         * @param request PushHistoricalReceiptsRequest
-         * @return PushHistoricalReceiptsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>触发单据同步给有成</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PushHistoricalReceiptsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PushHistoricalReceiptsResponse
+        /// </returns>
         public async Task<PushHistoricalReceiptsResponse> PushHistoricalReceiptsAsync(PushHistoricalReceiptsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3430,14 +4245,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await PushHistoricalReceiptsWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询智能财务计量型权益
-         *
-         * @param request QueryBenefitRequest
-         * @param headers QueryBenefitHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryBenefitResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询智能财务计量型权益</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryBenefitRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryBenefitHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryBenefitResponse
+        /// </returns>
         public QueryBenefitResponse QueryBenefitWithOptions(QueryBenefitRequest request, QueryBenefitHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3475,14 +4300,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryBenefitResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询智能财务计量型权益
-         *
-         * @param request QueryBenefitRequest
-         * @param headers QueryBenefitHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryBenefitResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询智能财务计量型权益</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryBenefitRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryBenefitHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryBenefitResponse
+        /// </returns>
         public async Task<QueryBenefitResponse> QueryBenefitWithOptionsAsync(QueryBenefitRequest request, QueryBenefitHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3520,12 +4355,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryBenefitResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询智能财务计量型权益
-         *
-         * @param request QueryBenefitRequest
-         * @return QueryBenefitResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询智能财务计量型权益</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryBenefitRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryBenefitResponse
+        /// </returns>
         public QueryBenefitResponse QueryBenefit(QueryBenefitRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3533,12 +4374,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return QueryBenefitWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询智能财务计量型权益
-         *
-         * @param request QueryBenefitRequest
-         * @return QueryBenefitResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询智能财务计量型权益</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryBenefitRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryBenefitResponse
+        /// </returns>
         public async Task<QueryBenefitResponse> QueryBenefitAsync(QueryBenefitRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3546,14 +4393,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await QueryBenefitWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 批量获取费用类别
-         *
-         * @param request QueryCategoryByPageRequest
-         * @param headers QueryCategoryByPageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryCategoryByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取费用类别</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCategoryByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryCategoryByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCategoryByPageResponse
+        /// </returns>
         public QueryCategoryByPageResponse QueryCategoryByPageWithOptions(QueryCategoryByPageRequest request, QueryCategoryByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3599,14 +4456,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryCategoryByPageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 批量获取费用类别
-         *
-         * @param request QueryCategoryByPageRequest
-         * @param headers QueryCategoryByPageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryCategoryByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取费用类别</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCategoryByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryCategoryByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCategoryByPageResponse
+        /// </returns>
         public async Task<QueryCategoryByPageResponse> QueryCategoryByPageWithOptionsAsync(QueryCategoryByPageRequest request, QueryCategoryByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3652,12 +4519,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryCategoryByPageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 批量获取费用类别
-         *
-         * @param request QueryCategoryByPageRequest
-         * @return QueryCategoryByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取费用类别</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCategoryByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCategoryByPageResponse
+        /// </returns>
         public QueryCategoryByPageResponse QueryCategoryByPage(QueryCategoryByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3665,12 +4538,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return QueryCategoryByPageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 批量获取费用类别
-         *
-         * @param request QueryCategoryByPageRequest
-         * @return QueryCategoryByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取费用类别</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCategoryByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCategoryByPageResponse
+        /// </returns>
         public async Task<QueryCategoryByPageResponse> QueryCategoryByPageAsync(QueryCategoryByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3678,14 +4557,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await QueryCategoryByPageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询某个主体的开票申请单的提单数量
-         *
-         * @param request QueryCompanyInvoiceRelationCountRequest
-         * @param headers QueryCompanyInvoiceRelationCountHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryCompanyInvoiceRelationCountResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询某个主体的开票申请单的提单数量</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCompanyInvoiceRelationCountRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryCompanyInvoiceRelationCountHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCompanyInvoiceRelationCountResponse
+        /// </returns>
         public QueryCompanyInvoiceRelationCountResponse QueryCompanyInvoiceRelationCountWithOptions(QueryCompanyInvoiceRelationCountRequest request, QueryCompanyInvoiceRelationCountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3723,14 +4612,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryCompanyInvoiceRelationCountResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询某个主体的开票申请单的提单数量
-         *
-         * @param request QueryCompanyInvoiceRelationCountRequest
-         * @param headers QueryCompanyInvoiceRelationCountHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryCompanyInvoiceRelationCountResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询某个主体的开票申请单的提单数量</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCompanyInvoiceRelationCountRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryCompanyInvoiceRelationCountHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCompanyInvoiceRelationCountResponse
+        /// </returns>
         public async Task<QueryCompanyInvoiceRelationCountResponse> QueryCompanyInvoiceRelationCountWithOptionsAsync(QueryCompanyInvoiceRelationCountRequest request, QueryCompanyInvoiceRelationCountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3768,12 +4667,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryCompanyInvoiceRelationCountResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询某个主体的开票申请单的提单数量
-         *
-         * @param request QueryCompanyInvoiceRelationCountRequest
-         * @return QueryCompanyInvoiceRelationCountResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询某个主体的开票申请单的提单数量</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCompanyInvoiceRelationCountRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCompanyInvoiceRelationCountResponse
+        /// </returns>
         public QueryCompanyInvoiceRelationCountResponse QueryCompanyInvoiceRelationCount(QueryCompanyInvoiceRelationCountRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3781,12 +4686,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return QueryCompanyInvoiceRelationCountWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询某个主体的开票申请单的提单数量
-         *
-         * @param request QueryCompanyInvoiceRelationCountRequest
-         * @return QueryCompanyInvoiceRelationCountResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询某个主体的开票申请单的提单数量</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCompanyInvoiceRelationCountRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCompanyInvoiceRelationCountResponse
+        /// </returns>
         public async Task<QueryCompanyInvoiceRelationCountResponse> QueryCompanyInvoiceRelationCountAsync(QueryCompanyInvoiceRelationCountRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3794,14 +4705,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await QueryCompanyInvoiceRelationCountWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 分页批量获取智能财务应用内维护的客户信息
-         *
-         * @param request QueryCustomerByPageRequest
-         * @param headers QueryCustomerByPageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryCustomerByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页批量获取智能财务应用内维护的客户信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCustomerByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryCustomerByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCustomerByPageResponse
+        /// </returns>
         public QueryCustomerByPageResponse QueryCustomerByPageWithOptions(QueryCustomerByPageRequest request, QueryCustomerByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3843,14 +4764,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryCustomerByPageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 分页批量获取智能财务应用内维护的客户信息
-         *
-         * @param request QueryCustomerByPageRequest
-         * @param headers QueryCustomerByPageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryCustomerByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页批量获取智能财务应用内维护的客户信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCustomerByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryCustomerByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCustomerByPageResponse
+        /// </returns>
         public async Task<QueryCustomerByPageResponse> QueryCustomerByPageWithOptionsAsync(QueryCustomerByPageRequest request, QueryCustomerByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3892,12 +4823,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryCustomerByPageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 分页批量获取智能财务应用内维护的客户信息
-         *
-         * @param request QueryCustomerByPageRequest
-         * @return QueryCustomerByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页批量获取智能财务应用内维护的客户信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCustomerByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCustomerByPageResponse
+        /// </returns>
         public QueryCustomerByPageResponse QueryCustomerByPage(QueryCustomerByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3905,12 +4842,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return QueryCustomerByPageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 分页批量获取智能财务应用内维护的客户信息
-         *
-         * @param request QueryCustomerByPageRequest
-         * @return QueryCustomerByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页批量获取智能财务应用内维护的客户信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCustomerByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCustomerByPageResponse
+        /// </returns>
         public async Task<QueryCustomerByPageResponse> QueryCustomerByPageAsync(QueryCustomerByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3918,14 +4861,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await QueryCustomerByPageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 提供给合作伙伴，查询智能财务的客户配置信息
-         *
-         * @param request QueryCustomerInfoRequest
-         * @param headers QueryCustomerInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryCustomerInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提供给合作伙伴，查询智能财务的客户配置信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCustomerInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryCustomerInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCustomerInfoResponse
+        /// </returns>
         public QueryCustomerInfoResponse QueryCustomerInfoWithOptions(QueryCustomerInfoRequest request, QueryCustomerInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3971,14 +4924,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryCustomerInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 提供给合作伙伴，查询智能财务的客户配置信息
-         *
-         * @param request QueryCustomerInfoRequest
-         * @param headers QueryCustomerInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryCustomerInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提供给合作伙伴，查询智能财务的客户配置信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCustomerInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryCustomerInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCustomerInfoResponse
+        /// </returns>
         public async Task<QueryCustomerInfoResponse> QueryCustomerInfoWithOptionsAsync(QueryCustomerInfoRequest request, QueryCustomerInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4024,12 +4987,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryCustomerInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 提供给合作伙伴，查询智能财务的客户配置信息
-         *
-         * @param request QueryCustomerInfoRequest
-         * @return QueryCustomerInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提供给合作伙伴，查询智能财务的客户配置信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCustomerInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCustomerInfoResponse
+        /// </returns>
         public QueryCustomerInfoResponse QueryCustomerInfo(QueryCustomerInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4037,12 +5006,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return QueryCustomerInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 提供给合作伙伴，查询智能财务的客户配置信息
-         *
-         * @param request QueryCustomerInfoRequest
-         * @return QueryCustomerInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提供给合作伙伴，查询智能财务的客户配置信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCustomerInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCustomerInfoResponse
+        /// </returns>
         public async Task<QueryCustomerInfoResponse> QueryCustomerInfoAsync(QueryCustomerInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4050,14 +5025,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await QueryCustomerInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 批量获取企业账户
-         *
-         * @param request QueryEnterpriseAccountByPageRequest
-         * @param headers QueryEnterpriseAccountByPageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryEnterpriseAccountByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取企业账户</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryEnterpriseAccountByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryEnterpriseAccountByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryEnterpriseAccountByPageResponse
+        /// </returns>
         public QueryEnterpriseAccountByPageResponse QueryEnterpriseAccountByPageWithOptions(QueryEnterpriseAccountByPageRequest request, QueryEnterpriseAccountByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4099,14 +5084,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryEnterpriseAccountByPageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 批量获取企业账户
-         *
-         * @param request QueryEnterpriseAccountByPageRequest
-         * @param headers QueryEnterpriseAccountByPageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryEnterpriseAccountByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取企业账户</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryEnterpriseAccountByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryEnterpriseAccountByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryEnterpriseAccountByPageResponse
+        /// </returns>
         public async Task<QueryEnterpriseAccountByPageResponse> QueryEnterpriseAccountByPageWithOptionsAsync(QueryEnterpriseAccountByPageRequest request, QueryEnterpriseAccountByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4148,12 +5143,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryEnterpriseAccountByPageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 批量获取企业账户
-         *
-         * @param request QueryEnterpriseAccountByPageRequest
-         * @return QueryEnterpriseAccountByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取企业账户</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryEnterpriseAccountByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryEnterpriseAccountByPageResponse
+        /// </returns>
         public QueryEnterpriseAccountByPageResponse QueryEnterpriseAccountByPage(QueryEnterpriseAccountByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4161,12 +5162,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return QueryEnterpriseAccountByPageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 批量获取企业账户
-         *
-         * @param request QueryEnterpriseAccountByPageRequest
-         * @return QueryEnterpriseAccountByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取企业账户</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryEnterpriseAccountByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryEnterpriseAccountByPageResponse
+        /// </returns>
         public async Task<QueryEnterpriseAccountByPageResponse> QueryEnterpriseAccountByPageAsync(QueryEnterpriseAccountByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4174,13 +5181,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await QueryEnterpriseAccountByPageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询智能财务配置的企业信息
-         *
-         * @param headers QueryFinanceCompanyInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryFinanceCompanyInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询智能财务配置的企业信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryFinanceCompanyInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryFinanceCompanyInfoResponse
+        /// </returns>
         public QueryFinanceCompanyInfoResponse QueryFinanceCompanyInfoWithOptions(QueryFinanceCompanyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -4211,13 +5226,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryFinanceCompanyInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询智能财务配置的企业信息
-         *
-         * @param headers QueryFinanceCompanyInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryFinanceCompanyInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询智能财务配置的企业信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryFinanceCompanyInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryFinanceCompanyInfoResponse
+        /// </returns>
         public async Task<QueryFinanceCompanyInfoResponse> QueryFinanceCompanyInfoWithOptionsAsync(QueryFinanceCompanyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -4248,11 +5271,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryFinanceCompanyInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询智能财务配置的企业信息
-         *
-         * @return QueryFinanceCompanyInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询智能财务配置的企业信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryFinanceCompanyInfoResponse
+        /// </returns>
         public QueryFinanceCompanyInfoResponse QueryFinanceCompanyInfo()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4260,11 +5286,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return QueryFinanceCompanyInfoWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 查询智能财务配置的企业信息
-         *
-         * @return QueryFinanceCompanyInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询智能财务配置的企业信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryFinanceCompanyInfoResponse
+        /// </returns>
         public async Task<QueryFinanceCompanyInfoResponse> QueryFinanceCompanyInfoAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4272,13 +5301,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await QueryFinanceCompanyInfoWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 查询开票申请单的提单数量
-         *
-         * @param headers QueryInvoiceRelationCountHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryInvoiceRelationCountResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询开票申请单的提单数量</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryInvoiceRelationCountHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryInvoiceRelationCountResponse
+        /// </returns>
         public QueryInvoiceRelationCountResponse QueryInvoiceRelationCountWithOptions(QueryInvoiceRelationCountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -4309,13 +5346,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryInvoiceRelationCountResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询开票申请单的提单数量
-         *
-         * @param headers QueryInvoiceRelationCountHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryInvoiceRelationCountResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询开票申请单的提单数量</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryInvoiceRelationCountHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryInvoiceRelationCountResponse
+        /// </returns>
         public async Task<QueryInvoiceRelationCountResponse> QueryInvoiceRelationCountWithOptionsAsync(QueryInvoiceRelationCountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -4346,11 +5391,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryInvoiceRelationCountResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询开票申请单的提单数量
-         *
-         * @return QueryInvoiceRelationCountResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询开票申请单的提单数量</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryInvoiceRelationCountResponse
+        /// </returns>
         public QueryInvoiceRelationCountResponse QueryInvoiceRelationCount()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4358,11 +5406,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return QueryInvoiceRelationCountWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 查询开票申请单的提单数量
-         *
-         * @return QueryInvoiceRelationCountResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询开票申请单的提单数量</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryInvoiceRelationCountResponse
+        /// </returns>
         public async Task<QueryInvoiceRelationCountResponse> QueryInvoiceRelationCountAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4370,13 +5421,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await QueryInvoiceRelationCountWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 查询钉钉智能财务多主体信息
-         *
-         * @param headers QueryMultiCompanyInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryMultiCompanyInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询钉钉智能财务多主体信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryMultiCompanyInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMultiCompanyInfoResponse
+        /// </returns>
         public QueryMultiCompanyInfoResponse QueryMultiCompanyInfoWithOptions(QueryMultiCompanyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -4407,13 +5466,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryMultiCompanyInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询钉钉智能财务多主体信息
-         *
-         * @param headers QueryMultiCompanyInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryMultiCompanyInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询钉钉智能财务多主体信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryMultiCompanyInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMultiCompanyInfoResponse
+        /// </returns>
         public async Task<QueryMultiCompanyInfoResponse> QueryMultiCompanyInfoWithOptionsAsync(QueryMultiCompanyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -4444,11 +5511,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryMultiCompanyInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询钉钉智能财务多主体信息
-         *
-         * @return QueryMultiCompanyInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询钉钉智能财务多主体信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryMultiCompanyInfoResponse
+        /// </returns>
         public QueryMultiCompanyInfoResponse QueryMultiCompanyInfo()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4456,11 +5526,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return QueryMultiCompanyInfoWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 查询钉钉智能财务多主体信息
-         *
-         * @return QueryMultiCompanyInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询钉钉智能财务多主体信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryMultiCompanyInfoResponse
+        /// </returns>
         public async Task<QueryMultiCompanyInfoResponse> QueryMultiCompanyInfoAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4468,14 +5541,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await QueryMultiCompanyInfoWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 提供给小望，查询当前用户所具有的的小望权限点信息
-         *
-         * @param request QueryPermissionByUserIdRequest
-         * @param headers QueryPermissionByUserIdHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryPermissionByUserIdResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提供给小望，查询当前用户所具有的的小望权限点信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryPermissionByUserIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryPermissionByUserIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPermissionByUserIdResponse
+        /// </returns>
         public QueryPermissionByUserIdResponse QueryPermissionByUserIdWithOptions(QueryPermissionByUserIdRequest request, QueryPermissionByUserIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4517,14 +5600,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryPermissionByUserIdResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 提供给小望，查询当前用户所具有的的小望权限点信息
-         *
-         * @param request QueryPermissionByUserIdRequest
-         * @param headers QueryPermissionByUserIdHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryPermissionByUserIdResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提供给小望，查询当前用户所具有的的小望权限点信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryPermissionByUserIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryPermissionByUserIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPermissionByUserIdResponse
+        /// </returns>
         public async Task<QueryPermissionByUserIdResponse> QueryPermissionByUserIdWithOptionsAsync(QueryPermissionByUserIdRequest request, QueryPermissionByUserIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4566,12 +5659,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryPermissionByUserIdResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 提供给小望，查询当前用户所具有的的小望权限点信息
-         *
-         * @param request QueryPermissionByUserIdRequest
-         * @return QueryPermissionByUserIdResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提供给小望，查询当前用户所具有的的小望权限点信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryPermissionByUserIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPermissionByUserIdResponse
+        /// </returns>
         public QueryPermissionByUserIdResponse QueryPermissionByUserId(QueryPermissionByUserIdRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4579,12 +5678,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return QueryPermissionByUserIdWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 提供给小望，查询当前用户所具有的的小望权限点信息
-         *
-         * @param request QueryPermissionByUserIdRequest
-         * @return QueryPermissionByUserIdResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提供给小望，查询当前用户所具有的的小望权限点信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryPermissionByUserIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPermissionByUserIdResponse
+        /// </returns>
         public async Task<QueryPermissionByUserIdResponse> QueryPermissionByUserIdAsync(QueryPermissionByUserIdRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4592,14 +5697,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await QueryPermissionByUserIdWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询智能财务角色下的成员信息
-         *
-         * @param request QueryPermissionRoleMemberRequest
-         * @param headers QueryPermissionRoleMemberHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryPermissionRoleMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询智能财务角色下的成员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryPermissionRoleMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryPermissionRoleMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPermissionRoleMemberResponse
+        /// </returns>
         public QueryPermissionRoleMemberResponse QueryPermissionRoleMemberWithOptions(QueryPermissionRoleMemberRequest request, QueryPermissionRoleMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4641,14 +5756,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryPermissionRoleMemberResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询智能财务角色下的成员信息
-         *
-         * @param request QueryPermissionRoleMemberRequest
-         * @param headers QueryPermissionRoleMemberHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryPermissionRoleMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询智能财务角色下的成员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryPermissionRoleMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryPermissionRoleMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPermissionRoleMemberResponse
+        /// </returns>
         public async Task<QueryPermissionRoleMemberResponse> QueryPermissionRoleMemberWithOptionsAsync(QueryPermissionRoleMemberRequest request, QueryPermissionRoleMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4690,12 +5815,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryPermissionRoleMemberResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询智能财务角色下的成员信息
-         *
-         * @param request QueryPermissionRoleMemberRequest
-         * @return QueryPermissionRoleMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询智能财务角色下的成员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryPermissionRoleMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPermissionRoleMemberResponse
+        /// </returns>
         public QueryPermissionRoleMemberResponse QueryPermissionRoleMember(QueryPermissionRoleMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4703,12 +5834,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return QueryPermissionRoleMemberWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询智能财务角色下的成员信息
-         *
-         * @param request QueryPermissionRoleMemberRequest
-         * @return QueryPermissionRoleMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询智能财务角色下的成员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryPermissionRoleMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPermissionRoleMemberResponse
+        /// </returns>
         public async Task<QueryPermissionRoleMemberResponse> QueryPermissionRoleMemberAsync(QueryPermissionRoleMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4716,14 +5853,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await QueryPermissionRoleMemberWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 批量获取商品信息
-         *
-         * @param request QueryProductByPageRequest
-         * @param headers QueryProductByPageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryProductByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取商品信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryProductByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryProductByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryProductByPageResponse
+        /// </returns>
         public QueryProductByPageResponse QueryProductByPageWithOptions(QueryProductByPageRequest request, QueryProductByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4765,14 +5912,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryProductByPageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 批量获取商品信息
-         *
-         * @param request QueryProductByPageRequest
-         * @param headers QueryProductByPageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryProductByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取商品信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryProductByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryProductByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryProductByPageResponse
+        /// </returns>
         public async Task<QueryProductByPageResponse> QueryProductByPageWithOptionsAsync(QueryProductByPageRequest request, QueryProductByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4814,12 +5971,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryProductByPageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 批量获取商品信息
-         *
-         * @param request QueryProductByPageRequest
-         * @return QueryProductByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取商品信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryProductByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryProductByPageResponse
+        /// </returns>
         public QueryProductByPageResponse QueryProductByPage(QueryProductByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4827,12 +5990,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return QueryProductByPageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 批量获取商品信息
-         *
-         * @param request QueryProductByPageRequest
-         * @return QueryProductByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取商品信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryProductByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryProductByPageResponse
+        /// </returns>
         public async Task<QueryProductByPageResponse> QueryProductByPageAsync(QueryProductByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4840,14 +6009,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await QueryProductByPageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 批量获取项目信息
-         *
-         * @param request QueryProjectByPageRequest
-         * @param headers QueryProjectByPageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryProjectByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取项目信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryProjectByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryProjectByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryProjectByPageResponse
+        /// </returns>
         public QueryProjectByPageResponse QueryProjectByPageWithOptions(QueryProjectByPageRequest request, QueryProjectByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4889,14 +6068,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryProjectByPageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 批量获取项目信息
-         *
-         * @param request QueryProjectByPageRequest
-         * @param headers QueryProjectByPageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryProjectByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取项目信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryProjectByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryProjectByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryProjectByPageResponse
+        /// </returns>
         public async Task<QueryProjectByPageResponse> QueryProjectByPageWithOptionsAsync(QueryProjectByPageRequest request, QueryProjectByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4938,12 +6127,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryProjectByPageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 批量获取项目信息
-         *
-         * @param request QueryProjectByPageRequest
-         * @return QueryProjectByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取项目信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryProjectByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryProjectByPageResponse
+        /// </returns>
         public QueryProjectByPageResponse QueryProjectByPage(QueryProjectByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4951,12 +6146,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return QueryProjectByPageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 批量获取项目信息
-         *
-         * @param request QueryProjectByPageRequest
-         * @return QueryProjectByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取项目信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryProjectByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryProjectByPageResponse
+        /// </returns>
         public async Task<QueryProjectByPageResponse> QueryProjectByPageAsync(QueryProjectByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4964,14 +6165,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await QueryProjectByPageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询开票申请单详情
-         *
-         * @param request QueryReceiptDetailForInvoiceRequest
-         * @param headers QueryReceiptDetailForInvoiceHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryReceiptDetailForInvoiceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询开票申请单详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryReceiptDetailForInvoiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryReceiptDetailForInvoiceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryReceiptDetailForInvoiceResponse
+        /// </returns>
         public QueryReceiptDetailForInvoiceResponse QueryReceiptDetailForInvoiceWithOptions(QueryReceiptDetailForInvoiceRequest request, QueryReceiptDetailForInvoiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5009,14 +6220,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryReceiptDetailForInvoiceResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询开票申请单详情
-         *
-         * @param request QueryReceiptDetailForInvoiceRequest
-         * @param headers QueryReceiptDetailForInvoiceHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryReceiptDetailForInvoiceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询开票申请单详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryReceiptDetailForInvoiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryReceiptDetailForInvoiceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryReceiptDetailForInvoiceResponse
+        /// </returns>
         public async Task<QueryReceiptDetailForInvoiceResponse> QueryReceiptDetailForInvoiceWithOptionsAsync(QueryReceiptDetailForInvoiceRequest request, QueryReceiptDetailForInvoiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5054,12 +6275,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryReceiptDetailForInvoiceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询开票申请单详情
-         *
-         * @param request QueryReceiptDetailForInvoiceRequest
-         * @return QueryReceiptDetailForInvoiceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询开票申请单详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryReceiptDetailForInvoiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryReceiptDetailForInvoiceResponse
+        /// </returns>
         public QueryReceiptDetailForInvoiceResponse QueryReceiptDetailForInvoice(QueryReceiptDetailForInvoiceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5067,12 +6294,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return QueryReceiptDetailForInvoiceWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询开票申请单详情
-         *
-         * @param request QueryReceiptDetailForInvoiceRequest
-         * @return QueryReceiptDetailForInvoiceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询开票申请单详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryReceiptDetailForInvoiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryReceiptDetailForInvoiceResponse
+        /// </returns>
         public async Task<QueryReceiptDetailForInvoiceResponse> QueryReceiptDetailForInvoiceAsync(QueryReceiptDetailForInvoiceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5080,14 +6313,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await QueryReceiptDetailForInvoiceWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 批量查询智能财务单据主数据信息
-         *
-         * @param request QueryReceiptForInvoiceRequest
-         * @param headers QueryReceiptForInvoiceHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryReceiptForInvoiceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询智能财务单据主数据信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryReceiptForInvoiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryReceiptForInvoiceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryReceiptForInvoiceResponse
+        /// </returns>
         public QueryReceiptForInvoiceResponse QueryReceiptForInvoiceWithOptions(QueryReceiptForInvoiceRequest request, QueryReceiptForInvoiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5165,14 +6408,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryReceiptForInvoiceResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 批量查询智能财务单据主数据信息
-         *
-         * @param request QueryReceiptForInvoiceRequest
-         * @param headers QueryReceiptForInvoiceHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryReceiptForInvoiceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询智能财务单据主数据信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryReceiptForInvoiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryReceiptForInvoiceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryReceiptForInvoiceResponse
+        /// </returns>
         public async Task<QueryReceiptForInvoiceResponse> QueryReceiptForInvoiceWithOptionsAsync(QueryReceiptForInvoiceRequest request, QueryReceiptForInvoiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5250,12 +6503,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryReceiptForInvoiceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 批量查询智能财务单据主数据信息
-         *
-         * @param request QueryReceiptForInvoiceRequest
-         * @return QueryReceiptForInvoiceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询智能财务单据主数据信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryReceiptForInvoiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryReceiptForInvoiceResponse
+        /// </returns>
         public QueryReceiptForInvoiceResponse QueryReceiptForInvoice(QueryReceiptForInvoiceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5263,12 +6522,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return QueryReceiptForInvoiceWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 批量查询智能财务单据主数据信息
-         *
-         * @param request QueryReceiptForInvoiceRequest
-         * @return QueryReceiptForInvoiceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询智能财务单据主数据信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryReceiptForInvoiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryReceiptForInvoiceResponse
+        /// </returns>
         public async Task<QueryReceiptForInvoiceResponse> QueryReceiptForInvoiceAsync(QueryReceiptForInvoiceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5276,14 +6541,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await QueryReceiptForInvoiceWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 批量查询智能财务的单据主数据基本信息
-         *
-         * @param request QueryReceiptsBaseInfoRequest
-         * @param headers QueryReceiptsBaseInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryReceiptsBaseInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询智能财务的单据主数据基本信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryReceiptsBaseInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryReceiptsBaseInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryReceiptsBaseInfoResponse
+        /// </returns>
         public QueryReceiptsBaseInfoResponse QueryReceiptsBaseInfoWithOptions(QueryReceiptsBaseInfoRequest request, QueryReceiptsBaseInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5361,14 +6636,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryReceiptsBaseInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 批量查询智能财务的单据主数据基本信息
-         *
-         * @param request QueryReceiptsBaseInfoRequest
-         * @param headers QueryReceiptsBaseInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryReceiptsBaseInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询智能财务的单据主数据基本信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryReceiptsBaseInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryReceiptsBaseInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryReceiptsBaseInfoResponse
+        /// </returns>
         public async Task<QueryReceiptsBaseInfoResponse> QueryReceiptsBaseInfoWithOptionsAsync(QueryReceiptsBaseInfoRequest request, QueryReceiptsBaseInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5446,12 +6731,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryReceiptsBaseInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 批量查询智能财务的单据主数据基本信息
-         *
-         * @param request QueryReceiptsBaseInfoRequest
-         * @return QueryReceiptsBaseInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询智能财务的单据主数据基本信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryReceiptsBaseInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryReceiptsBaseInfoResponse
+        /// </returns>
         public QueryReceiptsBaseInfoResponse QueryReceiptsBaseInfo(QueryReceiptsBaseInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5459,12 +6750,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return QueryReceiptsBaseInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 批量查询智能财务的单据主数据基本信息
-         *
-         * @param request QueryReceiptsBaseInfoRequest
-         * @return QueryReceiptsBaseInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询智能财务的单据主数据基本信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryReceiptsBaseInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryReceiptsBaseInfoResponse
+        /// </returns>
         public async Task<QueryReceiptsBaseInfoResponse> QueryReceiptsBaseInfoAsync(QueryReceiptsBaseInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5472,14 +6769,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await QueryReceiptsBaseInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 分页获取智能财务单据详情列表
-         *
-         * @param request QueryReceiptsByPageRequest
-         * @param headers QueryReceiptsByPageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryReceiptsByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页获取智能财务单据详情列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryReceiptsByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryReceiptsByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryReceiptsByPageResponse
+        /// </returns>
         public QueryReceiptsByPageResponse QueryReceiptsByPageWithOptions(QueryReceiptsByPageRequest request, QueryReceiptsByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5537,14 +6844,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryReceiptsByPageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 分页获取智能财务单据详情列表
-         *
-         * @param request QueryReceiptsByPageRequest
-         * @param headers QueryReceiptsByPageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryReceiptsByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页获取智能财务单据详情列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryReceiptsByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryReceiptsByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryReceiptsByPageResponse
+        /// </returns>
         public async Task<QueryReceiptsByPageResponse> QueryReceiptsByPageWithOptionsAsync(QueryReceiptsByPageRequest request, QueryReceiptsByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5602,12 +6919,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryReceiptsByPageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 分页获取智能财务单据详情列表
-         *
-         * @param request QueryReceiptsByPageRequest
-         * @return QueryReceiptsByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页获取智能财务单据详情列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryReceiptsByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryReceiptsByPageResponse
+        /// </returns>
         public QueryReceiptsByPageResponse QueryReceiptsByPage(QueryReceiptsByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5615,12 +6938,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return QueryReceiptsByPageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 分页获取智能财务单据详情列表
-         *
-         * @param request QueryReceiptsByPageRequest
-         * @return QueryReceiptsByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页获取智能财务单据详情列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryReceiptsByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryReceiptsByPageResponse
+        /// </returns>
         public async Task<QueryReceiptsByPageResponse> QueryReceiptsByPageAsync(QueryReceiptsByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5628,14 +6957,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await QueryReceiptsByPageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 分页查询智能财务角色下的成员信息
-         *
-         * @param request QueryRoleMemberByPageRequest
-         * @param headers QueryRoleMemberByPageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryRoleMemberByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页查询智能财务角色下的成员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryRoleMemberByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryRoleMemberByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryRoleMemberByPageResponse
+        /// </returns>
         public QueryRoleMemberByPageResponse QueryRoleMemberByPageWithOptions(QueryRoleMemberByPageRequest request, QueryRoleMemberByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5685,14 +7024,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryRoleMemberByPageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 分页查询智能财务角色下的成员信息
-         *
-         * @param request QueryRoleMemberByPageRequest
-         * @param headers QueryRoleMemberByPageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryRoleMemberByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页查询智能财务角色下的成员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryRoleMemberByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryRoleMemberByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryRoleMemberByPageResponse
+        /// </returns>
         public async Task<QueryRoleMemberByPageResponse> QueryRoleMemberByPageWithOptionsAsync(QueryRoleMemberByPageRequest request, QueryRoleMemberByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5742,12 +7091,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryRoleMemberByPageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 分页查询智能财务角色下的成员信息
-         *
-         * @param request QueryRoleMemberByPageRequest
-         * @return QueryRoleMemberByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页查询智能财务角色下的成员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryRoleMemberByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryRoleMemberByPageResponse
+        /// </returns>
         public QueryRoleMemberByPageResponse QueryRoleMemberByPage(QueryRoleMemberByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5755,12 +7110,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return QueryRoleMemberByPageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 分页查询智能财务角色下的成员信息
-         *
-         * @param request QueryRoleMemberByPageRequest
-         * @return QueryRoleMemberByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页查询智能财务角色下的成员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryRoleMemberByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryRoleMemberByPageResponse
+        /// </returns>
         public async Task<QueryRoleMemberByPageResponse> QueryRoleMemberByPageAsync(QueryRoleMemberByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5768,14 +7129,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await QueryRoleMemberByPageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 分页批量获取智能财务应用内维护的供应商信息
-         *
-         * @param request QuerySupplierByPageRequest
-         * @param headers QuerySupplierByPageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QuerySupplierByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页批量获取智能财务应用内维护的供应商信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QuerySupplierByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// QuerySupplierByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QuerySupplierByPageResponse
+        /// </returns>
         public QuerySupplierByPageResponse QuerySupplierByPageWithOptions(QuerySupplierByPageRequest request, QuerySupplierByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5817,14 +7188,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QuerySupplierByPageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 分页批量获取智能财务应用内维护的供应商信息
-         *
-         * @param request QuerySupplierByPageRequest
-         * @param headers QuerySupplierByPageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QuerySupplierByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页批量获取智能财务应用内维护的供应商信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QuerySupplierByPageRequest
+        /// </param>
+        /// <param name="headers">
+        /// QuerySupplierByPageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QuerySupplierByPageResponse
+        /// </returns>
         public async Task<QuerySupplierByPageResponse> QuerySupplierByPageWithOptionsAsync(QuerySupplierByPageRequest request, QuerySupplierByPageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5866,12 +7247,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QuerySupplierByPageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 分页批量获取智能财务应用内维护的供应商信息
-         *
-         * @param request QuerySupplierByPageRequest
-         * @return QuerySupplierByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页批量获取智能财务应用内维护的供应商信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QuerySupplierByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QuerySupplierByPageResponse
+        /// </returns>
         public QuerySupplierByPageResponse QuerySupplierByPage(QuerySupplierByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5879,12 +7266,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return QuerySupplierByPageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 分页批量获取智能财务应用内维护的供应商信息
-         *
-         * @param request QuerySupplierByPageRequest
-         * @return QuerySupplierByPageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页批量获取智能财务应用内维护的供应商信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QuerySupplierByPageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QuerySupplierByPageResponse
+        /// </returns>
         public async Task<QuerySupplierByPageResponse> QuerySupplierByPageAsync(QuerySupplierByPageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5892,14 +7285,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await QuerySupplierByPageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询用户角色
-         *
-         * @param request QueryUserRoleListRequest
-         * @param headers QueryUserRoleListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryUserRoleListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询用户角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserRoleListRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryUserRoleListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserRoleListResponse
+        /// </returns>
         public QueryUserRoleListResponse QueryUserRoleListWithOptions(QueryUserRoleListRequest request, QueryUserRoleListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5937,14 +7340,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryUserRoleListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询用户角色
-         *
-         * @param request QueryUserRoleListRequest
-         * @param headers QueryUserRoleListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryUserRoleListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询用户角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserRoleListRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryUserRoleListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserRoleListResponse
+        /// </returns>
         public async Task<QueryUserRoleListResponse> QueryUserRoleListWithOptionsAsync(QueryUserRoleListRequest request, QueryUserRoleListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5982,12 +7395,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<QueryUserRoleListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询用户角色
-         *
-         * @param request QueryUserRoleListRequest
-         * @return QueryUserRoleListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询用户角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserRoleListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserRoleListResponse
+        /// </returns>
         public QueryUserRoleListResponse QueryUserRoleList(QueryUserRoleListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5995,12 +7414,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return QueryUserRoleListWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询用户角色
-         *
-         * @param request QueryUserRoleListRequest
-         * @return QueryUserRoleListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询用户角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserRoleListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserRoleListResponse
+        /// </returns>
         public async Task<QueryUserRoleListResponse> QueryUserRoleListAsync(QueryUserRoleListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6008,14 +7433,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await QueryUserRoleListWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 解绑开票申请单关联的发票
-         *
-         * @param request UnbindApplyReceiptAndInvoiceRelatedRequest
-         * @param headers UnbindApplyReceiptAndInvoiceRelatedHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UnbindApplyReceiptAndInvoiceRelatedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>解绑开票申请单关联的发票</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UnbindApplyReceiptAndInvoiceRelatedRequest
+        /// </param>
+        /// <param name="headers">
+        /// UnbindApplyReceiptAndInvoiceRelatedHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UnbindApplyReceiptAndInvoiceRelatedResponse
+        /// </returns>
         public UnbindApplyReceiptAndInvoiceRelatedResponse UnbindApplyReceiptAndInvoiceRelatedWithOptions(UnbindApplyReceiptAndInvoiceRelatedRequest request, UnbindApplyReceiptAndInvoiceRelatedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6061,14 +7496,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UnbindApplyReceiptAndInvoiceRelatedResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 解绑开票申请单关联的发票
-         *
-         * @param request UnbindApplyReceiptAndInvoiceRelatedRequest
-         * @param headers UnbindApplyReceiptAndInvoiceRelatedHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UnbindApplyReceiptAndInvoiceRelatedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>解绑开票申请单关联的发票</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UnbindApplyReceiptAndInvoiceRelatedRequest
+        /// </param>
+        /// <param name="headers">
+        /// UnbindApplyReceiptAndInvoiceRelatedHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UnbindApplyReceiptAndInvoiceRelatedResponse
+        /// </returns>
         public async Task<UnbindApplyReceiptAndInvoiceRelatedResponse> UnbindApplyReceiptAndInvoiceRelatedWithOptionsAsync(UnbindApplyReceiptAndInvoiceRelatedRequest request, UnbindApplyReceiptAndInvoiceRelatedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6114,12 +7559,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UnbindApplyReceiptAndInvoiceRelatedResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 解绑开票申请单关联的发票
-         *
-         * @param request UnbindApplyReceiptAndInvoiceRelatedRequest
-         * @return UnbindApplyReceiptAndInvoiceRelatedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>解绑开票申请单关联的发票</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UnbindApplyReceiptAndInvoiceRelatedRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UnbindApplyReceiptAndInvoiceRelatedResponse
+        /// </returns>
         public UnbindApplyReceiptAndInvoiceRelatedResponse UnbindApplyReceiptAndInvoiceRelated(UnbindApplyReceiptAndInvoiceRelatedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6127,12 +7578,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return UnbindApplyReceiptAndInvoiceRelatedWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 解绑开票申请单关联的发票
-         *
-         * @param request UnbindApplyReceiptAndInvoiceRelatedRequest
-         * @return UnbindApplyReceiptAndInvoiceRelatedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>解绑开票申请单关联的发票</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UnbindApplyReceiptAndInvoiceRelatedRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UnbindApplyReceiptAndInvoiceRelatedResponse
+        /// </returns>
         public async Task<UnbindApplyReceiptAndInvoiceRelatedResponse> UnbindApplyReceiptAndInvoiceRelatedAsync(UnbindApplyReceiptAndInvoiceRelatedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6140,14 +7597,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await UnbindApplyReceiptAndInvoiceRelatedWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 开票申请单关联发票
-         *
-         * @param request UpdateApplyReceiptAndInvoiceRelatedRequest
-         * @param headers UpdateApplyReceiptAndInvoiceRelatedHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateApplyReceiptAndInvoiceRelatedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>开票申请单关联发票</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateApplyReceiptAndInvoiceRelatedRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateApplyReceiptAndInvoiceRelatedHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateApplyReceiptAndInvoiceRelatedResponse
+        /// </returns>
         public UpdateApplyReceiptAndInvoiceRelatedResponse UpdateApplyReceiptAndInvoiceRelatedWithOptions(UpdateApplyReceiptAndInvoiceRelatedRequest request, UpdateApplyReceiptAndInvoiceRelatedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6193,14 +7660,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateApplyReceiptAndInvoiceRelatedResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 开票申请单关联发票
-         *
-         * @param request UpdateApplyReceiptAndInvoiceRelatedRequest
-         * @param headers UpdateApplyReceiptAndInvoiceRelatedHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateApplyReceiptAndInvoiceRelatedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>开票申请单关联发票</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateApplyReceiptAndInvoiceRelatedRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateApplyReceiptAndInvoiceRelatedHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateApplyReceiptAndInvoiceRelatedResponse
+        /// </returns>
         public async Task<UpdateApplyReceiptAndInvoiceRelatedResponse> UpdateApplyReceiptAndInvoiceRelatedWithOptionsAsync(UpdateApplyReceiptAndInvoiceRelatedRequest request, UpdateApplyReceiptAndInvoiceRelatedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6246,12 +7723,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateApplyReceiptAndInvoiceRelatedResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 开票申请单关联发票
-         *
-         * @param request UpdateApplyReceiptAndInvoiceRelatedRequest
-         * @return UpdateApplyReceiptAndInvoiceRelatedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>开票申请单关联发票</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateApplyReceiptAndInvoiceRelatedRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateApplyReceiptAndInvoiceRelatedResponse
+        /// </returns>
         public UpdateApplyReceiptAndInvoiceRelatedResponse UpdateApplyReceiptAndInvoiceRelated(UpdateApplyReceiptAndInvoiceRelatedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6259,12 +7742,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return UpdateApplyReceiptAndInvoiceRelatedWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 开票申请单关联发票
-         *
-         * @param request UpdateApplyReceiptAndInvoiceRelatedRequest
-         * @return UpdateApplyReceiptAndInvoiceRelatedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>开票申请单关联发票</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateApplyReceiptAndInvoiceRelatedRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateApplyReceiptAndInvoiceRelatedResponse
+        /// </returns>
         public async Task<UpdateApplyReceiptAndInvoiceRelatedResponse> UpdateApplyReceiptAndInvoiceRelatedAsync(UpdateApplyReceiptAndInvoiceRelatedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6272,14 +7761,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await UpdateApplyReceiptAndInvoiceRelatedWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新全电发票企业信息
-         *
-         * @param request UpdateDigitalInvoiceOrgInfoRequest
-         * @param headers UpdateDigitalInvoiceOrgInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateDigitalInvoiceOrgInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新全电发票企业信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateDigitalInvoiceOrgInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateDigitalInvoiceOrgInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateDigitalInvoiceOrgInfoResponse
+        /// </returns>
         public UpdateDigitalInvoiceOrgInfoResponse UpdateDigitalInvoiceOrgInfoWithOptions(UpdateDigitalInvoiceOrgInfoRequest request, UpdateDigitalInvoiceOrgInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6329,14 +7828,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateDigitalInvoiceOrgInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新全电发票企业信息
-         *
-         * @param request UpdateDigitalInvoiceOrgInfoRequest
-         * @param headers UpdateDigitalInvoiceOrgInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateDigitalInvoiceOrgInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新全电发票企业信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateDigitalInvoiceOrgInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateDigitalInvoiceOrgInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateDigitalInvoiceOrgInfoResponse
+        /// </returns>
         public async Task<UpdateDigitalInvoiceOrgInfoResponse> UpdateDigitalInvoiceOrgInfoWithOptionsAsync(UpdateDigitalInvoiceOrgInfoRequest request, UpdateDigitalInvoiceOrgInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6386,12 +7895,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateDigitalInvoiceOrgInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新全电发票企业信息
-         *
-         * @param request UpdateDigitalInvoiceOrgInfoRequest
-         * @return UpdateDigitalInvoiceOrgInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新全电发票企业信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateDigitalInvoiceOrgInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateDigitalInvoiceOrgInfoResponse
+        /// </returns>
         public UpdateDigitalInvoiceOrgInfoResponse UpdateDigitalInvoiceOrgInfo(UpdateDigitalInvoiceOrgInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6399,12 +7914,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return UpdateDigitalInvoiceOrgInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新全电发票企业信息
-         *
-         * @param request UpdateDigitalInvoiceOrgInfoRequest
-         * @return UpdateDigitalInvoiceOrgInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新全电发票企业信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateDigitalInvoiceOrgInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateDigitalInvoiceOrgInfoResponse
+        /// </returns>
         public async Task<UpdateDigitalInvoiceOrgInfoResponse> UpdateDigitalInvoiceOrgInfoAsync(UpdateDigitalInvoiceOrgInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6412,14 +7933,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await UpdateDigitalInvoiceOrgInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新智能财务配置的企业信息
-         *
-         * @param request UpdateFinanceCompanyInfoRequest
-         * @param headers UpdateFinanceCompanyInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateFinanceCompanyInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新智能财务配置的企业信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFinanceCompanyInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateFinanceCompanyInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFinanceCompanyInfoResponse
+        /// </returns>
         public UpdateFinanceCompanyInfoResponse UpdateFinanceCompanyInfoWithOptions(UpdateFinanceCompanyInfoRequest request, UpdateFinanceCompanyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6473,14 +8004,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateFinanceCompanyInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新智能财务配置的企业信息
-         *
-         * @param request UpdateFinanceCompanyInfoRequest
-         * @param headers UpdateFinanceCompanyInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateFinanceCompanyInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新智能财务配置的企业信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFinanceCompanyInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateFinanceCompanyInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFinanceCompanyInfoResponse
+        /// </returns>
         public async Task<UpdateFinanceCompanyInfoResponse> UpdateFinanceCompanyInfoWithOptionsAsync(UpdateFinanceCompanyInfoRequest request, UpdateFinanceCompanyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6534,12 +8075,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateFinanceCompanyInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新智能财务配置的企业信息
-         *
-         * @param request UpdateFinanceCompanyInfoRequest
-         * @return UpdateFinanceCompanyInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新智能财务配置的企业信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFinanceCompanyInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFinanceCompanyInfoResponse
+        /// </returns>
         public UpdateFinanceCompanyInfoResponse UpdateFinanceCompanyInfo(UpdateFinanceCompanyInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6547,12 +8094,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return UpdateFinanceCompanyInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新智能财务配置的企业信息
-         *
-         * @param request UpdateFinanceCompanyInfoRequest
-         * @return UpdateFinanceCompanyInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新智能财务配置的企业信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFinanceCompanyInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFinanceCompanyInfoResponse
+        /// </returns>
         public async Task<UpdateFinanceCompanyInfoResponse> UpdateFinanceCompanyInfoAsync(UpdateFinanceCompanyInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6560,14 +8113,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await UpdateFinanceCompanyInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新钉钉智能财务多主体信息
-         *
-         * @param request UpdateFinanceMultiCompanyInfoRequest
-         * @param headers UpdateFinanceMultiCompanyInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateFinanceMultiCompanyInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新钉钉智能财务多主体信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFinanceMultiCompanyInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateFinanceMultiCompanyInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFinanceMultiCompanyInfoResponse
+        /// </returns>
         public UpdateFinanceMultiCompanyInfoResponse UpdateFinanceMultiCompanyInfoWithOptions(UpdateFinanceMultiCompanyInfoRequest request, UpdateFinanceMultiCompanyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6625,14 +8188,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateFinanceMultiCompanyInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新钉钉智能财务多主体信息
-         *
-         * @param request UpdateFinanceMultiCompanyInfoRequest
-         * @param headers UpdateFinanceMultiCompanyInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateFinanceMultiCompanyInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新钉钉智能财务多主体信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFinanceMultiCompanyInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateFinanceMultiCompanyInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFinanceMultiCompanyInfoResponse
+        /// </returns>
         public async Task<UpdateFinanceMultiCompanyInfoResponse> UpdateFinanceMultiCompanyInfoWithOptionsAsync(UpdateFinanceMultiCompanyInfoRequest request, UpdateFinanceMultiCompanyInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6690,12 +8263,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateFinanceMultiCompanyInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新钉钉智能财务多主体信息
-         *
-         * @param request UpdateFinanceMultiCompanyInfoRequest
-         * @return UpdateFinanceMultiCompanyInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新钉钉智能财务多主体信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFinanceMultiCompanyInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFinanceMultiCompanyInfoResponse
+        /// </returns>
         public UpdateFinanceMultiCompanyInfoResponse UpdateFinanceMultiCompanyInfo(UpdateFinanceMultiCompanyInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6703,12 +8282,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return UpdateFinanceMultiCompanyInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新钉钉智能财务多主体信息
-         *
-         * @param request UpdateFinanceMultiCompanyInfoRequest
-         * @return UpdateFinanceMultiCompanyInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新钉钉智能财务多主体信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateFinanceMultiCompanyInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateFinanceMultiCompanyInfoResponse
+        /// </returns>
         public async Task<UpdateFinanceMultiCompanyInfoResponse> UpdateFinanceMultiCompanyInfoAsync(UpdateFinanceMultiCompanyInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6716,14 +8301,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await UpdateFinanceMultiCompanyInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 发票红冲/废弃状态变更接口
-         *
-         * @param request UpdateInvoiceAbandonStatusRequest
-         * @param headers UpdateInvoiceAbandonStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateInvoiceAbandonStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发票红冲/废弃状态变更接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceAbandonStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateInvoiceAbandonStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceAbandonStatusResponse
+        /// </returns>
         public UpdateInvoiceAbandonStatusResponse UpdateInvoiceAbandonStatusWithOptions(UpdateInvoiceAbandonStatusRequest request, UpdateInvoiceAbandonStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6801,14 +8396,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateInvoiceAbandonStatusResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 发票红冲/废弃状态变更接口
-         *
-         * @param request UpdateInvoiceAbandonStatusRequest
-         * @param headers UpdateInvoiceAbandonStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateInvoiceAbandonStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发票红冲/废弃状态变更接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceAbandonStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateInvoiceAbandonStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceAbandonStatusResponse
+        /// </returns>
         public async Task<UpdateInvoiceAbandonStatusResponse> UpdateInvoiceAbandonStatusWithOptionsAsync(UpdateInvoiceAbandonStatusRequest request, UpdateInvoiceAbandonStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6886,12 +8491,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateInvoiceAbandonStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 发票红冲/废弃状态变更接口
-         *
-         * @param request UpdateInvoiceAbandonStatusRequest
-         * @return UpdateInvoiceAbandonStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发票红冲/废弃状态变更接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceAbandonStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceAbandonStatusResponse
+        /// </returns>
         public UpdateInvoiceAbandonStatusResponse UpdateInvoiceAbandonStatus(UpdateInvoiceAbandonStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6899,12 +8510,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return UpdateInvoiceAbandonStatusWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 发票红冲/废弃状态变更接口
-         *
-         * @param request UpdateInvoiceAbandonStatusRequest
-         * @return UpdateInvoiceAbandonStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发票红冲/废弃状态变更接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceAbandonStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceAbandonStatusResponse
+        /// </returns>
         public async Task<UpdateInvoiceAbandonStatusResponse> UpdateInvoiceAbandonStatusAsync(UpdateInvoiceAbandonStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6912,14 +8529,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await UpdateInvoiceAbandonStatusWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新发票账期状态
-         *
-         * @param request UpdateInvoiceAccountPeriodRequest
-         * @param headers UpdateInvoiceAccountPeriodHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateInvoiceAccountPeriodResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新发票账期状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceAccountPeriodRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateInvoiceAccountPeriodHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceAccountPeriodResponse
+        /// </returns>
         public UpdateInvoiceAccountPeriodResponse UpdateInvoiceAccountPeriodWithOptions(UpdateInvoiceAccountPeriodRequest request, UpdateInvoiceAccountPeriodHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6973,14 +8600,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateInvoiceAccountPeriodResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新发票账期状态
-         *
-         * @param request UpdateInvoiceAccountPeriodRequest
-         * @param headers UpdateInvoiceAccountPeriodHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateInvoiceAccountPeriodResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新发票账期状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceAccountPeriodRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateInvoiceAccountPeriodHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceAccountPeriodResponse
+        /// </returns>
         public async Task<UpdateInvoiceAccountPeriodResponse> UpdateInvoiceAccountPeriodWithOptionsAsync(UpdateInvoiceAccountPeriodRequest request, UpdateInvoiceAccountPeriodHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7034,12 +8671,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateInvoiceAccountPeriodResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新发票账期状态
-         *
-         * @param request UpdateInvoiceAccountPeriodRequest
-         * @return UpdateInvoiceAccountPeriodResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新发票账期状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceAccountPeriodRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceAccountPeriodResponse
+        /// </returns>
         public UpdateInvoiceAccountPeriodResponse UpdateInvoiceAccountPeriod(UpdateInvoiceAccountPeriodRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7047,12 +8690,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return UpdateInvoiceAccountPeriodWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新发票账期状态
-         *
-         * @param request UpdateInvoiceAccountPeriodRequest
-         * @return UpdateInvoiceAccountPeriodResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新发票账期状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceAccountPeriodRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceAccountPeriodResponse
+        /// </returns>
         public async Task<UpdateInvoiceAccountPeriodResponse> UpdateInvoiceAccountPeriodAsync(UpdateInvoiceAccountPeriodRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7060,14 +8709,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await UpdateInvoiceAccountPeriodWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新全电企业入账时间
-         *
-         * @param request UpdateInvoiceAccountingPeriodDateRequest
-         * @param headers UpdateInvoiceAccountingPeriodDateHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateInvoiceAccountingPeriodDateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新全电企业入账时间</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceAccountingPeriodDateRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateInvoiceAccountingPeriodDateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceAccountingPeriodDateResponse
+        /// </returns>
         public UpdateInvoiceAccountingPeriodDateResponse UpdateInvoiceAccountingPeriodDateWithOptions(UpdateInvoiceAccountingPeriodDateRequest request, UpdateInvoiceAccountingPeriodDateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7113,14 +8772,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateInvoiceAccountingPeriodDateResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新全电企业入账时间
-         *
-         * @param request UpdateInvoiceAccountingPeriodDateRequest
-         * @param headers UpdateInvoiceAccountingPeriodDateHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateInvoiceAccountingPeriodDateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新全电企业入账时间</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceAccountingPeriodDateRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateInvoiceAccountingPeriodDateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceAccountingPeriodDateResponse
+        /// </returns>
         public async Task<UpdateInvoiceAccountingPeriodDateResponse> UpdateInvoiceAccountingPeriodDateWithOptionsAsync(UpdateInvoiceAccountingPeriodDateRequest request, UpdateInvoiceAccountingPeriodDateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7166,12 +8835,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateInvoiceAccountingPeriodDateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新全电企业入账时间
-         *
-         * @param request UpdateInvoiceAccountingPeriodDateRequest
-         * @return UpdateInvoiceAccountingPeriodDateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新全电企业入账时间</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceAccountingPeriodDateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceAccountingPeriodDateResponse
+        /// </returns>
         public UpdateInvoiceAccountingPeriodDateResponse UpdateInvoiceAccountingPeriodDate(UpdateInvoiceAccountingPeriodDateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7179,12 +8854,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return UpdateInvoiceAccountingPeriodDateWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新全电企业入账时间
-         *
-         * @param request UpdateInvoiceAccountingPeriodDateRequest
-         * @return UpdateInvoiceAccountingPeriodDateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新全电企业入账时间</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceAccountingPeriodDateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceAccountingPeriodDateResponse
+        /// </returns>
         public async Task<UpdateInvoiceAccountingPeriodDateResponse> UpdateInvoiceAccountingPeriodDateAsync(UpdateInvoiceAccountingPeriodDateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7192,14 +8873,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await UpdateInvoiceAccountingPeriodDateWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新全电企业入账状态
-         *
-         * @param request UpdateInvoiceAccountingStatusRequest
-         * @param headers UpdateInvoiceAccountingStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateInvoiceAccountingStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新全电企业入账状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceAccountingStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateInvoiceAccountingStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceAccountingStatusResponse
+        /// </returns>
         public UpdateInvoiceAccountingStatusResponse UpdateInvoiceAccountingStatusWithOptions(UpdateInvoiceAccountingStatusRequest request, UpdateInvoiceAccountingStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7245,14 +8936,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateInvoiceAccountingStatusResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新全电企业入账状态
-         *
-         * @param request UpdateInvoiceAccountingStatusRequest
-         * @param headers UpdateInvoiceAccountingStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateInvoiceAccountingStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新全电企业入账状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceAccountingStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateInvoiceAccountingStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceAccountingStatusResponse
+        /// </returns>
         public async Task<UpdateInvoiceAccountingStatusResponse> UpdateInvoiceAccountingStatusWithOptionsAsync(UpdateInvoiceAccountingStatusRequest request, UpdateInvoiceAccountingStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7298,12 +8999,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateInvoiceAccountingStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新全电企业入账状态
-         *
-         * @param request UpdateInvoiceAccountingStatusRequest
-         * @return UpdateInvoiceAccountingStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新全电企业入账状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceAccountingStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceAccountingStatusResponse
+        /// </returns>
         public UpdateInvoiceAccountingStatusResponse UpdateInvoiceAccountingStatus(UpdateInvoiceAccountingStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7311,12 +9018,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return UpdateInvoiceAccountingStatusWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新全电企业入账状态
-         *
-         * @param request UpdateInvoiceAccountingStatusRequest
-         * @return UpdateInvoiceAccountingStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新全电企业入账状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceAccountingStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceAccountingStatusResponse
+        /// </returns>
         public async Task<UpdateInvoiceAccountingStatusResponse> UpdateInvoiceAccountingStatusAsync(UpdateInvoiceAccountingStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7324,14 +9037,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await UpdateInvoiceAccountingStatusWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新发票关联审批单
-         *
-         * @param request UpdateInvoiceAndReceiptRelatedRequest
-         * @param headers UpdateInvoiceAndReceiptRelatedHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateInvoiceAndReceiptRelatedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新发票关联审批单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceAndReceiptRelatedRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateInvoiceAndReceiptRelatedHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceAndReceiptRelatedResponse
+        /// </returns>
         public UpdateInvoiceAndReceiptRelatedResponse UpdateInvoiceAndReceiptRelatedWithOptions(UpdateInvoiceAndReceiptRelatedRequest request, UpdateInvoiceAndReceiptRelatedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7385,14 +9108,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateInvoiceAndReceiptRelatedResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新发票关联审批单
-         *
-         * @param request UpdateInvoiceAndReceiptRelatedRequest
-         * @param headers UpdateInvoiceAndReceiptRelatedHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateInvoiceAndReceiptRelatedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新发票关联审批单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceAndReceiptRelatedRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateInvoiceAndReceiptRelatedHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceAndReceiptRelatedResponse
+        /// </returns>
         public async Task<UpdateInvoiceAndReceiptRelatedResponse> UpdateInvoiceAndReceiptRelatedWithOptionsAsync(UpdateInvoiceAndReceiptRelatedRequest request, UpdateInvoiceAndReceiptRelatedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7446,12 +9179,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateInvoiceAndReceiptRelatedResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新发票关联审批单
-         *
-         * @param request UpdateInvoiceAndReceiptRelatedRequest
-         * @return UpdateInvoiceAndReceiptRelatedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新发票关联审批单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceAndReceiptRelatedRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceAndReceiptRelatedResponse
+        /// </returns>
         public UpdateInvoiceAndReceiptRelatedResponse UpdateInvoiceAndReceiptRelated(UpdateInvoiceAndReceiptRelatedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7459,12 +9198,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return UpdateInvoiceAndReceiptRelatedWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新发票关联审批单
-         *
-         * @param request UpdateInvoiceAndReceiptRelatedRequest
-         * @return UpdateInvoiceAndReceiptRelatedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新发票关联审批单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceAndReceiptRelatedRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceAndReceiptRelatedResponse
+        /// </returns>
         public async Task<UpdateInvoiceAndReceiptRelatedResponse> UpdateInvoiceAndReceiptRelatedAsync(UpdateInvoiceAndReceiptRelatedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7472,14 +9217,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await UpdateInvoiceAndReceiptRelatedWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新发票忽略状态
-         *
-         * @param request UpdateInvoiceIgnoreStatusRequest
-         * @param headers UpdateInvoiceIgnoreStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateInvoiceIgnoreStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新发票忽略状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceIgnoreStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateInvoiceIgnoreStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceIgnoreStatusResponse
+        /// </returns>
         public UpdateInvoiceIgnoreStatusResponse UpdateInvoiceIgnoreStatusWithOptions(UpdateInvoiceIgnoreStatusRequest request, UpdateInvoiceIgnoreStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7525,14 +9280,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateInvoiceIgnoreStatusResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新发票忽略状态
-         *
-         * @param request UpdateInvoiceIgnoreStatusRequest
-         * @param headers UpdateInvoiceIgnoreStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateInvoiceIgnoreStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新发票忽略状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceIgnoreStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateInvoiceIgnoreStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceIgnoreStatusResponse
+        /// </returns>
         public async Task<UpdateInvoiceIgnoreStatusResponse> UpdateInvoiceIgnoreStatusWithOptionsAsync(UpdateInvoiceIgnoreStatusRequest request, UpdateInvoiceIgnoreStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7578,12 +9343,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateInvoiceIgnoreStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新发票忽略状态
-         *
-         * @param request UpdateInvoiceIgnoreStatusRequest
-         * @return UpdateInvoiceIgnoreStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新发票忽略状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceIgnoreStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceIgnoreStatusResponse
+        /// </returns>
         public UpdateInvoiceIgnoreStatusResponse UpdateInvoiceIgnoreStatus(UpdateInvoiceIgnoreStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7591,12 +9362,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return UpdateInvoiceIgnoreStatusWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新发票忽略状态
-         *
-         * @param request UpdateInvoiceIgnoreStatusRequest
-         * @return UpdateInvoiceIgnoreStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新发票忽略状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceIgnoreStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceIgnoreStatusResponse
+        /// </returns>
         public async Task<UpdateInvoiceIgnoreStatusResponse> UpdateInvoiceIgnoreStatusAsync(UpdateInvoiceIgnoreStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7604,14 +9381,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await UpdateInvoiceIgnoreStatusWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 发票认证状态变更接口
-         *
-         * @param request UpdateInvoiceVerifyStatusRequest
-         * @param headers UpdateInvoiceVerifyStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateInvoiceVerifyStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发票认证状态变更接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceVerifyStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateInvoiceVerifyStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceVerifyStatusResponse
+        /// </returns>
         public UpdateInvoiceVerifyStatusResponse UpdateInvoiceVerifyStatusWithOptions(UpdateInvoiceVerifyStatusRequest request, UpdateInvoiceVerifyStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7669,14 +9456,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateInvoiceVerifyStatusResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 发票认证状态变更接口
-         *
-         * @param request UpdateInvoiceVerifyStatusRequest
-         * @param headers UpdateInvoiceVerifyStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateInvoiceVerifyStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发票认证状态变更接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceVerifyStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateInvoiceVerifyStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceVerifyStatusResponse
+        /// </returns>
         public async Task<UpdateInvoiceVerifyStatusResponse> UpdateInvoiceVerifyStatusWithOptionsAsync(UpdateInvoiceVerifyStatusRequest request, UpdateInvoiceVerifyStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7734,12 +9531,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateInvoiceVerifyStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 发票认证状态变更接口
-         *
-         * @param request UpdateInvoiceVerifyStatusRequest
-         * @return UpdateInvoiceVerifyStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发票认证状态变更接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceVerifyStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceVerifyStatusResponse
+        /// </returns>
         public UpdateInvoiceVerifyStatusResponse UpdateInvoiceVerifyStatus(UpdateInvoiceVerifyStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7747,12 +9550,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return UpdateInvoiceVerifyStatusWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 发票认证状态变更接口
-         *
-         * @param request UpdateInvoiceVerifyStatusRequest
-         * @return UpdateInvoiceVerifyStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发票认证状态变更接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceVerifyStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceVerifyStatusResponse
+        /// </returns>
         public async Task<UpdateInvoiceVerifyStatusResponse> UpdateInvoiceVerifyStatusAsync(UpdateInvoiceVerifyStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7760,14 +9569,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await UpdateInvoiceVerifyStatusWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新发票生成凭证状态
-         *
-         * @param request UpdateInvoiceVoucherStatusRequest
-         * @param headers UpdateInvoiceVoucherStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateInvoiceVoucherStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新发票生成凭证状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceVoucherStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateInvoiceVoucherStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceVoucherStatusResponse
+        /// </returns>
         public UpdateInvoiceVoucherStatusResponse UpdateInvoiceVoucherStatusWithOptions(UpdateInvoiceVoucherStatusRequest request, UpdateInvoiceVoucherStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7825,14 +9644,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateInvoiceVoucherStatusResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新发票生成凭证状态
-         *
-         * @param request UpdateInvoiceVoucherStatusRequest
-         * @param headers UpdateInvoiceVoucherStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateInvoiceVoucherStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新发票生成凭证状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceVoucherStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateInvoiceVoucherStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceVoucherStatusResponse
+        /// </returns>
         public async Task<UpdateInvoiceVoucherStatusResponse> UpdateInvoiceVoucherStatusWithOptionsAsync(UpdateInvoiceVoucherStatusRequest request, UpdateInvoiceVoucherStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7890,12 +9719,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateInvoiceVoucherStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新发票生成凭证状态
-         *
-         * @param request UpdateInvoiceVoucherStatusRequest
-         * @return UpdateInvoiceVoucherStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新发票生成凭证状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceVoucherStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceVoucherStatusResponse
+        /// </returns>
         public UpdateInvoiceVoucherStatusResponse UpdateInvoiceVoucherStatus(UpdateInvoiceVoucherStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7903,12 +9738,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return UpdateInvoiceVoucherStatusWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新发票生成凭证状态
-         *
-         * @param request UpdateInvoiceVoucherStatusRequest
-         * @return UpdateInvoiceVoucherStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新发票生成凭证状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceVoucherStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceVoucherStatusResponse
+        /// </returns>
         public async Task<UpdateInvoiceVoucherStatusResponse> UpdateInvoiceVoucherStatusAsync(UpdateInvoiceVoucherStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7916,14 +9757,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await UpdateInvoiceVoucherStatusWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新智能财务单据
-         *
-         * @param request UpdateReceiptRequest
-         * @param headers UpdateReceiptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateReceiptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新智能财务单据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateReceiptRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateReceiptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateReceiptResponse
+        /// </returns>
         public UpdateReceiptResponse UpdateReceiptWithOptions(UpdateReceiptRequest request, UpdateReceiptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7961,14 +9812,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateReceiptResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新智能财务单据
-         *
-         * @param request UpdateReceiptRequest
-         * @param headers UpdateReceiptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateReceiptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新智能财务单据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateReceiptRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateReceiptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateReceiptResponse
+        /// </returns>
         public async Task<UpdateReceiptResponse> UpdateReceiptWithOptionsAsync(UpdateReceiptRequest request, UpdateReceiptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -8006,12 +9867,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateReceiptResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新智能财务单据
-         *
-         * @param request UpdateReceiptRequest
-         * @return UpdateReceiptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新智能财务单据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateReceiptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateReceiptResponse
+        /// </returns>
         public UpdateReceiptResponse UpdateReceipt(UpdateReceiptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -8019,12 +9886,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return UpdateReceiptWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新智能财务单据
-         *
-         * @param request UpdateReceiptRequest
-         * @return UpdateReceiptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新智能财务单据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateReceiptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateReceiptResponse
+        /// </returns>
         public async Task<UpdateReceiptResponse> UpdateReceiptAsync(UpdateReceiptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -8032,14 +9905,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return await UpdateReceiptWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新智能财务审批单的凭证状态
-         *
-         * @param request UpdateReceiptVoucherStatusRequest
-         * @param headers UpdateReceiptVoucherStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateReceiptVoucherStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新智能财务审批单的凭证状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateReceiptVoucherStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateReceiptVoucherStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateReceiptVoucherStatusResponse
+        /// </returns>
         public UpdateReceiptVoucherStatusResponse UpdateReceiptVoucherStatusWithOptions(UpdateReceiptVoucherStatusRequest request, UpdateReceiptVoucherStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -8101,14 +9984,24 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateReceiptVoucherStatusResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新智能财务审批单的凭证状态
-         *
-         * @param request UpdateReceiptVoucherStatusRequest
-         * @param headers UpdateReceiptVoucherStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateReceiptVoucherStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新智能财务审批单的凭证状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateReceiptVoucherStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateReceiptVoucherStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateReceiptVoucherStatusResponse
+        /// </returns>
         public async Task<UpdateReceiptVoucherStatusResponse> UpdateReceiptVoucherStatusWithOptionsAsync(UpdateReceiptVoucherStatusRequest request, UpdateReceiptVoucherStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -8170,12 +10063,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return TeaModel.ToObject<UpdateReceiptVoucherStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新智能财务审批单的凭证状态
-         *
-         * @param request UpdateReceiptVoucherStatusRequest
-         * @return UpdateReceiptVoucherStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新智能财务审批单的凭证状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateReceiptVoucherStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateReceiptVoucherStatusResponse
+        /// </returns>
         public UpdateReceiptVoucherStatusResponse UpdateReceiptVoucherStatus(UpdateReceiptVoucherStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -8183,12 +10082,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0
             return UpdateReceiptVoucherStatusWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新智能财务审批单的凭证状态
-         *
-         * @param request UpdateReceiptVoucherStatusRequest
-         * @return UpdateReceiptVoucherStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新智能财务审批单的凭证状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateReceiptVoucherStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateReceiptVoucherStatusResponse
+        /// </returns>
         public async Task<UpdateReceiptVoucherStatusResponse> UpdateReceiptVoucherStatusAsync(UpdateReceiptVoucherStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

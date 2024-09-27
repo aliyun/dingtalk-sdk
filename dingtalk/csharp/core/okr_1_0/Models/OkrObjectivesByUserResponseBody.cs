@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
             [Validation(Required=false)]
             public List<OpenObjectiveDTO> Result { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>15</para>
+            /// </summary>
             [NameInMap("totalCount")]
             [Validation(Required=false)]
             public long? TotalCount { get; set; }

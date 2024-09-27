@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class RemoveGroupMemberResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>移除成功</para>
         /// </summary>
         [NameInMap("message")]
         [Validation(Required=false)]

@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class MasterDataTenantQueyRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("entityCode")]
         [Validation(Required=false)]
         public string EntityCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("scopeCode")]
         [Validation(Required=false)]

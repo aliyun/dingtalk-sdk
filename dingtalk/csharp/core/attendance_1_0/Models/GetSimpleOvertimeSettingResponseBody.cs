@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
             [Validation(Required=false)]
             public List<GetSimpleOvertimeSettingResponseBodyResultItems> Items { get; set; }
             public class GetSimpleOvertimeSettingResponseBodyResultItems : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>1</para>
+                /// </summary>
                 [NameInMap("id")]
                 [Validation(Required=false)]
                 public long? Id { get; set; }
@@ -25,16 +29,28 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>1</para>
+                /// </summary>
                 [NameInMap("settingId")]
                 [Validation(Required=false)]
                 public long? SettingId { get; set; }
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1</para>
+            /// </summary>
             [NameInMap("pageNumber")]
             [Validation(Required=false)]
             public long? PageNumber { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1</para>
+            /// </summary>
             [NameInMap("totalPage")]
             [Validation(Required=false)]
             public long? TotalPage { get; set; }

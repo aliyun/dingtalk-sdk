@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0.Models
 {
     public class GetAccessTokenRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("appKey")]
         [Validation(Required=false)]

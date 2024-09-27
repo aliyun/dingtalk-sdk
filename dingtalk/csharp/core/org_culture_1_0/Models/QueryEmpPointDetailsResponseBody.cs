@@ -18,19 +18,29 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
             public List<QueryEmpPointDetailsResponseBodyResultDetails> Details { get; set; }
             public class QueryEmpPointDetailsResponseBodyResultDetails : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>10</para>
                 /// </summary>
                 [NameInMap("amount")]
                 [Validation(Required=false)]
                 public long? Amount { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>1655450856000</para>
                 /// </summary>
                 [NameInMap("gmtCreate")]
                 [Validation(Required=false)]
                 public long? GmtCreate { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>324324353535</para>
+                /// </summary>
                 [NameInMap("outId")]
                 [Validation(Required=false)]
                 public string OutId { get; set; }
@@ -43,14 +53,26 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
                     [Validation(Required=false)]
                     public QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountSource AccountSource { get; set; }
                     public class QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountSource : TeaModel {
+                        /// <summary>
+                        /// <b>Example:</b>
+                        /// <para>EMP</para>
+                        /// </summary>
                         [NameInMap("accountType")]
                         [Validation(Required=false)]
                         public string AccountType { get; set; }
 
+                        /// <summary>
+                        /// <b>Example:</b>
+                        /// <para>张三</para>
+                        /// </summary>
                         [NameInMap("empName")]
                         [Validation(Required=false)]
                         public string EmpName { get; set; }
 
+                        /// <summary>
+                        /// <b>Example:</b>
+                        /// <para>01274411491620908910</para>
+                        /// </summary>
                         [NameInMap("userId")]
                         [Validation(Required=false)]
                         public string UserId { get; set; }
@@ -61,26 +83,45 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
                     [Validation(Required=false)]
                     public QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountTarget AccountTarget { get; set; }
                     public class QueryEmpPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountTarget : TeaModel {
+                        /// <summary>
+                        /// <b>Example:</b>
+                        /// <para>personal</para>
+                        /// </summary>
                         [NameInMap("accountType")]
                         [Validation(Required=false)]
                         public string AccountType { get; set; }
 
+                        /// <summary>
+                        /// <b>Example:</b>
+                        /// <para>李四</para>
+                        /// </summary>
                         [NameInMap("empName")]
                         [Validation(Required=false)]
                         public string EmpName { get; set; }
 
+                        /// <summary>
+                        /// <b>Example:</b>
+                        /// <para>01274411491620908910</para>
+                        /// </summary>
                         [NameInMap("userId")]
                         [Validation(Required=false)]
                         public string UserId { get; set; }
 
                     }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>收到奖励积分</para>
+                    /// </summary>
                     [NameInMap("remark")]
                     [Validation(Required=false)]
                     public string Remark { get; set; }
 
                     /// <summary>
-                    /// This parameter is required.
+                    /// <para>This parameter is required.</para>
+                    /// 
+                    /// <b>Example:</b>
+                    /// <para>三方系统员工收到积分</para>
                     /// </summary>
                     [NameInMap("usage")]
                     [Validation(Required=false)]
@@ -89,7 +130,10 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
                 }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>personal</para>
                 /// </summary>
                 [NameInMap("sourceBizCode")]
                 [Validation(Required=false)]
@@ -98,7 +142,10 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
             }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>true</para>
             /// </summary>
             [NameInMap("hasMore")]
             [Validation(Required=false)]
@@ -107,7 +154,10 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>true</para>
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

@@ -18,28 +18,28 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
             public QueryOpenConversationReceiveUserResponseBodyResultReceiveUser ReceiveUser { get; set; }
             public class QueryOpenConversationReceiveUserResponseBodyResultReceiveUser : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("icon")]
                 [Validation(Required=false)]
                 public string Icon { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("nickName")]
                 [Validation(Required=false)]
                 public string NickName { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]

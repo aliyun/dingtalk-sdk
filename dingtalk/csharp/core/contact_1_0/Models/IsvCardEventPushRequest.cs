@@ -10,35 +10,35 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class IsvCardEventPushRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("eventParams")]
         [Validation(Required=false)]
         public Dictionary<string, object> EventParams { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("eventType")]
         [Validation(Required=false)]
         public string EventType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("isvCardId")]
         [Validation(Required=false)]
         public string IsvCardId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("isvToken")]
         [Validation(Required=false)]
         public string IsvToken { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("isvUid")]
         [Validation(Required=false)]

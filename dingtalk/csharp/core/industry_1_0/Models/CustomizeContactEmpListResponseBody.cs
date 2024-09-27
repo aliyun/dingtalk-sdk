@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class CustomizeContactEmpListResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
         public List<CustomizeContactEmpListResponseBodyContent> Content { get; set; }
         public class CustomizeContactEmpListResponseBodyContent : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]

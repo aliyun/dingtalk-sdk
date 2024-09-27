@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
 {
     public class RegisterAndActivateDeviceResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
@@ -21,56 +21,56 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
             public int? DeviceCategory { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("deviceCode")]
             [Validation(Required=false)]
             public string DeviceCode { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("deviceDetailUrl")]
             [Validation(Required=false)]
             public string DeviceDetailUrl { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("deviceName")]
             [Validation(Required=false)]
             public string DeviceName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("deviceUuid")]
             [Validation(Required=false)]
             public string DeviceUuid { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("introduction")]
             [Validation(Required=false)]
             public string Introduction { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("roleUuid")]
             [Validation(Required=false)]
             public string RoleUuid { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("typeUuid")]
             [Validation(Required=false)]
             public string TypeUuid { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("userIds")]
             [Validation(Required=false)]

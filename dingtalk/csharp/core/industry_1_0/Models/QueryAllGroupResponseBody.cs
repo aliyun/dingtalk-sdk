@@ -13,14 +13,26 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public List<QueryAllGroupResponseBodyContent> Content { get; set; }
         public class QueryAllGroupResponseBodyContent : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>12</para>
+            /// </summary>
             [NameInMap("deptId")]
             [Validation(Required=false)]
             public long? DeptId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1</para>
+            /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public long? Id { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>医疗组1</para>
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }

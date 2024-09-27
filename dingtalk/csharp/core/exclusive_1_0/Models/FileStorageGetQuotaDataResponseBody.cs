@@ -14,14 +14,20 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public List<FileStorageGetQuotaDataResponseBodyQuotaModelList> QuotaModelList { get; set; }
         public class FileStorageGetQuotaDataResponseBodyQuotaModelList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>2022-04</para>
             /// </summary>
             [NameInMap("statisticTime")]
             [Validation(Required=false)]
             public string StatisticTime { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>14000</para>
             /// </summary>
             [NameInMap("usedStorage")]
             [Validation(Required=false)]

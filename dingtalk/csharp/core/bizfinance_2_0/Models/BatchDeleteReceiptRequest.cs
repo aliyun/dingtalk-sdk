@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
         [Validation(Required=false)]
         public List<string> InstanceIdList { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>504XX</para>
+        /// </summary>
         [NameInMap("operator")]
         [Validation(Required=false)]
         public string Operator { get; set; }

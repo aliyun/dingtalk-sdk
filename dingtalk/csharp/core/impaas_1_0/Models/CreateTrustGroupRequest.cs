@@ -10,12 +10,19 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class CreateTrustGroupRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>channel_abcd</para>
         /// </summary>
         [NameInMap("channel")]
         [Validation(Required=false)]
         public string Channel { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>@lALOKACADDA</para>
+        /// </summary>
         [NameInMap("iconMediaId")]
         [Validation(Required=false)]
         public string IconMediaId { get; set; }
@@ -35,7 +42,10 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>测试群名称XXX</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
@@ -45,12 +55,19 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
         [Validation(Required=false)]
         public Dictionary<string, string> Properties { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>你有新的会话</para>
+        /// </summary>
         [NameInMap("systemMsg")]
         [Validation(Required=false)]
         public string SystemMsg { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1657099913071</para>
         /// </summary>
         [NameInMap("uuid")]
         [Validation(Required=false)]

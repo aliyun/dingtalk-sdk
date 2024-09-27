@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class SendMessageRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
@@ -29,14 +29,14 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
         public string ReceiverUid { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("senderUid")]
         [Validation(Required=false)]
         public string SenderUid { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("uuid")]
         [Validation(Required=false)]

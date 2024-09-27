@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
 {
     public class AddApplicationRegFormTemplateResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>xxxxxx</para>
         /// </summary>
         [NameInMap("templateId")]
         [Validation(Required=false)]
         public string TemplateId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>0</para>
         /// </summary>
         [NameInMap("version")]
         [Validation(Required=false)]

@@ -13,10 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public UpdateTaskStartdateResponseBodyResult Result { get; set; }
         public class UpdateTaskStartdateResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>2022-07-04T03:29:34.770Z</para>
+            /// </summary>
             [NameInMap("startDate")]
             [Validation(Required=false)]
             public string StartDate { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>2022-07-04T03:29:34.770Z</para>
+            /// </summary>
             [NameInMap("updated")]
             [Validation(Required=false)]
             public string Updated { get; set; }

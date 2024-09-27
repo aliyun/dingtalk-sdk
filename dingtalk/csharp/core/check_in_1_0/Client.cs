@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkcheck_in_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkcheck_in_1_0
         }
 
 
-        /**
-         * @summary 调用本接口，获取用户签到记录
-         *
-         * @param request GetCheckinRecordByUserRequest
-         * @param headers GetCheckinRecordByUserHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetCheckinRecordByUserResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>调用本接口，获取用户签到记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCheckinRecordByUserRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetCheckinRecordByUserHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCheckinRecordByUserResponse
+        /// </returns>
         public GetCheckinRecordByUserResponse GetCheckinRecordByUserWithOptions(GetCheckinRecordByUserRequest request, GetCheckinRecordByUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -93,14 +104,24 @@ namespace AlibabaCloud.SDK.Dingtalkcheck_in_1_0
             return TeaModel.ToObject<GetCheckinRecordByUserResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 调用本接口，获取用户签到记录
-         *
-         * @param request GetCheckinRecordByUserRequest
-         * @param headers GetCheckinRecordByUserHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetCheckinRecordByUserResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>调用本接口，获取用户签到记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCheckinRecordByUserRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetCheckinRecordByUserHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCheckinRecordByUserResponse
+        /// </returns>
         public async Task<GetCheckinRecordByUserResponse> GetCheckinRecordByUserWithOptionsAsync(GetCheckinRecordByUserRequest request, GetCheckinRecordByUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -158,12 +179,18 @@ namespace AlibabaCloud.SDK.Dingtalkcheck_in_1_0
             return TeaModel.ToObject<GetCheckinRecordByUserResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 调用本接口，获取用户签到记录
-         *
-         * @param request GetCheckinRecordByUserRequest
-         * @return GetCheckinRecordByUserResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>调用本接口，获取用户签到记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCheckinRecordByUserRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCheckinRecordByUserResponse
+        /// </returns>
         public GetCheckinRecordByUserResponse GetCheckinRecordByUser(GetCheckinRecordByUserRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -171,12 +198,18 @@ namespace AlibabaCloud.SDK.Dingtalkcheck_in_1_0
             return GetCheckinRecordByUserWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 调用本接口，获取用户签到记录
-         *
-         * @param request GetCheckinRecordByUserRequest
-         * @return GetCheckinRecordByUserResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>调用本接口，获取用户签到记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCheckinRecordByUserRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCheckinRecordByUserResponse
+        /// </returns>
         public async Task<GetCheckinRecordByUserResponse> GetCheckinRecordByUserAsync(GetCheckinRecordByUserRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

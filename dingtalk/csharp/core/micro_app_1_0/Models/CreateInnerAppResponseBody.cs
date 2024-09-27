@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
     public class CreateInnerAppResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>111</para>
+        /// </summary>
         [NameInMap("agentId")]
         [Validation(Required=false)]
         public long? AgentId { get; set; }

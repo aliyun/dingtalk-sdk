@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
 {
     public class CreateTicketRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("foreignId")]
         [Validation(Required=false)]
         public string ForeignId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("foreignName")]
         [Validation(Required=false)]
@@ -27,6 +27,10 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
         [Validation(Required=false)]
         public string OpenInstanceId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("productionType")]
         [Validation(Required=false)]
         public int? ProductionType { get; set; }
@@ -35,10 +39,18 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
         [Validation(Required=false)]
         public List<CreateTicketRequestProperties> Properties { get; set; }
         public class CreateTicketRequestProperties : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>字段名称</para>
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>字段取值</para>
+            /// </summary>
             [NameInMap("value")]
             [Validation(Required=false)]
             public string Value { get; set; }
@@ -46,21 +58,21 @@ namespace AlibabaCloud.SDK.Dingtalkcustomer_service_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("sourceId")]
         [Validation(Required=false)]
         public string SourceId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("templateId")]
         [Validation(Required=false)]
         public string TemplateId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("title")]
         [Validation(Required=false)]

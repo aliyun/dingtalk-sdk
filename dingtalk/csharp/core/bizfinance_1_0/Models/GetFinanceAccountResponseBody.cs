@@ -10,18 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class GetFinanceAccountResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>12345</para>
         /// </summary>
         [NameInMap("accountCode")]
         [Validation(Required=false)]
         public string AccountCode { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para><a href="mailto:test@alipay.com">test@alipay.com</a></para>
+        /// </summary>
         [NameInMap("accountId")]
         [Validation(Required=false)]
         public string AccountId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>测试</para>
         /// </summary>
         [NameInMap("accountName")]
         [Validation(Required=false)]
@@ -32,7 +42,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         public string AccountRemark { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ALIPAY</para>
         /// </summary>
         [NameInMap("accountType")]
         [Validation(Required=false)]
@@ -42,6 +55,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public List<string> AccountantBookIdList { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>50000.55</para>
+        /// </summary>
         [NameInMap("amount")]
         [Validation(Required=false)]
         public string Amount { get; set; }
@@ -55,14 +72,20 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         public string BankName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1631526550994</para>
         /// </summary>
         [NameInMap("createTime")]
         [Validation(Required=false)]
         public long? CreateTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>abcdef</para>
         /// </summary>
         [NameInMap("creator")]
         [Validation(Required=false)]

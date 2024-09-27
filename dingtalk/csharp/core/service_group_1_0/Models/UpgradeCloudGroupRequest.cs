@@ -10,23 +10,37 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class UpgradeCloudGroupRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>sdfdfser</para>
         /// </summary>
         [NameInMap("ccsInstanceId")]
         [Validation(Required=false)]
         public string CcsInstanceId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>cidrQnTVXH/X+ERaVqGaH+asw==</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>oPnDlfVYYIUia</para>
+        /// </summary>
         [NameInMap("openGroupSetId")]
         [Validation(Required=false)]
         public string OpenGroupSetId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>btkoYsadwyQiE</para>
+        /// </summary>
         [NameInMap("openTeamId")]
         [Validation(Required=false)]
         public string OpenTeamId { get; set; }

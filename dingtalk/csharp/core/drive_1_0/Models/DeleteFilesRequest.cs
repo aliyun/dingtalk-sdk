@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class DeleteFilesRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("deletePolicy")]
         [Validation(Required=false)]
         public string DeletePolicy { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("fileIds")]
         [Validation(Required=false)]
         public List<string> FileIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

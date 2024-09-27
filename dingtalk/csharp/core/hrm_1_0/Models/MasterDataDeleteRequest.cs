@@ -10,26 +10,36 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class MasterDataDeleteRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("body")]
         [Validation(Required=false)]
         public List<MasterDataDeleteRequestBody> Body { get; set; }
         public class MasterDataDeleteRequestBody : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>12312</para>
             /// </summary>
             [NameInMap("bizTime")]
             [Validation(Required=false)]
             public long? BizTime { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>uk123</para>
             /// </summary>
             [NameInMap("bizUk")]
             [Validation(Required=false)]
             public string BizUk { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>base</para>
+            /// </summary>
             [NameInMap("entityCode")]
             [Validation(Required=false)]
             public string EntityCode { get; set; }
@@ -38,10 +48,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             [Validation(Required=false)]
             public List<MasterDataDeleteRequestBodyFieldList> FieldList { get; set; }
             public class MasterDataDeleteRequestBodyFieldList : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>name</para>
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>123</para>
+                /// </summary>
                 [NameInMap("valueStr")]
                 [Validation(Required=false)]
                 public string ValueStr { get; set; }
@@ -49,19 +67,26 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("scope")]
             [Validation(Required=false)]
             public MasterDataDeleteRequestBodyScope Scope { get; set; }
             public class MasterDataDeleteRequestBodyScope : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>performance</para>
                 /// </summary>
                 [NameInMap("scopeCode")]
                 [Validation(Required=false)]
                 public string ScopeCode { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>1</para>
+                /// </summary>
                 [NameInMap("version")]
                 [Validation(Required=false)]
                 public int? Version { get; set; }
@@ -71,7 +96,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123</para>
         /// </summary>
         [NameInMap("tenantId")]
         [Validation(Required=false)]

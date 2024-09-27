@@ -9,19 +9,23 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
     public class RegisterCustomAppRoleRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>false</para>
+        /// </summary>
         [NameInMap("canManageRole")]
         [Validation(Required=false)]
         public bool? CanManageRole { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]
         public string OpUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("roleName")]
         [Validation(Required=false)]

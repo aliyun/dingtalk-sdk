@@ -14,14 +14,20 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public Dictionary<string, string> Body { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>dinglkj123hj25jk54j2</para>
         /// </summary>
         [NameInMap("branchCorpId")]
         [Validation(Required=false)]
         public string BranchCorpId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>eduStuCnt</para>
         /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]

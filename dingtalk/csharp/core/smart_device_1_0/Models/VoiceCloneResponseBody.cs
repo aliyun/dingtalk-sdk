@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0.Models
         [Validation(Required=false)]
         public VoiceCloneResponseBodyResult Result { get; set; }
         public class VoiceCloneResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para><a href="https://xxxx">https://xxxx</a></para>
+            /// </summary>
             [NameInMap("mediaUrl")]
             [Validation(Required=false)]
             public string MediaUrl { get; set; }

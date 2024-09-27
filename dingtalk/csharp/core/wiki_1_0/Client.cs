@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_1_0
         }
 
 
-        /**
-         * @summary 根据词条名称获取该词条释义
-         *
-         * @param request WikiWordsDetailRequest
-         * @param headers WikiWordsDetailHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return WikiWordsDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据词条名称获取该词条释义</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// WikiWordsDetailRequest
+        /// </param>
+        /// <param name="headers">
+        /// WikiWordsDetailHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// WikiWordsDetailResponse
+        /// </returns>
         public WikiWordsDetailResponse WikiWordsDetailWithOptions(WikiWordsDetailRequest request, WikiWordsDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -73,14 +84,24 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_1_0
             return TeaModel.ToObject<WikiWordsDetailResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据词条名称获取该词条释义
-         *
-         * @param request WikiWordsDetailRequest
-         * @param headers WikiWordsDetailHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return WikiWordsDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据词条名称获取该词条释义</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// WikiWordsDetailRequest
+        /// </param>
+        /// <param name="headers">
+        /// WikiWordsDetailHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// WikiWordsDetailResponse
+        /// </returns>
         public async Task<WikiWordsDetailResponse> WikiWordsDetailWithOptionsAsync(WikiWordsDetailRequest request, WikiWordsDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -118,12 +139,18 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_1_0
             return TeaModel.ToObject<WikiWordsDetailResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据词条名称获取该词条释义
-         *
-         * @param request WikiWordsDetailRequest
-         * @return WikiWordsDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据词条名称获取该词条释义</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// WikiWordsDetailRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// WikiWordsDetailResponse
+        /// </returns>
         public WikiWordsDetailResponse WikiWordsDetail(WikiWordsDetailRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -131,12 +158,18 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_1_0
             return WikiWordsDetailWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 根据词条名称获取该词条释义
-         *
-         * @param request WikiWordsDetailRequest
-         * @return WikiWordsDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据词条名称获取该词条释义</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// WikiWordsDetailRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// WikiWordsDetailResponse
+        /// </returns>
         public async Task<WikiWordsDetailResponse> WikiWordsDetailAsync(WikiWordsDetailRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -144,14 +177,24 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_1_0
             return await WikiWordsDetailWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 外部传递过来的消息根据百科词库分词
-         *
-         * @param request WikiWordsParseRequest
-         * @param headers WikiWordsParseHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return WikiWordsParseResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>外部传递过来的消息根据百科词库分词</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// WikiWordsParseRequest
+        /// </param>
+        /// <param name="headers">
+        /// WikiWordsParseHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// WikiWordsParseResponse
+        /// </returns>
         public WikiWordsParseResponse WikiWordsParseWithOptions(WikiWordsParseRequest request, WikiWordsParseHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -189,14 +232,24 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_1_0
             return TeaModel.ToObject<WikiWordsParseResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 外部传递过来的消息根据百科词库分词
-         *
-         * @param request WikiWordsParseRequest
-         * @param headers WikiWordsParseHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return WikiWordsParseResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>外部传递过来的消息根据百科词库分词</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// WikiWordsParseRequest
+        /// </param>
+        /// <param name="headers">
+        /// WikiWordsParseHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// WikiWordsParseResponse
+        /// </returns>
         public async Task<WikiWordsParseResponse> WikiWordsParseWithOptionsAsync(WikiWordsParseRequest request, WikiWordsParseHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -234,12 +287,18 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_1_0
             return TeaModel.ToObject<WikiWordsParseResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 外部传递过来的消息根据百科词库分词
-         *
-         * @param request WikiWordsParseRequest
-         * @return WikiWordsParseResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>外部传递过来的消息根据百科词库分词</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// WikiWordsParseRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// WikiWordsParseResponse
+        /// </returns>
         public WikiWordsParseResponse WikiWordsParse(WikiWordsParseRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -247,12 +306,18 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_1_0
             return WikiWordsParseWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 外部传递过来的消息根据百科词库分词
-         *
-         * @param request WikiWordsParseRequest
-         * @return WikiWordsParseResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>外部传递过来的消息根据百科词库分词</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// WikiWordsParseRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// WikiWordsParseResponse
+        /// </returns>
         public async Task<WikiWordsParseResponse> WikiWordsParseAsync(WikiWordsParseRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

@@ -10,28 +10,40 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class DeleteUniversityTeacherRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>65781</para>
         /// </summary>
         [NameInMap("classId")]
         [Validation(Required=false)]
         public long? ClassId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>manger1234</para>
         /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]
         public string OpUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>headmaster：班主任；instructor：辅导员</para>
         /// </summary>
         [NameInMap("role")]
         [Validation(Required=false)]
         public string Role { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ujo2344</para>
         /// </summary>
         [NameInMap("teacherUserId")]
         [Validation(Required=false)]

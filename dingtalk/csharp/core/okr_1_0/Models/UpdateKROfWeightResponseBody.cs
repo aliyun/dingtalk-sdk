@@ -10,21 +10,24 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class UpdateKROfWeightResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public UpdateKROfWeightResponseBodyData Data { get; set; }
         public class UpdateKROfWeightResponseBodyData : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("objectiveProgress")]
             [Validation(Required=false)]
             public UpdateKROfWeightResponseBodyDataObjectiveProgress ObjectiveProgress { get; set; }
             public class UpdateKROfWeightResponseBodyDataObjectiveProgress : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>0</para>
                 /// </summary>
                 [NameInMap("percent")]
                 [Validation(Required=false)]
@@ -33,7 +36,10 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
             }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>0</para>
             /// </summary>
             [NameInMap("objectiveScore")]
             [Validation(Required=false)]
@@ -42,7 +48,10 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>true</para>
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

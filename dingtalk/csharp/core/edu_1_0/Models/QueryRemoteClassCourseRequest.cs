@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class QueryRemoteClassCourseRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1635436800000</para>
         /// </summary>
         [NameInMap("endTime")]
         [Validation(Required=false)]
         public long? EndTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>manager1234</para>
         /// </summary>
         [NameInMap("operator")]
         [Validation(Required=false)]
         public string Operator { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1634832000000</para>
         /// </summary>
         [NameInMap("startTime")]
         [Validation(Required=false)]

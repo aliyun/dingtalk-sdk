@@ -14,21 +14,21 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public long? EndTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public long? PageNumber { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public int? PageSize { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("platform")]
         [Validation(Required=false)]
@@ -39,12 +39,16 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public long? StartTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("type")]
         [Validation(Required=false)]
         public int? Type { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>12034-1233</para>
+        /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }

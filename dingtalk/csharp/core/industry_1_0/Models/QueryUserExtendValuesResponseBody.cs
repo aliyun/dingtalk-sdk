@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<QueryUserExtendValuesResponseBodyContent> Content { get; set; }
         public class QueryUserExtendValuesResponseBodyContent : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("userCode")]
             [Validation(Required=false)]
@@ -25,14 +25,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             public string UserExtendDisplayName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("userExtendKey")]
             [Validation(Required=false)]
             public string UserExtendKey { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("userExtendValue")]
             [Validation(Required=false)]
@@ -41,14 +41,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("totalCount")]
         [Validation(Required=false)]

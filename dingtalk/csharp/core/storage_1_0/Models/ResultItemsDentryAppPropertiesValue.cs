@@ -9,14 +9,26 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 {
     public class ResultItemsDentryAppPropertiesValue : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>property_name</para>
+        /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>property_value</para>
+        /// </summary>
         [NameInMap("value")]
         [Validation(Required=false)]
         public string Value { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>PRIVATE</para>
+        /// </summary>
         [NameInMap("visibility")]
         [Validation(Required=false)]
         public string Visibility { get; set; }

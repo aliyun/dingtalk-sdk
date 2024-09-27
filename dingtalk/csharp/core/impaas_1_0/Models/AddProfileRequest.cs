@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class AddProfileRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("appUid")]
         [Validation(Required=false)]
@@ -21,14 +21,17 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
         public string AvatarMediaId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("mobileNumber")]
         [Validation(Required=false)]
         public string MobileNumber { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>usertest</para>
         /// </summary>
         [NameInMap("nick")]
         [Validation(Required=false)]

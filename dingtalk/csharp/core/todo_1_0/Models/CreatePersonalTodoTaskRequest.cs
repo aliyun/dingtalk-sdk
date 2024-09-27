@@ -18,7 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public long? DueTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("executorIds")]
         [Validation(Required=false)]
@@ -43,7 +43,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public long? ReminderTimeStamp { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("subject")]
         [Validation(Required=false)]

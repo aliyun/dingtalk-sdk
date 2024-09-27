@@ -14,14 +14,14 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
         public string IntegratorFlag { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("triggerInfo")]
         [Validation(Required=false)]
         public List<CreateTriggerRequestTriggerInfo> TriggerInfo { get; set; }
         public class CreateTriggerRequestTriggerInfo : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("description")]
             [Validation(Required=false)]
@@ -32,7 +32,7 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             public string DingConnectorId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("inputSchema")]
             [Validation(Required=false)]
@@ -43,14 +43,14 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             public string IntegratorConnectorId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("integratorTriggerId")]
             [Validation(Required=false)]
             public string IntegratorTriggerId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]

@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class GetAsyncTaskInfoRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

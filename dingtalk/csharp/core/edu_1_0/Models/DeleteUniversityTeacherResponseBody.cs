@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class DeleteUniversityTeacherResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>true</para>
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]

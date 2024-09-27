@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
 {
     public class UpgradeTemplateRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>dingcd2016f425331dc1acaaa37764f94726</para>
         /// </summary>
         [NameInMap("channelCorpId")]
         [Validation(Required=false)]
@@ -21,7 +24,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         public bool? ForceUpgrade { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>dingcd2016f425331dc1acaaa37764f94726</para>
         /// </summary>
         [NameInMap("tmcCorpId")]
         [Validation(Required=false)]

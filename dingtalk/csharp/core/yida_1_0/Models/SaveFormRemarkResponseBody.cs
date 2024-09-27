@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class SaveFormRemarkResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123</para>
+        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public long? Result { get; set; }

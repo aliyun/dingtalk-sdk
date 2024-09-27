@@ -13,12 +13,19 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public List<BatchBossCheckRequestModels> Models { get; set; }
         public class BatchBossCheckRequestModels : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1</para>
+            /// </summary>
             [NameInMap("absentMin")]
             [Validation(Required=false)]
             public long? AbsentMin { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>123</para>
             /// </summary>
             [NameInMap("planId")]
             [Validation(Required=false)]
@@ -29,7 +36,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
             public string Remark { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>Normal</para>
             /// </summary>
             [NameInMap("timeResult")]
             [Validation(Required=false)]
@@ -38,7 +48,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]

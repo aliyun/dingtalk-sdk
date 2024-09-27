@@ -9,12 +9,19 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
 {
     public class GetCandidateByPhoneNumberRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>ddats</para>
+        /// </summary>
         [NameInMap("bizCode")]
         [Validation(Required=false)]
         public string BizCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>13688888888</para>
         /// </summary>
         [NameInMap("phoneNumber")]
         [Validation(Required=false)]

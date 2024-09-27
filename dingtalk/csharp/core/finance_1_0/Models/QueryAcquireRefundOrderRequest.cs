@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
 {
     public class QueryAcquireRefundOrderRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>202100001</para>
         /// </summary>
         [NameInMap("outRefundNo")]
         [Validation(Required=false)]

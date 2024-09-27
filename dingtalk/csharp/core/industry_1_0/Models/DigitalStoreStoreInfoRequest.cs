@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class DigitalStoreStoreInfoRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
         public string Code { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("storeId")]
         [Validation(Required=false)]

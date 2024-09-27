@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkwatt_1_0.Models
         [Validation(Required=false)]
         public long? EndTime { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1028</para>
+        /// </summary>
         [NameInMap("resId")]
         [Validation(Required=false)]
         public string ResId { get; set; }

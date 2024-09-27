@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
         }
 
 
-        /**
-         * @summary 创建自定义屏幕模版
-         *
-         * @param request CreateDeviceCustomTemplateRequest
-         * @param headers CreateDeviceCustomTemplateHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateDeviceCustomTemplateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建自定义屏幕模版</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateDeviceCustomTemplateRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateDeviceCustomTemplateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateDeviceCustomTemplateResponse
+        /// </returns>
         public CreateDeviceCustomTemplateResponse CreateDeviceCustomTemplateWithOptions(CreateDeviceCustomTemplateRequest request, CreateDeviceCustomTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -141,14 +152,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<CreateDeviceCustomTemplateResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建自定义屏幕模版
-         *
-         * @param request CreateDeviceCustomTemplateRequest
-         * @param headers CreateDeviceCustomTemplateHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateDeviceCustomTemplateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建自定义屏幕模版</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateDeviceCustomTemplateRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateDeviceCustomTemplateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateDeviceCustomTemplateResponse
+        /// </returns>
         public async Task<CreateDeviceCustomTemplateResponse> CreateDeviceCustomTemplateWithOptionsAsync(CreateDeviceCustomTemplateRequest request, CreateDeviceCustomTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -254,12 +275,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<CreateDeviceCustomTemplateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建自定义屏幕模版
-         *
-         * @param request CreateDeviceCustomTemplateRequest
-         * @return CreateDeviceCustomTemplateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建自定义屏幕模版</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateDeviceCustomTemplateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateDeviceCustomTemplateResponse
+        /// </returns>
         public CreateDeviceCustomTemplateResponse CreateDeviceCustomTemplate(CreateDeviceCustomTemplateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -267,12 +294,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return CreateDeviceCustomTemplateWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建自定义屏幕模版
-         *
-         * @param request CreateDeviceCustomTemplateRequest
-         * @return CreateDeviceCustomTemplateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建自定义屏幕模版</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateDeviceCustomTemplateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateDeviceCustomTemplateResponse
+        /// </returns>
         public async Task<CreateDeviceCustomTemplateResponse> CreateDeviceCustomTemplateAsync(CreateDeviceCustomTemplateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -280,14 +313,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await CreateDeviceCustomTemplateWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建智能会议室
-         *
-         * @param request CreateMeetingRoomRequest
-         * @param headers CreateMeetingRoomHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建智能会议室</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateMeetingRoomRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateMeetingRoomHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateMeetingRoomResponse
+        /// </returns>
         public CreateMeetingRoomResponse CreateMeetingRoomWithOptions(CreateMeetingRoomRequest request, CreateMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -365,14 +408,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<CreateMeetingRoomResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建智能会议室
-         *
-         * @param request CreateMeetingRoomRequest
-         * @param headers CreateMeetingRoomHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建智能会议室</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateMeetingRoomRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateMeetingRoomHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateMeetingRoomResponse
+        /// </returns>
         public async Task<CreateMeetingRoomResponse> CreateMeetingRoomWithOptionsAsync(CreateMeetingRoomRequest request, CreateMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -450,12 +503,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<CreateMeetingRoomResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建智能会议室
-         *
-         * @param request CreateMeetingRoomRequest
-         * @return CreateMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建智能会议室</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateMeetingRoomRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateMeetingRoomResponse
+        /// </returns>
         public CreateMeetingRoomResponse CreateMeetingRoom(CreateMeetingRoomRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -463,12 +522,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return CreateMeetingRoomWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建智能会议室
-         *
-         * @param request CreateMeetingRoomRequest
-         * @return CreateMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建智能会议室</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateMeetingRoomRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateMeetingRoomResponse
+        /// </returns>
         public async Task<CreateMeetingRoomResponse> CreateMeetingRoomAsync(CreateMeetingRoomRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -476,14 +541,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await CreateMeetingRoomWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建智能会议室IOT配置
-         *
-         * @param request CreateMeetingRoomControlPanelRequest
-         * @param headers CreateMeetingRoomControlPanelHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateMeetingRoomControlPanelResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建智能会议室IOT配置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateMeetingRoomControlPanelRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateMeetingRoomControlPanelHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateMeetingRoomControlPanelResponse
+        /// </returns>
         public CreateMeetingRoomControlPanelResponse CreateMeetingRoomControlPanelWithOptions(CreateMeetingRoomControlPanelRequest request, CreateMeetingRoomControlPanelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -537,14 +612,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<CreateMeetingRoomControlPanelResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建智能会议室IOT配置
-         *
-         * @param request CreateMeetingRoomControlPanelRequest
-         * @param headers CreateMeetingRoomControlPanelHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateMeetingRoomControlPanelResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建智能会议室IOT配置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateMeetingRoomControlPanelRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateMeetingRoomControlPanelHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateMeetingRoomControlPanelResponse
+        /// </returns>
         public async Task<CreateMeetingRoomControlPanelResponse> CreateMeetingRoomControlPanelWithOptionsAsync(CreateMeetingRoomControlPanelRequest request, CreateMeetingRoomControlPanelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -598,12 +683,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<CreateMeetingRoomControlPanelResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建智能会议室IOT配置
-         *
-         * @param request CreateMeetingRoomControlPanelRequest
-         * @return CreateMeetingRoomControlPanelResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建智能会议室IOT配置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateMeetingRoomControlPanelRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateMeetingRoomControlPanelResponse
+        /// </returns>
         public CreateMeetingRoomControlPanelResponse CreateMeetingRoomControlPanel(CreateMeetingRoomControlPanelRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -611,12 +702,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return CreateMeetingRoomControlPanelWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建智能会议室IOT配置
-         *
-         * @param request CreateMeetingRoomControlPanelRequest
-         * @return CreateMeetingRoomControlPanelResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建智能会议室IOT配置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateMeetingRoomControlPanelRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateMeetingRoomControlPanelResponse
+        /// </returns>
         public async Task<CreateMeetingRoomControlPanelResponse> CreateMeetingRoomControlPanelAsync(CreateMeetingRoomControlPanelRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -624,14 +721,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await CreateMeetingRoomControlPanelWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建会议室分组
-         *
-         * @param request CreateMeetingRoomGroupRequest
-         * @param headers CreateMeetingRoomGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateMeetingRoomGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建会议室分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateMeetingRoomGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateMeetingRoomGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateMeetingRoomGroupResponse
+        /// </returns>
         public CreateMeetingRoomGroupResponse CreateMeetingRoomGroupWithOptions(CreateMeetingRoomGroupRequest request, CreateMeetingRoomGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -677,14 +784,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<CreateMeetingRoomGroupResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建会议室分组
-         *
-         * @param request CreateMeetingRoomGroupRequest
-         * @param headers CreateMeetingRoomGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateMeetingRoomGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建会议室分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateMeetingRoomGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateMeetingRoomGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateMeetingRoomGroupResponse
+        /// </returns>
         public async Task<CreateMeetingRoomGroupResponse> CreateMeetingRoomGroupWithOptionsAsync(CreateMeetingRoomGroupRequest request, CreateMeetingRoomGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -730,12 +847,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<CreateMeetingRoomGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建会议室分组
-         *
-         * @param request CreateMeetingRoomGroupRequest
-         * @return CreateMeetingRoomGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建会议室分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateMeetingRoomGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateMeetingRoomGroupResponse
+        /// </returns>
         public CreateMeetingRoomGroupResponse CreateMeetingRoomGroup(CreateMeetingRoomGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -743,12 +866,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return CreateMeetingRoomGroupWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建会议室分组
-         *
-         * @param request CreateMeetingRoomGroupRequest
-         * @return CreateMeetingRoomGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建会议室分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateMeetingRoomGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateMeetingRoomGroupResponse
+        /// </returns>
         public async Task<CreateMeetingRoomGroupResponse> CreateMeetingRoomGroupAsync(CreateMeetingRoomGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -756,14 +885,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await CreateMeetingRoomGroupWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除自定义屏幕模板
-         *
-         * @param request DeleteDeviceCustomTemplateRequest
-         * @param headers DeleteDeviceCustomTemplateHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteDeviceCustomTemplateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除自定义屏幕模板</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteDeviceCustomTemplateRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteDeviceCustomTemplateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteDeviceCustomTemplateResponse
+        /// </returns>
         public DeleteDeviceCustomTemplateResponse DeleteDeviceCustomTemplateWithOptions(DeleteDeviceCustomTemplateRequest request, DeleteDeviceCustomTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -801,14 +940,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<DeleteDeviceCustomTemplateResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除自定义屏幕模板
-         *
-         * @param request DeleteDeviceCustomTemplateRequest
-         * @param headers DeleteDeviceCustomTemplateHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteDeviceCustomTemplateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除自定义屏幕模板</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteDeviceCustomTemplateRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteDeviceCustomTemplateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteDeviceCustomTemplateResponse
+        /// </returns>
         public async Task<DeleteDeviceCustomTemplateResponse> DeleteDeviceCustomTemplateWithOptionsAsync(DeleteDeviceCustomTemplateRequest request, DeleteDeviceCustomTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -846,12 +995,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<DeleteDeviceCustomTemplateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除自定义屏幕模板
-         *
-         * @param request DeleteDeviceCustomTemplateRequest
-         * @return DeleteDeviceCustomTemplateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除自定义屏幕模板</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteDeviceCustomTemplateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteDeviceCustomTemplateResponse
+        /// </returns>
         public DeleteDeviceCustomTemplateResponse DeleteDeviceCustomTemplate(DeleteDeviceCustomTemplateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -859,12 +1014,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return DeleteDeviceCustomTemplateWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除自定义屏幕模板
-         *
-         * @param request DeleteDeviceCustomTemplateRequest
-         * @return DeleteDeviceCustomTemplateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除自定义屏幕模板</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteDeviceCustomTemplateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteDeviceCustomTemplateResponse
+        /// </returns>
         public async Task<DeleteDeviceCustomTemplateResponse> DeleteDeviceCustomTemplateAsync(DeleteDeviceCustomTemplateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -872,14 +1033,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await DeleteDeviceCustomTemplateWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除会议室
-         *
-         * @param request DeleteMeetingRoomRequest
-         * @param headers DeleteMeetingRoomHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除会议室</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteMeetingRoomRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteMeetingRoomHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteMeetingRoomResponse
+        /// </returns>
         public DeleteMeetingRoomResponse DeleteMeetingRoomWithOptions(string roomId, DeleteMeetingRoomRequest request, DeleteMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -917,14 +1088,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<DeleteMeetingRoomResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除会议室
-         *
-         * @param request DeleteMeetingRoomRequest
-         * @param headers DeleteMeetingRoomHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除会议室</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteMeetingRoomRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteMeetingRoomHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteMeetingRoomResponse
+        /// </returns>
         public async Task<DeleteMeetingRoomResponse> DeleteMeetingRoomWithOptionsAsync(string roomId, DeleteMeetingRoomRequest request, DeleteMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -962,12 +1143,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<DeleteMeetingRoomResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除会议室
-         *
-         * @param request DeleteMeetingRoomRequest
-         * @return DeleteMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除会议室</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteMeetingRoomRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteMeetingRoomResponse
+        /// </returns>
         public DeleteMeetingRoomResponse DeleteMeetingRoom(string roomId, DeleteMeetingRoomRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -975,12 +1162,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return DeleteMeetingRoomWithOptions(roomId, request, headers, runtime);
         }
 
-        /**
-         * @summary 删除会议室
-         *
-         * @param request DeleteMeetingRoomRequest
-         * @return DeleteMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除会议室</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteMeetingRoomRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteMeetingRoomResponse
+        /// </returns>
         public async Task<DeleteMeetingRoomResponse> DeleteMeetingRoomAsync(string roomId, DeleteMeetingRoomRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -988,14 +1181,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await DeleteMeetingRoomWithOptionsAsync(roomId, request, headers, runtime);
         }
 
-        /**
-         * @summary 删除会议室配置
-         *
-         * @param request DeleteMeetingRoomControlPanelRequest
-         * @param headers DeleteMeetingRoomControlPanelHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteMeetingRoomControlPanelResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除会议室配置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteMeetingRoomControlPanelRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteMeetingRoomControlPanelHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteMeetingRoomControlPanelResponse
+        /// </returns>
         public DeleteMeetingRoomControlPanelResponse DeleteMeetingRoomControlPanelWithOptions(DeleteMeetingRoomControlPanelRequest request, DeleteMeetingRoomControlPanelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1037,14 +1240,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<DeleteMeetingRoomControlPanelResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除会议室配置
-         *
-         * @param request DeleteMeetingRoomControlPanelRequest
-         * @param headers DeleteMeetingRoomControlPanelHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteMeetingRoomControlPanelResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除会议室配置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteMeetingRoomControlPanelRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteMeetingRoomControlPanelHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteMeetingRoomControlPanelResponse
+        /// </returns>
         public async Task<DeleteMeetingRoomControlPanelResponse> DeleteMeetingRoomControlPanelWithOptionsAsync(DeleteMeetingRoomControlPanelRequest request, DeleteMeetingRoomControlPanelHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1086,12 +1299,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<DeleteMeetingRoomControlPanelResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除会议室配置
-         *
-         * @param request DeleteMeetingRoomControlPanelRequest
-         * @return DeleteMeetingRoomControlPanelResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除会议室配置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteMeetingRoomControlPanelRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteMeetingRoomControlPanelResponse
+        /// </returns>
         public DeleteMeetingRoomControlPanelResponse DeleteMeetingRoomControlPanel(DeleteMeetingRoomControlPanelRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1099,12 +1318,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return DeleteMeetingRoomControlPanelWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除会议室配置
-         *
-         * @param request DeleteMeetingRoomControlPanelRequest
-         * @return DeleteMeetingRoomControlPanelResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除会议室配置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteMeetingRoomControlPanelRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteMeetingRoomControlPanelResponse
+        /// </returns>
         public async Task<DeleteMeetingRoomControlPanelResponse> DeleteMeetingRoomControlPanelAsync(DeleteMeetingRoomControlPanelRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1112,14 +1337,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await DeleteMeetingRoomControlPanelWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除会议室分组
-         *
-         * @param request DeleteMeetingRoomGroupRequest
-         * @param headers DeleteMeetingRoomGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteMeetingRoomGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除会议室分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteMeetingRoomGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteMeetingRoomGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteMeetingRoomGroupResponse
+        /// </returns>
         public DeleteMeetingRoomGroupResponse DeleteMeetingRoomGroupWithOptions(string groupId, DeleteMeetingRoomGroupRequest request, DeleteMeetingRoomGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1157,14 +1392,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<DeleteMeetingRoomGroupResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除会议室分组
-         *
-         * @param request DeleteMeetingRoomGroupRequest
-         * @param headers DeleteMeetingRoomGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteMeetingRoomGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除会议室分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteMeetingRoomGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteMeetingRoomGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteMeetingRoomGroupResponse
+        /// </returns>
         public async Task<DeleteMeetingRoomGroupResponse> DeleteMeetingRoomGroupWithOptionsAsync(string groupId, DeleteMeetingRoomGroupRequest request, DeleteMeetingRoomGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1202,12 +1447,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<DeleteMeetingRoomGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除会议室分组
-         *
-         * @param request DeleteMeetingRoomGroupRequest
-         * @return DeleteMeetingRoomGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除会议室分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteMeetingRoomGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteMeetingRoomGroupResponse
+        /// </returns>
         public DeleteMeetingRoomGroupResponse DeleteMeetingRoomGroup(string groupId, DeleteMeetingRoomGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1215,12 +1466,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return DeleteMeetingRoomGroupWithOptions(groupId, request, headers, runtime);
         }
 
-        /**
-         * @summary 删除会议室分组
-         *
-         * @param request DeleteMeetingRoomGroupRequest
-         * @return DeleteMeetingRoomGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除会议室分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteMeetingRoomGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteMeetingRoomGroupResponse
+        /// </returns>
         public async Task<DeleteMeetingRoomGroupResponse> DeleteMeetingRoomGroupAsync(string groupId, DeleteMeetingRoomGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1228,13 +1485,21 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await DeleteMeetingRoomGroupWithOptionsAsync(groupId, request, headers, runtime);
         }
 
-        /**
-         * @summary 查询自定义屏幕模板
-         *
-         * @param headers QueryDeviceCustomTemplateHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryDeviceCustomTemplateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询自定义屏幕模板</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryDeviceCustomTemplateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDeviceCustomTemplateResponse
+        /// </returns>
         public QueryDeviceCustomTemplateResponse QueryDeviceCustomTemplateWithOptions(string templateId, QueryDeviceCustomTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1265,13 +1530,21 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<QueryDeviceCustomTemplateResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询自定义屏幕模板
-         *
-         * @param headers QueryDeviceCustomTemplateHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryDeviceCustomTemplateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询自定义屏幕模板</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryDeviceCustomTemplateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDeviceCustomTemplateResponse
+        /// </returns>
         public async Task<QueryDeviceCustomTemplateResponse> QueryDeviceCustomTemplateWithOptionsAsync(string templateId, QueryDeviceCustomTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1302,11 +1575,14 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<QueryDeviceCustomTemplateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询自定义屏幕模板
-         *
-         * @return QueryDeviceCustomTemplateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询自定义屏幕模板</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryDeviceCustomTemplateResponse
+        /// </returns>
         public QueryDeviceCustomTemplateResponse QueryDeviceCustomTemplate(string templateId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1314,11 +1590,14 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return QueryDeviceCustomTemplateWithOptions(templateId, headers, runtime);
         }
 
-        /**
-         * @summary 查询自定义屏幕模板
-         *
-         * @return QueryDeviceCustomTemplateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询自定义屏幕模板</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryDeviceCustomTemplateResponse
+        /// </returns>
         public async Task<QueryDeviceCustomTemplateResponse> QueryDeviceCustomTemplateAsync(string templateId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1326,13 +1605,21 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await QueryDeviceCustomTemplateWithOptionsAsync(templateId, headers, runtime);
         }
 
-        /**
-         * @summary 查询自定义屏幕模板列表
-         *
-         * @param headers QueryDeviceCustomTemplateListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryDeviceCustomTemplateListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询自定义屏幕模板列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryDeviceCustomTemplateListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDeviceCustomTemplateListResponse
+        /// </returns>
         public QueryDeviceCustomTemplateListResponse QueryDeviceCustomTemplateListWithOptions(QueryDeviceCustomTemplateListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1363,13 +1650,21 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<QueryDeviceCustomTemplateListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询自定义屏幕模板列表
-         *
-         * @param headers QueryDeviceCustomTemplateListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryDeviceCustomTemplateListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询自定义屏幕模板列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryDeviceCustomTemplateListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDeviceCustomTemplateListResponse
+        /// </returns>
         public async Task<QueryDeviceCustomTemplateListResponse> QueryDeviceCustomTemplateListWithOptionsAsync(QueryDeviceCustomTemplateListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -1400,11 +1695,14 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<QueryDeviceCustomTemplateListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询自定义屏幕模板列表
-         *
-         * @return QueryDeviceCustomTemplateListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询自定义屏幕模板列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryDeviceCustomTemplateListResponse
+        /// </returns>
         public QueryDeviceCustomTemplateListResponse QueryDeviceCustomTemplateList()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1412,11 +1710,14 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return QueryDeviceCustomTemplateListWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 查询自定义屏幕模板列表
-         *
-         * @return QueryDeviceCustomTemplateListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询自定义屏幕模板列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryDeviceCustomTemplateListResponse
+        /// </returns>
         public async Task<QueryDeviceCustomTemplateListResponse> QueryDeviceCustomTemplateListAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1424,14 +1725,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await QueryDeviceCustomTemplateListWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 根据设备投屏码查询设备ip
-         *
-         * @param request QueryDeviceIpByCodeRequest
-         * @param headers QueryDeviceIpByCodeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryDeviceIpByCodeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据设备投屏码查询设备ip</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryDeviceIpByCodeRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryDeviceIpByCodeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDeviceIpByCodeResponse
+        /// </returns>
         public QueryDeviceIpByCodeResponse QueryDeviceIpByCodeWithOptions(string shareCode, QueryDeviceIpByCodeRequest request, QueryDeviceIpByCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1469,14 +1780,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<QueryDeviceIpByCodeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据设备投屏码查询设备ip
-         *
-         * @param request QueryDeviceIpByCodeRequest
-         * @param headers QueryDeviceIpByCodeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryDeviceIpByCodeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据设备投屏码查询设备ip</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryDeviceIpByCodeRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryDeviceIpByCodeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDeviceIpByCodeResponse
+        /// </returns>
         public async Task<QueryDeviceIpByCodeResponse> QueryDeviceIpByCodeWithOptionsAsync(string shareCode, QueryDeviceIpByCodeRequest request, QueryDeviceIpByCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1514,12 +1835,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<QueryDeviceIpByCodeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据设备投屏码查询设备ip
-         *
-         * @param request QueryDeviceIpByCodeRequest
-         * @return QueryDeviceIpByCodeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据设备投屏码查询设备ip</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryDeviceIpByCodeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDeviceIpByCodeResponse
+        /// </returns>
         public QueryDeviceIpByCodeResponse QueryDeviceIpByCode(string shareCode, QueryDeviceIpByCodeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1527,12 +1854,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return QueryDeviceIpByCodeWithOptions(shareCode, request, headers, runtime);
         }
 
-        /**
-         * @summary 根据设备投屏码查询设备ip
-         *
-         * @param request QueryDeviceIpByCodeRequest
-         * @return QueryDeviceIpByCodeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据设备投屏码查询设备ip</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryDeviceIpByCodeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDeviceIpByCodeResponse
+        /// </returns>
         public async Task<QueryDeviceIpByCodeResponse> QueryDeviceIpByCodeAsync(string shareCode, QueryDeviceIpByCodeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1540,14 +1873,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await QueryDeviceIpByCodeWithOptionsAsync(shareCode, request, headers, runtime);
         }
 
-        /**
-         * @summary 查询设备属性
-         *
-         * @param request QueryDevicePropertiesRequest
-         * @param headers QueryDevicePropertiesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryDevicePropertiesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询设备属性</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryDevicePropertiesRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryDevicePropertiesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDevicePropertiesResponse
+        /// </returns>
         public QueryDevicePropertiesResponse QueryDevicePropertiesWithOptions(QueryDevicePropertiesRequest request, QueryDevicePropertiesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1599,14 +1942,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<QueryDevicePropertiesResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询设备属性
-         *
-         * @param request QueryDevicePropertiesRequest
-         * @param headers QueryDevicePropertiesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryDevicePropertiesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询设备属性</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryDevicePropertiesRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryDevicePropertiesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDevicePropertiesResponse
+        /// </returns>
         public async Task<QueryDevicePropertiesResponse> QueryDevicePropertiesWithOptionsAsync(QueryDevicePropertiesRequest request, QueryDevicePropertiesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1658,12 +2011,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<QueryDevicePropertiesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询设备属性
-         *
-         * @param request QueryDevicePropertiesRequest
-         * @return QueryDevicePropertiesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询设备属性</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryDevicePropertiesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDevicePropertiesResponse
+        /// </returns>
         public QueryDevicePropertiesResponse QueryDeviceProperties(QueryDevicePropertiesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1671,12 +2030,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return QueryDevicePropertiesWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询设备属性
-         *
-         * @param request QueryDevicePropertiesRequest
-         * @return QueryDevicePropertiesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询设备属性</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryDevicePropertiesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDevicePropertiesResponse
+        /// </returns>
         public async Task<QueryDevicePropertiesResponse> QueryDevicePropertiesAsync(QueryDevicePropertiesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1684,14 +2049,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await QueryDevicePropertiesWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询会议室详情
-         *
-         * @param request QueryMeetingRoomRequest
-         * @param headers QueryMeetingRoomHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询会议室详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryMeetingRoomHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomResponse
+        /// </returns>
         public QueryMeetingRoomResponse QueryMeetingRoomWithOptions(string roomId, QueryMeetingRoomRequest request, QueryMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1729,14 +2104,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<QueryMeetingRoomResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询会议室详情
-         *
-         * @param request QueryMeetingRoomRequest
-         * @param headers QueryMeetingRoomHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询会议室详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryMeetingRoomHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomResponse
+        /// </returns>
         public async Task<QueryMeetingRoomResponse> QueryMeetingRoomWithOptionsAsync(string roomId, QueryMeetingRoomRequest request, QueryMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1774,12 +2159,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<QueryMeetingRoomResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询会议室详情
-         *
-         * @param request QueryMeetingRoomRequest
-         * @return QueryMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询会议室详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomResponse
+        /// </returns>
         public QueryMeetingRoomResponse QueryMeetingRoom(string roomId, QueryMeetingRoomRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1787,12 +2178,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return QueryMeetingRoomWithOptions(roomId, request, headers, runtime);
         }
 
-        /**
-         * @summary 查询会议室详情
-         *
-         * @param request QueryMeetingRoomRequest
-         * @return QueryMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询会议室详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomResponse
+        /// </returns>
         public async Task<QueryMeetingRoomResponse> QueryMeetingRoomAsync(string roomId, QueryMeetingRoomRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1800,14 +2197,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await QueryMeetingRoomWithOptionsAsync(roomId, request, headers, runtime);
         }
 
-        /**
-         * @summary 获取会议室IOT配置列表
-         *
-         * @param request QueryMeetingRoomControlPanelListRequest
-         * @param headers QueryMeetingRoomControlPanelListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryMeetingRoomControlPanelListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取会议室IOT配置列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomControlPanelListRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryMeetingRoomControlPanelListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomControlPanelListResponse
+        /// </returns>
         public QueryMeetingRoomControlPanelListResponse QueryMeetingRoomControlPanelListWithOptions(QueryMeetingRoomControlPanelListRequest request, QueryMeetingRoomControlPanelListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1857,14 +2264,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<QueryMeetingRoomControlPanelListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取会议室IOT配置列表
-         *
-         * @param request QueryMeetingRoomControlPanelListRequest
-         * @param headers QueryMeetingRoomControlPanelListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryMeetingRoomControlPanelListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取会议室IOT配置列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomControlPanelListRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryMeetingRoomControlPanelListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomControlPanelListResponse
+        /// </returns>
         public async Task<QueryMeetingRoomControlPanelListResponse> QueryMeetingRoomControlPanelListWithOptionsAsync(QueryMeetingRoomControlPanelListRequest request, QueryMeetingRoomControlPanelListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1914,12 +2331,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<QueryMeetingRoomControlPanelListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取会议室IOT配置列表
-         *
-         * @param request QueryMeetingRoomControlPanelListRequest
-         * @return QueryMeetingRoomControlPanelListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取会议室IOT配置列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomControlPanelListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomControlPanelListResponse
+        /// </returns>
         public QueryMeetingRoomControlPanelListResponse QueryMeetingRoomControlPanelList(QueryMeetingRoomControlPanelListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1927,12 +2350,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return QueryMeetingRoomControlPanelListWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取会议室IOT配置列表
-         *
-         * @param request QueryMeetingRoomControlPanelListRequest
-         * @return QueryMeetingRoomControlPanelListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取会议室IOT配置列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomControlPanelListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomControlPanelListResponse
+        /// </returns>
         public async Task<QueryMeetingRoomControlPanelListResponse> QueryMeetingRoomControlPanelListAsync(QueryMeetingRoomControlPanelListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1940,14 +2369,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await QueryMeetingRoomControlPanelListWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询设备信息
-         *
-         * @param request QueryMeetingRoomDeviceRequest
-         * @param headers QueryMeetingRoomDeviceHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryMeetingRoomDeviceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询设备信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomDeviceRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryMeetingRoomDeviceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomDeviceResponse
+        /// </returns>
         public QueryMeetingRoomDeviceResponse QueryMeetingRoomDeviceWithOptions(QueryMeetingRoomDeviceRequest request, QueryMeetingRoomDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1993,14 +2432,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<QueryMeetingRoomDeviceResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询设备信息
-         *
-         * @param request QueryMeetingRoomDeviceRequest
-         * @param headers QueryMeetingRoomDeviceHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryMeetingRoomDeviceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询设备信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomDeviceRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryMeetingRoomDeviceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomDeviceResponse
+        /// </returns>
         public async Task<QueryMeetingRoomDeviceResponse> QueryMeetingRoomDeviceWithOptionsAsync(QueryMeetingRoomDeviceRequest request, QueryMeetingRoomDeviceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2046,12 +2495,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<QueryMeetingRoomDeviceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询设备信息
-         *
-         * @param request QueryMeetingRoomDeviceRequest
-         * @return QueryMeetingRoomDeviceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询设备信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomDeviceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomDeviceResponse
+        /// </returns>
         public QueryMeetingRoomDeviceResponse QueryMeetingRoomDevice(QueryMeetingRoomDeviceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2059,12 +2514,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return QueryMeetingRoomDeviceWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询设备信息
-         *
-         * @param request QueryMeetingRoomDeviceRequest
-         * @return QueryMeetingRoomDeviceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询设备信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomDeviceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomDeviceResponse
+        /// </returns>
         public async Task<QueryMeetingRoomDeviceResponse> QueryMeetingRoomDeviceAsync(QueryMeetingRoomDeviceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2072,14 +2533,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await QueryMeetingRoomDeviceWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询会议室分组信息
-         *
-         * @param request QueryMeetingRoomGroupRequest
-         * @param headers QueryMeetingRoomGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryMeetingRoomGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询会议室分组信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryMeetingRoomGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomGroupResponse
+        /// </returns>
         public QueryMeetingRoomGroupResponse QueryMeetingRoomGroupWithOptions(string groupId, QueryMeetingRoomGroupRequest request, QueryMeetingRoomGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2117,14 +2588,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<QueryMeetingRoomGroupResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询会议室分组信息
-         *
-         * @param request QueryMeetingRoomGroupRequest
-         * @param headers QueryMeetingRoomGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryMeetingRoomGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询会议室分组信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryMeetingRoomGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomGroupResponse
+        /// </returns>
         public async Task<QueryMeetingRoomGroupResponse> QueryMeetingRoomGroupWithOptionsAsync(string groupId, QueryMeetingRoomGroupRequest request, QueryMeetingRoomGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2162,12 +2643,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<QueryMeetingRoomGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询会议室分组信息
-         *
-         * @param request QueryMeetingRoomGroupRequest
-         * @return QueryMeetingRoomGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询会议室分组信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomGroupResponse
+        /// </returns>
         public QueryMeetingRoomGroupResponse QueryMeetingRoomGroup(string groupId, QueryMeetingRoomGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2175,12 +2662,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return QueryMeetingRoomGroupWithOptions(groupId, request, headers, runtime);
         }
 
-        /**
-         * @summary 查询会议室分组信息
-         *
-         * @param request QueryMeetingRoomGroupRequest
-         * @return QueryMeetingRoomGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询会议室分组信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomGroupResponse
+        /// </returns>
         public async Task<QueryMeetingRoomGroupResponse> QueryMeetingRoomGroupAsync(string groupId, QueryMeetingRoomGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2188,14 +2681,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await QueryMeetingRoomGroupWithOptionsAsync(groupId, request, headers, runtime);
         }
 
-        /**
-         * @summary 查询会议室分组列表
-         *
-         * @param request QueryMeetingRoomGroupListRequest
-         * @param headers QueryMeetingRoomGroupListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryMeetingRoomGroupListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询会议室分组列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomGroupListRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryMeetingRoomGroupListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomGroupListResponse
+        /// </returns>
         public QueryMeetingRoomGroupListResponse QueryMeetingRoomGroupListWithOptions(QueryMeetingRoomGroupListRequest request, QueryMeetingRoomGroupListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2233,14 +2736,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<QueryMeetingRoomGroupListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询会议室分组列表
-         *
-         * @param request QueryMeetingRoomGroupListRequest
-         * @param headers QueryMeetingRoomGroupListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryMeetingRoomGroupListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询会议室分组列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomGroupListRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryMeetingRoomGroupListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomGroupListResponse
+        /// </returns>
         public async Task<QueryMeetingRoomGroupListResponse> QueryMeetingRoomGroupListWithOptionsAsync(QueryMeetingRoomGroupListRequest request, QueryMeetingRoomGroupListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2278,12 +2791,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<QueryMeetingRoomGroupListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询会议室分组列表
-         *
-         * @param request QueryMeetingRoomGroupListRequest
-         * @return QueryMeetingRoomGroupListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询会议室分组列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomGroupListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomGroupListResponse
+        /// </returns>
         public QueryMeetingRoomGroupListResponse QueryMeetingRoomGroupList(QueryMeetingRoomGroupListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2291,12 +2810,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return QueryMeetingRoomGroupListWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询会议室分组列表
-         *
-         * @param request QueryMeetingRoomGroupListRequest
-         * @return QueryMeetingRoomGroupListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询会议室分组列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomGroupListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomGroupListResponse
+        /// </returns>
         public async Task<QueryMeetingRoomGroupListResponse> QueryMeetingRoomGroupListAsync(QueryMeetingRoomGroupListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2304,14 +2829,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await QueryMeetingRoomGroupListWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询会议室列表
-         *
-         * @param request QueryMeetingRoomListRequest
-         * @param headers QueryMeetingRoomListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryMeetingRoomListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询会议室列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomListRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryMeetingRoomListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomListResponse
+        /// </returns>
         public QueryMeetingRoomListResponse QueryMeetingRoomListWithOptions(QueryMeetingRoomListRequest request, QueryMeetingRoomListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2357,14 +2892,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<QueryMeetingRoomListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询会议室列表
-         *
-         * @param request QueryMeetingRoomListRequest
-         * @param headers QueryMeetingRoomListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryMeetingRoomListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询会议室列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomListRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryMeetingRoomListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomListResponse
+        /// </returns>
         public async Task<QueryMeetingRoomListResponse> QueryMeetingRoomListWithOptionsAsync(QueryMeetingRoomListRequest request, QueryMeetingRoomListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2410,12 +2955,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<QueryMeetingRoomListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询会议室列表
-         *
-         * @param request QueryMeetingRoomListRequest
-         * @return QueryMeetingRoomListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询会议室列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomListResponse
+        /// </returns>
         public QueryMeetingRoomListResponse QueryMeetingRoomList(QueryMeetingRoomListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2423,12 +2974,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return QueryMeetingRoomListWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询会议室列表
-         *
-         * @param request QueryMeetingRoomListRequest
-         * @return QueryMeetingRoomListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询会议室列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMeetingRoomListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMeetingRoomListResponse
+        /// </returns>
         public async Task<QueryMeetingRoomListResponse> QueryMeetingRoomListAsync(QueryMeetingRoomListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2436,14 +2993,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await QueryMeetingRoomListWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 取消会议室高级用户模式。
-         *
-         * @param request RemoveSuperUserMeetingRoomRequest
-         * @param headers RemoveSuperUserMeetingRoomHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return RemoveSuperUserMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>取消会议室高级用户模式。</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RemoveSuperUserMeetingRoomRequest
+        /// </param>
+        /// <param name="headers">
+        /// RemoveSuperUserMeetingRoomHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RemoveSuperUserMeetingRoomResponse
+        /// </returns>
         public RemoveSuperUserMeetingRoomResponse RemoveSuperUserMeetingRoomWithOptions(RemoveSuperUserMeetingRoomRequest request, RemoveSuperUserMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2485,14 +3052,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<RemoveSuperUserMeetingRoomResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 取消会议室高级用户模式。
-         *
-         * @param request RemoveSuperUserMeetingRoomRequest
-         * @param headers RemoveSuperUserMeetingRoomHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return RemoveSuperUserMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>取消会议室高级用户模式。</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RemoveSuperUserMeetingRoomRequest
+        /// </param>
+        /// <param name="headers">
+        /// RemoveSuperUserMeetingRoomHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RemoveSuperUserMeetingRoomResponse
+        /// </returns>
         public async Task<RemoveSuperUserMeetingRoomResponse> RemoveSuperUserMeetingRoomWithOptionsAsync(RemoveSuperUserMeetingRoomRequest request, RemoveSuperUserMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2534,12 +3111,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<RemoveSuperUserMeetingRoomResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 取消会议室高级用户模式。
-         *
-         * @param request RemoveSuperUserMeetingRoomRequest
-         * @return RemoveSuperUserMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>取消会议室高级用户模式。</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RemoveSuperUserMeetingRoomRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RemoveSuperUserMeetingRoomResponse
+        /// </returns>
         public RemoveSuperUserMeetingRoomResponse RemoveSuperUserMeetingRoom(RemoveSuperUserMeetingRoomRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2547,12 +3130,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return RemoveSuperUserMeetingRoomWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 取消会议室高级用户模式。
-         *
-         * @param request RemoveSuperUserMeetingRoomRequest
-         * @return RemoveSuperUserMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>取消会议室高级用户模式。</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RemoveSuperUserMeetingRoomRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RemoveSuperUserMeetingRoomResponse
+        /// </returns>
         public async Task<RemoveSuperUserMeetingRoomResponse> RemoveSuperUserMeetingRoomAsync(RemoveSuperUserMeetingRoomRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2560,14 +3149,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await RemoveSuperUserMeetingRoomWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。
-         *
-         * @param request SetSuperUserMeetingRoomRequest
-         * @param headers SetSuperUserMeetingRoomHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SetSuperUserMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetSuperUserMeetingRoomRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetSuperUserMeetingRoomHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetSuperUserMeetingRoomResponse
+        /// </returns>
         public SetSuperUserMeetingRoomResponse SetSuperUserMeetingRoomWithOptions(SetSuperUserMeetingRoomRequest request, SetSuperUserMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2617,14 +3216,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<SetSuperUserMeetingRoomResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。
-         *
-         * @param request SetSuperUserMeetingRoomRequest
-         * @param headers SetSuperUserMeetingRoomHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SetSuperUserMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetSuperUserMeetingRoomRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetSuperUserMeetingRoomHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetSuperUserMeetingRoomResponse
+        /// </returns>
         public async Task<SetSuperUserMeetingRoomResponse> SetSuperUserMeetingRoomWithOptionsAsync(SetSuperUserMeetingRoomRequest request, SetSuperUserMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2674,12 +3283,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<SetSuperUserMeetingRoomResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。
-         *
-         * @param request SetSuperUserMeetingRoomRequest
-         * @return SetSuperUserMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetSuperUserMeetingRoomRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetSuperUserMeetingRoomResponse
+        /// </returns>
         public SetSuperUserMeetingRoomResponse SetSuperUserMeetingRoom(SetSuperUserMeetingRoomRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2687,12 +3302,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return SetSuperUserMeetingRoomWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。
-         *
-         * @param request SetSuperUserMeetingRoomRequest
-         * @return SetSuperUserMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置会议室成为高级用户模式。只有设置在白名单里的人员或部门，才能呼叫此会议室。</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetSuperUserMeetingRoomRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetSuperUserMeetingRoomResponse
+        /// </returns>
         public async Task<SetSuperUserMeetingRoomResponse> SetSuperUserMeetingRoomAsync(SetSuperUserMeetingRoomRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2700,14 +3321,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await SetSuperUserMeetingRoomWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新自定义屏幕模板
-         *
-         * @param request UpdateDeviceCustomTemplateRequest
-         * @param headers UpdateDeviceCustomTemplateHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateDeviceCustomTemplateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新自定义屏幕模板</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateDeviceCustomTemplateRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateDeviceCustomTemplateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateDeviceCustomTemplateResponse
+        /// </returns>
         public UpdateDeviceCustomTemplateResponse UpdateDeviceCustomTemplateWithOptions(UpdateDeviceCustomTemplateRequest request, UpdateDeviceCustomTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2817,14 +3448,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<UpdateDeviceCustomTemplateResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新自定义屏幕模板
-         *
-         * @param request UpdateDeviceCustomTemplateRequest
-         * @param headers UpdateDeviceCustomTemplateHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateDeviceCustomTemplateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新自定义屏幕模板</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateDeviceCustomTemplateRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateDeviceCustomTemplateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateDeviceCustomTemplateResponse
+        /// </returns>
         public async Task<UpdateDeviceCustomTemplateResponse> UpdateDeviceCustomTemplateWithOptionsAsync(UpdateDeviceCustomTemplateRequest request, UpdateDeviceCustomTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2934,12 +3575,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<UpdateDeviceCustomTemplateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新自定义屏幕模板
-         *
-         * @param request UpdateDeviceCustomTemplateRequest
-         * @return UpdateDeviceCustomTemplateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新自定义屏幕模板</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateDeviceCustomTemplateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateDeviceCustomTemplateResponse
+        /// </returns>
         public UpdateDeviceCustomTemplateResponse UpdateDeviceCustomTemplate(UpdateDeviceCustomTemplateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2947,12 +3594,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return UpdateDeviceCustomTemplateWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新自定义屏幕模板
-         *
-         * @param request UpdateDeviceCustomTemplateRequest
-         * @return UpdateDeviceCustomTemplateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新自定义屏幕模板</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateDeviceCustomTemplateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateDeviceCustomTemplateResponse
+        /// </returns>
         public async Task<UpdateDeviceCustomTemplateResponse> UpdateDeviceCustomTemplateAsync(UpdateDeviceCustomTemplateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2960,14 +3613,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await UpdateDeviceCustomTemplateWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新会议室信息
-         *
-         * @param request UpdateMeetingRoomRequest
-         * @param headers UpdateMeetingRoomHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新会议室信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateMeetingRoomRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateMeetingRoomHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateMeetingRoomResponse
+        /// </returns>
         public UpdateMeetingRoomResponse UpdateMeetingRoomWithOptions(UpdateMeetingRoomRequest request, UpdateMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3049,14 +3712,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<UpdateMeetingRoomResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新会议室信息
-         *
-         * @param request UpdateMeetingRoomRequest
-         * @param headers UpdateMeetingRoomHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新会议室信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateMeetingRoomRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateMeetingRoomHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateMeetingRoomResponse
+        /// </returns>
         public async Task<UpdateMeetingRoomResponse> UpdateMeetingRoomWithOptionsAsync(UpdateMeetingRoomRequest request, UpdateMeetingRoomHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3138,12 +3811,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<UpdateMeetingRoomResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新会议室信息
-         *
-         * @param request UpdateMeetingRoomRequest
-         * @return UpdateMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新会议室信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateMeetingRoomRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateMeetingRoomResponse
+        /// </returns>
         public UpdateMeetingRoomResponse UpdateMeetingRoom(UpdateMeetingRoomRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3151,12 +3830,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return UpdateMeetingRoomWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新会议室信息
-         *
-         * @param request UpdateMeetingRoomRequest
-         * @return UpdateMeetingRoomResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新会议室信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateMeetingRoomRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateMeetingRoomResponse
+        /// </returns>
         public async Task<UpdateMeetingRoomResponse> UpdateMeetingRoomAsync(UpdateMeetingRoomRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3164,14 +3849,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return await UpdateMeetingRoomWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新会议室分组
-         *
-         * @param request UpdateMeetingRoomGroupRequest
-         * @param headers UpdateMeetingRoomGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateMeetingRoomGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新会议室分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateMeetingRoomGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateMeetingRoomGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateMeetingRoomGroupResponse
+        /// </returns>
         public UpdateMeetingRoomGroupResponse UpdateMeetingRoomGroupWithOptions(UpdateMeetingRoomGroupRequest request, UpdateMeetingRoomGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3217,14 +3912,24 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<UpdateMeetingRoomGroupResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新会议室分组
-         *
-         * @param request UpdateMeetingRoomGroupRequest
-         * @param headers UpdateMeetingRoomGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateMeetingRoomGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新会议室分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateMeetingRoomGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateMeetingRoomGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateMeetingRoomGroupResponse
+        /// </returns>
         public async Task<UpdateMeetingRoomGroupResponse> UpdateMeetingRoomGroupWithOptionsAsync(UpdateMeetingRoomGroupRequest request, UpdateMeetingRoomGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3270,12 +3975,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return TeaModel.ToObject<UpdateMeetingRoomGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新会议室分组
-         *
-         * @param request UpdateMeetingRoomGroupRequest
-         * @return UpdateMeetingRoomGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新会议室分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateMeetingRoomGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateMeetingRoomGroupResponse
+        /// </returns>
         public UpdateMeetingRoomGroupResponse UpdateMeetingRoomGroup(UpdateMeetingRoomGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3283,12 +3994,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             return UpdateMeetingRoomGroupWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新会议室分组
-         *
-         * @param request UpdateMeetingRoomGroupRequest
-         * @return UpdateMeetingRoomGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新会议室分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateMeetingRoomGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateMeetingRoomGroupResponse
+        /// </returns>
         public async Task<UpdateMeetingRoomGroupResponse> UpdateMeetingRoomGroupAsync(UpdateMeetingRoomGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

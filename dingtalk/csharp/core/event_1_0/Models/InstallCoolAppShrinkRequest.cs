@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0.Models
 {
     public class InstallCoolAppShrinkRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("appId")]
         [Validation(Required=false)]
         public long? AppId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("coolAppCode")]
         [Validation(Required=false)]
         public string CoolAppCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]
@@ -35,14 +35,14 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0.Models
         public string FeatureShrink { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("installUid")]
         [Validation(Required=false)]
         public string InstallUid { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
@@ -53,7 +53,7 @@ namespace AlibabaCloud.SDK.Dingtalkevent_1_0.Models
         public string OptionsShrink { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("suiteId")]
         [Validation(Required=false)]

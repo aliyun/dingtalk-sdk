@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
         [Validation(Required=false)]
         public QueryMeetingRoomResponseBodyResult Result { get; set; }
         public class QueryMeetingRoomResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>ding994a046bca84545935c2f4657eb6378f</para>
+            /// </summary>
             [NameInMap("corpId")]
             [Validation(Required=false)]
             public string CorpId { get; set; }
@@ -25,6 +29,10 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
             [Validation(Required=false)]
             public bool? EnableCycleReservation { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>xxxIsvRoomId</para>
+            /// </summary>
             [NameInMap("isvRoomId")]
             [Validation(Required=false)]
             public string IsvRoomId { get; set; }
@@ -37,14 +45,26 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
                 [Validation(Required=false)]
                 public List<QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers> AuthorizedMembers { get; set; }
                 public class QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers : TeaModel {
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>lPHhSZDLXXXXXXpBlC9lxLwiEiE</para>
+                    /// </summary>
                     [NameInMap("memberId")]
                     [Validation(Required=false)]
                     public string MemberId { get; set; }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>张三</para>
+                    /// </summary>
                     [NameInMap("memberName")]
                     [Validation(Required=false)]
                     public string MemberName { get; set; }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>user</para>
+                    /// </summary>
                     [NameInMap("memberType")]
                     [Validation(Required=false)]
                     public string MemberType { get; set; }
@@ -53,6 +73,10 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>10</para>
+            /// </summary>
             [NameInMap("roomCapacity")]
             [Validation(Required=false)]
             public int? RoomCapacity { get; set; }
@@ -61,20 +85,36 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
             [Validation(Required=false)]
             public QueryMeetingRoomResponseBodyResultRoomGroup RoomGroup { get; set; }
             public class QueryMeetingRoomResponseBodyResultRoomGroup : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>1</para>
+                /// </summary>
                 [NameInMap("groupId")]
                 [Validation(Required=false)]
                 public long? GroupId { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>测试分组</para>
+                /// </summary>
                 [NameInMap("groupName")]
                 [Validation(Required=false)]
                 public string GroupName { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>0</para>
+                /// </summary>
                 [NameInMap("parentId")]
                 [Validation(Required=false)]
                 public long? ParentId { get; set; }
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>0ffb71843fbb7fc362cb1a0de97fd20b808b09d6ca6282ed</para>
+            /// </summary>
             [NameInMap("roomId")]
             [Validation(Required=false)]
             public string RoomId { get; set; }
@@ -97,28 +137,52 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
             [Validation(Required=false)]
             public QueryMeetingRoomResponseBodyResultRoomLocation RoomLocation { get; set; }
             public class QueryMeetingRoomResponseBodyResultRoomLocation : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>xx市xx区xx街道xx号</para>
+                /// </summary>
                 [NameInMap("desc")]
                 [Validation(Required=false)]
                 public string Desc { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>xxx公司</para>
+                /// </summary>
                 [NameInMap("title")]
                 [Validation(Required=false)]
                 public string Title { get; set; }
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>测试会议室</para>
+            /// </summary>
             [NameInMap("roomName")]
             [Validation(Required=false)]
             public string RoomName { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para><a href="https://static.dingtalk.com/media/lADPDgfLPFjNPu3NAWjNAWg_360_360.jpg">https://static.dingtalk.com/media/lADPDgfLPFjNPu3NAWjNAWg_360_360.jpg</a></para>
+            /// </summary>
             [NameInMap("roomPicture")]
             [Validation(Required=false)]
             public string RoomPicture { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>01224148194623278976</para>
+            /// </summary>
             [NameInMap("roomStaffId")]
             [Validation(Required=false)]
             public string RoomStaffId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>0.全员可用 1.仅管理员可用</para>
+            /// </summary>
             [NameInMap("roomStatus")]
             [Validation(Required=false)]
             public int? RoomStatus { get; set; }

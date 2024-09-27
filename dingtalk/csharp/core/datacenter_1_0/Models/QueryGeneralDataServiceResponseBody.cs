@@ -18,28 +18,28 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
         public List<QueryGeneralDataServiceResponseBodyMetaList> MetaList { get; set; }
         public class QueryGeneralDataServiceResponseBodyMetaList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("fieldDesc")]
             [Validation(Required=false)]
             public string FieldDesc { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("fieldId")]
             [Validation(Required=false)]
             public string FieldId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("fieldName")]
             [Validation(Required=false)]
             public string FieldName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("fieldType")]
             [Validation(Required=false)]

@@ -14,7 +14,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         public bool? CleanRunningTask { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>proc-abc</para>
         /// </summary>
         [NameInMap("processCode")]
         [Validation(Required=false)]

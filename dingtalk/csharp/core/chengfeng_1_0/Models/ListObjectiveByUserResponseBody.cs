@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
         [Validation(Required=false)]
         public ListObjectiveByUserResponseBodyContent Content { get; set; }
         public class ListObjectiveByUserResponseBodyContent : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1</para>
+            /// </summary>
             [NameInMap("count")]
             [Validation(Required=false)]
             public int? Count { get; set; }
@@ -27,6 +31,10 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
         [Validation(Required=false)]
         public string RequestId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

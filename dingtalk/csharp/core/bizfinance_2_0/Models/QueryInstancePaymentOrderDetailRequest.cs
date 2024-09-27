@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
 {
     public class QueryInstancePaymentOrderDetailRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>abc</para>
+        /// </summary>
         [NameInMap("orderNo")]
         [Validation(Required=false)]
         public string OrderNo { get; set; }

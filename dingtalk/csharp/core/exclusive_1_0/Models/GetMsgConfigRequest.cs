@@ -56,7 +56,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public string RuleCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("secretKey")]
         [Validation(Required=false)]

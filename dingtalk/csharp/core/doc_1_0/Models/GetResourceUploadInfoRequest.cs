@@ -10,28 +10,31 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class GetResourceUploadInfoRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("mediaType")]
         [Validation(Required=false)]
         public string MediaType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("resourceName")]
         [Validation(Required=false)]
         public string ResourceName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("size")]
         [Validation(Required=false)]
         public long? Size { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

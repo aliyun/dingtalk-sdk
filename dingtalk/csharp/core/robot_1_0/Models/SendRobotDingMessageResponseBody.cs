@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
 {
     public class SendRobotDingMessageResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("dingSendResultId")]
         [Validation(Required=false)]

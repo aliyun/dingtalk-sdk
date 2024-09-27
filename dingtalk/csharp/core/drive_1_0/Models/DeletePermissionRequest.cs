@@ -10,28 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class DeletePermissionRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("members")]
         [Validation(Required=false)]
         public List<DeletePermissionRequestMembers> Members { get; set; }
         public class DeletePermissionRequestMembers : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("corpId")]
             [Validation(Required=false)]
             public string CorpId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("memberId")]
             [Validation(Required=false)]
             public string MemberId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("memberType")]
             [Validation(Required=false)]
@@ -40,14 +40,14 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("role")]
         [Validation(Required=false)]
         public string Role { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

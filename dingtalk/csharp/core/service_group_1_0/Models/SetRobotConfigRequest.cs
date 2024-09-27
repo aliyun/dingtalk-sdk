@@ -33,6 +33,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public string OpenTeamId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>0</para>
+        /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]
         public string Status { get; set; }

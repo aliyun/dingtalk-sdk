@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             [Validation(Required=false)]
             public List<string> GroupNoticeReceiverUnionIds { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>true</para>
+            /// </summary>
             [NameInMap("noticeAllGroupMember")]
             [Validation(Required=false)]
             public bool? NoticeAllGroupMember { get; set; }
@@ -28,14 +32,20 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>eKWh3GBwsKEiE</para>
         /// </summary>
         [NameInMap("openTeamId")]
         [Validation(Required=false)]
         public string OpenTeamId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>a8iS4X94TgtgiE</para>
         /// </summary>
         [NameInMap("openTicketId")]
         [Validation(Required=false)]
@@ -63,6 +73,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>备注</para>
+            /// </summary>
             [NameInMap("memo")]
             [Validation(Required=false)]
             public string Memo { get; set; }

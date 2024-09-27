@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class AddCommentRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("commentContent")]
         [Validation(Required=false)]
         public string CommentContent { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("commentType")]
         [Validation(Required=false)]
@@ -27,6 +27,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public AddCommentRequestOption Option { get; set; }
         public class AddCommentRequestOption : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>create_time</para>
+            /// </summary>
             [NameInMap("createTime")]
             [Validation(Required=false)]
             public string CreateTime { get; set; }
@@ -38,7 +42,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

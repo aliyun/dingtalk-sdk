@@ -1,6 +1,3 @@
-/**
- *
- */
 // This file is auto-generated, don't edit it. Thanks.
 
 using System;
@@ -12,12 +9,19 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 {
     public class DentryModel : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>alidoc</para>
+        /// </summary>
         [NameInMap("contentType")]
         [Validation(Required=false)]
         public string ContentType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1663918630284</para>
         /// </summary>
         [NameInMap("createdTime")]
         [Validation(Required=false)]
@@ -28,14 +32,20 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         public DentryModelCreator Creator { get; set; }
         public class DentryModelCreator : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>DingTalk</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>YEp3JcM******UIbhwiE</para>
             /// </summary>
             [NameInMap("unionId")]
             [Validation(Required=false)]
@@ -44,36 +54,56 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>YRBd*****KGDA</para>
         /// </summary>
         [NameInMap("dentryId")]
         [Validation(Required=false)]
         public string DentryId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>file</para>
         /// </summary>
         [NameInMap("dentryType")]
         [Validation(Required=false)]
         public string DentryType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>6or0dp8Z****XWa91xzy3</para>
         /// </summary>
         [NameInMap("dentryUuid")]
         [Validation(Required=false)]
         public string DentryUuid { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>v1GXn****KqD4</para>
+        /// </summary>
         [NameInMap("docKey")]
         [Validation(Required=false)]
         public string DocKey { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>adoc</para>
+        /// </summary>
         [NameInMap("extension")]
         [Validation(Required=false)]
         public string Extension { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>false</para>
         /// </summary>
         [NameInMap("hasChildren")]
         [Validation(Required=false)]
@@ -84,12 +114,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         public LinkSourceInfo LinkSourceInfo { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>钉钉文档</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>测试组织/测试知识库/abc</para>
+        /// </summary>
         [NameInMap("path")]
         [Validation(Required=false)]
         public string Path { get; set; }
@@ -99,7 +136,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         public SpaceModel Space { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>YGv0****0xXAr</para>
         /// </summary>
         [NameInMap("spaceId")]
         [Validation(Required=false)]
@@ -116,7 +156,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1663918630284</para>
         /// </summary>
         [NameInMap("updatedTime")]
         [Validation(Required=false)]
@@ -127,14 +170,20 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         public DentryModelUpdater Updater { get; set; }
         public class DentryModelUpdater : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>DingTalk</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>YEp3JcM******UIbhwiE</para>
             /// </summary>
             [NameInMap("unionId")]
             [Validation(Required=false)]
@@ -142,6 +191,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para><a href="https://xxx.yy">https://xxx.yy</a></para>
+        /// </summary>
         [NameInMap("url")]
         [Validation(Required=false)]
         public string Url { get; set; }
@@ -154,6 +207,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
             [Validation(Required=false)]
             public List<string> DentryActions { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>5</para>
+            /// </summary>
             [NameInMap("roleCode")]
             [Validation(Required=false)]
             public string RoleCode { get; set; }

@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class DeletePhysicalClassroomRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>100016</para>
         /// </summary>
         [NameInMap("classroomId")]
         [Validation(Required=false)]
         public long? ClassroomId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>manger234</para>
         /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]

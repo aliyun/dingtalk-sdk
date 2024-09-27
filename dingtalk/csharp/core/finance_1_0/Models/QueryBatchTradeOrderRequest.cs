@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
 {
     public class QueryBatchTradeOrderRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("outBatchNos")]
         [Validation(Required=false)]

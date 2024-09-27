@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
 {
     public class ListDataDeliversRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>RT</para>
+        /// </summary>
         [NameInMap("dispatchingItemType")]
         [Validation(Required=false)]
         public string DispatchingItemType { get; set; }

@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class TransformToExclusiveAccountRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>false/true</para>
+        /// </summary>
         [NameInMap("idpDingTalk")]
         [Validation(Required=false)]
         public bool? IdpDingTalk { get; set; }
@@ -22,14 +26,17 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public string LoginId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>migrate</para>
         /// </summary>
         [NameInMap("transformType")]
         [Validation(Required=false)]
         public string TransformType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

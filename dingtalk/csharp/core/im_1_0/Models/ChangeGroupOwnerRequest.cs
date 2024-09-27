@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class ChangeGroupOwnerRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>14da****2760</para>
         /// </summary>
         [NameInMap("groupOwnerId")]
         [Validation(Required=false)]
         public string GroupOwnerId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>3</para>
         /// </summary>
         [NameInMap("groupOwnerType")]
         [Validation(Required=false)]
         public int? GroupOwnerType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>14da****2760</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]

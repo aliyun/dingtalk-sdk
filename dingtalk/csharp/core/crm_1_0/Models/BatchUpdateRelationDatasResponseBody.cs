@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class BatchUpdateRelationDatasResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("results")]
         [Validation(Required=false)]
         public List<BatchUpdateRelationDatasResponseBodyResults> Results { get; set; }
@@ -17,18 +21,34 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             [Validation(Required=false)]
             public List<string> DuplicatedRelationIds { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1002</para>
+            /// </summary>
             [NameInMap("errorCode")]
             [Validation(Required=false)]
             public string ErrorCode { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>查重失败</para>
+            /// </summary>
             [NameInMap("errorMsg")]
             [Validation(Required=false)]
             public string ErrorMsg { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>gads1ag-sfgasdfxcvxb</para>
+            /// </summary>
             [NameInMap("relationId")]
             [Validation(Required=false)]
             public string RelationId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>true</para>
+            /// </summary>
             [NameInMap("success")]
             [Validation(Required=false)]
             public bool? Success { get; set; }

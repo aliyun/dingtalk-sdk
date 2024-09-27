@@ -10,35 +10,47 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class SyncSolutionStatusRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123456</para>
         /// </summary>
         [NameInMap("bizId")]
         [Validation(Required=false)]
         public string BizId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>start</para>
         /// </summary>
         [NameInMap("solutionStatus")]
         [Validation(Required=false)]
         public string SolutionStatus { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>onboarding_v2</para>
         /// </summary>
         [NameInMap("solutionType")]
         [Validation(Required=false)]
         public string SolutionType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>12</para>
         /// </summary>
         [NameInMap("tenantId")]
         [Validation(Required=false)]
         public long? TenantId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userIds")]
         [Validation(Required=false)]

@@ -10,28 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
 {
     public class HrbrainImportEmpInfoRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("body")]
         [Validation(Required=false)]
         public List<HrbrainImportEmpInfoRequestBody> Body { get; set; }
         public class HrbrainImportEmpInfoRequestBody : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("birthday")]
             [Validation(Required=false)]
             public string Birthday { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("deptName")]
             [Validation(Required=false)]
             public string DeptName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("deptNo")]
             [Validation(Required=false)]
@@ -42,21 +42,21 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             public string DimissionDate { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("empSource")]
             [Validation(Required=false)]
             public string EmpSource { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("empStatus")]
             [Validation(Required=false)]
             public string EmpStatus { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("empType")]
             [Validation(Required=false)]
@@ -67,7 +67,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             public Dictionary<string, object> ExtendInfo { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("gender")]
             [Validation(Required=false)]
@@ -86,7 +86,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             public string IsDimission { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("jobCodeName")]
             [Validation(Required=false)]
@@ -105,35 +105,35 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             public string Marriage { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("nation")]
             [Validation(Required=false)]
             public string Nation { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("nationCtry")]
             [Validation(Required=false)]
             public string NationCtry { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("politicalStatus")]
             [Validation(Required=false)]
             public string PoliticalStatus { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("postName")]
             [Validation(Required=false)]
@@ -168,7 +168,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             public string WorkLocCity { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("workNo")]
             [Validation(Required=false)]
@@ -177,7 +177,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]

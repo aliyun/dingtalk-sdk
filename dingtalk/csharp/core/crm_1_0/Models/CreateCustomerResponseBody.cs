@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public List<CreateCustomerResponseBodyContacts> Contacts { get; set; }
         public class CreateCustomerResponseBodyContacts : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>contact_id</para>
+            /// </summary>
             [NameInMap("contactInstanceId")]
             [Validation(Required=false)]
             public string ContactInstanceId { get; set; }
@@ -20,12 +24,19 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>customer_id</para>
         /// </summary>
         [NameInMap("customerInstanceId")]
         [Validation(Required=false)]
         public string CustomerInstanceId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>crm_customer</para>
+        /// </summary>
         [NameInMap("objectType")]
         [Validation(Required=false)]
         public string ObjectType { get; set; }

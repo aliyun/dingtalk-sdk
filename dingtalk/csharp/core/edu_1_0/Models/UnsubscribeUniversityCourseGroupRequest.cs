@@ -10,21 +10,24 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class UnsubscribeUniversityCourseGroupRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>GSS10023</para>
         /// </summary>
         [NameInMap("courseGroupCode")]
         [Validation(Required=false)]
         public string CourseGroupCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("studentUserIds")]
         [Validation(Required=false)]
         public List<string> StudentUserIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]

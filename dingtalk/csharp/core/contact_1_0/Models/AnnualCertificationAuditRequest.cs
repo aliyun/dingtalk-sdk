@@ -22,7 +22,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public string ApplicationLetter { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("authStatus")]
         [Validation(Required=false)]
@@ -57,7 +57,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public string LicenseUrl { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>if can be null:</b>
+        /// <c>false</c>
         /// </summary>
         [NameInMap("orderId")]
         [Validation(Required=false)]

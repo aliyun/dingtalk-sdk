@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
 {
     public class HrbrainImportPerfEvalRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("body")]
         [Validation(Required=false)]
@@ -25,7 +25,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             public Dictionary<string, object> ExtendInfo { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
@@ -36,7 +36,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             public string PerfCate { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("perfPlanName")]
             [Validation(Required=false)]
@@ -47,35 +47,35 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
             public string PerfScore { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("period")]
             [Validation(Required=false)]
             public string Period { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("periodEndDate")]
             [Validation(Required=false)]
             public string PeriodEndDate { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("periodStartDate")]
             [Validation(Required=false)]
             public string PeriodStartDate { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("score")]
             [Validation(Required=false)]
             public string Score { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("workNo")]
             [Validation(Required=false)]
@@ -84,7 +84,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrbrain_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]

@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class QueryRelationDatasByTargetIdRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>abc123</para>
         /// </summary>
         [NameInMap("relationType")]
         [Validation(Required=false)]

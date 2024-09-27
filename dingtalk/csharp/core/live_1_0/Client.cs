@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         }
 
 
-        /**
-         * @summary 添加云导播联播群列表
-         *
-         * @param request AddShareCidListRequest
-         * @param headers AddShareCidListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AddShareCidListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加云导播联播群列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddShareCidListRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddShareCidListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddShareCidListResponse
+        /// </returns>
         public AddShareCidListResponse AddShareCidListWithOptions(string feedId, AddShareCidListRequest request, AddShareCidListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -81,14 +92,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<AddShareCidListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 添加云导播联播群列表
-         *
-         * @param request AddShareCidListRequest
-         * @param headers AddShareCidListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AddShareCidListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加云导播联播群列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddShareCidListRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddShareCidListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddShareCidListResponse
+        /// </returns>
         public async Task<AddShareCidListResponse> AddShareCidListWithOptionsAsync(string feedId, AddShareCidListRequest request, AddShareCidListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -134,12 +155,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<AddShareCidListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 添加云导播联播群列表
-         *
-         * @param request AddShareCidListRequest
-         * @return AddShareCidListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加云导播联播群列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddShareCidListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddShareCidListResponse
+        /// </returns>
         public AddShareCidListResponse AddShareCidList(string feedId, AddShareCidListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -147,12 +174,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return AddShareCidListWithOptions(feedId, request, headers, runtime);
         }
 
-        /**
-         * @summary 添加云导播联播群列表
-         *
-         * @param request AddShareCidListRequest
-         * @return AddShareCidListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加云导播联播群列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddShareCidListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddShareCidListResponse
+        /// </returns>
         public async Task<AddShareCidListResponse> AddShareCidListAsync(string feedId, AddShareCidListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -160,14 +193,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return await AddShareCidListWithOptionsAsync(feedId, request, headers, runtime);
         }
 
-        /**
-         * @summary 创建云导播课程
-         *
-         * @param request CreateCloudFeedRequest
-         * @param headers CreateCloudFeedHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateCloudFeedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建云导播课程</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateCloudFeedRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateCloudFeedHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateCloudFeedResponse
+        /// </returns>
         public CreateCloudFeedResponse CreateCloudFeedWithOptions(CreateCloudFeedRequest request, CreateCloudFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -225,14 +268,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<CreateCloudFeedResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建云导播课程
-         *
-         * @param request CreateCloudFeedRequest
-         * @param headers CreateCloudFeedHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateCloudFeedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建云导播课程</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateCloudFeedRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateCloudFeedHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateCloudFeedResponse
+        /// </returns>
         public async Task<CreateCloudFeedResponse> CreateCloudFeedWithOptionsAsync(CreateCloudFeedRequest request, CreateCloudFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -290,12 +343,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<CreateCloudFeedResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建云导播课程
-         *
-         * @param request CreateCloudFeedRequest
-         * @return CreateCloudFeedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建云导播课程</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateCloudFeedRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateCloudFeedResponse
+        /// </returns>
         public CreateCloudFeedResponse CreateCloudFeed(CreateCloudFeedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -303,12 +362,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return CreateCloudFeedWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建云导播课程
-         *
-         * @param request CreateCloudFeedRequest
-         * @return CreateCloudFeedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建云导播课程</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateCloudFeedRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateCloudFeedResponse
+        /// </returns>
         public async Task<CreateCloudFeedResponse> CreateCloudFeedAsync(CreateCloudFeedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -316,14 +381,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return await CreateCloudFeedWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建直播
-         *
-         * @param request CreateLiveRequest
-         * @param headers CreateLiveHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateLiveResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateLiveRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateLiveHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateLiveResponse
+        /// </returns>
         public CreateLiveResponse CreateLiveWithOptions(CreateLiveRequest request, CreateLiveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -385,14 +460,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<CreateLiveResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建直播
-         *
-         * @param request CreateLiveRequest
-         * @param headers CreateLiveHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateLiveResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateLiveRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateLiveHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateLiveResponse
+        /// </returns>
         public async Task<CreateLiveResponse> CreateLiveWithOptionsAsync(CreateLiveRequest request, CreateLiveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -454,12 +539,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<CreateLiveResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建直播
-         *
-         * @param request CreateLiveRequest
-         * @return CreateLiveResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateLiveRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateLiveResponse
+        /// </returns>
         public CreateLiveResponse CreateLive(CreateLiveRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -467,12 +558,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return CreateLiveWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建直播
-         *
-         * @param request CreateLiveRequest
-         * @return CreateLiveResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateLiveRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateLiveResponse
+        /// </returns>
         public async Task<CreateLiveResponse> CreateLiveAsync(CreateLiveRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -480,14 +577,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return await CreateLiveWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除直播
-         *
-         * @param request DeleteLiveRequest
-         * @param headers DeleteLiveHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteLiveResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteLiveRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteLiveHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteLiveResponse
+        /// </returns>
         public DeleteLiveResponse DeleteLiveWithOptions(DeleteLiveRequest request, DeleteLiveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -529,14 +636,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<DeleteLiveResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除直播
-         *
-         * @param request DeleteLiveRequest
-         * @param headers DeleteLiveHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteLiveResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteLiveRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteLiveHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteLiveResponse
+        /// </returns>
         public async Task<DeleteLiveResponse> DeleteLiveWithOptionsAsync(DeleteLiveRequest request, DeleteLiveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -578,12 +695,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<DeleteLiveResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除直播
-         *
-         * @param request DeleteLiveRequest
-         * @return DeleteLiveResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteLiveRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteLiveResponse
+        /// </returns>
         public DeleteLiveResponse DeleteLive(DeleteLiveRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -591,12 +714,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return DeleteLiveWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除直播
-         *
-         * @param request DeleteLiveRequest
-         * @return DeleteLiveResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteLiveRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteLiveResponse
+        /// </returns>
         public async Task<DeleteLiveResponse> DeleteLiveAsync(DeleteLiveRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -604,14 +733,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return await DeleteLiveWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除直播培训课程
-         *
-         * @param request DeleteLiveFeedRequest
-         * @param headers DeleteLiveFeedHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteLiveFeedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除直播培训课程</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteLiveFeedRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteLiveFeedHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteLiveFeedResponse
+        /// </returns>
         public DeleteLiveFeedResponse DeleteLiveFeedWithOptions(string feedId, DeleteLiveFeedRequest request, DeleteLiveFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -649,14 +788,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<DeleteLiveFeedResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除直播培训课程
-         *
-         * @param request DeleteLiveFeedRequest
-         * @param headers DeleteLiveFeedHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DeleteLiveFeedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除直播培训课程</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteLiveFeedRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteLiveFeedHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteLiveFeedResponse
+        /// </returns>
         public async Task<DeleteLiveFeedResponse> DeleteLiveFeedWithOptionsAsync(string feedId, DeleteLiveFeedRequest request, DeleteLiveFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -694,12 +843,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<DeleteLiveFeedResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除直播培训课程
-         *
-         * @param request DeleteLiveFeedRequest
-         * @return DeleteLiveFeedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除直播培训课程</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteLiveFeedRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteLiveFeedResponse
+        /// </returns>
         public DeleteLiveFeedResponse DeleteLiveFeed(string feedId, DeleteLiveFeedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -707,12 +862,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return DeleteLiveFeedWithOptions(feedId, request, headers, runtime);
         }
 
-        /**
-         * @summary 删除直播培训课程
-         *
-         * @param request DeleteLiveFeedRequest
-         * @return DeleteLiveFeedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除直播培训课程</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteLiveFeedRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteLiveFeedResponse
+        /// </returns>
         public async Task<DeleteLiveFeedResponse> DeleteLiveFeedAsync(string feedId, DeleteLiveFeedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -720,14 +881,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return await DeleteLiveFeedWithOptionsAsync(feedId, request, headers, runtime);
         }
 
-        /**
-         * @summary 剪辑直播课程的回放
-         *
-         * @param request EditFeedReplayRequest
-         * @param headers EditFeedReplayHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return EditFeedReplayResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>剪辑直播课程的回放</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EditFeedReplayRequest
+        /// </param>
+        /// <param name="headers">
+        /// EditFeedReplayHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// EditFeedReplayResponse
+        /// </returns>
         public EditFeedReplayResponse EditFeedReplayWithOptions(string feedId, EditFeedReplayRequest request, EditFeedReplayHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -773,14 +944,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<EditFeedReplayResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 剪辑直播课程的回放
-         *
-         * @param request EditFeedReplayRequest
-         * @param headers EditFeedReplayHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return EditFeedReplayResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>剪辑直播课程的回放</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EditFeedReplayRequest
+        /// </param>
+        /// <param name="headers">
+        /// EditFeedReplayHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// EditFeedReplayResponse
+        /// </returns>
         public async Task<EditFeedReplayResponse> EditFeedReplayWithOptionsAsync(string feedId, EditFeedReplayRequest request, EditFeedReplayHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -826,12 +1007,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<EditFeedReplayResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 剪辑直播课程的回放
-         *
-         * @param request EditFeedReplayRequest
-         * @return EditFeedReplayResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>剪辑直播课程的回放</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EditFeedReplayRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// EditFeedReplayResponse
+        /// </returns>
         public EditFeedReplayResponse EditFeedReplay(string feedId, EditFeedReplayRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -839,12 +1026,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return EditFeedReplayWithOptions(feedId, request, headers, runtime);
         }
 
-        /**
-         * @summary 剪辑直播课程的回放
-         *
-         * @param request EditFeedReplayRequest
-         * @return EditFeedReplayResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>剪辑直播课程的回放</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EditFeedReplayRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// EditFeedReplayResponse
+        /// </returns>
         public async Task<EditFeedReplayResponse> EditFeedReplayAsync(string feedId, EditFeedReplayRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -852,14 +1045,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return await EditFeedReplayWithOptionsAsync(feedId, request, headers, runtime);
         }
 
-        /**
-         * @summary 获取直播的可下载回放地址
-         *
-         * @param request GetLiveReplayUrlRequest
-         * @param headers GetLiveReplayUrlHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetLiveReplayUrlResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取直播的可下载回放地址</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetLiveReplayUrlRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetLiveReplayUrlHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetLiveReplayUrlResponse
+        /// </returns>
         public GetLiveReplayUrlResponse GetLiveReplayUrlWithOptions(GetLiveReplayUrlRequest request, GetLiveReplayUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -901,14 +1104,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<GetLiveReplayUrlResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取直播的可下载回放地址
-         *
-         * @param request GetLiveReplayUrlRequest
-         * @param headers GetLiveReplayUrlHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetLiveReplayUrlResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取直播的可下载回放地址</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetLiveReplayUrlRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetLiveReplayUrlHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetLiveReplayUrlResponse
+        /// </returns>
         public async Task<GetLiveReplayUrlResponse> GetLiveReplayUrlWithOptionsAsync(GetLiveReplayUrlRequest request, GetLiveReplayUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -950,12 +1163,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<GetLiveReplayUrlResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取直播的可下载回放地址
-         *
-         * @param request GetLiveReplayUrlRequest
-         * @return GetLiveReplayUrlResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取直播的可下载回放地址</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetLiveReplayUrlRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetLiveReplayUrlResponse
+        /// </returns>
         public GetLiveReplayUrlResponse GetLiveReplayUrl(GetLiveReplayUrlRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -963,12 +1182,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return GetLiveReplayUrlWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取直播的可下载回放地址
-         *
-         * @param request GetLiveReplayUrlRequest
-         * @return GetLiveReplayUrlResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取直播的可下载回放地址</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetLiveReplayUrlRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetLiveReplayUrlResponse
+        /// </returns>
         public async Task<GetLiveReplayUrlResponse> GetLiveReplayUrlAsync(GetLiveReplayUrlRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -976,14 +1201,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return await GetLiveReplayUrlWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 根据状态拉我相关的直播
-         *
-         * @param request GetUserAllLiveListRequest
-         * @param headers GetUserAllLiveListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetUserAllLiveListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据状态拉我相关的直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserAllLiveListRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetUserAllLiveListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserAllLiveListResponse
+        /// </returns>
         public GetUserAllLiveListResponse GetUserAllLiveListWithOptions(GetUserAllLiveListRequest request, GetUserAllLiveListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1047,14 +1282,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<GetUserAllLiveListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据状态拉我相关的直播
-         *
-         * @param request GetUserAllLiveListRequest
-         * @param headers GetUserAllLiveListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetUserAllLiveListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据状态拉我相关的直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserAllLiveListRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetUserAllLiveListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserAllLiveListResponse
+        /// </returns>
         public async Task<GetUserAllLiveListResponse> GetUserAllLiveListWithOptionsAsync(GetUserAllLiveListRequest request, GetUserAllLiveListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1118,12 +1363,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<GetUserAllLiveListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据状态拉我相关的直播
-         *
-         * @param request GetUserAllLiveListRequest
-         * @return GetUserAllLiveListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据状态拉我相关的直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserAllLiveListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserAllLiveListResponse
+        /// </returns>
         public GetUserAllLiveListResponse GetUserAllLiveList(GetUserAllLiveListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1131,12 +1382,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return GetUserAllLiveListWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 根据状态拉我相关的直播
-         *
-         * @param request GetUserAllLiveListRequest
-         * @return GetUserAllLiveListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据状态拉我相关的直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserAllLiveListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserAllLiveListResponse
+        /// </returns>
         public async Task<GetUserAllLiveListResponse> GetUserAllLiveListAsync(GetUserAllLiveListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1144,14 +1401,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return await GetUserAllLiveListWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 根据状态获取用户创建的直播
-         *
-         * @param request GetUserCreateLiveListRequest
-         * @param headers GetUserCreateLiveListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetUserCreateLiveListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据状态获取用户创建的直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserCreateLiveListRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetUserCreateLiveListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserCreateLiveListResponse
+        /// </returns>
         public GetUserCreateLiveListResponse GetUserCreateLiveListWithOptions(GetUserCreateLiveListRequest request, GetUserCreateLiveListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1215,14 +1482,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<GetUserCreateLiveListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据状态获取用户创建的直播
-         *
-         * @param request GetUserCreateLiveListRequest
-         * @param headers GetUserCreateLiveListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetUserCreateLiveListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据状态获取用户创建的直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserCreateLiveListRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetUserCreateLiveListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserCreateLiveListResponse
+        /// </returns>
         public async Task<GetUserCreateLiveListResponse> GetUserCreateLiveListWithOptionsAsync(GetUserCreateLiveListRequest request, GetUserCreateLiveListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1286,12 +1563,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<GetUserCreateLiveListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据状态获取用户创建的直播
-         *
-         * @param request GetUserCreateLiveListRequest
-         * @return GetUserCreateLiveListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据状态获取用户创建的直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserCreateLiveListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserCreateLiveListResponse
+        /// </returns>
         public GetUserCreateLiveListResponse GetUserCreateLiveList(GetUserCreateLiveListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1299,12 +1582,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return GetUserCreateLiveListWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 根据状态获取用户创建的直播
-         *
-         * @param request GetUserCreateLiveListRequest
-         * @return GetUserCreateLiveListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据状态获取用户创建的直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserCreateLiveListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserCreateLiveListResponse
+        /// </returns>
         public async Task<GetUserCreateLiveListResponse> GetUserCreateLiveListAsync(GetUserCreateLiveListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1312,14 +1601,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return await GetUserCreateLiveListWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取用户观看直播记录
-         *
-         * @param request GetUserWatchLiveListRequest
-         * @param headers GetUserWatchLiveListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetUserWatchLiveListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户观看直播记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserWatchLiveListRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetUserWatchLiveListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserWatchLiveListResponse
+        /// </returns>
         public GetUserWatchLiveListResponse GetUserWatchLiveListWithOptions(GetUserWatchLiveListRequest request, GetUserWatchLiveListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1369,14 +1668,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<GetUserWatchLiveListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取用户观看直播记录
-         *
-         * @param request GetUserWatchLiveListRequest
-         * @param headers GetUserWatchLiveListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetUserWatchLiveListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户观看直播记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserWatchLiveListRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetUserWatchLiveListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserWatchLiveListResponse
+        /// </returns>
         public async Task<GetUserWatchLiveListResponse> GetUserWatchLiveListWithOptionsAsync(GetUserWatchLiveListRequest request, GetUserWatchLiveListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1426,12 +1735,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<GetUserWatchLiveListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取用户观看直播记录
-         *
-         * @param request GetUserWatchLiveListRequest
-         * @return GetUserWatchLiveListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户观看直播记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserWatchLiveListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserWatchLiveListResponse
+        /// </returns>
         public GetUserWatchLiveListResponse GetUserWatchLiveList(GetUserWatchLiveListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1439,12 +1754,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return GetUserWatchLiveListWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取用户观看直播记录
-         *
-         * @param request GetUserWatchLiveListRequest
-         * @return GetUserWatchLiveListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户观看直播记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserWatchLiveListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserWatchLiveListResponse
+        /// </returns>
         public async Task<GetUserWatchLiveListResponse> GetUserWatchLiveListAsync(GetUserWatchLiveListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1452,14 +1773,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return await GetUserWatchLiveListWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 修改直播课程可见白名单
-         *
-         * @param tmpReq ModifyFeedWhiteListRequest
-         * @param headers ModifyFeedWhiteListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ModifyFeedWhiteListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改直播课程可见白名单</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// ModifyFeedWhiteListRequest
+        /// </param>
+        /// <param name="headers">
+        /// ModifyFeedWhiteListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ModifyFeedWhiteListResponse
+        /// </returns>
         public ModifyFeedWhiteListResponse ModifyFeedWhiteListWithOptions(string feedId, ModifyFeedWhiteListRequest tmpReq, ModifyFeedWhiteListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
@@ -1511,14 +1842,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<ModifyFeedWhiteListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 修改直播课程可见白名单
-         *
-         * @param tmpReq ModifyFeedWhiteListRequest
-         * @param headers ModifyFeedWhiteListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ModifyFeedWhiteListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改直播课程可见白名单</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// ModifyFeedWhiteListRequest
+        /// </param>
+        /// <param name="headers">
+        /// ModifyFeedWhiteListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ModifyFeedWhiteListResponse
+        /// </returns>
         public async Task<ModifyFeedWhiteListResponse> ModifyFeedWhiteListWithOptionsAsync(string feedId, ModifyFeedWhiteListRequest tmpReq, ModifyFeedWhiteListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
@@ -1570,12 +1911,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<ModifyFeedWhiteListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 修改直播课程可见白名单
-         *
-         * @param request ModifyFeedWhiteListRequest
-         * @return ModifyFeedWhiteListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改直播课程可见白名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ModifyFeedWhiteListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ModifyFeedWhiteListResponse
+        /// </returns>
         public ModifyFeedWhiteListResponse ModifyFeedWhiteList(string feedId, ModifyFeedWhiteListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1583,12 +1930,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return ModifyFeedWhiteListWithOptions(feedId, request, headers, runtime);
         }
 
-        /**
-         * @summary 修改直播课程可见白名单
-         *
-         * @param request ModifyFeedWhiteListRequest
-         * @return ModifyFeedWhiteListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改直播课程可见白名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ModifyFeedWhiteListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ModifyFeedWhiteListResponse
+        /// </returns>
         public async Task<ModifyFeedWhiteListResponse> ModifyFeedWhiteListAsync(string feedId, ModifyFeedWhiteListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1596,14 +1949,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return await ModifyFeedWhiteListWithOptionsAsync(feedId, request, headers, runtime);
         }
 
-        /**
-         * @summary 查询直播课程的观看白名单
-         *
-         * @param request QueryFeedWhiteListRequest
-         * @param headers QueryFeedWhiteListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryFeedWhiteListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询直播课程的观看白名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryFeedWhiteListRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryFeedWhiteListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryFeedWhiteListResponse
+        /// </returns>
         public QueryFeedWhiteListResponse QueryFeedWhiteListWithOptions(string feedId, QueryFeedWhiteListRequest request, QueryFeedWhiteListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1641,14 +2004,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<QueryFeedWhiteListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询直播课程的观看白名单
-         *
-         * @param request QueryFeedWhiteListRequest
-         * @param headers QueryFeedWhiteListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryFeedWhiteListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询直播课程的观看白名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryFeedWhiteListRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryFeedWhiteListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryFeedWhiteListResponse
+        /// </returns>
         public async Task<QueryFeedWhiteListResponse> QueryFeedWhiteListWithOptionsAsync(string feedId, QueryFeedWhiteListRequest request, QueryFeedWhiteListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1686,12 +2059,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<QueryFeedWhiteListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询直播课程的观看白名单
-         *
-         * @param request QueryFeedWhiteListRequest
-         * @return QueryFeedWhiteListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询直播课程的观看白名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryFeedWhiteListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryFeedWhiteListResponse
+        /// </returns>
         public QueryFeedWhiteListResponse QueryFeedWhiteList(string feedId, QueryFeedWhiteListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1699,12 +2078,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return QueryFeedWhiteListWithOptions(feedId, request, headers, runtime);
         }
 
-        /**
-         * @summary 查询直播课程的观看白名单
-         *
-         * @param request QueryFeedWhiteListRequest
-         * @return QueryFeedWhiteListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询直播课程的观看白名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryFeedWhiteListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryFeedWhiteListResponse
+        /// </returns>
         public async Task<QueryFeedWhiteListResponse> QueryFeedWhiteListAsync(string feedId, QueryFeedWhiteListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1712,14 +2097,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return await QueryFeedWhiteListWithOptionsAsync(feedId, request, headers, runtime);
         }
 
-        /**
-         * @summary 查询直播详情
-         *
-         * @param request QueryLiveInfoRequest
-         * @param headers QueryLiveInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryLiveInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询直播详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryLiveInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryLiveInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryLiveInfoResponse
+        /// </returns>
         public QueryLiveInfoResponse QueryLiveInfoWithOptions(QueryLiveInfoRequest request, QueryLiveInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1761,14 +2156,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<QueryLiveInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询直播详情
-         *
-         * @param request QueryLiveInfoRequest
-         * @param headers QueryLiveInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryLiveInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询直播详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryLiveInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryLiveInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryLiveInfoResponse
+        /// </returns>
         public async Task<QueryLiveInfoResponse> QueryLiveInfoWithOptionsAsync(QueryLiveInfoRequest request, QueryLiveInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1810,12 +2215,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<QueryLiveInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询直播详情
-         *
-         * @param request QueryLiveInfoRequest
-         * @return QueryLiveInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询直播详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryLiveInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryLiveInfoResponse
+        /// </returns>
         public QueryLiveInfoResponse QueryLiveInfo(QueryLiveInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1823,12 +2234,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return QueryLiveInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询直播详情
-         *
-         * @param request QueryLiveInfoRequest
-         * @return QueryLiveInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询直播详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryLiveInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryLiveInfoResponse
+        /// </returns>
         public async Task<QueryLiveInfoResponse> QueryLiveInfoAsync(QueryLiveInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1836,14 +2253,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return await QueryLiveInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取直播的观看数据
-         *
-         * @param request QueryLiveWatchDetailRequest
-         * @param headers QueryLiveWatchDetailHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryLiveWatchDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取直播的观看数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryLiveWatchDetailRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryLiveWatchDetailHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryLiveWatchDetailResponse
+        /// </returns>
         public QueryLiveWatchDetailResponse QueryLiveWatchDetailWithOptions(QueryLiveWatchDetailRequest request, QueryLiveWatchDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1885,14 +2312,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<QueryLiveWatchDetailResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取直播的观看数据
-         *
-         * @param request QueryLiveWatchDetailRequest
-         * @param headers QueryLiveWatchDetailHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryLiveWatchDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取直播的观看数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryLiveWatchDetailRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryLiveWatchDetailHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryLiveWatchDetailResponse
+        /// </returns>
         public async Task<QueryLiveWatchDetailResponse> QueryLiveWatchDetailWithOptionsAsync(QueryLiveWatchDetailRequest request, QueryLiveWatchDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1934,12 +2371,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<QueryLiveWatchDetailResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取直播的观看数据
-         *
-         * @param request QueryLiveWatchDetailRequest
-         * @return QueryLiveWatchDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取直播的观看数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryLiveWatchDetailRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryLiveWatchDetailResponse
+        /// </returns>
         public QueryLiveWatchDetailResponse QueryLiveWatchDetail(QueryLiveWatchDetailRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1947,12 +2390,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return QueryLiveWatchDetailWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取直播的观看数据
-         *
-         * @param request QueryLiveWatchDetailRequest
-         * @return QueryLiveWatchDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取直播的观看数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryLiveWatchDetailRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryLiveWatchDetailResponse
+        /// </returns>
         public async Task<QueryLiveWatchDetailResponse> QueryLiveWatchDetailAsync(QueryLiveWatchDetailRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1960,14 +2409,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return await QueryLiveWatchDetailWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取直播观看用户列表
-         *
-         * @param request QueryLiveWatchUserListRequest
-         * @param headers QueryLiveWatchUserListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryLiveWatchUserListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取直播观看用户列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryLiveWatchUserListRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryLiveWatchUserListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryLiveWatchUserListResponse
+        /// </returns>
         public QueryLiveWatchUserListResponse QueryLiveWatchUserListWithOptions(QueryLiveWatchUserListRequest request, QueryLiveWatchUserListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2017,14 +2476,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<QueryLiveWatchUserListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取直播观看用户列表
-         *
-         * @param request QueryLiveWatchUserListRequest
-         * @param headers QueryLiveWatchUserListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryLiveWatchUserListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取直播观看用户列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryLiveWatchUserListRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryLiveWatchUserListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryLiveWatchUserListResponse
+        /// </returns>
         public async Task<QueryLiveWatchUserListResponse> QueryLiveWatchUserListWithOptionsAsync(QueryLiveWatchUserListRequest request, QueryLiveWatchUserListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2074,12 +2543,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<QueryLiveWatchUserListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取直播观看用户列表
-         *
-         * @param request QueryLiveWatchUserListRequest
-         * @return QueryLiveWatchUserListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取直播观看用户列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryLiveWatchUserListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryLiveWatchUserListResponse
+        /// </returns>
         public QueryLiveWatchUserListResponse QueryLiveWatchUserList(QueryLiveWatchUserListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2087,12 +2562,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return QueryLiveWatchUserListWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取直播观看用户列表
-         *
-         * @param request QueryLiveWatchUserListRequest
-         * @return QueryLiveWatchUserListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取直播观看用户列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryLiveWatchUserListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryLiveWatchUserListResponse
+        /// </returns>
         public async Task<QueryLiveWatchUserListResponse> QueryLiveWatchUserListAsync(QueryLiveWatchUserListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2100,14 +2581,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return await QueryLiveWatchUserListWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 批量查询直播是否订阅
-         *
-         * @param tmpReq QuerySubscribeStatusRequest
-         * @param headers QuerySubscribeStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QuerySubscribeStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询直播是否订阅</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// QuerySubscribeStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// QuerySubscribeStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QuerySubscribeStatusResponse
+        /// </returns>
         public QuerySubscribeStatusResponse QuerySubscribeStatusWithOptions(QuerySubscribeStatusRequest tmpReq, QuerySubscribeStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
@@ -2155,14 +2646,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<QuerySubscribeStatusResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 批量查询直播是否订阅
-         *
-         * @param tmpReq QuerySubscribeStatusRequest
-         * @param headers QuerySubscribeStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QuerySubscribeStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询直播是否订阅</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// QuerySubscribeStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// QuerySubscribeStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QuerySubscribeStatusResponse
+        /// </returns>
         public async Task<QuerySubscribeStatusResponse> QuerySubscribeStatusWithOptionsAsync(QuerySubscribeStatusRequest tmpReq, QuerySubscribeStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
@@ -2210,12 +2711,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<QuerySubscribeStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 批量查询直播是否订阅
-         *
-         * @param request QuerySubscribeStatusRequest
-         * @return QuerySubscribeStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询直播是否订阅</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QuerySubscribeStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QuerySubscribeStatusResponse
+        /// </returns>
         public QuerySubscribeStatusResponse QuerySubscribeStatus(QuerySubscribeStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2223,12 +2730,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return QuerySubscribeStatusWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 批量查询直播是否订阅
-         *
-         * @param request QuerySubscribeStatusRequest
-         * @return QuerySubscribeStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询直播是否订阅</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QuerySubscribeStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QuerySubscribeStatusResponse
+        /// </returns>
         public async Task<QuerySubscribeStatusResponse> QuerySubscribeStatusAsync(QuerySubscribeStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2236,14 +2749,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return await QuerySubscribeStatusWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 开始一场云导播
-         *
-         * @param request StartCloudFeedRequest
-         * @param headers StartCloudFeedHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return StartCloudFeedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>开始一场云导播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// StartCloudFeedRequest
+        /// </param>
+        /// <param name="headers">
+        /// StartCloudFeedHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// StartCloudFeedResponse
+        /// </returns>
         public StartCloudFeedResponse StartCloudFeedWithOptions(string feedId, StartCloudFeedRequest request, StartCloudFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2281,14 +2804,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<StartCloudFeedResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 开始一场云导播
-         *
-         * @param request StartCloudFeedRequest
-         * @param headers StartCloudFeedHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return StartCloudFeedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>开始一场云导播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// StartCloudFeedRequest
+        /// </param>
+        /// <param name="headers">
+        /// StartCloudFeedHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// StartCloudFeedResponse
+        /// </returns>
         public async Task<StartCloudFeedResponse> StartCloudFeedWithOptionsAsync(string feedId, StartCloudFeedRequest request, StartCloudFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2326,12 +2859,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<StartCloudFeedResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 开始一场云导播
-         *
-         * @param request StartCloudFeedRequest
-         * @return StartCloudFeedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>开始一场云导播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// StartCloudFeedRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// StartCloudFeedResponse
+        /// </returns>
         public StartCloudFeedResponse StartCloudFeed(string feedId, StartCloudFeedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2339,12 +2878,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return StartCloudFeedWithOptions(feedId, request, headers, runtime);
         }
 
-        /**
-         * @summary 开始一场云导播
-         *
-         * @param request StartCloudFeedRequest
-         * @return StartCloudFeedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>开始一场云导播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// StartCloudFeedRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// StartCloudFeedResponse
+        /// </returns>
         public async Task<StartCloudFeedResponse> StartCloudFeedAsync(string feedId, StartCloudFeedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2352,14 +2897,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return await StartCloudFeedWithOptionsAsync(feedId, request, headers, runtime);
         }
 
-        /**
-         * @summary 结束一场云导播
-         *
-         * @param request StopCloudFeedRequest
-         * @param headers StopCloudFeedHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return StopCloudFeedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>结束一场云导播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// StopCloudFeedRequest
+        /// </param>
+        /// <param name="headers">
+        /// StopCloudFeedHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// StopCloudFeedResponse
+        /// </returns>
         public StopCloudFeedResponse StopCloudFeedWithOptions(string feedId, StopCloudFeedRequest request, StopCloudFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2397,14 +2952,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<StopCloudFeedResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 结束一场云导播
-         *
-         * @param request StopCloudFeedRequest
-         * @param headers StopCloudFeedHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return StopCloudFeedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>结束一场云导播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// StopCloudFeedRequest
+        /// </param>
+        /// <param name="headers">
+        /// StopCloudFeedHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// StopCloudFeedResponse
+        /// </returns>
         public async Task<StopCloudFeedResponse> StopCloudFeedWithOptionsAsync(string feedId, StopCloudFeedRequest request, StopCloudFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2442,12 +3007,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<StopCloudFeedResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 结束一场云导播
-         *
-         * @param request StopCloudFeedRequest
-         * @return StopCloudFeedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>结束一场云导播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// StopCloudFeedRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// StopCloudFeedResponse
+        /// </returns>
         public StopCloudFeedResponse StopCloudFeed(string feedId, StopCloudFeedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2455,12 +3026,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return StopCloudFeedWithOptions(feedId, request, headers, runtime);
         }
 
-        /**
-         * @summary 结束一场云导播
-         *
-         * @param request StopCloudFeedRequest
-         * @return StopCloudFeedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>结束一场云导播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// StopCloudFeedRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// StopCloudFeedResponse
+        /// </returns>
         public async Task<StopCloudFeedResponse> StopCloudFeedAsync(string feedId, StopCloudFeedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2468,14 +3045,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return await StopCloudFeedWithOptionsAsync(feedId, request, headers, runtime);
         }
 
-        /**
-         * @summary 预约直播
-         *
-         * @param request SubscribeLiveRequest
-         * @param headers SubscribeLiveHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SubscribeLiveResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>预约直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubscribeLiveRequest
+        /// </param>
+        /// <param name="headers">
+        /// SubscribeLiveHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubscribeLiveResponse
+        /// </returns>
         public SubscribeLiveResponse SubscribeLiveWithOptions(SubscribeLiveRequest request, SubscribeLiveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2521,14 +3108,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<SubscribeLiveResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 预约直播
-         *
-         * @param request SubscribeLiveRequest
-         * @param headers SubscribeLiveHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SubscribeLiveResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>预约直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubscribeLiveRequest
+        /// </param>
+        /// <param name="headers">
+        /// SubscribeLiveHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubscribeLiveResponse
+        /// </returns>
         public async Task<SubscribeLiveResponse> SubscribeLiveWithOptionsAsync(SubscribeLiveRequest request, SubscribeLiveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2574,12 +3171,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<SubscribeLiveResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 预约直播
-         *
-         * @param request SubscribeLiveRequest
-         * @return SubscribeLiveResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>预约直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubscribeLiveRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubscribeLiveResponse
+        /// </returns>
         public SubscribeLiveResponse SubscribeLive(SubscribeLiveRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2587,12 +3190,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return SubscribeLiveWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 预约直播
-         *
-         * @param request SubscribeLiveRequest
-         * @return SubscribeLiveResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>预约直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubscribeLiveRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubscribeLiveResponse
+        /// </returns>
         public async Task<SubscribeLiveResponse> SubscribeLiveAsync(SubscribeLiveRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2600,14 +3209,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return await SubscribeLiveWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 修改直播
-         *
-         * @param request UpdateLiveRequest
-         * @param headers UpdateLiveHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateLiveResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateLiveRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateLiveHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateLiveResponse
+        /// </returns>
         public UpdateLiveResponse UpdateLiveWithOptions(UpdateLiveRequest request, UpdateLiveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2669,14 +3288,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<UpdateLiveResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 修改直播
-         *
-         * @param request UpdateLiveRequest
-         * @param headers UpdateLiveHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateLiveResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateLiveRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateLiveHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateLiveResponse
+        /// </returns>
         public async Task<UpdateLiveResponse> UpdateLiveWithOptionsAsync(UpdateLiveRequest request, UpdateLiveHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2738,12 +3367,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<UpdateLiveResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 修改直播
-         *
-         * @param request UpdateLiveRequest
-         * @return UpdateLiveResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateLiveRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateLiveResponse
+        /// </returns>
         public UpdateLiveResponse UpdateLive(UpdateLiveRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2751,12 +3386,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return UpdateLiveWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 修改直播
-         *
-         * @param request UpdateLiveRequest
-         * @return UpdateLiveResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改直播</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateLiveRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateLiveResponse
+        /// </returns>
         public async Task<UpdateLiveResponse> UpdateLiveAsync(UpdateLiveRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2764,14 +3405,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return await UpdateLiveWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 修改培训课程信息
-         *
-         * @param request UpdateLiveFeedRequest
-         * @param headers UpdateLiveFeedHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateLiveFeedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改培训课程信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateLiveFeedRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateLiveFeedHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateLiveFeedResponse
+        /// </returns>
         public UpdateLiveFeedResponse UpdateLiveFeedWithOptions(string feedId, UpdateLiveFeedRequest request, UpdateLiveFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2825,14 +3476,24 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<UpdateLiveFeedResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 修改培训课程信息
-         *
-         * @param request UpdateLiveFeedRequest
-         * @param headers UpdateLiveFeedHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateLiveFeedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改培训课程信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateLiveFeedRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateLiveFeedHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateLiveFeedResponse
+        /// </returns>
         public async Task<UpdateLiveFeedResponse> UpdateLiveFeedWithOptionsAsync(string feedId, UpdateLiveFeedRequest request, UpdateLiveFeedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2886,12 +3547,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return TeaModel.ToObject<UpdateLiveFeedResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 修改培训课程信息
-         *
-         * @param request UpdateLiveFeedRequest
-         * @return UpdateLiveFeedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改培训课程信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateLiveFeedRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateLiveFeedResponse
+        /// </returns>
         public UpdateLiveFeedResponse UpdateLiveFeed(string feedId, UpdateLiveFeedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2899,12 +3566,18 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             return UpdateLiveFeedWithOptions(feedId, request, headers, runtime);
         }
 
-        /**
-         * @summary 修改培训课程信息
-         *
-         * @param request UpdateLiveFeedRequest
-         * @return UpdateLiveFeedResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改培训课程信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateLiveFeedRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateLiveFeedResponse
+        /// </returns>
         public async Task<UpdateLiveFeedResponse> UpdateLiveFeedAsync(string feedId, UpdateLiveFeedRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

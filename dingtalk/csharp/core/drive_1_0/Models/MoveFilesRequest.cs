@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public string AddConflictPolicy { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("fileIds")]
         [Validation(Required=false)]
@@ -25,14 +25,14 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public string TargetParentId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("targetSpaceId")]
         [Validation(Required=false)]
         public string TargetSpaceId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

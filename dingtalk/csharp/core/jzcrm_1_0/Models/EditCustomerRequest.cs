@@ -14,7 +14,13 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
         public EditCustomerRequestData Data { get; set; }
         public class EditCustomerRequestData : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>张三</para>
+            /// 
+            /// <b>if can be null:</b>
+            /// <c>false</c>
             /// </summary>
             [NameInMap("data_userid")]
             [Validation(Required=false)]
@@ -41,7 +47,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             public string KhCity { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("kh_class")]
             [Validation(Required=false)]
@@ -132,7 +138,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             public string KhJibie { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("kh_name")]
             [Validation(Required=false)]
@@ -217,18 +223,28 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>148</para>
         /// </summary>
         [NameInMap("datatype")]
         [Validation(Required=false)]
         public long? Datatype { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("msgid")]
         [Validation(Required=false)]
         public long? Msgid { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1621822122</para>
         /// </summary>
         [NameInMap("stamp")]
         [Validation(Required=false)]

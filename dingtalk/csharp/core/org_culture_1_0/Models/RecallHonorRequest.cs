@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
 {
     public class RecallHonorRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>suyfsdjfu</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

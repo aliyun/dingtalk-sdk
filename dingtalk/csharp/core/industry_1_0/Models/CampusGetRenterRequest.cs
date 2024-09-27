@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class CampusGetRenterRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1001</para>
         /// </summary>
         [NameInMap("renterId")]
         [Validation(Required=false)]

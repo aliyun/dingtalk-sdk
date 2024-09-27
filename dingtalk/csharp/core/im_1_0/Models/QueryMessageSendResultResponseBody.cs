@@ -13,10 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public QueryMessageSendResultResponseBodyResult Result { get; set; }
         public class QueryMessageSendResultResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>msghcuh234</para>
+            /// </summary>
             [NameInMap("openMessageId")]
             [Validation(Required=false)]
             public string OpenMessageId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1</para>
+            /// </summary>
             [NameInMap("sendStatus")]
             [Validation(Required=false)]
             public int? SendStatus { get; set; }

@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
 {
     public class PushOfficialAccountMessageResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1234abcd</para>
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]

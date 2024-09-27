@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
 {
     public class OpenAgoalTeamDTO : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>8535683xx</para>
         /// </summary>
         [NameInMap("deptId")]
         [Validation(Required=false)]
         public string DeptId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>测试部门</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>6444f5e9a4261c6e699dxxxx</para>
         /// </summary>
         [NameInMap("teamId")]
         [Validation(Required=false)]

@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class QueryGroupIdRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>sn123</para>
         /// </summary>
         [NameInMap("sn")]
         [Validation(Required=false)]

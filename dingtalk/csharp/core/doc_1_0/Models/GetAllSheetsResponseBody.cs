@@ -13,10 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public List<GetAllSheetsResponseBodyValue> Value { get; set; }
         public class GetAllSheetsResponseBodyValue : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>sheet_id</para>
+            /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public string Id { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>sheet_name</para>
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }

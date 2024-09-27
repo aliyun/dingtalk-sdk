@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
 {
     public class QueryGeneralDataUpdateDateRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("serviceId")]
         [Validation(Required=false)]

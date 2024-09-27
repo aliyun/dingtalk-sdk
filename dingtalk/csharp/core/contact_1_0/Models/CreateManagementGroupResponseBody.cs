@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class CreateManagementGroupResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>rolexxx</para>
         /// </summary>
         [NameInMap("groupId")]
         [Validation(Required=false)]

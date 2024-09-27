@@ -10,12 +10,19 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class UpdateRobotInteractiveCardRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>cardXXXX01</para>
         /// </summary>
         [NameInMap("cardBizId")]
         [Validation(Required=false)]
         public string CardBizId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>根据具体的cardTemplateId参考文档格式</para>
+        /// </summary>
         [NameInMap("cardData")]
         [Validation(Required=false)]
         public string CardData { get; set; }

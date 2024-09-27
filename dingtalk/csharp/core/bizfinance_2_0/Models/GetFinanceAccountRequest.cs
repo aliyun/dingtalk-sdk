@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
 {
     public class GetFinanceAccountRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("accountCode")]
         [Validation(Required=false)]

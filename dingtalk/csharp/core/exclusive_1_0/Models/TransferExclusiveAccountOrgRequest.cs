@@ -18,7 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public string TargetCorpId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userIds")]
         [Validation(Required=false)]

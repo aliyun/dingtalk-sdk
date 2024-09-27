@@ -14,14 +14,20 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public bool? IsForce { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>187xxxxxxxx</para>
         /// </summary>
         [NameInMap("newMobile")]
         [Validation(Required=false)]
         public string NewMobile { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>222222</para>
         /// </summary>
         [NameInMap("studentId")]
         [Validation(Required=false)]

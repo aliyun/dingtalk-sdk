@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class BatchExecuteProcessInstancesRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>67583405630</para>
         /// </summary>
         [NameInMap("actionerUserId")]
         [Validation(Required=false)]
@@ -21,28 +24,34 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         public string Remark { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>agree</para>
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public string Result { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("taskInfoList")]
         [Validation(Required=false)]
         public List<BatchExecuteProcessInstancesRequestTaskInfoList> TaskInfoList { get; set; }
         public class BatchExecuteProcessInstancesRequestTaskInfoList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>a171de6c-8bxxxx</para>
             /// </summary>
             [NameInMap("processInstanceId")]
             [Validation(Required=false)]
             public string ProcessInstanceId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("taskId")]
             [Validation(Required=false)]

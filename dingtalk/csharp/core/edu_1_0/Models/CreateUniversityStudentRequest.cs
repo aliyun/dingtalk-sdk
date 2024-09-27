@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class CreateUniversityStudentRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("classId")]
         [Validation(Required=false)]
         public long? ClassId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("gender")]
         [Validation(Required=false)]
@@ -28,28 +28,28 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string IdentityNumber { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("mobile")]
         [Validation(Required=false)]
         public string Mobile { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("studentNumber")]
         [Validation(Required=false)]
         public string StudentNumber { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]

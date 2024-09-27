@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public List<AttendanceBleDevicesRemoveResponseBodyErrorList> ErrorList { get; set; }
         public class AttendanceBleDevicesRemoveResponseBodyErrorList : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>400001</para>
+            /// </summary>
             [NameInMap("code")]
             [Validation(Required=false)]
             public string Code { get; set; }
@@ -21,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
             [Validation(Required=false)]
             public List<long?> FailureList { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>error</para>
+            /// </summary>
             [NameInMap("msg")]
             [Validation(Required=false)]
             public string Msg { get; set; }

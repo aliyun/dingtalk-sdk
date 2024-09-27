@@ -14,7 +14,10 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
         public UpdateAutoIssuePointResponseBodyResult Result { get; set; }
         public class UpdateAutoIssuePointResponseBodyResult : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1655450856000</para>
             /// </summary>
             [NameInMap("nextAutoIssuePointTime")]
             [Validation(Required=false)]
@@ -23,7 +26,10 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>true</para>
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

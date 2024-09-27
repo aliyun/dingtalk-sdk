@@ -17,10 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public List<UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList> InvoiceKeyVOList { get; set; }
             public class UnbindApplyReceiptAndInvoiceRelatedResponseBodyBatchUpdateInvoiceResponseInvoiceKeyVOList : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>abc</para>
+                /// </summary>
                 [NameInMap("invoiceCode")]
                 [Validation(Required=false)]
                 public string InvoiceCode { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>abc</para>
+                /// </summary>
                 [NameInMap("invoiceNo")]
                 [Validation(Required=false)]
                 public string InvoiceNo { get; set; }

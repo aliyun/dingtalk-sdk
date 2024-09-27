@@ -10,19 +10,26 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
 {
     public class UpdateInteractiveOTOMessageRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("detail")]
         [Validation(Required=false)]
         public UpdateInteractiveOTOMessageRequestDetail Detail { get; set; }
         public class UpdateInteractiveOTOMessageRequestDetail : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>service-card-202208240001</para>
             /// </summary>
             [NameInMap("cardBizId")]
             [Validation(Required=false)]
             public string CardBizId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>{&quot;like&quot;:1}</para>
+            /// </summary>
             [NameInMap("cardData")]
             [Validation(Required=false)]
             public string CardData { get; set; }
@@ -41,6 +48,10 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>{&quot;userI&quot;:&quot;&quot;}</para>
+            /// </summary>
             [NameInMap("userIdPrivateDataMap")]
             [Validation(Required=false)]
             public string UserIdPrivateDataMap { get; set; }

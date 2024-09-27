@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class IsvCardEventPushResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

@@ -10,12 +10,19 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class GetFormListInAppRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>APP_PBKT0MFBEBTDO8T7SLVP</para>
         /// </summary>
         [NameInMap("appType")]
         [Validation(Required=false)]
         public string AppType { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>receipt,process</para>
+        /// </summary>
         [NameInMap("formTypes")]
         [Validation(Required=false)]
         public string FormTypes { get; set; }
@@ -29,14 +36,20 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public int? PageSize { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>FO866D71GM94CE3KBMAFL4Q6WDG93MG6MLJ8L64</para>
         /// </summary>
         [NameInMap("systemToken")]
         [Validation(Required=false)]
         public string SystemToken { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>5014533041684350</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

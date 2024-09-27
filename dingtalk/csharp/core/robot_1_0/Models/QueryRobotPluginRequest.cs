@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
 {
     public class QueryRobotPluginRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>dingykcdkjnwpcll27gm</para>
         /// </summary>
         [NameInMap("robotCode")]
         [Validation(Required=false)]

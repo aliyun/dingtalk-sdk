@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
 {
     public class DeleteDeviceCustomTemplateRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("templateId")]
         [Validation(Required=false)]

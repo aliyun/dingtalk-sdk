@@ -50,7 +50,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             }
 
             /// <summary>
-            /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+            /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
             /// </summary>
             [NameInMap("createTime")]
             [Validation(Required=false)]
@@ -231,7 +231,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
                 public ListEventsViewByMeResponseBodyEventsRecurrenceRange Range { get; set; }
                 public class ListEventsViewByMeResponseBodyEventsRecurrenceRange : TeaModel {
                     /// <summary>
-                    /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                    /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
                     /// </summary>
                     [NameInMap("endDate")]
                     [Validation(Required=false)]
@@ -290,7 +290,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             public string Summary { get; set; }
 
             /// <summary>
-            /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+            /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
             /// </summary>
             [NameInMap("updateTime")]
             [Validation(Required=false)]

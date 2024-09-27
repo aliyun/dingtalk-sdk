@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0.Models
 {
     public class UpdateVersionStatusRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("bundleId")]
         [Validation(Required=false)]
         public string BundleId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("miniAppId")]
         [Validation(Required=false)]
@@ -28,7 +28,7 @@ namespace AlibabaCloud.SDK.Dingtalkminiapp_1_0.Models
         public string Version { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("versionType")]
         [Validation(Required=false)]

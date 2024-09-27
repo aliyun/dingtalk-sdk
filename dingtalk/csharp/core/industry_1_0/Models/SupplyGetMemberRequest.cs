@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class SupplyGetMemberRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>19912345678</para>
+        /// </summary>
         [NameInMap("mobile")]
         [Validation(Required=false)]
         public string Mobile { get; set; }

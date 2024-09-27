@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
 {
     public class GetJobPostRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1234</para>
         /// </summary>
         [NameInMap("jobPostCode")]
         [Validation(Required=false)]

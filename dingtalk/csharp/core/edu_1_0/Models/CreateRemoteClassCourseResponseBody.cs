@@ -20,7 +20,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

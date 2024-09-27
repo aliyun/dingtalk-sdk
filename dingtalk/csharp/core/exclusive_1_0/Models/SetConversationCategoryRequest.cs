@@ -10,14 +10,17 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class SetConversationCategoryRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>-1</para>
         /// </summary>
         [NameInMap("categoryId")]
         [Validation(Required=false)]
         public long? CategoryId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]

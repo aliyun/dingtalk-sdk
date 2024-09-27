@@ -88,7 +88,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("customFlag")]
         [Validation(Required=false)]
@@ -113,21 +113,21 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public string FinishTaskCardId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("operatorAccount")]
         [Validation(Required=false)]
         public string OperatorAccount { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("outTaskId")]
         [Validation(Required=false)]
         public string OutTaskId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("projId")]
         [Validation(Required=false)]
@@ -138,7 +138,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public string RobotCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("secretKey")]
         [Validation(Required=false)]
@@ -193,7 +193,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("taskSystem")]
         [Validation(Required=false)]
@@ -204,14 +204,14 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public string TaskTemplCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("taskTitle")]
         [Validation(Required=false)]
         public string TaskTitle { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("taskType")]
         [Validation(Required=false)]

@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
 {
     public class GetFlowIdByRelationEntityIdResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>xxx</para>
         /// </summary>
         [NameInMap("flowId")]
         [Validation(Required=false)]

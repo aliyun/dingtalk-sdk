@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public GetMultipartFileUploadInfosRequestOption Option { get; set; }
         public class GetMultipartFileUploadInfosRequestOption : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>true</para>
+            /// </summary>
             [NameInMap("preferIntranet")]
             [Validation(Required=false)]
             public bool? PreferIntranet { get; set; }
@@ -20,21 +24,27 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("partNumbers")]
         [Validation(Required=false)]
         public List<int?> PartNumbers { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>upload_key</para>
         /// </summary>
         [NameInMap("uploadKey")]
         [Validation(Required=false)]
         public string UploadKey { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

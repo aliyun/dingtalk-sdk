@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalknotable_2_0.Models
 {
     public class InsertRecordsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("records")]
         [Validation(Required=false)]
         public List<InsertRecordsRequestRecords> Records { get; set; }
         public class InsertRecordsRequestRecords : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("fields")]
             [Validation(Required=false)]

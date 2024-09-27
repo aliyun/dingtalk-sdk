@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class DeactivateDeviceResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>2</para>
+        /// </summary>
         [NameInMap("activateTimes")]
         [Validation(Required=false)]
         public int? ActivateTimes { get; set; }

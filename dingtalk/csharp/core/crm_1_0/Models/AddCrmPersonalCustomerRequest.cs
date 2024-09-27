@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class AddCrmPersonalCustomerRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>publicDraw</para>
+        /// </summary>
         [NameInMap("action")]
         [Validation(Required=false)]
         public string Action { get; set; }
@@ -18,14 +22,14 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public string CreatorNick { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("creatorUserId")]
         [Validation(Required=false)]
         public string CreatorUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
@@ -49,10 +53,18 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>crm_customer_personal</para>
+        /// </summary>
         [NameInMap("relationType")]
         [Validation(Required=false)]
         public string RelationType { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>false</para>
+        /// </summary>
         [NameInMap("skipDuplicateCheck")]
         [Validation(Required=false)]
         public bool? SkipDuplicateCheck { get; set; }

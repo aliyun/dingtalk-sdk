@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
 {
     public class RemoveUserFromGroupRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>xxxx</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]

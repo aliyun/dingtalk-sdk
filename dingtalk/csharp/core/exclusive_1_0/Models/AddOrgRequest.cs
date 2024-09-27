@@ -22,14 +22,20 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public int? IndustryCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>15800000000</para>
         /// </summary>
         [NameInMap("mobileNum")]
         [Validation(Required=false)]
         public string MobileNum { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>测试组织</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]

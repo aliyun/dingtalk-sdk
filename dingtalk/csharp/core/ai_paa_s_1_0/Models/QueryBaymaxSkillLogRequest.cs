@@ -14,14 +14,20 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0.Models
         public int? From { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>14da****2760</para>
         /// </summary>
         [NameInMap("logLevel")]
         [Validation(Required=false)]
         public string LogLevel { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>14da****2760</para>
         /// </summary>
         [NameInMap("skillExecuteId")]
         [Validation(Required=false)]

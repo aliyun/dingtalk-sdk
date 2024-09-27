@@ -10,14 +10,17 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
 {
     public class BatchRecallPrivateChatResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>5fe11095f46315d8d30d3f8XXXXXX:SYSTEM_ERROR</para>
         /// </summary>
         [NameInMap("failedResult")]
         [Validation(Required=false)]
         public Dictionary<string, string> FailedResult { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("successResult")]
         [Validation(Required=false)]

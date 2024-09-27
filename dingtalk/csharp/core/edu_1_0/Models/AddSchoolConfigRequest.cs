@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class AddSchoolConfigRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>操作人id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]
         public string OperatorId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>操作人名称</para>
         /// </summary>
         [NameInMap("operatorName")]
         [Validation(Required=false)]
         public string OperatorName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>测温上限</para>
         /// </summary>
         [NameInMap("temperatureUpLimit")]
         [Validation(Required=false)]

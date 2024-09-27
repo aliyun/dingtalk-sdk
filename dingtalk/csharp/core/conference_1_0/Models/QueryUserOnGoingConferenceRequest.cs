@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
     public class QueryUserOnGoingConferenceRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>2iPOLbpUNMLzB5LuwggiiqiPwiEiE</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

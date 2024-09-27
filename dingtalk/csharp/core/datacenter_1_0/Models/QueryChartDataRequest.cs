@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
 {
     public class QueryChartDataRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123</para>
         /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
         public string Code { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ABC</para>
         /// </summary>
         [NameInMap("ticket")]
         [Validation(Required=false)]

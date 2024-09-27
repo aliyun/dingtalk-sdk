@@ -9,10 +9,18 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class UpdateContactHideSettingRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("active")]
         [Validation(Required=false)]
         public bool? Active { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>description text</para>
+        /// </summary>
         [NameInMap("description")]
         [Validation(Required=false)]
         public string Description { get; set; }
@@ -29,18 +37,34 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [Validation(Required=false)]
         public List<long?> ExcludeTagIds { get; set; }
 
+        /// <summary>
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
         [NameInMap("hideInSearch")]
         [Validation(Required=false)]
         public bool? HideInSearch { get; set; }
 
+        /// <summary>
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
         [NameInMap("hideInUserProfile")]
         [Validation(Required=false)]
         public bool? HideInUserProfile { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>11234</para>
+        /// </summary>
         [NameInMap("id")]
         [Validation(Required=false)]
         public long? Id { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>test name</para>
+        /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }

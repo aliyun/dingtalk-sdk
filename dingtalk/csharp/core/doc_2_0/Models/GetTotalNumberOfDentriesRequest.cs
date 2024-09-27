@@ -14,7 +14,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         public bool? IncludeFolder { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>abcd</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

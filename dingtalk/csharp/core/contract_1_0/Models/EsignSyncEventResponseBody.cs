@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0.Models
         [Validation(Required=false)]
         public EsignSyncEventResponseBodyResult Result { get; set; }
         public class EsignSyncEventResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>外部服务异常</para>
+            /// </summary>
             [NameInMap("message")]
             [Validation(Required=false)]
             public string Message { get; set; }

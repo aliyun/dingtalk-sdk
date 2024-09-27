@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
 {
     public class QueryDigitalDistrictOrgInfoRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("corpIds")]
         [Validation(Required=false)]
         public List<string> CorpIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("statDates")]
         [Validation(Required=false)]

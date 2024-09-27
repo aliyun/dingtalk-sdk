@@ -10,28 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class BatchAddPermissionRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("list")]
         [Validation(Required=false)]
         public List<BatchAddPermissionRequestList> List { get; set; }
         public class BatchAddPermissionRequestList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("member")]
             [Validation(Required=false)]
             public BatchAddPermissionRequestListMember Member { get; set; }
             public class BatchAddPermissionRequestListMember : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("id")]
                 [Validation(Required=false)]
                 public string Id { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("type")]
                 [Validation(Required=false)]
@@ -40,7 +40,7 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
             }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("policyType")]
             [Validation(Required=false)]
@@ -49,21 +49,24 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("targetId")]
         [Validation(Required=false)]
         public string TargetId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("targetType")]
         [Validation(Required=false)]
         public string TargetType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>当前用户 userId。</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

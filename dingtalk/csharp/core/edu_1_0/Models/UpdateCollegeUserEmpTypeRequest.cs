@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class UpdateCollegeUserEmpTypeRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>college_student</para>
         /// </summary>
         [NameInMap("empType")]
         [Validation(Required=false)]
         public string EmpType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>zhangsan666</para>
         /// </summary>
         [NameInMap("userid")]
         [Validation(Required=false)]

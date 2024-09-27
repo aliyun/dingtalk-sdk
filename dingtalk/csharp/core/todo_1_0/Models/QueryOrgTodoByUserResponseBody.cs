@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
 {
     public class QueryOrgTodoByUserResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
@@ -66,6 +66,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
             [Validation(Required=false)]
             public int? Priority { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>一个业务自解释的json格式的字符串</para>
+            /// </summary>
             [NameInMap("sourceExt")]
             [Validation(Required=false)]
             public string SourceExt { get; set; }

@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 {
     public class BatchCreateTeamRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("param")]
         [Validation(Required=false)]
         public BatchCreateTeamRequestParam Param { get; set; }
         public class BatchCreateTeamRequestParam : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("createTeamParamList")]
             [Validation(Required=false)]
@@ -28,21 +28,30 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
                 public List<string> AdminUnionIdList { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>creator_union_id</para>
                 /// </summary>
                 [NameInMap("creatorUnionId")]
                 [Validation(Required=false)]
                 public string CreatorUnionId { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>dept_id</para>
                 /// </summary>
                 [NameInMap("deptId")]
                 [Validation(Required=false)]
                 public string DeptId { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>team_name</para>
                 /// </summary>
                 [NameInMap("teamName")]
                 [Validation(Required=false)]
@@ -53,7 +62,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

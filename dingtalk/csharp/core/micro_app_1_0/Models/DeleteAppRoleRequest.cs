@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
     public class DeleteAppRoleRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]

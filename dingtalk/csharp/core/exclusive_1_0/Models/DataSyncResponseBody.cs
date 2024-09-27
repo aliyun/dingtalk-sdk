@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [Validation(Required=false)]
         public List<Dictionary<string, object>> DataList { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("rowsAffected")]
         [Validation(Required=false)]
         public int? RowsAffected { get; set; }

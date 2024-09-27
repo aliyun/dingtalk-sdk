@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class GetMediaUrlResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("url")]
         [Validation(Required=false)]

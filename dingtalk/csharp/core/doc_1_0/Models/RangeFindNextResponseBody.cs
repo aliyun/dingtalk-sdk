@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class RangeFindNextResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>A2</para>
         /// </summary>
         [NameInMap("a1Notation")]
         [Validation(Required=false)]

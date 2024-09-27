@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<QueryMedicalEventsResponseBodyContent> Content { get; set; }
         public class QueryMedicalEventsResponseBodyContent : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("code")]
             [Validation(Required=false)]
@@ -25,7 +25,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             public string Content { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("eventId")]
             [Validation(Required=false)]
@@ -34,14 +34,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("totalCount")]
         [Validation(Required=false)]

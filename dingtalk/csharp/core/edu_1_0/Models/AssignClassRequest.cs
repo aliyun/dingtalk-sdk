@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class AssignClassRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>353534</para>
         /// </summary>
         [NameInMap("classId")]
         [Validation(Required=false)]
@@ -21,21 +24,30 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public bool? IsFinish { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>staff234</para>
         /// </summary>
         [NameInMap("operator")]
         [Validation(Required=false)]
         public string Operator { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>675656</para>
         /// </summary>
         [NameInMap("studentId")]
         [Validation(Required=false)]
         public long? StudentId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>4240028</para>
         /// </summary>
         [NameInMap("taskId")]
         [Validation(Required=false)]

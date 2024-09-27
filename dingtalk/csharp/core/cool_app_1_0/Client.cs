@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkcool_app_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkcool_app_1_0
         }
 
 
-        /**
-         * @summary 群酷应用排序
-         *
-         * @param request InstallCoolAppOrderToGroupRequest
-         * @param headers InstallCoolAppOrderToGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return InstallCoolAppOrderToGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群酷应用排序</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// InstallCoolAppOrderToGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// InstallCoolAppOrderToGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// InstallCoolAppOrderToGroupResponse
+        /// </returns>
         public InstallCoolAppOrderToGroupResponse InstallCoolAppOrderToGroupWithOptions(InstallCoolAppOrderToGroupRequest request, InstallCoolAppOrderToGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -85,14 +96,24 @@ namespace AlibabaCloud.SDK.Dingtalkcool_app_1_0
             return TeaModel.ToObject<InstallCoolAppOrderToGroupResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 群酷应用排序
-         *
-         * @param request InstallCoolAppOrderToGroupRequest
-         * @param headers InstallCoolAppOrderToGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return InstallCoolAppOrderToGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群酷应用排序</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// InstallCoolAppOrderToGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// InstallCoolAppOrderToGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// InstallCoolAppOrderToGroupResponse
+        /// </returns>
         public async Task<InstallCoolAppOrderToGroupResponse> InstallCoolAppOrderToGroupWithOptionsAsync(InstallCoolAppOrderToGroupRequest request, InstallCoolAppOrderToGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -142,12 +163,18 @@ namespace AlibabaCloud.SDK.Dingtalkcool_app_1_0
             return TeaModel.ToObject<InstallCoolAppOrderToGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 群酷应用排序
-         *
-         * @param request InstallCoolAppOrderToGroupRequest
-         * @return InstallCoolAppOrderToGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群酷应用排序</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// InstallCoolAppOrderToGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// InstallCoolAppOrderToGroupResponse
+        /// </returns>
         public InstallCoolAppOrderToGroupResponse InstallCoolAppOrderToGroup(InstallCoolAppOrderToGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -155,12 +182,18 @@ namespace AlibabaCloud.SDK.Dingtalkcool_app_1_0
             return InstallCoolAppOrderToGroupWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 群酷应用排序
-         *
-         * @param request InstallCoolAppOrderToGroupRequest
-         * @return InstallCoolAppOrderToGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群酷应用排序</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// InstallCoolAppOrderToGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// InstallCoolAppOrderToGroupResponse
+        /// </returns>
         public async Task<InstallCoolAppOrderToGroupResponse> InstallCoolAppOrderToGroupAsync(InstallCoolAppOrderToGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -168,14 +201,24 @@ namespace AlibabaCloud.SDK.Dingtalkcool_app_1_0
             return await InstallCoolAppOrderToGroupWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 安装酷应用到群
-         *
-         * @param request InstallCoolAppToGroupRequest
-         * @param headers InstallCoolAppToGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return InstallCoolAppToGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>安装酷应用到群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// InstallCoolAppToGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// InstallCoolAppToGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// InstallCoolAppToGroupResponse
+        /// </returns>
         public InstallCoolAppToGroupResponse InstallCoolAppToGroupWithOptions(InstallCoolAppToGroupRequest request, InstallCoolAppToGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -225,14 +268,24 @@ namespace AlibabaCloud.SDK.Dingtalkcool_app_1_0
             return TeaModel.ToObject<InstallCoolAppToGroupResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 安装酷应用到群
-         *
-         * @param request InstallCoolAppToGroupRequest
-         * @param headers InstallCoolAppToGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return InstallCoolAppToGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>安装酷应用到群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// InstallCoolAppToGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// InstallCoolAppToGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// InstallCoolAppToGroupResponse
+        /// </returns>
         public async Task<InstallCoolAppToGroupResponse> InstallCoolAppToGroupWithOptionsAsync(InstallCoolAppToGroupRequest request, InstallCoolAppToGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -282,12 +335,18 @@ namespace AlibabaCloud.SDK.Dingtalkcool_app_1_0
             return TeaModel.ToObject<InstallCoolAppToGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 安装酷应用到群
-         *
-         * @param request InstallCoolAppToGroupRequest
-         * @return InstallCoolAppToGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>安装酷应用到群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// InstallCoolAppToGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// InstallCoolAppToGroupResponse
+        /// </returns>
         public InstallCoolAppToGroupResponse InstallCoolAppToGroup(InstallCoolAppToGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -295,12 +354,18 @@ namespace AlibabaCloud.SDK.Dingtalkcool_app_1_0
             return InstallCoolAppToGroupWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 安装酷应用到群
-         *
-         * @param request InstallCoolAppToGroupRequest
-         * @return InstallCoolAppToGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>安装酷应用到群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// InstallCoolAppToGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// InstallCoolAppToGroupResponse
+        /// </returns>
         public async Task<InstallCoolAppToGroupResponse> InstallCoolAppToGroupAsync(InstallCoolAppToGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -308,14 +373,24 @@ namespace AlibabaCloud.SDK.Dingtalkcool_app_1_0
             return await InstallCoolAppToGroupWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询群插件栏
-         *
-         * @param request QueryCoolAppShortcutOrderRequest
-         * @param headers QueryCoolAppShortcutOrderHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryCoolAppShortcutOrderResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询群插件栏</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCoolAppShortcutOrderRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryCoolAppShortcutOrderHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCoolAppShortcutOrderResponse
+        /// </returns>
         public QueryCoolAppShortcutOrderResponse QueryCoolAppShortcutOrderWithOptions(QueryCoolAppShortcutOrderRequest request, QueryCoolAppShortcutOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -361,14 +436,24 @@ namespace AlibabaCloud.SDK.Dingtalkcool_app_1_0
             return TeaModel.ToObject<QueryCoolAppShortcutOrderResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询群插件栏
-         *
-         * @param request QueryCoolAppShortcutOrderRequest
-         * @param headers QueryCoolAppShortcutOrderHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryCoolAppShortcutOrderResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询群插件栏</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCoolAppShortcutOrderRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryCoolAppShortcutOrderHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCoolAppShortcutOrderResponse
+        /// </returns>
         public async Task<QueryCoolAppShortcutOrderResponse> QueryCoolAppShortcutOrderWithOptionsAsync(QueryCoolAppShortcutOrderRequest request, QueryCoolAppShortcutOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -414,12 +499,18 @@ namespace AlibabaCloud.SDK.Dingtalkcool_app_1_0
             return TeaModel.ToObject<QueryCoolAppShortcutOrderResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询群插件栏
-         *
-         * @param request QueryCoolAppShortcutOrderRequest
-         * @return QueryCoolAppShortcutOrderResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询群插件栏</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCoolAppShortcutOrderRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCoolAppShortcutOrderResponse
+        /// </returns>
         public QueryCoolAppShortcutOrderResponse QueryCoolAppShortcutOrder(QueryCoolAppShortcutOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -427,12 +518,18 @@ namespace AlibabaCloud.SDK.Dingtalkcool_app_1_0
             return QueryCoolAppShortcutOrderWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询群插件栏
-         *
-         * @param request QueryCoolAppShortcutOrderRequest
-         * @return QueryCoolAppShortcutOrderResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询群插件栏</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryCoolAppShortcutOrderRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryCoolAppShortcutOrderResponse
+        /// </returns>
         public async Task<QueryCoolAppShortcutOrderResponse> QueryCoolAppShortcutOrderAsync(QueryCoolAppShortcutOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -440,14 +537,24 @@ namespace AlibabaCloud.SDK.Dingtalkcool_app_1_0
             return await QueryCoolAppShortcutOrderWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 从群内卸载酷应用
-         *
-         * @param request UninstallCoolAppFromGroupRequest
-         * @param headers UninstallCoolAppFromGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UninstallCoolAppFromGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>从群内卸载酷应用</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UninstallCoolAppFromGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// UninstallCoolAppFromGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UninstallCoolAppFromGroupResponse
+        /// </returns>
         public UninstallCoolAppFromGroupResponse UninstallCoolAppFromGroupWithOptions(UninstallCoolAppFromGroupRequest request, UninstallCoolAppFromGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -497,14 +604,24 @@ namespace AlibabaCloud.SDK.Dingtalkcool_app_1_0
             return TeaModel.ToObject<UninstallCoolAppFromGroupResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 从群内卸载酷应用
-         *
-         * @param request UninstallCoolAppFromGroupRequest
-         * @param headers UninstallCoolAppFromGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UninstallCoolAppFromGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>从群内卸载酷应用</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UninstallCoolAppFromGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// UninstallCoolAppFromGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UninstallCoolAppFromGroupResponse
+        /// </returns>
         public async Task<UninstallCoolAppFromGroupResponse> UninstallCoolAppFromGroupWithOptionsAsync(UninstallCoolAppFromGroupRequest request, UninstallCoolAppFromGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -554,12 +671,18 @@ namespace AlibabaCloud.SDK.Dingtalkcool_app_1_0
             return TeaModel.ToObject<UninstallCoolAppFromGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 从群内卸载酷应用
-         *
-         * @param request UninstallCoolAppFromGroupRequest
-         * @return UninstallCoolAppFromGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>从群内卸载酷应用</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UninstallCoolAppFromGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UninstallCoolAppFromGroupResponse
+        /// </returns>
         public UninstallCoolAppFromGroupResponse UninstallCoolAppFromGroup(UninstallCoolAppFromGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -567,12 +690,18 @@ namespace AlibabaCloud.SDK.Dingtalkcool_app_1_0
             return UninstallCoolAppFromGroupWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 从群内卸载酷应用
-         *
-         * @param request UninstallCoolAppFromGroupRequest
-         * @return UninstallCoolAppFromGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>从群内卸载酷应用</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UninstallCoolAppFromGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UninstallCoolAppFromGroupResponse
+        /// </returns>
         public async Task<UninstallCoolAppFromGroupResponse> UninstallCoolAppFromGroupAsync(UninstallCoolAppFromGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

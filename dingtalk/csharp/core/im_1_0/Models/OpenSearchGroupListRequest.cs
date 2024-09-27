@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string Keyword { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

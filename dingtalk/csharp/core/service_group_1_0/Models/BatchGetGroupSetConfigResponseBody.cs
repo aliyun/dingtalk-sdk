@@ -14,14 +14,20 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public List<BatchGetGroupSetConfigResponseBodyGroupSetConfigs> GroupSetConfigs { get; set; }
         public class BatchGetGroupSetConfigResponseBodyGroupSetConfigs : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>ROBOT_SWITCH</para>
             /// </summary>
             [NameInMap("configKey")]
             [Validation(Required=false)]
             public string ConfigKey { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1</para>
             /// </summary>
             [NameInMap("configValue")]
             [Validation(Required=false)]

@@ -17,18 +17,34 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             [Validation(Required=false)]
             public List<IsvMetadataQueryResponseBodyResultFields> Fields { get; set; }
             public class IsvMetadataQueryResponseBodyResultFields : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>该字段为id主键</para>
+                /// </summary>
                 [NameInMap("description")]
                 [Validation(Required=false)]
                 public string Description { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>id</para>
+                /// </summary>
                 [NameInMap("fieldKey")]
                 [Validation(Required=false)]
                 public string FieldKey { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>id主键</para>
+                /// </summary>
                 [NameInMap("fieldName")]
                 [Validation(Required=false)]
                 public string FieldName { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>varchar</para>
+                /// </summary>
                 [NameInMap("fieldType")]
                 [Validation(Required=false)]
                 public string FieldType { get; set; }
@@ -43,6 +59,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>tb_test01</para>
+            /// </summary>
             [NameInMap("tableCode")]
             [Validation(Required=false)]
             public string TableCode { get; set; }

@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public string Action { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
@@ -25,7 +25,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public Dictionary<string, object> ExtendData { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("instanceId")]
         [Validation(Required=false)]
@@ -36,7 +36,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public string ModifierNick { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("modifierUserId")]
         [Validation(Required=false)]
@@ -60,6 +60,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string RelationType { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>false</para>
+        /// </summary>
         [NameInMap("skipDuplicateCheck")]
         [Validation(Required=false)]
         public bool? SkipDuplicateCheck { get; set; }

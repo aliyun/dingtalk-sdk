@@ -10,28 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class BatchOrgCreateHWRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("attributes")]
         [Validation(Required=false)]
         public string Attributes { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("bizCode")]
         [Validation(Required=false)]
         public string BizCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("courseName")]
         [Validation(Required=false)]
         public string CourseName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("hwContent")]
         [Validation(Required=false)]
@@ -41,6 +41,13 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public long? HwDeadline { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>Y</para>
+        /// 
+        /// <b>if can be null:</b>
+        /// <c>false</c>
+        /// </summary>
         [NameInMap("hwDeadlineOpen")]
         [Validation(Required=false)]
         public string HwDeadlineOpen { get; set; }
@@ -54,7 +61,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string HwPhoto { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("hwTitle")]
         [Validation(Required=false)]
@@ -69,14 +76,14 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string HwVideo { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("identifier")]
         [Validation(Required=false)]
         public string Identifier { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("openSelectItemList")]
         [Validation(Required=false)]
@@ -137,7 +144,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string ScheduledTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]
@@ -148,14 +155,14 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string TargetRole { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("teacherName")]
         [Validation(Required=false)]
         public string TeacherName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("teacherUserId")]
         [Validation(Required=false)]

@@ -21,28 +21,52 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                 [Validation(Required=false)]
                 public List<ListTodoWorkRecordsResponseBodyResultListForms> Forms { get; set; }
                 public class ListTodoWorkRecordsResponseBodyResultListForms : TeaModel {
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>钉三多</para>
+                    /// </summary>
                     [NameInMap("content")]
                     [Validation(Required=false)]
                     public string Content { get; set; }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>入职员工姓名</para>
+                    /// </summary>
                     [NameInMap("title")]
                     [Validation(Required=false)]
                     public string Title { get; set; }
 
                 }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>Siw2WNVZS4KiUt3tTmaNKg04*****809950</para>
+                /// </summary>
                 [NameInMap("instanceId")]
                 [Validation(Required=false)]
                 public string InstanceId { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>1234567</para>
+                /// </summary>
                 [NameInMap("taskId")]
                 [Validation(Required=false)]
                 public long? TaskId { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>xxx提交的入职审批</para>
+                /// </summary>
                 [NameInMap("title")]
                 [Validation(Required=false)]
                 public string Title { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para><a href="https://www.dingtalk.com">https://www.dingtalk.com</a></para>
+                /// </summary>
                 [NameInMap("url")]
                 [Validation(Required=false)]
                 public string Url { get; set; }

@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class UnAlignObjectiveRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1006</para>
         /// </summary>
         [NameInMap("periodId")]
         [Validation(Required=false)]
         public string PeriodId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>59YD</para>
         /// </summary>
         [NameInMap("targetId")]
         [Validation(Required=false)]
         public string TargetId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>0115396701752283</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

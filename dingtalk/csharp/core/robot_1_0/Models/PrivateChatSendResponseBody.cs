@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
 {
     public class PrivateChatSendResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("processQueryKey")]
         [Validation(Required=false)]

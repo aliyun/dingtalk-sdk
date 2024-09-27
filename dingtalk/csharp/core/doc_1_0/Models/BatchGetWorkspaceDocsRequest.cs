@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class BatchGetWorkspaceDocsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("nodeIds")]
         [Validation(Required=false)]
         public List<string> NodeIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

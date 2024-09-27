@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class QueryHrmEmployeeDismissionInfoRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userIdList")]
         [Validation(Required=false)]

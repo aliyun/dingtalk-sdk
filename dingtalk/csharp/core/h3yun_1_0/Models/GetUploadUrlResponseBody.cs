@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
 {
     public class GetUploadUrlResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>success</para>
         /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
@@ -20,6 +23,10 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
         [Validation(Required=false)]
         public GetUploadUrlResponseBodyData Data { get; set; }
         public class GetUploadUrlResponseBodyData : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>https://<em><b>?uploadSecret=</b></em></para>
+            /// </summary>
             [NameInMap("uploadUrl")]
             [Validation(Required=false)]
             public string UploadUrl { get; set; }
@@ -27,7 +34,10 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>OK</para>
         /// </summary>
         [NameInMap("message")]
         [Validation(Required=false)]

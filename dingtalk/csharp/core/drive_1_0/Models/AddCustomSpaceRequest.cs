@@ -10,28 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class AddCustomSpaceRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("bizType")]
         [Validation(Required=false)]
         public string BizType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("identifier")]
         [Validation(Required=false)]
         public string Identifier { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("permissionMode")]
         [Validation(Required=false)]
         public string PermissionMode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

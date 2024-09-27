@@ -10,12 +10,19 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class GetRangeRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]
         public string OperatorId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>select</para>
+        /// </summary>
         [NameInMap("select")]
         [Validation(Required=false)]
         public string Select { get; set; }

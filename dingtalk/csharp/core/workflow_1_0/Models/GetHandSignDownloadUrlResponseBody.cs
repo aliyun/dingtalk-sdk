@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public GetHandSignDownloadUrlResponseBodyResult Result { get; set; }
         public class GetHandSignDownloadUrlResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para><a href="https://dingding-file-zjk.oss-cn-zhangjiakouxxxx">https://dingding-file-zjk.oss-cn-zhangjiakouxxxx</a></para>
+            /// </summary>
             [NameInMap("downloadUrl")]
             [Validation(Required=false)]
             public string DownloadUrl { get; set; }

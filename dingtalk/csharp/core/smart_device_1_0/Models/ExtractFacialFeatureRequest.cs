@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0.Models
 {
     public class ExtractFacialFeatureRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("mediaId")]
         [Validation(Required=false)]
         public string MediaId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userid")]
         [Validation(Required=false)]

@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_2_0.Models
 {
     public class AddTeamRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>team_name</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
@@ -20,10 +23,18 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_2_0.Models
         [Validation(Required=false)]
         public AddTeamRequestOption Option { get; set; }
         public class AddTeamRequestOption : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>team_cover</para>
+            /// </summary>
             [NameInMap("cover")]
             [Validation(Required=false)]
             public string Cover { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>team_description</para>
+            /// </summary>
             [NameInMap("description")]
             [Validation(Required=false)]
             public string Description { get; set; }
@@ -32,10 +43,18 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_2_0.Models
             [Validation(Required=false)]
             public AddTeamRequestOptionIcon Icon { get; set; }
             public class AddTeamRequestOptionIcon : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>URL</para>
+                /// </summary>
                 [NameInMap("type")]
                 [Validation(Required=false)]
                 public string Type { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>icon_url</para>
+                /// </summary>
                 [NameInMap("value")]
                 [Validation(Required=false)]
                 public string Value { get; set; }
@@ -45,7 +64,10 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_2_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

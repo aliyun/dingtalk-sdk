@@ -18,21 +18,21 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public string CallerRegion { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("fileName")]
         [Validation(Required=false)]
         public string FileName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("fileSize")]
         [Validation(Required=false)]
         public long? FileSize { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("md5")]
         [Validation(Required=false)]
@@ -43,7 +43,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public string MediaId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

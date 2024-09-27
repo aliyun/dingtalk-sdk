@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
         }
 
 
-        /**
-         * @summary 批量查询任务结果
-         *
-         * @param request BatchGetTaskResultRequest
-         * @param headers BatchGetTaskResultHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return BatchGetTaskResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询任务结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchGetTaskResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchGetTaskResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchGetTaskResultResponse
+        /// </returns>
         public BatchGetTaskResultResponse BatchGetTaskResultWithOptions(BatchGetTaskResultRequest request, BatchGetTaskResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -73,14 +84,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<BatchGetTaskResultResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 批量查询任务结果
-         *
-         * @param request BatchGetTaskResultRequest
-         * @param headers BatchGetTaskResultHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return BatchGetTaskResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询任务结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchGetTaskResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchGetTaskResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchGetTaskResultResponse
+        /// </returns>
         public async Task<BatchGetTaskResultResponse> BatchGetTaskResultWithOptionsAsync(BatchGetTaskResultRequest request, BatchGetTaskResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -118,12 +139,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<BatchGetTaskResultResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 批量查询任务结果
-         *
-         * @param request BatchGetTaskResultRequest
-         * @return BatchGetTaskResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询任务结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchGetTaskResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchGetTaskResultResponse
+        /// </returns>
         public BatchGetTaskResultResponse BatchGetTaskResult(BatchGetTaskResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -131,12 +158,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return BatchGetTaskResultWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 批量查询任务结果
-         *
-         * @param request BatchGetTaskResultRequest
-         * @return BatchGetTaskResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询任务结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchGetTaskResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchGetTaskResultResponse
+        /// </returns>
         public async Task<BatchGetTaskResultResponse> BatchGetTaskResultAsync(BatchGetTaskResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -144,14 +177,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await BatchGetTaskResultWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 商机匹配
-         *
-         * @param request BusinessMatchRequest
-         * @param headers BusinessMatchHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return BusinessMatchResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>商机匹配</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BusinessMatchRequest
+        /// </param>
+        /// <param name="headers">
+        /// BusinessMatchHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BusinessMatchResponse
+        /// </returns>
         public BusinessMatchResponse BusinessMatchWithOptions(BusinessMatchRequest request, BusinessMatchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -197,14 +240,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<BusinessMatchResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 商机匹配
-         *
-         * @param request BusinessMatchRequest
-         * @param headers BusinessMatchHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return BusinessMatchResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>商机匹配</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BusinessMatchRequest
+        /// </param>
+        /// <param name="headers">
+        /// BusinessMatchHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BusinessMatchResponse
+        /// </returns>
         public async Task<BusinessMatchResponse> BusinessMatchWithOptionsAsync(BusinessMatchRequest request, BusinessMatchHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -250,12 +303,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<BusinessMatchResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 商机匹配
-         *
-         * @param request BusinessMatchRequest
-         * @return BusinessMatchResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>商机匹配</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BusinessMatchRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BusinessMatchResponse
+        /// </returns>
         public BusinessMatchResponse BusinessMatch(BusinessMatchRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -263,12 +322,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return BusinessMatchWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 商机匹配
-         *
-         * @param request BusinessMatchRequest
-         * @return BusinessMatchResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>商机匹配</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BusinessMatchRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BusinessMatchResponse
+        /// </returns>
         public async Task<BusinessMatchResponse> BusinessMatchAsync(BusinessMatchRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -276,14 +341,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await BusinessMatchWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 商机匹配结果查询
-         *
-         * @param request BusinessMatchResultRequest
-         * @param headers BusinessMatchResultHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return BusinessMatchResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>商机匹配结果查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BusinessMatchResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// BusinessMatchResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BusinessMatchResultResponse
+        /// </returns>
         public BusinessMatchResultResponse BusinessMatchResultWithOptions(BusinessMatchResultRequest request, BusinessMatchResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -325,14 +400,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<BusinessMatchResultResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 商机匹配结果查询
-         *
-         * @param request BusinessMatchResultRequest
-         * @param headers BusinessMatchResultHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return BusinessMatchResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>商机匹配结果查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BusinessMatchResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// BusinessMatchResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BusinessMatchResultResponse
+        /// </returns>
         public async Task<BusinessMatchResultResponse> BusinessMatchResultWithOptionsAsync(BusinessMatchResultRequest request, BusinessMatchResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -374,12 +459,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<BusinessMatchResultResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 商机匹配结果查询
-         *
-         * @param request BusinessMatchResultRequest
-         * @return BusinessMatchResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>商机匹配结果查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BusinessMatchResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BusinessMatchResultResponse
+        /// </returns>
         public BusinessMatchResultResponse BusinessMatchResult(BusinessMatchResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -387,12 +478,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return BusinessMatchResultWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 商机匹配结果查询
-         *
-         * @param request BusinessMatchResultRequest
-         * @return BusinessMatchResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>商机匹配结果查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BusinessMatchResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BusinessMatchResultResponse
+        /// </returns>
         public async Task<BusinessMatchResultResponse> BusinessMatchResultAsync(BusinessMatchResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -400,14 +497,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await BusinessMatchResultWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 添加租客下成员
-         *
-         * @param request CampusAddRenterMemberRequest
-         * @param headers CampusAddRenterMemberHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusAddRenterMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加租客下成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusAddRenterMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusAddRenterMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusAddRenterMemberResponse
+        /// </returns>
         public CampusAddRenterMemberResponse CampusAddRenterMemberWithOptions(CampusAddRenterMemberRequest request, CampusAddRenterMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -461,14 +568,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusAddRenterMemberResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 添加租客下成员
-         *
-         * @param request CampusAddRenterMemberRequest
-         * @param headers CampusAddRenterMemberHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusAddRenterMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加租客下成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusAddRenterMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusAddRenterMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusAddRenterMemberResponse
+        /// </returns>
         public async Task<CampusAddRenterMemberResponse> CampusAddRenterMemberWithOptionsAsync(CampusAddRenterMemberRequest request, CampusAddRenterMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -522,12 +639,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusAddRenterMemberResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 添加租客下成员
-         *
-         * @param request CampusAddRenterMemberRequest
-         * @return CampusAddRenterMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加租客下成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusAddRenterMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusAddRenterMemberResponse
+        /// </returns>
         public CampusAddRenterMemberResponse CampusAddRenterMember(CampusAddRenterMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -535,12 +658,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CampusAddRenterMemberWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 添加租客下成员
-         *
-         * @param request CampusAddRenterMemberRequest
-         * @return CampusAddRenterMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加租客下成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusAddRenterMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusAddRenterMemberResponse
+        /// </returns>
         public async Task<CampusAddRenterMemberResponse> CampusAddRenterMemberAsync(CampusAddRenterMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -548,14 +677,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CampusAddRenterMemberWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建园区
-         *
-         * @param request CampusCreateCampusRequest
-         * @param headers CampusCreateCampusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusCreateCampusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建园区</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusCreateCampusRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusCreateCampusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusCreateCampusResponse
+        /// </returns>
         public CampusCreateCampusResponse CampusCreateCampusWithOptions(CampusCreateCampusRequest request, CampusCreateCampusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -657,14 +796,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusCreateCampusResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建园区
-         *
-         * @param request CampusCreateCampusRequest
-         * @param headers CampusCreateCampusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusCreateCampusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建园区</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusCreateCampusRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusCreateCampusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusCreateCampusResponse
+        /// </returns>
         public async Task<CampusCreateCampusResponse> CampusCreateCampusWithOptionsAsync(CampusCreateCampusRequest request, CampusCreateCampusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -766,12 +915,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusCreateCampusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建园区
-         *
-         * @param request CampusCreateCampusRequest
-         * @return CampusCreateCampusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建园区</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusCreateCampusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusCreateCampusResponse
+        /// </returns>
         public CampusCreateCampusResponse CampusCreateCampus(CampusCreateCampusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -779,12 +934,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CampusCreateCampusWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建园区
-         *
-         * @param request CampusCreateCampusRequest
-         * @return CampusCreateCampusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建园区</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusCreateCampusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusCreateCampusResponse
+        /// </returns>
         public async Task<CampusCreateCampusResponse> CampusCreateCampusAsync(CampusCreateCampusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -792,14 +953,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CampusCreateCampusWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建园区项目组
-         *
-         * @param request CampusCreateCampusGroupRequest
-         * @param headers CampusCreateCampusGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusCreateCampusGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建园区项目组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusCreateCampusGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusCreateCampusGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusCreateCampusGroupResponse
+        /// </returns>
         public CampusCreateCampusGroupResponse CampusCreateCampusGroupWithOptions(CampusCreateCampusGroupRequest request, CampusCreateCampusGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -841,14 +1012,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusCreateCampusGroupResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建园区项目组
-         *
-         * @param request CampusCreateCampusGroupRequest
-         * @param headers CampusCreateCampusGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusCreateCampusGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建园区项目组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusCreateCampusGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusCreateCampusGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusCreateCampusGroupResponse
+        /// </returns>
         public async Task<CampusCreateCampusGroupResponse> CampusCreateCampusGroupWithOptionsAsync(CampusCreateCampusGroupRequest request, CampusCreateCampusGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -890,12 +1071,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusCreateCampusGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建园区项目组
-         *
-         * @param request CampusCreateCampusGroupRequest
-         * @return CampusCreateCampusGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建园区项目组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusCreateCampusGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusCreateCampusGroupResponse
+        /// </returns>
         public CampusCreateCampusGroupResponse CampusCreateCampusGroup(CampusCreateCampusGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -903,12 +1090,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CampusCreateCampusGroupWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建园区项目组
-         *
-         * @param request CampusCreateCampusGroupRequest
-         * @return CampusCreateCampusGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建园区项目组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusCreateCampusGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusCreateCampusGroupResponse
+        /// </returns>
         public async Task<CampusCreateCampusGroupResponse> CampusCreateCampusGroupAsync(CampusCreateCampusGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -916,14 +1109,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CampusCreateCampusGroupWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建租客
-         *
-         * @param request CampusCreateRenterRequest
-         * @param headers CampusCreateRenterHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusCreateRenterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建租客</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusCreateRenterRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusCreateRenterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusCreateRenterResponse
+        /// </returns>
         public CampusCreateRenterResponse CampusCreateRenterWithOptions(CampusCreateRenterRequest request, CampusCreateRenterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -981,14 +1184,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusCreateRenterResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建租客
-         *
-         * @param request CampusCreateRenterRequest
-         * @param headers CampusCreateRenterHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusCreateRenterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建租客</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusCreateRenterRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusCreateRenterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusCreateRenterResponse
+        /// </returns>
         public async Task<CampusCreateRenterResponse> CampusCreateRenterWithOptionsAsync(CampusCreateRenterRequest request, CampusCreateRenterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1046,12 +1259,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusCreateRenterResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建租客
-         *
-         * @param request CampusCreateRenterRequest
-         * @return CampusCreateRenterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建租客</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusCreateRenterRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusCreateRenterResponse
+        /// </returns>
         public CampusCreateRenterResponse CampusCreateRenter(CampusCreateRenterRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1059,12 +1278,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CampusCreateRenterWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建租客
-         *
-         * @param request CampusCreateRenterRequest
-         * @return CampusCreateRenterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建租客</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusCreateRenterRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusCreateRenterResponse
+        /// </returns>
         public async Task<CampusCreateRenterResponse> CampusCreateRenterAsync(CampusCreateRenterRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1072,14 +1297,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CampusCreateRenterWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 移除租客人员
-         *
-         * @param request CampusDelRenterMemberRequest
-         * @param headers CampusDelRenterMemberHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusDelRenterMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移除租客人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusDelRenterMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusDelRenterMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusDelRenterMemberResponse
+        /// </returns>
         public CampusDelRenterMemberResponse CampusDelRenterMemberWithOptions(CampusDelRenterMemberRequest request, CampusDelRenterMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1121,14 +1356,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusDelRenterMemberResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 移除租客人员
-         *
-         * @param request CampusDelRenterMemberRequest
-         * @param headers CampusDelRenterMemberHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusDelRenterMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移除租客人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusDelRenterMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusDelRenterMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusDelRenterMemberResponse
+        /// </returns>
         public async Task<CampusDelRenterMemberResponse> CampusDelRenterMemberWithOptionsAsync(CampusDelRenterMemberRequest request, CampusDelRenterMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1170,12 +1415,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusDelRenterMemberResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 移除租客人员
-         *
-         * @param request CampusDelRenterMemberRequest
-         * @return CampusDelRenterMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移除租客人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusDelRenterMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusDelRenterMemberResponse
+        /// </returns>
         public CampusDelRenterMemberResponse CampusDelRenterMember(CampusDelRenterMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1183,12 +1434,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CampusDelRenterMemberWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 移除租客人员
-         *
-         * @param request CampusDelRenterMemberRequest
-         * @return CampusDelRenterMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移除租客人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusDelRenterMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusDelRenterMemberResponse
+        /// </returns>
         public async Task<CampusDelRenterMemberResponse> CampusDelRenterMemberAsync(CampusDelRenterMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1196,14 +1453,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CampusDelRenterMemberWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除园区项目组
-         *
-         * @param request CampusDeleteCampusGroupRequest
-         * @param headers CampusDeleteCampusGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusDeleteCampusGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除园区项目组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusDeleteCampusGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusDeleteCampusGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusDeleteCampusGroupResponse
+        /// </returns>
         public CampusDeleteCampusGroupResponse CampusDeleteCampusGroupWithOptions(CampusDeleteCampusGroupRequest request, CampusDeleteCampusGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1241,14 +1508,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusDeleteCampusGroupResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除园区项目组
-         *
-         * @param request CampusDeleteCampusGroupRequest
-         * @param headers CampusDeleteCampusGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusDeleteCampusGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除园区项目组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusDeleteCampusGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusDeleteCampusGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusDeleteCampusGroupResponse
+        /// </returns>
         public async Task<CampusDeleteCampusGroupResponse> CampusDeleteCampusGroupWithOptionsAsync(CampusDeleteCampusGroupRequest request, CampusDeleteCampusGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1286,12 +1563,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusDeleteCampusGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除园区项目组
-         *
-         * @param request CampusDeleteCampusGroupRequest
-         * @return CampusDeleteCampusGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除园区项目组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusDeleteCampusGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusDeleteCampusGroupResponse
+        /// </returns>
         public CampusDeleteCampusGroupResponse CampusDeleteCampusGroup(CampusDeleteCampusGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1299,12 +1582,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CampusDeleteCampusGroupWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除园区项目组
-         *
-         * @param request CampusDeleteCampusGroupRequest
-         * @return CampusDeleteCampusGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除园区项目组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusDeleteCampusGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusDeleteCampusGroupResponse
+        /// </returns>
         public async Task<CampusDeleteCampusGroupResponse> CampusDeleteCampusGroupAsync(CampusDeleteCampusGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1312,14 +1601,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CampusDeleteCampusGroupWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除租客
-         *
-         * @param request CampusDeleteRenterRequest
-         * @param headers CampusDeleteRenterHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusDeleteRenterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除租客</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusDeleteRenterRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusDeleteRenterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusDeleteRenterResponse
+        /// </returns>
         public CampusDeleteRenterResponse CampusDeleteRenterWithOptions(CampusDeleteRenterRequest request, CampusDeleteRenterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1357,14 +1656,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusDeleteRenterResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除租客
-         *
-         * @param request CampusDeleteRenterRequest
-         * @param headers CampusDeleteRenterHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusDeleteRenterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除租客</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusDeleteRenterRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusDeleteRenterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusDeleteRenterResponse
+        /// </returns>
         public async Task<CampusDeleteRenterResponse> CampusDeleteRenterWithOptionsAsync(CampusDeleteRenterRequest request, CampusDeleteRenterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1402,12 +1711,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusDeleteRenterResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除租客
-         *
-         * @param request CampusDeleteRenterRequest
-         * @return CampusDeleteRenterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除租客</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusDeleteRenterRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusDeleteRenterResponse
+        /// </returns>
         public CampusDeleteRenterResponse CampusDeleteRenter(CampusDeleteRenterRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1415,12 +1730,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CampusDeleteRenterWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除租客
-         *
-         * @param request CampusDeleteRenterRequest
-         * @return CampusDeleteRenterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除租客</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusDeleteRenterRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusDeleteRenterResponse
+        /// </returns>
         public async Task<CampusDeleteRenterResponse> CampusDeleteRenterAsync(CampusDeleteRenterRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1428,14 +1749,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CampusDeleteRenterWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询园区详情
-         *
-         * @param request CampusGetCampusRequest
-         * @param headers CampusGetCampusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusGetCampusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询园区详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusGetCampusRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusGetCampusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusGetCampusResponse
+        /// </returns>
         public CampusGetCampusResponse CampusGetCampusWithOptions(CampusGetCampusRequest request, CampusGetCampusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1473,14 +1804,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusGetCampusResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询园区详情
-         *
-         * @param request CampusGetCampusRequest
-         * @param headers CampusGetCampusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusGetCampusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询园区详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusGetCampusRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusGetCampusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusGetCampusResponse
+        /// </returns>
         public async Task<CampusGetCampusResponse> CampusGetCampusWithOptionsAsync(CampusGetCampusRequest request, CampusGetCampusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1518,12 +1859,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusGetCampusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询园区详情
-         *
-         * @param request CampusGetCampusRequest
-         * @return CampusGetCampusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询园区详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusGetCampusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusGetCampusResponse
+        /// </returns>
         public CampusGetCampusResponse CampusGetCampus(CampusGetCampusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1531,12 +1878,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CampusGetCampusWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询园区详情
-         *
-         * @param request CampusGetCampusRequest
-         * @return CampusGetCampusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询园区详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusGetCampusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusGetCampusResponse
+        /// </returns>
         public async Task<CampusGetCampusResponse> CampusGetCampusAsync(CampusGetCampusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1544,14 +1897,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CampusGetCampusWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询园区项目组详情
-         *
-         * @param request CampusGetCampusGroupRequest
-         * @param headers CampusGetCampusGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusGetCampusGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询园区项目组详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusGetCampusGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusGetCampusGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusGetCampusGroupResponse
+        /// </returns>
         public CampusGetCampusGroupResponse CampusGetCampusGroupWithOptions(CampusGetCampusGroupRequest request, CampusGetCampusGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1589,14 +1952,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusGetCampusGroupResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询园区项目组详情
-         *
-         * @param request CampusGetCampusGroupRequest
-         * @param headers CampusGetCampusGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusGetCampusGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询园区项目组详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusGetCampusGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusGetCampusGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusGetCampusGroupResponse
+        /// </returns>
         public async Task<CampusGetCampusGroupResponse> CampusGetCampusGroupWithOptionsAsync(CampusGetCampusGroupRequest request, CampusGetCampusGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1634,12 +2007,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusGetCampusGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询园区项目组详情
-         *
-         * @param request CampusGetCampusGroupRequest
-         * @return CampusGetCampusGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询园区项目组详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusGetCampusGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusGetCampusGroupResponse
+        /// </returns>
         public CampusGetCampusGroupResponse CampusGetCampusGroup(CampusGetCampusGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1647,12 +2026,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CampusGetCampusGroupWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询园区项目组详情
-         *
-         * @param request CampusGetCampusGroupRequest
-         * @return CampusGetCampusGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询园区项目组详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusGetCampusGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusGetCampusGroupResponse
+        /// </returns>
         public async Task<CampusGetCampusGroupResponse> CampusGetCampusGroupAsync(CampusGetCampusGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1660,14 +2045,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CampusGetCampusGroupWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取租客详情
-         *
-         * @param request CampusGetRenterRequest
-         * @param headers CampusGetRenterHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusGetRenterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取租客详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusGetRenterRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusGetRenterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusGetRenterResponse
+        /// </returns>
         public CampusGetRenterResponse CampusGetRenterWithOptions(CampusGetRenterRequest request, CampusGetRenterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1705,14 +2100,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusGetRenterResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取租客详情
-         *
-         * @param request CampusGetRenterRequest
-         * @param headers CampusGetRenterHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusGetRenterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取租客详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusGetRenterRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusGetRenterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusGetRenterResponse
+        /// </returns>
         public async Task<CampusGetRenterResponse> CampusGetRenterWithOptionsAsync(CampusGetRenterRequest request, CampusGetRenterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1750,12 +2155,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusGetRenterResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取租客详情
-         *
-         * @param request CampusGetRenterRequest
-         * @return CampusGetRenterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取租客详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusGetRenterRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusGetRenterResponse
+        /// </returns>
         public CampusGetRenterResponse CampusGetRenter(CampusGetRenterRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1763,12 +2174,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CampusGetRenterWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取租客详情
-         *
-         * @param request CampusGetRenterRequest
-         * @return CampusGetRenterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取租客详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusGetRenterRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusGetRenterResponse
+        /// </returns>
         public async Task<CampusGetRenterResponse> CampusGetRenterAsync(CampusGetRenterRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1776,14 +2193,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CampusGetRenterWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询租客指定成员信息
-         *
-         * @param request CampusGetRenterMemberRequest
-         * @param headers CampusGetRenterMemberHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusGetRenterMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询租客指定成员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusGetRenterMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusGetRenterMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusGetRenterMemberResponse
+        /// </returns>
         public CampusGetRenterMemberResponse CampusGetRenterMemberWithOptions(CampusGetRenterMemberRequest request, CampusGetRenterMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1825,14 +2252,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusGetRenterMemberResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询租客指定成员信息
-         *
-         * @param request CampusGetRenterMemberRequest
-         * @param headers CampusGetRenterMemberHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusGetRenterMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询租客指定成员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusGetRenterMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusGetRenterMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusGetRenterMemberResponse
+        /// </returns>
         public async Task<CampusGetRenterMemberResponse> CampusGetRenterMemberWithOptionsAsync(CampusGetRenterMemberRequest request, CampusGetRenterMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1874,12 +2311,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusGetRenterMemberResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询租客指定成员信息
-         *
-         * @param request CampusGetRenterMemberRequest
-         * @return CampusGetRenterMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询租客指定成员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusGetRenterMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusGetRenterMemberResponse
+        /// </returns>
         public CampusGetRenterMemberResponse CampusGetRenterMember(CampusGetRenterMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1887,12 +2330,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CampusGetRenterMemberWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询租客指定成员信息
-         *
-         * @param request CampusGetRenterMemberRequest
-         * @return CampusGetRenterMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询租客指定成员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusGetRenterMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusGetRenterMemberResponse
+        /// </returns>
         public async Task<CampusGetRenterMemberResponse> CampusGetRenterMemberAsync(CampusGetRenterMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1900,14 +2349,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CampusGetRenterMemberWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询园区列表
-         *
-         * @param request CampusListCampusRequest
-         * @param headers CampusListCampusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusListCampusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询园区列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusListCampusRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusListCampusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusListCampusResponse
+        /// </returns>
         public CampusListCampusResponse CampusListCampusWithOptions(CampusListCampusRequest request, CampusListCampusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1945,14 +2404,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusListCampusResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询园区列表
-         *
-         * @param request CampusListCampusRequest
-         * @param headers CampusListCampusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusListCampusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询园区列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusListCampusRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusListCampusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusListCampusResponse
+        /// </returns>
         public async Task<CampusListCampusResponse> CampusListCampusWithOptionsAsync(CampusListCampusRequest request, CampusListCampusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1990,12 +2459,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusListCampusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询园区列表
-         *
-         * @param request CampusListCampusRequest
-         * @return CampusListCampusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询园区列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusListCampusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusListCampusResponse
+        /// </returns>
         public CampusListCampusResponse CampusListCampus(CampusListCampusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2003,12 +2478,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CampusListCampusWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询园区列表
-         *
-         * @param request CampusListCampusRequest
-         * @return CampusListCampusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询园区列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusListCampusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusListCampusResponse
+        /// </returns>
         public async Task<CampusListCampusResponse> CampusListCampusAsync(CampusListCampusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2016,13 +2497,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CampusListCampusWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询园区项目组列表
-         *
-         * @param headers CampusListCampusGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusListCampusGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询园区项目组列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// CampusListCampusGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusListCampusGroupResponse
+        /// </returns>
         public CampusListCampusGroupResponse CampusListCampusGroupWithOptions(CampusListCampusGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -2053,13 +2542,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusListCampusGroupResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询园区项目组列表
-         *
-         * @param headers CampusListCampusGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusListCampusGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询园区项目组列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// CampusListCampusGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusListCampusGroupResponse
+        /// </returns>
         public async Task<CampusListCampusGroupResponse> CampusListCampusGroupWithOptionsAsync(CampusListCampusGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -2090,11 +2587,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusListCampusGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询园区项目组列表
-         *
-         * @return CampusListCampusGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询园区项目组列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// CampusListCampusGroupResponse
+        /// </returns>
         public CampusListCampusGroupResponse CampusListCampusGroup()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2102,11 +2602,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CampusListCampusGroupWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 查询园区项目组列表
-         *
-         * @return CampusListCampusGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询园区项目组列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// CampusListCampusGroupResponse
+        /// </returns>
         public async Task<CampusListCampusGroupResponse> CampusListCampusGroupAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2114,13 +2617,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CampusListCampusGroupWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 获取租客列表
-         *
-         * @param headers CampusListRenterHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusListRenterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取租客列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// CampusListRenterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusListRenterResponse
+        /// </returns>
         public CampusListRenterResponse CampusListRenterWithOptions(CampusListRenterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -2151,13 +2662,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusListRenterResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取租客列表
-         *
-         * @param headers CampusListRenterHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusListRenterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取租客列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// CampusListRenterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusListRenterResponse
+        /// </returns>
         public async Task<CampusListRenterResponse> CampusListRenterWithOptionsAsync(CampusListRenterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -2188,11 +2707,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusListRenterResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取租客列表
-         *
-         * @return CampusListRenterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取租客列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// CampusListRenterResponse
+        /// </returns>
         public CampusListRenterResponse CampusListRenter()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2200,11 +2722,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CampusListRenterWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 获取租客列表
-         *
-         * @return CampusListRenterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取租客列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// CampusListRenterResponse
+        /// </returns>
         public async Task<CampusListRenterResponse> CampusListRenterAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2212,14 +2737,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CampusListRenterWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 查询租客下所有成员
-         *
-         * @param request CampusListRenterMembersRequest
-         * @param headers CampusListRenterMembersHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusListRenterMembersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询租客下所有成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusListRenterMembersRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusListRenterMembersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusListRenterMembersResponse
+        /// </returns>
         public CampusListRenterMembersResponse CampusListRenterMembersWithOptions(CampusListRenterMembersRequest request, CampusListRenterMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2257,14 +2792,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusListRenterMembersResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询租客下所有成员
-         *
-         * @param request CampusListRenterMembersRequest
-         * @param headers CampusListRenterMembersHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusListRenterMembersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询租客下所有成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusListRenterMembersRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusListRenterMembersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusListRenterMembersResponse
+        /// </returns>
         public async Task<CampusListRenterMembersResponse> CampusListRenterMembersWithOptionsAsync(CampusListRenterMembersRequest request, CampusListRenterMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2302,12 +2847,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusListRenterMembersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询租客下所有成员
-         *
-         * @param request CampusListRenterMembersRequest
-         * @return CampusListRenterMembersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询租客下所有成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusListRenterMembersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusListRenterMembersResponse
+        /// </returns>
         public CampusListRenterMembersResponse CampusListRenterMembers(CampusListRenterMembersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2315,12 +2866,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CampusListRenterMembersWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询租客下所有成员
-         *
-         * @param request CampusListRenterMembersRequest
-         * @return CampusListRenterMembersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询租客下所有成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusListRenterMembersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusListRenterMembersResponse
+        /// </returns>
         public async Task<CampusListRenterMembersResponse> CampusListRenterMembersAsync(CampusListRenterMembersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2328,14 +2885,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CampusListRenterMembersWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新园区项目
-         *
-         * @param request CampusUpdateCampusRequest
-         * @param headers CampusUpdateCampusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusUpdateCampusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新园区项目</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusUpdateCampusRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusUpdateCampusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusUpdateCampusResponse
+        /// </returns>
         public CampusUpdateCampusResponse CampusUpdateCampusWithOptions(CampusUpdateCampusRequest request, CampusUpdateCampusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2433,14 +3000,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusUpdateCampusResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新园区项目
-         *
-         * @param request CampusUpdateCampusRequest
-         * @param headers CampusUpdateCampusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusUpdateCampusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新园区项目</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusUpdateCampusRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusUpdateCampusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusUpdateCampusResponse
+        /// </returns>
         public async Task<CampusUpdateCampusResponse> CampusUpdateCampusWithOptionsAsync(CampusUpdateCampusRequest request, CampusUpdateCampusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2538,12 +3115,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusUpdateCampusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新园区项目
-         *
-         * @param request CampusUpdateCampusRequest
-         * @return CampusUpdateCampusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新园区项目</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusUpdateCampusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusUpdateCampusResponse
+        /// </returns>
         public CampusUpdateCampusResponse CampusUpdateCampus(CampusUpdateCampusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2551,12 +3134,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CampusUpdateCampusWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新园区项目
-         *
-         * @param request CampusUpdateCampusRequest
-         * @return CampusUpdateCampusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新园区项目</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusUpdateCampusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusUpdateCampusResponse
+        /// </returns>
         public async Task<CampusUpdateCampusResponse> CampusUpdateCampusAsync(CampusUpdateCampusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2564,14 +3153,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CampusUpdateCampusWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新园区项目组
-         *
-         * @param request CampusUpdateCampusGroupRequest
-         * @param headers CampusUpdateCampusGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusUpdateCampusGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新园区项目组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusUpdateCampusGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusUpdateCampusGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusUpdateCampusGroupResponse
+        /// </returns>
         public CampusUpdateCampusGroupResponse CampusUpdateCampusGroupWithOptions(CampusUpdateCampusGroupRequest request, CampusUpdateCampusGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2617,14 +3216,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusUpdateCampusGroupResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新园区项目组
-         *
-         * @param request CampusUpdateCampusGroupRequest
-         * @param headers CampusUpdateCampusGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusUpdateCampusGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新园区项目组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusUpdateCampusGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusUpdateCampusGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusUpdateCampusGroupResponse
+        /// </returns>
         public async Task<CampusUpdateCampusGroupResponse> CampusUpdateCampusGroupWithOptionsAsync(CampusUpdateCampusGroupRequest request, CampusUpdateCampusGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2670,12 +3279,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusUpdateCampusGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新园区项目组
-         *
-         * @param request CampusUpdateCampusGroupRequest
-         * @return CampusUpdateCampusGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新园区项目组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusUpdateCampusGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusUpdateCampusGroupResponse
+        /// </returns>
         public CampusUpdateCampusGroupResponse CampusUpdateCampusGroup(CampusUpdateCampusGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2683,12 +3298,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CampusUpdateCampusGroupWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新园区项目组
-         *
-         * @param request CampusUpdateCampusGroupRequest
-         * @return CampusUpdateCampusGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新园区项目组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusUpdateCampusGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusUpdateCampusGroupResponse
+        /// </returns>
         public async Task<CampusUpdateCampusGroupResponse> CampusUpdateCampusGroupAsync(CampusUpdateCampusGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2696,14 +3317,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CampusUpdateCampusGroupWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新租客
-         *
-         * @param request CampusUpdateRenterRequest
-         * @param headers CampusUpdateRenterHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusUpdateRenterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新租客</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusUpdateRenterRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusUpdateRenterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusUpdateRenterResponse
+        /// </returns>
         public CampusUpdateRenterResponse CampusUpdateRenterWithOptions(CampusUpdateRenterRequest request, CampusUpdateRenterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2765,14 +3396,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusUpdateRenterResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新租客
-         *
-         * @param request CampusUpdateRenterRequest
-         * @param headers CampusUpdateRenterHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusUpdateRenterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新租客</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusUpdateRenterRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusUpdateRenterHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusUpdateRenterResponse
+        /// </returns>
         public async Task<CampusUpdateRenterResponse> CampusUpdateRenterWithOptionsAsync(CampusUpdateRenterRequest request, CampusUpdateRenterHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2834,12 +3475,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusUpdateRenterResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新租客
-         *
-         * @param request CampusUpdateRenterRequest
-         * @return CampusUpdateRenterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新租客</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusUpdateRenterRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusUpdateRenterResponse
+        /// </returns>
         public CampusUpdateRenterResponse CampusUpdateRenter(CampusUpdateRenterRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2847,12 +3494,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CampusUpdateRenterWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新租客
-         *
-         * @param request CampusUpdateRenterRequest
-         * @return CampusUpdateRenterResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新租客</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusUpdateRenterRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusUpdateRenterResponse
+        /// </returns>
         public async Task<CampusUpdateRenterResponse> CampusUpdateRenterAsync(CampusUpdateRenterRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2860,14 +3513,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CampusUpdateRenterWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新租客下成员
-         *
-         * @param request CampusUpdateRenterMemberRequest
-         * @param headers CampusUpdateRenterMemberHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusUpdateRenterMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新租客下成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusUpdateRenterMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusUpdateRenterMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusUpdateRenterMemberResponse
+        /// </returns>
         public CampusUpdateRenterMemberResponse CampusUpdateRenterMemberWithOptions(CampusUpdateRenterMemberRequest request, CampusUpdateRenterMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2921,14 +3584,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusUpdateRenterMemberResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新租客下成员
-         *
-         * @param request CampusUpdateRenterMemberRequest
-         * @param headers CampusUpdateRenterMemberHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CampusUpdateRenterMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新租客下成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusUpdateRenterMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// CampusUpdateRenterMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusUpdateRenterMemberResponse
+        /// </returns>
         public async Task<CampusUpdateRenterMemberResponse> CampusUpdateRenterMemberWithOptionsAsync(CampusUpdateRenterMemberRequest request, CampusUpdateRenterMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -2982,12 +3655,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CampusUpdateRenterMemberResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新租客下成员
-         *
-         * @param request CampusUpdateRenterMemberRequest
-         * @return CampusUpdateRenterMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新租客下成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusUpdateRenterMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusUpdateRenterMemberResponse
+        /// </returns>
         public CampusUpdateRenterMemberResponse CampusUpdateRenterMember(CampusUpdateRenterMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -2995,12 +3674,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CampusUpdateRenterMemberWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新租客下成员
-         *
-         * @param request CampusUpdateRenterMemberRequest
-         * @return CampusUpdateRenterMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新租客下成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CampusUpdateRenterMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CampusUpdateRenterMemberResponse
+        /// </returns>
         public async Task<CampusUpdateRenterMemberResponse> CampusUpdateRenterMemberAsync(CampusUpdateRenterMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3008,14 +3693,516 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CampusUpdateRenterMemberWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取差旅单列表
-         *
-         * @param request ChatAiTravelListRequest
-         * @param headers ChatAiTravelListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ChatAiTravelListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加数据集权限</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatAIAddDatasetPermissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatAIAddDatasetPermissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatAIAddDatasetPermissionResponse
+        /// </returns>
+        public ChatAIAddDatasetPermissionResponse ChatAIAddDatasetPermissionWithOptions(ChatAIAddDatasetPermissionRequest request, ChatAIAddDatasetPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthorizationType))
+            {
+                body["authorizationType"] = request.AuthorizationType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthorizedObjectId))
+            {
+                body["authorizedObjectId"] = request.AuthorizedObjectId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                body["datasetId"] = request.DatasetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUser))
+            {
+                body["optUser"] = request.OptUser;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatAIAddDatasetPermission",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatai/dataset/permissions/add",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatAIAddDatasetPermissionResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加数据集权限</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatAIAddDatasetPermissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatAIAddDatasetPermissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatAIAddDatasetPermissionResponse
+        /// </returns>
+        public async Task<ChatAIAddDatasetPermissionResponse> ChatAIAddDatasetPermissionWithOptionsAsync(ChatAIAddDatasetPermissionRequest request, ChatAIAddDatasetPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthorizationType))
+            {
+                body["authorizationType"] = request.AuthorizationType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthorizedObjectId))
+            {
+                body["authorizedObjectId"] = request.AuthorizedObjectId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                body["datasetId"] = request.DatasetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUser))
+            {
+                body["optUser"] = request.OptUser;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatAIAddDatasetPermission",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatai/dataset/permissions/add",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatAIAddDatasetPermissionResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加数据集权限</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatAIAddDatasetPermissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatAIAddDatasetPermissionResponse
+        /// </returns>
+        public ChatAIAddDatasetPermissionResponse ChatAIAddDatasetPermission(ChatAIAddDatasetPermissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatAIAddDatasetPermissionHeaders headers = new ChatAIAddDatasetPermissionHeaders();
+            return ChatAIAddDatasetPermissionWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加数据集权限</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatAIAddDatasetPermissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatAIAddDatasetPermissionResponse
+        /// </returns>
+        public async Task<ChatAIAddDatasetPermissionResponse> ChatAIAddDatasetPermissionAsync(ChatAIAddDatasetPermissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatAIAddDatasetPermissionHeaders headers = new ChatAIAddDatasetPermissionHeaders();
+            return await ChatAIAddDatasetPermissionWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询数据集权限明细</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatAIQueryDatasetPermissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatAIQueryDatasetPermissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatAIQueryDatasetPermissionResponse
+        /// </returns>
+        public ChatAIQueryDatasetPermissionResponse ChatAIQueryDatasetPermissionWithOptions(ChatAIQueryDatasetPermissionRequest request, ChatAIQueryDatasetPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                query["datasetId"] = request.DatasetId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatAIQueryDatasetPermission",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatai/dataset/permissions",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatAIQueryDatasetPermissionResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询数据集权限明细</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatAIQueryDatasetPermissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatAIQueryDatasetPermissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatAIQueryDatasetPermissionResponse
+        /// </returns>
+        public async Task<ChatAIQueryDatasetPermissionResponse> ChatAIQueryDatasetPermissionWithOptionsAsync(ChatAIQueryDatasetPermissionRequest request, ChatAIQueryDatasetPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                query["datasetId"] = request.DatasetId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatAIQueryDatasetPermission",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatai/dataset/permissions",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatAIQueryDatasetPermissionResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询数据集权限明细</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatAIQueryDatasetPermissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatAIQueryDatasetPermissionResponse
+        /// </returns>
+        public ChatAIQueryDatasetPermissionResponse ChatAIQueryDatasetPermission(ChatAIQueryDatasetPermissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatAIQueryDatasetPermissionHeaders headers = new ChatAIQueryDatasetPermissionHeaders();
+            return ChatAIQueryDatasetPermissionWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询数据集权限明细</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatAIQueryDatasetPermissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatAIQueryDatasetPermissionResponse
+        /// </returns>
+        public async Task<ChatAIQueryDatasetPermissionResponse> ChatAIQueryDatasetPermissionAsync(ChatAIQueryDatasetPermissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatAIQueryDatasetPermissionHeaders headers = new ChatAIQueryDatasetPermissionHeaders();
+            return await ChatAIQueryDatasetPermissionWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除数据集权限</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatAIRemoveDatasetPermissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatAIRemoveDatasetPermissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatAIRemoveDatasetPermissionResponse
+        /// </returns>
+        public ChatAIRemoveDatasetPermissionResponse ChatAIRemoveDatasetPermissionWithOptions(ChatAIRemoveDatasetPermissionRequest request, ChatAIRemoveDatasetPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthorizationType))
+            {
+                body["authorizationType"] = request.AuthorizationType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthorizedObjectId))
+            {
+                body["authorizedObjectId"] = request.AuthorizedObjectId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                body["datasetId"] = request.DatasetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUser))
+            {
+                body["optUser"] = request.OptUser;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatAIRemoveDatasetPermission",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatai/dataset/permissions/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatAIRemoveDatasetPermissionResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除数据集权限</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatAIRemoveDatasetPermissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatAIRemoveDatasetPermissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatAIRemoveDatasetPermissionResponse
+        /// </returns>
+        public async Task<ChatAIRemoveDatasetPermissionResponse> ChatAIRemoveDatasetPermissionWithOptionsAsync(ChatAIRemoveDatasetPermissionRequest request, ChatAIRemoveDatasetPermissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthorizationType))
+            {
+                body["authorizationType"] = request.AuthorizationType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AuthorizedObjectId))
+            {
+                body["authorizedObjectId"] = request.AuthorizedObjectId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                body["datasetId"] = request.DatasetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUser))
+            {
+                body["optUser"] = request.OptUser;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatAIRemoveDatasetPermission",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatai/dataset/permissions/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatAIRemoveDatasetPermissionResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除数据集权限</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatAIRemoveDatasetPermissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatAIRemoveDatasetPermissionResponse
+        /// </returns>
+        public ChatAIRemoveDatasetPermissionResponse ChatAIRemoveDatasetPermission(ChatAIRemoveDatasetPermissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatAIRemoveDatasetPermissionHeaders headers = new ChatAIRemoveDatasetPermissionHeaders();
+            return ChatAIRemoveDatasetPermissionWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除数据集权限</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatAIRemoveDatasetPermissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatAIRemoveDatasetPermissionResponse
+        /// </returns>
+        public async Task<ChatAIRemoveDatasetPermissionResponse> ChatAIRemoveDatasetPermissionAsync(ChatAIRemoveDatasetPermissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatAIRemoveDatasetPermissionHeaders headers = new ChatAIRemoveDatasetPermissionHeaders();
+            return await ChatAIRemoveDatasetPermissionWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取差旅单列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatAiTravelListRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatAiTravelListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatAiTravelListResponse
+        /// </returns>
         public ChatAiTravelListResponse ChatAiTravelListWithOptions(ChatAiTravelListRequest request, ChatAiTravelListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3057,14 +4244,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ChatAiTravelListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取差旅单列表
-         *
-         * @param request ChatAiTravelListRequest
-         * @param headers ChatAiTravelListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ChatAiTravelListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取差旅单列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatAiTravelListRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatAiTravelListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatAiTravelListResponse
+        /// </returns>
         public async Task<ChatAiTravelListResponse> ChatAiTravelListWithOptionsAsync(ChatAiTravelListRequest request, ChatAiTravelListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3106,12 +4303,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ChatAiTravelListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取差旅单列表
-         *
-         * @param request ChatAiTravelListRequest
-         * @return ChatAiTravelListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取差旅单列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatAiTravelListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatAiTravelListResponse
+        /// </returns>
         public ChatAiTravelListResponse ChatAiTravelList(ChatAiTravelListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3119,12 +4322,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return ChatAiTravelListWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取差旅单列表
-         *
-         * @param request ChatAiTravelListRequest
-         * @return ChatAiTravelListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取差旅单列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatAiTravelListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatAiTravelListResponse
+        /// </returns>
         public async Task<ChatAiTravelListResponse> ChatAiTravelListAsync(ChatAiTravelListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3132,14 +4341,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await ChatAiTravelListWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary ChatForm查询表单识别结果
-         *
-         * @param request ChatFormGetDataForApiAccessRequest
-         * @param headers ChatFormGetDataForApiAccessHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ChatFormGetDataForApiAccessResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>ChatForm查询表单识别结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatFormGetDataForApiAccessRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatFormGetDataForApiAccessHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatFormGetDataForApiAccessResponse
+        /// </returns>
         public ChatFormGetDataForApiAccessResponse ChatFormGetDataForApiAccessWithOptions(ChatFormGetDataForApiAccessRequest request, ChatFormGetDataForApiAccessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3177,14 +4396,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ChatFormGetDataForApiAccessResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary ChatForm查询表单识别结果
-         *
-         * @param request ChatFormGetDataForApiAccessRequest
-         * @param headers ChatFormGetDataForApiAccessHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ChatFormGetDataForApiAccessResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>ChatForm查询表单识别结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatFormGetDataForApiAccessRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatFormGetDataForApiAccessHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatFormGetDataForApiAccessResponse
+        /// </returns>
         public async Task<ChatFormGetDataForApiAccessResponse> ChatFormGetDataForApiAccessWithOptionsAsync(ChatFormGetDataForApiAccessRequest request, ChatFormGetDataForApiAccessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3222,12 +4451,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ChatFormGetDataForApiAccessResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary ChatForm查询表单识别结果
-         *
-         * @param request ChatFormGetDataForApiAccessRequest
-         * @return ChatFormGetDataForApiAccessResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>ChatForm查询表单识别结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatFormGetDataForApiAccessRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatFormGetDataForApiAccessResponse
+        /// </returns>
         public ChatFormGetDataForApiAccessResponse ChatFormGetDataForApiAccess(ChatFormGetDataForApiAccessRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3235,12 +4470,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return ChatFormGetDataForApiAccessWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary ChatForm查询表单识别结果
-         *
-         * @param request ChatFormGetDataForApiAccessRequest
-         * @return ChatFormGetDataForApiAccessResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>ChatForm查询表单识别结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatFormGetDataForApiAccessRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatFormGetDataForApiAccessResponse
+        /// </returns>
         public async Task<ChatFormGetDataForApiAccessResponse> ChatFormGetDataForApiAccessAsync(ChatFormGetDataForApiAccessRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3248,14 +4489,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await ChatFormGetDataForApiAccessWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 新增普通文件
-         *
-         * @param request ChatMemoAddGeneralFileRequest
-         * @param headers ChatMemoAddGeneralFileHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ChatMemoAddGeneralFileResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增普通文件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoAddGeneralFileRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoAddGeneralFileHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoAddGeneralFileResponse
+        /// </returns>
         public ChatMemoAddGeneralFileResponse ChatMemoAddGeneralFileWithOptions(ChatMemoAddGeneralFileRequest request, ChatMemoAddGeneralFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3313,14 +4564,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ChatMemoAddGeneralFileResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 新增普通文件
-         *
-         * @param request ChatMemoAddGeneralFileRequest
-         * @param headers ChatMemoAddGeneralFileHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ChatMemoAddGeneralFileResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增普通文件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoAddGeneralFileRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoAddGeneralFileHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoAddGeneralFileResponse
+        /// </returns>
         public async Task<ChatMemoAddGeneralFileResponse> ChatMemoAddGeneralFileWithOptionsAsync(ChatMemoAddGeneralFileRequest request, ChatMemoAddGeneralFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3378,12 +4639,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ChatMemoAddGeneralFileResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 新增普通文件
-         *
-         * @param request ChatMemoAddGeneralFileRequest
-         * @return ChatMemoAddGeneralFileResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增普通文件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoAddGeneralFileRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoAddGeneralFileResponse
+        /// </returns>
         public ChatMemoAddGeneralFileResponse ChatMemoAddGeneralFile(ChatMemoAddGeneralFileRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3391,12 +4658,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return ChatMemoAddGeneralFileWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 新增普通文件
-         *
-         * @param request ChatMemoAddGeneralFileRequest
-         * @return ChatMemoAddGeneralFileResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增普通文件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoAddGeneralFileRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoAddGeneralFileResponse
+        /// </returns>
         public async Task<ChatMemoAddGeneralFileResponse> ChatMemoAddGeneralFileAsync(ChatMemoAddGeneralFileRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3404,14 +4677,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await ChatMemoAddGeneralFileWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除普通文件
-         *
-         * @param request ChatMemoDeleteGeneralFileRequest
-         * @param headers ChatMemoDeleteGeneralFileHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ChatMemoDeleteGeneralFileResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除普通文件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoDeleteGeneralFileRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoDeleteGeneralFileHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoDeleteGeneralFileResponse
+        /// </returns>
         public ChatMemoDeleteGeneralFileResponse ChatMemoDeleteGeneralFileWithOptions(ChatMemoDeleteGeneralFileRequest request, ChatMemoDeleteGeneralFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3453,14 +4736,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ChatMemoDeleteGeneralFileResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除普通文件
-         *
-         * @param request ChatMemoDeleteGeneralFileRequest
-         * @param headers ChatMemoDeleteGeneralFileHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ChatMemoDeleteGeneralFileResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除普通文件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoDeleteGeneralFileRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoDeleteGeneralFileHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoDeleteGeneralFileResponse
+        /// </returns>
         public async Task<ChatMemoDeleteGeneralFileResponse> ChatMemoDeleteGeneralFileWithOptionsAsync(ChatMemoDeleteGeneralFileRequest request, ChatMemoDeleteGeneralFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3502,12 +4795,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ChatMemoDeleteGeneralFileResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除普通文件
-         *
-         * @param request ChatMemoDeleteGeneralFileRequest
-         * @return ChatMemoDeleteGeneralFileResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除普通文件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoDeleteGeneralFileRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoDeleteGeneralFileResponse
+        /// </returns>
         public ChatMemoDeleteGeneralFileResponse ChatMemoDeleteGeneralFile(ChatMemoDeleteGeneralFileRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3515,12 +4814,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return ChatMemoDeleteGeneralFileWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除普通文件
-         *
-         * @param request ChatMemoDeleteGeneralFileRequest
-         * @return ChatMemoDeleteGeneralFileResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除普通文件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoDeleteGeneralFileRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoDeleteGeneralFileResponse
+        /// </returns>
         public async Task<ChatMemoDeleteGeneralFileResponse> ChatMemoDeleteGeneralFileAsync(ChatMemoDeleteGeneralFileRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3528,14 +4833,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await ChatMemoDeleteGeneralFileWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 新增 FAQ
-         *
-         * @param request ChatMemoFaqAddRequest
-         * @param headers ChatMemoFaqAddHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ChatMemoFaqAddResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增 FAQ</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoFaqAddRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoFaqAddHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoFaqAddResponse
+        /// </returns>
         public ChatMemoFaqAddResponse ChatMemoFaqAddWithOptions(ChatMemoFaqAddRequest request, ChatMemoFaqAddHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3589,14 +4904,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ChatMemoFaqAddResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 新增 FAQ
-         *
-         * @param request ChatMemoFaqAddRequest
-         * @param headers ChatMemoFaqAddHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ChatMemoFaqAddResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增 FAQ</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoFaqAddRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoFaqAddHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoFaqAddResponse
+        /// </returns>
         public async Task<ChatMemoFaqAddResponse> ChatMemoFaqAddWithOptionsAsync(ChatMemoFaqAddRequest request, ChatMemoFaqAddHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3650,12 +4975,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ChatMemoFaqAddResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 新增 FAQ
-         *
-         * @param request ChatMemoFaqAddRequest
-         * @return ChatMemoFaqAddResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增 FAQ</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoFaqAddRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoFaqAddResponse
+        /// </returns>
         public ChatMemoFaqAddResponse ChatMemoFaqAdd(ChatMemoFaqAddRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3663,12 +4994,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return ChatMemoFaqAddWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 新增 FAQ
-         *
-         * @param request ChatMemoFaqAddRequest
-         * @return ChatMemoFaqAddResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增 FAQ</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoFaqAddRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoFaqAddResponse
+        /// </returns>
         public async Task<ChatMemoFaqAddResponse> ChatMemoFaqAddAsync(ChatMemoFaqAddRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3676,14 +5013,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await ChatMemoFaqAddWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除指定数据集中的FAQ
-         *
-         * @param request ChatMemoFaqDeleteRequest
-         * @param headers ChatMemoFaqDeleteHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ChatMemoFaqDeleteResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除指定数据集中的FAQ</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoFaqDeleteRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoFaqDeleteHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoFaqDeleteResponse
+        /// </returns>
         public ChatMemoFaqDeleteResponse ChatMemoFaqDeleteWithOptions(ChatMemoFaqDeleteRequest request, ChatMemoFaqDeleteHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3725,14 +5072,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ChatMemoFaqDeleteResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除指定数据集中的FAQ
-         *
-         * @param request ChatMemoFaqDeleteRequest
-         * @param headers ChatMemoFaqDeleteHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ChatMemoFaqDeleteResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除指定数据集中的FAQ</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoFaqDeleteRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoFaqDeleteHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoFaqDeleteResponse
+        /// </returns>
         public async Task<ChatMemoFaqDeleteResponse> ChatMemoFaqDeleteWithOptionsAsync(ChatMemoFaqDeleteRequest request, ChatMemoFaqDeleteHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3774,12 +5131,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ChatMemoFaqDeleteResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除指定数据集中的FAQ
-         *
-         * @param request ChatMemoFaqDeleteRequest
-         * @return ChatMemoFaqDeleteResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除指定数据集中的FAQ</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoFaqDeleteRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoFaqDeleteResponse
+        /// </returns>
         public ChatMemoFaqDeleteResponse ChatMemoFaqDelete(ChatMemoFaqDeleteRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3787,12 +5150,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return ChatMemoFaqDeleteWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除指定数据集中的FAQ
-         *
-         * @param request ChatMemoFaqDeleteRequest
-         * @return ChatMemoFaqDeleteResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除指定数据集中的FAQ</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoFaqDeleteRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoFaqDeleteResponse
+        /// </returns>
         public async Task<ChatMemoFaqDeleteResponse> ChatMemoFaqDeleteAsync(ChatMemoFaqDeleteRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3800,14 +5169,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await ChatMemoFaqDeleteWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询指定数据集中的FAQ列表
-         *
-         * @param request ChatMemoFaqListRequest
-         * @param headers ChatMemoFaqListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ChatMemoFaqListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询指定数据集中的FAQ列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoFaqListRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoFaqListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoFaqListResponse
+        /// </returns>
         public ChatMemoFaqListResponse ChatMemoFaqListWithOptions(ChatMemoFaqListRequest request, ChatMemoFaqListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3853,14 +5232,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ChatMemoFaqListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询指定数据集中的FAQ列表
-         *
-         * @param request ChatMemoFaqListRequest
-         * @param headers ChatMemoFaqListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ChatMemoFaqListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询指定数据集中的FAQ列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoFaqListRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoFaqListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoFaqListResponse
+        /// </returns>
         public async Task<ChatMemoFaqListResponse> ChatMemoFaqListWithOptionsAsync(ChatMemoFaqListRequest request, ChatMemoFaqListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3906,12 +5295,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ChatMemoFaqListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询指定数据集中的FAQ列表
-         *
-         * @param request ChatMemoFaqListRequest
-         * @return ChatMemoFaqListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询指定数据集中的FAQ列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoFaqListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoFaqListResponse
+        /// </returns>
         public ChatMemoFaqListResponse ChatMemoFaqList(ChatMemoFaqListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3919,12 +5314,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return ChatMemoFaqListWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询指定数据集中的FAQ列表
-         *
-         * @param request ChatMemoFaqListRequest
-         * @return ChatMemoFaqListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询指定数据集中的FAQ列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoFaqListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoFaqListResponse
+        /// </returns>
         public async Task<ChatMemoFaqListResponse> ChatMemoFaqListAsync(ChatMemoFaqListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -3932,14 +5333,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await ChatMemoFaqListWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询指定数据集中的文件列表
-         *
-         * @param request ChatMemoGetFileListRequest
-         * @param headers ChatMemoGetFileListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ChatMemoGetFileListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询指定数据集中的文件列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoGetFileListRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoGetFileListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoGetFileListResponse
+        /// </returns>
         public ChatMemoGetFileListResponse ChatMemoGetFileListWithOptions(ChatMemoGetFileListRequest request, ChatMemoGetFileListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -3985,14 +5396,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ChatMemoGetFileListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询指定数据集中的文件列表
-         *
-         * @param request ChatMemoGetFileListRequest
-         * @param headers ChatMemoGetFileListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ChatMemoGetFileListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询指定数据集中的文件列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoGetFileListRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoGetFileListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoGetFileListResponse
+        /// </returns>
         public async Task<ChatMemoGetFileListResponse> ChatMemoGetFileListWithOptionsAsync(ChatMemoGetFileListRequest request, ChatMemoGetFileListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4038,12 +5459,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ChatMemoGetFileListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询指定数据集中的文件列表
-         *
-         * @param request ChatMemoGetFileListRequest
-         * @return ChatMemoGetFileListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询指定数据集中的文件列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoGetFileListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoGetFileListResponse
+        /// </returns>
         public ChatMemoGetFileListResponse ChatMemoGetFileList(ChatMemoGetFileListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4051,12 +5478,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return ChatMemoGetFileListWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询指定数据集中的文件列表
-         *
-         * @param request ChatMemoGetFileListRequest
-         * @return ChatMemoGetFileListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询指定数据集中的文件列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoGetFileListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoGetFileListResponse
+        /// </returns>
         public async Task<ChatMemoGetFileListResponse> ChatMemoGetFileListAsync(ChatMemoGetFileListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4064,14 +5497,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await ChatMemoGetFileListWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取文件状态
-         *
-         * @param request ChatMemoGetFileStatusRequest
-         * @param headers ChatMemoGetFileStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ChatMemoGetFileStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取文件状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoGetFileStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoGetFileStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoGetFileStatusResponse
+        /// </returns>
         public ChatMemoGetFileStatusResponse ChatMemoGetFileStatusWithOptions(ChatMemoGetFileStatusRequest request, ChatMemoGetFileStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4113,14 +5556,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ChatMemoGetFileStatusResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取文件状态
-         *
-         * @param request ChatMemoGetFileStatusRequest
-         * @param headers ChatMemoGetFileStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ChatMemoGetFileStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取文件状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoGetFileStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoGetFileStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoGetFileStatusResponse
+        /// </returns>
         public async Task<ChatMemoGetFileStatusResponse> ChatMemoGetFileStatusWithOptionsAsync(ChatMemoGetFileStatusRequest request, ChatMemoGetFileStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4162,12 +5615,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ChatMemoGetFileStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取文件状态
-         *
-         * @param request ChatMemoGetFileStatusRequest
-         * @return ChatMemoGetFileStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取文件状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoGetFileStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoGetFileStatusResponse
+        /// </returns>
         public ChatMemoGetFileStatusResponse ChatMemoGetFileStatus(ChatMemoGetFileStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4175,12 +5634,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return ChatMemoGetFileStatusWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取文件状态
-         *
-         * @param request ChatMemoGetFileStatusRequest
-         * @return ChatMemoGetFileStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取文件状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoGetFileStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoGetFileStatusResponse
+        /// </returns>
         public async Task<ChatMemoGetFileStatusResponse> ChatMemoGetFileStatusAsync(ChatMemoGetFileStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4188,14 +5653,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await ChatMemoGetFileStatusWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 开启学段/学院/年级/专业\系/班级群
-         *
-         * @param request CollegeActiveCollegeDeptGroupRequest
-         * @param headers CollegeActiveCollegeDeptGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeActiveCollegeDeptGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>开启学段/学院/年级/专业\系/班级群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeActiveCollegeDeptGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeActiveCollegeDeptGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeActiveCollegeDeptGroupResponse
+        /// </returns>
         public CollegeActiveCollegeDeptGroupResponse CollegeActiveCollegeDeptGroupWithOptions(CollegeActiveCollegeDeptGroupRequest request, CollegeActiveCollegeDeptGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4233,14 +5708,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeActiveCollegeDeptGroupResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 开启学段/学院/年级/专业\系/班级群
-         *
-         * @param request CollegeActiveCollegeDeptGroupRequest
-         * @param headers CollegeActiveCollegeDeptGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeActiveCollegeDeptGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>开启学段/学院/年级/专业\系/班级群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeActiveCollegeDeptGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeActiveCollegeDeptGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeActiveCollegeDeptGroupResponse
+        /// </returns>
         public async Task<CollegeActiveCollegeDeptGroupResponse> CollegeActiveCollegeDeptGroupWithOptionsAsync(CollegeActiveCollegeDeptGroupRequest request, CollegeActiveCollegeDeptGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4278,12 +5763,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeActiveCollegeDeptGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 开启学段/学院/年级/专业\系/班级群
-         *
-         * @param request CollegeActiveCollegeDeptGroupRequest
-         * @return CollegeActiveCollegeDeptGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>开启学段/学院/年级/专业\系/班级群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeActiveCollegeDeptGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeActiveCollegeDeptGroupResponse
+        /// </returns>
         public CollegeActiveCollegeDeptGroupResponse CollegeActiveCollegeDeptGroup(CollegeActiveCollegeDeptGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4291,12 +5782,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeActiveCollegeDeptGroupWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 开启学段/学院/年级/专业\系/班级群
-         *
-         * @param request CollegeActiveCollegeDeptGroupRequest
-         * @return CollegeActiveCollegeDeptGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>开启学段/学院/年级/专业\系/班级群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeActiveCollegeDeptGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeActiveCollegeDeptGroupResponse
+        /// </returns>
         public async Task<CollegeActiveCollegeDeptGroupResponse> CollegeActiveCollegeDeptGroupAsync(CollegeActiveCollegeDeptGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4304,14 +5801,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeActiveCollegeDeptGroupWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建学段/学院/年级/专业\系/班级
-         *
-         * @param request CollegeAddCollegeDeptRequest
-         * @param headers CollegeAddCollegeDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeAddCollegeDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建学段/学院/年级/专业\系/班级</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeAddCollegeDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeAddCollegeDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeAddCollegeDeptResponse
+        /// </returns>
         public CollegeAddCollegeDeptResponse CollegeAddCollegeDeptWithOptions(CollegeAddCollegeDeptRequest request, CollegeAddCollegeDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4361,14 +5868,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeAddCollegeDeptResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建学段/学院/年级/专业\系/班级
-         *
-         * @param request CollegeAddCollegeDeptRequest
-         * @param headers CollegeAddCollegeDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeAddCollegeDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建学段/学院/年级/专业\系/班级</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeAddCollegeDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeAddCollegeDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeAddCollegeDeptResponse
+        /// </returns>
         public async Task<CollegeAddCollegeDeptResponse> CollegeAddCollegeDeptWithOptionsAsync(CollegeAddCollegeDeptRequest request, CollegeAddCollegeDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4418,12 +5935,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeAddCollegeDeptResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建学段/学院/年级/专业\系/班级
-         *
-         * @param request CollegeAddCollegeDeptRequest
-         * @return CollegeAddCollegeDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建学段/学院/年级/专业\系/班级</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeAddCollegeDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeAddCollegeDeptResponse
+        /// </returns>
         public CollegeAddCollegeDeptResponse CollegeAddCollegeDept(CollegeAddCollegeDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4431,12 +5954,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeAddCollegeDeptWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建学段/学院/年级/专业\系/班级
-         *
-         * @param request CollegeAddCollegeDeptRequest
-         * @return CollegeAddCollegeDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建学段/学院/年级/专业\系/班级</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeAddCollegeDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeAddCollegeDeptResponse
+        /// </returns>
         public async Task<CollegeAddCollegeDeptResponse> CollegeAddCollegeDeptAsync(CollegeAddCollegeDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4444,14 +5973,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeAddCollegeDeptWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 往部门中添加负责人
-         *
-         * @param request CollegeAddManagerRequest
-         * @param headers CollegeAddManagerHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeAddManagerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>往部门中添加负责人</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeAddManagerRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeAddManagerHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeAddManagerResponse
+        /// </returns>
         public CollegeAddManagerResponse CollegeAddManagerWithOptions(CollegeAddManagerRequest request, CollegeAddManagerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4493,14 +6032,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeAddManagerResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 往部门中添加负责人
-         *
-         * @param request CollegeAddManagerRequest
-         * @param headers CollegeAddManagerHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeAddManagerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>往部门中添加负责人</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeAddManagerRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeAddManagerHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeAddManagerResponse
+        /// </returns>
         public async Task<CollegeAddManagerResponse> CollegeAddManagerWithOptionsAsync(CollegeAddManagerRequest request, CollegeAddManagerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4542,12 +6091,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeAddManagerResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 往部门中添加负责人
-         *
-         * @param request CollegeAddManagerRequest
-         * @return CollegeAddManagerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>往部门中添加负责人</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeAddManagerRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeAddManagerResponse
+        /// </returns>
         public CollegeAddManagerResponse CollegeAddManager(CollegeAddManagerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4555,12 +6110,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeAddManagerWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 往部门中添加负责人
-         *
-         * @param request CollegeAddManagerRequest
-         * @return CollegeAddManagerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>往部门中添加负责人</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeAddManagerRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeAddManagerResponse
+        /// </returns>
         public async Task<CollegeAddManagerResponse> CollegeAddManagerAsync(CollegeAddManagerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4568,14 +6129,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeAddManagerWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 在班级中添加人员
-         *
-         * @param request CollegeAddStudentRequest
-         * @param headers CollegeAddStudentHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeAddStudentResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>在班级中添加人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeAddStudentRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeAddStudentHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeAddStudentResponse
+        /// </returns>
         public CollegeAddStudentResponse CollegeAddStudentWithOptions(CollegeAddStudentRequest request, CollegeAddStudentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4645,14 +6216,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeAddStudentResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 在班级中添加人员
-         *
-         * @param request CollegeAddStudentRequest
-         * @param headers CollegeAddStudentHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeAddStudentResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>在班级中添加人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeAddStudentRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeAddStudentHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeAddStudentResponse
+        /// </returns>
         public async Task<CollegeAddStudentResponse> CollegeAddStudentWithOptionsAsync(CollegeAddStudentRequest request, CollegeAddStudentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4722,12 +6303,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeAddStudentResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 在班级中添加人员
-         *
-         * @param request CollegeAddStudentRequest
-         * @return CollegeAddStudentResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>在班级中添加人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeAddStudentRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeAddStudentResponse
+        /// </returns>
         public CollegeAddStudentResponse CollegeAddStudent(CollegeAddStudentRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4735,12 +6322,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeAddStudentWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 在班级中添加人员
-         *
-         * @param request CollegeAddStudentRequest
-         * @return CollegeAddStudentResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>在班级中添加人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeAddStudentRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeAddStudentResponse
+        /// </returns>
         public async Task<CollegeAddStudentResponse> CollegeAddStudentAsync(CollegeAddStudentRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4748,14 +6341,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeAddStudentWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 移动学生到其他部门
-         *
-         * @param request CollegeChangeStudentDeptRequest
-         * @param headers CollegeChangeStudentDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeChangeStudentDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移动学生到其他部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeChangeStudentDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeChangeStudentDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeChangeStudentDeptResponse
+        /// </returns>
         public CollegeChangeStudentDeptResponse CollegeChangeStudentDeptWithOptions(CollegeChangeStudentDeptRequest request, CollegeChangeStudentDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4801,14 +6404,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeChangeStudentDeptResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 移动学生到其他部门
-         *
-         * @param request CollegeChangeStudentDeptRequest
-         * @param headers CollegeChangeStudentDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeChangeStudentDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移动学生到其他部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeChangeStudentDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeChangeStudentDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeChangeStudentDeptResponse
+        /// </returns>
         public async Task<CollegeChangeStudentDeptResponse> CollegeChangeStudentDeptWithOptionsAsync(CollegeChangeStudentDeptRequest request, CollegeChangeStudentDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4854,12 +6467,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeChangeStudentDeptResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 移动学生到其他部门
-         *
-         * @param request CollegeChangeStudentDeptRequest
-         * @return CollegeChangeStudentDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移动学生到其他部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeChangeStudentDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeChangeStudentDeptResponse
+        /// </returns>
         public CollegeChangeStudentDeptResponse CollegeChangeStudentDept(CollegeChangeStudentDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4867,12 +6486,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeChangeStudentDeptWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 移动学生到其他部门
-         *
-         * @param request CollegeChangeStudentDeptRequest
-         * @return CollegeChangeStudentDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移动学生到其他部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeChangeStudentDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeChangeStudentDeptResponse
+        /// </returns>
         public async Task<CollegeChangeStudentDeptResponse> CollegeChangeStudentDeptAsync(CollegeChangeStudentDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4880,14 +6505,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeChangeStudentDeptWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除学段/学院/年级/专业\系/班级
-         *
-         * @param request CollegeDeleteCollegeDeptRequest
-         * @param headers CollegeDeleteCollegeDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeDeleteCollegeDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除学段/学院/年级/专业\系/班级</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeDeleteCollegeDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeDeleteCollegeDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeDeleteCollegeDeptResponse
+        /// </returns>
         public CollegeDeleteCollegeDeptResponse CollegeDeleteCollegeDeptWithOptions(CollegeDeleteCollegeDeptRequest request, CollegeDeleteCollegeDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4925,14 +6560,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeDeleteCollegeDeptResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除学段/学院/年级/专业\系/班级
-         *
-         * @param request CollegeDeleteCollegeDeptRequest
-         * @param headers CollegeDeleteCollegeDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeDeleteCollegeDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除学段/学院/年级/专业\系/班级</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeDeleteCollegeDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeDeleteCollegeDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeDeleteCollegeDeptResponse
+        /// </returns>
         public async Task<CollegeDeleteCollegeDeptResponse> CollegeDeleteCollegeDeptWithOptionsAsync(CollegeDeleteCollegeDeptRequest request, CollegeDeleteCollegeDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -4970,12 +6615,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeDeleteCollegeDeptResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除学段/学院/年级/专业\系/班级
-         *
-         * @param request CollegeDeleteCollegeDeptRequest
-         * @return CollegeDeleteCollegeDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除学段/学院/年级/专业\系/班级</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeDeleteCollegeDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeDeleteCollegeDeptResponse
+        /// </returns>
         public CollegeDeleteCollegeDeptResponse CollegeDeleteCollegeDept(CollegeDeleteCollegeDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4983,12 +6634,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeDeleteCollegeDeptWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除学段/学院/年级/专业\系/班级
-         *
-         * @param request CollegeDeleteCollegeDeptRequest
-         * @return CollegeDeleteCollegeDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除学段/学院/年级/专业\系/班级</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeDeleteCollegeDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeDeleteCollegeDeptResponse
+        /// </returns>
         public async Task<CollegeDeleteCollegeDeptResponse> CollegeDeleteCollegeDeptAsync(CollegeDeleteCollegeDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -4996,14 +6653,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeDeleteCollegeDeptWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取下级节点列表
-         *
-         * @param request CollegeListCollegeSubDeptRequest
-         * @param headers CollegeListCollegeSubDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeListCollegeSubDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取下级节点列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeListCollegeSubDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeListCollegeSubDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeListCollegeSubDeptResponse
+        /// </returns>
         public CollegeListCollegeSubDeptResponse CollegeListCollegeSubDeptWithOptions(CollegeListCollegeSubDeptRequest request, CollegeListCollegeSubDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5041,14 +6708,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeListCollegeSubDeptResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取下级节点列表
-         *
-         * @param request CollegeListCollegeSubDeptRequest
-         * @param headers CollegeListCollegeSubDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeListCollegeSubDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取下级节点列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeListCollegeSubDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeListCollegeSubDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeListCollegeSubDeptResponse
+        /// </returns>
         public async Task<CollegeListCollegeSubDeptResponse> CollegeListCollegeSubDeptWithOptionsAsync(CollegeListCollegeSubDeptRequest request, CollegeListCollegeSubDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5086,12 +6763,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeListCollegeSubDeptResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取下级节点列表
-         *
-         * @param request CollegeListCollegeSubDeptRequest
-         * @return CollegeListCollegeSubDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取下级节点列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeListCollegeSubDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeListCollegeSubDeptResponse
+        /// </returns>
         public CollegeListCollegeSubDeptResponse CollegeListCollegeSubDept(CollegeListCollegeSubDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5099,12 +6782,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeListCollegeSubDeptWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取下级节点列表
-         *
-         * @param request CollegeListCollegeSubDeptRequest
-         * @return CollegeListCollegeSubDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取下级节点列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeListCollegeSubDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeListCollegeSubDeptResponse
+        /// </returns>
         public async Task<CollegeListCollegeSubDeptResponse> CollegeListCollegeSubDeptAsync(CollegeListCollegeSubDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5112,14 +6801,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeListCollegeSubDeptWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取部门下所有负责人列表
-         *
-         * @param request CollegeListDeptManagerRequest
-         * @param headers CollegeListDeptManagerHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeListDeptManagerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取部门下所有负责人列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeListDeptManagerRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeListDeptManagerHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeListDeptManagerResponse
+        /// </returns>
         public CollegeListDeptManagerResponse CollegeListDeptManagerWithOptions(CollegeListDeptManagerRequest request, CollegeListDeptManagerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5165,14 +6864,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeListDeptManagerResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取部门下所有负责人列表
-         *
-         * @param request CollegeListDeptManagerRequest
-         * @param headers CollegeListDeptManagerHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeListDeptManagerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取部门下所有负责人列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeListDeptManagerRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeListDeptManagerHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeListDeptManagerResponse
+        /// </returns>
         public async Task<CollegeListDeptManagerResponse> CollegeListDeptManagerWithOptionsAsync(CollegeListDeptManagerRequest request, CollegeListDeptManagerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5218,12 +6927,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeListDeptManagerResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取部门下所有负责人列表
-         *
-         * @param request CollegeListDeptManagerRequest
-         * @return CollegeListDeptManagerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取部门下所有负责人列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeListDeptManagerRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeListDeptManagerResponse
+        /// </returns>
         public CollegeListDeptManagerResponse CollegeListDeptManager(CollegeListDeptManagerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5231,12 +6946,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeListDeptManagerWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取部门下所有负责人列表
-         *
-         * @param request CollegeListDeptManagerRequest
-         * @return CollegeListDeptManagerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取部门下所有负责人列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeListDeptManagerRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeListDeptManagerResponse
+        /// </returns>
         public async Task<CollegeListDeptManagerResponse> CollegeListDeptManagerAsync(CollegeListDeptManagerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5244,14 +6965,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeListDeptManagerWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 分页获取班级下所有学生列表
-         *
-         * @param request CollegeListStudentInfoRequest
-         * @param headers CollegeListStudentInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeListStudentInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页获取班级下所有学生列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeListStudentInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeListStudentInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeListStudentInfoResponse
+        /// </returns>
         public CollegeListStudentInfoResponse CollegeListStudentInfoWithOptions(CollegeListStudentInfoRequest request, CollegeListStudentInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5301,14 +7032,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeListStudentInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 分页获取班级下所有学生列表
-         *
-         * @param request CollegeListStudentInfoRequest
-         * @param headers CollegeListStudentInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeListStudentInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页获取班级下所有学生列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeListStudentInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeListStudentInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeListStudentInfoResponse
+        /// </returns>
         public async Task<CollegeListStudentInfoResponse> CollegeListStudentInfoWithOptionsAsync(CollegeListStudentInfoRequest request, CollegeListStudentInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5358,12 +7099,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeListStudentInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 分页获取班级下所有学生列表
-         *
-         * @param request CollegeListStudentInfoRequest
-         * @return CollegeListStudentInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页获取班级下所有学生列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeListStudentInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeListStudentInfoResponse
+        /// </returns>
         public CollegeListStudentInfoResponse CollegeListStudentInfo(CollegeListStudentInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5371,12 +7118,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeListStudentInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 分页获取班级下所有学生列表
-         *
-         * @param request CollegeListStudentInfoRequest
-         * @return CollegeListStudentInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页获取班级下所有学生列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeListStudentInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeListStudentInfoResponse
+        /// </returns>
         public async Task<CollegeListStudentInfoResponse> CollegeListStudentInfoAsync(CollegeListStudentInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5384,14 +7137,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeListStudentInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 分页查询未加入组织的学生列表
-         *
-         * @param request CollegeListUncheckedStudentRequest
-         * @param headers CollegeListUncheckedStudentHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeListUncheckedStudentResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页查询未加入组织的学生列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeListUncheckedStudentRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeListUncheckedStudentHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeListUncheckedStudentResponse
+        /// </returns>
         public CollegeListUncheckedStudentResponse CollegeListUncheckedStudentWithOptions(CollegeListUncheckedStudentRequest request, CollegeListUncheckedStudentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5437,14 +7200,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeListUncheckedStudentResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 分页查询未加入组织的学生列表
-         *
-         * @param request CollegeListUncheckedStudentRequest
-         * @param headers CollegeListUncheckedStudentHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeListUncheckedStudentResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页查询未加入组织的学生列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeListUncheckedStudentRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeListUncheckedStudentHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeListUncheckedStudentResponse
+        /// </returns>
         public async Task<CollegeListUncheckedStudentResponse> CollegeListUncheckedStudentWithOptionsAsync(CollegeListUncheckedStudentRequest request, CollegeListUncheckedStudentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5490,12 +7263,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeListUncheckedStudentResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 分页查询未加入组织的学生列表
-         *
-         * @param request CollegeListUncheckedStudentRequest
-         * @return CollegeListUncheckedStudentResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页查询未加入组织的学生列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeListUncheckedStudentRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeListUncheckedStudentResponse
+        /// </returns>
         public CollegeListUncheckedStudentResponse CollegeListUncheckedStudent(CollegeListUncheckedStudentRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5503,12 +7282,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeListUncheckedStudentWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 分页查询未加入组织的学生列表
-         *
-         * @param request CollegeListUncheckedStudentRequest
-         * @return CollegeListUncheckedStudentResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>分页查询未加入组织的学生列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeListUncheckedStudentRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeListUncheckedStudentResponse
+        /// </returns>
         public async Task<CollegeListUncheckedStudentResponse> CollegeListUncheckedStudentAsync(CollegeListUncheckedStudentRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5516,14 +7301,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeListUncheckedStudentWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取学段/学院/年级/专业\系/班级群群信息
-         *
-         * @param request CollegeQueryCollegeDeptGroupInfoRequest
-         * @param headers CollegeQueryCollegeDeptGroupInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeQueryCollegeDeptGroupInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取学段/学院/年级/专业\系/班级群群信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeQueryCollegeDeptGroupInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeQueryCollegeDeptGroupInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeQueryCollegeDeptGroupInfoResponse
+        /// </returns>
         public CollegeQueryCollegeDeptGroupInfoResponse CollegeQueryCollegeDeptGroupInfoWithOptions(CollegeQueryCollegeDeptGroupInfoRequest request, CollegeQueryCollegeDeptGroupInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5561,14 +7356,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeQueryCollegeDeptGroupInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取学段/学院/年级/专业\系/班级群群信息
-         *
-         * @param request CollegeQueryCollegeDeptGroupInfoRequest
-         * @param headers CollegeQueryCollegeDeptGroupInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeQueryCollegeDeptGroupInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取学段/学院/年级/专业\系/班级群群信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeQueryCollegeDeptGroupInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeQueryCollegeDeptGroupInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeQueryCollegeDeptGroupInfoResponse
+        /// </returns>
         public async Task<CollegeQueryCollegeDeptGroupInfoResponse> CollegeQueryCollegeDeptGroupInfoWithOptionsAsync(CollegeQueryCollegeDeptGroupInfoRequest request, CollegeQueryCollegeDeptGroupInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5606,12 +7411,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeQueryCollegeDeptGroupInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取学段/学院/年级/专业\系/班级群群信息
-         *
-         * @param request CollegeQueryCollegeDeptGroupInfoRequest
-         * @return CollegeQueryCollegeDeptGroupInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取学段/学院/年级/专业\系/班级群群信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeQueryCollegeDeptGroupInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeQueryCollegeDeptGroupInfoResponse
+        /// </returns>
         public CollegeQueryCollegeDeptGroupInfoResponse CollegeQueryCollegeDeptGroupInfo(CollegeQueryCollegeDeptGroupInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5619,12 +7430,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeQueryCollegeDeptGroupInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取学段/学院/年级/专业\系/班级群群信息
-         *
-         * @param request CollegeQueryCollegeDeptGroupInfoRequest
-         * @return CollegeQueryCollegeDeptGroupInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取学段/学院/年级/专业\系/班级群群信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeQueryCollegeDeptGroupInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeQueryCollegeDeptGroupInfoResponse
+        /// </returns>
         public async Task<CollegeQueryCollegeDeptGroupInfoResponse> CollegeQueryCollegeDeptGroupInfoAsync(CollegeQueryCollegeDeptGroupInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5632,14 +7449,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeQueryCollegeDeptGroupInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取学段/学院/年级/专业\系/班级信息
-         *
-         * @param request CollegeQueryCollegeDeptInfoRequest
-         * @param headers CollegeQueryCollegeDeptInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeQueryCollegeDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取学段/学院/年级/专业\系/班级信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeQueryCollegeDeptInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeQueryCollegeDeptInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeQueryCollegeDeptInfoResponse
+        /// </returns>
         public CollegeQueryCollegeDeptInfoResponse CollegeQueryCollegeDeptInfoWithOptions(CollegeQueryCollegeDeptInfoRequest request, CollegeQueryCollegeDeptInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5677,14 +7504,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeQueryCollegeDeptInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取学段/学院/年级/专业\系/班级信息
-         *
-         * @param request CollegeQueryCollegeDeptInfoRequest
-         * @param headers CollegeQueryCollegeDeptInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeQueryCollegeDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取学段/学院/年级/专业\系/班级信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeQueryCollegeDeptInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeQueryCollegeDeptInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeQueryCollegeDeptInfoResponse
+        /// </returns>
         public async Task<CollegeQueryCollegeDeptInfoResponse> CollegeQueryCollegeDeptInfoWithOptionsAsync(CollegeQueryCollegeDeptInfoRequest request, CollegeQueryCollegeDeptInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5722,12 +7559,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeQueryCollegeDeptInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取学段/学院/年级/专业\系/班级信息
-         *
-         * @param request CollegeQueryCollegeDeptInfoRequest
-         * @return CollegeQueryCollegeDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取学段/学院/年级/专业\系/班级信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeQueryCollegeDeptInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeQueryCollegeDeptInfoResponse
+        /// </returns>
         public CollegeQueryCollegeDeptInfoResponse CollegeQueryCollegeDeptInfo(CollegeQueryCollegeDeptInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5735,12 +7578,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeQueryCollegeDeptInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取学段/学院/年级/专业\系/班级信息
-         *
-         * @param request CollegeQueryCollegeDeptInfoRequest
-         * @return CollegeQueryCollegeDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取学段/学院/年级/专业\系/班级信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeQueryCollegeDeptInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeQueryCollegeDeptInfoResponse
+        /// </returns>
         public async Task<CollegeQueryCollegeDeptInfoResponse> CollegeQueryCollegeDeptInfoAsync(CollegeQueryCollegeDeptInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5748,14 +7597,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeQueryCollegeDeptInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取指定部门下指定学生的信息
-         *
-         * @param request CollegeQueryStudentInfoByDeptRequest
-         * @param headers CollegeQueryStudentInfoByDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeQueryStudentInfoByDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取指定部门下指定学生的信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeQueryStudentInfoByDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeQueryStudentInfoByDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeQueryStudentInfoByDeptResponse
+        /// </returns>
         public CollegeQueryStudentInfoByDeptResponse CollegeQueryStudentInfoByDeptWithOptions(CollegeQueryStudentInfoByDeptRequest request, CollegeQueryStudentInfoByDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5797,14 +7656,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeQueryStudentInfoByDeptResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取指定部门下指定学生的信息
-         *
-         * @param request CollegeQueryStudentInfoByDeptRequest
-         * @param headers CollegeQueryStudentInfoByDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeQueryStudentInfoByDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取指定部门下指定学生的信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeQueryStudentInfoByDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeQueryStudentInfoByDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeQueryStudentInfoByDeptResponse
+        /// </returns>
         public async Task<CollegeQueryStudentInfoByDeptResponse> CollegeQueryStudentInfoByDeptWithOptionsAsync(CollegeQueryStudentInfoByDeptRequest request, CollegeQueryStudentInfoByDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5846,12 +7715,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeQueryStudentInfoByDeptResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取指定部门下指定学生的信息
-         *
-         * @param request CollegeQueryStudentInfoByDeptRequest
-         * @return CollegeQueryStudentInfoByDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取指定部门下指定学生的信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeQueryStudentInfoByDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeQueryStudentInfoByDeptResponse
+        /// </returns>
         public CollegeQueryStudentInfoByDeptResponse CollegeQueryStudentInfoByDept(CollegeQueryStudentInfoByDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5859,12 +7734,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeQueryStudentInfoByDeptWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取指定部门下指定学生的信息
-         *
-         * @param request CollegeQueryStudentInfoByDeptRequest
-         * @return CollegeQueryStudentInfoByDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取指定部门下指定学生的信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeQueryStudentInfoByDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeQueryStudentInfoByDeptResponse
+        /// </returns>
         public async Task<CollegeQueryStudentInfoByDeptResponse> CollegeQueryStudentInfoByDeptAsync(CollegeQueryStudentInfoByDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5872,14 +7753,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeQueryStudentInfoByDeptWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 根据手机号查询学生信息
-         *
-         * @param request CollegeQueryStudentInfoByMobileRequest
-         * @param headers CollegeQueryStudentInfoByMobileHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeQueryStudentInfoByMobileResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据手机号查询学生信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeQueryStudentInfoByMobileRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeQueryStudentInfoByMobileHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeQueryStudentInfoByMobileResponse
+        /// </returns>
         public CollegeQueryStudentInfoByMobileResponse CollegeQueryStudentInfoByMobileWithOptions(CollegeQueryStudentInfoByMobileRequest request, CollegeQueryStudentInfoByMobileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5917,14 +7808,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeQueryStudentInfoByMobileResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据手机号查询学生信息
-         *
-         * @param request CollegeQueryStudentInfoByMobileRequest
-         * @param headers CollegeQueryStudentInfoByMobileHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeQueryStudentInfoByMobileResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据手机号查询学生信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeQueryStudentInfoByMobileRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeQueryStudentInfoByMobileHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeQueryStudentInfoByMobileResponse
+        /// </returns>
         public async Task<CollegeQueryStudentInfoByMobileResponse> CollegeQueryStudentInfoByMobileWithOptionsAsync(CollegeQueryStudentInfoByMobileRequest request, CollegeQueryStudentInfoByMobileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -5962,12 +7863,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeQueryStudentInfoByMobileResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据手机号查询学生信息
-         *
-         * @param request CollegeQueryStudentInfoByMobileRequest
-         * @return CollegeQueryStudentInfoByMobileResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据手机号查询学生信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeQueryStudentInfoByMobileRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeQueryStudentInfoByMobileResponse
+        /// </returns>
         public CollegeQueryStudentInfoByMobileResponse CollegeQueryStudentInfoByMobile(CollegeQueryStudentInfoByMobileRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5975,12 +7882,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeQueryStudentInfoByMobileWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 根据手机号查询学生信息
-         *
-         * @param request CollegeQueryStudentInfoByMobileRequest
-         * @return CollegeQueryStudentInfoByMobileResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据手机号查询学生信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeQueryStudentInfoByMobileRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeQueryStudentInfoByMobileResponse
+        /// </returns>
         public async Task<CollegeQueryStudentInfoByMobileResponse> CollegeQueryStudentInfoByMobileAsync(CollegeQueryStudentInfoByMobileRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -5988,14 +7901,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeQueryStudentInfoByMobileWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 根据studentId查询学生信息
-         *
-         * @param request CollegeQueryStudentInfoByStudentIdRequest
-         * @param headers CollegeQueryStudentInfoByStudentIdHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeQueryStudentInfoByStudentIdResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据studentId查询学生信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeQueryStudentInfoByStudentIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeQueryStudentInfoByStudentIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeQueryStudentInfoByStudentIdResponse
+        /// </returns>
         public CollegeQueryStudentInfoByStudentIdResponse CollegeQueryStudentInfoByStudentIdWithOptions(CollegeQueryStudentInfoByStudentIdRequest request, CollegeQueryStudentInfoByStudentIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6033,14 +7956,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeQueryStudentInfoByStudentIdResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据studentId查询学生信息
-         *
-         * @param request CollegeQueryStudentInfoByStudentIdRequest
-         * @param headers CollegeQueryStudentInfoByStudentIdHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeQueryStudentInfoByStudentIdResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据studentId查询学生信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeQueryStudentInfoByStudentIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeQueryStudentInfoByStudentIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeQueryStudentInfoByStudentIdResponse
+        /// </returns>
         public async Task<CollegeQueryStudentInfoByStudentIdResponse> CollegeQueryStudentInfoByStudentIdWithOptionsAsync(CollegeQueryStudentInfoByStudentIdRequest request, CollegeQueryStudentInfoByStudentIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6078,12 +8011,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeQueryStudentInfoByStudentIdResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 根据studentId查询学生信息
-         *
-         * @param request CollegeQueryStudentInfoByStudentIdRequest
-         * @return CollegeQueryStudentInfoByStudentIdResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据studentId查询学生信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeQueryStudentInfoByStudentIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeQueryStudentInfoByStudentIdResponse
+        /// </returns>
         public CollegeQueryStudentInfoByStudentIdResponse CollegeQueryStudentInfoByStudentId(CollegeQueryStudentInfoByStudentIdRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6091,12 +8030,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeQueryStudentInfoByStudentIdWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 根据studentId查询学生信息
-         *
-         * @param request CollegeQueryStudentInfoByStudentIdRequest
-         * @return CollegeQueryStudentInfoByStudentIdResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据studentId查询学生信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeQueryStudentInfoByStudentIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeQueryStudentInfoByStudentIdResponse
+        /// </returns>
         public async Task<CollegeQueryStudentInfoByStudentIdResponse> CollegeQueryStudentInfoByStudentIdAsync(CollegeQueryStudentInfoByStudentIdRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6104,14 +8049,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeQueryStudentInfoByStudentIdWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 从部门中移除负责人
-         *
-         * @param request CollegeRemoveManagerRequest
-         * @param headers CollegeRemoveManagerHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeRemoveManagerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>从部门中移除负责人</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeRemoveManagerRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeRemoveManagerHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeRemoveManagerResponse
+        /// </returns>
         public CollegeRemoveManagerResponse CollegeRemoveManagerWithOptions(CollegeRemoveManagerRequest request, CollegeRemoveManagerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6157,14 +8112,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeRemoveManagerResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 从部门中移除负责人
-         *
-         * @param request CollegeRemoveManagerRequest
-         * @param headers CollegeRemoveManagerHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeRemoveManagerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>从部门中移除负责人</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeRemoveManagerRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeRemoveManagerHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeRemoveManagerResponse
+        /// </returns>
         public async Task<CollegeRemoveManagerResponse> CollegeRemoveManagerWithOptionsAsync(CollegeRemoveManagerRequest request, CollegeRemoveManagerHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6210,12 +8175,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeRemoveManagerResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 从部门中移除负责人
-         *
-         * @param request CollegeRemoveManagerRequest
-         * @return CollegeRemoveManagerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>从部门中移除负责人</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeRemoveManagerRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeRemoveManagerResponse
+        /// </returns>
         public CollegeRemoveManagerResponse CollegeRemoveManager(CollegeRemoveManagerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6223,12 +8194,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeRemoveManagerWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 从部门中移除负责人
-         *
-         * @param request CollegeRemoveManagerRequest
-         * @return CollegeRemoveManagerResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>从部门中移除负责人</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeRemoveManagerRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeRemoveManagerResponse
+        /// </returns>
         public async Task<CollegeRemoveManagerResponse> CollegeRemoveManagerAsync(CollegeRemoveManagerRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6236,14 +8213,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeRemoveManagerWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 从部门中移除学生
-         *
-         * @param request CollegeRemoveStudentRequest
-         * @param headers CollegeRemoveStudentHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeRemoveStudentResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>从部门中移除学生</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeRemoveStudentRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeRemoveStudentHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeRemoveStudentResponse
+        /// </returns>
         public CollegeRemoveStudentResponse CollegeRemoveStudentWithOptions(CollegeRemoveStudentRequest request, CollegeRemoveStudentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6285,14 +8272,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeRemoveStudentResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 从部门中移除学生
-         *
-         * @param request CollegeRemoveStudentRequest
-         * @param headers CollegeRemoveStudentHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeRemoveStudentResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>从部门中移除学生</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeRemoveStudentRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeRemoveStudentHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeRemoveStudentResponse
+        /// </returns>
         public async Task<CollegeRemoveStudentResponse> CollegeRemoveStudentWithOptionsAsync(CollegeRemoveStudentRequest request, CollegeRemoveStudentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6334,12 +8331,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeRemoveStudentResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 从部门中移除学生
-         *
-         * @param request CollegeRemoveStudentRequest
-         * @return CollegeRemoveStudentResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>从部门中移除学生</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeRemoveStudentRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeRemoveStudentResponse
+        /// </returns>
         public CollegeRemoveStudentResponse CollegeRemoveStudent(CollegeRemoveStudentRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6347,12 +8350,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeRemoveStudentWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 从部门中移除学生
-         *
-         * @param request CollegeRemoveStudentRequest
-         * @return CollegeRemoveStudentResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>从部门中移除学生</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeRemoveStudentRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeRemoveStudentResponse
+        /// </returns>
         public async Task<CollegeRemoveStudentResponse> CollegeRemoveStudentAsync(CollegeRemoveStudentRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6360,14 +8369,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeRemoveStudentWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 编辑学段/学院/年级/专业\系/班级
-         *
-         * @param request CollegeUpdateCollegeDeptRequest
-         * @param headers CollegeUpdateCollegeDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeUpdateCollegeDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>编辑学段/学院/年级/专业\系/班级</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeUpdateCollegeDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeUpdateCollegeDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeUpdateCollegeDeptResponse
+        /// </returns>
         public CollegeUpdateCollegeDeptResponse CollegeUpdateCollegeDeptWithOptions(CollegeUpdateCollegeDeptRequest request, CollegeUpdateCollegeDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6417,14 +8436,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeUpdateCollegeDeptResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 编辑学段/学院/年级/专业\系/班级
-         *
-         * @param request CollegeUpdateCollegeDeptRequest
-         * @param headers CollegeUpdateCollegeDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeUpdateCollegeDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>编辑学段/学院/年级/专业\系/班级</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeUpdateCollegeDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeUpdateCollegeDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeUpdateCollegeDeptResponse
+        /// </returns>
         public async Task<CollegeUpdateCollegeDeptResponse> CollegeUpdateCollegeDeptWithOptionsAsync(CollegeUpdateCollegeDeptRequest request, CollegeUpdateCollegeDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6474,12 +8503,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeUpdateCollegeDeptResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 编辑学段/学院/年级/专业\系/班级
-         *
-         * @param request CollegeUpdateCollegeDeptRequest
-         * @return CollegeUpdateCollegeDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>编辑学段/学院/年级/专业\系/班级</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeUpdateCollegeDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeUpdateCollegeDeptResponse
+        /// </returns>
         public CollegeUpdateCollegeDeptResponse CollegeUpdateCollegeDept(CollegeUpdateCollegeDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6487,12 +8522,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeUpdateCollegeDeptWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 编辑学段/学院/年级/专业\系/班级
-         *
-         * @param request CollegeUpdateCollegeDeptRequest
-         * @return CollegeUpdateCollegeDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>编辑学段/学院/年级/专业\系/班级</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeUpdateCollegeDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeUpdateCollegeDeptResponse
+        /// </returns>
         public async Task<CollegeUpdateCollegeDeptResponse> CollegeUpdateCollegeDeptAsync(CollegeUpdateCollegeDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6500,14 +8541,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeUpdateCollegeDeptWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新学生的部门相关信息
-         *
-         * @param request CollegeUpdateStudentDeptInfoRequest
-         * @param headers CollegeUpdateStudentDeptInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeUpdateStudentDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新学生的部门相关信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeUpdateStudentDeptInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeUpdateStudentDeptInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeUpdateStudentDeptInfoResponse
+        /// </returns>
         public CollegeUpdateStudentDeptInfoResponse CollegeUpdateStudentDeptInfoWithOptions(CollegeUpdateStudentDeptInfoRequest request, CollegeUpdateStudentDeptInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6553,14 +8604,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeUpdateStudentDeptInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新学生的部门相关信息
-         *
-         * @param request CollegeUpdateStudentDeptInfoRequest
-         * @param headers CollegeUpdateStudentDeptInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeUpdateStudentDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新学生的部门相关信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeUpdateStudentDeptInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeUpdateStudentDeptInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeUpdateStudentDeptInfoResponse
+        /// </returns>
         public async Task<CollegeUpdateStudentDeptInfoResponse> CollegeUpdateStudentDeptInfoWithOptionsAsync(CollegeUpdateStudentDeptInfoRequest request, CollegeUpdateStudentDeptInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6606,12 +8667,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeUpdateStudentDeptInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新学生的部门相关信息
-         *
-         * @param request CollegeUpdateStudentDeptInfoRequest
-         * @return CollegeUpdateStudentDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新学生的部门相关信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeUpdateStudentDeptInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeUpdateStudentDeptInfoResponse
+        /// </returns>
         public CollegeUpdateStudentDeptInfoResponse CollegeUpdateStudentDeptInfo(CollegeUpdateStudentDeptInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6619,12 +8686,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeUpdateStudentDeptInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新学生的部门相关信息
-         *
-         * @param request CollegeUpdateStudentDeptInfoRequest
-         * @return CollegeUpdateStudentDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新学生的部门相关信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeUpdateStudentDeptInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeUpdateStudentDeptInfoResponse
+        /// </returns>
         public async Task<CollegeUpdateStudentDeptInfoResponse> CollegeUpdateStudentDeptInfoAsync(CollegeUpdateStudentDeptInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6632,14 +8705,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeUpdateStudentDeptInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新班级下学生信息
-         *
-         * @param request CollegeUpdateStudentInfoRequest
-         * @param headers CollegeUpdateStudentInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeUpdateStudentInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新班级下学生信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeUpdateStudentInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeUpdateStudentInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeUpdateStudentInfoResponse
+        /// </returns>
         public CollegeUpdateStudentInfoResponse CollegeUpdateStudentInfoWithOptions(CollegeUpdateStudentInfoRequest request, CollegeUpdateStudentInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6697,14 +8780,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeUpdateStudentInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新班级下学生信息
-         *
-         * @param request CollegeUpdateStudentInfoRequest
-         * @param headers CollegeUpdateStudentInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeUpdateStudentInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新班级下学生信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeUpdateStudentInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeUpdateStudentInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeUpdateStudentInfoResponse
+        /// </returns>
         public async Task<CollegeUpdateStudentInfoResponse> CollegeUpdateStudentInfoWithOptionsAsync(CollegeUpdateStudentInfoRequest request, CollegeUpdateStudentInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6762,12 +8855,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeUpdateStudentInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新班级下学生信息
-         *
-         * @param request CollegeUpdateStudentInfoRequest
-         * @return CollegeUpdateStudentInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新班级下学生信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeUpdateStudentInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeUpdateStudentInfoResponse
+        /// </returns>
         public CollegeUpdateStudentInfoResponse CollegeUpdateStudentInfo(CollegeUpdateStudentInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6775,12 +8874,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeUpdateStudentInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新班级下学生信息
-         *
-         * @param request CollegeUpdateStudentInfoRequest
-         * @return CollegeUpdateStudentInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新班级下学生信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeUpdateStudentInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeUpdateStudentInfoResponse
+        /// </returns>
         public async Task<CollegeUpdateStudentInfoResponse> CollegeUpdateStudentInfoAsync(CollegeUpdateStudentInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6788,14 +8893,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeUpdateStudentInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 修改学生手机号
-         *
-         * @param request CollegeUpdateStudentMoblieRequest
-         * @param headers CollegeUpdateStudentMoblieHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeUpdateStudentMoblieResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改学生手机号</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeUpdateStudentMoblieRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeUpdateStudentMoblieHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeUpdateStudentMoblieResponse
+        /// </returns>
         public CollegeUpdateStudentMoblieResponse CollegeUpdateStudentMoblieWithOptions(CollegeUpdateStudentMoblieRequest request, CollegeUpdateStudentMoblieHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6841,14 +8956,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeUpdateStudentMoblieResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 修改学生手机号
-         *
-         * @param request CollegeUpdateStudentMoblieRequest
-         * @param headers CollegeUpdateStudentMoblieHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CollegeUpdateStudentMoblieResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改学生手机号</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeUpdateStudentMoblieRequest
+        /// </param>
+        /// <param name="headers">
+        /// CollegeUpdateStudentMoblieHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeUpdateStudentMoblieResponse
+        /// </returns>
         public async Task<CollegeUpdateStudentMoblieResponse> CollegeUpdateStudentMoblieWithOptionsAsync(CollegeUpdateStudentMoblieRequest request, CollegeUpdateStudentMoblieHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6894,12 +9019,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CollegeUpdateStudentMoblieResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 修改学生手机号
-         *
-         * @param request CollegeUpdateStudentMoblieRequest
-         * @return CollegeUpdateStudentMoblieResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改学生手机号</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeUpdateStudentMoblieRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeUpdateStudentMoblieResponse
+        /// </returns>
         public CollegeUpdateStudentMoblieResponse CollegeUpdateStudentMoblie(CollegeUpdateStudentMoblieRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6907,12 +9038,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CollegeUpdateStudentMoblieWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 修改学生手机号
-         *
-         * @param request CollegeUpdateStudentMoblieRequest
-         * @return CollegeUpdateStudentMoblieResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改学生手机号</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CollegeUpdateStudentMoblieRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CollegeUpdateStudentMoblieResponse
+        /// </returns>
         public async Task<CollegeUpdateStudentMoblieResponse> CollegeUpdateStudentMoblieAsync(CollegeUpdateStudentMoblieRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -6920,14 +9057,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CollegeUpdateStudentMoblieWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建自定义通讯录
-         *
-         * @param request CustomizeContactCreateRequest
-         * @param headers CustomizeContactCreateHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactCreateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建自定义通讯录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactCreateRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactCreateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactCreateResponse
+        /// </returns>
         public CustomizeContactCreateResponse CustomizeContactCreateWithOptions(CustomizeContactCreateRequest request, CustomizeContactCreateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -6973,14 +9120,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactCreateResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建自定义通讯录
-         *
-         * @param request CustomizeContactCreateRequest
-         * @param headers CustomizeContactCreateHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactCreateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建自定义通讯录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactCreateRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactCreateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactCreateResponse
+        /// </returns>
         public async Task<CustomizeContactCreateResponse> CustomizeContactCreateWithOptionsAsync(CustomizeContactCreateRequest request, CustomizeContactCreateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7026,12 +9183,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactCreateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建自定义通讯录
-         *
-         * @param request CustomizeContactCreateRequest
-         * @return CustomizeContactCreateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建自定义通讯录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactCreateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactCreateResponse
+        /// </returns>
         public CustomizeContactCreateResponse CustomizeContactCreate(CustomizeContactCreateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7039,12 +9202,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CustomizeContactCreateWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建自定义通讯录
-         *
-         * @param request CustomizeContactCreateRequest
-         * @return CustomizeContactCreateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建自定义通讯录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactCreateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactCreateResponse
+        /// </returns>
         public async Task<CustomizeContactCreateResponse> CustomizeContactCreateAsync(CustomizeContactCreateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7052,14 +9221,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CustomizeContactCreateWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除自定义通讯录
-         *
-         * @param request CustomizeContactDeleteRequest
-         * @param headers CustomizeContactDeleteHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactDeleteResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除自定义通讯录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeleteRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactDeleteHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeleteResponse
+        /// </returns>
         public CustomizeContactDeleteResponse CustomizeContactDeleteWithOptions(CustomizeContactDeleteRequest request, CustomizeContactDeleteHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7097,14 +9276,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactDeleteResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除自定义通讯录
-         *
-         * @param request CustomizeContactDeleteRequest
-         * @param headers CustomizeContactDeleteHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactDeleteResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除自定义通讯录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeleteRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactDeleteHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeleteResponse
+        /// </returns>
         public async Task<CustomizeContactDeleteResponse> CustomizeContactDeleteWithOptionsAsync(CustomizeContactDeleteRequest request, CustomizeContactDeleteHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7142,12 +9331,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactDeleteResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除自定义通讯录
-         *
-         * @param request CustomizeContactDeleteRequest
-         * @return CustomizeContactDeleteResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除自定义通讯录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeleteRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeleteResponse
+        /// </returns>
         public CustomizeContactDeleteResponse CustomizeContactDelete(CustomizeContactDeleteRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7155,12 +9350,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CustomizeContactDeleteWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除自定义通讯录
-         *
-         * @param request CustomizeContactDeleteRequest
-         * @return CustomizeContactDeleteResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除自定义通讯录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeleteRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeleteResponse
+        /// </returns>
         public async Task<CustomizeContactDeleteResponse> CustomizeContactDeleteAsync(CustomizeContactDeleteRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7168,14 +9369,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CustomizeContactDeleteWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建部门
-         *
-         * @param request CustomizeContactDeptCreateRequest
-         * @param headers CustomizeContactDeptCreateHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactDeptCreateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptCreateRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactDeptCreateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptCreateResponse
+        /// </returns>
         public CustomizeContactDeptCreateResponse CustomizeContactDeptCreateWithOptions(CustomizeContactDeptCreateRequest request, CustomizeContactDeptCreateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7237,14 +9448,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactDeptCreateResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建部门
-         *
-         * @param request CustomizeContactDeptCreateRequest
-         * @param headers CustomizeContactDeptCreateHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactDeptCreateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptCreateRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactDeptCreateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptCreateResponse
+        /// </returns>
         public async Task<CustomizeContactDeptCreateResponse> CustomizeContactDeptCreateWithOptionsAsync(CustomizeContactDeptCreateRequest request, CustomizeContactDeptCreateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7306,12 +9527,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactDeptCreateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建部门
-         *
-         * @param request CustomizeContactDeptCreateRequest
-         * @return CustomizeContactDeptCreateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptCreateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptCreateResponse
+        /// </returns>
         public CustomizeContactDeptCreateResponse CustomizeContactDeptCreate(CustomizeContactDeptCreateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7319,12 +9546,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CustomizeContactDeptCreateWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建部门
-         *
-         * @param request CustomizeContactDeptCreateRequest
-         * @return CustomizeContactDeptCreateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptCreateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptCreateResponse
+        /// </returns>
         public async Task<CustomizeContactDeptCreateResponse> CustomizeContactDeptCreateAsync(CustomizeContactDeptCreateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7332,14 +9565,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CustomizeContactDeptCreateWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除部门
-         *
-         * @param request CustomizeContactDeptDeleteRequest
-         * @param headers CustomizeContactDeptDeleteHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactDeptDeleteResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptDeleteRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactDeptDeleteHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptDeleteResponse
+        /// </returns>
         public CustomizeContactDeptDeleteResponse CustomizeContactDeptDeleteWithOptions(CustomizeContactDeptDeleteRequest request, CustomizeContactDeptDeleteHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7381,14 +9624,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactDeptDeleteResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除部门
-         *
-         * @param request CustomizeContactDeptDeleteRequest
-         * @param headers CustomizeContactDeptDeleteHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactDeptDeleteResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptDeleteRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactDeptDeleteHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptDeleteResponse
+        /// </returns>
         public async Task<CustomizeContactDeptDeleteResponse> CustomizeContactDeptDeleteWithOptionsAsync(CustomizeContactDeptDeleteRequest request, CustomizeContactDeptDeleteHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7430,12 +9683,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactDeptDeleteResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除部门
-         *
-         * @param request CustomizeContactDeptDeleteRequest
-         * @return CustomizeContactDeptDeleteResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptDeleteRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptDeleteResponse
+        /// </returns>
         public CustomizeContactDeptDeleteResponse CustomizeContactDeptDelete(CustomizeContactDeptDeleteRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7443,12 +9702,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CustomizeContactDeptDeleteWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除部门
-         *
-         * @param request CustomizeContactDeptDeleteRequest
-         * @return CustomizeContactDeptDeleteResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptDeleteRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptDeleteResponse
+        /// </returns>
         public async Task<CustomizeContactDeptDeleteResponse> CustomizeContactDeptDeleteAsync(CustomizeContactDeptDeleteRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7456,14 +9721,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CustomizeContactDeptDeleteWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建自定义通讯录某个部门的部门群
-         *
-         * @param request CustomizeContactDeptGroupCreateRequest
-         * @param headers CustomizeContactDeptGroupCreateHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactDeptGroupCreateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建自定义通讯录某个部门的部门群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptGroupCreateRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactDeptGroupCreateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptGroupCreateResponse
+        /// </returns>
         public CustomizeContactDeptGroupCreateResponse CustomizeContactDeptGroupCreateWithOptions(CustomizeContactDeptGroupCreateRequest request, CustomizeContactDeptGroupCreateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7505,14 +9780,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactDeptGroupCreateResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建自定义通讯录某个部门的部门群
-         *
-         * @param request CustomizeContactDeptGroupCreateRequest
-         * @param headers CustomizeContactDeptGroupCreateHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactDeptGroupCreateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建自定义通讯录某个部门的部门群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptGroupCreateRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactDeptGroupCreateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptGroupCreateResponse
+        /// </returns>
         public async Task<CustomizeContactDeptGroupCreateResponse> CustomizeContactDeptGroupCreateWithOptionsAsync(CustomizeContactDeptGroupCreateRequest request, CustomizeContactDeptGroupCreateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7554,12 +9839,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactDeptGroupCreateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建自定义通讯录某个部门的部门群
-         *
-         * @param request CustomizeContactDeptGroupCreateRequest
-         * @return CustomizeContactDeptGroupCreateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建自定义通讯录某个部门的部门群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptGroupCreateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptGroupCreateResponse
+        /// </returns>
         public CustomizeContactDeptGroupCreateResponse CustomizeContactDeptGroupCreate(CustomizeContactDeptGroupCreateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7567,12 +9858,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CustomizeContactDeptGroupCreateWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建自定义通讯录某个部门的部门群
-         *
-         * @param request CustomizeContactDeptGroupCreateRequest
-         * @return CustomizeContactDeptGroupCreateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建自定义通讯录某个部门的部门群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptGroupCreateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptGroupCreateResponse
+        /// </returns>
         public async Task<CustomizeContactDeptGroupCreateResponse> CustomizeContactDeptGroupCreateAsync(CustomizeContactDeptGroupCreateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7580,14 +9877,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CustomizeContactDeptGroupCreateWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取部门详情
-         *
-         * @param request CustomizeContactDeptInfoRequest
-         * @param headers CustomizeContactDeptInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取部门详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactDeptInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptInfoResponse
+        /// </returns>
         public CustomizeContactDeptInfoResponse CustomizeContactDeptInfoWithOptions(CustomizeContactDeptInfoRequest request, CustomizeContactDeptInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7629,14 +9936,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactDeptInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取部门详情
-         *
-         * @param request CustomizeContactDeptInfoRequest
-         * @param headers CustomizeContactDeptInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取部门详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactDeptInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptInfoResponse
+        /// </returns>
         public async Task<CustomizeContactDeptInfoResponse> CustomizeContactDeptInfoWithOptionsAsync(CustomizeContactDeptInfoRequest request, CustomizeContactDeptInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7678,12 +9995,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactDeptInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取部门详情
-         *
-         * @param request CustomizeContactDeptInfoRequest
-         * @return CustomizeContactDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取部门详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptInfoResponse
+        /// </returns>
         public CustomizeContactDeptInfoResponse CustomizeContactDeptInfo(CustomizeContactDeptInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7691,12 +10014,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CustomizeContactDeptInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取部门详情
-         *
-         * @param request CustomizeContactDeptInfoRequest
-         * @return CustomizeContactDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取部门详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptInfoResponse
+        /// </returns>
         public async Task<CustomizeContactDeptInfoResponse> CustomizeContactDeptInfoAsync(CustomizeContactDeptInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7704,14 +10033,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CustomizeContactDeptInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取子部门列表
-         *
-         * @param request CustomizeContactDeptListRequest
-         * @param headers CustomizeContactDeptListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactDeptListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取子部门列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptListRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactDeptListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptListResponse
+        /// </returns>
         public CustomizeContactDeptListResponse CustomizeContactDeptListWithOptions(CustomizeContactDeptListRequest request, CustomizeContactDeptListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7753,14 +10092,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactDeptListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取子部门列表
-         *
-         * @param request CustomizeContactDeptListRequest
-         * @param headers CustomizeContactDeptListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactDeptListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取子部门列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptListRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactDeptListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptListResponse
+        /// </returns>
         public async Task<CustomizeContactDeptListResponse> CustomizeContactDeptListWithOptionsAsync(CustomizeContactDeptListRequest request, CustomizeContactDeptListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7802,12 +10151,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactDeptListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取子部门列表
-         *
-         * @param request CustomizeContactDeptListRequest
-         * @return CustomizeContactDeptListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取子部门列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptListResponse
+        /// </returns>
         public CustomizeContactDeptListResponse CustomizeContactDeptList(CustomizeContactDeptListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7815,12 +10170,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CustomizeContactDeptListWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取子部门列表
-         *
-         * @param request CustomizeContactDeptListRequest
-         * @return CustomizeContactDeptListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取子部门列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptListResponse
+        /// </returns>
         public async Task<CustomizeContactDeptListResponse> CustomizeContactDeptListAsync(CustomizeContactDeptListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7828,14 +10189,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CustomizeContactDeptListWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新部门
-         *
-         * @param request CustomizeContactDeptUpdateRequest
-         * @param headers CustomizeContactDeptUpdateHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactDeptUpdateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptUpdateRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactDeptUpdateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptUpdateResponse
+        /// </returns>
         public CustomizeContactDeptUpdateResponse CustomizeContactDeptUpdateWithOptions(CustomizeContactDeptUpdateRequest request, CustomizeContactDeptUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7893,14 +10264,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactDeptUpdateResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新部门
-         *
-         * @param request CustomizeContactDeptUpdateRequest
-         * @param headers CustomizeContactDeptUpdateHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactDeptUpdateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptUpdateRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactDeptUpdateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptUpdateResponse
+        /// </returns>
         public async Task<CustomizeContactDeptUpdateResponse> CustomizeContactDeptUpdateWithOptionsAsync(CustomizeContactDeptUpdateRequest request, CustomizeContactDeptUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -7958,12 +10339,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactDeptUpdateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新部门
-         *
-         * @param request CustomizeContactDeptUpdateRequest
-         * @return CustomizeContactDeptUpdateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptUpdateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptUpdateResponse
+        /// </returns>
         public CustomizeContactDeptUpdateResponse CustomizeContactDeptUpdate(CustomizeContactDeptUpdateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7971,12 +10358,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CustomizeContactDeptUpdateWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新部门
-         *
-         * @param request CustomizeContactDeptUpdateRequest
-         * @return CustomizeContactDeptUpdateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactDeptUpdateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactDeptUpdateResponse
+        /// </returns>
         public async Task<CustomizeContactDeptUpdateResponse> CustomizeContactDeptUpdateAsync(CustomizeContactDeptUpdateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -7984,14 +10377,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CustomizeContactDeptUpdateWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 普通部门下添加人员
-         *
-         * @param request CustomizeContactEmpAddRequest
-         * @param headers CustomizeContactEmpAddHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactEmpAddResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>普通部门下添加人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactEmpAddRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactEmpAddHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactEmpAddResponse
+        /// </returns>
         public CustomizeContactEmpAddResponse CustomizeContactEmpAddWithOptions(CustomizeContactEmpAddRequest request, CustomizeContactEmpAddHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -8037,14 +10440,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactEmpAddResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 普通部门下添加人员
-         *
-         * @param request CustomizeContactEmpAddRequest
-         * @param headers CustomizeContactEmpAddHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactEmpAddResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>普通部门下添加人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactEmpAddRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactEmpAddHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactEmpAddResponse
+        /// </returns>
         public async Task<CustomizeContactEmpAddResponse> CustomizeContactEmpAddWithOptionsAsync(CustomizeContactEmpAddRequest request, CustomizeContactEmpAddHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -8090,12 +10503,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactEmpAddResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 普通部门下添加人员
-         *
-         * @param request CustomizeContactEmpAddRequest
-         * @return CustomizeContactEmpAddResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>普通部门下添加人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactEmpAddRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactEmpAddResponse
+        /// </returns>
         public CustomizeContactEmpAddResponse CustomizeContactEmpAdd(CustomizeContactEmpAddRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -8103,12 +10522,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CustomizeContactEmpAddWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 普通部门下添加人员
-         *
-         * @param request CustomizeContactEmpAddRequest
-         * @return CustomizeContactEmpAddResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>普通部门下添加人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactEmpAddRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactEmpAddResponse
+        /// </returns>
         public async Task<CustomizeContactEmpAddResponse> CustomizeContactEmpAddAsync(CustomizeContactEmpAddRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -8116,14 +10541,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CustomizeContactEmpAddWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 普通部门下移除人员
-         *
-         * @param request CustomizeContactEmpDeleteRequest
-         * @param headers CustomizeContactEmpDeleteHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactEmpDeleteResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>普通部门下移除人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactEmpDeleteRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactEmpDeleteHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactEmpDeleteResponse
+        /// </returns>
         public CustomizeContactEmpDeleteResponse CustomizeContactEmpDeleteWithOptions(CustomizeContactEmpDeleteRequest request, CustomizeContactEmpDeleteHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -8169,14 +10604,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactEmpDeleteResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 普通部门下移除人员
-         *
-         * @param request CustomizeContactEmpDeleteRequest
-         * @param headers CustomizeContactEmpDeleteHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactEmpDeleteResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>普通部门下移除人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactEmpDeleteRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactEmpDeleteHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactEmpDeleteResponse
+        /// </returns>
         public async Task<CustomizeContactEmpDeleteResponse> CustomizeContactEmpDeleteWithOptionsAsync(CustomizeContactEmpDeleteRequest request, CustomizeContactEmpDeleteHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -8222,12 +10667,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactEmpDeleteResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 普通部门下移除人员
-         *
-         * @param request CustomizeContactEmpDeleteRequest
-         * @return CustomizeContactEmpDeleteResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>普通部门下移除人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactEmpDeleteRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactEmpDeleteResponse
+        /// </returns>
         public CustomizeContactEmpDeleteResponse CustomizeContactEmpDelete(CustomizeContactEmpDeleteRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -8235,12 +10686,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CustomizeContactEmpDeleteWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 普通部门下移除人员
-         *
-         * @param request CustomizeContactEmpDeleteRequest
-         * @return CustomizeContactEmpDeleteResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>普通部门下移除人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactEmpDeleteRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactEmpDeleteResponse
+        /// </returns>
         public async Task<CustomizeContactEmpDeleteResponse> CustomizeContactEmpDeleteAsync(CustomizeContactEmpDeleteRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -8248,14 +10705,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CustomizeContactEmpDeleteWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询部门下人员
-         *
-         * @param request CustomizeContactEmpListRequest
-         * @param headers CustomizeContactEmpListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactEmpListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询部门下人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactEmpListRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactEmpListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactEmpListResponse
+        /// </returns>
         public CustomizeContactEmpListResponse CustomizeContactEmpListWithOptions(CustomizeContactEmpListRequest request, CustomizeContactEmpListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -8293,14 +10760,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactEmpListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询部门下人员
-         *
-         * @param request CustomizeContactEmpListRequest
-         * @param headers CustomizeContactEmpListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactEmpListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询部门下人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactEmpListRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactEmpListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactEmpListResponse
+        /// </returns>
         public async Task<CustomizeContactEmpListResponse> CustomizeContactEmpListWithOptionsAsync(CustomizeContactEmpListRequest request, CustomizeContactEmpListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -8338,12 +10815,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactEmpListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询部门下人员
-         *
-         * @param request CustomizeContactEmpListRequest
-         * @return CustomizeContactEmpListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询部门下人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactEmpListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactEmpListResponse
+        /// </returns>
         public CustomizeContactEmpListResponse CustomizeContactEmpList(CustomizeContactEmpListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -8351,12 +10834,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CustomizeContactEmpListWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询部门下人员
-         *
-         * @param request CustomizeContactEmpListRequest
-         * @return CustomizeContactEmpListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询部门下人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactEmpListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactEmpListResponse
+        /// </returns>
         public async Task<CustomizeContactEmpListResponse> CustomizeContactEmpListAsync(CustomizeContactEmpListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -8364,13 +10853,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CustomizeContactEmpListWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取自定义通讯录列表
-         *
-         * @param headers CustomizeContactListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取自定义通讯录列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// CustomizeContactListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactListResponse
+        /// </returns>
         public CustomizeContactListResponse CustomizeContactListWithOptions(CustomizeContactListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -8401,13 +10898,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取自定义通讯录列表
-         *
-         * @param headers CustomizeContactListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取自定义通讯录列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// CustomizeContactListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactListResponse
+        /// </returns>
         public async Task<CustomizeContactListResponse> CustomizeContactListWithOptionsAsync(CustomizeContactListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -8438,11 +10943,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取自定义通讯录列表
-         *
-         * @return CustomizeContactListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取自定义通讯录列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// CustomizeContactListResponse
+        /// </returns>
         public CustomizeContactListResponse CustomizeContactList()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -8450,11 +10958,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CustomizeContactListWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 获取自定义通讯录列表
-         *
-         * @return CustomizeContactListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取自定义通讯录列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// CustomizeContactListResponse
+        /// </returns>
         public async Task<CustomizeContactListResponse> CustomizeContactListAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -8462,14 +10973,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CustomizeContactListWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 更新自定义通讯录
-         *
-         * @param request CustomizeContactUpdateRequest
-         * @param headers CustomizeContactUpdateHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactUpdateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新自定义通讯录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactUpdateRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactUpdateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactUpdateResponse
+        /// </returns>
         public CustomizeContactUpdateResponse CustomizeContactUpdateWithOptions(CustomizeContactUpdateRequest request, CustomizeContactUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -8519,14 +11040,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactUpdateResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新自定义通讯录
-         *
-         * @param request CustomizeContactUpdateRequest
-         * @param headers CustomizeContactUpdateHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CustomizeContactUpdateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新自定义通讯录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactUpdateRequest
+        /// </param>
+        /// <param name="headers">
+        /// CustomizeContactUpdateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactUpdateResponse
+        /// </returns>
         public async Task<CustomizeContactUpdateResponse> CustomizeContactUpdateWithOptionsAsync(CustomizeContactUpdateRequest request, CustomizeContactUpdateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -8576,12 +11107,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<CustomizeContactUpdateResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新自定义通讯录
-         *
-         * @param request CustomizeContactUpdateRequest
-         * @return CustomizeContactUpdateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新自定义通讯录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactUpdateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactUpdateResponse
+        /// </returns>
         public CustomizeContactUpdateResponse CustomizeContactUpdate(CustomizeContactUpdateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -8589,12 +11126,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return CustomizeContactUpdateWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新自定义通讯录
-         *
-         * @param request CustomizeContactUpdateRequest
-         * @return CustomizeContactUpdateResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新自定义通讯录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CustomizeContactUpdateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CustomizeContactUpdateResponse
+        /// </returns>
         public async Task<CustomizeContactUpdateResponse> CustomizeContactUpdateAsync(CustomizeContactUpdateRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -8602,14 +11145,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await CustomizeContactUpdateWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 门店通业务消息推送
-         *
-         * @param tmpReq DIgitalStoreMessagePushRequest
-         * @param headers DIgitalStoreMessagePushHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DIgitalStoreMessagePushResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>门店通业务消息推送</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// DIgitalStoreMessagePushRequest
+        /// </param>
+        /// <param name="headers">
+        /// DIgitalStoreMessagePushHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DIgitalStoreMessagePushResponse
+        /// </returns>
         public DIgitalStoreMessagePushResponse DIgitalStoreMessagePushWithOptions(DIgitalStoreMessagePushRequest tmpReq, DIgitalStoreMessagePushHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
@@ -8653,14 +11206,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DIgitalStoreMessagePushResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 门店通业务消息推送
-         *
-         * @param tmpReq DIgitalStoreMessagePushRequest
-         * @param headers DIgitalStoreMessagePushHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DIgitalStoreMessagePushResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>门店通业务消息推送</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// DIgitalStoreMessagePushRequest
+        /// </param>
+        /// <param name="headers">
+        /// DIgitalStoreMessagePushHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DIgitalStoreMessagePushResponse
+        /// </returns>
         public async Task<DIgitalStoreMessagePushResponse> DIgitalStoreMessagePushWithOptionsAsync(DIgitalStoreMessagePushRequest tmpReq, DIgitalStoreMessagePushHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
@@ -8704,12 +11267,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DIgitalStoreMessagePushResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 门店通业务消息推送
-         *
-         * @param request DIgitalStoreMessagePushRequest
-         * @return DIgitalStoreMessagePushResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>门店通业务消息推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DIgitalStoreMessagePushRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DIgitalStoreMessagePushResponse
+        /// </returns>
         public DIgitalStoreMessagePushResponse DIgitalStoreMessagePush(DIgitalStoreMessagePushRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -8717,12 +11286,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return DIgitalStoreMessagePushWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 门店通业务消息推送
-         *
-         * @param request DIgitalStoreMessagePushRequest
-         * @return DIgitalStoreMessagePushResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>门店通业务消息推送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DIgitalStoreMessagePushRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DIgitalStoreMessagePushResponse
+        /// </returns>
         public async Task<DIgitalStoreMessagePushResponse> DIgitalStoreMessagePushAsync(DIgitalStoreMessagePushRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -8730,14 +11305,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await DIgitalStoreMessagePushWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 群运营-场景卡片发送记录列表
-         *
-         * @param request DigitalStoreCardRecordRequest
-         * @param headers DigitalStoreCardRecordHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreCardRecordResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群运营-场景卡片发送记录列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreCardRecordRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreCardRecordHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreCardRecordResponse
+        /// </returns>
         public DigitalStoreCardRecordResponse DigitalStoreCardRecordWithOptions(DigitalStoreCardRecordRequest request, DigitalStoreCardRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -8795,14 +11380,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreCardRecordResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 群运营-场景卡片发送记录列表
-         *
-         * @param request DigitalStoreCardRecordRequest
-         * @param headers DigitalStoreCardRecordHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreCardRecordResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群运营-场景卡片发送记录列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreCardRecordRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreCardRecordHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreCardRecordResponse
+        /// </returns>
         public async Task<DigitalStoreCardRecordResponse> DigitalStoreCardRecordWithOptionsAsync(DigitalStoreCardRecordRequest request, DigitalStoreCardRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -8860,12 +11455,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreCardRecordResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 群运营-场景卡片发送记录列表
-         *
-         * @param request DigitalStoreCardRecordRequest
-         * @return DigitalStoreCardRecordResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群运营-场景卡片发送记录列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreCardRecordRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreCardRecordResponse
+        /// </returns>
         public DigitalStoreCardRecordResponse DigitalStoreCardRecord(DigitalStoreCardRecordRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -8873,12 +11474,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return DigitalStoreCardRecordWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 群运营-场景卡片发送记录列表
-         *
-         * @param request DigitalStoreCardRecordRequest
-         * @return DigitalStoreCardRecordResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群运营-场景卡片发送记录列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreCardRecordRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreCardRecordResponse
+        /// </returns>
         public async Task<DigitalStoreCardRecordResponse> DigitalStoreCardRecordAsync(DigitalStoreCardRecordRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -8886,13 +11493,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await DigitalStoreCardRecordWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询组织中门店通通讯录基础信息
-         *
-         * @param headers DigitalStoreContactInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreContactInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询组织中门店通通讯录基础信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// DigitalStoreContactInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreContactInfoResponse
+        /// </returns>
         public DigitalStoreContactInfoResponse DigitalStoreContactInfoWithOptions(DigitalStoreContactInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -8923,13 +11538,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreContactInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询组织中门店通通讯录基础信息
-         *
-         * @param headers DigitalStoreContactInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreContactInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询组织中门店通通讯录基础信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// DigitalStoreContactInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreContactInfoResponse
+        /// </returns>
         public async Task<DigitalStoreContactInfoResponse> DigitalStoreContactInfoWithOptionsAsync(DigitalStoreContactInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -8960,11 +11583,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreContactInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询组织中门店通通讯录基础信息
-         *
-         * @return DigitalStoreContactInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询组织中门店通通讯录基础信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// DigitalStoreContactInfoResponse
+        /// </returns>
         public DigitalStoreContactInfoResponse DigitalStoreContactInfo()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -8972,11 +11598,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return DigitalStoreContactInfoWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 查询组织中门店通通讯录基础信息
-         *
-         * @return DigitalStoreContactInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询组织中门店通通讯录基础信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// DigitalStoreContactInfoResponse
+        /// </returns>
         public async Task<DigitalStoreContactInfoResponse> DigitalStoreContactInfoAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -8984,14 +11613,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await DigitalStoreContactInfoWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 获取门店通相关会话列表（区域群、门店群）
-         *
-         * @param request DigitalStoreConversationsRequest
-         * @param headers DigitalStoreConversationsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreConversationsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取门店通相关会话列表（区域群、门店群）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreConversationsRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreConversationsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreConversationsResponse
+        /// </returns>
         public DigitalStoreConversationsResponse DigitalStoreConversationsWithOptions(DigitalStoreConversationsRequest request, DigitalStoreConversationsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -9033,14 +11672,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreConversationsResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取门店通相关会话列表（区域群、门店群）
-         *
-         * @param request DigitalStoreConversationsRequest
-         * @param headers DigitalStoreConversationsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreConversationsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取门店通相关会话列表（区域群、门店群）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreConversationsRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreConversationsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreConversationsResponse
+        /// </returns>
         public async Task<DigitalStoreConversationsResponse> DigitalStoreConversationsWithOptionsAsync(DigitalStoreConversationsRequest request, DigitalStoreConversationsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -9082,12 +11731,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreConversationsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取门店通相关会话列表（区域群、门店群）
-         *
-         * @param request DigitalStoreConversationsRequest
-         * @return DigitalStoreConversationsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取门店通相关会话列表（区域群、门店群）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreConversationsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreConversationsResponse
+        /// </returns>
         public DigitalStoreConversationsResponse DigitalStoreConversations(DigitalStoreConversationsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -9095,12 +11750,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return DigitalStoreConversationsWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取门店通相关会话列表（区域群、门店群）
-         *
-         * @param request DigitalStoreConversationsRequest
-         * @return DigitalStoreConversationsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取门店通相关会话列表（区域群、门店群）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreConversationsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreConversationsResponse
+        /// </returns>
         public async Task<DigitalStoreConversationsResponse> DigitalStoreConversationsAsync(DigitalStoreConversationsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -9108,14 +11769,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await DigitalStoreConversationsWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 群运营-数据监控-导出列表
-         *
-         * @param request DigitalStoreExportCardRecordRequest
-         * @param headers DigitalStoreExportCardRecordHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreExportCardRecordResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群运营-数据监控-导出列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreExportCardRecordRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreExportCardRecordHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreExportCardRecordResponse
+        /// </returns>
         public DigitalStoreExportCardRecordResponse DigitalStoreExportCardRecordWithOptions(DigitalStoreExportCardRecordRequest request, DigitalStoreExportCardRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -9165,14 +11836,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreExportCardRecordResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 群运营-数据监控-导出列表
-         *
-         * @param request DigitalStoreExportCardRecordRequest
-         * @param headers DigitalStoreExportCardRecordHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreExportCardRecordResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群运营-数据监控-导出列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreExportCardRecordRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreExportCardRecordHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreExportCardRecordResponse
+        /// </returns>
         public async Task<DigitalStoreExportCardRecordResponse> DigitalStoreExportCardRecordWithOptionsAsync(DigitalStoreExportCardRecordRequest request, DigitalStoreExportCardRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -9222,12 +11903,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreExportCardRecordResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 群运营-数据监控-导出列表
-         *
-         * @param request DigitalStoreExportCardRecordRequest
-         * @return DigitalStoreExportCardRecordResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群运营-数据监控-导出列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreExportCardRecordRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreExportCardRecordResponse
+        /// </returns>
         public DigitalStoreExportCardRecordResponse DigitalStoreExportCardRecord(DigitalStoreExportCardRecordRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -9235,12 +11922,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return DigitalStoreExportCardRecordWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 群运营-数据监控-导出列表
-         *
-         * @param request DigitalStoreExportCardRecordRequest
-         * @return DigitalStoreExportCardRecordResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群运营-数据监控-导出列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreExportCardRecordRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreExportCardRecordResponse
+        /// </returns>
         public async Task<DigitalStoreExportCardRecordResponse> DigitalStoreExportCardRecordAsync(DigitalStoreExportCardRecordRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -9248,14 +11941,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await DigitalStoreExportCardRecordWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 群运营-数据监控-导出明细
-         *
-         * @param request DigitalStoreExportCardRecordDetailRequest
-         * @param headers DigitalStoreExportCardRecordDetailHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreExportCardRecordDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群运营-数据监控-导出明细</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreExportCardRecordDetailRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreExportCardRecordDetailHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreExportCardRecordDetailResponse
+        /// </returns>
         public DigitalStoreExportCardRecordDetailResponse DigitalStoreExportCardRecordDetailWithOptions(DigitalStoreExportCardRecordDetailRequest request, DigitalStoreExportCardRecordDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -9305,14 +12008,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreExportCardRecordDetailResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 群运营-数据监控-导出明细
-         *
-         * @param request DigitalStoreExportCardRecordDetailRequest
-         * @param headers DigitalStoreExportCardRecordDetailHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreExportCardRecordDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群运营-数据监控-导出明细</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreExportCardRecordDetailRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreExportCardRecordDetailHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreExportCardRecordDetailResponse
+        /// </returns>
         public async Task<DigitalStoreExportCardRecordDetailResponse> DigitalStoreExportCardRecordDetailWithOptionsAsync(DigitalStoreExportCardRecordDetailRequest request, DigitalStoreExportCardRecordDetailHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -9362,12 +12075,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreExportCardRecordDetailResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 群运营-数据监控-导出明细
-         *
-         * @param request DigitalStoreExportCardRecordDetailRequest
-         * @return DigitalStoreExportCardRecordDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群运营-数据监控-导出明细</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreExportCardRecordDetailRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreExportCardRecordDetailResponse
+        /// </returns>
         public DigitalStoreExportCardRecordDetailResponse DigitalStoreExportCardRecordDetail(DigitalStoreExportCardRecordDetailRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -9375,12 +12094,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return DigitalStoreExportCardRecordDetailWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 群运营-数据监控-导出明细
-         *
-         * @param request DigitalStoreExportCardRecordDetailRequest
-         * @return DigitalStoreExportCardRecordDetailResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群运营-数据监控-导出明细</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreExportCardRecordDetailRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreExportCardRecordDetailResponse
+        /// </returns>
         public async Task<DigitalStoreExportCardRecordDetailResponse> DigitalStoreExportCardRecordDetailAsync(DigitalStoreExportCardRecordDetailRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -9388,14 +12113,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await DigitalStoreExportCardRecordDetailWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询门店通中的门店分组详情
-         *
-         * @param request DigitalStoreGroupInfoRequest
-         * @param headers DigitalStoreGroupInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreGroupInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通中的门店分组详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreGroupInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreGroupInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreGroupInfoResponse
+        /// </returns>
         public DigitalStoreGroupInfoResponse DigitalStoreGroupInfoWithOptions(DigitalStoreGroupInfoRequest request, DigitalStoreGroupInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -9433,14 +12168,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreGroupInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询门店通中的门店分组详情
-         *
-         * @param request DigitalStoreGroupInfoRequest
-         * @param headers DigitalStoreGroupInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreGroupInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通中的门店分组详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreGroupInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreGroupInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreGroupInfoResponse
+        /// </returns>
         public async Task<DigitalStoreGroupInfoResponse> DigitalStoreGroupInfoWithOptionsAsync(DigitalStoreGroupInfoRequest request, DigitalStoreGroupInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -9478,12 +12223,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreGroupInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询门店通中的门店分组详情
-         *
-         * @param request DigitalStoreGroupInfoRequest
-         * @return DigitalStoreGroupInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通中的门店分组详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreGroupInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreGroupInfoResponse
+        /// </returns>
         public DigitalStoreGroupInfoResponse DigitalStoreGroupInfo(DigitalStoreGroupInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -9491,12 +12242,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return DigitalStoreGroupInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询门店通中的门店分组详情
-         *
-         * @param request DigitalStoreGroupInfoRequest
-         * @return DigitalStoreGroupInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通中的门店分组详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreGroupInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreGroupInfoResponse
+        /// </returns>
         public async Task<DigitalStoreGroupInfoResponse> DigitalStoreGroupInfoAsync(DigitalStoreGroupInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -9504,13 +12261,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await DigitalStoreGroupInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询门店通中的分组列表
-         *
-         * @param headers DigitalStoreGroupsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreGroupsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通中的分组列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// DigitalStoreGroupsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreGroupsResponse
+        /// </returns>
         public DigitalStoreGroupsResponse DigitalStoreGroupsWithOptions(DigitalStoreGroupsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -9541,13 +12306,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreGroupsResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询门店通中的分组列表
-         *
-         * @param headers DigitalStoreGroupsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreGroupsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通中的分组列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// DigitalStoreGroupsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreGroupsResponse
+        /// </returns>
         public async Task<DigitalStoreGroupsResponse> DigitalStoreGroupsWithOptionsAsync(DigitalStoreGroupsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -9578,11 +12351,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreGroupsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询门店通中的分组列表
-         *
-         * @return DigitalStoreGroupsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通中的分组列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// DigitalStoreGroupsResponse
+        /// </returns>
         public DigitalStoreGroupsResponse DigitalStoreGroups()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -9590,11 +12366,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return DigitalStoreGroupsWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 查询门店通中的分组列表
-         *
-         * @return DigitalStoreGroupsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通中的分组列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// DigitalStoreGroupsResponse
+        /// </returns>
         public async Task<DigitalStoreGroupsResponse> DigitalStoreGroupsAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -9602,14 +12381,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await DigitalStoreGroupsWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 查询门店通讯录某个节点信息
-         *
-         * @param request DigitalStoreNodeInfoRequest
-         * @param headers DigitalStoreNodeInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreNodeInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通讯录某个节点信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreNodeInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreNodeInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreNodeInfoResponse
+        /// </returns>
         public DigitalStoreNodeInfoResponse DigitalStoreNodeInfoWithOptions(DigitalStoreNodeInfoRequest request, DigitalStoreNodeInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -9651,14 +12440,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreNodeInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询门店通讯录某个节点信息
-         *
-         * @param request DigitalStoreNodeInfoRequest
-         * @param headers DigitalStoreNodeInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreNodeInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通讯录某个节点信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreNodeInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreNodeInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreNodeInfoResponse
+        /// </returns>
         public async Task<DigitalStoreNodeInfoResponse> DigitalStoreNodeInfoWithOptionsAsync(DigitalStoreNodeInfoRequest request, DigitalStoreNodeInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -9700,12 +12499,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreNodeInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询门店通讯录某个节点信息
-         *
-         * @param request DigitalStoreNodeInfoRequest
-         * @return DigitalStoreNodeInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通讯录某个节点信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreNodeInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreNodeInfoResponse
+        /// </returns>
         public DigitalStoreNodeInfoResponse DigitalStoreNodeInfo(DigitalStoreNodeInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -9713,12 +12518,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return DigitalStoreNodeInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询门店通讯录某个节点信息
-         *
-         * @param request DigitalStoreNodeInfoRequest
-         * @return DigitalStoreNodeInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通讯录某个节点信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreNodeInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreNodeInfoResponse
+        /// </returns>
         public async Task<DigitalStoreNodeInfoResponse> DigitalStoreNodeInfoAsync(DigitalStoreNodeInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -9726,13 +12537,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await DigitalStoreNodeInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 门店通权益信息查询
-         *
-         * @param headers DigitalStoreRightsInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreRightsInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>门店通权益信息查询</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// DigitalStoreRightsInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreRightsInfoResponse
+        /// </returns>
         public DigitalStoreRightsInfoResponse DigitalStoreRightsInfoWithOptions(DigitalStoreRightsInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -9763,13 +12582,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreRightsInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 门店通权益信息查询
-         *
-         * @param headers DigitalStoreRightsInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreRightsInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>门店通权益信息查询</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// DigitalStoreRightsInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreRightsInfoResponse
+        /// </returns>
         public async Task<DigitalStoreRightsInfoResponse> DigitalStoreRightsInfoWithOptionsAsync(DigitalStoreRightsInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -9800,11 +12627,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreRightsInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 门店通权益信息查询
-         *
-         * @return DigitalStoreRightsInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>门店通权益信息查询</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// DigitalStoreRightsInfoResponse
+        /// </returns>
         public DigitalStoreRightsInfoResponse DigitalStoreRightsInfo()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -9812,11 +12642,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return DigitalStoreRightsInfoWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 门店通权益信息查询
-         *
-         * @return DigitalStoreRightsInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>门店通权益信息查询</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// DigitalStoreRightsInfoResponse
+        /// </returns>
         public async Task<DigitalStoreRightsInfoResponse> DigitalStoreRightsInfoAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -9824,13 +12657,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await DigitalStoreRightsInfoWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 查询门店通中的角色列表
-         *
-         * @param headers DigitalStoreRolesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreRolesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通中的角色列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// DigitalStoreRolesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreRolesResponse
+        /// </returns>
         public DigitalStoreRolesResponse DigitalStoreRolesWithOptions(DigitalStoreRolesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -9861,13 +12702,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreRolesResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询门店通中的角色列表
-         *
-         * @param headers DigitalStoreRolesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreRolesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通中的角色列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// DigitalStoreRolesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreRolesResponse
+        /// </returns>
         public async Task<DigitalStoreRolesResponse> DigitalStoreRolesWithOptionsAsync(DigitalStoreRolesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -9898,11 +12747,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreRolesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询门店通中的角色列表
-         *
-         * @return DigitalStoreRolesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通中的角色列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// DigitalStoreRolesResponse
+        /// </returns>
         public DigitalStoreRolesResponse DigitalStoreRoles()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -9910,11 +12762,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return DigitalStoreRolesWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 查询门店通中的角色列表
-         *
-         * @return DigitalStoreRolesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通中的角色列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// DigitalStoreRolesResponse
+        /// </returns>
         public async Task<DigitalStoreRolesResponse> DigitalStoreRolesAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -9922,14 +12777,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await DigitalStoreRolesWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 获取门店通场景群的业务范围
-         *
-         * @param request DigitalStoreSceneScopeRequest
-         * @param headers DigitalStoreSceneScopeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreSceneScopeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取门店通场景群的业务范围</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreSceneScopeRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreSceneScopeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreSceneScopeResponse
+        /// </returns>
         public DigitalStoreSceneScopeResponse DigitalStoreSceneScopeWithOptions(DigitalStoreSceneScopeRequest request, DigitalStoreSceneScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -9971,14 +12836,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreSceneScopeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取门店通场景群的业务范围
-         *
-         * @param request DigitalStoreSceneScopeRequest
-         * @param headers DigitalStoreSceneScopeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreSceneScopeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取门店通场景群的业务范围</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreSceneScopeRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreSceneScopeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreSceneScopeResponse
+        /// </returns>
         public async Task<DigitalStoreSceneScopeResponse> DigitalStoreSceneScopeWithOptionsAsync(DigitalStoreSceneScopeRequest request, DigitalStoreSceneScopeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -10020,12 +12895,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreSceneScopeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取门店通场景群的业务范围
-         *
-         * @param request DigitalStoreSceneScopeRequest
-         * @return DigitalStoreSceneScopeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取门店通场景群的业务范围</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreSceneScopeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreSceneScopeResponse
+        /// </returns>
         public DigitalStoreSceneScopeResponse DigitalStoreSceneScope(DigitalStoreSceneScopeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -10033,12 +12914,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return DigitalStoreSceneScopeWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取门店通场景群的业务范围
-         *
-         * @param request DigitalStoreSceneScopeRequest
-         * @return DigitalStoreSceneScopeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取门店通场景群的业务范围</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreSceneScopeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreSceneScopeResponse
+        /// </returns>
         public async Task<DigitalStoreSceneScopeResponse> DigitalStoreSceneScopeAsync(DigitalStoreSceneScopeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -10046,14 +12933,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await DigitalStoreSceneScopeWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询门店通中的门店详情
-         *
-         * @param request DigitalStoreStoreInfoRequest
-         * @param headers DigitalStoreStoreInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreStoreInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通中的门店详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreStoreInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreStoreInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreStoreInfoResponse
+        /// </returns>
         public DigitalStoreStoreInfoResponse DigitalStoreStoreInfoWithOptions(DigitalStoreStoreInfoRequest request, DigitalStoreStoreInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -10095,14 +12992,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreStoreInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询门店通中的门店详情
-         *
-         * @param request DigitalStoreStoreInfoRequest
-         * @param headers DigitalStoreStoreInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreStoreInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通中的门店详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreStoreInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreStoreInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreStoreInfoResponse
+        /// </returns>
         public async Task<DigitalStoreStoreInfoResponse> DigitalStoreStoreInfoWithOptionsAsync(DigitalStoreStoreInfoRequest request, DigitalStoreStoreInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -10144,12 +13051,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreStoreInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询门店通中的门店详情
-         *
-         * @param request DigitalStoreStoreInfoRequest
-         * @return DigitalStoreStoreInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通中的门店详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreStoreInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreStoreInfoResponse
+        /// </returns>
         public DigitalStoreStoreInfoResponse DigitalStoreStoreInfo(DigitalStoreStoreInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -10157,12 +13070,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return DigitalStoreStoreInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询门店通中的门店详情
-         *
-         * @param request DigitalStoreStoreInfoRequest
-         * @return DigitalStoreStoreInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通中的门店详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreStoreInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreStoreInfoResponse
+        /// </returns>
         public async Task<DigitalStoreStoreInfoResponse> DigitalStoreStoreInfoAsync(DigitalStoreStoreInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -10170,14 +13089,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await DigitalStoreStoreInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询门店通讯录某个节点下的子节点
-         *
-         * @param request DigitalStoreSubNodesRequest
-         * @param headers DigitalStoreSubNodesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreSubNodesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通讯录某个节点下的子节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreSubNodesRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreSubNodesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreSubNodesResponse
+        /// </returns>
         public DigitalStoreSubNodesResponse DigitalStoreSubNodesWithOptions(DigitalStoreSubNodesRequest request, DigitalStoreSubNodesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -10219,14 +13148,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreSubNodesResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询门店通讯录某个节点下的子节点
-         *
-         * @param request DigitalStoreSubNodesRequest
-         * @param headers DigitalStoreSubNodesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreSubNodesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通讯录某个节点下的子节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreSubNodesRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreSubNodesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreSubNodesResponse
+        /// </returns>
         public async Task<DigitalStoreSubNodesResponse> DigitalStoreSubNodesWithOptionsAsync(DigitalStoreSubNodesRequest request, DigitalStoreSubNodesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -10268,12 +13207,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreSubNodesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询门店通讯录某个节点下的子节点
-         *
-         * @param request DigitalStoreSubNodesRequest
-         * @return DigitalStoreSubNodesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通讯录某个节点下的子节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreSubNodesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreSubNodesResponse
+        /// </returns>
         public DigitalStoreSubNodesResponse DigitalStoreSubNodes(DigitalStoreSubNodesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -10281,12 +13226,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return DigitalStoreSubNodesWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询门店通讯录某个节点下的子节点
-         *
-         * @param request DigitalStoreSubNodesRequest
-         * @return DigitalStoreSubNodesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通讯录某个节点下的子节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreSubNodesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreSubNodesResponse
+        /// </returns>
         public async Task<DigitalStoreSubNodesResponse> DigitalStoreSubNodesAsync(DigitalStoreSubNodesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -10294,14 +13245,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await DigitalStoreSubNodesWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 修改人员管辖范围以及所属角色
-         *
-         * @param request DigitalStoreUpdateAuthInfoRequest
-         * @param headers DigitalStoreUpdateAuthInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreUpdateAuthInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改人员管辖范围以及所属角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreUpdateAuthInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreUpdateAuthInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreUpdateAuthInfoResponse
+        /// </returns>
         public DigitalStoreUpdateAuthInfoResponse DigitalStoreUpdateAuthInfoWithOptions(DigitalStoreUpdateAuthInfoRequest request, DigitalStoreUpdateAuthInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -10339,14 +13300,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreUpdateAuthInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 修改人员管辖范围以及所属角色
-         *
-         * @param request DigitalStoreUpdateAuthInfoRequest
-         * @param headers DigitalStoreUpdateAuthInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreUpdateAuthInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改人员管辖范围以及所属角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreUpdateAuthInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreUpdateAuthInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreUpdateAuthInfoResponse
+        /// </returns>
         public async Task<DigitalStoreUpdateAuthInfoResponse> DigitalStoreUpdateAuthInfoWithOptionsAsync(DigitalStoreUpdateAuthInfoRequest request, DigitalStoreUpdateAuthInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -10384,12 +13355,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreUpdateAuthInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 修改人员管辖范围以及所属角色
-         *
-         * @param request DigitalStoreUpdateAuthInfoRequest
-         * @return DigitalStoreUpdateAuthInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改人员管辖范围以及所属角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreUpdateAuthInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreUpdateAuthInfoResponse
+        /// </returns>
         public DigitalStoreUpdateAuthInfoResponse DigitalStoreUpdateAuthInfo(DigitalStoreUpdateAuthInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -10397,12 +13374,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return DigitalStoreUpdateAuthInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 修改人员管辖范围以及所属角色
-         *
-         * @param request DigitalStoreUpdateAuthInfoRequest
-         * @return DigitalStoreUpdateAuthInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改人员管辖范围以及所属角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreUpdateAuthInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreUpdateAuthInfoResponse
+        /// </returns>
         public async Task<DigitalStoreUpdateAuthInfoResponse> DigitalStoreUpdateAuthInfoAsync(DigitalStoreUpdateAuthInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -10410,14 +13393,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await DigitalStoreUpdateAuthInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询门店通讯录人员信息
-         *
-         * @param request DigitalStoreUserInfoRequest
-         * @param headers DigitalStoreUserInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreUserInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通讯录人员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreUserInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreUserInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreUserInfoResponse
+        /// </returns>
         public DigitalStoreUserInfoResponse DigitalStoreUserInfoWithOptions(DigitalStoreUserInfoRequest request, DigitalStoreUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -10459,14 +13452,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreUserInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询门店通讯录人员信息
-         *
-         * @param request DigitalStoreUserInfoRequest
-         * @param headers DigitalStoreUserInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreUserInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通讯录人员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreUserInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreUserInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreUserInfoResponse
+        /// </returns>
         public async Task<DigitalStoreUserInfoResponse> DigitalStoreUserInfoWithOptionsAsync(DigitalStoreUserInfoRequest request, DigitalStoreUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -10508,12 +13511,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreUserInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询门店通讯录人员信息
-         *
-         * @param request DigitalStoreUserInfoRequest
-         * @return DigitalStoreUserInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通讯录人员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreUserInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreUserInfoResponse
+        /// </returns>
         public DigitalStoreUserInfoResponse DigitalStoreUserInfo(DigitalStoreUserInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -10521,12 +13530,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return DigitalStoreUserInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询门店通讯录人员信息
-         *
-         * @param request DigitalStoreUserInfoRequest
-         * @return DigitalStoreUserInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通讯录人员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreUserInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreUserInfoResponse
+        /// </returns>
         public async Task<DigitalStoreUserInfoResponse> DigitalStoreUserInfoAsync(DigitalStoreUserInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -10534,14 +13549,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await DigitalStoreUserInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询门店通讯录某个节点下的所有人员
-         *
-         * @param request DigitalStoreUsersRequest
-         * @param headers DigitalStoreUsersHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreUsersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通讯录某个节点下的所有人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreUsersRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreUsersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreUsersResponse
+        /// </returns>
         public DigitalStoreUsersResponse DigitalStoreUsersWithOptions(DigitalStoreUsersRequest request, DigitalStoreUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -10583,14 +13608,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreUsersResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询门店通讯录某个节点下的所有人员
-         *
-         * @param request DigitalStoreUsersRequest
-         * @param headers DigitalStoreUsersHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStoreUsersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通讯录某个节点下的所有人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreUsersRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStoreUsersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreUsersResponse
+        /// </returns>
         public async Task<DigitalStoreUsersResponse> DigitalStoreUsersWithOptionsAsync(DigitalStoreUsersRequest request, DigitalStoreUsersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -10632,12 +13667,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStoreUsersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询门店通讯录某个节点下的所有人员
-         *
-         * @param request DigitalStoreUsersRequest
-         * @return DigitalStoreUsersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通讯录某个节点下的所有人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreUsersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreUsersResponse
+        /// </returns>
         public DigitalStoreUsersResponse DigitalStoreUsers(DigitalStoreUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -10645,12 +13686,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return DigitalStoreUsersWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询门店通讯录某个节点下的所有人员
-         *
-         * @param request DigitalStoreUsersRequest
-         * @return DigitalStoreUsersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询门店通讯录某个节点下的所有人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStoreUsersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStoreUsersResponse
+        /// </returns>
         public async Task<DigitalStoreUsersResponse> DigitalStoreUsersAsync(DigitalStoreUsersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -10658,14 +13705,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await DigitalStoreUsersWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 群运营-数据监控-查询导出任务的记录列表
-         *
-         * @param request DigitalStorelistExportTaskRecordRequest
-         * @param headers DigitalStorelistExportTaskRecordHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStorelistExportTaskRecordResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群运营-数据监控-查询导出任务的记录列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStorelistExportTaskRecordRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStorelistExportTaskRecordHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStorelistExportTaskRecordResponse
+        /// </returns>
         public DigitalStorelistExportTaskRecordResponse DigitalStorelistExportTaskRecordWithOptions(DigitalStorelistExportTaskRecordRequest request, DigitalStorelistExportTaskRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -10707,14 +13764,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStorelistExportTaskRecordResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 群运营-数据监控-查询导出任务的记录列表
-         *
-         * @param request DigitalStorelistExportTaskRecordRequest
-         * @param headers DigitalStorelistExportTaskRecordHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DigitalStorelistExportTaskRecordResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群运营-数据监控-查询导出任务的记录列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStorelistExportTaskRecordRequest
+        /// </param>
+        /// <param name="headers">
+        /// DigitalStorelistExportTaskRecordHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStorelistExportTaskRecordResponse
+        /// </returns>
         public async Task<DigitalStorelistExportTaskRecordResponse> DigitalStorelistExportTaskRecordWithOptionsAsync(DigitalStorelistExportTaskRecordRequest request, DigitalStorelistExportTaskRecordHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -10756,12 +13823,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<DigitalStorelistExportTaskRecordResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 群运营-数据监控-查询导出任务的记录列表
-         *
-         * @param request DigitalStorelistExportTaskRecordRequest
-         * @return DigitalStorelistExportTaskRecordResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群运营-数据监控-查询导出任务的记录列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStorelistExportTaskRecordRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStorelistExportTaskRecordResponse
+        /// </returns>
         public DigitalStorelistExportTaskRecordResponse DigitalStorelistExportTaskRecord(DigitalStorelistExportTaskRecordRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -10769,12 +13842,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return DigitalStorelistExportTaskRecordWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 群运营-数据监控-查询导出任务的记录列表
-         *
-         * @param request DigitalStorelistExportTaskRecordRequest
-         * @return DigitalStorelistExportTaskRecordResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>群运营-数据监控-查询导出任务的记录列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DigitalStorelistExportTaskRecordRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DigitalStorelistExportTaskRecordResponse
+        /// </returns>
         public async Task<DigitalStorelistExportTaskRecordResponse> DigitalStorelistExportTaskRecordAsync(DigitalStorelistExportTaskRecordRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -10782,14 +13861,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await DigitalStorelistExportTaskRecordWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询启用了当前应用的外部协作组织
-         *
-         * @param request ExternalQueryExternalAppOrgsRequest
-         * @param headers ExternalQueryExternalAppOrgsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ExternalQueryExternalAppOrgsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询启用了当前应用的外部协作组织</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExternalQueryExternalAppOrgsRequest
+        /// </param>
+        /// <param name="headers">
+        /// ExternalQueryExternalAppOrgsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExternalQueryExternalAppOrgsResponse
+        /// </returns>
         public ExternalQueryExternalAppOrgsResponse ExternalQueryExternalAppOrgsWithOptions(ExternalQueryExternalAppOrgsRequest request, ExternalQueryExternalAppOrgsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -10827,14 +13916,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ExternalQueryExternalAppOrgsResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询启用了当前应用的外部协作组织
-         *
-         * @param request ExternalQueryExternalAppOrgsRequest
-         * @param headers ExternalQueryExternalAppOrgsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ExternalQueryExternalAppOrgsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询启用了当前应用的外部协作组织</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExternalQueryExternalAppOrgsRequest
+        /// </param>
+        /// <param name="headers">
+        /// ExternalQueryExternalAppOrgsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExternalQueryExternalAppOrgsResponse
+        /// </returns>
         public async Task<ExternalQueryExternalAppOrgsResponse> ExternalQueryExternalAppOrgsWithOptionsAsync(ExternalQueryExternalAppOrgsRequest request, ExternalQueryExternalAppOrgsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -10872,12 +13971,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ExternalQueryExternalAppOrgsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询启用了当前应用的外部协作组织
-         *
-         * @param request ExternalQueryExternalAppOrgsRequest
-         * @return ExternalQueryExternalAppOrgsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询启用了当前应用的外部协作组织</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExternalQueryExternalAppOrgsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExternalQueryExternalAppOrgsResponse
+        /// </returns>
         public ExternalQueryExternalAppOrgsResponse ExternalQueryExternalAppOrgs(ExternalQueryExternalAppOrgsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -10885,12 +13990,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return ExternalQueryExternalAppOrgsWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询启用了当前应用的外部协作组织
-         *
-         * @param request ExternalQueryExternalAppOrgsRequest
-         * @return ExternalQueryExternalAppOrgsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询启用了当前应用的外部协作组织</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExternalQueryExternalAppOrgsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExternalQueryExternalAppOrgsResponse
+        /// </returns>
         public async Task<ExternalQueryExternalAppOrgsResponse> ExternalQueryExternalAppOrgsAsync(ExternalQueryExternalAppOrgsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -10898,14 +14009,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await ExternalQueryExternalAppOrgsWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询归属的主组织
-         *
-         * @param request ExternalQueryExternalBelongMainOrgRequest
-         * @param headers ExternalQueryExternalBelongMainOrgHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ExternalQueryExternalBelongMainOrgResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询归属的主组织</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExternalQueryExternalBelongMainOrgRequest
+        /// </param>
+        /// <param name="headers">
+        /// ExternalQueryExternalBelongMainOrgHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExternalQueryExternalBelongMainOrgResponse
+        /// </returns>
         public ExternalQueryExternalBelongMainOrgResponse ExternalQueryExternalBelongMainOrgWithOptions(ExternalQueryExternalBelongMainOrgRequest request, ExternalQueryExternalBelongMainOrgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -10943,14 +14064,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ExternalQueryExternalBelongMainOrgResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询归属的主组织
-         *
-         * @param request ExternalQueryExternalBelongMainOrgRequest
-         * @param headers ExternalQueryExternalBelongMainOrgHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ExternalQueryExternalBelongMainOrgResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询归属的主组织</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExternalQueryExternalBelongMainOrgRequest
+        /// </param>
+        /// <param name="headers">
+        /// ExternalQueryExternalBelongMainOrgHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExternalQueryExternalBelongMainOrgResponse
+        /// </returns>
         public async Task<ExternalQueryExternalBelongMainOrgResponse> ExternalQueryExternalBelongMainOrgWithOptionsAsync(ExternalQueryExternalBelongMainOrgRequest request, ExternalQueryExternalBelongMainOrgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -10988,12 +14119,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ExternalQueryExternalBelongMainOrgResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询归属的主组织
-         *
-         * @param request ExternalQueryExternalBelongMainOrgRequest
-         * @return ExternalQueryExternalBelongMainOrgResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询归属的主组织</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExternalQueryExternalBelongMainOrgRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExternalQueryExternalBelongMainOrgResponse
+        /// </returns>
         public ExternalQueryExternalBelongMainOrgResponse ExternalQueryExternalBelongMainOrg(ExternalQueryExternalBelongMainOrgRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -11001,12 +14138,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return ExternalQueryExternalBelongMainOrgWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询归属的主组织
-         *
-         * @param request ExternalQueryExternalBelongMainOrgRequest
-         * @return ExternalQueryExternalBelongMainOrgResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询归属的主组织</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExternalQueryExternalBelongMainOrgRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExternalQueryExternalBelongMainOrgResponse
+        /// </returns>
         public async Task<ExternalQueryExternalBelongMainOrgResponse> ExternalQueryExternalBelongMainOrgAsync(ExternalQueryExternalBelongMainOrgRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -11014,14 +14157,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await ExternalQueryExternalBelongMainOrgWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询外部协作组织
-         *
-         * @param request ExternalQueryExternalOrgsRequest
-         * @param headers ExternalQueryExternalOrgsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ExternalQueryExternalOrgsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询外部协作组织</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExternalQueryExternalOrgsRequest
+        /// </param>
+        /// <param name="headers">
+        /// ExternalQueryExternalOrgsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExternalQueryExternalOrgsResponse
+        /// </returns>
         public ExternalQueryExternalOrgsResponse ExternalQueryExternalOrgsWithOptions(ExternalQueryExternalOrgsRequest request, ExternalQueryExternalOrgsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -11059,14 +14212,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ExternalQueryExternalOrgsResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询外部协作组织
-         *
-         * @param request ExternalQueryExternalOrgsRequest
-         * @param headers ExternalQueryExternalOrgsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ExternalQueryExternalOrgsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询外部协作组织</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExternalQueryExternalOrgsRequest
+        /// </param>
+        /// <param name="headers">
+        /// ExternalQueryExternalOrgsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExternalQueryExternalOrgsResponse
+        /// </returns>
         public async Task<ExternalQueryExternalOrgsResponse> ExternalQueryExternalOrgsWithOptionsAsync(ExternalQueryExternalOrgsRequest request, ExternalQueryExternalOrgsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -11104,12 +14267,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<ExternalQueryExternalOrgsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询外部协作组织
-         *
-         * @param request ExternalQueryExternalOrgsRequest
-         * @return ExternalQueryExternalOrgsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询外部协作组织</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExternalQueryExternalOrgsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExternalQueryExternalOrgsResponse
+        /// </returns>
         public ExternalQueryExternalOrgsResponse ExternalQueryExternalOrgs(ExternalQueryExternalOrgsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -11117,12 +14286,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return ExternalQueryExternalOrgsWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询外部协作组织
-         *
-         * @param request ExternalQueryExternalOrgsRequest
-         * @return ExternalQueryExternalOrgsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询外部协作组织</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExternalQueryExternalOrgsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExternalQueryExternalOrgsResponse
+        /// </returns>
         public async Task<ExternalQueryExternalOrgsResponse> ExternalQueryExternalOrgsAsync(ExternalQueryExternalOrgsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -11130,14 +14305,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await ExternalQueryExternalOrgsWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 医疗数据对账
-         *
-         * @param request HospitalDataCheckRequest
-         * @param headers HospitalDataCheckHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HospitalDataCheckResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>医疗数据对账</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HospitalDataCheckRequest
+        /// </param>
+        /// <param name="headers">
+        /// HospitalDataCheckHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HospitalDataCheckResponse
+        /// </returns>
         public HospitalDataCheckResponse HospitalDataCheckWithOptions(HospitalDataCheckRequest request, HospitalDataCheckHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -11203,14 +14388,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<HospitalDataCheckResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 医疗数据对账
-         *
-         * @param request HospitalDataCheckRequest
-         * @param headers HospitalDataCheckHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return HospitalDataCheckResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>医疗数据对账</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HospitalDataCheckRequest
+        /// </param>
+        /// <param name="headers">
+        /// HospitalDataCheckHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// HospitalDataCheckResponse
+        /// </returns>
         public async Task<HospitalDataCheckResponse> HospitalDataCheckWithOptionsAsync(HospitalDataCheckRequest request, HospitalDataCheckHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -11276,12 +14471,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<HospitalDataCheckResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 医疗数据对账
-         *
-         * @param request HospitalDataCheckRequest
-         * @return HospitalDataCheckResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>医疗数据对账</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HospitalDataCheckRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HospitalDataCheckResponse
+        /// </returns>
         public HospitalDataCheckResponse HospitalDataCheck(HospitalDataCheckRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -11289,12 +14490,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return HospitalDataCheckWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 医疗数据对账
-         *
-         * @param request HospitalDataCheckRequest
-         * @return HospitalDataCheckResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>医疗数据对账</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// HospitalDataCheckRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// HospitalDataCheckResponse
+        /// </returns>
         public async Task<HospitalDataCheckResponse> HospitalDataCheckAsync(HospitalDataCheckRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -11302,14 +14509,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await HospitalDataCheckWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 行业化制造业事件中心
-         *
-         * @param request IndustryManufactureCommonEventRequest
-         * @param headers IndustryManufactureCommonEventHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureCommonEventResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>行业化制造业事件中心</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureCommonEventRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureCommonEventHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureCommonEventResponse
+        /// </returns>
         public IndustryManufactureCommonEventResponse IndustryManufactureCommonEventWithOptions(IndustryManufactureCommonEventRequest request, IndustryManufactureCommonEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -11359,14 +14576,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureCommonEventResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 行业化制造业事件中心
-         *
-         * @param request IndustryManufactureCommonEventRequest
-         * @param headers IndustryManufactureCommonEventHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureCommonEventResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>行业化制造业事件中心</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureCommonEventRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureCommonEventHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureCommonEventResponse
+        /// </returns>
         public async Task<IndustryManufactureCommonEventResponse> IndustryManufactureCommonEventWithOptionsAsync(IndustryManufactureCommonEventRequest request, IndustryManufactureCommonEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -11416,12 +14643,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureCommonEventResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 行业化制造业事件中心
-         *
-         * @param request IndustryManufactureCommonEventRequest
-         * @return IndustryManufactureCommonEventResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>行业化制造业事件中心</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureCommonEventRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureCommonEventResponse
+        /// </returns>
         public IndustryManufactureCommonEventResponse IndustryManufactureCommonEvent(IndustryManufactureCommonEventRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -11429,12 +14662,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return IndustryManufactureCommonEventWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 行业化制造业事件中心
-         *
-         * @param request IndustryManufactureCommonEventRequest
-         * @return IndustryManufactureCommonEventResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>行业化制造业事件中心</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureCommonEventRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureCommonEventResponse
+        /// </returns>
         public async Task<IndustryManufactureCommonEventResponse> IndustryManufactureCommonEventAsync(IndustryManufactureCommonEventRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -11442,14 +14681,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await IndustryManufactureCommonEventWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 物料成本开放服务
-         *
-         * @param request IndustryManufactureCostRecordListGetRequest
-         * @param headers IndustryManufactureCostRecordListGetHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureCostRecordListGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>物料成本开放服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureCostRecordListGetRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureCostRecordListGetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureCostRecordListGetResponse
+        /// </returns>
         public IndustryManufactureCostRecordListGetResponse IndustryManufactureCostRecordListGetWithOptions(IndustryManufactureCostRecordListGetRequest request, IndustryManufactureCostRecordListGetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -11555,14 +14804,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureCostRecordListGetResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 物料成本开放服务
-         *
-         * @param request IndustryManufactureCostRecordListGetRequest
-         * @param headers IndustryManufactureCostRecordListGetHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureCostRecordListGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>物料成本开放服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureCostRecordListGetRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureCostRecordListGetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureCostRecordListGetResponse
+        /// </returns>
         public async Task<IndustryManufactureCostRecordListGetResponse> IndustryManufactureCostRecordListGetWithOptionsAsync(IndustryManufactureCostRecordListGetRequest request, IndustryManufactureCostRecordListGetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -11668,12 +14927,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureCostRecordListGetResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 物料成本开放服务
-         *
-         * @param request IndustryManufactureCostRecordListGetRequest
-         * @return IndustryManufactureCostRecordListGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>物料成本开放服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureCostRecordListGetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureCostRecordListGetResponse
+        /// </returns>
         public IndustryManufactureCostRecordListGetResponse IndustryManufactureCostRecordListGet(IndustryManufactureCostRecordListGetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -11681,12 +14946,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return IndustryManufactureCostRecordListGetWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 物料成本开放服务
-         *
-         * @param request IndustryManufactureCostRecordListGetRequest
-         * @return IndustryManufactureCostRecordListGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>物料成本开放服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureCostRecordListGetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureCostRecordListGetResponse
+        /// </returns>
         public async Task<IndustryManufactureCostRecordListGetResponse> IndustryManufactureCostRecordListGetAsync(IndustryManufactureCostRecordListGetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -11694,14 +14965,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await IndustryManufactureCostRecordListGetWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 费用服务
-         *
-         * @param request IndustryManufactureFeeListGetRequest
-         * @param headers IndustryManufactureFeeListGetHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureFeeListGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>费用服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureFeeListGetRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureFeeListGetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureFeeListGetResponse
+        /// </returns>
         public IndustryManufactureFeeListGetResponse IndustryManufactureFeeListGetWithOptions(IndustryManufactureFeeListGetRequest request, IndustryManufactureFeeListGetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -11803,14 +15084,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureFeeListGetResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 费用服务
-         *
-         * @param request IndustryManufactureFeeListGetRequest
-         * @param headers IndustryManufactureFeeListGetHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureFeeListGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>费用服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureFeeListGetRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureFeeListGetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureFeeListGetResponse
+        /// </returns>
         public async Task<IndustryManufactureFeeListGetResponse> IndustryManufactureFeeListGetWithOptionsAsync(IndustryManufactureFeeListGetRequest request, IndustryManufactureFeeListGetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -11912,12 +15203,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureFeeListGetResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 费用服务
-         *
-         * @param request IndustryManufactureFeeListGetRequest
-         * @return IndustryManufactureFeeListGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>费用服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureFeeListGetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureFeeListGetResponse
+        /// </returns>
         public IndustryManufactureFeeListGetResponse IndustryManufactureFeeListGet(IndustryManufactureFeeListGetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -11925,12 +15222,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return IndustryManufactureFeeListGetWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 费用服务
-         *
-         * @param request IndustryManufactureFeeListGetRequest
-         * @return IndustryManufactureFeeListGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>费用服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureFeeListGetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureFeeListGetResponse
+        /// </returns>
         public async Task<IndustryManufactureFeeListGetResponse> IndustryManufactureFeeListGetAsync(IndustryManufactureFeeListGetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -11938,14 +15241,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await IndustryManufactureFeeListGetWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 行业化-制造业工价接口
-         *
-         * @param request IndustryManufactureLabourCostRequest
-         * @param headers IndustryManufactureLabourCostHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureLabourCostResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>行业化-制造业工价接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureLabourCostRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureLabourCostHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureLabourCostResponse
+        /// </returns>
         public IndustryManufactureLabourCostResponse IndustryManufactureLabourCostWithOptions(IndustryManufactureLabourCostRequest request, IndustryManufactureLabourCostHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -12043,14 +15356,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureLabourCostResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 行业化-制造业工价接口
-         *
-         * @param request IndustryManufactureLabourCostRequest
-         * @param headers IndustryManufactureLabourCostHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureLabourCostResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>行业化-制造业工价接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureLabourCostRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureLabourCostHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureLabourCostResponse
+        /// </returns>
         public async Task<IndustryManufactureLabourCostResponse> IndustryManufactureLabourCostWithOptionsAsync(IndustryManufactureLabourCostRequest request, IndustryManufactureLabourCostHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -12148,12 +15471,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureLabourCostResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 行业化-制造业工价接口
-         *
-         * @param request IndustryManufactureLabourCostRequest
-         * @return IndustryManufactureLabourCostResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>行业化-制造业工价接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureLabourCostRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureLabourCostResponse
+        /// </returns>
         public IndustryManufactureLabourCostResponse IndustryManufactureLabourCost(IndustryManufactureLabourCostRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -12161,12 +15490,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return IndustryManufactureLabourCostWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 行业化-制造业工价接口
-         *
-         * @param request IndustryManufactureLabourCostRequest
-         * @return IndustryManufactureLabourCostResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>行业化-制造业工价接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureLabourCostRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureLabourCostResponse
+        /// </returns>
         public async Task<IndustryManufactureLabourCostResponse> IndustryManufactureLabourCostAsync(IndustryManufactureLabourCostRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -12174,14 +15509,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await IndustryManufactureLabourCostWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询行业物料列表
-         *
-         * @param request IndustryManufactureMaterialListRequest
-         * @param headers IndustryManufactureMaterialListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureMaterialListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询行业物料列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMaterialListRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureMaterialListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMaterialListResponse
+        /// </returns>
         public IndustryManufactureMaterialListResponse IndustryManufactureMaterialListWithOptions(IndustryManufactureMaterialListRequest request, IndustryManufactureMaterialListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -12279,14 +15624,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureMaterialListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询行业物料列表
-         *
-         * @param request IndustryManufactureMaterialListRequest
-         * @param headers IndustryManufactureMaterialListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureMaterialListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询行业物料列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMaterialListRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureMaterialListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMaterialListResponse
+        /// </returns>
         public async Task<IndustryManufactureMaterialListResponse> IndustryManufactureMaterialListWithOptionsAsync(IndustryManufactureMaterialListRequest request, IndustryManufactureMaterialListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -12384,12 +15739,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureMaterialListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询行业物料列表
-         *
-         * @param request IndustryManufactureMaterialListRequest
-         * @return IndustryManufactureMaterialListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询行业物料列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMaterialListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMaterialListResponse
+        /// </returns>
         public IndustryManufactureMaterialListResponse IndustryManufactureMaterialList(IndustryManufactureMaterialListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -12397,12 +15758,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return IndustryManufactureMaterialListWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询行业物料列表
-         *
-         * @param request IndustryManufactureMaterialListRequest
-         * @return IndustryManufactureMaterialListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询行业物料列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMaterialListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMaterialListResponse
+        /// </returns>
         public async Task<IndustryManufactureMaterialListResponse> IndustryManufactureMaterialListAsync(IndustryManufactureMaterialListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -12410,14 +15777,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await IndustryManufactureMaterialListWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 派工任务管理
-         *
-         * @param request IndustryManufactureMesDispatchTaskRequest
-         * @param headers IndustryManufactureMesDispatchTaskHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureMesDispatchTaskResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>派工任务管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesDispatchTaskRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureMesDispatchTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesDispatchTaskResponse
+        /// </returns>
         public IndustryManufactureMesDispatchTaskResponse IndustryManufactureMesDispatchTaskWithOptions(IndustryManufactureMesDispatchTaskRequest request, IndustryManufactureMesDispatchTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -12551,14 +15928,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureMesDispatchTaskResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 派工任务管理
-         *
-         * @param request IndustryManufactureMesDispatchTaskRequest
-         * @param headers IndustryManufactureMesDispatchTaskHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureMesDispatchTaskResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>派工任务管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesDispatchTaskRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureMesDispatchTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesDispatchTaskResponse
+        /// </returns>
         public async Task<IndustryManufactureMesDispatchTaskResponse> IndustryManufactureMesDispatchTaskWithOptionsAsync(IndustryManufactureMesDispatchTaskRequest request, IndustryManufactureMesDispatchTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -12692,12 +16079,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureMesDispatchTaskResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 派工任务管理
-         *
-         * @param request IndustryManufactureMesDispatchTaskRequest
-         * @return IndustryManufactureMesDispatchTaskResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>派工任务管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesDispatchTaskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesDispatchTaskResponse
+        /// </returns>
         public IndustryManufactureMesDispatchTaskResponse IndustryManufactureMesDispatchTask(IndustryManufactureMesDispatchTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -12705,12 +16098,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return IndustryManufactureMesDispatchTaskWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 派工任务管理
-         *
-         * @param request IndustryManufactureMesDispatchTaskRequest
-         * @return IndustryManufactureMesDispatchTaskResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>派工任务管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesDispatchTaskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesDispatchTaskResponse
+        /// </returns>
         public async Task<IndustryManufactureMesDispatchTaskResponse> IndustryManufactureMesDispatchTaskAsync(IndustryManufactureMesDispatchTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -12718,14 +16117,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await IndustryManufactureMesDispatchTaskWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary MES系统物料管理
-         *
-         * @param request IndustryManufactureMesMaterialRequest
-         * @param headers IndustryManufactureMesMaterialHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureMesMaterialResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>MES系统物料管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesMaterialRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureMesMaterialHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesMaterialResponse
+        /// </returns>
         public IndustryManufactureMesMaterialResponse IndustryManufactureMesMaterialWithOptions(IndustryManufactureMesMaterialRequest request, IndustryManufactureMesMaterialHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -12803,14 +16212,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureMesMaterialResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary MES系统物料管理
-         *
-         * @param request IndustryManufactureMesMaterialRequest
-         * @param headers IndustryManufactureMesMaterialHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureMesMaterialResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>MES系统物料管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesMaterialRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureMesMaterialHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesMaterialResponse
+        /// </returns>
         public async Task<IndustryManufactureMesMaterialResponse> IndustryManufactureMesMaterialWithOptionsAsync(IndustryManufactureMesMaterialRequest request, IndustryManufactureMesMaterialHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -12888,12 +16307,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureMesMaterialResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary MES系统物料管理
-         *
-         * @param request IndustryManufactureMesMaterialRequest
-         * @return IndustryManufactureMesMaterialResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>MES系统物料管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesMaterialRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesMaterialResponse
+        /// </returns>
         public IndustryManufactureMesMaterialResponse IndustryManufactureMesMaterial(IndustryManufactureMesMaterialRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -12901,12 +16326,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return IndustryManufactureMesMaterialWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary MES系统物料管理
-         *
-         * @param request IndustryManufactureMesMaterialRequest
-         * @return IndustryManufactureMesMaterialResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>MES系统物料管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesMaterialRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesMaterialResponse
+        /// </returns>
         public async Task<IndustryManufactureMesMaterialResponse> IndustryManufactureMesMaterialAsync(IndustryManufactureMesMaterialRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -12914,14 +16345,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await IndustryManufactureMesMaterialWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 生产委外工单管理
-         *
-         * @param request IndustryManufactureMesOutPlanRequest
-         * @param headers IndustryManufactureMesOutPlanHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureMesOutPlanResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生产委外工单管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesOutPlanRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureMesOutPlanHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesOutPlanResponse
+        /// </returns>
         public IndustryManufactureMesOutPlanResponse IndustryManufactureMesOutPlanWithOptions(IndustryManufactureMesOutPlanRequest request, IndustryManufactureMesOutPlanHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -13027,14 +16468,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureMesOutPlanResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 生产委外工单管理
-         *
-         * @param request IndustryManufactureMesOutPlanRequest
-         * @param headers IndustryManufactureMesOutPlanHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureMesOutPlanResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生产委外工单管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesOutPlanRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureMesOutPlanHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesOutPlanResponse
+        /// </returns>
         public async Task<IndustryManufactureMesOutPlanResponse> IndustryManufactureMesOutPlanWithOptionsAsync(IndustryManufactureMesOutPlanRequest request, IndustryManufactureMesOutPlanHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -13140,12 +16591,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureMesOutPlanResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 生产委外工单管理
-         *
-         * @param request IndustryManufactureMesOutPlanRequest
-         * @return IndustryManufactureMesOutPlanResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生产委外工单管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesOutPlanRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesOutPlanResponse
+        /// </returns>
         public IndustryManufactureMesOutPlanResponse IndustryManufactureMesOutPlan(IndustryManufactureMesOutPlanRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -13153,12 +16610,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return IndustryManufactureMesOutPlanWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 生产委外工单管理
-         *
-         * @param request IndustryManufactureMesOutPlanRequest
-         * @return IndustryManufactureMesOutPlanResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生产委外工单管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesOutPlanRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesOutPlanResponse
+        /// </returns>
         public async Task<IndustryManufactureMesOutPlanResponse> IndustryManufactureMesOutPlanAsync(IndustryManufactureMesOutPlanRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -13166,14 +16629,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await IndustryManufactureMesOutPlanWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 生产报工管理
-         *
-         * @param request IndustryManufactureMesOutputRequest
-         * @param headers IndustryManufactureMesOutputHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureMesOutputResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生产报工管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesOutputRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureMesOutputHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesOutputResponse
+        /// </returns>
         public IndustryManufactureMesOutputResponse IndustryManufactureMesOutputWithOptions(IndustryManufactureMesOutputRequest request, IndustryManufactureMesOutputHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -13323,14 +16796,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureMesOutputResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 生产报工管理
-         *
-         * @param request IndustryManufactureMesOutputRequest
-         * @param headers IndustryManufactureMesOutputHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureMesOutputResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生产报工管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesOutputRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureMesOutputHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesOutputResponse
+        /// </returns>
         public async Task<IndustryManufactureMesOutputResponse> IndustryManufactureMesOutputWithOptionsAsync(IndustryManufactureMesOutputRequest request, IndustryManufactureMesOutputHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -13480,12 +16963,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureMesOutputResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 生产报工管理
-         *
-         * @param request IndustryManufactureMesOutputRequest
-         * @return IndustryManufactureMesOutputResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生产报工管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesOutputRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesOutputResponse
+        /// </returns>
         public IndustryManufactureMesOutputResponse IndustryManufactureMesOutput(IndustryManufactureMesOutputRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -13493,12 +16982,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return IndustryManufactureMesOutputWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 生产报工管理
-         *
-         * @param request IndustryManufactureMesOutputRequest
-         * @return IndustryManufactureMesOutputResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生产报工管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesOutputRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesOutputResponse
+        /// </returns>
         public async Task<IndustryManufactureMesOutputResponse> IndustryManufactureMesOutputAsync(IndustryManufactureMesOutputRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -13506,14 +17001,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await IndustryManufactureMesOutputWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary MES系统工序管理
-         *
-         * @param request IndustryManufactureMesProcessRequest
-         * @param headers IndustryManufactureMesProcessHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureMesProcessResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>MES系统工序管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesProcessRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureMesProcessHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesProcessResponse
+        /// </returns>
         public IndustryManufactureMesProcessResponse IndustryManufactureMesProcessWithOptions(IndustryManufactureMesProcessRequest request, IndustryManufactureMesProcessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -13599,14 +17104,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureMesProcessResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary MES系统工序管理
-         *
-         * @param request IndustryManufactureMesProcessRequest
-         * @param headers IndustryManufactureMesProcessHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureMesProcessResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>MES系统工序管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesProcessRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureMesProcessHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesProcessResponse
+        /// </returns>
         public async Task<IndustryManufactureMesProcessResponse> IndustryManufactureMesProcessWithOptionsAsync(IndustryManufactureMesProcessRequest request, IndustryManufactureMesProcessHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -13692,12 +17207,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureMesProcessResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary MES系统工序管理
-         *
-         * @param request IndustryManufactureMesProcessRequest
-         * @return IndustryManufactureMesProcessResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>MES系统工序管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesProcessRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesProcessResponse
+        /// </returns>
         public IndustryManufactureMesProcessResponse IndustryManufactureMesProcess(IndustryManufactureMesProcessRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -13705,12 +17226,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return IndustryManufactureMesProcessWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary MES系统工序管理
-         *
-         * @param request IndustryManufactureMesProcessRequest
-         * @return IndustryManufactureMesProcessResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>MES系统工序管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesProcessRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesProcessResponse
+        /// </returns>
         public async Task<IndustryManufactureMesProcessResponse> IndustryManufactureMesProcessAsync(IndustryManufactureMesProcessRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -13718,14 +17245,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await IndustryManufactureMesProcessWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 生产工单管理
-         *
-         * @param request IndustryManufactureMesProductionPlanRequest
-         * @param headers IndustryManufactureMesProductionPlanHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureMesProductionPlanResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生产工单管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesProductionPlanRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureMesProductionPlanHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesProductionPlanResponse
+        /// </returns>
         public IndustryManufactureMesProductionPlanResponse IndustryManufactureMesProductionPlanWithOptions(IndustryManufactureMesProductionPlanRequest request, IndustryManufactureMesProductionPlanHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -13859,14 +17396,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureMesProductionPlanResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 生产工单管理
-         *
-         * @param request IndustryManufactureMesProductionPlanRequest
-         * @param headers IndustryManufactureMesProductionPlanHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureMesProductionPlanResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生产工单管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesProductionPlanRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureMesProductionPlanHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesProductionPlanResponse
+        /// </returns>
         public async Task<IndustryManufactureMesProductionPlanResponse> IndustryManufactureMesProductionPlanWithOptionsAsync(IndustryManufactureMesProductionPlanRequest request, IndustryManufactureMesProductionPlanHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -14000,12 +17547,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureMesProductionPlanResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 生产工单管理
-         *
-         * @param request IndustryManufactureMesProductionPlanRequest
-         * @return IndustryManufactureMesProductionPlanResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生产工单管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesProductionPlanRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesProductionPlanResponse
+        /// </returns>
         public IndustryManufactureMesProductionPlanResponse IndustryManufactureMesProductionPlan(IndustryManufactureMesProductionPlanRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -14013,12 +17566,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return IndustryManufactureMesProductionPlanWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 生产工单管理
-         *
-         * @param request IndustryManufactureMesProductionPlanRequest
-         * @return IndustryManufactureMesProductionPlanResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生产工单管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesProductionPlanRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesProductionPlanResponse
+        /// </returns>
         public async Task<IndustryManufactureMesProductionPlanResponse> IndustryManufactureMesProductionPlanAsync(IndustryManufactureMesProductionPlanRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -14026,14 +17585,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await IndustryManufactureMesProductionPlanWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 生产委外合作班组管理
-         *
-         * @param request IndustryManufactureMesSubCooperationTeamRequest
-         * @param headers IndustryManufactureMesSubCooperationTeamHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureMesSubCooperationTeamResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生产委外合作班组管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesSubCooperationTeamRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureMesSubCooperationTeamHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesSubCooperationTeamResponse
+        /// </returns>
         public IndustryManufactureMesSubCooperationTeamResponse IndustryManufactureMesSubCooperationTeamWithOptions(IndustryManufactureMesSubCooperationTeamRequest request, IndustryManufactureMesSubCooperationTeamHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -14119,14 +17688,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureMesSubCooperationTeamResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 生产委外合作班组管理
-         *
-         * @param request IndustryManufactureMesSubCooperationTeamRequest
-         * @param headers IndustryManufactureMesSubCooperationTeamHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureMesSubCooperationTeamResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生产委外合作班组管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesSubCooperationTeamRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureMesSubCooperationTeamHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesSubCooperationTeamResponse
+        /// </returns>
         public async Task<IndustryManufactureMesSubCooperationTeamResponse> IndustryManufactureMesSubCooperationTeamWithOptionsAsync(IndustryManufactureMesSubCooperationTeamRequest request, IndustryManufactureMesSubCooperationTeamHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -14212,12 +17791,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureMesSubCooperationTeamResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 生产委外合作班组管理
-         *
-         * @param request IndustryManufactureMesSubCooperationTeamRequest
-         * @return IndustryManufactureMesSubCooperationTeamResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生产委外合作班组管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesSubCooperationTeamRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesSubCooperationTeamResponse
+        /// </returns>
         public IndustryManufactureMesSubCooperationTeamResponse IndustryManufactureMesSubCooperationTeam(IndustryManufactureMesSubCooperationTeamRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -14225,12 +17810,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return IndustryManufactureMesSubCooperationTeamWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 生产委外合作班组管理
-         *
-         * @param request IndustryManufactureMesSubCooperationTeamRequest
-         * @return IndustryManufactureMesSubCooperationTeamResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生产委外合作班组管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesSubCooperationTeamRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesSubCooperationTeamResponse
+        /// </returns>
         public async Task<IndustryManufactureMesSubCooperationTeamResponse> IndustryManufactureMesSubCooperationTeamAsync(IndustryManufactureMesSubCooperationTeamRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -14238,14 +17829,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await IndustryManufactureMesSubCooperationTeamWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary MES系统班组管理
-         *
-         * @param request IndustryManufactureMesTeamMgmtRequest
-         * @param headers IndustryManufactureMesTeamMgmtHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureMesTeamMgmtResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>MES系统班组管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesTeamMgmtRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureMesTeamMgmtHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesTeamMgmtResponse
+        /// </returns>
         public IndustryManufactureMesTeamMgmtResponse IndustryManufactureMesTeamMgmtWithOptions(IndustryManufactureMesTeamMgmtRequest request, IndustryManufactureMesTeamMgmtHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -14339,14 +17940,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureMesTeamMgmtResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary MES系统班组管理
-         *
-         * @param request IndustryManufactureMesTeamMgmtRequest
-         * @param headers IndustryManufactureMesTeamMgmtHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryManufactureMesTeamMgmtResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>MES系统班组管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesTeamMgmtRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryManufactureMesTeamMgmtHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesTeamMgmtResponse
+        /// </returns>
         public async Task<IndustryManufactureMesTeamMgmtResponse> IndustryManufactureMesTeamMgmtWithOptionsAsync(IndustryManufactureMesTeamMgmtRequest request, IndustryManufactureMesTeamMgmtHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -14440,12 +18051,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryManufactureMesTeamMgmtResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary MES系统班组管理
-         *
-         * @param request IndustryManufactureMesTeamMgmtRequest
-         * @return IndustryManufactureMesTeamMgmtResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>MES系统班组管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesTeamMgmtRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesTeamMgmtResponse
+        /// </returns>
         public IndustryManufactureMesTeamMgmtResponse IndustryManufactureMesTeamMgmt(IndustryManufactureMesTeamMgmtRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -14453,12 +18070,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return IndustryManufactureMesTeamMgmtWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary MES系统班组管理
-         *
-         * @param request IndustryManufactureMesTeamMgmtRequest
-         * @return IndustryManufactureMesTeamMgmtResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>MES系统班组管理</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryManufactureMesTeamMgmtRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryManufactureMesTeamMgmtResponse
+        /// </returns>
         public async Task<IndustryManufactureMesTeamMgmtResponse> IndustryManufactureMesTeamMgmtAsync(IndustryManufactureMesTeamMgmtRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -14466,14 +18089,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await IndustryManufactureMesTeamMgmtWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 物料成本查询服务
-         *
-         * @param request IndustryMmanufactureMaterialCostGetRequest
-         * @param headers IndustryMmanufactureMaterialCostGetHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryMmanufactureMaterialCostGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>物料成本查询服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryMmanufactureMaterialCostGetRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryMmanufactureMaterialCostGetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryMmanufactureMaterialCostGetResponse
+        /// </returns>
         public IndustryMmanufactureMaterialCostGetResponse IndustryMmanufactureMaterialCostGetWithOptions(IndustryMmanufactureMaterialCostGetRequest request, IndustryMmanufactureMaterialCostGetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -14571,14 +18204,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryMmanufactureMaterialCostGetResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 物料成本查询服务
-         *
-         * @param request IndustryMmanufactureMaterialCostGetRequest
-         * @param headers IndustryMmanufactureMaterialCostGetHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustryMmanufactureMaterialCostGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>物料成本查询服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryMmanufactureMaterialCostGetRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustryMmanufactureMaterialCostGetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryMmanufactureMaterialCostGetResponse
+        /// </returns>
         public async Task<IndustryMmanufactureMaterialCostGetResponse> IndustryMmanufactureMaterialCostGetWithOptionsAsync(IndustryMmanufactureMaterialCostGetRequest request, IndustryMmanufactureMaterialCostGetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -14676,12 +18319,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<IndustryMmanufactureMaterialCostGetResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 物料成本查询服务
-         *
-         * @param request IndustryMmanufactureMaterialCostGetRequest
-         * @return IndustryMmanufactureMaterialCostGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>物料成本查询服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryMmanufactureMaterialCostGetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryMmanufactureMaterialCostGetResponse
+        /// </returns>
         public IndustryMmanufactureMaterialCostGetResponse IndustryMmanufactureMaterialCostGet(IndustryMmanufactureMaterialCostGetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -14689,12 +18338,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return IndustryMmanufactureMaterialCostGetWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 物料成本查询服务
-         *
-         * @param request IndustryMmanufactureMaterialCostGetRequest
-         * @return IndustryMmanufactureMaterialCostGetResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>物料成本查询服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustryMmanufactureMaterialCostGetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustryMmanufactureMaterialCostGetResponse
+        /// </returns>
         public async Task<IndustryMmanufactureMaterialCostGetResponse> IndustryMmanufactureMaterialCostGetAsync(IndustryMmanufactureMaterialCostGetRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -14702,14 +18357,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await IndustryMmanufactureMaterialCostGetWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 提供text和card两种形式工作通知消息
-         *
-         * @param request PushDingMessageRequest
-         * @param headers PushDingMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return PushDingMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提供text和card两种形式工作通知消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PushDingMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// PushDingMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PushDingMessageResponse
+        /// </returns>
         public PushDingMessageResponse PushDingMessageWithOptions(PushDingMessageRequest request, PushDingMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -14779,14 +18444,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<PushDingMessageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 提供text和card两种形式工作通知消息
-         *
-         * @param request PushDingMessageRequest
-         * @param headers PushDingMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return PushDingMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提供text和card两种形式工作通知消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PushDingMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// PushDingMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PushDingMessageResponse
+        /// </returns>
         public async Task<PushDingMessageResponse> PushDingMessageWithOptionsAsync(PushDingMessageRequest request, PushDingMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -14856,12 +18531,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<PushDingMessageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 提供text和card两种形式工作通知消息
-         *
-         * @param request PushDingMessageRequest
-         * @return PushDingMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提供text和card两种形式工作通知消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PushDingMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PushDingMessageResponse
+        /// </returns>
         public PushDingMessageResponse PushDingMessage(PushDingMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -14869,12 +18550,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return PushDingMessageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 提供text和card两种形式工作通知消息
-         *
-         * @param request PushDingMessageRequest
-         * @return PushDingMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提供text和card两种形式工作通知消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PushDingMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PushDingMessageResponse
+        /// </returns>
         public async Task<PushDingMessageResponse> PushDingMessageAsync(PushDingMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -14882,14 +18569,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await PushDingMessageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取当前组织下的所有科室
-         *
-         * @param request QueryAllDepartmentRequest
-         * @param headers QueryAllDepartmentHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryAllDepartmentResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取当前组织下的所有科室</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllDepartmentRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryAllDepartmentHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllDepartmentResponse
+        /// </returns>
         public QueryAllDepartmentResponse QueryAllDepartmentWithOptions(QueryAllDepartmentRequest request, QueryAllDepartmentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -14931,14 +18628,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryAllDepartmentResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取当前组织下的所有科室
-         *
-         * @param request QueryAllDepartmentRequest
-         * @param headers QueryAllDepartmentHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryAllDepartmentResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取当前组织下的所有科室</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllDepartmentRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryAllDepartmentHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllDepartmentResponse
+        /// </returns>
         public async Task<QueryAllDepartmentResponse> QueryAllDepartmentWithOptionsAsync(QueryAllDepartmentRequest request, QueryAllDepartmentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -14980,12 +18687,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryAllDepartmentResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取当前组织下的所有科室
-         *
-         * @param request QueryAllDepartmentRequest
-         * @return QueryAllDepartmentResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取当前组织下的所有科室</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllDepartmentRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllDepartmentResponse
+        /// </returns>
         public QueryAllDepartmentResponse QueryAllDepartment(QueryAllDepartmentRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -14993,12 +18706,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryAllDepartmentWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取当前组织下的所有科室
-         *
-         * @param request QueryAllDepartmentRequest
-         * @return QueryAllDepartmentResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取当前组织下的所有科室</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllDepartmentRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllDepartmentResponse
+        /// </returns>
         public async Task<QueryAllDepartmentResponse> QueryAllDepartmentAsync(QueryAllDepartmentRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -15006,14 +18725,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryAllDepartmentWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询医院下的所有医生
-         *
-         * @param request QueryAllDoctorsRequest
-         * @param headers QueryAllDoctorsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryAllDoctorsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询医院下的所有医生</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllDoctorsRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryAllDoctorsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllDoctorsResponse
+        /// </returns>
         public QueryAllDoctorsResponse QueryAllDoctorsWithOptions(QueryAllDoctorsRequest request, QueryAllDoctorsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -15059,14 +18788,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryAllDoctorsResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询医院下的所有医生
-         *
-         * @param request QueryAllDoctorsRequest
-         * @param headers QueryAllDoctorsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryAllDoctorsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询医院下的所有医生</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllDoctorsRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryAllDoctorsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllDoctorsResponse
+        /// </returns>
         public async Task<QueryAllDoctorsResponse> QueryAllDoctorsWithOptionsAsync(QueryAllDoctorsRequest request, QueryAllDoctorsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -15112,12 +18851,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryAllDoctorsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询医院下的所有医生
-         *
-         * @param request QueryAllDoctorsRequest
-         * @return QueryAllDoctorsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询医院下的所有医生</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllDoctorsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllDoctorsResponse
+        /// </returns>
         public QueryAllDoctorsResponse QueryAllDoctors(QueryAllDoctorsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -15125,12 +18870,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryAllDoctorsWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询医院下的所有医生
-         *
-         * @param request QueryAllDoctorsRequest
-         * @return QueryAllDoctorsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询医院下的所有医生</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllDoctorsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllDoctorsResponse
+        /// </returns>
         public async Task<QueryAllDoctorsResponse> QueryAllDoctorsAsync(QueryAllDoctorsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -15138,14 +18889,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryAllDoctorsWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询所有医疗组
-         *
-         * @param request QueryAllGroupRequest
-         * @param headers QueryAllGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryAllGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询所有医疗组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryAllGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllGroupResponse
+        /// </returns>
         public QueryAllGroupResponse QueryAllGroupWithOptions(QueryAllGroupRequest request, QueryAllGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -15187,14 +18948,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryAllGroupResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询所有医疗组
-         *
-         * @param request QueryAllGroupRequest
-         * @param headers QueryAllGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryAllGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询所有医疗组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryAllGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllGroupResponse
+        /// </returns>
         public async Task<QueryAllGroupResponse> QueryAllGroupWithOptionsAsync(QueryAllGroupRequest request, QueryAllGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -15236,12 +19007,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryAllGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询所有医疗组
-         *
-         * @param request QueryAllGroupRequest
-         * @return QueryAllGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询所有医疗组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllGroupResponse
+        /// </returns>
         public QueryAllGroupResponse QueryAllGroup(QueryAllGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -15249,12 +19026,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryAllGroupWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询所有医疗组
-         *
-         * @param request QueryAllGroupRequest
-         * @return QueryAllGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询所有医疗组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllGroupResponse
+        /// </returns>
         public async Task<QueryAllGroupResponse> QueryAllGroupAsync(QueryAllGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -15262,14 +19045,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryAllGroupWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询科室下的所有医疗组
-         *
-         * @param request QueryAllGroupsInDeptRequest
-         * @param headers QueryAllGroupsInDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryAllGroupsInDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询科室下的所有医疗组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllGroupsInDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryAllGroupsInDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllGroupsInDeptResponse
+        /// </returns>
         public QueryAllGroupsInDeptResponse QueryAllGroupsInDeptWithOptions(string deptId, QueryAllGroupsInDeptRequest request, QueryAllGroupsInDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -15311,14 +19104,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryAllGroupsInDeptResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询科室下的所有医疗组
-         *
-         * @param request QueryAllGroupsInDeptRequest
-         * @param headers QueryAllGroupsInDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryAllGroupsInDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询科室下的所有医疗组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllGroupsInDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryAllGroupsInDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllGroupsInDeptResponse
+        /// </returns>
         public async Task<QueryAllGroupsInDeptResponse> QueryAllGroupsInDeptWithOptionsAsync(string deptId, QueryAllGroupsInDeptRequest request, QueryAllGroupsInDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -15360,12 +19163,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryAllGroupsInDeptResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询科室下的所有医疗组
-         *
-         * @param request QueryAllGroupsInDeptRequest
-         * @return QueryAllGroupsInDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询科室下的所有医疗组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllGroupsInDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllGroupsInDeptResponse
+        /// </returns>
         public QueryAllGroupsInDeptResponse QueryAllGroupsInDept(string deptId, QueryAllGroupsInDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -15373,12 +19182,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryAllGroupsInDeptWithOptions(deptId, request, headers, runtime);
         }
 
-        /**
-         * @summary 查询科室下的所有医疗组
-         *
-         * @param request QueryAllGroupsInDeptRequest
-         * @return QueryAllGroupsInDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询科室下的所有医疗组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllGroupsInDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllGroupsInDeptResponse
+        /// </returns>
         public async Task<QueryAllGroupsInDeptResponse> QueryAllGroupsInDeptAsync(string deptId, QueryAllGroupsInDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -15386,14 +19201,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryAllGroupsInDeptWithOptionsAsync(deptId, request, headers, runtime);
         }
 
-        /**
-         * @summary 查询科室下的所有人员
-         *
-         * @param request QueryAllMemberByDeptRequest
-         * @param headers QueryAllMemberByDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryAllMemberByDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询科室下的所有人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllMemberByDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryAllMemberByDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllMemberByDeptResponse
+        /// </returns>
         public QueryAllMemberByDeptResponse QueryAllMemberByDeptWithOptions(string deptId, QueryAllMemberByDeptRequest request, QueryAllMemberByDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -15439,14 +19264,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryAllMemberByDeptResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询科室下的所有人员
-         *
-         * @param request QueryAllMemberByDeptRequest
-         * @param headers QueryAllMemberByDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryAllMemberByDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询科室下的所有人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllMemberByDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryAllMemberByDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllMemberByDeptResponse
+        /// </returns>
         public async Task<QueryAllMemberByDeptResponse> QueryAllMemberByDeptWithOptionsAsync(string deptId, QueryAllMemberByDeptRequest request, QueryAllMemberByDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -15492,12 +19327,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryAllMemberByDeptResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询科室下的所有人员
-         *
-         * @param request QueryAllMemberByDeptRequest
-         * @return QueryAllMemberByDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询科室下的所有人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllMemberByDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllMemberByDeptResponse
+        /// </returns>
         public QueryAllMemberByDeptResponse QueryAllMemberByDept(string deptId, QueryAllMemberByDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -15505,12 +19346,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryAllMemberByDeptWithOptions(deptId, request, headers, runtime);
         }
 
-        /**
-         * @summary 查询科室下的所有人员
-         *
-         * @param request QueryAllMemberByDeptRequest
-         * @return QueryAllMemberByDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询科室下的所有人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllMemberByDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllMemberByDeptResponse
+        /// </returns>
         public async Task<QueryAllMemberByDeptResponse> QueryAllMemberByDeptAsync(string deptId, QueryAllMemberByDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -15518,14 +19365,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryAllMemberByDeptWithOptionsAsync(deptId, request, headers, runtime);
         }
 
-        /**
-         * @summary 获取医疗组下面的所有成员
-         *
-         * @param request QueryAllMemberByGroupRequest
-         * @param headers QueryAllMemberByGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryAllMemberByGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取医疗组下面的所有成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllMemberByGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryAllMemberByGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllMemberByGroupResponse
+        /// </returns>
         public QueryAllMemberByGroupResponse QueryAllMemberByGroupWithOptions(string groupId, QueryAllMemberByGroupRequest request, QueryAllMemberByGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -15571,14 +19428,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryAllMemberByGroupResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取医疗组下面的所有成员
-         *
-         * @param request QueryAllMemberByGroupRequest
-         * @param headers QueryAllMemberByGroupHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryAllMemberByGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取医疗组下面的所有成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllMemberByGroupRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryAllMemberByGroupHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllMemberByGroupResponse
+        /// </returns>
         public async Task<QueryAllMemberByGroupResponse> QueryAllMemberByGroupWithOptionsAsync(string groupId, QueryAllMemberByGroupRequest request, QueryAllMemberByGroupHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -15624,12 +19491,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryAllMemberByGroupResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取医疗组下面的所有成员
-         *
-         * @param request QueryAllMemberByGroupRequest
-         * @return QueryAllMemberByGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取医疗组下面的所有成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllMemberByGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllMemberByGroupResponse
+        /// </returns>
         public QueryAllMemberByGroupResponse QueryAllMemberByGroup(string groupId, QueryAllMemberByGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -15637,12 +19510,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryAllMemberByGroupWithOptions(groupId, request, headers, runtime);
         }
 
-        /**
-         * @summary 获取医疗组下面的所有成员
-         *
-         * @param request QueryAllMemberByGroupRequest
-         * @return QueryAllMemberByGroupResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取医疗组下面的所有成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAllMemberByGroupRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAllMemberByGroupResponse
+        /// </returns>
         public async Task<QueryAllMemberByGroupResponse> QueryAllMemberByGroupAsync(string groupId, QueryAllMemberByGroupRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -15650,14 +19529,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryAllMemberByGroupWithOptionsAsync(groupId, request, headers, runtime);
         }
 
-        /**
-         * @summary 获取当前企业医疗通讯录的业务操作日志
-         *
-         * @param request QueryBizOptLogRequest
-         * @param headers QueryBizOptLogHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryBizOptLogResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取当前企业医疗通讯录的业务操作日志</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryBizOptLogRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryBizOptLogHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryBizOptLogResponse
+        /// </returns>
         public QueryBizOptLogResponse QueryBizOptLogWithOptions(QueryBizOptLogRequest request, QueryBizOptLogHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -15699,14 +19588,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryBizOptLogResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取当前企业医疗通讯录的业务操作日志
-         *
-         * @param request QueryBizOptLogRequest
-         * @param headers QueryBizOptLogHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryBizOptLogResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取当前企业医疗通讯录的业务操作日志</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryBizOptLogRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryBizOptLogHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryBizOptLogResponse
+        /// </returns>
         public async Task<QueryBizOptLogResponse> QueryBizOptLogWithOptionsAsync(QueryBizOptLogRequest request, QueryBizOptLogHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -15748,12 +19647,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryBizOptLogResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取当前企业医疗通讯录的业务操作日志
-         *
-         * @param request QueryBizOptLogRequest
-         * @return QueryBizOptLogResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取当前企业医疗通讯录的业务操作日志</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryBizOptLogRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryBizOptLogResponse
+        /// </returns>
         public QueryBizOptLogResponse QueryBizOptLog(QueryBizOptLogRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -15761,12 +19666,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryBizOptLogWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取当前企业医疗通讯录的业务操作日志
-         *
-         * @param request QueryBizOptLogRequest
-         * @return QueryBizOptLogResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取当前企业医疗通讯录的业务操作日志</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryBizOptLogRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryBizOptLogResponse
+        /// </returns>
         public async Task<QueryBizOptLogResponse> QueryBizOptLogAsync(QueryBizOptLogRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -15774,14 +19685,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryBizOptLogWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询科室和医疗组的扩展信息
-         *
-         * @param request QueryDepartmentExtendInfoRequest
-         * @param headers QueryDepartmentExtendInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryDepartmentExtendInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询科室和医疗组的扩展信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryDepartmentExtendInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryDepartmentExtendInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDepartmentExtendInfoResponse
+        /// </returns>
         public QueryDepartmentExtendInfoResponse QueryDepartmentExtendInfoWithOptions(QueryDepartmentExtendInfoRequest request, QueryDepartmentExtendInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -15823,14 +19744,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryDepartmentExtendInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询科室和医疗组的扩展信息
-         *
-         * @param request QueryDepartmentExtendInfoRequest
-         * @param headers QueryDepartmentExtendInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryDepartmentExtendInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询科室和医疗组的扩展信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryDepartmentExtendInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryDepartmentExtendInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDepartmentExtendInfoResponse
+        /// </returns>
         public async Task<QueryDepartmentExtendInfoResponse> QueryDepartmentExtendInfoWithOptionsAsync(QueryDepartmentExtendInfoRequest request, QueryDepartmentExtendInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -15872,12 +19803,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryDepartmentExtendInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询科室和医疗组的扩展信息
-         *
-         * @param request QueryDepartmentExtendInfoRequest
-         * @return QueryDepartmentExtendInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询科室和医疗组的扩展信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryDepartmentExtendInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDepartmentExtendInfoResponse
+        /// </returns>
         public QueryDepartmentExtendInfoResponse QueryDepartmentExtendInfo(QueryDepartmentExtendInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -15885,12 +19822,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryDepartmentExtendInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询科室和医疗组的扩展信息
-         *
-         * @param request QueryDepartmentExtendInfoRequest
-         * @return QueryDepartmentExtendInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询科室和医疗组的扩展信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryDepartmentExtendInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDepartmentExtendInfoResponse
+        /// </returns>
         public async Task<QueryDepartmentExtendInfoResponse> QueryDepartmentExtendInfoAsync(QueryDepartmentExtendInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -15898,13 +19841,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryDepartmentExtendInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询部门详情
-         *
-         * @param headers QueryDepartmentInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryDepartmentInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询部门详情</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryDepartmentInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDepartmentInfoResponse
+        /// </returns>
         public QueryDepartmentInfoResponse QueryDepartmentInfoWithOptions(string deptId, QueryDepartmentInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -15935,13 +19886,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryDepartmentInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询部门详情
-         *
-         * @param headers QueryDepartmentInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryDepartmentInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询部门详情</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryDepartmentInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDepartmentInfoResponse
+        /// </returns>
         public async Task<QueryDepartmentInfoResponse> QueryDepartmentInfoWithOptionsAsync(string deptId, QueryDepartmentInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -15972,11 +19931,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryDepartmentInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询部门详情
-         *
-         * @return QueryDepartmentInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询部门详情</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryDepartmentInfoResponse
+        /// </returns>
         public QueryDepartmentInfoResponse QueryDepartmentInfo(string deptId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -15984,11 +19946,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryDepartmentInfoWithOptions(deptId, headers, runtime);
         }
 
-        /**
-         * @summary 查询部门详情
-         *
-         * @return QueryDepartmentInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询部门详情</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryDepartmentInfoResponse
+        /// </returns>
         public async Task<QueryDepartmentInfoResponse> QueryDepartmentInfoAsync(string deptId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -15996,14 +19961,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryDepartmentInfoWithOptionsAsync(deptId, headers, runtime);
         }
 
-        /**
-         * @summary 通过工号查询人员信息
-         *
-         * @param request QueryDoctorDetailsByJobNumberRequest
-         * @param headers QueryDoctorDetailsByJobNumberHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryDoctorDetailsByJobNumberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过工号查询人员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryDoctorDetailsByJobNumberRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryDoctorDetailsByJobNumberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDoctorDetailsByJobNumberResponse
+        /// </returns>
         public QueryDoctorDetailsByJobNumberResponse QueryDoctorDetailsByJobNumberWithOptions(string jobNumber, QueryDoctorDetailsByJobNumberRequest request, QueryDoctorDetailsByJobNumberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -16041,14 +20016,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryDoctorDetailsByJobNumberResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 通过工号查询人员信息
-         *
-         * @param request QueryDoctorDetailsByJobNumberRequest
-         * @param headers QueryDoctorDetailsByJobNumberHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryDoctorDetailsByJobNumberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过工号查询人员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryDoctorDetailsByJobNumberRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryDoctorDetailsByJobNumberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDoctorDetailsByJobNumberResponse
+        /// </returns>
         public async Task<QueryDoctorDetailsByJobNumberResponse> QueryDoctorDetailsByJobNumberWithOptionsAsync(string jobNumber, QueryDoctorDetailsByJobNumberRequest request, QueryDoctorDetailsByJobNumberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -16086,12 +20071,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryDoctorDetailsByJobNumberResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 通过工号查询人员信息
-         *
-         * @param request QueryDoctorDetailsByJobNumberRequest
-         * @return QueryDoctorDetailsByJobNumberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过工号查询人员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryDoctorDetailsByJobNumberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDoctorDetailsByJobNumberResponse
+        /// </returns>
         public QueryDoctorDetailsByJobNumberResponse QueryDoctorDetailsByJobNumber(string jobNumber, QueryDoctorDetailsByJobNumberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -16099,12 +20090,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryDoctorDetailsByJobNumberWithOptions(jobNumber, request, headers, runtime);
         }
 
-        /**
-         * @summary 通过工号查询人员信息
-         *
-         * @param request QueryDoctorDetailsByJobNumberRequest
-         * @return QueryDoctorDetailsByJobNumberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通过工号查询人员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryDoctorDetailsByJobNumberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDoctorDetailsByJobNumberResponse
+        /// </returns>
         public async Task<QueryDoctorDetailsByJobNumberResponse> QueryDoctorDetailsByJobNumberAsync(string jobNumber, QueryDoctorDetailsByJobNumberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -16112,13 +20109,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryDoctorDetailsByJobNumberWithOptionsAsync(jobNumber, request, headers, runtime);
         }
 
-        /**
-         * @summary 获取医疗组详情
-         *
-         * @param headers QueryGroupInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryGroupInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取医疗组详情</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryGroupInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryGroupInfoResponse
+        /// </returns>
         public QueryGroupInfoResponse QueryGroupInfoWithOptions(string groupId, QueryGroupInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -16149,13 +20154,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryGroupInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取医疗组详情
-         *
-         * @param headers QueryGroupInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryGroupInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取医疗组详情</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryGroupInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryGroupInfoResponse
+        /// </returns>
         public async Task<QueryGroupInfoResponse> QueryGroupInfoWithOptionsAsync(string groupId, QueryGroupInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -16186,11 +20199,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryGroupInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取医疗组详情
-         *
-         * @return QueryGroupInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取医疗组详情</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryGroupInfoResponse
+        /// </returns>
         public QueryGroupInfoResponse QueryGroupInfo(string groupId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -16198,11 +20214,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryGroupInfoWithOptions(groupId, headers, runtime);
         }
 
-        /**
-         * @summary 获取医疗组详情
-         *
-         * @return QueryGroupInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取医疗组详情</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryGroupInfoResponse
+        /// </returns>
         public async Task<QueryGroupInfoResponse> QueryGroupInfoAsync(string groupId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -16210,14 +20229,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryGroupInfoWithOptionsAsync(groupId, headers, runtime);
         }
 
-        /**
-         * @summary 查询医院的院区和病区信息
-         *
-         * @param request QueryHospitalDistrictInfoRequest
-         * @param headers QueryHospitalDistrictInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryHospitalDistrictInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询医院的院区和病区信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryHospitalDistrictInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryHospitalDistrictInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryHospitalDistrictInfoResponse
+        /// </returns>
         public QueryHospitalDistrictInfoResponse QueryHospitalDistrictInfoWithOptions(QueryHospitalDistrictInfoRequest request, QueryHospitalDistrictInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -16259,14 +20288,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryHospitalDistrictInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询医院的院区和病区信息
-         *
-         * @param request QueryHospitalDistrictInfoRequest
-         * @param headers QueryHospitalDistrictInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryHospitalDistrictInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询医院的院区和病区信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryHospitalDistrictInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryHospitalDistrictInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryHospitalDistrictInfoResponse
+        /// </returns>
         public async Task<QueryHospitalDistrictInfoResponse> QueryHospitalDistrictInfoWithOptionsAsync(QueryHospitalDistrictInfoRequest request, QueryHospitalDistrictInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -16308,12 +20347,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryHospitalDistrictInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询医院的院区和病区信息
-         *
-         * @param request QueryHospitalDistrictInfoRequest
-         * @return QueryHospitalDistrictInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询医院的院区和病区信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryHospitalDistrictInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryHospitalDistrictInfoResponse
+        /// </returns>
         public QueryHospitalDistrictInfoResponse QueryHospitalDistrictInfo(QueryHospitalDistrictInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -16321,12 +20366,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryHospitalDistrictInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询医院的院区和病区信息
-         *
-         * @param request QueryHospitalDistrictInfoRequest
-         * @return QueryHospitalDistrictInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询医院的院区和病区信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryHospitalDistrictInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryHospitalDistrictInfoResponse
+        /// </returns>
         public async Task<QueryHospitalDistrictInfoResponse> QueryHospitalDistrictInfoAsync(QueryHospitalDistrictInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -16334,14 +20385,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryHospitalDistrictInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询医院所有角色的人员
-         *
-         * @param request QueryHospitalRoleUserInfoRequest
-         * @param headers QueryHospitalRoleUserInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryHospitalRoleUserInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询医院所有角色的人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryHospitalRoleUserInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryHospitalRoleUserInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryHospitalRoleUserInfoResponse
+        /// </returns>
         public QueryHospitalRoleUserInfoResponse QueryHospitalRoleUserInfoWithOptions(QueryHospitalRoleUserInfoRequest request, QueryHospitalRoleUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -16383,14 +20444,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryHospitalRoleUserInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询医院所有角色的人员
-         *
-         * @param request QueryHospitalRoleUserInfoRequest
-         * @param headers QueryHospitalRoleUserInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryHospitalRoleUserInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询医院所有角色的人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryHospitalRoleUserInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryHospitalRoleUserInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryHospitalRoleUserInfoResponse
+        /// </returns>
         public async Task<QueryHospitalRoleUserInfoResponse> QueryHospitalRoleUserInfoWithOptionsAsync(QueryHospitalRoleUserInfoRequest request, QueryHospitalRoleUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -16432,12 +20503,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryHospitalRoleUserInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询医院所有角色的人员
-         *
-         * @param request QueryHospitalRoleUserInfoRequest
-         * @return QueryHospitalRoleUserInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询医院所有角色的人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryHospitalRoleUserInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryHospitalRoleUserInfoResponse
+        /// </returns>
         public QueryHospitalRoleUserInfoResponse QueryHospitalRoleUserInfo(QueryHospitalRoleUserInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -16445,12 +20522,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryHospitalRoleUserInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询医院所有角色的人员
-         *
-         * @param request QueryHospitalRoleUserInfoRequest
-         * @return QueryHospitalRoleUserInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询医院所有角色的人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryHospitalRoleUserInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryHospitalRoleUserInfoResponse
+        /// </returns>
         public async Task<QueryHospitalRoleUserInfoResponse> QueryHospitalRoleUserInfoAsync(QueryHospitalRoleUserInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -16458,13 +20541,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryHospitalRoleUserInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询医院的角色
-         *
-         * @param headers QueryHospitalRolesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryHospitalRolesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询医院的角色</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryHospitalRolesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryHospitalRolesResponse
+        /// </returns>
         public QueryHospitalRolesResponse QueryHospitalRolesWithOptions(QueryHospitalRolesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -16495,13 +20586,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryHospitalRolesResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询医院的角色
-         *
-         * @param headers QueryHospitalRolesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryHospitalRolesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询医院的角色</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryHospitalRolesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryHospitalRolesResponse
+        /// </returns>
         public async Task<QueryHospitalRolesResponse> QueryHospitalRolesWithOptionsAsync(QueryHospitalRolesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -16532,11 +20631,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryHospitalRolesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询医院的角色
-         *
-         * @return QueryHospitalRolesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询医院的角色</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryHospitalRolesResponse
+        /// </returns>
         public QueryHospitalRolesResponse QueryHospitalRoles()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -16544,11 +20646,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryHospitalRolesWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 查询医院的角色
-         *
-         * @return QueryHospitalRolesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询医院的角色</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryHospitalRolesResponse
+        /// </returns>
         public async Task<QueryHospitalRolesResponse> QueryHospitalRolesAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -16556,13 +20661,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryHospitalRolesWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 查询职称字典表
-         *
-         * @param headers QueryJobCodeDictionaryHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryJobCodeDictionaryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询职称字典表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryJobCodeDictionaryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryJobCodeDictionaryResponse
+        /// </returns>
         public QueryJobCodeDictionaryResponse QueryJobCodeDictionaryWithOptions(QueryJobCodeDictionaryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -16593,13 +20706,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryJobCodeDictionaryResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询职称字典表
-         *
-         * @param headers QueryJobCodeDictionaryHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryJobCodeDictionaryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询职称字典表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryJobCodeDictionaryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryJobCodeDictionaryResponse
+        /// </returns>
         public async Task<QueryJobCodeDictionaryResponse> QueryJobCodeDictionaryWithOptionsAsync(QueryJobCodeDictionaryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -16630,11 +20751,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryJobCodeDictionaryResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询职称字典表
-         *
-         * @return QueryJobCodeDictionaryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询职称字典表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryJobCodeDictionaryResponse
+        /// </returns>
         public QueryJobCodeDictionaryResponse QueryJobCodeDictionary()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -16642,11 +20766,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryJobCodeDictionaryWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 查询职称字典表
-         *
-         * @return QueryJobCodeDictionaryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询职称字典表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryJobCodeDictionaryResponse
+        /// </returns>
         public async Task<QueryJobCodeDictionaryResponse> QueryJobCodeDictionaryAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -16654,13 +20781,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryJobCodeDictionaryWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 查询工作状态字典表
-         *
-         * @param headers QueryJobStatusCodeDictionaryHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryJobStatusCodeDictionaryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询工作状态字典表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryJobStatusCodeDictionaryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryJobStatusCodeDictionaryResponse
+        /// </returns>
         public QueryJobStatusCodeDictionaryResponse QueryJobStatusCodeDictionaryWithOptions(QueryJobStatusCodeDictionaryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -16691,13 +20826,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryJobStatusCodeDictionaryResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询工作状态字典表
-         *
-         * @param headers QueryJobStatusCodeDictionaryHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryJobStatusCodeDictionaryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询工作状态字典表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryJobStatusCodeDictionaryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryJobStatusCodeDictionaryResponse
+        /// </returns>
         public async Task<QueryJobStatusCodeDictionaryResponse> QueryJobStatusCodeDictionaryWithOptionsAsync(QueryJobStatusCodeDictionaryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -16728,11 +20871,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryJobStatusCodeDictionaryResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询工作状态字典表
-         *
-         * @return QueryJobStatusCodeDictionaryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询工作状态字典表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryJobStatusCodeDictionaryResponse
+        /// </returns>
         public QueryJobStatusCodeDictionaryResponse QueryJobStatusCodeDictionary()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -16740,11 +20886,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryJobStatusCodeDictionaryWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 查询工作状态字典表
-         *
-         * @return QueryJobStatusCodeDictionaryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询工作状态字典表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryJobStatusCodeDictionaryResponse
+        /// </returns>
         public async Task<QueryJobStatusCodeDictionaryResponse> QueryJobStatusCodeDictionaryAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -16752,13 +20901,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryJobStatusCodeDictionaryWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 查询医疗行业事件
-         *
-         * @param headers QueryMedicalEventsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryMedicalEventsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询医疗行业事件</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryMedicalEventsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMedicalEventsResponse
+        /// </returns>
         public QueryMedicalEventsResponse QueryMedicalEventsWithOptions(QueryMedicalEventsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -16789,13 +20946,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryMedicalEventsResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询医疗行业事件
-         *
-         * @param headers QueryMedicalEventsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryMedicalEventsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询医疗行业事件</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryMedicalEventsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMedicalEventsResponse
+        /// </returns>
         public async Task<QueryMedicalEventsResponse> QueryMedicalEventsWithOptionsAsync(QueryMedicalEventsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -16826,11 +20991,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryMedicalEventsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询医疗行业事件
-         *
-         * @return QueryMedicalEventsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询医疗行业事件</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryMedicalEventsResponse
+        /// </returns>
         public QueryMedicalEventsResponse QueryMedicalEvents()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -16838,11 +21006,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryMedicalEventsWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 查询医疗行业事件
-         *
-         * @return QueryMedicalEventsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询医疗行业事件</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryMedicalEventsResponse
+        /// </returns>
         public async Task<QueryMedicalEventsResponse> QueryMedicalEventsAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -16850,14 +21021,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryMedicalEventsWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 查询用户的证书
-         *
-         * @param request QueryUserCredentialsRequest
-         * @param headers QueryUserCredentialsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryUserCredentialsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询用户的证书</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserCredentialsRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryUserCredentialsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserCredentialsResponse
+        /// </returns>
         public QueryUserCredentialsResponse QueryUserCredentialsWithOptions(QueryUserCredentialsRequest request, QueryUserCredentialsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -16895,14 +21076,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryUserCredentialsResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询用户的证书
-         *
-         * @param request QueryUserCredentialsRequest
-         * @param headers QueryUserCredentialsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryUserCredentialsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询用户的证书</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserCredentialsRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryUserCredentialsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserCredentialsResponse
+        /// </returns>
         public async Task<QueryUserCredentialsResponse> QueryUserCredentialsWithOptionsAsync(QueryUserCredentialsRequest request, QueryUserCredentialsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -16940,12 +21131,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryUserCredentialsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询用户的证书
-         *
-         * @param request QueryUserCredentialsRequest
-         * @return QueryUserCredentialsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询用户的证书</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserCredentialsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserCredentialsResponse
+        /// </returns>
         public QueryUserCredentialsResponse QueryUserCredentials(QueryUserCredentialsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -16953,12 +21150,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryUserCredentialsWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询用户的证书
-         *
-         * @param request QueryUserCredentialsRequest
-         * @return QueryUserCredentialsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询用户的证书</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserCredentialsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserCredentialsResponse
+        /// </returns>
         public async Task<QueryUserCredentialsResponse> QueryUserCredentialsAsync(QueryUserCredentialsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -16966,13 +21169,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryUserCredentialsWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询人员的扩展信息
-         *
-         * @param headers QueryUserExtInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryUserExtInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人员的扩展信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryUserExtInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserExtInfoResponse
+        /// </returns>
         public QueryUserExtInfoResponse QueryUserExtInfoWithOptions(string userId, QueryUserExtInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -17003,13 +21214,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryUserExtInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询人员的扩展信息
-         *
-         * @param headers QueryUserExtInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryUserExtInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人员的扩展信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryUserExtInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserExtInfoResponse
+        /// </returns>
         public async Task<QueryUserExtInfoResponse> QueryUserExtInfoWithOptionsAsync(string userId, QueryUserExtInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -17040,11 +21259,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryUserExtInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询人员的扩展信息
-         *
-         * @return QueryUserExtInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人员的扩展信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryUserExtInfoResponse
+        /// </returns>
         public QueryUserExtInfoResponse QueryUserExtInfo(string userId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -17052,11 +21274,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryUserExtInfoWithOptions(userId, headers, runtime);
         }
 
-        /**
-         * @summary 查询人员的扩展信息
-         *
-         * @return QueryUserExtInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人员的扩展信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryUserExtInfoResponse
+        /// </returns>
         public async Task<QueryUserExtInfoResponse> QueryUserExtInfoAsync(string userId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -17064,14 +21289,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryUserExtInfoWithOptionsAsync(userId, headers, runtime);
         }
 
-        /**
-         * @summary 获取用户拓展字段
-         *
-         * @param request QueryUserExtendValuesRequest
-         * @param headers QueryUserExtendValuesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryUserExtendValuesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户拓展字段</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserExtendValuesRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryUserExtendValuesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserExtendValuesResponse
+        /// </returns>
         public QueryUserExtendValuesResponse QueryUserExtendValuesWithOptions(QueryUserExtendValuesRequest request, QueryUserExtendValuesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -17113,14 +21348,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryUserExtendValuesResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取用户拓展字段
-         *
-         * @param request QueryUserExtendValuesRequest
-         * @param headers QueryUserExtendValuesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryUserExtendValuesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户拓展字段</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserExtendValuesRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryUserExtendValuesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserExtendValuesResponse
+        /// </returns>
         public async Task<QueryUserExtendValuesResponse> QueryUserExtendValuesWithOptionsAsync(QueryUserExtendValuesRequest request, QueryUserExtendValuesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -17162,12 +21407,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryUserExtendValuesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取用户拓展字段
-         *
-         * @param request QueryUserExtendValuesRequest
-         * @return QueryUserExtendValuesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户拓展字段</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserExtendValuesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserExtendValuesResponse
+        /// </returns>
         public QueryUserExtendValuesResponse QueryUserExtendValues(QueryUserExtendValuesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -17175,12 +21426,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryUserExtendValuesWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取用户拓展字段
-         *
-         * @param request QueryUserExtendValuesRequest
-         * @return QueryUserExtendValuesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户拓展字段</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserExtendValuesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserExtendValuesResponse
+        /// </returns>
         public async Task<QueryUserExtendValuesResponse> QueryUserExtendValuesAsync(QueryUserExtendValuesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -17188,14 +21445,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryUserExtendValuesWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询人员详情
-         *
-         * @param request QueryUserInfoRequest
-         * @param headers QueryUserInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryUserInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人员详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryUserInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserInfoResponse
+        /// </returns>
         public QueryUserInfoResponse QueryUserInfoWithOptions(string userId, QueryUserInfoRequest request, QueryUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -17233,14 +21500,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryUserInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询人员详情
-         *
-         * @param request QueryUserInfoRequest
-         * @param headers QueryUserInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryUserInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人员详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryUserInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserInfoResponse
+        /// </returns>
         public async Task<QueryUserInfoResponse> QueryUserInfoWithOptionsAsync(string userId, QueryUserInfoRequest request, QueryUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -17278,12 +21555,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryUserInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询人员详情
-         *
-         * @param request QueryUserInfoRequest
-         * @return QueryUserInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人员详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserInfoResponse
+        /// </returns>
         public QueryUserInfoResponse QueryUserInfo(string userId, QueryUserInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -17291,12 +21574,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryUserInfoWithOptions(userId, request, headers, runtime);
         }
 
-        /**
-         * @summary 查询人员详情
-         *
-         * @param request QueryUserInfoRequest
-         * @return QueryUserInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人员详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUserInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserInfoResponse
+        /// </returns>
         public async Task<QueryUserInfoResponse> QueryUserInfoAsync(string userId, QueryUserInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -17304,13 +21593,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryUserInfoWithOptionsAsync(userId, request, headers, runtime);
         }
 
-        /**
-         * @summary 查询人员属性字典表
-         *
-         * @param headers QueryUserProbCodeDictionaryHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryUserProbCodeDictionaryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人员属性字典表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryUserProbCodeDictionaryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserProbCodeDictionaryResponse
+        /// </returns>
         public QueryUserProbCodeDictionaryResponse QueryUserProbCodeDictionaryWithOptions(QueryUserProbCodeDictionaryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -17341,13 +21638,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryUserProbCodeDictionaryResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询人员属性字典表
-         *
-         * @param headers QueryUserProbCodeDictionaryHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryUserProbCodeDictionaryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人员属性字典表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryUserProbCodeDictionaryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserProbCodeDictionaryResponse
+        /// </returns>
         public async Task<QueryUserProbCodeDictionaryResponse> QueryUserProbCodeDictionaryWithOptionsAsync(QueryUserProbCodeDictionaryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -17378,11 +21683,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryUserProbCodeDictionaryResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询人员属性字典表
-         *
-         * @return QueryUserProbCodeDictionaryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人员属性字典表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryUserProbCodeDictionaryResponse
+        /// </returns>
         public QueryUserProbCodeDictionaryResponse QueryUserProbCodeDictionary()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -17390,11 +21698,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryUserProbCodeDictionaryWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 查询人员属性字典表
-         *
-         * @return QueryUserProbCodeDictionaryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人员属性字典表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryUserProbCodeDictionaryResponse
+        /// </returns>
         public async Task<QueryUserProbCodeDictionaryResponse> QueryUserProbCodeDictionaryAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -17402,13 +21713,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryUserProbCodeDictionaryWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 查询人员权限
-         *
-         * @param headers QueryUserRolesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryUserRolesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人员权限</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryUserRolesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserRolesResponse
+        /// </returns>
         public QueryUserRolesResponse QueryUserRolesWithOptions(string userId, QueryUserRolesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -17439,13 +21758,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryUserRolesResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询人员权限
-         *
-         * @param headers QueryUserRolesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryUserRolesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人员权限</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryUserRolesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUserRolesResponse
+        /// </returns>
         public async Task<QueryUserRolesResponse> QueryUserRolesWithOptionsAsync(string userId, QueryUserRolesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -17476,11 +21803,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<QueryUserRolesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询人员权限
-         *
-         * @return QueryUserRolesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人员权限</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryUserRolesResponse
+        /// </returns>
         public QueryUserRolesResponse QueryUserRoles(string userId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -17488,11 +21818,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return QueryUserRolesWithOptions(userId, headers, runtime);
         }
 
-        /**
-         * @summary 查询人员权限
-         *
-         * @return QueryUserRolesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询人员权限</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryUserRolesResponse
+        /// </returns>
         public async Task<QueryUserRolesResponse> QueryUserRolesAsync(string userId)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -17500,14 +21833,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await QueryUserRolesWithOptionsAsync(userId, headers, runtime);
         }
 
-        /**
-         * @summary 保存用户拓展字段
-         *
-         * @param request SaveUserExtendValuesRequest
-         * @param headers SaveUserExtendValuesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SaveUserExtendValuesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>保存用户拓展字段</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveUserExtendValuesRequest
+        /// </param>
+        /// <param name="headers">
+        /// SaveUserExtendValuesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveUserExtendValuesResponse
+        /// </returns>
         public SaveUserExtendValuesResponse SaveUserExtendValuesWithOptions(string userId, SaveUserExtendValuesRequest request, SaveUserExtendValuesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -17553,14 +21896,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SaveUserExtendValuesResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 保存用户拓展字段
-         *
-         * @param request SaveUserExtendValuesRequest
-         * @param headers SaveUserExtendValuesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SaveUserExtendValuesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>保存用户拓展字段</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveUserExtendValuesRequest
+        /// </param>
+        /// <param name="headers">
+        /// SaveUserExtendValuesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveUserExtendValuesResponse
+        /// </returns>
         public async Task<SaveUserExtendValuesResponse> SaveUserExtendValuesWithOptionsAsync(string userId, SaveUserExtendValuesRequest request, SaveUserExtendValuesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -17606,12 +21959,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SaveUserExtendValuesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 保存用户拓展字段
-         *
-         * @param request SaveUserExtendValuesRequest
-         * @return SaveUserExtendValuesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>保存用户拓展字段</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveUserExtendValuesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveUserExtendValuesResponse
+        /// </returns>
         public SaveUserExtendValuesResponse SaveUserExtendValues(string userId, SaveUserExtendValuesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -17619,12 +21978,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SaveUserExtendValuesWithOptions(userId, request, headers, runtime);
         }
 
-        /**
-         * @summary 保存用户拓展字段
-         *
-         * @param request SaveUserExtendValuesRequest
-         * @return SaveUserExtendValuesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>保存用户拓展字段</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveUserExtendValuesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveUserExtendValuesResponse
+        /// </returns>
         public async Task<SaveUserExtendValuesResponse> SaveUserExtendValuesAsync(string userId, SaveUserExtendValuesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -17632,14 +21997,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SaveUserExtendValuesWithOptionsAsync(userId, request, headers, runtime);
         }
 
-        /**
-         * @summary 提交ai解析任务
-         *
-         * @param request SubmitTaskRequest
-         * @param headers SubmitTaskHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SubmitTaskResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提交ai解析任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubmitTaskRequest
+        /// </param>
+        /// <param name="headers">
+        /// SubmitTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubmitTaskResponse
+        /// </returns>
         public SubmitTaskResponse SubmitTaskWithOptions(SubmitTaskRequest request, SubmitTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -17685,14 +22060,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SubmitTaskResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 提交ai解析任务
-         *
-         * @param request SubmitTaskRequest
-         * @param headers SubmitTaskHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SubmitTaskResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提交ai解析任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubmitTaskRequest
+        /// </param>
+        /// <param name="headers">
+        /// SubmitTaskHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubmitTaskResponse
+        /// </returns>
         public async Task<SubmitTaskResponse> SubmitTaskWithOptionsAsync(SubmitTaskRequest request, SubmitTaskHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -17738,12 +22123,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SubmitTaskResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 提交ai解析任务
-         *
-         * @param request SubmitTaskRequest
-         * @return SubmitTaskResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提交ai解析任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubmitTaskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubmitTaskResponse
+        /// </returns>
         public SubmitTaskResponse SubmitTask(SubmitTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -17751,12 +22142,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SubmitTaskWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 提交ai解析任务
-         *
-         * @param request SubmitTaskRequest
-         * @return SubmitTaskResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>提交ai解析任务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubmitTaskRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubmitTaskResponse
+        /// </returns>
         public async Task<SubmitTaskResponse> SubmitTaskAsync(SubmitTaskRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -17764,14 +22161,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SubmitTaskWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 增加角色或角色组
-         *
-         * @param request SupplAddRoleRequest
-         * @param headers SupplAddRoleHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplAddRoleResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>增加角色或角色组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplAddRoleRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplAddRoleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplAddRoleResponse
+        /// </returns>
         public SupplAddRoleResponse SupplAddRoleWithOptions(SupplAddRoleRequest request, SupplAddRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -17813,14 +22220,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplAddRoleResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 增加角色或角色组
-         *
-         * @param request SupplAddRoleRequest
-         * @param headers SupplAddRoleHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplAddRoleResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>增加角色或角色组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplAddRoleRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplAddRoleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplAddRoleResponse
+        /// </returns>
         public async Task<SupplAddRoleResponse> SupplAddRoleWithOptionsAsync(SupplAddRoleRequest request, SupplAddRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -17862,12 +22279,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplAddRoleResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 增加角色或角色组
-         *
-         * @param request SupplAddRoleRequest
-         * @return SupplAddRoleResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>增加角色或角色组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplAddRoleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplAddRoleResponse
+        /// </returns>
         public SupplAddRoleResponse SupplAddRole(SupplAddRoleRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -17875,12 +22298,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplAddRoleWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 增加角色或角色组
-         *
-         * @param request SupplAddRoleRequest
-         * @return SupplAddRoleResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>增加角色或角色组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplAddRoleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplAddRoleResponse
+        /// </returns>
         public async Task<SupplAddRoleResponse> SupplAddRoleAsync(SupplAddRoleRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -17888,14 +22317,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplAddRoleWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 新增供应链节点
-         *
-         * @param request SupplyAddDeptRequest
-         * @param headers SupplyAddDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyAddDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增供应链节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyAddDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyAddDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyAddDeptResponse
+        /// </returns>
         public SupplyAddDeptResponse SupplyAddDeptWithOptions(SupplyAddDeptRequest request, SupplyAddDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -17945,14 +22384,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyAddDeptResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 新增供应链节点
-         *
-         * @param request SupplyAddDeptRequest
-         * @param headers SupplyAddDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyAddDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增供应链节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyAddDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyAddDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyAddDeptResponse
+        /// </returns>
         public async Task<SupplyAddDeptResponse> SupplyAddDeptWithOptionsAsync(SupplyAddDeptRequest request, SupplyAddDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -18002,12 +22451,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyAddDeptResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 新增供应链节点
-         *
-         * @param request SupplyAddDeptRequest
-         * @return SupplyAddDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增供应链节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyAddDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyAddDeptResponse
+        /// </returns>
         public SupplyAddDeptResponse SupplyAddDept(SupplyAddDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -18015,12 +22470,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyAddDeptWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 新增供应链节点
-         *
-         * @param request SupplyAddDeptRequest
-         * @return SupplyAddDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增供应链节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyAddDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyAddDeptResponse
+        /// </returns>
         public async Task<SupplyAddDeptResponse> SupplyAddDeptAsync(SupplyAddDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -18028,14 +22489,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyAddDeptWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 添加供应商人员
-         *
-         * @param request SupplyAddMemberRequest
-         * @param headers SupplyAddMemberHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyAddMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加供应商人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyAddMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyAddMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyAddMemberResponse
+        /// </returns>
         public SupplyAddMemberResponse SupplyAddMemberWithOptions(SupplyAddMemberRequest request, SupplyAddMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -18093,14 +22564,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyAddMemberResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 添加供应商人员
-         *
-         * @param request SupplyAddMemberRequest
-         * @param headers SupplyAddMemberHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyAddMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加供应商人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyAddMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyAddMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyAddMemberResponse
+        /// </returns>
         public async Task<SupplyAddMemberResponse> SupplyAddMemberWithOptionsAsync(SupplyAddMemberRequest request, SupplyAddMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -18158,12 +22639,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyAddMemberResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 添加供应商人员
-         *
-         * @param request SupplyAddMemberRequest
-         * @return SupplyAddMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加供应商人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyAddMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyAddMemberResponse
+        /// </returns>
         public SupplyAddMemberResponse SupplyAddMember(SupplyAddMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -18171,12 +22658,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyAddMemberWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 添加供应商人员
-         *
-         * @param request SupplyAddMemberRequest
-         * @return SupplyAddMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加供应商人员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyAddMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyAddMemberResponse
+        /// </returns>
         public async Task<SupplyAddMemberResponse> SupplyAddMemberAsync(SupplyAddMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -18184,14 +22677,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyAddMemberWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 添加伙伴负责人
-         *
-         * @param request SupplyAddPartnerAdminsRequest
-         * @param headers SupplyAddPartnerAdminsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyAddPartnerAdminsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加伙伴负责人</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyAddPartnerAdminsRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyAddPartnerAdminsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyAddPartnerAdminsResponse
+        /// </returns>
         public SupplyAddPartnerAdminsResponse SupplyAddPartnerAdminsWithOptions(SupplyAddPartnerAdminsRequest request, SupplyAddPartnerAdminsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -18233,14 +22736,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyAddPartnerAdminsResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 添加伙伴负责人
-         *
-         * @param request SupplyAddPartnerAdminsRequest
-         * @param headers SupplyAddPartnerAdminsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyAddPartnerAdminsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加伙伴负责人</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyAddPartnerAdminsRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyAddPartnerAdminsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyAddPartnerAdminsResponse
+        /// </returns>
         public async Task<SupplyAddPartnerAdminsResponse> SupplyAddPartnerAdminsWithOptionsAsync(SupplyAddPartnerAdminsRequest request, SupplyAddPartnerAdminsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -18282,12 +22795,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyAddPartnerAdminsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 添加伙伴负责人
-         *
-         * @param request SupplyAddPartnerAdminsRequest
-         * @return SupplyAddPartnerAdminsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加伙伴负责人</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyAddPartnerAdminsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyAddPartnerAdminsResponse
+        /// </returns>
         public SupplyAddPartnerAdminsResponse SupplyAddPartnerAdmins(SupplyAddPartnerAdminsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -18295,12 +22814,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyAddPartnerAdminsWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 添加伙伴负责人
-         *
-         * @param request SupplyAddPartnerAdminsRequest
-         * @return SupplyAddPartnerAdminsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加伙伴负责人</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyAddPartnerAdminsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyAddPartnerAdminsResponse
+        /// </returns>
         public async Task<SupplyAddPartnerAdminsResponse> SupplyAddPartnerAdminsAsync(SupplyAddPartnerAdminsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -18308,14 +22833,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyAddPartnerAdminsWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 添加伙伴的对接人或对接部门
-         *
-         * @param request SupplyAddPartnerManagersRequest
-         * @param headers SupplyAddPartnerManagersHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyAddPartnerManagersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加伙伴的对接人或对接部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyAddPartnerManagersRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyAddPartnerManagersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyAddPartnerManagersResponse
+        /// </returns>
         public SupplyAddPartnerManagersResponse SupplyAddPartnerManagersWithOptions(SupplyAddPartnerManagersRequest request, SupplyAddPartnerManagersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -18361,14 +22896,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyAddPartnerManagersResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 添加伙伴的对接人或对接部门
-         *
-         * @param request SupplyAddPartnerManagersRequest
-         * @param headers SupplyAddPartnerManagersHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyAddPartnerManagersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加伙伴的对接人或对接部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyAddPartnerManagersRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyAddPartnerManagersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyAddPartnerManagersResponse
+        /// </returns>
         public async Task<SupplyAddPartnerManagersResponse> SupplyAddPartnerManagersWithOptionsAsync(SupplyAddPartnerManagersRequest request, SupplyAddPartnerManagersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -18414,12 +22959,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyAddPartnerManagersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 添加伙伴的对接人或对接部门
-         *
-         * @param request SupplyAddPartnerManagersRequest
-         * @return SupplyAddPartnerManagersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加伙伴的对接人或对接部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyAddPartnerManagersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyAddPartnerManagersResponse
+        /// </returns>
         public SupplyAddPartnerManagersResponse SupplyAddPartnerManagers(SupplyAddPartnerManagersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -18427,12 +22978,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyAddPartnerManagersWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 添加伙伴的对接人或对接部门
-         *
-         * @param request SupplyAddPartnerManagersRequest
-         * @return SupplyAddPartnerManagersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加伙伴的对接人或对接部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyAddPartnerManagersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyAddPartnerManagersResponse
+        /// </returns>
         public async Task<SupplyAddPartnerManagersResponse> SupplyAddPartnerManagersAsync(SupplyAddPartnerManagersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -18440,14 +22997,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyAddPartnerManagersWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 添加伙伴标签
-         *
-         * @param request SupplyAddPartnerTypeRequest
-         * @param headers SupplyAddPartnerTypeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyAddPartnerTypeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加伙伴标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyAddPartnerTypeRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyAddPartnerTypeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyAddPartnerTypeResponse
+        /// </returns>
         public SupplyAddPartnerTypeResponse SupplyAddPartnerTypeWithOptions(SupplyAddPartnerTypeRequest request, SupplyAddPartnerTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -18489,14 +23056,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyAddPartnerTypeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 添加伙伴标签
-         *
-         * @param request SupplyAddPartnerTypeRequest
-         * @param headers SupplyAddPartnerTypeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyAddPartnerTypeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加伙伴标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyAddPartnerTypeRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyAddPartnerTypeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyAddPartnerTypeResponse
+        /// </returns>
         public async Task<SupplyAddPartnerTypeResponse> SupplyAddPartnerTypeWithOptionsAsync(SupplyAddPartnerTypeRequest request, SupplyAddPartnerTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -18538,12 +23115,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyAddPartnerTypeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 添加伙伴标签
-         *
-         * @param request SupplyAddPartnerTypeRequest
-         * @return SupplyAddPartnerTypeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加伙伴标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyAddPartnerTypeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyAddPartnerTypeResponse
+        /// </returns>
         public SupplyAddPartnerTypeResponse SupplyAddPartnerType(SupplyAddPartnerTypeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -18551,12 +23134,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyAddPartnerTypeWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 添加伙伴标签
-         *
-         * @param request SupplyAddPartnerTypeRequest
-         * @return SupplyAddPartnerTypeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加伙伴标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyAddPartnerTypeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyAddPartnerTypeResponse
+        /// </returns>
         public async Task<SupplyAddPartnerTypeResponse> SupplyAddPartnerTypeAsync(SupplyAddPartnerTypeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -18564,14 +23153,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyAddPartnerTypeWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary  删除上下游节点
-         *
-         * @param request SupplyChainDeleteDeptRequest
-         * @param headers SupplyChainDeleteDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyChainDeleteDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除上下游节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyChainDeleteDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyChainDeleteDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyChainDeleteDeptResponse
+        /// </returns>
         public SupplyChainDeleteDeptResponse SupplyChainDeleteDeptWithOptions(SupplyChainDeleteDeptRequest request, SupplyChainDeleteDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -18609,14 +23208,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyChainDeleteDeptResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary  删除上下游节点
-         *
-         * @param request SupplyChainDeleteDeptRequest
-         * @param headers SupplyChainDeleteDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyChainDeleteDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除上下游节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyChainDeleteDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyChainDeleteDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyChainDeleteDeptResponse
+        /// </returns>
         public async Task<SupplyChainDeleteDeptResponse> SupplyChainDeleteDeptWithOptionsAsync(SupplyChainDeleteDeptRequest request, SupplyChainDeleteDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -18654,12 +23263,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyChainDeleteDeptResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary  删除上下游节点
-         *
-         * @param request SupplyChainDeleteDeptRequest
-         * @return SupplyChainDeleteDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除上下游节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyChainDeleteDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyChainDeleteDeptResponse
+        /// </returns>
         public SupplyChainDeleteDeptResponse SupplyChainDeleteDept(SupplyChainDeleteDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -18667,12 +23282,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyChainDeleteDeptWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary  删除上下游节点
-         *
-         * @param request SupplyChainDeleteDeptRequest
-         * @return SupplyChainDeleteDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除上下游节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyChainDeleteDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyChainDeleteDeptResponse
+        /// </returns>
         public async Task<SupplyChainDeleteDeptResponse> SupplyChainDeleteDeptAsync(SupplyChainDeleteDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -18680,14 +23301,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyChainDeleteDeptWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询上下游节点信息
-         *
-         * @param request SupplyChainQueryDeptInfoRequest
-         * @param headers SupplyChainQueryDeptInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyChainQueryDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询上下游节点信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyChainQueryDeptInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyChainQueryDeptInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyChainQueryDeptInfoResponse
+        /// </returns>
         public SupplyChainQueryDeptInfoResponse SupplyChainQueryDeptInfoWithOptions(SupplyChainQueryDeptInfoRequest request, SupplyChainQueryDeptInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -18725,14 +23356,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyChainQueryDeptInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询上下游节点信息
-         *
-         * @param request SupplyChainQueryDeptInfoRequest
-         * @param headers SupplyChainQueryDeptInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyChainQueryDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询上下游节点信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyChainQueryDeptInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyChainQueryDeptInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyChainQueryDeptInfoResponse
+        /// </returns>
         public async Task<SupplyChainQueryDeptInfoResponse> SupplyChainQueryDeptInfoWithOptionsAsync(SupplyChainQueryDeptInfoRequest request, SupplyChainQueryDeptInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -18770,12 +23411,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyChainQueryDeptInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询上下游节点信息
-         *
-         * @param request SupplyChainQueryDeptInfoRequest
-         * @return SupplyChainQueryDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询上下游节点信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyChainQueryDeptInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyChainQueryDeptInfoResponse
+        /// </returns>
         public SupplyChainQueryDeptInfoResponse SupplyChainQueryDeptInfo(SupplyChainQueryDeptInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -18783,12 +23430,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyChainQueryDeptInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询上下游节点信息
-         *
-         * @param request SupplyChainQueryDeptInfoRequest
-         * @return SupplyChainQueryDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询上下游节点信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyChainQueryDeptInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyChainQueryDeptInfoResponse
+        /// </returns>
         public async Task<SupplyChainQueryDeptInfoResponse> SupplyChainQueryDeptInfoAsync(SupplyChainQueryDeptInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -18796,14 +23449,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyChainQueryDeptInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新上下游节点信息
-         *
-         * @param request SupplyChainUpdateDeptInfoRequest
-         * @param headers SupplyChainUpdateDeptInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyChainUpdateDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新上下游节点信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyChainUpdateDeptInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyChainUpdateDeptInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyChainUpdateDeptInfoResponse
+        /// </returns>
         public SupplyChainUpdateDeptInfoResponse SupplyChainUpdateDeptInfoWithOptions(SupplyChainUpdateDeptInfoRequest request, SupplyChainUpdateDeptInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -18857,14 +23520,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyChainUpdateDeptInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新上下游节点信息
-         *
-         * @param request SupplyChainUpdateDeptInfoRequest
-         * @param headers SupplyChainUpdateDeptInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyChainUpdateDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新上下游节点信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyChainUpdateDeptInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyChainUpdateDeptInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyChainUpdateDeptInfoResponse
+        /// </returns>
         public async Task<SupplyChainUpdateDeptInfoResponse> SupplyChainUpdateDeptInfoWithOptionsAsync(SupplyChainUpdateDeptInfoRequest request, SupplyChainUpdateDeptInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -18918,12 +23591,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyChainUpdateDeptInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新上下游节点信息
-         *
-         * @param request SupplyChainUpdateDeptInfoRequest
-         * @return SupplyChainUpdateDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新上下游节点信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyChainUpdateDeptInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyChainUpdateDeptInfoResponse
+        /// </returns>
         public SupplyChainUpdateDeptInfoResponse SupplyChainUpdateDeptInfo(SupplyChainUpdateDeptInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -18931,12 +23610,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyChainUpdateDeptInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新上下游节点信息
-         *
-         * @param request SupplyChainUpdateDeptInfoRequest
-         * @return SupplyChainUpdateDeptInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新上下游节点信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyChainUpdateDeptInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyChainUpdateDeptInfoResponse
+        /// </returns>
         public async Task<SupplyChainUpdateDeptInfoResponse> SupplyChainUpdateDeptInfoAsync(SupplyChainUpdateDeptInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -18944,14 +23629,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyChainUpdateDeptInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除伙伴成员
-         *
-         * @param request SupplyDeleteMemberRequest
-         * @param headers SupplyDeleteMemberHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyDeleteMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除伙伴成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyDeleteMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyDeleteMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyDeleteMemberResponse
+        /// </returns>
         public SupplyDeleteMemberResponse SupplyDeleteMemberWithOptions(SupplyDeleteMemberRequest request, SupplyDeleteMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -19001,14 +23696,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyDeleteMemberResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除伙伴成员
-         *
-         * @param request SupplyDeleteMemberRequest
-         * @param headers SupplyDeleteMemberHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyDeleteMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除伙伴成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyDeleteMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyDeleteMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyDeleteMemberResponse
+        /// </returns>
         public async Task<SupplyDeleteMemberResponse> SupplyDeleteMemberWithOptionsAsync(SupplyDeleteMemberRequest request, SupplyDeleteMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -19058,12 +23763,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyDeleteMemberResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除伙伴成员
-         *
-         * @param request SupplyDeleteMemberRequest
-         * @return SupplyDeleteMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除伙伴成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyDeleteMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyDeleteMemberResponse
+        /// </returns>
         public SupplyDeleteMemberResponse SupplyDeleteMember(SupplyDeleteMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -19071,12 +23782,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyDeleteMemberWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除伙伴成员
-         *
-         * @param request SupplyDeleteMemberRequest
-         * @return SupplyDeleteMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除伙伴成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyDeleteMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyDeleteMemberResponse
+        /// </returns>
         public async Task<SupplyDeleteMemberResponse> SupplyDeleteMemberAsync(SupplyDeleteMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -19084,14 +23801,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyDeleteMemberWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除伙伴负责人
-         *
-         * @param request SupplyDeletePartnerAdminsRequest
-         * @param headers SupplyDeletePartnerAdminsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyDeletePartnerAdminsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除伙伴负责人</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyDeletePartnerAdminsRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyDeletePartnerAdminsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyDeletePartnerAdminsResponse
+        /// </returns>
         public SupplyDeletePartnerAdminsResponse SupplyDeletePartnerAdminsWithOptions(SupplyDeletePartnerAdminsRequest request, SupplyDeletePartnerAdminsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -19133,14 +23860,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyDeletePartnerAdminsResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除伙伴负责人
-         *
-         * @param request SupplyDeletePartnerAdminsRequest
-         * @param headers SupplyDeletePartnerAdminsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyDeletePartnerAdminsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除伙伴负责人</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyDeletePartnerAdminsRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyDeletePartnerAdminsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyDeletePartnerAdminsResponse
+        /// </returns>
         public async Task<SupplyDeletePartnerAdminsResponse> SupplyDeletePartnerAdminsWithOptionsAsync(SupplyDeletePartnerAdminsRequest request, SupplyDeletePartnerAdminsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -19182,12 +23919,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyDeletePartnerAdminsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除伙伴负责人
-         *
-         * @param request SupplyDeletePartnerAdminsRequest
-         * @return SupplyDeletePartnerAdminsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除伙伴负责人</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyDeletePartnerAdminsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyDeletePartnerAdminsResponse
+        /// </returns>
         public SupplyDeletePartnerAdminsResponse SupplyDeletePartnerAdmins(SupplyDeletePartnerAdminsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -19195,12 +23938,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyDeletePartnerAdminsWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除伙伴负责人
-         *
-         * @param request SupplyDeletePartnerAdminsRequest
-         * @return SupplyDeletePartnerAdminsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除伙伴负责人</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyDeletePartnerAdminsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyDeletePartnerAdminsResponse
+        /// </returns>
         public async Task<SupplyDeletePartnerAdminsResponse> SupplyDeletePartnerAdminsAsync(SupplyDeletePartnerAdminsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -19208,14 +23957,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyDeletePartnerAdminsWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 移除伙伴的对接人或对接部门
-         *
-         * @param request SupplyDeletePartnerManagersRequest
-         * @param headers SupplyDeletePartnerManagersHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyDeletePartnerManagersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移除伙伴的对接人或对接部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyDeletePartnerManagersRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyDeletePartnerManagersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyDeletePartnerManagersResponse
+        /// </returns>
         public SupplyDeletePartnerManagersResponse SupplyDeletePartnerManagersWithOptions(SupplyDeletePartnerManagersRequest request, SupplyDeletePartnerManagersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -19261,14 +24020,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyDeletePartnerManagersResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 移除伙伴的对接人或对接部门
-         *
-         * @param request SupplyDeletePartnerManagersRequest
-         * @param headers SupplyDeletePartnerManagersHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyDeletePartnerManagersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移除伙伴的对接人或对接部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyDeletePartnerManagersRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyDeletePartnerManagersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyDeletePartnerManagersResponse
+        /// </returns>
         public async Task<SupplyDeletePartnerManagersResponse> SupplyDeletePartnerManagersWithOptionsAsync(SupplyDeletePartnerManagersRequest request, SupplyDeletePartnerManagersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -19314,12 +24083,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyDeletePartnerManagersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 移除伙伴的对接人或对接部门
-         *
-         * @param request SupplyDeletePartnerManagersRequest
-         * @return SupplyDeletePartnerManagersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移除伙伴的对接人或对接部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyDeletePartnerManagersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyDeletePartnerManagersResponse
+        /// </returns>
         public SupplyDeletePartnerManagersResponse SupplyDeletePartnerManagers(SupplyDeletePartnerManagersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -19327,12 +24102,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyDeletePartnerManagersWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 移除伙伴的对接人或对接部门
-         *
-         * @param request SupplyDeletePartnerManagersRequest
-         * @return SupplyDeletePartnerManagersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移除伙伴的对接人或对接部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyDeletePartnerManagersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyDeletePartnerManagersResponse
+        /// </returns>
         public async Task<SupplyDeletePartnerManagersResponse> SupplyDeletePartnerManagersAsync(SupplyDeletePartnerManagersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -19340,14 +24121,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyDeletePartnerManagersWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除伙伴标签
-         *
-         * @param request SupplyDeletePartnerTypeRequest
-         * @param headers SupplyDeletePartnerTypeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyDeletePartnerTypeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除伙伴标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyDeletePartnerTypeRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyDeletePartnerTypeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyDeletePartnerTypeResponse
+        /// </returns>
         public SupplyDeletePartnerTypeResponse SupplyDeletePartnerTypeWithOptions(SupplyDeletePartnerTypeRequest request, SupplyDeletePartnerTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -19385,14 +24176,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyDeletePartnerTypeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除伙伴标签
-         *
-         * @param request SupplyDeletePartnerTypeRequest
-         * @param headers SupplyDeletePartnerTypeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyDeletePartnerTypeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除伙伴标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyDeletePartnerTypeRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyDeletePartnerTypeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyDeletePartnerTypeResponse
+        /// </returns>
         public async Task<SupplyDeletePartnerTypeResponse> SupplyDeletePartnerTypeWithOptionsAsync(SupplyDeletePartnerTypeRequest request, SupplyDeletePartnerTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -19430,12 +24231,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyDeletePartnerTypeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除伙伴标签
-         *
-         * @param request SupplyDeletePartnerTypeRequest
-         * @return SupplyDeletePartnerTypeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除伙伴标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyDeletePartnerTypeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyDeletePartnerTypeResponse
+        /// </returns>
         public SupplyDeletePartnerTypeResponse SupplyDeletePartnerType(SupplyDeletePartnerTypeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -19443,12 +24250,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyDeletePartnerTypeWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除伙伴标签
-         *
-         * @param request SupplyDeletePartnerTypeRequest
-         * @return SupplyDeletePartnerTypeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除伙伴标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyDeletePartnerTypeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyDeletePartnerTypeResponse
+        /// </returns>
         public async Task<SupplyDeletePartnerTypeResponse> SupplyDeletePartnerTypeAsync(SupplyDeletePartnerTypeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -19456,14 +24269,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyDeletePartnerTypeWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除角色或角色组
-         *
-         * @param request SupplyDeleteRoleRequest
-         * @param headers SupplyDeleteRoleHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyDeleteRoleResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除角色或角色组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyDeleteRoleRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyDeleteRoleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyDeleteRoleResponse
+        /// </returns>
         public SupplyDeleteRoleResponse SupplyDeleteRoleWithOptions(SupplyDeleteRoleRequest request, SupplyDeleteRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -19505,14 +24328,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyDeleteRoleResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除角色或角色组
-         *
-         * @param request SupplyDeleteRoleRequest
-         * @param headers SupplyDeleteRoleHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyDeleteRoleResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除角色或角色组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyDeleteRoleRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyDeleteRoleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyDeleteRoleResponse
+        /// </returns>
         public async Task<SupplyDeleteRoleResponse> SupplyDeleteRoleWithOptionsAsync(SupplyDeleteRoleRequest request, SupplyDeleteRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -19554,12 +24387,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyDeleteRoleResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 删除角色或角色组
-         *
-         * @param request SupplyDeleteRoleRequest
-         * @return SupplyDeleteRoleResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除角色或角色组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyDeleteRoleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyDeleteRoleResponse
+        /// </returns>
         public SupplyDeleteRoleResponse SupplyDeleteRole(SupplyDeleteRoleRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -19567,12 +24406,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyDeleteRoleWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 删除角色或角色组
-         *
-         * @param request SupplyDeleteRoleRequest
-         * @return SupplyDeleteRoleResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除角色或角色组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyDeleteRoleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyDeleteRoleResponse
+        /// </returns>
         public async Task<SupplyDeleteRoleResponse> SupplyDeleteRoleAsync(SupplyDeleteRoleRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -19580,14 +24425,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyDeleteRoleWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取供应链成员信息
-         *
-         * @param request SupplyGetMemberRequest
-         * @param headers SupplyGetMemberHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyGetMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取供应链成员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyGetMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyGetMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyGetMemberResponse
+        /// </returns>
         public SupplyGetMemberResponse SupplyGetMemberWithOptions(SupplyGetMemberRequest request, SupplyGetMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -19633,14 +24488,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyGetMemberResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取供应链成员信息
-         *
-         * @param request SupplyGetMemberRequest
-         * @param headers SupplyGetMemberHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyGetMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取供应链成员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyGetMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyGetMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyGetMemberResponse
+        /// </returns>
         public async Task<SupplyGetMemberResponse> SupplyGetMemberWithOptionsAsync(SupplyGetMemberRequest request, SupplyGetMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -19686,12 +24551,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyGetMemberResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取供应链成员信息
-         *
-         * @param request SupplyGetMemberRequest
-         * @return SupplyGetMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取供应链成员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyGetMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyGetMemberResponse
+        /// </returns>
         public SupplyGetMemberResponse SupplyGetMember(SupplyGetMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -19699,12 +24570,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyGetMemberWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取供应链成员信息
-         *
-         * @param request SupplyGetMemberRequest
-         * @return SupplyGetMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取供应链成员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyGetMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyGetMemberResponse
+        /// </returns>
         public async Task<SupplyGetMemberResponse> SupplyGetMemberAsync(SupplyGetMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -19712,14 +24589,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyGetMemberWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取供应链部门下成员
-         *
-         * @param request SupplyListDeptMembersRequest
-         * @param headers SupplyListDeptMembersHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyListDeptMembersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取供应链部门下成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListDeptMembersRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyListDeptMembersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListDeptMembersResponse
+        /// </returns>
         public SupplyListDeptMembersResponse SupplyListDeptMembersWithOptions(SupplyListDeptMembersRequest request, SupplyListDeptMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -19765,14 +24652,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyListDeptMembersResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取供应链部门下成员
-         *
-         * @param request SupplyListDeptMembersRequest
-         * @param headers SupplyListDeptMembersHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyListDeptMembersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取供应链部门下成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListDeptMembersRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyListDeptMembersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListDeptMembersResponse
+        /// </returns>
         public async Task<SupplyListDeptMembersResponse> SupplyListDeptMembersWithOptionsAsync(SupplyListDeptMembersRequest request, SupplyListDeptMembersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -19818,12 +24715,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyListDeptMembersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取供应链部门下成员
-         *
-         * @param request SupplyListDeptMembersRequest
-         * @return SupplyListDeptMembersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取供应链部门下成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListDeptMembersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListDeptMembersResponse
+        /// </returns>
         public SupplyListDeptMembersResponse SupplyListDeptMembers(SupplyListDeptMembersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -19831,12 +24734,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyListDeptMembersWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取供应链部门下成员
-         *
-         * @param request SupplyListDeptMembersRequest
-         * @return SupplyListDeptMembersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取供应链部门下成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListDeptMembersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListDeptMembersResponse
+        /// </returns>
         public async Task<SupplyListDeptMembersResponse> SupplyListDeptMembersAsync(SupplyListDeptMembersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -19844,14 +24753,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyListDeptMembersWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取伙伴负责人列表
-         *
-         * @param request SupplyListPartnerAdminsRequest
-         * @param headers SupplyListPartnerAdminsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyListPartnerAdminsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取伙伴负责人列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListPartnerAdminsRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyListPartnerAdminsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListPartnerAdminsResponse
+        /// </returns>
         public SupplyListPartnerAdminsResponse SupplyListPartnerAdminsWithOptions(SupplyListPartnerAdminsRequest request, SupplyListPartnerAdminsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -19889,14 +24808,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyListPartnerAdminsResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取伙伴负责人列表
-         *
-         * @param request SupplyListPartnerAdminsRequest
-         * @param headers SupplyListPartnerAdminsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyListPartnerAdminsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取伙伴负责人列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListPartnerAdminsRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyListPartnerAdminsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListPartnerAdminsResponse
+        /// </returns>
         public async Task<SupplyListPartnerAdminsResponse> SupplyListPartnerAdminsWithOptionsAsync(SupplyListPartnerAdminsRequest request, SupplyListPartnerAdminsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -19934,12 +24863,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyListPartnerAdminsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取伙伴负责人列表
-         *
-         * @param request SupplyListPartnerAdminsRequest
-         * @return SupplyListPartnerAdminsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取伙伴负责人列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListPartnerAdminsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListPartnerAdminsResponse
+        /// </returns>
         public SupplyListPartnerAdminsResponse SupplyListPartnerAdmins(SupplyListPartnerAdminsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -19947,12 +24882,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyListPartnerAdminsWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取伙伴负责人列表
-         *
-         * @param request SupplyListPartnerAdminsRequest
-         * @return SupplyListPartnerAdminsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取伙伴负责人列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListPartnerAdminsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListPartnerAdminsResponse
+        /// </returns>
         public async Task<SupplyListPartnerAdminsResponse> SupplyListPartnerAdminsAsync(SupplyListPartnerAdminsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -19960,14 +24901,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyListPartnerAdminsWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取伙伴的对接人/对接部门
-         *
-         * @param request SupplyListPartnerManagersRequest
-         * @param headers SupplyListPartnerManagersHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyListPartnerManagersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取伙伴的对接人/对接部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListPartnerManagersRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyListPartnerManagersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListPartnerManagersResponse
+        /// </returns>
         public SupplyListPartnerManagersResponse SupplyListPartnerManagersWithOptions(SupplyListPartnerManagersRequest request, SupplyListPartnerManagersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -20005,14 +24956,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyListPartnerManagersResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取伙伴的对接人/对接部门
-         *
-         * @param request SupplyListPartnerManagersRequest
-         * @param headers SupplyListPartnerManagersHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyListPartnerManagersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取伙伴的对接人/对接部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListPartnerManagersRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyListPartnerManagersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListPartnerManagersResponse
+        /// </returns>
         public async Task<SupplyListPartnerManagersResponse> SupplyListPartnerManagersWithOptionsAsync(SupplyListPartnerManagersRequest request, SupplyListPartnerManagersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -20050,12 +25011,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyListPartnerManagersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取伙伴的对接人/对接部门
-         *
-         * @param request SupplyListPartnerManagersRequest
-         * @return SupplyListPartnerManagersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取伙伴的对接人/对接部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListPartnerManagersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListPartnerManagersResponse
+        /// </returns>
         public SupplyListPartnerManagersResponse SupplyListPartnerManagers(SupplyListPartnerManagersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -20063,12 +25030,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyListPartnerManagersWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取伙伴的对接人/对接部门
-         *
-         * @param request SupplyListPartnerManagersRequest
-         * @return SupplyListPartnerManagersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取伙伴的对接人/对接部门</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListPartnerManagersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListPartnerManagersResponse
+        /// </returns>
         public async Task<SupplyListPartnerManagersResponse> SupplyListPartnerManagersAsync(SupplyListPartnerManagersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -20076,14 +25049,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyListPartnerManagersWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询下级伙伴标签
-         *
-         * @param request SupplyListPartnerTypeRequest
-         * @param headers SupplyListPartnerTypeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyListPartnerTypeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询下级伙伴标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListPartnerTypeRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyListPartnerTypeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListPartnerTypeResponse
+        /// </returns>
         public SupplyListPartnerTypeResponse SupplyListPartnerTypeWithOptions(SupplyListPartnerTypeRequest request, SupplyListPartnerTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -20121,14 +25104,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyListPartnerTypeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询下级伙伴标签
-         *
-         * @param request SupplyListPartnerTypeRequest
-         * @param headers SupplyListPartnerTypeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyListPartnerTypeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询下级伙伴标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListPartnerTypeRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyListPartnerTypeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListPartnerTypeResponse
+        /// </returns>
         public async Task<SupplyListPartnerTypeResponse> SupplyListPartnerTypeWithOptionsAsync(SupplyListPartnerTypeRequest request, SupplyListPartnerTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -20166,12 +25159,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyListPartnerTypeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询下级伙伴标签
-         *
-         * @param request SupplyListPartnerTypeRequest
-         * @return SupplyListPartnerTypeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询下级伙伴标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListPartnerTypeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListPartnerTypeResponse
+        /// </returns>
         public SupplyListPartnerTypeResponse SupplyListPartnerType(SupplyListPartnerTypeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -20179,12 +25178,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyListPartnerTypeWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询下级伙伴标签
-         *
-         * @param request SupplyListPartnerTypeRequest
-         * @return SupplyListPartnerTypeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询下级伙伴标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListPartnerTypeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListPartnerTypeResponse
+        /// </returns>
         public async Task<SupplyListPartnerTypeResponse> SupplyListPartnerTypeAsync(SupplyListPartnerTypeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -20192,14 +25197,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyListPartnerTypeWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询角色组或角色
-         *
-         * @param request SupplyListRoleRequest
-         * @param headers SupplyListRoleHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyListRoleResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询角色组或角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListRoleRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyListRoleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListRoleResponse
+        /// </returns>
         public SupplyListRoleResponse SupplyListRoleWithOptions(SupplyListRoleRequest request, SupplyListRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -20237,14 +25252,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyListRoleResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询角色组或角色
-         *
-         * @param request SupplyListRoleRequest
-         * @param headers SupplyListRoleHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyListRoleResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询角色组或角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListRoleRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyListRoleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListRoleResponse
+        /// </returns>
         public async Task<SupplyListRoleResponse> SupplyListRoleWithOptionsAsync(SupplyListRoleRequest request, SupplyListRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -20282,12 +25307,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyListRoleResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询角色组或角色
-         *
-         * @param request SupplyListRoleRequest
-         * @return SupplyListRoleResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询角色组或角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListRoleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListRoleResponse
+        /// </returns>
         public SupplyListRoleResponse SupplyListRole(SupplyListRoleRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -20295,12 +25326,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyListRoleWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询角色组或角色
-         *
-         * @param request SupplyListRoleRequest
-         * @return SupplyListRoleResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询角色组或角色</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListRoleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListRoleResponse
+        /// </returns>
         public async Task<SupplyListRoleResponse> SupplyListRoleAsync(SupplyListRoleRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -20308,14 +25345,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyListRoleWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询下级节点列表
-         *
-         * @param request SupplyListSubDeptRequest
-         * @param headers SupplyListSubDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyListSubDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询下级节点列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListSubDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyListSubDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListSubDeptResponse
+        /// </returns>
         public SupplyListSubDeptResponse SupplyListSubDeptWithOptions(SupplyListSubDeptRequest request, SupplyListSubDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -20353,14 +25400,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyListSubDeptResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询下级节点列表
-         *
-         * @param request SupplyListSubDeptRequest
-         * @param headers SupplyListSubDeptHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyListSubDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询下级节点列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListSubDeptRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyListSubDeptHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListSubDeptResponse
+        /// </returns>
         public async Task<SupplyListSubDeptResponse> SupplyListSubDeptWithOptionsAsync(SupplyListSubDeptRequest request, SupplyListSubDeptHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -20398,12 +25455,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyListSubDeptResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询下级节点列表
-         *
-         * @param request SupplyListSubDeptRequest
-         * @return SupplyListSubDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询下级节点列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListSubDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListSubDeptResponse
+        /// </returns>
         public SupplyListSubDeptResponse SupplyListSubDept(SupplyListSubDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -20411,12 +25474,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyListSubDeptWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询下级节点列表
-         *
-         * @param request SupplyListSubDeptRequest
-         * @return SupplyListSubDeptResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询下级节点列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyListSubDeptRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyListSubDeptResponse
+        /// </returns>
         public async Task<SupplyListSubDeptResponse> SupplyListSubDeptAsync(SupplyListSubDeptRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -20424,14 +25493,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyListSubDeptWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询伙伴标签
-         *
-         * @param request SupplyQueryPartnerTypeRequest
-         * @param headers SupplyQueryPartnerTypeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyQueryPartnerTypeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询伙伴标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyQueryPartnerTypeRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyQueryPartnerTypeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyQueryPartnerTypeResponse
+        /// </returns>
         public SupplyQueryPartnerTypeResponse SupplyQueryPartnerTypeWithOptions(SupplyQueryPartnerTypeRequest request, SupplyQueryPartnerTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -20469,14 +25548,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyQueryPartnerTypeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询伙伴标签
-         *
-         * @param request SupplyQueryPartnerTypeRequest
-         * @param headers SupplyQueryPartnerTypeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyQueryPartnerTypeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询伙伴标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyQueryPartnerTypeRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyQueryPartnerTypeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyQueryPartnerTypeResponse
+        /// </returns>
         public async Task<SupplyQueryPartnerTypeResponse> SupplyQueryPartnerTypeWithOptionsAsync(SupplyQueryPartnerTypeRequest request, SupplyQueryPartnerTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -20514,12 +25603,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyQueryPartnerTypeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询伙伴标签
-         *
-         * @param request SupplyQueryPartnerTypeRequest
-         * @return SupplyQueryPartnerTypeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询伙伴标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyQueryPartnerTypeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyQueryPartnerTypeResponse
+        /// </returns>
         public SupplyQueryPartnerTypeResponse SupplyQueryPartnerType(SupplyQueryPartnerTypeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -20527,12 +25622,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyQueryPartnerTypeWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询伙伴标签
-         *
-         * @param request SupplyQueryPartnerTypeRequest
-         * @return SupplyQueryPartnerTypeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询伙伴标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyQueryPartnerTypeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyQueryPartnerTypeResponse
+        /// </returns>
         public async Task<SupplyQueryPartnerTypeResponse> SupplyQueryPartnerTypeAsync(SupplyQueryPartnerTypeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -20540,14 +25641,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyQueryPartnerTypeWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新供应商人员信息
-         *
-         * @param request SupplyUpdateMemberRequest
-         * @param headers SupplyUpdateMemberHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyUpdateMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新供应商人员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyUpdateMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyUpdateMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyUpdateMemberResponse
+        /// </returns>
         public SupplyUpdateMemberResponse SupplyUpdateMemberWithOptions(SupplyUpdateMemberRequest request, SupplyUpdateMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -20617,14 +25728,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyUpdateMemberResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新供应商人员信息
-         *
-         * @param request SupplyUpdateMemberRequest
-         * @param headers SupplyUpdateMemberHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyUpdateMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新供应商人员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyUpdateMemberRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyUpdateMemberHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyUpdateMemberResponse
+        /// </returns>
         public async Task<SupplyUpdateMemberResponse> SupplyUpdateMemberWithOptionsAsync(SupplyUpdateMemberRequest request, SupplyUpdateMemberHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -20694,12 +25815,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyUpdateMemberResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新供应商人员信息
-         *
-         * @param request SupplyUpdateMemberRequest
-         * @return SupplyUpdateMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新供应商人员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyUpdateMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyUpdateMemberResponse
+        /// </returns>
         public SupplyUpdateMemberResponse SupplyUpdateMember(SupplyUpdateMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -20707,12 +25834,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyUpdateMemberWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新供应商人员信息
-         *
-         * @param request SupplyUpdateMemberRequest
-         * @return SupplyUpdateMemberResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新供应商人员信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyUpdateMemberRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyUpdateMemberResponse
+        /// </returns>
         public async Task<SupplyUpdateMemberResponse> SupplyUpdateMemberAsync(SupplyUpdateMemberRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -20720,14 +25853,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyUpdateMemberWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新伙伴标签
-         *
-         * @param request SupplyUpdatePartnerTypeRequest
-         * @param headers SupplyUpdatePartnerTypeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyUpdatePartnerTypeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新伙伴标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyUpdatePartnerTypeRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyUpdatePartnerTypeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyUpdatePartnerTypeResponse
+        /// </returns>
         public SupplyUpdatePartnerTypeResponse SupplyUpdatePartnerTypeWithOptions(SupplyUpdatePartnerTypeRequest request, SupplyUpdatePartnerTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -20773,14 +25916,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyUpdatePartnerTypeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新伙伴标签
-         *
-         * @param request SupplyUpdatePartnerTypeRequest
-         * @param headers SupplyUpdatePartnerTypeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyUpdatePartnerTypeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新伙伴标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyUpdatePartnerTypeRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyUpdatePartnerTypeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyUpdatePartnerTypeResponse
+        /// </returns>
         public async Task<SupplyUpdatePartnerTypeResponse> SupplyUpdatePartnerTypeWithOptionsAsync(SupplyUpdatePartnerTypeRequest request, SupplyUpdatePartnerTypeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -20826,12 +25979,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyUpdatePartnerTypeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新伙伴标签
-         *
-         * @param request SupplyUpdatePartnerTypeRequest
-         * @return SupplyUpdatePartnerTypeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新伙伴标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyUpdatePartnerTypeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyUpdatePartnerTypeResponse
+        /// </returns>
         public SupplyUpdatePartnerTypeResponse SupplyUpdatePartnerType(SupplyUpdatePartnerTypeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -20839,12 +25998,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyUpdatePartnerTypeWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新伙伴标签
-         *
-         * @param request SupplyUpdatePartnerTypeRequest
-         * @return SupplyUpdatePartnerTypeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新伙伴标签</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyUpdatePartnerTypeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyUpdatePartnerTypeResponse
+        /// </returns>
         public async Task<SupplyUpdatePartnerTypeResponse> SupplyUpdatePartnerTypeAsync(SupplyUpdatePartnerTypeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -20852,14 +26017,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyUpdatePartnerTypeWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新角色或角色组
-         *
-         * @param request SupplyUpdateRoleRequest
-         * @param headers SupplyUpdateRoleHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyUpdateRoleResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新角色或角色组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyUpdateRoleRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyUpdateRoleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyUpdateRoleResponse
+        /// </returns>
         public SupplyUpdateRoleResponse SupplyUpdateRoleWithOptions(SupplyUpdateRoleRequest request, SupplyUpdateRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -20905,14 +26080,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyUpdateRoleResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新角色或角色组
-         *
-         * @param request SupplyUpdateRoleRequest
-         * @param headers SupplyUpdateRoleHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SupplyUpdateRoleResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新角色或角色组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyUpdateRoleRequest
+        /// </param>
+        /// <param name="headers">
+        /// SupplyUpdateRoleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyUpdateRoleResponse
+        /// </returns>
         public async Task<SupplyUpdateRoleResponse> SupplyUpdateRoleWithOptionsAsync(SupplyUpdateRoleRequest request, SupplyUpdateRoleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -20958,12 +26143,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<SupplyUpdateRoleResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新角色或角色组
-         *
-         * @param request SupplyUpdateRoleRequest
-         * @return SupplyUpdateRoleResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新角色或角色组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyUpdateRoleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyUpdateRoleResponse
+        /// </returns>
         public SupplyUpdateRoleResponse SupplyUpdateRole(SupplyUpdateRoleRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -20971,12 +26162,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return SupplyUpdateRoleWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新角色或角色组
-         *
-         * @param request SupplyUpdateRoleRequest
-         * @return SupplyUpdateRoleResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新角色或角色组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SupplyUpdateRoleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SupplyUpdateRoleResponse
+        /// </returns>
         public async Task<SupplyUpdateRoleResponse> SupplyUpdateRoleAsync(SupplyUpdateRoleRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -20984,14 +26181,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return await SupplyUpdateRoleWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新医疗用户扩展信息
-         *
-         * @param request UpdateUserExtendInfoRequest
-         * @param headers UpdateUserExtendInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateUserExtendInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新医疗用户扩展信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateUserExtendInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateUserExtendInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateUserExtendInfoResponse
+        /// </returns>
         public UpdateUserExtendInfoResponse UpdateUserExtendInfoWithOptions(string userId, UpdateUserExtendInfoRequest request, UpdateUserExtendInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -21041,14 +26248,24 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<UpdateUserExtendInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新医疗用户扩展信息
-         *
-         * @param request UpdateUserExtendInfoRequest
-         * @param headers UpdateUserExtendInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateUserExtendInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新医疗用户扩展信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateUserExtendInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateUserExtendInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateUserExtendInfoResponse
+        /// </returns>
         public async Task<UpdateUserExtendInfoResponse> UpdateUserExtendInfoWithOptionsAsync(string userId, UpdateUserExtendInfoRequest request, UpdateUserExtendInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -21098,12 +26315,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return TeaModel.ToObject<UpdateUserExtendInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新医疗用户扩展信息
-         *
-         * @param request UpdateUserExtendInfoRequest
-         * @return UpdateUserExtendInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新医疗用户扩展信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateUserExtendInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateUserExtendInfoResponse
+        /// </returns>
         public UpdateUserExtendInfoResponse UpdateUserExtendInfo(string userId, UpdateUserExtendInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -21111,12 +26334,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             return UpdateUserExtendInfoWithOptions(userId, request, headers, runtime);
         }
 
-        /**
-         * @summary 更新医疗用户扩展信息
-         *
-         * @param request UpdateUserExtendInfoRequest
-         * @return UpdateUserExtendInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新医疗用户扩展信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateUserExtendInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateUserExtendInfoResponse
+        /// </returns>
         public async Task<UpdateUserExtendInfoResponse> UpdateUserExtendInfoAsync(string userId, UpdateUserExtendInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

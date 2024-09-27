@@ -14,14 +14,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         public GetDeveloperMetadataResponseBodyAssociatedColumn AssociatedColumn { get; set; }
         public class GetDeveloperMetadataResponseBodyAssociatedColumn : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("column")]
             [Validation(Required=false)]
             public int? Column { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("sheetId")]
             [Validation(Required=false)]
@@ -34,14 +34,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         public GetDeveloperMetadataResponseBodyAssociatedRow AssociatedRow { get; set; }
         public class GetDeveloperMetadataResponseBodyAssociatedRow : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("row")]
             [Validation(Required=false)]
             public int? Row { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("sheetId")]
             [Validation(Required=false)]

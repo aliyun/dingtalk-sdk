@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class GetApplyInviteInfoResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("auditType")]
         [Validation(Required=false)]
         public long? AuditType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("empApplyJoinDept")]
         [Validation(Required=false)]
         public bool? EmpApplyJoinDept { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("inviteSwitch")]
         [Validation(Required=false)]
@@ -35,21 +35,21 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public string InviteUrl { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("linkInvite")]
         [Validation(Required=false)]
         public bool? LinkInvite { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("orgApplyCodeInvite")]
         [Validation(Required=false)]
         public bool? OrgApplyCodeInvite { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("searchNameInvite")]
         [Validation(Required=false)]

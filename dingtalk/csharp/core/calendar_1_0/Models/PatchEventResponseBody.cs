@@ -50,7 +50,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         }
 
         /// <summary>
-        /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
         /// </summary>
         [NameInMap("createTime")]
         [Validation(Required=false)]
@@ -179,7 +179,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             public PatchEventResponseBodyRecurrenceRange Range { get; set; }
             public class PatchEventResponseBodyRecurrenceRange : TeaModel {
                 /// <summary>
-                /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
                 /// </summary>
                 [NameInMap("endDate")]
                 [Validation(Required=false)]
@@ -222,7 +222,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("start")]
         [Validation(Required=false)]
@@ -251,14 +251,14 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         public List<PatchEventResponseBodyUiConfigs> UiConfigs { get; set; }
         public class PatchEventResponseBodyUiConfigs : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("uiName")]
             [Validation(Required=false)]
             public string UiName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("uiStatus")]
             [Validation(Required=false)]
@@ -267,7 +267,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         }
 
         /// <summary>
-        /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+        /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
         /// </summary>
         [NameInMap("updateTime")]
         [Validation(Required=false)]

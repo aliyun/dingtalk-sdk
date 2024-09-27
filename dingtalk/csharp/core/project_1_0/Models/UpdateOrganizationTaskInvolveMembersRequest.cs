@@ -17,10 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public List<string> DelInvolvers { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("disableActivity")]
         [Validation(Required=false)]
         public bool? DisableActivity { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("disableNotification")]
         [Validation(Required=false)]
         public bool? DisableNotification { get; set; }

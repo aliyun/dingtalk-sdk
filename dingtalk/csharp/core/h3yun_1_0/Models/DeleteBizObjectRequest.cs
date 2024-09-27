@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
 {
     public class DeleteBizObjectRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1a1ce0ab-0181-4dc2-9968-793d20906b27</para>
         /// </summary>
         [NameInMap("bizObjectId")]
         [Validation(Required=false)]
         public string BizObjectId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>D0001839bbbbe346bbf496498bb76c44c7eb972</para>
         /// </summary>
         [NameInMap("schemaCode")]
         [Validation(Required=false)]

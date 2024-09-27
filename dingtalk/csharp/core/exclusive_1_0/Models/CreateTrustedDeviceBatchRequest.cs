@@ -10,21 +10,27 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class CreateTrustedDeviceBatchRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("macAddressList")]
         [Validation(Required=false)]
         public List<string> MacAddressList { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>Win</para>
         /// </summary>
         [NameInMap("platform")]
         [Validation(Required=false)]
         public string Platform { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

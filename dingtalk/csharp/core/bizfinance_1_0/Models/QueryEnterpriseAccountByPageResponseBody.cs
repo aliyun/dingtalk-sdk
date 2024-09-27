@@ -10,48 +10,72 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class QueryEnterpriseAccountByPageResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>true</para>
         /// </summary>
         [NameInMap("hasMore")]
         [Validation(Required=false)]
         public bool? HasMore { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("list")]
         [Validation(Required=false)]
         public List<QueryEnterpriseAccountByPageResponseBodyList> List { get; set; }
         public class QueryEnterpriseAccountByPageResponseBodyList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>12345</para>
             /// </summary>
             [NameInMap("accountCode")]
             [Validation(Required=false)]
             public string AccountCode { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para><a href="mailto:test@alipay.com">test@alipay.com</a></para>
+            /// </summary>
             [NameInMap("accountId")]
             [Validation(Required=false)]
             public string AccountId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>网商银行</para>
             /// </summary>
             [NameInMap("accountName")]
             [Validation(Required=false)]
             public string AccountName { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>test</para>
+            /// </summary>
             [NameInMap("accountRemark")]
             [Validation(Required=false)]
             public string AccountRemark { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>ALIPAY</para>
             /// </summary>
             [NameInMap("accountType")]
             [Validation(Required=false)]
             public string AccountType { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>10000.33</para>
+            /// </summary>
             [NameInMap("amount")]
             [Validation(Required=false)]
             public string Amount { get; set; }
@@ -65,14 +89,20 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             public string BankName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1631526550994</para>
             /// </summary>
             [NameInMap("createTime")]
             [Validation(Required=false)]
             public long? CreateTime { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>aaa</para>
             /// </summary>
             [NameInMap("creator")]
             [Validation(Required=false)]

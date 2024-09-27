@@ -14,21 +14,21 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public List<BatchCreateClueDataRequestDataList> DataList { get; set; }
         public class BatchCreateClueDataRequestDataList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("contactList")]
             [Validation(Required=false)]
             public List<BatchCreateClueDataRequestDataListContactList> ContactList { get; set; }
             public class BatchCreateClueDataRequestDataListContactList : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("mobile")]
                 [Validation(Required=false)]
                 public string Mobile { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
@@ -65,7 +65,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 public string IndustryCode { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
@@ -82,21 +82,27 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>钉钉中国</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("sourceId")]
             [Validation(Required=false)]
             public string SourceId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>demo</para>
             /// </summary>
             [NameInMap("sourceType")]
             [Validation(Required=false)]
@@ -107,7 +113,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             public List<BatchCreateClueDataRequestDataListTagIdList> TagIdList { get; set; }
             public class BatchCreateClueDataRequestDataListTagIdList : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("tagId")]
                 [Validation(Required=false)]
@@ -126,7 +132,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public bool? PrivateSeas { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>d124</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

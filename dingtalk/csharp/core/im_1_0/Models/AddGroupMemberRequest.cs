@@ -14,14 +14,20 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public List<string> AppUserIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>14da****2760</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1745****8777</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

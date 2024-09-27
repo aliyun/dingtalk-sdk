@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public QueryCustomerBizTypeResponseBodyResult Result { get; set; }
         public class QueryCustomerBizTypeResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>crm_customer</para>
+            /// </summary>
             [NameInMap("customerBizType")]
             [Validation(Required=false)]
             public string CustomerBizType { get; set; }

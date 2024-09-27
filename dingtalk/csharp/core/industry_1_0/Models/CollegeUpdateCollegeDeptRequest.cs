@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class CollegeUpdateCollegeDeptRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1111</para>
         /// </summary>
         [NameInMap("deptId")]
         [Validation(Required=false)]
@@ -20,10 +23,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public string DeptName { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>10</para>
+        /// </summary>
         [NameInMap("sortFactor")]
         [Validation(Required=false)]
         public long? SortFactor { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>22222</para>
+        /// </summary>
         [NameInMap("superId")]
         [Validation(Required=false)]
         public long? SuperId { get; set; }

@@ -10,21 +10,27 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class DigitalStoreGroupInfoResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1</para>
         /// </summary>
         [NameInMap("groupId")]
         [Validation(Required=false)]
         public long? GroupId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>分组1</para>
         /// </summary>
         [NameInMap("groupName")]
         [Validation(Required=false)]
         public string GroupName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("storeIdList")]
         [Validation(Required=false)]

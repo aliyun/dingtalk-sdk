@@ -9,26 +9,30 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class GetInActiveUserListRequest : TeaModel {
+        /// <summary>
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
         [NameInMap("deptIds")]
         [Validation(Required=false)]
         public List<string> DeptIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public long? PageNumber { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public long? PageSize { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("statDate")]
         [Validation(Required=false)]

@@ -28,14 +28,14 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("createdTime")]
         [Validation(Required=false)]
         public long? CreatedTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("creatorId")]
         [Validation(Required=false)]
@@ -76,7 +76,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public long? FinishTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("id")]
         [Validation(Required=false)]
@@ -129,7 +129,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public long? StartTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("subject")]
         [Validation(Required=false)]

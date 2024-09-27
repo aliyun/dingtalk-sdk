@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         [Validation(Required=false)]
         public List<GetPrintAppInfoResponseBodyResult> Result { get; set; }
         public class GetPrintAppInfoResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>李四的宜搭应用</para>
+            /// </summary>
             [NameInMap("appName")]
             [Validation(Required=false)]
             public string AppName { get; set; }

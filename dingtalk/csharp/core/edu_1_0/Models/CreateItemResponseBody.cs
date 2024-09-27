@@ -10,28 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class CreateItemResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]
         public string CorpId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("id")]
         [Validation(Required=false)]
         public long? Id { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("merchantId")]
         [Validation(Required=false)]
         public string MerchantId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]

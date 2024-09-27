@@ -13,10 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public PremiumInsertOrUpdateDirResponseBodyResult Result { get; set; }
         public class PremiumInsertOrUpdateDirResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>{应用appId}_administeration</para>
+            /// </summary>
             [NameInMap("bizGroup")]
             [Validation(Required=false)]
             public string BizGroup { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>oaDirIdxxx</para>
+            /// </summary>
             [NameInMap("dirId")]
             [Validation(Required=false)]
             public string DirId { get; set; }

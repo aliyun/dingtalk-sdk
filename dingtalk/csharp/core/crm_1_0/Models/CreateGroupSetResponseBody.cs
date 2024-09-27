@@ -22,14 +22,14 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public string InviteLink { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("lastOpenConversationId")]
         [Validation(Required=false)]
         public string LastOpenConversationId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("manager")]
         [Validation(Required=false)]
@@ -74,7 +74,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public string OpenGroupSetId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("owner")]
         [Validation(Required=false)]

@@ -27,6 +27,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>abc</para>
+        /// </summary>
         [NameInMap("appKey")]
         [Validation(Required=false)]
         public string AppKey { get; set; }
@@ -39,6 +43,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
         [Validation(Required=false)]
         public string InvoiceRemark { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>VAT_NORMAL_E</para>
+        /// </summary>
         [NameInMap("invoiceType")]
         [Validation(Required=false)]
         public string InvoiceType { get; set; }
@@ -51,6 +59,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
         [Validation(Required=false)]
         public string Operator { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>abc</para>
+        /// </summary>
         [NameInMap("orderId")]
         [Validation(Required=false)]
         public string OrderId { get; set; }
@@ -67,14 +79,26 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
         [Validation(Required=false)]
         public List<OrderBillingRequestProducts> Products { get; set; }
         public class OrderBillingRequestProducts : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>12.55</para>
+            /// </summary>
             [NameInMap("amountWithTax")]
             [Validation(Required=false)]
             public string AmountWithTax { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>面包</para>
+            /// </summary>
             [NameInMap("productName")]
             [Validation(Required=false)]
             public string ProductName { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>5</para>
+            /// </summary>
             [NameInMap("quantity")]
             [Validation(Required=false)]
             public string Quantity { get; set; }
@@ -87,16 +111,28 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
             [Validation(Required=false)]
             public string Specification { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>个</para>
+            /// </summary>
             [NameInMap("unit")]
             [Validation(Required=false)]
             public string Unit { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>19.99</para>
+            /// </summary>
             [NameInMap("unitPrice")]
             [Validation(Required=false)]
             public string UnitPrice { get; set; }
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>浙江省杭州市XXX街道</para>
+        /// </summary>
         [NameInMap("purchaserAddress")]
         [Validation(Required=false)]
         public string PurchaserAddress { get; set; }
@@ -109,6 +145,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
         [Validation(Required=false)]
         public string PurchaserBankName { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>XXX公司</para>
+        /// </summary>
         [NameInMap("purchaserName")]
         [Validation(Required=false)]
         public string PurchaserName { get; set; }

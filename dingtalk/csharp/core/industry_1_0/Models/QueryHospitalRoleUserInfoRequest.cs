@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class QueryHospitalRoleUserInfoRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1</para>
         /// </summary>
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public long? PageNumber { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>100</para>
         /// </summary>
         [NameInMap("pageSize")]
         [Validation(Required=false)]

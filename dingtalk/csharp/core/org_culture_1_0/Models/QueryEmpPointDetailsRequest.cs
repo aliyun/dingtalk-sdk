@@ -10,18 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
 {
     public class QueryEmpPointDetailsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1</para>
         /// </summary>
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public long? PageNumber { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>10</para>
+        /// </summary>
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public long? PageSize { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>042216842933</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

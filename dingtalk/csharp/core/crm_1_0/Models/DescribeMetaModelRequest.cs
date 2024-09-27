@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class DescribeMetaModelRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("bizTypes")]
         [Validation(Required=false)]
         public List<string> BizTypes { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("operatorUserId")]
         [Validation(Required=false)]
         public string OperatorUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("tenant")]
         [Validation(Required=false)]

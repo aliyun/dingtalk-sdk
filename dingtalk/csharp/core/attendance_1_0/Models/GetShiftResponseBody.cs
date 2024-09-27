@@ -13,18 +13,34 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public GetShiftResponseBodyResult Result { get; set; }
         public class GetShiftResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>dinge87f1xxxx</para>
+            /// </summary>
             [NameInMap("corpId")]
             [Validation(Required=false)]
             public string CorpId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>678215070</para>
+            /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public long? Id { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>B</para>
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>user123</para>
+            /// </summary>
             [NameInMap("owner")]
             [Validation(Required=false)]
             public string Owner { get; set; }
@@ -41,6 +57,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                     [Validation(Required=false)]
                     public long? AbsenteeismLateMinutes { get; set; }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>0</para>
+                    /// </summary>
                     [NameInMap("across")]
                     [Validation(Required=false)]
                     public long? Across { get; set; }
@@ -50,16 +70,27 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                     public long? BeginMin { get; set; }
 
                     /// <summary>
-                    /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                    /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
+                    /// 
+                    /// <b>Example:</b>
+                    /// <para>1970-01-01 19:00:00</para>
                     /// </summary>
                     [NameInMap("checkTime")]
                     [Validation(Required=false)]
                     public string CheckTime { get; set; }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>OnDuty</para>
+                    /// </summary>
                     [NameInMap("checkType")]
                     [Validation(Required=false)]
                     public string CheckType { get; set; }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>-1</para>
+                    /// </summary>
                     [NameInMap("endMin")]
                     [Validation(Required=false)]
                     public long? EndMin { get; set; }
@@ -92,10 +123,18 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 
                     }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>0</para>
+                    /// </summary>
                     [NameInMap("permitMinutes")]
                     [Validation(Required=false)]
                     public long? PermitMinutes { get; set; }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>33928201</para>
+                    /// </summary>
                     [NameInMap("puncheId")]
                     [Validation(Required=false)]
                     public long? PuncheId { get; set; }
@@ -115,7 +154,7 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                     public long? Across { get; set; }
 
                     /// <summary>
-                    /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                    /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
                     /// </summary>
                     [NameInMap("checkTime")]
                     [Validation(Required=false)]
@@ -141,6 +180,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
             [Validation(Required=false)]
             public long? ShiftGroupId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>考勤班</para>
+            /// </summary>
             [NameInMap("shiftGroupName")]
             [Validation(Required=false)]
             public string ShiftGroupName { get; set; }
@@ -149,36 +192,62 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
             [Validation(Required=false)]
             public GetShiftResponseBodyResultShiftSetting ShiftSetting { get; set; }
             public class GetShiftResponseBodyResultShiftSetting : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>12</para>
+                /// </summary>
                 [NameInMap("attendDays")]
                 [Validation(Required=false)]
                 public string AttendDays { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>dinge87f1xxxx</para>
+                /// </summary>
                 [NameInMap("corpId")]
                 [Validation(Required=false)]
                 public string CorpId { get; set; }
 
                 /// <summary>
-                /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>2020-09-06 15:49:27</para>
                 /// </summary>
                 [NameInMap("gmtCreate")]
                 [Validation(Required=false)]
                 public string GmtCreate { get; set; }
 
                 /// <summary>
-                /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>2020-09-06 15:49:27</para>
                 /// </summary>
                 [NameInMap("gmtModified")]
                 [Validation(Required=false)]
                 public string GmtModified { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>678215070</para>
+                /// </summary>
                 [NameInMap("shiftId")]
                 [Validation(Required=false)]
                 public long? ShiftId { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>233840112</para>
+                /// </summary>
                 [NameInMap("shiftSettingId")]
                 [Validation(Required=false)]
                 public long? ShiftSettingId { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>600</para>
+                /// </summary>
                 [NameInMap("workTimeMinutes")]
                 [Validation(Required=false)]
                 public long? WorkTimeMinutes { get; set; }

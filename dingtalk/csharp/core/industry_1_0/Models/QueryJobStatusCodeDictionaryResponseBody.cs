@@ -10,28 +10,37 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class QueryJobStatusCodeDictionaryResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
         public List<QueryJobStatusCodeDictionaryResponseBodyContent> Content { get; set; }
         public class QueryJobStatusCodeDictionaryResponseBodyContent : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1</para>
             /// </summary>
             [NameInMap("category")]
             [Validation(Required=false)]
             public string Category { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1</para>
             /// </summary>
             [NameInMap("code")]
             [Validation(Required=false)]
             public string Code { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>主任医师</para>
             /// </summary>
             [NameInMap("displayName")]
             [Validation(Required=false)]

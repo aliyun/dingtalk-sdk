@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0.Models
         [Validation(Required=false)]
         public bool? Success { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>232432</para>
+        /// </summary>
         [NameInMap("uuid")]
         [Validation(Required=false)]
         public long? Uuid { get; set; }

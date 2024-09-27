@@ -10,14 +10,17 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class AddGroupMembersRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("conversationId")]
         [Validation(Required=false)]
         public string ConversationId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>if can be null:</b>
+        /// <c>true</c>
         /// </summary>
         [NameInMap("members")]
         [Validation(Required=false)]
@@ -28,7 +31,7 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
             public string Nick { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("uid")]
             [Validation(Required=false)]

@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
 {
     public class UploadRegisterImageResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ossUrl</para>
         /// </summary>
         [NameInMap("ossUrl")]
         [Validation(Required=false)]

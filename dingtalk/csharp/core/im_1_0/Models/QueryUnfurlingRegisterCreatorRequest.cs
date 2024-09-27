@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class QueryUnfurlingRegisterCreatorRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para><a href="http://www.dingtalk.com">www.dingtalk.com</a></para>
         /// </summary>
         [NameInMap("domain")]
         [Validation(Required=false)]
         public string Domain { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>/a</para>
         /// </summary>
         [NameInMap("path")]
         [Validation(Required=false)]

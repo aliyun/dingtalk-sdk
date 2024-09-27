@@ -33,6 +33,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [Validation(Required=false)]
         public List<string> HideFields { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>11111</para>
+        /// </summary>
         [NameInMap("id")]
         [Validation(Required=false)]
         public long? Id { get; set; }

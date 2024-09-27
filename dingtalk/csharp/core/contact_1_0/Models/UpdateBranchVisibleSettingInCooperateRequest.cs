@@ -10,28 +10,37 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class UpdateBranchVisibleSettingInCooperateRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("body")]
         [Validation(Required=false)]
         public List<UpdateBranchVisibleSettingInCooperateRequestBody> Body { get; set; }
         public class UpdateBranchVisibleSettingInCooperateRequestBody : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>ding1234</para>
             /// </summary>
             [NameInMap("branchCorpId")]
             [Validation(Required=false)]
             public string BranchCorpId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>true</para>
             /// </summary>
             [NameInMap("open")]
             [Validation(Required=false)]
             public bool? Open { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>0</para>
             /// </summary>
             [NameInMap("type")]
             [Validation(Required=false)]

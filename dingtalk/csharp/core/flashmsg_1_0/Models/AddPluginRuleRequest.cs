@@ -10,42 +10,57 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
 {
     public class AddPluginRuleRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>group_chat</para>
         /// </summary>
         [NameInMap("chatType")]
         [Validation(Required=false)]
         public string ChatType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>-10050</para>
         /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
         public string Code { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>group</para>
         /// </summary>
         [NameInMap("itemType")]
         [Validation(Required=false)]
         public string ItemType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("rules")]
         [Validation(Required=false)]
         public List<AddPluginRuleRequestRules> Rules { get; set; }
         public class AddPluginRuleRequestRules : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>100</para>
             /// </summary>
             [NameInMap("itemId")]
             [Validation(Required=false)]
             public string ItemId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>管理员角色</para>
             /// </summary>
             [NameInMap("itemName")]
             [Validation(Required=false)]
@@ -54,7 +69,10 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>0847493113802787</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

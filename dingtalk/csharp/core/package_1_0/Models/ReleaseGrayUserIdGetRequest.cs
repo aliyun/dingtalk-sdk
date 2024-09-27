@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkpackage_1_0.Models
 {
     public class ReleaseGrayUserIdGetRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>5000000000000000</para>
         /// </summary>
         [NameInMap("miniAppId")]
         [Validation(Required=false)]
         public string MiniAppId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>0.0.1</para>
         /// </summary>
         [NameInMap("version")]
         [Validation(Required=false)]

@@ -21,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0.Models
             [Validation(Required=false)]
             public Dictionary<string, string> Extension { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>advanced</para>
+            /// </summary>
             [NameInMap("version")]
             [Validation(Required=false)]
             public string Version { get; set; }

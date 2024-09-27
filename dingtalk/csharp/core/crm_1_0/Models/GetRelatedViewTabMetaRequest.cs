@@ -10,14 +10,17 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class GetRelatedViewTabMetaRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>PROC-2DB0FF86-CE29-41FF-B0FE-BFDE5BD9A0C1</para>
         /// </summary>
         [NameInMap("formCode")]
         [Validation(Required=false)]
         public string FormCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("viewUserId")]
         [Validation(Required=false)]

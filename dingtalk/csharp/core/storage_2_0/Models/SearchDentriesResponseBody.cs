@@ -17,16 +17,28 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_2_0.Models
             [Validation(Required=false)]
             public SearchDentriesResponseBodyItemsCreator Creator { get; set; }
             public class SearchDentriesResponseBodyItemsCreator : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>user_name</para>
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>staff_id</para>
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>uuid</para>
+            /// </summary>
             [NameInMap("dentryUuid")]
             [Validation(Required=false)]
             public string DentryUuid { get; set; }
@@ -35,22 +47,38 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_2_0.Models
             [Validation(Required=false)]
             public SearchDentriesResponseBodyItemsModifier Modifier { get; set; }
             public class SearchDentriesResponseBodyItemsModifier : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>user_name</para>
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>staff_id</para>
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>name</para>
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>next_token</para>
+        /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public string NextToken { get; set; }

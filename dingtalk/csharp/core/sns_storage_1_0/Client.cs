@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
         }
 
 
-        /**
-         * @summary 三方个人应用批量获取文件或文件夹信息
-         *
-         * @param request GetDentriesRequest
-         * @param headers GetDentriesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetDentriesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用批量获取文件或文件夹信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDentriesRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetDentriesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDentriesResponse
+        /// </returns>
         public GetDentriesResponse GetDentriesWithOptions(string spaceId, GetDentriesRequest request, GetDentriesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -83,14 +94,24 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return TeaModel.ToObject<GetDentriesResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 三方个人应用批量获取文件或文件夹信息
-         *
-         * @param request GetDentriesRequest
-         * @param headers GetDentriesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetDentriesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用批量获取文件或文件夹信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDentriesRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetDentriesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDentriesResponse
+        /// </returns>
         public async Task<GetDentriesResponse> GetDentriesWithOptionsAsync(string spaceId, GetDentriesRequest request, GetDentriesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -138,12 +159,18 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return TeaModel.ToObject<GetDentriesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 三方个人应用批量获取文件或文件夹信息
-         *
-         * @param request GetDentriesRequest
-         * @return GetDentriesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用批量获取文件或文件夹信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDentriesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDentriesResponse
+        /// </returns>
         public GetDentriesResponse GetDentries(string spaceId, GetDentriesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -151,12 +178,18 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return GetDentriesWithOptions(spaceId, request, headers, runtime);
         }
 
-        /**
-         * @summary 三方个人应用批量获取文件或文件夹信息
-         *
-         * @param request GetDentriesRequest
-         * @return GetDentriesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用批量获取文件或文件夹信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDentriesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDentriesResponse
+        /// </returns>
         public async Task<GetDentriesResponse> GetDentriesAsync(string spaceId, GetDentriesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -164,14 +197,24 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return await GetDentriesWithOptionsAsync(spaceId, request, headers, runtime);
         }
 
-        /**
-         * @summary 三方个人应用获取文件(夹)信息
-         *
-         * @param request GetDentryRequest
-         * @param headers GetDentryHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetDentryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用获取文件(夹)信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDentryRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetDentryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDentryResponse
+        /// </returns>
         public GetDentryResponse GetDentryWithOptions(string spaceId, string dentryId, GetDentryRequest request, GetDentryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -215,14 +258,24 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return TeaModel.ToObject<GetDentryResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 三方个人应用获取文件(夹)信息
-         *
-         * @param request GetDentryRequest
-         * @param headers GetDentryHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetDentryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用获取文件(夹)信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDentryRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetDentryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDentryResponse
+        /// </returns>
         public async Task<GetDentryResponse> GetDentryWithOptionsAsync(string spaceId, string dentryId, GetDentryRequest request, GetDentryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -266,12 +319,18 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return TeaModel.ToObject<GetDentryResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 三方个人应用获取文件(夹)信息
-         *
-         * @param request GetDentryRequest
-         * @return GetDentryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用获取文件(夹)信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDentryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDentryResponse
+        /// </returns>
         public GetDentryResponse GetDentry(string spaceId, string dentryId, GetDentryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -279,12 +338,18 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return GetDentryWithOptions(spaceId, dentryId, request, headers, runtime);
         }
 
-        /**
-         * @summary 三方个人应用获取文件(夹)信息
-         *
-         * @param request GetDentryRequest
-         * @return GetDentryResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用获取文件(夹)信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDentryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDentryResponse
+        /// </returns>
         public async Task<GetDentryResponse> GetDentryAsync(string spaceId, string dentryId, GetDentryRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -292,14 +357,24 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return await GetDentryWithOptionsAsync(spaceId, dentryId, request, headers, runtime);
         }
 
-        /**
-         * @summary 三方个人应用批量获取文件缩略图
-         *
-         * @param request GetDentryThumbnailsRequest
-         * @param headers GetDentryThumbnailsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetDentryThumbnailsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用批量获取文件缩略图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDentryThumbnailsRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetDentryThumbnailsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDentryThumbnailsResponse
+        /// </returns>
         public GetDentryThumbnailsResponse GetDentryThumbnailsWithOptions(string spaceId, GetDentryThumbnailsRequest request, GetDentryThumbnailsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -343,14 +418,24 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return TeaModel.ToObject<GetDentryThumbnailsResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 三方个人应用批量获取文件缩略图
-         *
-         * @param request GetDentryThumbnailsRequest
-         * @param headers GetDentryThumbnailsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetDentryThumbnailsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用批量获取文件缩略图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDentryThumbnailsRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetDentryThumbnailsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDentryThumbnailsResponse
+        /// </returns>
         public async Task<GetDentryThumbnailsResponse> GetDentryThumbnailsWithOptionsAsync(string spaceId, GetDentryThumbnailsRequest request, GetDentryThumbnailsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -394,12 +479,18 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return TeaModel.ToObject<GetDentryThumbnailsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 三方个人应用批量获取文件缩略图
-         *
-         * @param request GetDentryThumbnailsRequest
-         * @return GetDentryThumbnailsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用批量获取文件缩略图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDentryThumbnailsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDentryThumbnailsResponse
+        /// </returns>
         public GetDentryThumbnailsResponse GetDentryThumbnails(string spaceId, GetDentryThumbnailsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -407,12 +498,18 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return GetDentryThumbnailsWithOptions(spaceId, request, headers, runtime);
         }
 
-        /**
-         * @summary 三方个人应用批量获取文件缩略图
-         *
-         * @param request GetDentryThumbnailsRequest
-         * @return GetDentryThumbnailsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用批量获取文件缩略图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetDentryThumbnailsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetDentryThumbnailsResponse
+        /// </returns>
         public async Task<GetDentryThumbnailsResponse> GetDentryThumbnailsAsync(string spaceId, GetDentryThumbnailsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -420,14 +517,24 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return await GetDentryThumbnailsWithOptionsAsync(spaceId, request, headers, runtime);
         }
 
-        /**
-         * @summary 三方个人应用获取文件下载信息
-         *
-         * @param request GetFileDownloadInfoRequest
-         * @param headers GetFileDownloadInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetFileDownloadInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用获取文件下载信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFileDownloadInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFileDownloadInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFileDownloadInfoResponse
+        /// </returns>
         public GetFileDownloadInfoResponse GetFileDownloadInfoWithOptions(string spaceId, string dentryId, GetFileDownloadInfoRequest request, GetFileDownloadInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -471,14 +578,24 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return TeaModel.ToObject<GetFileDownloadInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 三方个人应用获取文件下载信息
-         *
-         * @param request GetFileDownloadInfoRequest
-         * @param headers GetFileDownloadInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetFileDownloadInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用获取文件下载信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFileDownloadInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFileDownloadInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFileDownloadInfoResponse
+        /// </returns>
         public async Task<GetFileDownloadInfoResponse> GetFileDownloadInfoWithOptionsAsync(string spaceId, string dentryId, GetFileDownloadInfoRequest request, GetFileDownloadInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -522,12 +639,18 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return TeaModel.ToObject<GetFileDownloadInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 三方个人应用获取文件下载信息
-         *
-         * @param request GetFileDownloadInfoRequest
-         * @return GetFileDownloadInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用获取文件下载信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFileDownloadInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFileDownloadInfoResponse
+        /// </returns>
         public GetFileDownloadInfoResponse GetFileDownloadInfo(string spaceId, string dentryId, GetFileDownloadInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -535,12 +658,18 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return GetFileDownloadInfoWithOptions(spaceId, dentryId, request, headers, runtime);
         }
 
-        /**
-         * @summary 三方个人应用获取文件下载信息
-         *
-         * @param request GetFileDownloadInfoRequest
-         * @return GetFileDownloadInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用获取文件下载信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFileDownloadInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFileDownloadInfoResponse
+        /// </returns>
         public async Task<GetFileDownloadInfoResponse> GetFileDownloadInfoAsync(string spaceId, string dentryId, GetFileDownloadInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -548,14 +677,24 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return await GetFileDownloadInfoWithOptionsAsync(spaceId, dentryId, request, headers, runtime);
         }
 
-        /**
-         * @summary 三方个人应用获取IM会话存储空间信息
-         *
-         * @param request GetSpaceRequest
-         * @param headers GetSpaceHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetSpaceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用获取IM会话存储空间信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSpaceRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetSpaceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSpaceResponse
+        /// </returns>
         public GetSpaceResponse GetSpaceWithOptions(GetSpaceRequest request, GetSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -599,14 +738,24 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return TeaModel.ToObject<GetSpaceResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 三方个人应用获取IM会话存储空间信息
-         *
-         * @param request GetSpaceRequest
-         * @param headers GetSpaceHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetSpaceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用获取IM会话存储空间信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSpaceRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetSpaceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSpaceResponse
+        /// </returns>
         public async Task<GetSpaceResponse> GetSpaceWithOptionsAsync(GetSpaceRequest request, GetSpaceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -650,12 +799,18 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return TeaModel.ToObject<GetSpaceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 三方个人应用获取IM会话存储空间信息
-         *
-         * @param request GetSpaceRequest
-         * @return GetSpaceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用获取IM会话存储空间信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSpaceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSpaceResponse
+        /// </returns>
         public GetSpaceResponse GetSpace(GetSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -663,12 +818,18 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return GetSpaceWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 三方个人应用获取IM会话存储空间信息
-         *
-         * @param request GetSpaceRequest
-         * @return GetSpaceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用获取IM会话存储空间信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSpaceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSpaceResponse
+        /// </returns>
         public async Task<GetSpaceResponse> GetSpaceAsync(GetSpaceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -676,14 +837,24 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return await GetSpaceWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 三方个人应用获取全部文件或文件夹列表
-         *
-         * @param request ListAllDentriesRequest
-         * @param headers ListAllDentriesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListAllDentriesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用获取全部文件或文件夹列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListAllDentriesRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListAllDentriesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAllDentriesResponse
+        /// </returns>
         public ListAllDentriesResponse ListAllDentriesWithOptions(string spaceId, ListAllDentriesRequest request, ListAllDentriesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -727,14 +898,24 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return TeaModel.ToObject<ListAllDentriesResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 三方个人应用获取全部文件或文件夹列表
-         *
-         * @param request ListAllDentriesRequest
-         * @param headers ListAllDentriesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListAllDentriesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用获取全部文件或文件夹列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListAllDentriesRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListAllDentriesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAllDentriesResponse
+        /// </returns>
         public async Task<ListAllDentriesResponse> ListAllDentriesWithOptionsAsync(string spaceId, ListAllDentriesRequest request, ListAllDentriesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -778,12 +959,18 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return TeaModel.ToObject<ListAllDentriesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 三方个人应用获取全部文件或文件夹列表
-         *
-         * @param request ListAllDentriesRequest
-         * @return ListAllDentriesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用获取全部文件或文件夹列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListAllDentriesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAllDentriesResponse
+        /// </returns>
         public ListAllDentriesResponse ListAllDentries(string spaceId, ListAllDentriesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -791,12 +978,18 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return ListAllDentriesWithOptions(spaceId, request, headers, runtime);
         }
 
-        /**
-         * @summary 三方个人应用获取全部文件或文件夹列表
-         *
-         * @param request ListAllDentriesRequest
-         * @return ListAllDentriesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用获取全部文件或文件夹列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListAllDentriesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListAllDentriesResponse
+        /// </returns>
         public async Task<ListAllDentriesResponse> ListAllDentriesAsync(string spaceId, ListAllDentriesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -804,14 +997,24 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return await ListAllDentriesWithOptionsAsync(spaceId, request, headers, runtime);
         }
 
-        /**
-         * @summary 三方个人应用获取文件列表
-         *
-         * @param request ListDentriesRequest
-         * @param headers ListDentriesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListDentriesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用获取文件列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListDentriesRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListDentriesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListDentriesResponse
+        /// </returns>
         public ListDentriesResponse ListDentriesWithOptions(string spaceId, ListDentriesRequest request, ListDentriesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -873,14 +1076,24 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return TeaModel.ToObject<ListDentriesResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 三方个人应用获取文件列表
-         *
-         * @param request ListDentriesRequest
-         * @param headers ListDentriesHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListDentriesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用获取文件列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListDentriesRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListDentriesHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListDentriesResponse
+        /// </returns>
         public async Task<ListDentriesResponse> ListDentriesWithOptionsAsync(string spaceId, ListDentriesRequest request, ListDentriesHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -942,12 +1155,18 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return TeaModel.ToObject<ListDentriesResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 三方个人应用获取文件列表
-         *
-         * @param request ListDentriesRequest
-         * @return ListDentriesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用获取文件列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListDentriesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListDentriesResponse
+        /// </returns>
         public ListDentriesResponse ListDentries(string spaceId, ListDentriesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -955,12 +1174,18 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return ListDentriesWithOptions(spaceId, request, headers, runtime);
         }
 
-        /**
-         * @summary 三方个人应用获取文件列表
-         *
-         * @param request ListDentriesRequest
-         * @return ListDentriesResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用获取文件列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListDentriesRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListDentriesResponse
+        /// </returns>
         public async Task<ListDentriesResponse> ListDentriesAsync(string spaceId, ListDentriesRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -968,14 +1193,24 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return await ListDentriesWithOptionsAsync(spaceId, request, headers, runtime);
         }
 
-        /**
-         * @summary 获取会话过期文件列表
-         *
-         * @param request ListExpiredRequest
-         * @param headers ListExpiredHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListExpiredResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取会话过期文件列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListExpiredRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListExpiredHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListExpiredResponse
+        /// </returns>
         public ListExpiredResponse ListExpiredWithOptions(ListExpiredRequest request, ListExpiredHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1023,14 +1258,24 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return TeaModel.ToObject<ListExpiredResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取会话过期文件列表
-         *
-         * @param request ListExpiredRequest
-         * @param headers ListExpiredHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListExpiredResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取会话过期文件列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListExpiredRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListExpiredHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListExpiredResponse
+        /// </returns>
         public async Task<ListExpiredResponse> ListExpiredWithOptionsAsync(ListExpiredRequest request, ListExpiredHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1078,12 +1323,18 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return TeaModel.ToObject<ListExpiredResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取会话过期文件列表
-         *
-         * @param request ListExpiredRequest
-         * @return ListExpiredResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取会话过期文件列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListExpiredRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListExpiredResponse
+        /// </returns>
         public ListExpiredResponse ListExpired(ListExpiredRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1091,12 +1342,18 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return ListExpiredWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取会话过期文件列表
-         *
-         * @param request ListExpiredRequest
-         * @return ListExpiredResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取会话过期文件列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListExpiredRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListExpiredResponse
+        /// </returns>
         public async Task<ListExpiredResponse> ListExpiredAsync(ListExpiredRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1104,14 +1361,24 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return await ListExpiredWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 三方个人应用订阅文件变更事件
-         *
-         * @param request SubscribeEventRequest
-         * @param headers SubscribeEventHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SubscribeEventResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用订阅文件变更事件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubscribeEventRequest
+        /// </param>
+        /// <param name="headers">
+        /// SubscribeEventHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubscribeEventResponse
+        /// </returns>
         public SubscribeEventResponse SubscribeEventWithOptions(SubscribeEventRequest request, SubscribeEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1159,14 +1426,24 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return TeaModel.ToObject<SubscribeEventResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 三方个人应用订阅文件变更事件
-         *
-         * @param request SubscribeEventRequest
-         * @param headers SubscribeEventHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SubscribeEventResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用订阅文件变更事件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubscribeEventRequest
+        /// </param>
+        /// <param name="headers">
+        /// SubscribeEventHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubscribeEventResponse
+        /// </returns>
         public async Task<SubscribeEventResponse> SubscribeEventWithOptionsAsync(SubscribeEventRequest request, SubscribeEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1214,12 +1491,18 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return TeaModel.ToObject<SubscribeEventResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 三方个人应用订阅文件变更事件
-         *
-         * @param request SubscribeEventRequest
-         * @return SubscribeEventResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用订阅文件变更事件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubscribeEventRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubscribeEventResponse
+        /// </returns>
         public SubscribeEventResponse SubscribeEvent(SubscribeEventRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1227,12 +1510,18 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return SubscribeEventWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 三方个人应用订阅文件变更事件
-         *
-         * @param request SubscribeEventRequest
-         * @return SubscribeEventResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用订阅文件变更事件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SubscribeEventRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SubscribeEventResponse
+        /// </returns>
         public async Task<SubscribeEventResponse> SubscribeEventAsync(SubscribeEventRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1240,14 +1529,24 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return await SubscribeEventWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 三方个人应用取消订阅文件变更事件
-         *
-         * @param request UnsubscribeEventRequest
-         * @param headers UnsubscribeEventHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UnsubscribeEventResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用取消订阅文件变更事件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UnsubscribeEventRequest
+        /// </param>
+        /// <param name="headers">
+        /// UnsubscribeEventHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UnsubscribeEventResponse
+        /// </returns>
         public UnsubscribeEventResponse UnsubscribeEventWithOptions(UnsubscribeEventRequest request, UnsubscribeEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1295,14 +1594,24 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return TeaModel.ToObject<UnsubscribeEventResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 三方个人应用取消订阅文件变更事件
-         *
-         * @param request UnsubscribeEventRequest
-         * @param headers UnsubscribeEventHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UnsubscribeEventResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用取消订阅文件变更事件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UnsubscribeEventRequest
+        /// </param>
+        /// <param name="headers">
+        /// UnsubscribeEventHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UnsubscribeEventResponse
+        /// </returns>
         public async Task<UnsubscribeEventResponse> UnsubscribeEventWithOptionsAsync(UnsubscribeEventRequest request, UnsubscribeEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1350,12 +1659,18 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return TeaModel.ToObject<UnsubscribeEventResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 三方个人应用取消订阅文件变更事件
-         *
-         * @param request UnsubscribeEventRequest
-         * @return UnsubscribeEventResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用取消订阅文件变更事件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UnsubscribeEventRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UnsubscribeEventResponse
+        /// </returns>
         public UnsubscribeEventResponse UnsubscribeEvent(UnsubscribeEventRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1363,12 +1678,18 @@ namespace AlibabaCloud.SDK.Dingtalksns_storage_1_0
             return UnsubscribeEventWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 三方个人应用取消订阅文件变更事件
-         *
-         * @param request UnsubscribeEventRequest
-         * @return UnsubscribeEventResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>三方个人应用取消订阅文件变更事件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UnsubscribeEventRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UnsubscribeEventResponse
+        /// </returns>
         public async Task<UnsubscribeEventResponse> UnsubscribeEventAsync(UnsubscribeEventRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

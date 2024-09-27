@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
         }
 
 
-        /**
-         * @summary 创建企业邮箱用户
-         *
-         * @param request CreateUserRequest
-         * @param headers CreateUserHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateUserResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建企业邮箱用户</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateUserRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateUserHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateUserResponse
+        /// </returns>
         public CreateUserResponse CreateUserWithOptions(CreateUserRequest request, CreateUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -85,14 +96,24 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
             return TeaModel.ToObject<CreateUserResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建企业邮箱用户
-         *
-         * @param request CreateUserRequest
-         * @param headers CreateUserHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateUserResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建企业邮箱用户</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateUserRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateUserHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateUserResponse
+        /// </returns>
         public async Task<CreateUserResponse> CreateUserWithOptionsAsync(CreateUserRequest request, CreateUserHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -142,12 +163,18 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
             return TeaModel.ToObject<CreateUserResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建企业邮箱用户
-         *
-         * @param request CreateUserRequest
-         * @return CreateUserResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建企业邮箱用户</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateUserRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateUserResponse
+        /// </returns>
         public CreateUserResponse CreateUser(CreateUserRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -155,12 +182,18 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
             return CreateUserWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建企业邮箱用户
-         *
-         * @param request CreateUserRequest
-         * @return CreateUserResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建企业邮箱用户</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateUserRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateUserResponse
+        /// </returns>
         public async Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -168,14 +201,24 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
             return await CreateUserWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取指定文件夹的子文件夹列表
-         *
-         * @param request ListMailFoldersRequest
-         * @param headers ListMailFoldersHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListMailFoldersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取指定文件夹的子文件夹列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListMailFoldersRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListMailFoldersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListMailFoldersResponse
+        /// </returns>
         public ListMailFoldersResponse ListMailFoldersWithOptions(string email, ListMailFoldersRequest request, ListMailFoldersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -213,14 +256,24 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
             return TeaModel.ToObject<ListMailFoldersResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取指定文件夹的子文件夹列表
-         *
-         * @param request ListMailFoldersRequest
-         * @param headers ListMailFoldersHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ListMailFoldersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取指定文件夹的子文件夹列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListMailFoldersRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListMailFoldersHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListMailFoldersResponse
+        /// </returns>
         public async Task<ListMailFoldersResponse> ListMailFoldersWithOptionsAsync(string email, ListMailFoldersRequest request, ListMailFoldersHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -258,12 +311,18 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
             return TeaModel.ToObject<ListMailFoldersResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取指定文件夹的子文件夹列表
-         *
-         * @param request ListMailFoldersRequest
-         * @return ListMailFoldersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取指定文件夹的子文件夹列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListMailFoldersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListMailFoldersResponse
+        /// </returns>
         public ListMailFoldersResponse ListMailFolders(string email, ListMailFoldersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -271,12 +330,18 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0
             return ListMailFoldersWithOptions(email, request, headers, runtime);
         }
 
-        /**
-         * @summary 获取指定文件夹的子文件夹列表
-         *
-         * @param request ListMailFoldersRequest
-         * @return ListMailFoldersResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取指定文件夹的子文件夹列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListMailFoldersRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListMailFoldersResponse
+        /// </returns>
         public async Task<ListMailFoldersResponse> ListMailFoldersAsync(string email, ListMailFoldersRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

@@ -17,10 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
             [Validation(Required=false)]
             public List<OpenGroupUserRoleQueryResponseBodyResultGroupRoles> GroupRoles { get; set; }
             public class OpenGroupUserRoleQueryResponseBodyResultGroupRoles : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>rolexxxxxxx</para>
+                /// </summary>
                 [NameInMap("openRoleId")]
                 [Validation(Required=false)]
                 public string OpenRoleId { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>小美</para>
+                /// </summary>
                 [NameInMap("roleName")]
                 [Validation(Required=false)]
                 public string RoleName { get; set; }

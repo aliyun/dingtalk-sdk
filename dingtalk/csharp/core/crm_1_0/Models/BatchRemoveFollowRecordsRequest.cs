@@ -10,14 +10,17 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class BatchRemoveFollowRecordsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("instanceIds")]
         [Validation(Required=false)]
         public List<string> InstanceIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>manager021a</para>
         /// </summary>
         [NameInMap("operatorUserId")]
         [Validation(Required=false)]

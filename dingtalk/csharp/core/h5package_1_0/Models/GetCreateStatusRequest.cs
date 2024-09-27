@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0.Models
 {
     public class GetCreateStatusRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1663748308644pjpF</para>
         /// </summary>
         [NameInMap("taskId")]
         [Validation(Required=false)]

@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class GetCardInUserHolderResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("avatarUrl")]
         [Validation(Required=false)]
@@ -25,12 +25,16 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public long? CardAcceptTimeLong { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("cardId")]
         [Validation(Required=false)]
         public string CardId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>0</para>
+        /// </summary>
         [NameInMap("cardSource")]
         [Validation(Required=false)]
         public int? CardSource { get; set; }
@@ -48,14 +52,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public string Introduce { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("orgName")]
         [Validation(Required=false)]

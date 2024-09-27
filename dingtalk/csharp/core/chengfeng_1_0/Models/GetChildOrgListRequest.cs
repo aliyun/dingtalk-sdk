@@ -10,7 +10,13 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
 {
     public class GetChildOrgListRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123</para>
+        /// 
+        /// <b>if can be null:</b>
+        /// <c>false</c>
         /// </summary>
         [NameInMap("deptCode")]
         [Validation(Required=false)]

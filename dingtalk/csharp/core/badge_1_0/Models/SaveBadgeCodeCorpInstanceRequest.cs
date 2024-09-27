@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
 {
     public class SaveBadgeCodeCorpInstanceRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>H_FISH_CANTEEN</para>
         /// </summary>
         [NameInMap("codeIdentity")]
         [Validation(Required=false)]
         public string CodeIdentity { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>dingxxxx</para>
         /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]
@@ -28,7 +34,10 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
         public Dictionary<string, string> ExtInfo { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>OPEN</para>
         /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]

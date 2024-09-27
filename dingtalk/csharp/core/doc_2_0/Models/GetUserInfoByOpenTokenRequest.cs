@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 {
     public class GetUserInfoByOpenTokenRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("docKey")]
         [Validation(Required=false)]
         public string DocKey { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("openToken")]
         [Validation(Required=false)]

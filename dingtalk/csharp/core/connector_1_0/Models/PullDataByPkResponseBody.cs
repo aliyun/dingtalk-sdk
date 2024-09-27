@@ -10,49 +10,49 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
 {
     public class PullDataByPkResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("dataCreateAppId")]
         [Validation(Required=false)]
         public string DataCreateAppId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("dataCreateAppType")]
         [Validation(Required=false)]
         public string DataCreateAppType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("dataGmtCreate")]
         [Validation(Required=false)]
         public long? DataGmtCreate { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("dataGmtModified")]
         [Validation(Required=false)]
         public long? DataGmtModified { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("dataModifiedAppId")]
         [Validation(Required=false)]
         public string DataModifiedAppId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("dataModifiedAppType")]
         [Validation(Required=false)]
         public string DataModifiedAppType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("jsonData")]
         [Validation(Required=false)]

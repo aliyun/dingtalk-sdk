@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 {
     public class SearchTemplatesResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>next_token</para>
+        /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public string NextToken { get; set; }

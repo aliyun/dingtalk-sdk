@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class SetEnableRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>userIdXXX</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

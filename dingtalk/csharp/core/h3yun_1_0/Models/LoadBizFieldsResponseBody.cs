@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
 {
     public class LoadBizFieldsResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>success</para>
         /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
@@ -28,24 +31,44 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
                 [Validation(Required=false)]
                 public List<LoadBizFieldsResponseBodyDataChildFormsFields> Fields { get; set; }
                 public class LoadBizFieldsResponseBodyDataChildFormsFields : TeaModel {
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>ShortString</para>
+                    /// </summary>
                     [NameInMap("bizDataType")]
                     [Validation(Required=false)]
                     public string BizDataType { get; set; }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>Phone</para>
+                    /// </summary>
                     [NameInMap("fieldName")]
                     [Validation(Required=false)]
                     public string FieldName { get; set; }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>电话</para>
+                    /// </summary>
                     [NameInMap("label")]
                     [Validation(Required=false)]
                     public string Label { get; set; }
 
                 }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>子表</para>
+                /// </summary>
                 [NameInMap("formName")]
                 [Validation(Required=false)]
                 public string FormName { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>D000183Fcd15f3a51e624bbc9945392d190b6aa8</para>
+                /// </summary>
                 [NameInMap("schemaCode")]
                 [Validation(Required=false)]
                 public string SchemaCode { get; set; }
@@ -56,24 +79,44 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
             [Validation(Required=false)]
             public List<LoadBizFieldsResponseBodyDataFields> Fields { get; set; }
             public class LoadBizFieldsResponseBodyDataFields : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>ShortString</para>
+                /// </summary>
                 [NameInMap("bizDataType")]
                 [Validation(Required=false)]
                 public string BizDataType { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>Name</para>
+                /// </summary>
                 [NameInMap("fieldName")]
                 [Validation(Required=false)]
                 public string FieldName { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>姓名</para>
+                /// </summary>
                 [NameInMap("label")]
                 [Validation(Required=false)]
                 public string Label { get; set; }
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>客户管理</para>
+            /// </summary>
             [NameInMap("formName")]
             [Validation(Required=false)]
             public string FormName { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>D0001839bbbbe346bbf496498bb76c44c7eb972</para>
+            /// </summary>
             [NameInMap("schemaCode")]
             [Validation(Required=false)]
             public string SchemaCode { get; set; }
@@ -81,7 +124,10 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>OK</para>
         /// </summary>
         [NameInMap("message")]
         [Validation(Required=false)]

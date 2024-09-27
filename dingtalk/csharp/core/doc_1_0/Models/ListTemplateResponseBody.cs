@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class ListTemplateResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("hasMore")]
         [Validation(Required=false)]
@@ -21,14 +21,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         public string NextToken { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("templateList")]
         [Validation(Required=false)]
         public List<ListTemplateResponseBodyTemplateList> TemplateList { get; set; }
         public class ListTemplateResponseBodyTemplateList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("coverUrl")]
             [Validation(Required=false)]
@@ -39,28 +39,28 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             public long? CreateTime { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("docType")]
             [Validation(Required=false)]
             public string DocType { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public string Id { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("templateType")]
             [Validation(Required=false)]
             public string TemplateType { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("title")]
             [Validation(Required=false)]

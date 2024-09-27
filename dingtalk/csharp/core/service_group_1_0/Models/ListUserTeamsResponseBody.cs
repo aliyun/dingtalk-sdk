@@ -13,10 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public List<ListUserTeamsResponseBodyTeams> Teams { get; set; }
         public class ListUserTeamsResponseBodyTeams : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>Jxi12wo3qxoa</para>
+            /// </summary>
             [NameInMap("openTeamId")]
             [Validation(Required=false)]
             public string OpenTeamId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>测试团队</para>
+            /// </summary>
             [NameInMap("teamName")]
             [Validation(Required=false)]
             public string TeamName { get; set; }

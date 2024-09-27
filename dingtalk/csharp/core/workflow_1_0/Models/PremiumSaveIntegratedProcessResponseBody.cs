@@ -14,7 +14,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         public PremiumSaveIntegratedProcessResponseBodyResult Result { get; set; }
         public class PremiumSaveIntegratedProcessResponseBodyResult : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>PROC-abcdef-example</para>
             /// </summary>
             [NameInMap("processCode")]
             [Validation(Required=false)]

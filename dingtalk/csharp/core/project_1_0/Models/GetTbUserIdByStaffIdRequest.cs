@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class GetTbUserIdByStaffIdRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>0175xxxx</para>
         /// </summary>
         [NameInMap("optUserId")]
         [Validation(Required=false)]
         public string OptUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>0175xxxx</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

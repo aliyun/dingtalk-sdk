@@ -14,14 +14,14 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
         public Dictionary<string, object> Context { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("input")]
         [Validation(Required=false)]
         public string Input { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("robotCode")]
         [Validation(Required=false)]

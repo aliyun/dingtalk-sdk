@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalknotable_2_0.Models
 {
     public class DeleteRecordsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("recordIds")]
         [Validation(Required=false)]

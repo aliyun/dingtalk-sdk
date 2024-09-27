@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class GetTbProjectGrayRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>project_teambition</para>
         /// </summary>
         [NameInMap("label")]
         [Validation(Required=false)]

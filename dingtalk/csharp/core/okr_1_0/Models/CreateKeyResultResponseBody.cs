@@ -10,28 +10,37 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class CreateKeyResultResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public CreateKeyResultResponseBodyData Data { get; set; }
         public class CreateKeyResultResponseBodyData : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>R45Y</para>
             /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public Stream Id { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>420983</para>
             /// </summary>
             [NameInMap("position")]
             [Validation(Required=false)]
             public long? Position { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>100</para>
             /// </summary>
             [NameInMap("weight")]
             [Validation(Required=false)]
@@ -40,7 +49,10 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>true</para>
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

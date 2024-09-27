@@ -26,26 +26,39 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         public long? HouseState { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>A栋</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>-7</para>
         /// </summary>
         [NameInMap("parentDeptId")]
         [Validation(Required=false)]
         public string ParentDeptId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>House</para>
         /// </summary>
         [NameInMap("tagCode")]
         [Validation(Required=false)]
         public string TagCode { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>2</para>
+        /// </summary>
         [NameInMap("type")]
         [Validation(Required=false)]
         public string Type { get; set; }

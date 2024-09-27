@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 {
     public class AddAttendeeRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("attendeesToAdd")]
         [Validation(Required=false)]

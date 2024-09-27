@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class SendServiceGroupMessageResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>msgxxxxxx==</para>
         /// </summary>
         [NameInMap("openMsgTaskId")]
         [Validation(Required=false)]

@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class ListGroupStaffMembersResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("members")]
         [Validation(Required=false)]
@@ -21,7 +21,7 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
             public string Nick { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("uid")]
             [Validation(Required=false)]

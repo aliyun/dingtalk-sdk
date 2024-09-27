@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string AccountPeriod { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>ABC</para>
+            /// </summary>
             [NameInMap("agentCode")]
             [Validation(Required=false)]
             public string AgentCode { get; set; }
@@ -29,6 +33,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string AmountWithTax { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>123</para>
+            /// </summary>
             [NameInMap("caacDevelopmentFund")]
             [Validation(Required=false)]
             public string CaacDevelopmentFund { get; set; }
@@ -41,18 +49,34 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string CheckTime { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>杭州</para>
+            /// </summary>
             [NameInMap("city")]
             [Validation(Required=false)]
             public string City { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>北京</para>
+            /// </summary>
             [NameInMap("destination")]
             [Validation(Required=false)]
             public string Destination { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>123KM</para>
+            /// </summary>
             [NameInMap("distance")]
             [Validation(Required=false)]
             public string Distance { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>张三</para>
+            /// </summary>
             [NameInMap("drawerName")]
             [Validation(Required=false)]
             public string DrawerName { get; set; }
@@ -65,10 +89,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string ElectronicUrl { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>杭州北</para>
+            /// </summary>
             [NameInMap("entrance")]
             [Validation(Required=false)]
             public string Entrance { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>杭州北</para>
+            /// </summary>
             [NameInMap("exit")]
             [Validation(Required=false)]
             public string Exit { get; set; }
@@ -81,36 +113,68 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public List<UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails> FlightItineraryDetails { get; set; }
             public class UpdateInvoiceAndReceiptRelatedRequestGeneralInvoiceVOFlightItineraryDetails : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>北京国际机场</para>
+                /// </summary>
                 [NameInMap("carrier")]
                 [Validation(Required=false)]
                 public string Carrier { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>AA1234</para>
+                /// </summary>
                 [NameInMap("flightNumber")]
                 [Validation(Required=false)]
                 public string FlightNumber { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>2023-05-11</para>
+                /// </summary>
                 [NameInMap("flyDate")]
                 [Validation(Required=false)]
                 public string FlyDate { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>杭州</para>
+                /// </summary>
                 [NameInMap("flyFrom")]
                 [Validation(Required=false)]
                 public string FlyFrom { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>16:00</para>
+                /// </summary>
                 [NameInMap("flyTime")]
                 [Validation(Required=false)]
                 public string FlyTime { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>北京</para>
+                /// </summary>
                 [NameInMap("flyTo")]
                 [Validation(Required=false)]
                 public string FlyTo { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>头等舱</para>
+                /// </summary>
                 [NameInMap("seat")]
                 [Validation(Required=false)]
                 public string Seat { get; set; }
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>123</para>
+            /// </summary>
             [NameInMap("fuelSurcharge")]
             [Validation(Required=false)]
             public string FuelSurcharge { get; set; }
@@ -155,6 +219,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [Validation(Required=false)]
                 public string TaxPre { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>1</para>
+                /// </summary>
                 [NameInMap("taxPreType")]
                 [Validation(Required=false)]
                 public string TaxPreType { get; set; }
@@ -173,14 +241,26 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>18:00</para>
+            /// </summary>
             [NameInMap("getOffTime")]
             [Validation(Required=false)]
             public string GetOffTime { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>17:00</para>
+            /// </summary>
             [NameInMap("getOnTime")]
             [Validation(Required=false)]
             public string GetOnTime { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para><a href="http://XXX.jpg">http://XXX.jpg</a></para>
+            /// </summary>
             [NameInMap("imageUrl")]
             [Validation(Required=false)]
             public string ImageUrl { get; set; }
@@ -201,6 +281,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string InvoiceType { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>ABCD</para>
+            /// </summary>
             [NameInMap("issueBy")]
             [Validation(Required=false)]
             public string IssueBy { get; set; }
@@ -213,14 +297,26 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string OilFlag { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>杭州</para>
+            /// </summary>
             [NameInMap("origin")]
             [Validation(Required=false)]
             public string Origin { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>张三</para>
+            /// </summary>
             [NameInMap("passenger")]
             [Validation(Required=false)]
             public string Passenger { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>330781****1234</para>
+            /// </summary>
             [NameInMap("passengerUserId")]
             [Validation(Required=false)]
             public string PassengerUserId { get; set; }
@@ -229,6 +325,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string Payee { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>123</para>
+            /// </summary>
             [NameInMap("printSerialNumber")]
             [Validation(Required=false)]
             public string PrintSerialNumber { get; set; }
@@ -245,10 +345,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string PurchaserAddress { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>abc</para>
+            /// </summary>
             [NameInMap("purchaserBankAccount")]
             [Validation(Required=false)]
             public string PurchaserBankAccount { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>abc</para>
+            /// </summary>
             [NameInMap("purchaserBankNameAccount")]
             [Validation(Required=false)]
             public string PurchaserBankNameAccount { get; set; }
@@ -265,14 +373,26 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string PurchaserTel { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para><a href="mailto:abc@test.com">abc@test.com</a></para>
+            /// </summary>
             [NameInMap("receiverEmail")]
             [Validation(Required=false)]
             public string ReceiverEmail { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>张三</para>
+            /// </summary>
             [NameInMap("receiverName")]
             [Validation(Required=false)]
             public string ReceiverName { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1234567809</para>
+            /// </summary>
             [NameInMap("receiverTel")]
             [Validation(Required=false)]
             public string ReceiverTel { get; set; }
@@ -281,6 +401,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string Remark { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>2023-09-01</para>
+            /// </summary>
             [NameInMap("seatClass")]
             [Validation(Required=false)]
             public string SeatClass { get; set; }
@@ -335,10 +459,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string SellerAddress { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>abc</para>
+            /// </summary>
             [NameInMap("sellerBankAccount")]
             [Validation(Required=false)]
             public string SellerBankAccount { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>abc</para>
+            /// </summary>
             [NameInMap("sellerBankNameAccount")]
             [Validation(Required=false)]
             public string SellerBankNameAccount { get; set; }
@@ -355,10 +487,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string SellerTel { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>杭州</para>
+            /// </summary>
             [NameInMap("serialNo")]
             [Validation(Required=false)]
             public string SerialNo { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>杭州</para>
+            /// </summary>
             [NameInMap("startTime")]
             [Validation(Required=false)]
             public string StartTime { get; set; }
@@ -367,6 +507,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string SupplySign { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>123</para>
+            /// </summary>
             [NameInMap("surcharge")]
             [Validation(Required=false)]
             public string Surcharge { get; set; }
@@ -375,10 +519,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string TaxAmount { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>G1234</para>
+            /// </summary>
             [NameInMap("trainNo")]
             [Validation(Required=false)]
             public string TrainNo { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>2023-09-01</para>
+            /// </summary>
             [NameInMap("travelDate")]
             [Validation(Required=false)]
             public string TravelDate { get; set; }
@@ -477,6 +629,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [Validation(Required=false)]
                 public string ImportCertificateNo { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>123</para>
+                /// </summary>
                 [NameInMap("inspectionListNo")]
                 [Validation(Required=false)]
                 public string InspectionListNo { get; set; }
@@ -533,18 +689,34 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>code</para>
+        /// </summary>
         [NameInMap("invoiceCode")]
         [Validation(Required=false)]
         public string InvoiceCode { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>155</para>
+        /// </summary>
         [NameInMap("invoiceNo")]
         [Validation(Required=false)]
         public string InvoiceNo { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>abc</para>
+        /// </summary>
         [NameInMap("operator")]
         [Validation(Required=false)]
         public string Operator { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>abc</para>
+        /// </summary>
         [NameInMap("receiptCode")]
         [Validation(Required=false)]
         public string ReceiptCode { get; set; }

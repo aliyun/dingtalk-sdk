@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
 {
     public class RobotRecallDingRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("openDingId")]
         [Validation(Required=false)]
         public string OpenDingId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("robotCode")]
         [Validation(Required=false)]

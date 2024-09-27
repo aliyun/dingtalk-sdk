@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 {
     public class OkrObjectivesByUserRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>dingOKR</para>
+        /// </summary>
         [NameInMap("goodsCode")]
         [Validation(Required=false)]
         public string GoodsCode { get; set; }
@@ -17,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         [Validation(Required=false)]
         public int? PageNumber { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>10</para>
+        /// </summary>
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public int? PageSize { get; set; }

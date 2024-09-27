@@ -21,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public string NickName { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>eWaJSqDcLsoiE</para>
+        /// </summary>
         [NameInMap("openTeamId")]
         [Validation(Required=false)]
         public string OpenTeamId { get; set; }
@@ -33,6 +37,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         [Validation(Required=false)]
         public string ServerTips { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>对应外部渠道的会话ID</para>
+        /// </summary>
         [NameInMap("serviceToken")]
         [Validation(Required=false)]
         public string ServiceToken { get; set; }

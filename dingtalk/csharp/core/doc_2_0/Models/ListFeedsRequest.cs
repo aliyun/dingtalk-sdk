@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         public bool? ExcludeFile { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
@@ -25,7 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         public string NextToken { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>abcd</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

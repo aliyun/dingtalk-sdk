@@ -10,19 +10,23 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class ListSubCorpsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("isOnlyDirect")]
         [Validation(Required=false)]
         public bool? IsOnlyDirect { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("subCorpId")]
         [Validation(Required=false)]
         public string SubCorpId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>county|community</para>
+        /// </summary>
         [NameInMap("types")]
         [Validation(Required=false)]
         public string Types { get; set; }

@@ -10,14 +10,17 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class UpdateFileStatusRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("requestIds")]
         [Validation(Required=false)]
         public List<string> RequestIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1-检测通过，2-检测失败</para>
         /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]

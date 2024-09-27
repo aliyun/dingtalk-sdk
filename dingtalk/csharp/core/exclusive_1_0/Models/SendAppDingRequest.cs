@@ -10,14 +10,17 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class SendAppDingRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>开会</para>
         /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
         public string Content { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userids")]
         [Validation(Required=false)]

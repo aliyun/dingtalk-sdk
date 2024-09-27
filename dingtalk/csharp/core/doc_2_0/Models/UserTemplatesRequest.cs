@@ -13,14 +13,26 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [Validation(Required=false)]
         public UserTemplatesRequestOption Option { get; set; }
         public class UserTemplatesRequestOption : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>20</para>
+            /// </summary>
             [NameInMap("maxResults")]
             [Validation(Required=false)]
             public int? MaxResults { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>next_token</para>
+            /// </summary>
             [NameInMap("nextToken")]
             [Validation(Required=false)]
             public string NextToken { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>pc</para>
+            /// </summary>
             [NameInMap("platform")]
             [Validation(Required=false)]
             public string Platform { get; set; }
@@ -29,6 +41,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
             [Validation(Required=false)]
             public List<int?> TemplateTypes { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1</para>
+            /// </summary>
             [NameInMap("version")]
             [Validation(Required=false)]
             public int? Version { get; set; }
@@ -36,7 +52,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

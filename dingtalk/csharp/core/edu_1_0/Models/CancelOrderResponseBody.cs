@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class CancelOrderResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>false</para>
         /// </summary>
         [NameInMap("needRetry")]
         [Validation(Required=false)]
         public bool? NeedRetry { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>refund</para>
         /// </summary>
         [NameInMap("tradeAction")]
         [Validation(Required=false)]

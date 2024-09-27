@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
 {
     public class UpdateTriggerRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("integratorFlag")]
         [Validation(Required=false)]
         public string IntegratorFlag { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("triggerInfo")]
         [Validation(Required=false)]
@@ -40,14 +40,14 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             public string InputSchema { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("integratorConnectorId")]
             [Validation(Required=false)]
             public string IntegratorConnectorId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("integratorTriggerId")]
             [Validation(Required=false)]

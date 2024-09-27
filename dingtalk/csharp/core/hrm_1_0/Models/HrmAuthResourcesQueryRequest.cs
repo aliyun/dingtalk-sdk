@@ -10,14 +10,17 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class HrmAuthResourcesQueryRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("authResourceIds")]
         [Validation(Required=false)]
         public List<string> AuthResourceIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1231</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

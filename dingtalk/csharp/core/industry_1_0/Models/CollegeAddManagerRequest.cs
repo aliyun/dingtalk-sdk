@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class CollegeAddManagerRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>11111</para>
         /// </summary>
         [NameInMap("deptId")]
         [Validation(Required=false)]
         public long? DeptId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>12525</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

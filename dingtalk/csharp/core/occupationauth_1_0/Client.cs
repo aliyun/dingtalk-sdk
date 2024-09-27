@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkoccupationauth_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkoccupationauth_1_0
         }
 
 
-        /**
-         * @summary 检查用户任务状态
-         *
-         * @param request CheckUserTaskStatusRequest
-         * @param headers CheckUserTaskStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CheckUserTaskStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>检查用户任务状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckUserTaskStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// CheckUserTaskStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckUserTaskStatusResponse
+        /// </returns>
         public CheckUserTaskStatusResponse CheckUserTaskStatusWithOptions(CheckUserTaskStatusRequest request, CheckUserTaskStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -73,14 +84,24 @@ namespace AlibabaCloud.SDK.Dingtalkoccupationauth_1_0
             return TeaModel.ToObject<CheckUserTaskStatusResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 检查用户任务状态
-         *
-         * @param request CheckUserTaskStatusRequest
-         * @param headers CheckUserTaskStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CheckUserTaskStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>检查用户任务状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckUserTaskStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// CheckUserTaskStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckUserTaskStatusResponse
+        /// </returns>
         public async Task<CheckUserTaskStatusResponse> CheckUserTaskStatusWithOptionsAsync(CheckUserTaskStatusRequest request, CheckUserTaskStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -118,12 +139,18 @@ namespace AlibabaCloud.SDK.Dingtalkoccupationauth_1_0
             return TeaModel.ToObject<CheckUserTaskStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 检查用户任务状态
-         *
-         * @param request CheckUserTaskStatusRequest
-         * @return CheckUserTaskStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>检查用户任务状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckUserTaskStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckUserTaskStatusResponse
+        /// </returns>
         public CheckUserTaskStatusResponse CheckUserTaskStatus(CheckUserTaskStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -131,12 +158,18 @@ namespace AlibabaCloud.SDK.Dingtalkoccupationauth_1_0
             return CheckUserTaskStatusWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 检查用户任务状态
-         *
-         * @param request CheckUserTaskStatusRequest
-         * @return CheckUserTaskStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>检查用户任务状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckUserTaskStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckUserTaskStatusResponse
+        /// </returns>
         public async Task<CheckUserTaskStatusResponse> CheckUserTaskStatusAsync(CheckUserTaskStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -144,14 +177,24 @@ namespace AlibabaCloud.SDK.Dingtalkoccupationauth_1_0
             return await CheckUserTaskStatusWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 检查用户任务状态
-         *
-         * @param request CheckUserTasksStatusRequest
-         * @param headers CheckUserTasksStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CheckUserTasksStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>检查用户任务状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckUserTasksStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// CheckUserTasksStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckUserTasksStatusResponse
+        /// </returns>
         public CheckUserTasksStatusResponse CheckUserTasksStatusWithOptions(CheckUserTasksStatusRequest request, CheckUserTasksStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -189,14 +232,24 @@ namespace AlibabaCloud.SDK.Dingtalkoccupationauth_1_0
             return TeaModel.ToObject<CheckUserTasksStatusResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 检查用户任务状态
-         *
-         * @param request CheckUserTasksStatusRequest
-         * @param headers CheckUserTasksStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CheckUserTasksStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>检查用户任务状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckUserTasksStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// CheckUserTasksStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckUserTasksStatusResponse
+        /// </returns>
         public async Task<CheckUserTasksStatusResponse> CheckUserTasksStatusWithOptionsAsync(CheckUserTasksStatusRequest request, CheckUserTasksStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -234,12 +287,18 @@ namespace AlibabaCloud.SDK.Dingtalkoccupationauth_1_0
             return TeaModel.ToObject<CheckUserTasksStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 检查用户任务状态
-         *
-         * @param request CheckUserTasksStatusRequest
-         * @return CheckUserTasksStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>检查用户任务状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckUserTasksStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckUserTasksStatusResponse
+        /// </returns>
         public CheckUserTasksStatusResponse CheckUserTasksStatus(CheckUserTasksStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -247,12 +306,18 @@ namespace AlibabaCloud.SDK.Dingtalkoccupationauth_1_0
             return CheckUserTasksStatusWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 检查用户任务状态
-         *
-         * @param request CheckUserTasksStatusRequest
-         * @return CheckUserTasksStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>检查用户任务状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckUserTasksStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckUserTasksStatusResponse
+        /// </returns>
         public async Task<CheckUserTasksStatusResponse> CheckUserTasksStatusAsync(CheckUserTasksStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

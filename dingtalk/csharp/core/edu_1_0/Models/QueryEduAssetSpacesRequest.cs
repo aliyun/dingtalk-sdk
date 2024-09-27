@@ -10,18 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class QueryEduAssetSpacesRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>soke</para>
         /// </summary>
         [NameInMap("bizCode")]
         [Validation(Required=false)]
         public string BizCode { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>10</para>
+        /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>20110</para>
         /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]

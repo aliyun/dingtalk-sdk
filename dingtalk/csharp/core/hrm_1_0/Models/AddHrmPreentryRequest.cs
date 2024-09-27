@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         [Validation(Required=false)]
         public List<AddHrmPreentryRequestGroups> Groups { get; set; }
         public class AddHrmPreentryRequestGroups : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>sys01</para>
+            /// </summary>
             [NameInMap("groupId")]
             [Validation(Required=false)]
             public string GroupId { get; set; }
@@ -29,16 +33,28 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
                 [Validation(Required=false)]
                 public List<AddHrmPreentryRequestGroupsSectionsEmpFieldVOList> EmpFieldVOList { get; set; }
                 public class AddHrmPreentryRequestGroupsSectionsEmpFieldVOList : TeaModel {
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>sys01-birthTime</para>
+                    /// </summary>
                     [NameInMap("fieldCode")]
                     [Validation(Required=false)]
                     public string FieldCode { get; set; }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>2020-10-10</para>
+                    /// </summary>
                     [NameInMap("value")]
                     [Validation(Required=false)]
                     public string Value { get; set; }
 
                 }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>0</para>
+                /// </summary>
                 [NameInMap("oldIndex")]
                 [Validation(Required=false)]
                 public int? OldIndex { get; set; }
@@ -48,14 +64,14 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("mobile")]
         [Validation(Required=false)]
         public string Mobile { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]

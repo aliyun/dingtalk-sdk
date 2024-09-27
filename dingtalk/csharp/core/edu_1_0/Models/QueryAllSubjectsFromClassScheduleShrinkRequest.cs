@@ -14,12 +14,19 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string ClassIdsShrink { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>34524523543</para>
         /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]
         public string OpUserId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>KINDERGARTEN</para>
+        /// </summary>
         [NameInMap("periodCode")]
         [Validation(Required=false)]
         public string PeriodCode { get; set; }

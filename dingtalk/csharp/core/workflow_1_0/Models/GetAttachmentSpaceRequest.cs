@@ -9,12 +9,19 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class GetAttachmentSpaceRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>8345000</para>
+        /// </summary>
         [NameInMap("agentId")]
         [Validation(Required=false)]
         public long? AgentId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>user123</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

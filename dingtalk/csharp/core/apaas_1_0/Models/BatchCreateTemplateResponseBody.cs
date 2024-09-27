@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkapaas_1_0.Models
 {
     public class BatchCreateTemplateResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("createResultList")]
         [Validation(Required=false)]
         public List<BatchCreateTemplateResponseBodyCreateResultList> CreateResultList { get; set; }
         public class BatchCreateTemplateResponseBodyCreateResultList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("templateKey")]
             [Validation(Required=false)]
             public string TemplateKey { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("value")]
             [Validation(Required=false)]

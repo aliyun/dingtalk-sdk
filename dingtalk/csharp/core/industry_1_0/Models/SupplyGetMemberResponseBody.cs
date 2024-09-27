@@ -17,22 +17,42 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public List<long?> DeptIdList { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>NORMAL</para>
+            /// </summary>
             [NameInMap("dingMemberStatus")]
             [Validation(Required=false)]
             public string DingMemberStatus { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>true</para>
+            /// </summary>
             [NameInMap("isActive")]
             [Validation(Required=false)]
             public bool? IsActive { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>李白</para>
+            /// </summary>
             [NameInMap("memberName")]
             [Validation(Required=false)]
             public string MemberName { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>经理</para>
+            /// </summary>
             [NameInMap("memberTitle")]
             [Validation(Required=false)]
             public string MemberTitle { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>123</para>
+            /// </summary>
             [NameInMap("memberWorkNumber")]
             [Validation(Required=false)]
             public string MemberWorkNumber { get; set; }
@@ -41,10 +61,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public List<SupplyGetMemberResponseBodyResultRoleInfoList> RoleInfoList { get; set; }
             public class SupplyGetMemberResponseBodyResultRoleInfoList : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>123</para>
+                /// </summary>
                 [NameInMap("roleId")]
                 [Validation(Required=false)]
                 public string RoleId { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>老板</para>
+                /// </summary>
                 [NameInMap("roleName")]
                 [Validation(Required=false)]
                 public string RoleName { get; set; }

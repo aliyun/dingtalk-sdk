@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class InitVPaasDeviceRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>fsdfdsa-41231</para>
         /// </summary>
         [NameInMap("sn")]
         [Validation(Required=false)]
@@ -21,7 +24,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public long? Timestamp { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>VIDEO_CALL</para>
         /// </summary>
         [NameInMap("type")]
         [Validation(Required=false)]

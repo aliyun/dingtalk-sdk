@@ -14,49 +14,49 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         public GetPeriodListResponseBodyData Data { get; set; }
         public class GetPeriodListResponseBodyData : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("periodList")]
             [Validation(Required=false)]
             public List<GetPeriodListResponseBodyDataPeriodList> PeriodList { get; set; }
             public class GetPeriodListResponseBodyDataPeriodList : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("endTime")]
                 [Validation(Required=false)]
                 public float? EndTime { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("id")]
                 [Validation(Required=false)]
                 public Stream Id { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("isCurrent")]
                 [Validation(Required=false)]
                 public bool? IsCurrent { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("isYearly")]
                 [Validation(Required=false)]
                 public bool? IsYearly { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public Stream Name { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("startTime")]
                 [Validation(Required=false)]

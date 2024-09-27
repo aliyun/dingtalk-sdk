@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
 {
     public class DeleteResidentBlackBoardRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("blackboardId")]
         [Validation(Required=false)]

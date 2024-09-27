@@ -10,14 +10,17 @@ namespace AlibabaCloud.SDK.Dingtalkflashmsg_1_0.Models
 {
     public class DeletePlguinRuleRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("bizIdList")]
         [Validation(Required=false)]
         public List<string> BizIdList { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>0847493113802787</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

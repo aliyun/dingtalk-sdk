@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
 {
     public class GetQuotaInfosResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("quotas")]
         [Validation(Required=false)]

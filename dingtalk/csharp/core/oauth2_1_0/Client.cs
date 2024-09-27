@@ -18,9 +18,9 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
-            this._signatureAlgorithm = "v2";
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -29,13 +29,21 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
         }
 
 
-        /**
-         * @summary 生成jsapi ticket
-         *
-         * @param headers CreateJsapiTicketHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateJsapiTicketResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生成jsapi ticket</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// CreateJsapiTicketHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateJsapiTicketResponse
+        /// </returns>
         public CreateJsapiTicketResponse CreateJsapiTicketWithOptions(CreateJsapiTicketHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -66,13 +74,21 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return TeaModel.ToObject<CreateJsapiTicketResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 生成jsapi ticket
-         *
-         * @param headers CreateJsapiTicketHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateJsapiTicketResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生成jsapi ticket</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// CreateJsapiTicketHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateJsapiTicketResponse
+        /// </returns>
         public async Task<CreateJsapiTicketResponse> CreateJsapiTicketWithOptionsAsync(CreateJsapiTicketHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -103,11 +119,14 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return TeaModel.ToObject<CreateJsapiTicketResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 生成jsapi ticket
-         *
-         * @return CreateJsapiTicketResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生成jsapi ticket</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// CreateJsapiTicketResponse
+        /// </returns>
         public CreateJsapiTicketResponse CreateJsapiTicket()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -115,11 +134,14 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return CreateJsapiTicketWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 生成jsapi ticket
-         *
-         * @return CreateJsapiTicketResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生成jsapi ticket</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// CreateJsapiTicketResponse
+        /// </returns>
         public async Task<CreateJsapiTicketResponse> CreateJsapiTicketAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -127,14 +149,24 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return await CreateJsapiTicketWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 获取企业accessToken(企业内部应用)
-         *
-         * @param request GetAccessTokenRequest
-         * @param headers map
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetAccessTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业accessToken(企业内部应用)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAccessTokenRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAccessTokenResponse
+        /// </returns>
         public GetAccessTokenResponse GetAccessTokenWithOptions(GetAccessTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -164,17 +196,27 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetAccessTokenResponse>(Execute(params_, req, runtime));
+            return TeaModel.ToObject<GetAccessTokenResponse>(DoROARequestWithForm(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
         }
 
-        /**
-         * @summary 获取企业accessToken(企业内部应用)
-         *
-         * @param request GetAccessTokenRequest
-         * @param headers map
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetAccessTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业accessToken(企业内部应用)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAccessTokenRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAccessTokenResponse
+        /// </returns>
         public async Task<GetAccessTokenResponse> GetAccessTokenWithOptionsAsync(GetAccessTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -204,15 +246,21 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetAccessTokenResponse>(await ExecuteAsync(params_, req, runtime));
+            return TeaModel.ToObject<GetAccessTokenResponse>(await DoROARequestWithFormAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
         }
 
-        /**
-         * @summary 获取企业accessToken(企业内部应用)
-         *
-         * @param request GetAccessTokenRequest
-         * @return GetAccessTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业accessToken(企业内部应用)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAccessTokenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAccessTokenResponse
+        /// </returns>
         public GetAccessTokenResponse GetAccessToken(GetAccessTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -220,12 +268,18 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return GetAccessTokenWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取企业accessToken(企业内部应用)
-         *
-         * @param request GetAccessTokenRequest
-         * @return GetAccessTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业accessToken(企业内部应用)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAccessTokenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAccessTokenResponse
+        /// </returns>
         public async Task<GetAccessTokenResponse> GetAccessTokenAsync(GetAccessTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -233,14 +287,24 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return await GetAccessTokenWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取企业开通应用后的授权信息
-         *
-         * @param request GetAuthInfoRequest
-         * @param headers GetAuthInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetAuthInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业开通应用后的授权信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAuthInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetAuthInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAuthInfoResponse
+        /// </returns>
         public GetAuthInfoResponse GetAuthInfoWithOptions(GetAuthInfoRequest request, GetAuthInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -278,14 +342,24 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return TeaModel.ToObject<GetAuthInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取企业开通应用后的授权信息
-         *
-         * @param request GetAuthInfoRequest
-         * @param headers GetAuthInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetAuthInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业开通应用后的授权信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAuthInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetAuthInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAuthInfoResponse
+        /// </returns>
         public async Task<GetAuthInfoResponse> GetAuthInfoWithOptionsAsync(GetAuthInfoRequest request, GetAuthInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -323,12 +397,18 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return TeaModel.ToObject<GetAuthInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取企业开通应用后的授权信息
-         *
-         * @param request GetAuthInfoRequest
-         * @return GetAuthInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业开通应用后的授权信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAuthInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAuthInfoResponse
+        /// </returns>
         public GetAuthInfoResponse GetAuthInfo(GetAuthInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -336,12 +416,18 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return GetAuthInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取企业开通应用后的授权信息
-         *
-         * @param request GetAuthInfoRequest
-         * @return GetAuthInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业开通应用后的授权信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAuthInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAuthInfoResponse
+        /// </returns>
         public async Task<GetAuthInfoResponse> GetAuthInfoAsync(GetAuthInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -349,14 +435,24 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return await GetAuthInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取企业accessToken(应用商店应用)
-         *
-         * @param request GetCorpAccessTokenRequest
-         * @param headers map
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetCorpAccessTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业accessToken(应用商店应用)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCorpAccessTokenRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCorpAccessTokenResponse
+        /// </returns>
         public GetCorpAccessTokenResponse GetCorpAccessTokenWithOptions(GetCorpAccessTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -394,17 +490,27 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetCorpAccessTokenResponse>(Execute(params_, req, runtime));
+            return TeaModel.ToObject<GetCorpAccessTokenResponse>(DoROARequestWithForm(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
         }
 
-        /**
-         * @summary 获取企业accessToken(应用商店应用)
-         *
-         * @param request GetCorpAccessTokenRequest
-         * @param headers map
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetCorpAccessTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业accessToken(应用商店应用)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCorpAccessTokenRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCorpAccessTokenResponse
+        /// </returns>
         public async Task<GetCorpAccessTokenResponse> GetCorpAccessTokenWithOptionsAsync(GetCorpAccessTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -442,15 +548,21 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetCorpAccessTokenResponse>(await ExecuteAsync(params_, req, runtime));
+            return TeaModel.ToObject<GetCorpAccessTokenResponse>(await DoROARequestWithFormAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
         }
 
-        /**
-         * @summary 获取企业accessToken(应用商店应用)
-         *
-         * @param request GetCorpAccessTokenRequest
-         * @return GetCorpAccessTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业accessToken(应用商店应用)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCorpAccessTokenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCorpAccessTokenResponse
+        /// </returns>
         public GetCorpAccessTokenResponse GetCorpAccessToken(GetCorpAccessTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -458,12 +570,18 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return GetCorpAccessTokenWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取企业accessToken(应用商店应用)
-         *
-         * @param request GetCorpAccessTokenRequest
-         * @return GetCorpAccessTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取企业accessToken(应用商店应用)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCorpAccessTokenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCorpAccessTokenResponse
+        /// </returns>
         public async Task<GetCorpAccessTokenResponse> GetCorpAccessTokenAsync(GetCorpAccessTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -471,13 +589,21 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return await GetCorpAccessTokenWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询个人授权记录
-         *
-         * @param headers GetPersonalAuthRuleHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetPersonalAuthRuleResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询个人授权记录</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetPersonalAuthRuleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPersonalAuthRuleResponse
+        /// </returns>
         public GetPersonalAuthRuleResponse GetPersonalAuthRuleWithOptions(GetPersonalAuthRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -508,13 +634,21 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return TeaModel.ToObject<GetPersonalAuthRuleResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询个人授权记录
-         *
-         * @param headers GetPersonalAuthRuleHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetPersonalAuthRuleResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询个人授权记录</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetPersonalAuthRuleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPersonalAuthRuleResponse
+        /// </returns>
         public async Task<GetPersonalAuthRuleResponse> GetPersonalAuthRuleWithOptionsAsync(GetPersonalAuthRuleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -545,11 +679,14 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return TeaModel.ToObject<GetPersonalAuthRuleResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询个人授权记录
-         *
-         * @return GetPersonalAuthRuleResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询个人授权记录</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetPersonalAuthRuleResponse
+        /// </returns>
         public GetPersonalAuthRuleResponse GetPersonalAuthRule()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -557,11 +694,14 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return GetPersonalAuthRuleWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 查询个人授权记录
-         *
-         * @return GetPersonalAuthRuleResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询个人授权记录</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetPersonalAuthRuleResponse
+        /// </returns>
         public async Task<GetPersonalAuthRuleResponse> GetPersonalAuthRuleAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -569,14 +709,24 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return await GetPersonalAuthRuleWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary 生成微应用管理后台accessToken
-         *
-         * @param request GetSsoAccessTokenRequest
-         * @param headers map
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetSsoAccessTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生成微应用管理后台accessToken</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSsoAccessTokenRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSsoAccessTokenResponse
+        /// </returns>
         public GetSsoAccessTokenResponse GetSsoAccessTokenWithOptions(GetSsoAccessTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -606,17 +756,27 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "json",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetSsoAccessTokenResponse>(Execute(params_, req, runtime));
+            return TeaModel.ToObject<GetSsoAccessTokenResponse>(DoROARequest(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
         }
 
-        /**
-         * @summary 生成微应用管理后台accessToken
-         *
-         * @param request GetSsoAccessTokenRequest
-         * @param headers map
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetSsoAccessTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生成微应用管理后台accessToken</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSsoAccessTokenRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSsoAccessTokenResponse
+        /// </returns>
         public async Task<GetSsoAccessTokenResponse> GetSsoAccessTokenWithOptionsAsync(GetSsoAccessTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -646,15 +806,21 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "json",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetSsoAccessTokenResponse>(await ExecuteAsync(params_, req, runtime));
+            return TeaModel.ToObject<GetSsoAccessTokenResponse>(await DoROARequestAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
         }
 
-        /**
-         * @summary 生成微应用管理后台accessToken
-         *
-         * @param request GetSsoAccessTokenRequest
-         * @return GetSsoAccessTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生成微应用管理后台accessToken</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSsoAccessTokenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSsoAccessTokenResponse
+        /// </returns>
         public GetSsoAccessTokenResponse GetSsoAccessToken(GetSsoAccessTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -662,12 +828,18 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return GetSsoAccessTokenWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 生成微应用管理后台accessToken
-         *
-         * @param request GetSsoAccessTokenRequest
-         * @return GetSsoAccessTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>生成微应用管理后台accessToken</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSsoAccessTokenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSsoAccessTokenResponse
+        /// </returns>
         public async Task<GetSsoAccessTokenResponse> GetSsoAccessTokenAsync(GetSsoAccessTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -675,14 +847,24 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return await GetSsoAccessTokenWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询微应用后台免登的用户信息
-         *
-         * @param request GetSsoUserInfoRequest
-         * @param headers GetSsoUserInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetSsoUserInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询微应用后台免登的用户信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSsoUserInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetSsoUserInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSsoUserInfoResponse
+        /// </returns>
         public GetSsoUserInfoResponse GetSsoUserInfoWithOptions(GetSsoUserInfoRequest request, GetSsoUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -720,14 +902,24 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return TeaModel.ToObject<GetSsoUserInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询微应用后台免登的用户信息
-         *
-         * @param request GetSsoUserInfoRequest
-         * @param headers GetSsoUserInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetSsoUserInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询微应用后台免登的用户信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSsoUserInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetSsoUserInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSsoUserInfoResponse
+        /// </returns>
         public async Task<GetSsoUserInfoResponse> GetSsoUserInfoWithOptionsAsync(GetSsoUserInfoRequest request, GetSsoUserInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -765,12 +957,18 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return TeaModel.ToObject<GetSsoUserInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询微应用后台免登的用户信息
-         *
-         * @param request GetSsoUserInfoRequest
-         * @return GetSsoUserInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询微应用后台免登的用户信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSsoUserInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSsoUserInfoResponse
+        /// </returns>
         public GetSsoUserInfoResponse GetSsoUserInfo(GetSsoUserInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -778,12 +976,18 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return GetSsoUserInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询微应用后台免登的用户信息
-         *
-         * @param request GetSsoUserInfoRequest
-         * @return GetSsoUserInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询微应用后台免登的用户信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSsoUserInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSsoUserInfoResponse
+        /// </returns>
         public async Task<GetSsoUserInfoResponse> GetSsoUserInfoAsync(GetSsoUserInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -791,14 +995,24 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return await GetSsoUserInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取isvAccessToken（三方企业应用）
-         *
-         * @param request GetSuiteAccessTokenRequest
-         * @param headers map
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetSuiteAccessTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取isvAccessToken（三方企业应用）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSuiteAccessTokenRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSuiteAccessTokenResponse
+        /// </returns>
         public GetSuiteAccessTokenResponse GetSuiteAccessTokenWithOptions(GetSuiteAccessTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -832,17 +1046,27 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "json",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetSuiteAccessTokenResponse>(Execute(params_, req, runtime));
+            return TeaModel.ToObject<GetSuiteAccessTokenResponse>(DoROARequest(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
         }
 
-        /**
-         * @summary 获取isvAccessToken（三方企业应用）
-         *
-         * @param request GetSuiteAccessTokenRequest
-         * @param headers map
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetSuiteAccessTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取isvAccessToken（三方企业应用）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSuiteAccessTokenRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSuiteAccessTokenResponse
+        /// </returns>
         public async Task<GetSuiteAccessTokenResponse> GetSuiteAccessTokenWithOptionsAsync(GetSuiteAccessTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -876,15 +1100,21 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "json",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetSuiteAccessTokenResponse>(await ExecuteAsync(params_, req, runtime));
+            return TeaModel.ToObject<GetSuiteAccessTokenResponse>(await DoROARequestAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
         }
 
-        /**
-         * @summary 获取isvAccessToken（三方企业应用）
-         *
-         * @param request GetSuiteAccessTokenRequest
-         * @return GetSuiteAccessTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取isvAccessToken（三方企业应用）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSuiteAccessTokenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSuiteAccessTokenResponse
+        /// </returns>
         public GetSuiteAccessTokenResponse GetSuiteAccessToken(GetSuiteAccessTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -892,12 +1122,18 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return GetSuiteAccessTokenWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取isvAccessToken（三方企业应用）
-         *
-         * @param request GetSuiteAccessTokenRequest
-         * @return GetSuiteAccessTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取isvAccessToken（三方企业应用）</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetSuiteAccessTokenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSuiteAccessTokenResponse
+        /// </returns>
         public async Task<GetSuiteAccessTokenResponse> GetSuiteAccessTokenAsync(GetSuiteAccessTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -905,14 +1141,24 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return await GetSuiteAccessTokenWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取Access Token
-         *
-         * @param request GetTokenRequest
-         * @param headers map
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Access Token</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetTokenRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetTokenResponse
+        /// </returns>
         public GetTokenResponse GetTokenWithOptions(string corpId, GetTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -946,17 +1192,27 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetTokenResponse>(Execute(params_, req, runtime));
+            return TeaModel.ToObject<GetTokenResponse>(DoROARequestWithForm(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
         }
 
-        /**
-         * @summary 获取Access Token
-         *
-         * @param request GetTokenRequest
-         * @param headers map
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Access Token</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetTokenRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetTokenResponse
+        /// </returns>
         public async Task<GetTokenResponse> GetTokenWithOptionsAsync(string corpId, GetTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -990,15 +1246,21 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetTokenResponse>(await ExecuteAsync(params_, req, runtime));
+            return TeaModel.ToObject<GetTokenResponse>(await DoROARequestWithFormAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
         }
 
-        /**
-         * @summary 获取Access Token
-         *
-         * @param request GetTokenRequest
-         * @return GetTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Access Token</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetTokenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetTokenResponse
+        /// </returns>
         public GetTokenResponse GetToken(string corpId, GetTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1006,12 +1268,18 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return GetTokenWithOptions(corpId, request, headers, runtime);
         }
 
-        /**
-         * @summary 获取Access Token
-         *
-         * @param request GetTokenRequest
-         * @return GetTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Access Token</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetTokenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetTokenResponse
+        /// </returns>
         public async Task<GetTokenResponse> GetTokenAsync(string corpId, GetTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1019,14 +1287,24 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return await GetTokenWithOptionsAsync(corpId, request, headers, runtime);
         }
 
-        /**
-         * @summary 获取用户token
-         *
-         * @param request GetUserTokenRequest
-         * @param headers map
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetUserTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户token</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserTokenRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserTokenResponse
+        /// </returns>
         public GetUserTokenResponse GetUserTokenWithOptions(GetUserTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1068,17 +1346,27 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "json",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetUserTokenResponse>(Execute(params_, req, runtime));
+            return TeaModel.ToObject<GetUserTokenResponse>(DoROARequest(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
         }
 
-        /**
-         * @summary 获取用户token
-         *
-         * @param request GetUserTokenRequest
-         * @param headers map
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetUserTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户token</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserTokenRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserTokenResponse
+        /// </returns>
         public async Task<GetUserTokenResponse> GetUserTokenWithOptionsAsync(GetUserTokenRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1120,15 +1408,21 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "json",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetUserTokenResponse>(await ExecuteAsync(params_, req, runtime));
+            return TeaModel.ToObject<GetUserTokenResponse>(await DoROARequestAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
         }
 
-        /**
-         * @summary 获取用户token
-         *
-         * @param request GetUserTokenRequest
-         * @return GetUserTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户token</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserTokenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserTokenResponse
+        /// </returns>
         public GetUserTokenResponse GetUserToken(GetUserTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1136,12 +1430,18 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
             return GetUserTokenWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取用户token
-         *
-         * @param request GetUserTokenRequest
-         * @return GetUserTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户token</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetUserTokenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetUserTokenResponse
+        /// </returns>
         public async Task<GetUserTokenResponse> GetUserTokenAsync(GetUserTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

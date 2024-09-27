@@ -36,7 +36,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("cardType")]
         [Validation(Required=false)]
@@ -65,14 +65,14 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public string Description { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("icon")]
         [Validation(Required=false)]
         public string Icon { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("pcDetailUrlOpenMode")]
         [Validation(Required=false)]

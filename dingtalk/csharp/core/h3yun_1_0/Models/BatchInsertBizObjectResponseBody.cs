@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
 {
     public class BatchInsertBizObjectResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>success</para>
         /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
@@ -39,7 +42,10 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>OK</para>
         /// </summary>
         [NameInMap("message")]
         [Validation(Required=false)]

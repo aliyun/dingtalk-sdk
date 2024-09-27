@@ -18,14 +18,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0.Models
         public bool? IsNewModel { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("modelId")]
         [Validation(Required=false)]
         public string ModelId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("modelName")]
         [Validation(Required=false)]

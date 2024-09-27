@@ -10,26 +10,39 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class TwoPhaseCommitInventoryRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>B_ACCOUNT_NUMBER</para>
         /// </summary>
         [NameInMap("benefitCode")]
         [Validation(Required=false)]
         public string BenefitCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>bizId</para>
         /// </summary>
         [NameInMap("bizRequestId")]
         [Validation(Required=false)]
         public string BizRequestId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>true</para>
         /// </summary>
         [NameInMap("executeResult")]
         [Validation(Required=false)]
         public bool? ExecuteResult { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>10</para>
+        /// </summary>
         [NameInMap("quota")]
         [Validation(Required=false)]
         public long? Quota { get; set; }

@@ -14,21 +14,30 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<QueryUserProbCodeDictionaryResponseBodyContent> Content { get; set; }
         public class QueryUserProbCodeDictionaryResponseBodyContent : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1</para>
             /// </summary>
             [NameInMap("category")]
             [Validation(Required=false)]
             public string Category { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1</para>
             /// </summary>
             [NameInMap("code")]
             [Validation(Required=false)]
             public string Code { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>主任医师</para>
             /// </summary>
             [NameInMap("displayName")]
             [Validation(Required=false)]

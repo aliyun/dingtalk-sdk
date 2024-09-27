@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class CreateGroupSetRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("creatorUserId")]
         [Validation(Required=false)]
@@ -25,7 +25,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public int? MemberQuota { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
@@ -40,14 +40,14 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public int? NoticeToped { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("ownerUserId")]
         [Validation(Required=false)]
         public string OwnerUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("relationType")]
         [Validation(Required=false)]

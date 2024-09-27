@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public List<string> AbstractGenRule { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>{&quot;sid_instStart&quot;:[{&quot;fieldId&quot;:&quot;TextField-K2AD4O5B&quot;,&quot;fieldBehavior&quot;:&quot;HIDDEN&quot;,&quot;componentName&quot;:&quot;TextField&quot;,&quot;disableBehaviors&quot;:[]}],&quot;1918_5cd3&quot;:[{&quot;fieldId&quot;:&quot;TextField-K2AD4O5B&quot;,&quot;fieldBehavior&quot;:&quot;HIDDEN&quot;,&quot;componentName&quot;:&quot;TextField&quot;,&quot;disableBehaviors&quot;:[]}],&quot;d01c_a677&quot;:[{&quot;fieldId&quot;:&quot;TextField-K2AD4O5B&quot;,&quot;fieldBehavior&quot;:&quot;NORMAL&quot;,&quot;componentName&quot;:&quot;TextField&quot;,&quot;disableBehaviors&quot;:[]}]}</para>
+            /// </summary>
             [NameInMap("activityAuth")]
             [Validation(Required=false)]
             public string ActivityAuth { get; set; }
@@ -33,10 +37,18 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public bool? AutoExecuteOriginatorTasks { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>alitrip.business</para>
+            /// </summary>
             [NameInMap("bizCategoryId")]
             [Validation(Required=false)]
             public string BizCategoryId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>crm_customer</para>
+            /// </summary>
             [NameInMap("bizType")]
             [Validation(Required=false)]
             public string BizType { get; set; }
@@ -45,6 +57,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public GetProcessConfigResponseBodyResultCommentConf CommentConf { get; set; }
             public class GetProcessConfigResponseBodyResultCommentConf : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>评论描述</para>
+                /// </summary>
                 [NameInMap("commentDescription")]
                 [Validation(Required=false)]
                 public string CommentDescription { get; set; }
@@ -59,10 +75,18 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>continuousFirst</para>
+            /// </summary>
             [NameInMap("duplicateRemoval")]
             [Validation(Required=false)]
             public string DuplicateRemoval { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>{&quot;items&quot;:[]}</para>
+            /// </summary>
             [NameInMap("formSchema")]
             [Validation(Required=false)]
             public string FormSchema { get; set; }
@@ -85,6 +109,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public List<string> Managers { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>模板名称</para>
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
@@ -93,6 +121,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public bool? ProcessAppType { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>{&quot;type&quot;:&quot;&quot;,&quot;properties&quot;:{},&quot;childNode&quot;:{}}</para>
+            /// </summary>
             [NameInMap("processConfig")]
             [Validation(Required=false)]
             public string ProcessConfig { get; set; }
@@ -113,14 +145,26 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
                 [Validation(Required=false)]
                 public List<GetProcessConfigResponseBodyResultSubstituteSubmitConfSubmitterList> SubmitterList { get; set; }
                 public class GetProcessConfigResponseBodyResultSubstituteSubmitConfSubmitterList : TeaModel {
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>钉三多</para>
+                    /// </summary>
                     [NameInMap("name")]
                     [Validation(Required=false)]
                     public string Name { get; set; }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>approval</para>
+                    /// </summary>
                     [NameInMap("type")]
                     [Validation(Required=false)]
                     public string Type { get; set; }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>manager1234</para>
+                    /// </summary>
                     [NameInMap("value")]
                     [Validation(Required=false)]
                     public string Value { get; set; }
@@ -133,10 +177,18 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public GetProcessConfigResponseBodyResultTitleGenRule TitleGenRule { get; set; }
             public class GetProcessConfigResponseBodyResultTitleGenRule : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>#{originator}#{formName}#{createTime}</para>
+                /// </summary>
                 [NameInMap("express")]
                 [Validation(Required=false)]
                 public string Express { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>2</para>
+                /// </summary>
                 [NameInMap("type")]
                 [Validation(Required=false)]
                 public int? Type { get; set; }
@@ -147,10 +199,18 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             [Validation(Required=false)]
             public List<GetProcessConfigResponseBodyResultVisibility> Visibility { get; set; }
             public class GetProcessConfigResponseBodyResultVisibility : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>1</para>
+                /// </summary>
                 [NameInMap("type")]
                 [Validation(Required=false)]
                 public int? Type { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>manager345</para>
+                /// </summary>
                 [NameInMap("value")]
                 [Validation(Required=false)]
                 public string Value { get; set; }

@@ -14,28 +14,40 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public List<ListJoinOrgInfoResponseBodyOrgInfoList> OrgInfoList { get; set; }
         public class ListJoinOrgInfoResponseBodyOrgInfoList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>ding32xxxxxxxxe0105d</para>
             /// </summary>
             [NameInMap("corpId")]
             [Validation(Required=false)]
             public string CorpId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>testCode</para>
             /// </summary>
             [NameInMap("domain")]
             [Validation(Required=false)]
             public string Domain { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>钉钉(中国)信息技术有限公司</para>
             /// </summary>
             [NameInMap("orgFullName")]
             [Validation(Required=false)]
             public string OrgFullName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>钉钉</para>
             /// </summary>
             [NameInMap("orgName")]
             [Validation(Required=false)]

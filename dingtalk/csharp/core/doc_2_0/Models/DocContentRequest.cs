@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [Validation(Required=false)]
         public DocContentRequestOption Option { get; set; }
         public class DocContentRequestOption : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>markdown</para>
+            /// </summary>
             [NameInMap("targetFormat")]
             [Validation(Required=false)]
             public string TargetFormat { get; set; }
@@ -20,7 +24,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

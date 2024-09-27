@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
 {
     public class QueryFeedWhiteListRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1206186351746728</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

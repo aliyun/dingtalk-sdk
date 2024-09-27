@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
 {
     public class ListSearchTabsByOrgIdResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("searchTabResult")]
         [Validation(Required=false)]
@@ -21,14 +21,20 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
             public string DarkIcon { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>2021-09-17T19:43Z</para>
             /// </summary>
             [NameInMap("gmtCreate")]
             [Validation(Required=false)]
             public string GmtCreate { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>2021-09-17T19:43Z</para>
             /// </summary>
             [NameInMap("gmtModified")]
             [Validation(Required=false)]
@@ -39,14 +45,20 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
             public string Icon { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>专辑</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1</para>
             /// </summary>
             [NameInMap("priority")]
             [Validation(Required=false)]
@@ -57,14 +69,20 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
             public string Source { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>0</para>
             /// </summary>
             [NameInMap("status")]
             [Validation(Required=false)]
             public int? Status { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>3333</para>
             /// </summary>
             [NameInMap("tabId")]
             [Validation(Required=false)]

@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkstorage_2_0.Models
 {
     public class GetPermissionInheritanceResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>PASS_ON</para>
+        /// </summary>
         [NameInMap("inheritance")]
         [Validation(Required=false)]
         public string Inheritance { get; set; }

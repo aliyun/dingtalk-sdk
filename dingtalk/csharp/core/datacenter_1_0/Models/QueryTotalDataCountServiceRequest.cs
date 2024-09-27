@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
         [Validation(Required=false)]
         public List<string> DeptIds { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>20240611</para>
+        /// </summary>
         [NameInMap("endDate")]
         [Validation(Required=false)]
         public string EndDate { get; set; }
@@ -25,14 +29,26 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
         [Validation(Required=false)]
         public long? PageSize { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>API-xxxx</para>
+        /// </summary>
         [NameInMap("serviceId")]
         [Validation(Required=false)]
         public string ServiceId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>20240611</para>
+        /// </summary>
         [NameInMap("startDate")]
         [Validation(Required=false)]
         public string StartDate { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>222</para>
+        /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }

@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class DeleteCrmCustomObjectDataRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>PROC_xx</para>
         /// </summary>
         [NameInMap("formCode")]
         [Validation(Required=false)]

@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_1_0.Models
 {
     public class WikiWordsDetailRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("wordName")]
         [Validation(Required=false)]

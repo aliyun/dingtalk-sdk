@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 {
     public class GetMySpaceRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("isMySpace")]
         [Validation(Required=false)]
         public bool? IsMySpace { get; set; }

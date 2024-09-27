@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class GetProcessConfigRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>PROC-BEFC22B7-EA64-4336-86EB-AB773AA2EB12</para>
         /// </summary>
         [NameInMap("procCode")]
         [Validation(Required=false)]

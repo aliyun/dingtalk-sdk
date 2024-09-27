@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [Validation(Required=false)]
         public List<TeamModel> Items { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>cjk72iEakdim</para>
+        /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
         public string NextToken { get; set; }

@@ -10,25 +10,35 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 {
     public class AddPermissionRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("members")]
         [Validation(Required=false)]
         public List<AddPermissionRequestMembers> Members { get; set; }
         public class AddPermissionRequestMembers : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>corp_id</para>
+            /// </summary>
             [NameInMap("corpId")]
             [Validation(Required=false)]
             public string CorpId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>member_id</para>
             /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public string Id { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>USER</para>
             /// </summary>
             [NameInMap("type")]
             [Validation(Required=false)]
@@ -40,6 +50,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public AddPermissionRequestOption Option { get; set; }
         public class AddPermissionRequestOption : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>3600</para>
+            /// </summary>
             [NameInMap("duration")]
             [Validation(Required=false)]
             public long? Duration { get; set; }
@@ -47,14 +61,20 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>MANAGER</para>
         /// </summary>
         [NameInMap("roleId")]
         [Validation(Required=false)]
         public string RoleId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

@@ -10,25 +10,38 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class PublishFileChangeNoticeRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>xxxx</para>
         /// </summary>
         [NameInMap("fileId")]
         [Validation(Required=false)]
         public string FileId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("operateType")]
         [Validation(Required=false)]
         public string OperateType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>xxxx</para>
         /// </summary>
         [NameInMap("operatorUnionId")]
         [Validation(Required=false)]
         public string OperatorUnionId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>xxxx</para>
         /// </summary>
         [NameInMap("spaceId")]
         [Validation(Required=false)]

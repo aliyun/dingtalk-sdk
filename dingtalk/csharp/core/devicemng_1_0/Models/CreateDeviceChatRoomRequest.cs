@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
 {
     public class CreateDeviceChatRoomRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>REPAIR_GROUP</para>
+        /// </summary>
         [NameInMap("chatType")]
         [Validation(Required=false)]
         public string ChatType { get; set; }
@@ -22,18 +26,25 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
         public List<string> DeviceUuids { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>xxxxxxx</para>
         /// </summary>
         [NameInMap("ownerUserId")]
         [Validation(Required=false)]
         public string OwnerUserId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>设备维修群</para>
+        /// </summary>
         [NameInMap("title")]
         [Validation(Required=false)]
         public string Title { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userIds")]
         [Validation(Required=false)]

@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
 {
     public class UpdateConnectorRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("connectorInfo")]
         [Validation(Required=false)]
@@ -49,7 +49,7 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             public string IconMediaId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("integratorConnectorId")]
             [Validation(Required=false)]
@@ -62,7 +62,7 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("integratorFlag")]
         [Validation(Required=false)]

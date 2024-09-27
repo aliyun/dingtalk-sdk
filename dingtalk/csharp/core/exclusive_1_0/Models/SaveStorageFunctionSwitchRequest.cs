@@ -10,21 +10,27 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class SaveStorageFunctionSwitchRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>15800000000</para>
         /// </summary>
         [NameInMap("functionList")]
         [Validation(Required=false)]
         public List<SaveStorageFunctionSwitchRequestFunctionList> FunctionList { get; set; }
         public class SaveStorageFunctionSwitchRequestFunctionList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("functionKey")]
             [Validation(Required=false)]
             public string FunctionKey { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1</para>
             /// </summary>
             [NameInMap("functionValue")]
             [Validation(Required=false)]
@@ -33,7 +39,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>dingxxxxxx</para>
         /// </summary>
         [NameInMap("targetCorpId")]
         [Validation(Required=false)]

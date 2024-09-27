@@ -10,28 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class GetOssTempUrlRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("fetchMode")]
         [Validation(Required=false)]
         public string FetchMode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("fileName")]
         [Validation(Required=false)]
         public string FileName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("key")]
         [Validation(Required=false)]
         public string Key { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("openTeamId")]
         [Validation(Required=false)]

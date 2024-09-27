@@ -14,14 +14,14 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0.Models
         public List<ListMailFoldersResponseBodyFolders> Folders { get; set; }
         public class ListMailFoldersResponseBodyFolders : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("childFolderCount")]
             [Validation(Required=false)]
             public int? ChildFolderCount { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("displayName")]
             [Validation(Required=false)]
@@ -32,28 +32,28 @@ namespace AlibabaCloud.SDK.Dingtalkmail_1_0.Models
             public Dictionary<string, string> Extensions { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public string Id { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("parentFolderId")]
             [Validation(Required=false)]
             public string ParentFolderId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("totalItemCount")]
             [Validation(Required=false)]
             public int? TotalItemCount { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("unreadItemCount")]
             [Validation(Required=false)]

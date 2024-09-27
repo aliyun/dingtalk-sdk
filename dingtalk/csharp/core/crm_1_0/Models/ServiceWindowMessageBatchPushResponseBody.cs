@@ -18,7 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public ServiceWindowMessageBatchPushResponseBodyResult Result { get; set; }
         public class ServiceWindowMessageBatchPushResponseBodyResult : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("openPushId")]
             [Validation(Required=false)]

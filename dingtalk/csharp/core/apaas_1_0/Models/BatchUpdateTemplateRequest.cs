@@ -10,28 +10,34 @@ namespace AlibabaCloud.SDK.Dingtalkapaas_1_0.Models
 {
     public class BatchUpdateTemplateRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("templateList")]
         [Validation(Required=false)]
         public List<BatchUpdateTemplateRequestTemplateList> TemplateList { get; set; }
         public class BatchUpdateTemplateRequestTemplateList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("adaptEnv")]
             [Validation(Required=false)]
             public List<string> AdaptEnv { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>这是测试</para>
             /// </summary>
             [NameInMap("appDesc")]
             [Validation(Required=false)]
             public string AppDesc { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>@lALPDe7s2JOuoyjNBaDNCgA</para>
             /// </summary>
             [NameInMap("appIcon")]
             [Validation(Required=false)]
@@ -42,7 +48,10 @@ namespace AlibabaCloud.SDK.Dingtalkapaas_1_0.Models
             public List<string> CaseVideoList { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>template_category</para>
             /// </summary>
             [NameInMap("categoryCode")]
             [Validation(Required=false)]
@@ -52,12 +61,16 @@ namespace AlibabaCloud.SDK.Dingtalkapaas_1_0.Models
             [Validation(Required=false)]
             public List<string> CoverImgList { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para><a href="https://www.baidu.com/">https://www.baidu.com/</a></para>
+            /// </summary>
             [NameInMap("expUrl")]
             [Validation(Required=false)]
             public string ExpUrl { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("industryLabelList")]
             [Validation(Required=false)]
@@ -68,39 +81,52 @@ namespace AlibabaCloud.SDK.Dingtalkapaas_1_0.Models
             public List<string> MobilePreviewMediaList { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>这是测试</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("previewMediaList")]
             [Validation(Required=false)]
             public List<string> PreviewMediaList { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>小红</para>
+            /// </summary>
             [NameInMap("providerName")]
             [Validation(Required=false)]
             public string ProviderName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("roleLabelList")]
             [Validation(Required=false)]
             public List<string> RoleLabelList { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>这是一个描述</para>
             /// </summary>
             [NameInMap("simpleDesc")]
             [Validation(Required=false)]
             public string SimpleDesc { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>template_key_1</para>
             /// </summary>
             [NameInMap("templateKey")]
             [Validation(Required=false)]

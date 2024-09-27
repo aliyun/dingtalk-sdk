@@ -13,30 +13,38 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
         [Validation(Required=false)]
         public GetJobPostResponseBodyContent Content { get; set; }
         public class GetJobPostResponseBodyContent : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>123</para>
+            /// </summary>
             [NameInMap("code")]
             [Validation(Required=false)]
             public string Code { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("establishDate")]
             [Validation(Required=false)]
             public string EstablishDate { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>测试</para>
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("startDate")]
             [Validation(Required=false)]
             public string StartDate { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("stopDate")]
             [Validation(Required=false)]

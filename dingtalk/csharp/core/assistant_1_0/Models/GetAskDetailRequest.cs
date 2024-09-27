@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0.Models
 {
     public class GetAskDetailRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("assistantId")]
         [Validation(Required=false)]
@@ -21,14 +21,14 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0.Models
         public long? EndTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("offset")]
         [Validation(Required=false)]
         public long? Offset { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("pageSize")]
         [Validation(Required=false)]

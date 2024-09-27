@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
     public class MuteAllRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>mute</para>
         /// </summary>
         [NameInMap("action")]
         [Validation(Required=false)]

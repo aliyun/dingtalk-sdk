@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontract_1_0.Models
 {
     public class QueryAdvancedContractVersionRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>dingff048f704a8b6d8e4ac5d6980864d335</para>
+        /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]
         public string CorpId { get; set; }

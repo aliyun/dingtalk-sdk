@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class AddHrmLegalEntityRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]
@@ -40,42 +40,82 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             [Validation(Required=false)]
             public AddHrmLegalEntityRequestExtManageAddress ManageAddress { get; set; }
             public class AddHrmLegalEntityRequestExtManageAddress : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>110101</para>
+                /// </summary>
                 [NameInMap("areaCode")]
                 [Validation(Required=false)]
                 public string AreaCode { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>东城区</para>
+                /// </summary>
                 [NameInMap("areaName")]
                 [Validation(Required=false)]
                 public string AreaName { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>123</para>
+                /// </summary>
                 [NameInMap("cityCode")]
                 [Validation(Required=false)]
                 public string CityCode { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>广州市</para>
+                /// </summary>
                 [NameInMap("cityName")]
                 [Validation(Required=false)]
                 public string CityName { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>123</para>
+                /// </summary>
                 [NameInMap("countryCode")]
                 [Validation(Required=false)]
                 public string CountryCode { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>China</para>
+                /// </summary>
                 [NameInMap("countryName")]
                 [Validation(Required=false)]
                 public string CountryName { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>北京市东城区xx街道xx小区xx楼</para>
+                /// </summary>
                 [NameInMap("detailAddress")]
                 [Validation(Required=false)]
                 public string DetailAddress { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>1</para>
+                /// </summary>
                 [NameInMap("globalAreaType")]
                 [Validation(Required=false)]
                 public string GlobalAreaType { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>123</para>
+                /// </summary>
                 [NameInMap("provinceCode")]
                 [Validation(Required=false)]
                 public string ProvinceCode { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>广东省</para>
+                /// </summary>
                 [NameInMap("provinceName")]
                 [Validation(Required=false)]
                 public string ProvinceName { get; set; }
@@ -86,42 +126,82 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             [Validation(Required=false)]
             public AddHrmLegalEntityRequestExtRegistrationAddress RegistrationAddress { get; set; }
             public class AddHrmLegalEntityRequestExtRegistrationAddress : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>110101</para>
+                /// </summary>
                 [NameInMap("areaCode")]
                 [Validation(Required=false)]
                 public string AreaCode { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>东城区</para>
+                /// </summary>
                 [NameInMap("areaName")]
                 [Validation(Required=false)]
                 public string AreaName { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>123</para>
+                /// </summary>
                 [NameInMap("cityCode")]
                 [Validation(Required=false)]
                 public string CityCode { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>广州市</para>
+                /// </summary>
                 [NameInMap("cityName")]
                 [Validation(Required=false)]
                 public string CityName { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>123</para>
+                /// </summary>
                 [NameInMap("countryCode")]
                 [Validation(Required=false)]
                 public string CountryCode { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>China</para>
+                /// </summary>
                 [NameInMap("countryName")]
                 [Validation(Required=false)]
                 public string CountryName { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>北京市东城区xx街道xx小区xx楼</para>
+                /// </summary>
                 [NameInMap("detailAddress")]
                 [Validation(Required=false)]
                 public string DetailAddress { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>1</para>
+                /// </summary>
                 [NameInMap("globalAreaType")]
                 [Validation(Required=false)]
                 public string GlobalAreaType { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>123</para>
+                /// </summary>
                 [NameInMap("provinceCode")]
                 [Validation(Required=false)]
                 public string ProvinceCode { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>广东省</para>
+                /// </summary>
                 [NameInMap("provinceName")]
                 [Validation(Required=false)]
                 public string ProvinceName { get; set; }
@@ -136,6 +216,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             [Validation(Required=false)]
             public string UnifiedSocialCreditCode { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>515200</para>
+            /// </summary>
             [NameInMap("zipCode")]
             [Validation(Required=false)]
             public string ZipCode { get; set; }
@@ -143,7 +227,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("legalEntityName")]
         [Validation(Required=false)]
@@ -154,7 +238,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         public string LegalEntityShortName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("legalEntityStatus")]
         [Validation(Required=false)]

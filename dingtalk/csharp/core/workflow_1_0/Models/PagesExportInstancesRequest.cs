@@ -14,14 +14,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         public long? EndTimeInMills { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("maxResults")]
         [Validation(Required=false)]
         public int? MaxResults { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
@@ -32,14 +32,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         public string OrderBy { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("processCode")]
         [Validation(Required=false)]
         public string ProcessCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("startTimeInMills")]
         [Validation(Required=false)]

@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
 {
     public class ClearRobotPluginRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>dingkxnemxbqkifzl</para>
         /// </summary>
         [NameInMap("robotCode")]
         [Validation(Required=false)]

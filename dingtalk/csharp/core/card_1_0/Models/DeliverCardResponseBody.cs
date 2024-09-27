@@ -13,18 +13,34 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public List<DeliverCardResponseBodyResult> Result { get; set; }
         public class DeliverCardResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>4v+AzUEDuC0dKuO*********J0w8=</para>
+            /// </summary>
             [NameInMap("carrierId")]
             [Validation(Required=false)]
             public string CarrierId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>system error</para>
+            /// </summary>
             [NameInMap("errorMsg")]
             [Validation(Required=false)]
             public string ErrorMsg { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>cid1234abcd</para>
+            /// </summary>
             [NameInMap("spaceId")]
             [Validation(Required=false)]
             public string SpaceId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>IM_GROUP</para>
+            /// </summary>
             [NameInMap("spaceType")]
             [Validation(Required=false)]
             public string SpaceType { get; set; }

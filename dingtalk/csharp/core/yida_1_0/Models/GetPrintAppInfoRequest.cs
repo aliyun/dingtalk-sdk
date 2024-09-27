@@ -9,12 +9,19 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class GetPrintAppInfoRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>abc</para>
+        /// </summary>
         [NameInMap("nameLike")]
         [Validation(Required=false)]
         public string NameLike { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123456</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

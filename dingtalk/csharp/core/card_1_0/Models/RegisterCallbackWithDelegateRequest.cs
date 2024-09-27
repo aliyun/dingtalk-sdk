@@ -9,19 +9,29 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
 {
     public class RegisterCallbackWithDelegateRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>mySecret</para>
+        /// </summary>
         [NameInMap("apiSecret")]
         [Validation(Required=false)]
         public string ApiSecret { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>routeKey-12</para>
         /// </summary>
         [NameInMap("callbackRouteKey")]
         [Validation(Required=false)]
         public string CallbackRouteKey { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para><a href="https://www.myurl/callback">https://www.myurl/callback</a></para>
         /// </summary>
         [NameInMap("callbackUrl")]
         [Validation(Required=false)]

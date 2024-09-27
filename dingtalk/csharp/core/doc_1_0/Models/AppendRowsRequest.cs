@@ -10,14 +10,17 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class AppendRowsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("values")]
         [Validation(Required=false)]
         public List<List<string>> Values { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

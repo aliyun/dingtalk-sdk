@@ -14,42 +14,57 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         public UploadInvoiceByAuthResponseBodyResult Result { get; set; }
         public class UploadInvoiceByAuthResponseBodyResult : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("results")]
             [Validation(Required=false)]
             public List<UploadInvoiceByAuthResponseBodyResultResults> Results { get; set; }
             public class UploadInvoiceByAuthResponseBodyResultResults : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>20006</para>
                 /// </summary>
                 [NameInMap("errCode")]
                 [Validation(Required=false)]
                 public string ErrCode { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>033002000712</para>
                 /// </summary>
                 [NameInMap("invoiceCode")]
                 [Validation(Required=false)]
                 public string InvoiceCode { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>20532643</para>
                 /// </summary>
                 [NameInMap("invoiceNo")]
                 [Validation(Required=false)]
                 public string InvoiceNo { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>duplicateInvoice</para>
                 /// </summary>
                 [NameInMap("reason")]
                 [Validation(Required=false)]
                 public string Reason { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>true</para>
                 /// </summary>
                 [NameInMap("success")]
                 [Validation(Required=false)]

@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0.Models
 {
     public class GetSuiteAccessTokenRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("suiteKey")]
         [Validation(Required=false)]
         public string SuiteKey { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("suiteSecret")]
         [Validation(Required=false)]
         public string SuiteSecret { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("suiteTicket")]
         [Validation(Required=false)]

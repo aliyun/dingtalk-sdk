@@ -9,10 +9,18 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class RollbackMiniAppVersionResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>成功</para>
+        /// </summary>
         [NameInMap("cause")]
         [Validation(Required=false)]
         public string Cause { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>200</para>
+        /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
         public long? Code { get; set; }

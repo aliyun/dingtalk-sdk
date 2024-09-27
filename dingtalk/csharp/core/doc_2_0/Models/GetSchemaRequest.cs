@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 {
     public class GetSchemaRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>abcd</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

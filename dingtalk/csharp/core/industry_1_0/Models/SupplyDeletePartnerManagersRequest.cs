@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class SupplyDeletePartnerManagersRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1231</para>
         /// </summary>
         [NameInMap("deptId")]
         [Validation(Required=false)]
         public long? DeptId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>12131</para>
         /// </summary>
         [NameInMap("interfaceId")]
         [Validation(Required=false)]
         public string InterfaceId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>user</para>
         /// </summary>
         [NameInMap("interfaceType")]
         [Validation(Required=false)]

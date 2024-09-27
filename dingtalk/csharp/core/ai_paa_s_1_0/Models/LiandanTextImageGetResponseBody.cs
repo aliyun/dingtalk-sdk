@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0.Models
         [Validation(Required=false)]
         public List<Dictionary<string, object>> Result { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

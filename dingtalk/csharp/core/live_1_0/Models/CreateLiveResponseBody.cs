@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
         [Validation(Required=false)]
         public CreateLiveResponseBodyResult Result { get; set; }
         public class CreateLiveResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1a353547-040d-4095-bb93-404bc5d47920</para>
+            /// </summary>
             [NameInMap("liveId")]
             [Validation(Required=false)]
             public string LiveId { get; set; }

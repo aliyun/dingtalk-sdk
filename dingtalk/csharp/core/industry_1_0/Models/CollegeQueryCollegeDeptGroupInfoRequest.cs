@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class CollegeQueryCollegeDeptGroupInfoRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>111111</para>
         /// </summary>
         [NameInMap("deptId")]
         [Validation(Required=false)]

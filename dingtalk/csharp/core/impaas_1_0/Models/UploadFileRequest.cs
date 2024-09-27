@@ -10,28 +10,37 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class UploadFileRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>111.png</para>
         /// </summary>
         [NameInMap("fileName")]
         [Validation(Required=false)]
         public string FileName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>image</para>
         /// </summary>
         [NameInMap("fileType")]
         [Validation(Required=false)]
         public string FileType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("fileUrl")]
         [Validation(Required=false)]
         public string FileUrl { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>111@dingdingkelian</para>
         /// </summary>
         [NameInMap("senderUid")]
         [Validation(Required=false)]

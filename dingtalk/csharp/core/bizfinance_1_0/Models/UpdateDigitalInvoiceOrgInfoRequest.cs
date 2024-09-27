@@ -17,10 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public bool? IsDigitalOrg { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>zhejiang</para>
+        /// </summary>
         [NameInMap("location")]
         [Validation(Required=false)]
         public string Location { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1234567</para>
+        /// </summary>
         [NameInMap("operator")]
         [Validation(Required=false)]
         public string Operator { get; set; }

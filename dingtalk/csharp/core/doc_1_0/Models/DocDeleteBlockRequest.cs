@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class DocDeleteBlockRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

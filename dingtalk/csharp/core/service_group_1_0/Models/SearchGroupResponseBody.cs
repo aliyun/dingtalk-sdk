@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public int? MaxResults { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]
@@ -25,35 +25,50 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         public List<SearchGroupResponseBodyRecords> Records { get; set; }
         public class SearchGroupResponseBodyRecords : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>钉钉专属服务群</para>
             /// </summary>
             [NameInMap("groupName")]
             [Validation(Required=false)]
             public string GroupName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>dingtalk:xxx</para>
             /// </summary>
             [NameInMap("groupUrl")]
             [Validation(Required=false)]
             public string GroupUrl { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>cidxxxxx==</para>
             /// </summary>
             [NameInMap("openConversationId")]
             [Validation(Required=false)]
             public string OpenConversationId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>xjfjdsiw</para>
             /// </summary>
             [NameInMap("openGroupSetId")]
             [Validation(Required=false)]
             public string OpenGroupSetId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>xkjhfker</para>
             /// </summary>
             [NameInMap("openTeamId")]
             [Validation(Required=false)]

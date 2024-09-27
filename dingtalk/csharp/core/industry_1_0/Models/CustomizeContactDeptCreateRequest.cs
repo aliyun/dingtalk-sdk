@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class CustomizeContactDeptCreateRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
@@ -21,7 +21,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<string> ManagerIdList { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
@@ -32,7 +32,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public long? Order { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("parentDeptId")]
         [Validation(Required=false)]
@@ -43,7 +43,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public long? RefId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("type")]
         [Validation(Required=false)]

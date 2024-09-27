@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class GetResidentUserInfoRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("subCorpId")]
         [Validation(Required=false)]

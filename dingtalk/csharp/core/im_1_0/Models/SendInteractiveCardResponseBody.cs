@@ -14,7 +14,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public SendInteractiveCardResponseBodyResult Result { get; set; }
         public class SendInteractiveCardResponseBodyResult : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>xxxxxx</para>
             /// </summary>
             [NameInMap("processQueryKey")]
             [Validation(Required=false)]

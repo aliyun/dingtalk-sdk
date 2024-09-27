@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0.Models
 {
     public class NlpWordDistinguishResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("requestId")]
         [Validation(Required=false)]

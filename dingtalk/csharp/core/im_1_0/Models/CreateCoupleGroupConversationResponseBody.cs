@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class CreateCoupleGroupConversationResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>cid****8Q==</para>
         /// </summary>
         [NameInMap("conversationId")]
         [Validation(Required=false)]
         public string ConversationId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>14da****2760</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]

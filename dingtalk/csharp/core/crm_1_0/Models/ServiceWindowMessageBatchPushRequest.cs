@@ -9,23 +9,31 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class ServiceWindowMessageBatchPushRequest : TeaModel {
+        /// <summary>
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
         [NameInMap("bizId")]
         [Validation(Required=false)]
         public string BizId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("detail")]
         [Validation(Required=false)]
         public ServiceWindowMessageBatchPushRequestDetail Detail { get; set; }
         public class ServiceWindowMessageBatchPushRequestDetail : TeaModel {
+            /// <summary>
+            /// <b>if can be null:</b>
+            /// <c>false</c>
+            /// </summary>
             [NameInMap("bizRequestId")]
             [Validation(Required=false)]
             public string BizRequestId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("messageBody")]
             [Validation(Required=false)]
@@ -40,14 +48,14 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                     public List<ServiceWindowMessageBatchPushRequestDetailMessageBodyActionCardButtonList> ButtonList { get; set; }
                     public class ServiceWindowMessageBatchPushRequestDetailMessageBodyActionCardButtonList : TeaModel {
                         /// <summary>
-                        /// This parameter is required.
+                        /// <para>This parameter is required.</para>
                         /// </summary>
                         [NameInMap("actionUrl")]
                         [Validation(Required=false)]
                         public string ActionUrl { get; set; }
 
                         /// <summary>
-                        /// This parameter is required.
+                        /// <para>This parameter is required.</para>
                         /// </summary>
                         [NameInMap("title")]
                         [Validation(Required=false)]
@@ -104,14 +112,14 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 public ServiceWindowMessageBatchPushRequestDetailMessageBodyMarkdown Markdown { get; set; }
                 public class ServiceWindowMessageBatchPushRequestDetailMessageBodyMarkdown : TeaModel {
                     /// <summary>
-                    /// This parameter is required.
+                    /// <para>This parameter is required.</para>
                     /// </summary>
                     [NameInMap("text")]
                     [Validation(Required=false)]
                     public string Text { get; set; }
 
                     /// <summary>
-                    /// This parameter is required.
+                    /// <para>This parameter is required.</para>
                     /// </summary>
                     [NameInMap("title")]
                     [Validation(Required=false)]
@@ -124,7 +132,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
                 public ServiceWindowMessageBatchPushRequestDetailMessageBodyText Text { get; set; }
                 public class ServiceWindowMessageBatchPushRequestDetailMessageBodyText : TeaModel {
                     /// <summary>
-                    /// This parameter is required.
+                    /// <para>This parameter is required.</para>
                     /// </summary>
                     [NameInMap("content")]
                     [Validation(Required=false)]
@@ -135,7 +143,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>if can be null:</b>
+            /// <c>true</c>
             /// </summary>
             [NameInMap("msgType")]
             [Validation(Required=false)]
@@ -146,14 +157,17 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             public bool? SendToAll { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("userIdList")]
             [Validation(Required=false)]
             public List<string> UserIdList { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>if can be null:</b>
+            /// <c>true</c>
             /// </summary>
             [NameInMap("uuid")]
             [Validation(Required=false)]

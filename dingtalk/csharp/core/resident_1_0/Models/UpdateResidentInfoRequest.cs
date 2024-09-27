@@ -34,7 +34,10 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         public string Location { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>测试小区1</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
@@ -45,7 +48,10 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         public string ProvName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>0</para>
         /// </summary>
         [NameInMap("state")]
         [Validation(Required=false)]

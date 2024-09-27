@@ -9,54 +9,106 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 {
     public class GroupUpdateRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123L</para>
+        /// </summary>
         [NameInMap("adjustmentSettingId")]
         [Validation(Required=false)]
         public long? AdjustmentSettingId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("disableCheckWhenRest")]
         [Validation(Required=false)]
         public bool? DisableCheckWhenRest { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("disableCheckWithoutSchedule")]
         [Validation(Required=false)]
         public bool? DisableCheckWithoutSchedule { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("enableCameraCheck")]
         [Validation(Required=false)]
         public bool? EnableCameraCheck { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("enableEmpSelectClass")]
         [Validation(Required=false)]
         public bool? EnableEmpSelectClass { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("enableFaceCheck")]
         [Validation(Required=false)]
         public bool? EnableFaceCheck { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("enableFaceStrictMode")]
         [Validation(Required=false)]
         public bool? EnableFaceStrictMode { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("enableOutSideUpdateNormalCheck")]
         [Validation(Required=false)]
         public bool? EnableOutSideUpdateNormalCheck { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("enableOutsideApply")]
         [Validation(Required=false)]
         public bool? EnableOutsideApply { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("enableOutsideCheck")]
         [Validation(Required=false)]
         public bool? EnableOutsideCheck { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("enableOutsideRemark")]
         [Validation(Required=false)]
         public bool? EnableOutsideRemark { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("enableTrimDistance")]
         [Validation(Required=false)]
         public bool? EnableTrimDistance { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("forbidHideOutSideAddress")]
         [Validation(Required=false)]
         public bool? ForbidHideOutSideAddress { get; set; }
@@ -73,10 +125,18 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
             [Validation(Required=false)]
             public GroupUpdateRequestFreeCheckSettingFreeCheckGap FreeCheckGap { get; set; }
             public class GroupUpdateRequestFreeCheckSettingFreeCheckGap : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>0</para>
+                /// </summary>
                 [NameInMap("offOnCheckGapMinutes")]
                 [Validation(Required=false)]
                 public int? OffOnCheckGapMinutes { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>0</para>
+                /// </summary>
                 [NameInMap("onOffCheckGapMinutes")]
                 [Validation(Required=false)]
                 public int? OnOffCheckGapMinutes { get; set; }
@@ -85,6 +145,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>0</para>
+        /// </summary>
         [NameInMap("freeCheckTypeId")]
         [Validation(Required=false)]
         public int? FreeCheckTypeId { get; set; }
@@ -93,10 +157,18 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public int? FreecheckDayStartMinOffset { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123</para>
+        /// </summary>
         [NameInMap("groupId")]
         [Validation(Required=false)]
         public long? GroupId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>白班考勤</para>
+        /// </summary>
         [NameInMap("groupName")]
         [Validation(Required=false)]
         public string GroupName { get; set; }
@@ -105,6 +177,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public List<string> ManagerList { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>500</para>
+        /// </summary>
         [NameInMap("offset")]
         [Validation(Required=false)]
         public int? Offset { get; set; }
@@ -117,18 +193,34 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public bool? OpenCameraCheck { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("openFaceCheck")]
         [Validation(Required=false)]
         public bool? OpenFaceCheck { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>-1</para>
+        /// </summary>
         [NameInMap("outsideCheckApproveModeId")]
         [Validation(Required=false)]
         public int? OutsideCheckApproveModeId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123L</para>
+        /// </summary>
         [NameInMap("overtimeSettingId")]
         [Validation(Required=false)]
         public long? OvertimeSettingId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123dfdf</para>
+        /// </summary>
         [NameInMap("owner")]
         [Validation(Required=false)]
         public string Owner { get; set; }
@@ -137,22 +229,42 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public List<GroupUpdateRequestPositions> Positions { get; set; }
         public class GroupUpdateRequestPositions : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>生物科技产业园区经二路21号</para>
+            /// </summary>
             [NameInMap("address")]
             [Validation(Required=false)]
             public string Address { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>36.687495</para>
+            /// </summary>
             [NameInMap("latitude")]
             [Validation(Required=false)]
             public string Latitude { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>101.750329</para>
+            /// </summary>
             [NameInMap("longitude")]
             [Validation(Required=false)]
             public string Longitude { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>500</para>
+            /// </summary>
             [NameInMap("offset")]
             [Validation(Required=false)]
             public int? Offset { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>青藏高原自然博物馆</para>
+            /// </summary>
             [NameInMap("title")]
             [Validation(Required=false)]
             public string Title { get; set; }
@@ -167,16 +279,28 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public List<GroupUpdateRequestShiftVOList> ShiftVOList { get; set; }
         public class GroupUpdateRequestShiftVOList : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>123</para>
+            /// </summary>
             [NameInMap("shiftId")]
             [Validation(Required=false)]
             public long? ShiftId { get; set; }
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("skipHolidays")]
         [Validation(Required=false)]
         public bool? SkipHolidays { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>100</para>
+        /// </summary>
         [NameInMap("trimDistance")]
         [Validation(Required=false)]
         public int? TrimDistance { get; set; }
@@ -186,7 +310,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         public List<long?> WorkdayClassList { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123dfd</para>
         /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]

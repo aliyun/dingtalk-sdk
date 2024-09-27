@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class RemoveTenantResourceRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>accessKey</para>
+        /// </summary>
         [NameInMap("accessKey")]
         [Validation(Required=false)]
         public string AccessKey { get; set; }

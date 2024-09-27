@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
     public class DeleteInnerAppRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>xxxx</para>
         /// </summary>
         [NameInMap("opUnionId")]
         [Validation(Required=false)]

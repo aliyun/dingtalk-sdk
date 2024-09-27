@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
     public class SavePrintTplDetailInfoRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123456</para>
         /// </summary>
         [NameInMap("appType")]
         [Validation(Required=false)]
@@ -25,20 +28,35 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string FileNameConfig { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>abc</para>
         /// </summary>
         [NameInMap("formUuid")]
         [Validation(Required=false)]
         public string FormUuid { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123456</para>
+        /// </summary>
         [NameInMap("formVersion")]
         [Validation(Required=false)]
         public int? FormVersion { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123456</para>
+        /// </summary>
         [NameInMap("setting")]
         [Validation(Required=false)]
         public string Setting { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123456</para>
+        /// </summary>
         [NameInMap("templateId")]
         [Validation(Required=false)]
         public long? TemplateId { get; set; }
@@ -48,12 +66,19 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
         public string Title { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123456</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123456</para>
+        /// </summary>
         [NameInMap("vm")]
         [Validation(Required=false)]
         public string Vm { get; set; }

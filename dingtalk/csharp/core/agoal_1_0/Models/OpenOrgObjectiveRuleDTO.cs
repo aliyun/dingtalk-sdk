@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
 {
     public class OpenOrgObjectiveRuleDTO : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>6444f5e9a4261c6e699dxxxx</para>
         /// </summary>
         [NameInMap("objectiveRuleId")]
         [Validation(Required=false)]
         public string ObjectiveRuleId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>测试规则</para>
         /// </summary>
         [NameInMap("objectiveRuleName")]
         [Validation(Required=false)]

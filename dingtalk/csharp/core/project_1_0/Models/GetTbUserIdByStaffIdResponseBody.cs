@@ -10,14 +10,17 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class GetTbUserIdByStaffIdResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public GetTbUserIdByStaffIdResponseBodyResult Result { get; set; }
         public class GetTbUserIdByStaffIdResponseBodyResult : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>601fdeb17f8681c9xxxx</para>
             /// </summary>
             [NameInMap("tbUserId")]
             [Validation(Required=false)]

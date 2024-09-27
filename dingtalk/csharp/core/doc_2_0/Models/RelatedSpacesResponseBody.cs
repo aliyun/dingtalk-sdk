@@ -17,10 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         [Validation(Required=false)]
         public List<RelatedSpacesResponseBodyItems> Items { get; set; }
         public class RelatedSpacesResponseBodyItems : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para><a href="https://img.abc.yyy">https://img.abc.yyy</a></para>
+            /// </summary>
             [NameInMap("cover")]
             [Validation(Required=false)]
             public string Cover { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>This is some description.</para>
+            /// </summary>
             [NameInMap("description")]
             [Validation(Required=false)]
             public string Description { get; set; }
@@ -30,14 +38,20 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
             public RelatedSpacesResponseBodyItemsHdIconVO HdIconVO { get; set; }
             public class RelatedSpacesResponseBodyItemsHdIconVO : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para><a href="https://img.xxx.yyy">https://img.xxx.yyy</a></para>
                 /// </summary>
                 [NameInMap("icon")]
                 [Validation(Required=false)]
                 public string Icon { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>url</para>
                 /// </summary>
                 [NameInMap("type")]
                 [Validation(Required=false)]
@@ -50,14 +64,20 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
             public RelatedSpacesResponseBodyItemsIconVO IconVO { get; set; }
             public class RelatedSpacesResponseBodyItemsIconVO : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para><a href="https://img.xxx.yyy">https://img.xxx.yyy</a></para>
                 /// </summary>
                 [NameInMap("icon")]
                 [Validation(Required=false)]
                 public string Icon { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>url</para>
                 /// </summary>
                 [NameInMap("type")]
                 [Validation(Required=false)]
@@ -66,14 +86,20 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
             }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>abc</para>
             /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public string Id { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>hello</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
@@ -84,14 +110,20 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
             public RelatedSpacesResponseBodyItemsOwner Owner { get; set; }
             public class RelatedSpacesResponseBodyItemsOwner : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>dingtalk</para>
                 /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>abcd</para>
                 /// </summary>
                 [NameInMap("unionId")]
                 [Validation(Required=false)]
@@ -103,10 +135,18 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
             [Validation(Required=false)]
             public List<DentryModel> RecentList { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1</para>
+            /// </summary>
             [NameInMap("type")]
             [Validation(Required=false)]
             public int? Type { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para><a href="https://xx.yy">https://xx.yy</a></para>
+            /// </summary>
             [NameInMap("url")]
             [Validation(Required=false)]
             public string Url { get; set; }
@@ -123,6 +163,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
                 [Validation(Required=false)]
                 public bool? Pinned { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>3</para>
+                /// </summary>
                 [NameInMap("roleCode")]
                 [Validation(Required=false)]
                 public string RoleCode { get; set; }

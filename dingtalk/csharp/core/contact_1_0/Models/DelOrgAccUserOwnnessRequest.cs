@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class DelOrgAccUserOwnnessRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>2</para>
         /// </summary>
         [NameInMap("ownenssType")]
         [Validation(Required=false)]
         public long? OwnenssType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123456</para>
         /// </summary>
         [NameInMap("ownnessId")]
         [Validation(Required=false)]
         public long? OwnnessId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

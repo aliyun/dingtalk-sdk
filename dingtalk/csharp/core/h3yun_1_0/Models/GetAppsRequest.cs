@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
 {
     public class GetAppsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>All</para>
         /// </summary>
         [NameInMap("queryType")]
         [Validation(Required=false)]

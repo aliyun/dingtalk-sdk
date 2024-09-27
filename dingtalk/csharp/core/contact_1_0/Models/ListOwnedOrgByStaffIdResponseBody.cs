@@ -14,14 +14,20 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public List<ListOwnedOrgByStaffIdResponseBodyOrgList> OrgList { get; set; }
         public class ListOwnedOrgByStaffIdResponseBodyOrgList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>corpIdxxx</para>
             /// </summary>
             [NameInMap("corpId")]
             [Validation(Required=false)]
             public string CorpId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>corpNamexxx</para>
             /// </summary>
             [NameInMap("corpName")]
             [Validation(Required=false)]

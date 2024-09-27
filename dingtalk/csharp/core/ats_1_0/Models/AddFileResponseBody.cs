@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
 {
     public class AddFileResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>111111</para>
         /// </summary>
         [NameInMap("fileId")]
         [Validation(Required=false)]
         public string FileId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>张三的简历</para>
         /// </summary>
         [NameInMap("fileName")]
         [Validation(Required=false)]
         public string FileName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123456</para>
         /// </summary>
         [NameInMap("spaceId")]
         [Validation(Required=false)]

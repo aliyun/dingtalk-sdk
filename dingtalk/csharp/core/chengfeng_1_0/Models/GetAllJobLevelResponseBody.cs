@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
         [Validation(Required=false)]
         public List<CfJobLevelResp> Content { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>请求ID</para>
+        /// </summary>
         [NameInMap("requestId")]
         [Validation(Required=false)]
         public string RequestId { get; set; }

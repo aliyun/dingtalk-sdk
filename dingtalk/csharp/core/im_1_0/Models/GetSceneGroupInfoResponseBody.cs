@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         [Validation(Required=false)]
         public string Icon { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>cidXXXXXXXXX==</para>
+        /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }

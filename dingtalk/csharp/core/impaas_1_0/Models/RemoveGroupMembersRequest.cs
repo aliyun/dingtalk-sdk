@@ -10,14 +10,17 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class RemoveGroupMembersRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("conversationId")]
         [Validation(Required=false)]
         public string ConversationId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>if can be null:</b>
+        /// <c>true</c>
         /// </summary>
         [NameInMap("memberUids")]
         [Validation(Required=false)]

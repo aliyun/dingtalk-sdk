@@ -14,21 +14,21 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
         public string NextToken { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("spaces")]
         [Validation(Required=false)]
         public List<ListSpacesResponseBodySpaces> Spaces { get; set; }
         public class ListSpacesResponseBodySpaces : TeaModel {
             /// <summary>
-            /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+            /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
             /// </summary>
             [NameInMap("createTime")]
             [Validation(Required=false)]
             public string CreateTime { get; set; }
 
             /// <summary>
-            /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+            /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
             /// </summary>
             [NameInMap("modifyTime")]
             [Validation(Required=false)]
@@ -43,7 +43,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public long? Quota { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("spaceId")]
             [Validation(Required=false)]
@@ -54,14 +54,14 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public string SpaceName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("spaceType")]
             [Validation(Required=false)]
             public string SpaceType { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("usedQuota")]
             [Validation(Required=false)]

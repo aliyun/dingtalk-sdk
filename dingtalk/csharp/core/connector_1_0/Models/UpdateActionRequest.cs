@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
 {
     public class UpdateActionRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("actionInfo")]
         [Validation(Required=false)]
@@ -51,14 +51,14 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             public string InputSchema { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("integratorActionId")]
             [Validation(Required=false)]
             public string IntegratorActionId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("integratorConnectorId")]
             [Validation(Required=false)]
@@ -72,14 +72,26 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             [Validation(Required=false)]
             public List<UpdateActionRequestActionInfoOutputDataRules> OutputDataRules { get; set; }
             public class UpdateActionRequestActionInfoOutputDataRules : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>1</para>
+                /// </summary>
                 [NameInMap("expectValue")]
                 [Validation(Required=false)]
                 public string ExpectValue { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>EQ</para>
+                /// </summary>
                 [NameInMap("operate")]
                 [Validation(Required=false)]
                 public string Operate { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>a/b/c</para>
+                /// </summary>
                 [NameInMap("propertyPath")]
                 [Validation(Required=false)]
                 public string PropertyPath { get; set; }
@@ -107,7 +119,7 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("integratorFlag")]
         [Validation(Required=false)]

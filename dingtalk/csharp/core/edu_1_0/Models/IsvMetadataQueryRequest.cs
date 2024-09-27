@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class IsvMetadataQueryRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>abc</para>
+        /// </summary>
         [NameInMap("objectCode")]
         [Validation(Required=false)]
         public string ObjectCode { get; set; }

@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
 {
     public class CreateActionRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("actionInfo")]
         [Validation(Required=false)]
@@ -21,7 +21,7 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             public string ApiPath { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("description")]
             [Validation(Required=false)]
@@ -50,7 +50,7 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             public string InputSchema { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("integratorActionId")]
             [Validation(Required=false)]
@@ -61,7 +61,7 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             public string IntegratorConnectorId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
@@ -71,14 +71,26 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             [Validation(Required=false)]
             public List<CreateActionRequestActionInfoOutputDataRules> OutputDataRules { get; set; }
             public class CreateActionRequestActionInfoOutputDataRules : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>1</para>
+                /// </summary>
                 [NameInMap("expectValue")]
                 [Validation(Required=false)]
                 public string ExpectValue { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>EQ</para>
+                /// </summary>
                 [NameInMap("operate")]
                 [Validation(Required=false)]
                 public string Operate { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>a/b/c</para>
+                /// </summary>
                 [NameInMap("propertyPath")]
                 [Validation(Required=false)]
                 public string PropertyPath { get; set; }

@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkworkrecord_1_0.Models
 {
     public class CountWorkRecordRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

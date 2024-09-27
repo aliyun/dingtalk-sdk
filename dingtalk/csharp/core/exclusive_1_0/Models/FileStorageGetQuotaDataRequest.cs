@@ -10,28 +10,40 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class FileStorageGetQuotaDataRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>2022-04</para>
         /// </summary>
         [NameInMap("endTime")]
         [Validation(Required=false)]
         public string EndTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>2021-04</para>
         /// </summary>
         [NameInMap("startTime")]
         [Validation(Required=false)]
         public string StartTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ding77b8cac4e026cc123xxxxxxxxeb6378f</para>
         /// </summary>
         [NameInMap("targetCorpId")]
         [Validation(Required=false)]
         public string TargetCorpId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1</para>
         /// </summary>
         [NameInMap("type")]
         [Validation(Required=false)]

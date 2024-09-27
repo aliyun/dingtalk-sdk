@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class GetHandSignDownloadUrlRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>AzBltRlvKukX3Wxxxx</para>
         /// </summary>
         [NameInMap("handSignToken")]
         [Validation(Required=false)]
         public string HandSignToken { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ag187wewxxxx</para>
         /// </summary>
         [NameInMap("processInstanceId")]
         [Validation(Required=false)]

@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class GetNegativeWordCloudRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>KxisoOk</para>
         /// </summary>
         [NameInMap("openTeamId")]
         [Validation(Required=false)]

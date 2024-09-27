@@ -10,70 +10,100 @@ namespace AlibabaCloud.SDK.Dingtalkats_1_0.Models
 {
     public class GetApplicationRegFormByFlowIdResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>xxx</para>
         /// </summary>
         [NameInMap("candidateId")]
         [Validation(Required=false)]
         public string CandidateId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>manager5875</para>
         /// </summary>
         [NameInMap("creatorUserId")]
         [Validation(Required=false)]
         public string CreatorUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>flowXXX</para>
         /// </summary>
         [NameInMap("flowId")]
         [Validation(Required=false)]
         public string FlowId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>formXXX</para>
         /// </summary>
         [NameInMap("formId")]
         [Validation(Required=false)]
         public string FormId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1626775016427</para>
         /// </summary>
         [NameInMap("gmtCreateMillis")]
         [Validation(Required=false)]
         public long? GmtCreateMillis { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1626775016427</para>
         /// </summary>
         [NameInMap("gmtModifiedMillis")]
         [Validation(Required=false)]
         public long? GmtModifiedMillis { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>jobXXX</para>
         /// </summary>
         [NameInMap("jobId")]
         [Validation(Required=false)]
         public string JobId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>0</para>
         /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]
         public int? Status { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>templateXXX</para>
         /// </summary>
         [NameInMap("templateId")]
         [Validation(Required=false)]
         public string TemplateId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>0</para>
         /// </summary>
         [NameInMap("templateVersion")]
         [Validation(Required=false)]

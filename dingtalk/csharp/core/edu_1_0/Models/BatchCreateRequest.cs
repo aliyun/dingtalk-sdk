@@ -10,36 +10,47 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class BatchCreateRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>industry_center</para>
         /// </summary>
         [NameInMap("cardBizCode")]
         [Validation(Required=false)]
         public string CardBizCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("data")]
         [Validation(Required=false)]
         public BatchCreateRequestData Data { get; set; }
         public class BatchCreateRequestData : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>true</para>
+            /// </summary>
             [NameInMap("canReissueCard")]
             [Validation(Required=false)]
             public bool? CanReissueCard { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>3</para>
+            /// </summary>
             [NameInMap("cardCycle")]
             [Validation(Required=false)]
             public int? CardCycle { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("cardFrequency")]
             [Validation(Required=false)]
             public List<int?> CardFrequency { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("cardRuleItemParamList")]
             [Validation(Required=false)]
@@ -80,7 +91,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public List<string> ClassNames { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>打卡的内容</para>
             /// </summary>
             [NameInMap("content")]
             [Validation(Required=false)]
@@ -99,7 +113,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public string NeedMetering { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("orgClassStudentGroupList")]
             [Validation(Required=false)]
@@ -140,14 +154,14 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("remindHour")]
             [Validation(Required=false)]
             public int? RemindHour { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("remindMinute")]
             [Validation(Required=false)]
@@ -162,7 +176,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public long? TemplateId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("title")]
             [Validation(Required=false)]
@@ -175,21 +189,30 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>AFC35F13-8A88-728F-27C5-3616AD7DFF2E</para>
         /// </summary>
         [NameInMap("identifier")]
         [Validation(Required=false)]
         public string Identifier { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>4</para>
         /// </summary>
         [NameInMap("jsVersion")]
         [Validation(Required=false)]
         public int? JsVersion { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>QUPEIYIN</para>
         /// </summary>
         [NameInMap("sourceType")]
         [Validation(Required=false)]

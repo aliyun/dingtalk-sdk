@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class QueryGroupInfoByMemberAuthRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>COOLAPP-XXX</para>
         /// </summary>
         [NameInMap("coolAppCode")]
         [Validation(Required=false)]
         public string CoolAppCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>cidXXX</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]

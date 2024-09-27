@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkblackboard_1_0.Models
         [Validation(Required=false)]
         public List<QueryBlackboardReadUnReadResponseBodyUsers> Users { get; set; }
         public class QueryBlackboardReadUnReadResponseBodyUsers : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>true</para>
+            /// </summary>
             [NameInMap("read")]
             [Validation(Required=false)]
             public string Read { get; set; }
@@ -25,6 +29,10 @@ namespace AlibabaCloud.SDK.Dingtalkblackboard_1_0.Models
             [Validation(Required=false)]
             public long? ReadTimestamp { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>12039</para>
+            /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }

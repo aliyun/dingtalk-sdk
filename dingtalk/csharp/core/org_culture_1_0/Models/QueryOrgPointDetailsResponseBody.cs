@@ -18,19 +18,29 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
             public List<QueryOrgPointDetailsResponseBodyResultDetails> Details { get; set; }
             public class QueryOrgPointDetailsResponseBodyResultDetails : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>100</para>
                 /// </summary>
                 [NameInMap("amount")]
                 [Validation(Required=false)]
                 public long? Amount { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>1655450960000</para>
                 /// </summary>
                 [NameInMap("gmtCreate")]
                 [Validation(Required=false)]
                 public long? GmtCreate { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>2323232134455667</para>
+                /// </summary>
                 [NameInMap("outId")]
                 [Validation(Required=false)]
                 public string OutId { get; set; }
@@ -44,16 +54,27 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
                     public QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountSource AccountSource { get; set; }
                     public class QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountSource : TeaModel {
                         /// <summary>
-                        /// This parameter is required.
+                        /// <para>This parameter is required.</para>
+                        /// 
+                        /// <b>Example:</b>
+                        /// <para>ORG</para>
                         /// </summary>
                         [NameInMap("accountType")]
                         [Validation(Required=false)]
                         public string AccountType { get; set; }
 
+                        /// <summary>
+                        /// <b>Example:</b>
+                        /// <para>张三</para>
+                        /// </summary>
                         [NameInMap("empName")]
                         [Validation(Required=false)]
                         public string EmpName { get; set; }
 
+                        /// <summary>
+                        /// <b>Example:</b>
+                        /// <para>01274411491620908910</para>
+                        /// </summary>
                         [NameInMap("userId")]
                         [Validation(Required=false)]
                         public string UserId { get; set; }
@@ -64,26 +85,45 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
                     [Validation(Required=false)]
                     public QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountTarget AccountTarget { get; set; }
                     public class QueryOrgPointDetailsResponseBodyResultDetailsPointOperateFeatureResponseDTOAccountTarget : TeaModel {
+                        /// <summary>
+                        /// <b>Example:</b>
+                        /// <para>EMP</para>
+                        /// </summary>
                         [NameInMap("accountType")]
                         [Validation(Required=false)]
                         public string AccountType { get; set; }
 
+                        /// <summary>
+                        /// <b>Example:</b>
+                        /// <para>李四</para>
+                        /// </summary>
                         [NameInMap("empName")]
                         [Validation(Required=false)]
                         public string EmpName { get; set; }
 
+                        /// <summary>
+                        /// <b>Example:</b>
+                        /// <para>01274411491620908910</para>
+                        /// </summary>
                         [NameInMap("userId")]
                         [Validation(Required=false)]
                         public string UserId { get; set; }
 
                     }
 
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>表现优秀，特此奖励</para>
+                    /// </summary>
                     [NameInMap("remark")]
                     [Validation(Required=false)]
                     public string Remark { get; set; }
 
                     /// <summary>
-                    /// This parameter is required.
+                    /// <para>This parameter is required.</para>
+                    /// 
+                    /// <b>Example:</b>
+                    /// <para>三方系统管理员发放额度</para>
                     /// </summary>
                     [NameInMap("usage")]
                     [Validation(Required=false)]
@@ -92,7 +132,10 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
                 }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>credit</para>
                 /// </summary>
                 [NameInMap("sourceBizCode")]
                 [Validation(Required=false)]
@@ -101,14 +144,20 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
             }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>true</para>
             /// </summary>
             [NameInMap("hasMore")]
             [Validation(Required=false)]
             public bool? HasMore { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>true</para>
             /// </summary>
             [NameInMap("success")]
             [Validation(Required=false)]

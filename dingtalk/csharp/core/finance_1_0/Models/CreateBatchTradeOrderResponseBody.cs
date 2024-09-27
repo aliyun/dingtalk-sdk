@@ -14,14 +14,14 @@ namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
         public string OrderNo { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("orderStatus")]
         [Validation(Required=false)]
         public string OrderStatus { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("outBatchNo")]
         [Validation(Required=false)]

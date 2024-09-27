@@ -9,12 +9,19 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class BindCoolAppToSheetRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>cool_app_code</para>
+        /// </summary>
         [NameInMap("coolAppCode")]
         [Validation(Required=false)]
         public string CoolAppCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

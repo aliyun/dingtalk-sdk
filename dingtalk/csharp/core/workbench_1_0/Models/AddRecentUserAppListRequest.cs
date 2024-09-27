@@ -10,21 +10,27 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0.Models
 {
     public class AddRecentUserAppListRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ding48143d56cd15327624f2f5cc6abecb85</para>
         /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]
         public string CorpId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("usedAppDetailList")]
         [Validation(Required=false)]
         public List<AddRecentUserAppListRequestUsedAppDetailList> UsedAppDetailList { get; set; }
         public class AddRecentUserAppListRequestUsedAppDetailList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>2636835622</para>
             /// </summary>
             [NameInMap("agentId")]
             [Validation(Required=false)]
@@ -33,7 +39,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkbench_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>642325391030949</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

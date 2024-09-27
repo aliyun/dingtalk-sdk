@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkstorage_2_0.Models
 {
     public class GetPermissionShareScopeResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>ORG_READ</para>
+        /// </summary>
         [NameInMap("scope")]
         [Validation(Required=false)]
         public string Scope { get; set; }

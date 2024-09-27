@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class EsignRollbackRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("optUserId")]
         [Validation(Required=false)]

@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
 {
     public class OpenUserDTO : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1</para>
         /// </summary>
         [NameInMap("id")]
         [Validation(Required=false)]
         public string Id { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>王五</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>015310183065939140</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

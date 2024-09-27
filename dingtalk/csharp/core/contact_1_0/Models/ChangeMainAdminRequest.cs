@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class ChangeMainAdminRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>corpIdCCC</para>
         /// </summary>
         [NameInMap("effectCorpId")]
         [Validation(Required=false)]
         public string EffectCorpId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>userIdAA</para>
         /// </summary>
         [NameInMap("sourceUserId")]
         [Validation(Required=false)]
         public string SourceUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>userIdBB</para>
         /// </summary>
         [NameInMap("targetUserId")]
         [Validation(Required=false)]

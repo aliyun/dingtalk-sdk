@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
 {
     public class CreateCloudFeedResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>创建好的云导播课程id</para>
+        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public string Result { get; set; }

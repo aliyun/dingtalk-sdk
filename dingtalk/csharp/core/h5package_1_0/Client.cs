@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
         }
 
 
-        /**
-         * @summary 上传H5离线包
-         *
-         * @param request CreatePackageRequest
-         * @param headers CreatePackageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreatePackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>上传H5离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreatePackageRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreatePackageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreatePackageResponse
+        /// </returns>
         public CreatePackageResponse CreatePackageWithOptions(CreatePackageRequest request, CreatePackageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -85,14 +96,24 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
             return TeaModel.ToObject<CreatePackageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 上传H5离线包
-         *
-         * @param request CreatePackageRequest
-         * @param headers CreatePackageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreatePackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>上传H5离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreatePackageRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreatePackageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreatePackageResponse
+        /// </returns>
         public async Task<CreatePackageResponse> CreatePackageWithOptionsAsync(CreatePackageRequest request, CreatePackageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -142,12 +163,18 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
             return TeaModel.ToObject<CreatePackageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 上传H5离线包
-         *
-         * @param request CreatePackageRequest
-         * @return CreatePackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>上传H5离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreatePackageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreatePackageResponse
+        /// </returns>
         public CreatePackageResponse CreatePackage(CreatePackageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -155,12 +182,18 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
             return CreatePackageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 上传H5离线包
-         *
-         * @param request CreatePackageRequest
-         * @return CreatePackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>上传H5离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreatePackageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreatePackageResponse
+        /// </returns>
         public async Task<CreatePackageResponse> CreatePackageAsync(CreatePackageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -168,14 +201,24 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
             return await CreatePackageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取包上传一次性AccessToken
-         *
-         * @param request GetAccessTokenRequest
-         * @param headers GetAccessTokenHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetAccessTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取包上传一次性AccessToken</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAccessTokenRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetAccessTokenHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAccessTokenResponse
+        /// </returns>
         public GetAccessTokenResponse GetAccessTokenWithOptions(GetAccessTokenRequest request, GetAccessTokenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -217,14 +260,24 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
             return TeaModel.ToObject<GetAccessTokenResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取包上传一次性AccessToken
-         *
-         * @param request GetAccessTokenRequest
-         * @param headers GetAccessTokenHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetAccessTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取包上传一次性AccessToken</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAccessTokenRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetAccessTokenHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAccessTokenResponse
+        /// </returns>
         public async Task<GetAccessTokenResponse> GetAccessTokenWithOptionsAsync(GetAccessTokenRequest request, GetAccessTokenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -266,12 +319,18 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
             return TeaModel.ToObject<GetAccessTokenResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取包上传一次性AccessToken
-         *
-         * @param request GetAccessTokenRequest
-         * @return GetAccessTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取包上传一次性AccessToken</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAccessTokenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAccessTokenResponse
+        /// </returns>
         public GetAccessTokenResponse GetAccessToken(GetAccessTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -279,12 +338,18 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
             return GetAccessTokenWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取包上传一次性AccessToken
-         *
-         * @param request GetAccessTokenRequest
-         * @return GetAccessTokenResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取包上传一次性AccessToken</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAccessTokenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAccessTokenResponse
+        /// </returns>
         public async Task<GetAccessTokenResponse> GetAccessTokenAsync(GetAccessTokenRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -292,14 +357,24 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
             return await GetAccessTokenWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取H5离线包版本创建状态
-         *
-         * @param request GetCreateStatusRequest
-         * @param headers GetCreateStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetCreateStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取H5离线包版本创建状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCreateStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetCreateStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCreateStatusResponse
+        /// </returns>
         public GetCreateStatusResponse GetCreateStatusWithOptions(GetCreateStatusRequest request, GetCreateStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -337,14 +412,24 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
             return TeaModel.ToObject<GetCreateStatusResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取H5离线包版本创建状态
-         *
-         * @param request GetCreateStatusRequest
-         * @param headers GetCreateStatusHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return GetCreateStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取H5离线包版本创建状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCreateStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetCreateStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCreateStatusResponse
+        /// </returns>
         public async Task<GetCreateStatusResponse> GetCreateStatusWithOptionsAsync(GetCreateStatusRequest request, GetCreateStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -382,12 +467,18 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
             return TeaModel.ToObject<GetCreateStatusResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取H5离线包版本创建状态
-         *
-         * @param request GetCreateStatusRequest
-         * @return GetCreateStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取H5离线包版本创建状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCreateStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCreateStatusResponse
+        /// </returns>
         public GetCreateStatusResponse GetCreateStatus(GetCreateStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -395,12 +486,18 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
             return GetCreateStatusWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取H5离线包版本创建状态
-         *
-         * @param request GetCreateStatusRequest
-         * @return GetCreateStatusResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取H5离线包版本创建状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetCreateStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetCreateStatusResponse
+        /// </returns>
         public async Task<GetCreateStatusResponse> GetCreateStatusAsync(GetCreateStatusRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -408,14 +505,24 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
             return await GetCreateStatusWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 发布离线包
-         *
-         * @param request PublishPackageRequest
-         * @param headers PublishPackageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return PublishPackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发布离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PublishPackageRequest
+        /// </param>
+        /// <param name="headers">
+        /// PublishPackageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PublishPackageResponse
+        /// </returns>
         public PublishPackageResponse PublishPackageWithOptions(PublishPackageRequest request, PublishPackageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -461,14 +568,24 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
             return TeaModel.ToObject<PublishPackageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 发布离线包
-         *
-         * @param request PublishPackageRequest
-         * @param headers PublishPackageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return PublishPackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发布离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PublishPackageRequest
+        /// </param>
+        /// <param name="headers">
+        /// PublishPackageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PublishPackageResponse
+        /// </returns>
         public async Task<PublishPackageResponse> PublishPackageWithOptionsAsync(PublishPackageRequest request, PublishPackageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -514,12 +631,18 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
             return TeaModel.ToObject<PublishPackageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 发布离线包
-         *
-         * @param request PublishPackageRequest
-         * @return PublishPackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发布离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PublishPackageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PublishPackageResponse
+        /// </returns>
         public PublishPackageResponse PublishPackage(PublishPackageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -527,12 +650,18 @@ namespace AlibabaCloud.SDK.Dingtalkh5package_1_0
             return PublishPackageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 发布离线包
-         *
-         * @param request PublishPackageRequest
-         * @return PublishPackageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发布离线包</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PublishPackageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PublishPackageResponse
+        /// </returns>
         public async Task<PublishPackageResponse> PublishPackageAsync(PublishPackageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

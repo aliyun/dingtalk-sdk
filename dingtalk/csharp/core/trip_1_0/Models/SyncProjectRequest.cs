@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
 {
     public class SyncProjectRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ding89233847892ndkas</para>
         /// </summary>
         [NameInMap("channelCorpId")]
         [Validation(Required=false)]
@@ -28,12 +31,19 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         [Validation(Required=false)]
         public bool? DeleteFlag { get; set; }
 
+        /// <summary>
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
         [NameInMap("extension")]
         [Validation(Required=false)]
         public string Extension { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>2022-02-21 11:11:11</para>
         /// </summary>
         [NameInMap("gmtAction")]
         [Validation(Required=false)]
@@ -48,19 +58,29 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         public List<string> ManagerIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123456</para>
         /// </summary>
         [NameInMap("projectId")]
         [Validation(Required=false)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>默认项目</para>
         /// </summary>
         [NameInMap("projectName")]
         [Validation(Required=false)]
         public string ProjectName { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("scope")]
         [Validation(Required=false)]
         public int? Scope { get; set; }
@@ -74,7 +94,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         public string ThirdPartId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>20881001829000</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

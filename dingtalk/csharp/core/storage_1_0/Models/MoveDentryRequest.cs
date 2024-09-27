@@ -13,10 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public MoveDentryRequestOption Option { get; set; }
         public class MoveDentryRequestOption : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>AUTO_RENAME</para>
+            /// </summary>
             [NameInMap("conflictStrategy")]
             [Validation(Required=false)]
             public string ConflictStrategy { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>true</para>
+            /// </summary>
             [NameInMap("presevePermissions")]
             [Validation(Required=false)]
             public bool? PresevePermissions { get; set; }
@@ -24,21 +32,30 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>target_folder_id</para>
         /// </summary>
         [NameInMap("targetFolderId")]
         [Validation(Required=false)]
         public string TargetFolderId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>target_space_id</para>
         /// </summary>
         [NameInMap("targetSpaceId")]
         [Validation(Required=false)]
         public string TargetSpaceId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

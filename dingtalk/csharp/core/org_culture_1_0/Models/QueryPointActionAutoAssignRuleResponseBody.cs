@@ -18,35 +18,50 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
             public List<QueryPointActionAutoAssignRuleResponseBodyResultQueryPointRuleResponseDTOS> QueryPointRuleResponseDTOS { get; set; }
             public class QueryPointActionAutoAssignRuleResponseBodyResultQueryPointRuleResponseDTOS : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>10</para>
                 /// </summary>
                 [NameInMap("awardScore")]
                 [Validation(Required=false)]
                 public long? AwardScore { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>DAILY_VISIT</para>
                 /// </summary>
                 [NameInMap("code")]
                 [Validation(Required=false)]
                 public string Code { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>1</para>
                 /// </summary>
                 [NameInMap("dayLimitTimes")]
                 [Validation(Required=false)]
                 public long? DayLimitTimes { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>每日访问</para>
                 /// </summary>
                 [NameInMap("description")]
                 [Validation(Required=false)]
                 public string Description { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>1</para>
                 /// </summary>
                 [NameInMap("status")]
                 [Validation(Required=false)]

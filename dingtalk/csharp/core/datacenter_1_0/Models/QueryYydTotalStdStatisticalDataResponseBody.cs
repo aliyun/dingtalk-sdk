@@ -18,35 +18,35 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
         public List<QueryYydTotalStdStatisticalDataResponseBodyMetaList> MetaList { get; set; }
         public class QueryYydTotalStdStatisticalDataResponseBodyMetaList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("kpiCaliber")]
             [Validation(Required=false)]
             public string KpiCaliber { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("kpiId")]
             [Validation(Required=false)]
             public string KpiId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("kpiName")]
             [Validation(Required=false)]
             public string KpiName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("period")]
             [Validation(Required=false)]
             public string Period { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("unit")]
             [Validation(Required=false)]

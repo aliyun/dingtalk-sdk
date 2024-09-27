@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [Validation(Required=false)]
         public long? DeptId { get; set; }
 
+        /// <summary>
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
         [NameInMap("inviterUserId")]
         [Validation(Required=false)]
         public string InviterUserId { get; set; }

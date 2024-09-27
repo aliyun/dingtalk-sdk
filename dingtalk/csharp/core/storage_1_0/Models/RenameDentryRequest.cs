@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 {
     public class RenameDentryRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>dentry_name</para>
         /// </summary>
         [NameInMap("newName")]
         [Validation(Required=false)]
         public string NewName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class CreateGroupRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("channel")]
         [Validation(Required=false)]
         public string Channel { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("creatorUid")]
         [Validation(Required=false)]
@@ -28,21 +28,21 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
         public string IconMediaId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("properties")]
         [Validation(Required=false)]
         public Dictionary<string, string> Properties { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("uuid")]
         [Validation(Required=false)]

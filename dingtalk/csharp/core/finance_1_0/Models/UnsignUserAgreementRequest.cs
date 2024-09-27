@@ -9,34 +9,55 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
 {
     public class UnsignUserAgreementRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>23021_12342134</para>
+        /// </summary>
         [NameInMap("agreementNo")]
         [Validation(Required=false)]
         public string AgreementNo { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>TRADE</para>
+        /// </summary>
         [NameInMap("bizCode")]
         [Validation(Required=false)]
         public string BizCode { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>WITHHOLDING</para>
+        /// </summary>
         [NameInMap("bizScene")]
         [Validation(Required=false)]
         public string BizScene { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>202111090001</para>
         /// </summary>
         [NameInMap("instId")]
         [Validation(Required=false)]
         public string InstId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1001</para>
         /// </summary>
         [NameInMap("subInstId")]
         [Validation(Required=false)]
         public string SubInstId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>2120493284</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

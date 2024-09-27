@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class IntentionStatisticsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>20220101</para>
         /// </summary>
         [NameInMap("maxDt")]
         [Validation(Required=false)]
         public string MaxDt { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>20220101</para>
         /// </summary>
         [NameInMap("minDt")]
         [Validation(Required=false)]
         public string MinDt { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>KxisoOk</para>
         /// </summary>
         [NameInMap("openTeamId")]
         [Validation(Required=false)]

@@ -10,21 +10,27 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class GetInstancesByIdsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>DING_CUSTOMER</para>
         /// </summary>
         [NameInMap("formCode")]
         [Validation(Required=false)]
         public string FormCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("openDataInstanceIdList")]
         [Validation(Required=false)]
         public List<string> OpenDataInstanceIdList { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>888***</para>
         /// </summary>
         [NameInMap("openTeamId")]
         [Validation(Required=false)]

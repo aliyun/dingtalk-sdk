@@ -13,18 +13,34 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public GetDentryOpenInfoRequestOption Option { get; set; }
         public class GetDentryOpenInfoRequestOption : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>true</para>
+            /// </summary>
             [NameInMap("checkLogin")]
             [Validation(Required=false)]
             public bool? CheckLogin { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>PREVIEW</para>
+            /// </summary>
             [NameInMap("type")]
             [Validation(Required=false)]
             public string Type { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1</para>
+            /// </summary>
             [NameInMap("version")]
             [Validation(Required=false)]
             public long? Version { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>true</para>
+            /// </summary>
             [NameInMap("waterMark")]
             [Validation(Required=false)]
             public bool? WaterMark { get; set; }
@@ -32,7 +48,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

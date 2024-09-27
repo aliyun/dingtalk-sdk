@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public CreateUniversityCourseGroupResponseBodyCourseGroupInfo CourseGroupInfo { get; set; }
         public class CreateUniversityCourseGroupResponseBodyCourseGroupInfo : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>GS10001</para>
+            /// </summary>
             [NameInMap("courseGroupCode")]
             [Validation(Required=false)]
             public string CourseGroupCode { get; set; }

@@ -10,19 +10,26 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class FormDataSource : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("target")]
         [Validation(Required=false)]
         public FormDataSourceTarget Target { get; set; }
         public class FormDataSourceTarget : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>0</para>
             /// </summary>
             [NameInMap("appType")]
             [Validation(Required=false)]
             public int? AppType { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>SWAPP-abcd</para>
+            /// </summary>
             [NameInMap("appUuid")]
             [Validation(Required=false)]
             public string AppUuid { get; set; }
@@ -32,7 +39,7 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             public string BizType { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("formCode")]
             [Validation(Required=false)]
@@ -40,6 +47,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>form</para>
+        /// </summary>
         [NameInMap("type")]
         [Validation(Required=false)]
         public string Type { get; set; }

@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalksearch_1_0.Models
 {
     public class CreateSearchTabResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>3333</para>
         /// </summary>
         [NameInMap("tabId")]
         [Validation(Required=false)]

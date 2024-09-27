@@ -21,14 +21,26 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         [Validation(Required=false)]
         public List<ListSeniorSettingsResponseBodySeniorWhiteList> SeniorWhiteList { get; set; }
         public class ListSeniorSettingsResponseBodySeniorWhiteList : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1234</para>
+            /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public string Id { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>测试角色</para>
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1</para>
+            /// </summary>
             [NameInMap("type")]
             [Validation(Required=false)]
             public int? Type { get; set; }

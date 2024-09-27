@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
         }
 
 
-        /**
-         * @summary 合同权益核销
-         *
-         * @param request ContractBenefitConsumeRequest
-         * @param headers ContractBenefitConsumeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ContractBenefitConsumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>合同权益核销</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ContractBenefitConsumeRequest
+        /// </param>
+        /// <param name="headers">
+        /// ContractBenefitConsumeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ContractBenefitConsumeResponse
+        /// </returns>
         public ContractBenefitConsumeResponse ContractBenefitConsumeWithOptions(ContractBenefitConsumeRequest request, ContractBenefitConsumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -97,14 +108,24 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return TeaModel.ToObject<ContractBenefitConsumeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 合同权益核销
-         *
-         * @param request ContractBenefitConsumeRequest
-         * @param headers ContractBenefitConsumeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return ContractBenefitConsumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>合同权益核销</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ContractBenefitConsumeRequest
+        /// </param>
+        /// <param name="headers">
+        /// ContractBenefitConsumeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ContractBenefitConsumeResponse
+        /// </returns>
         public async Task<ContractBenefitConsumeResponse> ContractBenefitConsumeWithOptionsAsync(ContractBenefitConsumeRequest request, ContractBenefitConsumeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -166,12 +187,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return TeaModel.ToObject<ContractBenefitConsumeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 合同权益核销
-         *
-         * @param request ContractBenefitConsumeRequest
-         * @return ContractBenefitConsumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>合同权益核销</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ContractBenefitConsumeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ContractBenefitConsumeResponse
+        /// </returns>
         public ContractBenefitConsumeResponse ContractBenefitConsume(ContractBenefitConsumeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -179,12 +206,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return ContractBenefitConsumeWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 合同权益核销
-         *
-         * @param request ContractBenefitConsumeRequest
-         * @return ContractBenefitConsumeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>合同权益核销</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ContractBenefitConsumeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ContractBenefitConsumeResponse
+        /// </returns>
         public async Task<ContractBenefitConsumeResponse> ContractBenefitConsumeAsync(ContractBenefitConsumeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -192,14 +225,24 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return await ContractBenefitConsumeWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 天谷侧查询审批单
-         *
-         * @param request EsignQueryApprovalInfoRequest
-         * @param headers EsignQueryApprovalInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return EsignQueryApprovalInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>天谷侧查询审批单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EsignQueryApprovalInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// EsignQueryApprovalInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// EsignQueryApprovalInfoResponse
+        /// </returns>
         public EsignQueryApprovalInfoResponse EsignQueryApprovalInfoWithOptions(EsignQueryApprovalInfoRequest request, EsignQueryApprovalInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -245,14 +288,24 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return TeaModel.ToObject<EsignQueryApprovalInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 天谷侧查询审批单
-         *
-         * @param request EsignQueryApprovalInfoRequest
-         * @param headers EsignQueryApprovalInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return EsignQueryApprovalInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>天谷侧查询审批单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EsignQueryApprovalInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// EsignQueryApprovalInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// EsignQueryApprovalInfoResponse
+        /// </returns>
         public async Task<EsignQueryApprovalInfoResponse> EsignQueryApprovalInfoWithOptionsAsync(EsignQueryApprovalInfoRequest request, EsignQueryApprovalInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -298,12 +351,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return TeaModel.ToObject<EsignQueryApprovalInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 天谷侧查询审批单
-         *
-         * @param request EsignQueryApprovalInfoRequest
-         * @return EsignQueryApprovalInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>天谷侧查询审批单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EsignQueryApprovalInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// EsignQueryApprovalInfoResponse
+        /// </returns>
         public EsignQueryApprovalInfoResponse EsignQueryApprovalInfo(EsignQueryApprovalInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -311,12 +370,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return EsignQueryApprovalInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 天谷侧查询审批单
-         *
-         * @param request EsignQueryApprovalInfoRequest
-         * @return EsignQueryApprovalInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>天谷侧查询审批单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EsignQueryApprovalInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// EsignQueryApprovalInfoResponse
+        /// </returns>
         public async Task<EsignQueryApprovalInfoResponse> EsignQueryApprovalInfoAsync(EsignQueryApprovalInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -324,14 +389,24 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return await EsignQueryApprovalInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 天谷侧查询授权信息接口
-         *
-         * @param request EsignQueryGrantInfoRequest
-         * @param headers EsignQueryGrantInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return EsignQueryGrantInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>天谷侧查询授权信息接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EsignQueryGrantInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// EsignQueryGrantInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// EsignQueryGrantInfoResponse
+        /// </returns>
         public EsignQueryGrantInfoResponse EsignQueryGrantInfoWithOptions(EsignQueryGrantInfoRequest request, EsignQueryGrantInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -377,14 +452,24 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return TeaModel.ToObject<EsignQueryGrantInfoResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 天谷侧查询授权信息接口
-         *
-         * @param request EsignQueryGrantInfoRequest
-         * @param headers EsignQueryGrantInfoHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return EsignQueryGrantInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>天谷侧查询授权信息接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EsignQueryGrantInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// EsignQueryGrantInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// EsignQueryGrantInfoResponse
+        /// </returns>
         public async Task<EsignQueryGrantInfoResponse> EsignQueryGrantInfoWithOptionsAsync(EsignQueryGrantInfoRequest request, EsignQueryGrantInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -430,12 +515,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return TeaModel.ToObject<EsignQueryGrantInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 天谷侧查询授权信息接口
-         *
-         * @param request EsignQueryGrantInfoRequest
-         * @return EsignQueryGrantInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>天谷侧查询授权信息接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EsignQueryGrantInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// EsignQueryGrantInfoResponse
+        /// </returns>
         public EsignQueryGrantInfoResponse EsignQueryGrantInfo(EsignQueryGrantInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -443,12 +534,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return EsignQueryGrantInfoWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 天谷侧查询授权信息接口
-         *
-         * @param request EsignQueryGrantInfoRequest
-         * @return EsignQueryGrantInfoResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>天谷侧查询授权信息接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EsignQueryGrantInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// EsignQueryGrantInfoResponse
+        /// </returns>
         public async Task<EsignQueryGrantInfoResponse> EsignQueryGrantInfoAsync(EsignQueryGrantInfoRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -456,14 +553,24 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return await EsignQueryGrantInfoWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 天谷侧查询获取免登信息
-         *
-         * @param request EsignQueryIdentityByTicketRequest
-         * @param headers EsignQueryIdentityByTicketHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return EsignQueryIdentityByTicketResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>天谷侧查询获取免登信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EsignQueryIdentityByTicketRequest
+        /// </param>
+        /// <param name="headers">
+        /// EsignQueryIdentityByTicketHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// EsignQueryIdentityByTicketResponse
+        /// </returns>
         public EsignQueryIdentityByTicketResponse EsignQueryIdentityByTicketWithOptions(EsignQueryIdentityByTicketRequest request, EsignQueryIdentityByTicketHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -509,14 +616,24 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return TeaModel.ToObject<EsignQueryIdentityByTicketResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 天谷侧查询获取免登信息
-         *
-         * @param request EsignQueryIdentityByTicketRequest
-         * @param headers EsignQueryIdentityByTicketHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return EsignQueryIdentityByTicketResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>天谷侧查询获取免登信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EsignQueryIdentityByTicketRequest
+        /// </param>
+        /// <param name="headers">
+        /// EsignQueryIdentityByTicketHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// EsignQueryIdentityByTicketResponse
+        /// </returns>
         public async Task<EsignQueryIdentityByTicketResponse> EsignQueryIdentityByTicketWithOptionsAsync(EsignQueryIdentityByTicketRequest request, EsignQueryIdentityByTicketHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -562,12 +679,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return TeaModel.ToObject<EsignQueryIdentityByTicketResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 天谷侧查询获取免登信息
-         *
-         * @param request EsignQueryIdentityByTicketRequest
-         * @return EsignQueryIdentityByTicketResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>天谷侧查询获取免登信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EsignQueryIdentityByTicketRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// EsignQueryIdentityByTicketResponse
+        /// </returns>
         public EsignQueryIdentityByTicketResponse EsignQueryIdentityByTicket(EsignQueryIdentityByTicketRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -575,12 +698,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return EsignQueryIdentityByTicketWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 天谷侧查询获取免登信息
-         *
-         * @param request EsignQueryIdentityByTicketRequest
-         * @return EsignQueryIdentityByTicketResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>天谷侧查询获取免登信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EsignQueryIdentityByTicketRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// EsignQueryIdentityByTicketResponse
+        /// </returns>
         public async Task<EsignQueryIdentityByTicketResponse> EsignQueryIdentityByTicketAsync(EsignQueryIdentityByTicketRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -588,14 +717,24 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return await EsignQueryIdentityByTicketWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary e签宝电子签事件同步回传接口
-         *
-         * @param request EsignSyncEventRequest
-         * @param headers EsignSyncEventHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return EsignSyncEventResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>e签宝电子签事件同步回传接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EsignSyncEventRequest
+        /// </param>
+        /// <param name="headers">
+        /// EsignSyncEventHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// EsignSyncEventResponse
+        /// </returns>
         public EsignSyncEventResponse EsignSyncEventWithOptions(EsignSyncEventRequest request, EsignSyncEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -649,14 +788,24 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return TeaModel.ToObject<EsignSyncEventResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary e签宝电子签事件同步回传接口
-         *
-         * @param request EsignSyncEventRequest
-         * @param headers EsignSyncEventHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return EsignSyncEventResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>e签宝电子签事件同步回传接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EsignSyncEventRequest
+        /// </param>
+        /// <param name="headers">
+        /// EsignSyncEventHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// EsignSyncEventResponse
+        /// </returns>
         public async Task<EsignSyncEventResponse> EsignSyncEventWithOptionsAsync(EsignSyncEventRequest request, EsignSyncEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -710,12 +859,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return TeaModel.ToObject<EsignSyncEventResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary e签宝电子签事件同步回传接口
-         *
-         * @param request EsignSyncEventRequest
-         * @return EsignSyncEventResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>e签宝电子签事件同步回传接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EsignSyncEventRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// EsignSyncEventResponse
+        /// </returns>
         public EsignSyncEventResponse EsignSyncEvent(EsignSyncEventRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -723,12 +878,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return EsignSyncEventWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary e签宝电子签事件同步回传接口
-         *
-         * @param request EsignSyncEventRequest
-         * @return EsignSyncEventResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>e签宝电子签事件同步回传接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EsignSyncEventRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// EsignSyncEventResponse
+        /// </returns>
         public async Task<EsignSyncEventResponse> EsignSyncEventAsync(EsignSyncEventRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -736,14 +897,24 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return await EsignSyncEventWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 完成工单审查接口
-         *
-         * @param request FinishReviewOrderRequest
-         * @param headers FinishReviewOrderHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return FinishReviewOrderResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>完成工单审查接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// FinishReviewOrderRequest
+        /// </param>
+        /// <param name="headers">
+        /// FinishReviewOrderHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// FinishReviewOrderResponse
+        /// </returns>
         public FinishReviewOrderResponse FinishReviewOrderWithOptions(FinishReviewOrderRequest request, FinishReviewOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -789,14 +960,24 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return TeaModel.ToObject<FinishReviewOrderResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 完成工单审查接口
-         *
-         * @param request FinishReviewOrderRequest
-         * @param headers FinishReviewOrderHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return FinishReviewOrderResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>完成工单审查接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// FinishReviewOrderRequest
+        /// </param>
+        /// <param name="headers">
+        /// FinishReviewOrderHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// FinishReviewOrderResponse
+        /// </returns>
         public async Task<FinishReviewOrderResponse> FinishReviewOrderWithOptionsAsync(FinishReviewOrderRequest request, FinishReviewOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -842,12 +1023,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return TeaModel.ToObject<FinishReviewOrderResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 完成工单审查接口
-         *
-         * @param request FinishReviewOrderRequest
-         * @return FinishReviewOrderResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>完成工单审查接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// FinishReviewOrderRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// FinishReviewOrderResponse
+        /// </returns>
         public FinishReviewOrderResponse FinishReviewOrder(FinishReviewOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -855,12 +1042,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return FinishReviewOrderWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 完成工单审查接口
-         *
-         * @param request FinishReviewOrderRequest
-         * @return FinishReviewOrderResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>完成工单审查接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// FinishReviewOrderRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// FinishReviewOrderResponse
+        /// </returns>
         public async Task<FinishReviewOrderResponse> FinishReviewOrderAsync(FinishReviewOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -868,14 +1061,24 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return await FinishReviewOrderWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary e签宝查询智能合同版本接口
-         *
-         * @param request QueryAdvancedContractVersionRequest
-         * @param headers QueryAdvancedContractVersionHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryAdvancedContractVersionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>e签宝查询智能合同版本接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAdvancedContractVersionRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryAdvancedContractVersionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAdvancedContractVersionResponse
+        /// </returns>
         public QueryAdvancedContractVersionResponse QueryAdvancedContractVersionWithOptions(QueryAdvancedContractVersionRequest request, QueryAdvancedContractVersionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -917,14 +1120,24 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return TeaModel.ToObject<QueryAdvancedContractVersionResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary e签宝查询智能合同版本接口
-         *
-         * @param request QueryAdvancedContractVersionRequest
-         * @param headers QueryAdvancedContractVersionHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryAdvancedContractVersionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>e签宝查询智能合同版本接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAdvancedContractVersionRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryAdvancedContractVersionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAdvancedContractVersionResponse
+        /// </returns>
         public async Task<QueryAdvancedContractVersionResponse> QueryAdvancedContractVersionWithOptionsAsync(QueryAdvancedContractVersionRequest request, QueryAdvancedContractVersionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -966,12 +1179,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return TeaModel.ToObject<QueryAdvancedContractVersionResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary e签宝查询智能合同版本接口
-         *
-         * @param request QueryAdvancedContractVersionRequest
-         * @return QueryAdvancedContractVersionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>e签宝查询智能合同版本接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAdvancedContractVersionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAdvancedContractVersionResponse
+        /// </returns>
         public QueryAdvancedContractVersionResponse QueryAdvancedContractVersion(QueryAdvancedContractVersionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -979,12 +1198,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return QueryAdvancedContractVersionWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary e签宝查询智能合同版本接口
-         *
-         * @param request QueryAdvancedContractVersionRequest
-         * @return QueryAdvancedContractVersionResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>e签宝查询智能合同版本接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryAdvancedContractVersionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryAdvancedContractVersionResponse
+        /// </returns>
         public async Task<QueryAdvancedContractVersionResponse> QueryAdvancedContractVersionAsync(QueryAdvancedContractVersionRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -992,14 +1217,24 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return await QueryAdvancedContractVersionWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 发送合同相关卡片
-         *
-         * @param request SendContractCardRequest
-         * @param headers SendContractCardHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SendContractCardResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送合同相关卡片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendContractCardRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendContractCardHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendContractCardResponse
+        /// </returns>
         public SendContractCardResponse SendContractCardWithOptions(SendContractCardRequest request, SendContractCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1069,14 +1304,24 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return TeaModel.ToObject<SendContractCardResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 发送合同相关卡片
-         *
-         * @param request SendContractCardRequest
-         * @param headers SendContractCardHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SendContractCardResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送合同相关卡片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendContractCardRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendContractCardHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendContractCardResponse
+        /// </returns>
         public async Task<SendContractCardResponse> SendContractCardWithOptionsAsync(SendContractCardRequest request, SendContractCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1146,12 +1391,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return TeaModel.ToObject<SendContractCardResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 发送合同相关卡片
-         *
-         * @param request SendContractCardRequest
-         * @return SendContractCardResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送合同相关卡片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendContractCardRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendContractCardResponse
+        /// </returns>
         public SendContractCardResponse SendContractCard(SendContractCardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1159,12 +1410,18 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
             return SendContractCardWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 发送合同相关卡片
-         *
-         * @param request SendContractCardRequest
-         * @return SendContractCardResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送合同相关卡片</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendContractCardRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendContractCardResponse
+        /// </returns>
         public async Task<SendContractCardResponse> SendContractCardAsync(SendContractCardRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

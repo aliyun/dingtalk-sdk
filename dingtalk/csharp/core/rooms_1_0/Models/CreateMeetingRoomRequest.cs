@@ -13,12 +13,19 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
         [Validation(Required=false)]
         public bool? EnableCycleReservation { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>0</para>
+        /// </summary>
         [NameInMap("groupId")]
         [Validation(Required=false)]
         public long? GroupId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>xxxIsvRoomId</para>
         /// </summary>
         [NameInMap("isvRoomId")]
         [Validation(Required=false)]
@@ -32,14 +39,26 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
             [Validation(Required=false)]
             public List<CreateMeetingRoomRequestReservationAuthorityAuthorizedMembers> AuthorizedMembers { get; set; }
             public class CreateMeetingRoomRequestReservationAuthorityAuthorizedMembers : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>lPHhSZDLXXXXXXpBlC9lxLwiEiE</para>
+                /// </summary>
                 [NameInMap("memberId")]
                 [Validation(Required=false)]
                 public string MemberId { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>张三</para>
+                /// </summary>
                 [NameInMap("memberName")]
                 [Validation(Required=false)]
                 public string MemberName { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>user</para>
+                /// </summary>
                 [NameInMap("memberType")]
                 [Validation(Required=false)]
                 public string MemberType { get; set; }
@@ -48,6 +67,10 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>10</para>
+        /// </summary>
         [NameInMap("roomCapacity")]
         [Validation(Required=false)]
         public int? RoomCapacity { get; set; }
@@ -60,10 +83,18 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
         [Validation(Required=false)]
         public CreateMeetingRoomRequestRoomLocation RoomLocation { get; set; }
         public class CreateMeetingRoomRequestRoomLocation : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>xx市xx区xx路xx号</para>
+            /// </summary>
             [NameInMap("desc")]
             [Validation(Required=false)]
             public string Desc { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>xxx公司</para>
+            /// </summary>
             [NameInMap("title")]
             [Validation(Required=false)]
             public string Title { get; set; }
@@ -71,25 +102,38 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>测试会议室</para>
         /// </summary>
         [NameInMap("roomName")]
         [Validation(Required=false)]
         public string RoomName { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para><a href="https://static.dingtalk.com/media/lADPDgfLPFjNPu3NAWjNAWg_360_360.jpg">https://static.dingtalk.com/media/lADPDgfLPFjNPu3NAWjNAWg_360_360.jpg</a></para>
+        /// </summary>
         [NameInMap("roomPicture")]
         [Validation(Required=false)]
         public string RoomPicture { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>0.全员可用 1.仅管理员可用</para>
         /// </summary>
         [NameInMap("roomStatus")]
         [Validation(Required=false)]
         public int? RoomStatus { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>2iPOLbpUNMLzB5LuwggiiqiPwiEiE</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

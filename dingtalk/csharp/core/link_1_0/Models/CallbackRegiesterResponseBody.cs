@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
 {
     public class CallbackRegiesterResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
@@ -21,7 +21,7 @@ namespace AlibabaCloud.SDK.Dingtalklink_1_0.Models
             public string ApiSecret { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("callbackUrl")]
             [Validation(Required=false)]

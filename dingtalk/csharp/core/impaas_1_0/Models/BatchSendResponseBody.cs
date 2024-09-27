@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class BatchSendResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>23233434</para>
         /// </summary>
         [NameInMap("taskId")]
         [Validation(Required=false)]

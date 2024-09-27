@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0.Models
 {
     public class GetShanhuiByCalendarRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>VGZCWXpvTmxpQmorbUhiSXUveTB98Iok</para>
         /// </summary>
         [NameInMap("eventId")]
         [Validation(Required=false)]
         public string EventId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>EUiSN7beu1Q2wR</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

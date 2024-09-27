@@ -17,10 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             [Validation(Required=false)]
             public List<InvalidSignRecordsResponseBodyResultFailItems> FailItems { get; set; }
             public class InvalidSignRecordsResponseBodyResultFailItems : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>1234566789</para>
+                /// </summary>
                 [NameInMap("itemId")]
                 [Validation(Required=false)]
                 public string ItemId { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>电子签状态变更不合法</para>
+                /// </summary>
                 [NameInMap("type")]
                 [Validation(Required=false)]
                 public string Type { get; set; }
@@ -31,6 +39,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
             [Validation(Required=false)]
             public List<InvalidSignRecordsResponseBodyResultSuccessItems> SuccessItems { get; set; }
             public class InvalidSignRecordsResponseBodyResultSuccessItems : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>123456789</para>
+                /// </summary>
                 [NameInMap("itemId")]
                 [Validation(Required=false)]
                 public string ItemId { get; set; }
@@ -40,7 +52,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

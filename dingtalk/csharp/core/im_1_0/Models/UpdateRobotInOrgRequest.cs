@@ -9,36 +9,67 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class UpdateRobotInOrgRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>小加</para>
+        /// </summary>
         [NameInMap("brief")]
         [Validation(Required=false)]
         public string Brief { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>小加</para>
+        /// </summary>
         [NameInMap("description")]
         [Validation(Required=false)]
         public string Description { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>@lALPDe7s26Bre</para>
+        /// </summary>
         [NameInMap("icon")]
         [Validation(Required=false)]
         public string Icon { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>小加</para>
+        /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123</para>
+        /// </summary>
         [NameInMap("outgoingToken")]
         [Validation(Required=false)]
         public string OutgoingToken { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>https://*.com</para>
+        /// </summary>
         [NameInMap("outgoingUrl")]
         [Validation(Required=false)]
         public string OutgoingUrl { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>@lALPDe7s26Bre</para>
+        /// </summary>
         [NameInMap("previewMediaId")]
         [Validation(Required=false)]
         public string PreviewMediaId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123</para>
         /// </summary>
         [NameInMap("robotCode")]
         [Validation(Required=false)]

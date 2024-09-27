@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalksmart_device_1_0.Models
 {
     public class ExtractFacialFeatureResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]

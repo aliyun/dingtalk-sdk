@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0.Models
 {
     public class QueryBaymaxSkillLogResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>14da****2760</para>
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]

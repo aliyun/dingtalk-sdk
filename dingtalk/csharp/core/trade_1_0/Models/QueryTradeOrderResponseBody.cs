@@ -10,28 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0.Models
 {
     public class QueryTradeOrderResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("articleCode")]
         [Validation(Required=false)]
         public string ArticleCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("articleItemCode")]
         [Validation(Required=false)]
         public string ArticleItemCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("articleItemName")]
         [Validation(Required=false)]
         public string ArticleItemName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("articleName")]
         [Validation(Required=false)]
@@ -42,28 +42,28 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0.Models
         public long? CloseTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("createTime")]
         [Validation(Required=false)]
         public long? CreateTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("fee")]
         [Validation(Required=false)]
         public long? Fee { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("isvCropId")]
         [Validation(Required=false)]
         public string IsvCropId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("orderId")]
         [Validation(Required=false)]
@@ -74,7 +74,7 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0.Models
         public string OuterOrderId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("payFee")]
         [Validation(Required=false)]
@@ -85,7 +85,7 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0.Models
         public long? PayTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("quantity")]
         [Validation(Required=false)]
@@ -96,7 +96,7 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0.Models
         public long? RefundTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]

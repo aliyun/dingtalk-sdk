@@ -10,28 +10,40 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_2_0.Models
 {
     public class HandOverWorkspaceRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>source_owner_id</para>
         /// </summary>
         [NameInMap("sourceOwnerId")]
         [Validation(Required=false)]
         public string SourceOwnerId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>source_owner_id</para>
         /// </summary>
         [NameInMap("targetOwnerId")]
         [Validation(Required=false)]
         public string TargetOwnerId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>workspace_id</para>
         /// </summary>
         [NameInMap("workspaceId")]
         [Validation(Required=false)]
         public string WorkspaceId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

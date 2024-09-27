@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class DistributePartnerAppRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("appId")]
         [Validation(Required=false)]
@@ -21,14 +21,14 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public long? DeptId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("subCorpId")]
         [Validation(Required=false)]
         public string SubCorpId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("type")]
         [Validation(Required=false)]

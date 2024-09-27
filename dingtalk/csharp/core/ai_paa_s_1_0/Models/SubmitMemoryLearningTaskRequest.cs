@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0.Models
 {
     public class SubmitMemoryLearningTaskRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("agentCode")]
         [Validation(Required=false)]
         public string AgentCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
@@ -34,14 +34,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("learningMode")]
         [Validation(Required=false)]
         public string LearningMode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("memoryKey")]
         [Validation(Required=false)]

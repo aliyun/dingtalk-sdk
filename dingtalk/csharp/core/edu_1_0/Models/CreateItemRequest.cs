@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class CreateItemRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("description")]
         [Validation(Required=false)]
         public string Description { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("effectType")]
         [Validation(Required=false)]
@@ -28,21 +28,21 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public long? EndTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("merchantId")]
         [Validation(Required=false)]
         public string MerchantId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("optUser")]
         [Validation(Required=false)]
@@ -53,14 +53,14 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public long? PeriodType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("price")]
         [Validation(Required=false)]
         public long? Price { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("scene")]
         [Validation(Required=false)]
@@ -71,14 +71,17 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public long? StartTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1</para>
         /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]
         public int? Status { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("type")]
         [Validation(Required=false)]

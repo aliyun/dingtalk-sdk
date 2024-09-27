@@ -68,7 +68,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         public Dictionary<string, string> Extra { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("id")]
         [Validation(Required=false)]
@@ -137,7 +137,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             public PatchEventRequestRecurrenceRange Range { get; set; }
             public class PatchEventRequestRecurrenceRange : TeaModel {
                 /// <summary>
-                /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+                /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
                 /// </summary>
                 [NameInMap("endDate")]
                 [Validation(Required=false)]
@@ -206,14 +206,14 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         public List<PatchEventRequestUiConfigs> UiConfigs { get; set; }
         public class PatchEventRequestUiConfigs : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("uiName")]
             [Validation(Required=false)]
             public string UiName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("uiStatus")]
             [Validation(Required=false)]

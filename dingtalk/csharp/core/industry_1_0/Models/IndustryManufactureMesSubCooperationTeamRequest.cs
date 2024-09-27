@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class IndustryManufactureMesSubCooperationTeamRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>add</para>
         /// </summary>
         [NameInMap("action")]
         [Validation(Required=false)]
         public string Action { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>libai</para>
         /// </summary>
         [NameInMap("appKey")]
         [Validation(Required=false)]
         public string AppKey { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>outTeam</para>
         /// </summary>
         [NameInMap("baseDataName")]
         [Validation(Required=false)]
@@ -39,25 +48,38 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<IndustryManufactureMesSubCooperationTeamRequestExtendData> ExtendData { get; set; }
         public class IndustryManufactureMesSubCooperationTeamRequestExtendData : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>school</para>
             /// </summary>
             [NameInMap("code")]
             [Validation(Required=false)]
             public string Code { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>学校</para>
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>北大</para>
             /// </summary>
             [NameInMap("value")]
             [Validation(Required=false)]
             public string Value { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>string</para>
             /// </summary>
             [NameInMap("valueType")]
             [Validation(Required=false)]
@@ -70,14 +92,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<IndustryManufactureMesSubCooperationTeamRequestGroupPlugins> GroupPlugins { get; set; }
         public class IndustryManufactureMesSubCooperationTeamRequestGroupPlugins : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("label")]
             [Validation(Required=false)]
             public string Label { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("value")]
             [Validation(Required=false)]
@@ -85,6 +107,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>SUB_COOPERATION_GROUP</para>
+        /// </summary>
         [NameInMap("groupType")]
         [Validation(Required=false)]
         public string GroupType { get; set; }
@@ -94,14 +120,20 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<IndustryManufactureMesSubCooperationTeamRequestLeaders> Leaders { get; set; }
         public class IndustryManufactureMesSubCooperationTeamRequestLeaders : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>张三</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1919442747879777</para>
             /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
@@ -114,14 +146,20 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<IndustryManufactureMesSubCooperationTeamRequestMembers> Members { get; set; }
         public class IndustryManufactureMesSubCooperationTeamRequestMembers : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>李四</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1919442747879777</para>
             /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
@@ -129,12 +167,19 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>打磨班组</para>
+        /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>dingfsdfs3fsd2234wds</para>
         /// </summary>
         [NameInMap("outCorpId")]
         [Validation(Required=false)]
@@ -145,7 +190,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<string> ProcessIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>d41d8cd98f00b204e9800998ecf8427e</para>
         /// </summary>
         [NameInMap("uuid")]
         [Validation(Required=false)]

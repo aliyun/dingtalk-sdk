@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class UpdateCrmPersonalCustomerResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("instanceId")]
         [Validation(Required=false)]

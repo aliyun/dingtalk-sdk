@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkimpaas_1_0.Models
 {
     public class UploadFileResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>$csvsvsdvsvdscs</para>
         /// </summary>
         [NameInMap("mediaId")]
         [Validation(Required=false)]

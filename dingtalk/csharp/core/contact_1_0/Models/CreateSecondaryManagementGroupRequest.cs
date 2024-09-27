@@ -10,28 +10,37 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class CreateSecondaryManagementGroupRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>财务常用权限</para>
         /// </summary>
         [NameInMap("groupName")]
         [Validation(Required=false)]
         public string GroupName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("members")]
         [Validation(Required=false)]
         public List<CreateSecondaryManagementGroupRequestMembers> Members { get; set; }
         public class CreateSecondaryManagementGroupRequestMembers : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>WB001</para>
             /// </summary>
             [NameInMap("memberId")]
             [Validation(Required=false)]
             public string MemberId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>user</para>
             /// </summary>
             [NameInMap("memberType")]
             [Validation(Required=false)]
@@ -40,14 +49,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("resourceIds")]
         [Validation(Required=false)]
         public List<string> ResourceIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("scope")]
         [Validation(Required=false)]
@@ -58,7 +67,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             public List<long?> DeptIds { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1:全公司 2:所在部门 3:指定部门</para>
             /// </summary>
             [NameInMap("scopeType")]
             [Validation(Required=false)]
@@ -67,7 +79,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>WB001</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

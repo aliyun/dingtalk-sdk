@@ -14,14 +14,17 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         public string CustomTrackDesc { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("instanceIdList")]
         [Validation(Required=false)]
         public List<string> InstanceIdList { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123123123</para>
         /// </summary>
         [NameInMap("operatorUserId")]
         [Validation(Required=false)]

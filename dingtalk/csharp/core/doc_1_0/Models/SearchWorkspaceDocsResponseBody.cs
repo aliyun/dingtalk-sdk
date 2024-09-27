@@ -26,28 +26,28 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 public long? LastEditTime { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("nodeId")]
                 [Validation(Required=false)]
                 public string NodeId { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("originName")]
                 [Validation(Required=false)]
                 public string OriginName { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("url")]
                 [Validation(Required=false)]
@@ -64,7 +64,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 public string Name { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("workspaceId")]
                 [Validation(Required=false)]
@@ -75,7 +75,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("hasMore")]
         [Validation(Required=false)]

@@ -18,7 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public string ContentType { get; set; }
 
             /// <summary>
-            /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+            /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
             /// </summary>
             [NameInMap("createTime")]
             [Validation(Required=false)]
@@ -57,7 +57,7 @@ namespace AlibabaCloud.SDK.Dingtalkdrive_1_0.Models
             public string Modifier { get; set; }
 
             /// <summary>
-            /// Use the UTC time format: yyyy-MM-ddTHH:mmZ
+            /// <para>Use the UTC time format: yyyy-MM-ddTHH:mmZ</para>
             /// </summary>
             [NameInMap("modifyTime")]
             [Validation(Required=false)]

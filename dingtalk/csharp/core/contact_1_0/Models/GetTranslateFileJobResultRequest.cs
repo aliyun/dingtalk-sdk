@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class GetTranslateFileJobResultRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>fXrgPrvsNiZNa8RWis9Nk1SY</para>
         /// </summary>
         [NameInMap("jobId")]
         [Validation(Required=false)]

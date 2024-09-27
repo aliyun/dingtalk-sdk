@@ -18,9 +18,9 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
-            this._signatureAlgorithm = "v2";
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -29,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
         }
 
 
-        /**
-         * @summary 日清月结-计件报工接口
-         *
-         * @param request IndustrializeManufactureJobBookRequest
-         * @param headers map
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustrializeManufactureJobBookResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>日清月结-计件报工接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustrializeManufactureJobBookRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustrializeManufactureJobBookResponse
+        /// </returns>
         public IndustrializeManufactureJobBookResponse IndustrializeManufactureJobBookWithOptions(string userId, IndustrializeManufactureJobBookRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -138,17 +148,27 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<IndustrializeManufactureJobBookResponse>(Execute(params_, req, runtime));
+            return TeaModel.ToObject<IndustrializeManufactureJobBookResponse>(DoROARequestWithForm(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
         }
 
-        /**
-         * @summary 日清月结-计件报工接口
-         *
-         * @param request IndustrializeManufactureJobBookRequest
-         * @param headers map
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustrializeManufactureJobBookResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>日清月结-计件报工接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustrializeManufactureJobBookRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustrializeManufactureJobBookResponse
+        /// </returns>
         public async Task<IndustrializeManufactureJobBookResponse> IndustrializeManufactureJobBookWithOptionsAsync(string userId, IndustrializeManufactureJobBookRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -250,15 +270,21 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<IndustrializeManufactureJobBookResponse>(await ExecuteAsync(params_, req, runtime));
+            return TeaModel.ToObject<IndustrializeManufactureJobBookResponse>(await DoROARequestWithFormAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
         }
 
-        /**
-         * @summary 日清月结-计件报工接口
-         *
-         * @param request IndustrializeManufactureJobBookRequest
-         * @return IndustrializeManufactureJobBookResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>日清月结-计件报工接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustrializeManufactureJobBookRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustrializeManufactureJobBookResponse
+        /// </returns>
         public IndustrializeManufactureJobBookResponse IndustrializeManufactureJobBook(string userId, IndustrializeManufactureJobBookRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -266,12 +292,18 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
             return IndustrializeManufactureJobBookWithOptions(userId, request, headers, runtime);
         }
 
-        /**
-         * @summary 日清月结-计件报工接口
-         *
-         * @param request IndustrializeManufactureJobBookRequest
-         * @return IndustrializeManufactureJobBookResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>日清月结-计件报工接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustrializeManufactureJobBookRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustrializeManufactureJobBookResponse
+        /// </returns>
         public async Task<IndustrializeManufactureJobBookResponse> IndustrializeManufactureJobBookAsync(string userId, IndustrializeManufactureJobBookRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -279,14 +311,24 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
             return await IndustrializeManufactureJobBookWithOptionsAsync(userId, request, headers, runtime);
         }
 
-        /**
-         * @summary 日清月结-计件报工查询接口
-         *
-         * @param request IndustrializeManufactureQueryJobsRequest
-         * @param headers IndustrializeManufactureQueryJobsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustrializeManufactureQueryJobsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>日清月结-计件报工查询接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustrializeManufactureQueryJobsRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustrializeManufactureQueryJobsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustrializeManufactureQueryJobsResponse
+        /// </returns>
         public IndustrializeManufactureQueryJobsResponse IndustrializeManufactureQueryJobsWithOptions(IndustrializeManufactureQueryJobsRequest request, IndustrializeManufactureQueryJobsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -380,14 +422,24 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
             return TeaModel.ToObject<IndustrializeManufactureQueryJobsResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 日清月结-计件报工查询接口
-         *
-         * @param request IndustrializeManufactureQueryJobsRequest
-         * @param headers IndustrializeManufactureQueryJobsHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return IndustrializeManufactureQueryJobsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>日清月结-计件报工查询接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustrializeManufactureQueryJobsRequest
+        /// </param>
+        /// <param name="headers">
+        /// IndustrializeManufactureQueryJobsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustrializeManufactureQueryJobsResponse
+        /// </returns>
         public async Task<IndustrializeManufactureQueryJobsResponse> IndustrializeManufactureQueryJobsWithOptionsAsync(IndustrializeManufactureQueryJobsRequest request, IndustrializeManufactureQueryJobsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -481,12 +533,18 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
             return TeaModel.ToObject<IndustrializeManufactureQueryJobsResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 日清月结-计件报工查询接口
-         *
-         * @param request IndustrializeManufactureQueryJobsRequest
-         * @return IndustrializeManufactureQueryJobsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>日清月结-计件报工查询接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustrializeManufactureQueryJobsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustrializeManufactureQueryJobsResponse
+        /// </returns>
         public IndustrializeManufactureQueryJobsResponse IndustrializeManufactureQueryJobs(IndustrializeManufactureQueryJobsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -494,12 +552,18 @@ namespace AlibabaCloud.SDK.Dingtalkmanufacturing_1_0
             return IndustrializeManufactureQueryJobsWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 日清月结-计件报工查询接口
-         *
-         * @param request IndustrializeManufactureQueryJobsRequest
-         * @return IndustrializeManufactureQueryJobsResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>日清月结-计件报工查询接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IndustrializeManufactureQueryJobsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IndustrializeManufactureQueryJobsResponse
+        /// </returns>
         public async Task<IndustrializeManufactureQueryJobsResponse> IndustrializeManufactureQueryJobsAsync(IndustrializeManufactureQueryJobsRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

@@ -18,7 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         public bool? DisableNotification { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("executorId")]
         [Validation(Required=false)]

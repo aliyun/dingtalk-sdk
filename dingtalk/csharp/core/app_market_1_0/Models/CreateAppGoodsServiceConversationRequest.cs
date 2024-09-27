@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkapp_market_1_0.Models
 {
     public class CreateAppGoodsServiceConversationRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("isvUserId")]
         [Validation(Required=false)]
         public string IsvUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("orderId")]
         [Validation(Required=false)]

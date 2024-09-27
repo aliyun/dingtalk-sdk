@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class GetRelatedWorkspacesResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("workspaces")]
         [Validation(Required=false)]
@@ -21,14 +21,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             public long? CreateTime { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("deleted")]
             [Validation(Required=false)]
             public bool? Deleted { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
@@ -47,21 +47,21 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
                 public long? LastEditTime { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("nodeId")]
                 [Validation(Required=false)]
                 public string NodeId { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("url")]
                 [Validation(Required=false)]
@@ -69,19 +69,23 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>OWNER：所有者；MANAGER：管理者；EDITOR：可编辑；VIEWER：可查询\下载；ONLY_VIEWER：尽可查看</para>
+            /// </summary>
             [NameInMap("role")]
             [Validation(Required=false)]
             public string Role { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("url")]
             [Validation(Required=false)]
             public string Url { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("workspaceId")]
             [Validation(Required=false)]

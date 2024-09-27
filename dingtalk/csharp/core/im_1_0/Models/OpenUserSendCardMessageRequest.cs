@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class OpenUserSendCardMessageRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("cardContent")]
         [Validation(Required=false)]
         public OpenUserSendCardMessageRequestCardContent CardContent { get; set; }
         public class OpenUserSendCardMessageRequestCardContent : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("lastMessage")]
             [Validation(Required=false)]
             public string LastMessage { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("outTrackId")]
             [Validation(Required=false)]
@@ -41,7 +41,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
         public string ReceiveUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

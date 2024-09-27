@@ -21,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
                 [Validation(Required=false)]
                 public List<GetColumnvalsResponseBodyResultColumnDataColumnValues> ColumnValues { get; set; }
                 public class GetColumnvalsResponseBodyResultColumnDataColumnValues : TeaModel {
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>1709222400000</para>
+                    /// </summary>
                     [NameInMap("date")]
                     [Validation(Required=false)]
                     public long? Date { get; set; }
@@ -31,16 +35,28 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 
                 }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>0</para>
+                /// </summary>
                 [NameInMap("fixedValue")]
                 [Validation(Required=false)]
                 public string FixedValue { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>129339038</para>
+                /// </summary>
                 [NameInMap("id")]
                 [Validation(Required=false)]
                 public long? Id { get; set; }
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>manager123</para>
+            /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }

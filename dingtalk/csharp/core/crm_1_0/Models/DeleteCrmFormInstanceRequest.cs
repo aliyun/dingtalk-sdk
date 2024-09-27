@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class DeleteCrmFormInstanceRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>manager123</para>
         /// </summary>
         [NameInMap("currentOperatorUserId")]
         [Validation(Required=false)]
         public string CurrentOperatorUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>PROC-123</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]

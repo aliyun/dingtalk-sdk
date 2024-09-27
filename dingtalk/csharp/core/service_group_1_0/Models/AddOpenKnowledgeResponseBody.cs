@@ -10,22 +10,36 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class AddOpenKnowledgeResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>22</para>
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public AddOpenKnowledgeResponseBodyResult Result { get; set; }
         public class AddOpenKnowledgeResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>111</para>
+            /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public long? Id { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>知识标问不能为空</para>
+            /// </summary>
             [NameInMap("message")]
             [Validation(Required=false)]
             public string Message { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>true</para>
             /// </summary>
             [NameInMap("success")]
             [Validation(Required=false)]
@@ -34,7 +48,10 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>true</para>
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

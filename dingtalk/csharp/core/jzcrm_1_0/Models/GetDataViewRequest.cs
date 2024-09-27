@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
 {
     public class GetDataViewRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>150</para>
         /// </summary>
         [NameInMap("datatype")]
         [Validation(Required=false)]
         public string Datatype { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1</para>
         /// </summary>
         [NameInMap("msgid")]
         [Validation(Required=false)]

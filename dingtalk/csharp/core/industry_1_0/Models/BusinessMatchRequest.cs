@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class BusinessMatchRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("businessInfo")]
         [Validation(Required=false)]
         public string BusinessInfo { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("corpName")]
         [Validation(Required=false)]
         public string CorpName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

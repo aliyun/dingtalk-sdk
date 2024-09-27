@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class UpdateCustomerBizTypeRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>crm_customer</para>
         /// </summary>
         [NameInMap("customerBizType")]
         [Validation(Required=false)]
         public string CustomerBizType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>34234234ddddad</para>
         /// </summary>
         [NameInMap("operatorUserId")]
         [Validation(Required=false)]

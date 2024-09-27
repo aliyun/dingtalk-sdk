@@ -10,12 +10,19 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
 {
     public class SyncProjectEntityRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ding89233847892ndkas</para>
         /// </summary>
         [NameInMap("channelCorpId")]
         [Validation(Required=false)]
         public string ChannelCorpId { get; set; }
 
+        /// <summary>
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
         [NameInMap("delAll")]
         [Validation(Required=false)]
         public bool? DelAll { get; set; }
@@ -25,14 +32,14 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         public List<SyncProjectEntityRequestEntityList> EntityList { get; set; }
         public class SyncProjectEntityRequestEntityList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("entityId")]
             [Validation(Required=false)]
             public string EntityId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("entityType")]
             [Validation(Required=false)]
@@ -41,14 +48,20 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123456</para>
         /// </summary>
         [NameInMap("projectId")]
         [Validation(Required=false)]
         public string ProjectId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>20881001829000</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

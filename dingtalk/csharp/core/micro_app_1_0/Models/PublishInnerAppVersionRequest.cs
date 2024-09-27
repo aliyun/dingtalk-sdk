@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
     public class PublishInnerAppVersionRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1</para>
         /// </summary>
         [NameInMap("appVersionId")]
         [Validation(Required=false)]
@@ -21,12 +24,19 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         public bool? MiniAppOnPc { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>xxx</para>
         /// </summary>
         [NameInMap("opUnionId")]
         [Validation(Required=false)]
         public string OpUnionId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>online</para>
+        /// </summary>
         [NameInMap("publishType")]
         [Validation(Required=false)]
         public string PublishType { get; set; }

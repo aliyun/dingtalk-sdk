@@ -14,14 +14,20 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         public CreateObjectiveResponseBodyData Data { get; set; }
         public class CreateObjectiveResponseBodyData : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>58YD</para>
             /// </summary>
             [NameInMap("id")]
             [Validation(Required=false)]
             public string Id { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>33453</para>
             /// </summary>
             [NameInMap("position")]
             [Validation(Required=false)]
@@ -29,6 +35,10 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

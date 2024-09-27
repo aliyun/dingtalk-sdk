@@ -13,12 +13,16 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public string CallbackRouteKey { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>STREAM</para>
+        /// </summary>
         [NameInMap("callbackType")]
         [Validation(Required=false)]
         public string CallbackType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("cardData")]
         [Validation(Required=false)]
@@ -31,7 +35,7 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("cardTemplateId")]
         [Validation(Required=false)]
@@ -41,10 +45,18 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public CreateAndDeliverRequestCoFeedOpenDeliverModel CoFeedOpenDeliverModel { get; set; }
         public class CreateAndDeliverRequestCoFeedOpenDeliverModel : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>xxx_biz_tag</para>
+            /// </summary>
             [NameInMap("bizTag")]
             [Validation(Required=false)]
             public string BizTag { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1665473229000</para>
+            /// </summary>
             [NameInMap("gmtTimeLine")]
             [Validation(Required=false)]
             public long? GmtTimeLine { get; set; }
@@ -55,10 +67,18 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public CreateAndDeliverRequestCoFeedOpenSpaceModel CoFeedOpenSpaceModel { get; set; }
         public class CreateAndDeliverRequestCoFeedOpenSpaceModel : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>coolAppCode123</para>
+            /// </summary>
             [NameInMap("coolAppCode")]
             [Validation(Required=false)]
             public string CoolAppCode { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>xxxx卡片</para>
+            /// </summary>
             [NameInMap("title")]
             [Validation(Required=false)]
             public string Title { get; set; }
@@ -69,6 +89,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public CreateAndDeliverRequestDocOpenDeliverModel DocOpenDeliverModel { get; set; }
         public class CreateAndDeliverRequestDocOpenDeliverModel : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>xxx_biz_tag</para>
+            /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }
@@ -91,6 +115,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
             [Validation(Required=false)]
             public List<string> Recipients { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>dingg3xmqdkpaojuakm8</para>
+            /// </summary>
             [NameInMap("robotCode")]
             [Validation(Required=false)]
             public string RobotCode { get; set; }
@@ -109,6 +137,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
             [Validation(Required=false)]
             public CreateAndDeliverRequestImGroupOpenSpaceModelNotification Notification { get; set; }
             public class CreateAndDeliverRequestImGroupOpenSpaceModelNotification : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>你收到了一个卡片消息</para>
+                /// </summary>
                 [NameInMap("alertContent")]
                 [Validation(Required=false)]
                 public string AlertContent { get; set; }
@@ -123,14 +155,26 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
             [Validation(Required=false)]
             public CreateAndDeliverRequestImGroupOpenSpaceModelSearchSupport SearchSupport { get; set; }
             public class CreateAndDeliverRequestImGroupOpenSpaceModelSearchSupport : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>卡片的具体描述</para>
+                /// </summary>
                 [NameInMap("searchDesc")]
                 [Validation(Required=false)]
                 public string SearchDesc { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>@lALPDgQ9q8hFhlHNAXzNAqI</para>
+                /// </summary>
                 [NameInMap("searchIcon")]
                 [Validation(Required=false)]
                 public string SearchIcon { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>{&quot;zh_CN&quot;:&quot;待办&quot;,&quot;zh_TW&quot;:&quot;待辦&quot;,&quot;en_US&quot;:&quot;ToDo&quot;}</para>
+                /// </summary>
                 [NameInMap("searchTypeName")]
                 [Validation(Required=false)]
                 public string SearchTypeName { get; set; }
@@ -151,6 +195,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
             [Validation(Required=false)]
             public Dictionary<string, string> Extension { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>dingg3xmqdkpaojuakm8</para>
+            /// </summary>
             [NameInMap("robotCode")]
             [Validation(Required=false)]
             public string RobotCode { get; set; }
@@ -173,6 +221,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
             [Validation(Required=false)]
             public CreateAndDeliverRequestImRobotOpenSpaceModelNotification Notification { get; set; }
             public class CreateAndDeliverRequestImRobotOpenSpaceModelNotification : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>你收到了一个卡片消息</para>
+                /// </summary>
                 [NameInMap("alertContent")]
                 [Validation(Required=false)]
                 public string AlertContent { get; set; }
@@ -187,14 +239,26 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
             [Validation(Required=false)]
             public CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport SearchSupport { get; set; }
             public class CreateAndDeliverRequestImRobotOpenSpaceModelSearchSupport : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>卡片的具体描述</para>
+                /// </summary>
                 [NameInMap("searchDesc")]
                 [Validation(Required=false)]
                 public string SearchDesc { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>@lALPDgQ9q8hFhlHNAXzNAqI</para>
+                /// </summary>
                 [NameInMap("searchIcon")]
                 [Validation(Required=false)]
                 public string SearchIcon { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>{&quot;zh_CN&quot;:&quot;待办&quot;,&quot;zh_TW&quot;:&quot;待辦&quot;,&quot;en_US&quot;:&quot;ToDo&quot;}</para>
+                /// </summary>
                 [NameInMap("searchTypeName")]
                 [Validation(Required=false)]
                 public string SearchTypeName { get; set; }
@@ -233,6 +297,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
             [Validation(Required=false)]
             public CreateAndDeliverRequestImSingleOpenSpaceModelNotification Notification { get; set; }
             public class CreateAndDeliverRequestImSingleOpenSpaceModelNotification : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>你收到了一个卡片消息</para>
+                /// </summary>
                 [NameInMap("alertContent")]
                 [Validation(Required=false)]
                 public string AlertContent { get; set; }
@@ -247,14 +315,26 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
             [Validation(Required=false)]
             public CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport SearchSupport { get; set; }
             public class CreateAndDeliverRequestImSingleOpenSpaceModelSearchSupport : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>卡片的具体描述</para>
+                /// </summary>
                 [NameInMap("searchDesc")]
                 [Validation(Required=false)]
                 public string SearchDesc { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>@lALPDgQ9q8hFhlHNAXzNAqI</para>
+                /// </summary>
                 [NameInMap("searchIcon")]
                 [Validation(Required=false)]
                 public string SearchIcon { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>{&quot;zh_CN&quot;:&quot;待办&quot;,&quot;zh_TW&quot;:&quot;待辦&quot;,&quot;en_US&quot;:&quot;ToDo&quot;}</para>
+                /// </summary>
                 [NameInMap("searchTypeName")]
                 [Validation(Required=false)]
                 public string SearchTypeName { get; set; }
@@ -306,14 +386,17 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>dtv1.card//im_group.cidp4Gh<em><b><b><b>VCQ==;im_robot.manager</b></b>67;im_robot.staff</b></em><em>89;co_feed.manager</em><em><b>67;one_box.cidp4Gh</b></em>****VCQ==;</para>
         /// </summary>
         [NameInMap("openSpaceId")]
         [Validation(Required=false)]
         public string OpenSpaceId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("outTrackId")]
         [Validation(Required=false)]
@@ -327,6 +410,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public CreateAndDeliverRequestTopOpenDeliverModel TopOpenDeliverModel { get; set; }
         public class CreateAndDeliverRequestTopOpenDeliverModel : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1665473229000</para>
+            /// </summary>
             [NameInMap("expiredTimeMillis")]
             [Validation(Required=false)]
             public long? ExpiredTimeMillis { get; set; }
@@ -345,6 +432,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public CreateAndDeliverRequestTopOpenSpaceModel TopOpenSpaceModel { get; set; }
         public class CreateAndDeliverRequestTopOpenSpaceModel : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>ONE_BOX</para>
+            /// </summary>
             [NameInMap("spaceType")]
             [Validation(Required=false)]
             public string SpaceType { get; set; }

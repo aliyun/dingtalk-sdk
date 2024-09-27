@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class GetOrganizatioTaskByIdsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>62a010c153c2ef5244xxxx, 62a010c153c2ef524xxxxxx</para>
         /// </summary>
         [NameInMap("taskIds")]
         [Validation(Required=false)]

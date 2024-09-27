@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public PremiumSaveIntegratedProcessInstanceResponseBodyResult Result { get; set; }
         public class PremiumSaveIntegratedProcessInstanceResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>proc-abc</para>
+            /// </summary>
             [NameInMap("processInstanceId")]
             [Validation(Required=false)]
             public string ProcessInstanceId { get; set; }

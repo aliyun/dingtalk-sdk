@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class ReleaseUnfurlingRegisterRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>3102xxxxxxx</para>
         /// </summary>
         [NameInMap("appId")]
         [Validation(Required=false)]
         public string AppId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1</para>
         /// </summary>
         [NameInMap("id")]
         [Validation(Required=false)]
         public long? Id { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>37xxxx</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

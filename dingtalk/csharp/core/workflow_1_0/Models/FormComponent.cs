@@ -14,14 +14,17 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         public List<FormComponent> Children { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>TextField</para>
         /// </summary>
         [NameInMap("componentType")]
         [Validation(Required=false)]
         public string ComponentType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("props")]
         [Validation(Required=false)]

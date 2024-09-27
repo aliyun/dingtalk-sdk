@@ -14,14 +14,14 @@ namespace AlibabaCloud.SDK.Dingtalkai_interaction_1_0.Models
         public string Content { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("contentType")]
         [Validation(Required=false)]
         public string ContentType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("conversationToken")]
         [Validation(Required=false)]

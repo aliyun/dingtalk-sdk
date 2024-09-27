@@ -10,42 +10,42 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
 {
     public class GetResidentUserInfoResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("feature")]
         [Validation(Required=false)]
         public string Feature { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("roles")]
         [Validation(Required=false)]
         public List<GetResidentUserInfoResponseBodyRoles> Roles { get; set; }
         public class GetResidentUserInfoResponseBodyRoles : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("roleId")]
             [Validation(Required=false)]
             public long? RoleId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("roleName")]
             [Validation(Required=false)]
             public string RoleName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("tagCode")]
             [Validation(Required=false)]
@@ -54,14 +54,14 @@ namespace AlibabaCloud.SDK.Dingtalkvillage_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userid")]
         [Validation(Required=false)]

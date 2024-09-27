@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
 {
     public class QueryProcessesWorkItemsResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>success</para>
         /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
@@ -20,30 +23,58 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
         [Validation(Required=false)]
         public List<QueryProcessesWorkItemsResponseBodyData> Data { get; set; }
         public class QueryProcessesWorkItemsResponseBodyData : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>Activity1</para>
+            /// </summary>
             [NameInMap("activityCode")]
             [Validation(Required=false)]
             public string ActivityCode { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>发起流程</para>
+            /// </summary>
             [NameInMap("activityName")]
             [Validation(Required=false)]
             public string ActivityName { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>D000001</para>
+            /// </summary>
             [NameInMap("appCode")]
             [Validation(Required=false)]
             public string AppCode { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>106f870b-4d1c-4cd0-85b3-2e866798e947</para>
+            /// </summary>
             [NameInMap("bizObjectId")]
             [Validation(Required=false)]
             public string BizObjectId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>同意</para>
+            /// </summary>
             [NameInMap("comment")]
             [Validation(Required=false)]
             public string Comment { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>发起流程</para>
+            /// </summary>
             [NameInMap("displayName")]
             [Validation(Required=false)]
             public string DisplayName { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>null</para>
+            /// </summary>
             [NameInMap("finishTimeGMT")]
             [Validation(Required=false)]
             public string FinishTimeGMT { get; set; }
@@ -52,28 +83,52 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
             [Validation(Required=false)]
             public QueryProcessesWorkItemsResponseBodyDataFinisher Finisher { get; set; }
             public class QueryProcessesWorkItemsResponseBodyDataFinisher : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>18f923a7-5a5e-426d-94ae-a55ad1a4b240</para>
+                /// </summary>
                 [NameInMap("departmentId")]
                 [Validation(Required=false)]
                 public string DepartmentId { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>研发中心</para>
+                /// </summary>
                 [NameInMap("departmentName")]
                 [Validation(Required=false)]
                 public string DepartmentName { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>张三</para>
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>aea4d7a7-d162-4c77-9c44-7bd9cb8316a5</para>
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>true</para>
+            /// </summary>
             [NameInMap("isApproval")]
             [Validation(Required=false)]
             public bool? IsApproval { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>false</para>
+            /// </summary>
             [NameInMap("isFinish")]
             [Validation(Required=false)]
             public bool? IsFinish { get; set; }
@@ -82,28 +137,52 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
             [Validation(Required=false)]
             public QueryProcessesWorkItemsResponseBodyDataParticipant Participant { get; set; }
             public class QueryProcessesWorkItemsResponseBodyDataParticipant : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>18f923a7-5a5e-426d-94ae-a55ad1a4b240</para>
+                /// </summary>
                 [NameInMap("departmentId")]
                 [Validation(Required=false)]
                 public string DepartmentId { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>研发中心</para>
+                /// </summary>
                 [NameInMap("departmentName")]
                 [Validation(Required=false)]
                 public string DepartmentName { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>张三</para>
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>aea4d7a7-d162-4c77-9c44-7bd9cb8316a5</para>
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>006f870b-4d1c-4cd0-85b3-2e866798e947</para>
+            /// </summary>
             [NameInMap("processInstanceId")]
             [Validation(Required=false)]
             public string ProcessInstanceId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>3</para>
+            /// </summary>
             [NameInMap("processVersion")]
             [Validation(Required=false)]
             public string ProcessVersion { get; set; }
@@ -112,44 +191,84 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
             [Validation(Required=false)]
             public QueryProcessesWorkItemsResponseBodyDataReceiptor Receiptor { get; set; }
             public class QueryProcessesWorkItemsResponseBodyDataReceiptor : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>null</para>
+                /// </summary>
                 [NameInMap("departmentId")]
                 [Validation(Required=false)]
                 public string DepartmentId { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>null</para>
+                /// </summary>
                 [NameInMap("departmentName")]
                 [Validation(Required=false)]
                 public string DepartmentName { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>null</para>
+                /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>null</para>
+                /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
                 public string UserId { get; set; }
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>2021-11-19 19:36:54</para>
+            /// </summary>
             [NameInMap("receiveTimeGMT")]
             [Validation(Required=false)]
             public string ReceiveTimeGMT { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>D0001833abb0fb61524487eb01848207bc89b47</para>
+            /// </summary>
             [NameInMap("schemaCode")]
             [Validation(Required=false)]
             public string SchemaCode { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>2021-11-19 19:36:54</para>
+            /// </summary>
             [NameInMap("startTimeGMT")]
             [Validation(Required=false)]
             public string StartTimeGMT { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>Waiting</para>
+            /// </summary>
             [NameInMap("state")]
             [Validation(Required=false)]
             public string State { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>3d0ad4a4-d7d5-4196-9f2c-3ed246f2b713</para>
+            /// </summary>
             [NameInMap("workItemId")]
             [Validation(Required=false)]
             public string WorkItemId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>Fill</para>
+            /// </summary>
             [NameInMap("workItemType")]
             [Validation(Required=false)]
             public string WorkItemType { get; set; }
@@ -157,7 +276,10 @@ namespace AlibabaCloud.SDK.Dingtalkh3yun_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>OK</para>
         /// </summary>
         [NameInMap("message")]
         [Validation(Required=false)]

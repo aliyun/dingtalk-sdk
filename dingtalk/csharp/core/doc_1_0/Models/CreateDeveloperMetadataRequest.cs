@@ -14,14 +14,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         public CreateDeveloperMetadataRequestAssociatedColumn AssociatedColumn { get; set; }
         public class CreateDeveloperMetadataRequestAssociatedColumn : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("column")]
             [Validation(Required=false)]
             public int? Column { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("sheet")]
             [Validation(Required=false)]
@@ -34,14 +34,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         public CreateDeveloperMetadataRequestAssociatedRow AssociatedRow { get; set; }
         public class CreateDeveloperMetadataRequestAssociatedRow : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("row")]
             [Validation(Required=false)]
             public int? Row { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("sheet")]
             [Validation(Required=false)]
@@ -54,7 +54,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         public string Value { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ppgAQuHfOoNVpJiStDwWCEgiEiE</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

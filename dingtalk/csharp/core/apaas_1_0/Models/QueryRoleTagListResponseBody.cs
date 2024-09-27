@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkapaas_1_0.Models
 {
     public class QueryRoleTagListResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("roleList")]
         [Validation(Required=false)]

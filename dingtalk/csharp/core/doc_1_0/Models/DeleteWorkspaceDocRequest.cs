@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class DeleteWorkspaceDocRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

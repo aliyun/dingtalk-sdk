@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkfinance_1_0.Models
 {
     public class UpateUserCodeInstanceResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>codexxxxxx</para>
+        /// </summary>
         [NameInMap("codeId")]
         [Validation(Required=false)]
         public string CodeId { get; set; }

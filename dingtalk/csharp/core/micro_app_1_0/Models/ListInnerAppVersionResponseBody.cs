@@ -14,28 +14,40 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         public List<ListInnerAppVersionResponseBodyAppVersionList> AppVersionList { get; set; }
         public class ListInnerAppVersionResponseBodyAppVersionList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>0.0.1</para>
             /// </summary>
             [NameInMap("appVersion")]
             [Validation(Required=false)]
             public string AppVersion { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1</para>
             /// </summary>
             [NameInMap("appVersionId")]
             [Validation(Required=false)]
             public long? AppVersionId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>0</para>
             /// </summary>
             [NameInMap("appVersionType")]
             [Validation(Required=false)]
             public int? AppVersionType { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>2023-01-01 00:00:00</para>
             /// </summary>
             [NameInMap("createTime")]
             [Validation(Required=false)]
@@ -46,7 +58,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
             public string EntranceLink { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("miniAppId")]
             [Validation(Required=false)]
@@ -57,7 +69,10 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
             public bool? MiniAppOnPc { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>2023-01-01 00:00:00</para>
             /// </summary>
             [NameInMap("modifyTime")]
             [Validation(Required=false)]

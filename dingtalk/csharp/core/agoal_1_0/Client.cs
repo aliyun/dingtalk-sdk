@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
         }
 
 
-        /**
-         * @summary 创建目标进展
-         *
-         * @param request AgoalCreateProgressRequest
-         * @param headers AgoalCreateProgressHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AgoalCreateProgressResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建目标进展</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalCreateProgressRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalCreateProgressHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalCreateProgressResponse
+        /// </returns>
         public AgoalCreateProgressResponse AgoalCreateProgressWithOptions(AgoalCreateProgressRequest request, AgoalCreateProgressHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -93,14 +104,24 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return TeaModel.ToObject<AgoalCreateProgressResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建目标进展
-         *
-         * @param request AgoalCreateProgressRequest
-         * @param headers AgoalCreateProgressHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AgoalCreateProgressResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建目标进展</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalCreateProgressRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalCreateProgressHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalCreateProgressResponse
+        /// </returns>
         public async Task<AgoalCreateProgressResponse> AgoalCreateProgressWithOptionsAsync(AgoalCreateProgressRequest request, AgoalCreateProgressHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -158,12 +179,18 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return TeaModel.ToObject<AgoalCreateProgressResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建目标进展
-         *
-         * @param request AgoalCreateProgressRequest
-         * @return AgoalCreateProgressResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建目标进展</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalCreateProgressRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalCreateProgressResponse
+        /// </returns>
         public AgoalCreateProgressResponse AgoalCreateProgress(AgoalCreateProgressRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -171,12 +198,18 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return AgoalCreateProgressWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建目标进展
-         *
-         * @param request AgoalCreateProgressRequest
-         * @return AgoalCreateProgressResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建目标进展</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalCreateProgressRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalCreateProgressResponse
+        /// </returns>
         public async Task<AgoalCreateProgressResponse> AgoalCreateProgressAsync(AgoalCreateProgressRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -184,14 +217,24 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return await AgoalCreateProgressWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取Agoal指定目标或者关键结果关联的关键行动
-         *
-         * @param request AgoalObjectiveKeyActionListRequest
-         * @param headers AgoalObjectiveKeyActionListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AgoalObjectiveKeyActionListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Agoal指定目标或者关键结果关联的关键行动</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalObjectiveKeyActionListRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalObjectiveKeyActionListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalObjectiveKeyActionListResponse
+        /// </returns>
         public AgoalObjectiveKeyActionListResponse AgoalObjectiveKeyActionListWithOptions(AgoalObjectiveKeyActionListRequest request, AgoalObjectiveKeyActionListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -237,14 +280,24 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return TeaModel.ToObject<AgoalObjectiveKeyActionListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取Agoal指定目标或者关键结果关联的关键行动
-         *
-         * @param request AgoalObjectiveKeyActionListRequest
-         * @param headers AgoalObjectiveKeyActionListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AgoalObjectiveKeyActionListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Agoal指定目标或者关键结果关联的关键行动</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalObjectiveKeyActionListRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalObjectiveKeyActionListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalObjectiveKeyActionListResponse
+        /// </returns>
         public async Task<AgoalObjectiveKeyActionListResponse> AgoalObjectiveKeyActionListWithOptionsAsync(AgoalObjectiveKeyActionListRequest request, AgoalObjectiveKeyActionListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -290,12 +343,18 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return TeaModel.ToObject<AgoalObjectiveKeyActionListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取Agoal指定目标或者关键结果关联的关键行动
-         *
-         * @param request AgoalObjectiveKeyActionListRequest
-         * @return AgoalObjectiveKeyActionListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Agoal指定目标或者关键结果关联的关键行动</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalObjectiveKeyActionListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalObjectiveKeyActionListResponse
+        /// </returns>
         public AgoalObjectiveKeyActionListResponse AgoalObjectiveKeyActionList(AgoalObjectiveKeyActionListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -303,12 +362,18 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return AgoalObjectiveKeyActionListWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取Agoal指定目标或者关键结果关联的关键行动
-         *
-         * @param request AgoalObjectiveKeyActionListRequest
-         * @return AgoalObjectiveKeyActionListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Agoal指定目标或者关键结果关联的关键行动</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalObjectiveKeyActionListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalObjectiveKeyActionListResponse
+        /// </returns>
         public async Task<AgoalObjectiveKeyActionListResponse> AgoalObjectiveKeyActionListAsync(AgoalObjectiveKeyActionListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -316,14 +381,24 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return await AgoalObjectiveKeyActionListWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取Agoal目标规则下的周期列表
-         *
-         * @param request AgoalObjectiveRulePeriodListRequest
-         * @param headers AgoalObjectiveRulePeriodListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AgoalObjectiveRulePeriodListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Agoal目标规则下的周期列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalObjectiveRulePeriodListRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalObjectiveRulePeriodListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalObjectiveRulePeriodListResponse
+        /// </returns>
         public AgoalObjectiveRulePeriodListResponse AgoalObjectiveRulePeriodListWithOptions(AgoalObjectiveRulePeriodListRequest request, AgoalObjectiveRulePeriodListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -361,14 +436,24 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return TeaModel.ToObject<AgoalObjectiveRulePeriodListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取Agoal目标规则下的周期列表
-         *
-         * @param request AgoalObjectiveRulePeriodListRequest
-         * @param headers AgoalObjectiveRulePeriodListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AgoalObjectiveRulePeriodListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Agoal目标规则下的周期列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalObjectiveRulePeriodListRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalObjectiveRulePeriodListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalObjectiveRulePeriodListResponse
+        /// </returns>
         public async Task<AgoalObjectiveRulePeriodListResponse> AgoalObjectiveRulePeriodListWithOptionsAsync(AgoalObjectiveRulePeriodListRequest request, AgoalObjectiveRulePeriodListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -406,12 +491,18 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return TeaModel.ToObject<AgoalObjectiveRulePeriodListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取Agoal目标规则下的周期列表
-         *
-         * @param request AgoalObjectiveRulePeriodListRequest
-         * @return AgoalObjectiveRulePeriodListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Agoal目标规则下的周期列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalObjectiveRulePeriodListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalObjectiveRulePeriodListResponse
+        /// </returns>
         public AgoalObjectiveRulePeriodListResponse AgoalObjectiveRulePeriodList(AgoalObjectiveRulePeriodListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -419,12 +510,18 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return AgoalObjectiveRulePeriodListWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取Agoal目标规则下的周期列表
-         *
-         * @param request AgoalObjectiveRulePeriodListRequest
-         * @return AgoalObjectiveRulePeriodListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Agoal目标规则下的周期列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalObjectiveRulePeriodListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalObjectiveRulePeriodListResponse
+        /// </returns>
         public async Task<AgoalObjectiveRulePeriodListResponse> AgoalObjectiveRulePeriodListAsync(AgoalObjectiveRulePeriodListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -432,13 +529,21 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return await AgoalObjectiveRulePeriodListWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取Agoal目标规则列表
-         *
-         * @param headers AgoalOrgObjectiveRuleListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AgoalOrgObjectiveRuleListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Agoal目标规则列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// AgoalOrgObjectiveRuleListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalOrgObjectiveRuleListResponse
+        /// </returns>
         public AgoalOrgObjectiveRuleListResponse AgoalOrgObjectiveRuleListWithOptions(AgoalOrgObjectiveRuleListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -469,13 +574,21 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return TeaModel.ToObject<AgoalOrgObjectiveRuleListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取Agoal目标规则列表
-         *
-         * @param headers AgoalOrgObjectiveRuleListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AgoalOrgObjectiveRuleListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Agoal目标规则列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// AgoalOrgObjectiveRuleListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalOrgObjectiveRuleListResponse
+        /// </returns>
         public async Task<AgoalOrgObjectiveRuleListResponse> AgoalOrgObjectiveRuleListWithOptionsAsync(AgoalOrgObjectiveRuleListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -506,11 +619,14 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return TeaModel.ToObject<AgoalOrgObjectiveRuleListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取Agoal目标规则列表
-         *
-         * @return AgoalOrgObjectiveRuleListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Agoal目标规则列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// AgoalOrgObjectiveRuleListResponse
+        /// </returns>
         public AgoalOrgObjectiveRuleListResponse AgoalOrgObjectiveRuleList()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -518,11 +634,14 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return AgoalOrgObjectiveRuleListWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 获取Agoal目标规则列表
-         *
-         * @return AgoalOrgObjectiveRuleListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Agoal目标规则列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// AgoalOrgObjectiveRuleListResponse
+        /// </returns>
         public async Task<AgoalOrgObjectiveRuleListResponse> AgoalOrgObjectiveRuleListAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -530,14 +649,24 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return await AgoalOrgObjectiveRuleListWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary Agoal消息发送
-         *
-         * @param request AgoalSendMessageRequest
-         * @param headers AgoalSendMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AgoalSendMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>Agoal消息发送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalSendMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalSendMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalSendMessageResponse
+        /// </returns>
         public AgoalSendMessageResponse AgoalSendMessageWithOptions(AgoalSendMessageRequest request, AgoalSendMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -595,14 +724,24 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return TeaModel.ToObject<AgoalSendMessageResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary Agoal消息发送
-         *
-         * @param request AgoalSendMessageRequest
-         * @param headers AgoalSendMessageHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AgoalSendMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>Agoal消息发送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalSendMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalSendMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalSendMessageResponse
+        /// </returns>
         public async Task<AgoalSendMessageResponse> AgoalSendMessageWithOptionsAsync(AgoalSendMessageRequest request, AgoalSendMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -660,12 +799,18 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return TeaModel.ToObject<AgoalSendMessageResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary Agoal消息发送
-         *
-         * @param request AgoalSendMessageRequest
-         * @return AgoalSendMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>Agoal消息发送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalSendMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalSendMessageResponse
+        /// </returns>
         public AgoalSendMessageResponse AgoalSendMessage(AgoalSendMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -673,12 +818,18 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return AgoalSendMessageWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary Agoal消息发送
-         *
-         * @param request AgoalSendMessageRequest
-         * @return AgoalSendMessageResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>Agoal消息发送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalSendMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalSendMessageResponse
+        /// </returns>
         public async Task<AgoalSendMessageResponse> AgoalSendMessageAsync(AgoalSendMessageRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -686,13 +837,21 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return await AgoalSendMessageWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取Agoal管理员列表
-         *
-         * @param headers AgoalUserAdminListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AgoalUserAdminListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Agoal管理员列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// AgoalUserAdminListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalUserAdminListResponse
+        /// </returns>
         public AgoalUserAdminListResponse AgoalUserAdminListWithOptions(AgoalUserAdminListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -723,13 +882,21 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return TeaModel.ToObject<AgoalUserAdminListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取Agoal管理员列表
-         *
-         * @param headers AgoalUserAdminListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AgoalUserAdminListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Agoal管理员列表</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// AgoalUserAdminListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalUserAdminListResponse
+        /// </returns>
         public async Task<AgoalUserAdminListResponse> AgoalUserAdminListWithOptionsAsync(AgoalUserAdminListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
@@ -760,11 +927,14 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return TeaModel.ToObject<AgoalUserAdminListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取Agoal管理员列表
-         *
-         * @return AgoalUserAdminListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Agoal管理员列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// AgoalUserAdminListResponse
+        /// </returns>
         public AgoalUserAdminListResponse AgoalUserAdminList()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -772,11 +942,14 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return AgoalUserAdminListWithOptions(headers, runtime);
         }
 
-        /**
-         * @summary 获取Agoal管理员列表
-         *
-         * @return AgoalUserAdminListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Agoal管理员列表</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// AgoalUserAdminListResponse
+        /// </returns>
         public async Task<AgoalUserAdminListResponse> AgoalUserAdminListAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -784,14 +957,24 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return await AgoalUserAdminListWithOptionsAsync(headers, runtime);
         }
 
-        /**
-         * @summary Agoal用户目标列表
-         *
-         * @param request AgoalUserObjectiveListRequest
-         * @param headers AgoalUserObjectiveListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AgoalUserObjectiveListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>Agoal用户目标列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalUserObjectiveListRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalUserObjectiveListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalUserObjectiveListResponse
+        /// </returns>
         public AgoalUserObjectiveListResponse AgoalUserObjectiveListWithOptions(AgoalUserObjectiveListRequest request, AgoalUserObjectiveListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -837,14 +1020,24 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return TeaModel.ToObject<AgoalUserObjectiveListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary Agoal用户目标列表
-         *
-         * @param request AgoalUserObjectiveListRequest
-         * @param headers AgoalUserObjectiveListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AgoalUserObjectiveListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>Agoal用户目标列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalUserObjectiveListRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalUserObjectiveListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalUserObjectiveListResponse
+        /// </returns>
         public async Task<AgoalUserObjectiveListResponse> AgoalUserObjectiveListWithOptionsAsync(AgoalUserObjectiveListRequest request, AgoalUserObjectiveListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -890,12 +1083,18 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return TeaModel.ToObject<AgoalUserObjectiveListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary Agoal用户目标列表
-         *
-         * @param request AgoalUserObjectiveListRequest
-         * @return AgoalUserObjectiveListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>Agoal用户目标列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalUserObjectiveListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalUserObjectiveListResponse
+        /// </returns>
         public AgoalUserObjectiveListResponse AgoalUserObjectiveList(AgoalUserObjectiveListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -903,12 +1102,18 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return AgoalUserObjectiveListWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary Agoal用户目标列表
-         *
-         * @param request AgoalUserObjectiveListRequest
-         * @return AgoalUserObjectiveListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>Agoal用户目标列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalUserObjectiveListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalUserObjectiveListResponse
+        /// </returns>
         public async Task<AgoalUserObjectiveListResponse> AgoalUserObjectiveListAsync(AgoalUserObjectiveListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -916,14 +1121,24 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return await AgoalUserObjectiveListWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取Agoal子管理员列表
-         *
-         * @param request AgoalUserSubAdminListRequest
-         * @param headers AgoalUserSubAdminListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AgoalUserSubAdminListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Agoal子管理员列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalUserSubAdminListRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalUserSubAdminListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalUserSubAdminListResponse
+        /// </returns>
         public AgoalUserSubAdminListResponse AgoalUserSubAdminListWithOptions(AgoalUserSubAdminListRequest request, AgoalUserSubAdminListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -961,14 +1176,24 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return TeaModel.ToObject<AgoalUserSubAdminListResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取Agoal子管理员列表
-         *
-         * @param request AgoalUserSubAdminListRequest
-         * @param headers AgoalUserSubAdminListHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return AgoalUserSubAdminListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Agoal子管理员列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalUserSubAdminListRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalUserSubAdminListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalUserSubAdminListResponse
+        /// </returns>
         public async Task<AgoalUserSubAdminListResponse> AgoalUserSubAdminListWithOptionsAsync(AgoalUserSubAdminListRequest request, AgoalUserSubAdminListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1006,12 +1231,18 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return TeaModel.ToObject<AgoalUserSubAdminListResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 获取Agoal子管理员列表
-         *
-         * @param request AgoalUserSubAdminListRequest
-         * @return AgoalUserSubAdminListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Agoal子管理员列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalUserSubAdminListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalUserSubAdminListResponse
+        /// </returns>
         public AgoalUserSubAdminListResponse AgoalUserSubAdminList(AgoalUserSubAdminListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1019,12 +1250,18 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
             return AgoalUserSubAdminListWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 获取Agoal子管理员列表
-         *
-         * @param request AgoalUserSubAdminListRequest
-         * @return AgoalUserSubAdminListResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取Agoal子管理员列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalUserSubAdminListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalUserSubAdminListResponse
+        /// </returns>
         public async Task<AgoalUserSubAdminListResponse> AgoalUserSubAdminListAsync(AgoalUserSubAdminListRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

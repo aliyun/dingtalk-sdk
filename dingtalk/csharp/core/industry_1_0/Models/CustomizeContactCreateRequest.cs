@@ -14,7 +14,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<string> ManagerIdList { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>A项目通讯录</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]

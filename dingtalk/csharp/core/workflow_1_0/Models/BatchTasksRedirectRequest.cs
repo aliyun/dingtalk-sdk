@@ -10,28 +10,40 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class BatchTasksRedirectRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>staffId-B</para>
         /// </summary>
         [NameInMap("handoverUserId")]
         [Validation(Required=false)]
         public string HandoverUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>manager-12</para>
         /// </summary>
         [NameInMap("managerUserId")]
         [Validation(Required=false)]
         public string ManagerUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>if can be null:</b>
+        /// <c>false</c>
         /// </summary>
         [NameInMap("taskIds")]
         [Validation(Required=false)]
         public List<long?> TaskIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>staffId-A</para>
         /// </summary>
         [NameInMap("transfereeUserId")]
         [Validation(Required=false)]

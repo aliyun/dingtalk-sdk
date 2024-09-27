@@ -14,7 +14,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         public string OpUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>10</para>
         /// </summary>
         [NameInMap("shiftId")]
         [Validation(Required=false)]

@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkpedia_1_0.Models
 {
     public class PediaWordsDeleteRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>2123132</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>212112</para>
         /// </summary>
         [NameInMap("uuid")]
         [Validation(Required=false)]

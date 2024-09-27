@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
 {
     public class RosterMetaAvailableFieldListRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1231</para>
         /// </summary>
         [NameInMap("appAgentId")]
         [Validation(Required=false)]

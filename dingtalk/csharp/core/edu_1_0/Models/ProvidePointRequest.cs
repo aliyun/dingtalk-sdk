@@ -10,21 +10,30 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class ProvidePointRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>action01</para>
         /// </summary>
         [NameInMap("actionCode")]
         [Validation(Required=false)]
         public string ActionCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>biz01</para>
         /// </summary>
         [NameInMap("bizId")]
         [Validation(Required=false)]
         public string BizId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>personal</para>
         /// </summary>
         [NameInMap("pointType")]
         [Validation(Required=false)]

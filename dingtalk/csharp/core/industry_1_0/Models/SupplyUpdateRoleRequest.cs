@@ -10,21 +10,21 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 {
     public class SupplyUpdateRoleRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("isRoleGroup")]
         [Validation(Required=false)]
         public bool? IsRoleGroup { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("roleId")]
         [Validation(Required=false)]
         public string RoleId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("roleName")]
         [Validation(Required=false)]

@@ -13,10 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public List<ExternalQueryExternalAppOrgsResponseBodyResult> Result { get; set; }
         public class ExternalQueryExternalAppOrgsResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>ding121212</para>
+            /// </summary>
             [NameInMap("corpId")]
             [Validation(Required=false)]
             public string CorpId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>组织名</para>
+            /// </summary>
             [NameInMap("corpName")]
             [Validation(Required=false)]
             public string CorpName { get; set; }

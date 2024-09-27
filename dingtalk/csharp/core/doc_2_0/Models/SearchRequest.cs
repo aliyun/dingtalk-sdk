@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         public SearchRequestDentryRequest DentryRequest { get; set; }
         public class SearchRequestDentryRequest : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("maxResults")]
             [Validation(Required=false)]
@@ -40,6 +40,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
             [Validation(Required=false)]
             public List<string> SpaceIds { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>40</para>
+            /// </summary>
             [NameInMap("summaryLength")]
             [Validation(Required=false)]
             public int? SummaryLength { get; set; }
@@ -61,14 +65,17 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>测试搜索关键词</para>
         /// </summary>
         [NameInMap("keyword")]
         [Validation(Required=false)]
         public string Keyword { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]
@@ -79,7 +86,7 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
         public SearchRequestSpaceRequest SpaceRequest { get; set; }
         public class SearchRequestSpaceRequest : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("maxResults")]
             [Validation(Required=false)]

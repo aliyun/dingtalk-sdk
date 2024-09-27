@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class DescribeCrmPersonalCustomerObjectMetaResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>PROC-XXXX</para>
+        /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
         public string Code { get; set; }
@@ -98,14 +102,14 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
             public List<DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsRollUpSummaryFields> RollUpSummaryFields { get; set; }
             public class DescribeCrmPersonalCustomerObjectMetaResponseBodyFieldsRollUpSummaryFields : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("aggregator")]
                 [Validation(Required=false)]
                 public string Aggregator { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("name")]
                 [Validation(Required=false)]
@@ -141,6 +145,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>PUBLISHED</para>
+        /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]
         public string Status { get; set; }

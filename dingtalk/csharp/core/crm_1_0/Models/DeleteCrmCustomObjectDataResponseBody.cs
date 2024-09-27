@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class DeleteCrmCustomObjectDataResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>INST_xx</para>
         /// </summary>
         [NameInMap("instanceId")]
         [Validation(Required=false)]

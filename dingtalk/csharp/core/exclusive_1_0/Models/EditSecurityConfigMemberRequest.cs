@@ -10,28 +10,37 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class EditSecurityConfigMemberRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ctrl.xxx</para>
         /// </summary>
         [NameInMap("configKey")]
         [Validation(Required=false)]
         public string ConfigKey { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>add</para>
         /// </summary>
         [NameInMap("operateType")]
         [Validation(Required=false)]
         public string OperateType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>staffxxx</para>
         /// </summary>
         [NameInMap("operateUserId")]
         [Validation(Required=false)]
         public string OperateUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userIds")]
         [Validation(Required=false)]

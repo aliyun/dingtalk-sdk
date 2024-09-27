@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontent_1_0.Models
 {
     public class GetFeedRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>50730********40554</para>
         /// </summary>
         [NameInMap("mcnId")]
         [Validation(Required=false)]

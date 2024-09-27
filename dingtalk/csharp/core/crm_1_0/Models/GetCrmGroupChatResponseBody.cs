@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
         [Validation(Required=false)]
         public long? GmtCreate { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para><a href="https://static/xx.com/xx.jpg">https://static/xx.com/xx.jpg</a></para>
+        /// </summary>
         [NameInMap("iconUrl")]
         [Validation(Required=false)]
         public string IconUrl { get; set; }

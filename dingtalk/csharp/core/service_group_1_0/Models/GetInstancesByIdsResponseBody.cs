@@ -22,21 +22,21 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             public string Fields { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("formCode")]
             [Validation(Required=false)]
             public string FormCode { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("gmtCreate")]
             [Validation(Required=false)]
             public string GmtCreate { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("gmtModified")]
             [Validation(Required=false)]
@@ -51,7 +51,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             public string OpenDataInstanceId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("openTeamId")]
             [Validation(Required=false)]

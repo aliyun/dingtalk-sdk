@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public UnSuspendProjectResponseBodyResult Result { get; set; }
         public class UnSuspendProjectResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>2022-06-08T07:32:48.958Z</para>
+            /// </summary>
             [NameInMap("updated")]
             [Validation(Required=false)]
             public string Updated { get; set; }

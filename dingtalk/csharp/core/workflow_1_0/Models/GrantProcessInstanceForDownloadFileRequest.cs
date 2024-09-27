@@ -10,19 +10,29 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class GrantProcessInstanceForDownloadFileRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>111</para>
         /// </summary>
         [NameInMap("fileId")]
         [Validation(Required=false)]
         public string FileId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>a17444d1-075b-4a4d-xxxx</para>
         /// </summary>
         [NameInMap("processInstanceId")]
         [Validation(Required=false)]
         public string ProcessInstanceId { get; set; }
 
+        /// <summary>
+        /// <b>if can be null:</b>
+        /// <c>true</c>
+        /// </summary>
         [NameInMap("withCommentAttatchment")]
         [Validation(Required=false)]
         public bool? WithCommentAttatchment { get; set; }

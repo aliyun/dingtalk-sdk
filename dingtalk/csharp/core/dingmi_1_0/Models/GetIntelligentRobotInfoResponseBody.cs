@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
 {
     public class GetIntelligentRobotInfoResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>abcd1234</para>
+        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public string Result { get; set; }

@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
 {
     public class QueryMailStatisticalDataRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("statDate")]
         [Validation(Required=false)]

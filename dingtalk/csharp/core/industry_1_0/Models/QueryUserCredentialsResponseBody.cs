@@ -14,28 +14,37 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public List<QueryUserCredentialsResponseBodyContent> Content { get; set; }
         public class QueryUserCredentialsResponseBodyContent : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("credentialList")]
             [Validation(Required=false)]
             public List<QueryUserCredentialsResponseBodyContentCredentialList> CredentialList { get; set; }
             public class QueryUserCredentialsResponseBodyContentCredentialList : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>医生资格证书</para>
                 /// </summary>
                 [NameInMap("credentialName")]
                 [Validation(Required=false)]
                 public string CredentialName { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>1</para>
                 /// </summary>
                 [NameInMap("credentialType")]
                 [Validation(Required=false)]
                 public int? CredentialType { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>2022-08-01</para>
                 /// </summary>
                 [NameInMap("termOfValidity")]
                 [Validation(Required=false)]
@@ -44,7 +53,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1234</para>
             /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]

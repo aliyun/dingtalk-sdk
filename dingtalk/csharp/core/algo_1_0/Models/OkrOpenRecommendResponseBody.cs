@@ -18,21 +18,24 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0.Models
             public List<OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults> KrResultRelatedResults { get; set; }
             public class OkrOpenRecommendResponseBodyOkrRecommendItemsKrResultRelatedResults : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("krId")]
                 [Validation(Required=false)]
                 public string KrId { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>3</para>
                 /// </summary>
                 [NameInMap("semanticLevel")]
                 [Validation(Required=false)]
                 public long? SemanticLevel { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("words")]
                 [Validation(Required=false)]
@@ -45,21 +48,24 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0.Models
             public List<OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults> ObjectiveRelatedResults { get; set; }
             public class OkrOpenRecommendResponseBodyOkrRecommendItemsObjectiveRelatedResults : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("objectiveId")]
                 [Validation(Required=false)]
                 public string ObjectiveId { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>3</para>
                 /// </summary>
                 [NameInMap("semanticLevel")]
                 [Validation(Required=false)]
                 public long? SemanticLevel { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
                 /// </summary>
                 [NameInMap("words")]
                 [Validation(Required=false)]
@@ -68,21 +74,27 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0.Models
             }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("relatedLevel")]
             [Validation(Required=false)]
             public long? RelatedLevel { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>3</para>
             /// </summary>
             [NameInMap("semanticLevel")]
             [Validation(Required=false)]
             public long? SemanticLevel { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>111</para>
             /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
@@ -91,7 +103,7 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("requestId")]
         [Validation(Required=false)]

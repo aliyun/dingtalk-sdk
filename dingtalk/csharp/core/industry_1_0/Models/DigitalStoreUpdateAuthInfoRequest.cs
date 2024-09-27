@@ -17,10 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public List<DigitalStoreUpdateAuthInfoRequestUpdateUserListRoleList> RoleList { get; set; }
             public class DigitalStoreUpdateAuthInfoRequestUpdateUserListRoleList : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>区域督导</para>
+                /// </summary>
                 [NameInMap("roleName")]
                 [Validation(Required=false)]
                 public string RoleName { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>255</para>
+                /// </summary>
                 [NameInMap("sourceRoleId")]
                 [Validation(Required=false)]
                 public string SourceRoleId { get; set; }
@@ -31,16 +39,28 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public List<DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList> UserAuthList { get; set; }
             public class DigitalStoreUpdateAuthInfoRequestUpdateUserListUserAuthList : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>8733901123</para>
+                /// </summary>
                 [NameInMap("dingDeptId")]
                 [Validation(Required=false)]
                 public string DingDeptId { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>998383831</para>
+                /// </summary>
                 [NameInMap("sourceDeptId")]
                 [Validation(Required=false)]
                 public string SourceDeptId { get; set; }
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>0998182231</para>
+            /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
             public string UserId { get; set; }

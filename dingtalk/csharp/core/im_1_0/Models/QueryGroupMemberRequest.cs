@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class QueryGroupMemberRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>14da****2760</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]

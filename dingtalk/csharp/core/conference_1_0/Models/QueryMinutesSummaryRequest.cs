@@ -14,7 +14,10 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         public List<string> SummaryTypeList { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>27SaQ3iiHLN0uwqcPisedfreNwiEiE</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

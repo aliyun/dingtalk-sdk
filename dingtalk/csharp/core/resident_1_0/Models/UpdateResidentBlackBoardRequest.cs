@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         public string BlackboardId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("context")]
         [Validation(Required=false)]
@@ -25,7 +25,7 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         public string MediaId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("title")]
         [Validation(Required=false)]

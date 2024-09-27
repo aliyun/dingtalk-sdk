@@ -10,18 +10,25 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
 {
     public class CreateConnectorResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("item")]
         [Validation(Required=false)]
         public List<CreateConnectorResponseBodyItem> Item { get; set; }
         public class CreateConnectorResponseBodyItem : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>G-CONN-101921B15FE0212B4AF70</para>
+            /// </summary>
             [NameInMap("dingConnectorId")]
             [Validation(Required=false)]
             public string DingConnectorId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>xxxx</para>
             /// </summary>
             [NameInMap("integratorConnectorId")]
             [Validation(Required=false)]
@@ -36,7 +43,10 @@ namespace AlibabaCloud.SDK.Dingtalkconnector_1_0.Models
             public string SubErrMsg { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>true</para>
             /// </summary>
             [NameInMap("success")]
             [Validation(Required=false)]

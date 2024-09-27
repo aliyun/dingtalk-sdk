@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
 {
     public class GetIntelligentRobotInfoRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>abcd1234</para>
         /// </summary>
         [NameInMap("robotAppKey")]
         [Validation(Required=false)]

@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class AddOrgAccountOwnnessResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123456</para>
+        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public long? Result { get; set; }

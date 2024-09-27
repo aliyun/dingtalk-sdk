@@ -10,49 +10,81 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0.Models
 {
     public class DecodeBadgeCodeResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>2512345678</para>
         /// </summary>
         [NameInMap("alipayCode")]
         [Validation(Required=false)]
         public string AlipayCode { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>codeIdxxxxx</para>
+        /// </summary>
         [NameInMap("codeId")]
         [Validation(Required=false)]
         public string CodeId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>DT_VISITOR</para>
+        /// </summary>
         [NameInMap("codeIdentity")]
         [Validation(Required=false)]
         public string CodeIdentity { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>PURE_IDENTIFY_CODE</para>
         /// </summary>
         [NameInMap("codeType")]
         [Validation(Required=false)]
         public string CodeType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ding1234</para>
         /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]
         public string CorpId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>{&quot;authRules&quot;:{}}</para>
+        /// </summary>
         [NameInMap("extInfo")]
         [Validation(Required=false)]
         public string ExtInfo { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>xxxx</para>
+        /// </summary>
         [NameInMap("outBizId")]
         [Validation(Required=false)]
         public string OutBizId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>INTERNAL_STAFF</para>
         /// </summary>
         [NameInMap("userCorpRelationType")]
         [Validation(Required=false)]
         public string UserCorpRelationType { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>staffId</para>
+        /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]
         public string UserId { get; set; }

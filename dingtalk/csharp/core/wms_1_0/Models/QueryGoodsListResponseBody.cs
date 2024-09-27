@@ -14,7 +14,10 @@ namespace AlibabaCloud.SDK.Dingtalkwms_1_0.Models
         public QueryGoodsListResponseBodyResult Result { get; set; }
         public class QueryGoodsListResponseBodyResult : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>true</para>
             /// </summary>
             [NameInMap("hasMore")]
             [Validation(Required=false)]
@@ -25,35 +28,50 @@ namespace AlibabaCloud.SDK.Dingtalkwms_1_0.Models
             public List<QueryGoodsListResponseBodyResultList> List { get; set; }
             public class QueryGoodsListResponseBodyResultList : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>衣服</para>
                 /// </summary>
                 [NameInMap("goodsName")]
                 [Validation(Required=false)]
                 public string GoodsName { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>0001</para>
                 /// </summary>
                 [NameInMap("goodsNo")]
                 [Validation(Required=false)]
                 public string GoodsNo { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>abcdse-dse-example</para>
                 /// </summary>
                 [NameInMap("instanceId")]
                 [Validation(Required=false)]
                 public string InstanceId { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>XXL</para>
                 /// </summary>
                 [NameInMap("productSpecs")]
                 [Validation(Required=false)]
                 public string ProductSpecs { get; set; }
 
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>件</para>
                 /// </summary>
                 [NameInMap("unit")]
                 [Validation(Required=false)]
@@ -62,14 +80,20 @@ namespace AlibabaCloud.SDK.Dingtalkwms_1_0.Models
             }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>20</para>
             /// </summary>
             [NameInMap("maxResults")]
             [Validation(Required=false)]
             public long? MaxResults { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>10</para>
             /// </summary>
             [NameInMap("nextToken")]
             [Validation(Required=false)]

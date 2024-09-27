@@ -10,21 +10,27 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
 {
     public class ExportDocRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("param")]
         [Validation(Required=false)]
         public ExportDocRequestParam Param { get; set; }
         public class ExportDocRequestParam : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>dentryUuid</para>
             /// </summary>
             [NameInMap("dentryUuid")]
             [Validation(Required=false)]
             public string DentryUuid { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>dingTalksheetToxlsx</para>
             /// </summary>
             [NameInMap("exportType")]
             [Validation(Required=false)]

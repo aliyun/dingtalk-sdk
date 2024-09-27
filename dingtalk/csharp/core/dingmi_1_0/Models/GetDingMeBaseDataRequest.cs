@@ -10,28 +10,40 @@ namespace AlibabaCloud.SDK.Dingtalkdingmi_1_0.Models
 {
     public class GetDingMeBaseDataRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>dsfsfr434</para>
         /// </summary>
         [NameInMap("appKey")]
         [Validation(Required=false)]
         public string AppKey { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>true</para>
         /// </summary>
         [NameInMap("byDay")]
         [Validation(Required=false)]
         public bool? ByDay { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>20210506</para>
         /// </summary>
         [NameInMap("endDay")]
         [Validation(Required=false)]
         public string EndDay { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>20210405</para>
         /// </summary>
         [NameInMap("startDay")]
         [Validation(Required=false)]

@@ -29,10 +29,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public string CreateTimeGMT { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>ding12345</para>
+            /// </summary>
             [NameInMap("creatorUserId")]
             [Validation(Required=false)]
             public string CreatorUserId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>FORM_INST_12345</para>
+            /// </summary>
             [NameInMap("formInstanceId")]
             [Validation(Required=false)]
             public string FormInstanceId { get; set; }
@@ -67,10 +75,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public long? PageNumber { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>100</para>
+        /// </summary>
         [NameInMap("totalCount")]
         [Validation(Required=false)]
         public long? TotalCount { get; set; }

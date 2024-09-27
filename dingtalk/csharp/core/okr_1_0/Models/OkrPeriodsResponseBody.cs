@@ -13,10 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         [Validation(Required=false)]
         public OkrPeriodsResponseBodyContent Content { get; set; }
         public class OkrPeriodsResponseBodyContent : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1</para>
+            /// </summary>
             [NameInMap("pageNumber")]
             [Validation(Required=false)]
             public int? PageNumber { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>10</para>
+            /// </summary>
             [NameInMap("pageSize")]
             [Validation(Required=false)]
             public int? PageSize { get; set; }
@@ -25,6 +33,10 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
             [Validation(Required=false)]
             public List<OpenPeriodDTO> Result { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>15</para>
+            /// </summary>
             [NameInMap("totalCount")]
             [Validation(Required=false)]
             public long? TotalCount { get; set; }
@@ -36,7 +48,7 @@ namespace AlibabaCloud.SDK.Dingtalkokr_1_0.Models
         public string RequestId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

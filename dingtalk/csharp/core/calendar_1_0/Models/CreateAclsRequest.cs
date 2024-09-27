@@ -10,28 +10,28 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
 {
     public class CreateAclsRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("privilege")]
         [Validation(Required=false)]
         public string Privilege { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("scope")]
         [Validation(Required=false)]
         public CreateAclsRequestScope Scope { get; set; }
         public class CreateAclsRequestScope : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("scopeType")]
             [Validation(Required=false)]
             public string ScopeType { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
@@ -40,7 +40,7 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("sendMsg")]
         [Validation(Required=false)]

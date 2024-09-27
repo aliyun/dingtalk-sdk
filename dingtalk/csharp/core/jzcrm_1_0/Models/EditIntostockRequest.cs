@@ -22,14 +22,17 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             public string Auditreson { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("billno")]
             [Validation(Required=false)]
             public string Billno { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>&quot;child_mx&quot;:[{&quot;产品ID&quot;:&quot;1&quot;,&quot;数量&quot;:&quot;10&quot;,&quot;单价&quot;:&quot;58.5&quot;,&quot;总价&quot;:&quot;585&quot;,&quot;明细备注&quot;:&quot;包含的测试产品&quot;}]</para>
             /// </summary>
             [NameInMap("child_mx")]
             [Validation(Required=false)]
@@ -40,14 +43,20 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             public string Customerid { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>张三</para>
+            /// 
+            /// <b>if can be null:</b>
+            /// <c>false</c>
             /// </summary>
             [NameInMap("data_userid")]
             [Validation(Required=false)]
             public string DataUserid { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("empid")]
             [Validation(Required=false)]
@@ -58,7 +67,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             public string Inorout { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("libiodate")]
             [Validation(Required=false)]
@@ -69,7 +78,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             public string Libioname { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("libiostate")]
             [Validation(Required=false)]
@@ -84,7 +93,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             public string Remark { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("stocklibid")]
             [Validation(Required=false)]
@@ -93,18 +102,28 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>189</para>
         /// </summary>
         [NameInMap("datatype")]
         [Validation(Required=false)]
         public long? Datatype { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("msgid")]
         [Validation(Required=false)]
         public long? Msgid { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1621822122</para>
         /// </summary>
         [NameInMap("stamp")]
         [Validation(Required=false)]

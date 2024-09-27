@@ -18,21 +18,30 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         public string Code { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1631526550994</para>
         /// </summary>
         [NameInMap("createTime")]
         [Validation(Required=false)]
         public long? CreateTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>aaa</para>
         /// </summary>
         [NameInMap("creator")]
         [Validation(Required=false)]
         public string Creator { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>和外部合作</para>
         /// </summary>
         [NameInMap("description")]
         [Validation(Required=false)]
@@ -43,21 +52,30 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         public string Name { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>PROJ-XXX</para>
         /// </summary>
         [NameInMap("projectCode")]
         [Validation(Required=false)]
         public string ProjectCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>外包项目</para>
         /// </summary>
         [NameInMap("projectName")]
         [Validation(Required=false)]
         public string ProjectName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>valid</para>
         /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]

@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
 {
     public class UpdateApaasAppRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("appIcon")]
         [Validation(Required=false)]
         public string AppIcon { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("appName")]
         [Validation(Required=false)]
@@ -28,14 +28,14 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         public int? AppStatus { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("bizAppId")]
         [Validation(Required=false)]
         public string BizAppId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]

@@ -9,10 +9,18 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
 {
     public class SendMsgRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>text</para>
+        /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
         public string Content { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>xxxx</para>
+        /// </summary>
         [NameInMap("deviceCode")]
         [Validation(Required=false)]
         public string DeviceCode { get; set; }
@@ -21,6 +29,10 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
         [Validation(Required=false)]
         public string DeviceUuid { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>cidxxxxxxx==</para>
+        /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]
         public string OpenConversationId { get; set; }

@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
     public class GetUserLastMetricRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("unionIdList")]
         [Validation(Required=false)]

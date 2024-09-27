@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
     public class LockConferenceRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>lock</para>
         /// </summary>
         [NameInMap("action")]
         [Validation(Required=false)]

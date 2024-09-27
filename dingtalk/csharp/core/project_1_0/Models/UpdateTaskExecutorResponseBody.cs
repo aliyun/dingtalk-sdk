@@ -13,10 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public UpdateTaskExecutorResponseBodyResult Result { get; set; }
         public class UpdateTaskExecutorResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>0517xxxxxxx</para>
+            /// </summary>
             [NameInMap("executorId")]
             [Validation(Required=false)]
             public string ExecutorId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>2022-07-04T03:29:34.770Z</para>
+            /// </summary>
             [NameInMap("updated")]
             [Validation(Required=false)]
             public string Updated { get; set; }

@@ -128,7 +128,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         public string SourceId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("subject")]
         [Validation(Required=false)]

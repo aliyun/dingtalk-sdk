@@ -18,7 +18,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             public List<BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers> Notifiers { get; set; }
             public class BatchUpdateProcessInstanceRequestUpdateProcessInstanceRequestsNotifiers : TeaModel {
                 /// <summary>
-                /// This parameter is required.
+                /// <para>This parameter is required.</para>
+                /// 
+                /// <b>Example:</b>
+                /// <para>manager001</para>
                 /// </summary>
                 [NameInMap("userId")]
                 [Validation(Required=false)]
@@ -27,18 +30,28 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
             }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>abc</para>
             /// </summary>
             [NameInMap("processInstanceId")]
             [Validation(Required=false)]
             public string ProcessInstanceId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>agree</para>
+            /// </summary>
             [NameInMap("result")]
             [Validation(Required=false)]
             public string Result { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>COMPLETED</para>
             /// </summary>
             [NameInMap("status")]
             [Validation(Required=false)]

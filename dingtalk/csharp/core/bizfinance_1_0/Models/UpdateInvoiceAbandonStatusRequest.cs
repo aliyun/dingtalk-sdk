@@ -33,6 +33,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string CheckTime { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>张三</para>
+            /// </summary>
             [NameInMap("drawerName")]
             [Validation(Required=false)]
             public string DrawerName { get; set; }
@@ -89,6 +93,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [Validation(Required=false)]
                 public string TaxPre { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>1</para>
+                /// </summary>
                 [NameInMap("taxPreType")]
                 [Validation(Required=false)]
                 public string TaxPreType { get; set; }
@@ -107,6 +115,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para><a href="http://XXX.jpg">http://XXX.jpg</a></para>
+            /// </summary>
             [NameInMap("imageUrl")]
             [Validation(Required=false)]
             public string ImageUrl { get; set; }
@@ -151,10 +163,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string PurchaserAddress { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>111</para>
+            /// </summary>
             [NameInMap("purchaserBankAccount")]
             [Validation(Required=false)]
             public string PurchaserBankAccount { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>111</para>
+            /// </summary>
             [NameInMap("purchaserBankNameAccount")]
             [Validation(Required=false)]
             public string PurchaserBankNameAccount { get; set; }
@@ -225,6 +245,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string SellerAddress { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>111</para>
+            /// </summary>
             [NameInMap("sellerBankAccount")]
             [Validation(Required=false)]
             public string SellerBankAccount { get; set; }
@@ -347,6 +371,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [Validation(Required=false)]
                 public string ImportCertificateNo { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>111</para>
+                /// </summary>
                 [NameInMap("inspectionListNo")]
                 [Validation(Required=false)]
                 public string InspectionListNo { get; set; }
@@ -415,10 +443,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public string BlueInvoiceStatus { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>COM_DEFAULT</para>
+        /// </summary>
         [NameInMap("companyCode")]
         [Validation(Required=false)]
         public string CompanyCode { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>abc</para>
+        /// </summary>
         [NameInMap("operator")]
         [Validation(Required=false)]
         public string Operator { get; set; }
@@ -447,6 +483,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string CheckTime { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>张三</para>
+            /// </summary>
             [NameInMap("drawerName")]
             [Validation(Required=false)]
             public string DrawerName { get; set; }
@@ -503,6 +543,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [Validation(Required=false)]
                 public string TaxPre { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>111</para>
+                /// </summary>
                 [NameInMap("taxPreType")]
                 [Validation(Required=false)]
                 public string TaxPreType { get; set; }
@@ -521,6 +565,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para><a href="http://XXX.jpg">http://XXX.jpg</a></para>
+            /// </summary>
             [NameInMap("imageUrl")]
             [Validation(Required=false)]
             public string ImageUrl { get; set; }
@@ -565,6 +613,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string PurchaserAddress { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>aaa</para>
+            /// </summary>
             [NameInMap("purchaserBankAccount")]
             [Validation(Required=false)]
             public string PurchaserBankAccount { get; set; }
@@ -639,6 +691,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string SellerAddress { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>111</para>
+            /// </summary>
             [NameInMap("sellerBankAccount")]
             [Validation(Required=false)]
             public string SellerBankAccount { get; set; }
@@ -761,6 +817,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 [Validation(Required=false)]
                 public string ImportCertificateNo { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>111</para>
+                /// </summary>
                 [NameInMap("inspectionListNo")]
                 [Validation(Required=false)]
                 public string InspectionListNo { get; set; }
@@ -821,14 +881,26 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public string RedInvoiceCode { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>abc</para>
+        /// </summary>
         [NameInMap("redInvoiceNo")]
         [Validation(Required=false)]
         public string RedInvoiceNo { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>abc</para>
+        /// </summary>
         [NameInMap("redInvoiceStatus")]
         [Validation(Required=false)]
         public string RedInvoiceStatus { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>abc</para>
+        /// </summary>
         [NameInMap("targetInvoice")]
         [Validation(Required=false)]
         public string TargetInvoice { get; set; }

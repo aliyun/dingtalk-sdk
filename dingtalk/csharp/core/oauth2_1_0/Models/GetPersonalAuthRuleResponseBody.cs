@@ -14,14 +14,17 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0.Models
         public List<GetPersonalAuthRuleResponseBodyResult> Result { get; set; }
         public class GetPersonalAuthRuleResponseBodyResult : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("authItems")]
             [Validation(Required=false)]
             public List<string> AuthItems { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>Contact.User</para>
             /// </summary>
             [NameInMap("resource")]
             [Validation(Required=false)]

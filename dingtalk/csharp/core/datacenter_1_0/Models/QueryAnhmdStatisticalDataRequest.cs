@@ -18,7 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
         public long? PageSize { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("statDate")]
         [Validation(Required=false)]

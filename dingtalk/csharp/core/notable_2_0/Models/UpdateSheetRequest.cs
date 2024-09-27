@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalknotable_2_0.Models
 {
     public class UpdateSheetRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]

@@ -14,28 +14,40 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
         public List<BatchOTOQueryResponseBodyMessageReadInfoList> MessageReadInfoList { get; set; }
         public class BatchOTOQueryResponseBodyMessageReadInfoList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>曲大岳</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>READ</para>
             /// </summary>
             [NameInMap("readStatus")]
             [Validation(Required=false)]
             public string ReadStatus { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>1433138400000</para>
             /// </summary>
             [NameInMap("readTimestamp")]
             [Validation(Required=false)]
             public long? ReadTimestamp { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>201382020</para>
             /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
@@ -43,6 +55,10 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>SUCESS</para>
+        /// </summary>
         [NameInMap("sendStatus")]
         [Validation(Required=false)]
         public string SendStatus { get; set; }

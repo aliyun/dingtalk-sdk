@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public string Reason { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

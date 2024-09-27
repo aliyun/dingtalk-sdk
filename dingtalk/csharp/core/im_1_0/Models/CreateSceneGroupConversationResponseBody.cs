@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
     public class CreateSceneGroupConversationResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>cidxxxxxx==</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]

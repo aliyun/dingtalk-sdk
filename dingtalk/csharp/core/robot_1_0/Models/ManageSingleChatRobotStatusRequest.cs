@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkrobot_1_0.Models
 {
     public class ManageSingleChatRobotStatusRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>dingykcdkjnwpcll27gm</para>
         /// </summary>
         [NameInMap("robotCode")]
         [Validation(Required=false)]
         public string RobotCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>enable</para>
         /// </summary>
         [NameInMap("status")]
         [Validation(Required=false)]

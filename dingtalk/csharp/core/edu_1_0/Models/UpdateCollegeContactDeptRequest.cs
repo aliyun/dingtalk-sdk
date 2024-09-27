@@ -17,10 +17,18 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public bool? AutoApproveApply { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>这是组织单元简介</para>
+        /// </summary>
         [NameInMap("brief")]
         [Validation(Required=false)]
         public string Brief { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>20000</para>
+        /// </summary>
         [NameInMap("code")]
         [Validation(Required=false)]
         public string Code { get; set; }
@@ -29,12 +37,19 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public bool? CreateDeptGroup { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>dept456</para>
+        /// </summary>
         [NameInMap("deptCode")]
         [Validation(Required=false)]
         public string DeptCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>200</para>
         /// </summary>
         [NameInMap("deptId")]
         [Validation(Required=false)]
@@ -48,6 +63,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         [Validation(Required=false)]
         public List<long?> DeptPermits { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>contact_class_dept</para>
+        /// </summary>
         [NameInMap("deptType")]
         [Validation(Required=false)]
         public string DeptType { get; set; }
@@ -106,18 +125,34 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>zh_CN</para>
+        /// </summary>
         [NameInMap("language")]
         [Validation(Required=false)]
         public string Language { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>软件工程</para>
+        /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>20</para>
+        /// </summary>
         [NameInMap("order")]
         [Validation(Required=false)]
         public long? Order { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>user234</para>
+        /// </summary>
         [NameInMap("orgDeptOwner")]
         [Validation(Required=false)]
         public string OrgDeptOwner { get; set; }
@@ -164,14 +199,26 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>20</para>
+        /// </summary>
         [NameInMap("parentId")]
         [Validation(Required=false)]
         public long? ParentId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>软件工程标识</para>
+        /// </summary>
         [NameInMap("sourceIdentifier")]
         [Validation(Required=false)]
         public string SourceIdentifier { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>138xxxx0000</para>
+        /// </summary>
         [NameInMap("telephone")]
         [Validation(Required=false)]
         public string Telephone { get; set; }

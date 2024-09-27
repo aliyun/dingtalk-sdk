@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
     public class FocusRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("action")]
         [Validation(Required=false)]
         public string Action { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

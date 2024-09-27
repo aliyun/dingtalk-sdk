@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
         public EditQuotationRecordRequestData Data { get; set; }
         public class EditQuotationRecordRequestData : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("bj_bjren")]
             [Validation(Required=false)]
@@ -25,14 +25,14 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             public string BjBzremark { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("bj_customerid")]
             [Validation(Required=false)]
             public string BjCustomerid { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("bj_date")]
             [Validation(Required=false)]
@@ -75,7 +75,7 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             public string BjNumber { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("bj_price")]
             [Validation(Required=false)]
@@ -97,12 +97,22 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
             [Validation(Required=false)]
             public string BjXshid { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>&quot;child_mx&quot;:[{&quot;产品ID&quot;:&quot;1&quot;,&quot;数量&quot;:&quot;10&quot;,&quot;单价&quot;:&quot;58.5&quot;,&quot;总价&quot;:&quot;585&quot;,&quot;明细备注&quot;:&quot;包含的测试产品&quot;}]</para>
+            /// </summary>
             [NameInMap("child_mx")]
             [Validation(Required=false)]
             public string ChildMx { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>张三</para>
+            /// 
+            /// <b>if can be null:</b>
+            /// <c>false</c>
             /// </summary>
             [NameInMap("data_userid")]
             [Validation(Required=false)]
@@ -111,18 +121,28 @@ namespace AlibabaCloud.SDK.Dingtalkjzcrm_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>161</para>
         /// </summary>
         [NameInMap("datatype")]
         [Validation(Required=false)]
         public long? Datatype { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("msgid")]
         [Validation(Required=false)]
         public long? Msgid { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1621822122</para>
         /// </summary>
         [NameInMap("stamp")]
         [Validation(Required=false)]

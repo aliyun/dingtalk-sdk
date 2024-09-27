@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 {
     public class CreateTaskRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>任务标题</para>
         /// </summary>
         [NameInMap("content")]
         [Validation(Required=false)]
@@ -20,10 +23,18 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public List<CreateTaskRequestCustomfields> Customfields { get; set; }
         public class CreateTaskRequestCustomfields : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>62fb0bxxxxxxx</para>
+            /// </summary>
             [NameInMap("customfieldId")]
             [Validation(Required=false)]
             public string CustomfieldId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>自定义字段-文本</para>
+            /// </summary>
             [NameInMap("customfieldName")]
             [Validation(Required=false)]
             public string CustomfieldName { get; set; }
@@ -40,6 +51,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
                 [Validation(Required=false)]
                 public string ThumbUrl { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>我是自定义字段显示值</para>
+                /// </summary>
                 [NameInMap("title")]
                 [Validation(Required=false)]
                 public string Title { get; set; }
@@ -48,45 +63,84 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>2022-06-13T07:36:50.318Z</para>
+        /// </summary>
         [NameInMap("dueDate")]
         [Validation(Required=false)]
         public string DueDate { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>173xxxx</para>
+        /// </summary>
         [NameInMap("executorId")]
         [Validation(Required=false)]
         public string ExecutorId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>我是一条任务备注</para>
+        /// </summary>
         [NameInMap("note")]
         [Validation(Required=false)]
         public string Note { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>62c25e3b376exxxxxx</para>
+        /// </summary>
         [NameInMap("parentTaskId")]
         [Validation(Required=false)]
         public string ParentTaskId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>-10</para>
+        /// </summary>
         [NameInMap("priority")]
         [Validation(Required=false)]
         public int? Priority { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>62c25e3b376exxxxxx</para>
         /// </summary>
         [NameInMap("projectId")]
         [Validation(Required=false)]
         public string ProjectId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>62c25e3b376exxxxxx</para>
+        /// </summary>
         [NameInMap("scenariofieldconfigId")]
         [Validation(Required=false)]
         public string ScenariofieldconfigId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>62c25e3b376exxxxxx</para>
+        /// </summary>
         [NameInMap("stageId")]
         [Validation(Required=false)]
         public string StageId { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>2022-06-13T07:36:50.318Z</para>
+        /// </summary>
         [NameInMap("startDate")]
         [Validation(Required=false)]
         public string StartDate { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>members</para>
+        /// </summary>
         [NameInMap("visible")]
         [Validation(Required=false)]
         public string Visible { get; set; }

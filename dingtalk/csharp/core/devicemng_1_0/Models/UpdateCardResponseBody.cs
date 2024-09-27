@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkdevicemng_1_0.Models
         public bool? Result { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

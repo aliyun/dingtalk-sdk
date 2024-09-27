@@ -17,24 +17,44 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
             [Validation(Required=false)]
             public AddSpaceRequestOptionCapabilities Capabilities { get; set; }
             public class AddSpaceRequestOptionCapabilities : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>true</para>
+                /// </summary>
                 [NameInMap("canRecordRecentFile")]
                 [Validation(Required=false)]
                 public bool? CanRecordRecentFile { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>true</para>
+                /// </summary>
                 [NameInMap("canRename")]
                 [Validation(Required=false)]
                 public bool? CanRename { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>true</para>
+                /// </summary>
                 [NameInMap("canSearch")]
                 [Validation(Required=false)]
                 public bool? CanSearch { get; set; }
 
             }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>space_name</para>
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>USER</para>
+            /// </summary>
             [NameInMap("ownerType")]
             [Validation(Required=false)]
             public string OwnerType { get; set; }
@@ -43,10 +63,18 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
             [Validation(Required=false)]
             public long? Quota { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>scene</para>
+            /// </summary>
             [NameInMap("scene")]
             [Validation(Required=false)]
             public string Scene { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>scene_id</para>
+            /// </summary>
             [NameInMap("sceneId")]
             [Validation(Required=false)]
             public string SceneId { get; set; }
@@ -54,7 +82,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

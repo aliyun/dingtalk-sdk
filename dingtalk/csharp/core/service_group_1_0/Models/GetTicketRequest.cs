@@ -10,14 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class GetTicketRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("openTeamId")]
         [Validation(Required=false)]
         public string OpenTeamId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("openTicketId")]
         [Validation(Required=false)]

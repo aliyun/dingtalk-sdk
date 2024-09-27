@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
         }
 
 
-        /**
-         * @summary 创建钉工牌码用户实例
-         *
-         * @param request CreateBadgeCodeUserInstanceRequest
-         * @param headers CreateBadgeCodeUserInstanceHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateBadgeCodeUserInstanceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建钉工牌码用户实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateBadgeCodeUserInstanceRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateBadgeCodeUserInstanceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateBadgeCodeUserInstanceResponse
+        /// </returns>
         public CreateBadgeCodeUserInstanceResponse CreateBadgeCodeUserInstanceWithOptions(CreateBadgeCodeUserInstanceRequest request, CreateBadgeCodeUserInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -113,14 +124,24 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return TeaModel.ToObject<CreateBadgeCodeUserInstanceResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建钉工牌码用户实例
-         *
-         * @param request CreateBadgeCodeUserInstanceRequest
-         * @param headers CreateBadgeCodeUserInstanceHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateBadgeCodeUserInstanceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建钉工牌码用户实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateBadgeCodeUserInstanceRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateBadgeCodeUserInstanceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateBadgeCodeUserInstanceResponse
+        /// </returns>
         public async Task<CreateBadgeCodeUserInstanceResponse> CreateBadgeCodeUserInstanceWithOptionsAsync(CreateBadgeCodeUserInstanceRequest request, CreateBadgeCodeUserInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -198,12 +219,18 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return TeaModel.ToObject<CreateBadgeCodeUserInstanceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建钉工牌码用户实例
-         *
-         * @param request CreateBadgeCodeUserInstanceRequest
-         * @return CreateBadgeCodeUserInstanceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建钉工牌码用户实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateBadgeCodeUserInstanceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateBadgeCodeUserInstanceResponse
+        /// </returns>
         public CreateBadgeCodeUserInstanceResponse CreateBadgeCodeUserInstance(CreateBadgeCodeUserInstanceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -211,12 +238,18 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return CreateBadgeCodeUserInstanceWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建钉工牌码用户实例
-         *
-         * @param request CreateBadgeCodeUserInstanceRequest
-         * @return CreateBadgeCodeUserInstanceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建钉工牌码用户实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateBadgeCodeUserInstanceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateBadgeCodeUserInstanceResponse
+        /// </returns>
         public async Task<CreateBadgeCodeUserInstanceResponse> CreateBadgeCodeUserInstanceAsync(CreateBadgeCodeUserInstanceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -224,14 +257,24 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return await CreateBadgeCodeUserInstanceWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建钉工牌通知消息
-         *
-         * @param request CreateBadgeNotifyRequest
-         * @param headers CreateBadgeNotifyHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateBadgeNotifyResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建钉工牌通知消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateBadgeNotifyRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateBadgeNotifyHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateBadgeNotifyResponse
+        /// </returns>
         public CreateBadgeNotifyResponse CreateBadgeNotifyWithOptions(CreateBadgeNotifyRequest request, CreateBadgeNotifyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -281,14 +324,24 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return TeaModel.ToObject<CreateBadgeNotifyResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建钉工牌通知消息
-         *
-         * @param request CreateBadgeNotifyRequest
-         * @param headers CreateBadgeNotifyHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateBadgeNotifyResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建钉工牌通知消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateBadgeNotifyRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateBadgeNotifyHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateBadgeNotifyResponse
+        /// </returns>
         public async Task<CreateBadgeNotifyResponse> CreateBadgeNotifyWithOptionsAsync(CreateBadgeNotifyRequest request, CreateBadgeNotifyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -338,12 +391,18 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return TeaModel.ToObject<CreateBadgeNotifyResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建钉工牌通知消息
-         *
-         * @param request CreateBadgeNotifyRequest
-         * @return CreateBadgeNotifyResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建钉工牌通知消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateBadgeNotifyRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateBadgeNotifyResponse
+        /// </returns>
         public CreateBadgeNotifyResponse CreateBadgeNotify(CreateBadgeNotifyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -351,12 +410,18 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return CreateBadgeNotifyWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建钉工牌通知消息
-         *
-         * @param request CreateBadgeNotifyRequest
-         * @return CreateBadgeNotifyResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建钉工牌通知消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateBadgeNotifyRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateBadgeNotifyResponse
+        /// </returns>
         public async Task<CreateBadgeNotifyResponse> CreateBadgeNotifyAsync(CreateBadgeNotifyRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -364,14 +429,24 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return await CreateBadgeNotifyWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 钉工牌解码
-         *
-         * @param request DecodeBadgeCodeRequest
-         * @param headers DecodeBadgeCodeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DecodeBadgeCodeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>钉工牌解码</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DecodeBadgeCodeRequest
+        /// </param>
+        /// <param name="headers">
+        /// DecodeBadgeCodeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DecodeBadgeCodeResponse
+        /// </returns>
         public DecodeBadgeCodeResponse DecodeBadgeCodeWithOptions(DecodeBadgeCodeRequest request, DecodeBadgeCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -413,14 +488,24 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return TeaModel.ToObject<DecodeBadgeCodeResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 钉工牌解码
-         *
-         * @param request DecodeBadgeCodeRequest
-         * @param headers DecodeBadgeCodeHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return DecodeBadgeCodeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>钉工牌解码</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DecodeBadgeCodeRequest
+        /// </param>
+        /// <param name="headers">
+        /// DecodeBadgeCodeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DecodeBadgeCodeResponse
+        /// </returns>
         public async Task<DecodeBadgeCodeResponse> DecodeBadgeCodeWithOptionsAsync(DecodeBadgeCodeRequest request, DecodeBadgeCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -462,12 +547,18 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return TeaModel.ToObject<DecodeBadgeCodeResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 钉工牌解码
-         *
-         * @param request DecodeBadgeCodeRequest
-         * @return DecodeBadgeCodeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>钉工牌解码</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DecodeBadgeCodeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DecodeBadgeCodeResponse
+        /// </returns>
         public DecodeBadgeCodeResponse DecodeBadgeCode(DecodeBadgeCodeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -475,12 +566,18 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return DecodeBadgeCodeWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 钉工牌解码
-         *
-         * @param request DecodeBadgeCodeRequest
-         * @return DecodeBadgeCodeResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>钉工牌解码</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DecodeBadgeCodeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DecodeBadgeCodeResponse
+        /// </returns>
         public async Task<DecodeBadgeCodeResponse> DecodeBadgeCodeAsync(DecodeBadgeCodeRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -488,14 +585,24 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return await DecodeBadgeCodeWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 通知钉工牌码付款结果
-         *
-         * @param request NotifyBadgeCodePayResultRequest
-         * @param headers NotifyBadgeCodePayResultHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return NotifyBadgeCodePayResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通知钉工牌码付款结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// NotifyBadgeCodePayResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// NotifyBadgeCodePayResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// NotifyBadgeCodePayResultResponse
+        /// </returns>
         public NotifyBadgeCodePayResultResponse NotifyBadgeCodePayResultWithOptions(NotifyBadgeCodePayResultRequest request, NotifyBadgeCodePayResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -597,14 +704,24 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return TeaModel.ToObject<NotifyBadgeCodePayResultResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 通知钉工牌码付款结果
-         *
-         * @param request NotifyBadgeCodePayResultRequest
-         * @param headers NotifyBadgeCodePayResultHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return NotifyBadgeCodePayResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通知钉工牌码付款结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// NotifyBadgeCodePayResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// NotifyBadgeCodePayResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// NotifyBadgeCodePayResultResponse
+        /// </returns>
         public async Task<NotifyBadgeCodePayResultResponse> NotifyBadgeCodePayResultWithOptionsAsync(NotifyBadgeCodePayResultRequest request, NotifyBadgeCodePayResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -706,12 +823,18 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return TeaModel.ToObject<NotifyBadgeCodePayResultResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 通知钉工牌码付款结果
-         *
-         * @param request NotifyBadgeCodePayResultRequest
-         * @return NotifyBadgeCodePayResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通知钉工牌码付款结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// NotifyBadgeCodePayResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// NotifyBadgeCodePayResultResponse
+        /// </returns>
         public NotifyBadgeCodePayResultResponse NotifyBadgeCodePayResult(NotifyBadgeCodePayResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -719,12 +842,18 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return NotifyBadgeCodePayResultWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 通知钉工牌码付款结果
-         *
-         * @param request NotifyBadgeCodePayResultRequest
-         * @return NotifyBadgeCodePayResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通知钉工牌码付款结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// NotifyBadgeCodePayResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// NotifyBadgeCodePayResultResponse
+        /// </returns>
         public async Task<NotifyBadgeCodePayResultResponse> NotifyBadgeCodePayResultAsync(NotifyBadgeCodePayResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -732,14 +861,24 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return await NotifyBadgeCodePayResultWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 通知钉工牌码退款结果
-         *
-         * @param request NotifyBadgeCodeRefundResultRequest
-         * @param headers NotifyBadgeCodeRefundResultHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return NotifyBadgeCodeRefundResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通知钉工牌码退款结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// NotifyBadgeCodeRefundResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// NotifyBadgeCodeRefundResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// NotifyBadgeCodeRefundResultResponse
+        /// </returns>
         public NotifyBadgeCodeRefundResultResponse NotifyBadgeCodeRefundResultWithOptions(NotifyBadgeCodeRefundResultRequest request, NotifyBadgeCodeRefundResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -813,14 +952,24 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return TeaModel.ToObject<NotifyBadgeCodeRefundResultResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 通知钉工牌码退款结果
-         *
-         * @param request NotifyBadgeCodeRefundResultRequest
-         * @param headers NotifyBadgeCodeRefundResultHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return NotifyBadgeCodeRefundResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通知钉工牌码退款结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// NotifyBadgeCodeRefundResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// NotifyBadgeCodeRefundResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// NotifyBadgeCodeRefundResultResponse
+        /// </returns>
         public async Task<NotifyBadgeCodeRefundResultResponse> NotifyBadgeCodeRefundResultWithOptionsAsync(NotifyBadgeCodeRefundResultRequest request, NotifyBadgeCodeRefundResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -894,12 +1043,18 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return TeaModel.ToObject<NotifyBadgeCodeRefundResultResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 通知钉工牌码退款结果
-         *
-         * @param request NotifyBadgeCodeRefundResultRequest
-         * @return NotifyBadgeCodeRefundResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通知钉工牌码退款结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// NotifyBadgeCodeRefundResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// NotifyBadgeCodeRefundResultResponse
+        /// </returns>
         public NotifyBadgeCodeRefundResultResponse NotifyBadgeCodeRefundResult(NotifyBadgeCodeRefundResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -907,12 +1062,18 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return NotifyBadgeCodeRefundResultWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 通知钉工牌码退款结果
-         *
-         * @param request NotifyBadgeCodeRefundResultRequest
-         * @return NotifyBadgeCodeRefundResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通知钉工牌码退款结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// NotifyBadgeCodeRefundResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// NotifyBadgeCodeRefundResultResponse
+        /// </returns>
         public async Task<NotifyBadgeCodeRefundResultResponse> NotifyBadgeCodeRefundResultAsync(NotifyBadgeCodeRefundResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -920,14 +1081,24 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return await NotifyBadgeCodeRefundResultWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 通知钉工牌码验证结果
-         *
-         * @param request NotifyBadgeCodeVerifyResultRequest
-         * @param headers NotifyBadgeCodeVerifyResultHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return NotifyBadgeCodeVerifyResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通知钉工牌码验证结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// NotifyBadgeCodeVerifyResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// NotifyBadgeCodeVerifyResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// NotifyBadgeCodeVerifyResultResponse
+        /// </returns>
         public NotifyBadgeCodeVerifyResultResponse NotifyBadgeCodeVerifyResultWithOptions(NotifyBadgeCodeVerifyResultRequest request, NotifyBadgeCodeVerifyResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1001,14 +1172,24 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return TeaModel.ToObject<NotifyBadgeCodeVerifyResultResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 通知钉工牌码验证结果
-         *
-         * @param request NotifyBadgeCodeVerifyResultRequest
-         * @param headers NotifyBadgeCodeVerifyResultHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return NotifyBadgeCodeVerifyResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通知钉工牌码验证结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// NotifyBadgeCodeVerifyResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// NotifyBadgeCodeVerifyResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// NotifyBadgeCodeVerifyResultResponse
+        /// </returns>
         public async Task<NotifyBadgeCodeVerifyResultResponse> NotifyBadgeCodeVerifyResultWithOptionsAsync(NotifyBadgeCodeVerifyResultRequest request, NotifyBadgeCodeVerifyResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1082,12 +1263,18 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return TeaModel.ToObject<NotifyBadgeCodeVerifyResultResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 通知钉工牌码验证结果
-         *
-         * @param request NotifyBadgeCodeVerifyResultRequest
-         * @return NotifyBadgeCodeVerifyResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通知钉工牌码验证结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// NotifyBadgeCodeVerifyResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// NotifyBadgeCodeVerifyResultResponse
+        /// </returns>
         public NotifyBadgeCodeVerifyResultResponse NotifyBadgeCodeVerifyResult(NotifyBadgeCodeVerifyResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1095,12 +1282,18 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return NotifyBadgeCodeVerifyResultWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 通知钉工牌码验证结果
-         *
-         * @param request NotifyBadgeCodeVerifyResultRequest
-         * @return NotifyBadgeCodeVerifyResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>通知钉工牌码验证结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// NotifyBadgeCodeVerifyResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// NotifyBadgeCodeVerifyResultResponse
+        /// </returns>
         public async Task<NotifyBadgeCodeVerifyResultResponse> NotifyBadgeCodeVerifyResultAsync(NotifyBadgeCodeVerifyResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1108,14 +1301,24 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return await NotifyBadgeCodeVerifyResultWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 保存钉工牌企业实例
-         *
-         * @param request SaveBadgeCodeCorpInstanceRequest
-         * @param headers SaveBadgeCodeCorpInstanceHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SaveBadgeCodeCorpInstanceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>保存钉工牌企业实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveBadgeCodeCorpInstanceRequest
+        /// </param>
+        /// <param name="headers">
+        /// SaveBadgeCodeCorpInstanceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveBadgeCodeCorpInstanceResponse
+        /// </returns>
         public SaveBadgeCodeCorpInstanceResponse SaveBadgeCodeCorpInstanceWithOptions(SaveBadgeCodeCorpInstanceRequest request, SaveBadgeCodeCorpInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1165,14 +1368,24 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return TeaModel.ToObject<SaveBadgeCodeCorpInstanceResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 保存钉工牌企业实例
-         *
-         * @param request SaveBadgeCodeCorpInstanceRequest
-         * @param headers SaveBadgeCodeCorpInstanceHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return SaveBadgeCodeCorpInstanceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>保存钉工牌企业实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveBadgeCodeCorpInstanceRequest
+        /// </param>
+        /// <param name="headers">
+        /// SaveBadgeCodeCorpInstanceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveBadgeCodeCorpInstanceResponse
+        /// </returns>
         public async Task<SaveBadgeCodeCorpInstanceResponse> SaveBadgeCodeCorpInstanceWithOptionsAsync(SaveBadgeCodeCorpInstanceRequest request, SaveBadgeCodeCorpInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1222,12 +1435,18 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return TeaModel.ToObject<SaveBadgeCodeCorpInstanceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 保存钉工牌企业实例
-         *
-         * @param request SaveBadgeCodeCorpInstanceRequest
-         * @return SaveBadgeCodeCorpInstanceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>保存钉工牌企业实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveBadgeCodeCorpInstanceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveBadgeCodeCorpInstanceResponse
+        /// </returns>
         public SaveBadgeCodeCorpInstanceResponse SaveBadgeCodeCorpInstance(SaveBadgeCodeCorpInstanceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1235,12 +1454,18 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return SaveBadgeCodeCorpInstanceWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 保存钉工牌企业实例
-         *
-         * @param request SaveBadgeCodeCorpInstanceRequest
-         * @return SaveBadgeCodeCorpInstanceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>保存钉工牌企业实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SaveBadgeCodeCorpInstanceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SaveBadgeCodeCorpInstanceResponse
+        /// </returns>
         public async Task<SaveBadgeCodeCorpInstanceResponse> SaveBadgeCodeCorpInstanceAsync(SaveBadgeCodeCorpInstanceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1248,14 +1473,24 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return await SaveBadgeCodeCorpInstanceWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新钉工牌码用户实例
-         *
-         * @param request UpdateBadgeCodeUserInstanceRequest
-         * @param headers UpdateBadgeCodeUserInstanceHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateBadgeCodeUserInstanceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新钉工牌码用户实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateBadgeCodeUserInstanceRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateBadgeCodeUserInstanceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateBadgeCodeUserInstanceResponse
+        /// </returns>
         public UpdateBadgeCodeUserInstanceResponse UpdateBadgeCodeUserInstanceWithOptions(UpdateBadgeCodeUserInstanceRequest request, UpdateBadgeCodeUserInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1329,14 +1564,24 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return TeaModel.ToObject<UpdateBadgeCodeUserInstanceResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新钉工牌码用户实例
-         *
-         * @param request UpdateBadgeCodeUserInstanceRequest
-         * @param headers UpdateBadgeCodeUserInstanceHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return UpdateBadgeCodeUserInstanceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新钉工牌码用户实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateBadgeCodeUserInstanceRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateBadgeCodeUserInstanceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateBadgeCodeUserInstanceResponse
+        /// </returns>
         public async Task<UpdateBadgeCodeUserInstanceResponse> UpdateBadgeCodeUserInstanceWithOptionsAsync(UpdateBadgeCodeUserInstanceRequest request, UpdateBadgeCodeUserInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -1410,12 +1655,18 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return TeaModel.ToObject<UpdateBadgeCodeUserInstanceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 更新钉工牌码用户实例
-         *
-         * @param request UpdateBadgeCodeUserInstanceRequest
-         * @return UpdateBadgeCodeUserInstanceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新钉工牌码用户实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateBadgeCodeUserInstanceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateBadgeCodeUserInstanceResponse
+        /// </returns>
         public UpdateBadgeCodeUserInstanceResponse UpdateBadgeCodeUserInstance(UpdateBadgeCodeUserInstanceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -1423,12 +1674,18 @@ namespace AlibabaCloud.SDK.Dingtalkbadge_1_0
             return UpdateBadgeCodeUserInstanceWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 更新钉工牌码用户实例
-         *
-         * @param request UpdateBadgeCodeUserInstanceRequest
-         * @return UpdateBadgeCodeUserInstanceResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新钉工牌码用户实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateBadgeCodeUserInstanceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateBadgeCodeUserInstanceResponse
+        /// </returns>
         public async Task<UpdateBadgeCodeUserInstanceResponse> UpdateBadgeCodeUserInstanceAsync(UpdateBadgeCodeUserInstanceRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

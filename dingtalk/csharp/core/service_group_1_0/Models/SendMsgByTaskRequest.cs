@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
 {
     public class SendMsgByTaskRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("messageContent")]
         [Validation(Required=false)]
@@ -51,7 +51,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             public List<string> Images { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("messageType")]
             [Validation(Required=false)]
@@ -72,14 +72,14 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("openTeamId")]
         [Validation(Required=false)]
         public string OpenTeamId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("queryGroup")]
         [Validation(Required=false)]
@@ -110,7 +110,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             public string OpenGroupSetId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("queryType")]
             [Validation(Required=false)]
@@ -119,7 +119,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("sendConfig")]
         [Validation(Required=false)]
@@ -134,7 +134,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
             public string SendTime { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("sendType")]
             [Validation(Required=false)]
@@ -161,7 +161,7 @@ namespace AlibabaCloud.SDK.Dingtalkservice_group_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("taskName")]
         [Validation(Required=false)]

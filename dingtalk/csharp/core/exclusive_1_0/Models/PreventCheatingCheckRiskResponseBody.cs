@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public PreventCheatingCheckRiskResponseBodyResult Result { get; set; }
         public class PreventCheatingCheckRiskResponseBodyResult : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("hasRisk")]
             [Validation(Required=false)]

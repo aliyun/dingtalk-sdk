@@ -13,10 +13,18 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
         [Validation(Required=false)]
         public GetEmployeeInfoByWorkNoResponseBodyContent Content { get; set; }
         public class GetEmployeeInfoByWorkNoResponseBodyContent : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>姜小白</para>
+            /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>305932</para>
+            /// </summary>
             [NameInMap("workNo")]
             [Validation(Required=false)]
             public string WorkNo { get; set; }
@@ -24,7 +32,10 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>true</para>
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

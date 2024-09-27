@@ -13,12 +13,20 @@ namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
         [Validation(Required=false)]
         public QueryCorpPointsResponseBodyResult Result { get; set; }
         public class QueryCorpPointsResponseBodyResult : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>1000</para>
+            /// </summary>
             [NameInMap("amount")]
             [Validation(Required=false)]
             public long? Amount { get; set; }
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

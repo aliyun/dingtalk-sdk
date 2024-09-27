@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkresident_1_0.Models
         [Validation(Required=false)]
         public int? Status { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>10005</para>
+        /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]
         public string UnionId { get; set; }

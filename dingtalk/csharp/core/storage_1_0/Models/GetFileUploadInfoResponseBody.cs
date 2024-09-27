@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         [Validation(Required=false)]
         public GetFileUploadInfoResponseBodyHeaderSignatureInfo HeaderSignatureInfo { get; set; }
         public class GetFileUploadInfoResponseBodyHeaderSignatureInfo : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>900</para>
+            /// </summary>
             [NameInMap("expirationSeconds")]
             [Validation(Required=false)]
             public int? ExpirationSeconds { get; set; }
@@ -25,6 +29,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
             [Validation(Required=false)]
             public List<string> InternalResourceUrls { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>ZHANGJIAKOU</para>
+            /// </summary>
             [NameInMap("region")]
             [Validation(Required=false)]
             public string Region { get; set; }
@@ -35,14 +43,26 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>HEADER_SIGNATURE</para>
+        /// </summary>
         [NameInMap("protocol")]
         [Validation(Required=false)]
         public string Protocol { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>DINGTALK</para>
+        /// </summary>
         [NameInMap("storageDriver")]
         [Validation(Required=false)]
         public string StorageDriver { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>upload_key</para>
+        /// </summary>
         [NameInMap("uploadKey")]
         [Validation(Required=false)]
         public string UploadKey { get; set; }

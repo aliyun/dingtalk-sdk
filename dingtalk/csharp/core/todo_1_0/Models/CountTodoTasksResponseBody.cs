@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
 {
     public class CountTodoTasksResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>99</para>
+        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public int? Result { get; set; }

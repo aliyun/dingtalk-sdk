@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
 {
     public class DeleteMeetingRoomResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>true</para>
+        /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public bool? Result { get; set; }

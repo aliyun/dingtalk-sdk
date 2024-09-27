@@ -18,7 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         public string NewRoleName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("opUserId")]
         [Validation(Required=false)]

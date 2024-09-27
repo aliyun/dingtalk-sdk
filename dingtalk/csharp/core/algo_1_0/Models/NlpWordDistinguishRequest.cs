@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0.Models
 {
     public class NlpWordDistinguishRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("attachExtractDecisionInfo")]
         [Validation(Required=false)]
@@ -25,21 +25,21 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0.Models
             public List<string> CandidateWords { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("corpId")]
             [Validation(Required=false)]
             public string CorpId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("deptIds")]
             [Validation(Required=false)]
             public List<string> DeptIds { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("userId")]
             [Validation(Required=false)]
@@ -48,14 +48,14 @@ namespace AlibabaCloud.SDK.Dingtalkalgo_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("isvAppId")]
         [Validation(Required=false)]
         public string IsvAppId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("text")]
         [Validation(Required=false)]

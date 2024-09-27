@@ -10,21 +10,27 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
 {
     public class SubscribeLiveRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>3dd295eb-17a1-4dfg-ae1b-aa165c5007eb</para>
         /// </summary>
         [NameInMap("liveId")]
         [Validation(Required=false)]
         public string LiveId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("subscribe")]
         [Validation(Required=false)]
         public bool? Subscribe { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>6crtQT2XOgPHviiPvXhhiP6gdhiE</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

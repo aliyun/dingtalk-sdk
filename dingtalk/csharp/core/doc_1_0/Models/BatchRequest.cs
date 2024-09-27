@@ -10,25 +10,35 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class BatchRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("requests")]
         [Validation(Required=false)]
         public List<BatchRequestRequests> Requests { get; set; }
         public class BatchRequestRequests : TeaModel {
+            /// <summary>
+            /// <b>if can be null:</b>
+            /// <c>true</c>
+            /// </summary>
             [NameInMap("body")]
             [Validation(Required=false)]
             public object Body { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>get</para>
             /// </summary>
             [NameInMap("method")]
             [Validation(Required=false)]
             public string Method { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>sheets</para>
             /// </summary>
             [NameInMap("path")]
             [Validation(Required=false)]
@@ -37,7 +47,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ppgAQuHxxxxx</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

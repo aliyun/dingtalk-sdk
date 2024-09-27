@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
     public class CreateVideoConferenceResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("conferenceId")]
         [Validation(Required=false)]

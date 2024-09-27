@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         [Validation(Required=false)]
         public string Address { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>xxx银行</para>
+        /// </summary>
         [NameInMap("bankName")]
         [Validation(Required=false)]
         public string BankName { get; set; }
@@ -22,7 +26,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         public string BankNo { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ding89233847892ndkas</para>
         /// </summary>
         [NameInMap("channelCorpId")]
         [Validation(Required=false)]
@@ -33,14 +40,20 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         public bool? DeleteFlag { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>2022-02-21 11:11:11</para>
         /// </summary>
         [NameInMap("gmtAction")]
         [Validation(Required=false)]
         public string GmtAction { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>123456</para>
         /// </summary>
         [NameInMap("invoiceId")]
         [Validation(Required=false)]
@@ -50,6 +63,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         [Validation(Required=false)]
         public List<string> ProjectIds { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1</para>
+        /// </summary>
         [NameInMap("scope")]
         [Validation(Required=false)]
         public int? Scope { get; set; }
@@ -66,12 +83,19 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         [Validation(Required=false)]
         public string Tel { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123456</para>
+        /// </summary>
         [NameInMap("thirdPartId")]
         [Validation(Required=false)]
         public string ThirdPartId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>默认发票抬头</para>
         /// </summary>
         [NameInMap("title")]
         [Validation(Required=false)]
@@ -86,7 +110,10 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
         public int? UnitType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>20881001829000</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

@@ -25,10 +25,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public GetInstanceByIdResponseBodyActionExecutorName Name { get; set; }
             public class GetInstanceByIdResponseBodyActionExecutorName : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>张三</para>
+                /// </summary>
                 [NameInMap("nameInChinese")]
                 [Validation(Required=false)]
                 public string NameInChinese { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>ZhangSan</para>
+                /// </summary>
                 [NameInMap("nameInEnglish")]
                 [Validation(Required=false)]
                 public string NameInEnglish { get; set; }
@@ -85,10 +93,18 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
             [Validation(Required=false)]
             public GetInstanceByIdResponseBodyOriginatorName Name { get; set; }
             public class GetInstanceByIdResponseBodyOriginatorName : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>张三</para>
+                /// </summary>
                 [NameInMap("nameInChinese")]
                 [Validation(Required=false)]
                 public string NameInChinese { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>ZhangSan</para>
+                /// </summary>
                 [NameInMap("nameInEnglish")]
                 [Validation(Required=false)]
                 public string NameInEnglish { get; set; }

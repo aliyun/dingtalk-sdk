@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_2_0.Models
         [Validation(Required=false)]
         public SetPermissionShareScopeRequestOption Option { get; set; }
         public class SetPermissionShareScopeRequestOption : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>true</para>
+            /// </summary>
             [NameInMap("canSearch")]
             [Validation(Required=false)]
             public bool? CanSearch { get; set; }
@@ -20,14 +24,20 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_2_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ORG_READ</para>
         /// </summary>
         [NameInMap("scope")]
         [Validation(Required=false)]
         public string Scope { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

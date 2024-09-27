@@ -9,40 +9,59 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 {
     public class QueryReceiptsByPageRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>1637658261363</para>
+        /// </summary>
         [NameInMap("endTime")]
         [Validation(Required=false)]
         public long? EndTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>EM-1017F28E03350B1738B3000X</para>
         /// </summary>
         [NameInMap("modelId")]
         [Validation(Required=false)]
         public string ModelId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1</para>
         /// </summary>
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public long? PageNumber { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>10</para>
         /// </summary>
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public long? PageSize { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1637658261363</para>
         /// </summary>
         [NameInMap("startTime")]
         [Validation(Required=false)]
         public long? StartTime { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>gmt_create</para>
         /// </summary>
         [NameInMap("timeFilterField")]
         [Validation(Required=false)]

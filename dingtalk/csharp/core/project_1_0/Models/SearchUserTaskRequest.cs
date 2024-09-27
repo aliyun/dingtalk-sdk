@@ -18,7 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         public string NextToken { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("roleTypes")]
         [Validation(Required=false)]

@@ -22,7 +22,7 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         public string AppName { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("corpId")]
         [Validation(Required=false)]

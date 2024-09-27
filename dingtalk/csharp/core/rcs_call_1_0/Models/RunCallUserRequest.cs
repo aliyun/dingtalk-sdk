@@ -10,28 +10,40 @@ namespace AlibabaCloud.SDK.Dingtalkrcs_call_1_0.Models
 {
     public class RunCallUserRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>corpidxxxxx</para>
         /// </summary>
         [NameInMap("authorizeCorpId")]
         [Validation(Required=false)]
         public string AuthorizeCorpId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>xxxxx</para>
         /// </summary>
         [NameInMap("authorizeUserId")]
         [Validation(Required=false)]
         public string AuthorizeUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>xxxx</para>
         /// </summary>
         [NameInMap("orderId")]
         [Validation(Required=false)]
         public string OrderId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>xxxx</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

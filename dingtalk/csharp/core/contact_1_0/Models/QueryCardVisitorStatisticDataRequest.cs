@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
 {
     public class QueryCardVisitorStatisticDataRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>RCsp7PJmmTUr7w0hbs9aKAiEiE</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

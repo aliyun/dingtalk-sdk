@@ -21,14 +21,26 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
         [Validation(Required=false)]
         public List<GetAppResourceUseInfoResponseBody> Body { get; set; }
         public class GetAppResourceUseInfoResponseBody : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>202301</para>
+            /// </summary>
             [NameInMap("period")]
             [Validation(Required=false)]
             public string Period { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>8511</para>
+            /// </summary>
             [NameInMap("usedNum")]
             [Validation(Required=false)]
             public long? UsedNum { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>10000</para>
+            /// </summary>
             [NameInMap("quotaNum")]
             [Validation(Required=false)]
             public long? QuotaNum { get; set; }

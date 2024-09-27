@@ -9,12 +9,19 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkgroup_blackboard_1_0.Models
 {
     public class CreateGroupBlackboardResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>123456</para>
+        /// </summary>
         [NameInMap("dataId")]
         [Validation(Required=false)]
         public string DataId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>true</para>
         /// </summary>
         [NameInMap("success")]
         [Validation(Required=false)]

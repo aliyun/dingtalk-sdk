@@ -10,21 +10,27 @@ namespace AlibabaCloud.SDK.Dingtalkapaas_1_0.Models
 {
     public class QueryTemplateCategorysResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("categoryList")]
         [Validation(Required=false)]
         public List<QueryTemplateCategorysResponseBodyCategoryList> CategoryList { get; set; }
         public class QueryTemplateCategorysResponseBodyCategoryList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>template_category</para>
             /// </summary>
             [NameInMap("code")]
             [Validation(Required=false)]
             public string Code { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>模板分类</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
@@ -32,6 +38,10 @@ namespace AlibabaCloud.SDK.Dingtalkapaas_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>3</para>
+        /// </summary>
         [NameInMap("total")]
         [Validation(Required=false)]
         public string Total { get; set; }

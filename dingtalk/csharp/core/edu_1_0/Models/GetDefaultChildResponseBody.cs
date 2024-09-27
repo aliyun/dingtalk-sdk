@@ -22,7 +22,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public long? ClassId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("corpId")]
             [Validation(Required=false)]
@@ -33,7 +33,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
             public string Period { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("staffId")]
             [Validation(Required=false)]
@@ -46,7 +46,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public int? Grade { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
@@ -61,7 +61,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string Period { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("unionId")]
         [Validation(Required=false)]

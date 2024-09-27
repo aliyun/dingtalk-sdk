@@ -18,6 +18,7 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
+            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -28,14 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
         }
 
 
-        /**
-         * @summary isv检查商机创建是否符合预期
-         *
-         * @param request CheckOpportunityResultRequest
-         * @param headers CheckOpportunityResultHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CheckOpportunityResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>isv检查商机创建是否符合预期</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckOpportunityResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// CheckOpportunityResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckOpportunityResultResponse
+        /// </returns>
         public CheckOpportunityResultResponse CheckOpportunityResultWithOptions(CheckOpportunityResultRequest request, CheckOpportunityResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -89,14 +100,24 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
             return TeaModel.ToObject<CheckOpportunityResultResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary isv检查商机创建是否符合预期
-         *
-         * @param request CheckOpportunityResultRequest
-         * @param headers CheckOpportunityResultHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CheckOpportunityResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>isv检查商机创建是否符合预期</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckOpportunityResultRequest
+        /// </param>
+        /// <param name="headers">
+        /// CheckOpportunityResultHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckOpportunityResultResponse
+        /// </returns>
         public async Task<CheckOpportunityResultResponse> CheckOpportunityResultWithOptionsAsync(CheckOpportunityResultRequest request, CheckOpportunityResultHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -150,12 +171,18 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
             return TeaModel.ToObject<CheckOpportunityResultResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary isv检查商机创建是否符合预期
-         *
-         * @param request CheckOpportunityResultRequest
-         * @return CheckOpportunityResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>isv检查商机创建是否符合预期</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckOpportunityResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckOpportunityResultResponse
+        /// </returns>
         public CheckOpportunityResultResponse CheckOpportunityResult(CheckOpportunityResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -163,12 +190,18 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
             return CheckOpportunityResultWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary isv检查商机创建是否符合预期
-         *
-         * @param request CheckOpportunityResultRequest
-         * @return CheckOpportunityResultResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>isv检查商机创建是否符合预期</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CheckOpportunityResultRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CheckOpportunityResultResponse
+        /// </returns>
         public async Task<CheckOpportunityResultResponse> CheckOpportunityResultAsync(CheckOpportunityResultRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -176,14 +209,24 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
             return await CheckOpportunityResultWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建小记
-         *
-         * @param request CreateNoteForIsvRequest
-         * @param headers CreateNoteForIsvHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateNoteForIsvResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建小记</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateNoteForIsvRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateNoteForIsvHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateNoteForIsvResponse
+        /// </returns>
         public CreateNoteForIsvResponse CreateNoteForIsvWithOptions(CreateNoteForIsvRequest request, CreateNoteForIsvHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -241,14 +284,24 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
             return TeaModel.ToObject<CreateNoteForIsvResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建小记
-         *
-         * @param request CreateNoteForIsvRequest
-         * @param headers CreateNoteForIsvHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateNoteForIsvResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建小记</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateNoteForIsvRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateNoteForIsvHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateNoteForIsvResponse
+        /// </returns>
         public async Task<CreateNoteForIsvResponse> CreateNoteForIsvWithOptionsAsync(CreateNoteForIsvRequest request, CreateNoteForIsvHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -306,12 +359,18 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
             return TeaModel.ToObject<CreateNoteForIsvResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 创建小记
-         *
-         * @param request CreateNoteForIsvRequest
-         * @return CreateNoteForIsvResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建小记</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateNoteForIsvRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateNoteForIsvResponse
+        /// </returns>
         public CreateNoteForIsvResponse CreateNoteForIsv(CreateNoteForIsvRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -319,12 +378,18 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
             return CreateNoteForIsvWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 创建小记
-         *
-         * @param request CreateNoteForIsvRequest
-         * @return CreateNoteForIsvResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建小记</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateNoteForIsvRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateNoteForIsvResponse
+        /// </returns>
         public async Task<CreateNoteForIsvResponse> CreateNoteForIsvAsync(CreateNoteForIsvRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -332,14 +397,24 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
             return await CreateNoteForIsvWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary isv创建商机
-         *
-         * @param request CreateOpportunityRequest
-         * @param headers CreateOpportunityHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateOpportunityResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>isv创建商机</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateOpportunityRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateOpportunityHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateOpportunityResponse
+        /// </returns>
         public CreateOpportunityResponse CreateOpportunityWithOptions(CreateOpportunityRequest request, CreateOpportunityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -393,14 +468,24 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
             return TeaModel.ToObject<CreateOpportunityResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary isv创建商机
-         *
-         * @param request CreateOpportunityRequest
-         * @param headers CreateOpportunityHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return CreateOpportunityResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>isv创建商机</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateOpportunityRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateOpportunityHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateOpportunityResponse
+        /// </returns>
         public async Task<CreateOpportunityResponse> CreateOpportunityWithOptionsAsync(CreateOpportunityRequest request, CreateOpportunityHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -454,12 +539,18 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
             return TeaModel.ToObject<CreateOpportunityResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary isv创建商机
-         *
-         * @param request CreateOpportunityRequest
-         * @return CreateOpportunityResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>isv创建商机</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateOpportunityRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateOpportunityResponse
+        /// </returns>
         public CreateOpportunityResponse CreateOpportunity(CreateOpportunityRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -467,12 +558,18 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
             return CreateOpportunityWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary isv创建商机
-         *
-         * @param request CreateOpportunityRequest
-         * @return CreateOpportunityResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>isv创建商机</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateOpportunityRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateOpportunityResponse
+        /// </returns>
         public async Task<CreateOpportunityResponse> CreateOpportunityAsync(CreateOpportunityRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -480,14 +577,24 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
             return await CreateOpportunityWithOptionsAsync(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询订单信息
-         *
-         * @param request QueryTradeOrderRequest
-         * @param headers QueryTradeOrderHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryTradeOrderResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询订单信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryTradeOrderRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryTradeOrderHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryTradeOrderResponse
+        /// </returns>
         public QueryTradeOrderResponse QueryTradeOrderWithOptions(QueryTradeOrderRequest request, QueryTradeOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -529,14 +636,24 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
             return TeaModel.ToObject<QueryTradeOrderResponse>(Execute(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询订单信息
-         *
-         * @param request QueryTradeOrderRequest
-         * @param headers QueryTradeOrderHeaders
-         * @param runtime runtime options for this request RuntimeOptions
-         * @return QueryTradeOrderResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询订单信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryTradeOrderRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryTradeOrderHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryTradeOrderResponse
+        /// </returns>
         public async Task<QueryTradeOrderResponse> QueryTradeOrderWithOptionsAsync(QueryTradeOrderRequest request, QueryTradeOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
@@ -578,12 +695,18 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
             return TeaModel.ToObject<QueryTradeOrderResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
-        /**
-         * @summary 查询订单信息
-         *
-         * @param request QueryTradeOrderRequest
-         * @return QueryTradeOrderResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询订单信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryTradeOrderRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryTradeOrderResponse
+        /// </returns>
         public QueryTradeOrderResponse QueryTradeOrder(QueryTradeOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
@@ -591,12 +714,18 @@ namespace AlibabaCloud.SDK.Dingtalktrade_1_0
             return QueryTradeOrderWithOptions(request, headers, runtime);
         }
 
-        /**
-         * @summary 查询订单信息
-         *
-         * @param request QueryTradeOrderRequest
-         * @return QueryTradeOrderResponse
-         */
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询订单信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryTradeOrderRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryTradeOrderResponse
+        /// </returns>
         public async Task<QueryTradeOrderResponse> QueryTradeOrderAsync(QueryTradeOrderRequest request)
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();

@@ -14,7 +14,10 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
         public List<string> PeriodIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>32222</para>
         /// </summary>
         [NameInMap("deptId")]
         [Validation(Required=false)]

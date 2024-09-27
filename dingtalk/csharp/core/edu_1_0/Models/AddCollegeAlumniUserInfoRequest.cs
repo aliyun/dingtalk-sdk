@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string Address { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("deptIds")]
         [Validation(Required=false)]
@@ -29,21 +29,21 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string Intake { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("mobile")]
         [Validation(Required=false)]
         public string Mobile { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
         public string Name { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("operator")]
         [Validation(Required=false)]

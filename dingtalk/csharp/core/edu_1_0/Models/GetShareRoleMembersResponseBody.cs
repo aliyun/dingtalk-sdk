@@ -10,21 +10,24 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 {
     public class GetShareRoleMembersResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("result")]
         [Validation(Required=false)]
         public List<GetShareRoleMembersResponseBodyResult> Result { get; set; }
         public class GetShareRoleMembersResponseBodyResult : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
+            /// 
+            /// <b>Example:</b>
+            /// <para>ding4lj234j3hj43hl312lh</para>
             /// </summary>
             [NameInMap("corpId")]
             [Validation(Required=false)]
             public string CorpId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("memberUserIdListInTrunkOrg")]
             [Validation(Required=false)]

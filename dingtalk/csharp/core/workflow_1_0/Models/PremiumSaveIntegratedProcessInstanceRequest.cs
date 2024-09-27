@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class PremiumSaveIntegratedProcessInstanceRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>&quot;{&quot;mykey&quot;: &quot;myData&quot;}&quot;</para>
+        /// </summary>
         [NameInMap("bizData")]
         [Validation(Required=false)]
         public string BizData { get; set; }
@@ -47,10 +51,18 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         [Validation(Required=false)]
         public List<PremiumSaveIntegratedProcessInstanceRequestNotifiers> Notifiers { get; set; }
         public class PremiumSaveIntegratedProcessInstanceRequestNotifiers : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>start</para>
+            /// </summary>
             [NameInMap("position")]
             [Validation(Required=false)]
             public string Position { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>manager001</para>
+            /// </summary>
             [NameInMap("userid")]
             [Validation(Required=false)]
             public string Userid { get; set; }
@@ -58,14 +70,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("originatorUserId")]
         [Validation(Required=false)]
         public string OriginatorUserId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("processCode")]
         [Validation(Required=false)]
@@ -76,7 +88,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         public string Title { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para><a href="https://www.dingtalk.com/">https://www.dingtalk.com/</a></para>
         /// </summary>
         [NameInMap("url")]
         [Validation(Required=false)]

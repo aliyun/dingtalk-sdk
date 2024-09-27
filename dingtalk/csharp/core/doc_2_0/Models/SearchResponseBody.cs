@@ -61,6 +61,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0.Models
                 [Validation(Required=false)]
                 public string Path { get; set; }
 
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>1</para>
+                /// </summary>
                 [NameInMap("sceneType")]
                 [Validation(Required=false)]
                 public int? SceneType { get; set; }

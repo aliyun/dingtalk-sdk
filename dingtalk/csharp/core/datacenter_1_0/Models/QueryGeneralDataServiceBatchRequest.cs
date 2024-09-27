@@ -14,7 +14,7 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
         public List<string> DeptIds { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("endDate")]
         [Validation(Required=false)]
@@ -39,14 +39,14 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public long? PageNumber { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("pageSize")]
         [Validation(Required=false)]
@@ -57,14 +57,14 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
         public bool? ReturnTotal { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("serviceId")]
         [Validation(Required=false)]
         public string ServiceId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("startDate")]
         [Validation(Required=false)]

@@ -14,14 +14,14 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         public bool? HasMore { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("list")]
         [Validation(Required=false)]
         public List<GetUserCardHolderListResponseBodyList> List { get; set; }
         public class GetUserCardHolderListResponseBodyList : TeaModel {
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("avatarUrl")]
             [Validation(Required=false)]
@@ -36,60 +36,64 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
             public long? CardAcceptTimeLong { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("cardId")]
             [Validation(Required=false)]
             public string CardId { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>0</para>
+            /// </summary>
             [NameInMap("cardSource")]
             [Validation(Required=false)]
             public int? CardSource { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("extension")]
             [Validation(Required=false)]
             public Dictionary<string, object> Extension { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("industryName")]
             [Validation(Required=false)]
             public string IndustryName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("introduce")]
             [Validation(Required=false)]
             public string Introduce { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("orgName")]
             [Validation(Required=false)]
             public string OrgName { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("templateId")]
             [Validation(Required=false)]
             public string TemplateId { get; set; }
 
             /// <summary>
-            /// This parameter is required.
+            /// <para>This parameter is required.</para>
             /// </summary>
             [NameInMap("title")]
             [Validation(Required=false)]
@@ -98,7 +102,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("nextToken")]
         [Validation(Required=false)]

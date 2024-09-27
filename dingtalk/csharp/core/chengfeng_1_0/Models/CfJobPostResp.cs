@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkchengfeng_1_0.Models
 {
     public class CfJobPostResp : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1234</para>
         /// </summary>
         [NameInMap("jobPostCode")]
         [Validation(Required=false)]
         public string JobPostCode { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>技术岗</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]

@@ -9,19 +9,29 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkorg_culture_1_0.Models
 {
     public class ExportPointOpenRequest : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>20220601</para>
+        /// </summary>
         [NameInMap("exportDate")]
         [Validation(Required=false)]
         public string ExportDate { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>1</para>
         /// </summary>
         [NameInMap("exportType")]
         [Validation(Required=false)]
         public long? ExportType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>11185568-1380470824</para>
         /// </summary>
         [NameInMap("userId")]
         [Validation(Required=false)]

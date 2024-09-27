@@ -10,14 +10,20 @@ namespace AlibabaCloud.SDK.Dingtalkcrm_1_0.Models
 {
     public class JoinGroupSetResponseBody : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>abc123</para>
         /// </summary>
         [NameInMap("chatId")]
         [Validation(Required=false)]
         public string ChatId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>abc123</para>
         /// </summary>
         [NameInMap("openConversationId")]
         [Validation(Required=false)]

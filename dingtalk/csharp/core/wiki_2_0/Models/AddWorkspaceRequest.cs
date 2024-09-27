@@ -10,7 +10,10 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_2_0.Models
 {
     public class AddWorkspaceRequest : TeaModel {
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>workspace_name</para>
         /// </summary>
         [NameInMap("name")]
         [Validation(Required=false)]
@@ -20,10 +23,18 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_2_0.Models
         [Validation(Required=false)]
         public AddWorkspaceRequestOption Option { get; set; }
         public class AddWorkspaceRequestOption : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>workspace_description</para>
+            /// </summary>
             [NameInMap("description")]
             [Validation(Required=false)]
             public string Description { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>team_id</para>
+            /// </summary>
             [NameInMap("teamId")]
             [Validation(Required=false)]
             public string TeamId { get; set; }
@@ -31,7 +42,10 @@ namespace AlibabaCloud.SDK.Dingtalkwiki_2_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>union_id</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

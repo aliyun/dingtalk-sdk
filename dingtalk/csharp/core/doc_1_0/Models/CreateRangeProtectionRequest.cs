@@ -48,14 +48,17 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("otherUserPermission")]
         [Validation(Required=false)]
         public string OtherUserPermission { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>ppgAQuHfOoNVpJiStDwWCEgiEiE</para>
         /// </summary>
         [NameInMap("operatorId")]
         [Validation(Required=false)]

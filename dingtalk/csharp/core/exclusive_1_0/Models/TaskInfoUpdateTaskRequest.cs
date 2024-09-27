@@ -86,7 +86,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public int? OperateType { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("operatorAccount")]
         [Validation(Required=false)]
@@ -97,14 +97,14 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         public string OutTaskId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("projId")]
         [Validation(Required=false)]
         public string ProjId { get; set; }
 
         /// <summary>
-        /// This parameter is required.
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("secretKey")]
         [Validation(Required=false)]
