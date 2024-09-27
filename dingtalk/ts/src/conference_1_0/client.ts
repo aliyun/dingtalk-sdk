@@ -1205,6 +1205,118 @@ export class FocusResponse extends $tea.Model {
   }
 }
 
+export class GenerateFlashMinutesDocumentUrlHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GenerateFlashMinutesDocumentUrlRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * cloud_record
+   */
+  bizType?: string;
+  /**
+   * @example
+   * 1727185971000
+   * 
+   * **if can be null:**
+   * false
+   */
+  expireTime?: number;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * lJcRnm39OsU4jlFVmRG9KXXXX
+   */
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bizType: 'bizType',
+      expireTime: 'expireTime',
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bizType: 'string',
+      expireTime: 'number',
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GenerateFlashMinutesDocumentUrlResponseBody extends $tea.Model {
+  minutesDocUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      minutesDocUrl: 'minutesDocUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      minutesDocUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GenerateFlashMinutesDocumentUrlResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GenerateFlashMinutesDocumentUrlResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GenerateFlashMinutesDocumentUrlResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetConfDataByConferenceIdHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -7557,6 +7669,68 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new FocusHeaders({ });
     return await this.focusWithOptions(conferenceId, request, headers, runtime);
+  }
+
+  /**
+   * 生成会议闪记文档的下载链接
+   * 
+   * @param request - GenerateFlashMinutesDocumentUrlRequest
+   * @param headers - GenerateFlashMinutesDocumentUrlHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GenerateFlashMinutesDocumentUrlResponse
+   */
+  async generateFlashMinutesDocumentUrlWithOptions(conferenceId: string, request: GenerateFlashMinutesDocumentUrlRequest, headers: GenerateFlashMinutesDocumentUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GenerateFlashMinutesDocumentUrlResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.bizType)) {
+      query["bizType"] = request.bizType;
+    }
+
+    if (!Util.isUnset(request.expireTime)) {
+      query["expireTime"] = request.expireTime;
+    }
+
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GenerateFlashMinutesDocumentUrl",
+      version: "conference_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/conference/videoConferences/${conferenceId}/flashMinutes/document/generate`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GenerateFlashMinutesDocumentUrlResponse>(await this.execute(params, req, runtime), new GenerateFlashMinutesDocumentUrlResponse({}));
+  }
+
+  /**
+   * 生成会议闪记文档的下载链接
+   * 
+   * @param request - GenerateFlashMinutesDocumentUrlRequest
+   * @returns GenerateFlashMinutesDocumentUrlResponse
+   */
+  async generateFlashMinutesDocumentUrl(conferenceId: string, request: GenerateFlashMinutesDocumentUrlRequest): Promise<GenerateFlashMinutesDocumentUrlResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GenerateFlashMinutesDocumentUrlHeaders({ });
+    return await this.generateFlashMinutesDocumentUrlWithOptions(conferenceId, request, headers, runtime);
   }
 
   /**

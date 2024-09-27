@@ -2574,6 +2574,299 @@ export class CampusUpdateRenterMemberResponse extends $tea.Model {
   }
 }
 
+export class ChatAIAddDatasetPermissionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatAIAddDatasetPermissionRequest extends $tea.Model {
+  /**
+   * @example
+   * user
+   */
+  authorizationType?: string;
+  authorizedObjectId?: string[];
+  datasetId?: number;
+  /**
+   * @example
+   * 操作人id
+   */
+  optUser?: string;
+  static names(): { [key: string]: string } {
+    return {
+      authorizationType: 'authorizationType',
+      authorizedObjectId: 'authorizedObjectId',
+      datasetId: 'datasetId',
+      optUser: 'optUser',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authorizationType: 'string',
+      authorizedObjectId: { 'type': 'array', 'itemType': 'string' },
+      datasetId: 'number',
+      optUser: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatAIAddDatasetPermissionResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatAIAddDatasetPermissionResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ChatAIAddDatasetPermissionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ChatAIAddDatasetPermissionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatAIQueryDatasetPermissionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatAIQueryDatasetPermissionRequest extends $tea.Model {
+  /**
+   * @example
+   * 数据集Id
+   */
+  datasetId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      datasetId: 'datasetId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      datasetId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatAIQueryDatasetPermissionResponseBody extends $tea.Model {
+  permissionInfos?: ChatAIQueryDatasetPermissionResponseBodyPermissionInfos[];
+  static names(): { [key: string]: string } {
+    return {
+      permissionInfos: 'permissionInfos',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      permissionInfos: { 'type': 'array', 'itemType': ChatAIQueryDatasetPermissionResponseBodyPermissionInfos },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatAIQueryDatasetPermissionResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ChatAIQueryDatasetPermissionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ChatAIQueryDatasetPermissionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatAIRemoveDatasetPermissionHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatAIRemoveDatasetPermissionRequest extends $tea.Model {
+  /**
+   * @example
+   * user
+   */
+  authorizationType?: string;
+  authorizedObjectId?: string[];
+  datasetId?: number;
+  /**
+   * @example
+   * 操作人id
+   */
+  optUser?: string;
+  static names(): { [key: string]: string } {
+    return {
+      authorizationType: 'authorizationType',
+      authorizedObjectId: 'authorizedObjectId',
+      datasetId: 'datasetId',
+      optUser: 'optUser',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      authorizationType: 'string',
+      authorizedObjectId: { 'type': 'array', 'itemType': 'string' },
+      datasetId: 'number',
+      optUser: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatAIRemoveDatasetPermissionResponseBody extends $tea.Model {
+  result?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ChatAIRemoveDatasetPermissionResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ChatAIRemoveDatasetPermissionResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ChatAIRemoveDatasetPermissionResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ChatAiTravelListHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -18299,6 +18592,28 @@ export class CampusListRenterMembersResponseBodyResult extends $tea.Model {
   }
 }
 
+export class ChatAIQueryDatasetPermissionResponseBodyPermissionInfos extends $tea.Model {
+  permissionType?: string;
+  permissionValues?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      permissionType: 'permissionType',
+      permissionValues: 'permissionValues',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      permissionType: 'string',
+      permissionValues: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ChatAiTravelListRequestParamList extends $tea.Model {
   /**
    * @example
@@ -25776,6 +26091,192 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CampusUpdateRenterMemberHeaders({ });
     return await this.campusUpdateRenterMemberWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 添加数据集权限
+   * 
+   * @param request - ChatAIAddDatasetPermissionRequest
+   * @param headers - ChatAIAddDatasetPermissionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ChatAIAddDatasetPermissionResponse
+   */
+  async chatAIAddDatasetPermissionWithOptions(request: ChatAIAddDatasetPermissionRequest, headers: ChatAIAddDatasetPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<ChatAIAddDatasetPermissionResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.authorizationType)) {
+      body["authorizationType"] = request.authorizationType;
+    }
+
+    if (!Util.isUnset(request.authorizedObjectId)) {
+      body["authorizedObjectId"] = request.authorizedObjectId;
+    }
+
+    if (!Util.isUnset(request.datasetId)) {
+      body["datasetId"] = request.datasetId;
+    }
+
+    if (!Util.isUnset(request.optUser)) {
+      body["optUser"] = request.optUser;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ChatAIAddDatasetPermission",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/chatai/dataset/permissions/add`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ChatAIAddDatasetPermissionResponse>(await this.execute(params, req, runtime), new ChatAIAddDatasetPermissionResponse({}));
+  }
+
+  /**
+   * 添加数据集权限
+   * 
+   * @param request - ChatAIAddDatasetPermissionRequest
+   * @returns ChatAIAddDatasetPermissionResponse
+   */
+  async chatAIAddDatasetPermission(request: ChatAIAddDatasetPermissionRequest): Promise<ChatAIAddDatasetPermissionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ChatAIAddDatasetPermissionHeaders({ });
+    return await this.chatAIAddDatasetPermissionWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 查询数据集权限明细
+   * 
+   * @param request - ChatAIQueryDatasetPermissionRequest
+   * @param headers - ChatAIQueryDatasetPermissionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ChatAIQueryDatasetPermissionResponse
+   */
+  async chatAIQueryDatasetPermissionWithOptions(request: ChatAIQueryDatasetPermissionRequest, headers: ChatAIQueryDatasetPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<ChatAIQueryDatasetPermissionResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.datasetId)) {
+      query["datasetId"] = request.datasetId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "ChatAIQueryDatasetPermission",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/chatai/dataset/permissions`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ChatAIQueryDatasetPermissionResponse>(await this.execute(params, req, runtime), new ChatAIQueryDatasetPermissionResponse({}));
+  }
+
+  /**
+   * 查询数据集权限明细
+   * 
+   * @param request - ChatAIQueryDatasetPermissionRequest
+   * @returns ChatAIQueryDatasetPermissionResponse
+   */
+  async chatAIQueryDatasetPermission(request: ChatAIQueryDatasetPermissionRequest): Promise<ChatAIQueryDatasetPermissionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ChatAIQueryDatasetPermissionHeaders({ });
+    return await this.chatAIQueryDatasetPermissionWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 删除数据集权限
+   * 
+   * @param request - ChatAIRemoveDatasetPermissionRequest
+   * @param headers - ChatAIRemoveDatasetPermissionHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ChatAIRemoveDatasetPermissionResponse
+   */
+  async chatAIRemoveDatasetPermissionWithOptions(request: ChatAIRemoveDatasetPermissionRequest, headers: ChatAIRemoveDatasetPermissionHeaders, runtime: $Util.RuntimeOptions): Promise<ChatAIRemoveDatasetPermissionResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.authorizationType)) {
+      body["authorizationType"] = request.authorizationType;
+    }
+
+    if (!Util.isUnset(request.authorizedObjectId)) {
+      body["authorizedObjectId"] = request.authorizedObjectId;
+    }
+
+    if (!Util.isUnset(request.datasetId)) {
+      body["datasetId"] = request.datasetId;
+    }
+
+    if (!Util.isUnset(request.optUser)) {
+      body["optUser"] = request.optUser;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "ChatAIRemoveDatasetPermission",
+      version: "industry_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/industry/chatai/dataset/permissions/remove`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ChatAIRemoveDatasetPermissionResponse>(await this.execute(params, req, runtime), new ChatAIRemoveDatasetPermissionResponse({}));
+  }
+
+  /**
+   * 删除数据集权限
+   * 
+   * @param request - ChatAIRemoveDatasetPermissionRequest
+   * @returns ChatAIRemoveDatasetPermissionResponse
+   */
+  async chatAIRemoveDatasetPermission(request: ChatAIRemoveDatasetPermissionRequest): Promise<ChatAIRemoveDatasetPermissionResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ChatAIRemoveDatasetPermissionHeaders({ });
+    return await this.chatAIRemoveDatasetPermissionWithOptions(request, headers, runtime);
   }
 
   /**

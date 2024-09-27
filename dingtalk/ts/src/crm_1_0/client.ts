@@ -18844,6 +18844,16 @@ export class ListAvailableBenefitResponseBodyResult extends $tea.Model {
    * 10
    */
   usedQuota?: number;
+  /**
+   * @example
+   * tryout
+   */
+  version?: string;
+  /**
+   * @example
+   * 试用版
+   */
+  versionName?: string;
   static names(): { [key: string]: string } {
     return {
       benefitCode: 'benefitCode',
@@ -18851,6 +18861,8 @@ export class ListAvailableBenefitResponseBodyResult extends $tea.Model {
       quota: 'quota',
       startTime: 'startTime',
       usedQuota: 'usedQuota',
+      version: 'version',
+      versionName: 'versionName',
     };
   }
 
@@ -18861,6 +18873,8 @@ export class ListAvailableBenefitResponseBodyResult extends $tea.Model {
       quota: 'number',
       startTime: 'number',
       usedQuota: 'number',
+      version: 'string',
+      versionName: 'string',
     };
   }
 

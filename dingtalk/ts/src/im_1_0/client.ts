@@ -8147,6 +8147,125 @@ export class SendOTOInteractiveCardResponse extends $tea.Model {
   }
 }
 
+export class SendPersonalMessageHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendPersonalMessageRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * {"content":"月会通知<@all> ","at":{"atUserIds":[],"isAtAll":true}}
+   */
+  content?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * text
+   */
+  msgType?: string;
+  /**
+   * @example
+   * cidc4iLyQBuHFQRvzxznz204Q==
+   */
+  openConversationId?: string;
+  /**
+   * @example
+   * 1662055829854977
+   */
+  receiverUid?: string;
+  static names(): { [key: string]: string } {
+    return {
+      content: 'content',
+      msgType: 'msgType',
+      openConversationId: 'openConversationId',
+      receiverUid: 'receiverUid',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      content: 'string',
+      msgType: 'string',
+      openConversationId: 'string',
+      receiverUid: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendPersonalMessageResponseBody extends $tea.Model {
+  result?: SendPersonalMessageResponseBodyResult;
+  success?: string;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: SendPersonalMessageResponseBodyResult,
+      success: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendPersonalMessageResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: SendPersonalMessageResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: SendPersonalMessageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class SendRobotInteractiveCardHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -12528,6 +12647,25 @@ export class SendOTOInteractiveCardResponseBodyResult extends $tea.Model {
   static types(): { [key: string]: any } {
     return {
       processQueryKey: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class SendPersonalMessageResponseBodyResult extends $tea.Model {
+  openTaskId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      openTaskId: 'openTaskId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      openTaskId: 'string',
     };
   }
 
@@ -17271,6 +17409,72 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new SendOTOInteractiveCardHeaders({ });
     return await this.sendOTOInteractiveCardWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 委托权限发消息
+   * 
+   * @param request - SendPersonalMessageRequest
+   * @param headers - SendPersonalMessageHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns SendPersonalMessageResponse
+   */
+  async sendPersonalMessageWithOptions(request: SendPersonalMessageRequest, headers: SendPersonalMessageHeaders, runtime: $Util.RuntimeOptions): Promise<SendPersonalMessageResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.content)) {
+      body["content"] = request.content;
+    }
+
+    if (!Util.isUnset(request.msgType)) {
+      body["msgType"] = request.msgType;
+    }
+
+    if (!Util.isUnset(request.openConversationId)) {
+      body["openConversationId"] = request.openConversationId;
+    }
+
+    if (!Util.isUnset(request.receiverUid)) {
+      body["receiverUid"] = request.receiverUid;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "SendPersonalMessage",
+      version: "im_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/im/me/messages/send`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<SendPersonalMessageResponse>(await this.execute(params, req, runtime), new SendPersonalMessageResponse({}));
+  }
+
+  /**
+   * 委托权限发消息
+   * 
+   * @param request - SendPersonalMessageRequest
+   * @returns SendPersonalMessageResponse
+   */
+  async sendPersonalMessage(request: SendPersonalMessageRequest): Promise<SendPersonalMessageResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new SendPersonalMessageHeaders({ });
+    return await this.sendPersonalMessageWithOptions(request, headers, runtime);
   }
 
   /**
