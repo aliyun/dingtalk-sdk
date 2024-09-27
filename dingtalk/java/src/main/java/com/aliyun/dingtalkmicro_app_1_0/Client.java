@@ -8,9 +8,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
+        this._productId = "dingtalk";
         com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
         this._spi = gatewayClient;
-        this._signatureAlgorithm = "v2";
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -242,7 +242,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("reqBodyType", "none"),
             new TeaPair("bodyType", "json")
         ));
-        return TeaModel.toModel(this.execute(params, req, runtime), new AnheiPResponse());
+        return TeaModel.toModel(this.doROARequestWithForm(params.action, params.version, params.protocol, params.method, params.authType, params.pathname, params.bodyType, req, runtime), new AnheiPResponse());
     }
 
     /**
@@ -279,7 +279,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("reqBodyType", "none"),
             new TeaPair("bodyType", "json")
         ));
-        return TeaModel.toModel(this.execute(params, req, runtime), new AnheiTest888Response());
+        return TeaModel.toModel(this.doROARequestWithForm(params.action, params.version, params.protocol, params.method, params.authType, params.pathname, params.bodyType, req, runtime), new AnheiTest888Response());
     }
 
     /**
@@ -316,7 +316,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("reqBodyType", "none"),
             new TeaPair("bodyType", "json")
         ));
-        return TeaModel.toModel(this.execute(params, req, runtime), new AnheiTestBResponse());
+        return TeaModel.toModel(this.doROARequestWithForm(params.action, params.version, params.protocol, params.method, params.authType, params.pathname, params.bodyType, req, runtime), new AnheiTestBResponse());
     }
 
     /**
@@ -353,7 +353,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("reqBodyType", "none"),
             new TeaPair("bodyType", "json")
         ));
-        return TeaModel.toModel(this.execute(params, req, runtime), new AnheiTestNineResponse());
+        return TeaModel.toModel(this.doROARequestWithForm(params.action, params.version, params.protocol, params.method, params.authType, params.pathname, params.bodyType, req, runtime), new AnheiTestNineResponse());
     }
 
     /**
@@ -398,7 +398,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("reqBodyType", "none"),
             new TeaPair("bodyType", "json")
         ));
-        return TeaModel.toModel(this.execute(params, req, runtime), new AppStatusManagerTestResponse());
+        return TeaModel.toModel(this.doROARequestWithForm(params.action, params.version, params.protocol, params.method, params.authType, params.pathname, params.bodyType, req, runtime), new AppStatusManagerTestResponse());
     }
 
     /**
@@ -437,7 +437,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("reqBodyType", "none"),
             new TeaPair("bodyType", "json")
         ));
-        return TeaModel.toModel(this.execute(params, req, runtime), new AyunTestResponse());
+        return TeaModel.toModel(this.doROARequestWithForm(params.action, params.version, params.protocol, params.method, params.authType, params.pathname, params.bodyType, req, runtime), new AyunTestResponse());
     }
 
     /**
@@ -474,7 +474,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("reqBodyType", "none"),
             new TeaPair("bodyType", "json")
         ));
-        return TeaModel.toModel(this.execute(params, req, runtime), new AyunTestOnlineResponse());
+        return TeaModel.toModel(this.doROARequestWithForm(params.action, params.version, params.protocol, params.method, params.authType, params.pathname, params.bodyType, req, runtime), new AyunTestOnlineResponse());
     }
 
     /**

@@ -61,6 +61,20 @@ public class ListAvailableBenefitResponseBody extends TeaModel {
         @NameInMap("usedQuota")
         public Long usedQuota;
 
+        /**
+         * <strong>example:</strong>
+         * <p>tryout</p>
+         */
+        @NameInMap("version")
+        public String version;
+
+        /**
+         * <strong>example:</strong>
+         * <p>试用版</p>
+         */
+        @NameInMap("versionName")
+        public String versionName;
+
         public static ListAvailableBenefitResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             ListAvailableBenefitResponseBodyResult self = new ListAvailableBenefitResponseBodyResult();
             return TeaModel.build(map, self);
@@ -104,6 +118,22 @@ public class ListAvailableBenefitResponseBody extends TeaModel {
         }
         public Long getUsedQuota() {
             return this.usedQuota;
+        }
+
+        public ListAvailableBenefitResponseBodyResult setVersion(String version) {
+            this.version = version;
+            return this;
+        }
+        public String getVersion() {
+            return this.version;
+        }
+
+        public ListAvailableBenefitResponseBodyResult setVersionName(String versionName) {
+            this.versionName = versionName;
+            return this;
+        }
+        public String getVersionName() {
+            return this.versionName;
         }
 
     }
