@@ -224,6 +224,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendOTOInteractiveCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendOTOInteractiveCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendOTOInteractiveCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendPersonalMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendPersonalMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendPersonalMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendRobotInteractiveCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendRobotInteractiveCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\SendRobotInteractiveCardResponse;
@@ -4857,6 +4860,72 @@ class Dingtalk extends OpenApiClient
         $headers = new SendOTOInteractiveCardHeaders([]);
 
         return $this->sendOTOInteractiveCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 委托权限发消息
+     *  *
+     * @param SendPersonalMessageRequest $request SendPersonalMessageRequest
+     * @param SendPersonalMessageHeaders $headers SendPersonalMessageHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SendPersonalMessageResponse SendPersonalMessageResponse
+     */
+    public function sendPersonalMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->content)) {
+            $body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->msgType)) {
+            $body['msgType'] = $request->msgType;
+        }
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->receiverUid)) {
+            $body['receiverUid'] = $request->receiverUid;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SendPersonalMessage',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/me/messages/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SendPersonalMessageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 委托权限发消息
+     *  *
+     * @param SendPersonalMessageRequest $request SendPersonalMessageRequest
+     *
+     * @return SendPersonalMessageResponse SendPersonalMessageResponse
+     */
+    public function sendPersonalMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendPersonalMessageHeaders([]);
+
+        return $this->sendPersonalMessageWithOptions($request, $headers, $runtime);
     }
 
     /**

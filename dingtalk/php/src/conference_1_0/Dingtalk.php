@@ -29,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\CreateVideoConferenceRespon
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\FocusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\FocusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\FocusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GenerateFlashMinutesDocumentUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GenerateFlashMinutesDocumentUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GenerateFlashMinutesDocumentUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetConfDataByConferenceIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetConfDataByConferenceIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\GetConfDataByConferenceIdResponse;
@@ -663,6 +666,71 @@ class Dingtalk extends OpenApiClient
         $headers = new FocusHeaders([]);
 
         return $this->focusWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 生成会议闪记文档的下载链接
+     *  *
+     * @param string                                 $conferenceId
+     * @param GenerateFlashMinutesDocumentUrlRequest $request      GenerateFlashMinutesDocumentUrlRequest
+     * @param GenerateFlashMinutesDocumentUrlHeaders $headers      GenerateFlashMinutesDocumentUrlHeaders
+     * @param RuntimeOptions                         $runtime      runtime options for this request RuntimeOptions
+     *
+     * @return GenerateFlashMinutesDocumentUrlResponse GenerateFlashMinutesDocumentUrlResponse
+     */
+    public function generateFlashMinutesDocumentUrlWithOptions($conferenceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizType)) {
+            $query['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->expireTime)) {
+            $query['expireTime'] = $request->expireTime;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GenerateFlashMinutesDocumentUrl',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/videoConferences/' . $conferenceId . '/flashMinutes/document/generate',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GenerateFlashMinutesDocumentUrlResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 生成会议闪记文档的下载链接
+     *  *
+     * @param string                                 $conferenceId
+     * @param GenerateFlashMinutesDocumentUrlRequest $request      GenerateFlashMinutesDocumentUrlRequest
+     *
+     * @return GenerateFlashMinutesDocumentUrlResponse GenerateFlashMinutesDocumentUrlResponse
+     */
+    public function generateFlashMinutesDocumentUrl($conferenceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GenerateFlashMinutesDocumentUrlHeaders([]);
+
+        return $this->generateFlashMinutesDocumentUrlWithOptions($conferenceId, $request, $headers, $runtime);
     }
 
     /**

@@ -44,12 +44,28 @@ class result extends Model
      * @var int
      */
     public $usedQuota;
+
+    /**
+     * @example tryout
+     *
+     * @var string
+     */
+    public $version;
+
+    /**
+     * @example 试用版
+     *
+     * @var string
+     */
+    public $versionName;
     protected $_name = [
         'benefitCode' => 'benefitCode',
         'endTime'     => 'endTime',
         'quota'       => 'quota',
         'startTime'   => 'startTime',
         'usedQuota'   => 'usedQuota',
+        'version'     => 'version',
+        'versionName' => 'versionName',
     ];
 
     public function validate()
@@ -73,6 +89,12 @@ class result extends Model
         }
         if (null !== $this->usedQuota) {
             $res['usedQuota'] = $this->usedQuota;
+        }
+        if (null !== $this->version) {
+            $res['version'] = $this->version;
+        }
+        if (null !== $this->versionName) {
+            $res['versionName'] = $this->versionName;
         }
 
         return $res;
@@ -100,6 +122,12 @@ class result extends Model
         }
         if (isset($map['usedQuota'])) {
             $model->usedQuota = $map['usedQuota'];
+        }
+        if (isset($map['version'])) {
+            $model->version = $map['version'];
+        }
+        if (isset($map['versionName'])) {
+            $model->versionName = $map['versionName'];
         }
 
         return $model;

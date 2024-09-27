@@ -69,6 +69,15 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterMemberReque
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterMemberResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIAddDatasetPermissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIAddDatasetPermissionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIAddDatasetPermissionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIQueryDatasetPermissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIQueryDatasetPermissionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIQueryDatasetPermissionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIRemoveDatasetPermissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIRemoveDatasetPermissionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIRemoveDatasetPermissionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAiTravelListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAiTravelListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAiTravelListResponse;
@@ -1878,6 +1887,195 @@ class Dingtalk extends OpenApiClient
         $headers = new CampusUpdateRenterMemberHeaders([]);
 
         return $this->campusUpdateRenterMemberWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 添加数据集权限
+     *  *
+     * @param ChatAIAddDatasetPermissionRequest $request ChatAIAddDatasetPermissionRequest
+     * @param ChatAIAddDatasetPermissionHeaders $headers ChatAIAddDatasetPermissionHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ChatAIAddDatasetPermissionResponse ChatAIAddDatasetPermissionResponse
+     */
+    public function chatAIAddDatasetPermissionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->authorizationType)) {
+            $body['authorizationType'] = $request->authorizationType;
+        }
+        if (!Utils::isUnset($request->authorizedObjectId)) {
+            $body['authorizedObjectId'] = $request->authorizedObjectId;
+        }
+        if (!Utils::isUnset($request->datasetId)) {
+            $body['datasetId'] = $request->datasetId;
+        }
+        if (!Utils::isUnset($request->optUser)) {
+            $body['optUser'] = $request->optUser;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatAIAddDatasetPermission',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatai/dataset/permissions/add',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatAIAddDatasetPermissionResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 添加数据集权限
+     *  *
+     * @param ChatAIAddDatasetPermissionRequest $request ChatAIAddDatasetPermissionRequest
+     *
+     * @return ChatAIAddDatasetPermissionResponse ChatAIAddDatasetPermissionResponse
+     */
+    public function chatAIAddDatasetPermission($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatAIAddDatasetPermissionHeaders([]);
+
+        return $this->chatAIAddDatasetPermissionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询数据集权限明细
+     *  *
+     * @param ChatAIQueryDatasetPermissionRequest $request ChatAIQueryDatasetPermissionRequest
+     * @param ChatAIQueryDatasetPermissionHeaders $headers ChatAIQueryDatasetPermissionHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ChatAIQueryDatasetPermissionResponse ChatAIQueryDatasetPermissionResponse
+     */
+    public function chatAIQueryDatasetPermissionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->datasetId)) {
+            $query['datasetId'] = $request->datasetId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatAIQueryDatasetPermission',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatai/dataset/permissions',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatAIQueryDatasetPermissionResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询数据集权限明细
+     *  *
+     * @param ChatAIQueryDatasetPermissionRequest $request ChatAIQueryDatasetPermissionRequest
+     *
+     * @return ChatAIQueryDatasetPermissionResponse ChatAIQueryDatasetPermissionResponse
+     */
+    public function chatAIQueryDatasetPermission($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatAIQueryDatasetPermissionHeaders([]);
+
+        return $this->chatAIQueryDatasetPermissionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除数据集权限
+     *  *
+     * @param ChatAIRemoveDatasetPermissionRequest $request ChatAIRemoveDatasetPermissionRequest
+     * @param ChatAIRemoveDatasetPermissionHeaders $headers ChatAIRemoveDatasetPermissionHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ChatAIRemoveDatasetPermissionResponse ChatAIRemoveDatasetPermissionResponse
+     */
+    public function chatAIRemoveDatasetPermissionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->authorizationType)) {
+            $body['authorizationType'] = $request->authorizationType;
+        }
+        if (!Utils::isUnset($request->authorizedObjectId)) {
+            $body['authorizedObjectId'] = $request->authorizedObjectId;
+        }
+        if (!Utils::isUnset($request->datasetId)) {
+            $body['datasetId'] = $request->datasetId;
+        }
+        if (!Utils::isUnset($request->optUser)) {
+            $body['optUser'] = $request->optUser;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatAIRemoveDatasetPermission',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatai/dataset/permissions/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatAIRemoveDatasetPermissionResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除数据集权限
+     *  *
+     * @param ChatAIRemoveDatasetPermissionRequest $request ChatAIRemoveDatasetPermissionRequest
+     *
+     * @return ChatAIRemoveDatasetPermissionResponse ChatAIRemoveDatasetPermissionResponse
+     */
+    public function chatAIRemoveDatasetPermission($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatAIRemoveDatasetPermissionHeaders([]);
+
+        return $this->chatAIRemoveDatasetPermissionWithOptions($request, $headers, $runtime);
     }
 
     /**
