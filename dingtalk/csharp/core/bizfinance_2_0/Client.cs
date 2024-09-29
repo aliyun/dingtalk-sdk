@@ -2341,6 +2341,318 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询支付回单信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryPaymentRecallFileRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryPaymentRecallFileHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPaymentRecallFileResponse
+        /// </returns>
+        public QueryPaymentRecallFileResponse QueryPaymentRecallFileWithOptions(string instanceId, QueryPaymentRecallFileRequest request, QueryPaymentRecallFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPaymentRecallFile",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/payments/recallFiles/" + instanceId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPaymentRecallFileResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询支付回单信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryPaymentRecallFileRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryPaymentRecallFileHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPaymentRecallFileResponse
+        /// </returns>
+        public async Task<QueryPaymentRecallFileResponse> QueryPaymentRecallFileWithOptionsAsync(string instanceId, QueryPaymentRecallFileRequest request, QueryPaymentRecallFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPaymentRecallFile",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/payments/recallFiles/" + instanceId,
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPaymentRecallFileResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询支付回单信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryPaymentRecallFileRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPaymentRecallFileResponse
+        /// </returns>
+        public QueryPaymentRecallFileResponse QueryPaymentRecallFile(string instanceId, QueryPaymentRecallFileRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryPaymentRecallFileHeaders headers = new QueryPaymentRecallFileHeaders();
+            return QueryPaymentRecallFileWithOptions(instanceId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询支付回单信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryPaymentRecallFileRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPaymentRecallFileResponse
+        /// </returns>
+        public async Task<QueryPaymentRecallFileResponse> QueryPaymentRecallFileAsync(string instanceId, QueryPaymentRecallFileRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryPaymentRecallFileHeaders headers = new QueryPaymentRecallFileHeaders();
+            return await QueryPaymentRecallFileWithOptionsAsync(instanceId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询支付订单的状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryPaymentStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryPaymentStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPaymentStatusResponse
+        /// </returns>
+        public QueryPaymentStatusResponse QueryPaymentStatusWithOptions(QueryPaymentStatusRequest request, QueryPaymentStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstanceId))
+            {
+                query["instanceId"] = request.InstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderNo))
+            {
+                query["orderNo"] = request.OrderNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPaymentStatus",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/payments/statuses",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPaymentStatusResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询支付订单的状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryPaymentStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryPaymentStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPaymentStatusResponse
+        /// </returns>
+        public async Task<QueryPaymentStatusResponse> QueryPaymentStatusWithOptionsAsync(QueryPaymentStatusRequest request, QueryPaymentStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InstanceId))
+            {
+                query["instanceId"] = request.InstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OrderNo))
+            {
+                query["orderNo"] = request.OrderNo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                query["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryPaymentStatus",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/payments/statuses",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryPaymentStatusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询支付订单的状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryPaymentStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPaymentStatusResponse
+        /// </returns>
+        public QueryPaymentStatusResponse QueryPaymentStatus(QueryPaymentStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryPaymentStatusHeaders headers = new QueryPaymentStatusHeaders();
+            return QueryPaymentStatusWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询支付订单的状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryPaymentStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryPaymentStatusResponse
+        /// </returns>
+        public async Task<QueryPaymentStatusResponse> QueryPaymentStatusAsync(QueryPaymentStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryPaymentStatusHeaders headers = new QueryPaymentStatusHeaders();
+            return await QueryPaymentStatusWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>批量获取项目信息</para>
         /// </summary>
         /// 
@@ -2649,6 +2961,126 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QuerySupplierByPageHeaders headers = new QuerySupplierByPageHeaders();
             return await QuerySupplierByPageWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询组织是否命中走新发票应用</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryUseNewInvoiceAppHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUseNewInvoiceAppResponse
+        /// </returns>
+        public QueryUseNewInvoiceAppResponse QueryUseNewInvoiceAppWithOptions(QueryUseNewInvoiceAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryUseNewInvoiceApp",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/invoice/appGray",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryUseNewInvoiceAppResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询组织是否命中走新发票应用</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryUseNewInvoiceAppHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUseNewInvoiceAppResponse
+        /// </returns>
+        public async Task<QueryUseNewInvoiceAppResponse> QueryUseNewInvoiceAppWithOptionsAsync(QueryUseNewInvoiceAppHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryUseNewInvoiceApp",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/invoice/appGray",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryUseNewInvoiceAppResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询组织是否命中走新发票应用</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryUseNewInvoiceAppResponse
+        /// </returns>
+        public QueryUseNewInvoiceAppResponse QueryUseNewInvoiceApp()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryUseNewInvoiceAppHeaders headers = new QueryUseNewInvoiceAppHeaders();
+            return QueryUseNewInvoiceAppWithOptions(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询组织是否命中走新发票应用</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryUseNewInvoiceAppResponse
+        /// </returns>
+        public async Task<QueryUseNewInvoiceAppResponse> QueryUseNewInvoiceAppAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryUseNewInvoiceAppHeaders headers = new QueryUseNewInvoiceAppHeaders();
+            return await QueryUseNewInvoiceAppWithOptionsAsync(headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

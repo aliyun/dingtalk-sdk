@@ -4251,6 +4251,154 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>获取 WebOfficeUrl 接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetWebOfficeUrlRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetWebOfficeUrlHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetWebOfficeUrlResponse
+        /// </returns>
+        public GetWebOfficeUrlResponse GetWebOfficeUrlWithOptions(string spaceId, string dentryId, GetWebOfficeUrlRequest request, GetWebOfficeUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetWebOfficeUrl",
+                Version = "storage_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/storage/spaces/" + spaceId + "/dentries/" + dentryId + "/webOfficeUrls",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetWebOfficeUrlResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取 WebOfficeUrl 接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetWebOfficeUrlRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetWebOfficeUrlHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetWebOfficeUrlResponse
+        /// </returns>
+        public async Task<GetWebOfficeUrlResponse> GetWebOfficeUrlWithOptionsAsync(string spaceId, string dentryId, GetWebOfficeUrlRequest request, GetWebOfficeUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetWebOfficeUrl",
+                Version = "storage_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/storage/spaces/" + spaceId + "/dentries/" + dentryId + "/webOfficeUrls",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetWebOfficeUrlResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取 WebOfficeUrl 接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetWebOfficeUrlRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetWebOfficeUrlResponse
+        /// </returns>
+        public GetWebOfficeUrlResponse GetWebOfficeUrl(string spaceId, string dentryId, GetWebOfficeUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetWebOfficeUrlHeaders headers = new GetWebOfficeUrlHeaders();
+            return GetWebOfficeUrlWithOptions(spaceId, dentryId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取 WebOfficeUrl 接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetWebOfficeUrlRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetWebOfficeUrlResponse
+        /// </returns>
+        public async Task<GetWebOfficeUrlResponse> GetWebOfficeUrlAsync(string spaceId, string dentryId, GetWebOfficeUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetWebOfficeUrlHeaders headers = new GetWebOfficeUrlHeaders();
+            return await GetWebOfficeUrlWithOptionsAsync(spaceId, dentryId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>初始化文件分片上传</para>
         /// </summary>
         /// 
@@ -5611,6 +5759,170 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             MoveDentryHeaders headers = new MoveDentryHeaders();
             return await MoveDentryWithOptionsAsync(spaceId, dentryId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取 accessToken 接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RefreshWebOfficeTokenRequest
+        /// </param>
+        /// <param name="headers">
+        /// RefreshWebOfficeTokenHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RefreshWebOfficeTokenResponse
+        /// </returns>
+        public RefreshWebOfficeTokenResponse RefreshWebOfficeTokenWithOptions(string spaceId, string dentryId, RefreshWebOfficeTokenRequest request, RefreshWebOfficeTokenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WebOfficeAccessToken))
+            {
+                query["webOfficeAccessToken"] = request.WebOfficeAccessToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WebOfficeRefreshToken))
+            {
+                query["webOfficeRefreshToken"] = request.WebOfficeRefreshToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RefreshWebOfficeToken",
+                Version = "storage_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/storage/spaces/" + spaceId + "/dentries/" + dentryId + "/refreshWebOfficeToken",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RefreshWebOfficeTokenResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取 accessToken 接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RefreshWebOfficeTokenRequest
+        /// </param>
+        /// <param name="headers">
+        /// RefreshWebOfficeTokenHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RefreshWebOfficeTokenResponse
+        /// </returns>
+        public async Task<RefreshWebOfficeTokenResponse> RefreshWebOfficeTokenWithOptionsAsync(string spaceId, string dentryId, RefreshWebOfficeTokenRequest request, RefreshWebOfficeTokenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WebOfficeAccessToken))
+            {
+                query["webOfficeAccessToken"] = request.WebOfficeAccessToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WebOfficeRefreshToken))
+            {
+                query["webOfficeRefreshToken"] = request.WebOfficeRefreshToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RefreshWebOfficeToken",
+                Version = "storage_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/storage/spaces/" + spaceId + "/dentries/" + dentryId + "/refreshWebOfficeToken",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RefreshWebOfficeTokenResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取 accessToken 接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RefreshWebOfficeTokenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RefreshWebOfficeTokenResponse
+        /// </returns>
+        public RefreshWebOfficeTokenResponse RefreshWebOfficeToken(string spaceId, string dentryId, RefreshWebOfficeTokenRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RefreshWebOfficeTokenHeaders headers = new RefreshWebOfficeTokenHeaders();
+            return RefreshWebOfficeTokenWithOptions(spaceId, dentryId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取 accessToken 接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RefreshWebOfficeTokenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RefreshWebOfficeTokenResponse
+        /// </returns>
+        public async Task<RefreshWebOfficeTokenResponse> RefreshWebOfficeTokenAsync(string spaceId, string dentryId, RefreshWebOfficeTokenRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RefreshWebOfficeTokenHeaders headers = new RefreshWebOfficeTokenHeaders();
+            return await RefreshWebOfficeTokenWithOptionsAsync(spaceId, dentryId, request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
