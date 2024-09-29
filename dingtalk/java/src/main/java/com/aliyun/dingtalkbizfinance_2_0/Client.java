@@ -924,6 +924,126 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询支付回单信息</p>
+     * 
+     * @param request QueryPaymentRecallFileRequest
+     * @param headers QueryPaymentRecallFileHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryPaymentRecallFileResponse
+     */
+    public QueryPaymentRecallFileResponse queryPaymentRecallFileWithOptions(String instanceId, QueryPaymentRecallFileRequest request, QueryPaymentRecallFileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryPaymentRecallFile"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/payments/recallFiles/" + instanceId + ""),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryPaymentRecallFileResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询支付回单信息</p>
+     * 
+     * @param request QueryPaymentRecallFileRequest
+     * @return QueryPaymentRecallFileResponse
+     */
+    public QueryPaymentRecallFileResponse queryPaymentRecallFile(String instanceId, QueryPaymentRecallFileRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryPaymentRecallFileHeaders headers = new QueryPaymentRecallFileHeaders();
+        return this.queryPaymentRecallFileWithOptions(instanceId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询支付订单的状态</p>
+     * 
+     * @param request QueryPaymentStatusRequest
+     * @param headers QueryPaymentStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryPaymentStatusResponse
+     */
+    public QueryPaymentStatusResponse queryPaymentStatusWithOptions(QueryPaymentStatusRequest request, QueryPaymentStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.instanceId)) {
+            query.put("instanceId", request.instanceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.orderNo)) {
+            query.put("orderNo", request.orderNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            query.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryPaymentStatus"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/payments/statuses"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryPaymentStatusResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询支付订单的状态</p>
+     * 
+     * @param request QueryPaymentStatusRequest
+     * @return QueryPaymentStatusResponse
+     */
+    public QueryPaymentStatusResponse queryPaymentStatus(QueryPaymentStatusRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryPaymentStatusHeaders headers = new QueryPaymentStatusHeaders();
+        return this.queryPaymentStatusWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>批量获取项目信息</p>
      * 
      * @param request QueryProjectByPageRequest
@@ -1040,6 +1160,52 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QuerySupplierByPageHeaders headers = new QuerySupplierByPageHeaders();
         return this.querySupplierByPageWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询组织是否命中走新发票应用</p>
+     * 
+     * @param headers QueryUseNewInvoiceAppHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryUseNewInvoiceAppResponse
+     */
+    public QueryUseNewInvoiceAppResponse queryUseNewInvoiceAppWithOptions(QueryUseNewInvoiceAppHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryUseNewInvoiceApp"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/invoice/appGray"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryUseNewInvoiceAppResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询组织是否命中走新发票应用</p>
+     * @return QueryUseNewInvoiceAppResponse
+     */
+    public QueryUseNewInvoiceAppResponse queryUseNewInvoiceApp() throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryUseNewInvoiceAppHeaders headers = new QueryUseNewInvoiceAppHeaders();
+        return this.queryUseNewInvoiceAppWithOptions(headers, runtime);
     }
 
     /**
