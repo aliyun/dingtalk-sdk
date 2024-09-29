@@ -3342,6 +3342,128 @@ class Client(OpenApiClient):
         headers = dingtalkstorage__1__0_models.GetTaskHeaders()
         return await self.get_task_with_options_async(task_id, request, headers, runtime)
 
+    def get_web_office_url_with_options(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.GetWebOfficeUrlRequest,
+        headers: dingtalkstorage__1__0_models.GetWebOfficeUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.GetWebOfficeUrlResponse:
+        """
+        @summary 获取 WebOfficeUrl 接口
+        
+        @param request: GetWebOfficeUrlRequest
+        @param headers: GetWebOfficeUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetWebOfficeUrlResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetWebOfficeUrl',
+            version='storage_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/storage/spaces/{space_id}/dentries/{dentry_id}/webOfficeUrls',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.GetWebOfficeUrlResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_web_office_url_with_options_async(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.GetWebOfficeUrlRequest,
+        headers: dingtalkstorage__1__0_models.GetWebOfficeUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.GetWebOfficeUrlResponse:
+        """
+        @summary 获取 WebOfficeUrl 接口
+        
+        @param request: GetWebOfficeUrlRequest
+        @param headers: GetWebOfficeUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetWebOfficeUrlResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetWebOfficeUrl',
+            version='storage_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/storage/spaces/{space_id}/dentries/{dentry_id}/webOfficeUrls',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.GetWebOfficeUrlResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_web_office_url(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.GetWebOfficeUrlRequest,
+    ) -> dingtalkstorage__1__0_models.GetWebOfficeUrlResponse:
+        """
+        @summary 获取 WebOfficeUrl 接口
+        
+        @param request: GetWebOfficeUrlRequest
+        @return: GetWebOfficeUrlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.GetWebOfficeUrlHeaders()
+        return self.get_web_office_url_with_options(space_id, dentry_id, request, headers, runtime)
+
+    async def get_web_office_url_async(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.GetWebOfficeUrlRequest,
+    ) -> dingtalkstorage__1__0_models.GetWebOfficeUrlResponse:
+        """
+        @summary 获取 WebOfficeUrl 接口
+        
+        @param request: GetWebOfficeUrlRequest
+        @return: GetWebOfficeUrlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.GetWebOfficeUrlHeaders()
+        return await self.get_web_office_url_with_options_async(space_id, dentry_id, request, headers, runtime)
+
     def init_multipart_file_upload_with_options(
         self,
         space_id: str,
@@ -4397,6 +4519,136 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkstorage__1__0_models.MoveDentryHeaders()
         return await self.move_dentry_with_options_async(space_id, dentry_id, request, headers, runtime)
+
+    def refresh_web_office_token_with_options(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.RefreshWebOfficeTokenRequest,
+        headers: dingtalkstorage__1__0_models.RefreshWebOfficeTokenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.RefreshWebOfficeTokenResponse:
+        """
+        @summary 获取 accessToken 接口
+        
+        @param request: RefreshWebOfficeTokenRequest
+        @param headers: RefreshWebOfficeTokenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RefreshWebOfficeTokenResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.web_office_access_token):
+            query['webOfficeAccessToken'] = request.web_office_access_token
+        if not UtilClient.is_unset(request.web_office_refresh_token):
+            query['webOfficeRefreshToken'] = request.web_office_refresh_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='RefreshWebOfficeToken',
+            version='storage_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/storage/spaces/{space_id}/dentries/{dentry_id}/refreshWebOfficeToken',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.RefreshWebOfficeTokenResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def refresh_web_office_token_with_options_async(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.RefreshWebOfficeTokenRequest,
+        headers: dingtalkstorage__1__0_models.RefreshWebOfficeTokenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__1__0_models.RefreshWebOfficeTokenResponse:
+        """
+        @summary 获取 accessToken 接口
+        
+        @param request: RefreshWebOfficeTokenRequest
+        @param headers: RefreshWebOfficeTokenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RefreshWebOfficeTokenResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        if not UtilClient.is_unset(request.web_office_access_token):
+            query['webOfficeAccessToken'] = request.web_office_access_token
+        if not UtilClient.is_unset(request.web_office_refresh_token):
+            query['webOfficeRefreshToken'] = request.web_office_refresh_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='RefreshWebOfficeToken',
+            version='storage_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/storage/spaces/{space_id}/dentries/{dentry_id}/refreshWebOfficeToken',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__1__0_models.RefreshWebOfficeTokenResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def refresh_web_office_token(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.RefreshWebOfficeTokenRequest,
+    ) -> dingtalkstorage__1__0_models.RefreshWebOfficeTokenResponse:
+        """
+        @summary 获取 accessToken 接口
+        
+        @param request: RefreshWebOfficeTokenRequest
+        @return: RefreshWebOfficeTokenResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.RefreshWebOfficeTokenHeaders()
+        return self.refresh_web_office_token_with_options(space_id, dentry_id, request, headers, runtime)
+
+    async def refresh_web_office_token_async(
+        self,
+        space_id: str,
+        dentry_id: str,
+        request: dingtalkstorage__1__0_models.RefreshWebOfficeTokenRequest,
+    ) -> dingtalkstorage__1__0_models.RefreshWebOfficeTokenResponse:
+        """
+        @summary 获取 accessToken 接口
+        
+        @param request: RefreshWebOfficeTokenRequest
+        @return: RefreshWebOfficeTokenResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__1__0_models.RefreshWebOfficeTokenHeaders()
+        return await self.refresh_web_office_token_with_options_async(space_id, dentry_id, request, headers, runtime)
 
     def register_open_info_with_options(
         self,

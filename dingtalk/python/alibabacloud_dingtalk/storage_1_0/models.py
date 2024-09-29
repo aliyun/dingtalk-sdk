@@ -7017,6 +7017,147 @@ class GetTaskResponse(TeaModel):
         return self
 
 
+class GetWebOfficeUrlHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetWebOfficeUrlRequest(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class GetWebOfficeUrlResponseBody(TeaModel):
+    def __init__(
+        self,
+        web_office_access_token: str = None,
+        web_office_refresh_token: str = None,
+        web_office_url: str = None,
+    ):
+        self.web_office_access_token = web_office_access_token
+        self.web_office_refresh_token = web_office_refresh_token
+        self.web_office_url = web_office_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.web_office_access_token is not None:
+            result['webOfficeAccessToken'] = self.web_office_access_token
+        if self.web_office_refresh_token is not None:
+            result['webOfficeRefreshToken'] = self.web_office_refresh_token
+        if self.web_office_url is not None:
+            result['webOfficeUrl'] = self.web_office_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('webOfficeAccessToken') is not None:
+            self.web_office_access_token = m.get('webOfficeAccessToken')
+        if m.get('webOfficeRefreshToken') is not None:
+            self.web_office_refresh_token = m.get('webOfficeRefreshToken')
+        if m.get('webOfficeUrl') is not None:
+            self.web_office_url = m.get('webOfficeUrl')
+        return self
+
+
+class GetWebOfficeUrlResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetWebOfficeUrlResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetWebOfficeUrlResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class InitMultipartFileUploadHeaders(TeaModel):
     def __init__(
         self,
@@ -9621,6 +9762,155 @@ class MoveDentryResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = MoveDentryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class RefreshWebOfficeTokenHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RefreshWebOfficeTokenRequest(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+        web_office_access_token: str = None,
+        web_office_refresh_token: str = None,
+    ):
+        # This parameter is required.
+        self.union_id = union_id
+        # This parameter is required.
+        self.web_office_access_token = web_office_access_token
+        # This parameter is required.
+        self.web_office_refresh_token = web_office_refresh_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.web_office_access_token is not None:
+            result['webOfficeAccessToken'] = self.web_office_access_token
+        if self.web_office_refresh_token is not None:
+            result['webOfficeRefreshToken'] = self.web_office_refresh_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('webOfficeAccessToken') is not None:
+            self.web_office_access_token = m.get('webOfficeAccessToken')
+        if m.get('webOfficeRefreshToken') is not None:
+            self.web_office_refresh_token = m.get('webOfficeRefreshToken')
+        return self
+
+
+class RefreshWebOfficeTokenResponseBody(TeaModel):
+    def __init__(
+        self,
+        web_office_access_token: str = None,
+        web_office_refresh_token: str = None,
+    ):
+        self.web_office_access_token = web_office_access_token
+        self.web_office_refresh_token = web_office_refresh_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.web_office_access_token is not None:
+            result['webOfficeAccessToken'] = self.web_office_access_token
+        if self.web_office_refresh_token is not None:
+            result['webOfficeRefreshToken'] = self.web_office_refresh_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('webOfficeAccessToken') is not None:
+            self.web_office_access_token = m.get('webOfficeAccessToken')
+        if m.get('webOfficeRefreshToken') is not None:
+            self.web_office_refresh_token = m.get('webOfficeRefreshToken')
+        return self
+
+
+class RefreshWebOfficeTokenResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: RefreshWebOfficeTokenResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = RefreshWebOfficeTokenResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

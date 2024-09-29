@@ -1744,6 +1744,246 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailHeaders()
         return await self.query_instance_payment_order_detail_with_options_async(instance_id, request, headers, runtime)
 
+    def query_payment_recall_file_with_options(
+        self,
+        instance_id: str,
+        request: dingtalkbizfinance__2__0_models.QueryPaymentRecallFileRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryPaymentRecallFileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryPaymentRecallFileResponse:
+        """
+        @summary 查询支付回单信息
+        
+        @param request: QueryPaymentRecallFileRequest
+        @param headers: QueryPaymentRecallFileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPaymentRecallFileResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryPaymentRecallFile',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/payments/recallFiles/{instance_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryPaymentRecallFileResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_payment_recall_file_with_options_async(
+        self,
+        instance_id: str,
+        request: dingtalkbizfinance__2__0_models.QueryPaymentRecallFileRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryPaymentRecallFileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryPaymentRecallFileResponse:
+        """
+        @summary 查询支付回单信息
+        
+        @param request: QueryPaymentRecallFileRequest
+        @param headers: QueryPaymentRecallFileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPaymentRecallFileResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryPaymentRecallFile',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/payments/recallFiles/{instance_id}',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryPaymentRecallFileResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_payment_recall_file(
+        self,
+        instance_id: str,
+        request: dingtalkbizfinance__2__0_models.QueryPaymentRecallFileRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryPaymentRecallFileResponse:
+        """
+        @summary 查询支付回单信息
+        
+        @param request: QueryPaymentRecallFileRequest
+        @return: QueryPaymentRecallFileResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryPaymentRecallFileHeaders()
+        return self.query_payment_recall_file_with_options(instance_id, request, headers, runtime)
+
+    async def query_payment_recall_file_async(
+        self,
+        instance_id: str,
+        request: dingtalkbizfinance__2__0_models.QueryPaymentRecallFileRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryPaymentRecallFileResponse:
+        """
+        @summary 查询支付回单信息
+        
+        @param request: QueryPaymentRecallFileRequest
+        @return: QueryPaymentRecallFileResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryPaymentRecallFileHeaders()
+        return await self.query_payment_recall_file_with_options_async(instance_id, request, headers, runtime)
+
+    def query_payment_status_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryPaymentStatusRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryPaymentStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryPaymentStatusResponse:
+        """
+        @summary 查询支付订单的状态
+        
+        @param request: QueryPaymentStatusRequest
+        @param headers: QueryPaymentStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPaymentStatusResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.instance_id):
+            query['instanceId'] = request.instance_id
+        if not UtilClient.is_unset(request.order_no):
+            query['orderNo'] = request.order_no
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryPaymentStatus',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/payments/statuses',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryPaymentStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_payment_status_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryPaymentStatusRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryPaymentStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryPaymentStatusResponse:
+        """
+        @summary 查询支付订单的状态
+        
+        @param request: QueryPaymentStatusRequest
+        @param headers: QueryPaymentStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPaymentStatusResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.instance_id):
+            query['instanceId'] = request.instance_id
+        if not UtilClient.is_unset(request.order_no):
+            query['orderNo'] = request.order_no
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryPaymentStatus',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/payments/statuses',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryPaymentStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_payment_status(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryPaymentStatusRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryPaymentStatusResponse:
+        """
+        @summary 查询支付订单的状态
+        
+        @param request: QueryPaymentStatusRequest
+        @return: QueryPaymentStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryPaymentStatusHeaders()
+        return self.query_payment_status_with_options(request, headers, runtime)
+
+    async def query_payment_status_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryPaymentStatusRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryPaymentStatusResponse:
+        """
+        @summary 查询支付订单的状态
+        
+        @param request: QueryPaymentStatusRequest
+        @return: QueryPaymentStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryPaymentStatusHeaders()
+        return await self.query_payment_status_with_options_async(request, headers, runtime)
+
     def query_project_by_page_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.QueryProjectByPageRequest,
@@ -1979,6 +2219,98 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbizfinance__2__0_models.QuerySupplierByPageHeaders()
         return await self.query_supplier_by_page_with_options_async(request, headers, runtime)
+
+    def query_use_new_invoice_app_with_options(
+        self,
+        headers: dingtalkbizfinance__2__0_models.QueryUseNewInvoiceAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryUseNewInvoiceAppResponse:
+        """
+        @summary 查询组织是否命中走新发票应用
+        
+        @param headers: QueryUseNewInvoiceAppHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUseNewInvoiceAppResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryUseNewInvoiceApp',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/invoice/appGray',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryUseNewInvoiceAppResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_use_new_invoice_app_with_options_async(
+        self,
+        headers: dingtalkbizfinance__2__0_models.QueryUseNewInvoiceAppHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryUseNewInvoiceAppResponse:
+        """
+        @summary 查询组织是否命中走新发票应用
+        
+        @param headers: QueryUseNewInvoiceAppHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryUseNewInvoiceAppResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryUseNewInvoiceApp',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/invoice/appGray',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryUseNewInvoiceAppResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_use_new_invoice_app(self) -> dingtalkbizfinance__2__0_models.QueryUseNewInvoiceAppResponse:
+        """
+        @summary 查询组织是否命中走新发票应用
+        
+        @return: QueryUseNewInvoiceAppResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryUseNewInvoiceAppHeaders()
+        return self.query_use_new_invoice_app_with_options(headers, runtime)
+
+    async def query_use_new_invoice_app_async(self) -> dingtalkbizfinance__2__0_models.QueryUseNewInvoiceAppResponse:
+        """
+        @summary 查询组织是否命中走新发票应用
+        
+        @return: QueryUseNewInvoiceAppResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryUseNewInvoiceAppHeaders()
+        return await self.query_use_new_invoice_app_with_options_async(headers, runtime)
 
     def query_user_role_list_with_options(
         self,

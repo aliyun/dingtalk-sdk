@@ -11682,6 +11682,120 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.MoveStudentHeaders()
         return await self.move_student_with_options_async(request, headers, runtime)
 
+    def order_info_with_options(
+        self,
+        request: dingtalkedu__1__0_models.OrderInfoRequest,
+        headers: dingtalkedu__1__0_models.OrderInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.OrderInfoResponse:
+        """
+        @summary 查询订单信息
+        
+        @param request: OrderInfoRequest
+        @param headers: OrderInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OrderInfoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.order_no):
+            query['orderNo'] = request.order_no
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='OrderInfo',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/dingLifes/orders',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.OrderInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def order_info_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.OrderInfoRequest,
+        headers: dingtalkedu__1__0_models.OrderInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.OrderInfoResponse:
+        """
+        @summary 查询订单信息
+        
+        @param request: OrderInfoRequest
+        @param headers: OrderInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OrderInfoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.order_no):
+            query['orderNo'] = request.order_no
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='OrderInfo',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/dingLifes/orders',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.OrderInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def order_info(
+        self,
+        request: dingtalkedu__1__0_models.OrderInfoRequest,
+    ) -> dingtalkedu__1__0_models.OrderInfoResponse:
+        """
+        @summary 查询订单信息
+        
+        @param request: OrderInfoRequest
+        @return: OrderInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.OrderInfoHeaders()
+        return self.order_info_with_options(request, headers, runtime)
+
+    async def order_info_async(
+        self,
+        request: dingtalkedu__1__0_models.OrderInfoRequest,
+    ) -> dingtalkedu__1__0_models.OrderInfoResponse:
+        """
+        @summary 查询订单信息
+        
+        @param request: OrderInfoRequest
+        @return: OrderInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.OrderInfoHeaders()
+        return await self.order_info_with_options_async(request, headers, runtime)
+
     def page_query_devices_with_options(
         self,
         request: dingtalkedu__1__0_models.PageQueryDevicesRequest,
