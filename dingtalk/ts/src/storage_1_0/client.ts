@@ -2857,6 +2857,104 @@ export class GetTaskResponse extends $tea.Model {
   }
 }
 
+export class GetWebOfficeUrlHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWebOfficeUrlRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
+  unionId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWebOfficeUrlResponseBody extends $tea.Model {
+  webOfficeAccessToken?: string;
+  webOfficeRefreshToken?: string;
+  webOfficeUrl?: string;
+  static names(): { [key: string]: string } {
+    return {
+      webOfficeAccessToken: 'webOfficeAccessToken',
+      webOfficeRefreshToken: 'webOfficeRefreshToken',
+      webOfficeUrl: 'webOfficeUrl',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      webOfficeAccessToken: 'string',
+      webOfficeRefreshToken: 'string',
+      webOfficeUrl: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetWebOfficeUrlResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetWebOfficeUrlResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetWebOfficeUrlResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class InitMultipartFileUploadHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -3780,6 +3878,115 @@ export class MoveDentryResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: MoveDentryResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RefreshWebOfficeTokenHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RefreshWebOfficeTokenRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * union_id
+   */
+  unionId?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  webOfficeAccessToken?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  webOfficeRefreshToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      unionId: 'unionId',
+      webOfficeAccessToken: 'webOfficeAccessToken',
+      webOfficeRefreshToken: 'webOfficeRefreshToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      unionId: 'string',
+      webOfficeAccessToken: 'string',
+      webOfficeRefreshToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RefreshWebOfficeTokenResponseBody extends $tea.Model {
+  webOfficeAccessToken?: string;
+  webOfficeRefreshToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      webOfficeAccessToken: 'webOfficeAccessToken',
+      webOfficeRefreshToken: 'webOfficeRefreshToken',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      webOfficeAccessToken: 'string',
+      webOfficeRefreshToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class RefreshWebOfficeTokenResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: RefreshWebOfficeTokenResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: RefreshWebOfficeTokenResponseBody,
     };
   }
 
@@ -10865,6 +11072,60 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * 获取 WebOfficeUrl 接口
+   * 
+   * @param request - GetWebOfficeUrlRequest
+   * @param headers - GetWebOfficeUrlHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetWebOfficeUrlResponse
+   */
+  async getWebOfficeUrlWithOptions(spaceId: string, dentryId: string, request: GetWebOfficeUrlRequest, headers: GetWebOfficeUrlHeaders, runtime: $Util.RuntimeOptions): Promise<GetWebOfficeUrlResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetWebOfficeUrl",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/webOfficeUrls`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetWebOfficeUrlResponse>(await this.execute(params, req, runtime), new GetWebOfficeUrlResponse({}));
+  }
+
+  /**
+   * 获取 WebOfficeUrl 接口
+   * 
+   * @param request - GetWebOfficeUrlRequest
+   * @returns GetWebOfficeUrlResponse
+   */
+  async getWebOfficeUrl(spaceId: string, dentryId: string, request: GetWebOfficeUrlRequest): Promise<GetWebOfficeUrlResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetWebOfficeUrlHeaders({ });
+    return await this.getWebOfficeUrlWithOptions(spaceId, dentryId, request, headers, runtime);
+  }
+
+  /**
    * 初始化文件分片上传
    * 
    * @param request - InitMultipartFileUploadRequest
@@ -11384,6 +11645,68 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MoveDentryHeaders({ });
     return await this.moveDentryWithOptions(spaceId, dentryId, request, headers, runtime);
+  }
+
+  /**
+   * 获取 accessToken 接口
+   * 
+   * @param request - RefreshWebOfficeTokenRequest
+   * @param headers - RefreshWebOfficeTokenHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns RefreshWebOfficeTokenResponse
+   */
+  async refreshWebOfficeTokenWithOptions(spaceId: string, dentryId: string, request: RefreshWebOfficeTokenRequest, headers: RefreshWebOfficeTokenHeaders, runtime: $Util.RuntimeOptions): Promise<RefreshWebOfficeTokenResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.unionId)) {
+      query["unionId"] = request.unionId;
+    }
+
+    if (!Util.isUnset(request.webOfficeAccessToken)) {
+      query["webOfficeAccessToken"] = request.webOfficeAccessToken;
+    }
+
+    if (!Util.isUnset(request.webOfficeRefreshToken)) {
+      query["webOfficeRefreshToken"] = request.webOfficeRefreshToken;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "RefreshWebOfficeToken",
+      version: "storage_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/storage/spaces/${spaceId}/dentries/${dentryId}/refreshWebOfficeToken`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<RefreshWebOfficeTokenResponse>(await this.execute(params, req, runtime), new RefreshWebOfficeTokenResponse({}));
+  }
+
+  /**
+   * 获取 accessToken 接口
+   * 
+   * @param request - RefreshWebOfficeTokenRequest
+   * @returns RefreshWebOfficeTokenResponse
+   */
+  async refreshWebOfficeToken(spaceId: string, dentryId: string, request: RefreshWebOfficeTokenRequest): Promise<RefreshWebOfficeTokenResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new RefreshWebOfficeTokenHeaders({ });
+    return await this.refreshWebOfficeTokenWithOptions(spaceId, dentryId, request, headers, runtime);
   }
 
   /**

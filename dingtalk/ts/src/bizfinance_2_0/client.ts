@@ -1788,6 +1788,267 @@ export class QueryInstancePaymentOrderDetailResponse extends $tea.Model {
   }
 }
 
+export class QueryPaymentRecallFileHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPaymentRecallFileRequest extends $tea.Model {
+  /**
+   * @example
+   * 504
+   */
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPaymentRecallFileResponseBody extends $tea.Model {
+  corpId?: string;
+  paymentRecallFileList?: QueryPaymentRecallFileResponseBodyPaymentRecallFileList[];
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      paymentRecallFileList: 'paymentRecallFileList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      paymentRecallFileList: { 'type': 'array', 'itemType': QueryPaymentRecallFileResponseBodyPaymentRecallFileList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPaymentRecallFileResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryPaymentRecallFileResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryPaymentRecallFileResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPaymentStatusHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPaymentStatusRequest extends $tea.Model {
+  /**
+   * @example
+   * ABC
+   */
+  instanceId?: string;
+  /**
+   * @example
+   * 20241102231
+   */
+  orderNo?: string;
+  /**
+   * @example
+   * 504323
+   */
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      instanceId: 'instanceId',
+      orderNo: 'orderNo',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      instanceId: 'string',
+      orderNo: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPaymentStatusResponseBody extends $tea.Model {
+  /**
+   * @example
+   * dingXXX
+   */
+  corpId?: string;
+  /**
+   * @example
+   * 收款账户错误
+   */
+  failReason?: string;
+  /**
+   * @example
+   * ABC
+   */
+  instanceId?: string;
+  /**
+   * @example
+   * 20241112
+   */
+  orderNo?: string;
+  payeeAccountInfo?: QueryPaymentStatusResponseBodyPayeeAccountInfo;
+  payerAccountInfo?: QueryPaymentStatusResponseBodyPayerAccountInfo;
+  /**
+   * @example
+   * SUCCESS
+   */
+  paymentStatus?: string;
+  /**
+   * @example
+   * 2024-11-11 00:00:00
+   */
+  paymentTime?: string;
+  /**
+   * @example
+   * ABC
+   */
+  remark?: string;
+  /**
+   * @example
+   * 报销
+   */
+  usage?: string;
+  /**
+   * @example
+   * 504
+   */
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      failReason: 'failReason',
+      instanceId: 'instanceId',
+      orderNo: 'orderNo',
+      payeeAccountInfo: 'payeeAccountInfo',
+      payerAccountInfo: 'payerAccountInfo',
+      paymentStatus: 'paymentStatus',
+      paymentTime: 'paymentTime',
+      remark: 'remark',
+      usage: 'usage',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      failReason: 'string',
+      instanceId: 'string',
+      orderNo: 'string',
+      payeeAccountInfo: QueryPaymentStatusResponseBodyPayeeAccountInfo,
+      payerAccountInfo: QueryPaymentStatusResponseBodyPayerAccountInfo,
+      paymentStatus: 'string',
+      paymentTime: 'string',
+      remark: 'string',
+      usage: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPaymentStatusResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryPaymentStatusResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryPaymentStatusResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class QueryProjectByPageHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -2012,6 +2273,76 @@ export class QuerySupplierByPageResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: QuerySupplierByPageResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUseNewInvoiceAppHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUseNewInvoiceAppResponseBody extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  useNew?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      useNew: 'useNew',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      useNew: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryUseNewInvoiceAppResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryUseNewInvoiceAppResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryUseNewInvoiceAppResponseBody,
     };
   }
 
@@ -3010,6 +3341,140 @@ export class QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTO extends 
   static types(): { [key: string]: any } {
     return {
       bankOpenDTO: QueryInstancePaymentOrderDetailResponseBodyPayerAccountDTOBankOpenDTO,
+      enterpriseAccountCode: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPaymentRecallFileResponseBodyPaymentRecallFileList extends $tea.Model {
+  fileId?: string;
+  fileName?: string;
+  fileSize?: string;
+  fileType?: string;
+  instanceId?: string;
+  orderNo?: string;
+  previewUrl?: string;
+  spaceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      fileId: 'fileId',
+      fileName: 'fileName',
+      fileSize: 'fileSize',
+      fileType: 'fileType',
+      instanceId: 'instanceId',
+      orderNo: 'orderNo',
+      previewUrl: 'previewUrl',
+      spaceId: 'spaceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      fileId: 'string',
+      fileName: 'string',
+      fileSize: 'string',
+      fileType: 'string',
+      instanceId: 'string',
+      orderNo: 'string',
+      previewUrl: 'string',
+      spaceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPaymentStatusResponseBodyPayeeAccountInfoBankOpenDTO extends $tea.Model {
+  bankBranchName?: string;
+  bankCardNo?: string;
+  bankName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bankBranchName: 'bankBranchName',
+      bankCardNo: 'bankCardNo',
+      bankName: 'bankName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bankBranchName: 'string',
+      bankCardNo: 'string',
+      bankName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPaymentStatusResponseBodyPayeeAccountInfo extends $tea.Model {
+  bankOpenDTO?: QueryPaymentStatusResponseBodyPayeeAccountInfoBankOpenDTO;
+  static names(): { [key: string]: string } {
+    return {
+      bankOpenDTO: 'bankOpenDTO',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bankOpenDTO: QueryPaymentStatusResponseBodyPayeeAccountInfoBankOpenDTO,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPaymentStatusResponseBodyPayerAccountInfoBankOpenDTO extends $tea.Model {
+  bankBranchName?: string;
+  bankCardNo?: string;
+  bankName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      bankBranchName: 'bankBranchName',
+      bankCardNo: 'bankCardNo',
+      bankName: 'bankName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      bankBranchName: 'string',
+      bankCardNo: 'string',
+      bankName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryPaymentStatusResponseBodyPayerAccountInfo extends $tea.Model {
+  accountType?: string;
+  bankOpenDTO?: QueryPaymentStatusResponseBodyPayerAccountInfoBankOpenDTO;
+  enterpriseAccountCode?: string;
+  static names(): { [key: string]: string } {
+    return {
+      accountType: 'accountType',
+      bankOpenDTO: 'bankOpenDTO',
+      enterpriseAccountCode: 'enterpriseAccountCode',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      accountType: 'string',
+      bankOpenDTO: QueryPaymentStatusResponseBodyPayerAccountInfoBankOpenDTO,
       enterpriseAccountCode: 'string',
     };
   }
@@ -4152,6 +4617,122 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * 查询支付回单信息
+   * 
+   * @param request - QueryPaymentRecallFileRequest
+   * @param headers - QueryPaymentRecallFileHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryPaymentRecallFileResponse
+   */
+  async queryPaymentRecallFileWithOptions(instanceId: string, request: QueryPaymentRecallFileRequest, headers: QueryPaymentRecallFileHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPaymentRecallFileResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryPaymentRecallFile",
+      version: "bizfinance_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/bizfinance/payments/recallFiles/${instanceId}`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryPaymentRecallFileResponse>(await this.execute(params, req, runtime), new QueryPaymentRecallFileResponse({}));
+  }
+
+  /**
+   * 查询支付回单信息
+   * 
+   * @param request - QueryPaymentRecallFileRequest
+   * @returns QueryPaymentRecallFileResponse
+   */
+  async queryPaymentRecallFile(instanceId: string, request: QueryPaymentRecallFileRequest): Promise<QueryPaymentRecallFileResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryPaymentRecallFileHeaders({ });
+    return await this.queryPaymentRecallFileWithOptions(instanceId, request, headers, runtime);
+  }
+
+  /**
+   * 查询支付订单的状态
+   * 
+   * @param request - QueryPaymentStatusRequest
+   * @param headers - QueryPaymentStatusHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryPaymentStatusResponse
+   */
+  async queryPaymentStatusWithOptions(request: QueryPaymentStatusRequest, headers: QueryPaymentStatusHeaders, runtime: $Util.RuntimeOptions): Promise<QueryPaymentStatusResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.instanceId)) {
+      query["instanceId"] = request.instanceId;
+    }
+
+    if (!Util.isUnset(request.orderNo)) {
+      query["orderNo"] = request.orderNo;
+    }
+
+    if (!Util.isUnset(request.userId)) {
+      query["userId"] = request.userId;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryPaymentStatus",
+      version: "bizfinance_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/bizfinance/payments/statuses`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryPaymentStatusResponse>(await this.execute(params, req, runtime), new QueryPaymentStatusResponse({}));
+  }
+
+  /**
+   * 查询支付订单的状态
+   * 
+   * @param request - QueryPaymentStatusRequest
+   * @returns QueryPaymentStatusResponse
+   */
+  async queryPaymentStatus(request: QueryPaymentStatusRequest): Promise<QueryPaymentStatusResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryPaymentStatusHeaders({ });
+    return await this.queryPaymentStatusWithOptions(request, headers, runtime);
+  }
+
+  /**
    * 批量获取项目信息
    * 
    * @param request - QueryProjectByPageRequest
@@ -4265,6 +4846,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QuerySupplierByPageHeaders({ });
     return await this.querySupplierByPageWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 查询组织是否命中走新发票应用
+   * 
+   * @param headers - QueryUseNewInvoiceAppHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryUseNewInvoiceAppResponse
+   */
+  async queryUseNewInvoiceAppWithOptions(headers: QueryUseNewInvoiceAppHeaders, runtime: $Util.RuntimeOptions): Promise<QueryUseNewInvoiceAppResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryUseNewInvoiceApp",
+      version: "bizfinance_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/bizfinance/invoice/appGray`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryUseNewInvoiceAppResponse>(await this.execute(params, req, runtime), new QueryUseNewInvoiceAppResponse({}));
+  }
+
+  /**
+   * 查询组织是否命中走新发票应用
+   * @returns QueryUseNewInvoiceAppResponse
+   */
+  async queryUseNewInvoiceApp(): Promise<QueryUseNewInvoiceAppResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryUseNewInvoiceAppHeaders({ });
+    return await this.queryUseNewInvoiceAppWithOptions(headers, runtime);
   }
 
   /**

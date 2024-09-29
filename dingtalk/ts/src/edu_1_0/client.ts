@@ -11587,6 +11587,98 @@ export class MoveStudentResponse extends $tea.Model {
   }
 }
 
+export class OrderInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OrderInfoRequest extends $tea.Model {
+  /**
+   * @example
+   * 80930501630545566xx
+   */
+  orderNo?: string;
+  static names(): { [key: string]: string } {
+    return {
+      orderNo: 'orderNo',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      orderNo: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OrderInfoResponseBody extends $tea.Model {
+  result?: OrderInfoResponseBodyResult;
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      result: 'result',
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      result: OrderInfoResponseBodyResult,
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OrderInfoResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: OrderInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: OrderInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PageQueryDevicesHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -23703,6 +23795,89 @@ export class ListOrderResponseBodyList extends $tea.Model {
   }
 }
 
+export class OrderInfoResponseBodyResultItemList extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   * 
+   * @example
+   * 商品名称
+   */
+  itemName?: string;
+  /**
+   * @example
+   * 2
+   */
+  itemNum?: string;
+  static names(): { [key: string]: string } {
+    return {
+      itemName: 'itemName',
+      itemNum: 'itemNum',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      itemName: 'string',
+      itemNum: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class OrderInfoResponseBodyResult extends $tea.Model {
+  /**
+   * @example
+   * xxx店铺
+   */
+  address?: string;
+  itemList?: OrderInfoResponseBodyResultItemList[];
+  /**
+   * @example
+   * 808324521
+   */
+  orderNo?: string;
+  /**
+   * @example
+   * 7245
+   */
+  receiverPhoneSuffix?: string;
+  /**
+   * @example
+   * 商家名称
+   */
+  shopName?: string;
+  userId?: number;
+  static names(): { [key: string]: string } {
+    return {
+      address: 'address',
+      itemList: 'itemList',
+      orderNo: 'orderNo',
+      receiverPhoneSuffix: 'receiverPhoneSuffix',
+      shopName: 'shopName',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      address: 'string',
+      itemList: { 'type': 'array', 'itemType': OrderInfoResponseBodyResultItemList },
+      orderNo: 'string',
+      receiverPhoneSuffix: 'string',
+      shopName: 'string',
+      userId: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class PageQueryDevicesResponseBodyList extends $tea.Model {
   /**
    * @example
@@ -33405,6 +33580,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new MoveStudentHeaders({ });
     return await this.moveStudentWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 查询订单信息
+   * 
+   * @param request - OrderInfoRequest
+   * @param headers - OrderInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns OrderInfoResponse
+   */
+  async orderInfoWithOptions(request: OrderInfoRequest, headers: OrderInfoHeaders, runtime: $Util.RuntimeOptions): Promise<OrderInfoResponse> {
+    Util.validateModel(request);
+    let query : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.orderNo)) {
+      query["orderNo"] = request.orderNo;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      query: OpenApiUtil.query(query),
+    });
+    let params = new $OpenApi.Params({
+      action: "OrderInfo",
+      version: "edu_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/edu/dingLifes/orders`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<OrderInfoResponse>(await this.execute(params, req, runtime), new OrderInfoResponse({}));
+  }
+
+  /**
+   * 查询订单信息
+   * 
+   * @param request - OrderInfoRequest
+   * @returns OrderInfoResponse
+   */
+  async orderInfo(request: OrderInfoRequest): Promise<OrderInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new OrderInfoHeaders({ });
+    return await this.orderInfoWithOptions(request, headers, runtime);
   }
 
   /**
