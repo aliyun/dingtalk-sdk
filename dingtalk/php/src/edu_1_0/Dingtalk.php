@@ -272,6 +272,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\MoveStudentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\MoveStudentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\MoveStudentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\OrderInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\OrderInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\OrderInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PageQueryDevicesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PageQueryDevicesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PageQueryDevicesResponse;
@@ -6643,6 +6646,63 @@ class Dingtalk extends OpenApiClient
         $headers = new MoveStudentHeaders([]);
 
         return $this->moveStudentWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询订单信息
+     *  *
+     * @param OrderInfoRequest $request OrderInfoRequest
+     * @param OrderInfoHeaders $headers OrderInfoHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OrderInfoResponse OrderInfoResponse
+     */
+    public function orderInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->orderNo)) {
+            $query['orderNo'] = $request->orderNo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'OrderInfo',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/dingLifes/orders',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OrderInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询订单信息
+     *  *
+     * @param OrderInfoRequest $request OrderInfoRequest
+     *
+     * @return OrderInfoResponse OrderInfoResponse
+     */
+    public function orderInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OrderInfoHeaders([]);
+
+        return $this->orderInfoWithOptions($request, $headers, $runtime);
     }
 
     /**

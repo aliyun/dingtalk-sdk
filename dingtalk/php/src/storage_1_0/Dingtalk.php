@@ -83,6 +83,9 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetSpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetWebOfficeUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetWebOfficeUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\GetWebOfficeUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\InitMultipartFileUploadHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\InitMultipartFileUploadRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\InitMultipartFileUploadResponse;
@@ -107,6 +110,9 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\MoveDentriesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\MoveDentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\MoveDentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\MoveDentryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RefreshWebOfficeTokenHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RefreshWebOfficeTokenRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RefreshWebOfficeTokenResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RegisterOpenInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RegisterOpenInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\RegisterOpenInfoResponse;
@@ -1852,6 +1858,67 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取 WebOfficeUrl 接口
+     *  *
+     * @param string                 $spaceId
+     * @param string                 $dentryId
+     * @param GetWebOfficeUrlRequest $request  GetWebOfficeUrlRequest
+     * @param GetWebOfficeUrlHeaders $headers  GetWebOfficeUrlHeaders
+     * @param RuntimeOptions         $runtime  runtime options for this request RuntimeOptions
+     *
+     * @return GetWebOfficeUrlResponse GetWebOfficeUrlResponse
+     */
+    public function getWebOfficeUrlWithOptions($spaceId, $dentryId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetWebOfficeUrl',
+            'version'     => 'storage_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/webOfficeUrls',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetWebOfficeUrlResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取 WebOfficeUrl 接口
+     *  *
+     * @param string                 $spaceId
+     * @param string                 $dentryId
+     * @param GetWebOfficeUrlRequest $request  GetWebOfficeUrlRequest
+     *
+     * @return GetWebOfficeUrlResponse GetWebOfficeUrlResponse
+     */
+    public function getWebOfficeUrl($spaceId, $dentryId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetWebOfficeUrlHeaders([]);
+
+        return $this->getWebOfficeUrlWithOptions($spaceId, $dentryId, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 初始化文件分片上传
      *  *
      * @param string                         $spaceId
@@ -2397,6 +2464,73 @@ class Dingtalk extends OpenApiClient
         $headers = new MoveDentryHeaders([]);
 
         return $this->moveDentryWithOptions($spaceId, $dentryId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取 accessToken 接口
+     *  *
+     * @param string                       $spaceId
+     * @param string                       $dentryId
+     * @param RefreshWebOfficeTokenRequest $request  RefreshWebOfficeTokenRequest
+     * @param RefreshWebOfficeTokenHeaders $headers  RefreshWebOfficeTokenHeaders
+     * @param RuntimeOptions               $runtime  runtime options for this request RuntimeOptions
+     *
+     * @return RefreshWebOfficeTokenResponse RefreshWebOfficeTokenResponse
+     */
+    public function refreshWebOfficeTokenWithOptions($spaceId, $dentryId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        if (!Utils::isUnset($request->webOfficeAccessToken)) {
+            $query['webOfficeAccessToken'] = $request->webOfficeAccessToken;
+        }
+        if (!Utils::isUnset($request->webOfficeRefreshToken)) {
+            $query['webOfficeRefreshToken'] = $request->webOfficeRefreshToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'RefreshWebOfficeToken',
+            'version'     => 'storage_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/storage/spaces/' . $spaceId . '/dentries/' . $dentryId . '/refreshWebOfficeToken',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return RefreshWebOfficeTokenResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取 accessToken 接口
+     *  *
+     * @param string                       $spaceId
+     * @param string                       $dentryId
+     * @param RefreshWebOfficeTokenRequest $request  RefreshWebOfficeTokenRequest
+     *
+     * @return RefreshWebOfficeTokenResponse RefreshWebOfficeTokenResponse
+     */
+    public function refreshWebOfficeToken($spaceId, $dentryId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RefreshWebOfficeTokenHeaders([]);
+
+        return $this->refreshWebOfficeTokenWithOptions($spaceId, $dentryId, $request, $headers, $runtime);
     }
 
     /**

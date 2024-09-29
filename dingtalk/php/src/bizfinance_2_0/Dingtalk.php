@@ -47,12 +47,20 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryEnterpriseAccountByPag
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryInstancePaymentOrderDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryInstancePaymentOrderDetailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryInstancePaymentOrderDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentRecallFileHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentRecallFileRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentRecallFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryProjectByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryProjectByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryProjectByPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QuerySupplierByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QuerySupplierByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QuerySupplierByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryUseNewInvoiceAppHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryUseNewInvoiceAppResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryUserRoleListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryUserRoleListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryUserRoleListResponse;
@@ -977,6 +985,128 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询支付回单信息
+     *  *
+     * @param string                        $instanceId
+     * @param QueryPaymentRecallFileRequest $request    QueryPaymentRecallFileRequest
+     * @param QueryPaymentRecallFileHeaders $headers    QueryPaymentRecallFileHeaders
+     * @param RuntimeOptions                $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return QueryPaymentRecallFileResponse QueryPaymentRecallFileResponse
+     */
+    public function queryPaymentRecallFileWithOptions($instanceId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryPaymentRecallFile',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/payments/recallFiles/' . $instanceId . '',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryPaymentRecallFileResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询支付回单信息
+     *  *
+     * @param string                        $instanceId
+     * @param QueryPaymentRecallFileRequest $request    QueryPaymentRecallFileRequest
+     *
+     * @return QueryPaymentRecallFileResponse QueryPaymentRecallFileResponse
+     */
+    public function queryPaymentRecallFile($instanceId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryPaymentRecallFileHeaders([]);
+
+        return $this->queryPaymentRecallFileWithOptions($instanceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询支付订单的状态
+     *  *
+     * @param QueryPaymentStatusRequest $request QueryPaymentStatusRequest
+     * @param QueryPaymentStatusHeaders $headers QueryPaymentStatusHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryPaymentStatusResponse QueryPaymentStatusResponse
+     */
+    public function queryPaymentStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->instanceId)) {
+            $query['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->orderNo)) {
+            $query['orderNo'] = $request->orderNo;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $query['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryPaymentStatus',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/payments/statuses',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryPaymentStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询支付订单的状态
+     *  *
+     * @param QueryPaymentStatusRequest $request QueryPaymentStatusRequest
+     *
+     * @return QueryPaymentStatusResponse QueryPaymentStatusResponse
+     */
+    public function queryPaymentStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryPaymentStatusHeaders([]);
+
+        return $this->queryPaymentStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 批量获取项目信息
      *  *
      * @param QueryProjectByPageRequest $request QueryProjectByPageRequest
@@ -1094,6 +1224,54 @@ class Dingtalk extends OpenApiClient
         $headers = new QuerySupplierByPageHeaders([]);
 
         return $this->querySupplierByPageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询组织是否命中走新发票应用
+     *  *
+     * @param QueryUseNewInvoiceAppHeaders $headers QueryUseNewInvoiceAppHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryUseNewInvoiceAppResponse QueryUseNewInvoiceAppResponse
+     */
+    public function queryUseNewInvoiceAppWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'QueryUseNewInvoiceApp',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/invoice/appGray',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryUseNewInvoiceAppResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询组织是否命中走新发票应用
+     *  *
+     * @return QueryUseNewInvoiceAppResponse QueryUseNewInvoiceAppResponse
+     */
+    public function queryUseNewInvoiceApp()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryUseNewInvoiceAppHeaders([]);
+
+        return $this->queryUseNewInvoiceAppWithOptions($headers, $runtime);
     }
 
     /**
