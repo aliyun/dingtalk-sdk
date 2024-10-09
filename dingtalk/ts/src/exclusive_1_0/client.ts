@@ -7139,6 +7139,176 @@ export class ListAuditLogResponse extends $tea.Model {
   }
 }
 
+export class ListByCodesHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListByCodesRequest extends $tea.Model {
+  body?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      body: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListByCodesResponseBody extends $tea.Model {
+  robotInfoList?: ListByCodesResponseBodyRobotInfoList[];
+  static names(): { [key: string]: string } {
+    return {
+      robotInfoList: 'robotInfoList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      robotInfoList: { 'type': 'array', 'itemType': ListByCodesResponseBodyRobotInfoList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListByCodesResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListByCodesResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ListByCodesResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListByPluginIdsHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListByPluginIdsRequest extends $tea.Model {
+  body?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      body: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListByPluginIdsResponseBody extends $tea.Model {
+  pluginInfoList?: ListByPluginIdsResponseBodyPluginInfoList[];
+  static names(): { [key: string]: string } {
+    return {
+      pluginInfoList: 'pluginInfoList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      pluginInfoList: { 'type': 'array', 'itemType': ListByPluginIdsResponseBodyPluginInfoList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListByPluginIdsResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: ListByPluginIdsResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: ListByPluginIdsResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListCategorysHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -9041,6 +9211,141 @@ export class QueryPartnerInfoResponse extends $tea.Model {
       headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
       statusCode: 'number',
       body: QueryPartnerInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTemplateInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTemplateInfoResponseBody extends $tea.Model {
+  abilitySwitch?: number;
+  appInfo?: QueryTemplateInfoResponseBodyAppInfo;
+  conversationScope?: string[];
+  createAt?: number;
+  description?: string;
+  grayConversationIds?: string[];
+  grayInfo?: QueryTemplateInfoResponseBodyGrayInfo;
+  grayTemplateId?: string;
+  groupSettingList?: QueryTemplateInfoResponseBodyGroupSettingList[];
+  iconMediaId?: string;
+  modifiedAt?: number;
+  modifyOrderId?: number;
+  modifyStatus?: number;
+  parentTemplateDetailVO?: QueryTemplateInfoResponseBodyParentTemplateDetailVO;
+  publishSubState?: string;
+  robotTemplateList?: string[];
+  status?: number;
+  templateId?: string;
+  templateIntroduction?: QueryTemplateInfoResponseBodyTemplateIntroduction;
+  templateName?: string;
+  templateType?: number;
+  templateVisibility?: QueryTemplateInfoResponseBodyTemplateVisibility;
+  toolbarPluginList?: string[];
+  version?: number;
+  static names(): { [key: string]: string } {
+    return {
+      abilitySwitch: 'abilitySwitch',
+      appInfo: 'appInfo',
+      conversationScope: 'conversationScope',
+      createAt: 'createAt',
+      description: 'description',
+      grayConversationIds: 'grayConversationIds',
+      grayInfo: 'grayInfo',
+      grayTemplateId: 'grayTemplateId',
+      groupSettingList: 'groupSettingList',
+      iconMediaId: 'iconMediaId',
+      modifiedAt: 'modifiedAt',
+      modifyOrderId: 'modifyOrderId',
+      modifyStatus: 'modifyStatus',
+      parentTemplateDetailVO: 'parentTemplateDetailVO',
+      publishSubState: 'publishSubState',
+      robotTemplateList: 'robotTemplateList',
+      status: 'status',
+      templateId: 'templateId',
+      templateIntroduction: 'templateIntroduction',
+      templateName: 'templateName',
+      templateType: 'templateType',
+      templateVisibility: 'templateVisibility',
+      toolbarPluginList: 'toolbarPluginList',
+      version: 'version',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      abilitySwitch: 'number',
+      appInfo: QueryTemplateInfoResponseBodyAppInfo,
+      conversationScope: { 'type': 'array', 'itemType': 'string' },
+      createAt: 'number',
+      description: 'string',
+      grayConversationIds: { 'type': 'array', 'itemType': 'string' },
+      grayInfo: QueryTemplateInfoResponseBodyGrayInfo,
+      grayTemplateId: 'string',
+      groupSettingList: { 'type': 'array', 'itemType': QueryTemplateInfoResponseBodyGroupSettingList },
+      iconMediaId: 'string',
+      modifiedAt: 'number',
+      modifyOrderId: 'number',
+      modifyStatus: 'number',
+      parentTemplateDetailVO: QueryTemplateInfoResponseBodyParentTemplateDetailVO,
+      publishSubState: 'string',
+      robotTemplateList: { 'type': 'array', 'itemType': 'string' },
+      status: 'number',
+      templateId: 'string',
+      templateIntroduction: QueryTemplateInfoResponseBodyTemplateIntroduction,
+      templateName: 'string',
+      templateType: 'number',
+      templateVisibility: QueryTemplateInfoResponseBodyTemplateVisibility,
+      toolbarPluginList: { 'type': 'array', 'itemType': 'string' },
+      version: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTemplateInfoResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: QueryTemplateInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: QueryTemplateInfoResponseBody,
     };
   }
 
@@ -15602,6 +15907,107 @@ export class ListAuditLogResponseBodyList extends $tea.Model {
   }
 }
 
+export class ListByCodesResponseBodyRobotInfoList extends $tea.Model {
+  brief?: string;
+  code?: string;
+  createAt?: number;
+  description?: string;
+  dev?: string;
+  icon?: string;
+  modifiedAt?: number;
+  name?: string;
+  outgoingToken?: string;
+  outgoingUrl?: string;
+  previewMediaId?: string;
+  sourceUrl?: string;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      brief: 'brief',
+      code: 'code',
+      createAt: 'createAt',
+      description: 'description',
+      dev: 'dev',
+      icon: 'icon',
+      modifiedAt: 'modifiedAt',
+      name: 'name',
+      outgoingToken: 'outgoingToken',
+      outgoingUrl: 'outgoingUrl',
+      previewMediaId: 'previewMediaId',
+      sourceUrl: 'sourceUrl',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      brief: 'string',
+      code: 'string',
+      createAt: 'number',
+      description: 'string',
+      dev: 'string',
+      icon: 'string',
+      modifiedAt: 'number',
+      name: 'string',
+      outgoingToken: 'string',
+      outgoingUrl: 'string',
+      previewMediaId: 'string',
+      sourceUrl: 'string',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class ListByPluginIdsResponseBodyPluginInfoList extends $tea.Model {
+  appId?: string;
+  createAt?: number;
+  desc?: string;
+  icons?: string;
+  modifiedAt?: number;
+  name?: string;
+  pcUrl?: string;
+  pluginId?: string;
+  status?: number;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appId: 'appId',
+      createAt: 'createAt',
+      desc: 'desc',
+      icons: 'icons',
+      modifiedAt: 'modifiedAt',
+      name: 'name',
+      pcUrl: 'pcUrl',
+      pluginId: 'pluginId',
+      status: 'status',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appId: 'string',
+      createAt: 'number',
+      desc: 'string',
+      icons: 'string',
+      modifiedAt: 'number',
+      name: 'string',
+      pcUrl: 'string',
+      pluginId: 'string',
+      status: 'number',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class ListCategorysRequestBody extends $tea.Model {
   /**
    * @example
@@ -16347,6 +16753,313 @@ export class QueryPartnerInfoResponseBodyPartnerLabelList extends $tea.Model {
     return {
       id: 'number',
       name: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTemplateInfoResponseBodyAppInfo extends $tea.Model {
+  appIcon?: string;
+  appId?: string;
+  appName?: string;
+  corpId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appIcon: 'appIcon',
+      appId: 'appId',
+      appName: 'appName',
+      corpId: 'corpId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appIcon: 'string',
+      appId: 'string',
+      appName: 'string',
+      corpId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTemplateInfoResponseBodyGrayInfo extends $tea.Model {
+  tenThousandPercent?: number;
+  whiteSet?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      tenThousandPercent: 'tenThousandPercent',
+      whiteSet: 'whiteSet',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      tenThousandPercent: 'number',
+      whiteSet: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTemplateInfoResponseBodyGroupSettingList extends $tea.Model {
+  desc?: string;
+  name?: string;
+  state?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      desc: 'desc',
+      name: 'name',
+      state: 'state',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      desc: 'string',
+      name: 'string',
+      state: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTemplateInfoResponseBodyParentTemplateDetailVORobotTemplateList extends $tea.Model {
+  brief?: string;
+  code?: string;
+  corpId?: string;
+  createAt?: number;
+  description?: string;
+  dev?: string;
+  groupTemplateId?: string;
+  icon?: string;
+  modifiedAt?: number;
+  name?: string;
+  outgoingToken?: string;
+  outgoingUrl?: string;
+  previewMediaId?: string;
+  sourceUrl?: string;
+  status?: number;
+  static names(): { [key: string]: string } {
+    return {
+      brief: 'brief',
+      code: 'code',
+      corpId: 'corpId',
+      createAt: 'createAt',
+      description: 'description',
+      dev: 'dev',
+      groupTemplateId: 'groupTemplateId',
+      icon: 'icon',
+      modifiedAt: 'modifiedAt',
+      name: 'name',
+      outgoingToken: 'outgoingToken',
+      outgoingUrl: 'outgoingUrl',
+      previewMediaId: 'previewMediaId',
+      sourceUrl: 'sourceUrl',
+      status: 'status',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      brief: 'string',
+      code: 'string',
+      corpId: 'string',
+      createAt: 'number',
+      description: 'string',
+      dev: 'string',
+      groupTemplateId: 'string',
+      icon: 'string',
+      modifiedAt: 'number',
+      name: 'string',
+      outgoingToken: 'string',
+      outgoingUrl: 'string',
+      previewMediaId: 'string',
+      sourceUrl: 'string',
+      status: 'number',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTemplateInfoResponseBodyParentTemplateDetailVOToolbarPluginList extends $tea.Model {
+  appId?: string;
+  createAt?: number;
+  desc?: string;
+  icons?: string;
+  modifiedAt?: number;
+  name?: string;
+  pcUrl?: string;
+  pluginId?: string;
+  status?: number;
+  url?: string;
+  static names(): { [key: string]: string } {
+    return {
+      appId: 'appId',
+      createAt: 'createAt',
+      desc: 'desc',
+      icons: 'icons',
+      modifiedAt: 'modifiedAt',
+      name: 'name',
+      pcUrl: 'pcUrl',
+      pluginId: 'pluginId',
+      status: 'status',
+      url: 'url',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      appId: 'string',
+      createAt: 'number',
+      desc: 'string',
+      icons: 'string',
+      modifiedAt: 'number',
+      name: 'string',
+      pcUrl: 'string',
+      pluginId: 'string',
+      status: 'number',
+      url: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTemplateInfoResponseBodyParentTemplateDetailVO extends $tea.Model {
+  robotTemplateList?: QueryTemplateInfoResponseBodyParentTemplateDetailVORobotTemplateList[];
+  templateId?: string;
+  toolbarPluginList?: QueryTemplateInfoResponseBodyParentTemplateDetailVOToolbarPluginList[];
+  static names(): { [key: string]: string } {
+    return {
+      robotTemplateList: 'robotTemplateList',
+      templateId: 'templateId',
+      toolbarPluginList: 'toolbarPluginList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      robotTemplateList: { 'type': 'array', 'itemType': QueryTemplateInfoResponseBodyParentTemplateDetailVORobotTemplateList },
+      templateId: 'string',
+      toolbarPluginList: { 'type': 'array', 'itemType': QueryTemplateInfoResponseBodyParentTemplateDetailVOToolbarPluginList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTemplateInfoResponseBodyTemplateIntroduction extends $tea.Model {
+  banner?: string;
+  detail?: string;
+  title?: string;
+  static names(): { [key: string]: string } {
+    return {
+      banner: 'banner',
+      detail: 'detail',
+      title: 'title',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      banner: 'string',
+      detail: 'string',
+      title: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTemplateInfoResponseBodyTemplateVisibilityDeptIds extends $tea.Model {
+  deptId?: string;
+  deptName?: string;
+  static names(): { [key: string]: string } {
+    return {
+      deptId: 'deptId',
+      deptName: 'deptName',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      deptId: 'string',
+      deptName: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTemplateInfoResponseBodyTemplateVisibilityUserIds extends $tea.Model {
+  avatar?: string;
+  nick?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      avatar: 'avatar',
+      nick: 'nick',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      avatar: 'string',
+      nick: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class QueryTemplateInfoResponseBodyTemplateVisibility extends $tea.Model {
+  corpId?: string;
+  deptIds?: QueryTemplateInfoResponseBodyTemplateVisibilityDeptIds[];
+  roleIds?: string[];
+  userIds?: QueryTemplateInfoResponseBodyTemplateVisibilityUserIds[];
+  static names(): { [key: string]: string } {
+    return {
+      corpId: 'corpId',
+      deptIds: 'deptIds',
+      roleIds: 'roleIds',
+      userIds: 'userIds',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      corpId: 'string',
+      deptIds: { 'type': 'array', 'itemType': QueryTemplateInfoResponseBodyTemplateVisibilityDeptIds },
+      roleIds: { 'type': 'array', 'itemType': 'string' },
+      userIds: { 'type': 'array', 'itemType': QueryTemplateInfoResponseBodyTemplateVisibilityUserIds },
     };
   }
 
@@ -21334,6 +22047,104 @@ export default class Client extends OpenApi {
   }
 
   /**
+   * 根据机器人code列表查询机器人信息
+   * 
+   * @param request - ListByCodesRequest
+   * @param headers - ListByCodesHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListByCodesResponse
+   */
+  async listByCodesWithOptions(request: ListByCodesRequest, headers: ListByCodesHeaders, runtime: $Util.RuntimeOptions): Promise<ListByCodesResponse> {
+    Util.validateModel(request);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: request.body,
+    });
+    let params = new $OpenApi.Params({
+      action: "ListByCodes",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/sceneGroups/robotInfos/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListByCodesResponse>(await this.execute(params, req, runtime), new ListByCodesResponse({}));
+  }
+
+  /**
+   * 根据机器人code列表查询机器人信息
+   * 
+   * @param request - ListByCodesRequest
+   * @returns ListByCodesResponse
+   */
+  async listByCodes(request: ListByCodesRequest): Promise<ListByCodesResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListByCodesHeaders({ });
+    return await this.listByCodesWithOptions(request, headers, runtime);
+  }
+
+  /**
+   * 根据插件id列表查询插件信息
+   * 
+   * @param request - ListByPluginIdsRequest
+   * @param headers - ListByPluginIdsHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns ListByPluginIdsResponse
+   */
+  async listByPluginIdsWithOptions(request: ListByPluginIdsRequest, headers: ListByPluginIdsHeaders, runtime: $Util.RuntimeOptions): Promise<ListByPluginIdsResponse> {
+    Util.validateModel(request);
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: request.body,
+    });
+    let params = new $OpenApi.Params({
+      action: "ListByPluginIds",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/sceneGroups/pluginInfos/query`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<ListByPluginIdsResponse>(await this.execute(params, req, runtime), new ListByPluginIdsResponse({}));
+  }
+
+  /**
+   * 根据插件id列表查询插件信息
+   * 
+   * @param request - ListByPluginIdsRequest
+   * @returns ListByPluginIdsResponse
+   */
+  async listByPluginIds(request: ListByPluginIdsRequest): Promise<ListByPluginIdsResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new ListByPluginIdsHeaders({ });
+    return await this.listByPluginIdsWithOptions(request, headers, runtime);
+  }
+
+  /**
    * 查询分组列表
    * 
    * @param tmpReq - ListCategorysRequest
@@ -22393,6 +23204,50 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new QueryPartnerInfoHeaders({ });
     return await this.queryPartnerInfoWithOptions(userId, headers, runtime);
+  }
+
+  /**
+   * 根据templateId查询模版信息
+   * 
+   * @param headers - QueryTemplateInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns QueryTemplateInfoResponse
+   */
+  async queryTemplateInfoWithOptions(templateId: string, headers: QueryTemplateInfoHeaders, runtime: $Util.RuntimeOptions): Promise<QueryTemplateInfoResponse> {
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+    });
+    let params = new $OpenApi.Params({
+      action: "QueryTemplateInfo",
+      version: "exclusive_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/exclusive/sceneGroups/templates/${templateId}/infos`,
+      method: "GET",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<QueryTemplateInfoResponse>(await this.execute(params, req, runtime), new QueryTemplateInfoResponse({}));
+  }
+
+  /**
+   * 根据templateId查询模版信息
+   * @returns QueryTemplateInfoResponse
+   */
+  async queryTemplateInfo(templateId: string): Promise<QueryTemplateInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new QueryTemplateInfoHeaders({ });
+    return await this.queryTemplateInfoWithOptions(templateId, headers, runtime);
   }
 
   /**
