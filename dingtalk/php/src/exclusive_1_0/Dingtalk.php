@@ -192,6 +192,12 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GroupQueryByOpenIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListAuditLogResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListByCodesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListByCodesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListByCodesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListByPluginIdsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListByPluginIdsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListByPluginIdsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListCategorysHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListCategorysRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ListCategorysResponse;
@@ -245,6 +251,8 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryExclusiveBenefitsHeader
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryExclusiveBenefitsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryPartnerInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryPartnerInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryTemplateInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryTemplateInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryUserBehaviorHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryUserBehaviorRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\QueryUserBehaviorResponse;
@@ -4463,6 +4471,112 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据机器人code列表查询机器人信息
+     *  *
+     * @param ListByCodesRequest $request ListByCodesRequest
+     * @param ListByCodesHeaders $headers ListByCodesHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListByCodesResponse ListByCodesResponse
+     */
+    public function listByCodesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => $request->body,
+        ]);
+        $params = new Params([
+            'action'      => 'ListByCodes',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/sceneGroups/robotInfos/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListByCodesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据机器人code列表查询机器人信息
+     *  *
+     * @param ListByCodesRequest $request ListByCodesRequest
+     *
+     * @return ListByCodesResponse ListByCodesResponse
+     */
+    public function listByCodes($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListByCodesHeaders([]);
+
+        return $this->listByCodesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据插件id列表查询插件信息
+     *  *
+     * @param ListByPluginIdsRequest $request ListByPluginIdsRequest
+     * @param ListByPluginIdsHeaders $headers ListByPluginIdsHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListByPluginIdsResponse ListByPluginIdsResponse
+     */
+    public function listByPluginIdsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => $request->body,
+        ]);
+        $params = new Params([
+            'action'      => 'ListByPluginIds',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/sceneGroups/pluginInfos/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListByPluginIdsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据插件id列表查询插件信息
+     *  *
+     * @param ListByPluginIdsRequest $request ListByPluginIdsRequest
+     *
+     * @return ListByPluginIdsResponse ListByPluginIdsResponse
+     */
+    public function listByPluginIds($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListByPluginIdsHeaders([]);
+
+        return $this->listByPluginIdsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询分组列表
      *  *
      * @param ListCategorysRequest $tmpReq  ListCategorysRequest
@@ -5556,6 +5670,57 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryPartnerInfoHeaders([]);
 
         return $this->queryPartnerInfoWithOptions($userId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据templateId查询模版信息
+     *  *
+     * @param string                   $templateId
+     * @param QueryTemplateInfoHeaders $headers    QueryTemplateInfoHeaders
+     * @param RuntimeOptions           $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return QueryTemplateInfoResponse QueryTemplateInfoResponse
+     */
+    public function queryTemplateInfoWithOptions($templateId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'QueryTemplateInfo',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/sceneGroups/templates/' . $templateId . '/infos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryTemplateInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据templateId查询模版信息
+     *  *
+     * @param string $templateId
+     *
+     * @return QueryTemplateInfoResponse QueryTemplateInfoResponse
+     */
+    public function queryTemplateInfo($templateId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryTemplateInfoHeaders([]);
+
+        return $this->queryTemplateInfoWithOptions($templateId, $headers, $runtime);
     }
 
     /**
