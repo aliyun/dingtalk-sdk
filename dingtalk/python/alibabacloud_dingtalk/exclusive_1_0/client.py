@@ -7940,6 +7940,222 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.ListAuditLogHeaders()
         return await self.list_audit_log_with_options_async(request, headers, runtime)
 
+    def list_by_codes_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.ListByCodesRequest,
+        headers: dingtalkexclusive__1__0_models.ListByCodesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ListByCodesResponse:
+        """
+        @summary 根据机器人code列表查询机器人信息
+        
+        @param request: ListByCodesRequest
+        @param headers: ListByCodesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListByCodesResponse
+        """
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=request.body
+        )
+        params = open_api_models.Params(
+            action='ListByCodes',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/sceneGroups/robotInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ListByCodesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_by_codes_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ListByCodesRequest,
+        headers: dingtalkexclusive__1__0_models.ListByCodesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ListByCodesResponse:
+        """
+        @summary 根据机器人code列表查询机器人信息
+        
+        @param request: ListByCodesRequest
+        @param headers: ListByCodesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListByCodesResponse
+        """
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=request.body
+        )
+        params = open_api_models.Params(
+            action='ListByCodes',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/sceneGroups/robotInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ListByCodesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_by_codes(
+        self,
+        request: dingtalkexclusive__1__0_models.ListByCodesRequest,
+    ) -> dingtalkexclusive__1__0_models.ListByCodesResponse:
+        """
+        @summary 根据机器人code列表查询机器人信息
+        
+        @param request: ListByCodesRequest
+        @return: ListByCodesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ListByCodesHeaders()
+        return self.list_by_codes_with_options(request, headers, runtime)
+
+    async def list_by_codes_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ListByCodesRequest,
+    ) -> dingtalkexclusive__1__0_models.ListByCodesResponse:
+        """
+        @summary 根据机器人code列表查询机器人信息
+        
+        @param request: ListByCodesRequest
+        @return: ListByCodesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ListByCodesHeaders()
+        return await self.list_by_codes_with_options_async(request, headers, runtime)
+
+    def list_by_plugin_ids_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.ListByPluginIdsRequest,
+        headers: dingtalkexclusive__1__0_models.ListByPluginIdsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ListByPluginIdsResponse:
+        """
+        @summary 根据插件id列表查询插件信息
+        
+        @param request: ListByPluginIdsRequest
+        @param headers: ListByPluginIdsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListByPluginIdsResponse
+        """
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=request.body
+        )
+        params = open_api_models.Params(
+            action='ListByPluginIds',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/sceneGroups/pluginInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ListByPluginIdsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_by_plugin_ids_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ListByPluginIdsRequest,
+        headers: dingtalkexclusive__1__0_models.ListByPluginIdsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.ListByPluginIdsResponse:
+        """
+        @summary 根据插件id列表查询插件信息
+        
+        @param request: ListByPluginIdsRequest
+        @param headers: ListByPluginIdsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListByPluginIdsResponse
+        """
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=request.body
+        )
+        params = open_api_models.Params(
+            action='ListByPluginIds',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/sceneGroups/pluginInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.ListByPluginIdsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_by_plugin_ids(
+        self,
+        request: dingtalkexclusive__1__0_models.ListByPluginIdsRequest,
+    ) -> dingtalkexclusive__1__0_models.ListByPluginIdsResponse:
+        """
+        @summary 根据插件id列表查询插件信息
+        
+        @param request: ListByPluginIdsRequest
+        @return: ListByPluginIdsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ListByPluginIdsHeaders()
+        return self.list_by_plugin_ids_with_options(request, headers, runtime)
+
+    async def list_by_plugin_ids_async(
+        self,
+        request: dingtalkexclusive__1__0_models.ListByPluginIdsRequest,
+    ) -> dingtalkexclusive__1__0_models.ListByPluginIdsResponse:
+        """
+        @summary 根据插件id列表查询插件信息
+        
+        @param request: ListByPluginIdsRequest
+        @return: ListByPluginIdsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.ListByPluginIdsHeaders()
+        return await self.list_by_plugin_ids_with_options_async(request, headers, runtime)
+
     def list_categorys_with_options(
         self,
         tmp_req: dingtalkexclusive__1__0_models.ListCategorysRequest,
@@ -10065,6 +10281,106 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.QueryPartnerInfoHeaders()
         return await self.query_partner_info_with_options_async(user_id, headers, runtime)
+
+    def query_template_info_with_options(
+        self,
+        template_id: str,
+        headers: dingtalkexclusive__1__0_models.QueryTemplateInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.QueryTemplateInfoResponse:
+        """
+        @summary 根据templateId查询模版信息
+        
+        @param headers: QueryTemplateInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTemplateInfoResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryTemplateInfo',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/sceneGroups/templates/{template_id}/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.QueryTemplateInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_template_info_with_options_async(
+        self,
+        template_id: str,
+        headers: dingtalkexclusive__1__0_models.QueryTemplateInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.QueryTemplateInfoResponse:
+        """
+        @summary 根据templateId查询模版信息
+        
+        @param headers: QueryTemplateInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTemplateInfoResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryTemplateInfo',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/sceneGroups/templates/{template_id}/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.QueryTemplateInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_template_info(
+        self,
+        template_id: str,
+    ) -> dingtalkexclusive__1__0_models.QueryTemplateInfoResponse:
+        """
+        @summary 根据templateId查询模版信息
+        
+        @return: QueryTemplateInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.QueryTemplateInfoHeaders()
+        return self.query_template_info_with_options(template_id, headers, runtime)
+
+    async def query_template_info_async(
+        self,
+        template_id: str,
+    ) -> dingtalkexclusive__1__0_models.QueryTemplateInfoResponse:
+        """
+        @summary 根据templateId查询模版信息
+        
+        @return: QueryTemplateInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.QueryTemplateInfoHeaders()
+        return await self.query_template_info_with_options_async(template_id, headers, runtime)
 
     def query_user_behavior_with_options(
         self,

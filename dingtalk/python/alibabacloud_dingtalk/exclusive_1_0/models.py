@@ -13319,6 +13319,458 @@ class ListAuditLogResponse(TeaModel):
         return self
 
 
+class ListByCodesHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListByCodesRequest(TeaModel):
+    def __init__(
+        self,
+        body: List[str] = None,
+    ):
+        self.body = body
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body is not None:
+            result['body'] = self.body
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            self.body = m.get('body')
+        return self
+
+
+class ListByCodesResponseBodyRobotInfoList(TeaModel):
+    def __init__(
+        self,
+        brief: str = None,
+        code: str = None,
+        create_at: int = None,
+        description: str = None,
+        dev: str = None,
+        icon: str = None,
+        modified_at: int = None,
+        name: str = None,
+        outgoing_token: str = None,
+        outgoing_url: str = None,
+        preview_media_id: str = None,
+        source_url: str = None,
+        status: int = None,
+    ):
+        self.brief = brief
+        self.code = code
+        self.create_at = create_at
+        self.description = description
+        self.dev = dev
+        self.icon = icon
+        self.modified_at = modified_at
+        self.name = name
+        self.outgoing_token = outgoing_token
+        self.outgoing_url = outgoing_url
+        self.preview_media_id = preview_media_id
+        self.source_url = source_url
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.brief is not None:
+            result['brief'] = self.brief
+        if self.code is not None:
+            result['code'] = self.code
+        if self.create_at is not None:
+            result['createAt'] = self.create_at
+        if self.description is not None:
+            result['description'] = self.description
+        if self.dev is not None:
+            result['dev'] = self.dev
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.modified_at is not None:
+            result['modifiedAt'] = self.modified_at
+        if self.name is not None:
+            result['name'] = self.name
+        if self.outgoing_token is not None:
+            result['outgoingToken'] = self.outgoing_token
+        if self.outgoing_url is not None:
+            result['outgoingUrl'] = self.outgoing_url
+        if self.preview_media_id is not None:
+            result['previewMediaId'] = self.preview_media_id
+        if self.source_url is not None:
+            result['sourceUrl'] = self.source_url
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('brief') is not None:
+            self.brief = m.get('brief')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('createAt') is not None:
+            self.create_at = m.get('createAt')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('dev') is not None:
+            self.dev = m.get('dev')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('modifiedAt') is not None:
+            self.modified_at = m.get('modifiedAt')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('outgoingToken') is not None:
+            self.outgoing_token = m.get('outgoingToken')
+        if m.get('outgoingUrl') is not None:
+            self.outgoing_url = m.get('outgoingUrl')
+        if m.get('previewMediaId') is not None:
+            self.preview_media_id = m.get('previewMediaId')
+        if m.get('sourceUrl') is not None:
+            self.source_url = m.get('sourceUrl')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class ListByCodesResponseBody(TeaModel):
+    def __init__(
+        self,
+        robot_info_list: List[ListByCodesResponseBodyRobotInfoList] = None,
+    ):
+        self.robot_info_list = robot_info_list
+
+    def validate(self):
+        if self.robot_info_list:
+            for k in self.robot_info_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['robotInfoList'] = []
+        if self.robot_info_list is not None:
+            for k in self.robot_info_list:
+                result['robotInfoList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.robot_info_list = []
+        if m.get('robotInfoList') is not None:
+            for k in m.get('robotInfoList'):
+                temp_model = ListByCodesResponseBodyRobotInfoList()
+                self.robot_info_list.append(temp_model.from_map(k))
+        return self
+
+
+class ListByCodesResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListByCodesResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListByCodesResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListByPluginIdsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListByPluginIdsRequest(TeaModel):
+    def __init__(
+        self,
+        body: List[str] = None,
+    ):
+        self.body = body
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body is not None:
+            result['body'] = self.body
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            self.body = m.get('body')
+        return self
+
+
+class ListByPluginIdsResponseBodyPluginInfoList(TeaModel):
+    def __init__(
+        self,
+        app_id: str = None,
+        create_at: int = None,
+        desc: str = None,
+        icons: str = None,
+        modified_at: int = None,
+        name: str = None,
+        pc_url: str = None,
+        plugin_id: str = None,
+        status: int = None,
+        url: str = None,
+    ):
+        self.app_id = app_id
+        self.create_at = create_at
+        self.desc = desc
+        self.icons = icons
+        self.modified_at = modified_at
+        self.name = name
+        self.pc_url = pc_url
+        self.plugin_id = plugin_id
+        self.status = status
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.create_at is not None:
+            result['createAt'] = self.create_at
+        if self.desc is not None:
+            result['desc'] = self.desc
+        if self.icons is not None:
+            result['icons'] = self.icons
+        if self.modified_at is not None:
+            result['modifiedAt'] = self.modified_at
+        if self.name is not None:
+            result['name'] = self.name
+        if self.pc_url is not None:
+            result['pcUrl'] = self.pc_url
+        if self.plugin_id is not None:
+            result['pluginId'] = self.plugin_id
+        if self.status is not None:
+            result['status'] = self.status
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('createAt') is not None:
+            self.create_at = m.get('createAt')
+        if m.get('desc') is not None:
+            self.desc = m.get('desc')
+        if m.get('icons') is not None:
+            self.icons = m.get('icons')
+        if m.get('modifiedAt') is not None:
+            self.modified_at = m.get('modifiedAt')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('pcUrl') is not None:
+            self.pc_url = m.get('pcUrl')
+        if m.get('pluginId') is not None:
+            self.plugin_id = m.get('pluginId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class ListByPluginIdsResponseBody(TeaModel):
+    def __init__(
+        self,
+        plugin_info_list: List[ListByPluginIdsResponseBodyPluginInfoList] = None,
+    ):
+        self.plugin_info_list = plugin_info_list
+
+    def validate(self):
+        if self.plugin_info_list:
+            for k in self.plugin_info_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['pluginInfoList'] = []
+        if self.plugin_info_list is not None:
+            for k in self.plugin_info_list:
+                result['pluginInfoList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.plugin_info_list = []
+        if m.get('pluginInfoList') is not None:
+            for k in m.get('pluginInfoList'):
+                temp_model = ListByPluginIdsResponseBodyPluginInfoList()
+                self.plugin_info_list.append(temp_model.from_map(k))
+        return self
+
+
+class ListByPluginIdsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListByPluginIdsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListByPluginIdsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListCategorysHeaders(TeaModel):
     def __init__(
         self,
@@ -16797,6 +17249,806 @@ class QueryPartnerInfoResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryPartnerInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryTemplateInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryTemplateInfoResponseBodyAppInfo(TeaModel):
+    def __init__(
+        self,
+        app_icon: str = None,
+        app_id: str = None,
+        app_name: str = None,
+        corp_id: str = None,
+    ):
+        self.app_icon = app_icon
+        self.app_id = app_id
+        self.app_name = app_name
+        self.corp_id = corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_icon is not None:
+            result['appIcon'] = self.app_icon
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.app_name is not None:
+            result['appName'] = self.app_name
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appIcon') is not None:
+            self.app_icon = m.get('appIcon')
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('appName') is not None:
+            self.app_name = m.get('appName')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        return self
+
+
+class QueryTemplateInfoResponseBodyGrayInfo(TeaModel):
+    def __init__(
+        self,
+        ten_thousand_percent: int = None,
+        white_set: List[str] = None,
+    ):
+        self.ten_thousand_percent = ten_thousand_percent
+        self.white_set = white_set
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ten_thousand_percent is not None:
+            result['tenThousandPercent'] = self.ten_thousand_percent
+        if self.white_set is not None:
+            result['whiteSet'] = self.white_set
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('tenThousandPercent') is not None:
+            self.ten_thousand_percent = m.get('tenThousandPercent')
+        if m.get('whiteSet') is not None:
+            self.white_set = m.get('whiteSet')
+        return self
+
+
+class QueryTemplateInfoResponseBodyGroupSettingList(TeaModel):
+    def __init__(
+        self,
+        desc: str = None,
+        name: str = None,
+        state: bool = None,
+    ):
+        self.desc = desc
+        self.name = name
+        self.state = state
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.desc is not None:
+            result['desc'] = self.desc
+        if self.name is not None:
+            result['name'] = self.name
+        if self.state is not None:
+            result['state'] = self.state
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('desc') is not None:
+            self.desc = m.get('desc')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('state') is not None:
+            self.state = m.get('state')
+        return self
+
+
+class QueryTemplateInfoResponseBodyParentTemplateDetailVORobotTemplateList(TeaModel):
+    def __init__(
+        self,
+        brief: str = None,
+        code: str = None,
+        corp_id: str = None,
+        create_at: int = None,
+        description: str = None,
+        dev: str = None,
+        group_template_id: str = None,
+        icon: str = None,
+        modified_at: int = None,
+        name: str = None,
+        outgoing_token: str = None,
+        outgoing_url: str = None,
+        preview_media_id: str = None,
+        source_url: str = None,
+        status: int = None,
+    ):
+        self.brief = brief
+        self.code = code
+        self.corp_id = corp_id
+        self.create_at = create_at
+        self.description = description
+        self.dev = dev
+        self.group_template_id = group_template_id
+        self.icon = icon
+        self.modified_at = modified_at
+        self.name = name
+        self.outgoing_token = outgoing_token
+        self.outgoing_url = outgoing_url
+        self.preview_media_id = preview_media_id
+        self.source_url = source_url
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.brief is not None:
+            result['brief'] = self.brief
+        if self.code is not None:
+            result['code'] = self.code
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.create_at is not None:
+            result['createAt'] = self.create_at
+        if self.description is not None:
+            result['description'] = self.description
+        if self.dev is not None:
+            result['dev'] = self.dev
+        if self.group_template_id is not None:
+            result['groupTemplateId'] = self.group_template_id
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.modified_at is not None:
+            result['modifiedAt'] = self.modified_at
+        if self.name is not None:
+            result['name'] = self.name
+        if self.outgoing_token is not None:
+            result['outgoingToken'] = self.outgoing_token
+        if self.outgoing_url is not None:
+            result['outgoingUrl'] = self.outgoing_url
+        if self.preview_media_id is not None:
+            result['previewMediaId'] = self.preview_media_id
+        if self.source_url is not None:
+            result['sourceUrl'] = self.source_url
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('brief') is not None:
+            self.brief = m.get('brief')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('createAt') is not None:
+            self.create_at = m.get('createAt')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('dev') is not None:
+            self.dev = m.get('dev')
+        if m.get('groupTemplateId') is not None:
+            self.group_template_id = m.get('groupTemplateId')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('modifiedAt') is not None:
+            self.modified_at = m.get('modifiedAt')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('outgoingToken') is not None:
+            self.outgoing_token = m.get('outgoingToken')
+        if m.get('outgoingUrl') is not None:
+            self.outgoing_url = m.get('outgoingUrl')
+        if m.get('previewMediaId') is not None:
+            self.preview_media_id = m.get('previewMediaId')
+        if m.get('sourceUrl') is not None:
+            self.source_url = m.get('sourceUrl')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class QueryTemplateInfoResponseBodyParentTemplateDetailVOToolbarPluginList(TeaModel):
+    def __init__(
+        self,
+        app_id: str = None,
+        create_at: int = None,
+        desc: str = None,
+        icons: str = None,
+        modified_at: int = None,
+        name: str = None,
+        pc_url: str = None,
+        plugin_id: str = None,
+        status: int = None,
+        url: str = None,
+    ):
+        self.app_id = app_id
+        self.create_at = create_at
+        self.desc = desc
+        self.icons = icons
+        self.modified_at = modified_at
+        self.name = name
+        self.pc_url = pc_url
+        self.plugin_id = plugin_id
+        self.status = status
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.create_at is not None:
+            result['createAt'] = self.create_at
+        if self.desc is not None:
+            result['desc'] = self.desc
+        if self.icons is not None:
+            result['icons'] = self.icons
+        if self.modified_at is not None:
+            result['modifiedAt'] = self.modified_at
+        if self.name is not None:
+            result['name'] = self.name
+        if self.pc_url is not None:
+            result['pcUrl'] = self.pc_url
+        if self.plugin_id is not None:
+            result['pluginId'] = self.plugin_id
+        if self.status is not None:
+            result['status'] = self.status
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('createAt') is not None:
+            self.create_at = m.get('createAt')
+        if m.get('desc') is not None:
+            self.desc = m.get('desc')
+        if m.get('icons') is not None:
+            self.icons = m.get('icons')
+        if m.get('modifiedAt') is not None:
+            self.modified_at = m.get('modifiedAt')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('pcUrl') is not None:
+            self.pc_url = m.get('pcUrl')
+        if m.get('pluginId') is not None:
+            self.plugin_id = m.get('pluginId')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class QueryTemplateInfoResponseBodyParentTemplateDetailVO(TeaModel):
+    def __init__(
+        self,
+        robot_template_list: List[QueryTemplateInfoResponseBodyParentTemplateDetailVORobotTemplateList] = None,
+        template_id: str = None,
+        toolbar_plugin_list: List[QueryTemplateInfoResponseBodyParentTemplateDetailVOToolbarPluginList] = None,
+    ):
+        self.robot_template_list = robot_template_list
+        self.template_id = template_id
+        self.toolbar_plugin_list = toolbar_plugin_list
+
+    def validate(self):
+        if self.robot_template_list:
+            for k in self.robot_template_list:
+                if k:
+                    k.validate()
+        if self.toolbar_plugin_list:
+            for k in self.toolbar_plugin_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['robotTemplateList'] = []
+        if self.robot_template_list is not None:
+            for k in self.robot_template_list:
+                result['robotTemplateList'].append(k.to_map() if k else None)
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        result['toolbarPluginList'] = []
+        if self.toolbar_plugin_list is not None:
+            for k in self.toolbar_plugin_list:
+                result['toolbarPluginList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.robot_template_list = []
+        if m.get('robotTemplateList') is not None:
+            for k in m.get('robotTemplateList'):
+                temp_model = QueryTemplateInfoResponseBodyParentTemplateDetailVORobotTemplateList()
+                self.robot_template_list.append(temp_model.from_map(k))
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        self.toolbar_plugin_list = []
+        if m.get('toolbarPluginList') is not None:
+            for k in m.get('toolbarPluginList'):
+                temp_model = QueryTemplateInfoResponseBodyParentTemplateDetailVOToolbarPluginList()
+                self.toolbar_plugin_list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryTemplateInfoResponseBodyTemplateIntroduction(TeaModel):
+    def __init__(
+        self,
+        banner: str = None,
+        detail: str = None,
+        title: str = None,
+    ):
+        self.banner = banner
+        self.detail = detail
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.banner is not None:
+            result['banner'] = self.banner
+        if self.detail is not None:
+            result['detail'] = self.detail
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('banner') is not None:
+            self.banner = m.get('banner')
+        if m.get('detail') is not None:
+            self.detail = m.get('detail')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class QueryTemplateInfoResponseBodyTemplateVisibilityDeptIds(TeaModel):
+    def __init__(
+        self,
+        dept_id: str = None,
+        dept_name: str = None,
+    ):
+        self.dept_id = dept_id
+        self.dept_name = dept_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        return self
+
+
+class QueryTemplateInfoResponseBodyTemplateVisibilityUserIds(TeaModel):
+    def __init__(
+        self,
+        avatar: str = None,
+        nick: str = None,
+        user_id: str = None,
+    ):
+        self.avatar = avatar
+        self.nick = nick
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.avatar is not None:
+            result['avatar'] = self.avatar
+        if self.nick is not None:
+            result['nick'] = self.nick
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('avatar') is not None:
+            self.avatar = m.get('avatar')
+        if m.get('nick') is not None:
+            self.nick = m.get('nick')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryTemplateInfoResponseBodyTemplateVisibility(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        dept_ids: List[QueryTemplateInfoResponseBodyTemplateVisibilityDeptIds] = None,
+        role_ids: List[str] = None,
+        user_ids: List[QueryTemplateInfoResponseBodyTemplateVisibilityUserIds] = None,
+    ):
+        self.corp_id = corp_id
+        self.dept_ids = dept_ids
+        self.role_ids = role_ids
+        self.user_ids = user_ids
+
+    def validate(self):
+        if self.dept_ids:
+            for k in self.dept_ids:
+                if k:
+                    k.validate()
+        if self.user_ids:
+            for k in self.user_ids:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        result['deptIds'] = []
+        if self.dept_ids is not None:
+            for k in self.dept_ids:
+                result['deptIds'].append(k.to_map() if k else None)
+        if self.role_ids is not None:
+            result['roleIds'] = self.role_ids
+        result['userIds'] = []
+        if self.user_ids is not None:
+            for k in self.user_ids:
+                result['userIds'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        self.dept_ids = []
+        if m.get('deptIds') is not None:
+            for k in m.get('deptIds'):
+                temp_model = QueryTemplateInfoResponseBodyTemplateVisibilityDeptIds()
+                self.dept_ids.append(temp_model.from_map(k))
+        if m.get('roleIds') is not None:
+            self.role_ids = m.get('roleIds')
+        self.user_ids = []
+        if m.get('userIds') is not None:
+            for k in m.get('userIds'):
+                temp_model = QueryTemplateInfoResponseBodyTemplateVisibilityUserIds()
+                self.user_ids.append(temp_model.from_map(k))
+        return self
+
+
+class QueryTemplateInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        ability_switch: int = None,
+        app_info: QueryTemplateInfoResponseBodyAppInfo = None,
+        conversation_scope: List[str] = None,
+        create_at: int = None,
+        description: str = None,
+        gray_conversation_ids: List[str] = None,
+        gray_info: QueryTemplateInfoResponseBodyGrayInfo = None,
+        gray_template_id: str = None,
+        group_setting_list: List[QueryTemplateInfoResponseBodyGroupSettingList] = None,
+        icon_media_id: str = None,
+        modified_at: int = None,
+        modify_order_id: int = None,
+        modify_status: int = None,
+        parent_template_detail_vo: QueryTemplateInfoResponseBodyParentTemplateDetailVO = None,
+        publish_sub_state: str = None,
+        robot_template_list: List[str] = None,
+        status: int = None,
+        template_id: str = None,
+        template_introduction: QueryTemplateInfoResponseBodyTemplateIntroduction = None,
+        template_name: str = None,
+        template_type: int = None,
+        template_visibility: QueryTemplateInfoResponseBodyTemplateVisibility = None,
+        toolbar_plugin_list: List[str] = None,
+        version: int = None,
+    ):
+        self.ability_switch = ability_switch
+        self.app_info = app_info
+        self.conversation_scope = conversation_scope
+        self.create_at = create_at
+        self.description = description
+        self.gray_conversation_ids = gray_conversation_ids
+        self.gray_info = gray_info
+        self.gray_template_id = gray_template_id
+        self.group_setting_list = group_setting_list
+        self.icon_media_id = icon_media_id
+        self.modified_at = modified_at
+        self.modify_order_id = modify_order_id
+        self.modify_status = modify_status
+        self.parent_template_detail_vo = parent_template_detail_vo
+        self.publish_sub_state = publish_sub_state
+        self.robot_template_list = robot_template_list
+        self.status = status
+        self.template_id = template_id
+        self.template_introduction = template_introduction
+        self.template_name = template_name
+        self.template_type = template_type
+        self.template_visibility = template_visibility
+        self.toolbar_plugin_list = toolbar_plugin_list
+        self.version = version
+
+    def validate(self):
+        if self.app_info:
+            self.app_info.validate()
+        if self.gray_info:
+            self.gray_info.validate()
+        if self.group_setting_list:
+            for k in self.group_setting_list:
+                if k:
+                    k.validate()
+        if self.parent_template_detail_vo:
+            self.parent_template_detail_vo.validate()
+        if self.template_introduction:
+            self.template_introduction.validate()
+        if self.template_visibility:
+            self.template_visibility.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ability_switch is not None:
+            result['abilitySwitch'] = self.ability_switch
+        if self.app_info is not None:
+            result['appInfo'] = self.app_info.to_map()
+        if self.conversation_scope is not None:
+            result['conversationScope'] = self.conversation_scope
+        if self.create_at is not None:
+            result['createAt'] = self.create_at
+        if self.description is not None:
+            result['description'] = self.description
+        if self.gray_conversation_ids is not None:
+            result['grayConversationIds'] = self.gray_conversation_ids
+        if self.gray_info is not None:
+            result['grayInfo'] = self.gray_info.to_map()
+        if self.gray_template_id is not None:
+            result['grayTemplateId'] = self.gray_template_id
+        result['groupSettingList'] = []
+        if self.group_setting_list is not None:
+            for k in self.group_setting_list:
+                result['groupSettingList'].append(k.to_map() if k else None)
+        if self.icon_media_id is not None:
+            result['iconMediaId'] = self.icon_media_id
+        if self.modified_at is not None:
+            result['modifiedAt'] = self.modified_at
+        if self.modify_order_id is not None:
+            result['modifyOrderId'] = self.modify_order_id
+        if self.modify_status is not None:
+            result['modifyStatus'] = self.modify_status
+        if self.parent_template_detail_vo is not None:
+            result['parentTemplateDetailVO'] = self.parent_template_detail_vo.to_map()
+        if self.publish_sub_state is not None:
+            result['publishSubState'] = self.publish_sub_state
+        if self.robot_template_list is not None:
+            result['robotTemplateList'] = self.robot_template_list
+        if self.status is not None:
+            result['status'] = self.status
+        if self.template_id is not None:
+            result['templateId'] = self.template_id
+        if self.template_introduction is not None:
+            result['templateIntroduction'] = self.template_introduction.to_map()
+        if self.template_name is not None:
+            result['templateName'] = self.template_name
+        if self.template_type is not None:
+            result['templateType'] = self.template_type
+        if self.template_visibility is not None:
+            result['templateVisibility'] = self.template_visibility.to_map()
+        if self.toolbar_plugin_list is not None:
+            result['toolbarPluginList'] = self.toolbar_plugin_list
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('abilitySwitch') is not None:
+            self.ability_switch = m.get('abilitySwitch')
+        if m.get('appInfo') is not None:
+            temp_model = QueryTemplateInfoResponseBodyAppInfo()
+            self.app_info = temp_model.from_map(m['appInfo'])
+        if m.get('conversationScope') is not None:
+            self.conversation_scope = m.get('conversationScope')
+        if m.get('createAt') is not None:
+            self.create_at = m.get('createAt')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('grayConversationIds') is not None:
+            self.gray_conversation_ids = m.get('grayConversationIds')
+        if m.get('grayInfo') is not None:
+            temp_model = QueryTemplateInfoResponseBodyGrayInfo()
+            self.gray_info = temp_model.from_map(m['grayInfo'])
+        if m.get('grayTemplateId') is not None:
+            self.gray_template_id = m.get('grayTemplateId')
+        self.group_setting_list = []
+        if m.get('groupSettingList') is not None:
+            for k in m.get('groupSettingList'):
+                temp_model = QueryTemplateInfoResponseBodyGroupSettingList()
+                self.group_setting_list.append(temp_model.from_map(k))
+        if m.get('iconMediaId') is not None:
+            self.icon_media_id = m.get('iconMediaId')
+        if m.get('modifiedAt') is not None:
+            self.modified_at = m.get('modifiedAt')
+        if m.get('modifyOrderId') is not None:
+            self.modify_order_id = m.get('modifyOrderId')
+        if m.get('modifyStatus') is not None:
+            self.modify_status = m.get('modifyStatus')
+        if m.get('parentTemplateDetailVO') is not None:
+            temp_model = QueryTemplateInfoResponseBodyParentTemplateDetailVO()
+            self.parent_template_detail_vo = temp_model.from_map(m['parentTemplateDetailVO'])
+        if m.get('publishSubState') is not None:
+            self.publish_sub_state = m.get('publishSubState')
+        if m.get('robotTemplateList') is not None:
+            self.robot_template_list = m.get('robotTemplateList')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('templateId') is not None:
+            self.template_id = m.get('templateId')
+        if m.get('templateIntroduction') is not None:
+            temp_model = QueryTemplateInfoResponseBodyTemplateIntroduction()
+            self.template_introduction = temp_model.from_map(m['templateIntroduction'])
+        if m.get('templateName') is not None:
+            self.template_name = m.get('templateName')
+        if m.get('templateType') is not None:
+            self.template_type = m.get('templateType')
+        if m.get('templateVisibility') is not None:
+            temp_model = QueryTemplateInfoResponseBodyTemplateVisibility()
+            self.template_visibility = temp_model.from_map(m['templateVisibility'])
+        if m.get('toolbarPluginList') is not None:
+            self.toolbar_plugin_list = m.get('toolbarPluginList')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class QueryTemplateInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryTemplateInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryTemplateInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
