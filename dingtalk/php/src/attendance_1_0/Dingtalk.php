@@ -72,6 +72,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetMachineResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetMachineUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetMachineUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetMachineUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetOverdraftInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetOverdraftInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetOverdraftInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetOvertimeSettingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetOvertimeSettingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\GetOvertimeSettingResponse;
@@ -1658,6 +1661,66 @@ class Dingtalk extends OpenApiClient
         $headers = new GetMachineUserHeaders([]);
 
         return $this->getMachineUserWithOptions($devId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 假期透支信息查询
+     *  *
+     * @param GetOverdraftInfoRequest $request GetOverdraftInfoRequest
+     * @param GetOverdraftInfoHeaders $headers GetOverdraftInfoHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetOverdraftInfoResponse GetOverdraftInfoResponse
+     */
+    public function getOverdraftInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->leaveCode)) {
+            $body['leaveCode'] = $request->leaveCode;
+        }
+        if (!Utils::isUnset($request->userIdList)) {
+            $body['userIdList'] = $request->userIdList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetOverdraftInfo',
+            'version'     => 'attendance_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/attendance/vacations/overdraft/get',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetOverdraftInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 假期透支信息查询
+     *  *
+     * @param GetOverdraftInfoRequest $request GetOverdraftInfoRequest
+     *
+     * @return GetOverdraftInfoResponse GetOverdraftInfoResponse
+     */
+    public function getOverdraftInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOverdraftInfoHeaders([]);
+
+        return $this->getOverdraftInfoWithOptions($request, $headers, $runtime);
     }
 
     /**
