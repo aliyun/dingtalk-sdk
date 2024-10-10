@@ -21,9 +21,9 @@ class Client(OpenApiClient):
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._product_id = 'dingtalk'
         gateway_client = GatewayClientClient()
         self._spi = gateway_client
-        self._signature_algorithm = 'v2'
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
@@ -63,7 +63,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.AyunOnlienTestResponse(),
-            self.execute(params, req, runtime)
+            self.do_roarequest_with_form(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
         )
 
     async def ayun_onlien_test_with_options_async(
@@ -101,7 +101,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.AyunOnlienTestResponse(),
-            await self.execute_async(params, req, runtime)
+            await self.do_roarequest_with_form_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
         )
 
     def ayun_onlien_test(
@@ -888,7 +888,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.DiotMamaResponse(),
-            self.execute(params, req, runtime)
+            self.do_roarequest_with_form(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
         )
 
     async def diot_mama_with_options_async(
@@ -919,7 +919,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.DiotMamaResponse(),
-            await self.execute_async(params, req, runtime)
+            await self.do_roarequest_with_form_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
         )
 
     def diot_mama(self) -> dingtalkdiot__1__0_models.DiotMamaResponse:
@@ -970,7 +970,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.DiotMarketManagerTestResponse(),
-            self.execute(params, req, runtime)
+            self.do_roarequest_with_form(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
         )
 
     async def diot_market_manager_test_with_options_async(
@@ -1001,7 +1001,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.DiotMarketManagerTestResponse(),
-            await self.execute_async(params, req, runtime)
+            await self.do_roarequest_with_form_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
         )
 
     def diot_market_manager_test(self) -> dingtalkdiot__1__0_models.DiotMarketManagerTestResponse:
@@ -1052,7 +1052,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.DiotSystemMarkTestResponse(),
-            self.execute(params, req, runtime)
+            self.do_roarequest_with_form(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
         )
 
     async def diot_system_mark_test_with_options_async(
@@ -1083,7 +1083,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.DiotSystemMarkTestResponse(),
-            await self.execute_async(params, req, runtime)
+            await self.do_roarequest_with_form_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
         )
 
     def diot_system_mark_test(self) -> dingtalkdiot__1__0_models.DiotSystemMarkTestResponse:
@@ -1134,7 +1134,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.DiotMarketManagerResponse(),
-            self.execute(params, req, runtime)
+            self.do_roarequest_with_form(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
         )
 
     async def diot__market__manager_with_options_async(
@@ -1165,7 +1165,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.DiotMarketManagerResponse(),
-            await self.execute_async(params, req, runtime)
+            await self.do_roarequest_with_form_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
         )
 
     def diot__market__manager(self) -> dingtalkdiot__1__0_models.DiotMarketManagerResponse:
@@ -1902,7 +1902,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.UpgradeDeviceResponse(),
-            self.execute(params, req, runtime)
+            self.do_roarequest_with_form(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
         )
 
     async def upgrade_device_with_options_async(
@@ -1933,7 +1933,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.UpgradeDeviceResponse(),
-            await self.execute_async(params, req, runtime)
+            await self.do_roarequest_with_form_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
         )
 
     def upgrade_device(self) -> dingtalkdiot__1__0_models.UpgradeDeviceResponse:
@@ -1984,7 +1984,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.WorkbenchTransformInfoResponse(),
-            self.execute(params, req, runtime)
+            self.do_roarequest_with_form(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
         )
 
     async def workbench_transform_info_with_options_async(
@@ -2015,7 +2015,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkdiot__1__0_models.WorkbenchTransformInfoResponse(),
-            await self.execute_async(params, req, runtime)
+            await self.do_roarequest_with_form_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
         )
 
     def workbench_transform_info(self) -> dingtalkdiot__1__0_models.WorkbenchTransformInfoResponse:

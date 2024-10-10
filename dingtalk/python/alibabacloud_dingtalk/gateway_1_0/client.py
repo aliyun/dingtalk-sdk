@@ -21,9 +21,9 @@ class Client(OpenApiClient):
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._product_id = 'dingtalk'
         gateway_client = GatewayClientClient()
         self._spi = gateway_client
-        self._signature_algorithm = 'v2'
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
@@ -71,7 +71,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkgateway__1__0_models.OpenConnectionResponse(),
-            self.execute(params, req, runtime)
+            self.do_roarequest_with_form(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
         )
 
     async def open_connection_with_options_async(
@@ -117,7 +117,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkgateway__1__0_models.OpenConnectionResponse(),
-            await self.execute_async(params, req, runtime)
+            await self.do_roarequest_with_form_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
         )
 
     def open_connection(

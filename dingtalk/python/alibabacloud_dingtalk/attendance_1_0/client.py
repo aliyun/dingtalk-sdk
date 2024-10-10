@@ -20,6 +20,7 @@ class Client(OpenApiClient):
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._product_id = 'dingtalk'
         gateway_client = GatewayClientClient()
         self._spi = gateway_client
         self._endpoint_rule = ''
@@ -2907,6 +2908,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkattendance__1__0_models.GetMachineUserHeaders()
         return await self.get_machine_user_with_options_async(dev_id, request, headers, runtime)
+
+    def get_overdraft_info_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.GetOverdraftInfoRequest,
+        headers: dingtalkattendance__1__0_models.GetOverdraftInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetOverdraftInfoResponse:
+        """
+        @summary 假期透支信息查询
+        
+        @param request: GetOverdraftInfoRequest
+        @param headers: GetOverdraftInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetOverdraftInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.leave_code):
+            body['leaveCode'] = request.leave_code
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetOverdraftInfo',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/vacations/overdraft/get',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetOverdraftInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_overdraft_info_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetOverdraftInfoRequest,
+        headers: dingtalkattendance__1__0_models.GetOverdraftInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.GetOverdraftInfoResponse:
+        """
+        @summary 假期透支信息查询
+        
+        @param request: GetOverdraftInfoRequest
+        @param headers: GetOverdraftInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetOverdraftInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.leave_code):
+            body['leaveCode'] = request.leave_code
+        if not UtilClient.is_unset(request.user_id_list):
+            body['userIdList'] = request.user_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetOverdraftInfo',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/vacations/overdraft/get',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.GetOverdraftInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_overdraft_info(
+        self,
+        request: dingtalkattendance__1__0_models.GetOverdraftInfoRequest,
+    ) -> dingtalkattendance__1__0_models.GetOverdraftInfoResponse:
+        """
+        @summary 假期透支信息查询
+        
+        @param request: GetOverdraftInfoRequest
+        @return: GetOverdraftInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetOverdraftInfoHeaders()
+        return self.get_overdraft_info_with_options(request, headers, runtime)
+
+    async def get_overdraft_info_async(
+        self,
+        request: dingtalkattendance__1__0_models.GetOverdraftInfoRequest,
+    ) -> dingtalkattendance__1__0_models.GetOverdraftInfoResponse:
+        """
+        @summary 假期透支信息查询
+        
+        @param request: GetOverdraftInfoRequest
+        @return: GetOverdraftInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.GetOverdraftInfoHeaders()
+        return await self.get_overdraft_info_with_options_async(request, headers, runtime)
 
     def get_overtime_setting_with_options(
         self,

@@ -21,9 +21,9 @@ class Client(OpenApiClient):
         config: open_api_models.Config,
     ):
         super().__init__(config)
+        self._product_id = 'dingtalk'
         gateway_client = GatewayClientClient()
         self._spi = gateway_client
-        self._signature_algorithm = 'v2'
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
@@ -463,7 +463,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkevent__1__0_models.RePushSuiteTicketResponse(),
-            self.execute(params, req, runtime)
+            self.do_roarequest_with_form(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
         )
 
     async def re_push_suite_ticket_with_options_async(
@@ -503,7 +503,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkevent__1__0_models.RePushSuiteTicketResponse(),
-            await self.execute_async(params, req, runtime)
+            await self.do_roarequest_with_form_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
         )
 
     def re_push_suite_ticket(

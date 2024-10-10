@@ -6167,6 +6167,189 @@ class GetMachineUserResponse(TeaModel):
         return self
 
 
+class GetOverdraftInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetOverdraftInfoRequest(TeaModel):
+    def __init__(
+        self,
+        leave_code: str = None,
+        user_id_list: List[str] = None,
+    ):
+        # This parameter is required.
+        self.leave_code = leave_code
+        # This parameter is required.
+        self.user_id_list = user_id_list
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.leave_code is not None:
+            result['leaveCode'] = self.leave_code
+        if self.user_id_list is not None:
+            result['userIdList'] = self.user_id_list
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('leaveCode') is not None:
+            self.leave_code = m.get('leaveCode')
+        if m.get('userIdList') is not None:
+            self.user_id_list = m.get('userIdList')
+        return self
+
+
+class GetOverdraftInfoResponseBodyOverdraftList(TeaModel):
+    def __init__(
+        self,
+        overdraft: int = None,
+        unit: str = None,
+        user_id: str = None,
+    ):
+        self.overdraft = overdraft
+        self.unit = unit
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.overdraft is not None:
+            result['overdraft'] = self.overdraft
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('overdraft') is not None:
+            self.overdraft = m.get('overdraft')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetOverdraftInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        overdraft_list: List[GetOverdraftInfoResponseBodyOverdraftList] = None,
+    ):
+        self.overdraft_list = overdraft_list
+
+    def validate(self):
+        if self.overdraft_list:
+            for k in self.overdraft_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['overdraftList'] = []
+        if self.overdraft_list is not None:
+            for k in self.overdraft_list:
+                result['overdraftList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.overdraft_list = []
+        if m.get('overdraftList') is not None:
+            for k in m.get('overdraftList'):
+                temp_model = GetOverdraftInfoResponseBodyOverdraftList()
+                self.overdraft_list.append(temp_model.from_map(k))
+        return self
+
+
+class GetOverdraftInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetOverdraftInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetOverdraftInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetOvertimeSettingHeaders(TeaModel):
     def __init__(
         self,
