@@ -1304,6 +1304,99 @@ export class CopyDentryResponse extends $tea.Model {
   }
 }
 
+export class CopyWorkspaceHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CopyWorkspaceRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  param?: CopyWorkspaceRequestParam;
+  static names(): { [key: string]: string } {
+    return {
+      param: 'param',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      param: CopyWorkspaceRequestParam,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CopyWorkspaceResponseBody extends $tea.Model {
+  /**
+   * @example
+   * true
+   */
+  success?: boolean;
+  static names(): { [key: string]: string } {
+    return {
+      success: 'success',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      success: 'boolean',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class CopyWorkspaceResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: CopyWorkspaceResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: CopyWorkspaceResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateDentryHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -7335,6 +7428,29 @@ export class CategoryTemplatesResponseBodyList extends $tea.Model {
   }
 }
 
+export class CopyWorkspaceRequestParam extends $tea.Model {
+  /**
+   * @example
+   * 0
+   */
+  originWorkspaceId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      originWorkspaceId: 'originWorkspaceId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      originWorkspaceId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class CreateSpaceRequestShareScope extends $tea.Model {
   /**
    * @remarks
@@ -10273,6 +10389,60 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new CopyDentryHeaders({ });
     return await this.copyDentryWithOptions(spaceId, dentryId, request, headers, runtime);
+  }
+
+  /**
+   * 拷贝知识库
+   * 
+   * @param request - CopyWorkspaceRequest
+   * @param headers - CopyWorkspaceHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns CopyWorkspaceResponse
+   */
+  async copyWorkspaceWithOptions(request: CopyWorkspaceRequest, headers: CopyWorkspaceHeaders, runtime: $Util.RuntimeOptions): Promise<CopyWorkspaceResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.param)) {
+      body["param"] = request.param;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "CopyWorkspace",
+      version: "doc_2.0",
+      protocol: "HTTP",
+      pathname: `/v2.0/doc/dentries/workspace/copy`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<CopyWorkspaceResponse>(await this.execute(params, req, runtime), new CopyWorkspaceResponse({}));
+  }
+
+  /**
+   * 拷贝知识库
+   * 
+   * @param request - CopyWorkspaceRequest
+   * @returns CopyWorkspaceResponse
+   */
+  async copyWorkspace(request: CopyWorkspaceRequest): Promise<CopyWorkspaceResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new CopyWorkspaceHeaders({ });
+    return await this.copyWorkspaceWithOptions(request, headers, runtime);
   }
 
   /**

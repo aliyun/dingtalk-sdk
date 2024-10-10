@@ -2692,6 +2692,102 @@ export class GetMachineUserResponse extends $tea.Model {
   }
 }
 
+export class GetOverdraftInfoHeaders extends $tea.Model {
+  commonHeaders?: { [key: string]: string };
+  xAcsDingtalkAccessToken?: string;
+  static names(): { [key: string]: string } {
+    return {
+      commonHeaders: 'commonHeaders',
+      xAcsDingtalkAccessToken: 'x-acs-dingtalk-access-token',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      commonHeaders: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      xAcsDingtalkAccessToken: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOverdraftInfoRequest extends $tea.Model {
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  leaveCode?: string;
+  /**
+   * @remarks
+   * This parameter is required.
+   */
+  userIdList?: string[];
+  static names(): { [key: string]: string } {
+    return {
+      leaveCode: 'leaveCode',
+      userIdList: 'userIdList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      leaveCode: 'string',
+      userIdList: { 'type': 'array', 'itemType': 'string' },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOverdraftInfoResponseBody extends $tea.Model {
+  overdraftList?: GetOverdraftInfoResponseBodyOverdraftList[];
+  static names(): { [key: string]: string } {
+    return {
+      overdraftList: 'overdraftList',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      overdraftList: { 'type': 'array', 'itemType': GetOverdraftInfoResponseBodyOverdraftList },
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
+export class GetOverdraftInfoResponse extends $tea.Model {
+  headers?: { [key: string]: string };
+  statusCode?: number;
+  body?: GetOverdraftInfoResponseBody;
+  static names(): { [key: string]: string } {
+    return {
+      headers: 'headers',
+      statusCode: 'statusCode',
+      body: 'body',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      headers: { 'type': 'map', 'keyType': 'string', 'valueType': 'string' },
+      statusCode: 'number',
+      body: GetOverdraftInfoResponseBody,
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetOvertimeSettingHeaders extends $tea.Model {
   commonHeaders?: { [key: string]: string };
   xAcsDingtalkAccessToken?: string;
@@ -7485,6 +7581,31 @@ export class GetMachineUserResponseBodyResult extends $tea.Model {
   }
 }
 
+export class GetOverdraftInfoResponseBodyOverdraftList extends $tea.Model {
+  overdraft?: number;
+  unit?: string;
+  userId?: string;
+  static names(): { [key: string]: string } {
+    return {
+      overdraft: 'overdraft',
+      unit: 'unit',
+      userId: 'userId',
+    };
+  }
+
+  static types(): { [key: string]: any } {
+    return {
+      overdraft: 'number',
+      unit: 'string',
+      userId: 'string',
+    };
+  }
+
+  constructor(map?: { [key: string]: any }) {
+    super(map);
+  }
+}
+
 export class GetOvertimeSettingResponseBodyResultOvertimeDivisions extends $tea.Model {
   nextDayType?: string;
   previousDayType?: string;
@@ -11506,6 +11627,64 @@ export default class Client extends OpenApi {
     let runtime = new $Util.RuntimeOptions({ });
     let headers = new GetMachineUserHeaders({ });
     return await this.getMachineUserWithOptions(devId, request, headers, runtime);
+  }
+
+  /**
+   * 假期透支信息查询
+   * 
+   * @param request - GetOverdraftInfoRequest
+   * @param headers - GetOverdraftInfoHeaders
+   * @param runtime - runtime options for this request RuntimeOptions
+   * @returns GetOverdraftInfoResponse
+   */
+  async getOverdraftInfoWithOptions(request: GetOverdraftInfoRequest, headers: GetOverdraftInfoHeaders, runtime: $Util.RuntimeOptions): Promise<GetOverdraftInfoResponse> {
+    Util.validateModel(request);
+    let body : {[key: string ]: any} = { };
+    if (!Util.isUnset(request.leaveCode)) {
+      body["leaveCode"] = request.leaveCode;
+    }
+
+    if (!Util.isUnset(request.userIdList)) {
+      body["userIdList"] = request.userIdList;
+    }
+
+    let realHeaders : {[key: string ]: string} = { };
+    if (!Util.isUnset(headers.commonHeaders)) {
+      realHeaders = headers.commonHeaders;
+    }
+
+    if (!Util.isUnset(headers.xAcsDingtalkAccessToken)) {
+      realHeaders["x-acs-dingtalk-access-token"] = Util.toJSONString(headers.xAcsDingtalkAccessToken);
+    }
+
+    let req = new $OpenApi.OpenApiRequest({
+      headers: realHeaders,
+      body: OpenApiUtil.parseToMap(body),
+    });
+    let params = new $OpenApi.Params({
+      action: "GetOverdraftInfo",
+      version: "attendance_1.0",
+      protocol: "HTTP",
+      pathname: `/v1.0/attendance/vacations/overdraft/get`,
+      method: "POST",
+      authType: "AK",
+      style: "ROA",
+      reqBodyType: "none",
+      bodyType: "json",
+    });
+    return $tea.cast<GetOverdraftInfoResponse>(await this.execute(params, req, runtime), new GetOverdraftInfoResponse({}));
+  }
+
+  /**
+   * 假期透支信息查询
+   * 
+   * @param request - GetOverdraftInfoRequest
+   * @returns GetOverdraftInfoResponse
+   */
+  async getOverdraftInfo(request: GetOverdraftInfoRequest): Promise<GetOverdraftInfoResponse> {
+    let runtime = new $Util.RuntimeOptions({ });
+    let headers = new GetOverdraftInfoHeaders({ });
+    return await this.getOverdraftInfoWithOptions(request, headers, runtime);
   }
 
   /**
