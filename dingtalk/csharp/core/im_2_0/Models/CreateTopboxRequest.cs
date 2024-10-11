@@ -126,17 +126,17 @@ namespace AlibabaCloud.SDK.Dingtalkim_2_0.Models
         [Validation(Required=false)]
         public string RobotCode { get; set; }
 
-        [NameInMap("unionIdPrivateDataMap")]
-        [Validation(Required=false)]
-        public Dictionary<string, UnionIdPrivateDataMapValue> UnionIdPrivateDataMap { get; set; }
-
         /// <summary>
         /// <b>Example:</b>
         /// <para>jHsR7xxx</para>
         /// </summary>
-        [NameInMap("unoinId")]
+        [NameInMap("unionId")]
         [Validation(Required=false)]
-        public string UnoinId { get; set; }
+        public string UnionId { get; set; }
+
+        [NameInMap("unionIdPrivateDataMap")]
+        [Validation(Required=false)]
+        public Dictionary<string, UnionIdPrivateDataMapValue> UnionIdPrivateDataMap { get; set; }
 
         /// <summary>
         /// <b>Example:</b>

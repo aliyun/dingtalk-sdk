@@ -11,6 +11,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
     public class InitDocumentRequest : TeaModel {
         /// <summary>
         /// <b>Example:</b>
+        /// <para>attachments_key</para>
+        /// </summary>
+        [NameInMap("attachmentsKey")]
+        [Validation(Required=false)]
+        public string AttachmentsKey { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
         /// <para>attachments_map</para>
         /// </summary>
         [NameInMap("attachmentsMap")]

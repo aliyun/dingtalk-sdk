@@ -6596,6 +6596,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttachmentsKey))
+            {
+                body["attachmentsKey"] = request.AttachmentsKey;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttachmentsMap))
             {
                 body["attachmentsMap"] = request.AttachmentsMap;
@@ -6665,6 +6669,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
                 query["operatorId"] = request.OperatorId;
             }
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttachmentsKey))
+            {
+                body["attachmentsKey"] = request.AttachmentsKey;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AttachmentsMap))
             {
                 body["attachmentsMap"] = request.AttachmentsMap;
