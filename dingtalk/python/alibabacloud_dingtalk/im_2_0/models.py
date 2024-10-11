@@ -762,8 +762,8 @@ class CreateTopboxRequest(TeaModel):
         receiver_union_id_list: List[str] = None,
         receiver_user_id_list: List[str] = None,
         robot_code: str = None,
+        union_id: str = None,
         union_id_private_data_map: Dict[str, UnionIdPrivateDataMapValue] = None,
-        unoin_id: str = None,
         user_id: str = None,
         user_id_private_data_map: Dict[str, UserIdPrivateDataMapValue] = None,
     ):
@@ -785,8 +785,8 @@ class CreateTopboxRequest(TeaModel):
         self.receiver_union_id_list = receiver_union_id_list
         self.receiver_user_id_list = receiver_user_id_list
         self.robot_code = robot_code
+        self.union_id = union_id
         self.union_id_private_data_map = union_id_private_data_map
-        self.unoin_id = unoin_id
         self.user_id = user_id
         self.user_id_private_data_map = user_id_private_data_map
 
@@ -838,12 +838,12 @@ class CreateTopboxRequest(TeaModel):
             result['receiverUserIdList'] = self.receiver_user_id_list
         if self.robot_code is not None:
             result['robotCode'] = self.robot_code
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
         result['unionIdPrivateDataMap'] = {}
         if self.union_id_private_data_map is not None:
             for k, v in self.union_id_private_data_map.items():
                 result['unionIdPrivateDataMap'][k] = v.to_map()
-        if self.unoin_id is not None:
-            result['unoinId'] = self.unoin_id
         if self.user_id is not None:
             result['userId'] = self.user_id
         result['userIdPrivateDataMap'] = {}
@@ -884,13 +884,13 @@ class CreateTopboxRequest(TeaModel):
             self.receiver_user_id_list = m.get('receiverUserIdList')
         if m.get('robotCode') is not None:
             self.robot_code = m.get('robotCode')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
         self.union_id_private_data_map = {}
         if m.get('unionIdPrivateDataMap') is not None:
             for k, v in m.get('unionIdPrivateDataMap').items():
                 temp_model = UnionIdPrivateDataMapValue()
                 self.union_id_private_data_map[k] = temp_model.from_map(v)
-        if m.get('unoinId') is not None:
-            self.unoin_id = m.get('unoinId')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
         self.user_id_private_data_map = {}

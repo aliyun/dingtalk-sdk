@@ -779,6 +779,120 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.CopyWorkspaceHeaders()
         return await self.copy_workspace_with_options_async(request, headers, runtime)
 
+    def copy_workspace_async_with_options(
+        self,
+        request: dingtalkdoc__2__0_models.CopyWorkspaceAsyncRequest,
+        headers: dingtalkdoc__2__0_models.CopyWorkspaceAsyncHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.CopyWorkspaceAsyncResponse:
+        """
+        @summary 异步拷贝知识库
+        
+        @param request: CopyWorkspaceAsyncRequest
+        @param headers: CopyWorkspaceAsyncHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CopyWorkspaceAsyncResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CopyWorkspaceAsync',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/dentries/workspace/asyncCopy',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.CopyWorkspaceAsyncResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def copy_workspace_async_with_options_async(
+        self,
+        request: dingtalkdoc__2__0_models.CopyWorkspaceAsyncRequest,
+        headers: dingtalkdoc__2__0_models.CopyWorkspaceAsyncHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.CopyWorkspaceAsyncResponse:
+        """
+        @summary 异步拷贝知识库
+        
+        @param request: CopyWorkspaceAsyncRequest
+        @param headers: CopyWorkspaceAsyncHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CopyWorkspaceAsyncResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.param):
+            body['param'] = request.param
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CopyWorkspaceAsync',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/dentries/workspace/asyncCopy',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.CopyWorkspaceAsyncResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def copy_workspace_async(
+        self,
+        request: dingtalkdoc__2__0_models.CopyWorkspaceAsyncRequest,
+    ) -> dingtalkdoc__2__0_models.CopyWorkspaceAsyncResponse:
+        """
+        @summary 异步拷贝知识库
+        
+        @param request: CopyWorkspaceAsyncRequest
+        @return: CopyWorkspaceAsyncResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.CopyWorkspaceAsyncHeaders()
+        return self.copy_workspace_async_with_options(request, headers, runtime)
+
+    async def copy_workspace_async_async(
+        self,
+        request: dingtalkdoc__2__0_models.CopyWorkspaceAsyncRequest,
+    ) -> dingtalkdoc__2__0_models.CopyWorkspaceAsyncResponse:
+        """
+        @summary 异步拷贝知识库
+        
+        @param request: CopyWorkspaceAsyncRequest
+        @return: CopyWorkspaceAsyncResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.CopyWorkspaceAsyncHeaders()
+        return await self.copy_workspace_async_with_options_async(request, headers, runtime)
+
     def create_dentry_with_options(
         self,
         space_id: str,

@@ -5231,6 +5231,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         body = {}
+        if not UtilClient.is_unset(request.attachments_key):
+            body['attachmentsKey'] = request.attachments_key
         if not UtilClient.is_unset(request.attachments_map):
             body['attachmentsMap'] = request.attachments_map
         if not UtilClient.is_unset(request.import_type):
@@ -5283,6 +5285,8 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         body = {}
+        if not UtilClient.is_unset(request.attachments_key):
+            body['attachmentsKey'] = request.attachments_key
         if not UtilClient.is_unset(request.attachments_map):
             body['attachmentsMap'] = request.attachments_map
         if not UtilClient.is_unset(request.import_type):

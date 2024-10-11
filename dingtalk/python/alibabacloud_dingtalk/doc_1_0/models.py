@@ -7488,11 +7488,13 @@ class InitDocumentHeaders(TeaModel):
 class InitDocumentRequest(TeaModel):
     def __init__(
         self,
+        attachments_key: str = None,
         attachments_map: Dict[str, AttachmentsMapValue] = None,
         import_type: int = None,
         links_key: str = None,
         operator_id: str = None,
     ):
+        self.attachments_key = attachments_key
         self.attachments_map = attachments_map
         # This parameter is required.
         self.import_type = import_type
@@ -7512,6 +7514,8 @@ class InitDocumentRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.attachments_key is not None:
+            result['attachmentsKey'] = self.attachments_key
         result['attachmentsMap'] = {}
         if self.attachments_map is not None:
             for k, v in self.attachments_map.items():
@@ -7526,6 +7530,8 @@ class InitDocumentRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('attachmentsKey') is not None:
+            self.attachments_key = m.get('attachmentsKey')
         self.attachments_map = {}
         if m.get('attachmentsMap') is not None:
             for k, v in m.get('attachmentsMap').items():

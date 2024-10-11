@@ -466,10 +466,10 @@ class Client(OpenApiClient):
             body['receiverUserIdList'] = request.receiver_user_id_list
         if not UtilClient.is_unset(request.robot_code):
             body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
         if not UtilClient.is_unset(request.union_id_private_data_map):
             body['unionIdPrivateDataMap'] = request.union_id_private_data_map
-        if not UtilClient.is_unset(request.unoin_id):
-            body['unoinId'] = request.unoin_id
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         if not UtilClient.is_unset(request.user_id_private_data_map):
@@ -543,10 +543,10 @@ class Client(OpenApiClient):
             body['receiverUserIdList'] = request.receiver_user_id_list
         if not UtilClient.is_unset(request.robot_code):
             body['robotCode'] = request.robot_code
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
         if not UtilClient.is_unset(request.union_id_private_data_map):
             body['unionIdPrivateDataMap'] = request.union_id_private_data_map
-        if not UtilClient.is_unset(request.unoin_id):
-            body['unoinId'] = request.unoin_id
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         if not UtilClient.is_unset(request.user_id_private_data_map):
