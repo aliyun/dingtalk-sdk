@@ -20,6 +20,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CategoryTemplatesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDentryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDentryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyDentryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyWorkspaceAsyncHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyWorkspaceAsyncRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyWorkspaceAsyncResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyWorkspaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyWorkspaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\CopyWorkspaceResponse;
@@ -581,6 +584,63 @@ class Dingtalk extends OpenApiClient
         $headers = new CopyWorkspaceHeaders([]);
 
         return $this->copyWorkspaceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 异步拷贝知识库
+     *  *
+     * @param CopyWorkspaceAsyncRequest $request CopyWorkspaceAsyncRequest
+     * @param CopyWorkspaceAsyncHeaders $headers CopyWorkspaceAsyncHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CopyWorkspaceAsyncResponse CopyWorkspaceAsyncResponse
+     */
+    public function copyWorkspaceAsyncWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->param)) {
+            $body['param'] = $request->param;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CopyWorkspaceAsync',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/dentries/workspace/asyncCopy',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CopyWorkspaceAsyncResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 异步拷贝知识库
+     *  *
+     * @param CopyWorkspaceAsyncRequest $request CopyWorkspaceAsyncRequest
+     *
+     * @return CopyWorkspaceAsyncResponse CopyWorkspaceAsyncResponse
+     */
+    public function copyWorkspaceAsync($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CopyWorkspaceAsyncHeaders([]);
+
+        return $this->copyWorkspaceAsyncWithOptions($request, $headers, $runtime);
     }
 
     /**

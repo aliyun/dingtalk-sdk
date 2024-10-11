@@ -304,11 +304,11 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->robotCode)) {
             $body['robotCode'] = $request->robotCode;
         }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
         if (!Utils::isUnset($request->unionIdPrivateDataMap)) {
             $body['unionIdPrivateDataMap'] = $request->unionIdPrivateDataMap;
-        }
-        if (!Utils::isUnset($request->unoinId)) {
-            $body['unoinId'] = $request->unoinId;
         }
         if (!Utils::isUnset($request->userId)) {
             $body['userId'] = $request->userId;

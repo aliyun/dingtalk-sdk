@@ -109,16 +109,16 @@ class CreateTopboxRequest extends Model
     public $robotCode;
 
     /**
-     * @var UnionIdPrivateDataMapValue[]
-     */
-    public $unionIdPrivateDataMap;
-
-    /**
      * @example jHsR7xxx
      *
      * @var string
      */
-    public $unoinId;
+    public $unionId;
+
+    /**
+     * @var UnionIdPrivateDataMapValue[]
+     */
+    public $unionIdPrivateDataMap;
 
     /**
      * @example 011xxx
@@ -146,8 +146,8 @@ class CreateTopboxRequest extends Model
         'receiverUnionIdList'   => 'receiverUnionIdList',
         'receiverUserIdList'    => 'receiverUserIdList',
         'robotCode'             => 'robotCode',
+        'unionId'               => 'unionId',
         'unionIdPrivateDataMap' => 'unionIdPrivateDataMap',
-        'unoinId'               => 'unoinId',
         'userId'                => 'userId',
         'userIdPrivateDataMap'  => 'userIdPrivateDataMap',
     ];
@@ -201,6 +201,9 @@ class CreateTopboxRequest extends Model
         if (null !== $this->robotCode) {
             $res['robotCode'] = $this->robotCode;
         }
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
+        }
         if (null !== $this->unionIdPrivateDataMap) {
             $res['unionIdPrivateDataMap'] = [];
             if (null !== $this->unionIdPrivateDataMap && \is_array($this->unionIdPrivateDataMap)) {
@@ -208,9 +211,6 @@ class CreateTopboxRequest extends Model
                     $res['unionIdPrivateDataMap'][$key] = null !== $val ? $val->toMap() : $val;
                 }
             }
-        }
-        if (null !== $this->unoinId) {
-            $res['unoinId'] = $this->unoinId;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -281,11 +281,11 @@ class CreateTopboxRequest extends Model
         if (isset($map['robotCode'])) {
             $model->robotCode = $map['robotCode'];
         }
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
+        }
         if (isset($map['unionIdPrivateDataMap'])) {
             $model->unionIdPrivateDataMap = $map['unionIdPrivateDataMap'];
-        }
-        if (isset($map['unoinId'])) {
-            $model->unoinId = $map['unoinId'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

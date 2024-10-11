@@ -2874,6 +2874,9 @@ class Dingtalk extends OpenApiClient
             $query['operatorId'] = $request->operatorId;
         }
         $body = [];
+        if (!Utils::isUnset($request->attachmentsKey)) {
+            $body['attachmentsKey'] = $request->attachmentsKey;
+        }
         if (!Utils::isUnset($request->attachmentsMap)) {
             $body['attachmentsMap'] = $request->attachmentsMap;
         }

@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class InitDocumentRequest extends Model
 {
     /**
+     * @example attachments_key
+     *
+     * @var string
+     */
+    public $attachmentsKey;
+
+    /**
      * @example attachments_map
      *
      * @var AttachmentsMapValue[]
@@ -40,6 +47,7 @@ class InitDocumentRequest extends Model
      */
     public $operatorId;
     protected $_name = [
+        'attachmentsKey' => 'attachmentsKey',
         'attachmentsMap' => 'attachmentsMap',
         'importType'     => 'importType',
         'linksKey'       => 'linksKey',
@@ -53,6 +61,9 @@ class InitDocumentRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->attachmentsKey) {
+            $res['attachmentsKey'] = $this->attachmentsKey;
+        }
         if (null !== $this->attachmentsMap) {
             $res['attachmentsMap'] = [];
             if (null !== $this->attachmentsMap && \is_array($this->attachmentsMap)) {
@@ -82,6 +93,9 @@ class InitDocumentRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['attachmentsKey'])) {
+            $model->attachmentsKey = $map['attachmentsKey'];
+        }
         if (isset($map['attachmentsMap'])) {
             $model->attachmentsMap = $map['attachmentsMap'];
         }
