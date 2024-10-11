@@ -307,12 +307,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("robotCode", request.robotCode);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.unionIdPrivateDataMap)) {
-            body.put("unionIdPrivateDataMap", request.unionIdPrivateDataMap);
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            body.put("unionId", request.unionId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.unoinId)) {
-            body.put("unoinId", request.unoinId);
+        if (!com.aliyun.teautil.Common.isUnset(request.unionIdPrivateDataMap)) {
+            body.put("unionIdPrivateDataMap", request.unionIdPrivateDataMap);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {

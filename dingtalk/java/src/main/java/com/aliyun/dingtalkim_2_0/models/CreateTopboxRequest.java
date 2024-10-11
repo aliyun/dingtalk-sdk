@@ -95,15 +95,15 @@ public class CreateTopboxRequest extends TeaModel {
     @NameInMap("robotCode")
     public String robotCode;
 
-    @NameInMap("unionIdPrivateDataMap")
-    public java.util.Map<String, UnionIdPrivateDataMapValue> unionIdPrivateDataMap;
-
     /**
      * <strong>example:</strong>
      * <p>jHsR7xxx</p>
      */
-    @NameInMap("unoinId")
-    public String unoinId;
+    @NameInMap("unionId")
+    public String unionId;
+
+    @NameInMap("unionIdPrivateDataMap")
+    public java.util.Map<String, UnionIdPrivateDataMapValue> unionIdPrivateDataMap;
 
     /**
      * <strong>example:</strong>
@@ -232,20 +232,20 @@ public class CreateTopboxRequest extends TeaModel {
         return this.robotCode;
     }
 
+    public CreateTopboxRequest setUnionId(String unionId) {
+        this.unionId = unionId;
+        return this;
+    }
+    public String getUnionId() {
+        return this.unionId;
+    }
+
     public CreateTopboxRequest setUnionIdPrivateDataMap(java.util.Map<String, UnionIdPrivateDataMapValue> unionIdPrivateDataMap) {
         this.unionIdPrivateDataMap = unionIdPrivateDataMap;
         return this;
     }
     public java.util.Map<String, UnionIdPrivateDataMapValue> getUnionIdPrivateDataMap() {
         return this.unionIdPrivateDataMap;
-    }
-
-    public CreateTopboxRequest setUnoinId(String unoinId) {
-        this.unoinId = unoinId;
-        return this;
-    }
-    public String getUnoinId() {
-        return this.unoinId;
     }
 
     public CreateTopboxRequest setUserId(String userId) {

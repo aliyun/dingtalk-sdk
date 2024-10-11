@@ -6,6 +6,13 @@ import com.aliyun.tea.*;
 public class InitDocumentRequest extends TeaModel {
     /**
      * <strong>example:</strong>
+     * <p>attachments_key</p>
+     */
+    @NameInMap("attachmentsKey")
+    public String attachmentsKey;
+
+    /**
+     * <strong>example:</strong>
      * <p>attachments_map</p>
      */
     @NameInMap("attachmentsMap")
@@ -39,6 +46,14 @@ public class InitDocumentRequest extends TeaModel {
     public static InitDocumentRequest build(java.util.Map<String, ?> map) throws Exception {
         InitDocumentRequest self = new InitDocumentRequest();
         return TeaModel.build(map, self);
+    }
+
+    public InitDocumentRequest setAttachmentsKey(String attachmentsKey) {
+        this.attachmentsKey = attachmentsKey;
+        return this;
+    }
+    public String getAttachmentsKey() {
+        return this.attachmentsKey;
     }
 
     public InitDocumentRequest setAttachmentsMap(java.util.Map<String, AttachmentsMapValue> attachmentsMap) {
