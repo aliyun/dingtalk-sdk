@@ -112,6 +112,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vstorage_1_0\\": "src/storage_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vstorage_2_0\\": "src/storage_2_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vswform_1_0\\": "src/swform_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vteam_sphere_1_0\\": "src/team_sphere_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vtodo_e_e_1_0\\": "src/todo_e_e_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vtodo_1_0\\": "src/todo_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vtrade_1_0\\": "src/trade_1_0/",
