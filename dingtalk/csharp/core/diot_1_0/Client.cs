@@ -18,9 +18,9 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
-            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
+            this._signatureAlgorithm = "v2";
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -72,7 +72,7 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<AyunOnlienTestResponse>(DoROARequestWithForm(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<AyunOnlienTestResponse>(Execute(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -118,7 +118,7 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<AyunOnlienTestResponse>(await DoROARequestWithFormAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<AyunOnlienTestResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -1168,7 +1168,7 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<DiotMamaResponse>(DoROARequestWithForm(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<DiotMamaResponse>(Execute(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -1204,7 +1204,7 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<DiotMamaResponse>(await DoROARequestWithFormAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<DiotMamaResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -1270,7 +1270,7 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<DiotMarketManagerTestResponse>(DoROARequestWithForm(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<DiotMarketManagerTestResponse>(Execute(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -1306,7 +1306,7 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<DiotMarketManagerTestResponse>(await DoROARequestWithFormAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<DiotMarketManagerTestResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -1372,7 +1372,7 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<DiotSystemMarkTestResponse>(DoROARequestWithForm(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<DiotSystemMarkTestResponse>(Execute(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -1408,7 +1408,7 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<DiotSystemMarkTestResponse>(await DoROARequestWithFormAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<DiotSystemMarkTestResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -1474,7 +1474,7 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<DiotMarketManagerResponse>(DoROARequestWithForm(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<DiotMarketManagerResponse>(Execute(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -1510,7 +1510,7 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<DiotMarketManagerResponse>(await DoROARequestWithFormAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<DiotMarketManagerResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -2548,7 +2548,7 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<UpgradeDeviceResponse>(DoROARequestWithForm(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<UpgradeDeviceResponse>(Execute(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -2584,7 +2584,7 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<UpgradeDeviceResponse>(await DoROARequestWithFormAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<UpgradeDeviceResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -2650,7 +2650,7 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<WorkbenchTransformInfoResponse>(DoROARequestWithForm(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<WorkbenchTransformInfoResponse>(Execute(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -2686,7 +2686,7 @@ namespace AlibabaCloud.SDK.Dingtalkdiot_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<WorkbenchTransformInfoResponse>(await DoROARequestWithFormAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<WorkbenchTransformInfoResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>

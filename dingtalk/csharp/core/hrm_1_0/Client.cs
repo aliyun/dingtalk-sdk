@@ -18,9 +18,9 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
-            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
+            this._signatureAlgorithm = "v2";
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -686,7 +686,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<DeviceMarketManagerResponse>(DoROARequestWithForm(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<DeviceMarketManagerResponse>(Execute(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -722,7 +722,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<DeviceMarketManagerResponse>(await DoROARequestWithFormAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<DeviceMarketManagerResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -788,7 +788,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<DeviceMarketOrderManagerResponse>(DoROARequestWithForm(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<DeviceMarketOrderManagerResponse>(Execute(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -824,7 +824,7 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<DeviceMarketOrderManagerResponse>(await DoROARequestWithFormAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<DeviceMarketOrderManagerResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>

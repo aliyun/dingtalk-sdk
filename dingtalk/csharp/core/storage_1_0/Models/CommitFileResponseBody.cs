@@ -19,6 +19,14 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 
             /// <summary>
             /// <b>Example:</b>
+            /// <para>DOCUMENT</para>
+            /// </summary>
+            [NameInMap("category")]
+            [Validation(Required=false)]
+            public string Category { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
             /// <para>2022-01-01T10:00:00Z</para>
             /// </summary>
             [NameInMap("createTime")]
@@ -143,9 +151,39 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
             [Validation(Required=false)]
             public string StorageDriver { get; set; }
 
+            [NameInMap("thumbnail")]
+            [Validation(Required=false)]
+            public CommitFileResponseBodyDentryThumbnail Thumbnail { get; set; }
+            public class CommitFileResponseBodyDentryThumbnail : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>64</para>
+                /// </summary>
+                [NameInMap("height")]
+                [Validation(Required=false)]
+                public int? Height { get; set; }
+
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>url</para>
+                /// </summary>
+                [NameInMap("url")]
+                [Validation(Required=false)]
+                public string Url { get; set; }
+
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>64</para>
+                /// </summary>
+                [NameInMap("width")]
+                [Validation(Required=false)]
+                public int? Width { get; set; }
+
+            }
+
             /// <summary>
             /// <b>Example:</b>
-            /// <para>file</para>
+            /// <para>FILE</para>
             /// </summary>
             [NameInMap("type")]
             [Validation(Required=false)]

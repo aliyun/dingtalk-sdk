@@ -18,7 +18,6 @@ namespace AlibabaCloud.SDK.Dingtalkcontract_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
-            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";

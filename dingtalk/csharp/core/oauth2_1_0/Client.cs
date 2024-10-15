@@ -18,9 +18,9 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
-            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
+            this._signatureAlgorithm = "v2";
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -196,7 +196,7 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetAccessTokenResponse>(DoROARequestWithForm(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<GetAccessTokenResponse>(Execute(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -246,7 +246,7 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetAccessTokenResponse>(await DoROARequestWithFormAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<GetAccessTokenResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -490,7 +490,7 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetCorpAccessTokenResponse>(DoROARequestWithForm(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<GetCorpAccessTokenResponse>(Execute(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -548,7 +548,7 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetCorpAccessTokenResponse>(await DoROARequestWithFormAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<GetCorpAccessTokenResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -756,7 +756,7 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "json",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetSsoAccessTokenResponse>(DoROARequest(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<GetSsoAccessTokenResponse>(Execute(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -806,7 +806,7 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "json",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetSsoAccessTokenResponse>(await DoROARequestAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<GetSsoAccessTokenResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -1046,7 +1046,7 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "json",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetSuiteAccessTokenResponse>(DoROARequest(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<GetSuiteAccessTokenResponse>(Execute(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -1100,7 +1100,7 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "json",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetSuiteAccessTokenResponse>(await DoROARequestAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<GetSuiteAccessTokenResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -1192,7 +1192,7 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetTokenResponse>(DoROARequestWithForm(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<GetTokenResponse>(Execute(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -1246,7 +1246,7 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetTokenResponse>(await DoROARequestWithFormAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<GetTokenResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -1346,7 +1346,7 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "json",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetUserTokenResponse>(DoROARequest(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<GetUserTokenResponse>(Execute(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -1408,7 +1408,7 @@ namespace AlibabaCloud.SDK.Dingtalkoauth2_1_0
                 ReqBodyType = "json",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GetUserTokenResponse>(await DoROARequestAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<GetUserTokenResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>

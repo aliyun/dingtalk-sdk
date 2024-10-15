@@ -18,9 +18,9 @@ namespace AlibabaCloud.SDK.Dingtalkim_2_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
-            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
+            this._signatureAlgorithm = "v2";
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -894,7 +894,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_2_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GroupManagerDeviceMarketResponse>(DoROARequestWithForm(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<GroupManagerDeviceMarketResponse>(Execute(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>
@@ -930,7 +930,7 @@ namespace AlibabaCloud.SDK.Dingtalkim_2_0
                 ReqBodyType = "none",
                 BodyType = "json",
             };
-            return TeaModel.ToObject<GroupManagerDeviceMarketResponse>(await DoROARequestWithFormAsync(params_.Action, params_.Version, params_.Protocol, params_.Method, params_.AuthType, params_.Pathname, params_.BodyType, req, runtime));
+            return TeaModel.ToObject<GroupManagerDeviceMarketResponse>(await ExecuteAsync(params_, req, runtime));
         }
 
         /// <term><b>Summary:</b></term>

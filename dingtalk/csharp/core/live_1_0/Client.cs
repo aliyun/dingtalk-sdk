@@ -18,7 +18,6 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
-            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -1043,6 +1042,174 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             EditFeedReplayHeaders headers = new EditFeedReplayHeaders();
             return await EditFeedReplayWithOptionsAsync(feedId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取群内的直播列表</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// GetGroupLiveListRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetGroupLiveListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetGroupLiveListResponse
+        /// </returns>
+        public GetGroupLiveListResponse GetGroupLiveListWithOptions(GetGroupLiveListRequest tmpReq, GetGroupLiveListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            GetGroupLiveListShrinkRequest request = new GetGroupLiveListShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.RequestBody))
+            {
+                request.RequestBodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.RequestBody, "requestBody", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RequestBodyShrink))
+            {
+                query["requestBody"] = request.RequestBodyShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetGroupLiveList",
+                Version = "live_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/live/groupLives",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetGroupLiveListResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取群内的直播列表</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// GetGroupLiveListRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetGroupLiveListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetGroupLiveListResponse
+        /// </returns>
+        public async Task<GetGroupLiveListResponse> GetGroupLiveListWithOptionsAsync(GetGroupLiveListRequest tmpReq, GetGroupLiveListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            GetGroupLiveListShrinkRequest request = new GetGroupLiveListShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.RequestBody))
+            {
+                request.RequestBodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.RequestBody, "requestBody", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RequestBodyShrink))
+            {
+                query["requestBody"] = request.RequestBodyShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetGroupLiveList",
+                Version = "live_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/live/groupLives",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetGroupLiveListResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取群内的直播列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetGroupLiveListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetGroupLiveListResponse
+        /// </returns>
+        public GetGroupLiveListResponse GetGroupLiveList(GetGroupLiveListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetGroupLiveListHeaders headers = new GetGroupLiveListHeaders();
+            return GetGroupLiveListWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取群内的直播列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetGroupLiveListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetGroupLiveListResponse
+        /// </returns>
+        public async Task<GetGroupLiveListResponse> GetGroupLiveListAsync(GetGroupLiveListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetGroupLiveListHeaders headers = new GetGroupLiveListHeaders();
+            return await GetGroupLiveListWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

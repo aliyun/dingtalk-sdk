@@ -18,7 +18,6 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
-            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -1743,6 +1742,182 @@ namespace AlibabaCloud.SDK.Dingtalknotable_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             InsertRecordsHeaders headers = new InsertRecordsHeaders();
             return await InsertRecordsWithOptionsAsync(baseId, sheetIdOrName, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>列出多行记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListRecordsRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListRecordsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListRecordsResponse
+        /// </returns>
+        public ListRecordsResponse ListRecordsWithOptions(string baseId, string sheetIdOrName, ListRecordsRequest request, ListRecordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Filter))
+            {
+                body["filter"] = request.Filter;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListRecords",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/bases/" + baseId + "/sheets/" + sheetIdOrName + "/records/list",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListRecordsResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>列出多行记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListRecordsRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListRecordsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListRecordsResponse
+        /// </returns>
+        public async Task<ListRecordsResponse> ListRecordsWithOptionsAsync(string baseId, string sheetIdOrName, ListRecordsRequest request, ListRecordsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Filter))
+            {
+                body["filter"] = request.Filter;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                body["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                body["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListRecords",
+                Version = "notable_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/notable/bases/" + baseId + "/sheets/" + sheetIdOrName + "/records/list",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListRecordsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>列出多行记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListRecordsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListRecordsResponse
+        /// </returns>
+        public ListRecordsResponse ListRecords(string baseId, string sheetIdOrName, ListRecordsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListRecordsHeaders headers = new ListRecordsHeaders();
+            return ListRecordsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>列出多行记录</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListRecordsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListRecordsResponse
+        /// </returns>
+        public async Task<ListRecordsResponse> ListRecordsAsync(string baseId, string sheetIdOrName, ListRecordsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListRecordsHeaders headers = new ListRecordsHeaders();
+            return await ListRecordsWithOptionsAsync(baseId, sheetIdOrName, request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

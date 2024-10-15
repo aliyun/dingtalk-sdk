@@ -78,6 +78,14 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
         }
 
         /// <summary>
+        /// <b>Example:</b>
+        /// <para>dentry_id</para>
+        /// </summary>
+        [NameInMap("overwriteDentryId")]
+        [Validation(Required=false)]
+        public string OverwriteDentryId { get; set; }
+
+        /// <summary>
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>

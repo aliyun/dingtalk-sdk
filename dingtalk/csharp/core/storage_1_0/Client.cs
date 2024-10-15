@@ -18,7 +18,6 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0
 
         public Client(AlibabaCloud.OpenApiClient.Models.Config config): base(config)
         {
-            this._productId = "dingtalk";
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
             this._endpointRule = "";
@@ -716,6 +715,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0
             {
                 body["option"] = request.Option;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OverwriteDentryId))
+            {
+                body["overwriteDentryId"] = request.OverwriteDentryId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentId))
             {
                 body["parentId"] = request.ParentId;
@@ -788,6 +791,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Option))
             {
                 body["option"] = request.Option;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OverwriteDentryId))
+            {
+                body["overwriteDentryId"] = request.OverwriteDentryId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentId))
             {
