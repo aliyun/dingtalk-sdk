@@ -22,10 +22,10 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $this->_productId    = 'dingtalk';
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
-        $this->_endpointRule = '';
+        $gatewayClient             = new Client();
+        $this->_spi                = $gatewayClient;
+        $this->_signatureAlgorithm = 'v2';
+        $this->_endpointRule       = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
@@ -121,7 +121,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return IndustrializeManufactureJobBookResponse::fromMap($this->doROARequestWithForm($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
+        return IndustrializeManufactureJobBookResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**

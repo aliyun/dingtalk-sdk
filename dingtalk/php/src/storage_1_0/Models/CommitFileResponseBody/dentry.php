@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\CommitFileResponseBody;
 
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\CommitFileResponseBody\dentry\properties;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\CommitFileResponseBody\dentry\thumbnail;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_1_0\Models\DentryAppPropertiesValue;
 use AlibabaCloud\Tea\Model;
 
@@ -14,6 +15,13 @@ class dentry extends Model
      * @var DentryAppPropertiesValue[][]
      */
     public $appProperties;
+
+    /**
+     * @example DOCUMENT
+     *
+     * @var string
+     */
+    public $category;
 
     /**
      * @example 2022-01-01T10:00:00Z
@@ -119,7 +127,12 @@ class dentry extends Model
     public $storageDriver;
 
     /**
-     * @example file
+     * @var thumbnail
+     */
+    public $thumbnail;
+
+    /**
+     * @example FILE
      *
      * @var string
      */
@@ -140,6 +153,7 @@ class dentry extends Model
     public $version;
     protected $_name = [
         'appProperties' => 'appProperties',
+        'category'      => 'category',
         'createTime'    => 'createTime',
         'creatorId'     => 'creatorId',
         'extension'     => 'extension',
@@ -155,6 +169,7 @@ class dentry extends Model
         'spaceId'       => 'spaceId',
         'status'        => 'status',
         'storageDriver' => 'storageDriver',
+        'thumbnail'     => 'thumbnail',
         'type'          => 'type',
         'uuid'          => 'uuid',
         'version'       => 'version',
@@ -169,6 +184,9 @@ class dentry extends Model
         $res = [];
         if (null !== $this->appProperties) {
             $res['appProperties'] = $this->appProperties;
+        }
+        if (null !== $this->category) {
+            $res['category'] = $this->category;
         }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
@@ -215,6 +233,9 @@ class dentry extends Model
         if (null !== $this->storageDriver) {
             $res['storageDriver'] = $this->storageDriver;
         }
+        if (null !== $this->thumbnail) {
+            $res['thumbnail'] = null !== $this->thumbnail ? $this->thumbnail->toMap() : null;
+        }
         if (null !== $this->type) {
             $res['type'] = $this->type;
         }
@@ -238,6 +259,9 @@ class dentry extends Model
         $model = new self();
         if (isset($map['appProperties'])) {
             $model->appProperties = $map['appProperties'];
+        }
+        if (isset($map['category'])) {
+            $model->category = $map['category'];
         }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
@@ -283,6 +307,9 @@ class dentry extends Model
         }
         if (isset($map['storageDriver'])) {
             $model->storageDriver = $map['storageDriver'];
+        }
+        if (isset($map['thumbnail'])) {
+            $model->thumbnail = thumbnail::fromMap($map['thumbnail']);
         }
         if (isset($map['type'])) {
             $model->type = $map['type'];

@@ -24,6 +24,13 @@ class CommitFileRequest extends Model
     public $option;
 
     /**
+     * @example dentry_id
+     *
+     * @var string
+     */
+    public $overwriteDentryId;
+
+    /**
      * @description This parameter is required.
      *
      * @example parent_id
@@ -50,11 +57,12 @@ class CommitFileRequest extends Model
      */
     public $unionId;
     protected $_name = [
-        'name'      => 'name',
-        'option'    => 'option',
-        'parentId'  => 'parentId',
-        'uploadKey' => 'uploadKey',
-        'unionId'   => 'unionId',
+        'name'              => 'name',
+        'option'            => 'option',
+        'overwriteDentryId' => 'overwriteDentryId',
+        'parentId'          => 'parentId',
+        'uploadKey'         => 'uploadKey',
+        'unionId'           => 'unionId',
     ];
 
     public function validate()
@@ -69,6 +77,9 @@ class CommitFileRequest extends Model
         }
         if (null !== $this->option) {
             $res['option'] = null !== $this->option ? $this->option->toMap() : null;
+        }
+        if (null !== $this->overwriteDentryId) {
+            $res['overwriteDentryId'] = $this->overwriteDentryId;
         }
         if (null !== $this->parentId) {
             $res['parentId'] = $this->parentId;
@@ -96,6 +107,9 @@ class CommitFileRequest extends Model
         }
         if (isset($map['option'])) {
             $model->option = option::fromMap($map['option']);
+        }
+        if (isset($map['overwriteDentryId'])) {
+            $model->overwriteDentryId = $map['overwriteDentryId'];
         }
         if (isset($map['parentId'])) {
             $model->parentId = $map['parentId'];

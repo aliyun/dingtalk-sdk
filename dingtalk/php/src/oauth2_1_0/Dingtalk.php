@@ -39,10 +39,10 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $this->_productId    = 'dingtalk';
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
-        $this->_endpointRule = '';
+        $gatewayClient             = new Client();
+        $this->_spi                = $gatewayClient;
+        $this->_signatureAlgorithm = 'v2';
+        $this->_endpointRule       = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
@@ -131,7 +131,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return GetAccessTokenResponse::fromMap($this->doROARequestWithForm($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
+        return GetAccessTokenResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -247,7 +247,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return GetCorpAccessTokenResponse::fromMap($this->doROARequestWithForm($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
+        return GetCorpAccessTokenResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -348,7 +348,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return GetSsoAccessTokenResponse::fromMap($this->doROARequest($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
+        return GetSsoAccessTokenResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -461,7 +461,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return GetSuiteAccessTokenResponse::fromMap($this->doROARequest($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
+        return GetSuiteAccessTokenResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -518,7 +518,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return GetTokenResponse::fromMap($this->doROARequestWithForm($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
+        return GetTokenResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**
@@ -581,7 +581,7 @@ class Dingtalk extends OpenApiClient
             'bodyType'    => 'json',
         ]);
 
-        return GetUserTokenResponse::fromMap($this->doROARequest($params->action, $params->version, $params->protocol, $params->method, $params->authType, $params->pathname, $params->bodyType, $req, $runtime));
+        return GetUserTokenResponse::fromMap($this->execute($params, $req, $runtime));
     }
 
     /**

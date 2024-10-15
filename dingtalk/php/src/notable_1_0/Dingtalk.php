@@ -38,6 +38,9 @@ use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\GetSheetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\InsertRecordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\InsertRecordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\InsertRecordsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ListRecordsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ListRecordsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\ListRecordsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareSetRichTextHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareSetRichTextRequest;
 use AlibabaCloud\SDK\Dingtalk\Vnotable_1_0\Models\PrepareSetRichTextResponse;
@@ -62,7 +65,6 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $this->_productId    = 'dingtalk';
         $gatewayClient       = new Client();
         $this->_spi          = $gatewayClient;
         $this->_endpointRule = '';
@@ -775,6 +777,78 @@ class Dingtalk extends OpenApiClient
         $headers = new InsertRecordsHeaders([]);
 
         return $this->insertRecordsWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 列出多行记录
+     *  *
+     * @param string             $baseId
+     * @param string             $sheetIdOrName
+     * @param ListRecordsRequest $request       ListRecordsRequest
+     * @param ListRecordsHeaders $headers       ListRecordsHeaders
+     * @param RuntimeOptions     $runtime       runtime options for this request RuntimeOptions
+     *
+     * @return ListRecordsResponse ListRecordsResponse
+     */
+    public function listRecordsWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->filter)) {
+            $body['filter'] = $request->filter;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $body['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $body['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ListRecords',
+            'version'     => 'notable_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/notable/bases/' . $baseId . '/sheets/' . $sheetIdOrName . '/records/list',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListRecordsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 列出多行记录
+     *  *
+     * @param string             $baseId
+     * @param string             $sheetIdOrName
+     * @param ListRecordsRequest $request       ListRecordsRequest
+     *
+     * @return ListRecordsResponse ListRecordsResponse
+     */
+    public function listRecords($baseId, $sheetIdOrName, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListRecordsHeaders([]);
+
+        return $this->listRecordsWithOptions($baseId, $sheetIdOrName, $request, $headers, $runtime);
     }
 
     /**

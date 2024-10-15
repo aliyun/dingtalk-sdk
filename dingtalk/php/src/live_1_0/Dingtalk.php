@@ -23,6 +23,10 @@ use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\DeleteLiveResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\EditFeedReplayHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\EditFeedReplayRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\EditFeedReplayResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetGroupLiveListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetGroupLiveListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetGroupLiveListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetGroupLiveListShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetLiveReplayUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetLiveReplayUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetLiveReplayUrlResponse;
@@ -82,7 +86,6 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $this->_productId    = 'dingtalk';
         $gatewayClient       = new Client();
         $this->_spi          = $gatewayClient;
         $this->_endpointRule = '';
@@ -485,6 +488,71 @@ class Dingtalk extends OpenApiClient
         $headers = new EditFeedReplayHeaders([]);
 
         return $this->editFeedReplayWithOptions($feedId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取群内的直播列表
+     *  *
+     * @param GetGroupLiveListRequest $tmpReq  GetGroupLiveListRequest
+     * @param GetGroupLiveListHeaders $headers GetGroupLiveListHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetGroupLiveListResponse GetGroupLiveListResponse
+     */
+    public function getGroupLiveListWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new GetGroupLiveListShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->requestBody)) {
+            $request->requestBodyShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->requestBody, 'requestBody', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->requestBodyShrink)) {
+            $query['requestBody'] = $request->requestBodyShrink;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetGroupLiveList',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/groupLives',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetGroupLiveListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取群内的直播列表
+     *  *
+     * @param GetGroupLiveListRequest $request GetGroupLiveListRequest
+     *
+     * @return GetGroupLiveListResponse GetGroupLiveListResponse
+     */
+    public function getGroupLiveList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetGroupLiveListHeaders([]);
+
+        return $this->getGroupLiveListWithOptions($request, $headers, $runtime);
     }
 
     /**
