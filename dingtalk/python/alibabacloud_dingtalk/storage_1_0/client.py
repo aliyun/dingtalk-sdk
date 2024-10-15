@@ -20,7 +20,6 @@ class Client(OpenApiClient):
         config: open_api_models.Config,
     ):
         super().__init__(config)
-        self._product_id = 'dingtalk'
         gateway_client = GatewayClientClient()
         self._spi = gateway_client
         self._endpoint_rule = ''
@@ -563,6 +562,8 @@ class Client(OpenApiClient):
             body['name'] = request.name
         if not UtilClient.is_unset(request.option):
             body['option'] = request.option
+        if not UtilClient.is_unset(request.overwrite_dentry_id):
+            body['overwriteDentryId'] = request.overwrite_dentry_id
         if not UtilClient.is_unset(request.parent_id):
             body['parentId'] = request.parent_id
         if not UtilClient.is_unset(request.upload_key):
@@ -617,6 +618,8 @@ class Client(OpenApiClient):
             body['name'] = request.name
         if not UtilClient.is_unset(request.option):
             body['option'] = request.option
+        if not UtilClient.is_unset(request.overwrite_dentry_id):
+            body['overwriteDentryId'] = request.overwrite_dentry_id
         if not UtilClient.is_unset(request.parent_id):
             body['parentId'] = request.parent_id
         if not UtilClient.is_unset(request.upload_key):

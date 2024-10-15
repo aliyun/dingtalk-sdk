@@ -1950,6 +1950,374 @@ class InsertRecordsResponse(TeaModel):
         return self
 
 
+class ListRecordsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListRecordsRequestFilterConditions(TeaModel):
+    def __init__(
+        self,
+        field: str = None,
+        operator: str = None,
+        value: List[Any] = None,
+    ):
+        # This parameter is required.
+        self.field = field
+        # This parameter is required.
+        self.operator = operator
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field is not None:
+            result['field'] = self.field
+        if self.operator is not None:
+            result['operator'] = self.operator
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('field') is not None:
+            self.field = m.get('field')
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class ListRecordsRequestFilter(TeaModel):
+    def __init__(
+        self,
+        combination: str = None,
+        conditions: List[ListRecordsRequestFilterConditions] = None,
+    ):
+        self.combination = combination
+        # This parameter is required.
+        self.conditions = conditions
+
+    def validate(self):
+        if self.conditions:
+            for k in self.conditions:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.combination is not None:
+            result['combination'] = self.combination
+        result['conditions'] = []
+        if self.conditions is not None:
+            for k in self.conditions:
+                result['conditions'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('combination') is not None:
+            self.combination = m.get('combination')
+        self.conditions = []
+        if m.get('conditions') is not None:
+            for k in m.get('conditions'):
+                temp_model = ListRecordsRequestFilterConditions()
+                self.conditions.append(temp_model.from_map(k))
+        return self
+
+
+class ListRecordsRequest(TeaModel):
+    def __init__(
+        self,
+        filter: ListRecordsRequestFilter = None,
+        max_results: int = None,
+        next_token: str = None,
+        operator_id: str = None,
+    ):
+        self.filter = filter
+        self.max_results = max_results
+        self.next_token = next_token
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.filter:
+            self.filter.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.filter is not None:
+            result['filter'] = self.filter.to_map()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('filter') is not None:
+            temp_model = ListRecordsRequestFilter()
+            self.filter = temp_model.from_map(m['filter'])
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class ListRecordsResponseBodyRecordsCreatedBy(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+    ):
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class ListRecordsResponseBodyRecordsLastModifiedBy(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+    ):
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class ListRecordsResponseBodyRecords(TeaModel):
+    def __init__(
+        self,
+        created_by: ListRecordsResponseBodyRecordsCreatedBy = None,
+        created_time: int = None,
+        fields: Dict[str, Any] = None,
+        id: str = None,
+        last_modified_by: ListRecordsResponseBodyRecordsLastModifiedBy = None,
+        last_modified_time: int = None,
+    ):
+        self.created_by = created_by
+        self.created_time = created_time
+        self.fields = fields
+        self.id = id
+        self.last_modified_by = last_modified_by
+        self.last_modified_time = last_modified_time
+
+    def validate(self):
+        if self.created_by:
+            self.created_by.validate()
+        if self.last_modified_by:
+            self.last_modified_by.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.created_by is not None:
+            result['createdBy'] = self.created_by.to_map()
+        if self.created_time is not None:
+            result['createdTime'] = self.created_time
+        if self.fields is not None:
+            result['fields'] = self.fields
+        if self.id is not None:
+            result['id'] = self.id
+        if self.last_modified_by is not None:
+            result['lastModifiedBy'] = self.last_modified_by.to_map()
+        if self.last_modified_time is not None:
+            result['lastModifiedTime'] = self.last_modified_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('createdBy') is not None:
+            temp_model = ListRecordsResponseBodyRecordsCreatedBy()
+            self.created_by = temp_model.from_map(m['createdBy'])
+        if m.get('createdTime') is not None:
+            self.created_time = m.get('createdTime')
+        if m.get('fields') is not None:
+            self.fields = m.get('fields')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('lastModifiedBy') is not None:
+            temp_model = ListRecordsResponseBodyRecordsLastModifiedBy()
+            self.last_modified_by = temp_model.from_map(m['lastModifiedBy'])
+        if m.get('lastModifiedTime') is not None:
+            self.last_modified_time = m.get('lastModifiedTime')
+        return self
+
+
+class ListRecordsResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        next_token: str = None,
+        records: List[ListRecordsResponseBodyRecords] = None,
+    ):
+        self.has_more = has_more
+        self.next_token = next_token
+        self.records = records
+
+    def validate(self):
+        if self.records:
+            for k in self.records:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['records'] = []
+        if self.records is not None:
+            for k in self.records:
+                result['records'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.records = []
+        if m.get('records') is not None:
+            for k in m.get('records'):
+                temp_model = ListRecordsResponseBodyRecords()
+                self.records.append(temp_model.from_map(k))
+        return self
+
+
+class ListRecordsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListRecordsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListRecordsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class PrepareSetRichTextHeaders(TeaModel):
     def __init__(
         self,

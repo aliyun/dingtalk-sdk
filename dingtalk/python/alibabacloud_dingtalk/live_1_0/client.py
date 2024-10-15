@@ -20,7 +20,6 @@ class Client(OpenApiClient):
         config: open_api_models.Config,
     ):
         super().__init__(config)
-        self._product_id = 'dingtalk'
         gateway_client = GatewayClientClient()
         self._spi = gateway_client
         self._endpoint_rule = ''
@@ -786,6 +785,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.EditFeedReplayHeaders()
         return await self.edit_feed_replay_with_options_async(feed_id, request, headers, runtime)
+
+    def get_group_live_list_with_options(
+        self,
+        tmp_req: dingtalklive__1__0_models.GetGroupLiveListRequest,
+        headers: dingtalklive__1__0_models.GetGroupLiveListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.GetGroupLiveListResponse:
+        """
+        @summary 获取群内的直播列表
+        
+        @param tmp_req: GetGroupLiveListRequest
+        @param headers: GetGroupLiveListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetGroupLiveListResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalklive__1__0_models.GetGroupLiveListShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.request_body):
+            request.request_body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.request_body, 'requestBody', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.request_body_shrink):
+            query['requestBody'] = request.request_body_shrink
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetGroupLiveList',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/groupLives',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.GetGroupLiveListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_group_live_list_with_options_async(
+        self,
+        tmp_req: dingtalklive__1__0_models.GetGroupLiveListRequest,
+        headers: dingtalklive__1__0_models.GetGroupLiveListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.GetGroupLiveListResponse:
+        """
+        @summary 获取群内的直播列表
+        
+        @param tmp_req: GetGroupLiveListRequest
+        @param headers: GetGroupLiveListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetGroupLiveListResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalklive__1__0_models.GetGroupLiveListShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.request_body):
+            request.request_body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.request_body, 'requestBody', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.request_body_shrink):
+            query['requestBody'] = request.request_body_shrink
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetGroupLiveList',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/groupLives',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.GetGroupLiveListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_group_live_list(
+        self,
+        request: dingtalklive__1__0_models.GetGroupLiveListRequest,
+    ) -> dingtalklive__1__0_models.GetGroupLiveListResponse:
+        """
+        @summary 获取群内的直播列表
+        
+        @param request: GetGroupLiveListRequest
+        @return: GetGroupLiveListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.GetGroupLiveListHeaders()
+        return self.get_group_live_list_with_options(request, headers, runtime)
+
+    async def get_group_live_list_async(
+        self,
+        request: dingtalklive__1__0_models.GetGroupLiveListRequest,
+    ) -> dingtalklive__1__0_models.GetGroupLiveListResponse:
+        """
+        @summary 获取群内的直播列表
+        
+        @param request: GetGroupLiveListRequest
+        @return: GetGroupLiveListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.GetGroupLiveListHeaders()
+        return await self.get_group_live_list_with_options_async(request, headers, runtime)
 
     def get_live_replay_url_with_options(
         self,

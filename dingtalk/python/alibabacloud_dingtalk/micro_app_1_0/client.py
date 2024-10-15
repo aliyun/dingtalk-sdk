@@ -21,9 +21,9 @@ class Client(OpenApiClient):
         config: open_api_models.Config,
     ):
         super().__init__(config)
-        self._product_id = 'dingtalk'
         gateway_client = GatewayClientClient()
         self._spi = gateway_client
+        self._signature_algorithm = 'v2'
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
@@ -446,7 +446,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.AnheiPResponse(),
-            self.do_roarequest_with_form(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def anhei_pwith_options_async(
@@ -477,7 +477,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.AnheiPResponse(),
-            await self.do_roarequest_with_form_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
     def anhei_p(self) -> dingtalkmicro_app__1__0_models.AnheiPResponse:
@@ -528,7 +528,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.AnheiTest888Response(),
-            self.do_roarequest_with_form(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def anhei_test_888with_options_async(
@@ -559,7 +559,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.AnheiTest888Response(),
-            await self.do_roarequest_with_form_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
     def anhei_test_888(self) -> dingtalkmicro_app__1__0_models.AnheiTest888Response:
@@ -610,7 +610,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.AnheiTestBResponse(),
-            self.do_roarequest_with_form(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def anhei_test_bwith_options_async(
@@ -641,7 +641,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.AnheiTestBResponse(),
-            await self.do_roarequest_with_form_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
     def anhei_test_b(self) -> dingtalkmicro_app__1__0_models.AnheiTestBResponse:
@@ -692,7 +692,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.AnheiTestNineResponse(),
-            self.do_roarequest_with_form(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def anhei_test_nine_with_options_async(
@@ -723,7 +723,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.AnheiTestNineResponse(),
-            await self.do_roarequest_with_form_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
     def anhei_test_nine(self) -> dingtalkmicro_app__1__0_models.AnheiTestNineResponse:
@@ -781,7 +781,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.AppStatusManagerTestResponse(),
-            self.do_roarequest_with_form(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def app_status_manager_test_with_options_async(
@@ -819,7 +819,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.AppStatusManagerTestResponse(),
-            await self.do_roarequest_with_form_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
     def app_status_manager_test(
@@ -878,7 +878,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.AyunTestResponse(),
-            self.do_roarequest_with_form(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def ayun_test_with_options_async(
@@ -909,7 +909,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.AyunTestResponse(),
-            await self.do_roarequest_with_form_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
     def ayun_test(self) -> dingtalkmicro_app__1__0_models.AyunTestResponse:
@@ -960,7 +960,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.AyunTestOnlineResponse(),
-            self.do_roarequest_with_form(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def ayun_test_online_with_options_async(
@@ -991,7 +991,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkmicro_app__1__0_models.AyunTestOnlineResponse(),
-            await self.do_roarequest_with_form_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
     def ayun_test_online(self) -> dingtalkmicro_app__1__0_models.AyunTestOnlineResponse:

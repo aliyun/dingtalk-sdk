@@ -949,6 +949,308 @@ class EditFeedReplayResponse(TeaModel):
         return self
 
 
+class GetGroupLiveListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetGroupLiveListRequestRequestBody(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        open_conversation_id: str = None,
+        start_time: int = None,
+    ):
+        self.end_time = end_time
+        self.open_conversation_id = open_conversation_id
+        self.start_time = start_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        return self
+
+
+class GetGroupLiveListRequest(TeaModel):
+    def __init__(
+        self,
+        request_body: GetGroupLiveListRequestRequestBody = None,
+        union_id: str = None,
+    ):
+        self.request_body = request_body
+        self.union_id = union_id
+
+    def validate(self):
+        if self.request_body:
+            self.request_body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_body is not None:
+            result['requestBody'] = self.request_body.to_map()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestBody') is not None:
+            temp_model = GetGroupLiveListRequestRequestBody()
+            self.request_body = temp_model.from_map(m['requestBody'])
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class GetGroupLiveListShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        request_body_shrink: str = None,
+        union_id: str = None,
+    ):
+        self.request_body_shrink = request_body_shrink
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_body_shrink is not None:
+            result['requestBody'] = self.request_body_shrink
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestBody') is not None:
+            self.request_body_shrink = m.get('requestBody')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class GetGroupLiveListResponseBodyResultGroupLiveList(TeaModel):
+    def __init__(
+        self,
+        anchor_nickname: str = None,
+        anchor_union_id: str = None,
+        live_end_time: int = None,
+        live_start_time: int = None,
+        live_uuid: str = None,
+        title: str = None,
+    ):
+        self.anchor_nickname = anchor_nickname
+        self.anchor_union_id = anchor_union_id
+        self.live_end_time = live_end_time
+        self.live_start_time = live_start_time
+        self.live_uuid = live_uuid
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.anchor_nickname is not None:
+            result['anchorNickname'] = self.anchor_nickname
+        if self.anchor_union_id is not None:
+            result['anchorUnionId'] = self.anchor_union_id
+        if self.live_end_time is not None:
+            result['liveEndTime'] = self.live_end_time
+        if self.live_start_time is not None:
+            result['liveStartTime'] = self.live_start_time
+        if self.live_uuid is not None:
+            result['liveUuid'] = self.live_uuid
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('anchorNickname') is not None:
+            self.anchor_nickname = m.get('anchorNickname')
+        if m.get('anchorUnionId') is not None:
+            self.anchor_union_id = m.get('anchorUnionId')
+        if m.get('liveEndTime') is not None:
+            self.live_end_time = m.get('liveEndTime')
+        if m.get('liveStartTime') is not None:
+            self.live_start_time = m.get('liveStartTime')
+        if m.get('liveUuid') is not None:
+            self.live_uuid = m.get('liveUuid')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class GetGroupLiveListResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        group_live_list: List[GetGroupLiveListResponseBodyResultGroupLiveList] = None,
+    ):
+        self.group_live_list = group_live_list
+
+    def validate(self):
+        if self.group_live_list:
+            for k in self.group_live_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['groupLiveList'] = []
+        if self.group_live_list is not None:
+            for k in self.group_live_list:
+                result['groupLiveList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.group_live_list = []
+        if m.get('groupLiveList') is not None:
+            for k in m.get('groupLiveList'):
+                temp_model = GetGroupLiveListResponseBodyResultGroupLiveList()
+                self.group_live_list.append(temp_model.from_map(k))
+        return self
+
+
+class GetGroupLiveListResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetGroupLiveListResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetGroupLiveListResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class GetGroupLiveListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetGroupLiveListResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetGroupLiveListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetLiveReplayUrlHeaders(TeaModel):
     def __init__(
         self,

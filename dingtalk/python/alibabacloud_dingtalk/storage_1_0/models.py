@@ -1504,6 +1504,7 @@ class CommitFileRequest(TeaModel):
         self,
         name: str = None,
         option: CommitFileRequestOption = None,
+        overwrite_dentry_id: str = None,
         parent_id: str = None,
         upload_key: str = None,
         union_id: str = None,
@@ -1511,6 +1512,7 @@ class CommitFileRequest(TeaModel):
         # This parameter is required.
         self.name = name
         self.option = option
+        self.overwrite_dentry_id = overwrite_dentry_id
         # This parameter is required.
         self.parent_id = parent_id
         # This parameter is required.
@@ -1532,6 +1534,8 @@ class CommitFileRequest(TeaModel):
             result['name'] = self.name
         if self.option is not None:
             result['option'] = self.option.to_map()
+        if self.overwrite_dentry_id is not None:
+            result['overwriteDentryId'] = self.overwrite_dentry_id
         if self.parent_id is not None:
             result['parentId'] = self.parent_id
         if self.upload_key is not None:
@@ -1547,6 +1551,8 @@ class CommitFileRequest(TeaModel):
         if m.get('option') is not None:
             temp_model = CommitFileRequestOption()
             self.option = temp_model.from_map(m['option'])
+        if m.get('overwriteDentryId') is not None:
+            self.overwrite_dentry_id = m.get('overwriteDentryId')
         if m.get('parentId') is not None:
             self.parent_id = m.get('parentId')
         if m.get('uploadKey') is not None:
@@ -1583,10 +1589,50 @@ class CommitFileResponseBodyDentryProperties(TeaModel):
         return self
 
 
+class CommitFileResponseBodyDentryThumbnail(TeaModel):
+    def __init__(
+        self,
+        height: int = None,
+        url: str = None,
+        width: int = None,
+    ):
+        self.height = height
+        self.url = url
+        self.width = width
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.height is not None:
+            result['height'] = self.height
+        if self.url is not None:
+            result['url'] = self.url
+        if self.width is not None:
+            result['width'] = self.width
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('height') is not None:
+            self.height = m.get('height')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        if m.get('width') is not None:
+            self.width = m.get('width')
+        return self
+
+
 class CommitFileResponseBodyDentry(TeaModel):
     def __init__(
         self,
         app_properties: Dict[str, List[DentryAppPropertiesValue]] = None,
+        category: str = None,
         create_time: str = None,
         creator_id: str = None,
         extension: str = None,
@@ -1602,11 +1648,13 @@ class CommitFileResponseBodyDentry(TeaModel):
         space_id: str = None,
         status: str = None,
         storage_driver: str = None,
+        thumbnail: CommitFileResponseBodyDentryThumbnail = None,
         type: str = None,
         uuid: str = None,
         version: int = None,
     ):
         self.app_properties = app_properties
+        self.category = category
         self.create_time = create_time
         self.creator_id = creator_id
         self.extension = extension
@@ -1622,6 +1670,7 @@ class CommitFileResponseBodyDentry(TeaModel):
         self.space_id = space_id
         self.status = status
         self.storage_driver = storage_driver
+        self.thumbnail = thumbnail
         self.type = type
         self.uuid = uuid
         self.version = version
@@ -1634,6 +1683,8 @@ class CommitFileResponseBodyDentry(TeaModel):
                         k1.validate()
         if self.properties:
             self.properties.validate()
+        if self.thumbnail:
+            self.thumbnail.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1648,6 +1699,8 @@ class CommitFileResponseBodyDentry(TeaModel):
                 for k1 in v:
                     l1.append(k1.to_map() if k1 else None)
                 result['appProperties'][k] = l1
+        if self.category is not None:
+            result['category'] = self.category
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator_id is not None:
@@ -1678,6 +1731,8 @@ class CommitFileResponseBodyDentry(TeaModel):
             result['status'] = self.status
         if self.storage_driver is not None:
             result['storageDriver'] = self.storage_driver
+        if self.thumbnail is not None:
+            result['thumbnail'] = self.thumbnail.to_map()
         if self.type is not None:
             result['type'] = self.type
         if self.uuid is not None:
@@ -1696,6 +1751,8 @@ class CommitFileResponseBodyDentry(TeaModel):
                     temp_model = DentryAppPropertiesValue()
                     l1.append(temp_model.from_map(k1))
                 self.app_properties['k'] = l1
+        if m.get('category') is not None:
+            self.category = m.get('category')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creatorId') is not None:
@@ -1727,6 +1784,9 @@ class CommitFileResponseBodyDentry(TeaModel):
             self.status = m.get('status')
         if m.get('storageDriver') is not None:
             self.storage_driver = m.get('storageDriver')
+        if m.get('thumbnail') is not None:
+            temp_model = CommitFileResponseBodyDentryThumbnail()
+            self.thumbnail = temp_model.from_map(m['thumbnail'])
         if m.get('type') is not None:
             self.type = m.get('type')
         if m.get('uuid') is not None:

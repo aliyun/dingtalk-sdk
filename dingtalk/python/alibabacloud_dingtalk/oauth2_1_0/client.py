@@ -21,9 +21,9 @@ class Client(OpenApiClient):
         config: open_api_models.Config,
     ):
         super().__init__(config)
-        self._product_id = 'dingtalk'
         gateway_client = GatewayClientClient()
         self._spi = gateway_client
+        self._signature_algorithm = 'v2'
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
@@ -157,7 +157,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetAccessTokenResponse(),
-            self.do_roarequest_with_form(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_access_token_with_options_async(
@@ -197,7 +197,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetAccessTokenResponse(),
-            await self.do_roarequest_with_form_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
     def get_access_token(
@@ -383,7 +383,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse(),
-            self.do_roarequest_with_form(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_corp_access_token_with_options_async(
@@ -427,7 +427,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetCorpAccessTokenResponse(),
-            await self.do_roarequest_with_form_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
     def get_corp_access_token(
@@ -587,7 +587,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetSsoAccessTokenResponse(),
-            self.do_roarequest(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_sso_access_token_with_options_async(
@@ -627,7 +627,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetSsoAccessTokenResponse(),
-            await self.do_roarequest_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
     def get_sso_access_token(
@@ -811,7 +811,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse(),
-            self.do_roarequest(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_suite_access_token_with_options_async(
@@ -853,7 +853,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetSuiteAccessTokenResponse(),
-            await self.do_roarequest_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
     def get_suite_access_token(
@@ -924,7 +924,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetTokenResponse(),
-            self.do_roarequest_with_form(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_token_with_options_async(
@@ -967,7 +967,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetTokenResponse(),
-            await self.do_roarequest_with_form_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
     def get_token(
@@ -1043,7 +1043,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetUserTokenResponse(),
-            self.do_roarequest(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            self.execute(params, req, runtime)
         )
 
     async def get_user_token_with_options_async(
@@ -1089,7 +1089,7 @@ class Client(OpenApiClient):
         )
         return TeaCore.from_map(
             dingtalkoauth_2__1__0_models.GetUserTokenResponse(),
-            await self.do_roarequest_async(params.action, params.version, params.protocol, params.method, params.auth_type, params.pathname, params.body_type, req, runtime)
+            await self.execute_async(params, req, runtime)
         )
 
     def get_user_token(
