@@ -8,7 +8,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._productId = "dingtalk";
         com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
         this._spi = gatewayClient;
         this._endpointRule = "";
@@ -296,6 +295,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.option)) {
             body.put("option", request.option);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.overwriteDentryId)) {
+            body.put("overwriteDentryId", request.overwriteDentryId);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.parentId)) {

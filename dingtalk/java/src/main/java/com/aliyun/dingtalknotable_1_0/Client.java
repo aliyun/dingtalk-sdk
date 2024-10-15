@@ -8,7 +8,6 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._productId = "dingtalk";
         com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
         this._spi = gatewayClient;
         this._endpointRule = "";
@@ -677,6 +676,76 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         InsertRecordsHeaders headers = new InsertRecordsHeaders();
         return this.insertRecordsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>列出多行记录</p>
+     * 
+     * @param request ListRecordsRequest
+     * @param headers ListRecordsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListRecordsResponse
+     */
+    public ListRecordsResponse listRecordsWithOptions(String baseId, String sheetIdOrName, ListRecordsRequest request, ListRecordsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.filter)) {
+            body.put("filter", request.filter);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            body.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            body.put("nextToken", request.nextToken);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListRecords"),
+            new TeaPair("version", "notable_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/notable/bases/" + baseId + "/sheets/" + sheetIdOrName + "/records/list"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListRecordsResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>列出多行记录</p>
+     * 
+     * @param request ListRecordsRequest
+     * @return ListRecordsResponse
+     */
+    public ListRecordsResponse listRecords(String baseId, String sheetIdOrName, ListRecordsRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListRecordsHeaders headers = new ListRecordsHeaders();
+        return this.listRecordsWithOptions(baseId, sheetIdOrName, request, headers, runtime);
     }
 
     /**

@@ -8,9 +8,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._productId = "dingtalk";
         com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
         this._spi = gatewayClient;
+        this._signatureAlgorithm = "v2";
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -50,7 +50,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("reqBodyType", "none"),
             new TeaPair("bodyType", "json")
         ));
-        return TeaModel.toModel(this.doROARequestWithForm(params.action, params.version, params.protocol, params.method, params.authType, params.pathname, params.bodyType, req, runtime), new AyunOnlienTestResponse());
+        return TeaModel.toModel(this.execute(params, req, runtime), new AyunOnlienTestResponse());
     }
 
     /**
@@ -469,7 +469,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("reqBodyType", "none"),
             new TeaPair("bodyType", "json")
         ));
-        return TeaModel.toModel(this.doROARequestWithForm(params.action, params.version, params.protocol, params.method, params.authType, params.pathname, params.bodyType, req, runtime), new DiotMamaResponse());
+        return TeaModel.toModel(this.execute(params, req, runtime), new DiotMamaResponse());
     }
 
     /**
@@ -506,7 +506,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("reqBodyType", "none"),
             new TeaPair("bodyType", "json")
         ));
-        return TeaModel.toModel(this.doROARequestWithForm(params.action, params.version, params.protocol, params.method, params.authType, params.pathname, params.bodyType, req, runtime), new DiotMarketManagerTestResponse());
+        return TeaModel.toModel(this.execute(params, req, runtime), new DiotMarketManagerTestResponse());
     }
 
     /**
@@ -543,7 +543,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("reqBodyType", "none"),
             new TeaPair("bodyType", "json")
         ));
-        return TeaModel.toModel(this.doROARequestWithForm(params.action, params.version, params.protocol, params.method, params.authType, params.pathname, params.bodyType, req, runtime), new DiotSystemMarkTestResponse());
+        return TeaModel.toModel(this.execute(params, req, runtime), new DiotSystemMarkTestResponse());
     }
 
     /**
@@ -580,7 +580,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("reqBodyType", "none"),
             new TeaPair("bodyType", "json")
         ));
-        return TeaModel.toModel(this.doROARequestWithForm(params.action, params.version, params.protocol, params.method, params.authType, params.pathname, params.bodyType, req, runtime), new DiotMarketManagerResponse());
+        return TeaModel.toModel(this.execute(params, req, runtime), new DiotMarketManagerResponse());
     }
 
     /**
@@ -1013,7 +1013,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("reqBodyType", "none"),
             new TeaPair("bodyType", "json")
         ));
-        return TeaModel.toModel(this.doROARequestWithForm(params.action, params.version, params.protocol, params.method, params.authType, params.pathname, params.bodyType, req, runtime), new UpgradeDeviceResponse());
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpgradeDeviceResponse());
     }
 
     /**
@@ -1050,7 +1050,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("reqBodyType", "none"),
             new TeaPair("bodyType", "json")
         ));
-        return TeaModel.toModel(this.doROARequestWithForm(params.action, params.version, params.protocol, params.method, params.authType, params.pathname, params.bodyType, req, runtime), new WorkbenchTransformInfoResponse());
+        return TeaModel.toModel(this.execute(params, req, runtime), new WorkbenchTransformInfoResponse());
     }
 
     /**

@@ -8,9 +8,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     public Client(com.aliyun.teaopenapi.models.Config config) throws Exception {
         super(config);
-        this._productId = "dingtalk";
         com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
         this._spi = gatewayClient;
+        this._signatureAlgorithm = "v2";
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -300,7 +300,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("reqBodyType", "none"),
             new TeaPair("bodyType", "json")
         ));
-        return TeaModel.toModel(this.doROARequestWithForm(params.action, params.version, params.protocol, params.method, params.authType, params.pathname, params.bodyType, req, runtime), new DeviceMarketManagerResponse());
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeviceMarketManagerResponse());
     }
 
     /**
@@ -337,7 +337,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("reqBodyType", "none"),
             new TeaPair("bodyType", "json")
         ));
-        return TeaModel.toModel(this.doROARequestWithForm(params.action, params.version, params.protocol, params.method, params.authType, params.pathname, params.bodyType, req, runtime), new DeviceMarketOrderManagerResponse());
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeviceMarketOrderManagerResponse());
     }
 
     /**

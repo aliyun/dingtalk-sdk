@@ -43,9 +43,69 @@ public class CommitFileResponseBody extends TeaModel {
 
     }
 
+    public static class CommitFileResponseBodyDentryThumbnail extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>64</p>
+         */
+        @NameInMap("height")
+        public Integer height;
+
+        /**
+         * <strong>example:</strong>
+         * <p>url</p>
+         */
+        @NameInMap("url")
+        public String url;
+
+        /**
+         * <strong>example:</strong>
+         * <p>64</p>
+         */
+        @NameInMap("width")
+        public Integer width;
+
+        public static CommitFileResponseBodyDentryThumbnail build(java.util.Map<String, ?> map) throws Exception {
+            CommitFileResponseBodyDentryThumbnail self = new CommitFileResponseBodyDentryThumbnail();
+            return TeaModel.build(map, self);
+        }
+
+        public CommitFileResponseBodyDentryThumbnail setHeight(Integer height) {
+            this.height = height;
+            return this;
+        }
+        public Integer getHeight() {
+            return this.height;
+        }
+
+        public CommitFileResponseBodyDentryThumbnail setUrl(String url) {
+            this.url = url;
+            return this;
+        }
+        public String getUrl() {
+            return this.url;
+        }
+
+        public CommitFileResponseBodyDentryThumbnail setWidth(Integer width) {
+            this.width = width;
+            return this;
+        }
+        public Integer getWidth() {
+            return this.width;
+        }
+
+    }
+
     public static class CommitFileResponseBodyDentry extends TeaModel {
         @NameInMap("appProperties")
         public java.util.Map<String, java.util.List<DentryAppPropertiesValue>> appProperties;
+
+        /**
+         * <strong>example:</strong>
+         * <p>DOCUMENT</p>
+         */
+        @NameInMap("category")
+        public String category;
 
         /**
          * <strong>example:</strong>
@@ -148,9 +208,12 @@ public class CommitFileResponseBody extends TeaModel {
         @NameInMap("storageDriver")
         public String storageDriver;
 
+        @NameInMap("thumbnail")
+        public CommitFileResponseBodyDentryThumbnail thumbnail;
+
         /**
          * <strong>example:</strong>
-         * <p>file</p>
+         * <p>FILE</p>
          */
         @NameInMap("type")
         public String type;
@@ -180,6 +243,14 @@ public class CommitFileResponseBody extends TeaModel {
         }
         public java.util.Map<String, java.util.List<DentryAppPropertiesValue>> getAppProperties() {
             return this.appProperties;
+        }
+
+        public CommitFileResponseBodyDentry setCategory(String category) {
+            this.category = category;
+            return this;
+        }
+        public String getCategory() {
+            return this.category;
         }
 
         public CommitFileResponseBodyDentry setCreateTime(String createTime) {
@@ -300,6 +371,14 @@ public class CommitFileResponseBody extends TeaModel {
         }
         public String getStorageDriver() {
             return this.storageDriver;
+        }
+
+        public CommitFileResponseBodyDentry setThumbnail(CommitFileResponseBodyDentryThumbnail thumbnail) {
+            this.thumbnail = thumbnail;
+            return this;
+        }
+        public CommitFileResponseBodyDentryThumbnail getThumbnail() {
+            return this.thumbnail;
         }
 
         public CommitFileResponseBodyDentry setType(String type) {

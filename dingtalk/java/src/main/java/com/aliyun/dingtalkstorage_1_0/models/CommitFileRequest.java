@@ -17,6 +17,13 @@ public class CommitFileRequest extends TeaModel {
     public CommitFileRequestOption option;
 
     /**
+     * <strong>example:</strong>
+     * <p>dentry_id</p>
+     */
+    @NameInMap("overwriteDentryId")
+    public String overwriteDentryId;
+
+    /**
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
@@ -62,6 +69,14 @@ public class CommitFileRequest extends TeaModel {
     }
     public CommitFileRequestOption getOption() {
         return this.option;
+    }
+
+    public CommitFileRequest setOverwriteDentryId(String overwriteDentryId) {
+        this.overwriteDentryId = overwriteDentryId;
+        return this;
+    }
+    public String getOverwriteDentryId() {
+        return this.overwriteDentryId;
     }
 
     public CommitFileRequest setParentId(String parentId) {
