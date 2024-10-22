@@ -354,6 +354,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public QueryReportDetailResponse queryReportDetailWithOptions(QueryReportDetailRequest request, QueryReportDetailHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.format)) {
+            query.put("format", request.format);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.reportId)) {
             query.put("reportId", request.reportId);
         }

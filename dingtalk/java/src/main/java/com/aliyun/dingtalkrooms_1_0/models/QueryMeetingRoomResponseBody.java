@@ -288,6 +288,13 @@ public class QueryMeetingRoomResponseBody extends TeaModel {
         @NameInMap("roomStatus")
         public Integer roomStatus;
 
+        /**
+         * <strong>example:</strong>
+         * <p>DtB8VDzXXXXXX41rgiE</p>
+         */
+        @NameInMap("roomUnionId")
+        public String roomUnionId;
+
         public static QueryMeetingRoomResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             QueryMeetingRoomResponseBodyResult self = new QueryMeetingRoomResponseBodyResult();
             return TeaModel.build(map, self);
@@ -403,6 +410,14 @@ public class QueryMeetingRoomResponseBody extends TeaModel {
         }
         public Integer getRoomStatus() {
             return this.roomStatus;
+        }
+
+        public QueryMeetingRoomResponseBodyResult setRoomUnionId(String roomUnionId) {
+            this.roomUnionId = roomUnionId;
+            return this;
+        }
+        public String getRoomUnionId() {
+            return this.roomUnionId;
         }
 
     }
