@@ -10,6 +10,14 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0.Models
 {
     public class QueryReportDetailRequest : TeaModel {
         /// <summary>
+        /// <b>Example:</b>
+        /// <para>TEXT</para>
+        /// </summary>
+        [NameInMap("format")]
+        [Validation(Required=false)]
+        public string Format { get; set; }
+
+        /// <summary>
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>

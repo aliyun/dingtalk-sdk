@@ -842,6 +842,10 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Format))
+            {
+                query["format"] = request.Format;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReportId))
             {
                 query["reportId"] = request.ReportId;
@@ -897,6 +901,10 @@ namespace AlibabaCloud.SDK.Dingtalkreport_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Format))
+            {
+                query["format"] = request.Format;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReportId))
             {
                 query["reportId"] = request.ReportId;

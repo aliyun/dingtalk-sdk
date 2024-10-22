@@ -187,6 +187,14 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
             [Validation(Required=false)]
             public int? RoomStatus { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>DtB8VDzXXXXXX41rgiE</para>
+            /// </summary>
+            [NameInMap("roomUnionId")]
+            [Validation(Required=false)]
+            public string RoomUnionId { get; set; }
+
         }
 
     }

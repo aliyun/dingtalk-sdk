@@ -30,6 +30,186 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>创建预定黑名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateBookingBlacklistRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateBookingBlacklistHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateBookingBlacklistResponse
+        /// </returns>
+        public CreateBookingBlacklistResponse CreateBookingBlacklistWithOptions(CreateBookingBlacklistRequest request, CreateBookingBlacklistHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BlacklistUnionId))
+            {
+                body["blacklistUnionId"] = request.BlacklistUnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Memo))
+            {
+                body["memo"] = request.Memo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateBookingBlacklist",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/bookings/blacklist",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateBookingBlacklistResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建预定黑名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateBookingBlacklistRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateBookingBlacklistHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateBookingBlacklistResponse
+        /// </returns>
+        public async Task<CreateBookingBlacklistResponse> CreateBookingBlacklistWithOptionsAsync(CreateBookingBlacklistRequest request, CreateBookingBlacklistHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BlacklistUnionId))
+            {
+                body["blacklistUnionId"] = request.BlacklistUnionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EndTime))
+            {
+                body["endTime"] = request.EndTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Memo))
+            {
+                body["memo"] = request.Memo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StartTime))
+            {
+                body["startTime"] = request.StartTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateBookingBlacklist",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/bookings/blacklist",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateBookingBlacklistResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建预定黑名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateBookingBlacklistRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateBookingBlacklistResponse
+        /// </returns>
+        public CreateBookingBlacklistResponse CreateBookingBlacklist(CreateBookingBlacklistRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateBookingBlacklistHeaders headers = new CreateBookingBlacklistHeaders();
+            return CreateBookingBlacklistWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建预定黑名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateBookingBlacklistRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateBookingBlacklistResponse
+        /// </returns>
+        public async Task<CreateBookingBlacklistResponse> CreateBookingBlacklistAsync(CreateBookingBlacklistRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateBookingBlacklistHeaders headers = new CreateBookingBlacklistHeaders();
+            return await CreateBookingBlacklistWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>创建自定义屏幕模版</para>
         /// </summary>
         /// 
@@ -882,6 +1062,162 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             CreateMeetingRoomGroupHeaders headers = new CreateMeetingRoomGroupHeaders();
             return await CreateMeetingRoomGroupWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除预定黑名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteBookingBlacklistRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteBookingBlacklistHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteBookingBlacklistResponse
+        /// </returns>
+        public DeleteBookingBlacklistResponse DeleteBookingBlacklistWithOptions(DeleteBookingBlacklistRequest request, DeleteBookingBlacklistHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BlacklistUnionIds))
+            {
+                body["blacklistUnionIds"] = request.BlacklistUnionIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteBookingBlacklist",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/bookings/blacklist/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteBookingBlacklistResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除预定黑名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteBookingBlacklistRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteBookingBlacklistHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteBookingBlacklistResponse
+        /// </returns>
+        public async Task<DeleteBookingBlacklistResponse> DeleteBookingBlacklistWithOptionsAsync(DeleteBookingBlacklistRequest request, DeleteBookingBlacklistHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BlacklistUnionIds))
+            {
+                body["blacklistUnionIds"] = request.BlacklistUnionIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteBookingBlacklist",
+                Version = "rooms_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/rooms/bookings/blacklist/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteBookingBlacklistResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除预定黑名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteBookingBlacklistRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteBookingBlacklistResponse
+        /// </returns>
+        public DeleteBookingBlacklistResponse DeleteBookingBlacklist(DeleteBookingBlacklistRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteBookingBlacklistHeaders headers = new DeleteBookingBlacklistHeaders();
+            return DeleteBookingBlacklistWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除预定黑名单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteBookingBlacklistRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteBookingBlacklistResponse
+        /// </returns>
+        public async Task<DeleteBookingBlacklistResponse> DeleteBookingBlacklistAsync(DeleteBookingBlacklistRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteBookingBlacklistHeaders headers = new DeleteBookingBlacklistHeaders();
+            return await DeleteBookingBlacklistWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

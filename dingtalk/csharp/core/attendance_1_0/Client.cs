@@ -7222,6 +7222,162 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>薪酬三方数据写入</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SalaryThirdDataIntegrationRequest
+        /// </param>
+        /// <param name="headers">
+        /// SalaryThirdDataIntegrationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SalaryThirdDataIntegrationResponse
+        /// </returns>
+        public SalaryThirdDataIntegrationResponse SalaryThirdDataIntegrationWithOptions(SalaryThirdDataIntegrationRequest request, SalaryThirdDataIntegrationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
+            {
+                body["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Items))
+            {
+                body["items"] = request.Items;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SalaryThirdDataIntegration",
+                Version = "attendance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/attendance/salaries/tripartiteDatas/write",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SalaryThirdDataIntegrationResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>薪酬三方数据写入</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SalaryThirdDataIntegrationRequest
+        /// </param>
+        /// <param name="headers">
+        /// SalaryThirdDataIntegrationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SalaryThirdDataIntegrationResponse
+        /// </returns>
+        public async Task<SalaryThirdDataIntegrationResponse> SalaryThirdDataIntegrationWithOptionsAsync(SalaryThirdDataIntegrationRequest request, SalaryThirdDataIntegrationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizType))
+            {
+                body["bizType"] = request.BizType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Items))
+            {
+                body["items"] = request.Items;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SalaryThirdDataIntegration",
+                Version = "attendance_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/attendance/salaries/tripartiteDatas/write",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SalaryThirdDataIntegrationResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>薪酬三方数据写入</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SalaryThirdDataIntegrationRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SalaryThirdDataIntegrationResponse
+        /// </returns>
+        public SalaryThirdDataIntegrationResponse SalaryThirdDataIntegration(SalaryThirdDataIntegrationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SalaryThirdDataIntegrationHeaders headers = new SalaryThirdDataIntegrationHeaders();
+            return SalaryThirdDataIntegrationWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>薪酬三方数据写入</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SalaryThirdDataIntegrationRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SalaryThirdDataIntegrationResponse
+        /// </returns>
+        public async Task<SalaryThirdDataIntegrationResponse> SalaryThirdDataIntegrationAsync(SalaryThirdDataIntegrationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SalaryThirdDataIntegrationHeaders headers = new SalaryThirdDataIntegrationHeaders();
+            return await SalaryThirdDataIntegrationWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>新增水印签到模板</para>
         /// </summary>
         /// 
