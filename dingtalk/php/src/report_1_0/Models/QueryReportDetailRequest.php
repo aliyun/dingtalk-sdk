@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class QueryReportDetailRequest extends Model
 {
     /**
+     * @example TEXT
+     *
+     * @var string
+     */
+    public $format;
+
+    /**
      * @description This parameter is required.
      *
      * @example 18XXXX
@@ -17,6 +24,7 @@ class QueryReportDetailRequest extends Model
      */
     public $reportId;
     protected $_name = [
+        'format'   => 'format',
         'reportId' => 'reportId',
     ];
 
@@ -27,6 +35,9 @@ class QueryReportDetailRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->format) {
+            $res['format'] = $this->format;
+        }
         if (null !== $this->reportId) {
             $res['reportId'] = $this->reportId;
         }
@@ -42,6 +53,9 @@ class QueryReportDetailRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['format'])) {
+            $model->format = $map['format'];
+        }
         if (isset($map['reportId'])) {
             $model->reportId = $map['reportId'];
         }

@@ -120,6 +120,9 @@ use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\RetainLeaveTypesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ReverseTrialAdvancedLeaveHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ReverseTrialAdvancedLeaveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\ReverseTrialAdvancedLeaveResponse;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SalaryThirdDataIntegrationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SalaryThirdDataIntegrationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SalaryThirdDataIntegrationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SaveCustomWaterMarkTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SaveCustomWaterMarkTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vattendance_1_0\Models\SaveCustomWaterMarkTemplateResponse;
@@ -2924,6 +2927,66 @@ class Dingtalk extends OpenApiClient
         $headers = new ReverseTrialAdvancedLeaveHeaders([]);
 
         return $this->reverseTrialAdvancedLeaveWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 薪酬三方数据写入
+     *  *
+     * @param SalaryThirdDataIntegrationRequest $request SalaryThirdDataIntegrationRequest
+     * @param SalaryThirdDataIntegrationHeaders $headers SalaryThirdDataIntegrationHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SalaryThirdDataIntegrationResponse SalaryThirdDataIntegrationResponse
+     */
+    public function salaryThirdDataIntegrationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizType)) {
+            $body['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->items)) {
+            $body['items'] = $request->items;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SalaryThirdDataIntegration',
+            'version'     => 'attendance_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/attendance/salaries/tripartiteDatas/write',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SalaryThirdDataIntegrationResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 薪酬三方数据写入
+     *  *
+     * @param SalaryThirdDataIntegrationRequest $request SalaryThirdDataIntegrationRequest
+     *
+     * @return SalaryThirdDataIntegrationResponse SalaryThirdDataIntegrationResponse
+     */
+    public function salaryThirdDataIntegration($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SalaryThirdDataIntegrationHeaders([]);
+
+        return $this->salaryThirdDataIntegrationWithOptions($request, $headers, $runtime);
     }
 
     /**

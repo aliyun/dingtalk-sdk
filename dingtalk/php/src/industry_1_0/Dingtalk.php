@@ -72,6 +72,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CampusUpdateRenterResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIAddDatasetPermissionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIAddDatasetPermissionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIAddDatasetPermissionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIListDatasetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIListDatasetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIListDatasetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIQueryDatasetPermissionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIQueryDatasetPermissionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIQueryDatasetPermissionResponse;
@@ -1952,6 +1955,63 @@ class Dingtalk extends OpenApiClient
         $headers = new ChatAIAddDatasetPermissionHeaders([]);
 
         return $this->chatAIAddDatasetPermissionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取chatAI应用下的数据集列表
+     *  *
+     * @param ChatAIListDatasetRequest $request ChatAIListDatasetRequest
+     * @param ChatAIListDatasetHeaders $headers ChatAIListDatasetHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ChatAIListDatasetResponse ChatAIListDatasetResponse
+     */
+    public function chatAIListDatasetWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appId)) {
+            $query['appId'] = $request->appId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatAIListDataset',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatai/datasets',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatAIListDatasetResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取chatAI应用下的数据集列表
+     *  *
+     * @param ChatAIListDatasetRequest $request ChatAIListDatasetRequest
+     *
+     * @return ChatAIListDatasetResponse ChatAIListDatasetResponse
+     */
+    public function chatAIListDataset($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatAIListDatasetHeaders([]);
+
+        return $this->chatAIListDatasetWithOptions($request, $headers, $runtime);
     }
 
     /**

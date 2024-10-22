@@ -20,6 +20,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignQueryIdentityByTicketRes
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignSyncEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignSyncEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignSyncEventResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignUserVerifyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignUserVerifyRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignUserVerifyResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\FinishReviewOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\FinishReviewOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\FinishReviewOrderResponse;
@@ -380,6 +383,66 @@ class Dingtalk extends OpenApiClient
         $headers = new EsignSyncEventHeaders([]);
 
         return $this->esignSyncEventWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 校验钉钉用户能否访问e签宝页面接口
+     *  *
+     * @param EsignUserVerifyRequest $request EsignUserVerifyRequest
+     * @param EsignUserVerifyHeaders $headers EsignUserVerifyHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return EsignUserVerifyResponse EsignUserVerifyResponse
+     */
+    public function esignUserVerifyWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'EsignUserVerify',
+            'version'     => 'contract_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contract/esign/user/verify',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return EsignUserVerifyResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 校验钉钉用户能否访问e签宝页面接口
+     *  *
+     * @param EsignUserVerifyRequest $request EsignUserVerifyRequest
+     *
+     * @return EsignUserVerifyResponse EsignUserVerifyResponse
+     */
+    public function esignUserVerify($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EsignUserVerifyHeaders([]);
+
+        return $this->esignUserVerifyWithOptions($request, $headers, $runtime);
     }
 
     /**

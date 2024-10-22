@@ -159,6 +159,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetRealPeopleRecordsResponse
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetRecognizeRecordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetRecognizeRecordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetRecognizeRecordsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetRobotInfoByCodeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetRobotInfoByCodeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetRobotInfoByCodeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetSecurityConfigMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetSecurityConfigMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetSecurityConfigMemberResponse;
@@ -226,6 +229,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\LogoutResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\OpenBenefitPackageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\OpenBenefitPackageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\OpenBenefitPackageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\OpportunitySearchHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\OpportunitySearchRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\OpportunitySearchResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PreventCheatingCheckRiskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PreventCheatingCheckRiskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\PreventCheatingCheckRiskResponse;
@@ -3760,6 +3766,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据机器人标识查询机器人信息
+     *  *
+     * @param GetRobotInfoByCodeRequest $request GetRobotInfoByCodeRequest
+     * @param GetRobotInfoByCodeHeaders $headers GetRobotInfoByCodeHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetRobotInfoByCodeResponse GetRobotInfoByCodeResponse
+     */
+    public function getRobotInfoByCodeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->robotCode)) {
+            $query['robotCode'] = $request->robotCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetRobotInfoByCode',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/robots/infos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetRobotInfoByCodeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据机器人标识查询机器人信息
+     *  *
+     * @param GetRobotInfoByCodeRequest $request GetRobotInfoByCodeRequest
+     *
+     * @return GetRobotInfoByCodeResponse GetRobotInfoByCodeResponse
+     */
+    public function getRobotInfoByCode($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetRobotInfoByCodeHeaders([]);
+
+        return $this->getRobotInfoByCodeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取安全管控卡片成员
      *  *
      * @param GetSecurityConfigMemberRequest $request GetSecurityConfigMemberRequest
@@ -5132,6 +5195,63 @@ class Dingtalk extends OpenApiClient
         $headers = new OpenBenefitPackageHeaders([]);
 
         return $this->openBenefitPackageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 商机冲突检测
+     *  *
+     * @param OpportunitySearchRequest $request OpportunitySearchRequest
+     * @param OpportunitySearchHeaders $headers OpportunitySearchHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OpportunitySearchResponse OpportunitySearchResponse
+     */
+    public function opportunitySearchWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->targetCorpId)) {
+            $body['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'OpportunitySearch',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/opportunities/check',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OpportunitySearchResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 商机冲突检测
+     *  *
+     * @param OpportunitySearchRequest $request OpportunitySearchRequest
+     *
+     * @return OpportunitySearchResponse OpportunitySearchResponse
+     */
+    public function opportunitySearch($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OpportunitySearchHeaders([]);
+
+        return $this->opportunitySearchWithOptions($request, $headers, $runtime);
     }
 
     /**

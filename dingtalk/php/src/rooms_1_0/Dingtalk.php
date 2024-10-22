@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vrooms_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateBookingBlacklistHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateBookingBlacklistRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateBookingBlacklistResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateDeviceCustomTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateDeviceCustomTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateDeviceCustomTemplateResponse;
@@ -17,6 +20,9 @@ use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateMeetingRoomGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateMeetingRoomHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateMeetingRoomRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\CreateMeetingRoomResponse;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteBookingBlacklistHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteBookingBlacklistRequest;
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteBookingBlacklistResponse;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteDeviceCustomTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteDeviceCustomTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\DeleteDeviceCustomTemplateResponse;
@@ -90,6 +96,75 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 创建预定黑名单
+     *  *
+     * @param CreateBookingBlacklistRequest $request CreateBookingBlacklistRequest
+     * @param CreateBookingBlacklistHeaders $headers CreateBookingBlacklistHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateBookingBlacklistResponse CreateBookingBlacklistResponse
+     */
+    public function createBookingBlacklistWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->blacklistUnionId)) {
+            $body['blacklistUnionId'] = $request->blacklistUnionId;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->memo)) {
+            $body['memo'] = $request->memo;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateBookingBlacklist',
+            'version'     => 'rooms_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/rooms/bookings/blacklist',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateBookingBlacklistResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建预定黑名单
+     *  *
+     * @param CreateBookingBlacklistRequest $request CreateBookingBlacklistRequest
+     *
+     * @return CreateBookingBlacklistResponse CreateBookingBlacklistResponse
+     */
+    public function createBookingBlacklist($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateBookingBlacklistHeaders([]);
+
+        return $this->createBookingBlacklistWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -417,6 +492,66 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateMeetingRoomGroupHeaders([]);
 
         return $this->createMeetingRoomGroupWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除预定黑名单
+     *  *
+     * @param DeleteBookingBlacklistRequest $request DeleteBookingBlacklistRequest
+     * @param DeleteBookingBlacklistHeaders $headers DeleteBookingBlacklistHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteBookingBlacklistResponse DeleteBookingBlacklistResponse
+     */
+    public function deleteBookingBlacklistWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->blacklistUnionIds)) {
+            $body['blacklistUnionIds'] = $request->blacklistUnionIds;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteBookingBlacklist',
+            'version'     => 'rooms_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/rooms/bookings/blacklist/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DeleteBookingBlacklistResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除预定黑名单
+     *  *
+     * @param DeleteBookingBlacklistRequest $request DeleteBookingBlacklistRequest
+     *
+     * @return DeleteBookingBlacklistResponse DeleteBookingBlacklistResponse
+     */
+    public function deleteBookingBlacklist($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteBookingBlacklistHeaders([]);
+
+        return $this->deleteBookingBlacklistWithOptions($request, $headers, $runtime);
     }
 
     /**

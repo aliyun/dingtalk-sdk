@@ -56,6 +56,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryProjectByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryProjectByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryProjectByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryReceiptForInvoiceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryReceiptForInvoiceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryReceiptForInvoiceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QuerySupplierByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QuerySupplierByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QuerySupplierByPageResponse;
@@ -1163,6 +1166,93 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryProjectByPageHeaders([]);
 
         return $this->queryProjectByPageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量查询智能财务单据主数据信息
+     *  *
+     * @param QueryReceiptForInvoiceRequest $request QueryReceiptForInvoiceRequest
+     * @param QueryReceiptForInvoiceHeaders $headers QueryReceiptForInvoiceHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryReceiptForInvoiceResponse QueryReceiptForInvoiceResponse
+     */
+    public function queryReceiptForInvoiceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->accountantBookId)) {
+            $body['accountantBookId'] = $request->accountantBookId;
+        }
+        if (!Utils::isUnset($request->applyStatusList)) {
+            $body['applyStatusList'] = $request->applyStatusList;
+        }
+        if (!Utils::isUnset($request->bizStatusList)) {
+            $body['bizStatusList'] = $request->bizStatusList;
+        }
+        if (!Utils::isUnset($request->companyCode)) {
+            $body['companyCode'] = $request->companyCode;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->receiptStatusList)) {
+            $body['receiptStatusList'] = $request->receiptStatusList;
+        }
+        if (!Utils::isUnset($request->searchParams)) {
+            $body['searchParams'] = $request->searchParams;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryReceiptForInvoice',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/invoices/receipts/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryReceiptForInvoiceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量查询智能财务单据主数据信息
+     *  *
+     * @param QueryReceiptForInvoiceRequest $request QueryReceiptForInvoiceRequest
+     *
+     * @return QueryReceiptForInvoiceResponse QueryReceiptForInvoiceResponse
+     */
+    public function queryReceiptForInvoice($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryReceiptForInvoiceHeaders([]);
+
+        return $this->queryReceiptForInvoiceWithOptions($request, $headers, $runtime);
     }
 
     /**
