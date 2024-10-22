@@ -660,6 +660,124 @@ class Client(OpenApiClient):
         headers = dingtalkcontract__1__0_models.EsignSyncEventHeaders()
         return await self.esign_sync_event_with_options_async(request, headers, runtime)
 
+    def esign_user_verify_with_options(
+        self,
+        request: dingtalkcontract__1__0_models.EsignUserVerifyRequest,
+        headers: dingtalkcontract__1__0_models.EsignUserVerifyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.EsignUserVerifyResponse:
+        """
+        @summary 校验钉钉用户能否访问e签宝页面接口
+        
+        @param request: EsignUserVerifyRequest
+        @param headers: EsignUserVerifyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EsignUserVerifyResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EsignUserVerify',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/esign/user/verify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.EsignUserVerifyResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def esign_user_verify_with_options_async(
+        self,
+        request: dingtalkcontract__1__0_models.EsignUserVerifyRequest,
+        headers: dingtalkcontract__1__0_models.EsignUserVerifyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontract__1__0_models.EsignUserVerifyResponse:
+        """
+        @summary 校验钉钉用户能否访问e签宝页面接口
+        
+        @param request: EsignUserVerifyRequest
+        @param headers: EsignUserVerifyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EsignUserVerifyResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EsignUserVerify',
+            version='contract_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contract/esign/user/verify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontract__1__0_models.EsignUserVerifyResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def esign_user_verify(
+        self,
+        request: dingtalkcontract__1__0_models.EsignUserVerifyRequest,
+    ) -> dingtalkcontract__1__0_models.EsignUserVerifyResponse:
+        """
+        @summary 校验钉钉用户能否访问e签宝页面接口
+        
+        @param request: EsignUserVerifyRequest
+        @return: EsignUserVerifyResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.EsignUserVerifyHeaders()
+        return self.esign_user_verify_with_options(request, headers, runtime)
+
+    async def esign_user_verify_async(
+        self,
+        request: dingtalkcontract__1__0_models.EsignUserVerifyRequest,
+    ) -> dingtalkcontract__1__0_models.EsignUserVerifyResponse:
+        """
+        @summary 校验钉钉用户能否访问e签宝页面接口
+        
+        @param request: EsignUserVerifyRequest
+        @return: EsignUserVerifyResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontract__1__0_models.EsignUserVerifyHeaders()
+        return await self.esign_user_verify_with_options_async(request, headers, runtime)
+
     def finish_review_order_with_options(
         self,
         request: dingtalkcontract__1__0_models.FinishReviewOrderRequest,

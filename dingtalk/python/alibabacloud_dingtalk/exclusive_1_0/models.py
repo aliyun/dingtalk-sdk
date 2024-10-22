@@ -10593,6 +10593,187 @@ class GetRecognizeRecordsResponse(TeaModel):
         return self
 
 
+class GetRobotInfoByCodeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetRobotInfoByCodeRequest(TeaModel):
+    def __init__(
+        self,
+        robot_code: str = None,
+    ):
+        self.robot_code = robot_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        return self
+
+
+class GetRobotInfoByCodeResponseBodyRobotInfoVO(TeaModel):
+    def __init__(
+        self,
+        agent_id: int = None,
+        brief: str = None,
+        description: str = None,
+        name: str = None,
+        robot_organization: int = None,
+    ):
+        self.agent_id = agent_id
+        self.brief = brief
+        self.description = description
+        self.name = name
+        self.robot_organization = robot_organization
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.agent_id is not None:
+            result['agentId'] = self.agent_id
+        if self.brief is not None:
+            result['brief'] = self.brief
+        if self.description is not None:
+            result['description'] = self.description
+        if self.name is not None:
+            result['name'] = self.name
+        if self.robot_organization is not None:
+            result['robotOrganization'] = self.robot_organization
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('agentId') is not None:
+            self.agent_id = m.get('agentId')
+        if m.get('brief') is not None:
+            self.brief = m.get('brief')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('robotOrganization') is not None:
+            self.robot_organization = m.get('robotOrganization')
+        return self
+
+
+class GetRobotInfoByCodeResponseBody(TeaModel):
+    def __init__(
+        self,
+        robot_info_vo: GetRobotInfoByCodeResponseBodyRobotInfoVO = None,
+    ):
+        self.robot_info_vo = robot_info_vo
+
+    def validate(self):
+        if self.robot_info_vo:
+            self.robot_info_vo.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.robot_info_vo is not None:
+            result['robotInfoVO'] = self.robot_info_vo.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('robotInfoVO') is not None:
+            temp_model = GetRobotInfoByCodeResponseBodyRobotInfoVO()
+            self.robot_info_vo = temp_model.from_map(m['robotInfoVO'])
+        return self
+
+
+class GetRobotInfoByCodeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetRobotInfoByCodeResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetRobotInfoByCodeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetSecurityConfigMemberHeaders(TeaModel):
     def __init__(
         self,
@@ -15596,6 +15777,135 @@ class OpenBenefitPackageResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = OpenBenefitPackageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class OpportunitySearchHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class OpportunitySearchRequest(TeaModel):
+    def __init__(
+        self,
+        target_corp_id: str = None,
+    ):
+        # This parameter is required.
+        self.target_corp_id = target_corp_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.target_corp_id is not None:
+            result['targetCorpId'] = self.target_corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('targetCorpId') is not None:
+            self.target_corp_id = m.get('targetCorpId')
+        return self
+
+
+class OpportunitySearchResponseBody(TeaModel):
+    def __init__(
+        self,
+        opportunity_exist: bool = None,
+    ):
+        self.opportunity_exist = opportunity_exist
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.opportunity_exist is not None:
+            result['opportunityExist'] = self.opportunity_exist
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('opportunityExist') is not None:
+            self.opportunity_exist = m.get('opportunityExist')
+        return self
+
+
+class OpportunitySearchResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: OpportunitySearchResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = OpportunitySearchResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

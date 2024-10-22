@@ -598,6 +598,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.format):
+            query['format'] = request.format
         if not UtilClient.is_unset(request.report_id):
             query['reportId'] = request.report_id
         real_headers = {}
@@ -641,6 +643,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.format):
+            query['format'] = request.format
         if not UtilClient.is_unset(request.report_id):
             query['reportId'] = request.report_id
         real_headers = {}

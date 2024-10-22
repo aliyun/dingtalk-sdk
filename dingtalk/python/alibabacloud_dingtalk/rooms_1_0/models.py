@@ -4,6 +4,161 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class CreateBookingBlacklistHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateBookingBlacklistRequest(TeaModel):
+    def __init__(
+        self,
+        blacklist_union_id: str = None,
+        end_time: int = None,
+        memo: str = None,
+        start_time: int = None,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.blacklist_union_id = blacklist_union_id
+        self.end_time = end_time
+        self.memo = memo
+        # This parameter is required.
+        self.start_time = start_time
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.blacklist_union_id is not None:
+            result['blacklistUnionId'] = self.blacklist_union_id
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.memo is not None:
+            result['memo'] = self.memo
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('blacklistUnionId') is not None:
+            self.blacklist_union_id = m.get('blacklistUnionId')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('memo') is not None:
+            self.memo = m.get('memo')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class CreateBookingBlacklistResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class CreateBookingBlacklistResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateBookingBlacklistResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateBookingBlacklistResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateDeviceCustomTemplateHeaders(TeaModel):
     def __init__(
         self,
@@ -933,6 +1088,140 @@ class CreateMeetingRoomGroupResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateMeetingRoomGroupResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteBookingBlacklistHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteBookingBlacklistRequest(TeaModel):
+    def __init__(
+        self,
+        blacklist_union_ids: List[str] = None,
+        union_id: str = None,
+    ):
+        self.blacklist_union_ids = blacklist_union_ids
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.blacklist_union_ids is not None:
+            result['blacklistUnionIds'] = self.blacklist_union_ids
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('blacklistUnionIds') is not None:
+            self.blacklist_union_ids = m.get('blacklistUnionIds')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class DeleteBookingBlacklistResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class DeleteBookingBlacklistResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteBookingBlacklistResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteBookingBlacklistResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2644,6 +2933,7 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
         room_picture: str = None,
         room_staff_id: str = None,
         room_status: int = None,
+        room_union_id: str = None,
     ):
         self.corp_id = corp_id
         self.device_union_ids = device_union_ids
@@ -2659,6 +2949,7 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
         self.room_picture = room_picture
         self.room_staff_id = room_staff_id
         self.room_status = room_status
+        self.room_union_id = room_union_id
 
     def validate(self):
         if self.reservation_authority:
@@ -2708,6 +2999,8 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
             result['roomStaffId'] = self.room_staff_id
         if self.room_status is not None:
             result['roomStatus'] = self.room_status
+        if self.room_union_id is not None:
+            result['roomUnionId'] = self.room_union_id
         return result
 
     def from_map(self, m: dict = None):
@@ -2746,6 +3039,8 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
             self.room_staff_id = m.get('roomStaffId')
         if m.get('roomStatus') is not None:
             self.room_status = m.get('roomStatus')
+        if m.get('roomUnionId') is not None:
+            self.room_union_id = m.get('roomUnionId')
         return self
 
 

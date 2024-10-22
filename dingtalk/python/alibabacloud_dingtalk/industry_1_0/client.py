@@ -2848,6 +2848,120 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.ChatAIAddDatasetPermissionHeaders()
         return await self.chat_aiadd_dataset_permission_with_options_async(request, headers, runtime)
 
+    def chat_ailist_dataset_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatAIListDatasetRequest,
+        headers: dingtalkindustry__1__0_models.ChatAIListDatasetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatAIListDatasetResponse:
+        """
+        @summary 获取chatAI应用下的数据集列表
+        
+        @param request: ChatAIListDatasetRequest
+        @param headers: ChatAIListDatasetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatAIListDatasetResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_id):
+            query['appId'] = request.app_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ChatAIListDataset',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatai/datasets',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatAIListDatasetResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_ailist_dataset_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatAIListDatasetRequest,
+        headers: dingtalkindustry__1__0_models.ChatAIListDatasetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatAIListDatasetResponse:
+        """
+        @summary 获取chatAI应用下的数据集列表
+        
+        @param request: ChatAIListDatasetRequest
+        @param headers: ChatAIListDatasetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatAIListDatasetResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_id):
+            query['appId'] = request.app_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ChatAIListDataset',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatai/datasets',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatAIListDatasetResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_ailist_dataset(
+        self,
+        request: dingtalkindustry__1__0_models.ChatAIListDatasetRequest,
+    ) -> dingtalkindustry__1__0_models.ChatAIListDatasetResponse:
+        """
+        @summary 获取chatAI应用下的数据集列表
+        
+        @param request: ChatAIListDatasetRequest
+        @return: ChatAIListDatasetResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatAIListDatasetHeaders()
+        return self.chat_ailist_dataset_with_options(request, headers, runtime)
+
+    async def chat_ailist_dataset_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatAIListDatasetRequest,
+    ) -> dingtalkindustry__1__0_models.ChatAIListDatasetResponse:
+        """
+        @summary 获取chatAI应用下的数据集列表
+        
+        @param request: ChatAIListDatasetRequest
+        @return: ChatAIListDatasetResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatAIListDatasetHeaders()
+        return await self.chat_ailist_dataset_with_options_async(request, headers, runtime)
+
     def chat_aiquery_dataset_permission_with_options(
         self,
         request: dingtalkindustry__1__0_models.ChatAIQueryDatasetPermissionRequest,

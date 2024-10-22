@@ -5208,6 +5208,124 @@ class Client(OpenApiClient):
         headers = dingtalkattendance__1__0_models.ReverseTrialAdvancedLeaveHeaders()
         return await self.reverse_trial_advanced_leave_with_options_async(request, headers, runtime)
 
+    def salary_third_data_integration_with_options(
+        self,
+        request: dingtalkattendance__1__0_models.SalaryThirdDataIntegrationRequest,
+        headers: dingtalkattendance__1__0_models.SalaryThirdDataIntegrationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.SalaryThirdDataIntegrationResponse:
+        """
+        @summary 薪酬三方数据写入
+        
+        @param request: SalaryThirdDataIntegrationRequest
+        @param headers: SalaryThirdDataIntegrationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SalaryThirdDataIntegrationResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.items):
+            body['items'] = request.items
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SalaryThirdDataIntegration',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/salaries/tripartiteDatas/write',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.SalaryThirdDataIntegrationResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def salary_third_data_integration_with_options_async(
+        self,
+        request: dingtalkattendance__1__0_models.SalaryThirdDataIntegrationRequest,
+        headers: dingtalkattendance__1__0_models.SalaryThirdDataIntegrationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkattendance__1__0_models.SalaryThirdDataIntegrationResponse:
+        """
+        @summary 薪酬三方数据写入
+        
+        @param request: SalaryThirdDataIntegrationRequest
+        @param headers: SalaryThirdDataIntegrationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SalaryThirdDataIntegrationResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.items):
+            body['items'] = request.items
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SalaryThirdDataIntegration',
+            version='attendance_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/attendance/salaries/tripartiteDatas/write',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkattendance__1__0_models.SalaryThirdDataIntegrationResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def salary_third_data_integration(
+        self,
+        request: dingtalkattendance__1__0_models.SalaryThirdDataIntegrationRequest,
+    ) -> dingtalkattendance__1__0_models.SalaryThirdDataIntegrationResponse:
+        """
+        @summary 薪酬三方数据写入
+        
+        @param request: SalaryThirdDataIntegrationRequest
+        @return: SalaryThirdDataIntegrationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.SalaryThirdDataIntegrationHeaders()
+        return self.salary_third_data_integration_with_options(request, headers, runtime)
+
+    async def salary_third_data_integration_async(
+        self,
+        request: dingtalkattendance__1__0_models.SalaryThirdDataIntegrationRequest,
+    ) -> dingtalkattendance__1__0_models.SalaryThirdDataIntegrationResponse:
+        """
+        @summary 薪酬三方数据写入
+        
+        @param request: SalaryThirdDataIntegrationRequest
+        @return: SalaryThirdDataIntegrationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkattendance__1__0_models.SalaryThirdDataIntegrationHeaders()
+        return await self.salary_third_data_integration_with_options_async(request, headers, runtime)
+
     def save_custom_water_mark_template_with_options(
         self,
         request: dingtalkattendance__1__0_models.SaveCustomWaterMarkTemplateRequest,

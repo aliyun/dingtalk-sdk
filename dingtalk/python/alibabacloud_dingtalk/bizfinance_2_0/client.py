@@ -2102,6 +2102,160 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.QueryProjectByPageHeaders()
         return await self.query_project_by_page_with_options_async(request, headers, runtime)
 
+    def query_receipt_for_invoice_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryReceiptForInvoiceRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryReceiptForInvoiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryReceiptForInvoiceResponse:
+        """
+        @summary 批量查询智能财务单据主数据信息
+        
+        @param request: QueryReceiptForInvoiceRequest
+        @param headers: QueryReceiptForInvoiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryReceiptForInvoiceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.accountant_book_id):
+            body['accountantBookId'] = request.accountant_book_id
+        if not UtilClient.is_unset(request.apply_status_list):
+            body['applyStatusList'] = request.apply_status_list
+        if not UtilClient.is_unset(request.biz_status_list):
+            body['bizStatusList'] = request.biz_status_list
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.receipt_status_list):
+            body['receiptStatusList'] = request.receipt_status_list
+        if not UtilClient.is_unset(request.search_params):
+            body['searchParams'] = request.search_params
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryReceiptForInvoice',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/invoices/receipts/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryReceiptForInvoiceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_receipt_for_invoice_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryReceiptForInvoiceRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryReceiptForInvoiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryReceiptForInvoiceResponse:
+        """
+        @summary 批量查询智能财务单据主数据信息
+        
+        @param request: QueryReceiptForInvoiceRequest
+        @param headers: QueryReceiptForInvoiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryReceiptForInvoiceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.accountant_book_id):
+            body['accountantBookId'] = request.accountant_book_id
+        if not UtilClient.is_unset(request.apply_status_list):
+            body['applyStatusList'] = request.apply_status_list
+        if not UtilClient.is_unset(request.biz_status_list):
+            body['bizStatusList'] = request.biz_status_list
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.receipt_status_list):
+            body['receiptStatusList'] = request.receipt_status_list
+        if not UtilClient.is_unset(request.search_params):
+            body['searchParams'] = request.search_params
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryReceiptForInvoice',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/invoices/receipts/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryReceiptForInvoiceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_receipt_for_invoice(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryReceiptForInvoiceRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryReceiptForInvoiceResponse:
+        """
+        @summary 批量查询智能财务单据主数据信息
+        
+        @param request: QueryReceiptForInvoiceRequest
+        @return: QueryReceiptForInvoiceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryReceiptForInvoiceHeaders()
+        return self.query_receipt_for_invoice_with_options(request, headers, runtime)
+
+    async def query_receipt_for_invoice_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryReceiptForInvoiceRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryReceiptForInvoiceResponse:
+        """
+        @summary 批量查询智能财务单据主数据信息
+        
+        @param request: QueryReceiptForInvoiceRequest
+        @return: QueryReceiptForInvoiceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryReceiptForInvoiceHeaders()
+        return await self.query_receipt_for_invoice_with_options_async(request, headers, runtime)
+
     def query_supplier_by_page_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.QuerySupplierByPageRequest,

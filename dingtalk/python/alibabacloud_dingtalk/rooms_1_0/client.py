@@ -26,6 +26,136 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def create_booking_blacklist_with_options(
+        self,
+        request: dingtalkrooms__1__0_models.CreateBookingBlacklistRequest,
+        headers: dingtalkrooms__1__0_models.CreateBookingBlacklistHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.CreateBookingBlacklistResponse:
+        """
+        @summary 创建预定黑名单
+        
+        @param request: CreateBookingBlacklistRequest
+        @param headers: CreateBookingBlacklistHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateBookingBlacklistResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.blacklist_union_id):
+            body['blacklistUnionId'] = request.blacklist_union_id
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.memo):
+            body['memo'] = request.memo
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateBookingBlacklist',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/bookings/blacklist',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.CreateBookingBlacklistResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_booking_blacklist_with_options_async(
+        self,
+        request: dingtalkrooms__1__0_models.CreateBookingBlacklistRequest,
+        headers: dingtalkrooms__1__0_models.CreateBookingBlacklistHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.CreateBookingBlacklistResponse:
+        """
+        @summary 创建预定黑名单
+        
+        @param request: CreateBookingBlacklistRequest
+        @param headers: CreateBookingBlacklistHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateBookingBlacklistResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.blacklist_union_id):
+            body['blacklistUnionId'] = request.blacklist_union_id
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.memo):
+            body['memo'] = request.memo
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateBookingBlacklist',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/bookings/blacklist',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.CreateBookingBlacklistResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_booking_blacklist(
+        self,
+        request: dingtalkrooms__1__0_models.CreateBookingBlacklistRequest,
+    ) -> dingtalkrooms__1__0_models.CreateBookingBlacklistResponse:
+        """
+        @summary 创建预定黑名单
+        
+        @param request: CreateBookingBlacklistRequest
+        @return: CreateBookingBlacklistResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.CreateBookingBlacklistHeaders()
+        return self.create_booking_blacklist_with_options(request, headers, runtime)
+
+    async def create_booking_blacklist_async(
+        self,
+        request: dingtalkrooms__1__0_models.CreateBookingBlacklistRequest,
+    ) -> dingtalkrooms__1__0_models.CreateBookingBlacklistResponse:
+        """
+        @summary 创建预定黑名单
+        
+        @param request: CreateBookingBlacklistRequest
+        @return: CreateBookingBlacklistResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.CreateBookingBlacklistHeaders()
+        return await self.create_booking_blacklist_with_options_async(request, headers, runtime)
+
     def create_device_custom_template_with_options(
         self,
         request: dingtalkrooms__1__0_models.CreateDeviceCustomTemplateRequest,
@@ -613,6 +743,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkrooms__1__0_models.CreateMeetingRoomGroupHeaders()
         return await self.create_meeting_room_group_with_options_async(request, headers, runtime)
+
+    def delete_booking_blacklist_with_options(
+        self,
+        request: dingtalkrooms__1__0_models.DeleteBookingBlacklistRequest,
+        headers: dingtalkrooms__1__0_models.DeleteBookingBlacklistHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.DeleteBookingBlacklistResponse:
+        """
+        @summary 删除预定黑名单
+        
+        @param request: DeleteBookingBlacklistRequest
+        @param headers: DeleteBookingBlacklistHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteBookingBlacklistResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.blacklist_union_ids):
+            body['blacklistUnionIds'] = request.blacklist_union_ids
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteBookingBlacklist',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/bookings/blacklist/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.DeleteBookingBlacklistResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_booking_blacklist_with_options_async(
+        self,
+        request: dingtalkrooms__1__0_models.DeleteBookingBlacklistRequest,
+        headers: dingtalkrooms__1__0_models.DeleteBookingBlacklistHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkrooms__1__0_models.DeleteBookingBlacklistResponse:
+        """
+        @summary 删除预定黑名单
+        
+        @param request: DeleteBookingBlacklistRequest
+        @param headers: DeleteBookingBlacklistHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteBookingBlacklistResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.blacklist_union_ids):
+            body['blacklistUnionIds'] = request.blacklist_union_ids
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteBookingBlacklist',
+            version='rooms_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/rooms/bookings/blacklist/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkrooms__1__0_models.DeleteBookingBlacklistResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_booking_blacklist(
+        self,
+        request: dingtalkrooms__1__0_models.DeleteBookingBlacklistRequest,
+    ) -> dingtalkrooms__1__0_models.DeleteBookingBlacklistResponse:
+        """
+        @summary 删除预定黑名单
+        
+        @param request: DeleteBookingBlacklistRequest
+        @return: DeleteBookingBlacklistResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.DeleteBookingBlacklistHeaders()
+        return self.delete_booking_blacklist_with_options(request, headers, runtime)
+
+    async def delete_booking_blacklist_async(
+        self,
+        request: dingtalkrooms__1__0_models.DeleteBookingBlacklistRequest,
+    ) -> dingtalkrooms__1__0_models.DeleteBookingBlacklistResponse:
+        """
+        @summary 删除预定黑名单
+        
+        @param request: DeleteBookingBlacklistRequest
+        @return: DeleteBookingBlacklistResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkrooms__1__0_models.DeleteBookingBlacklistHeaders()
+        return await self.delete_booking_blacklist_with_options_async(request, headers, runtime)
 
     def delete_device_custom_template_with_options(
         self,

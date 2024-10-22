@@ -1156,8 +1156,10 @@ class QueryReportDetailHeaders(TeaModel):
 class QueryReportDetailRequest(TeaModel):
     def __init__(
         self,
+        format: str = None,
         report_id: str = None,
     ):
+        self.format = format
         # This parameter is required.
         self.report_id = report_id
 
@@ -1170,12 +1172,16 @@ class QueryReportDetailRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.format is not None:
+            result['format'] = self.format
         if self.report_id is not None:
             result['reportId'] = self.report_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('format') is not None:
+            self.format = m.get('format')
         if m.get('reportId') is not None:
             self.report_id = m.get('reportId')
         return self

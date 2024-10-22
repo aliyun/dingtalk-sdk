@@ -3711,6 +3711,570 @@ class QueryProjectByPageResponse(TeaModel):
         return self
 
 
+class QueryReceiptForInvoiceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryReceiptForInvoiceRequest(TeaModel):
+    def __init__(
+        self,
+        accountant_book_id: str = None,
+        apply_status_list: List[str] = None,
+        biz_status_list: List[str] = None,
+        company_code: str = None,
+        end_time: int = None,
+        page_number: int = None,
+        page_size: int = None,
+        receipt_status_list: List[str] = None,
+        search_params: Dict[str, str] = None,
+        start_time: int = None,
+        title: str = None,
+    ):
+        self.accountant_book_id = accountant_book_id
+        self.apply_status_list = apply_status_list
+        self.biz_status_list = biz_status_list
+        self.company_code = company_code
+        self.end_time = end_time
+        self.page_number = page_number
+        self.page_size = page_size
+        self.receipt_status_list = receipt_status_list
+        self.search_params = search_params
+        self.start_time = start_time
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.accountant_book_id is not None:
+            result['accountantBookId'] = self.accountant_book_id
+        if self.apply_status_list is not None:
+            result['applyStatusList'] = self.apply_status_list
+        if self.biz_status_list is not None:
+            result['bizStatusList'] = self.biz_status_list
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.receipt_status_list is not None:
+            result['receiptStatusList'] = self.receipt_status_list
+        if self.search_params is not None:
+            result['searchParams'] = self.search_params
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountantBookId') is not None:
+            self.accountant_book_id = m.get('accountantBookId')
+        if m.get('applyStatusList') is not None:
+            self.apply_status_list = m.get('applyStatusList')
+        if m.get('bizStatusList') is not None:
+            self.biz_status_list = m.get('bizStatusList')
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('receiptStatusList') is not None:
+            self.receipt_status_list = m.get('receiptStatusList')
+        if m.get('searchParams') is not None:
+            self.search_params = m.get('searchParams')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class QueryReceiptForInvoiceResponseBodyListCreator(TeaModel):
+    def __init__(
+        self,
+        avatar_url: str = None,
+        nick: str = None,
+        user_id: str = None,
+    ):
+        self.avatar_url = avatar_url
+        self.nick = nick
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.avatar_url is not None:
+            result['avatarUrl'] = self.avatar_url
+        if self.nick is not None:
+            result['nick'] = self.nick
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('avatarUrl') is not None:
+            self.avatar_url = m.get('avatarUrl')
+        if m.get('nick') is not None:
+            self.nick = m.get('nick')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryReceiptForInvoiceResponseBodyListCustomer(TeaModel):
+    def __init__(
+        self,
+        code: str = None,
+        name: str = None,
+    ):
+        self.code = code
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.code is not None:
+            result['code'] = self.code
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class QueryReceiptForInvoiceResponseBodyListProductInfoList(TeaModel):
+    def __init__(
+        self,
+        amount_with_tax: str = None,
+        amount_without_tax: str = None,
+        discount_amount: str = None,
+        name: str = None,
+        quantity: str = None,
+        specification: str = None,
+        tax_classification_code: str = None,
+        tax_rate: str = None,
+        unit: str = None,
+        unit_price_with_tax: str = None,
+        unit_price_without_tax: str = None,
+        with_tax: bool = None,
+    ):
+        self.amount_with_tax = amount_with_tax
+        self.amount_without_tax = amount_without_tax
+        self.discount_amount = discount_amount
+        self.name = name
+        self.quantity = quantity
+        self.specification = specification
+        self.tax_classification_code = tax_classification_code
+        self.tax_rate = tax_rate
+        self.unit = unit
+        self.unit_price_with_tax = unit_price_with_tax
+        self.unit_price_without_tax = unit_price_without_tax
+        self.with_tax = with_tax
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount_with_tax is not None:
+            result['amountWithTax'] = self.amount_with_tax
+        if self.amount_without_tax is not None:
+            result['amountWithoutTax'] = self.amount_without_tax
+        if self.discount_amount is not None:
+            result['discountAmount'] = self.discount_amount
+        if self.name is not None:
+            result['name'] = self.name
+        if self.quantity is not None:
+            result['quantity'] = self.quantity
+        if self.specification is not None:
+            result['specification'] = self.specification
+        if self.tax_classification_code is not None:
+            result['taxClassificationCode'] = self.tax_classification_code
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.unit is not None:
+            result['unit'] = self.unit
+        if self.unit_price_with_tax is not None:
+            result['unitPriceWithTax'] = self.unit_price_with_tax
+        if self.unit_price_without_tax is not None:
+            result['unitPriceWithoutTax'] = self.unit_price_without_tax
+        if self.with_tax is not None:
+            result['withTax'] = self.with_tax
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amountWithTax') is not None:
+            self.amount_with_tax = m.get('amountWithTax')
+        if m.get('amountWithoutTax') is not None:
+            self.amount_without_tax = m.get('amountWithoutTax')
+        if m.get('discountAmount') is not None:
+            self.discount_amount = m.get('discountAmount')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('quantity') is not None:
+            self.quantity = m.get('quantity')
+        if m.get('specification') is not None:
+            self.specification = m.get('specification')
+        if m.get('taxClassificationCode') is not None:
+            self.tax_classification_code = m.get('taxClassificationCode')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        if m.get('unitPriceWithTax') is not None:
+            self.unit_price_with_tax = m.get('unitPriceWithTax')
+        if m.get('unitPriceWithoutTax') is not None:
+            self.unit_price_without_tax = m.get('unitPriceWithoutTax')
+        if m.get('withTax') is not None:
+            self.with_tax = m.get('withTax')
+        return self
+
+
+class QueryReceiptForInvoiceResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        accountant_book_id: str = None,
+        amount: str = None,
+        apply_status: str = None,
+        biz_status: str = None,
+        business_id: str = None,
+        company_code: str = None,
+        create_time: str = None,
+        creator: QueryReceiptForInvoiceResponseBodyListCreator = None,
+        customer: QueryReceiptForInvoiceResponseBodyListCustomer = None,
+        drawer_email: str = None,
+        drawer_telephone: str = None,
+        invoice_type: str = None,
+        model_id: str = None,
+        product_info_list: List[QueryReceiptForInvoiceResponseBodyListProductInfoList] = None,
+        purchaser_account: str = None,
+        purchaser_address: str = None,
+        purchaser_bank_name: str = None,
+        purchaser_name: str = None,
+        purchaser_tax_no: str = None,
+        purchaser_tel: str = None,
+        receipt_id: str = None,
+        record_time: str = None,
+        remark: str = None,
+        source: str = None,
+        status: str = None,
+        title: str = None,
+    ):
+        self.accountant_book_id = accountant_book_id
+        self.amount = amount
+        self.apply_status = apply_status
+        self.biz_status = biz_status
+        self.business_id = business_id
+        self.company_code = company_code
+        self.create_time = create_time
+        self.creator = creator
+        self.customer = customer
+        self.drawer_email = drawer_email
+        self.drawer_telephone = drawer_telephone
+        self.invoice_type = invoice_type
+        self.model_id = model_id
+        self.product_info_list = product_info_list
+        self.purchaser_account = purchaser_account
+        self.purchaser_address = purchaser_address
+        self.purchaser_bank_name = purchaser_bank_name
+        self.purchaser_name = purchaser_name
+        self.purchaser_tax_no = purchaser_tax_no
+        self.purchaser_tel = purchaser_tel
+        self.receipt_id = receipt_id
+        self.record_time = record_time
+        self.remark = remark
+        self.source = source
+        self.status = status
+        self.title = title
+
+    def validate(self):
+        if self.creator:
+            self.creator.validate()
+        if self.customer:
+            self.customer.validate()
+        if self.product_info_list:
+            for k in self.product_info_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.accountant_book_id is not None:
+            result['accountantBookId'] = self.accountant_book_id
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.apply_status is not None:
+            result['applyStatus'] = self.apply_status
+        if self.biz_status is not None:
+            result['bizStatus'] = self.biz_status
+        if self.business_id is not None:
+            result['businessId'] = self.business_id
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.creator is not None:
+            result['creator'] = self.creator.to_map()
+        if self.customer is not None:
+            result['customer'] = self.customer.to_map()
+        if self.drawer_email is not None:
+            result['drawerEmail'] = self.drawer_email
+        if self.drawer_telephone is not None:
+            result['drawerTelephone'] = self.drawer_telephone
+        if self.invoice_type is not None:
+            result['invoiceType'] = self.invoice_type
+        if self.model_id is not None:
+            result['modelId'] = self.model_id
+        result['productInfoList'] = []
+        if self.product_info_list is not None:
+            for k in self.product_info_list:
+                result['productInfoList'].append(k.to_map() if k else None)
+        if self.purchaser_account is not None:
+            result['purchaserAccount'] = self.purchaser_account
+        if self.purchaser_address is not None:
+            result['purchaserAddress'] = self.purchaser_address
+        if self.purchaser_bank_name is not None:
+            result['purchaserBankName'] = self.purchaser_bank_name
+        if self.purchaser_name is not None:
+            result['purchaserName'] = self.purchaser_name
+        if self.purchaser_tax_no is not None:
+            result['purchaserTaxNo'] = self.purchaser_tax_no
+        if self.purchaser_tel is not None:
+            result['purchaserTel'] = self.purchaser_tel
+        if self.receipt_id is not None:
+            result['receiptId'] = self.receipt_id
+        if self.record_time is not None:
+            result['recordTime'] = self.record_time
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.source is not None:
+            result['source'] = self.source
+        if self.status is not None:
+            result['status'] = self.status
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountantBookId') is not None:
+            self.accountant_book_id = m.get('accountantBookId')
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('applyStatus') is not None:
+            self.apply_status = m.get('applyStatus')
+        if m.get('bizStatus') is not None:
+            self.biz_status = m.get('bizStatus')
+        if m.get('businessId') is not None:
+            self.business_id = m.get('businessId')
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('creator') is not None:
+            temp_model = QueryReceiptForInvoiceResponseBodyListCreator()
+            self.creator = temp_model.from_map(m['creator'])
+        if m.get('customer') is not None:
+            temp_model = QueryReceiptForInvoiceResponseBodyListCustomer()
+            self.customer = temp_model.from_map(m['customer'])
+        if m.get('drawerEmail') is not None:
+            self.drawer_email = m.get('drawerEmail')
+        if m.get('drawerTelephone') is not None:
+            self.drawer_telephone = m.get('drawerTelephone')
+        if m.get('invoiceType') is not None:
+            self.invoice_type = m.get('invoiceType')
+        if m.get('modelId') is not None:
+            self.model_id = m.get('modelId')
+        self.product_info_list = []
+        if m.get('productInfoList') is not None:
+            for k in m.get('productInfoList'):
+                temp_model = QueryReceiptForInvoiceResponseBodyListProductInfoList()
+                self.product_info_list.append(temp_model.from_map(k))
+        if m.get('purchaserAccount') is not None:
+            self.purchaser_account = m.get('purchaserAccount')
+        if m.get('purchaserAddress') is not None:
+            self.purchaser_address = m.get('purchaserAddress')
+        if m.get('purchaserBankName') is not None:
+            self.purchaser_bank_name = m.get('purchaserBankName')
+        if m.get('purchaserName') is not None:
+            self.purchaser_name = m.get('purchaserName')
+        if m.get('purchaserTaxNo') is not None:
+            self.purchaser_tax_no = m.get('purchaserTaxNo')
+        if m.get('purchaserTel') is not None:
+            self.purchaser_tel = m.get('purchaserTel')
+        if m.get('receiptId') is not None:
+            self.receipt_id = m.get('receiptId')
+        if m.get('recordTime') is not None:
+            self.record_time = m.get('recordTime')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('source') is not None:
+            self.source = m.get('source')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class QueryReceiptForInvoiceResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: str = None,
+        list: List[QueryReceiptForInvoiceResponseBodyList] = None,
+        total_count: int = None,
+    ):
+        self.has_more = has_more
+        self.list = list
+        self.total_count = total_count
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = QueryReceiptForInvoiceResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryReceiptForInvoiceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryReceiptForInvoiceResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryReceiptForInvoiceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QuerySupplierByPageHeaders(TeaModel):
     def __init__(
         self,

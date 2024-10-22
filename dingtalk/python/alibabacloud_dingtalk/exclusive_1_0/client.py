@@ -6574,6 +6574,120 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.GetRecognizeRecordsHeaders()
         return await self.get_recognize_records_with_options_async(request, headers, runtime)
 
+    def get_robot_info_by_code_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetRobotInfoByCodeRequest,
+        headers: dingtalkexclusive__1__0_models.GetRobotInfoByCodeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetRobotInfoByCodeResponse:
+        """
+        @summary 根据机器人标识查询机器人信息
+        
+        @param request: GetRobotInfoByCodeRequest
+        @param headers: GetRobotInfoByCodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRobotInfoByCodeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.robot_code):
+            query['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetRobotInfoByCode',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/robots/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetRobotInfoByCodeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_robot_info_by_code_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetRobotInfoByCodeRequest,
+        headers: dingtalkexclusive__1__0_models.GetRobotInfoByCodeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetRobotInfoByCodeResponse:
+        """
+        @summary 根据机器人标识查询机器人信息
+        
+        @param request: GetRobotInfoByCodeRequest
+        @param headers: GetRobotInfoByCodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetRobotInfoByCodeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.robot_code):
+            query['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetRobotInfoByCode',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/robots/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetRobotInfoByCodeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_robot_info_by_code(
+        self,
+        request: dingtalkexclusive__1__0_models.GetRobotInfoByCodeRequest,
+    ) -> dingtalkexclusive__1__0_models.GetRobotInfoByCodeResponse:
+        """
+        @summary 根据机器人标识查询机器人信息
+        
+        @param request: GetRobotInfoByCodeRequest
+        @return: GetRobotInfoByCodeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetRobotInfoByCodeHeaders()
+        return self.get_robot_info_by_code_with_options(request, headers, runtime)
+
+    async def get_robot_info_by_code_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetRobotInfoByCodeRequest,
+    ) -> dingtalkexclusive__1__0_models.GetRobotInfoByCodeResponse:
+        """
+        @summary 根据机器人标识查询机器人信息
+        
+        @param request: GetRobotInfoByCodeRequest
+        @return: GetRobotInfoByCodeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetRobotInfoByCodeHeaders()
+        return await self.get_robot_info_by_code_with_options_async(request, headers, runtime)
+
     def get_security_config_member_with_options(
         self,
         request: dingtalkexclusive__1__0_models.GetSecurityConfigMemberRequest,
@@ -9239,6 +9353,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.OpenBenefitPackageHeaders()
         return await self.open_benefit_package_with_options_async(request, headers, runtime)
+
+    def opportunity_search_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.OpportunitySearchRequest,
+        headers: dingtalkexclusive__1__0_models.OpportunitySearchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.OpportunitySearchResponse:
+        """
+        @summary 商机冲突检测
+        
+        @param request: OpportunitySearchRequest
+        @param headers: OpportunitySearchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpportunitySearchResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OpportunitySearch',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/opportunities/check',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.OpportunitySearchResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def opportunity_search_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.OpportunitySearchRequest,
+        headers: dingtalkexclusive__1__0_models.OpportunitySearchHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.OpportunitySearchResponse:
+        """
+        @summary 商机冲突检测
+        
+        @param request: OpportunitySearchRequest
+        @param headers: OpportunitySearchHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpportunitySearchResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OpportunitySearch',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/opportunities/check',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.OpportunitySearchResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def opportunity_search(
+        self,
+        request: dingtalkexclusive__1__0_models.OpportunitySearchRequest,
+    ) -> dingtalkexclusive__1__0_models.OpportunitySearchResponse:
+        """
+        @summary 商机冲突检测
+        
+        @param request: OpportunitySearchRequest
+        @return: OpportunitySearchResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.OpportunitySearchHeaders()
+        return self.opportunity_search_with_options(request, headers, runtime)
+
+    async def opportunity_search_async(
+        self,
+        request: dingtalkexclusive__1__0_models.OpportunitySearchRequest,
+    ) -> dingtalkexclusive__1__0_models.OpportunitySearchResponse:
+        """
+        @summary 商机冲突检测
+        
+        @param request: OpportunitySearchRequest
+        @return: OpportunitySearchResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.OpportunitySearchHeaders()
+        return await self.opportunity_search_with_options_async(request, headers, runtime)
 
     def prevent_cheating_check_risk_with_options(
         self,
