@@ -948,6 +948,132 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.GetSupplierHeaders()
         return await self.get_supplier_with_options_async(request, headers, runtime)
 
+    def issue_invoice_with_order_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.IssueInvoiceWithOrderRequest,
+        headers: dingtalkbizfinance__2__0_models.IssueInvoiceWithOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.IssueInvoiceWithOrderResponse:
+        """
+        @summary 订单开票
+        
+        @param request: IssueInvoiceWithOrderRequest
+        @param headers: IssueInvoiceWithOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: IssueInvoiceWithOrderResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.finance_app_key):
+            body['financeAppKey'] = request.finance_app_key
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.signature):
+            body['signature'] = request.signature
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='IssueInvoiceWithOrder',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/issueInvoices/order',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.IssueInvoiceWithOrderResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def issue_invoice_with_order_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.IssueInvoiceWithOrderRequest,
+        headers: dingtalkbizfinance__2__0_models.IssueInvoiceWithOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.IssueInvoiceWithOrderResponse:
+        """
+        @summary 订单开票
+        
+        @param request: IssueInvoiceWithOrderRequest
+        @param headers: IssueInvoiceWithOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: IssueInvoiceWithOrderResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.finance_app_key):
+            body['financeAppKey'] = request.finance_app_key
+        if not UtilClient.is_unset(request.operator):
+            body['operator'] = request.operator
+        if not UtilClient.is_unset(request.signature):
+            body['signature'] = request.signature
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='IssueInvoiceWithOrder',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/issueInvoices/order',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.IssueInvoiceWithOrderResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def issue_invoice_with_order(
+        self,
+        request: dingtalkbizfinance__2__0_models.IssueInvoiceWithOrderRequest,
+    ) -> dingtalkbizfinance__2__0_models.IssueInvoiceWithOrderResponse:
+        """
+        @summary 订单开票
+        
+        @param request: IssueInvoiceWithOrderRequest
+        @return: IssueInvoiceWithOrderResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.IssueInvoiceWithOrderHeaders()
+        return self.issue_invoice_with_order_with_options(request, headers, runtime)
+
+    async def issue_invoice_with_order_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.IssueInvoiceWithOrderRequest,
+    ) -> dingtalkbizfinance__2__0_models.IssueInvoiceWithOrderResponse:
+        """
+        @summary 订单开票
+        
+        @param request: IssueInvoiceWithOrderRequest
+        @return: IssueInvoiceWithOrderResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.IssueInvoiceWithOrderHeaders()
+        return await self.issue_invoice_with_order_with_options_async(request, headers, runtime)
+
     def link_common_invoke_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.LinkCommonInvokeRequest,

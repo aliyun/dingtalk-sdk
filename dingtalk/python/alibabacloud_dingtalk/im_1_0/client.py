@@ -1580,6 +1580,106 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.CountOpenMsgSceneGroupsHeaders()
         return await self.count_open_msg_scene_groups_with_options_async(request, headers, runtime)
 
+    def count_scene_groups_by_template_id_with_options(
+        self,
+        template_id: str,
+        headers: dingtalkim__1__0_models.CountSceneGroupsByTemplateIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CountSceneGroupsByTemplateIdResponse:
+        """
+        @summary 查询群模板关联的群数量
+        
+        @param headers: CountSceneGroupsByTemplateIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CountSceneGroupsByTemplateIdResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='CountSceneGroupsByTemplateId',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/sceneGroups/templates/{template_id}/counts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CountSceneGroupsByTemplateIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def count_scene_groups_by_template_id_with_options_async(
+        self,
+        template_id: str,
+        headers: dingtalkim__1__0_models.CountSceneGroupsByTemplateIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CountSceneGroupsByTemplateIdResponse:
+        """
+        @summary 查询群模板关联的群数量
+        
+        @param headers: CountSceneGroupsByTemplateIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CountSceneGroupsByTemplateIdResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='CountSceneGroupsByTemplateId',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/sceneGroups/templates/{template_id}/counts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CountSceneGroupsByTemplateIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def count_scene_groups_by_template_id(
+        self,
+        template_id: str,
+    ) -> dingtalkim__1__0_models.CountSceneGroupsByTemplateIdResponse:
+        """
+        @summary 查询群模板关联的群数量
+        
+        @return: CountSceneGroupsByTemplateIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CountSceneGroupsByTemplateIdHeaders()
+        return self.count_scene_groups_by_template_id_with_options(template_id, headers, runtime)
+
+    async def count_scene_groups_by_template_id_async(
+        self,
+        template_id: str,
+    ) -> dingtalkim__1__0_models.CountSceneGroupsByTemplateIdResponse:
+        """
+        @summary 查询群模板关联的群数量
+        
+        @return: CountSceneGroupsByTemplateIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CountSceneGroupsByTemplateIdHeaders()
+        return await self.count_scene_groups_by_template_id_with_options_async(template_id, headers, runtime)
+
     def create_couple_group_conversation_with_options(
         self,
         request: dingtalkim__1__0_models.CreateCoupleGroupConversationRequest,
@@ -4819,6 +4919,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.ListOrgTextEmotionHeaders()
         return await self.list_org_text_emotion_with_options_async(headers, runtime)
+
+    def list_scene_groups_by_template_id_with_options(
+        self,
+        template_id: str,
+        request: dingtalkim__1__0_models.ListSceneGroupsByTemplateIdRequest,
+        headers: dingtalkim__1__0_models.ListSceneGroupsByTemplateIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.ListSceneGroupsByTemplateIdResponse:
+        """
+        @summary 根据模板id查询关联的群
+        
+        @param request: ListSceneGroupsByTemplateIdRequest
+        @param headers: ListSceneGroupsByTemplateIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListSceneGroupsByTemplateIdResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListSceneGroupsByTemplateId',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/sceneGroups/templates/{template_id}/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.ListSceneGroupsByTemplateIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_scene_groups_by_template_id_with_options_async(
+        self,
+        template_id: str,
+        request: dingtalkim__1__0_models.ListSceneGroupsByTemplateIdRequest,
+        headers: dingtalkim__1__0_models.ListSceneGroupsByTemplateIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.ListSceneGroupsByTemplateIdResponse:
+        """
+        @summary 根据模板id查询关联的群
+        
+        @param request: ListSceneGroupsByTemplateIdRequest
+        @param headers: ListSceneGroupsByTemplateIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListSceneGroupsByTemplateIdResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListSceneGroupsByTemplateId',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/sceneGroups/templates/{template_id}/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.ListSceneGroupsByTemplateIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_scene_groups_by_template_id(
+        self,
+        template_id: str,
+        request: dingtalkim__1__0_models.ListSceneGroupsByTemplateIdRequest,
+    ) -> dingtalkim__1__0_models.ListSceneGroupsByTemplateIdResponse:
+        """
+        @summary 根据模板id查询关联的群
+        
+        @param request: ListSceneGroupsByTemplateIdRequest
+        @return: ListSceneGroupsByTemplateIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.ListSceneGroupsByTemplateIdHeaders()
+        return self.list_scene_groups_by_template_id_with_options(template_id, request, headers, runtime)
+
+    async def list_scene_groups_by_template_id_async(
+        self,
+        template_id: str,
+        request: dingtalkim__1__0_models.ListSceneGroupsByTemplateIdRequest,
+    ) -> dingtalkim__1__0_models.ListSceneGroupsByTemplateIdResponse:
+        """
+        @summary 根据模板id查询关联的群
+        
+        @param request: ListSceneGroupsByTemplateIdRequest
+        @return: ListSceneGroupsByTemplateIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.ListSceneGroupsByTemplateIdHeaders()
+        return await self.list_scene_groups_by_template_id_with_options_async(template_id, request, headers, runtime)
 
     def offline_unfurling_register_with_options(
         self,

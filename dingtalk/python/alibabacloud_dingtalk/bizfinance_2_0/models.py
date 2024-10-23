@@ -1346,6 +1346,396 @@ class GetSupplierResponse(TeaModel):
         return self
 
 
+class IssueInvoiceWithOrderHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class IssueInvoiceWithOrderRequestContentAdditionInfo(TeaModel):
+    def __init__(
+        self,
+        addition_content: str = None,
+        addition_name: str = None,
+        data_type: int = None,
+    ):
+        self.addition_content = addition_content
+        self.addition_name = addition_name
+        self.data_type = data_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.addition_content is not None:
+            result['additionContent'] = self.addition_content
+        if self.addition_name is not None:
+            result['additionName'] = self.addition_name
+        if self.data_type is not None:
+            result['dataType'] = self.data_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('additionContent') is not None:
+            self.addition_content = m.get('additionContent')
+        if m.get('additionName') is not None:
+            self.addition_name = m.get('additionName')
+        if m.get('dataType') is not None:
+            self.data_type = m.get('dataType')
+        return self
+
+
+class IssueInvoiceWithOrderRequestContentProducts(TeaModel):
+    def __init__(
+        self,
+        amount_include_tax: str = None,
+        product_name: str = None,
+        quantity: str = None,
+        revenue_code: str = None,
+        specs: str = None,
+        tax_sign: str = None,
+        unit: str = None,
+    ):
+        self.amount_include_tax = amount_include_tax
+        self.product_name = product_name
+        self.quantity = quantity
+        self.revenue_code = revenue_code
+        self.specs = specs
+        self.tax_sign = tax_sign
+        self.unit = unit
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount_include_tax is not None:
+            result['amountIncludeTax'] = self.amount_include_tax
+        if self.product_name is not None:
+            result['productName'] = self.product_name
+        if self.quantity is not None:
+            result['quantity'] = self.quantity
+        if self.revenue_code is not None:
+            result['revenueCode'] = self.revenue_code
+        if self.specs is not None:
+            result['specs'] = self.specs
+        if self.tax_sign is not None:
+            result['taxSign'] = self.tax_sign
+        if self.unit is not None:
+            result['unit'] = self.unit
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amountIncludeTax') is not None:
+            self.amount_include_tax = m.get('amountIncludeTax')
+        if m.get('productName') is not None:
+            self.product_name = m.get('productName')
+        if m.get('quantity') is not None:
+            self.quantity = m.get('quantity')
+        if m.get('revenueCode') is not None:
+            self.revenue_code = m.get('revenueCode')
+        if m.get('specs') is not None:
+            self.specs = m.get('specs')
+        if m.get('taxSign') is not None:
+            self.tax_sign = m.get('taxSign')
+        if m.get('unit') is not None:
+            self.unit = m.get('unit')
+        return self
+
+
+class IssueInvoiceWithOrderRequestContent(TeaModel):
+    def __init__(
+        self,
+        addition_info: List[IssueInvoiceWithOrderRequestContentAdditionInfo] = None,
+        apply_person: str = None,
+        bank_account: str = None,
+        bank_name: str = None,
+        invoice_remark: str = None,
+        invoice_type: int = None,
+        natural_person: str = None,
+        order_id: str = None,
+        payee: str = None,
+        phone: str = None,
+        products: List[IssueInvoiceWithOrderRequestContentProducts] = None,
+        purchaser: str = None,
+        purchaser_address: str = None,
+        purchaser_tel: str = None,
+        remark: str = None,
+        reviewer: str = None,
+        taxnum: str = None,
+    ):
+        self.addition_info = addition_info
+        self.apply_person = apply_person
+        self.bank_account = bank_account
+        self.bank_name = bank_name
+        self.invoice_remark = invoice_remark
+        self.invoice_type = invoice_type
+        self.natural_person = natural_person
+        self.order_id = order_id
+        self.payee = payee
+        self.phone = phone
+        self.products = products
+        self.purchaser = purchaser
+        self.purchaser_address = purchaser_address
+        self.purchaser_tel = purchaser_tel
+        self.remark = remark
+        self.reviewer = reviewer
+        self.taxnum = taxnum
+
+    def validate(self):
+        if self.addition_info:
+            for k in self.addition_info:
+                if k:
+                    k.validate()
+        if self.products:
+            for k in self.products:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['additionInfo'] = []
+        if self.addition_info is not None:
+            for k in self.addition_info:
+                result['additionInfo'].append(k.to_map() if k else None)
+        if self.apply_person is not None:
+            result['applyPerson'] = self.apply_person
+        if self.bank_account is not None:
+            result['bankAccount'] = self.bank_account
+        if self.bank_name is not None:
+            result['bankName'] = self.bank_name
+        if self.invoice_remark is not None:
+            result['invoiceRemark'] = self.invoice_remark
+        if self.invoice_type is not None:
+            result['invoiceType'] = self.invoice_type
+        if self.natural_person is not None:
+            result['naturalPerson'] = self.natural_person
+        if self.order_id is not None:
+            result['orderId'] = self.order_id
+        if self.payee is not None:
+            result['payee'] = self.payee
+        if self.phone is not None:
+            result['phone'] = self.phone
+        result['products'] = []
+        if self.products is not None:
+            for k in self.products:
+                result['products'].append(k.to_map() if k else None)
+        if self.purchaser is not None:
+            result['purchaser'] = self.purchaser
+        if self.purchaser_address is not None:
+            result['purchaserAddress'] = self.purchaser_address
+        if self.purchaser_tel is not None:
+            result['purchaserTel'] = self.purchaser_tel
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.reviewer is not None:
+            result['reviewer'] = self.reviewer
+        if self.taxnum is not None:
+            result['taxnum'] = self.taxnum
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.addition_info = []
+        if m.get('additionInfo') is not None:
+            for k in m.get('additionInfo'):
+                temp_model = IssueInvoiceWithOrderRequestContentAdditionInfo()
+                self.addition_info.append(temp_model.from_map(k))
+        if m.get('applyPerson') is not None:
+            self.apply_person = m.get('applyPerson')
+        if m.get('bankAccount') is not None:
+            self.bank_account = m.get('bankAccount')
+        if m.get('bankName') is not None:
+            self.bank_name = m.get('bankName')
+        if m.get('invoiceRemark') is not None:
+            self.invoice_remark = m.get('invoiceRemark')
+        if m.get('invoiceType') is not None:
+            self.invoice_type = m.get('invoiceType')
+        if m.get('naturalPerson') is not None:
+            self.natural_person = m.get('naturalPerson')
+        if m.get('orderId') is not None:
+            self.order_id = m.get('orderId')
+        if m.get('payee') is not None:
+            self.payee = m.get('payee')
+        if m.get('phone') is not None:
+            self.phone = m.get('phone')
+        self.products = []
+        if m.get('products') is not None:
+            for k in m.get('products'):
+                temp_model = IssueInvoiceWithOrderRequestContentProducts()
+                self.products.append(temp_model.from_map(k))
+        if m.get('purchaser') is not None:
+            self.purchaser = m.get('purchaser')
+        if m.get('purchaserAddress') is not None:
+            self.purchaser_address = m.get('purchaserAddress')
+        if m.get('purchaserTel') is not None:
+            self.purchaser_tel = m.get('purchaserTel')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('reviewer') is not None:
+            self.reviewer = m.get('reviewer')
+        if m.get('taxnum') is not None:
+            self.taxnum = m.get('taxnum')
+        return self
+
+
+class IssueInvoiceWithOrderRequest(TeaModel):
+    def __init__(
+        self,
+        content: IssueInvoiceWithOrderRequestContent = None,
+        finance_app_key: str = None,
+        operator: str = None,
+        signature: str = None,
+    ):
+        self.content = content
+        self.finance_app_key = finance_app_key
+        self.operator = operator
+        self.signature = signature
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        if self.finance_app_key is not None:
+            result['financeAppKey'] = self.finance_app_key
+        if self.operator is not None:
+            result['operator'] = self.operator
+        if self.signature is not None:
+            result['signature'] = self.signature
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            temp_model = IssueInvoiceWithOrderRequestContent()
+            self.content = temp_model.from_map(m['content'])
+        if m.get('financeAppKey') is not None:
+            self.finance_app_key = m.get('financeAppKey')
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        if m.get('signature') is not None:
+            self.signature = m.get('signature')
+        return self
+
+
+class IssueInvoiceWithOrderResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class IssueInvoiceWithOrderResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: IssueInvoiceWithOrderResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = IssueInvoiceWithOrderResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class LinkCommonInvokeHeaders(TeaModel):
     def __init__(
         self,
