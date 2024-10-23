@@ -836,6 +836,52 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询群模板关联的群数量</p>
+     * 
+     * @param headers CountSceneGroupsByTemplateIdHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CountSceneGroupsByTemplateIdResponse
+     */
+    public CountSceneGroupsByTemplateIdResponse countSceneGroupsByTemplateIdWithOptions(String templateId, CountSceneGroupsByTemplateIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CountSceneGroupsByTemplateId"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/chats/sceneGroups/templates/" + templateId + "/counts"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CountSceneGroupsByTemplateIdResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询群模板关联的群数量</p>
+     * @return CountSceneGroupsByTemplateIdResponse
+     */
+    public CountSceneGroupsByTemplateIdResponse countSceneGroupsByTemplateId(String templateId) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CountSceneGroupsByTemplateIdHeaders headers = new CountSceneGroupsByTemplateIdHeaders();
+        return this.countSceneGroupsByTemplateIdWithOptions(templateId, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>创建钉外两人群</p>
      * 
      * @param request CreateCoupleGroupConversationRequest
@@ -2634,6 +2680,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListOrgTextEmotionHeaders headers = new ListOrgTextEmotionHeaders();
         return this.listOrgTextEmotionWithOptions(headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>根据模板id查询关联的群</p>
+     * 
+     * @param request ListSceneGroupsByTemplateIdRequest
+     * @param headers ListSceneGroupsByTemplateIdHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListSceneGroupsByTemplateIdResponse
+     */
+    public ListSceneGroupsByTemplateIdResponse listSceneGroupsByTemplateIdWithOptions(String templateId, ListSceneGroupsByTemplateIdRequest request, ListSceneGroupsByTemplateIdHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            query.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            query.put("pageSize", request.pageSize);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListSceneGroupsByTemplateId"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/chats/sceneGroups/templates/" + templateId + "/lists"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListSceneGroupsByTemplateIdResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>根据模板id查询关联的群</p>
+     * 
+     * @param request ListSceneGroupsByTemplateIdRequest
+     * @return ListSceneGroupsByTemplateIdResponse
+     */
+    public ListSceneGroupsByTemplateIdResponse listSceneGroupsByTemplateId(String templateId, ListSceneGroupsByTemplateIdRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListSceneGroupsByTemplateIdHeaders headers = new ListSceneGroupsByTemplateIdHeaders();
+        return this.listSceneGroupsByTemplateIdWithOptions(templateId, request, headers, runtime);
     }
 
     /**
