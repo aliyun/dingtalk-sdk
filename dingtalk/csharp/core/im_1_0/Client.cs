@@ -2114,6 +2114,126 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询群模板关联的群数量</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// CountSceneGroupsByTemplateIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CountSceneGroupsByTemplateIdResponse
+        /// </returns>
+        public CountSceneGroupsByTemplateIdResponse CountSceneGroupsByTemplateIdWithOptions(string templateId, CountSceneGroupsByTemplateIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CountSceneGroupsByTemplateId",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/chats/sceneGroups/templates/" + templateId + "/counts",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CountSceneGroupsByTemplateIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询群模板关联的群数量</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// CountSceneGroupsByTemplateIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CountSceneGroupsByTemplateIdResponse
+        /// </returns>
+        public async Task<CountSceneGroupsByTemplateIdResponse> CountSceneGroupsByTemplateIdWithOptionsAsync(string templateId, CountSceneGroupsByTemplateIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CountSceneGroupsByTemplateId",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/chats/sceneGroups/templates/" + templateId + "/counts",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CountSceneGroupsByTemplateIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询群模板关联的群数量</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// CountSceneGroupsByTemplateIdResponse
+        /// </returns>
+        public CountSceneGroupsByTemplateIdResponse CountSceneGroupsByTemplateId(string templateId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CountSceneGroupsByTemplateIdHeaders headers = new CountSceneGroupsByTemplateIdHeaders();
+            return CountSceneGroupsByTemplateIdWithOptions(templateId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询群模板关联的群数量</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// CountSceneGroupsByTemplateIdResponse
+        /// </returns>
+        public async Task<CountSceneGroupsByTemplateIdResponse> CountSceneGroupsByTemplateIdAsync(string templateId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CountSceneGroupsByTemplateIdHeaders headers = new CountSceneGroupsByTemplateIdHeaders();
+            return await CountSceneGroupsByTemplateIdWithOptionsAsync(templateId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>创建钉外两人群</para>
         /// </summary>
         /// 
@@ -6606,6 +6726,162 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListOrgTextEmotionHeaders headers = new ListOrgTextEmotionHeaders();
             return await ListOrgTextEmotionWithOptionsAsync(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据模板id查询关联的群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListSceneGroupsByTemplateIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListSceneGroupsByTemplateIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListSceneGroupsByTemplateIdResponse
+        /// </returns>
+        public ListSceneGroupsByTemplateIdResponse ListSceneGroupsByTemplateIdWithOptions(string templateId, ListSceneGroupsByTemplateIdRequest request, ListSceneGroupsByTemplateIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListSceneGroupsByTemplateId",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/chats/sceneGroups/templates/" + templateId + "/lists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListSceneGroupsByTemplateIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据模板id查询关联的群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListSceneGroupsByTemplateIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListSceneGroupsByTemplateIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListSceneGroupsByTemplateIdResponse
+        /// </returns>
+        public async Task<ListSceneGroupsByTemplateIdResponse> ListSceneGroupsByTemplateIdWithOptionsAsync(string templateId, ListSceneGroupsByTemplateIdRequest request, ListSceneGroupsByTemplateIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListSceneGroupsByTemplateId",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/chats/sceneGroups/templates/" + templateId + "/lists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListSceneGroupsByTemplateIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据模板id查询关联的群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListSceneGroupsByTemplateIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListSceneGroupsByTemplateIdResponse
+        /// </returns>
+        public ListSceneGroupsByTemplateIdResponse ListSceneGroupsByTemplateId(string templateId, ListSceneGroupsByTemplateIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListSceneGroupsByTemplateIdHeaders headers = new ListSceneGroupsByTemplateIdHeaders();
+            return ListSceneGroupsByTemplateIdWithOptions(templateId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据模板id查询关联的群</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListSceneGroupsByTemplateIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListSceneGroupsByTemplateIdResponse
+        /// </returns>
+        public async Task<ListSceneGroupsByTemplateIdResponse> ListSceneGroupsByTemplateIdAsync(string templateId, ListSceneGroupsByTemplateIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListSceneGroupsByTemplateIdHeaders headers = new ListSceneGroupsByTemplateIdHeaders();
+            return await ListSceneGroupsByTemplateIdWithOptionsAsync(templateId, request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

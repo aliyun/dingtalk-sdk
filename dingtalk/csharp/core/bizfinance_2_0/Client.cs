@@ -1236,6 +1236,178 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>订单开票</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IssueInvoiceWithOrderRequest
+        /// </param>
+        /// <param name="headers">
+        /// IssueInvoiceWithOrderHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IssueInvoiceWithOrderResponse
+        /// </returns>
+        public IssueInvoiceWithOrderResponse IssueInvoiceWithOrderWithOptions(IssueInvoiceWithOrderRequest request, IssueInvoiceWithOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
+            {
+                body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FinanceAppKey))
+            {
+                body["financeAppKey"] = request.FinanceAppKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Signature))
+            {
+                body["signature"] = request.Signature;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "IssueInvoiceWithOrder",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/issueInvoices/order",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<IssueInvoiceWithOrderResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>订单开票</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IssueInvoiceWithOrderRequest
+        /// </param>
+        /// <param name="headers">
+        /// IssueInvoiceWithOrderHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IssueInvoiceWithOrderResponse
+        /// </returns>
+        public async Task<IssueInvoiceWithOrderResponse> IssueInvoiceWithOrderWithOptionsAsync(IssueInvoiceWithOrderRequest request, IssueInvoiceWithOrderHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Content))
+            {
+                body["content"] = request.Content;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FinanceAppKey))
+            {
+                body["financeAppKey"] = request.FinanceAppKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                body["operator"] = request.Operator;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Signature))
+            {
+                body["signature"] = request.Signature;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "IssueInvoiceWithOrder",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/issueInvoices/order",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<IssueInvoiceWithOrderResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>订单开票</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IssueInvoiceWithOrderRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IssueInvoiceWithOrderResponse
+        /// </returns>
+        public IssueInvoiceWithOrderResponse IssueInvoiceWithOrder(IssueInvoiceWithOrderRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            IssueInvoiceWithOrderHeaders headers = new IssueInvoiceWithOrderHeaders();
+            return IssueInvoiceWithOrderWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>订单开票</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IssueInvoiceWithOrderRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IssueInvoiceWithOrderResponse
+        /// </returns>
+        public async Task<IssueInvoiceWithOrderResponse> IssueInvoiceWithOrderAsync(IssueInvoiceWithOrderRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            IssueInvoiceWithOrderHeaders headers = new IssueInvoiceWithOrderHeaders();
+            return await IssueInvoiceWithOrderWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>根据不同的bizType查询不同的数据</para>
         /// </summary>
         /// 
