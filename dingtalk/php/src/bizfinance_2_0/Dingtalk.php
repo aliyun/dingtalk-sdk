@@ -29,6 +29,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetReceiptResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetSupplierHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetSupplierRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetSupplierResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\IssueInvoiceWithOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\IssueInvoiceWithOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\IssueInvoiceWithOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\LinkCommonInvokeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\LinkCommonInvokeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\LinkCommonInvokeResponse;
@@ -559,6 +562,72 @@ class Dingtalk extends OpenApiClient
         $headers = new GetSupplierHeaders([]);
 
         return $this->getSupplierWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 订单开票
+     *  *
+     * @param IssueInvoiceWithOrderRequest $request IssueInvoiceWithOrderRequest
+     * @param IssueInvoiceWithOrderHeaders $headers IssueInvoiceWithOrderHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return IssueInvoiceWithOrderResponse IssueInvoiceWithOrderResponse
+     */
+    public function issueInvoiceWithOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->content)) {
+            $body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->financeAppKey)) {
+            $body['financeAppKey'] = $request->financeAppKey;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            $body['operator'] = $request->operator;
+        }
+        if (!Utils::isUnset($request->signature)) {
+            $body['signature'] = $request->signature;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'IssueInvoiceWithOrder',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/issueInvoices/order',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return IssueInvoiceWithOrderResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 订单开票
+     *  *
+     * @param IssueInvoiceWithOrderRequest $request IssueInvoiceWithOrderRequest
+     *
+     * @return IssueInvoiceWithOrderResponse IssueInvoiceWithOrderResponse
+     */
+    public function issueInvoiceWithOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IssueInvoiceWithOrderHeaders([]);
+
+        return $this->issueInvoiceWithOrderWithOptions($request, $headers, $runtime);
     }
 
     /**

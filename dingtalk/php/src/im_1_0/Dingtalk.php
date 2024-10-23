@@ -45,6 +45,8 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CopyUnfurlingRegisterResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CountOpenMsgSceneGroupsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CountOpenMsgSceneGroupsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CountOpenMsgSceneGroupsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CountSceneGroupsByTemplateIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CountSceneGroupsByTemplateIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateCoupleGroupConversationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateCoupleGroupConversationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateCoupleGroupConversationResponse;
@@ -119,6 +121,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceReques
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListOrgTextEmotionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListOrgTextEmotionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListSceneGroupsByTemplateIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListSceneGroupsByTemplateIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListSceneGroupsByTemplateIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OfflineUnfurlingRegisterHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OfflineUnfurlingRegisterRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\OfflineUnfurlingRegisterResponse;
@@ -1106,6 +1111,57 @@ class Dingtalk extends OpenApiClient
         $headers = new CountOpenMsgSceneGroupsHeaders([]);
 
         return $this->countOpenMsgSceneGroupsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询群模板关联的群数量
+     *  *
+     * @param string                              $templateId
+     * @param CountSceneGroupsByTemplateIdHeaders $headers    CountSceneGroupsByTemplateIdHeaders
+     * @param RuntimeOptions                      $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return CountSceneGroupsByTemplateIdResponse CountSceneGroupsByTemplateIdResponse
+     */
+    public function countSceneGroupsByTemplateIdWithOptions($templateId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'CountSceneGroupsByTemplateId',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/chats/sceneGroups/templates/' . $templateId . '/counts',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CountSceneGroupsByTemplateIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询群模板关联的群数量
+     *  *
+     * @param string $templateId
+     *
+     * @return CountSceneGroupsByTemplateIdResponse CountSceneGroupsByTemplateIdResponse
+     */
+    public function countSceneGroupsByTemplateId($templateId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CountSceneGroupsByTemplateIdHeaders([]);
+
+        return $this->countSceneGroupsByTemplateIdWithOptions($templateId, $headers, $runtime);
     }
 
     /**
@@ -2831,6 +2887,68 @@ class Dingtalk extends OpenApiClient
         $headers = new ListOrgTextEmotionHeaders([]);
 
         return $this->listOrgTextEmotionWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @summary 根据模板id查询关联的群
+     *  *
+     * @param string                             $templateId
+     * @param ListSceneGroupsByTemplateIdRequest $request    ListSceneGroupsByTemplateIdRequest
+     * @param ListSceneGroupsByTemplateIdHeaders $headers    ListSceneGroupsByTemplateIdHeaders
+     * @param RuntimeOptions                     $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return ListSceneGroupsByTemplateIdResponse ListSceneGroupsByTemplateIdResponse
+     */
+    public function listSceneGroupsByTemplateIdWithOptions($templateId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ListSceneGroupsByTemplateId',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/chats/sceneGroups/templates/' . $templateId . '/lists',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListSceneGroupsByTemplateIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据模板id查询关联的群
+     *  *
+     * @param string                             $templateId
+     * @param ListSceneGroupsByTemplateIdRequest $request    ListSceneGroupsByTemplateIdRequest
+     *
+     * @return ListSceneGroupsByTemplateIdResponse ListSceneGroupsByTemplateIdResponse
+     */
+    public function listSceneGroupsByTemplateId($templateId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListSceneGroupsByTemplateIdHeaders([]);
+
+        return $this->listSceneGroupsByTemplateIdWithOptions($templateId, $request, $headers, $runtime);
     }
 
     /**
