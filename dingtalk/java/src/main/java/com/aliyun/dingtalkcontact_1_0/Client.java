@@ -2909,6 +2909,57 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>更新企业账号电话可见性</p>
+     * 
+     * @param request OrgAccountMobileVisiblePermissonRequest
+     * @param headers OrgAccountMobileVisiblePermissonHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return OrgAccountMobileVisiblePermissonResponse
+     */
+    public OrgAccountMobileVisiblePermissonResponse orgAccountMobileVisiblePermissonWithOptions(OrgAccountMobileVisiblePermissonRequest request, OrgAccountMobileVisiblePermissonHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", request.body)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "OrgAccountMobileVisiblePermisson"),
+            new TeaPair("version", "contact_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/contact/orgAccounts/mobiles/visiblePermissions"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new OrgAccountMobileVisiblePermissonResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新企业账号电话可见性</p>
+     * 
+     * @param request OrgAccountMobileVisiblePermissonRequest
+     * @return OrgAccountMobileVisiblePermissonResponse
+     */
+    public OrgAccountMobileVisiblePermissonResponse orgAccountMobileVisiblePermisson(OrgAccountMobileVisiblePermissonRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        OrgAccountMobileVisiblePermissonHeaders headers = new OrgAccountMobileVisiblePermissonHeaders();
+        return this.orgAccountMobileVisiblePermissonWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>给员工推送事件唤起核身组件</p>
      * 
      * @param request PushVerifyEventRequest

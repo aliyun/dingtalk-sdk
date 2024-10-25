@@ -31,6 +31,55 @@ public class GetConversationDetailResponseBody extends TeaModel {
         return this.success;
     }
 
+    public static class GetConversationDetailResponseBodyResultMultipleCategoryList extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>0</p>
+         */
+        @NameInMap("categoryId")
+        public Long categoryId;
+
+        /**
+         * <strong>example:</strong>
+         * <p>全部</p>
+         */
+        @NameInMap("categoryName")
+        public String categoryName;
+
+        @NameInMap("order")
+        public Integer order;
+
+        public static GetConversationDetailResponseBodyResultMultipleCategoryList build(java.util.Map<String, ?> map) throws Exception {
+            GetConversationDetailResponseBodyResultMultipleCategoryList self = new GetConversationDetailResponseBodyResultMultipleCategoryList();
+            return TeaModel.build(map, self);
+        }
+
+        public GetConversationDetailResponseBodyResultMultipleCategoryList setCategoryId(Long categoryId) {
+            this.categoryId = categoryId;
+            return this;
+        }
+        public Long getCategoryId() {
+            return this.categoryId;
+        }
+
+        public GetConversationDetailResponseBodyResultMultipleCategoryList setCategoryName(String categoryName) {
+            this.categoryName = categoryName;
+            return this;
+        }
+        public String getCategoryName() {
+            return this.categoryName;
+        }
+
+        public GetConversationDetailResponseBodyResultMultipleCategoryList setOrder(Integer order) {
+            this.order = order;
+            return this;
+        }
+        public Integer getOrder() {
+            return this.order;
+        }
+
+    }
+
     public static class GetConversationDetailResponseBodyResult extends TeaModel {
         /**
          * <strong>example:</strong>
@@ -86,6 +135,9 @@ public class GetConversationDetailResponseBody extends TeaModel {
          */
         @NameInMap("manageSign")
         public Integer manageSign;
+
+        @NameInMap("multipleCategoryList")
+        public java.util.List<GetConversationDetailResponseBodyResultMultipleCategoryList> multipleCategoryList;
 
         /**
          * <p>This parameter is required.</p>
@@ -181,6 +233,14 @@ public class GetConversationDetailResponseBody extends TeaModel {
         }
         public Integer getManageSign() {
             return this.manageSign;
+        }
+
+        public GetConversationDetailResponseBodyResult setMultipleCategoryList(java.util.List<GetConversationDetailResponseBodyResultMultipleCategoryList> multipleCategoryList) {
+            this.multipleCategoryList = multipleCategoryList;
+            return this;
+        }
+        public java.util.List<GetConversationDetailResponseBodyResultMultipleCategoryList> getMultipleCategoryList() {
+            return this.multipleCategoryList;
         }
 
         public GetConversationDetailResponseBodyResult setOpenConversationId(String openConversationId) {
