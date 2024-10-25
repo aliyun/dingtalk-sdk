@@ -136,6 +136,8 @@ use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryDingSendStatisticalDat
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryDocumentStatisticalDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryDocumentStatisticalDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryDocumentStatisticalDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryDpaasDataPackageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryDpaasDataPackageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryDriveStatisticalDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryDriveStatisticalDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdatacenter_1_0\Models\QueryDriveStatisticalDataResponse;
@@ -3042,6 +3044,54 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryDocumentStatisticalDataHeaders([]);
 
         return $this->queryDocumentStatisticalDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询数据资产平台增购包购买信息
+     *  *
+     * @param QueryDpaasDataPackageHeaders $headers QueryDpaasDataPackageHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryDpaasDataPackageResponse QueryDpaasDataPackageResponse
+     */
+    public function queryDpaasDataPackageWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'QueryDpaasDataPackage',
+            'version'     => 'datacenter_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/datacenter/dpaas/dataPackages/purchaseInfos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryDpaasDataPackageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询数据资产平台增购包购买信息
+     *  *
+     * @return QueryDpaasDataPackageResponse QueryDpaasDataPackageResponse
+     */
+    public function queryDpaasDataPackage()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryDpaasDataPackageHeaders([]);
+
+        return $this->queryDpaasDataPackageWithOptions($headers, $runtime);
     }
 
     /**

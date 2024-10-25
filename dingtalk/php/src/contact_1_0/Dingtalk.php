@@ -135,6 +135,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ModifyOrgAccUserOwnnessRespons
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\MultiOrgPermissionGrantHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\MultiOrgPermissionGrantRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\MultiOrgPermissionGrantResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\OrgAccountMobileVisiblePermissonHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\OrgAccountMobileVisiblePermissonRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\OrgAccountMobileVisiblePermissonResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\PushVerifyEventHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\PushVerifyEventRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\PushVerifyEventResponse;
@@ -3145,6 +3148,59 @@ class Dingtalk extends OpenApiClient
         $headers = new MultiOrgPermissionGrantHeaders([]);
 
         return $this->multiOrgPermissionGrantWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新企业账号电话可见性
+     *  *
+     * @param OrgAccountMobileVisiblePermissonRequest $request OrgAccountMobileVisiblePermissonRequest
+     * @param OrgAccountMobileVisiblePermissonHeaders $headers OrgAccountMobileVisiblePermissonHeaders
+     * @param RuntimeOptions                          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OrgAccountMobileVisiblePermissonResponse OrgAccountMobileVisiblePermissonResponse
+     */
+    public function orgAccountMobileVisiblePermissonWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => $request->body,
+        ]);
+        $params = new Params([
+            'action'      => 'OrgAccountMobileVisiblePermisson',
+            'version'     => 'contact_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contact/orgAccounts/mobiles/visiblePermissions',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OrgAccountMobileVisiblePermissonResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新企业账号电话可见性
+     *  *
+     * @param OrgAccountMobileVisiblePermissonRequest $request OrgAccountMobileVisiblePermissonRequest
+     *
+     * @return OrgAccountMobileVisiblePermissonResponse OrgAccountMobileVisiblePermissonResponse
+     */
+    public function orgAccountMobileVisiblePermisson($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OrgAccountMobileVisiblePermissonHeaders([]);
+
+        return $this->orgAccountMobileVisiblePermissonWithOptions($request, $headers, $runtime);
     }
 
     /**

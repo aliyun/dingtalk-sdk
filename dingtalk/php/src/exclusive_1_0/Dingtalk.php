@@ -301,9 +301,15 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendPhoneDingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetConversationCategoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetConversationCategoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetConversationCategoryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetConversationTopCategoryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetConversationTopCategoryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetConversationTopCategoryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetDeptPartnerTypeAndNumResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetOrgTopConversationCategoryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetOrgTopConversationCategoryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetOrgTopConversationCategoryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SpecialRuleBatchReceiverHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SpecialRuleBatchReceiverRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SpecialRuleBatchReceiverResponse;
@@ -6827,6 +6833,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 设置会话所属顶部分组
+     *  *
+     * @param SetConversationTopCategoryRequest $request SetConversationTopCategoryRequest
+     * @param SetConversationTopCategoryHeaders $headers SetConversationTopCategoryHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SetConversationTopCategoryResponse SetConversationTopCategoryResponse
+     */
+    public function setConversationTopCategoryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->setCategoryList)) {
+            $body['setCategoryList'] = $request->setCategoryList;
+        }
+        if (!Utils::isUnset($request->sign)) {
+            $body['sign'] = $request->sign;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SetConversationTopCategory',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/conversations/topCategories/set',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SetConversationTopCategoryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 设置会话所属顶部分组
+     *  *
+     * @param SetConversationTopCategoryRequest $request SetConversationTopCategoryRequest
+     *
+     * @return SetConversationTopCategoryResponse SetConversationTopCategoryResponse
+     */
+    public function setConversationTopCategory($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetConversationTopCategoryHeaders([]);
+
+        return $this->setConversationTopCategoryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 伙伴钉设置部门伙伴编码和伙伴类型
      *  *
      * @param SetDeptPartnerTypeAndNumRequest $request SetDeptPartnerTypeAndNumRequest
@@ -6887,6 +6956,59 @@ class Dingtalk extends OpenApiClient
         $headers = new SetDeptPartnerTypeAndNumHeaders([]);
 
         return $this->setDeptPartnerTypeAndNumWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 设置企业全局顶部会话分组
+     *  *
+     * @param SetOrgTopConversationCategoryRequest $request SetOrgTopConversationCategoryRequest
+     * @param SetOrgTopConversationCategoryHeaders $headers SetOrgTopConversationCategoryHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SetOrgTopConversationCategoryResponse SetOrgTopConversationCategoryResponse
+     */
+    public function setOrgTopConversationCategoryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => Utils::toArray($request->body),
+        ]);
+        $params = new Params([
+            'action'      => 'SetOrgTopConversationCategory',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/topConversations/categories/set',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SetOrgTopConversationCategoryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 设置企业全局顶部会话分组
+     *  *
+     * @param SetOrgTopConversationCategoryRequest $request SetOrgTopConversationCategoryRequest
+     *
+     * @return SetOrgTopConversationCategoryResponse SetOrgTopConversationCategoryResponse
+     */
+    public function setOrgTopConversationCategory($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetOrgTopConversationCategoryHeaders([]);
+
+        return $this->setOrgTopConversationCategoryWithOptions($request, $headers, $runtime);
     }
 
     /**

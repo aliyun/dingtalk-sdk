@@ -2,34 +2,49 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConversationCategoryResponseBody;
+namespace AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConversationCategoryResponseBody\result\children;
 use AlibabaCloud\Tea\Model;
 
-class result extends Model
+class ConversationCategoryModel extends Model
 {
     /**
+     * @description This parameter is required.
+     *
+     * @example 1
+     *
      * @var int
      */
     public $categoryId;
 
     /**
+     * @description This parameter is required.
+     *
+     * @example 分组
+     *
      * @var string
      */
     public $categoryName;
 
     /**
-     * @var children[]
+     * @var \AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\ConversationCategoryModel[]
      */
     public $children;
 
     /**
+     * @description This parameter is required.
+     *
+     * @example 0
+     *
      * @var int
      */
     public $levelNum;
 
     /**
+     * @description This parameter is required.
+     *
+     * @example 1
+     *
      * @var int
      */
     public $order;
@@ -76,7 +91,7 @@ class result extends Model
     /**
      * @param array $map
      *
-     * @return result
+     * @return ConversationCategoryModel
      */
     public static function fromMap($map = [])
     {
@@ -92,7 +107,7 @@ class result extends Model
                 $model->children = [];
                 $n               = 0;
                 foreach ($map['children'] as $item) {
-                    $model->children[$n++] = null !== $item ? children::fromMap($item) : $item;
+                    $model->children[$n++] = null !== $item ? self::fromMap($item) : $item;
                 }
             }
         }

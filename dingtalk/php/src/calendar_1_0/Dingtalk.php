@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\AddAttendeeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\AddMeetingRoomsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\AddMeetingRoomsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\AddMeetingRoomsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CancelEventHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CancelEventRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CancelEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CheckInHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\CheckInResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcalendar_1_0\Models\ConvertLegacyEventIdHeaders;
@@ -269,6 +272,72 @@ class Dingtalk extends OpenApiClient
         $headers = new AddMeetingRoomsHeaders([]);
 
         return $this->addMeetingRoomsWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 取消指定日程
+     *  *
+     * @param string             $userId
+     * @param string             $calendarId
+     * @param string             $eventId
+     * @param CancelEventRequest $request    CancelEventRequest
+     * @param CancelEventHeaders $headers    CancelEventHeaders
+     * @param RuntimeOptions     $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return CancelEventResponse CancelEventResponse
+     */
+    public function cancelEventWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->scope)) {
+            $query['scope'] = $request->scope;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xClientToken)) {
+            $realHeaders['x-client-token'] = Utils::toJSONString($headers->xClientToken);
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'CancelEvent',
+            'version'     => 'calendar_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/calendar/users/' . $userId . '/calendars/' . $calendarId . '/events/' . $eventId . '/cancel',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CancelEventResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 取消指定日程
+     *  *
+     * @param string             $userId
+     * @param string             $calendarId
+     * @param string             $eventId
+     * @param CancelEventRequest $request    CancelEventRequest
+     *
+     * @return CancelEventResponse CancelEventResponse
+     */
+    public function cancelEvent($userId, $calendarId, $eventId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CancelEventHeaders([]);
+
+        return $this->cancelEventWithOptions($userId, $calendarId, $eventId, $request, $headers, $runtime);
     }
 
     /**

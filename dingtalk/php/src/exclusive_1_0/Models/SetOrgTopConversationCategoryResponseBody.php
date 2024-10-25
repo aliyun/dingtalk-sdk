@@ -6,10 +6,10 @@ namespace AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class GetConversationCategoryResponseBody extends Model
+class SetOrgTopConversationCategoryResponseBody extends Model
 {
     /**
-     * @var ConversationCategoryModel[]
+     * @var string
      */
     public $result;
 
@@ -30,13 +30,7 @@ class GetConversationCategoryResponseBody extends Model
     {
         $res = [];
         if (null !== $this->result) {
-            $res['result'] = [];
-            if (null !== $this->result && \is_array($this->result)) {
-                $n = 0;
-                foreach ($this->result as $item) {
-                    $res['result'][$n++] = null !== $item ? $item->toMap() : $item;
-                }
-            }
+            $res['result'] = $this->result;
         }
         if (null !== $this->success) {
             $res['success'] = $this->success;
@@ -48,19 +42,13 @@ class GetConversationCategoryResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return GetConversationCategoryResponseBody
+     * @return SetOrgTopConversationCategoryResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
         if (isset($map['result'])) {
-            if (!empty($map['result'])) {
-                $model->result = [];
-                $n             = 0;
-                foreach ($map['result'] as $item) {
-                    $model->result[$n++] = null !== $item ? ConversationCategoryModel::fromMap($item) : $item;
-                }
-            }
+            $model->result = $map['result'];
         }
         if (isset($map['success'])) {
             $model->success = $map['success'];

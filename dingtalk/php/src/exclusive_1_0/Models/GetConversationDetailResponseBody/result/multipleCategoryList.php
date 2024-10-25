@@ -2,26 +2,25 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConversationCategoryResponseBody\result;
+namespace AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConversationDetailResponseBody\result;
 
 use AlibabaCloud\Tea\Model;
 
-class children extends Model
+class multipleCategoryList extends Model
 {
     /**
+     * @example 0
+     *
      * @var int
      */
     public $categoryId;
 
     /**
+     * @example 全部
+     *
      * @var string
      */
     public $categoryName;
-
-    /**
-     * @var int
-     */
-    public $levelNum;
 
     /**
      * @var int
@@ -30,7 +29,6 @@ class children extends Model
     protected $_name = [
         'categoryId'   => 'categoryId',
         'categoryName' => 'categoryName',
-        'levelNum'     => 'levelNum',
         'order'        => 'order',
     ];
 
@@ -47,9 +45,6 @@ class children extends Model
         if (null !== $this->categoryName) {
             $res['categoryName'] = $this->categoryName;
         }
-        if (null !== $this->levelNum) {
-            $res['levelNum'] = $this->levelNum;
-        }
         if (null !== $this->order) {
             $res['order'] = $this->order;
         }
@@ -60,7 +55,7 @@ class children extends Model
     /**
      * @param array $map
      *
-     * @return children
+     * @return multipleCategoryList
      */
     public static function fromMap($map = [])
     {
@@ -70,9 +65,6 @@ class children extends Model
         }
         if (isset($map['categoryName'])) {
             $model->categoryName = $map['categoryName'];
-        }
-        if (isset($map['levelNum'])) {
-            $model->levelNum = $map['levelNum'];
         }
         if (isset($map['order'])) {
             $model->order = $map['order'];

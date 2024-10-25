@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConversationDetailResponseBody;
 
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetConversationDetailResponseBody\result\multipleCategoryList;
 use AlibabaCloud\Tea\Model;
 
 class result extends Model
@@ -68,6 +69,11 @@ class result extends Model
     public $manageSign;
 
     /**
+     * @var multipleCategoryList[]
+     */
+    public $multipleCategoryList;
+
+    /**
      * @description This parameter is required.
      *
      * @example cidxxx
@@ -88,18 +94,19 @@ class result extends Model
      */
     public $status;
     protected $_name = [
-        'categoryId'         => 'categoryId',
-        'categoryName'       => 'categoryName',
-        'groupCode'          => 'groupCode',
-        'groupMembersCnt'    => 'groupMembersCnt',
-        'groupName'          => 'groupName',
-        'groupOwnerName'     => 'groupOwnerName',
-        'groupOwnerUserId'   => 'groupOwnerUserId',
-        'isKpConversation'   => 'isKpConversation',
-        'manageSign'         => 'manageSign',
-        'openConversationId' => 'openConversationId',
-        'order'              => 'order',
-        'status'             => 'status',
+        'categoryId'           => 'categoryId',
+        'categoryName'         => 'categoryName',
+        'groupCode'            => 'groupCode',
+        'groupMembersCnt'      => 'groupMembersCnt',
+        'groupName'            => 'groupName',
+        'groupOwnerName'       => 'groupOwnerName',
+        'groupOwnerUserId'     => 'groupOwnerUserId',
+        'isKpConversation'     => 'isKpConversation',
+        'manageSign'           => 'manageSign',
+        'multipleCategoryList' => 'multipleCategoryList',
+        'openConversationId'   => 'openConversationId',
+        'order'                => 'order',
+        'status'               => 'status',
     ];
 
     public function validate()
@@ -135,6 +142,15 @@ class result extends Model
         }
         if (null !== $this->manageSign) {
             $res['manageSign'] = $this->manageSign;
+        }
+        if (null !== $this->multipleCategoryList) {
+            $res['multipleCategoryList'] = [];
+            if (null !== $this->multipleCategoryList && \is_array($this->multipleCategoryList)) {
+                $n = 0;
+                foreach ($this->multipleCategoryList as $item) {
+                    $res['multipleCategoryList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->openConversationId) {
             $res['openConversationId'] = $this->openConversationId;
@@ -183,6 +199,15 @@ class result extends Model
         }
         if (isset($map['manageSign'])) {
             $model->manageSign = $map['manageSign'];
+        }
+        if (isset($map['multipleCategoryList'])) {
+            if (!empty($map['multipleCategoryList'])) {
+                $model->multipleCategoryList = [];
+                $n                           = 0;
+                foreach ($map['multipleCategoryList'] as $item) {
+                    $model->multipleCategoryList[$n++] = null !== $item ? multipleCategoryList::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['openConversationId'])) {
             $model->openConversationId = $map['openConversationId'];
