@@ -7030,6 +7030,126 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询数据资产平台增购包购买信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryDpaasDataPackageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDpaasDataPackageResponse
+        /// </returns>
+        public QueryDpaasDataPackageResponse QueryDpaasDataPackageWithOptions(QueryDpaasDataPackageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryDpaasDataPackage",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/dpaas/dataPackages/purchaseInfos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryDpaasDataPackageResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询数据资产平台增购包购买信息</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// QueryDpaasDataPackageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryDpaasDataPackageResponse
+        /// </returns>
+        public async Task<QueryDpaasDataPackageResponse> QueryDpaasDataPackageWithOptionsAsync(QueryDpaasDataPackageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryDpaasDataPackage",
+                Version = "datacenter_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/datacenter/dpaas/dataPackages/purchaseInfos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryDpaasDataPackageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询数据资产平台增购包购买信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryDpaasDataPackageResponse
+        /// </returns>
+        public QueryDpaasDataPackageResponse QueryDpaasDataPackage()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryDpaasDataPackageHeaders headers = new QueryDpaasDataPackageHeaders();
+            return QueryDpaasDataPackageWithOptions(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询数据资产平台增购包购买信息</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// QueryDpaasDataPackageResponse
+        /// </returns>
+        public async Task<QueryDpaasDataPackageResponse> QueryDpaasDataPackageAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryDpaasDataPackageHeaders headers = new QueryDpaasDataPackageHeaders();
+            return await QueryDpaasDataPackageWithOptionsAsync(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取企业钉盘统计数据</para>
         /// </summary>
         /// 

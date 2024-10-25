@@ -16634,6 +16634,170 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>设置会话所属顶部分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetConversationTopCategoryRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetConversationTopCategoryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetConversationTopCategoryResponse
+        /// </returns>
+        public SetConversationTopCategoryResponse SetConversationTopCategoryWithOptions(SetConversationTopCategoryRequest request, SetConversationTopCategoryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SetCategoryList))
+            {
+                body["setCategoryList"] = request.SetCategoryList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sign))
+            {
+                body["sign"] = request.Sign;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetConversationTopCategory",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/conversations/topCategories/set",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetConversationTopCategoryResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置会话所属顶部分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetConversationTopCategoryRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetConversationTopCategoryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetConversationTopCategoryResponse
+        /// </returns>
+        public async Task<SetConversationTopCategoryResponse> SetConversationTopCategoryWithOptionsAsync(SetConversationTopCategoryRequest request, SetConversationTopCategoryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SetCategoryList))
+            {
+                body["setCategoryList"] = request.SetCategoryList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Sign))
+            {
+                body["sign"] = request.Sign;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetConversationTopCategory",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/conversations/topCategories/set",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetConversationTopCategoryResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置会话所属顶部分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetConversationTopCategoryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetConversationTopCategoryResponse
+        /// </returns>
+        public SetConversationTopCategoryResponse SetConversationTopCategory(SetConversationTopCategoryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetConversationTopCategoryHeaders headers = new SetConversationTopCategoryHeaders();
+            return SetConversationTopCategoryWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置会话所属顶部分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetConversationTopCategoryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetConversationTopCategoryResponse
+        /// </returns>
+        public async Task<SetConversationTopCategoryResponse> SetConversationTopCategoryAsync(SetConversationTopCategoryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetConversationTopCategoryHeaders headers = new SetConversationTopCategoryHeaders();
+            return await SetConversationTopCategoryWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>伙伴钉设置部门伙伴编码和伙伴类型</para>
         /// </summary>
         /// 
@@ -16794,6 +16958,144 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             SetDeptPartnerTypeAndNumHeaders headers = new SetDeptPartnerTypeAndNumHeaders();
             return await SetDeptPartnerTypeAndNumWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置企业全局顶部会话分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetOrgTopConversationCategoryRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetOrgTopConversationCategoryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetOrgTopConversationCategoryResponse
+        /// </returns>
+        public SetOrgTopConversationCategoryResponse SetOrgTopConversationCategoryWithOptions(SetOrgTopConversationCategoryRequest request, SetOrgTopConversationCategoryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetOrgTopConversationCategory",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/topConversations/categories/set",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetOrgTopConversationCategoryResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置企业全局顶部会话分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetOrgTopConversationCategoryRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetOrgTopConversationCategoryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetOrgTopConversationCategoryResponse
+        /// </returns>
+        public async Task<SetOrgTopConversationCategoryResponse> SetOrgTopConversationCategoryWithOptionsAsync(SetOrgTopConversationCategoryRequest request, SetOrgTopConversationCategoryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.TeaUtil.Common.ToArray(request.Body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetOrgTopConversationCategory",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/topConversations/categories/set",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetOrgTopConversationCategoryResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置企业全局顶部会话分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetOrgTopConversationCategoryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetOrgTopConversationCategoryResponse
+        /// </returns>
+        public SetOrgTopConversationCategoryResponse SetOrgTopConversationCategory(SetOrgTopConversationCategoryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetOrgTopConversationCategoryHeaders headers = new SetOrgTopConversationCategoryHeaders();
+            return SetOrgTopConversationCategoryWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置企业全局顶部会话分组</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetOrgTopConversationCategoryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetOrgTopConversationCategoryResponse
+        /// </returns>
+        public async Task<SetOrgTopConversationCategoryResponse> SetOrgTopConversationCategoryAsync(SetOrgTopConversationCategoryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetOrgTopConversationCategoryHeaders headers = new SetOrgTopConversationCategoryHeaders();
+            return await SetOrgTopConversationCategoryWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

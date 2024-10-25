@@ -358,6 +358,162 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>取消指定日程</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CancelEventRequest
+        /// </param>
+        /// <param name="headers">
+        /// CancelEventHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CancelEventResponse
+        /// </returns>
+        public CancelEventResponse CancelEventWithOptions(string userId, string calendarId, string eventId, CancelEventRequest request, CancelEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope))
+            {
+                query["scope"] = request.Scope;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XClientToken))
+            {
+                realHeaders["x-client-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XClientToken);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CancelEvent",
+                Version = "calendar_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/cancel",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CancelEventResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>取消指定日程</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CancelEventRequest
+        /// </param>
+        /// <param name="headers">
+        /// CancelEventHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CancelEventResponse
+        /// </returns>
+        public async Task<CancelEventResponse> CancelEventWithOptionsAsync(string userId, string calendarId, string eventId, CancelEventRequest request, CancelEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Scope))
+            {
+                query["scope"] = request.Scope;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XClientToken))
+            {
+                realHeaders["x-client-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XClientToken);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CancelEvent",
+                Version = "calendar_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/calendar/users/" + userId + "/calendars/" + calendarId + "/events/" + eventId + "/cancel",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CancelEventResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>取消指定日程</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CancelEventRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CancelEventResponse
+        /// </returns>
+        public CancelEventResponse CancelEvent(string userId, string calendarId, string eventId, CancelEventRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CancelEventHeaders headers = new CancelEventHeaders();
+            return CancelEventWithOptions(userId, calendarId, eventId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>取消指定日程</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CancelEventRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CancelEventResponse
+        /// </returns>
+        public async Task<CancelEventResponse> CancelEventAsync(string userId, string calendarId, string eventId, CancelEventRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CancelEventHeaders headers = new CancelEventHeaders();
+            return await CancelEventWithOptionsAsync(userId, calendarId, eventId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>签到</para>
         /// </summary>
         /// 

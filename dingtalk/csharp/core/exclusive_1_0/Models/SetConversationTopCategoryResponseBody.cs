@@ -8,11 +8,7 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
-    public class GetConversationCategoryResponseBody : TeaModel {
-        [NameInMap("result")]
-        [Validation(Required=false)]
-        public List<ConversationCategoryModel> Result { get; set; }
-
+    public class SetConversationTopCategoryResponseBody : TeaModel {
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

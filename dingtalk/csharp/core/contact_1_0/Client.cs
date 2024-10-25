@@ -7424,6 +7424,144 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>更新企业账号电话可见性</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OrgAccountMobileVisiblePermissonRequest
+        /// </param>
+        /// <param name="headers">
+        /// OrgAccountMobileVisiblePermissonHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// OrgAccountMobileVisiblePermissonResponse
+        /// </returns>
+        public OrgAccountMobileVisiblePermissonResponse OrgAccountMobileVisiblePermissonWithOptions(OrgAccountMobileVisiblePermissonRequest request, OrgAccountMobileVisiblePermissonHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = request.Body,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OrgAccountMobileVisiblePermisson",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/orgAccounts/mobiles/visiblePermissions",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OrgAccountMobileVisiblePermissonResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新企业账号电话可见性</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OrgAccountMobileVisiblePermissonRequest
+        /// </param>
+        /// <param name="headers">
+        /// OrgAccountMobileVisiblePermissonHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// OrgAccountMobileVisiblePermissonResponse
+        /// </returns>
+        public async Task<OrgAccountMobileVisiblePermissonResponse> OrgAccountMobileVisiblePermissonWithOptionsAsync(OrgAccountMobileVisiblePermissonRequest request, OrgAccountMobileVisiblePermissonHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = request.Body,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OrgAccountMobileVisiblePermisson",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/orgAccounts/mobiles/visiblePermissions",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OrgAccountMobileVisiblePermissonResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新企业账号电话可见性</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OrgAccountMobileVisiblePermissonRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// OrgAccountMobileVisiblePermissonResponse
+        /// </returns>
+        public OrgAccountMobileVisiblePermissonResponse OrgAccountMobileVisiblePermisson(OrgAccountMobileVisiblePermissonRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OrgAccountMobileVisiblePermissonHeaders headers = new OrgAccountMobileVisiblePermissonHeaders();
+            return OrgAccountMobileVisiblePermissonWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新企业账号电话可见性</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OrgAccountMobileVisiblePermissonRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// OrgAccountMobileVisiblePermissonResponse
+        /// </returns>
+        public async Task<OrgAccountMobileVisiblePermissonResponse> OrgAccountMobileVisiblePermissonAsync(OrgAccountMobileVisiblePermissonRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OrgAccountMobileVisiblePermissonHeaders headers = new OrgAccountMobileVisiblePermissonHeaders();
+            return await OrgAccountMobileVisiblePermissonWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>给员工推送事件唤起核身组件</para>
         /// </summary>
         /// 

@@ -77,6 +77,32 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
             [Validation(Required=false)]
             public int? ManageSign { get; set; }
 
+            [NameInMap("multipleCategoryList")]
+            [Validation(Required=false)]
+            public List<GetConversationDetailResponseBodyResultMultipleCategoryList> MultipleCategoryList { get; set; }
+            public class GetConversationDetailResponseBodyResultMultipleCategoryList : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>0</para>
+                /// </summary>
+                [NameInMap("categoryId")]
+                [Validation(Required=false)]
+                public long? CategoryId { get; set; }
+
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>全部</para>
+                /// </summary>
+                [NameInMap("categoryName")]
+                [Validation(Required=false)]
+                public string CategoryName { get; set; }
+
+                [NameInMap("order")]
+                [Validation(Required=false)]
+                public int? Order { get; set; }
+
+            }
+
             /// <summary>
             /// <para>This parameter is required.</para>
             /// 
