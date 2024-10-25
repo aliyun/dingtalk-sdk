@@ -5280,6 +5280,98 @@ class Client(OpenApiClient):
         headers = dingtalkdatacenter__1__0_models.QueryDocumentStatisticalDataHeaders()
         return await self.query_document_statistical_data_with_options_async(request, headers, runtime)
 
+    def query_dpaas_data_package_with_options(
+        self,
+        headers: dingtalkdatacenter__1__0_models.QueryDpaasDataPackageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryDpaasDataPackageResponse:
+        """
+        @summary 查询数据资产平台增购包购买信息
+        
+        @param headers: QueryDpaasDataPackageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryDpaasDataPackageResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryDpaasDataPackage',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/dpaas/dataPackages/purchaseInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryDpaasDataPackageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_dpaas_data_package_with_options_async(
+        self,
+        headers: dingtalkdatacenter__1__0_models.QueryDpaasDataPackageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.QueryDpaasDataPackageResponse:
+        """
+        @summary 查询数据资产平台增购包购买信息
+        
+        @param headers: QueryDpaasDataPackageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryDpaasDataPackageResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryDpaasDataPackage',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/dpaas/dataPackages/purchaseInfos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.QueryDpaasDataPackageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_dpaas_data_package(self) -> dingtalkdatacenter__1__0_models.QueryDpaasDataPackageResponse:
+        """
+        @summary 查询数据资产平台增购包购买信息
+        
+        @return: QueryDpaasDataPackageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryDpaasDataPackageHeaders()
+        return self.query_dpaas_data_package_with_options(headers, runtime)
+
+    async def query_dpaas_data_package_async(self) -> dingtalkdatacenter__1__0_models.QueryDpaasDataPackageResponse:
+        """
+        @summary 查询数据资产平台增购包购买信息
+        
+        @return: QueryDpaasDataPackageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.QueryDpaasDataPackageHeaders()
+        return await self.query_dpaas_data_package_with_options_async(headers, runtime)
+
     def query_drive_statistical_data_with_options(
         self,
         request: dingtalkdatacenter__1__0_models.QueryDriveStatisticalDataRequest,

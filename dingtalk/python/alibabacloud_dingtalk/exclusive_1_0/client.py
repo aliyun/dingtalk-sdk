@@ -12454,6 +12454,128 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.SetConversationCategoryHeaders()
         return await self.set_conversation_category_with_options_async(request, headers, runtime)
 
+    def set_conversation_top_category_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.SetConversationTopCategoryRequest,
+        headers: dingtalkexclusive__1__0_models.SetConversationTopCategoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SetConversationTopCategoryResponse:
+        """
+        @summary 设置会话所属顶部分组
+        
+        @param request: SetConversationTopCategoryRequest
+        @param headers: SetConversationTopCategoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetConversationTopCategoryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.set_category_list):
+            body['setCategoryList'] = request.set_category_list
+        if not UtilClient.is_unset(request.sign):
+            body['sign'] = request.sign
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetConversationTopCategory',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/conversations/topCategories/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SetConversationTopCategoryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def set_conversation_top_category_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SetConversationTopCategoryRequest,
+        headers: dingtalkexclusive__1__0_models.SetConversationTopCategoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SetConversationTopCategoryResponse:
+        """
+        @summary 设置会话所属顶部分组
+        
+        @param request: SetConversationTopCategoryRequest
+        @param headers: SetConversationTopCategoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetConversationTopCategoryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.set_category_list):
+            body['setCategoryList'] = request.set_category_list
+        if not UtilClient.is_unset(request.sign):
+            body['sign'] = request.sign
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetConversationTopCategory',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/conversations/topCategories/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SetConversationTopCategoryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def set_conversation_top_category(
+        self,
+        request: dingtalkexclusive__1__0_models.SetConversationTopCategoryRequest,
+    ) -> dingtalkexclusive__1__0_models.SetConversationTopCategoryResponse:
+        """
+        @summary 设置会话所属顶部分组
+        
+        @param request: SetConversationTopCategoryRequest
+        @return: SetConversationTopCategoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SetConversationTopCategoryHeaders()
+        return self.set_conversation_top_category_with_options(request, headers, runtime)
+
+    async def set_conversation_top_category_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SetConversationTopCategoryRequest,
+    ) -> dingtalkexclusive__1__0_models.SetConversationTopCategoryResponse:
+        """
+        @summary 设置会话所属顶部分组
+        
+        @param request: SetConversationTopCategoryRequest
+        @return: SetConversationTopCategoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SetConversationTopCategoryHeaders()
+        return await self.set_conversation_top_category_with_options_async(request, headers, runtime)
+
     def set_dept_partner_type_and_num_with_options(
         self,
         request: dingtalkexclusive__1__0_models.SetDeptPartnerTypeAndNumRequest,
@@ -12575,6 +12697,114 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.SetDeptPartnerTypeAndNumHeaders()
         return await self.set_dept_partner_type_and_num_with_options_async(request, headers, runtime)
+
+    def set_org_top_conversation_category_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.SetOrgTopConversationCategoryRequest,
+        headers: dingtalkexclusive__1__0_models.SetOrgTopConversationCategoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SetOrgTopConversationCategoryResponse:
+        """
+        @summary 设置企业全局顶部会话分组
+        
+        @param request: SetOrgTopConversationCategoryRequest
+        @param headers: SetOrgTopConversationCategoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetOrgTopConversationCategoryResponse
+        """
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='SetOrgTopConversationCategory',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/topConversations/categories/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SetOrgTopConversationCategoryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def set_org_top_conversation_category_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SetOrgTopConversationCategoryRequest,
+        headers: dingtalkexclusive__1__0_models.SetOrgTopConversationCategoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SetOrgTopConversationCategoryResponse:
+        """
+        @summary 设置企业全局顶部会话分组
+        
+        @param request: SetOrgTopConversationCategoryRequest
+        @param headers: SetOrgTopConversationCategoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetOrgTopConversationCategoryResponse
+        """
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=UtilClient.to_array(request.body)
+        )
+        params = open_api_models.Params(
+            action='SetOrgTopConversationCategory',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/topConversations/categories/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SetOrgTopConversationCategoryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def set_org_top_conversation_category(
+        self,
+        request: dingtalkexclusive__1__0_models.SetOrgTopConversationCategoryRequest,
+    ) -> dingtalkexclusive__1__0_models.SetOrgTopConversationCategoryResponse:
+        """
+        @summary 设置企业全局顶部会话分组
+        
+        @param request: SetOrgTopConversationCategoryRequest
+        @return: SetOrgTopConversationCategoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SetOrgTopConversationCategoryHeaders()
+        return self.set_org_top_conversation_category_with_options(request, headers, runtime)
+
+    async def set_org_top_conversation_category_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SetOrgTopConversationCategoryRequest,
+    ) -> dingtalkexclusive__1__0_models.SetOrgTopConversationCategoryResponse:
+        """
+        @summary 设置企业全局顶部会话分组
+        
+        @param request: SetOrgTopConversationCategoryRequest
+        @return: SetOrgTopConversationCategoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SetOrgTopConversationCategoryHeaders()
+        return await self.set_org_top_conversation_category_with_options_async(request, headers, runtime)
 
     def special_rule_batch_receiver_with_options(
         self,
