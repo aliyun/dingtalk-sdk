@@ -156,6 +156,156 @@ class Client(OpenApiClient):
         headers = dingtalktrade__1__0_models.CheckOpportunityResultHeaders()
         return await self.check_opportunity_result_with_options_async(request, headers, runtime)
 
+    def create_clue_temp_with_options(
+        self,
+        request: dingtalktrade__1__0_models.CreateClueTempRequest,
+        headers: dingtalktrade__1__0_models.CreateClueTempHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrade__1__0_models.CreateClueTempResponse:
+        """
+        @summary 用于客户跟进线索创建
+        
+        @param request: CreateClueTempRequest
+        @param headers: CreateClueTempHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateClueTempResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.address):
+            body['address'] = request.address
+        if not UtilClient.is_unset(request.contact_name):
+            body['contactName'] = request.contact_name
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.ext):
+            body['ext'] = request.ext
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.phone_num):
+            body['phoneNum'] = request.phone_num
+        if not UtilClient.is_unset(request.position):
+            body['position'] = request.position
+        if not UtilClient.is_unset(request.product_code):
+            body['productCode'] = request.product_code
+        if not UtilClient.is_unset(request.sales_id):
+            body['salesId'] = request.sales_id
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateClueTemp',
+            version='trade_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trade/clueTemps',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrade__1__0_models.CreateClueTempResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_clue_temp_with_options_async(
+        self,
+        request: dingtalktrade__1__0_models.CreateClueTempRequest,
+        headers: dingtalktrade__1__0_models.CreateClueTempHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktrade__1__0_models.CreateClueTempResponse:
+        """
+        @summary 用于客户跟进线索创建
+        
+        @param request: CreateClueTempRequest
+        @param headers: CreateClueTempHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateClueTempResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.address):
+            body['address'] = request.address
+        if not UtilClient.is_unset(request.contact_name):
+            body['contactName'] = request.contact_name
+        if not UtilClient.is_unset(request.dept_id):
+            body['deptId'] = request.dept_id
+        if not UtilClient.is_unset(request.ext):
+            body['ext'] = request.ext
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.phone_num):
+            body['phoneNum'] = request.phone_num
+        if not UtilClient.is_unset(request.position):
+            body['position'] = request.position
+        if not UtilClient.is_unset(request.product_code):
+            body['productCode'] = request.product_code
+        if not UtilClient.is_unset(request.sales_id):
+            body['salesId'] = request.sales_id
+        if not UtilClient.is_unset(request.source):
+            body['source'] = request.source
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateClueTemp',
+            version='trade_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/trade/clueTemps',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktrade__1__0_models.CreateClueTempResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_clue_temp(
+        self,
+        request: dingtalktrade__1__0_models.CreateClueTempRequest,
+    ) -> dingtalktrade__1__0_models.CreateClueTempResponse:
+        """
+        @summary 用于客户跟进线索创建
+        
+        @param request: CreateClueTempRequest
+        @return: CreateClueTempResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrade__1__0_models.CreateClueTempHeaders()
+        return self.create_clue_temp_with_options(request, headers, runtime)
+
+    async def create_clue_temp_async(
+        self,
+        request: dingtalktrade__1__0_models.CreateClueTempRequest,
+    ) -> dingtalktrade__1__0_models.CreateClueTempResponse:
+        """
+        @summary 用于客户跟进线索创建
+        
+        @param request: CreateClueTempRequest
+        @return: CreateClueTempResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktrade__1__0_models.CreateClueTempHeaders()
+        return await self.create_clue_temp_with_options_async(request, headers, runtime)
+
     def create_note_for_isv_with_options(
         self,
         request: dingtalktrade__1__0_models.CreateNoteForIsvRequest,

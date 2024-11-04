@@ -33,7 +33,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkrooms__1__0_models.CreateBookingBlacklistResponse:
         """
-        @summary 创建预定黑名单
+        @summary 创建会议室预定黑名单
         
         @param request: CreateBookingBlacklistRequest
         @param headers: CreateBookingBlacklistHeaders
@@ -84,7 +84,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkrooms__1__0_models.CreateBookingBlacklistResponse:
         """
-        @summary 创建预定黑名单
+        @summary 创建会议室预定黑名单
         
         @param request: CreateBookingBlacklistRequest
         @param headers: CreateBookingBlacklistHeaders
@@ -133,7 +133,7 @@ class Client(OpenApiClient):
         request: dingtalkrooms__1__0_models.CreateBookingBlacklistRequest,
     ) -> dingtalkrooms__1__0_models.CreateBookingBlacklistResponse:
         """
-        @summary 创建预定黑名单
+        @summary 创建会议室预定黑名单
         
         @param request: CreateBookingBlacklistRequest
         @return: CreateBookingBlacklistResponse
@@ -147,7 +147,7 @@ class Client(OpenApiClient):
         request: dingtalkrooms__1__0_models.CreateBookingBlacklistRequest,
     ) -> dingtalkrooms__1__0_models.CreateBookingBlacklistResponse:
         """
-        @summary 创建预定黑名单
+        @summary 创建会议室预定黑名单
         
         @param request: CreateBookingBlacklistRequest
         @return: CreateBookingBlacklistResponse
@@ -751,7 +751,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkrooms__1__0_models.DeleteBookingBlacklistResponse:
         """
-        @summary 删除预定黑名单
+        @summary 删除会议室预定黑名单
         
         @param request: DeleteBookingBlacklistRequest
         @param headers: DeleteBookingBlacklistHeaders
@@ -796,7 +796,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkrooms__1__0_models.DeleteBookingBlacklistResponse:
         """
-        @summary 删除预定黑名单
+        @summary 删除会议室预定黑名单
         
         @param request: DeleteBookingBlacklistRequest
         @param headers: DeleteBookingBlacklistHeaders
@@ -839,7 +839,7 @@ class Client(OpenApiClient):
         request: dingtalkrooms__1__0_models.DeleteBookingBlacklistRequest,
     ) -> dingtalkrooms__1__0_models.DeleteBookingBlacklistResponse:
         """
-        @summary 删除预定黑名单
+        @summary 删除会议室预定黑名单
         
         @param request: DeleteBookingBlacklistRequest
         @return: DeleteBookingBlacklistResponse
@@ -853,7 +853,7 @@ class Client(OpenApiClient):
         request: dingtalkrooms__1__0_models.DeleteBookingBlacklistRequest,
     ) -> dingtalkrooms__1__0_models.DeleteBookingBlacklistResponse:
         """
-        @summary 删除预定黑名单
+        @summary 删除会议室预定黑名单
         
         @param request: DeleteBookingBlacklistRequest
         @return: DeleteBookingBlacklistResponse

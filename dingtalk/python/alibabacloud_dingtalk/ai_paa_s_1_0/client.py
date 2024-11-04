@@ -1046,6 +1046,234 @@ class Client(OpenApiClient):
         headers = dingtalkai_paa_s__1__0_models.QueryMemoryLearningTaskHeaders()
         return await self.query_memory_learning_task_with_options_async(request, headers, runtime)
 
+    def smart_quote_data_service_with_options(
+        self,
+        request: dingtalkai_paa_s__1__0_models.SmartQuoteDataServiceRequest,
+        headers: dingtalkai_paa_s__1__0_models.SmartQuoteDataServiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_paa_s__1__0_models.SmartQuoteDataServiceResponse:
+        """
+        @summary 添加智能报价数据
+        
+        @param request: SmartQuoteDataServiceRequest
+        @param headers: SmartQuoteDataServiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SmartQuoteDataServiceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.request):
+            body['request'] = request.request
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SmartQuoteDataService',
+            version='aiPaaS_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiPaaS/nl2x/smartQuotations/datas',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_paa_s__1__0_models.SmartQuoteDataServiceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def smart_quote_data_service_with_options_async(
+        self,
+        request: dingtalkai_paa_s__1__0_models.SmartQuoteDataServiceRequest,
+        headers: dingtalkai_paa_s__1__0_models.SmartQuoteDataServiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_paa_s__1__0_models.SmartQuoteDataServiceResponse:
+        """
+        @summary 添加智能报价数据
+        
+        @param request: SmartQuoteDataServiceRequest
+        @param headers: SmartQuoteDataServiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SmartQuoteDataServiceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.request):
+            body['request'] = request.request
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SmartQuoteDataService',
+            version='aiPaaS_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiPaaS/nl2x/smartQuotations/datas',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_paa_s__1__0_models.SmartQuoteDataServiceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def smart_quote_data_service(
+        self,
+        request: dingtalkai_paa_s__1__0_models.SmartQuoteDataServiceRequest,
+    ) -> dingtalkai_paa_s__1__0_models.SmartQuoteDataServiceResponse:
+        """
+        @summary 添加智能报价数据
+        
+        @param request: SmartQuoteDataServiceRequest
+        @return: SmartQuoteDataServiceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_paa_s__1__0_models.SmartQuoteDataServiceHeaders()
+        return self.smart_quote_data_service_with_options(request, headers, runtime)
+
+    async def smart_quote_data_service_async(
+        self,
+        request: dingtalkai_paa_s__1__0_models.SmartQuoteDataServiceRequest,
+    ) -> dingtalkai_paa_s__1__0_models.SmartQuoteDataServiceResponse:
+        """
+        @summary 添加智能报价数据
+        
+        @param request: SmartQuoteDataServiceRequest
+        @return: SmartQuoteDataServiceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_paa_s__1__0_models.SmartQuoteDataServiceHeaders()
+        return await self.smart_quote_data_service_with_options_async(request, headers, runtime)
+
+    def smart_quote_query_service_with_options(
+        self,
+        request: dingtalkai_paa_s__1__0_models.SmartQuoteQueryServiceRequest,
+        headers: dingtalkai_paa_s__1__0_models.SmartQuoteQueryServiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_paa_s__1__0_models.SmartQuoteQueryServiceResponse:
+        """
+        @summary 查询智能报价
+        
+        @param request: SmartQuoteQueryServiceRequest
+        @param headers: SmartQuoteQueryServiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SmartQuoteQueryServiceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.request):
+            body['request'] = request.request
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SmartQuoteQueryService',
+            version='aiPaaS_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiPaaS/nl2x/smartQuotations/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_paa_s__1__0_models.SmartQuoteQueryServiceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def smart_quote_query_service_with_options_async(
+        self,
+        request: dingtalkai_paa_s__1__0_models.SmartQuoteQueryServiceRequest,
+        headers: dingtalkai_paa_s__1__0_models.SmartQuoteQueryServiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_paa_s__1__0_models.SmartQuoteQueryServiceResponse:
+        """
+        @summary 查询智能报价
+        
+        @param request: SmartQuoteQueryServiceRequest
+        @param headers: SmartQuoteQueryServiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SmartQuoteQueryServiceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.request):
+            body['request'] = request.request
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SmartQuoteQueryService',
+            version='aiPaaS_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiPaaS/nl2x/smartQuotations/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_paa_s__1__0_models.SmartQuoteQueryServiceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def smart_quote_query_service(
+        self,
+        request: dingtalkai_paa_s__1__0_models.SmartQuoteQueryServiceRequest,
+    ) -> dingtalkai_paa_s__1__0_models.SmartQuoteQueryServiceResponse:
+        """
+        @summary 查询智能报价
+        
+        @param request: SmartQuoteQueryServiceRequest
+        @return: SmartQuoteQueryServiceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_paa_s__1__0_models.SmartQuoteQueryServiceHeaders()
+        return self.smart_quote_query_service_with_options(request, headers, runtime)
+
+    async def smart_quote_query_service_async(
+        self,
+        request: dingtalkai_paa_s__1__0_models.SmartQuoteQueryServiceRequest,
+    ) -> dingtalkai_paa_s__1__0_models.SmartQuoteQueryServiceResponse:
+        """
+        @summary 查询智能报价
+        
+        @param request: SmartQuoteQueryServiceRequest
+        @return: SmartQuoteQueryServiceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_paa_s__1__0_models.SmartQuoteQueryServiceHeaders()
+        return await self.smart_quote_query_service_with_options_async(request, headers, runtime)
+
     def submit_memory_learning_task_with_options(
         self,
         tmp_req: dingtalkai_paa_s__1__0_models.SubmitMemoryLearningTaskRequest,

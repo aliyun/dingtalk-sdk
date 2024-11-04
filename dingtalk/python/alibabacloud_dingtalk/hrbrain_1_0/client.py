@@ -26,6 +26,1602 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def hrbrain_delete_award_records_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteAwardRecordsRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteAwardRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteAwardRecordsResponse:
+        """
+        @summary 删除奖励记录
+        
+        @param request: HrbrainDeleteAwardRecordsRequest
+        @param headers: HrbrainDeleteAwardRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteAwardRecordsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteAwardRecords',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/awardRecords/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteAwardRecordsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_delete_award_records_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteAwardRecordsRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteAwardRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteAwardRecordsResponse:
+        """
+        @summary 删除奖励记录
+        
+        @param request: HrbrainDeleteAwardRecordsRequest
+        @param headers: HrbrainDeleteAwardRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteAwardRecordsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteAwardRecords',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/awardRecords/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteAwardRecordsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_delete_award_records(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteAwardRecordsRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteAwardRecordsResponse:
+        """
+        @summary 删除奖励记录
+        
+        @param request: HrbrainDeleteAwardRecordsRequest
+        @return: HrbrainDeleteAwardRecordsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteAwardRecordsHeaders()
+        return self.hrbrain_delete_award_records_with_options(request, headers, runtime)
+
+    async def hrbrain_delete_award_records_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteAwardRecordsRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteAwardRecordsResponse:
+        """
+        @summary 删除奖励记录
+        
+        @param request: HrbrainDeleteAwardRecordsRequest
+        @return: HrbrainDeleteAwardRecordsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteAwardRecordsHeaders()
+        return await self.hrbrain_delete_award_records_with_options_async(request, headers, runtime)
+
+    def hrbrain_delete_dimission_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteDimissionRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteDimissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteDimissionResponse:
+        """
+        @summary 删除离职记录
+        
+        @param request: HrbrainDeleteDimissionRequest
+        @param headers: HrbrainDeleteDimissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteDimissionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteDimission',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/dimissionInfos/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteDimissionResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_delete_dimission_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteDimissionRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteDimissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteDimissionResponse:
+        """
+        @summary 删除离职记录
+        
+        @param request: HrbrainDeleteDimissionRequest
+        @param headers: HrbrainDeleteDimissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteDimissionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteDimission',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/dimissionInfos/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteDimissionResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_delete_dimission(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteDimissionRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteDimissionResponse:
+        """
+        @summary 删除离职记录
+        
+        @param request: HrbrainDeleteDimissionRequest
+        @return: HrbrainDeleteDimissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteDimissionHeaders()
+        return self.hrbrain_delete_dimission_with_options(request, headers, runtime)
+
+    async def hrbrain_delete_dimission_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteDimissionRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteDimissionResponse:
+        """
+        @summary 删除离职记录
+        
+        @param request: HrbrainDeleteDimissionRequest
+        @return: HrbrainDeleteDimissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteDimissionHeaders()
+        return await self.hrbrain_delete_dimission_with_options_async(request, headers, runtime)
+
+    def hrbrain_delete_edu_exp_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteEduExpRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteEduExpHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteEduExpResponse:
+        """
+        @summary 删除教育经历
+        
+        @param request: HrbrainDeleteEduExpRequest
+        @param headers: HrbrainDeleteEduExpHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteEduExpResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteEduExp',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/eduExperiences/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteEduExpResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_delete_edu_exp_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteEduExpRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteEduExpHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteEduExpResponse:
+        """
+        @summary 删除教育经历
+        
+        @param request: HrbrainDeleteEduExpRequest
+        @param headers: HrbrainDeleteEduExpHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteEduExpResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteEduExp',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/eduExperiences/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteEduExpResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_delete_edu_exp(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteEduExpRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteEduExpResponse:
+        """
+        @summary 删除教育经历
+        
+        @param request: HrbrainDeleteEduExpRequest
+        @return: HrbrainDeleteEduExpResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteEduExpHeaders()
+        return self.hrbrain_delete_edu_exp_with_options(request, headers, runtime)
+
+    async def hrbrain_delete_edu_exp_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteEduExpRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteEduExpResponse:
+        """
+        @summary 删除教育经历
+        
+        @param request: HrbrainDeleteEduExpRequest
+        @return: HrbrainDeleteEduExpResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteEduExpHeaders()
+        return await self.hrbrain_delete_edu_exp_with_options_async(request, headers, runtime)
+
+    def hrbrain_delete_emp_info_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteEmpInfoRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteEmpInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteEmpInfoResponse:
+        """
+        @summary 删除人员信息
+        
+        @param request: HrbrainDeleteEmpInfoRequest
+        @param headers: HrbrainDeleteEmpInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteEmpInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteEmpInfo',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/empInfos/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteEmpInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_delete_emp_info_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteEmpInfoRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteEmpInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteEmpInfoResponse:
+        """
+        @summary 删除人员信息
+        
+        @param request: HrbrainDeleteEmpInfoRequest
+        @param headers: HrbrainDeleteEmpInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteEmpInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteEmpInfo',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/empInfos/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteEmpInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_delete_emp_info(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteEmpInfoRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteEmpInfoResponse:
+        """
+        @summary 删除人员信息
+        
+        @param request: HrbrainDeleteEmpInfoRequest
+        @return: HrbrainDeleteEmpInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteEmpInfoHeaders()
+        return self.hrbrain_delete_emp_info_with_options(request, headers, runtime)
+
+    async def hrbrain_delete_emp_info_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteEmpInfoRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteEmpInfoResponse:
+        """
+        @summary 删除人员信息
+        
+        @param request: HrbrainDeleteEmpInfoRequest
+        @return: HrbrainDeleteEmpInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteEmpInfoHeaders()
+        return await self.hrbrain_delete_emp_info_with_options_async(request, headers, runtime)
+
+    def hrbrain_delete_label_industry_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteLabelIndustryRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteLabelIndustryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteLabelIndustryResponse:
+        """
+        @summary 删除领域经验
+        
+        @param request: HrbrainDeleteLabelIndustryRequest
+        @param headers: HrbrainDeleteLabelIndustryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteLabelIndustryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteLabelIndustry',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/industries/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteLabelIndustryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_delete_label_industry_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteLabelIndustryRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteLabelIndustryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteLabelIndustryResponse:
+        """
+        @summary 删除领域经验
+        
+        @param request: HrbrainDeleteLabelIndustryRequest
+        @param headers: HrbrainDeleteLabelIndustryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteLabelIndustryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteLabelIndustry',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/industries/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteLabelIndustryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_delete_label_industry(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteLabelIndustryRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteLabelIndustryResponse:
+        """
+        @summary 删除领域经验
+        
+        @param request: HrbrainDeleteLabelIndustryRequest
+        @return: HrbrainDeleteLabelIndustryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteLabelIndustryHeaders()
+        return self.hrbrain_delete_label_industry_with_options(request, headers, runtime)
+
+    async def hrbrain_delete_label_industry_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteLabelIndustryRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteLabelIndustryResponse:
+        """
+        @summary 删除领域经验
+        
+        @param request: HrbrainDeleteLabelIndustryRequest
+        @return: HrbrainDeleteLabelIndustryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteLabelIndustryHeaders()
+        return await self.hrbrain_delete_label_industry_with_options_async(request, headers, runtime)
+
+    def hrbrain_delete_label_inventory_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteLabelInventoryRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteLabelInventoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteLabelInventoryResponse:
+        """
+        @summary 删除盘点数据
+        
+        @param request: HrbrainDeleteLabelInventoryRequest
+        @param headers: HrbrainDeleteLabelInventoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteLabelInventoryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteLabelInventory',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/inventories/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteLabelInventoryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_delete_label_inventory_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteLabelInventoryRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteLabelInventoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteLabelInventoryResponse:
+        """
+        @summary 删除盘点数据
+        
+        @param request: HrbrainDeleteLabelInventoryRequest
+        @param headers: HrbrainDeleteLabelInventoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteLabelInventoryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteLabelInventory',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/inventories/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteLabelInventoryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_delete_label_inventory(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteLabelInventoryRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteLabelInventoryResponse:
+        """
+        @summary 删除盘点数据
+        
+        @param request: HrbrainDeleteLabelInventoryRequest
+        @return: HrbrainDeleteLabelInventoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteLabelInventoryHeaders()
+        return self.hrbrain_delete_label_inventory_with_options(request, headers, runtime)
+
+    async def hrbrain_delete_label_inventory_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteLabelInventoryRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteLabelInventoryResponse:
+        """
+        @summary 删除盘点数据
+        
+        @param request: HrbrainDeleteLabelInventoryRequest
+        @return: HrbrainDeleteLabelInventoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteLabelInventoryHeaders()
+        return await self.hrbrain_delete_label_inventory_with_options_async(request, headers, runtime)
+
+    def hrbrain_delete_label_prof_skill_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteLabelProfSkillRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteLabelProfSkillHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteLabelProfSkillResponse:
+        """
+        @summary 删除专业技能
+        
+        @param request: HrbrainDeleteLabelProfSkillRequest
+        @param headers: HrbrainDeleteLabelProfSkillHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteLabelProfSkillResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteLabelProfSkill',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/profSkills/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteLabelProfSkillResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_delete_label_prof_skill_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteLabelProfSkillRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteLabelProfSkillHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteLabelProfSkillResponse:
+        """
+        @summary 删除专业技能
+        
+        @param request: HrbrainDeleteLabelProfSkillRequest
+        @param headers: HrbrainDeleteLabelProfSkillHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteLabelProfSkillResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteLabelProfSkill',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/profSkills/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteLabelProfSkillResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_delete_label_prof_skill(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteLabelProfSkillRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteLabelProfSkillResponse:
+        """
+        @summary 删除专业技能
+        
+        @param request: HrbrainDeleteLabelProfSkillRequest
+        @return: HrbrainDeleteLabelProfSkillResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteLabelProfSkillHeaders()
+        return self.hrbrain_delete_label_prof_skill_with_options(request, headers, runtime)
+
+    async def hrbrain_delete_label_prof_skill_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteLabelProfSkillRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteLabelProfSkillResponse:
+        """
+        @summary 删除专业技能
+        
+        @param request: HrbrainDeleteLabelProfSkillRequest
+        @return: HrbrainDeleteLabelProfSkillResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteLabelProfSkillHeaders()
+        return await self.hrbrain_delete_label_prof_skill_with_options_async(request, headers, runtime)
+
+    def hrbrain_delete_perf_eval_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeletePerfEvalRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeletePerfEvalHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeletePerfEvalResponse:
+        """
+        @summary 删除绩效记录
+        
+        @param request: HrbrainDeletePerfEvalRequest
+        @param headers: HrbrainDeletePerfEvalHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeletePerfEvalResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeletePerfEval',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/perfRecords/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeletePerfEvalResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_delete_perf_eval_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeletePerfEvalRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeletePerfEvalHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeletePerfEvalResponse:
+        """
+        @summary 删除绩效记录
+        
+        @param request: HrbrainDeletePerfEvalRequest
+        @param headers: HrbrainDeletePerfEvalHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeletePerfEvalResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeletePerfEval',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/perfRecords/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeletePerfEvalResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_delete_perf_eval(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeletePerfEvalRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeletePerfEvalResponse:
+        """
+        @summary 删除绩效记录
+        
+        @param request: HrbrainDeletePerfEvalRequest
+        @return: HrbrainDeletePerfEvalResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeletePerfEvalHeaders()
+        return self.hrbrain_delete_perf_eval_with_options(request, headers, runtime)
+
+    async def hrbrain_delete_perf_eval_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeletePerfEvalRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeletePerfEvalResponse:
+        """
+        @summary 删除绩效记录
+        
+        @param request: HrbrainDeletePerfEvalRequest
+        @return: HrbrainDeletePerfEvalResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeletePerfEvalHeaders()
+        return await self.hrbrain_delete_perf_eval_with_options_async(request, headers, runtime)
+
+    def hrbrain_delete_prom_records_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeletePromRecordsRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeletePromRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeletePromRecordsResponse:
+        """
+        @summary 数据集成晋升记录删除
+        
+        @param request: HrbrainDeletePromRecordsRequest
+        @param headers: HrbrainDeletePromRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeletePromRecordsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeletePromRecords',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/promEvals/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeletePromRecordsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_delete_prom_records_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeletePromRecordsRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeletePromRecordsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeletePromRecordsResponse:
+        """
+        @summary 数据集成晋升记录删除
+        
+        @param request: HrbrainDeletePromRecordsRequest
+        @param headers: HrbrainDeletePromRecordsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeletePromRecordsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeletePromRecords',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/promEvals/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeletePromRecordsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_delete_prom_records(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeletePromRecordsRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeletePromRecordsResponse:
+        """
+        @summary 数据集成晋升记录删除
+        
+        @param request: HrbrainDeletePromRecordsRequest
+        @return: HrbrainDeletePromRecordsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeletePromRecordsHeaders()
+        return self.hrbrain_delete_prom_records_with_options(request, headers, runtime)
+
+    async def hrbrain_delete_prom_records_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeletePromRecordsRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeletePromRecordsResponse:
+        """
+        @summary 数据集成晋升记录删除
+        
+        @param request: HrbrainDeletePromRecordsRequest
+        @return: HrbrainDeletePromRecordsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeletePromRecordsHeaders()
+        return await self.hrbrain_delete_prom_records_with_options_async(request, headers, runtime)
+
+    def hrbrain_delete_pun_detail_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeletePunDetailRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeletePunDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeletePunDetailResponse:
+        """
+        @summary 删除处分记录
+        
+        @param request: HrbrainDeletePunDetailRequest
+        @param headers: HrbrainDeletePunDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeletePunDetailResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeletePunDetail',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/punDetails/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeletePunDetailResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_delete_pun_detail_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeletePunDetailRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeletePunDetailHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeletePunDetailResponse:
+        """
+        @summary 删除处分记录
+        
+        @param request: HrbrainDeletePunDetailRequest
+        @param headers: HrbrainDeletePunDetailHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeletePunDetailResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeletePunDetail',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/punDetails/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeletePunDetailResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_delete_pun_detail(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeletePunDetailRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeletePunDetailResponse:
+        """
+        @summary 删除处分记录
+        
+        @param request: HrbrainDeletePunDetailRequest
+        @return: HrbrainDeletePunDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeletePunDetailHeaders()
+        return self.hrbrain_delete_pun_detail_with_options(request, headers, runtime)
+
+    async def hrbrain_delete_pun_detail_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeletePunDetailRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeletePunDetailResponse:
+        """
+        @summary 删除处分记录
+        
+        @param request: HrbrainDeletePunDetailRequest
+        @return: HrbrainDeletePunDetailResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeletePunDetailHeaders()
+        return await self.hrbrain_delete_pun_detail_with_options_async(request, headers, runtime)
+
+    def hrbrain_delete_regist_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteRegistRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteRegistHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteRegistResponse:
+        """
+        @summary 删除入职记录
+        
+        @param request: HrbrainDeleteRegistRequest
+        @param headers: HrbrainDeleteRegistHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteRegistResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteRegist',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/registerInfos/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteRegistResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_delete_regist_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteRegistRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteRegistHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteRegistResponse:
+        """
+        @summary 删除入职记录
+        
+        @param request: HrbrainDeleteRegistRequest
+        @param headers: HrbrainDeleteRegistHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteRegistResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteRegist',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/registerInfos/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteRegistResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_delete_regist(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteRegistRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteRegistResponse:
+        """
+        @summary 删除入职记录
+        
+        @param request: HrbrainDeleteRegistRequest
+        @return: HrbrainDeleteRegistResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteRegistHeaders()
+        return self.hrbrain_delete_regist_with_options(request, headers, runtime)
+
+    async def hrbrain_delete_regist_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteRegistRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteRegistResponse:
+        """
+        @summary 删除入职记录
+        
+        @param request: HrbrainDeleteRegistRequest
+        @return: HrbrainDeleteRegistResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteRegistHeaders()
+        return await self.hrbrain_delete_regist_with_options_async(request, headers, runtime)
+
+    def hrbrain_delete_transfer_eval_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteTransferEvalRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteTransferEvalHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteTransferEvalResponse:
+        """
+        @summary 删除调岗记录
+        
+        @param request: HrbrainDeleteTransferEvalRequest
+        @param headers: HrbrainDeleteTransferEvalHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteTransferEvalResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteTransferEval',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/changeRecords/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteTransferEvalResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_delete_transfer_eval_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteTransferEvalRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteTransferEvalHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteTransferEvalResponse:
+        """
+        @summary 删除调岗记录
+        
+        @param request: HrbrainDeleteTransferEvalRequest
+        @param headers: HrbrainDeleteTransferEvalHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteTransferEvalResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteTransferEval',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/changeRecords/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteTransferEvalResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_delete_transfer_eval(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteTransferEvalRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteTransferEvalResponse:
+        """
+        @summary 删除调岗记录
+        
+        @param request: HrbrainDeleteTransferEvalRequest
+        @return: HrbrainDeleteTransferEvalResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteTransferEvalHeaders()
+        return self.hrbrain_delete_transfer_eval_with_options(request, headers, runtime)
+
+    async def hrbrain_delete_transfer_eval_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteTransferEvalRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteTransferEvalResponse:
+        """
+        @summary 删除调岗记录
+        
+        @param request: HrbrainDeleteTransferEvalRequest
+        @return: HrbrainDeleteTransferEvalResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteTransferEvalHeaders()
+        return await self.hrbrain_delete_transfer_eval_with_options_async(request, headers, runtime)
+
+    def hrbrain_delete_work_exp_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteWorkExpRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteWorkExpHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteWorkExpResponse:
+        """
+        @summary 删除工作经历
+        
+        @param request: HrbrainDeleteWorkExpRequest
+        @param headers: HrbrainDeleteWorkExpHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteWorkExpResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteWorkExp',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/workExperiences/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteWorkExpResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_delete_work_exp_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteWorkExpRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeleteWorkExpHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteWorkExpResponse:
+        """
+        @summary 删除工作经历
+        
+        @param request: HrbrainDeleteWorkExpRequest
+        @param headers: HrbrainDeleteWorkExpHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeleteWorkExpResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeleteWorkExp',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/workExperiences/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeleteWorkExpResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_delete_work_exp(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteWorkExpRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteWorkExpResponse:
+        """
+        @summary 删除工作经历
+        
+        @param request: HrbrainDeleteWorkExpRequest
+        @return: HrbrainDeleteWorkExpResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteWorkExpHeaders()
+        return self.hrbrain_delete_work_exp_with_options(request, headers, runtime)
+
+    async def hrbrain_delete_work_exp_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeleteWorkExpRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeleteWorkExpResponse:
+        """
+        @summary 删除工作经历
+        
+        @param request: HrbrainDeleteWorkExpRequest
+        @return: HrbrainDeleteWorkExpResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeleteWorkExpHeaders()
+        return await self.hrbrain_delete_work_exp_with_options_async(request, headers, runtime)
+
+    def hrbrain_deletet_label_base_with_options(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeletetLabelBaseRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeletetLabelBaseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeletetLabelBaseResponse:
+        """
+        @summary 删除标签数据
+        
+        @param request: HrbrainDeletetLabelBaseRequest
+        @param headers: HrbrainDeletetLabelBaseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeletetLabelBaseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeletetLabelBase',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/baseLabels/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeletetLabelBaseResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def hrbrain_deletet_label_base_with_options_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeletetLabelBaseRequest,
+        headers: dingtalkhrbrain__1__0_models.HrbrainDeletetLabelBaseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeletetLabelBaseResponse:
+        """
+        @summary 删除标签数据
+        
+        @param request: HrbrainDeletetLabelBaseRequest
+        @param headers: HrbrainDeletetLabelBaseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: HrbrainDeletetLabelBaseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.params):
+            body['params'] = request.params
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='HrbrainDeletetLabelBase',
+            version='hrbrain_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrbrain/datas/baseLabels/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrbrain__1__0_models.HrbrainDeletetLabelBaseResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def hrbrain_deletet_label_base(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeletetLabelBaseRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeletetLabelBaseResponse:
+        """
+        @summary 删除标签数据
+        
+        @param request: HrbrainDeletetLabelBaseRequest
+        @return: HrbrainDeletetLabelBaseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeletetLabelBaseHeaders()
+        return self.hrbrain_deletet_label_base_with_options(request, headers, runtime)
+
+    async def hrbrain_deletet_label_base_async(
+        self,
+        request: dingtalkhrbrain__1__0_models.HrbrainDeletetLabelBaseRequest,
+    ) -> dingtalkhrbrain__1__0_models.HrbrainDeletetLabelBaseResponse:
+        """
+        @summary 删除标签数据
+        
+        @param request: HrbrainDeletetLabelBaseRequest
+        @return: HrbrainDeletetLabelBaseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrbrain__1__0_models.HrbrainDeletetLabelBaseHeaders()
+        return await self.hrbrain_deletet_label_base_with_options_async(request, headers, runtime)
+
     def hrbrain_import_award_detail_with_options(
         self,
         request: dingtalkhrbrain__1__0_models.HrbrainImportAwardDetailRequest,

@@ -160,6 +160,192 @@ class CheckOpportunityResultResponse(TeaModel):
         return self
 
 
+class CreateClueTempHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateClueTempRequest(TeaModel):
+    def __init__(
+        self,
+        address: str = None,
+        contact_name: str = None,
+        dept_id: int = None,
+        ext: str = None,
+        name: str = None,
+        phone_num: str = None,
+        position: str = None,
+        product_code: str = None,
+        sales_id: int = None,
+        source: str = None,
+    ):
+        self.address = address
+        # This parameter is required.
+        self.contact_name = contact_name
+        self.dept_id = dept_id
+        self.ext = ext
+        # This parameter is required.
+        self.name = name
+        # This parameter is required.
+        self.phone_num = phone_num
+        self.position = position
+        self.product_code = product_code
+        self.sales_id = sales_id
+        # This parameter is required.
+        self.source = source
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.address is not None:
+            result['address'] = self.address
+        if self.contact_name is not None:
+            result['contactName'] = self.contact_name
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.ext is not None:
+            result['ext'] = self.ext
+        if self.name is not None:
+            result['name'] = self.name
+        if self.phone_num is not None:
+            result['phoneNum'] = self.phone_num
+        if self.position is not None:
+            result['position'] = self.position
+        if self.product_code is not None:
+            result['productCode'] = self.product_code
+        if self.sales_id is not None:
+            result['salesId'] = self.sales_id
+        if self.source is not None:
+            result['source'] = self.source
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('address') is not None:
+            self.address = m.get('address')
+        if m.get('contactName') is not None:
+            self.contact_name = m.get('contactName')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('ext') is not None:
+            self.ext = m.get('ext')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('phoneNum') is not None:
+            self.phone_num = m.get('phoneNum')
+        if m.get('position') is not None:
+            self.position = m.get('position')
+        if m.get('productCode') is not None:
+            self.product_code = m.get('productCode')
+        if m.get('salesId') is not None:
+            self.sales_id = m.get('salesId')
+        if m.get('source') is not None:
+            self.source = m.get('source')
+        return self
+
+
+class CreateClueTempResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateClueTempResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateClueTempResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateClueTempResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateNoteForIsvHeaders(TeaModel):
     def __init__(
         self,

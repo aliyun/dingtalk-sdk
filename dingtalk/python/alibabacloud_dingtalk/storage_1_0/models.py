@@ -8039,6 +8039,7 @@ class ListDentriesResponseBodyDentries(TeaModel):
     def __init__(
         self,
         app_properties: Dict[str, List[DentriesAppPropertiesValue]] = None,
+        category: str = None,
         create_time: str = None,
         creator_id: str = None,
         extension: str = None,
@@ -8060,6 +8061,7 @@ class ListDentriesResponseBodyDentries(TeaModel):
         version: int = None,
     ):
         self.app_properties = app_properties
+        self.category = category
         self.create_time = create_time
         self.creator_id = creator_id
         self.extension = extension
@@ -8104,6 +8106,8 @@ class ListDentriesResponseBodyDentries(TeaModel):
                 for k1 in v:
                     l1.append(k1.to_map() if k1 else None)
                 result['appProperties'][k] = l1
+        if self.category is not None:
+            result['category'] = self.category
         if self.create_time is not None:
             result['createTime'] = self.create_time
         if self.creator_id is not None:
@@ -8154,6 +8158,8 @@ class ListDentriesResponseBodyDentries(TeaModel):
                     temp_model = DentriesAppPropertiesValue()
                     l1.append(temp_model.from_map(k1))
                 self.app_properties['k'] = l1
+        if m.get('category') is not None:
+            self.category = m.get('category')
         if m.get('createTime') is not None:
             self.create_time = m.get('createTime')
         if m.get('creatorId') is not None:
