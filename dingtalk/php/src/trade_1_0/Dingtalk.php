@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CheckOpportunityResultHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CheckOpportunityResultRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CheckOpportunityResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CreateClueTempHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CreateClueTempRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CreateClueTempResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CreateNoteForIsvHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CreateNoteForIsvRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtrade_1_0\Models\CreateNoteForIsvResponse;
@@ -104,6 +107,90 @@ class Dingtalk extends OpenApiClient
         $headers = new CheckOpportunityResultHeaders([]);
 
         return $this->checkOpportunityResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 用于客户跟进线索创建
+     *  *
+     * @param CreateClueTempRequest $request CreateClueTempRequest
+     * @param CreateClueTempHeaders $headers CreateClueTempHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateClueTempResponse CreateClueTempResponse
+     */
+    public function createClueTempWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->address)) {
+            $body['address'] = $request->address;
+        }
+        if (!Utils::isUnset($request->contactName)) {
+            $body['contactName'] = $request->contactName;
+        }
+        if (!Utils::isUnset($request->deptId)) {
+            $body['deptId'] = $request->deptId;
+        }
+        if (!Utils::isUnset($request->ext)) {
+            $body['ext'] = $request->ext;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->phoneNum)) {
+            $body['phoneNum'] = $request->phoneNum;
+        }
+        if (!Utils::isUnset($request->position)) {
+            $body['position'] = $request->position;
+        }
+        if (!Utils::isUnset($request->productCode)) {
+            $body['productCode'] = $request->productCode;
+        }
+        if (!Utils::isUnset($request->salesId)) {
+            $body['salesId'] = $request->salesId;
+        }
+        if (!Utils::isUnset($request->source)) {
+            $body['source'] = $request->source;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateClueTemp',
+            'version'     => 'trade_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/trade/clueTemps',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateClueTempResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 用于客户跟进线索创建
+     *  *
+     * @param CreateClueTempRequest $request CreateClueTempRequest
+     *
+     * @return CreateClueTempResponse CreateClueTempResponse
+     */
+    public function createClueTemp($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateClueTempHeaders([]);
+
+        return $this->createClueTempWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -9,6 +9,16 @@ use AlibabaCloud\Tea\Model;
 class CreateAssistantRequest extends Model
 {
     /**
+     * @var string
+     */
+    public $customAgentMobileLink;
+
+    /**
+     * @var string
+     */
+    public $customAgentPCLink;
+
+    /**
      * @description This parameter is required.
      *
      * @var string
@@ -55,13 +65,15 @@ class CreateAssistantRequest extends Model
      */
     public $welcomeContent;
     protected $_name = [
-        'description'      => 'description',
-        'icon'             => 'icon',
-        'instructions'     => 'instructions',
-        'name'             => 'name',
-        'operatorUnionId'  => 'operatorUnionId',
-        'recommendPrompts' => 'recommendPrompts',
-        'welcomeContent'   => 'welcomeContent',
+        'customAgentMobileLink' => 'customAgentMobileLink',
+        'customAgentPCLink'     => 'customAgentPCLink',
+        'description'           => 'description',
+        'icon'                  => 'icon',
+        'instructions'          => 'instructions',
+        'name'                  => 'name',
+        'operatorUnionId'       => 'operatorUnionId',
+        'recommendPrompts'      => 'recommendPrompts',
+        'welcomeContent'        => 'welcomeContent',
     ];
 
     public function validate()
@@ -71,6 +83,12 @@ class CreateAssistantRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->customAgentMobileLink) {
+            $res['customAgentMobileLink'] = $this->customAgentMobileLink;
+        }
+        if (null !== $this->customAgentPCLink) {
+            $res['customAgentPCLink'] = $this->customAgentPCLink;
+        }
         if (null !== $this->description) {
             $res['description'] = $this->description;
         }
@@ -104,6 +122,12 @@ class CreateAssistantRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['customAgentMobileLink'])) {
+            $model->customAgentMobileLink = $map['customAgentMobileLink'];
+        }
+        if (isset($map['customAgentPCLink'])) {
+            $model->customAgentPCLink = $map['customAgentPCLink'];
+        }
         if (isset($map['description'])) {
             $model->description = $map['description'];
         }

@@ -63,6 +63,9 @@ use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\ListVisibleAssistantResponse
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RelearnKnowledgeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RelearnKnowledgeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RelearnKnowledgeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RemoveAssistantHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RemoveAssistantRequest;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RemoveAssistantResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RetrieveAssistantBasicInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RetrieveAssistantBasicInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RetrieveAssistantBasicInfoResponse;
@@ -174,6 +177,12 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->customAgentMobileLink)) {
+            $body['customAgentMobileLink'] = $request->customAgentMobileLink;
+        }
+        if (!Utils::isUnset($request->customAgentPCLink)) {
+            $body['customAgentPCLink'] = $request->customAgentPCLink;
+        }
         if (!Utils::isUnset($request->description)) {
             $body['description'] = $request->description;
         }
@@ -909,6 +918,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->assistantId)) {
             $body['assistantId'] = $request->assistantId;
         }
+        if (!Utils::isUnset($request->isAllOrgMemberVisible)) {
+            $body['isAllOrgMemberVisible'] = $request->isAllOrgMemberVisible;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -1318,6 +1330,66 @@ class Dingtalk extends OpenApiClient
         $headers = new RelearnKnowledgeHeaders([]);
 
         return $this->relearnKnowledgeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 卸载助理
+     *  *
+     * @param RemoveAssistantRequest $request RemoveAssistantRequest
+     * @param RemoveAssistantHeaders $headers RemoveAssistantHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return RemoveAssistantResponse RemoveAssistantResponse
+     */
+    public function removeAssistantWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->assistantId)) {
+            $body['assistantId'] = $request->assistantId;
+        }
+        if (!Utils::isUnset($request->operatorUnionId)) {
+            $body['operatorUnionId'] = $request->operatorUnionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'RemoveAssistant',
+            'version'     => 'assistant_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/assistant/uninstall',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return RemoveAssistantResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 卸载助理
+     *  *
+     * @param RemoveAssistantRequest $request RemoveAssistantRequest
+     *
+     * @return RemoveAssistantResponse RemoveAssistantResponse
+     */
+    public function removeAssistant($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RemoveAssistantHeaders([]);
+
+        return $this->removeAssistantWithOptions($request, $headers, $runtime);
     }
 
     /**

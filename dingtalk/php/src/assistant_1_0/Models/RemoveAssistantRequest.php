@@ -6,7 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class InstallAssistantRequest extends Model
+class RemoveAssistantRequest extends Model
 {
     /**
      * @var string
@@ -14,12 +14,12 @@ class InstallAssistantRequest extends Model
     public $assistantId;
 
     /**
-     * @var bool
+     * @var string
      */
-    public $isAllOrgMemberVisible;
+    public $operatorUnionId;
     protected $_name = [
-        'assistantId'           => 'assistantId',
-        'isAllOrgMemberVisible' => 'isAllOrgMemberVisible',
+        'assistantId'     => 'assistantId',
+        'operatorUnionId' => 'operatorUnionId',
     ];
 
     public function validate()
@@ -32,8 +32,8 @@ class InstallAssistantRequest extends Model
         if (null !== $this->assistantId) {
             $res['assistantId'] = $this->assistantId;
         }
-        if (null !== $this->isAllOrgMemberVisible) {
-            $res['isAllOrgMemberVisible'] = $this->isAllOrgMemberVisible;
+        if (null !== $this->operatorUnionId) {
+            $res['operatorUnionId'] = $this->operatorUnionId;
         }
 
         return $res;
@@ -42,7 +42,7 @@ class InstallAssistantRequest extends Model
     /**
      * @param array $map
      *
-     * @return InstallAssistantRequest
+     * @return RemoveAssistantRequest
      */
     public static function fromMap($map = [])
     {
@@ -50,8 +50,8 @@ class InstallAssistantRequest extends Model
         if (isset($map['assistantId'])) {
             $model->assistantId = $map['assistantId'];
         }
-        if (isset($map['isAllOrgMemberVisible'])) {
-            $model->isAllOrgMemberVisible = $map['isAllOrgMemberVisible'];
+        if (isset($map['operatorUnionId'])) {
+            $model->operatorUnionId = $map['operatorUnionId'];
         }
 
         return $model;

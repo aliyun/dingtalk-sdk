@@ -99,7 +99,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 创建预定黑名单
+     * @summary 创建会议室预定黑名单
      *  *
      * @param CreateBookingBlacklistRequest $request CreateBookingBlacklistRequest
      * @param CreateBookingBlacklistHeaders $headers CreateBookingBlacklistHeaders
@@ -153,7 +153,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 创建预定黑名单
+     * @summary 创建会议室预定黑名单
      *  *
      * @param CreateBookingBlacklistRequest $request CreateBookingBlacklistRequest
      *
@@ -495,7 +495,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 删除预定黑名单
+     * @summary 删除会议室预定黑名单
      *  *
      * @param DeleteBookingBlacklistRequest $request DeleteBookingBlacklistRequest
      * @param DeleteBookingBlacklistHeaders $headers DeleteBookingBlacklistHeaders
@@ -540,7 +540,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 删除预定黑名单
+     * @summary 删除会议室预定黑名单
      *  *
      * @param DeleteBookingBlacklistRequest $request DeleteBookingBlacklistRequest
      *

@@ -17,6 +17,13 @@ class dentries extends Model
     public $appProperties;
 
     /**
+     * @example DOCUMENT
+     *
+     * @var string
+     */
+    public $category;
+
+    /**
      * @example 2022-01-01T10:00:00Z
      *
      * @var string
@@ -125,7 +132,7 @@ class dentries extends Model
     public $thumbnail;
 
     /**
-     * @example file
+     * @example FILE
      *
      * @var string
      */
@@ -146,6 +153,7 @@ class dentries extends Model
     public $version;
     protected $_name = [
         'appProperties' => 'appProperties',
+        'category'      => 'category',
         'createTime'    => 'createTime',
         'creatorId'     => 'creatorId',
         'extension'     => 'extension',
@@ -176,6 +184,9 @@ class dentries extends Model
         $res = [];
         if (null !== $this->appProperties) {
             $res['appProperties'] = $this->appProperties;
+        }
+        if (null !== $this->category) {
+            $res['category'] = $this->category;
         }
         if (null !== $this->createTime) {
             $res['createTime'] = $this->createTime;
@@ -248,6 +259,9 @@ class dentries extends Model
         $model = new self();
         if (isset($map['appProperties'])) {
             $model->appProperties = $map['appProperties'];
+        }
+        if (isset($map['category'])) {
+            $model->category = $map['category'];
         }
         if (isset($map['createTime'])) {
             $model->createTime = $map['createTime'];
