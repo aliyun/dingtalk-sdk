@@ -20,7 +20,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>创建预定黑名单</p>
+     * <p>创建会议室预定黑名单</p>
      * 
      * @param request CreateBookingBlacklistRequest
      * @param headers CreateBookingBlacklistHeaders
@@ -79,7 +79,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>创建预定黑名单</p>
+     * <p>创建会议室预定黑名单</p>
      * 
      * @param request CreateBookingBlacklistRequest
      * @return CreateBookingBlacklistResponse
@@ -448,7 +448,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>删除预定黑名单</p>
+     * <p>删除会议室预定黑名单</p>
      * 
      * @param request DeleteBookingBlacklistRequest
      * @param headers DeleteBookingBlacklistHeaders
@@ -495,7 +495,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>删除预定黑名单</p>
+     * <p>删除会议室预定黑名单</p>
      * 
      * @param request DeleteBookingBlacklistRequest
      * @return DeleteBookingBlacklistResponse

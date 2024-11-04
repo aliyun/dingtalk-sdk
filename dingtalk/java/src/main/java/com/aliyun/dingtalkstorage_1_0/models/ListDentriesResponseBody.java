@@ -117,6 +117,13 @@ public class ListDentriesResponseBody extends TeaModel {
 
         /**
          * <strong>example:</strong>
+         * <p>DOCUMENT</p>
+         */
+        @NameInMap("category")
+        public String category;
+
+        /**
+         * <strong>example:</strong>
          * <p>2022-01-01T10:00:00Z</p>
          */
         @NameInMap("createTime")
@@ -221,7 +228,7 @@ public class ListDentriesResponseBody extends TeaModel {
 
         /**
          * <strong>example:</strong>
-         * <p>file</p>
+         * <p>FILE</p>
          */
         @NameInMap("type")
         public String type;
@@ -251,6 +258,14 @@ public class ListDentriesResponseBody extends TeaModel {
         }
         public java.util.Map<String, java.util.List<DentriesAppPropertiesValue>> getAppProperties() {
             return this.appProperties;
+        }
+
+        public ListDentriesResponseBodyDentries setCategory(String category) {
+            this.category = category;
+            return this;
+        }
+        public String getCategory() {
+            return this.category;
         }
 
         public ListDentriesResponseBodyDentries setCreateTime(String createTime) {

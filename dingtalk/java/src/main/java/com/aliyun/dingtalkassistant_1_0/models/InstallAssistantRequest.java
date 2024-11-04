@@ -7,6 +7,9 @@ public class InstallAssistantRequest extends TeaModel {
     @NameInMap("assistantId")
     public String assistantId;
 
+    @NameInMap("isAllOrgMemberVisible")
+    public Boolean isAllOrgMemberVisible;
+
     public static InstallAssistantRequest build(java.util.Map<String, ?> map) throws Exception {
         InstallAssistantRequest self = new InstallAssistantRequest();
         return TeaModel.build(map, self);
@@ -18,6 +21,14 @@ public class InstallAssistantRequest extends TeaModel {
     }
     public String getAssistantId() {
         return this.assistantId;
+    }
+
+    public InstallAssistantRequest setIsAllOrgMemberVisible(Boolean isAllOrgMemberVisible) {
+        this.isAllOrgMemberVisible = isAllOrgMemberVisible;
+        return this;
+    }
+    public Boolean getIsAllOrgMemberVisible() {
+        return this.isAllOrgMemberVisible;
     }
 
 }
