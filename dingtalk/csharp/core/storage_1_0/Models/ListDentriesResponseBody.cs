@@ -19,6 +19,14 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 
             /// <summary>
             /// <b>Example:</b>
+            /// <para>DOCUMENT</para>
+            /// </summary>
+            [NameInMap("category")]
+            [Validation(Required=false)]
+            public string Category { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
             /// <para>2022-01-01T10:00:00Z</para>
             /// </summary>
             [NameInMap("createTime")]
@@ -175,7 +183,7 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_1_0.Models
 
             /// <summary>
             /// <b>Example:</b>
-            /// <para>file</para>
+            /// <para>FILE</para>
             /// </summary>
             [NameInMap("type")]
             [Validation(Required=false)]

@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>创建预定黑名单</para>
+        /// <para>创建会议室预定黑名单</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -101,7 +101,7 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>创建预定黑名单</para>
+        /// <para>创建会议室预定黑名单</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -172,7 +172,7 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>创建预定黑名单</para>
+        /// <para>创建会议室预定黑名单</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -191,7 +191,7 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>创建预定黑名单</para>
+        /// <para>创建会议室预定黑名单</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -1066,7 +1066,7 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>删除预定黑名单</para>
+        /// <para>删除会议室预定黑名单</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -1125,7 +1125,7 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>删除预定黑名单</para>
+        /// <para>删除会议室预定黑名单</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -1184,7 +1184,7 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>删除预定黑名单</para>
+        /// <para>删除会议室预定黑名单</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -1203,7 +1203,7 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>删除预定黑名单</para>
+        /// <para>删除会议室预定黑名单</para>
         /// </summary>
         /// 
         /// <param name="request">

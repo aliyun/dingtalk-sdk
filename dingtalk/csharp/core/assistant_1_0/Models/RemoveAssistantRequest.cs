@@ -8,14 +8,14 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkassistant_1_0.Models
 {
-    public class InstallAssistantRequest : TeaModel {
+    public class RemoveAssistantRequest : TeaModel {
         [NameInMap("assistantId")]
         [Validation(Required=false)]
         public string AssistantId { get; set; }
 
-        [NameInMap("isAllOrgMemberVisible")]
+        [NameInMap("operatorUnionId")]
         [Validation(Required=false)]
-        public bool? IsAllOrgMemberVisible { get; set; }
+        public string OperatorUnionId { get; set; }
 
     }
 

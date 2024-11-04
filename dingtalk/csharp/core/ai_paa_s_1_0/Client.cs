@@ -1418,6 +1418,302 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>添加智能报价数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SmartQuoteDataServiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// SmartQuoteDataServiceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SmartQuoteDataServiceResponse
+        /// </returns>
+        public SmartQuoteDataServiceResponse SmartQuoteDataServiceWithOptions(SmartQuoteDataServiceRequest request, SmartQuoteDataServiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Request))
+            {
+                body["request"] = request.Request;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SmartQuoteDataService",
+                Version = "aiPaaS_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiPaaS/nl2x/smartQuotations/datas",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SmartQuoteDataServiceResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加智能报价数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SmartQuoteDataServiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// SmartQuoteDataServiceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SmartQuoteDataServiceResponse
+        /// </returns>
+        public async Task<SmartQuoteDataServiceResponse> SmartQuoteDataServiceWithOptionsAsync(SmartQuoteDataServiceRequest request, SmartQuoteDataServiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Request))
+            {
+                body["request"] = request.Request;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SmartQuoteDataService",
+                Version = "aiPaaS_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiPaaS/nl2x/smartQuotations/datas",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SmartQuoteDataServiceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加智能报价数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SmartQuoteDataServiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SmartQuoteDataServiceResponse
+        /// </returns>
+        public SmartQuoteDataServiceResponse SmartQuoteDataService(SmartQuoteDataServiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SmartQuoteDataServiceHeaders headers = new SmartQuoteDataServiceHeaders();
+            return SmartQuoteDataServiceWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加智能报价数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SmartQuoteDataServiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SmartQuoteDataServiceResponse
+        /// </returns>
+        public async Task<SmartQuoteDataServiceResponse> SmartQuoteDataServiceAsync(SmartQuoteDataServiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SmartQuoteDataServiceHeaders headers = new SmartQuoteDataServiceHeaders();
+            return await SmartQuoteDataServiceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询智能报价</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SmartQuoteQueryServiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// SmartQuoteQueryServiceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SmartQuoteQueryServiceResponse
+        /// </returns>
+        public SmartQuoteQueryServiceResponse SmartQuoteQueryServiceWithOptions(SmartQuoteQueryServiceRequest request, SmartQuoteQueryServiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Request))
+            {
+                body["request"] = request.Request;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SmartQuoteQueryService",
+                Version = "aiPaaS_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiPaaS/nl2x/smartQuotations/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SmartQuoteQueryServiceResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询智能报价</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SmartQuoteQueryServiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// SmartQuoteQueryServiceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SmartQuoteQueryServiceResponse
+        /// </returns>
+        public async Task<SmartQuoteQueryServiceResponse> SmartQuoteQueryServiceWithOptionsAsync(SmartQuoteQueryServiceRequest request, SmartQuoteQueryServiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Request))
+            {
+                body["request"] = request.Request;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SmartQuoteQueryService",
+                Version = "aiPaaS_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiPaaS/nl2x/smartQuotations/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SmartQuoteQueryServiceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询智能报价</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SmartQuoteQueryServiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SmartQuoteQueryServiceResponse
+        /// </returns>
+        public SmartQuoteQueryServiceResponse SmartQuoteQueryService(SmartQuoteQueryServiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SmartQuoteQueryServiceHeaders headers = new SmartQuoteQueryServiceHeaders();
+            return SmartQuoteQueryServiceWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询智能报价</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SmartQuoteQueryServiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SmartQuoteQueryServiceResponse
+        /// </returns>
+        public async Task<SmartQuoteQueryServiceResponse> SmartQuoteQueryServiceAsync(SmartQuoteQueryServiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SmartQuoteQueryServiceHeaders headers = new SmartQuoteQueryServiceHeaders();
+            return await SmartQuoteQueryServiceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>提交记忆学习任务</para>
         /// </summary>
         /// 

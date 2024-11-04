@@ -8,14 +8,14 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkassistant_1_0.Models
 {
-    public class InstallAssistantRequest : TeaModel {
-        [NameInMap("assistantId")]
+    public class RemoveAssistantHeaders : TeaModel {
+        [NameInMap("commonHeaders")]
         [Validation(Required=false)]
-        public string AssistantId { get; set; }
+        public Dictionary<string, string> CommonHeaders { get; set; }
 
-        [NameInMap("isAllOrgMemberVisible")]
+        [NameInMap("x-acs-dingtalk-access-token")]
         [Validation(Required=false)]
-        public bool? IsAllOrgMemberVisible { get; set; }
+        public string XAcsDingtalkAccessToken { get; set; }
 
     }
 
