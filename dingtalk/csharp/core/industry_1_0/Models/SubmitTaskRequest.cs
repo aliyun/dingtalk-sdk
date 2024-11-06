@@ -47,6 +47,14 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
 
             /// <summary>
             /// <b>Example:</b>
+            /// <para>根据不同业务类型，传业务需求的JSON字符串</para>
+            /// </summary>
+            [NameInMap("extension")]
+            [Validation(Required=false)]
+            public string Extension { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
             /// <para>audio</para>
             /// </summary>
             [NameInMap("fileType")]

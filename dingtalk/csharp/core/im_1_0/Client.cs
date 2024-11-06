@@ -5058,6 +5058,126 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询场景群模板消息存档能力开启状态</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetSceneGroupTemplateMessageOpenStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSceneGroupTemplateMessageOpenStatusResponse
+        /// </returns>
+        public GetSceneGroupTemplateMessageOpenStatusResponse GetSceneGroupTemplateMessageOpenStatusWithOptions(string templateId, GetSceneGroupTemplateMessageOpenStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSceneGroupTemplateMessageOpenStatus",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/chats/sceneGroups/templates/" + templateId + "/messageOpenStatuses",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSceneGroupTemplateMessageOpenStatusResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询场景群模板消息存档能力开启状态</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetSceneGroupTemplateMessageOpenStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetSceneGroupTemplateMessageOpenStatusResponse
+        /// </returns>
+        public async Task<GetSceneGroupTemplateMessageOpenStatusResponse> GetSceneGroupTemplateMessageOpenStatusWithOptionsAsync(string templateId, GetSceneGroupTemplateMessageOpenStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetSceneGroupTemplateMessageOpenStatus",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/chats/sceneGroups/templates/" + templateId + "/messageOpenStatuses",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetSceneGroupTemplateMessageOpenStatusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询场景群模板消息存档能力开启状态</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetSceneGroupTemplateMessageOpenStatusResponse
+        /// </returns>
+        public GetSceneGroupTemplateMessageOpenStatusResponse GetSceneGroupTemplateMessageOpenStatus(string templateId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetSceneGroupTemplateMessageOpenStatusHeaders headers = new GetSceneGroupTemplateMessageOpenStatusHeaders();
+            return GetSceneGroupTemplateMessageOpenStatusWithOptions(templateId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询场景群模板消息存档能力开启状态</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetSceneGroupTemplateMessageOpenStatusResponse
+        /// </returns>
+        public async Task<GetSceneGroupTemplateMessageOpenStatusResponse> GetSceneGroupTemplateMessageOpenStatusAsync(string templateId)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetSceneGroupTemplateMessageOpenStatusHeaders headers = new GetSceneGroupTemplateMessageOpenStatusHeaders();
+            return await GetSceneGroupTemplateMessageOpenStatusWithOptionsAsync(templateId, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>群禁言</para>
         /// </summary>
         /// 
@@ -15082,6 +15202,170 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateRobotInteractiveCardHeaders headers = new UpdateRobotInteractiveCardHeaders();
             return await UpdateRobotInteractiveCardWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改场景群模板消息存档能力开启状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateSceneGroupTemplateMessageOpenStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateSceneGroupTemplateMessageOpenStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateSceneGroupTemplateMessageOpenStatusResponse
+        /// </returns>
+        public UpdateSceneGroupTemplateMessageOpenStatusResponse UpdateSceneGroupTemplateMessageOpenStatusWithOptions(UpdateSceneGroupTemplateMessageOpenStatusRequest request, UpdateSceneGroupTemplateMessageOpenStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateIdList))
+            {
+                body["templateIdList"] = request.TemplateIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateSceneGroupTemplateMessageOpenStatus",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/chats/sceneGroups/templates/messageOpenStatuses",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateSceneGroupTemplateMessageOpenStatusResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改场景群模板消息存档能力开启状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateSceneGroupTemplateMessageOpenStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateSceneGroupTemplateMessageOpenStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateSceneGroupTemplateMessageOpenStatusResponse
+        /// </returns>
+        public async Task<UpdateSceneGroupTemplateMessageOpenStatusResponse> UpdateSceneGroupTemplateMessageOpenStatusWithOptionsAsync(UpdateSceneGroupTemplateMessageOpenStatusRequest request, UpdateSceneGroupTemplateMessageOpenStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
+            {
+                body["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateIdList))
+            {
+                body["templateIdList"] = request.TemplateIdList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateSceneGroupTemplateMessageOpenStatus",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/chats/sceneGroups/templates/messageOpenStatuses",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateSceneGroupTemplateMessageOpenStatusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改场景群模板消息存档能力开启状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateSceneGroupTemplateMessageOpenStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateSceneGroupTemplateMessageOpenStatusResponse
+        /// </returns>
+        public UpdateSceneGroupTemplateMessageOpenStatusResponse UpdateSceneGroupTemplateMessageOpenStatus(UpdateSceneGroupTemplateMessageOpenStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateSceneGroupTemplateMessageOpenStatusHeaders headers = new UpdateSceneGroupTemplateMessageOpenStatusHeaders();
+            return UpdateSceneGroupTemplateMessageOpenStatusWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改场景群模板消息存档能力开启状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateSceneGroupTemplateMessageOpenStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateSceneGroupTemplateMessageOpenStatusResponse
+        /// </returns>
+        public async Task<UpdateSceneGroupTemplateMessageOpenStatusResponse> UpdateSceneGroupTemplateMessageOpenStatusAsync(UpdateSceneGroupTemplateMessageOpenStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateSceneGroupTemplateMessageOpenStatusHeaders headers = new UpdateSceneGroupTemplateMessageOpenStatusHeaders();
+            return await UpdateSceneGroupTemplateMessageOpenStatusWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

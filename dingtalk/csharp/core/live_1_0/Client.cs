@@ -1370,6 +1370,174 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>获取某组织内的直播列表</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// GetOrgLiveListRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetOrgLiveListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetOrgLiveListResponse
+        /// </returns>
+        public GetOrgLiveListResponse GetOrgLiveListWithOptions(GetOrgLiveListRequest tmpReq, GetOrgLiveListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            GetOrgLiveListShrinkRequest request = new GetOrgLiveListShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.RequestBody))
+            {
+                request.RequestBodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.RequestBody, "requestBody", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RequestBodyShrink))
+            {
+                query["requestBody"] = request.RequestBodyShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetOrgLiveList",
+                Version = "live_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/live/organizations/liveLists/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetOrgLiveListResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取某组织内的直播列表</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// GetOrgLiveListRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetOrgLiveListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetOrgLiveListResponse
+        /// </returns>
+        public async Task<GetOrgLiveListResponse> GetOrgLiveListWithOptionsAsync(GetOrgLiveListRequest tmpReq, GetOrgLiveListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            GetOrgLiveListShrinkRequest request = new GetOrgLiveListShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.RequestBody))
+            {
+                request.RequestBodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.RequestBody, "requestBody", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CorpId))
+            {
+                query["corpId"] = request.CorpId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RequestBodyShrink))
+            {
+                query["requestBody"] = request.RequestBodyShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetOrgLiveList",
+                Version = "live_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/live/organizations/liveLists/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetOrgLiveListResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取某组织内的直播列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetOrgLiveListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetOrgLiveListResponse
+        /// </returns>
+        public GetOrgLiveListResponse GetOrgLiveList(GetOrgLiveListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetOrgLiveListHeaders headers = new GetOrgLiveListHeaders();
+            return GetOrgLiveListWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取某组织内的直播列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetOrgLiveListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetOrgLiveListResponse
+        /// </returns>
+        public async Task<GetOrgLiveListResponse> GetOrgLiveListAsync(GetOrgLiveListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetOrgLiveListHeaders headers = new GetOrgLiveListHeaders();
+            return await GetOrgLiveListWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>根据状态拉我相关的直播</para>
         /// </summary>
         /// 
