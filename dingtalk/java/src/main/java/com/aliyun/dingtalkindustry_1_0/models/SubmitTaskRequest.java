@@ -67,6 +67,13 @@ public class SubmitTaskRequest extends TeaModel {
 
         /**
          * <strong>example:</strong>
+         * <p>根据不同业务类型，传业务需求的JSON字符串</p>
+         */
+        @NameInMap("extension")
+        public String extension;
+
+        /**
+         * <strong>example:</strong>
          * <p>audio</p>
          */
         @NameInMap("fileType")
@@ -108,6 +115,14 @@ public class SubmitTaskRequest extends TeaModel {
         }
         public String getDesc() {
             return this.desc;
+        }
+
+        public SubmitTaskRequestData setExtension(String extension) {
+            this.extension = extension;
+            return this;
+        }
+        public String getExtension() {
+            return this.extension;
         }
 
         public SubmitTaskRequestData setFileType(String fileType) {

@@ -2006,6 +2006,52 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询场景群模板消息存档能力开启状态</p>
+     * 
+     * @param headers GetSceneGroupTemplateMessageOpenStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetSceneGroupTemplateMessageOpenStatusResponse
+     */
+    public GetSceneGroupTemplateMessageOpenStatusResponse getSceneGroupTemplateMessageOpenStatusWithOptions(String templateId, GetSceneGroupTemplateMessageOpenStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetSceneGroupTemplateMessageOpenStatus"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/chats/sceneGroups/templates/" + templateId + "/messageOpenStatuses"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetSceneGroupTemplateMessageOpenStatusResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询场景群模板消息存档能力开启状态</p>
+     * @return GetSceneGroupTemplateMessageOpenStatusResponse
+     */
+    public GetSceneGroupTemplateMessageOpenStatusResponse getSceneGroupTemplateMessageOpenStatus(String templateId) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetSceneGroupTemplateMessageOpenStatusHeaders headers = new GetSceneGroupTemplateMessageOpenStatusHeaders();
+        return this.getSceneGroupTemplateMessageOpenStatusWithOptions(templateId, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>群禁言</p>
      * 
      * @param request GroupBanWordsRequest
@@ -5976,6 +6022,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateRobotInteractiveCardHeaders headers = new UpdateRobotInteractiveCardHeaders();
         return this.updateRobotInteractiveCardWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改场景群模板消息存档能力开启状态</p>
+     * 
+     * @param request UpdateSceneGroupTemplateMessageOpenStatusRequest
+     * @param headers UpdateSceneGroupTemplateMessageOpenStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateSceneGroupTemplateMessageOpenStatusResponse
+     */
+    public UpdateSceneGroupTemplateMessageOpenStatusResponse updateSceneGroupTemplateMessageOpenStatusWithOptions(UpdateSceneGroupTemplateMessageOpenStatusRequest request, UpdateSceneGroupTemplateMessageOpenStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.status)) {
+            body.put("status", request.status);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.templateIdList)) {
+            body.put("templateIdList", request.templateIdList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateSceneGroupTemplateMessageOpenStatus"),
+            new TeaPair("version", "im_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/im/chats/sceneGroups/templates/messageOpenStatuses"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateSceneGroupTemplateMessageOpenStatusResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改场景群模板消息存档能力开启状态</p>
+     * 
+     * @param request UpdateSceneGroupTemplateMessageOpenStatusRequest
+     * @return UpdateSceneGroupTemplateMessageOpenStatusResponse
+     */
+    public UpdateSceneGroupTemplateMessageOpenStatusResponse updateSceneGroupTemplateMessageOpenStatus(UpdateSceneGroupTemplateMessageOpenStatusRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateSceneGroupTemplateMessageOpenStatusHeaders headers = new UpdateSceneGroupTemplateMessageOpenStatusHeaders();
+        return this.updateSceneGroupTemplateMessageOpenStatusWithOptions(request, headers, runtime);
     }
 
     /**
