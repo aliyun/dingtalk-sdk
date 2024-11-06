@@ -30,6 +30,10 @@ use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetGroupLiveListShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetLiveReplayUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetLiveReplayUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetLiveReplayUrlResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetOrgLiveListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetOrgLiveListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetOrgLiveListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetOrgLiveListShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetUserAllLiveListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetUserAllLiveListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\GetUserAllLiveListResponse;
@@ -613,6 +617,71 @@ class Dingtalk extends OpenApiClient
         $headers = new GetLiveReplayUrlHeaders([]);
 
         return $this->getLiveReplayUrlWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取某组织内的直播列表
+     *  *
+     * @param GetOrgLiveListRequest $tmpReq  GetOrgLiveListRequest
+     * @param GetOrgLiveListHeaders $headers GetOrgLiveListHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetOrgLiveListResponse GetOrgLiveListResponse
+     */
+    public function getOrgLiveListWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new GetOrgLiveListShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->requestBody)) {
+            $request->requestBodyShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->requestBody, 'requestBody', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $query['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->requestBodyShrink)) {
+            $query['requestBody'] = $request->requestBodyShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetOrgLiveList',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/organizations/liveLists/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetOrgLiveListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取某组织内的直播列表
+     *  *
+     * @param GetOrgLiveListRequest $request GetOrgLiveListRequest
+     *
+     * @return GetOrgLiveListResponse GetOrgLiveListResponse
+     */
+    public function getOrgLiveList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOrgLiveListHeaders([]);
+
+        return $this->getOrgLiveListWithOptions($request, $headers, $runtime);
     }
 
     /**

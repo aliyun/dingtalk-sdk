@@ -23,6 +23,13 @@ class data extends Model
     public $desc;
 
     /**
+     * @example 根据不同业务类型，传业务需求的JSON字符串
+     *
+     * @var string
+     */
+    public $extension;
+
+    /**
      * @example audio
      *
      * @var string
@@ -48,12 +55,13 @@ class data extends Model
      */
     public $name;
     protected $_name = [
-        'date'     => 'date',
-        'desc'     => 'desc',
-        'fileType' => 'fileType',
-        'fileUrl'  => 'fileUrl',
-        'id'       => 'id',
-        'name'     => 'name',
+        'date'      => 'date',
+        'desc'      => 'desc',
+        'extension' => 'extension',
+        'fileType'  => 'fileType',
+        'fileUrl'   => 'fileUrl',
+        'id'        => 'id',
+        'name'      => 'name',
     ];
 
     public function validate()
@@ -68,6 +76,9 @@ class data extends Model
         }
         if (null !== $this->desc) {
             $res['desc'] = $this->desc;
+        }
+        if (null !== $this->extension) {
+            $res['extension'] = $this->extension;
         }
         if (null !== $this->fileType) {
             $res['fileType'] = $this->fileType;
@@ -98,6 +109,9 @@ class data extends Model
         }
         if (isset($map['desc'])) {
             $model->desc = $map['desc'];
+        }
+        if (isset($map['extension'])) {
+            $model->extension = $map['extension'];
         }
         if (isset($map['fileType'])) {
             $model->fileType = $map['fileType'];

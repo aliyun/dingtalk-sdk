@@ -107,30 +107,54 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ListUserVisibleBpmsProcessesR
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PagesExportInstancesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PagesExportInstancesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PagesExportInstancesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumAddApproveDentryAuthHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumAddApproveDentryAuthRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumAddApproveDentryAuthResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumBatchExecuteProcessInstancesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumBatchExecuteProcessInstancesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumBatchExecuteProcessInstancesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumDelDirHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumDelDirRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumDelDirResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumDeleteFormInstanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumDeleteFormInstanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumDeleteFormInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetAttachmentSpaceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetAttachmentSpaceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetAttachmentSpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetDoneTasksHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetDoneTasksRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetDoneTasksResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetFieldModifiedHistoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetFieldModifiedHistoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetFieldModifiedHistoryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetFormInstanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetFormInstanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetFormInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetFormInstancesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetFormInstancesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetFormInstancesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetFormSchemaHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetFormSchemaRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetFormSchemaResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetNoticedInstancesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetNoticedInstancesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetNoticedInstancesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetProcessInstancesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetProcessInstancesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetProcessInstancesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetSpaceWithDownloadAuthHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetSpaceWithDownloadAuthRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetSpaceWithDownloadAuthResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetSubmittedInstancesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetSubmittedInstancesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetSubmittedInstancesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetTodoTasksHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetTodoTasksRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetTodoTasksResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGrantProcessInstanceForDownloadFileHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGrantProcessInstanceForDownloadFileRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGrantProcessInstanceForDownloadFileResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumInsertOrUpdateDirHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumInsertOrUpdateDirRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumInsertOrUpdateDirResponse;
@@ -140,6 +164,12 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumQueryTodoTasksByManage
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumRedirectTasksByManagerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumRedirectTasksByManagerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumRedirectTasksByManagerResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveFormHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveFormInstanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveFormInstanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveFormInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveFormRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveFormResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedProcessHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedProcessInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedProcessInstanceRequest;
@@ -149,6 +179,12 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedProcessR
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumSaveIntegratedTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumUpdateFormInstanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumUpdateFormInstanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumUpdateFormInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumUpdateProcessInstanceVariablesHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumUpdateProcessInstanceVariablesRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumUpdateProcessInstanceVariablesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ProcessForecastHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ProcessForecastRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ProcessForecastResponse;
@@ -2353,6 +2389,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 授权下载审批钉盘文件(OA高级版专享)
+     *  *
+     * @param PremiumAddApproveDentryAuthRequest $request PremiumAddApproveDentryAuthRequest
+     * @param PremiumAddApproveDentryAuthHeaders $headers PremiumAddApproveDentryAuthHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumAddApproveDentryAuthResponse PremiumAddApproveDentryAuthResponse
+     */
+    public function premiumAddApproveDentryAuthWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fileInfos)) {
+            $body['fileInfos'] = $request->fileInfos;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumAddApproveDentryAuth',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processInstances/spaces/files/authDownload',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumAddApproveDentryAuthResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 授权下载审批钉盘文件(OA高级版专享)
+     *  *
+     * @param PremiumAddApproveDentryAuthRequest $request PremiumAddApproveDentryAuthRequest
+     *
+     * @return PremiumAddApproveDentryAuthResponse PremiumAddApproveDentryAuthResponse
+     */
+    public function premiumAddApproveDentryAuth($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumAddApproveDentryAuthHeaders([]);
+
+        return $this->premiumAddApproveDentryAuthWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 批量同意或拒绝审批任务(OA高级版专享接口)
      *  *
      * @param PremiumBatchExecuteProcessInstancesRequest $request PremiumBatchExecuteProcessInstancesRequest
@@ -2479,6 +2575,129 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除数据表单实例(OA高级版专享)
+     *  *
+     * @param PremiumDeleteFormInstanceRequest $request PremiumDeleteFormInstanceRequest
+     * @param PremiumDeleteFormInstanceHeaders $headers PremiumDeleteFormInstanceHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumDeleteFormInstanceResponse PremiumDeleteFormInstanceResponse
+     */
+    public function premiumDeleteFormInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->formInstanceIds)) {
+            $body['formInstanceIds'] = $request->formInstanceIds;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            $body['processCode'] = $request->processCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumDeleteFormInstance',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/dataForms/formInstances/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumDeleteFormInstanceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除数据表单实例(OA高级版专享)
+     *  *
+     * @param PremiumDeleteFormInstanceRequest $request PremiumDeleteFormInstanceRequest
+     *
+     * @return PremiumDeleteFormInstanceResponse PremiumDeleteFormInstanceResponse
+     */
+    public function premiumDeleteFormInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumDeleteFormInstanceHeaders([]);
+
+        return $this->premiumDeleteFormInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取审批钉盘空间信息(OA高级版专享)
+     *  *
+     * @param PremiumGetAttachmentSpaceRequest $request PremiumGetAttachmentSpaceRequest
+     * @param PremiumGetAttachmentSpaceHeaders $headers PremiumGetAttachmentSpaceHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumGetAttachmentSpaceResponse PremiumGetAttachmentSpaceResponse
+     */
+    public function premiumGetAttachmentSpaceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->agentId)) {
+            $body['agentId'] = $request->agentId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumGetAttachmentSpace',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processInstances/spaces/infos/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumGetAttachmentSpaceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取审批钉盘空间信息(OA高级版专享)
+     *  *
+     * @param PremiumGetAttachmentSpaceRequest $request PremiumGetAttachmentSpaceRequest
+     *
+     * @return PremiumGetAttachmentSpaceResponse PremiumGetAttachmentSpaceResponse
+     */
+    public function premiumGetAttachmentSpace($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumGetAttachmentSpaceHeaders([]);
+
+        return $this->premiumGetAttachmentSpaceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询审批中心已处理任务列表(OA高级版专享接口)
      *  *
      * @param PremiumGetDoneTasksRequest $request PremiumGetDoneTasksRequest
@@ -2599,6 +2818,195 @@ class Dingtalk extends OpenApiClient
         $headers = new PremiumGetFieldModifiedHistoryHeaders([]);
 
         return $this->premiumGetFieldModifiedHistoryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取单个数据表单实例详情(OA高级版专享)
+     *  *
+     * @param PremiumGetFormInstanceRequest $request PremiumGetFormInstanceRequest
+     * @param PremiumGetFormInstanceHeaders $headers PremiumGetFormInstanceHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumGetFormInstanceResponse PremiumGetFormInstanceResponse
+     */
+    public function premiumGetFormInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appUuid)) {
+            $query['appUuid'] = $request->appUuid;
+        }
+        if (!Utils::isUnset($request->formCode)) {
+            $query['formCode'] = $request->formCode;
+        }
+        if (!Utils::isUnset($request->formInstanceId)) {
+            $query['formInstanceId'] = $request->formInstanceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumGetFormInstance',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/dataForms/formInstances',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumGetFormInstanceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取单个数据表单实例详情(OA高级版专享)
+     *  *
+     * @param PremiumGetFormInstanceRequest $request PremiumGetFormInstanceRequest
+     *
+     * @return PremiumGetFormInstanceResponse PremiumGetFormInstanceResponse
+     */
+    public function premiumGetFormInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumGetFormInstanceHeaders([]);
+
+        return $this->premiumGetFormInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据formCode分页获取数据表单实例(OA高级版专享)
+     *  *
+     * @param PremiumGetFormInstancesRequest $request PremiumGetFormInstancesRequest
+     * @param PremiumGetFormInstancesHeaders $headers PremiumGetFormInstancesHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumGetFormInstancesResponse PremiumGetFormInstancesResponse
+     */
+    public function premiumGetFormInstancesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appUuid)) {
+            $query['appUuid'] = $request->appUuid;
+        }
+        if (!Utils::isUnset($request->formCode)) {
+            $query['formCode'] = $request->formCode;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumGetFormInstances',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/dataForms/formInstances/pages',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumGetFormInstancesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据formCode分页获取数据表单实例(OA高级版专享)
+     *  *
+     * @param PremiumGetFormInstancesRequest $request PremiumGetFormInstancesRequest
+     *
+     * @return PremiumGetFormInstancesResponse PremiumGetFormInstancesResponse
+     */
+    public function premiumGetFormInstances($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumGetFormInstancesHeaders([]);
+
+        return $this->premiumGetFormInstancesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 通过formCode获取数据表单schema(OA高级版专享)
+     *  *
+     * @param PremiumGetFormSchemaRequest $request PremiumGetFormSchemaRequest
+     * @param PremiumGetFormSchemaHeaders $headers PremiumGetFormSchemaHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumGetFormSchemaResponse PremiumGetFormSchemaResponse
+     */
+    public function premiumGetFormSchemaWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->appUuid)) {
+            $query['appUuid'] = $request->appUuid;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            $query['processCode'] = $request->processCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumGetFormSchema',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/dataForms/schema/formCodes',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumGetFormSchemaResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 通过formCode获取数据表单schema(OA高级版专享)
+     *  *
+     * @param PremiumGetFormSchemaRequest $request PremiumGetFormSchemaRequest
+     *
+     * @return PremiumGetFormSchemaResponse PremiumGetFormSchemaResponse
+     */
+    public function premiumGetFormSchema($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumGetFormSchemaHeaders([]);
+
+        return $this->premiumGetFormSchemaWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2737,6 +3145,78 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 授权预览审批附件(OA高级版专享)
+     *  *
+     * @param PremiumGetSpaceWithDownloadAuthRequest $request PremiumGetSpaceWithDownloadAuthRequest
+     * @param PremiumGetSpaceWithDownloadAuthHeaders $headers PremiumGetSpaceWithDownloadAuthHeaders
+     * @param RuntimeOptions                         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumGetSpaceWithDownloadAuthResponse PremiumGetSpaceWithDownloadAuthResponse
+     */
+    public function premiumGetSpaceWithDownloadAuthWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->agentId)) {
+            $body['agentId'] = $request->agentId;
+        }
+        if (!Utils::isUnset($request->fileId)) {
+            $body['fileId'] = $request->fileId;
+        }
+        if (!Utils::isUnset($request->fileIdList)) {
+            $body['fileIdList'] = $request->fileIdList;
+        }
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $body['processInstanceId'] = $request->processInstanceId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->withCommentAttatchment)) {
+            $body['withCommentAttatchment'] = $request->withCommentAttatchment;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumGetSpaceWithDownloadAuth',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processInstances/spaces/authPreview',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumGetSpaceWithDownloadAuthResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 授权预览审批附件(OA高级版专享)
+     *  *
+     * @param PremiumGetSpaceWithDownloadAuthRequest $request PremiumGetSpaceWithDownloadAuthRequest
+     *
+     * @return PremiumGetSpaceWithDownloadAuthResponse PremiumGetSpaceWithDownloadAuthResponse
+     */
+    public function premiumGetSpaceWithDownloadAuth($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumGetSpaceWithDownloadAuthHeaders([]);
+
+        return $this->premiumGetSpaceWithDownloadAuthWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询审批中心已发起实例列表(OA高级版专享接口)
      *  *
      * @param PremiumGetSubmittedInstancesRequest $request PremiumGetSubmittedInstancesRequest
@@ -2863,6 +3343,69 @@ class Dingtalk extends OpenApiClient
         $headers = new PremiumGetTodoTasksHeaders([]);
 
         return $this->premiumGetTodoTasksWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 下载审批附件(OA高级版专享)
+     *  *
+     * @param PremiumGrantProcessInstanceForDownloadFileRequest $request PremiumGrantProcessInstanceForDownloadFileRequest
+     * @param PremiumGrantProcessInstanceForDownloadFileHeaders $headers PremiumGrantProcessInstanceForDownloadFileHeaders
+     * @param RuntimeOptions                                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumGrantProcessInstanceForDownloadFileResponse PremiumGrantProcessInstanceForDownloadFileResponse
+     */
+    public function premiumGrantProcessInstanceForDownloadFileWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fileId)) {
+            $body['fileId'] = $request->fileId;
+        }
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $body['processInstanceId'] = $request->processInstanceId;
+        }
+        if (!Utils::isUnset($request->withCommentAttatchment)) {
+            $body['withCommentAttatchment'] = $request->withCommentAttatchment;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumGrantProcessInstanceForDownloadFile',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processInstances/spaces/files/urls/download',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumGrantProcessInstanceForDownloadFileResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 下载审批附件(OA高级版专享)
+     *  *
+     * @param PremiumGrantProcessInstanceForDownloadFileRequest $request PremiumGrantProcessInstanceForDownloadFileRequest
+     *
+     * @return PremiumGrantProcessInstanceForDownloadFileResponse PremiumGrantProcessInstanceForDownloadFileResponse
+     */
+    public function premiumGrantProcessInstanceForDownloadFile($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumGrantProcessInstanceForDownloadFileHeaders([]);
+
+        return $this->premiumGrantProcessInstanceForDownloadFileWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3064,6 +3607,138 @@ class Dingtalk extends OpenApiClient
         $headers = new PremiumRedirectTasksByManagerHeaders([]);
 
         return $this->premiumRedirectTasksByManagerWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建或更新数据表单模板(OA高级版专享)
+     *  *
+     * @param PremiumSaveFormRequest $request PremiumSaveFormRequest
+     * @param PremiumSaveFormHeaders $headers PremiumSaveFormHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumSaveFormResponse PremiumSaveFormResponse
+     */
+    public function premiumSaveFormWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->formComponents)) {
+            $body['formComponents'] = $request->formComponents;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            $body['processCode'] = $request->processCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumSaveForm',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/dataForms/templates',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumSaveFormResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建或更新数据表单模板(OA高级版专享)
+     *  *
+     * @param PremiumSaveFormRequest $request PremiumSaveFormRequest
+     *
+     * @return PremiumSaveFormResponse PremiumSaveFormResponse
+     */
+    public function premiumSaveForm($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumSaveFormHeaders([]);
+
+        return $this->premiumSaveFormWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建数据表单实例(OA高级版专享)
+     *  *
+     * @param PremiumSaveFormInstanceRequest $request PremiumSaveFormInstanceRequest
+     * @param PremiumSaveFormInstanceHeaders $headers PremiumSaveFormInstanceHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumSaveFormInstanceResponse PremiumSaveFormInstanceResponse
+     */
+    public function premiumSaveFormInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->formComponentValueList)) {
+            $body['formComponentValueList'] = $request->formComponentValueList;
+        }
+        if (!Utils::isUnset($request->originatorUserId)) {
+            $body['originatorUserId'] = $request->originatorUserId;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            $body['processCode'] = $request->processCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumSaveFormInstance',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/dataForms/formInstances/save',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumSaveFormInstanceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建数据表单实例(OA高级版专享)
+     *  *
+     * @param PremiumSaveFormInstanceRequest $request PremiumSaveFormInstanceRequest
+     *
+     * @return PremiumSaveFormInstanceResponse PremiumSaveFormInstanceResponse
+     */
+    public function premiumSaveFormInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumSaveFormInstanceHeaders([]);
+
+        return $this->premiumSaveFormInstanceWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -3277,6 +3952,141 @@ class Dingtalk extends OpenApiClient
         $headers = new PremiumSaveIntegratedTaskHeaders([]);
 
         return $this->premiumSaveIntegratedTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新数据表单实例(OA高级版专享)
+     *  *
+     * @param PremiumUpdateFormInstanceRequest $request PremiumUpdateFormInstanceRequest
+     * @param PremiumUpdateFormInstanceHeaders $headers PremiumUpdateFormInstanceHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumUpdateFormInstanceResponse PremiumUpdateFormInstanceResponse
+     */
+    public function premiumUpdateFormInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->formComponentValueList)) {
+            $body['formComponentValueList'] = $request->formComponentValueList;
+        }
+        if (!Utils::isUnset($request->formInstanceIds)) {
+            $body['formInstanceIds'] = $request->formInstanceIds;
+        }
+        if (!Utils::isUnset($request->originatorUserId)) {
+            $body['originatorUserId'] = $request->originatorUserId;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            $body['processCode'] = $request->processCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumUpdateFormInstance',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/dataForms/formInstances',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumUpdateFormInstanceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新数据表单实例(OA高级版专享)
+     *  *
+     * @param PremiumUpdateFormInstanceRequest $request PremiumUpdateFormInstanceRequest
+     *
+     * @return PremiumUpdateFormInstanceResponse PremiumUpdateFormInstanceResponse
+     */
+    public function premiumUpdateFormInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumUpdateFormInstanceHeaders([]);
+
+        return $this->premiumUpdateFormInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新审批实例(OA高级版专享)
+     *  *
+     * @param PremiumUpdateProcessInstanceVariablesRequest $request PremiumUpdateProcessInstanceVariablesRequest
+     * @param PremiumUpdateProcessInstanceVariablesHeaders $headers PremiumUpdateProcessInstanceVariablesHeaders
+     * @param RuntimeOptions                               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumUpdateProcessInstanceVariablesResponse PremiumUpdateProcessInstanceVariablesResponse
+     */
+    public function premiumUpdateProcessInstanceVariablesWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->opUserId)) {
+            $body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->processCode)) {
+            $body['processCode'] = $request->processCode;
+        }
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $body['processInstanceId'] = $request->processInstanceId;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->variables)) {
+            $body['variables'] = $request->variables;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumUpdateProcessInstanceVariables',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processInstances',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumUpdateProcessInstanceVariablesResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新审批实例(OA高级版专享)
+     *  *
+     * @param PremiumUpdateProcessInstanceVariablesRequest $request PremiumUpdateProcessInstanceVariablesRequest
+     *
+     * @return PremiumUpdateProcessInstanceVariablesResponse PremiumUpdateProcessInstanceVariablesResponse
+     */
+    public function premiumUpdateProcessInstanceVariables($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumUpdateProcessInstanceVariablesHeaders([]);
+
+        return $this->premiumUpdateProcessInstanceVariablesWithOptions($request, $headers, $runtime);
     }
 
     /**

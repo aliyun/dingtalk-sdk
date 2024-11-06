@@ -95,6 +95,8 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupMembersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupMembersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupMembersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupTemplateMessageOpenStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetSceneGroupTemplateMessageOpenStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupBanWordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupBanWordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GroupBanWordsResponse;
@@ -277,6 +279,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateRobotInOrgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateRobotInteractiveCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateRobotInteractiveCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateRobotInteractiveCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateSceneGroupTemplateMessageOpenStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateSceneGroupTemplateMessageOpenStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateSceneGroupTemplateMessageOpenStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateTheGroupRolesOfGroupMemberHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateTheGroupRolesOfGroupMemberRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\UpdateTheGroupRolesOfGroupMemberResponse;
@@ -2245,6 +2250,57 @@ class Dingtalk extends OpenApiClient
         $headers = new GetSceneGroupMembersHeaders([]);
 
         return $this->getSceneGroupMembersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询场景群模板消息存档能力开启状态
+     *  *
+     * @param string                                        $templateId
+     * @param GetSceneGroupTemplateMessageOpenStatusHeaders $headers    GetSceneGroupTemplateMessageOpenStatusHeaders
+     * @param RuntimeOptions                                $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return GetSceneGroupTemplateMessageOpenStatusResponse GetSceneGroupTemplateMessageOpenStatusResponse
+     */
+    public function getSceneGroupTemplateMessageOpenStatusWithOptions($templateId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'GetSceneGroupTemplateMessageOpenStatus',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/chats/sceneGroups/templates/' . $templateId . '/messageOpenStatuses',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetSceneGroupTemplateMessageOpenStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询场景群模板消息存档能力开启状态
+     *  *
+     * @param string $templateId
+     *
+     * @return GetSceneGroupTemplateMessageOpenStatusResponse GetSceneGroupTemplateMessageOpenStatusResponse
+     */
+    public function getSceneGroupTemplateMessageOpenStatus($templateId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetSceneGroupTemplateMessageOpenStatusHeaders([]);
+
+        return $this->getSceneGroupTemplateMessageOpenStatusWithOptions($templateId, $headers, $runtime);
     }
 
     /**
@@ -6096,6 +6152,69 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateRobotInteractiveCardHeaders([]);
 
         return $this->updateRobotInteractiveCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 修改场景群模板消息存档能力开启状态
+     *  *
+     * @param UpdateSceneGroupTemplateMessageOpenStatusRequest $request UpdateSceneGroupTemplateMessageOpenStatusRequest
+     * @param UpdateSceneGroupTemplateMessageOpenStatusHeaders $headers UpdateSceneGroupTemplateMessageOpenStatusHeaders
+     * @param RuntimeOptions                                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateSceneGroupTemplateMessageOpenStatusResponse UpdateSceneGroupTemplateMessageOpenStatusResponse
+     */
+    public function updateSceneGroupTemplateMessageOpenStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->templateIdList)) {
+            $body['templateIdList'] = $request->templateIdList;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateSceneGroupTemplateMessageOpenStatus',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/chats/sceneGroups/templates/messageOpenStatuses',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateSceneGroupTemplateMessageOpenStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 修改场景群模板消息存档能力开启状态
+     *  *
+     * @param UpdateSceneGroupTemplateMessageOpenStatusRequest $request UpdateSceneGroupTemplateMessageOpenStatusRequest
+     *
+     * @return UpdateSceneGroupTemplateMessageOpenStatusResponse UpdateSceneGroupTemplateMessageOpenStatusResponse
+     */
+    public function updateSceneGroupTemplateMessageOpenStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateSceneGroupTemplateMessageOpenStatusHeaders([]);
+
+        return $this->updateSceneGroupTemplateMessageOpenStatusWithOptions($request, $headers, $runtime);
     }
 
     /**
