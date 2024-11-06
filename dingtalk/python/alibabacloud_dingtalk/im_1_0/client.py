@@ -3732,6 +3732,106 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.GetSceneGroupMembersHeaders()
         return await self.get_scene_group_members_with_options_async(request, headers, runtime)
 
+    def get_scene_group_template_message_open_status_with_options(
+        self,
+        template_id: str,
+        headers: dingtalkim__1__0_models.GetSceneGroupTemplateMessageOpenStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.GetSceneGroupTemplateMessageOpenStatusResponse:
+        """
+        @summary 查询场景群模板消息存档能力开启状态
+        
+        @param headers: GetSceneGroupTemplateMessageOpenStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSceneGroupTemplateMessageOpenStatusResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetSceneGroupTemplateMessageOpenStatus',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/sceneGroups/templates/{template_id}/messageOpenStatuses',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.GetSceneGroupTemplateMessageOpenStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_scene_group_template_message_open_status_with_options_async(
+        self,
+        template_id: str,
+        headers: dingtalkim__1__0_models.GetSceneGroupTemplateMessageOpenStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.GetSceneGroupTemplateMessageOpenStatusResponse:
+        """
+        @summary 查询场景群模板消息存档能力开启状态
+        
+        @param headers: GetSceneGroupTemplateMessageOpenStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetSceneGroupTemplateMessageOpenStatusResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetSceneGroupTemplateMessageOpenStatus',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/sceneGroups/templates/{template_id}/messageOpenStatuses',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.GetSceneGroupTemplateMessageOpenStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_scene_group_template_message_open_status(
+        self,
+        template_id: str,
+    ) -> dingtalkim__1__0_models.GetSceneGroupTemplateMessageOpenStatusResponse:
+        """
+        @summary 查询场景群模板消息存档能力开启状态
+        
+        @return: GetSceneGroupTemplateMessageOpenStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.GetSceneGroupTemplateMessageOpenStatusHeaders()
+        return self.get_scene_group_template_message_open_status_with_options(template_id, headers, runtime)
+
+    async def get_scene_group_template_message_open_status_async(
+        self,
+        template_id: str,
+    ) -> dingtalkim__1__0_models.GetSceneGroupTemplateMessageOpenStatusResponse:
+        """
+        @summary 查询场景群模板消息存档能力开启状态
+        
+        @return: GetSceneGroupTemplateMessageOpenStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.GetSceneGroupTemplateMessageOpenStatusHeaders()
+        return await self.get_scene_group_template_message_open_status_with_options_async(template_id, headers, runtime)
+
     def group_ban_words_with_options(
         self,
         request: dingtalkim__1__0_models.GroupBanWordsRequest,
@@ -11061,6 +11161,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkim__1__0_models.UpdateRobotInteractiveCardHeaders()
         return await self.update_robot_interactive_card_with_options_async(request, headers, runtime)
+
+    def update_scene_group_template_message_open_status_with_options(
+        self,
+        request: dingtalkim__1__0_models.UpdateSceneGroupTemplateMessageOpenStatusRequest,
+        headers: dingtalkim__1__0_models.UpdateSceneGroupTemplateMessageOpenStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateSceneGroupTemplateMessageOpenStatusResponse:
+        """
+        @summary 修改场景群模板消息存档能力开启状态
+        
+        @param request: UpdateSceneGroupTemplateMessageOpenStatusRequest
+        @param headers: UpdateSceneGroupTemplateMessageOpenStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateSceneGroupTemplateMessageOpenStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.template_id_list):
+            body['templateIdList'] = request.template_id_list
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateSceneGroupTemplateMessageOpenStatus',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/sceneGroups/templates/messageOpenStatuses',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateSceneGroupTemplateMessageOpenStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_scene_group_template_message_open_status_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateSceneGroupTemplateMessageOpenStatusRequest,
+        headers: dingtalkim__1__0_models.UpdateSceneGroupTemplateMessageOpenStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.UpdateSceneGroupTemplateMessageOpenStatusResponse:
+        """
+        @summary 修改场景群模板消息存档能力开启状态
+        
+        @param request: UpdateSceneGroupTemplateMessageOpenStatusRequest
+        @param headers: UpdateSceneGroupTemplateMessageOpenStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateSceneGroupTemplateMessageOpenStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.template_id_list):
+            body['templateIdList'] = request.template_id_list
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateSceneGroupTemplateMessageOpenStatus',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/sceneGroups/templates/messageOpenStatuses',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.UpdateSceneGroupTemplateMessageOpenStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_scene_group_template_message_open_status(
+        self,
+        request: dingtalkim__1__0_models.UpdateSceneGroupTemplateMessageOpenStatusRequest,
+    ) -> dingtalkim__1__0_models.UpdateSceneGroupTemplateMessageOpenStatusResponse:
+        """
+        @summary 修改场景群模板消息存档能力开启状态
+        
+        @param request: UpdateSceneGroupTemplateMessageOpenStatusRequest
+        @return: UpdateSceneGroupTemplateMessageOpenStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateSceneGroupTemplateMessageOpenStatusHeaders()
+        return self.update_scene_group_template_message_open_status_with_options(request, headers, runtime)
+
+    async def update_scene_group_template_message_open_status_async(
+        self,
+        request: dingtalkim__1__0_models.UpdateSceneGroupTemplateMessageOpenStatusRequest,
+    ) -> dingtalkim__1__0_models.UpdateSceneGroupTemplateMessageOpenStatusResponse:
+        """
+        @summary 修改场景群模板消息存档能力开启状态
+        
+        @param request: UpdateSceneGroupTemplateMessageOpenStatusRequest
+        @return: UpdateSceneGroupTemplateMessageOpenStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.UpdateSceneGroupTemplateMessageOpenStatusHeaders()
+        return await self.update_scene_group_template_message_open_status_with_options_async(request, headers, runtime)
 
     def update_the_group_roles_of_group_member_with_options(
         self,

@@ -26894,6 +26894,7 @@ class SubmitTaskRequestData(TeaModel):
         self,
         date: str = None,
         desc: str = None,
+        extension: str = None,
         file_type: str = None,
         file_url: List[str] = None,
         id: int = None,
@@ -26901,6 +26902,7 @@ class SubmitTaskRequestData(TeaModel):
     ):
         self.date = date
         self.desc = desc
+        self.extension = extension
         self.file_type = file_type
         self.file_url = file_url
         self.id = id
@@ -26919,6 +26921,8 @@ class SubmitTaskRequestData(TeaModel):
             result['date'] = self.date
         if self.desc is not None:
             result['desc'] = self.desc
+        if self.extension is not None:
+            result['extension'] = self.extension
         if self.file_type is not None:
             result['fileType'] = self.file_type
         if self.file_url is not None:
@@ -26935,6 +26939,8 @@ class SubmitTaskRequestData(TeaModel):
             self.date = m.get('date')
         if m.get('desc') is not None:
             self.desc = m.get('desc')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
         if m.get('fileType') is not None:
             self.file_type = m.get('fileType')
         if m.get('fileUrl') is not None:

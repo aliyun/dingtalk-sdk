@@ -4152,6 +4152,124 @@ class Client(OpenApiClient):
         headers = dingtalkworkflow__1__0_models.PagesExportInstancesHeaders()
         return await self.pages_export_instances_with_options_async(request, headers, runtime)
 
+    def premium_add_approve_dentry_auth_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumAddApproveDentryAuthRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumAddApproveDentryAuthHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumAddApproveDentryAuthResponse:
+        """
+        @summary 授权下载审批钉盘文件(OA高级版专享)
+        
+        @param request: PremiumAddApproveDentryAuthRequest
+        @param headers: PremiumAddApproveDentryAuthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumAddApproveDentryAuthResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_infos):
+            body['fileInfos'] = request.file_infos
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumAddApproveDentryAuth',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processInstances/spaces/files/authDownload',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumAddApproveDentryAuthResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_add_approve_dentry_auth_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumAddApproveDentryAuthRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumAddApproveDentryAuthHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumAddApproveDentryAuthResponse:
+        """
+        @summary 授权下载审批钉盘文件(OA高级版专享)
+        
+        @param request: PremiumAddApproveDentryAuthRequest
+        @param headers: PremiumAddApproveDentryAuthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumAddApproveDentryAuthResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_infos):
+            body['fileInfos'] = request.file_infos
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumAddApproveDentryAuth',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processInstances/spaces/files/authDownload',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumAddApproveDentryAuthResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_add_approve_dentry_auth(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumAddApproveDentryAuthRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumAddApproveDentryAuthResponse:
+        """
+        @summary 授权下载审批钉盘文件(OA高级版专享)
+        
+        @param request: PremiumAddApproveDentryAuthRequest
+        @return: PremiumAddApproveDentryAuthResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumAddApproveDentryAuthHeaders()
+        return self.premium_add_approve_dentry_auth_with_options(request, headers, runtime)
+
+    async def premium_add_approve_dentry_auth_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumAddApproveDentryAuthRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumAddApproveDentryAuthResponse:
+        """
+        @summary 授权下载审批钉盘文件(OA高级版专享)
+        
+        @param request: PremiumAddApproveDentryAuthRequest
+        @return: PremiumAddApproveDentryAuthResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumAddApproveDentryAuthHeaders()
+        return await self.premium_add_approve_dentry_auth_with_options_async(request, headers, runtime)
+
     def premium_batch_execute_process_instances_with_options(
         self,
         request: dingtalkworkflow__1__0_models.PremiumBatchExecuteProcessInstancesRequest,
@@ -4396,6 +4514,246 @@ class Client(OpenApiClient):
         headers = dingtalkworkflow__1__0_models.PremiumDelDirHeaders()
         return await self.premium_del_dir_with_options_async(request, headers, runtime)
 
+    def premium_delete_form_instance_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumDeleteFormInstanceRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumDeleteFormInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumDeleteFormInstanceResponse:
+        """
+        @summary 删除数据表单实例(OA高级版专享)
+        
+        @param request: PremiumDeleteFormInstanceRequest
+        @param headers: PremiumDeleteFormInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumDeleteFormInstanceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_instance_ids):
+            body['formInstanceIds'] = request.form_instance_ids
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumDeleteFormInstance',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/dataForms/formInstances/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumDeleteFormInstanceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_delete_form_instance_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumDeleteFormInstanceRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumDeleteFormInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumDeleteFormInstanceResponse:
+        """
+        @summary 删除数据表单实例(OA高级版专享)
+        
+        @param request: PremiumDeleteFormInstanceRequest
+        @param headers: PremiumDeleteFormInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumDeleteFormInstanceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_instance_ids):
+            body['formInstanceIds'] = request.form_instance_ids
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumDeleteFormInstance',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/dataForms/formInstances/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumDeleteFormInstanceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_delete_form_instance(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumDeleteFormInstanceRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumDeleteFormInstanceResponse:
+        """
+        @summary 删除数据表单实例(OA高级版专享)
+        
+        @param request: PremiumDeleteFormInstanceRequest
+        @return: PremiumDeleteFormInstanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumDeleteFormInstanceHeaders()
+        return self.premium_delete_form_instance_with_options(request, headers, runtime)
+
+    async def premium_delete_form_instance_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumDeleteFormInstanceRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumDeleteFormInstanceResponse:
+        """
+        @summary 删除数据表单实例(OA高级版专享)
+        
+        @param request: PremiumDeleteFormInstanceRequest
+        @return: PremiumDeleteFormInstanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumDeleteFormInstanceHeaders()
+        return await self.premium_delete_form_instance_with_options_async(request, headers, runtime)
+
+    def premium_get_attachment_space_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetAttachmentSpaceRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetAttachmentSpaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetAttachmentSpaceResponse:
+        """
+        @summary 获取审批钉盘空间信息(OA高级版专享)
+        
+        @param request: PremiumGetAttachmentSpaceRequest
+        @param headers: PremiumGetAttachmentSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetAttachmentSpaceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_id):
+            body['agentId'] = request.agent_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetAttachmentSpace',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processInstances/spaces/infos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetAttachmentSpaceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_get_attachment_space_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetAttachmentSpaceRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetAttachmentSpaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetAttachmentSpaceResponse:
+        """
+        @summary 获取审批钉盘空间信息(OA高级版专享)
+        
+        @param request: PremiumGetAttachmentSpaceRequest
+        @param headers: PremiumGetAttachmentSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetAttachmentSpaceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_id):
+            body['agentId'] = request.agent_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetAttachmentSpace',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processInstances/spaces/infos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetAttachmentSpaceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_get_attachment_space(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetAttachmentSpaceRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetAttachmentSpaceResponse:
+        """
+        @summary 获取审批钉盘空间信息(OA高级版专享)
+        
+        @param request: PremiumGetAttachmentSpaceRequest
+        @return: PremiumGetAttachmentSpaceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetAttachmentSpaceHeaders()
+        return self.premium_get_attachment_space_with_options(request, headers, runtime)
+
+    async def premium_get_attachment_space_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetAttachmentSpaceRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetAttachmentSpaceResponse:
+        """
+        @summary 获取审批钉盘空间信息(OA高级版专享)
+        
+        @param request: PremiumGetAttachmentSpaceRequest
+        @return: PremiumGetAttachmentSpaceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetAttachmentSpaceHeaders()
+        return await self.premium_get_attachment_space_with_options_async(request, headers, runtime)
+
     def premium_get_done_tasks_with_options(
         self,
         request: dingtalkworkflow__1__0_models.PremiumGetDoneTasksRequest,
@@ -4635,6 +4993,372 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkflow__1__0_models.PremiumGetFieldModifiedHistoryHeaders()
         return await self.premium_get_field_modified_history_with_options_async(request, headers, runtime)
+
+    def premium_get_form_instance_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetFormInstanceRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetFormInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetFormInstanceResponse:
+        """
+        @summary 获取单个数据表单实例详情(OA高级版专享)
+        
+        @param request: PremiumGetFormInstanceRequest
+        @param headers: PremiumGetFormInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetFormInstanceResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_uuid):
+            query['appUuid'] = request.app_uuid
+        if not UtilClient.is_unset(request.form_code):
+            query['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.form_instance_id):
+            query['formInstanceId'] = request.form_instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetFormInstance',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/dataForms/formInstances',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetFormInstanceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_get_form_instance_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetFormInstanceRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetFormInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetFormInstanceResponse:
+        """
+        @summary 获取单个数据表单实例详情(OA高级版专享)
+        
+        @param request: PremiumGetFormInstanceRequest
+        @param headers: PremiumGetFormInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetFormInstanceResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_uuid):
+            query['appUuid'] = request.app_uuid
+        if not UtilClient.is_unset(request.form_code):
+            query['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.form_instance_id):
+            query['formInstanceId'] = request.form_instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetFormInstance',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/dataForms/formInstances',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetFormInstanceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_get_form_instance(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetFormInstanceRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetFormInstanceResponse:
+        """
+        @summary 获取单个数据表单实例详情(OA高级版专享)
+        
+        @param request: PremiumGetFormInstanceRequest
+        @return: PremiumGetFormInstanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetFormInstanceHeaders()
+        return self.premium_get_form_instance_with_options(request, headers, runtime)
+
+    async def premium_get_form_instance_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetFormInstanceRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetFormInstanceResponse:
+        """
+        @summary 获取单个数据表单实例详情(OA高级版专享)
+        
+        @param request: PremiumGetFormInstanceRequest
+        @return: PremiumGetFormInstanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetFormInstanceHeaders()
+        return await self.premium_get_form_instance_with_options_async(request, headers, runtime)
+
+    def premium_get_form_instances_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetFormInstancesRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetFormInstancesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetFormInstancesResponse:
+        """
+        @summary 根据formCode分页获取数据表单实例(OA高级版专享)
+        
+        @param request: PremiumGetFormInstancesRequest
+        @param headers: PremiumGetFormInstancesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetFormInstancesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_uuid):
+            query['appUuid'] = request.app_uuid
+        if not UtilClient.is_unset(request.form_code):
+            query['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetFormInstances',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/dataForms/formInstances/pages',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetFormInstancesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_get_form_instances_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetFormInstancesRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetFormInstancesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetFormInstancesResponse:
+        """
+        @summary 根据formCode分页获取数据表单实例(OA高级版专享)
+        
+        @param request: PremiumGetFormInstancesRequest
+        @param headers: PremiumGetFormInstancesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetFormInstancesResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_uuid):
+            query['appUuid'] = request.app_uuid
+        if not UtilClient.is_unset(request.form_code):
+            query['formCode'] = request.form_code
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetFormInstances',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/dataForms/formInstances/pages',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetFormInstancesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_get_form_instances(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetFormInstancesRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetFormInstancesResponse:
+        """
+        @summary 根据formCode分页获取数据表单实例(OA高级版专享)
+        
+        @param request: PremiumGetFormInstancesRequest
+        @return: PremiumGetFormInstancesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetFormInstancesHeaders()
+        return self.premium_get_form_instances_with_options(request, headers, runtime)
+
+    async def premium_get_form_instances_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetFormInstancesRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetFormInstancesResponse:
+        """
+        @summary 根据formCode分页获取数据表单实例(OA高级版专享)
+        
+        @param request: PremiumGetFormInstancesRequest
+        @return: PremiumGetFormInstancesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetFormInstancesHeaders()
+        return await self.premium_get_form_instances_with_options_async(request, headers, runtime)
+
+    def premium_get_form_schema_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetFormSchemaRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetFormSchemaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetFormSchemaResponse:
+        """
+        @summary 通过formCode获取数据表单schema(OA高级版专享)
+        
+        @param request: PremiumGetFormSchemaRequest
+        @param headers: PremiumGetFormSchemaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetFormSchemaResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_uuid):
+            query['appUuid'] = request.app_uuid
+        if not UtilClient.is_unset(request.process_code):
+            query['processCode'] = request.process_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetFormSchema',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/dataForms/schema/formCodes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetFormSchemaResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_get_form_schema_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetFormSchemaRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetFormSchemaHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetFormSchemaResponse:
+        """
+        @summary 通过formCode获取数据表单schema(OA高级版专享)
+        
+        @param request: PremiumGetFormSchemaRequest
+        @param headers: PremiumGetFormSchemaHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetFormSchemaResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.app_uuid):
+            query['appUuid'] = request.app_uuid
+        if not UtilClient.is_unset(request.process_code):
+            query['processCode'] = request.process_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetFormSchema',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/dataForms/schema/formCodes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetFormSchemaResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_get_form_schema(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetFormSchemaRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetFormSchemaResponse:
+        """
+        @summary 通过formCode获取数据表单schema(OA高级版专享)
+        
+        @param request: PremiumGetFormSchemaRequest
+        @return: PremiumGetFormSchemaResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetFormSchemaHeaders()
+        return self.premium_get_form_schema_with_options(request, headers, runtime)
+
+    async def premium_get_form_schema_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetFormSchemaRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetFormSchemaResponse:
+        """
+        @summary 通过formCode获取数据表单schema(OA高级版专享)
+        
+        @param request: PremiumGetFormSchemaRequest
+        @return: PremiumGetFormSchemaResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetFormSchemaHeaders()
+        return await self.premium_get_form_schema_with_options_async(request, headers, runtime)
 
     def premium_get_noticed_instances_with_options(
         self,
@@ -4892,6 +5616,140 @@ class Client(OpenApiClient):
         headers = dingtalkworkflow__1__0_models.PremiumGetProcessInstancesHeaders()
         return await self.premium_get_process_instances_with_options_async(request, headers, runtime)
 
+    def premium_get_space_with_download_auth_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetSpaceWithDownloadAuthRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetSpaceWithDownloadAuthHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetSpaceWithDownloadAuthResponse:
+        """
+        @summary 授权预览审批附件(OA高级版专享)
+        
+        @param request: PremiumGetSpaceWithDownloadAuthRequest
+        @param headers: PremiumGetSpaceWithDownloadAuthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetSpaceWithDownloadAuthResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_id):
+            body['agentId'] = request.agent_id
+        if not UtilClient.is_unset(request.file_id):
+            body['fileId'] = request.file_id
+        if not UtilClient.is_unset(request.file_id_list):
+            body['fileIdList'] = request.file_id_list
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.with_comment_attatchment):
+            body['withCommentAttatchment'] = request.with_comment_attatchment
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetSpaceWithDownloadAuth',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processInstances/spaces/authPreview',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetSpaceWithDownloadAuthResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_get_space_with_download_auth_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetSpaceWithDownloadAuthRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGetSpaceWithDownloadAuthHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetSpaceWithDownloadAuthResponse:
+        """
+        @summary 授权预览审批附件(OA高级版专享)
+        
+        @param request: PremiumGetSpaceWithDownloadAuthRequest
+        @param headers: PremiumGetSpaceWithDownloadAuthHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGetSpaceWithDownloadAuthResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.agent_id):
+            body['agentId'] = request.agent_id
+        if not UtilClient.is_unset(request.file_id):
+            body['fileId'] = request.file_id
+        if not UtilClient.is_unset(request.file_id_list):
+            body['fileIdList'] = request.file_id_list
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        if not UtilClient.is_unset(request.with_comment_attatchment):
+            body['withCommentAttatchment'] = request.with_comment_attatchment
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumGetSpaceWithDownloadAuth',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processInstances/spaces/authPreview',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGetSpaceWithDownloadAuthResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_get_space_with_download_auth(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetSpaceWithDownloadAuthRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetSpaceWithDownloadAuthResponse:
+        """
+        @summary 授权预览审批附件(OA高级版专享)
+        
+        @param request: PremiumGetSpaceWithDownloadAuthRequest
+        @return: PremiumGetSpaceWithDownloadAuthResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetSpaceWithDownloadAuthHeaders()
+        return self.premium_get_space_with_download_auth_with_options(request, headers, runtime)
+
+    async def premium_get_space_with_download_auth_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGetSpaceWithDownloadAuthRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGetSpaceWithDownloadAuthResponse:
+        """
+        @summary 授权预览审批附件(OA高级版专享)
+        
+        @param request: PremiumGetSpaceWithDownloadAuthRequest
+        @return: PremiumGetSpaceWithDownloadAuthResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGetSpaceWithDownloadAuthHeaders()
+        return await self.premium_get_space_with_download_auth_with_options_async(request, headers, runtime)
+
     def premium_get_submitted_instances_with_options(
         self,
         request: dingtalkworkflow__1__0_models.PremiumGetSubmittedInstancesRequest,
@@ -5139,6 +5997,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkflow__1__0_models.PremiumGetTodoTasksHeaders()
         return await self.premium_get_todo_tasks_with_options_async(request, headers, runtime)
+
+    def premium_grant_process_instance_for_download_file_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGrantProcessInstanceForDownloadFileRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGrantProcessInstanceForDownloadFileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGrantProcessInstanceForDownloadFileResponse:
+        """
+        @summary 下载审批附件(OA高级版专享)
+        
+        @param request: PremiumGrantProcessInstanceForDownloadFileRequest
+        @param headers: PremiumGrantProcessInstanceForDownloadFileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGrantProcessInstanceForDownloadFileResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_id):
+            body['fileId'] = request.file_id
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        if not UtilClient.is_unset(request.with_comment_attatchment):
+            body['withCommentAttatchment'] = request.with_comment_attatchment
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumGrantProcessInstanceForDownloadFile',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processInstances/spaces/files/urls/download',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGrantProcessInstanceForDownloadFileResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_grant_process_instance_for_download_file_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGrantProcessInstanceForDownloadFileRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumGrantProcessInstanceForDownloadFileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumGrantProcessInstanceForDownloadFileResponse:
+        """
+        @summary 下载审批附件(OA高级版专享)
+        
+        @param request: PremiumGrantProcessInstanceForDownloadFileRequest
+        @param headers: PremiumGrantProcessInstanceForDownloadFileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumGrantProcessInstanceForDownloadFileResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_id):
+            body['fileId'] = request.file_id
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        if not UtilClient.is_unset(request.with_comment_attatchment):
+            body['withCommentAttatchment'] = request.with_comment_attatchment
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumGrantProcessInstanceForDownloadFile',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processInstances/spaces/files/urls/download',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumGrantProcessInstanceForDownloadFileResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_grant_process_instance_for_download_file(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGrantProcessInstanceForDownloadFileRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGrantProcessInstanceForDownloadFileResponse:
+        """
+        @summary 下载审批附件(OA高级版专享)
+        
+        @param request: PremiumGrantProcessInstanceForDownloadFileRequest
+        @return: PremiumGrantProcessInstanceForDownloadFileResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGrantProcessInstanceForDownloadFileHeaders()
+        return self.premium_grant_process_instance_for_download_file_with_options(request, headers, runtime)
+
+    async def premium_grant_process_instance_for_download_file_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumGrantProcessInstanceForDownloadFileRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumGrantProcessInstanceForDownloadFileResponse:
+        """
+        @summary 下载审批附件(OA高级版专享)
+        
+        @param request: PremiumGrantProcessInstanceForDownloadFileRequest
+        @return: PremiumGrantProcessInstanceForDownloadFileResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumGrantProcessInstanceForDownloadFileHeaders()
+        return await self.premium_grant_process_instance_for_download_file_with_options_async(request, headers, runtime)
 
     def premium_insert_or_update_dir_with_options(
         self,
@@ -5521,6 +6501,258 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkflow__1__0_models.PremiumRedirectTasksByManagerHeaders()
         return await self.premium_redirect_tasks_by_manager_with_options_async(request, headers, runtime)
+
+    def premium_save_form_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumSaveFormRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumSaveFormHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumSaveFormResponse:
+        """
+        @summary 创建或更新数据表单模板(OA高级版专享)
+        
+        @param request: PremiumSaveFormRequest
+        @param headers: PremiumSaveFormHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumSaveFormResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.form_components):
+            body['formComponents'] = request.form_components
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumSaveForm',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/dataForms/templates',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumSaveFormResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_save_form_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumSaveFormRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumSaveFormHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumSaveFormResponse:
+        """
+        @summary 创建或更新数据表单模板(OA高级版专享)
+        
+        @param request: PremiumSaveFormRequest
+        @param headers: PremiumSaveFormHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumSaveFormResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.form_components):
+            body['formComponents'] = request.form_components
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumSaveForm',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/dataForms/templates',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumSaveFormResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_save_form(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumSaveFormRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumSaveFormResponse:
+        """
+        @summary 创建或更新数据表单模板(OA高级版专享)
+        
+        @param request: PremiumSaveFormRequest
+        @return: PremiumSaveFormResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumSaveFormHeaders()
+        return self.premium_save_form_with_options(request, headers, runtime)
+
+    async def premium_save_form_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumSaveFormRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumSaveFormResponse:
+        """
+        @summary 创建或更新数据表单模板(OA高级版专享)
+        
+        @param request: PremiumSaveFormRequest
+        @return: PremiumSaveFormResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumSaveFormHeaders()
+        return await self.premium_save_form_with_options_async(request, headers, runtime)
+
+    def premium_save_form_instance_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumSaveFormInstanceRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumSaveFormInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumSaveFormInstanceResponse:
+        """
+        @summary 创建数据表单实例(OA高级版专享)
+        
+        @param request: PremiumSaveFormInstanceRequest
+        @param headers: PremiumSaveFormInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumSaveFormInstanceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_component_value_list):
+            body['formComponentValueList'] = request.form_component_value_list
+        if not UtilClient.is_unset(request.originator_user_id):
+            body['originatorUserId'] = request.originator_user_id
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumSaveFormInstance',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/dataForms/formInstances/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumSaveFormInstanceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_save_form_instance_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumSaveFormInstanceRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumSaveFormInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumSaveFormInstanceResponse:
+        """
+        @summary 创建数据表单实例(OA高级版专享)
+        
+        @param request: PremiumSaveFormInstanceRequest
+        @param headers: PremiumSaveFormInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumSaveFormInstanceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_component_value_list):
+            body['formComponentValueList'] = request.form_component_value_list
+        if not UtilClient.is_unset(request.originator_user_id):
+            body['originatorUserId'] = request.originator_user_id
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumSaveFormInstance',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/dataForms/formInstances/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumSaveFormInstanceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_save_form_instance(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumSaveFormInstanceRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumSaveFormInstanceResponse:
+        """
+        @summary 创建数据表单实例(OA高级版专享)
+        
+        @param request: PremiumSaveFormInstanceRequest
+        @return: PremiumSaveFormInstanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumSaveFormInstanceHeaders()
+        return self.premium_save_form_instance_with_options(request, headers, runtime)
+
+    async def premium_save_form_instance_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumSaveFormInstanceRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumSaveFormInstanceResponse:
+        """
+        @summary 创建数据表单实例(OA高级版专享)
+        
+        @param request: PremiumSaveFormInstanceRequest
+        @return: PremiumSaveFormInstanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumSaveFormInstanceHeaders()
+        return await self.premium_save_form_instance_with_options_async(request, headers, runtime)
 
     def premium_save_integrated_process_with_options(
         self,
@@ -5919,6 +7151,262 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkworkflow__1__0_models.PremiumSaveIntegratedTaskHeaders()
         return await self.premium_save_integrated_task_with_options_async(request, headers, runtime)
+
+    def premium_update_form_instance_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumUpdateFormInstanceRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumUpdateFormInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumUpdateFormInstanceResponse:
+        """
+        @summary 更新数据表单实例(OA高级版专享)
+        
+        @param request: PremiumUpdateFormInstanceRequest
+        @param headers: PremiumUpdateFormInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumUpdateFormInstanceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_component_value_list):
+            body['formComponentValueList'] = request.form_component_value_list
+        if not UtilClient.is_unset(request.form_instance_ids):
+            body['formInstanceIds'] = request.form_instance_ids
+        if not UtilClient.is_unset(request.originator_user_id):
+            body['originatorUserId'] = request.originator_user_id
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumUpdateFormInstance',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/dataForms/formInstances',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumUpdateFormInstanceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_update_form_instance_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumUpdateFormInstanceRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumUpdateFormInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumUpdateFormInstanceResponse:
+        """
+        @summary 更新数据表单实例(OA高级版专享)
+        
+        @param request: PremiumUpdateFormInstanceRequest
+        @param headers: PremiumUpdateFormInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumUpdateFormInstanceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.form_component_value_list):
+            body['formComponentValueList'] = request.form_component_value_list
+        if not UtilClient.is_unset(request.form_instance_ids):
+            body['formInstanceIds'] = request.form_instance_ids
+        if not UtilClient.is_unset(request.originator_user_id):
+            body['originatorUserId'] = request.originator_user_id
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumUpdateFormInstance',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/dataForms/formInstances',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumUpdateFormInstanceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_update_form_instance(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumUpdateFormInstanceRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumUpdateFormInstanceResponse:
+        """
+        @summary 更新数据表单实例(OA高级版专享)
+        
+        @param request: PremiumUpdateFormInstanceRequest
+        @return: PremiumUpdateFormInstanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumUpdateFormInstanceHeaders()
+        return self.premium_update_form_instance_with_options(request, headers, runtime)
+
+    async def premium_update_form_instance_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumUpdateFormInstanceRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumUpdateFormInstanceResponse:
+        """
+        @summary 更新数据表单实例(OA高级版专享)
+        
+        @param request: PremiumUpdateFormInstanceRequest
+        @return: PremiumUpdateFormInstanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumUpdateFormInstanceHeaders()
+        return await self.premium_update_form_instance_with_options_async(request, headers, runtime)
+
+    def premium_update_process_instance_variables_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumUpdateProcessInstanceVariablesRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumUpdateProcessInstanceVariablesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumUpdateProcessInstanceVariablesResponse:
+        """
+        @summary 更新审批实例(OA高级版专享)
+        
+        @param request: PremiumUpdateProcessInstanceVariablesRequest
+        @param headers: PremiumUpdateProcessInstanceVariablesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumUpdateProcessInstanceVariablesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.variables):
+            body['variables'] = request.variables
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumUpdateProcessInstanceVariables',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processInstances',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumUpdateProcessInstanceVariablesResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def premium_update_process_instance_variables_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumUpdateProcessInstanceVariablesRequest,
+        headers: dingtalkworkflow__1__0_models.PremiumUpdateProcessInstanceVariablesHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.PremiumUpdateProcessInstanceVariablesResponse:
+        """
+        @summary 更新审批实例(OA高级版专享)
+        
+        @param request: PremiumUpdateProcessInstanceVariablesRequest
+        @param headers: PremiumUpdateProcessInstanceVariablesHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PremiumUpdateProcessInstanceVariablesResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.process_code):
+            body['processCode'] = request.process_code
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.variables):
+            body['variables'] = request.variables
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PremiumUpdateProcessInstanceVariables',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processInstances',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.PremiumUpdateProcessInstanceVariablesResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def premium_update_process_instance_variables(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumUpdateProcessInstanceVariablesRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumUpdateProcessInstanceVariablesResponse:
+        """
+        @summary 更新审批实例(OA高级版专享)
+        
+        @param request: PremiumUpdateProcessInstanceVariablesRequest
+        @return: PremiumUpdateProcessInstanceVariablesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumUpdateProcessInstanceVariablesHeaders()
+        return self.premium_update_process_instance_variables_with_options(request, headers, runtime)
+
+    async def premium_update_process_instance_variables_async(
+        self,
+        request: dingtalkworkflow__1__0_models.PremiumUpdateProcessInstanceVariablesRequest,
+    ) -> dingtalkworkflow__1__0_models.PremiumUpdateProcessInstanceVariablesResponse:
+        """
+        @summary 更新审批实例(OA高级版专享)
+        
+        @param request: PremiumUpdateProcessInstanceVariablesRequest
+        @return: PremiumUpdateProcessInstanceVariablesResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.PremiumUpdateProcessInstanceVariablesHeaders()
+        return await self.premium_update_process_instance_variables_with_options_async(request, headers, runtime)
 
     def process_forecast_with_options(
         self,

@@ -1030,6 +1030,132 @@ class Client(OpenApiClient):
         headers = dingtalklive__1__0_models.GetLiveReplayUrlHeaders()
         return await self.get_live_replay_url_with_options_async(request, headers, runtime)
 
+    def get_org_live_list_with_options(
+        self,
+        tmp_req: dingtalklive__1__0_models.GetOrgLiveListRequest,
+        headers: dingtalklive__1__0_models.GetOrgLiveListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.GetOrgLiveListResponse:
+        """
+        @summary 获取某组织内的直播列表
+        
+        @param tmp_req: GetOrgLiveListRequest
+        @param headers: GetOrgLiveListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetOrgLiveListResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalklive__1__0_models.GetOrgLiveListShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.request_body):
+            request.request_body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.request_body, 'requestBody', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.request_body_shrink):
+            query['requestBody'] = request.request_body_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetOrgLiveList',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/organizations/liveLists/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.GetOrgLiveListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_org_live_list_with_options_async(
+        self,
+        tmp_req: dingtalklive__1__0_models.GetOrgLiveListRequest,
+        headers: dingtalklive__1__0_models.GetOrgLiveListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.GetOrgLiveListResponse:
+        """
+        @summary 获取某组织内的直播列表
+        
+        @param tmp_req: GetOrgLiveListRequest
+        @param headers: GetOrgLiveListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetOrgLiveListResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalklive__1__0_models.GetOrgLiveListShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.request_body):
+            request.request_body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.request_body, 'requestBody', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.corp_id):
+            query['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.request_body_shrink):
+            query['requestBody'] = request.request_body_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetOrgLiveList',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/organizations/liveLists/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.GetOrgLiveListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_org_live_list(
+        self,
+        request: dingtalklive__1__0_models.GetOrgLiveListRequest,
+    ) -> dingtalklive__1__0_models.GetOrgLiveListResponse:
+        """
+        @summary 获取某组织内的直播列表
+        
+        @param request: GetOrgLiveListRequest
+        @return: GetOrgLiveListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.GetOrgLiveListHeaders()
+        return self.get_org_live_list_with_options(request, headers, runtime)
+
+    async def get_org_live_list_async(
+        self,
+        request: dingtalklive__1__0_models.GetOrgLiveListRequest,
+    ) -> dingtalklive__1__0_models.GetOrgLiveListResponse:
+        """
+        @summary 获取某组织内的直播列表
+        
+        @param request: GetOrgLiveListRequest
+        @return: GetOrgLiveListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.GetOrgLiveListHeaders()
+        return await self.get_org_live_list_with_options_async(request, headers, runtime)
+
     def get_user_all_live_list_with_options(
         self,
         request: dingtalklive__1__0_models.GetUserAllLiveListRequest,

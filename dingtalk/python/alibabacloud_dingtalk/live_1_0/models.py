@@ -1416,6 +1416,508 @@ class GetLiveReplayUrlResponse(TeaModel):
         return self
 
 
+class GetOrgLiveListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetOrgLiveListRequestRequestBody(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        page_number: int = None,
+        page_size: int = None,
+        start_time: int = None,
+        union_id: str = None,
+    ):
+        self.end_time = end_time
+        # This parameter is required.
+        self.page_number = page_number
+        # This parameter is required.
+        self.page_size = page_size
+        self.start_time = start_time
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class GetOrgLiveListRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        request_body: GetOrgLiveListRequestRequestBody = None,
+    ):
+        # This parameter is required.
+        self.corp_id = corp_id
+        self.request_body = request_body
+
+    def validate(self):
+        if self.request_body:
+            self.request_body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.request_body is not None:
+            result['requestBody'] = self.request_body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('requestBody') is not None:
+            temp_model = GetOrgLiveListRequestRequestBody()
+            self.request_body = temp_model.from_map(m['requestBody'])
+        return self
+
+
+class GetOrgLiveListShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        corp_id: str = None,
+        request_body_shrink: str = None,
+    ):
+        # This parameter is required.
+        self.corp_id = corp_id
+        self.request_body_shrink = request_body_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.request_body_shrink is not None:
+            result['requestBody'] = self.request_body_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('requestBody') is not None:
+            self.request_body_shrink = m.get('requestBody')
+        return self
+
+
+class GetOrgLiveListResponseBodyResultNewLiveLiveList(TeaModel):
+    def __init__(
+        self,
+        anchor_nickname: str = None,
+        anchor_union_id: str = None,
+        live_end_time: int = None,
+        live_start_time: int = None,
+        live_uuid: str = None,
+        share_open_conversation_ids: List[str] = None,
+        title: str = None,
+    ):
+        self.anchor_nickname = anchor_nickname
+        self.anchor_union_id = anchor_union_id
+        self.live_end_time = live_end_time
+        self.live_start_time = live_start_time
+        self.live_uuid = live_uuid
+        self.share_open_conversation_ids = share_open_conversation_ids
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.anchor_nickname is not None:
+            result['anchorNickname'] = self.anchor_nickname
+        if self.anchor_union_id is not None:
+            result['anchorUnionId'] = self.anchor_union_id
+        if self.live_end_time is not None:
+            result['liveEndTime'] = self.live_end_time
+        if self.live_start_time is not None:
+            result['liveStartTime'] = self.live_start_time
+        if self.live_uuid is not None:
+            result['liveUuid'] = self.live_uuid
+        if self.share_open_conversation_ids is not None:
+            result['shareOpenConversationIds'] = self.share_open_conversation_ids
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('anchorNickname') is not None:
+            self.anchor_nickname = m.get('anchorNickname')
+        if m.get('anchorUnionId') is not None:
+            self.anchor_union_id = m.get('anchorUnionId')
+        if m.get('liveEndTime') is not None:
+            self.live_end_time = m.get('liveEndTime')
+        if m.get('liveStartTime') is not None:
+            self.live_start_time = m.get('liveStartTime')
+        if m.get('liveUuid') is not None:
+            self.live_uuid = m.get('liveUuid')
+        if m.get('shareOpenConversationIds') is not None:
+            self.share_open_conversation_ids = m.get('shareOpenConversationIds')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class GetOrgLiveListResponseBodyResultNewLive(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        live_list: List[GetOrgLiveListResponseBodyResultNewLiveLiveList] = None,
+        page_number: int = None,
+        page_size: int = None,
+        total_count: int = None,
+    ):
+        self.has_more = has_more
+        self.live_list = live_list
+        self.page_number = page_number
+        self.page_size = page_size
+        self.total_count = total_count
+
+    def validate(self):
+        if self.live_list:
+            for k in self.live_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['liveList'] = []
+        if self.live_list is not None:
+            for k in self.live_list:
+                result['liveList'].append(k.to_map() if k else None)
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.live_list = []
+        if m.get('liveList') is not None:
+            for k in m.get('liveList'):
+                temp_model = GetOrgLiveListResponseBodyResultNewLiveLiveList()
+                self.live_list.append(temp_model.from_map(k))
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class GetOrgLiveListResponseBodyResultUpdateLiveLiveList(TeaModel):
+    def __init__(
+        self,
+        anchor_nickname: str = None,
+        anchor_union_id: str = None,
+        live_end_time: int = None,
+        live_start_time: int = None,
+        live_uuid: str = None,
+        title: str = None,
+    ):
+        self.anchor_nickname = anchor_nickname
+        self.anchor_union_id = anchor_union_id
+        self.live_end_time = live_end_time
+        self.live_start_time = live_start_time
+        self.live_uuid = live_uuid
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.anchor_nickname is not None:
+            result['anchorNickname'] = self.anchor_nickname
+        if self.anchor_union_id is not None:
+            result['anchorUnionId'] = self.anchor_union_id
+        if self.live_end_time is not None:
+            result['liveEndTime'] = self.live_end_time
+        if self.live_start_time is not None:
+            result['liveStartTime'] = self.live_start_time
+        if self.live_uuid is not None:
+            result['liveUuid'] = self.live_uuid
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('anchorNickname') is not None:
+            self.anchor_nickname = m.get('anchorNickname')
+        if m.get('anchorUnionId') is not None:
+            self.anchor_union_id = m.get('anchorUnionId')
+        if m.get('liveEndTime') is not None:
+            self.live_end_time = m.get('liveEndTime')
+        if m.get('liveStartTime') is not None:
+            self.live_start_time = m.get('liveStartTime')
+        if m.get('liveUuid') is not None:
+            self.live_uuid = m.get('liveUuid')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class GetOrgLiveListResponseBodyResultUpdateLive(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        live_list: List[GetOrgLiveListResponseBodyResultUpdateLiveLiveList] = None,
+        page_number: int = None,
+        page_size: int = None,
+        total_count: int = None,
+    ):
+        self.has_more = has_more
+        self.live_list = live_list
+        self.page_number = page_number
+        self.page_size = page_size
+        self.total_count = total_count
+
+    def validate(self):
+        if self.live_list:
+            for k in self.live_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['liveList'] = []
+        if self.live_list is not None:
+            for k in self.live_list:
+                result['liveList'].append(k.to_map() if k else None)
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.live_list = []
+        if m.get('liveList') is not None:
+            for k in m.get('liveList'):
+                temp_model = GetOrgLiveListResponseBodyResultUpdateLiveLiveList()
+                self.live_list.append(temp_model.from_map(k))
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class GetOrgLiveListResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        new_live: GetOrgLiveListResponseBodyResultNewLive = None,
+        update_live: GetOrgLiveListResponseBodyResultUpdateLive = None,
+    ):
+        self.new_live = new_live
+        self.update_live = update_live
+
+    def validate(self):
+        if self.new_live:
+            self.new_live.validate()
+        if self.update_live:
+            self.update_live.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.new_live is not None:
+            result['newLive'] = self.new_live.to_map()
+        if self.update_live is not None:
+            result['updateLive'] = self.update_live.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('newLive') is not None:
+            temp_model = GetOrgLiveListResponseBodyResultNewLive()
+            self.new_live = temp_model.from_map(m['newLive'])
+        if m.get('updateLive') is not None:
+            temp_model = GetOrgLiveListResponseBodyResultUpdateLive()
+            self.update_live = temp_model.from_map(m['updateLive'])
+        return self
+
+
+class GetOrgLiveListResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetOrgLiveListResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetOrgLiveListResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class GetOrgLiveListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetOrgLiveListResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetOrgLiveListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetUserAllLiveListHeaders(TeaModel):
     def __init__(
         self,
