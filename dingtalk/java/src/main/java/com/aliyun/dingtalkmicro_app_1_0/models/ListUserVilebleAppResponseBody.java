@@ -99,6 +99,13 @@ public class ListUserVilebleAppResponseBody extends TeaModel {
         @NameInMap("pcHomepageLink")
         public String pcHomepageLink;
 
+        /**
+         * <strong>example:</strong>
+         * <p>unifiedAppId</p>
+         */
+        @NameInMap("unifiedAppId")
+        public String unifiedAppId;
+
         public static ListUserVilebleAppResponseBodyAppList build(java.util.Map<String, ?> map) throws Exception {
             ListUserVilebleAppResponseBodyAppList self = new ListUserVilebleAppResponseBodyAppList();
             return TeaModel.build(map, self);
@@ -182,6 +189,14 @@ public class ListUserVilebleAppResponseBody extends TeaModel {
         }
         public String getPcHomepageLink() {
             return this.pcHomepageLink;
+        }
+
+        public ListUserVilebleAppResponseBodyAppList setUnifiedAppId(String unifiedAppId) {
+            this.unifiedAppId = unifiedAppId;
+            return this;
+        }
+        public String getUnifiedAppId() {
+            return this.unifiedAppId;
         }
 
     }
