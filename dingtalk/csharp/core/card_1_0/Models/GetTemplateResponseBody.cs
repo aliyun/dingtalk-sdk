@@ -25,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
             [Validation(Required=false)]
             public object ExpVariableList { get; set; }
 
+            [NameInMap("extendType")]
+            [Validation(Required=false)]
+            public string ExtendType { get; set; }
+
             [NameInMap("gmtCreate")]
             [Validation(Required=false)]
             public string GmtCreate { get; set; }

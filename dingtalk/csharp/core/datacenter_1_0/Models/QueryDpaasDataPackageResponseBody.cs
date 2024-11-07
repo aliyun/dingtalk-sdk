@@ -25,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
         [Validation(Required=false)]
         public long? UsedNum { get; set; }
 
+        [NameInMap("whiteCustomer")]
+        [Validation(Required=false)]
+        public bool? WhiteCustomer { get; set; }
+
     }
 
 }

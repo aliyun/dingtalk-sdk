@@ -7424,6 +7424,162 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>修改企业账号加入其他组织后电话是否可见</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OrgAccountMobileVisibleInOtherOrgRequest
+        /// </param>
+        /// <param name="headers">
+        /// OrgAccountMobileVisibleInOtherOrgHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// OrgAccountMobileVisibleInOtherOrgResponse
+        /// </returns>
+        public OrgAccountMobileVisibleInOtherOrgResponse OrgAccountMobileVisibleInOtherOrgWithOptions(OrgAccountMobileVisibleInOtherOrgRequest request, OrgAccountMobileVisibleInOtherOrgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUserId))
+            {
+                body["optUserId"] = request.OptUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToCorpIds))
+            {
+                body["toCorpIds"] = request.ToCorpIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OrgAccountMobileVisibleInOtherOrg",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/orgAccounts/mobiles/visibleInOtherOrg",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OrgAccountMobileVisibleInOtherOrgResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改企业账号加入其他组织后电话是否可见</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OrgAccountMobileVisibleInOtherOrgRequest
+        /// </param>
+        /// <param name="headers">
+        /// OrgAccountMobileVisibleInOtherOrgHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// OrgAccountMobileVisibleInOtherOrgResponse
+        /// </returns>
+        public async Task<OrgAccountMobileVisibleInOtherOrgResponse> OrgAccountMobileVisibleInOtherOrgWithOptionsAsync(OrgAccountMobileVisibleInOtherOrgRequest request, OrgAccountMobileVisibleInOtherOrgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OptUserId))
+            {
+                body["optUserId"] = request.OptUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToCorpIds))
+            {
+                body["toCorpIds"] = request.ToCorpIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "OrgAccountMobileVisibleInOtherOrg",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/orgAccounts/mobiles/visibleInOtherOrg",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<OrgAccountMobileVisibleInOtherOrgResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改企业账号加入其他组织后电话是否可见</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OrgAccountMobileVisibleInOtherOrgRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// OrgAccountMobileVisibleInOtherOrgResponse
+        /// </returns>
+        public OrgAccountMobileVisibleInOtherOrgResponse OrgAccountMobileVisibleInOtherOrg(OrgAccountMobileVisibleInOtherOrgRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OrgAccountMobileVisibleInOtherOrgHeaders headers = new OrgAccountMobileVisibleInOtherOrgHeaders();
+            return OrgAccountMobileVisibleInOtherOrgWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改企业账号加入其他组织后电话是否可见</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// OrgAccountMobileVisibleInOtherOrgRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// OrgAccountMobileVisibleInOtherOrgResponse
+        /// </returns>
+        public async Task<OrgAccountMobileVisibleInOtherOrgResponse> OrgAccountMobileVisibleInOtherOrgAsync(OrgAccountMobileVisibleInOtherOrgRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            OrgAccountMobileVisibleInOtherOrgHeaders headers = new OrgAccountMobileVisibleInOtherOrgHeaders();
+            return await OrgAccountMobileVisibleInOtherOrgWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>更新企业账号电话可见性</para>
         /// </summary>
         /// 

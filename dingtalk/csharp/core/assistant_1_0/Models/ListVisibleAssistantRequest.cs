@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0.Models
         [Validation(Required=false)]
         public long? Cursor { get; set; }
 
+        [NameInMap("name")]
+        [Validation(Required=false)]
+        public string Name { get; set; }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>

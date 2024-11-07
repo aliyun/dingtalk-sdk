@@ -2886,6 +2886,10 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             {
                 query["cursor"] = request.Cursor;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                query["name"] = request.Name;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
             {
                 query["pageSize"] = request.PageSize;
@@ -2948,6 +2952,10 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Cursor))
             {
                 query["cursor"] = request.Cursor;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                query["name"] = request.Name;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
             {
