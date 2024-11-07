@@ -5636,6 +5636,124 @@ class Client(OpenApiClient):
         headers = dingtalkcontact__1__0_models.MultiOrgPermissionGrantHeaders()
         return await self.multi_org_permission_grant_with_options_async(request, headers, runtime)
 
+    def org_account_mobile_visible_in_other_org_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.OrgAccountMobileVisibleInOtherOrgRequest,
+        headers: dingtalkcontact__1__0_models.OrgAccountMobileVisibleInOtherOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.OrgAccountMobileVisibleInOtherOrgResponse:
+        """
+        @summary 修改企业账号加入其他组织后电话是否可见
+        
+        @param request: OrgAccountMobileVisibleInOtherOrgRequest
+        @param headers: OrgAccountMobileVisibleInOtherOrgHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OrgAccountMobileVisibleInOtherOrgResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.opt_user_id):
+            body['optUserId'] = request.opt_user_id
+        if not UtilClient.is_unset(request.to_corp_ids):
+            body['toCorpIds'] = request.to_corp_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OrgAccountMobileVisibleInOtherOrg',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/orgAccounts/mobiles/visibleInOtherOrg',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.OrgAccountMobileVisibleInOtherOrgResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def org_account_mobile_visible_in_other_org_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.OrgAccountMobileVisibleInOtherOrgRequest,
+        headers: dingtalkcontact__1__0_models.OrgAccountMobileVisibleInOtherOrgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.OrgAccountMobileVisibleInOtherOrgResponse:
+        """
+        @summary 修改企业账号加入其他组织后电话是否可见
+        
+        @param request: OrgAccountMobileVisibleInOtherOrgRequest
+        @param headers: OrgAccountMobileVisibleInOtherOrgHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OrgAccountMobileVisibleInOtherOrgResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.opt_user_id):
+            body['optUserId'] = request.opt_user_id
+        if not UtilClient.is_unset(request.to_corp_ids):
+            body['toCorpIds'] = request.to_corp_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OrgAccountMobileVisibleInOtherOrg',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/orgAccounts/mobiles/visibleInOtherOrg',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.OrgAccountMobileVisibleInOtherOrgResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def org_account_mobile_visible_in_other_org(
+        self,
+        request: dingtalkcontact__1__0_models.OrgAccountMobileVisibleInOtherOrgRequest,
+    ) -> dingtalkcontact__1__0_models.OrgAccountMobileVisibleInOtherOrgResponse:
+        """
+        @summary 修改企业账号加入其他组织后电话是否可见
+        
+        @param request: OrgAccountMobileVisibleInOtherOrgRequest
+        @return: OrgAccountMobileVisibleInOtherOrgResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.OrgAccountMobileVisibleInOtherOrgHeaders()
+        return self.org_account_mobile_visible_in_other_org_with_options(request, headers, runtime)
+
+    async def org_account_mobile_visible_in_other_org_async(
+        self,
+        request: dingtalkcontact__1__0_models.OrgAccountMobileVisibleInOtherOrgRequest,
+    ) -> dingtalkcontact__1__0_models.OrgAccountMobileVisibleInOtherOrgResponse:
+        """
+        @summary 修改企业账号加入其他组织后电话是否可见
+        
+        @param request: OrgAccountMobileVisibleInOtherOrgRequest
+        @return: OrgAccountMobileVisibleInOtherOrgResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.OrgAccountMobileVisibleInOtherOrgHeaders()
+        return await self.org_account_mobile_visible_in_other_org_with_options_async(request, headers, runtime)
+
     def org_account_mobile_visible_permisson_with_options(
         self,
         request: dingtalkcontact__1__0_models.OrgAccountMobileVisiblePermissonRequest,

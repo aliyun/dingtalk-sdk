@@ -3349,10 +3349,12 @@ class ListVisibleAssistantRequest(TeaModel):
     def __init__(
         self,
         cursor: int = None,
+        name: str = None,
         page_size: int = None,
         union_id: str = None,
     ):
         self.cursor = cursor
+        self.name = name
         # This parameter is required.
         self.page_size = page_size
         # This parameter is required.
@@ -3369,6 +3371,8 @@ class ListVisibleAssistantRequest(TeaModel):
         result = dict()
         if self.cursor is not None:
             result['cursor'] = self.cursor
+        if self.name is not None:
+            result['name'] = self.name
         if self.page_size is not None:
             result['pageSize'] = self.page_size
         if self.union_id is not None:
@@ -3379,6 +3383,8 @@ class ListVisibleAssistantRequest(TeaModel):
         m = m or dict()
         if m.get('cursor') is not None:
             self.cursor = m.get('cursor')
+        if m.get('name') is not None:
+            self.name = m.get('name')
         if m.get('pageSize') is not None:
             self.page_size = m.get('pageSize')
         if m.get('unionId') is not None:

@@ -2200,6 +2200,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.cursor):
             query['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.union_id):
@@ -2247,6 +2249,8 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.cursor):
             query['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
         if not UtilClient.is_unset(request.page_size):
             query['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.union_id):

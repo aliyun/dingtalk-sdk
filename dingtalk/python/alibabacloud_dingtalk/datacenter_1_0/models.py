@@ -7058,11 +7058,13 @@ class QueryDpaasDataPackageResponseBody(TeaModel):
         quota: int = None,
         success: bool = None,
         used_num: int = None,
+        white_customer: bool = None,
     ):
         self.buy = buy
         self.quota = quota
         self.success = success
         self.used_num = used_num
+        self.white_customer = white_customer
 
     def validate(self):
         pass
@@ -7081,6 +7083,8 @@ class QueryDpaasDataPackageResponseBody(TeaModel):
             result['success'] = self.success
         if self.used_num is not None:
             result['usedNum'] = self.used_num
+        if self.white_customer is not None:
+            result['whiteCustomer'] = self.white_customer
         return result
 
     def from_map(self, m: dict = None):
@@ -7093,6 +7097,8 @@ class QueryDpaasDataPackageResponseBody(TeaModel):
             self.success = m.get('success')
         if m.get('usedNum') is not None:
             self.used_num = m.get('usedNum')
+        if m.get('whiteCustomer') is not None:
+            self.white_customer = m.get('whiteCustomer')
         return self
 
 

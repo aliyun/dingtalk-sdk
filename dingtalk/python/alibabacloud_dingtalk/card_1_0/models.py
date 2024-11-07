@@ -6445,6 +6445,7 @@ class GetTemplateResponseBodyData(TeaModel):
         common_variable_list: Any = None,
         creator_id: str = None,
         exp_variable_list: Any = None,
+        extend_type: str = None,
         gmt_create: str = None,
         gmt_modified: str = None,
         local_variable_list: Any = None,
@@ -6457,6 +6458,7 @@ class GetTemplateResponseBodyData(TeaModel):
         self.common_variable_list = common_variable_list
         self.creator_id = creator_id
         self.exp_variable_list = exp_variable_list
+        self.extend_type = extend_type
         self.gmt_create = gmt_create
         self.gmt_modified = gmt_modified
         self.local_variable_list = local_variable_list
@@ -6481,6 +6483,8 @@ class GetTemplateResponseBodyData(TeaModel):
             result['creatorId'] = self.creator_id
         if self.exp_variable_list is not None:
             result['expVariableList'] = self.exp_variable_list
+        if self.extend_type is not None:
+            result['extendType'] = self.extend_type
         if self.gmt_create is not None:
             result['gmtCreate'] = self.gmt_create
         if self.gmt_modified is not None:
@@ -6507,6 +6511,8 @@ class GetTemplateResponseBodyData(TeaModel):
             self.creator_id = m.get('creatorId')
         if m.get('expVariableList') is not None:
             self.exp_variable_list = m.get('expVariableList')
+        if m.get('extendType') is not None:
+            self.extend_type = m.get('extendType')
         if m.get('gmtCreate') is not None:
             self.gmt_create = m.get('gmtCreate')
         if m.get('gmtModified') is not None:

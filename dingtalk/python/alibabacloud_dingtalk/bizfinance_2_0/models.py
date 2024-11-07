@@ -2261,6 +2261,377 @@ class OrderBillingResponse(TeaModel):
         return self
 
 
+class QueryAccountTradeByPageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryAccountTradeByPageRequestFilter(TeaModel):
+    def __init__(
+        self,
+        end_amount: str = None,
+        other_account_name: str = None,
+        start_amount: str = None,
+        trade_type: str = None,
+    ):
+        self.end_amount = end_amount
+        self.other_account_name = other_account_name
+        self.start_amount = start_amount
+        self.trade_type = trade_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_amount is not None:
+            result['endAmount'] = self.end_amount
+        if self.other_account_name is not None:
+            result['otherAccountName'] = self.other_account_name
+        if self.start_amount is not None:
+            result['startAmount'] = self.start_amount
+        if self.trade_type is not None:
+            result['tradeType'] = self.trade_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endAmount') is not None:
+            self.end_amount = m.get('endAmount')
+        if m.get('otherAccountName') is not None:
+            self.other_account_name = m.get('otherAccountName')
+        if m.get('startAmount') is not None:
+            self.start_amount = m.get('startAmount')
+        if m.get('tradeType') is not None:
+            self.trade_type = m.get('tradeType')
+        return self
+
+
+class QueryAccountTradeByPageRequest(TeaModel):
+    def __init__(
+        self,
+        account_id: str = None,
+        end_date: int = None,
+        filter: QueryAccountTradeByPageRequestFilter = None,
+        page_number: int = None,
+        page_size: int = None,
+        start_date: int = None,
+    ):
+        self.account_id = account_id
+        self.end_date = end_date
+        self.filter = filter
+        self.page_number = page_number
+        self.page_size = page_size
+        self.start_date = start_date
+
+    def validate(self):
+        if self.filter:
+            self.filter.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_id is not None:
+            result['accountId'] = self.account_id
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.filter is not None:
+            result['filter'] = self.filter.to_map()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountId') is not None:
+            self.account_id = m.get('accountId')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('filter') is not None:
+            temp_model = QueryAccountTradeByPageRequestFilter()
+            self.filter = temp_model.from_map(m['filter'])
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        return self
+
+
+class QueryAccountTradeByPageResponseBodyResultReceiptFile(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        file_name: str = None,
+        file_size: int = None,
+        file_type: str = None,
+        preview_url: str = None,
+        space_id: str = None,
+    ):
+        self.file_id = file_id
+        self.file_name = file_name
+        self.file_size = file_size
+        self.file_type = file_type
+        self.preview_url = preview_url
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.preview_url is not None:
+            result['previewUrl'] = self.preview_url
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('previewUrl') is not None:
+            self.preview_url = m.get('previewUrl')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class QueryAccountTradeByPageResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        balance: str = None,
+        instance_id: str = None,
+        instance_title: str = None,
+        instance_url: str = None,
+        other_account_name: str = None,
+        other_account_no: str = None,
+        receipt_file: QueryAccountTradeByPageResponseBodyResultReceiptFile = None,
+        remark: str = None,
+        trade_amount: str = None,
+        trade_no: str = None,
+        trade_time: int = None,
+        trade_type: str = None,
+    ):
+        self.balance = balance
+        self.instance_id = instance_id
+        self.instance_title = instance_title
+        self.instance_url = instance_url
+        self.other_account_name = other_account_name
+        self.other_account_no = other_account_no
+        self.receipt_file = receipt_file
+        self.remark = remark
+        self.trade_amount = trade_amount
+        self.trade_no = trade_no
+        self.trade_time = trade_time
+        self.trade_type = trade_type
+
+    def validate(self):
+        if self.receipt_file:
+            self.receipt_file.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.balance is not None:
+            result['balance'] = self.balance
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        if self.instance_title is not None:
+            result['instanceTitle'] = self.instance_title
+        if self.instance_url is not None:
+            result['instanceUrl'] = self.instance_url
+        if self.other_account_name is not None:
+            result['otherAccountName'] = self.other_account_name
+        if self.other_account_no is not None:
+            result['otherAccountNo'] = self.other_account_no
+        if self.receipt_file is not None:
+            result['receiptFile'] = self.receipt_file.to_map()
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.trade_amount is not None:
+            result['tradeAmount'] = self.trade_amount
+        if self.trade_no is not None:
+            result['tradeNo'] = self.trade_no
+        if self.trade_time is not None:
+            result['tradeTime'] = self.trade_time
+        if self.trade_type is not None:
+            result['tradeType'] = self.trade_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('balance') is not None:
+            self.balance = m.get('balance')
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        if m.get('instanceTitle') is not None:
+            self.instance_title = m.get('instanceTitle')
+        if m.get('instanceUrl') is not None:
+            self.instance_url = m.get('instanceUrl')
+        if m.get('otherAccountName') is not None:
+            self.other_account_name = m.get('otherAccountName')
+        if m.get('otherAccountNo') is not None:
+            self.other_account_no = m.get('otherAccountNo')
+        if m.get('receiptFile') is not None:
+            temp_model = QueryAccountTradeByPageResponseBodyResultReceiptFile()
+            self.receipt_file = temp_model.from_map(m['receiptFile'])
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('tradeAmount') is not None:
+            self.trade_amount = m.get('tradeAmount')
+        if m.get('tradeNo') is not None:
+            self.trade_no = m.get('tradeNo')
+        if m.get('tradeTime') is not None:
+            self.trade_time = m.get('tradeTime')
+        if m.get('tradeType') is not None:
+            self.trade_type = m.get('tradeType')
+        return self
+
+
+class QueryAccountTradeByPageResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[QueryAccountTradeByPageResponseBodyResult] = None,
+        total_count: int = None,
+    ):
+        self.result = result
+        self.total_count = total_count
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryAccountTradeByPageResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryAccountTradeByPageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryAccountTradeByPageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryAccountTradeByPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryCategoryByPageHeaders(TeaModel):
     def __init__(
         self,

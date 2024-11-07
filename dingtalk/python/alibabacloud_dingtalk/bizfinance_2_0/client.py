@@ -1394,6 +1394,140 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.OrderBillingHeaders()
         return await self.order_billing_with_options_async(request, headers, runtime)
 
+    def query_account_trade_by_page_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryAccountTradeByPageRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryAccountTradeByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryAccountTradeByPageResponse:
+        """
+        @summary 分页查询账户的银行交易流水
+        
+        @param request: QueryAccountTradeByPageRequest
+        @param headers: QueryAccountTradeByPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryAccountTradeByPageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.account_id):
+            body['accountId'] = request.account_id
+        if not UtilClient.is_unset(request.end_date):
+            body['endDate'] = request.end_date
+        if not UtilClient.is_unset(request.filter):
+            body['filter'] = request.filter
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_date):
+            body['startDate'] = request.start_date
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryAccountTradeByPage',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/payments/trades/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryAccountTradeByPageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_account_trade_by_page_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryAccountTradeByPageRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryAccountTradeByPageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryAccountTradeByPageResponse:
+        """
+        @summary 分页查询账户的银行交易流水
+        
+        @param request: QueryAccountTradeByPageRequest
+        @param headers: QueryAccountTradeByPageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryAccountTradeByPageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.account_id):
+            body['accountId'] = request.account_id
+        if not UtilClient.is_unset(request.end_date):
+            body['endDate'] = request.end_date
+        if not UtilClient.is_unset(request.filter):
+            body['filter'] = request.filter
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_date):
+            body['startDate'] = request.start_date
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryAccountTradeByPage',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/payments/trades/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryAccountTradeByPageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_account_trade_by_page(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryAccountTradeByPageRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryAccountTradeByPageResponse:
+        """
+        @summary 分页查询账户的银行交易流水
+        
+        @param request: QueryAccountTradeByPageRequest
+        @return: QueryAccountTradeByPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryAccountTradeByPageHeaders()
+        return self.query_account_trade_by_page_with_options(request, headers, runtime)
+
+    async def query_account_trade_by_page_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryAccountTradeByPageRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryAccountTradeByPageResponse:
+        """
+        @summary 分页查询账户的银行交易流水
+        
+        @param request: QueryAccountTradeByPageRequest
+        @return: QueryAccountTradeByPageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryAccountTradeByPageHeaders()
+        return await self.query_account_trade_by_page_with_options_async(request, headers, runtime)
+
     def query_category_by_page_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.QueryCategoryByPageRequest,
