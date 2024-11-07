@@ -101,6 +101,14 @@ namespace AlibabaCloud.SDK.Dingtalkmicro_app_1_0.Models
             [Validation(Required=false)]
             public string PcHomepageLink { get; set; }
 
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>unifiedAppId</para>
+            /// </summary>
+            [NameInMap("unifiedAppId")]
+            [Validation(Required=false)]
+            public string UnifiedAppId { get; set; }
+
         }
 
     }
