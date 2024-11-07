@@ -38,6 +38,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\LinkCommonInvokeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\OrderBillingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\OrderBillingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\OrderBillingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAccountTradeByPageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAccountTradeByPageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAccountTradeByPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCategoryByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCategoryByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCategoryByPageResponse;
@@ -811,6 +814,78 @@ class Dingtalk extends OpenApiClient
         $headers = new OrderBillingHeaders([]);
 
         return $this->orderBillingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 分页查询账户的银行交易流水
+     *  *
+     * @param QueryAccountTradeByPageRequest $request QueryAccountTradeByPageRequest
+     * @param QueryAccountTradeByPageHeaders $headers QueryAccountTradeByPageHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryAccountTradeByPageResponse QueryAccountTradeByPageResponse
+     */
+    public function queryAccountTradeByPageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->accountId)) {
+            $body['accountId'] = $request->accountId;
+        }
+        if (!Utils::isUnset($request->endDate)) {
+            $body['endDate'] = $request->endDate;
+        }
+        if (!Utils::isUnset($request->filter)) {
+            $body['filter'] = $request->filter;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->startDate)) {
+            $body['startDate'] = $request->startDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryAccountTradeByPage',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/payments/trades/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryAccountTradeByPageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 分页查询账户的银行交易流水
+     *  *
+     * @param QueryAccountTradeByPageRequest $request QueryAccountTradeByPageRequest
+     *
+     * @return QueryAccountTradeByPageResponse QueryAccountTradeByPageResponse
+     */
+    public function queryAccountTradeByPage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryAccountTradeByPageHeaders([]);
+
+        return $this->queryAccountTradeByPageWithOptions($request, $headers, $runtime);
     }
 
     /**

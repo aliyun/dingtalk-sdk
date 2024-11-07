@@ -27,11 +27,17 @@ class QueryDpaasDataPackageResponseBody extends Model
      * @var int
      */
     public $usedNum;
+
+    /**
+     * @var bool
+     */
+    public $whiteCustomer;
     protected $_name = [
-        'buy'     => 'buy',
-        'quota'   => 'quota',
-        'success' => 'success',
-        'usedNum' => 'usedNum',
+        'buy'           => 'buy',
+        'quota'         => 'quota',
+        'success'       => 'success',
+        'usedNum'       => 'usedNum',
+        'whiteCustomer' => 'whiteCustomer',
     ];
 
     public function validate()
@@ -52,6 +58,9 @@ class QueryDpaasDataPackageResponseBody extends Model
         }
         if (null !== $this->usedNum) {
             $res['usedNum'] = $this->usedNum;
+        }
+        if (null !== $this->whiteCustomer) {
+            $res['whiteCustomer'] = $this->whiteCustomer;
         }
 
         return $res;
@@ -76,6 +85,9 @@ class QueryDpaasDataPackageResponseBody extends Model
         }
         if (isset($map['usedNum'])) {
             $model->usedNum = $map['usedNum'];
+        }
+        if (isset($map['whiteCustomer'])) {
+            $model->whiteCustomer = $map['whiteCustomer'];
         }
 
         return $model;

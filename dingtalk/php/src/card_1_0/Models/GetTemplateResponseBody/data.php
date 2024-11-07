@@ -26,6 +26,11 @@ class data extends Model
     /**
      * @var string
      */
+    public $extendType;
+
+    /**
+     * @var string
+     */
     public $gmtCreate;
 
     /**
@@ -66,6 +71,7 @@ class data extends Model
         'commonVariableList' => 'commonVariableList',
         'creatorId'          => 'creatorId',
         'expVariableList'    => 'expVariableList',
+        'extendType'         => 'extendType',
         'gmtCreate'          => 'gmtCreate',
         'gmtModified'        => 'gmtModified',
         'localVariableList'  => 'localVariableList',
@@ -91,6 +97,9 @@ class data extends Model
         }
         if (null !== $this->expVariableList) {
             $res['expVariableList'] = $this->expVariableList;
+        }
+        if (null !== $this->extendType) {
+            $res['extendType'] = $this->extendType;
         }
         if (null !== $this->gmtCreate) {
             $res['gmtCreate'] = $this->gmtCreate;
@@ -136,6 +145,9 @@ class data extends Model
         }
         if (isset($map['expVariableList'])) {
             $model->expVariableList = $map['expVariableList'];
+        }
+        if (isset($map['extendType'])) {
+            $model->extendType = $map['extendType'];
         }
         if (isset($map['gmtCreate'])) {
             $model->gmtCreate = $map['gmtCreate'];

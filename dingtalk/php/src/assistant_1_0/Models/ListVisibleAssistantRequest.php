@@ -14,6 +14,11 @@ class ListVisibleAssistantRequest extends Model
     public $cursor;
 
     /**
+     * @var string
+     */
+    public $name;
+
+    /**
      * @description This parameter is required.
      *
      * @var int
@@ -28,6 +33,7 @@ class ListVisibleAssistantRequest extends Model
     public $unionId;
     protected $_name = [
         'cursor'   => 'cursor',
+        'name'     => 'name',
         'pageSize' => 'pageSize',
         'unionId'  => 'unionId',
     ];
@@ -41,6 +47,9 @@ class ListVisibleAssistantRequest extends Model
         $res = [];
         if (null !== $this->cursor) {
             $res['cursor'] = $this->cursor;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
         }
         if (null !== $this->pageSize) {
             $res['pageSize'] = $this->pageSize;
@@ -62,6 +71,9 @@ class ListVisibleAssistantRequest extends Model
         $model = new self();
         if (isset($map['cursor'])) {
             $model->cursor = $map['cursor'];
+        }
+        if (isset($map['name'])) {
+            $model->name = $map['name'];
         }
         if (isset($map['pageSize'])) {
             $model->pageSize = $map['pageSize'];

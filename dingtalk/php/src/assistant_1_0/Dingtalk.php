@@ -1228,6 +1228,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->cursor)) {
             $query['cursor'] = $request->cursor;
         }
+        if (!Utils::isUnset($request->name)) {
+            $query['name'] = $request->name;
+        }
         if (!Utils::isUnset($request->pageSize)) {
             $query['pageSize'] = $request->pageSize;
         }

@@ -135,6 +135,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\ModifyOrgAccUserOwnnessRespons
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\MultiOrgPermissionGrantHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\MultiOrgPermissionGrantRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\MultiOrgPermissionGrantResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\OrgAccountMobileVisibleInOtherOrgHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\OrgAccountMobileVisibleInOtherOrgRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\OrgAccountMobileVisibleInOtherOrgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\OrgAccountMobileVisiblePermissonHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\OrgAccountMobileVisiblePermissonRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\OrgAccountMobileVisiblePermissonResponse;
@@ -3148,6 +3151,66 @@ class Dingtalk extends OpenApiClient
         $headers = new MultiOrgPermissionGrantHeaders([]);
 
         return $this->multiOrgPermissionGrantWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 修改企业账号加入其他组织后电话是否可见
+     *  *
+     * @param OrgAccountMobileVisibleInOtherOrgRequest $request OrgAccountMobileVisibleInOtherOrgRequest
+     * @param OrgAccountMobileVisibleInOtherOrgHeaders $headers OrgAccountMobileVisibleInOtherOrgHeaders
+     * @param RuntimeOptions                           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OrgAccountMobileVisibleInOtherOrgResponse OrgAccountMobileVisibleInOtherOrgResponse
+     */
+    public function orgAccountMobileVisibleInOtherOrgWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->optUserId)) {
+            $body['optUserId'] = $request->optUserId;
+        }
+        if (!Utils::isUnset($request->toCorpIds)) {
+            $body['toCorpIds'] = $request->toCorpIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'OrgAccountMobileVisibleInOtherOrg',
+            'version'     => 'contact_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contact/orgAccounts/mobiles/visibleInOtherOrg',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OrgAccountMobileVisibleInOtherOrgResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 修改企业账号加入其他组织后电话是否可见
+     *  *
+     * @param OrgAccountMobileVisibleInOtherOrgRequest $request OrgAccountMobileVisibleInOtherOrgRequest
+     *
+     * @return OrgAccountMobileVisibleInOtherOrgResponse OrgAccountMobileVisibleInOtherOrgResponse
+     */
+    public function orgAccountMobileVisibleInOtherOrg($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OrgAccountMobileVisibleInOtherOrgHeaders([]);
+
+        return $this->orgAccountMobileVisibleInOtherOrgWithOptions($request, $headers, $runtime);
     }
 
     /**
