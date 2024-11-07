@@ -7,6 +7,9 @@ public class ListVisibleAssistantRequest extends TeaModel {
     @NameInMap("cursor")
     public Long cursor;
 
+    @NameInMap("name")
+    public String name;
+
     /**
      * <p>This parameter is required.</p>
      */
@@ -30,6 +33,14 @@ public class ListVisibleAssistantRequest extends TeaModel {
     }
     public Long getCursor() {
         return this.cursor;
+    }
+
+    public ListVisibleAssistantRequest setName(String name) {
+        this.name = name;
+        return this;
+    }
+    public String getName() {
+        return this.name;
     }
 
     public ListVisibleAssistantRequest setPageSize(Integer pageSize) {

@@ -41,6 +41,9 @@ public class GetTemplateResponseBody extends TeaModel {
         @NameInMap("expVariableList")
         public Object expVariableList;
 
+        @NameInMap("extendType")
+        public String extendType;
+
         @NameInMap("gmtCreate")
         public String gmtCreate;
 
@@ -92,6 +95,14 @@ public class GetTemplateResponseBody extends TeaModel {
         }
         public Object getExpVariableList() {
             return this.expVariableList;
+        }
+
+        public GetTemplateResponseBodyData setExtendType(String extendType) {
+            this.extendType = extendType;
+            return this;
+        }
+        public String getExtendType() {
+            return this.extendType;
         }
 
         public GetTemplateResponseBodyData setGmtCreate(String gmtCreate) {

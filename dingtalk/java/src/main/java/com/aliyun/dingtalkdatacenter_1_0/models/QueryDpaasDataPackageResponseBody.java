@@ -16,6 +16,9 @@ public class QueryDpaasDataPackageResponseBody extends TeaModel {
     @NameInMap("usedNum")
     public Long usedNum;
 
+    @NameInMap("whiteCustomer")
+    public Boolean whiteCustomer;
+
     public static QueryDpaasDataPackageResponseBody build(java.util.Map<String, ?> map) throws Exception {
         QueryDpaasDataPackageResponseBody self = new QueryDpaasDataPackageResponseBody();
         return TeaModel.build(map, self);
@@ -51,6 +54,14 @@ public class QueryDpaasDataPackageResponseBody extends TeaModel {
     }
     public Long getUsedNum() {
         return this.usedNum;
+    }
+
+    public QueryDpaasDataPackageResponseBody setWhiteCustomer(Boolean whiteCustomer) {
+        this.whiteCustomer = whiteCustomer;
+        return this;
+    }
+    public Boolean getWhiteCustomer() {
+        return this.whiteCustomer;
     }
 
 }
