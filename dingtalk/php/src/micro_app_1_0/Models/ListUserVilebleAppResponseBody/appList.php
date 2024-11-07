@@ -85,6 +85,13 @@ class appList extends Model
      * @var string
      */
     public $pcHomepageLink;
+
+    /**
+     * @example unifiedAppId
+     *
+     * @var string
+     */
+    public $unifiedAppId;
     protected $_name = [
         'agentId'        => 'agentId',
         'appId'          => 'appId',
@@ -96,6 +103,7 @@ class appList extends Model
         'name'           => 'name',
         'ompLink'        => 'ompLink',
         'pcHomepageLink' => 'pcHomepageLink',
+        'unifiedAppId'   => 'unifiedAppId',
     ];
 
     public function validate()
@@ -134,6 +142,9 @@ class appList extends Model
         }
         if (null !== $this->pcHomepageLink) {
             $res['pcHomepageLink'] = $this->pcHomepageLink;
+        }
+        if (null !== $this->unifiedAppId) {
+            $res['unifiedAppId'] = $this->unifiedAppId;
         }
 
         return $res;
@@ -176,6 +187,9 @@ class appList extends Model
         }
         if (isset($map['pcHomepageLink'])) {
             $model->pcHomepageLink = $map['pcHomepageLink'];
+        }
+        if (isset($map['unifiedAppId'])) {
+            $model->unifiedAppId = $map['unifiedAppId'];
         }
 
         return $model;
