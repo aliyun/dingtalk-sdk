@@ -3856,6 +3856,7 @@ class ListUserVilebleAppResponseBodyAppList(TeaModel):
         name: str = None,
         omp_link: str = None,
         pc_homepage_link: str = None,
+        unified_app_id: str = None,
     ):
         # This parameter is required.
         self.agent_id = agent_id
@@ -3871,6 +3872,7 @@ class ListUserVilebleAppResponseBodyAppList(TeaModel):
         self.name = name
         self.omp_link = omp_link
         self.pc_homepage_link = pc_homepage_link
+        self.unified_app_id = unified_app_id
 
     def validate(self):
         pass
@@ -3901,6 +3903,8 @@ class ListUserVilebleAppResponseBodyAppList(TeaModel):
             result['ompLink'] = self.omp_link
         if self.pc_homepage_link is not None:
             result['pcHomepageLink'] = self.pc_homepage_link
+        if self.unified_app_id is not None:
+            result['unifiedAppId'] = self.unified_app_id
         return result
 
     def from_map(self, m: dict = None):
@@ -3925,6 +3929,8 @@ class ListUserVilebleAppResponseBodyAppList(TeaModel):
             self.omp_link = m.get('ompLink')
         if m.get('pcHomepageLink') is not None:
             self.pc_homepage_link = m.get('pcHomepageLink')
+        if m.get('unifiedAppId') is not None:
+            self.unified_app_id = m.get('unifiedAppId')
         return self
 
 
