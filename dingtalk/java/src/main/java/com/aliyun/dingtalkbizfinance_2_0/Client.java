@@ -1067,6 +1067,68 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>发票数据迁移，根据数据key查询具体数据data</p>
+     * 
+     * @param tmpReq QueryInvoiceTransferDataRequest
+     * @param headers QueryInvoiceTransferDataHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryInvoiceTransferDataResponse
+     */
+    public QueryInvoiceTransferDataResponse queryInvoiceTransferDataWithOptions(QueryInvoiceTransferDataRequest tmpReq, QueryInvoiceTransferDataHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        QueryInvoiceTransferDataShrinkRequest request = new QueryInvoiceTransferDataShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.body)) {
+            request.bodyShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.body, "body", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bodyShrink)) {
+            query.put("body", request.bodyShrink);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryInvoiceTransferData"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/invoices/transferredDatas/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryInvoiceTransferDataResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>发票数据迁移，根据数据key查询具体数据data</p>
+     * 
+     * @param request QueryInvoiceTransferDataRequest
+     * @return QueryInvoiceTransferDataResponse
+     */
+    public QueryInvoiceTransferDataResponse queryInvoiceTransferData(QueryInvoiceTransferDataRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryInvoiceTransferDataHeaders headers = new QueryInvoiceTransferDataHeaders();
+        return this.queryInvoiceTransferDataWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>查询支付回单信息</p>
      * 
      * @param request QueryPaymentRecallFileRequest
@@ -1727,5 +1789,51 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateInstanceOrderInfoHeaders headers = new UpdateInstanceOrderInfoHeaders();
         return this.updateInstanceOrderInfoWithOptions(instanceId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>发票数据迁移，新发票应用上报已成功搬移数据</p>
+     * 
+     * @param headers UpdateInvoiceDataTransferDoneHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateInvoiceDataTransferDoneResponse
+     */
+    public UpdateInvoiceDataTransferDoneResponse updateInvoiceDataTransferDoneWithOptions(UpdateInvoiceDataTransferDoneHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateInvoiceDataTransferDone"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/invoices/transferredDatas/statuses"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateInvoiceDataTransferDoneResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>发票数据迁移，新发票应用上报已成功搬移数据</p>
+     * @return UpdateInvoiceDataTransferDoneResponse
+     */
+    public UpdateInvoiceDataTransferDoneResponse updateInvoiceDataTransferDone() throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateInvoiceDataTransferDoneHeaders headers = new UpdateInvoiceDataTransferDoneHeaders();
+        return this.updateInvoiceDataTransferDoneWithOptions(headers, runtime);
     }
 }
