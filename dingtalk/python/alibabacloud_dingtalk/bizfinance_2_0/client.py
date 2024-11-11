@@ -2004,6 +2004,128 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.QueryInstancePaymentOrderDetailHeaders()
         return await self.query_instance_payment_order_detail_with_options_async(instance_id, request, headers, runtime)
 
+    def query_invoice_transfer_data_with_options(
+        self,
+        tmp_req: dingtalkbizfinance__2__0_models.QueryInvoiceTransferDataRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryInvoiceTransferDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryInvoiceTransferDataResponse:
+        """
+        @summary 发票数据迁移，根据数据key查询具体数据data
+        
+        @param tmp_req: QueryInvoiceTransferDataRequest
+        @param headers: QueryInvoiceTransferDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryInvoiceTransferDataResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkbizfinance__2__0_models.QueryInvoiceTransferDataShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.body):
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.body_shrink):
+            query['body'] = request.body_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryInvoiceTransferData',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/invoices/transferredDatas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryInvoiceTransferDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_invoice_transfer_data_with_options_async(
+        self,
+        tmp_req: dingtalkbizfinance__2__0_models.QueryInvoiceTransferDataRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryInvoiceTransferDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryInvoiceTransferDataResponse:
+        """
+        @summary 发票数据迁移，根据数据key查询具体数据data
+        
+        @param tmp_req: QueryInvoiceTransferDataRequest
+        @param headers: QueryInvoiceTransferDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryInvoiceTransferDataResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkbizfinance__2__0_models.QueryInvoiceTransferDataShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.body):
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.body_shrink):
+            query['body'] = request.body_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryInvoiceTransferData',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/invoices/transferredDatas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryInvoiceTransferDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_invoice_transfer_data(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryInvoiceTransferDataRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryInvoiceTransferDataResponse:
+        """
+        @summary 发票数据迁移，根据数据key查询具体数据data
+        
+        @param request: QueryInvoiceTransferDataRequest
+        @return: QueryInvoiceTransferDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryInvoiceTransferDataHeaders()
+        return self.query_invoice_transfer_data_with_options(request, headers, runtime)
+
+    async def query_invoice_transfer_data_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryInvoiceTransferDataRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryInvoiceTransferDataResponse:
+        """
+        @summary 发票数据迁移，根据数据key查询具体数据data
+        
+        @param request: QueryInvoiceTransferDataRequest
+        @return: QueryInvoiceTransferDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryInvoiceTransferDataHeaders()
+        return await self.query_invoice_transfer_data_with_options_async(request, headers, runtime)
+
     def query_payment_recall_file_with_options(
         self,
         instance_id: str,
@@ -3245,3 +3367,95 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbizfinance__2__0_models.UpdateInstanceOrderInfoHeaders()
         return await self.update_instance_order_info_with_options_async(instance_id, request, headers, runtime)
+
+    def update_invoice_data_transfer_done_with_options(
+        self,
+        headers: dingtalkbizfinance__2__0_models.UpdateInvoiceDataTransferDoneHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.UpdateInvoiceDataTransferDoneResponse:
+        """
+        @summary 发票数据迁移，新发票应用上报已成功搬移数据
+        
+        @param headers: UpdateInvoiceDataTransferDoneHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateInvoiceDataTransferDoneResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='UpdateInvoiceDataTransferDone',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/invoices/transferredDatas/statuses',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.UpdateInvoiceDataTransferDoneResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_invoice_data_transfer_done_with_options_async(
+        self,
+        headers: dingtalkbizfinance__2__0_models.UpdateInvoiceDataTransferDoneHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.UpdateInvoiceDataTransferDoneResponse:
+        """
+        @summary 发票数据迁移，新发票应用上报已成功搬移数据
+        
+        @param headers: UpdateInvoiceDataTransferDoneHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateInvoiceDataTransferDoneResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='UpdateInvoiceDataTransferDone',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/invoices/transferredDatas/statuses',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.UpdateInvoiceDataTransferDoneResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_invoice_data_transfer_done(self) -> dingtalkbizfinance__2__0_models.UpdateInvoiceDataTransferDoneResponse:
+        """
+        @summary 发票数据迁移，新发票应用上报已成功搬移数据
+        
+        @return: UpdateInvoiceDataTransferDoneResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.UpdateInvoiceDataTransferDoneHeaders()
+        return self.update_invoice_data_transfer_done_with_options(headers, runtime)
+
+    async def update_invoice_data_transfer_done_async(self) -> dingtalkbizfinance__2__0_models.UpdateInvoiceDataTransferDoneResponse:
+        """
+        @summary 发票数据迁移，新发票应用上报已成功搬移数据
+        
+        @return: UpdateInvoiceDataTransferDoneResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.UpdateInvoiceDataTransferDoneHeaders()
+        return await self.update_invoice_data_transfer_done_with_options_async(headers, runtime)

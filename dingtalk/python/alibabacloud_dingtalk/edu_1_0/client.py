@@ -1230,6 +1230,342 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.AddSchoolConfigHeaders()
         return await self.add_school_config_with_options_async(request, headers, runtime)
 
+    def adjust_course_with_options(
+        self,
+        request: dingtalkedu__1__0_models.AdjustCourseRequest,
+        headers: dingtalkedu__1__0_models.AdjustCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AdjustCourseResponse:
+        """
+        @summary 修改课程
+        
+        @param request: AdjustCourseRequest
+        @param headers: AdjustCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AdjustCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attributes):
+            body['attributes'] = request.attributes
+        if not UtilClient.is_unset(request.class_name):
+            body['className'] = request.class_name
+        if not UtilClient.is_unset(request.class_room_id):
+            body['classRoomId'] = request.class_room_id
+        if not UtilClient.is_unset(request.class_room_name):
+            body['classRoomName'] = request.class_room_name
+        if not UtilClient.is_unset(request.class_type):
+            body['classType'] = request.class_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.course_code):
+            body['courseCode'] = request.course_code
+        if not UtilClient.is_unset(request.course_date):
+            body['courseDate'] = request.course_date
+        if not UtilClient.is_unset(request.course_name):
+            body['courseName'] = request.course_name
+        if not UtilClient.is_unset(request.course_week):
+            body['courseWeek'] = request.course_week
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_course_id):
+            body['isvCourseId'] = request.isv_course_id
+        if not UtilClient.is_unset(request.memo):
+            body['memo'] = request.memo
+        if not UtilClient.is_unset(request.school_year):
+            body['schoolYear'] = request.school_year
+        if not UtilClient.is_unset(request.semester):
+            body['semester'] = request.semester
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.teach_week):
+            body['teachWeek'] = request.teach_week
+        if not UtilClient.is_unset(request.timeslot_name):
+            body['timeslotName'] = request.timeslot_name
+        if not UtilClient.is_unset(request.timeslot_num):
+            body['timeslotNum'] = request.timeslot_num
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AdjustCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/courses/adjust',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AdjustCourseResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def adjust_course_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.AdjustCourseRequest,
+        headers: dingtalkedu__1__0_models.AdjustCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AdjustCourseResponse:
+        """
+        @summary 修改课程
+        
+        @param request: AdjustCourseRequest
+        @param headers: AdjustCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AdjustCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attributes):
+            body['attributes'] = request.attributes
+        if not UtilClient.is_unset(request.class_name):
+            body['className'] = request.class_name
+        if not UtilClient.is_unset(request.class_room_id):
+            body['classRoomId'] = request.class_room_id
+        if not UtilClient.is_unset(request.class_room_name):
+            body['classRoomName'] = request.class_room_name
+        if not UtilClient.is_unset(request.class_type):
+            body['classType'] = request.class_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.course_code):
+            body['courseCode'] = request.course_code
+        if not UtilClient.is_unset(request.course_date):
+            body['courseDate'] = request.course_date
+        if not UtilClient.is_unset(request.course_name):
+            body['courseName'] = request.course_name
+        if not UtilClient.is_unset(request.course_week):
+            body['courseWeek'] = request.course_week
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_course_id):
+            body['isvCourseId'] = request.isv_course_id
+        if not UtilClient.is_unset(request.memo):
+            body['memo'] = request.memo
+        if not UtilClient.is_unset(request.school_year):
+            body['schoolYear'] = request.school_year
+        if not UtilClient.is_unset(request.semester):
+            body['semester'] = request.semester
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.teach_week):
+            body['teachWeek'] = request.teach_week
+        if not UtilClient.is_unset(request.timeslot_name):
+            body['timeslotName'] = request.timeslot_name
+        if not UtilClient.is_unset(request.timeslot_num):
+            body['timeslotNum'] = request.timeslot_num
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AdjustCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/courses/adjust',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AdjustCourseResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def adjust_course(
+        self,
+        request: dingtalkedu__1__0_models.AdjustCourseRequest,
+    ) -> dingtalkedu__1__0_models.AdjustCourseResponse:
+        """
+        @summary 修改课程
+        
+        @param request: AdjustCourseRequest
+        @return: AdjustCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AdjustCourseHeaders()
+        return self.adjust_course_with_options(request, headers, runtime)
+
+    async def adjust_course_async(
+        self,
+        request: dingtalkedu__1__0_models.AdjustCourseRequest,
+    ) -> dingtalkedu__1__0_models.AdjustCourseResponse:
+        """
+        @summary 修改课程
+        
+        @param request: AdjustCourseRequest
+        @return: AdjustCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AdjustCourseHeaders()
+        return await self.adjust_course_with_options_async(request, headers, runtime)
+
+    def adjust_kit_with_options(
+        self,
+        request: dingtalkedu__1__0_models.AdjustKitRequest,
+        headers: dingtalkedu__1__0_models.AdjustKitHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AdjustKitResponse:
+        """
+        @summary 修改教育套件
+        
+        @param request: AdjustKitRequest
+        @param headers: AdjustKitHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AdjustKitResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attributes):
+            body['attributes'] = request.attributes
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_product_scene):
+            body['isvProductScene'] = request.isv_product_scene
+        if not UtilClient.is_unset(request.open_end_time):
+            body['openEndTime'] = request.open_end_time
+        if not UtilClient.is_unset(request.open_start_time):
+            body['openStartTime'] = request.open_start_time
+        if not UtilClient.is_unset(request.open_user_id):
+            body['openUserId'] = request.open_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AdjustKit',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/records/adjust',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AdjustKitResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def adjust_kit_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.AdjustKitRequest,
+        headers: dingtalkedu__1__0_models.AdjustKitHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AdjustKitResponse:
+        """
+        @summary 修改教育套件
+        
+        @param request: AdjustKitRequest
+        @param headers: AdjustKitHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AdjustKitResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attributes):
+            body['attributes'] = request.attributes
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_product_scene):
+            body['isvProductScene'] = request.isv_product_scene
+        if not UtilClient.is_unset(request.open_end_time):
+            body['openEndTime'] = request.open_end_time
+        if not UtilClient.is_unset(request.open_start_time):
+            body['openStartTime'] = request.open_start_time
+        if not UtilClient.is_unset(request.open_user_id):
+            body['openUserId'] = request.open_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AdjustKit',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/records/adjust',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AdjustKitResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def adjust_kit(
+        self,
+        request: dingtalkedu__1__0_models.AdjustKitRequest,
+    ) -> dingtalkedu__1__0_models.AdjustKitResponse:
+        """
+        @summary 修改教育套件
+        
+        @param request: AdjustKitRequest
+        @return: AdjustKitResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AdjustKitHeaders()
+        return self.adjust_kit_with_options(request, headers, runtime)
+
+    async def adjust_kit_async(
+        self,
+        request: dingtalkedu__1__0_models.AdjustKitRequest,
+    ) -> dingtalkedu__1__0_models.AdjustKitResponse:
+        """
+        @summary 修改教育套件
+        
+        @param request: AdjustKitRequest
+        @return: AdjustKitResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AdjustKitHeaders()
+        return await self.adjust_kit_with_options_async(request, headers, runtime)
+
     def assign_class_with_options(
         self,
         request: dingtalkedu__1__0_models.AssignClassRequest,
@@ -1493,6 +1829,542 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.BatchCreateHeaders()
         return await self.batch_create_with_options_async(request, headers, runtime)
+
+    def batch_create_course_with_options(
+        self,
+        request: dingtalkedu__1__0_models.BatchCreateCourseRequest,
+        headers: dingtalkedu__1__0_models.BatchCreateCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.BatchCreateCourseResponse:
+        """
+        @summary 批量创建课程
+        
+        @param request: BatchCreateCourseRequest
+        @param headers: BatchCreateCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchCreateCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.class_name):
+            body['className'] = request.class_name
+        if not UtilClient.is_unset(request.class_type):
+            body['classType'] = request.class_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.course_detail_item_list):
+            body['courseDetailItemList'] = request.course_detail_item_list
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.school_year):
+            body['schoolYear'] = request.school_year
+        if not UtilClient.is_unset(request.semester):
+            body['semester'] = request.semester
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchCreateCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/courses/batchCreate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.BatchCreateCourseResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_create_course_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.BatchCreateCourseRequest,
+        headers: dingtalkedu__1__0_models.BatchCreateCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.BatchCreateCourseResponse:
+        """
+        @summary 批量创建课程
+        
+        @param request: BatchCreateCourseRequest
+        @param headers: BatchCreateCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchCreateCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.class_name):
+            body['className'] = request.class_name
+        if not UtilClient.is_unset(request.class_type):
+            body['classType'] = request.class_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.course_detail_item_list):
+            body['courseDetailItemList'] = request.course_detail_item_list
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.school_year):
+            body['schoolYear'] = request.school_year
+        if not UtilClient.is_unset(request.semester):
+            body['semester'] = request.semester
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchCreateCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/courses/batchCreate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.BatchCreateCourseResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_create_course(
+        self,
+        request: dingtalkedu__1__0_models.BatchCreateCourseRequest,
+    ) -> dingtalkedu__1__0_models.BatchCreateCourseResponse:
+        """
+        @summary 批量创建课程
+        
+        @param request: BatchCreateCourseRequest
+        @return: BatchCreateCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.BatchCreateCourseHeaders()
+        return self.batch_create_course_with_options(request, headers, runtime)
+
+    async def batch_create_course_async(
+        self,
+        request: dingtalkedu__1__0_models.BatchCreateCourseRequest,
+    ) -> dingtalkedu__1__0_models.BatchCreateCourseResponse:
+        """
+        @summary 批量创建课程
+        
+        @param request: BatchCreateCourseRequest
+        @return: BatchCreateCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.BatchCreateCourseHeaders()
+        return await self.batch_create_course_with_options_async(request, headers, runtime)
+
+    def batch_create_student_class_with_options(
+        self,
+        request: dingtalkedu__1__0_models.BatchCreateStudentClassRequest,
+        headers: dingtalkedu__1__0_models.BatchCreateStudentClassHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.BatchCreateStudentClassResponse:
+        """
+        @summary 批量创建学生班级
+        
+        @param request: BatchCreateStudentClassRequest
+        @param headers: BatchCreateStudentClassHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchCreateStudentClassResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.class_name):
+            body['className'] = request.class_name
+        if not UtilClient.is_unset(request.class_type):
+            body['classType'] = request.class_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.student_list):
+            body['studentList'] = request.student_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchCreateStudentClass',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/students/classes/batchCreate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.BatchCreateStudentClassResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_create_student_class_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.BatchCreateStudentClassRequest,
+        headers: dingtalkedu__1__0_models.BatchCreateStudentClassHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.BatchCreateStudentClassResponse:
+        """
+        @summary 批量创建学生班级
+        
+        @param request: BatchCreateStudentClassRequest
+        @param headers: BatchCreateStudentClassHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchCreateStudentClassResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.class_name):
+            body['className'] = request.class_name
+        if not UtilClient.is_unset(request.class_type):
+            body['classType'] = request.class_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.student_list):
+            body['studentList'] = request.student_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchCreateStudentClass',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/students/classes/batchCreate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.BatchCreateStudentClassResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_create_student_class(
+        self,
+        request: dingtalkedu__1__0_models.BatchCreateStudentClassRequest,
+    ) -> dingtalkedu__1__0_models.BatchCreateStudentClassResponse:
+        """
+        @summary 批量创建学生班级
+        
+        @param request: BatchCreateStudentClassRequest
+        @return: BatchCreateStudentClassResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.BatchCreateStudentClassHeaders()
+        return self.batch_create_student_class_with_options(request, headers, runtime)
+
+    async def batch_create_student_class_async(
+        self,
+        request: dingtalkedu__1__0_models.BatchCreateStudentClassRequest,
+    ) -> dingtalkedu__1__0_models.BatchCreateStudentClassResponse:
+        """
+        @summary 批量创建学生班级
+        
+        @param request: BatchCreateStudentClassRequest
+        @return: BatchCreateStudentClassResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.BatchCreateStudentClassHeaders()
+        return await self.batch_create_student_class_with_options_async(request, headers, runtime)
+
+    def batch_create_teacher_course_with_options(
+        self,
+        request: dingtalkedu__1__0_models.BatchCreateTeacherCourseRequest,
+        headers: dingtalkedu__1__0_models.BatchCreateTeacherCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.BatchCreateTeacherCourseResponse:
+        """
+        @summary 批量创建老师课程
+        
+        @param request: BatchCreateTeacherCourseRequest
+        @param headers: BatchCreateTeacherCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchCreateTeacherCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.teacher_course_detail_item_list):
+            body['teacherCourseDetailItemList'] = request.teacher_course_detail_item_list
+        if not UtilClient.is_unset(request.teacher_name):
+            body['teacherName'] = request.teacher_name
+        if not UtilClient.is_unset(request.teacher_user_id):
+            body['teacherUserId'] = request.teacher_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchCreateTeacherCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/teachers/courses/batchCreate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.BatchCreateTeacherCourseResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_create_teacher_course_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.BatchCreateTeacherCourseRequest,
+        headers: dingtalkedu__1__0_models.BatchCreateTeacherCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.BatchCreateTeacherCourseResponse:
+        """
+        @summary 批量创建老师课程
+        
+        @param request: BatchCreateTeacherCourseRequest
+        @param headers: BatchCreateTeacherCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchCreateTeacherCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.teacher_course_detail_item_list):
+            body['teacherCourseDetailItemList'] = request.teacher_course_detail_item_list
+        if not UtilClient.is_unset(request.teacher_name):
+            body['teacherName'] = request.teacher_name
+        if not UtilClient.is_unset(request.teacher_user_id):
+            body['teacherUserId'] = request.teacher_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchCreateTeacherCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/teachers/courses/batchCreate',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.BatchCreateTeacherCourseResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_create_teacher_course(
+        self,
+        request: dingtalkedu__1__0_models.BatchCreateTeacherCourseRequest,
+    ) -> dingtalkedu__1__0_models.BatchCreateTeacherCourseResponse:
+        """
+        @summary 批量创建老师课程
+        
+        @param request: BatchCreateTeacherCourseRequest
+        @return: BatchCreateTeacherCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.BatchCreateTeacherCourseHeaders()
+        return self.batch_create_teacher_course_with_options(request, headers, runtime)
+
+    async def batch_create_teacher_course_async(
+        self,
+        request: dingtalkedu__1__0_models.BatchCreateTeacherCourseRequest,
+    ) -> dingtalkedu__1__0_models.BatchCreateTeacherCourseResponse:
+        """
+        @summary 批量创建老师课程
+        
+        @param request: BatchCreateTeacherCourseRequest
+        @return: BatchCreateTeacherCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.BatchCreateTeacherCourseHeaders()
+        return await self.batch_create_teacher_course_with_options_async(request, headers, runtime)
+
+    def batch_invalid_course_with_options(
+        self,
+        request: dingtalkedu__1__0_models.BatchInvalidCourseRequest,
+        headers: dingtalkedu__1__0_models.BatchInvalidCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.BatchInvalidCourseResponse:
+        """
+        @summary 批量失效课程
+        
+        @param request: BatchInvalidCourseRequest
+        @param headers: BatchInvalidCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchInvalidCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_course_id):
+            body['isvCourseId'] = request.isv_course_id
+        if not UtilClient.is_unset(request.isv_course_ids):
+            body['isvCourseIds'] = request.isv_course_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchInvalidCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/courses/batchInvalid',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.BatchInvalidCourseResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_invalid_course_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.BatchInvalidCourseRequest,
+        headers: dingtalkedu__1__0_models.BatchInvalidCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.BatchInvalidCourseResponse:
+        """
+        @summary 批量失效课程
+        
+        @param request: BatchInvalidCourseRequest
+        @param headers: BatchInvalidCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchInvalidCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_course_id):
+            body['isvCourseId'] = request.isv_course_id
+        if not UtilClient.is_unset(request.isv_course_ids):
+            body['isvCourseIds'] = request.isv_course_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchInvalidCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/courses/batchInvalid',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.BatchInvalidCourseResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_invalid_course(
+        self,
+        request: dingtalkedu__1__0_models.BatchInvalidCourseRequest,
+    ) -> dingtalkedu__1__0_models.BatchInvalidCourseResponse:
+        """
+        @summary 批量失效课程
+        
+        @param request: BatchInvalidCourseRequest
+        @return: BatchInvalidCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.BatchInvalidCourseHeaders()
+        return self.batch_invalid_course_with_options(request, headers, runtime)
+
+    async def batch_invalid_course_async(
+        self,
+        request: dingtalkedu__1__0_models.BatchInvalidCourseRequest,
+    ) -> dingtalkedu__1__0_models.BatchInvalidCourseResponse:
+        """
+        @summary 批量失效课程
+        
+        @param request: BatchInvalidCourseRequest
+        @return: BatchInvalidCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.BatchInvalidCourseHeaders()
+        return await self.batch_invalid_course_with_options_async(request, headers, runtime)
 
     def batch_org_create_hwwith_options(
         self,
@@ -3596,6 +4468,212 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.CreateCollegeContactDeptHeaders()
         return await self.create_college_contact_dept_with_options_async(request, headers, runtime)
 
+    def create_course_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CreateCourseRequest,
+        headers: dingtalkedu__1__0_models.CreateCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateCourseResponse:
+        """
+        @summary 创建课程
+        
+        @param request: CreateCourseRequest
+        @param headers: CreateCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attributes):
+            body['attributes'] = request.attributes
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.class_name):
+            body['className'] = request.class_name
+        if not UtilClient.is_unset(request.class_room_id):
+            body['classRoomId'] = request.class_room_id
+        if not UtilClient.is_unset(request.class_room_name):
+            body['classRoomName'] = request.class_room_name
+        if not UtilClient.is_unset(request.class_type):
+            body['classType'] = request.class_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.course_code):
+            body['courseCode'] = request.course_code
+        if not UtilClient.is_unset(request.course_date):
+            body['courseDate'] = request.course_date
+        if not UtilClient.is_unset(request.course_name):
+            body['courseName'] = request.course_name
+        if not UtilClient.is_unset(request.course_week):
+            body['courseWeek'] = request.course_week
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_course_id):
+            body['isvCourseId'] = request.isv_course_id
+        if not UtilClient.is_unset(request.memo):
+            body['memo'] = request.memo
+        if not UtilClient.is_unset(request.school_year):
+            body['schoolYear'] = request.school_year
+        if not UtilClient.is_unset(request.semester):
+            body['semester'] = request.semester
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.teach_week):
+            body['teachWeek'] = request.teach_week
+        if not UtilClient.is_unset(request.teacher_list):
+            body['teacherList'] = request.teacher_list
+        if not UtilClient.is_unset(request.timeslot_name):
+            body['timeslotName'] = request.timeslot_name
+        if not UtilClient.is_unset(request.timeslot_num):
+            body['timeslotNum'] = request.timeslot_num
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/courses',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateCourseResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_course_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateCourseRequest,
+        headers: dingtalkedu__1__0_models.CreateCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateCourseResponse:
+        """
+        @summary 创建课程
+        
+        @param request: CreateCourseRequest
+        @param headers: CreateCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attributes):
+            body['attributes'] = request.attributes
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.class_name):
+            body['className'] = request.class_name
+        if not UtilClient.is_unset(request.class_room_id):
+            body['classRoomId'] = request.class_room_id
+        if not UtilClient.is_unset(request.class_room_name):
+            body['classRoomName'] = request.class_room_name
+        if not UtilClient.is_unset(request.class_type):
+            body['classType'] = request.class_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.course_code):
+            body['courseCode'] = request.course_code
+        if not UtilClient.is_unset(request.course_date):
+            body['courseDate'] = request.course_date
+        if not UtilClient.is_unset(request.course_name):
+            body['courseName'] = request.course_name
+        if not UtilClient.is_unset(request.course_week):
+            body['courseWeek'] = request.course_week
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_course_id):
+            body['isvCourseId'] = request.isv_course_id
+        if not UtilClient.is_unset(request.memo):
+            body['memo'] = request.memo
+        if not UtilClient.is_unset(request.school_year):
+            body['schoolYear'] = request.school_year
+        if not UtilClient.is_unset(request.semester):
+            body['semester'] = request.semester
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        if not UtilClient.is_unset(request.teach_week):
+            body['teachWeek'] = request.teach_week
+        if not UtilClient.is_unset(request.teacher_list):
+            body['teacherList'] = request.teacher_list
+        if not UtilClient.is_unset(request.timeslot_name):
+            body['timeslotName'] = request.timeslot_name
+        if not UtilClient.is_unset(request.timeslot_num):
+            body['timeslotNum'] = request.timeslot_num
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/courses',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateCourseResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_course(
+        self,
+        request: dingtalkedu__1__0_models.CreateCourseRequest,
+    ) -> dingtalkedu__1__0_models.CreateCourseResponse:
+        """
+        @summary 创建课程
+        
+        @param request: CreateCourseRequest
+        @return: CreateCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateCourseHeaders()
+        return self.create_course_with_options(request, headers, runtime)
+
+    async def create_course_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateCourseRequest,
+    ) -> dingtalkedu__1__0_models.CreateCourseResponse:
+        """
+        @summary 创建课程
+        
+        @param request: CreateCourseRequest
+        @return: CreateCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateCourseHeaders()
+        return await self.create_course_with_options_async(request, headers, runtime)
+
     def create_custom_class_with_options(
         self,
         request: dingtalkedu__1__0_models.CreateCustomClassRequest,
@@ -5520,6 +6598,282 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.CreateStsTokenHeaders()
         return await self.create_sts_token_with_options_async(request, headers, runtime)
 
+    def create_student_class_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CreateStudentClassRequest,
+        headers: dingtalkedu__1__0_models.CreateStudentClassHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateStudentClassResponse:
+        """
+        @summary 创建学生班级
+        
+        @param request: CreateStudentClassRequest
+        @param headers: CreateStudentClassHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateStudentClassResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attributes):
+            body['attributes'] = request.attributes
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.class_name):
+            body['className'] = request.class_name
+        if not UtilClient.is_unset(request.class_type):
+            body['classType'] = request.class_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.student_name):
+            body['studentName'] = request.student_name
+        if not UtilClient.is_unset(request.student_user_id):
+            body['studentUserId'] = request.student_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateStudentClass',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/students/classes',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateStudentClassResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_student_class_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateStudentClassRequest,
+        headers: dingtalkedu__1__0_models.CreateStudentClassHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateStudentClassResponse:
+        """
+        @summary 创建学生班级
+        
+        @param request: CreateStudentClassRequest
+        @param headers: CreateStudentClassHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateStudentClassResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attributes):
+            body['attributes'] = request.attributes
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.class_name):
+            body['className'] = request.class_name
+        if not UtilClient.is_unset(request.class_type):
+            body['classType'] = request.class_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.student_name):
+            body['studentName'] = request.student_name
+        if not UtilClient.is_unset(request.student_user_id):
+            body['studentUserId'] = request.student_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateStudentClass',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/students/classes',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateStudentClassResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_student_class(
+        self,
+        request: dingtalkedu__1__0_models.CreateStudentClassRequest,
+    ) -> dingtalkedu__1__0_models.CreateStudentClassResponse:
+        """
+        @summary 创建学生班级
+        
+        @param request: CreateStudentClassRequest
+        @return: CreateStudentClassResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateStudentClassHeaders()
+        return self.create_student_class_with_options(request, headers, runtime)
+
+    async def create_student_class_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateStudentClassRequest,
+    ) -> dingtalkedu__1__0_models.CreateStudentClassResponse:
+        """
+        @summary 创建学生班级
+        
+        @param request: CreateStudentClassRequest
+        @return: CreateStudentClassResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateStudentClassHeaders()
+        return await self.create_student_class_with_options_async(request, headers, runtime)
+
+    def create_teacher_course_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CreateTeacherCourseRequest,
+        headers: dingtalkedu__1__0_models.CreateTeacherCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateTeacherCourseResponse:
+        """
+        @summary 创建老师课程
+        
+        @param request: CreateTeacherCourseRequest
+        @param headers: CreateTeacherCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTeacherCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attributes):
+            body['attributes'] = request.attributes
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_course_id):
+            body['isvCourseId'] = request.isv_course_id
+        if not UtilClient.is_unset(request.teacher_name):
+            body['teacherName'] = request.teacher_name
+        if not UtilClient.is_unset(request.teacher_user_id):
+            body['teacherUserId'] = request.teacher_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateTeacherCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/teachers/courses',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateTeacherCourseResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_teacher_course_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateTeacherCourseRequest,
+        headers: dingtalkedu__1__0_models.CreateTeacherCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateTeacherCourseResponse:
+        """
+        @summary 创建老师课程
+        
+        @param request: CreateTeacherCourseRequest
+        @param headers: CreateTeacherCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTeacherCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attributes):
+            body['attributes'] = request.attributes
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_course_id):
+            body['isvCourseId'] = request.isv_course_id
+        if not UtilClient.is_unset(request.teacher_name):
+            body['teacherName'] = request.teacher_name
+        if not UtilClient.is_unset(request.teacher_user_id):
+            body['teacherUserId'] = request.teacher_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateTeacherCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/teachers/courses',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateTeacherCourseResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_teacher_course(
+        self,
+        request: dingtalkedu__1__0_models.CreateTeacherCourseRequest,
+    ) -> dingtalkedu__1__0_models.CreateTeacherCourseResponse:
+        """
+        @summary 创建老师课程
+        
+        @param request: CreateTeacherCourseRequest
+        @return: CreateTeacherCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateTeacherCourseHeaders()
+        return self.create_teacher_course_with_options(request, headers, runtime)
+
+    async def create_teacher_course_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateTeacherCourseRequest,
+    ) -> dingtalkedu__1__0_models.CreateTeacherCourseResponse:
+        """
+        @summary 创建老师课程
+        
+        @param request: CreateTeacherCourseRequest
+        @return: CreateTeacherCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateTeacherCourseHeaders()
+        return await self.create_teacher_course_with_options_async(request, headers, runtime)
+
     def create_token_with_options(
         self,
         request: dingtalkedu__1__0_models.CreateTokenRequest,
@@ -5637,6 +6991,188 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.CreateTokenHeaders()
         return await self.create_token_with_options_async(request, headers, runtime)
+
+    def create_transfer_record_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CreateTransferRecordRequest,
+        headers: dingtalkedu__1__0_models.CreateTransferRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateTransferRecordResponse:
+        """
+        @summary 创建调代课记录
+        
+        @param request: CreateTransferRecordRequest
+        @param headers: CreateTransferRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTransferRecordResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attributes):
+            body['attributes'] = request.attributes
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.class_name):
+            body['className'] = request.class_name
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_record_id):
+            body['isvRecordId'] = request.isv_record_id
+        if not UtilClient.is_unset(request.src_course_code):
+            body['srcCourseCode'] = request.src_course_code
+        if not UtilClient.is_unset(request.src_course_date):
+            body['srcCourseDate'] = request.src_course_date
+        if not UtilClient.is_unset(request.src_course_name):
+            body['srcCourseName'] = request.src_course_name
+        if not UtilClient.is_unset(request.src_isv_course_id):
+            body['srcIsvCourseId'] = request.src_isv_course_id
+        if not UtilClient.is_unset(request.src_timeslot_name):
+            body['srcTimeslotName'] = request.src_timeslot_name
+        if not UtilClient.is_unset(request.src_timeslot_num):
+            body['srcTimeslotNum'] = request.src_timeslot_num
+        if not UtilClient.is_unset(request.tar_course_code):
+            body['tarCourseCode'] = request.tar_course_code
+        if not UtilClient.is_unset(request.tar_course_date):
+            body['tarCourseDate'] = request.tar_course_date
+        if not UtilClient.is_unset(request.tar_course_name):
+            body['tarCourseName'] = request.tar_course_name
+        if not UtilClient.is_unset(request.tar_isv_course_id):
+            body['tarIsvCourseId'] = request.tar_isv_course_id
+        if not UtilClient.is_unset(request.tar_timeslot_name):
+            body['tarTimeslotName'] = request.tar_timeslot_name
+        if not UtilClient.is_unset(request.tar_timeslot_num):
+            body['tarTimeslotNum'] = request.tar_timeslot_num
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateTransferRecord',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/transferRecords',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateTransferRecordResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_transfer_record_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateTransferRecordRequest,
+        headers: dingtalkedu__1__0_models.CreateTransferRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateTransferRecordResponse:
+        """
+        @summary 创建调代课记录
+        
+        @param request: CreateTransferRecordRequest
+        @param headers: CreateTransferRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTransferRecordResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attributes):
+            body['attributes'] = request.attributes
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.class_name):
+            body['className'] = request.class_name
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_record_id):
+            body['isvRecordId'] = request.isv_record_id
+        if not UtilClient.is_unset(request.src_course_code):
+            body['srcCourseCode'] = request.src_course_code
+        if not UtilClient.is_unset(request.src_course_date):
+            body['srcCourseDate'] = request.src_course_date
+        if not UtilClient.is_unset(request.src_course_name):
+            body['srcCourseName'] = request.src_course_name
+        if not UtilClient.is_unset(request.src_isv_course_id):
+            body['srcIsvCourseId'] = request.src_isv_course_id
+        if not UtilClient.is_unset(request.src_timeslot_name):
+            body['srcTimeslotName'] = request.src_timeslot_name
+        if not UtilClient.is_unset(request.src_timeslot_num):
+            body['srcTimeslotNum'] = request.src_timeslot_num
+        if not UtilClient.is_unset(request.tar_course_code):
+            body['tarCourseCode'] = request.tar_course_code
+        if not UtilClient.is_unset(request.tar_course_date):
+            body['tarCourseDate'] = request.tar_course_date
+        if not UtilClient.is_unset(request.tar_course_name):
+            body['tarCourseName'] = request.tar_course_name
+        if not UtilClient.is_unset(request.tar_isv_course_id):
+            body['tarIsvCourseId'] = request.tar_isv_course_id
+        if not UtilClient.is_unset(request.tar_timeslot_name):
+            body['tarTimeslotName'] = request.tar_timeslot_name
+        if not UtilClient.is_unset(request.tar_timeslot_num):
+            body['tarTimeslotNum'] = request.tar_timeslot_num
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateTransferRecord',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/transferRecords',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateTransferRecordResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_transfer_record(
+        self,
+        request: dingtalkedu__1__0_models.CreateTransferRecordRequest,
+    ) -> dingtalkedu__1__0_models.CreateTransferRecordResponse:
+        """
+        @summary 创建调代课记录
+        
+        @param request: CreateTransferRecordRequest
+        @return: CreateTransferRecordResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateTransferRecordHeaders()
+        return self.create_transfer_record_with_options(request, headers, runtime)
+
+    async def create_transfer_record_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateTransferRecordRequest,
+    ) -> dingtalkedu__1__0_models.CreateTransferRecordResponse:
+        """
+        @summary 创建调代课记录
+        
+        @param request: CreateTransferRecordRequest
+        @return: CreateTransferRecordResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateTransferRecordHeaders()
+        return await self.create_transfer_record_with_options_async(request, headers, runtime)
 
     def create_university_course_group_with_options(
         self,
@@ -10942,6 +12478,514 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.InsertSectionConfigHeaders()
         return await self.insert_section_config_with_options_async(request, headers, runtime)
 
+    def invalid_course_with_options(
+        self,
+        request: dingtalkedu__1__0_models.InvalidCourseRequest,
+        headers: dingtalkedu__1__0_models.InvalidCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.InvalidCourseResponse:
+        """
+        @summary 失效课程
+        
+        @param request: InvalidCourseRequest
+        @param headers: InvalidCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InvalidCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_course_id):
+            body['isvCourseId'] = request.isv_course_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='InvalidCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/courses/invalid',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.InvalidCourseResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def invalid_course_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.InvalidCourseRequest,
+        headers: dingtalkedu__1__0_models.InvalidCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.InvalidCourseResponse:
+        """
+        @summary 失效课程
+        
+        @param request: InvalidCourseRequest
+        @param headers: InvalidCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InvalidCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_course_id):
+            body['isvCourseId'] = request.isv_course_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='InvalidCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/courses/invalid',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.InvalidCourseResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def invalid_course(
+        self,
+        request: dingtalkedu__1__0_models.InvalidCourseRequest,
+    ) -> dingtalkedu__1__0_models.InvalidCourseResponse:
+        """
+        @summary 失效课程
+        
+        @param request: InvalidCourseRequest
+        @return: InvalidCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.InvalidCourseHeaders()
+        return self.invalid_course_with_options(request, headers, runtime)
+
+    async def invalid_course_async(
+        self,
+        request: dingtalkedu__1__0_models.InvalidCourseRequest,
+    ) -> dingtalkedu__1__0_models.InvalidCourseResponse:
+        """
+        @summary 失效课程
+        
+        @param request: InvalidCourseRequest
+        @return: InvalidCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.InvalidCourseHeaders()
+        return await self.invalid_course_with_options_async(request, headers, runtime)
+
+    def invalid_kit_with_options(
+        self,
+        request: dingtalkedu__1__0_models.InvalidKitRequest,
+        headers: dingtalkedu__1__0_models.InvalidKitHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.InvalidKitResponse:
+        """
+        @summary 失效教育套件
+        
+        @param request: InvalidKitRequest
+        @param headers: InvalidKitHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InvalidKitResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_product_scene):
+            body['isvProductScene'] = request.isv_product_scene
+        if not UtilClient.is_unset(request.open_user_id):
+            body['openUserId'] = request.open_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='InvalidKit',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/records/invalid',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.InvalidKitResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def invalid_kit_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.InvalidKitRequest,
+        headers: dingtalkedu__1__0_models.InvalidKitHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.InvalidKitResponse:
+        """
+        @summary 失效教育套件
+        
+        @param request: InvalidKitRequest
+        @param headers: InvalidKitHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InvalidKitResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_product_scene):
+            body['isvProductScene'] = request.isv_product_scene
+        if not UtilClient.is_unset(request.open_user_id):
+            body['openUserId'] = request.open_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='InvalidKit',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/records/invalid',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.InvalidKitResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def invalid_kit(
+        self,
+        request: dingtalkedu__1__0_models.InvalidKitRequest,
+    ) -> dingtalkedu__1__0_models.InvalidKitResponse:
+        """
+        @summary 失效教育套件
+        
+        @param request: InvalidKitRequest
+        @return: InvalidKitResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.InvalidKitHeaders()
+        return self.invalid_kit_with_options(request, headers, runtime)
+
+    async def invalid_kit_async(
+        self,
+        request: dingtalkedu__1__0_models.InvalidKitRequest,
+    ) -> dingtalkedu__1__0_models.InvalidKitResponse:
+        """
+        @summary 失效教育套件
+        
+        @param request: InvalidKitRequest
+        @return: InvalidKitResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.InvalidKitHeaders()
+        return await self.invalid_kit_with_options_async(request, headers, runtime)
+
+    def invalid_student_class_with_options(
+        self,
+        request: dingtalkedu__1__0_models.InvalidStudentClassRequest,
+        headers: dingtalkedu__1__0_models.InvalidStudentClassHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.InvalidStudentClassResponse:
+        """
+        @summary 删除学生班级
+        
+        @param request: InvalidStudentClassRequest
+        @param headers: InvalidStudentClassHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InvalidStudentClassResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.class_type):
+            body['classType'] = request.class_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.student_user_ids):
+            body['studentUserIds'] = request.student_user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='InvalidStudentClass',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/students/classes/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.InvalidStudentClassResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def invalid_student_class_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.InvalidStudentClassRequest,
+        headers: dingtalkedu__1__0_models.InvalidStudentClassHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.InvalidStudentClassResponse:
+        """
+        @summary 删除学生班级
+        
+        @param request: InvalidStudentClassRequest
+        @param headers: InvalidStudentClassHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InvalidStudentClassResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.class_type):
+            body['classType'] = request.class_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.student_user_ids):
+            body['studentUserIds'] = request.student_user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='InvalidStudentClass',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/students/classes/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.InvalidStudentClassResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def invalid_student_class(
+        self,
+        request: dingtalkedu__1__0_models.InvalidStudentClassRequest,
+    ) -> dingtalkedu__1__0_models.InvalidStudentClassResponse:
+        """
+        @summary 删除学生班级
+        
+        @param request: InvalidStudentClassRequest
+        @return: InvalidStudentClassResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.InvalidStudentClassHeaders()
+        return self.invalid_student_class_with_options(request, headers, runtime)
+
+    async def invalid_student_class_async(
+        self,
+        request: dingtalkedu__1__0_models.InvalidStudentClassRequest,
+    ) -> dingtalkedu__1__0_models.InvalidStudentClassResponse:
+        """
+        @summary 删除学生班级
+        
+        @param request: InvalidStudentClassRequest
+        @return: InvalidStudentClassResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.InvalidStudentClassHeaders()
+        return await self.invalid_student_class_with_options_async(request, headers, runtime)
+
+    def invalid_teacher_course_with_options(
+        self,
+        request: dingtalkedu__1__0_models.InvalidTeacherCourseRequest,
+        headers: dingtalkedu__1__0_models.InvalidTeacherCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.InvalidTeacherCourseResponse:
+        """
+        @summary 删除老师课程
+        
+        @param request: InvalidTeacherCourseRequest
+        @param headers: InvalidTeacherCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InvalidTeacherCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.need_delete_course_id_list):
+            body['needDeleteCourseIdList'] = request.need_delete_course_id_list
+        if not UtilClient.is_unset(request.teacher_user_id):
+            body['teacherUserId'] = request.teacher_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='InvalidTeacherCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/teachers/courses/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.InvalidTeacherCourseResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def invalid_teacher_course_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.InvalidTeacherCourseRequest,
+        headers: dingtalkedu__1__0_models.InvalidTeacherCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.InvalidTeacherCourseResponse:
+        """
+        @summary 删除老师课程
+        
+        @param request: InvalidTeacherCourseRequest
+        @param headers: InvalidTeacherCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InvalidTeacherCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.need_delete_course_id_list):
+            body['needDeleteCourseIdList'] = request.need_delete_course_id_list
+        if not UtilClient.is_unset(request.teacher_user_id):
+            body['teacherUserId'] = request.teacher_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='InvalidTeacherCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/teachers/courses/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.InvalidTeacherCourseResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def invalid_teacher_course(
+        self,
+        request: dingtalkedu__1__0_models.InvalidTeacherCourseRequest,
+    ) -> dingtalkedu__1__0_models.InvalidTeacherCourseResponse:
+        """
+        @summary 删除老师课程
+        
+        @param request: InvalidTeacherCourseRequest
+        @return: InvalidTeacherCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.InvalidTeacherCourseHeaders()
+        return self.invalid_teacher_course_with_options(request, headers, runtime)
+
+    async def invalid_teacher_course_async(
+        self,
+        request: dingtalkedu__1__0_models.InvalidTeacherCourseRequest,
+    ) -> dingtalkedu__1__0_models.InvalidTeacherCourseResponse:
+        """
+        @summary 删除老师课程
+        
+        @param request: InvalidTeacherCourseRequest
+        @return: InvalidTeacherCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.InvalidTeacherCourseHeaders()
+        return await self.invalid_teacher_course_with_options_async(request, headers, runtime)
+
     def isv_data_write_with_options(
         self,
         request: dingtalkedu__1__0_models.IsvDataWriteRequest,
@@ -11682,6 +13726,144 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.MoveStudentHeaders()
         return await self.move_student_with_options_async(request, headers, runtime)
 
+    def open_kit_with_options(
+        self,
+        request: dingtalkedu__1__0_models.OpenKitRequest,
+        headers: dingtalkedu__1__0_models.OpenKitHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.OpenKitResponse:
+        """
+        @summary 开通教育套件
+        
+        @param request: OpenKitRequest
+        @param headers: OpenKitHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpenKitResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attributes):
+            body['attributes'] = request.attributes
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_product_scene):
+            body['isvProductScene'] = request.isv_product_scene
+        if not UtilClient.is_unset(request.open_end_time):
+            body['openEndTime'] = request.open_end_time
+        if not UtilClient.is_unset(request.open_start_time):
+            body['openStartTime'] = request.open_start_time
+        if not UtilClient.is_unset(request.open_user_id):
+            body['openUserId'] = request.open_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OpenKit',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/records/open',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.OpenKitResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def open_kit_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.OpenKitRequest,
+        headers: dingtalkedu__1__0_models.OpenKitHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.OpenKitResponse:
+        """
+        @summary 开通教育套件
+        
+        @param request: OpenKitRequest
+        @param headers: OpenKitHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: OpenKitResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.attributes):
+            body['attributes'] = request.attributes
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_product_scene):
+            body['isvProductScene'] = request.isv_product_scene
+        if not UtilClient.is_unset(request.open_end_time):
+            body['openEndTime'] = request.open_end_time
+        if not UtilClient.is_unset(request.open_start_time):
+            body['openStartTime'] = request.open_start_time
+        if not UtilClient.is_unset(request.open_user_id):
+            body['openUserId'] = request.open_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='OpenKit',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/records/open',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.OpenKitResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def open_kit(
+        self,
+        request: dingtalkedu__1__0_models.OpenKitRequest,
+    ) -> dingtalkedu__1__0_models.OpenKitResponse:
+        """
+        @summary 开通教育套件
+        
+        @param request: OpenKitRequest
+        @return: OpenKitResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.OpenKitHeaders()
+        return self.open_kit_with_options(request, headers, runtime)
+
+    async def open_kit_async(
+        self,
+        request: dingtalkedu__1__0_models.OpenKitRequest,
+    ) -> dingtalkedu__1__0_models.OpenKitResponse:
+        """
+        @summary 开通教育套件
+        
+        @param request: OpenKitRequest
+        @return: OpenKitResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.OpenKitHeaders()
+        return await self.open_kit_with_options_async(request, headers, runtime)
+
     def order_info_with_options(
         self,
         request: dingtalkedu__1__0_models.OrderInfoRequest,
@@ -11795,6 +13977,144 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.OrderInfoHeaders()
         return await self.order_info_with_options_async(request, headers, runtime)
+
+    def page_query_class_course_with_options(
+        self,
+        request: dingtalkedu__1__0_models.PageQueryClassCourseRequest,
+        headers: dingtalkedu__1__0_models.PageQueryClassCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.PageQueryClassCourseResponse:
+        """
+        @summary 批量查询班级课表
+        
+        @param request: PageQueryClassCourseRequest
+        @param headers: PageQueryClassCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PageQueryClassCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.end_course_date):
+            body['endCourseDate'] = request.end_course_date
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_course_date):
+            body['startCourseDate'] = request.start_course_date
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PageQueryClassCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/classes/courses/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.PageQueryClassCourseResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def page_query_class_course_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.PageQueryClassCourseRequest,
+        headers: dingtalkedu__1__0_models.PageQueryClassCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.PageQueryClassCourseResponse:
+        """
+        @summary 批量查询班级课表
+        
+        @param request: PageQueryClassCourseRequest
+        @param headers: PageQueryClassCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PageQueryClassCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.end_course_date):
+            body['endCourseDate'] = request.end_course_date
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_course_date):
+            body['startCourseDate'] = request.start_course_date
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PageQueryClassCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/classes/courses/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.PageQueryClassCourseResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def page_query_class_course(
+        self,
+        request: dingtalkedu__1__0_models.PageQueryClassCourseRequest,
+    ) -> dingtalkedu__1__0_models.PageQueryClassCourseResponse:
+        """
+        @summary 批量查询班级课表
+        
+        @param request: PageQueryClassCourseRequest
+        @return: PageQueryClassCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.PageQueryClassCourseHeaders()
+        return self.page_query_class_course_with_options(request, headers, runtime)
+
+    async def page_query_class_course_async(
+        self,
+        request: dingtalkedu__1__0_models.PageQueryClassCourseRequest,
+    ) -> dingtalkedu__1__0_models.PageQueryClassCourseResponse:
+        """
+        @summary 批量查询班级课表
+        
+        @param request: PageQueryClassCourseRequest
+        @return: PageQueryClassCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.PageQueryClassCourseHeaders()
+        return await self.page_query_class_course_with_options_async(request, headers, runtime)
 
     def page_query_devices_with_options(
         self,
@@ -11917,6 +14237,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.PageQueryDevicesHeaders()
         return await self.page_query_devices_with_options_async(request, headers, runtime)
+
+    def page_query_kit_open_record_with_options(
+        self,
+        request: dingtalkedu__1__0_models.PageQueryKitOpenRecordRequest,
+        headers: dingtalkedu__1__0_models.PageQueryKitOpenRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.PageQueryKitOpenRecordResponse:
+        """
+        @summary 批量查询套件开通记录
+        
+        @param request: PageQueryKitOpenRecordRequest
+        @param headers: PageQueryKitOpenRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PageQueryKitOpenRecordResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_product_scene):
+            body['isvProductScene'] = request.isv_product_scene
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PageQueryKitOpenRecord',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/records/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.PageQueryKitOpenRecordResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def page_query_kit_open_record_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.PageQueryKitOpenRecordRequest,
+        headers: dingtalkedu__1__0_models.PageQueryKitOpenRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.PageQueryKitOpenRecordResponse:
+        """
+        @summary 批量查询套件开通记录
+        
+        @param request: PageQueryKitOpenRecordRequest
+        @param headers: PageQueryKitOpenRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PageQueryKitOpenRecordResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_product_scene):
+            body['isvProductScene'] = request.isv_product_scene
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PageQueryKitOpenRecord',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/records/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.PageQueryKitOpenRecordResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def page_query_kit_open_record(
+        self,
+        request: dingtalkedu__1__0_models.PageQueryKitOpenRecordRequest,
+    ) -> dingtalkedu__1__0_models.PageQueryKitOpenRecordResponse:
+        """
+        @summary 批量查询套件开通记录
+        
+        @param request: PageQueryKitOpenRecordRequest
+        @return: PageQueryKitOpenRecordResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.PageQueryKitOpenRecordHeaders()
+        return self.page_query_kit_open_record_with_options(request, headers, runtime)
+
+    async def page_query_kit_open_record_async(
+        self,
+        request: dingtalkedu__1__0_models.PageQueryKitOpenRecordRequest,
+    ) -> dingtalkedu__1__0_models.PageQueryKitOpenRecordResponse:
+        """
+        @summary 批量查询套件开通记录
+        
+        @param request: PageQueryKitOpenRecordRequest
+        @return: PageQueryKitOpenRecordResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.PageQueryKitOpenRecordHeaders()
+        return await self.page_query_kit_open_record_with_options_async(request, headers, runtime)
 
     def pay_order_with_options(
         self,
@@ -13536,6 +15982,128 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.QueryGroupIdHeaders()
         return await self.query_group_id_with_options_async(request, headers, runtime)
 
+    def query_kit_open_record_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QueryKitOpenRecordRequest,
+        headers: dingtalkedu__1__0_models.QueryKitOpenRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryKitOpenRecordResponse:
+        """
+        @summary 查询套件开通记录
+        
+        @param request: QueryKitOpenRecordRequest
+        @param headers: QueryKitOpenRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryKitOpenRecordResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_product_scene):
+            body['isvProductScene'] = request.isv_product_scene
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryKitOpenRecord',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/records/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryKitOpenRecordResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_kit_open_record_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryKitOpenRecordRequest,
+        headers: dingtalkedu__1__0_models.QueryKitOpenRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryKitOpenRecordResponse:
+        """
+        @summary 查询套件开通记录
+        
+        @param request: QueryKitOpenRecordRequest
+        @param headers: QueryKitOpenRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryKitOpenRecordResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_product_scene):
+            body['isvProductScene'] = request.isv_product_scene
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryKitOpenRecord',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/records/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryKitOpenRecordResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_kit_open_record(
+        self,
+        request: dingtalkedu__1__0_models.QueryKitOpenRecordRequest,
+    ) -> dingtalkedu__1__0_models.QueryKitOpenRecordResponse:
+        """
+        @summary 查询套件开通记录
+        
+        @param request: QueryKitOpenRecordRequest
+        @return: QueryKitOpenRecordResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryKitOpenRecordHeaders()
+        return self.query_kit_open_record_with_options(request, headers, runtime)
+
+    async def query_kit_open_record_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryKitOpenRecordRequest,
+    ) -> dingtalkedu__1__0_models.QueryKitOpenRecordResponse:
+        """
+        @summary 查询套件开通记录
+        
+        @param request: QueryKitOpenRecordRequest
+        @return: QueryKitOpenRecordResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryKitOpenRecordHeaders()
+        return await self.query_kit_open_record_with_options_async(request, headers, runtime)
+
     def query_order_with_options(
         self,
         request: dingtalkedu__1__0_models.QueryOrderRequest,
@@ -14876,6 +17444,136 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.QueryStatisticsDataHeaders()
         return await self.query_statistics_data_with_options_async(request, headers, runtime)
 
+    def query_student_class_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QueryStudentClassRequest,
+        headers: dingtalkedu__1__0_models.QueryStudentClassHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryStudentClassResponse:
+        """
+        @summary 查询学生班级
+        
+        @param request: QueryStudentClassRequest
+        @param headers: QueryStudentClassHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryStudentClassResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.class_type):
+            body['classType'] = request.class_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.student_user_ids):
+            body['studentUserIds'] = request.student_user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryStudentClass',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/students/classes/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryStudentClassResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_student_class_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryStudentClassRequest,
+        headers: dingtalkedu__1__0_models.QueryStudentClassHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryStudentClassResponse:
+        """
+        @summary 查询学生班级
+        
+        @param request: QueryStudentClassRequest
+        @param headers: QueryStudentClassHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryStudentClassResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.class_type):
+            body['classType'] = request.class_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.student_user_ids):
+            body['studentUserIds'] = request.student_user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryStudentClass',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/students/classes/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryStudentClassResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_student_class(
+        self,
+        request: dingtalkedu__1__0_models.QueryStudentClassRequest,
+    ) -> dingtalkedu__1__0_models.QueryStudentClassResponse:
+        """
+        @summary 查询学生班级
+        
+        @param request: QueryStudentClassRequest
+        @return: QueryStudentClassResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryStudentClassHeaders()
+        return self.query_student_class_with_options(request, headers, runtime)
+
+    async def query_student_class_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryStudentClassRequest,
+    ) -> dingtalkedu__1__0_models.QueryStudentClassResponse:
+        """
+        @summary 查询学生班级
+        
+        @param request: QueryStudentClassRequest
+        @return: QueryStudentClassResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryStudentClassHeaders()
+        return await self.query_student_class_with_options_async(request, headers, runtime)
+
     def query_subject_teachers_with_options(
         self,
         request: dingtalkedu__1__0_models.QuerySubjectTeachersRequest,
@@ -15115,6 +17813,254 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.QueryTeachSubjectsHeaders()
         return await self.query_teach_subjects_with_options_async(request, headers, runtime)
+
+    def query_teacher_course_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QueryTeacherCourseRequest,
+        headers: dingtalkedu__1__0_models.QueryTeacherCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryTeacherCourseResponse:
+        """
+        @summary 查询老师课程
+        
+        @param request: QueryTeacherCourseRequest
+        @param headers: QueryTeacherCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTeacherCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_course_id_list):
+            body['isvCourseIdList'] = request.isv_course_id_list
+        if not UtilClient.is_unset(request.teacher_user_id):
+            body['teacherUserId'] = request.teacher_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryTeacherCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/teachers/courses/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryTeacherCourseResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_teacher_course_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryTeacherCourseRequest,
+        headers: dingtalkedu__1__0_models.QueryTeacherCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryTeacherCourseResponse:
+        """
+        @summary 查询老师课程
+        
+        @param request: QueryTeacherCourseRequest
+        @param headers: QueryTeacherCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTeacherCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_course_id_list):
+            body['isvCourseIdList'] = request.isv_course_id_list
+        if not UtilClient.is_unset(request.teacher_user_id):
+            body['teacherUserId'] = request.teacher_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryTeacherCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/teachers/courses/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryTeacherCourseResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_teacher_course(
+        self,
+        request: dingtalkedu__1__0_models.QueryTeacherCourseRequest,
+    ) -> dingtalkedu__1__0_models.QueryTeacherCourseResponse:
+        """
+        @summary 查询老师课程
+        
+        @param request: QueryTeacherCourseRequest
+        @return: QueryTeacherCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryTeacherCourseHeaders()
+        return self.query_teacher_course_with_options(request, headers, runtime)
+
+    async def query_teacher_course_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryTeacherCourseRequest,
+    ) -> dingtalkedu__1__0_models.QueryTeacherCourseResponse:
+        """
+        @summary 查询老师课程
+        
+        @param request: QueryTeacherCourseRequest
+        @return: QueryTeacherCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryTeacherCourseHeaders()
+        return await self.query_teacher_course_with_options_async(request, headers, runtime)
+
+    def query_transfer_course_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QueryTransferCourseRequest,
+        headers: dingtalkedu__1__0_models.QueryTransferCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryTransferCourseResponse:
+        """
+        @summary 查询调代课记录
+        
+        @param request: QueryTransferCourseRequest
+        @param headers: QueryTransferCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTransferCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_record_id):
+            body['isvRecordId'] = request.isv_record_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryTransferCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/transferRecords/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryTransferCourseResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_transfer_course_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryTransferCourseRequest,
+        headers: dingtalkedu__1__0_models.QueryTransferCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryTransferCourseResponse:
+        """
+        @summary 查询调代课记录
+        
+        @param request: QueryTransferCourseRequest
+        @param headers: QueryTransferCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTransferCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_record_id):
+            body['isvRecordId'] = request.isv_record_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryTransferCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/transferRecords/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryTransferCourseResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_transfer_course(
+        self,
+        request: dingtalkedu__1__0_models.QueryTransferCourseRequest,
+    ) -> dingtalkedu__1__0_models.QueryTransferCourseResponse:
+        """
+        @summary 查询调代课记录
+        
+        @param request: QueryTransferCourseRequest
+        @return: QueryTransferCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryTransferCourseHeaders()
+        return self.query_transfer_course_with_options(request, headers, runtime)
+
+    async def query_transfer_course_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryTransferCourseRequest,
+    ) -> dingtalkedu__1__0_models.QueryTransferCourseResponse:
+        """
+        @summary 查询调代课记录
+        
+        @param request: QueryTransferCourseRequest
+        @return: QueryTransferCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryTransferCourseHeaders()
+        return await self.query_transfer_course_with_options_async(request, headers, runtime)
 
     def query_university_course_group_with_options(
         self,
@@ -19133,3 +22079,129 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.ValidateUserRoleHeaders()
         return await self.validate_user_role_with_options_async(request, headers, runtime)
+
+    def query_class_course_with_options(
+        self,
+        request: dingtalkedu__1__0_models.QueryClassCourseRequest,
+        headers: dingtalkedu__1__0_models.QueryClassCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryClassCourseResponse:
+        """
+        @summary 查询班级课程
+        
+        @param request: QueryClassCourseRequest
+        @param headers: QueryClassCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryClassCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_course_id):
+            body['isvCourseId'] = request.isv_course_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='queryClassCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/classes/courses/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryClassCourseResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_class_course_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryClassCourseRequest,
+        headers: dingtalkedu__1__0_models.QueryClassCourseHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.QueryClassCourseResponse:
+        """
+        @summary 查询班级课程
+        
+        @param request: QueryClassCourseRequest
+        @param headers: QueryClassCourseHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryClassCourseResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.class_id):
+            body['classId'] = request.class_id
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.isv_course_id):
+            body['isvCourseId'] = request.isv_course_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='queryClassCourse',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/classes/courses/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.QueryClassCourseResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_class_course(
+        self,
+        request: dingtalkedu__1__0_models.QueryClassCourseRequest,
+    ) -> dingtalkedu__1__0_models.QueryClassCourseResponse:
+        """
+        @summary 查询班级课程
+        
+        @param request: QueryClassCourseRequest
+        @return: QueryClassCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryClassCourseHeaders()
+        return self.query_class_course_with_options(request, headers, runtime)
+
+    async def query_class_course_async(
+        self,
+        request: dingtalkedu__1__0_models.QueryClassCourseRequest,
+    ) -> dingtalkedu__1__0_models.QueryClassCourseResponse:
+        """
+        @summary 查询班级课程
+        
+        @param request: QueryClassCourseRequest
+        @return: QueryClassCourseResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.QueryClassCourseHeaders()
+        return await self.query_class_course_with_options_async(request, headers, runtime)
