@@ -120,6 +120,7 @@
       "AlibabaCloud\\SDK\\Dingtalk\\Vtranscribe_1_0\\": "src/transcribe_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vtrip_1_0\\": "src/trip_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vvillage_1_0\\": "src/village_1_0/",
+      "AlibabaCloud\\SDK\\Dingtalk\\Vvip_member_1_0\\": "src/vip_member_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vwatt_1_0\\": "src/watt_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vwiki_1_0\\": "src/wiki_1_0/",
       "AlibabaCloud\\SDK\\Dingtalk\\Vwiki_2_0\\": "src/wiki_2_0/",
