@@ -29,12 +29,30 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddSchoolConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddSchoolConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddSchoolConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AdjustCourseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AdjustCourseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AdjustCourseResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AdjustKitHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AdjustKitRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AdjustKitResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AssignClassHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AssignClassRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AssignClassResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchCreateCourseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchCreateCourseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchCreateCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchCreateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchCreateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchCreateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchCreateStudentClassHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchCreateStudentClassRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchCreateStudentClassResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchCreateTeacherCourseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchCreateTeacherCourseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchCreateTeacherCourseResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchInvalidCourseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchInvalidCourseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchInvalidCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchOrgCreateHWHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchOrgCreateHWRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchOrgCreateHWResponse;
@@ -80,6 +98,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateAppOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCollegeContactDeptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCollegeContactDeptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCollegeContactDeptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCourseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCourseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomClassHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomClassRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCustomClassResponse;
@@ -122,9 +143,18 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateSnsAppOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateStsTokenHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateStsTokenRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateStsTokenResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateStudentClassHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateStudentClassRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateStudentClassResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTeacherCourseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTeacherCourseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTeacherCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTokenHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTokenRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTokenResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTransferRecordHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTransferRecordRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTransferRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateUniversityCourseGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateUniversityCourseGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateUniversityCourseGroupResponse;
@@ -254,6 +284,18 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InitVPaasDeviceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InsertSectionConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InsertSectionConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InsertSectionConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InvalidCourseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InvalidCourseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InvalidCourseResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InvalidKitHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InvalidKitRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InvalidKitResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InvalidStudentClassHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InvalidStudentClassRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InvalidStudentClassResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InvalidTeacherCourseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InvalidTeacherCourseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\InvalidTeacherCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsvDataWriteHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsvDataWriteRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsvDataWriteResponse;
@@ -272,12 +314,21 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\MoveStudentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\MoveStudentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\MoveStudentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\OpenKitHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\OpenKitRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\OpenKitResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\OrderInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\OrderInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\OrderInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PageQueryClassCourseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PageQueryClassCourseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PageQueryClassCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PageQueryDevicesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PageQueryDevicesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PageQueryDevicesResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PageQueryKitOpenRecordHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PageQueryKitOpenRecordRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PageQueryKitOpenRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PayOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PayOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PayOrderResponse;
@@ -294,6 +345,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleH
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleShrinkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassCourseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassCourseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassScheduleByTimeSchoolHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassScheduleByTimeSchoolRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryClassScheduleByTimeSchoolResponse;
@@ -319,6 +373,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryEduAssetSpacesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryGroupIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryGroupIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryGroupIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryKitOpenRecordHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryKitOpenRecordRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryKitOpenRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryOrderResponse;
@@ -351,12 +408,21 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySnsOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryStatisticsDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryStatisticsDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryStatisticsDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryStudentClassHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryStudentClassRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryStudentClassResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySubjectTeachersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySubjectTeachersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QuerySubjectTeachersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryTeacherCourseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryTeacherCourseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryTeacherCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryTeachSubjectsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryTeachSubjectsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryTeachSubjectsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryTransferCourseHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryTransferCourseRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryTransferCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryUniversityCourseGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryUniversityCourseGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryUniversityCourseGroupResponse;
@@ -1140,6 +1206,201 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 修改课程
+     *  *
+     * @param AdjustCourseRequest $request AdjustCourseRequest
+     * @param AdjustCourseHeaders $headers AdjustCourseHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AdjustCourseResponse AdjustCourseResponse
+     */
+    public function adjustCourseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->attributes)) {
+            $body['attributes'] = $request->attributes;
+        }
+        if (!Utils::isUnset($request->className)) {
+            $body['className'] = $request->className;
+        }
+        if (!Utils::isUnset($request->classRoomId)) {
+            $body['classRoomId'] = $request->classRoomId;
+        }
+        if (!Utils::isUnset($request->classRoomName)) {
+            $body['classRoomName'] = $request->classRoomName;
+        }
+        if (!Utils::isUnset($request->classType)) {
+            $body['classType'] = $request->classType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->courseCode)) {
+            $body['courseCode'] = $request->courseCode;
+        }
+        if (!Utils::isUnset($request->courseDate)) {
+            $body['courseDate'] = $request->courseDate;
+        }
+        if (!Utils::isUnset($request->courseName)) {
+            $body['courseName'] = $request->courseName;
+        }
+        if (!Utils::isUnset($request->courseWeek)) {
+            $body['courseWeek'] = $request->courseWeek;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->isvCourseId)) {
+            $body['isvCourseId'] = $request->isvCourseId;
+        }
+        if (!Utils::isUnset($request->memo)) {
+            $body['memo'] = $request->memo;
+        }
+        if (!Utils::isUnset($request->schoolYear)) {
+            $body['schoolYear'] = $request->schoolYear;
+        }
+        if (!Utils::isUnset($request->semester)) {
+            $body['semester'] = $request->semester;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->teachWeek)) {
+            $body['teachWeek'] = $request->teachWeek;
+        }
+        if (!Utils::isUnset($request->timeslotName)) {
+            $body['timeslotName'] = $request->timeslotName;
+        }
+        if (!Utils::isUnset($request->timeslotNum)) {
+            $body['timeslotNum'] = $request->timeslotNum;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AdjustCourse',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/courses/adjust',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AdjustCourseResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 修改课程
+     *  *
+     * @param AdjustCourseRequest $request AdjustCourseRequest
+     *
+     * @return AdjustCourseResponse AdjustCourseResponse
+     */
+    public function adjustCourse($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AdjustCourseHeaders([]);
+
+        return $this->adjustCourseWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 修改教育套件
+     *  *
+     * @param AdjustKitRequest $request AdjustKitRequest
+     * @param AdjustKitHeaders $headers AdjustKitHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AdjustKitResponse AdjustKitResponse
+     */
+    public function adjustKitWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->attributes)) {
+            $body['attributes'] = $request->attributes;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->isvProductScene)) {
+            $body['isvProductScene'] = $request->isvProductScene;
+        }
+        if (!Utils::isUnset($request->openEndTime)) {
+            $body['openEndTime'] = $request->openEndTime;
+        }
+        if (!Utils::isUnset($request->openStartTime)) {
+            $body['openStartTime'] = $request->openStartTime;
+        }
+        if (!Utils::isUnset($request->openUserId)) {
+            $body['openUserId'] = $request->openUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AdjustKit',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/records/adjust',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AdjustKitResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 修改教育套件
+     *  *
+     * @param AdjustKitRequest $request AdjustKitRequest
+     *
+     * @return AdjustKitResponse AdjustKitResponse
+     */
+    public function adjustKit($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AdjustKitHeaders([]);
+
+        return $this->adjustKitWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 进行分班
      *  *
      * @param AssignClassRequest $request AssignClassRequest
@@ -1278,6 +1539,294 @@ class Dingtalk extends OpenApiClient
         $headers = new BatchCreateHeaders([]);
 
         return $this->batchCreateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量创建课程
+     *  *
+     * @param BatchCreateCourseRequest $request BatchCreateCourseRequest
+     * @param BatchCreateCourseHeaders $headers BatchCreateCourseHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return BatchCreateCourseResponse BatchCreateCourseResponse
+     */
+    public function batchCreateCourseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->classId)) {
+            $body['classId'] = $request->classId;
+        }
+        if (!Utils::isUnset($request->className)) {
+            $body['className'] = $request->className;
+        }
+        if (!Utils::isUnset($request->classType)) {
+            $body['classType'] = $request->classType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->courseDetailItemList)) {
+            $body['courseDetailItemList'] = $request->courseDetailItemList;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->schoolYear)) {
+            $body['schoolYear'] = $request->schoolYear;
+        }
+        if (!Utils::isUnset($request->semester)) {
+            $body['semester'] = $request->semester;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'BatchCreateCourse',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/courses/batchCreate',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return BatchCreateCourseResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量创建课程
+     *  *
+     * @param BatchCreateCourseRequest $request BatchCreateCourseRequest
+     *
+     * @return BatchCreateCourseResponse BatchCreateCourseResponse
+     */
+    public function batchCreateCourse($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchCreateCourseHeaders([]);
+
+        return $this->batchCreateCourseWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量创建学生班级
+     *  *
+     * @param BatchCreateStudentClassRequest $request BatchCreateStudentClassRequest
+     * @param BatchCreateStudentClassHeaders $headers BatchCreateStudentClassHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return BatchCreateStudentClassResponse BatchCreateStudentClassResponse
+     */
+    public function batchCreateStudentClassWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->classId)) {
+            $body['classId'] = $request->classId;
+        }
+        if (!Utils::isUnset($request->className)) {
+            $body['className'] = $request->className;
+        }
+        if (!Utils::isUnset($request->classType)) {
+            $body['classType'] = $request->classType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->studentList)) {
+            $body['studentList'] = $request->studentList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'BatchCreateStudentClass',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/students/classes/batchCreate',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return BatchCreateStudentClassResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量创建学生班级
+     *  *
+     * @param BatchCreateStudentClassRequest $request BatchCreateStudentClassRequest
+     *
+     * @return BatchCreateStudentClassResponse BatchCreateStudentClassResponse
+     */
+    public function batchCreateStudentClass($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchCreateStudentClassHeaders([]);
+
+        return $this->batchCreateStudentClassWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量创建老师课程
+     *  *
+     * @param BatchCreateTeacherCourseRequest $request BatchCreateTeacherCourseRequest
+     * @param BatchCreateTeacherCourseHeaders $headers BatchCreateTeacherCourseHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return BatchCreateTeacherCourseResponse BatchCreateTeacherCourseResponse
+     */
+    public function batchCreateTeacherCourseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->teacherCourseDetailItemList)) {
+            $body['teacherCourseDetailItemList'] = $request->teacherCourseDetailItemList;
+        }
+        if (!Utils::isUnset($request->teacherName)) {
+            $body['teacherName'] = $request->teacherName;
+        }
+        if (!Utils::isUnset($request->teacherUserId)) {
+            $body['teacherUserId'] = $request->teacherUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'BatchCreateTeacherCourse',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/teachers/courses/batchCreate',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return BatchCreateTeacherCourseResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量创建老师课程
+     *  *
+     * @param BatchCreateTeacherCourseRequest $request BatchCreateTeacherCourseRequest
+     *
+     * @return BatchCreateTeacherCourseResponse BatchCreateTeacherCourseResponse
+     */
+    public function batchCreateTeacherCourse($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchCreateTeacherCourseHeaders([]);
+
+        return $this->batchCreateTeacherCourseWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量失效课程
+     *  *
+     * @param BatchInvalidCourseRequest $request BatchInvalidCourseRequest
+     * @param BatchInvalidCourseHeaders $headers BatchInvalidCourseHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return BatchInvalidCourseResponse BatchInvalidCourseResponse
+     */
+    public function batchInvalidCourseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->classId)) {
+            $body['classId'] = $request->classId;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->isvCourseId)) {
+            $body['isvCourseId'] = $request->isvCourseId;
+        }
+        if (!Utils::isUnset($request->isvCourseIds)) {
+            $body['isvCourseIds'] = $request->isvCourseIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'BatchInvalidCourse',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/courses/batchInvalid',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return BatchInvalidCourseResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量失效课程
+     *  *
+     * @param BatchInvalidCourseRequest $request BatchInvalidCourseRequest
+     *
+     * @return BatchInvalidCourseResponse BatchInvalidCourseResponse
+     */
+    public function batchInvalidCourse($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchInvalidCourseHeaders([]);
+
+        return $this->batchInvalidCourseWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2430,6 +2979,132 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建课程
+     *  *
+     * @param CreateCourseRequest $request CreateCourseRequest
+     * @param CreateCourseHeaders $headers CreateCourseHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateCourseResponse CreateCourseResponse
+     */
+    public function createCourseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->attributes)) {
+            $body['attributes'] = $request->attributes;
+        }
+        if (!Utils::isUnset($request->classId)) {
+            $body['classId'] = $request->classId;
+        }
+        if (!Utils::isUnset($request->className)) {
+            $body['className'] = $request->className;
+        }
+        if (!Utils::isUnset($request->classRoomId)) {
+            $body['classRoomId'] = $request->classRoomId;
+        }
+        if (!Utils::isUnset($request->classRoomName)) {
+            $body['classRoomName'] = $request->classRoomName;
+        }
+        if (!Utils::isUnset($request->classType)) {
+            $body['classType'] = $request->classType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->courseCode)) {
+            $body['courseCode'] = $request->courseCode;
+        }
+        if (!Utils::isUnset($request->courseDate)) {
+            $body['courseDate'] = $request->courseDate;
+        }
+        if (!Utils::isUnset($request->courseName)) {
+            $body['courseName'] = $request->courseName;
+        }
+        if (!Utils::isUnset($request->courseWeek)) {
+            $body['courseWeek'] = $request->courseWeek;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->isvCourseId)) {
+            $body['isvCourseId'] = $request->isvCourseId;
+        }
+        if (!Utils::isUnset($request->memo)) {
+            $body['memo'] = $request->memo;
+        }
+        if (!Utils::isUnset($request->schoolYear)) {
+            $body['schoolYear'] = $request->schoolYear;
+        }
+        if (!Utils::isUnset($request->semester)) {
+            $body['semester'] = $request->semester;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        if (!Utils::isUnset($request->teachWeek)) {
+            $body['teachWeek'] = $request->teachWeek;
+        }
+        if (!Utils::isUnset($request->teacherList)) {
+            $body['teacherList'] = $request->teacherList;
+        }
+        if (!Utils::isUnset($request->timeslotName)) {
+            $body['timeslotName'] = $request->timeslotName;
+        }
+        if (!Utils::isUnset($request->timeslotNum)) {
+            $body['timeslotNum'] = $request->timeslotNum;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateCourse',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/courses',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateCourseResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建课程
+     *  *
+     * @param CreateCourseRequest $request CreateCourseRequest
+     *
+     * @return CreateCourseResponse CreateCourseResponse
+     */
+    public function createCourse($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateCourseHeaders([]);
+
+        return $this->createCourseWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 创建自定义部门下班级
      *  *
      * @param CreateCustomClassRequest $request CreateCustomClassRequest
@@ -3472,6 +4147,156 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建学生班级
+     *  *
+     * @param CreateStudentClassRequest $request CreateStudentClassRequest
+     * @param CreateStudentClassHeaders $headers CreateStudentClassHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateStudentClassResponse CreateStudentClassResponse
+     */
+    public function createStudentClassWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->attributes)) {
+            $body['attributes'] = $request->attributes;
+        }
+        if (!Utils::isUnset($request->classId)) {
+            $body['classId'] = $request->classId;
+        }
+        if (!Utils::isUnset($request->className)) {
+            $body['className'] = $request->className;
+        }
+        if (!Utils::isUnset($request->classType)) {
+            $body['classType'] = $request->classType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->studentName)) {
+            $body['studentName'] = $request->studentName;
+        }
+        if (!Utils::isUnset($request->studentUserId)) {
+            $body['studentUserId'] = $request->studentUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateStudentClass',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/students/classes',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateStudentClassResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建学生班级
+     *  *
+     * @param CreateStudentClassRequest $request CreateStudentClassRequest
+     *
+     * @return CreateStudentClassResponse CreateStudentClassResponse
+     */
+    public function createStudentClass($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateStudentClassHeaders([]);
+
+        return $this->createStudentClassWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建老师课程
+     *  *
+     * @param CreateTeacherCourseRequest $request CreateTeacherCourseRequest
+     * @param CreateTeacherCourseHeaders $headers CreateTeacherCourseHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateTeacherCourseResponse CreateTeacherCourseResponse
+     */
+    public function createTeacherCourseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->attributes)) {
+            $body['attributes'] = $request->attributes;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->isvCourseId)) {
+            $body['isvCourseId'] = $request->isvCourseId;
+        }
+        if (!Utils::isUnset($request->teacherName)) {
+            $body['teacherName'] = $request->teacherName;
+        }
+        if (!Utils::isUnset($request->teacherUserId)) {
+            $body['teacherUserId'] = $request->teacherUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateTeacherCourse',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/teachers/courses',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateTeacherCourseResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建老师课程
+     *  *
+     * @param CreateTeacherCourseRequest $request CreateTeacherCourseRequest
+     *
+     * @return CreateTeacherCourseResponse CreateTeacherCourseResponse
+     */
+    public function createTeacherCourse($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateTeacherCourseHeaders([]);
+
+        return $this->createTeacherCourseWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 创建授权token
      *  *
      * @param CreateTokenRequest $request CreateTokenRequest
@@ -3529,6 +4354,114 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateTokenHeaders([]);
 
         return $this->createTokenWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建调代课记录
+     *  *
+     * @param CreateTransferRecordRequest $request CreateTransferRecordRequest
+     * @param CreateTransferRecordHeaders $headers CreateTransferRecordHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateTransferRecordResponse CreateTransferRecordResponse
+     */
+    public function createTransferRecordWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->attributes)) {
+            $body['attributes'] = $request->attributes;
+        }
+        if (!Utils::isUnset($request->classId)) {
+            $body['classId'] = $request->classId;
+        }
+        if (!Utils::isUnset($request->className)) {
+            $body['className'] = $request->className;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->isvRecordId)) {
+            $body['isvRecordId'] = $request->isvRecordId;
+        }
+        if (!Utils::isUnset($request->srcCourseCode)) {
+            $body['srcCourseCode'] = $request->srcCourseCode;
+        }
+        if (!Utils::isUnset($request->srcCourseDate)) {
+            $body['srcCourseDate'] = $request->srcCourseDate;
+        }
+        if (!Utils::isUnset($request->srcCourseName)) {
+            $body['srcCourseName'] = $request->srcCourseName;
+        }
+        if (!Utils::isUnset($request->srcIsvCourseId)) {
+            $body['srcIsvCourseId'] = $request->srcIsvCourseId;
+        }
+        if (!Utils::isUnset($request->srcTimeslotName)) {
+            $body['srcTimeslotName'] = $request->srcTimeslotName;
+        }
+        if (!Utils::isUnset($request->srcTimeslotNum)) {
+            $body['srcTimeslotNum'] = $request->srcTimeslotNum;
+        }
+        if (!Utils::isUnset($request->tarCourseCode)) {
+            $body['tarCourseCode'] = $request->tarCourseCode;
+        }
+        if (!Utils::isUnset($request->tarCourseDate)) {
+            $body['tarCourseDate'] = $request->tarCourseDate;
+        }
+        if (!Utils::isUnset($request->tarCourseName)) {
+            $body['tarCourseName'] = $request->tarCourseName;
+        }
+        if (!Utils::isUnset($request->tarIsvCourseId)) {
+            $body['tarIsvCourseId'] = $request->tarIsvCourseId;
+        }
+        if (!Utils::isUnset($request->tarTimeslotName)) {
+            $body['tarTimeslotName'] = $request->tarTimeslotName;
+        }
+        if (!Utils::isUnset($request->tarTimeslotNum)) {
+            $body['tarTimeslotNum'] = $request->tarTimeslotNum;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateTransferRecord',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/transferRecords',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateTransferRecordResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建调代课记录
+     *  *
+     * @param CreateTransferRecordRequest $request CreateTransferRecordRequest
+     *
+     * @return CreateTransferRecordResponse CreateTransferRecordResponse
+     */
+    public function createTransferRecord($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateTransferRecordHeaders([]);
+
+        return $this->createTransferRecordWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -6264,6 +7197,273 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 失效课程
+     *  *
+     * @param InvalidCourseRequest $request InvalidCourseRequest
+     * @param InvalidCourseHeaders $headers InvalidCourseHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return InvalidCourseResponse InvalidCourseResponse
+     */
+    public function invalidCourseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->classId)) {
+            $body['classId'] = $request->classId;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->isvCourseId)) {
+            $body['isvCourseId'] = $request->isvCourseId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'InvalidCourse',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/courses/invalid',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return InvalidCourseResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 失效课程
+     *  *
+     * @param InvalidCourseRequest $request InvalidCourseRequest
+     *
+     * @return InvalidCourseResponse InvalidCourseResponse
+     */
+    public function invalidCourse($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InvalidCourseHeaders([]);
+
+        return $this->invalidCourseWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 失效教育套件
+     *  *
+     * @param InvalidKitRequest $request InvalidKitRequest
+     * @param InvalidKitHeaders $headers InvalidKitHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return InvalidKitResponse InvalidKitResponse
+     */
+    public function invalidKitWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->isvProductScene)) {
+            $body['isvProductScene'] = $request->isvProductScene;
+        }
+        if (!Utils::isUnset($request->openUserId)) {
+            $body['openUserId'] = $request->openUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'InvalidKit',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/records/invalid',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return InvalidKitResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 失效教育套件
+     *  *
+     * @param InvalidKitRequest $request InvalidKitRequest
+     *
+     * @return InvalidKitResponse InvalidKitResponse
+     */
+    public function invalidKit($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InvalidKitHeaders([]);
+
+        return $this->invalidKitWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除学生班级
+     *  *
+     * @param InvalidStudentClassRequest $request InvalidStudentClassRequest
+     * @param InvalidStudentClassHeaders $headers InvalidStudentClassHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return InvalidStudentClassResponse InvalidStudentClassResponse
+     */
+    public function invalidStudentClassWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->classId)) {
+            $body['classId'] = $request->classId;
+        }
+        if (!Utils::isUnset($request->classType)) {
+            $body['classType'] = $request->classType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->studentUserIds)) {
+            $body['studentUserIds'] = $request->studentUserIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'InvalidStudentClass',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/students/classes/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return InvalidStudentClassResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除学生班级
+     *  *
+     * @param InvalidStudentClassRequest $request InvalidStudentClassRequest
+     *
+     * @return InvalidStudentClassResponse InvalidStudentClassResponse
+     */
+    public function invalidStudentClass($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InvalidStudentClassHeaders([]);
+
+        return $this->invalidStudentClassWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除老师课程
+     *  *
+     * @param InvalidTeacherCourseRequest $request InvalidTeacherCourseRequest
+     * @param InvalidTeacherCourseHeaders $headers InvalidTeacherCourseHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return InvalidTeacherCourseResponse InvalidTeacherCourseResponse
+     */
+    public function invalidTeacherCourseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->needDeleteCourseIdList)) {
+            $body['needDeleteCourseIdList'] = $request->needDeleteCourseIdList;
+        }
+        if (!Utils::isUnset($request->teacherUserId)) {
+            $body['teacherUserId'] = $request->teacherUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'InvalidTeacherCourse',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/teachers/courses/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return InvalidTeacherCourseResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除老师课程
+     *  *
+     * @param InvalidTeacherCourseRequest $request InvalidTeacherCourseRequest
+     *
+     * @return InvalidTeacherCourseResponse InvalidTeacherCourseResponse
+     */
+    public function invalidTeacherCourse($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InvalidTeacherCourseHeaders([]);
+
+        return $this->invalidTeacherCourseWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 第三方数据写入
      *  *
      * @param IsvDataWriteRequest $request IsvDataWriteRequest
@@ -6648,6 +7848,81 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 开通教育套件
+     *  *
+     * @param OpenKitRequest $request OpenKitRequest
+     * @param OpenKitHeaders $headers OpenKitHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
+     *
+     * @return OpenKitResponse OpenKitResponse
+     */
+    public function openKitWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->attributes)) {
+            $body['attributes'] = $request->attributes;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->isvProductScene)) {
+            $body['isvProductScene'] = $request->isvProductScene;
+        }
+        if (!Utils::isUnset($request->openEndTime)) {
+            $body['openEndTime'] = $request->openEndTime;
+        }
+        if (!Utils::isUnset($request->openStartTime)) {
+            $body['openStartTime'] = $request->openStartTime;
+        }
+        if (!Utils::isUnset($request->openUserId)) {
+            $body['openUserId'] = $request->openUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'OpenKit',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/records/open',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return OpenKitResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 开通教育套件
+     *  *
+     * @param OpenKitRequest $request OpenKitRequest
+     *
+     * @return OpenKitResponse OpenKitResponse
+     */
+    public function openKit($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new OpenKitHeaders([]);
+
+        return $this->openKitWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询订单信息
      *  *
      * @param OrderInfoRequest $request OrderInfoRequest
@@ -6702,6 +7977,81 @@ class Dingtalk extends OpenApiClient
         $headers = new OrderInfoHeaders([]);
 
         return $this->orderInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量查询班级课表
+     *  *
+     * @param PageQueryClassCourseRequest $request PageQueryClassCourseRequest
+     * @param PageQueryClassCourseHeaders $headers PageQueryClassCourseHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PageQueryClassCourseResponse PageQueryClassCourseResponse
+     */
+    public function pageQueryClassCourseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->classId)) {
+            $body['classId'] = $request->classId;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->endCourseDate)) {
+            $body['endCourseDate'] = $request->endCourseDate;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->startCourseDate)) {
+            $body['startCourseDate'] = $request->startCourseDate;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PageQueryClassCourse',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/classes/courses/batchQuery',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PageQueryClassCourseResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量查询班级课表
+     *  *
+     * @param PageQueryClassCourseRequest $request PageQueryClassCourseRequest
+     *
+     * @return PageQueryClassCourseResponse PageQueryClassCourseResponse
+     */
+    public function pageQueryClassCourse($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PageQueryClassCourseHeaders([]);
+
+        return $this->pageQueryClassCourseWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -6765,6 +8115,72 @@ class Dingtalk extends OpenApiClient
         $headers = new PageQueryDevicesHeaders([]);
 
         return $this->pageQueryDevicesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量查询套件开通记录
+     *  *
+     * @param PageQueryKitOpenRecordRequest $request PageQueryKitOpenRecordRequest
+     * @param PageQueryKitOpenRecordHeaders $headers PageQueryKitOpenRecordHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PageQueryKitOpenRecordResponse PageQueryKitOpenRecordResponse
+     */
+    public function pageQueryKitOpenRecordWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->isvProductScene)) {
+            $body['isvProductScene'] = $request->isvProductScene;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PageQueryKitOpenRecord',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/records/batchQuery',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PageQueryKitOpenRecordResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量查询套件开通记录
+     *  *
+     * @param PageQueryKitOpenRecordRequest $request PageQueryKitOpenRecordRequest
+     *
+     * @return PageQueryKitOpenRecordResponse PageQueryKitOpenRecordResponse
+     */
+    public function pageQueryKitOpenRecord($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PageQueryKitOpenRecordHeaders([]);
+
+        return $this->pageQueryKitOpenRecordWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -7608,6 +9024,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询套件开通记录
+     *  *
+     * @param QueryKitOpenRecordRequest $request QueryKitOpenRecordRequest
+     * @param QueryKitOpenRecordHeaders $headers QueryKitOpenRecordHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryKitOpenRecordResponse QueryKitOpenRecordResponse
+     */
+    public function queryKitOpenRecordWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->isvProductScene)) {
+            $body['isvProductScene'] = $request->isvProductScene;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryKitOpenRecord',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/records/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryKitOpenRecordResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询套件开通记录
+     *  *
+     * @param QueryKitOpenRecordRequest $request QueryKitOpenRecordRequest
+     *
+     * @return QueryKitOpenRecordResponse QueryKitOpenRecordResponse
+     */
+    public function queryKitOpenRecord($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryKitOpenRecordHeaders([]);
+
+        return $this->queryKitOpenRecordWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询订单信息
      *  *
      * @param QueryOrderRequest $request QueryOrderRequest
@@ -8306,6 +9785,75 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询学生班级
+     *  *
+     * @param QueryStudentClassRequest $request QueryStudentClassRequest
+     * @param QueryStudentClassHeaders $headers QueryStudentClassHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryStudentClassResponse QueryStudentClassResponse
+     */
+    public function queryStudentClassWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->classId)) {
+            $body['classId'] = $request->classId;
+        }
+        if (!Utils::isUnset($request->classType)) {
+            $body['classType'] = $request->classType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->studentUserIds)) {
+            $body['studentUserIds'] = $request->studentUserIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryStudentClass',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/students/classes/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryStudentClassResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询学生班级
+     *  *
+     * @param QueryStudentClassRequest $request QueryStudentClassRequest
+     *
+     * @return QueryStudentClassResponse QueryStudentClassResponse
+     */
+    public function queryStudentClass($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryStudentClassHeaders([]);
+
+        return $this->queryStudentClassWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询教授某学科老师列表
      *  *
      * @param QuerySubjectTeachersRequest $request QuerySubjectTeachersRequest
@@ -8426,6 +9974,135 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryTeachSubjectsHeaders([]);
 
         return $this->queryTeachSubjectsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询老师课程
+     *  *
+     * @param QueryTeacherCourseRequest $request QueryTeacherCourseRequest
+     * @param QueryTeacherCourseHeaders $headers QueryTeacherCourseHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryTeacherCourseResponse QueryTeacherCourseResponse
+     */
+    public function queryTeacherCourseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->isvCourseIdList)) {
+            $body['isvCourseIdList'] = $request->isvCourseIdList;
+        }
+        if (!Utils::isUnset($request->teacherUserId)) {
+            $body['teacherUserId'] = $request->teacherUserId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryTeacherCourse',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/teachers/courses/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryTeacherCourseResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询老师课程
+     *  *
+     * @param QueryTeacherCourseRequest $request QueryTeacherCourseRequest
+     *
+     * @return QueryTeacherCourseResponse QueryTeacherCourseResponse
+     */
+    public function queryTeacherCourse($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryTeacherCourseHeaders([]);
+
+        return $this->queryTeacherCourseWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询调代课记录
+     *  *
+     * @param QueryTransferCourseRequest $request QueryTransferCourseRequest
+     * @param QueryTransferCourseHeaders $headers QueryTransferCourseHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryTransferCourseResponse QueryTransferCourseResponse
+     */
+    public function queryTransferCourseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->isvRecordId)) {
+            $body['isvRecordId'] = $request->isvRecordId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryTransferCourse',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/transferRecords/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryTransferCourseResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询调代课记录
+     *  *
+     * @param QueryTransferCourseRequest $request QueryTransferCourseRequest
+     *
+     * @return QueryTransferCourseResponse QueryTransferCourseResponse
+     */
+    public function queryTransferCourse($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryTransferCourseHeaders([]);
+
+        return $this->queryTransferCourseWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -10605,5 +12282,71 @@ class Dingtalk extends OpenApiClient
         $headers = new ValidateUserRoleHeaders([]);
 
         return $this->validateUserRoleWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询班级课程
+     *  *
+     * @param QueryClassCourseRequest $request QueryClassCourseRequest
+     * @param QueryClassCourseHeaders $headers QueryClassCourseHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryClassCourseResponse QueryClassCourseResponse
+     */
+    public function queryClassCourseWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->classId)) {
+            $body['classId'] = $request->classId;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->isvCourseId)) {
+            $body['isvCourseId'] = $request->isvCourseId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'queryClassCourse',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/classes/courses/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryClassCourseResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询班级课程
+     *  *
+     * @param QueryClassCourseRequest $request QueryClassCourseRequest
+     *
+     * @return QueryClassCourseResponse QueryClassCourseResponse
+     */
+    public function queryClassCourse($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryClassCourseHeaders([]);
+
+        return $this->queryClassCourseWithOptions($request, $headers, $runtime);
     }
 }

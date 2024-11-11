@@ -53,6 +53,10 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryEnterpriseAccountByPag
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryInstancePaymentOrderDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryInstancePaymentOrderDetailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryInstancePaymentOrderDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryInvoiceTransferDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryInvoiceTransferDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryInvoiceTransferDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryInvoiceTransferDataShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentRecallFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentRecallFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryPaymentRecallFileResponse;
@@ -83,6 +87,8 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateInstanceOrderInfoHead
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateInstanceOrderInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateInstanceOrderInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateInstanceOrderInfoShrinkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateInvoiceDataTransferDoneHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateInvoiceDataTransferDoneResponse;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -1131,6 +1137,68 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 发票数据迁移，根据数据key查询具体数据data
+     *  *
+     * @param QueryInvoiceTransferDataRequest $tmpReq  QueryInvoiceTransferDataRequest
+     * @param QueryInvoiceTransferDataHeaders $headers QueryInvoiceTransferDataHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryInvoiceTransferDataResponse QueryInvoiceTransferDataResponse
+     */
+    public function queryInvoiceTransferDataWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new QueryInvoiceTransferDataShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->body)) {
+            $request->bodyShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->body, 'body', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->bodyShrink)) {
+            $query['body'] = $request->bodyShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryInvoiceTransferData',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/invoices/transferredDatas/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryInvoiceTransferDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 发票数据迁移，根据数据key查询具体数据data
+     *  *
+     * @param QueryInvoiceTransferDataRequest $request QueryInvoiceTransferDataRequest
+     *
+     * @return QueryInvoiceTransferDataResponse QueryInvoiceTransferDataResponse
+     */
+    public function queryInvoiceTransferData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryInvoiceTransferDataHeaders([]);
+
+        return $this->queryInvoiceTransferDataWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询支付回单信息
      *  *
      * @param string                        $instanceId
@@ -1779,5 +1847,53 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateInstanceOrderInfoHeaders([]);
 
         return $this->updateInstanceOrderInfoWithOptions($instanceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 发票数据迁移，新发票应用上报已成功搬移数据
+     *  *
+     * @param UpdateInvoiceDataTransferDoneHeaders $headers UpdateInvoiceDataTransferDoneHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateInvoiceDataTransferDoneResponse UpdateInvoiceDataTransferDoneResponse
+     */
+    public function updateInvoiceDataTransferDoneWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateInvoiceDataTransferDone',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/invoices/transferredDatas/statuses',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateInvoiceDataTransferDoneResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 发票数据迁移，新发票应用上报已成功搬移数据
+     *  *
+     * @return UpdateInvoiceDataTransferDoneResponse UpdateInvoiceDataTransferDoneResponse
+     */
+    public function updateInvoiceDataTransferDone()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateInvoiceDataTransferDoneHeaders([]);
+
+        return $this->updateInvoiceDataTransferDoneWithOptions($headers, $runtime);
     }
 }
