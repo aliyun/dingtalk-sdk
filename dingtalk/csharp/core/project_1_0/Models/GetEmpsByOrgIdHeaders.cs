@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
         [Validation(Required=false)]
         public string DingAccessTokenType { get; set; }
 
+        [NameInMap("dingIsvOrgId")]
+        [Validation(Required=false)]
+        public string DingIsvOrgId { get; set; }
+
         [NameInMap("dingOrgId")]
         [Validation(Required=false)]
         public string DingOrgId { get; set; }

@@ -87,6 +87,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
         [Validation(Required=false)]
         public long? StartDate { get; set; }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>50423414443123</para>
+        /// </summary>
+        [NameInMap("userId")]
+        [Validation(Required=false)]
+        public string UserId { get; set; }
+
     }
 
 }

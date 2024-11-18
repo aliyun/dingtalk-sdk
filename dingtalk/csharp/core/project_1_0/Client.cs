@@ -2583,6 +2583,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             {
                 realHeaders["dingAccessTokenType"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingAccessTokenType);
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingIsvOrgId))
+            {
+                realHeaders["dingIsvOrgId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingIsvOrgId);
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
             {
                 realHeaders["dingOrgId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingOrgId);
@@ -2653,6 +2657,10 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingAccessTokenType))
             {
                 realHeaders["dingAccessTokenType"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingAccessTokenType);
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingIsvOrgId))
+            {
+                realHeaders["dingIsvOrgId"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.DingIsvOrgId);
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.DingOrgId))
             {

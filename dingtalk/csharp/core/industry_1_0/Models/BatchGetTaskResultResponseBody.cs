@@ -25,6 +25,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 [Validation(Required=false)]
                 public string AudioText { get; set; }
 
+                [NameInMap("audioTextFormatted")]
+                [Validation(Required=false)]
+                public string AudioTextFormatted { get; set; }
+
                 /// <summary>
                 /// <b>Example:</b>
                 /// <para>2024-05-14</para>

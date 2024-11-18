@@ -13,9 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0.Models
         [Validation(Required=false)]
         public SmartQuoteQueryServiceResponseBodyResult Result { get; set; }
         public class SmartQuoteQueryServiceResponseBodyResult : TeaModel {
-            [NameInMap("response")]
+            [NameInMap("taskId")]
             [Validation(Required=false)]
-            public string Response { get; set; }
+            public string TaskId { get; set; }
 
         }
 
