@@ -2,18 +2,18 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\SmartQuoteQueryServiceResponseBody;
+namespace AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class result extends Model
+class QueryChatAIOXMInfoResponseBody extends Model
 {
     /**
      * @var string
      */
-    public $taskId;
+    public $result;
     protected $_name = [
-        'taskId' => 'taskId',
+        'result' => 'result',
     ];
 
     public function validate()
@@ -23,8 +23,8 @@ class result extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->taskId) {
-            $res['taskId'] = $this->taskId;
+        if (null !== $this->result) {
+            $res['result'] = $this->result;
         }
 
         return $res;
@@ -33,13 +33,13 @@ class result extends Model
     /**
      * @param array $map
      *
-     * @return result
+     * @return QueryChatAIOXMInfoResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['taskId'])) {
-            $model->taskId = $map['taskId'];
+        if (isset($map['result'])) {
+            $model->result = $map['result'];
         }
 
         return $model;

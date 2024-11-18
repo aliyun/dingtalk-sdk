@@ -338,6 +338,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryAllMemberByGroupResponse
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryBizOptLogHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryBizOptLogRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryBizOptLogResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryChatAIOXMInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryChatAIOXMInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryChatAIOXMInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentExtendInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentExtendInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\QueryDepartmentExtendInfoResponse;
@@ -8092,6 +8095,63 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryBizOptLogHeaders([]);
 
         return $this->queryBizOptLogWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取专属AI平台信息
+     *  *
+     * @param QueryChatAIOXMInfoRequest $request QueryChatAIOXMInfoRequest
+     * @param QueryChatAIOXMInfoHeaders $headers QueryChatAIOXMInfoHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryChatAIOXMInfoResponse QueryChatAIOXMInfoResponse
+     */
+    public function queryChatAIOXMInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->code)) {
+            $body['code'] = $request->code;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryChatAIOXMInfo',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatai/oxm/infos/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryChatAIOXMInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取专属AI平台信息
+     *  *
+     * @param QueryChatAIOXMInfoRequest $request QueryChatAIOXMInfoRequest
+     *
+     * @return QueryChatAIOXMInfoResponse QueryChatAIOXMInfoResponse
+     */
+    public function queryChatAIOXMInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryChatAIOXMInfoHeaders([]);
+
+        return $this->queryChatAIOXMInfoWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -33,6 +33,9 @@ use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\QueryMemoryLearningTaskRespon
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\SmartQuoteDataServiceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\SmartQuoteDataServiceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\SmartQuoteDataServiceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\SmartQuoteQueryResultServiceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\SmartQuoteQueryResultServiceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\SmartQuoteQueryResultServiceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\SmartQuoteQueryServiceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\SmartQuoteQueryServiceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\SmartQuoteQueryServiceResponse;
@@ -653,6 +656,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询智能报价结果
+     *  *
+     * @param SmartQuoteQueryResultServiceRequest $request SmartQuoteQueryResultServiceRequest
+     * @param SmartQuoteQueryResultServiceHeaders $headers SmartQuoteQueryResultServiceHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SmartQuoteQueryResultServiceResponse SmartQuoteQueryResultServiceResponse
+     */
+    public function smartQuoteQueryResultServiceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->taskId)) {
+            $body['taskId'] = $request->taskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SmartQuoteQueryResultService',
+            'version'     => 'aiPaaS_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/aiPaaS/nl2x/smartQuotations/results/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SmartQuoteQueryResultServiceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询智能报价结果
+     *  *
+     * @param SmartQuoteQueryResultServiceRequest $request SmartQuoteQueryResultServiceRequest
+     *
+     * @return SmartQuoteQueryResultServiceResponse SmartQuoteQueryResultServiceResponse
+     */
+    public function smartQuoteQueryResultService($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SmartQuoteQueryResultServiceHeaders([]);
+
+        return $this->smartQuoteQueryResultServiceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询智能报价
      *  *
      * @param SmartQuoteQueryServiceRequest $request SmartQuoteQueryServiceRequest
@@ -683,7 +743,7 @@ class Dingtalk extends OpenApiClient
             'action'      => 'SmartQuoteQueryService',
             'version'     => 'aiPaaS_1.0',
             'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/aiPaaS/nl2x/smartQuotations/query',
+            'pathname'    => '/v1.0/aiPaaS/nl2x/smartQuotations/triggerQuery',
             'method'      => 'POST',
             'authType'    => 'AK',
             'style'       => 'ROA',

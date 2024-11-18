@@ -48,6 +48,13 @@ class QueryAccountTradeByPageRequest extends Model
      * @var int
      */
     public $startDate;
+
+    /**
+     * @example 50423414443123
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
         'accountId'  => 'accountId',
         'endDate'    => 'endDate',
@@ -55,6 +62,7 @@ class QueryAccountTradeByPageRequest extends Model
         'pageNumber' => 'pageNumber',
         'pageSize'   => 'pageSize',
         'startDate'  => 'startDate',
+        'userId'     => 'userId',
     ];
 
     public function validate()
@@ -81,6 +89,9 @@ class QueryAccountTradeByPageRequest extends Model
         }
         if (null !== $this->startDate) {
             $res['startDate'] = $this->startDate;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -111,6 +122,9 @@ class QueryAccountTradeByPageRequest extends Model
         }
         if (isset($map['startDate'])) {
             $model->startDate = $map['startDate'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

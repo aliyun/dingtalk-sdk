@@ -17,6 +17,11 @@ class result extends Model
     public $audioText;
 
     /**
+     * @var string
+     */
+    public $audioTextFormatted;
+
+    /**
      * @example 2024-05-14
      *
      * @var string
@@ -56,13 +61,14 @@ class result extends Model
      */
     public $total;
     protected $_name = [
-        'audioText' => 'audioText',
-        'date'      => 'date',
-        'desc'      => 'desc',
-        'id'        => 'id',
-        'items'     => 'items',
-        'name'      => 'name',
-        'total'     => 'total',
+        'audioText'          => 'audioText',
+        'audioTextFormatted' => 'audioTextFormatted',
+        'date'               => 'date',
+        'desc'               => 'desc',
+        'id'                 => 'id',
+        'items'              => 'items',
+        'name'               => 'name',
+        'total'              => 'total',
     ];
 
     public function validate()
@@ -74,6 +80,9 @@ class result extends Model
         $res = [];
         if (null !== $this->audioText) {
             $res['audioText'] = $this->audioText;
+        }
+        if (null !== $this->audioTextFormatted) {
+            $res['audioTextFormatted'] = $this->audioTextFormatted;
         }
         if (null !== $this->date) {
             $res['date'] = $this->date;
@@ -113,6 +122,9 @@ class result extends Model
         $model = new self();
         if (isset($map['audioText'])) {
             $model->audioText = $map['audioText'];
+        }
+        if (isset($map['audioTextFormatted'])) {
+            $model->audioTextFormatted = $map['audioTextFormatted'];
         }
         if (isset($map['date'])) {
             $model->date = $map['date'];

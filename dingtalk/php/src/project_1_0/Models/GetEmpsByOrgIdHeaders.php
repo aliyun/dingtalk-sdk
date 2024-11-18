@@ -18,6 +18,11 @@ class GetEmpsByOrgIdHeaders extends Model
     /**
      * @var string
      */
+    public $dingIsvOrgId;
+
+    /**
+     * @var string
+     */
     public $dingOrgId;
 
     /**
@@ -26,6 +31,7 @@ class GetEmpsByOrgIdHeaders extends Model
     public $xAcsDingtalkAccessToken;
     protected $_name = [
         'dingAccessTokenType'     => 'dingAccessTokenType',
+        'dingIsvOrgId'            => 'dingIsvOrgId',
         'dingOrgId'               => 'dingOrgId',
         'xAcsDingtalkAccessToken' => 'x-acs-dingtalk-access-token',
     ];
@@ -42,6 +48,9 @@ class GetEmpsByOrgIdHeaders extends Model
         }
         if (null !== $this->dingAccessTokenType) {
             $res['dingAccessTokenType'] = $this->dingAccessTokenType;
+        }
+        if (null !== $this->dingIsvOrgId) {
+            $res['dingIsvOrgId'] = $this->dingIsvOrgId;
         }
         if (null !== $this->dingOrgId) {
             $res['dingOrgId'] = $this->dingOrgId;
@@ -66,6 +75,9 @@ class GetEmpsByOrgIdHeaders extends Model
         }
         if (isset($map['dingAccessTokenType'])) {
             $model->dingAccessTokenType = $map['dingAccessTokenType'];
+        }
+        if (isset($map['dingIsvOrgId'])) {
+            $model->dingIsvOrgId = $map['dingIsvOrgId'];
         }
         if (isset($map['dingOrgId'])) {
             $model->dingOrgId = $map['dingOrgId'];

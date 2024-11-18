@@ -149,6 +149,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateStudentClassResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTeacherCourseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTeacherCourseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTeacherCourseResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTimerCardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTimerCardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTimerCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTokenHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTokenRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateTokenResponse;
@@ -247,6 +250,12 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetDefaultChildResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetEduUserIdentityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetEduUserIdentityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetEduUserIdentityResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetFileDownloadInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetFileDownloadInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetFileDownloadInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetImageTempDownloadUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetImageTempDownloadUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetImageTempDownloadUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCourseDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCourseDetailResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetOpenCoursesHeaders;
@@ -453,6 +462,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SaveStudentLearningDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendAiCardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendAiCardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendAiCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendMessageResponse;
@@ -4297,6 +4309,81 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 套件-创建定时卡片
+     *  *
+     * @param CreateTimerCardRequest $request CreateTimerCardRequest
+     * @param CreateTimerCardHeaders $headers CreateTimerCardHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateTimerCardResponse CreateTimerCardResponse
+     */
+    public function createTimerCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actionTime)) {
+            $body['actionTime'] = $request->actionTime;
+        }
+        if (!Utils::isUnset($request->bizData)) {
+            $body['bizData'] = $request->bizData;
+        }
+        if (!Utils::isUnset($request->bizType)) {
+            $body['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->identifier)) {
+            $body['identifier'] = $request->identifier;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->memo)) {
+            $body['memo'] = $request->memo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateTimerCard',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/timerCards',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateTimerCardResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 套件-创建定时卡片
+     *  *
+     * @param CreateTimerCardRequest $request CreateTimerCardRequest
+     *
+     * @return CreateTimerCardResponse CreateTimerCardResponse
+     */
+    public function createTimerCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateTimerCardHeaders([]);
+
+        return $this->createTimerCardWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 创建授权token
      *  *
      * @param CreateTokenRequest $request CreateTokenRequest
@@ -6404,6 +6491,126 @@ class Dingtalk extends OpenApiClient
         $headers = new GetEduUserIdentityHeaders([]);
 
         return $this->getEduUserIdentityWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取文件下载信息
+     *  *
+     * @param GetFileDownloadInfoRequest $request GetFileDownloadInfoRequest
+     * @param GetFileDownloadInfoHeaders $headers GetFileDownloadInfoHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetFileDownloadInfoResponse GetFileDownloadInfoResponse
+     */
+    public function getFileDownloadInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->fileIdList)) {
+            $body['fileIdList'] = $request->fileIdList;
+        }
+        if (!Utils::isUnset($request->spaceId)) {
+            $body['spaceId'] = $request->spaceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetFileDownloadInfo',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/files/downloadInfos/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetFileDownloadInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取文件下载信息
+     *  *
+     * @param GetFileDownloadInfoRequest $request GetFileDownloadInfoRequest
+     *
+     * @return GetFileDownloadInfoResponse GetFileDownloadInfoResponse
+     */
+    public function getFileDownloadInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFileDownloadInfoHeaders([]);
+
+        return $this->getFileDownloadInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取图片下载信息
+     *  *
+     * @param GetImageTempDownloadUrlRequest $request GetImageTempDownloadUrlRequest
+     * @param GetImageTempDownloadUrlHeaders $headers GetImageTempDownloadUrlHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetImageTempDownloadUrlResponse GetImageTempDownloadUrlResponse
+     */
+    public function getImageTempDownloadUrlWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->mediaId)) {
+            $body['mediaId'] = $request->mediaId;
+        }
+        if (!Utils::isUnset($request->sourceType)) {
+            $body['sourceType'] = $request->sourceType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetImageTempDownloadUrl',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/images/tempDownloadUrls/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetImageTempDownloadUrlResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取图片下载信息
+     *  *
+     * @param GetImageTempDownloadUrlRequest $request GetImageTempDownloadUrlRequest
+     *
+     * @return GetImageTempDownloadUrlResponse GetImageTempDownloadUrlResponse
+     */
+    public function getImageTempDownloadUrl($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetImageTempDownloadUrlHeaders([]);
+
+        return $this->getImageTempDownloadUrlWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -10778,6 +10985,78 @@ class Dingtalk extends OpenApiClient
         $headers = new SearchTeachersHeaders([]);
 
         return $this->searchTeachersWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 套件-发送AI卡片
+     *  *
+     * @param SendAiCardRequest $request SendAiCardRequest
+     * @param SendAiCardHeaders $headers SendAiCardHeaders
+     * @param RuntimeOptions    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SendAiCardResponse SendAiCardResponse
+     */
+    public function sendAiCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actionType)) {
+            $body['actionType'] = $request->actionType;
+        }
+        if (!Utils::isUnset($request->bizData)) {
+            $body['bizData'] = $request->bizData;
+        }
+        if (!Utils::isUnset($request->cardChannel)) {
+            $body['cardChannel'] = $request->cardChannel;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->identifier)) {
+            $body['identifier'] = $request->identifier;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SendAiCard',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/aiCards/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SendAiCardResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 套件-发送AI卡片
+     *  *
+     * @param SendAiCardRequest $request SendAiCardRequest
+     *
+     * @return SendAiCardResponse SendAiCardResponse
+     */
+    public function sendAiCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendAiCardHeaders([]);
+
+        return $this->sendAiCardWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -2,11 +2,11 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\SmartQuoteQueryServiceResponseBody;
+namespace AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class result extends Model
+class SmartQuoteQueryResultServiceRequest extends Model
 {
     /**
      * @var string
@@ -33,7 +33,7 @@ class result extends Model
     /**
      * @param array $map
      *
-     * @return result
+     * @return SmartQuoteQueryResultServiceRequest
      */
     public static function fromMap($map = [])
     {

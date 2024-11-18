@@ -1240,6 +1240,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($headers->dingAccessTokenType)) {
             $realHeaders['dingAccessTokenType'] = Utils::toJSONString($headers->dingAccessTokenType);
         }
+        if (!Utils::isUnset($headers->dingIsvOrgId)) {
+            $realHeaders['dingIsvOrgId'] = Utils::toJSONString($headers->dingIsvOrgId);
+        }
         if (!Utils::isUnset($headers->dingOrgId)) {
             $realHeaders['dingOrgId'] = Utils::toJSONString($headers->dingOrgId);
         }
