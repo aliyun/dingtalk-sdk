@@ -1422,6 +1422,8 @@ class Client(OpenApiClient):
             body['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.start_date):
             body['startDate'] = request.start_date
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1475,6 +1477,8 @@ class Client(OpenApiClient):
             body['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.start_date):
             body['startDate'] = request.start_date
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers

@@ -4,6 +4,57 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class ResultValue(TeaModel):
+    def __init__(
+        self,
+        thumbnail: str = None,
+        file_size: int = None,
+        extension: str = None,
+        file_name: str = None,
+        url: str = None,
+    ):
+        self.thumbnail = thumbnail
+        self.file_size = file_size
+        self.extension = extension
+        self.file_name = file_name
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.thumbnail is not None:
+            result['thumbnail'] = self.thumbnail
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('thumbnail') is not None:
+            self.thumbnail = m.get('thumbnail')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
 class ActivateDeviceHeaders(TeaModel):
     def __init__(
         self,
@@ -11953,6 +12004,176 @@ class CreateTeacherCourseResponse(TeaModel):
         return self
 
 
+class CreateTimerCardHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateTimerCardRequest(TeaModel):
+    def __init__(
+        self,
+        action_time: int = None,
+        biz_data: str = None,
+        biz_type: str = None,
+        corp_id: str = None,
+        identifier: str = None,
+        isv_code: str = None,
+        memo: str = None,
+    ):
+        self.action_time = action_time
+        self.biz_data = biz_data
+        self.biz_type = biz_type
+        self.corp_id = corp_id
+        self.identifier = identifier
+        self.isv_code = isv_code
+        self.memo = memo
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_time is not None:
+            result['actionTime'] = self.action_time
+        if self.biz_data is not None:
+            result['bizData'] = self.biz_data
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.identifier is not None:
+            result['identifier'] = self.identifier
+        if self.isv_code is not None:
+            result['isvCode'] = self.isv_code
+        if self.memo is not None:
+            result['memo'] = self.memo
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionTime') is not None:
+            self.action_time = m.get('actionTime')
+        if m.get('bizData') is not None:
+            self.biz_data = m.get('bizData')
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('identifier') is not None:
+            self.identifier = m.get('identifier')
+        if m.get('isvCode') is not None:
+            self.isv_code = m.get('isvCode')
+        if m.get('memo') is not None:
+            self.memo = m.get('memo')
+        return self
+
+
+class CreateTimerCardResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        sucess: bool = None,
+    ):
+        self.result = result
+        self.sucess = sucess
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.sucess is not None:
+            result['sucess'] = self.sucess
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('sucess') is not None:
+            self.sucess = m.get('sucess')
+        return self
+
+
+class CreateTimerCardResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateTimerCardResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateTimerCardResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateTokenHeaders(TeaModel):
     def __init__(
         self,
@@ -17943,6 +18164,345 @@ class GetEduUserIdentityResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetEduUserIdentityResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetFileDownloadInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetFileDownloadInfoRequest(TeaModel):
+    def __init__(
+        self,
+        file_id_list: List[str] = None,
+        space_id: int = None,
+    ):
+        # This parameter is required.
+        self.file_id_list = file_id_list
+        # This parameter is required.
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id_list is not None:
+            result['fileIdList'] = self.file_id_list
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileIdList') is not None:
+            self.file_id_list = m.get('fileIdList')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class GetFileDownloadInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: Dict[str, ResultValue] = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            for v in self.result.values():
+                if v:
+                    v.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = {}
+        if self.result is not None:
+            for k, v in self.result.items():
+                result['result'][k] = v.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = {}
+        if m.get('result') is not None:
+            for k, v in m.get('result').items():
+                temp_model = ResultValue()
+                self.result[k] = temp_model.from_map(v)
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetFileDownloadInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetFileDownloadInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetFileDownloadInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetImageTempDownloadUrlHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetImageTempDownloadUrlRequest(TeaModel):
+    def __init__(
+        self,
+        media_id: str = None,
+        source_type: str = None,
+    ):
+        # This parameter is required.
+        self.media_id = media_id
+        # This parameter is required.
+        self.source_type = source_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        if self.source_type is not None:
+            result['sourceType'] = self.source_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        if m.get('sourceType') is not None:
+            self.source_type = m.get('sourceType')
+        return self
+
+
+class GetImageTempDownloadUrlResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        extension: str = None,
+        file_name: str = None,
+        file_size: int = None,
+        url: str = None,
+    ):
+        self.extension = extension
+        self.file_name = file_name
+        self.file_size = file_size
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
+class GetImageTempDownloadUrlResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: GetImageTempDownloadUrlResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetImageTempDownloadUrlResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetImageTempDownloadUrlResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetImageTempDownloadUrlResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetImageTempDownloadUrlResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -34126,6 +34686,170 @@ class SearchTeachersResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SearchTeachersResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SendAiCardHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SendAiCardRequest(TeaModel):
+    def __init__(
+        self,
+        action_type: str = None,
+        biz_data: str = None,
+        card_channel: str = None,
+        corp_id: str = None,
+        identifier: str = None,
+        isv_code: str = None,
+    ):
+        self.action_type = action_type
+        self.biz_data = biz_data
+        self.card_channel = card_channel
+        self.corp_id = corp_id
+        self.identifier = identifier
+        self.isv_code = isv_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_type is not None:
+            result['actionType'] = self.action_type
+        if self.biz_data is not None:
+            result['bizData'] = self.biz_data
+        if self.card_channel is not None:
+            result['cardChannel'] = self.card_channel
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        if self.identifier is not None:
+            result['identifier'] = self.identifier
+        if self.isv_code is not None:
+            result['isvCode'] = self.isv_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionType') is not None:
+            self.action_type = m.get('actionType')
+        if m.get('bizData') is not None:
+            self.biz_data = m.get('bizData')
+        if m.get('cardChannel') is not None:
+            self.card_channel = m.get('cardChannel')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        if m.get('identifier') is not None:
+            self.identifier = m.get('identifier')
+        if m.get('isvCode') is not None:
+            self.isv_code = m.get('isvCode')
+        return self
+
+
+class SendAiCardResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SendAiCardResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SendAiCardResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SendAiCardResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

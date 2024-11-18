@@ -14406,6 +14406,120 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.QueryBizOptLogHeaders()
         return await self.query_biz_opt_log_with_options_async(request, headers, runtime)
 
+    def query_chat_aioxminfo_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.QueryChatAIOXMInfoRequest,
+        headers: dingtalkindustry__1__0_models.QueryChatAIOXMInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryChatAIOXMInfoResponse:
+        """
+        @summary 获取专属AI平台信息
+        
+        @param request: QueryChatAIOXMInfoRequest
+        @param headers: QueryChatAIOXMInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryChatAIOXMInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryChatAIOXMInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatai/oxm/infos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryChatAIOXMInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_chat_aioxminfo_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryChatAIOXMInfoRequest,
+        headers: dingtalkindustry__1__0_models.QueryChatAIOXMInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.QueryChatAIOXMInfoResponse:
+        """
+        @summary 获取专属AI平台信息
+        
+        @param request: QueryChatAIOXMInfoRequest
+        @param headers: QueryChatAIOXMInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryChatAIOXMInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryChatAIOXMInfo',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatai/oxm/infos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.QueryChatAIOXMInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_chat_aioxminfo(
+        self,
+        request: dingtalkindustry__1__0_models.QueryChatAIOXMInfoRequest,
+    ) -> dingtalkindustry__1__0_models.QueryChatAIOXMInfoResponse:
+        """
+        @summary 获取专属AI平台信息
+        
+        @param request: QueryChatAIOXMInfoRequest
+        @return: QueryChatAIOXMInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryChatAIOXMInfoHeaders()
+        return self.query_chat_aioxminfo_with_options(request, headers, runtime)
+
+    async def query_chat_aioxminfo_async(
+        self,
+        request: dingtalkindustry__1__0_models.QueryChatAIOXMInfoRequest,
+    ) -> dingtalkindustry__1__0_models.QueryChatAIOXMInfoResponse:
+        """
+        @summary 获取专属AI平台信息
+        
+        @param request: QueryChatAIOXMInfoRequest
+        @return: QueryChatAIOXMInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.QueryChatAIOXMInfoHeaders()
+        return await self.query_chat_aioxminfo_with_options_async(request, headers, runtime)
+
     def query_department_extend_info_with_options(
         self,
         request: dingtalkindustry__1__0_models.QueryDepartmentExtendInfoRequest,

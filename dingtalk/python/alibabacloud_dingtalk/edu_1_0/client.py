@@ -6874,6 +6874,144 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.CreateTeacherCourseHeaders()
         return await self.create_teacher_course_with_options_async(request, headers, runtime)
 
+    def create_timer_card_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CreateTimerCardRequest,
+        headers: dingtalkedu__1__0_models.CreateTimerCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateTimerCardResponse:
+        """
+        @summary 套件-创建定时卡片
+        
+        @param request: CreateTimerCardRequest
+        @param headers: CreateTimerCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTimerCardResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_time):
+            body['actionTime'] = request.action_time
+        if not UtilClient.is_unset(request.biz_data):
+            body['bizData'] = request.biz_data
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.identifier):
+            body['identifier'] = request.identifier
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.memo):
+            body['memo'] = request.memo
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateTimerCard',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/timerCards',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateTimerCardResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_timer_card_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateTimerCardRequest,
+        headers: dingtalkedu__1__0_models.CreateTimerCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateTimerCardResponse:
+        """
+        @summary 套件-创建定时卡片
+        
+        @param request: CreateTimerCardRequest
+        @param headers: CreateTimerCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateTimerCardResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_time):
+            body['actionTime'] = request.action_time
+        if not UtilClient.is_unset(request.biz_data):
+            body['bizData'] = request.biz_data
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.identifier):
+            body['identifier'] = request.identifier
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.memo):
+            body['memo'] = request.memo
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateTimerCard',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/timerCards',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateTimerCardResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_timer_card(
+        self,
+        request: dingtalkedu__1__0_models.CreateTimerCardRequest,
+    ) -> dingtalkedu__1__0_models.CreateTimerCardResponse:
+        """
+        @summary 套件-创建定时卡片
+        
+        @param request: CreateTimerCardRequest
+        @return: CreateTimerCardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateTimerCardHeaders()
+        return self.create_timer_card_with_options(request, headers, runtime)
+
+    async def create_timer_card_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateTimerCardRequest,
+    ) -> dingtalkedu__1__0_models.CreateTimerCardResponse:
+        """
+        @summary 套件-创建定时卡片
+        
+        @param request: CreateTimerCardRequest
+        @return: CreateTimerCardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateTimerCardHeaders()
+        return await self.create_timer_card_with_options_async(request, headers, runtime)
+
     def create_token_with_options(
         self,
         request: dingtalkedu__1__0_models.CreateTokenRequest,
@@ -10945,6 +11083,242 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.GetEduUserIdentityHeaders()
         return await self.get_edu_user_identity_with_options_async(request, headers, runtime)
+
+    def get_file_download_info_with_options(
+        self,
+        request: dingtalkedu__1__0_models.GetFileDownloadInfoRequest,
+        headers: dingtalkedu__1__0_models.GetFileDownloadInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetFileDownloadInfoResponse:
+        """
+        @summary 获取文件下载信息
+        
+        @param request: GetFileDownloadInfoRequest
+        @param headers: GetFileDownloadInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFileDownloadInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_id_list):
+            body['fileIdList'] = request.file_id_list
+        if not UtilClient.is_unset(request.space_id):
+            body['spaceId'] = request.space_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetFileDownloadInfo',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/files/downloadInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetFileDownloadInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_file_download_info_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.GetFileDownloadInfoRequest,
+        headers: dingtalkedu__1__0_models.GetFileDownloadInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetFileDownloadInfoResponse:
+        """
+        @summary 获取文件下载信息
+        
+        @param request: GetFileDownloadInfoRequest
+        @param headers: GetFileDownloadInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFileDownloadInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.file_id_list):
+            body['fileIdList'] = request.file_id_list
+        if not UtilClient.is_unset(request.space_id):
+            body['spaceId'] = request.space_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetFileDownloadInfo',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/files/downloadInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetFileDownloadInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_file_download_info(
+        self,
+        request: dingtalkedu__1__0_models.GetFileDownloadInfoRequest,
+    ) -> dingtalkedu__1__0_models.GetFileDownloadInfoResponse:
+        """
+        @summary 获取文件下载信息
+        
+        @param request: GetFileDownloadInfoRequest
+        @return: GetFileDownloadInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetFileDownloadInfoHeaders()
+        return self.get_file_download_info_with_options(request, headers, runtime)
+
+    async def get_file_download_info_async(
+        self,
+        request: dingtalkedu__1__0_models.GetFileDownloadInfoRequest,
+    ) -> dingtalkedu__1__0_models.GetFileDownloadInfoResponse:
+        """
+        @summary 获取文件下载信息
+        
+        @param request: GetFileDownloadInfoRequest
+        @return: GetFileDownloadInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetFileDownloadInfoHeaders()
+        return await self.get_file_download_info_with_options_async(request, headers, runtime)
+
+    def get_image_temp_download_url_with_options(
+        self,
+        request: dingtalkedu__1__0_models.GetImageTempDownloadUrlRequest,
+        headers: dingtalkedu__1__0_models.GetImageTempDownloadUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetImageTempDownloadUrlResponse:
+        """
+        @summary 获取图片下载信息
+        
+        @param request: GetImageTempDownloadUrlRequest
+        @param headers: GetImageTempDownloadUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetImageTempDownloadUrlResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        if not UtilClient.is_unset(request.source_type):
+            body['sourceType'] = request.source_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetImageTempDownloadUrl',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/images/tempDownloadUrls/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetImageTempDownloadUrlResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_image_temp_download_url_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.GetImageTempDownloadUrlRequest,
+        headers: dingtalkedu__1__0_models.GetImageTempDownloadUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetImageTempDownloadUrlResponse:
+        """
+        @summary 获取图片下载信息
+        
+        @param request: GetImageTempDownloadUrlRequest
+        @param headers: GetImageTempDownloadUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetImageTempDownloadUrlResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        if not UtilClient.is_unset(request.source_type):
+            body['sourceType'] = request.source_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetImageTempDownloadUrl',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/images/tempDownloadUrls/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetImageTempDownloadUrlResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_image_temp_download_url(
+        self,
+        request: dingtalkedu__1__0_models.GetImageTempDownloadUrlRequest,
+    ) -> dingtalkedu__1__0_models.GetImageTempDownloadUrlResponse:
+        """
+        @summary 获取图片下载信息
+        
+        @param request: GetImageTempDownloadUrlRequest
+        @return: GetImageTempDownloadUrlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetImageTempDownloadUrlHeaders()
+        return self.get_image_temp_download_url_with_options(request, headers, runtime)
+
+    async def get_image_temp_download_url_async(
+        self,
+        request: dingtalkedu__1__0_models.GetImageTempDownloadUrlRequest,
+    ) -> dingtalkedu__1__0_models.GetImageTempDownloadUrlResponse:
+        """
+        @summary 获取图片下载信息
+        
+        @param request: GetImageTempDownloadUrlRequest
+        @return: GetImageTempDownloadUrlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetImageTempDownloadUrlHeaders()
+        return await self.get_image_temp_download_url_with_options_async(request, headers, runtime)
 
     def get_open_course_detail_with_options(
         self,
@@ -19341,6 +19715,140 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.SearchTeachersHeaders()
         return await self.search_teachers_with_options_async(request, headers, runtime)
+
+    def send_ai_card_with_options(
+        self,
+        request: dingtalkedu__1__0_models.SendAiCardRequest,
+        headers: dingtalkedu__1__0_models.SendAiCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.SendAiCardResponse:
+        """
+        @summary 套件-发送AI卡片
+        
+        @param request: SendAiCardRequest
+        @param headers: SendAiCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendAiCardResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_type):
+            body['actionType'] = request.action_type
+        if not UtilClient.is_unset(request.biz_data):
+            body['bizData'] = request.biz_data
+        if not UtilClient.is_unset(request.card_channel):
+            body['cardChannel'] = request.card_channel
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.identifier):
+            body['identifier'] = request.identifier
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SendAiCard',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/aiCards/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.SendAiCardResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def send_ai_card_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.SendAiCardRequest,
+        headers: dingtalkedu__1__0_models.SendAiCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.SendAiCardResponse:
+        """
+        @summary 套件-发送AI卡片
+        
+        @param request: SendAiCardRequest
+        @param headers: SendAiCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendAiCardResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_type):
+            body['actionType'] = request.action_type
+        if not UtilClient.is_unset(request.biz_data):
+            body['bizData'] = request.biz_data
+        if not UtilClient.is_unset(request.card_channel):
+            body['cardChannel'] = request.card_channel
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.identifier):
+            body['identifier'] = request.identifier
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SendAiCard',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/aiCards/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.SendAiCardResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def send_ai_card(
+        self,
+        request: dingtalkedu__1__0_models.SendAiCardRequest,
+    ) -> dingtalkedu__1__0_models.SendAiCardResponse:
+        """
+        @summary 套件-发送AI卡片
+        
+        @param request: SendAiCardRequest
+        @return: SendAiCardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.SendAiCardHeaders()
+        return self.send_ai_card_with_options(request, headers, runtime)
+
+    async def send_ai_card_async(
+        self,
+        request: dingtalkedu__1__0_models.SendAiCardRequest,
+    ) -> dingtalkedu__1__0_models.SendAiCardResponse:
+        """
+        @summary 套件-发送AI卡片
+        
+        @param request: SendAiCardRequest
+        @return: SendAiCardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.SendAiCardHeaders()
+        return await self.send_ai_card_with_options_async(request, headers, runtime)
 
     def send_message_with_options(
         self,

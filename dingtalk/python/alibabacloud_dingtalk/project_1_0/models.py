@@ -3626,11 +3626,13 @@ class GetEmpsByOrgIdHeaders(TeaModel):
         self,
         common_headers: Dict[str, str] = None,
         ding_access_token_type: str = None,
+        ding_isv_org_id: str = None,
         ding_org_id: str = None,
         x_acs_dingtalk_access_token: str = None,
     ):
         self.common_headers = common_headers
         self.ding_access_token_type = ding_access_token_type
+        self.ding_isv_org_id = ding_isv_org_id
         self.ding_org_id = ding_org_id
         self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
 
@@ -3647,6 +3649,8 @@ class GetEmpsByOrgIdHeaders(TeaModel):
             result['commonHeaders'] = self.common_headers
         if self.ding_access_token_type is not None:
             result['dingAccessTokenType'] = self.ding_access_token_type
+        if self.ding_isv_org_id is not None:
+            result['dingIsvOrgId'] = self.ding_isv_org_id
         if self.ding_org_id is not None:
             result['dingOrgId'] = self.ding_org_id
         if self.x_acs_dingtalk_access_token is not None:
@@ -3659,6 +3663,8 @@ class GetEmpsByOrgIdHeaders(TeaModel):
             self.common_headers = m.get('commonHeaders')
         if m.get('dingAccessTokenType') is not None:
             self.ding_access_token_type = m.get('dingAccessTokenType')
+        if m.get('dingIsvOrgId') is not None:
+            self.ding_isv_org_id = m.get('dingIsvOrgId')
         if m.get('dingOrgId') is not None:
             self.ding_org_id = m.get('dingOrgId')
         if m.get('x-acs-dingtalk-access-token') is not None:

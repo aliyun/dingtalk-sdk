@@ -2348,6 +2348,7 @@ class QueryAccountTradeByPageRequest(TeaModel):
         page_number: int = None,
         page_size: int = None,
         start_date: int = None,
+        user_id: str = None,
     ):
         self.account_id = account_id
         self.end_date = end_date
@@ -2355,6 +2356,7 @@ class QueryAccountTradeByPageRequest(TeaModel):
         self.page_number = page_number
         self.page_size = page_size
         self.start_date = start_date
+        self.user_id = user_id
 
     def validate(self):
         if self.filter:
@@ -2378,6 +2380,8 @@ class QueryAccountTradeByPageRequest(TeaModel):
             result['pageSize'] = self.page_size
         if self.start_date is not None:
             result['startDate'] = self.start_date
+        if self.user_id is not None:
+            result['userId'] = self.user_id
         return result
 
     def from_map(self, m: dict = None):
@@ -2395,6 +2399,8 @@ class QueryAccountTradeByPageRequest(TeaModel):
             self.page_size = m.get('pageSize')
         if m.get('startDate') is not None:
             self.start_date = m.get('startDate')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
         return self
 
 

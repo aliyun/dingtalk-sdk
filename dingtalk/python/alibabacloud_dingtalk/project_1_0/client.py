@@ -1985,6 +1985,8 @@ class Client(OpenApiClient):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.ding_access_token_type):
             real_headers['dingAccessTokenType'] = UtilClient.to_jsonstring(headers.ding_access_token_type)
+        if not UtilClient.is_unset(headers.ding_isv_org_id):
+            real_headers['dingIsvOrgId'] = UtilClient.to_jsonstring(headers.ding_isv_org_id)
         if not UtilClient.is_unset(headers.ding_org_id):
             real_headers['dingOrgId'] = UtilClient.to_jsonstring(headers.ding_org_id)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
@@ -2036,6 +2038,8 @@ class Client(OpenApiClient):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.ding_access_token_type):
             real_headers['dingAccessTokenType'] = UtilClient.to_jsonstring(headers.ding_access_token_type)
+        if not UtilClient.is_unset(headers.ding_isv_org_id):
+            real_headers['dingIsvOrgId'] = UtilClient.to_jsonstring(headers.ding_isv_org_id)
         if not UtilClient.is_unset(headers.ding_org_id):
             real_headers['dingOrgId'] = UtilClient.to_jsonstring(headers.ding_org_id)
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
