@@ -42,6 +42,13 @@ public class QueryAccountTradeByPageRequest extends TeaModel {
     @NameInMap("startDate")
     public Long startDate;
 
+    /**
+     * <strong>example:</strong>
+     * <p>50423414443123</p>
+     */
+    @NameInMap("userId")
+    public String userId;
+
     public static QueryAccountTradeByPageRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryAccountTradeByPageRequest self = new QueryAccountTradeByPageRequest();
         return TeaModel.build(map, self);
@@ -93,6 +100,14 @@ public class QueryAccountTradeByPageRequest extends TeaModel {
     }
     public Long getStartDate() {
         return this.startDate;
+    }
+
+    public QueryAccountTradeByPageRequest setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+    public String getUserId() {
+        return this.userId;
     }
 
     public static class QueryAccountTradeByPageRequestFilter extends TeaModel {

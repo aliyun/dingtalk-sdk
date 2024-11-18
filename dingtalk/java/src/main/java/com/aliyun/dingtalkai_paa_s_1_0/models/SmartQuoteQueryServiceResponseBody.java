@@ -32,20 +32,20 @@ public class SmartQuoteQueryServiceResponseBody extends TeaModel {
     }
 
     public static class SmartQuoteQueryServiceResponseBodyResult extends TeaModel {
-        @NameInMap("response")
-        public String response;
+        @NameInMap("taskId")
+        public String taskId;
 
         public static SmartQuoteQueryServiceResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
             SmartQuoteQueryServiceResponseBodyResult self = new SmartQuoteQueryServiceResponseBodyResult();
             return TeaModel.build(map, self);
         }
 
-        public SmartQuoteQueryServiceResponseBodyResult setResponse(String response) {
-            this.response = response;
+        public SmartQuoteQueryServiceResponseBodyResult setTaskId(String taskId) {
+            this.taskId = taskId;
             return this;
         }
-        public String getResponse() {
-            return this.response;
+        public String getTaskId() {
+            return this.taskId;
         }
 
     }

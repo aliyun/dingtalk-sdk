@@ -1049,6 +1049,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             realHeaders.put("dingAccessTokenType", com.aliyun.teautil.Common.toJSONString(headers.dingAccessTokenType));
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(headers.dingIsvOrgId)) {
+            realHeaders.put("dingIsvOrgId", com.aliyun.teautil.Common.toJSONString(headers.dingIsvOrgId));
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(headers.dingOrgId)) {
             realHeaders.put("dingOrgId", com.aliyun.teautil.Common.toJSONString(headers.dingOrgId));
         }

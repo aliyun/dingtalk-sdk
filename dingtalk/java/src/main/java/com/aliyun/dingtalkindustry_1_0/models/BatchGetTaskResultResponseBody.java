@@ -81,6 +81,9 @@ public class BatchGetTaskResultResponseBody extends TeaModel {
         @NameInMap("audioText")
         public String audioText;
 
+        @NameInMap("audioTextFormatted")
+        public String audioTextFormatted;
+
         /**
          * <strong>example:</strong>
          * <p>2024-05-14</p>
@@ -130,6 +133,14 @@ public class BatchGetTaskResultResponseBody extends TeaModel {
         }
         public String getAudioText() {
             return this.audioText;
+        }
+
+        public BatchGetTaskResultResponseBodyTasksResult setAudioTextFormatted(String audioTextFormatted) {
+            this.audioTextFormatted = audioTextFormatted;
+            return this;
+        }
+        public String getAudioTextFormatted() {
+            return this.audioTextFormatted;
         }
 
         public BatchGetTaskResultResponseBodyTasksResult setDate(String date) {

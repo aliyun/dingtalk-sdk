@@ -10,6 +10,9 @@ public class GetEmpsByOrgIdHeaders extends TeaModel {
     @NameInMap("dingAccessTokenType")
     public String dingAccessTokenType;
 
+    @NameInMap("dingIsvOrgId")
+    public String dingIsvOrgId;
+
     @NameInMap("dingOrgId")
     public String dingOrgId;
 
@@ -35,6 +38,14 @@ public class GetEmpsByOrgIdHeaders extends TeaModel {
     }
     public String getDingAccessTokenType() {
         return this.dingAccessTokenType;
+    }
+
+    public GetEmpsByOrgIdHeaders setDingIsvOrgId(String dingIsvOrgId) {
+        this.dingIsvOrgId = dingIsvOrgId;
+        return this;
+    }
+    public String getDingIsvOrgId() {
+        return this.dingIsvOrgId;
     }
 
     public GetEmpsByOrgIdHeaders setDingOrgId(String dingOrgId) {
