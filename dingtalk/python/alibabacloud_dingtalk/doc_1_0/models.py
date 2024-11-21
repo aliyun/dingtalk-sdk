@@ -165,12 +165,12 @@ class AddCommentRequest(TeaModel):
         return self
 
 
-class AddCommentResponseBody(TeaModel):
+class AddCommentResponseBodyResult(TeaModel):
     def __init__(
         self,
-        success: bool = None,
+        comment_id: str = None,
     ):
-        self.success = success
+        self.comment_id = comment_id
 
     def validate(self):
         pass
@@ -181,12 +181,47 @@ class AddCommentResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.comment_id is not None:
+            result['commentId'] = self.comment_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commentId') is not None:
+            self.comment_id = m.get('commentId')
+        return self
+
+
+class AddCommentResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: AddCommentResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
         if self.success is not None:
             result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('result') is not None:
+            temp_model = AddCommentResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
         if m.get('success') is not None:
             self.success = m.get('success')
         return self

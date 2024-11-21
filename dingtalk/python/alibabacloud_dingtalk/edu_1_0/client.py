@@ -442,6 +442,8 @@ class Client(OpenApiClient):
             body['deptIdList'] = request.dept_id_list
         if not UtilClient.is_unset(request.dept_order_list):
             body['deptOrderList'] = request.dept_order_list
+        if not UtilClient.is_unset(request.dept_position_set):
+            body['deptPositionSet'] = request.dept_position_set
         if not UtilClient.is_unset(request.dept_title_list):
             body['deptTitleList'] = request.dept_title_list
         if not UtilClient.is_unset(request.email):
@@ -537,6 +539,8 @@ class Client(OpenApiClient):
             body['deptIdList'] = request.dept_id_list
         if not UtilClient.is_unset(request.dept_order_list):
             body['deptOrderList'] = request.dept_order_list
+        if not UtilClient.is_unset(request.dept_position_set):
+            body['deptPositionSet'] = request.dept_position_set
         if not UtilClient.is_unset(request.dept_title_list):
             body['deptTitleList'] = request.dept_title_list
         if not UtilClient.is_unset(request.email):
@@ -658,6 +662,8 @@ class Client(OpenApiClient):
             body['deptIdList'] = request.dept_id_list
         if not UtilClient.is_unset(request.dept_order_list):
             body['deptOrderList'] = request.dept_order_list
+        if not UtilClient.is_unset(request.dept_position_set):
+            body['deptPositionSet'] = request.dept_position_set
         if not UtilClient.is_unset(request.dept_title_list):
             body['deptTitleList'] = request.dept_title_list
         if not UtilClient.is_unset(request.email):
@@ -745,6 +751,8 @@ class Client(OpenApiClient):
             body['deptIdList'] = request.dept_id_list
         if not UtilClient.is_unset(request.dept_order_list):
             body['deptOrderList'] = request.dept_order_list
+        if not UtilClient.is_unset(request.dept_position_set):
+            body['deptPositionSet'] = request.dept_position_set
         if not UtilClient.is_unset(request.dept_title_list):
             body['deptTitleList'] = request.dept_title_list
         if not UtilClient.is_unset(request.email):
@@ -15782,6 +15790,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.job_number):
+            query['jobNumber'] = request.job_number
         if not UtilClient.is_unset(request.language):
             query['language'] = request.language
         if not UtilClient.is_unset(request.userid):
@@ -15827,6 +15837,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.job_number):
+            query['jobNumber'] = request.job_number
         if not UtilClient.is_unset(request.language):
             query['language'] = request.language
         if not UtilClient.is_unset(request.userid):
@@ -19850,6 +19862,140 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.SendAiCardHeaders()
         return await self.send_ai_card_with_options_async(request, headers, runtime)
 
+    def send_file_message_with_options(
+        self,
+        request: dingtalkedu__1__0_models.SendFileMessageRequest,
+        headers: dingtalkedu__1__0_models.SendFileMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.SendFileMessageResponse:
+        """
+        @summary 收藏文件消息发送
+        
+        @param request: SendFileMessageRequest
+        @param headers: SendFileMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendFileMessageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.file_name):
+            body['fileName'] = request.file_name
+        if not UtilClient.is_unset(request.file_size):
+            body['fileSize'] = request.file_size
+        if not UtilClient.is_unset(request.file_url):
+            body['fileUrl'] = request.file_url
+        if not UtilClient.is_unset(request.send_type):
+            body['sendType'] = request.send_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SendFileMessage',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/contents/files/messages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.SendFileMessageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def send_file_message_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.SendFileMessageRequest,
+        headers: dingtalkedu__1__0_models.SendFileMessageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.SendFileMessageResponse:
+        """
+        @summary 收藏文件消息发送
+        
+        @param request: SendFileMessageRequest
+        @param headers: SendFileMessageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendFileMessageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
+        if not UtilClient.is_unset(request.file_name):
+            body['fileName'] = request.file_name
+        if not UtilClient.is_unset(request.file_size):
+            body['fileSize'] = request.file_size
+        if not UtilClient.is_unset(request.file_url):
+            body['fileUrl'] = request.file_url
+        if not UtilClient.is_unset(request.send_type):
+            body['sendType'] = request.send_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SendFileMessage',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/contents/files/messages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.SendFileMessageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def send_file_message(
+        self,
+        request: dingtalkedu__1__0_models.SendFileMessageRequest,
+    ) -> dingtalkedu__1__0_models.SendFileMessageResponse:
+        """
+        @summary 收藏文件消息发送
+        
+        @param request: SendFileMessageRequest
+        @return: SendFileMessageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.SendFileMessageHeaders()
+        return self.send_file_message_with_options(request, headers, runtime)
+
+    async def send_file_message_async(
+        self,
+        request: dingtalkedu__1__0_models.SendFileMessageRequest,
+    ) -> dingtalkedu__1__0_models.SendFileMessageResponse:
+        """
+        @summary 收藏文件消息发送
+        
+        @param request: SendFileMessageRequest
+        @return: SendFileMessageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.SendFileMessageHeaders()
+        return await self.send_file_message_with_options_async(request, headers, runtime)
+
     def send_message_with_options(
         self,
         request: dingtalkedu__1__0_models.SendMessageRequest,
@@ -20914,6 +21060,8 @@ class Client(OpenApiClient):
             body['deptIdList'] = request.dept_id_list
         if not UtilClient.is_unset(request.dept_order_list):
             body['deptOrderList'] = request.dept_order_list
+        if not UtilClient.is_unset(request.dept_position_set):
+            body['deptPositionSet'] = request.dept_position_set
         if not UtilClient.is_unset(request.dept_title_list):
             body['deptTitleList'] = request.dept_title_list
         if not UtilClient.is_unset(request.email):
@@ -21007,6 +21155,8 @@ class Client(OpenApiClient):
             body['deptIdList'] = request.dept_id_list
         if not UtilClient.is_unset(request.dept_order_list):
             body['deptOrderList'] = request.dept_order_list
+        if not UtilClient.is_unset(request.dept_position_set):
+            body['deptPositionSet'] = request.dept_position_set
         if not UtilClient.is_unset(request.dept_title_list):
             body['deptTitleList'] = request.dept_title_list
         if not UtilClient.is_unset(request.email):
@@ -21126,6 +21276,8 @@ class Client(OpenApiClient):
             body['deptIdList'] = request.dept_id_list
         if not UtilClient.is_unset(request.dept_order_list):
             body['deptOrderList'] = request.dept_order_list
+        if not UtilClient.is_unset(request.dept_position_set):
+            body['deptPositionSet'] = request.dept_position_set
         if not UtilClient.is_unset(request.dept_title_list):
             body['deptTitleList'] = request.dept_title_list
         if not UtilClient.is_unset(request.email):
@@ -21209,6 +21361,8 @@ class Client(OpenApiClient):
             body['deptIdList'] = request.dept_id_list
         if not UtilClient.is_unset(request.dept_order_list):
             body['deptOrderList'] = request.dept_order_list
+        if not UtilClient.is_unset(request.dept_position_set):
+            body['deptPositionSet'] = request.dept_position_set
         if not UtilClient.is_unset(request.dept_title_list):
             body['deptTitleList'] = request.dept_title_list
         if not UtilClient.is_unset(request.email):

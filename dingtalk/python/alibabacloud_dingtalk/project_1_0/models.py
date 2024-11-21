@@ -2222,8 +2222,12 @@ class CreateTaskRequest(TeaModel):
 class CreateTaskResponseBodyResultCustomfieldsValue(TeaModel):
     def __init__(
         self,
+        id: str = None,
+        thumb_url: str = None,
         title: str = None,
     ):
+        self.id = id
+        self.thumb_url = thumb_url
         self.title = title
 
     def validate(self):
@@ -2235,12 +2239,20 @@ class CreateTaskResponseBodyResultCustomfieldsValue(TeaModel):
             return _map
 
         result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.thumb_url is not None:
+            result['thumbUrl'] = self.thumb_url
         if self.title is not None:
             result['title'] = self.title
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('thumbUrl') is not None:
+            self.thumb_url = m.get('thumbUrl')
         if m.get('title') is not None:
             self.title = m.get('title')
         return self
@@ -9790,8 +9802,12 @@ class UpdateCustomfieldValueRequest(TeaModel):
 class UpdateCustomfieldValueResponseBodyResultCustomFieldsValue(TeaModel):
     def __init__(
         self,
+        id: str = None,
+        thumb_url: str = None,
         title: str = None,
     ):
+        self.id = id
+        self.thumb_url = thumb_url
         self.title = title
 
     def validate(self):
@@ -9803,12 +9819,20 @@ class UpdateCustomfieldValueResponseBodyResultCustomFieldsValue(TeaModel):
             return _map
 
         result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.thumb_url is not None:
+            result['thumbUrl'] = self.thumb_url
         if self.title is not None:
             result['title'] = self.title
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('thumbUrl') is not None:
+            self.thumb_url = m.get('thumbUrl')
         if m.get('title') is not None:
             self.title = m.get('title')
         return self

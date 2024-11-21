@@ -749,6 +749,51 @@ class AddCollegeContactExclusiveRequestDeptOrderList(TeaModel):
         return self
 
 
+class AddCollegeContactExclusiveRequestDeptPositionSet(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        manager_user_id: str = None,
+        title: str = None,
+        work_place: str = None,
+    ):
+        self.dept_id = dept_id
+        self.manager_user_id = manager_user_id
+        self.title = title
+        self.work_place = work_place
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.manager_user_id is not None:
+            result['managerUserId'] = self.manager_user_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.work_place is not None:
+            result['workPlace'] = self.work_place
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('managerUserId') is not None:
+            self.manager_user_id = m.get('managerUserId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('workPlace') is not None:
+            self.work_place = m.get('workPlace')
+        return self
+
+
 class AddCollegeContactExclusiveRequestDeptTitleList(TeaModel):
     def __init__(
         self,
@@ -788,6 +833,7 @@ class AddCollegeContactExclusiveRequest(TeaModel):
         avatar_media_id: str = None,
         dept_id_list: List[int] = None,
         dept_order_list: List[AddCollegeContactExclusiveRequestDeptOrderList] = None,
+        dept_position_set: List[AddCollegeContactExclusiveRequestDeptPositionSet] = None,
         dept_title_list: List[AddCollegeContactExclusiveRequestDeptTitleList] = None,
         email: str = None,
         emp_type: str = None,
@@ -817,6 +863,7 @@ class AddCollegeContactExclusiveRequest(TeaModel):
         # This parameter is required.
         self.dept_id_list = dept_id_list
         self.dept_order_list = dept_order_list
+        self.dept_position_set = dept_position_set
         self.dept_title_list = dept_title_list
         self.email = email
         # This parameter is required.
@@ -854,6 +901,10 @@ class AddCollegeContactExclusiveRequest(TeaModel):
             for k in self.dept_order_list:
                 if k:
                     k.validate()
+        if self.dept_position_set:
+            for k in self.dept_position_set:
+                if k:
+                    k.validate()
         if self.dept_title_list:
             for k in self.dept_title_list:
                 if k:
@@ -873,6 +924,10 @@ class AddCollegeContactExclusiveRequest(TeaModel):
         if self.dept_order_list is not None:
             for k in self.dept_order_list:
                 result['deptOrderList'].append(k.to_map() if k else None)
+        result['deptPositionSet'] = []
+        if self.dept_position_set is not None:
+            for k in self.dept_position_set:
+                result['deptPositionSet'].append(k.to_map() if k else None)
         result['deptTitleList'] = []
         if self.dept_title_list is not None:
             for k in self.dept_title_list:
@@ -936,6 +991,11 @@ class AddCollegeContactExclusiveRequest(TeaModel):
             for k in m.get('deptOrderList'):
                 temp_model = AddCollegeContactExclusiveRequestDeptOrderList()
                 self.dept_order_list.append(temp_model.from_map(k))
+        self.dept_position_set = []
+        if m.get('deptPositionSet') is not None:
+            for k in m.get('deptPositionSet'):
+                temp_model = AddCollegeContactExclusiveRequestDeptPositionSet()
+                self.dept_position_set.append(temp_model.from_map(k))
         self.dept_title_list = []
         if m.get('deptTitleList') is not None:
             for k in m.get('deptTitleList'):
@@ -1171,6 +1231,51 @@ class AddCollegeContactUserRequestDeptOrderList(TeaModel):
         return self
 
 
+class AddCollegeContactUserRequestDeptPositionSet(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        manager_user_id: str = None,
+        title: str = None,
+        work_place: str = None,
+    ):
+        self.dept_id = dept_id
+        self.manager_user_id = manager_user_id
+        self.title = title
+        self.work_place = work_place
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.manager_user_id is not None:
+            result['managerUserId'] = self.manager_user_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.work_place is not None:
+            result['workPlace'] = self.work_place
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('managerUserId') is not None:
+            self.manager_user_id = m.get('managerUserId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('workPlace') is not None:
+            self.work_place = m.get('workPlace')
+        return self
+
+
 class AddCollegeContactUserRequestDeptTitleList(TeaModel):
     def __init__(
         self,
@@ -1209,6 +1314,7 @@ class AddCollegeContactUserRequest(TeaModel):
         self,
         dept_id_list: List[int] = None,
         dept_order_list: List[AddCollegeContactUserRequestDeptOrderList] = None,
+        dept_position_set: List[AddCollegeContactUserRequestDeptPositionSet] = None,
         dept_title_list: List[AddCollegeContactUserRequestDeptTitleList] = None,
         email: str = None,
         emp_type: str = None,
@@ -1234,6 +1340,7 @@ class AddCollegeContactUserRequest(TeaModel):
         # This parameter is required.
         self.dept_id_list = dept_id_list
         self.dept_order_list = dept_order_list
+        self.dept_position_set = dept_position_set
         self.dept_title_list = dept_title_list
         self.email = email
         # This parameter is required.
@@ -1265,6 +1372,10 @@ class AddCollegeContactUserRequest(TeaModel):
             for k in self.dept_order_list:
                 if k:
                     k.validate()
+        if self.dept_position_set:
+            for k in self.dept_position_set:
+                if k:
+                    k.validate()
         if self.dept_title_list:
             for k in self.dept_title_list:
                 if k:
@@ -1282,6 +1393,10 @@ class AddCollegeContactUserRequest(TeaModel):
         if self.dept_order_list is not None:
             for k in self.dept_order_list:
                 result['deptOrderList'].append(k.to_map() if k else None)
+        result['deptPositionSet'] = []
+        if self.dept_position_set is not None:
+            for k in self.dept_position_set:
+                result['deptPositionSet'].append(k.to_map() if k else None)
         result['deptTitleList'] = []
         if self.dept_title_list is not None:
             for k in self.dept_title_list:
@@ -1337,6 +1452,11 @@ class AddCollegeContactUserRequest(TeaModel):
             for k in m.get('deptOrderList'):
                 temp_model = AddCollegeContactUserRequestDeptOrderList()
                 self.dept_order_list.append(temp_model.from_map(k))
+        self.dept_position_set = []
+        if m.get('deptPositionSet') is not None:
+            for k in m.get('deptPositionSet'):
+                temp_model = AddCollegeContactUserRequestDeptPositionSet()
+                self.dept_position_set.append(temp_model.from_map(k))
         self.dept_title_list = []
         if m.get('deptTitleList') is not None:
             for k in m.get('deptTitleList'):
@@ -3485,9 +3605,11 @@ class BatchCreateStudentClassRequestStudentList(TeaModel):
     def __init__(
         self,
         attributes: str = None,
+        student_name: str = None,
         student_user_id: str = None,
     ):
         self.attributes = attributes
+        self.student_name = student_name
         self.student_user_id = student_user_id
 
     def validate(self):
@@ -3501,6 +3623,8 @@ class BatchCreateStudentClassRequestStudentList(TeaModel):
         result = dict()
         if self.attributes is not None:
             result['attributes'] = self.attributes
+        if self.student_name is not None:
+            result['studentName'] = self.student_name
         if self.student_user_id is not None:
             result['studentUserId'] = self.student_user_id
         return result
@@ -3509,6 +3633,8 @@ class BatchCreateStudentClassRequestStudentList(TeaModel):
         m = m or dict()
         if m.get('attributes') is not None:
             self.attributes = m.get('attributes')
+        if m.get('studentName') is not None:
+            self.student_name = m.get('studentName')
         if m.get('studentUserId') is not None:
             self.student_user_id = m.get('studentUserId')
         return self
@@ -27418,11 +27544,12 @@ class QueryCollegeContactUserDetailHeaders(TeaModel):
 class QueryCollegeContactUserDetailRequest(TeaModel):
     def __init__(
         self,
+        job_number: str = None,
         language: str = None,
         userid: str = None,
     ):
+        self.job_number = job_number
         self.language = language
-        # This parameter is required.
         self.userid = userid
 
     def validate(self):
@@ -27434,6 +27561,8 @@ class QueryCollegeContactUserDetailRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.job_number is not None:
+            result['jobNumber'] = self.job_number
         if self.language is not None:
             result['language'] = self.language
         if self.userid is not None:
@@ -27442,6 +27571,8 @@ class QueryCollegeContactUserDetailRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('jobNumber') is not None:
+            self.job_number = m.get('jobNumber')
         if m.get('language') is not None:
             self.language = m.get('language')
         if m.get('userid') is not None:
@@ -27479,6 +27610,57 @@ class QueryCollegeContactUserDetailResponseBodyResultDeptOrderList(TeaModel):
             self.dept_id = m.get('deptId')
         if m.get('order') is not None:
             self.order = m.get('order')
+        return self
+
+
+class QueryCollegeContactUserDetailResponseBodyResultDeptPositionSet(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        is_main: bool = None,
+        manager_user_id: str = None,
+        title: str = None,
+        work_place: str = None,
+    ):
+        self.dept_id = dept_id
+        self.is_main = is_main
+        self.manager_user_id = manager_user_id
+        self.title = title
+        self.work_place = work_place
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.is_main is not None:
+            result['isMain'] = self.is_main
+        if self.manager_user_id is not None:
+            result['managerUserId'] = self.manager_user_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.work_place is not None:
+            result['workPlace'] = self.work_place
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('isMain') is not None:
+            self.is_main = m.get('isMain')
+        if m.get('managerUserId') is not None:
+            self.manager_user_id = m.get('managerUserId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('workPlace') is not None:
+            self.work_place = m.get('workPlace')
         return self
 
 
@@ -27694,6 +27876,7 @@ class QueryCollegeContactUserDetailResponseBodyResult(TeaModel):
         boss: bool = None,
         dept_id_list: List[int] = None,
         dept_order_list: List[QueryCollegeContactUserDetailResponseBodyResultDeptOrderList] = None,
+        dept_position_set: List[QueryCollegeContactUserDetailResponseBodyResultDeptPositionSet] = None,
         dept_type_set: List[QueryCollegeContactUserDetailResponseBodyResultDeptTypeSet] = None,
         email: str = None,
         emp_type: str = None,
@@ -27732,6 +27915,7 @@ class QueryCollegeContactUserDetailResponseBodyResult(TeaModel):
         self.boss = boss
         self.dept_id_list = dept_id_list
         self.dept_order_list = dept_order_list
+        self.dept_position_set = dept_position_set
         self.dept_type_set = dept_type_set
         self.email = email
         self.emp_type = emp_type
@@ -27769,6 +27953,10 @@ class QueryCollegeContactUserDetailResponseBodyResult(TeaModel):
             for k in self.dept_order_list:
                 if k:
                     k.validate()
+        if self.dept_position_set:
+            for k in self.dept_position_set:
+                if k:
+                    k.validate()
         if self.dept_type_set:
             for k in self.dept_type_set:
                 if k:
@@ -27804,6 +27992,10 @@ class QueryCollegeContactUserDetailResponseBodyResult(TeaModel):
         if self.dept_order_list is not None:
             for k in self.dept_order_list:
                 result['deptOrderList'].append(k.to_map() if k else None)
+        result['deptPositionSet'] = []
+        if self.dept_position_set is not None:
+            for k in self.dept_position_set:
+                result['deptPositionSet'].append(k.to_map() if k else None)
         result['deptTypeSet'] = []
         if self.dept_type_set is not None:
             for k in self.dept_type_set:
@@ -27891,6 +28083,11 @@ class QueryCollegeContactUserDetailResponseBodyResult(TeaModel):
             for k in m.get('deptOrderList'):
                 temp_model = QueryCollegeContactUserDetailResponseBodyResultDeptOrderList()
                 self.dept_order_list.append(temp_model.from_map(k))
+        self.dept_position_set = []
+        if m.get('deptPositionSet') is not None:
+            for k in m.get('deptPositionSet'):
+                temp_model = QueryCollegeContactUserDetailResponseBodyResultDeptPositionSet()
+                self.dept_position_set.append(temp_model.from_map(k))
         self.dept_type_set = []
         if m.get('deptTypeSet') is not None:
             for k in m.get('deptTypeSet'):
@@ -34854,6 +35051,175 @@ class SendAiCardResponse(TeaModel):
         return self
 
 
+class SendFileMessageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SendFileMessageRequest(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        extension: str = None,
+        file_name: str = None,
+        file_size: int = None,
+        file_url: str = None,
+        send_type: str = None,
+    ):
+        # This parameter is required.
+        self.biz_id = biz_id
+        # This parameter is required.
+        self.extension = extension
+        # This parameter is required.
+        self.file_name = file_name
+        # This parameter is required.
+        self.file_size = file_size
+        # This parameter is required.
+        self.file_url = file_url
+        self.send_type = send_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_url is not None:
+            result['fileUrl'] = self.file_url
+        if self.send_type is not None:
+            result['sendType'] = self.send_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileUrl') is not None:
+            self.file_url = m.get('fileUrl')
+        if m.get('sendType') is not None:
+            self.send_type = m.get('sendType')
+        return self
+
+
+class SendFileMessageResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SendFileMessageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SendFileMessageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SendFileMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SendMessageHeaders(TeaModel):
     def __init__(
         self,
@@ -36415,6 +36781,51 @@ class UpdateCollegeContactExclusiveRequestDeptOrderList(TeaModel):
         return self
 
 
+class UpdateCollegeContactExclusiveRequestDeptPositionSet(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        manager_user_id: str = None,
+        title: str = None,
+        work_place: str = None,
+    ):
+        self.dept_id = dept_id
+        self.manager_user_id = manager_user_id
+        self.title = title
+        self.work_place = work_place
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.manager_user_id is not None:
+            result['managerUserId'] = self.manager_user_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.work_place is not None:
+            result['workPlace'] = self.work_place
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('managerUserId') is not None:
+            self.manager_user_id = m.get('managerUserId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('workPlace') is not None:
+            self.work_place = m.get('workPlace')
+        return self
+
+
 class UpdateCollegeContactExclusiveRequestDeptTitleList(TeaModel):
     def __init__(
         self,
@@ -36454,6 +36865,7 @@ class UpdateCollegeContactExclusiveRequest(TeaModel):
         avatar_media_id: str = None,
         dept_id_list: List[int] = None,
         dept_order_list: List[UpdateCollegeContactExclusiveRequestDeptOrderList] = None,
+        dept_position_set: List[UpdateCollegeContactExclusiveRequestDeptPositionSet] = None,
         dept_title_list: List[UpdateCollegeContactExclusiveRequestDeptTitleList] = None,
         email: str = None,
         emp_type: str = None,
@@ -36481,6 +36893,7 @@ class UpdateCollegeContactExclusiveRequest(TeaModel):
         self.avatar_media_id = avatar_media_id
         self.dept_id_list = dept_id_list
         self.dept_order_list = dept_order_list
+        self.dept_position_set = dept_position_set
         self.dept_title_list = dept_title_list
         self.email = email
         self.emp_type = emp_type
@@ -36511,6 +36924,10 @@ class UpdateCollegeContactExclusiveRequest(TeaModel):
             for k in self.dept_order_list:
                 if k:
                     k.validate()
+        if self.dept_position_set:
+            for k in self.dept_position_set:
+                if k:
+                    k.validate()
         if self.dept_title_list:
             for k in self.dept_title_list:
                 if k:
@@ -36530,6 +36947,10 @@ class UpdateCollegeContactExclusiveRequest(TeaModel):
         if self.dept_order_list is not None:
             for k in self.dept_order_list:
                 result['deptOrderList'].append(k.to_map() if k else None)
+        result['deptPositionSet'] = []
+        if self.dept_position_set is not None:
+            for k in self.dept_position_set:
+                result['deptPositionSet'].append(k.to_map() if k else None)
         result['deptTitleList'] = []
         if self.dept_title_list is not None:
             for k in self.dept_title_list:
@@ -36591,6 +37012,11 @@ class UpdateCollegeContactExclusiveRequest(TeaModel):
             for k in m.get('deptOrderList'):
                 temp_model = UpdateCollegeContactExclusiveRequestDeptOrderList()
                 self.dept_order_list.append(temp_model.from_map(k))
+        self.dept_position_set = []
+        if m.get('deptPositionSet') is not None:
+            for k in m.get('deptPositionSet'):
+                temp_model = UpdateCollegeContactExclusiveRequestDeptPositionSet()
+                self.dept_position_set.append(temp_model.from_map(k))
         self.dept_title_list = []
         if m.get('deptTitleList') is not None:
             for k in m.get('deptTitleList'):
@@ -36777,6 +37203,51 @@ class UpdateCollegeContactUserRequestDeptOrderList(TeaModel):
         return self
 
 
+class UpdateCollegeContactUserRequestDeptPositionSet(TeaModel):
+    def __init__(
+        self,
+        dept_id: int = None,
+        manager_user_id: str = None,
+        title: str = None,
+        work_place: str = None,
+    ):
+        self.dept_id = dept_id
+        self.manager_user_id = manager_user_id
+        self.title = title
+        self.work_place = work_place
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.manager_user_id is not None:
+            result['managerUserId'] = self.manager_user_id
+        if self.title is not None:
+            result['title'] = self.title
+        if self.work_place is not None:
+            result['workPlace'] = self.work_place
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('managerUserId') is not None:
+            self.manager_user_id = m.get('managerUserId')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('workPlace') is not None:
+            self.work_place = m.get('workPlace')
+        return self
+
+
 class UpdateCollegeContactUserRequestDeptTitleList(TeaModel):
     def __init__(
         self,
@@ -36815,6 +37286,7 @@ class UpdateCollegeContactUserRequest(TeaModel):
         self,
         dept_id_list: List[int] = None,
         dept_order_list: List[UpdateCollegeContactUserRequestDeptOrderList] = None,
+        dept_position_set: List[UpdateCollegeContactUserRequestDeptPositionSet] = None,
         dept_title_list: List[UpdateCollegeContactUserRequestDeptTitleList] = None,
         email: str = None,
         emp_type: str = None,
@@ -36837,6 +37309,7 @@ class UpdateCollegeContactUserRequest(TeaModel):
     ):
         self.dept_id_list = dept_id_list
         self.dept_order_list = dept_order_list
+        self.dept_position_set = dept_position_set
         self.dept_title_list = dept_title_list
         self.email = email
         self.emp_type = emp_type
@@ -36863,6 +37336,10 @@ class UpdateCollegeContactUserRequest(TeaModel):
             for k in self.dept_order_list:
                 if k:
                     k.validate()
+        if self.dept_position_set:
+            for k in self.dept_position_set:
+                if k:
+                    k.validate()
         if self.dept_title_list:
             for k in self.dept_title_list:
                 if k:
@@ -36880,6 +37357,10 @@ class UpdateCollegeContactUserRequest(TeaModel):
         if self.dept_order_list is not None:
             for k in self.dept_order_list:
                 result['deptOrderList'].append(k.to_map() if k else None)
+        result['deptPositionSet'] = []
+        if self.dept_position_set is not None:
+            for k in self.dept_position_set:
+                result['deptPositionSet'].append(k.to_map() if k else None)
         result['deptTitleList'] = []
         if self.dept_title_list is not None:
             for k in self.dept_title_list:
@@ -36931,6 +37412,11 @@ class UpdateCollegeContactUserRequest(TeaModel):
             for k in m.get('deptOrderList'):
                 temp_model = UpdateCollegeContactUserRequestDeptOrderList()
                 self.dept_order_list.append(temp_model.from_map(k))
+        self.dept_position_set = []
+        if m.get('deptPositionSet') is not None:
+            for k in m.get('deptPositionSet'):
+                temp_model = UpdateCollegeContactUserRequestDeptPositionSet()
+                self.dept_position_set.append(temp_model.from_map(k))
         self.dept_title_list = []
         if m.get('deptTitleList') is not None:
             for k in m.get('deptTitleList'):

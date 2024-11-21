@@ -286,6 +286,124 @@ class Client(OpenApiClient):
         headers = dingtalkcard__1__0_models.AppendSpaceWithDelegateHeaders()
         return await self.append_space_with_delegate_with_options_async(request, headers, runtime)
 
+    def close_top_card_with_options(
+        self,
+        request: dingtalkcard__1__0_models.CloseTopCardRequest,
+        headers: dingtalkcard__1__0_models.CloseTopCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.CloseTopCardResponse:
+        """
+        @summary 关闭吊顶卡片接口
+        
+        @param request: CloseTopCardRequest
+        @param headers: CloseTopCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CloseTopCardResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.out_track_id):
+            query['outTrackId'] = request.out_track_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CloseTopCard',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/tops/close',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.CloseTopCardResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def close_top_card_with_options_async(
+        self,
+        request: dingtalkcard__1__0_models.CloseTopCardRequest,
+        headers: dingtalkcard__1__0_models.CloseTopCardHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.CloseTopCardResponse:
+        """
+        @summary 关闭吊顶卡片接口
+        
+        @param request: CloseTopCardRequest
+        @param headers: CloseTopCardHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CloseTopCardResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.out_track_id):
+            query['outTrackId'] = request.out_track_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CloseTopCard',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/tops/close',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.CloseTopCardResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def close_top_card(
+        self,
+        request: dingtalkcard__1__0_models.CloseTopCardRequest,
+    ) -> dingtalkcard__1__0_models.CloseTopCardResponse:
+        """
+        @summary 关闭吊顶卡片接口
+        
+        @param request: CloseTopCardRequest
+        @return: CloseTopCardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.CloseTopCardHeaders()
+        return self.close_top_card_with_options(request, headers, runtime)
+
+    async def close_top_card_async(
+        self,
+        request: dingtalkcard__1__0_models.CloseTopCardRequest,
+    ) -> dingtalkcard__1__0_models.CloseTopCardResponse:
+        """
+        @summary 关闭吊顶卡片接口
+        
+        @param request: CloseTopCardRequest
+        @return: CloseTopCardResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.CloseTopCardHeaders()
+        return await self.close_top_card_with_options_async(request, headers, runtime)
+
     def copy_template_with_options(
         self,
         request: dingtalkcard__1__0_models.CopyTemplateRequest,

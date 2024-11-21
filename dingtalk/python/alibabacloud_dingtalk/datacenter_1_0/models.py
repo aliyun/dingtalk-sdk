@@ -7055,13 +7055,17 @@ class QueryDpaasDataPackageResponseBody(TeaModel):
     def __init__(
         self,
         buy: bool = None,
+        end_date: str = None,
         quota: int = None,
+        start_date: str = None,
         success: bool = None,
         used_num: int = None,
         white_customer: bool = None,
     ):
         self.buy = buy
+        self.end_date = end_date
         self.quota = quota
+        self.start_date = start_date
         self.success = success
         self.used_num = used_num
         self.white_customer = white_customer
@@ -7077,8 +7081,12 @@ class QueryDpaasDataPackageResponseBody(TeaModel):
         result = dict()
         if self.buy is not None:
             result['buy'] = self.buy
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
         if self.quota is not None:
             result['quota'] = self.quota
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
         if self.success is not None:
             result['success'] = self.success
         if self.used_num is not None:
@@ -7091,8 +7099,12 @@ class QueryDpaasDataPackageResponseBody(TeaModel):
         m = m or dict()
         if m.get('buy') is not None:
             self.buy = m.get('buy')
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
         if m.get('quota') is not None:
             self.quota = m.get('quota')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
         if m.get('success') is not None:
             self.success = m.get('success')
         if m.get('usedNum') is not None:
