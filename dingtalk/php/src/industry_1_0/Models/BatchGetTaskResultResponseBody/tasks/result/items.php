@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\BatchGetTaskResultResponseBody\tasks\result;
 
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\BatchGetTaskResultResponseBody\tasks\result\items\subs;
 use AlibabaCloud\Tea\Model;
 
 class items extends Model
@@ -28,10 +29,22 @@ class items extends Model
      * @var int
      */
     public $point;
+
+    /**
+     * @var string
+     */
+    public $reference;
+
+    /**
+     * @var subs[]
+     */
+    public $subs;
     protected $_name = [
-        'info'  => 'info',
-        'name'  => 'name',
-        'point' => 'point',
+        'info'      => 'info',
+        'name'      => 'name',
+        'point'     => 'point',
+        'reference' => 'reference',
+        'subs'      => 'subs',
     ];
 
     public function validate()
@@ -49,6 +62,18 @@ class items extends Model
         }
         if (null !== $this->point) {
             $res['point'] = $this->point;
+        }
+        if (null !== $this->reference) {
+            $res['reference'] = $this->reference;
+        }
+        if (null !== $this->subs) {
+            $res['subs'] = [];
+            if (null !== $this->subs && \is_array($this->subs)) {
+                $n = 0;
+                foreach ($this->subs as $item) {
+                    $res['subs'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
 
         return $res;
@@ -70,6 +95,18 @@ class items extends Model
         }
         if (isset($map['point'])) {
             $model->point = $map['point'];
+        }
+        if (isset($map['reference'])) {
+            $model->reference = $map['reference'];
+        }
+        if (isset($map['subs'])) {
+            if (!empty($map['subs'])) {
+                $model->subs = [];
+                $n           = 0;
+                foreach ($map['subs'] as $item) {
+                    $model->subs[$n++] = null !== $item ? subs::fromMap($item) : $item;
+                }
+            }
         }
 
         return $model;

@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeContactExclusiveRequest\deptOrderList;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeContactExclusiveRequest\deptPositionSet;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCollegeContactExclusiveRequest\deptTitleList;
 use AlibabaCloud\Tea\Model;
 
@@ -28,6 +29,11 @@ class AddCollegeContactExclusiveRequest extends Model
      * @var deptOrderList[]
      */
     public $deptOrderList;
+
+    /**
+     * @var deptPositionSet[]
+     */
+    public $deptPositionSet;
 
     /**
      * @var deptTitleList[]
@@ -179,7 +185,7 @@ class AddCollegeContactExclusiveRequest extends Model
     public $telephone;
 
     /**
-     * @example 学生会主席
+     * @example 学工处处长
      *
      * @var string
      */
@@ -193,7 +199,7 @@ class AddCollegeContactExclusiveRequest extends Model
     public $userid;
 
     /**
-     * @example 阿里巴巴c区
+     * @example 学工处办公室
      *
      * @var string
      */
@@ -202,6 +208,7 @@ class AddCollegeContactExclusiveRequest extends Model
         'avatarMediaId'        => 'avatarMediaId',
         'deptIdList'           => 'deptIdList',
         'deptOrderList'        => 'deptOrderList',
+        'deptPositionSet'      => 'deptPositionSet',
         'deptTitleList'        => 'deptTitleList',
         'email'                => 'email',
         'empType'              => 'empType',
@@ -247,6 +254,15 @@ class AddCollegeContactExclusiveRequest extends Model
                 $n = 0;
                 foreach ($this->deptOrderList as $item) {
                     $res['deptOrderList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->deptPositionSet) {
+            $res['deptPositionSet'] = [];
+            if (null !== $this->deptPositionSet && \is_array($this->deptPositionSet)) {
+                $n = 0;
+                foreach ($this->deptPositionSet as $item) {
+                    $res['deptPositionSet'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -354,6 +370,15 @@ class AddCollegeContactExclusiveRequest extends Model
                 $n                    = 0;
                 foreach ($map['deptOrderList'] as $item) {
                     $model->deptOrderList[$n++] = null !== $item ? deptOrderList::fromMap($item) : $item;
+                }
+            }
+        }
+        if (isset($map['deptPositionSet'])) {
+            if (!empty($map['deptPositionSet'])) {
+                $model->deptPositionSet = [];
+                $n                      = 0;
+                foreach ($map['deptPositionSet'] as $item) {
+                    $model->deptPositionSet[$n++] = null !== $item ? deptPositionSet::fromMap($item) : $item;
                 }
             }
         }

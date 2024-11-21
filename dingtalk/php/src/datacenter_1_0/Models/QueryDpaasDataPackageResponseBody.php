@@ -14,9 +14,19 @@ class QueryDpaasDataPackageResponseBody extends Model
     public $buy;
 
     /**
+     * @var string
+     */
+    public $endDate;
+
+    /**
      * @var int
      */
     public $quota;
+
+    /**
+     * @var string
+     */
+    public $startDate;
 
     /**
      * @var bool
@@ -34,7 +44,9 @@ class QueryDpaasDataPackageResponseBody extends Model
     public $whiteCustomer;
     protected $_name = [
         'buy'           => 'buy',
+        'endDate'       => 'endDate',
         'quota'         => 'quota',
+        'startDate'     => 'startDate',
         'success'       => 'success',
         'usedNum'       => 'usedNum',
         'whiteCustomer' => 'whiteCustomer',
@@ -50,8 +62,14 @@ class QueryDpaasDataPackageResponseBody extends Model
         if (null !== $this->buy) {
             $res['buy'] = $this->buy;
         }
+        if (null !== $this->endDate) {
+            $res['endDate'] = $this->endDate;
+        }
         if (null !== $this->quota) {
             $res['quota'] = $this->quota;
+        }
+        if (null !== $this->startDate) {
+            $res['startDate'] = $this->startDate;
         }
         if (null !== $this->success) {
             $res['success'] = $this->success;
@@ -77,8 +95,14 @@ class QueryDpaasDataPackageResponseBody extends Model
         if (isset($map['buy'])) {
             $model->buy = $map['buy'];
         }
+        if (isset($map['endDate'])) {
+            $model->endDate = $map['endDate'];
+        }
         if (isset($map['quota'])) {
             $model->quota = $map['quota'];
+        }
+        if (isset($map['startDate'])) {
+            $model->startDate = $map['startDate'];
         }
         if (isset($map['success'])) {
             $model->success = $map['success'];

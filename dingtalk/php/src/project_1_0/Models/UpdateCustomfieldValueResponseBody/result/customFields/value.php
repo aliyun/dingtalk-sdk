@@ -9,13 +9,25 @@ use AlibabaCloud\Tea\Model;
 class value extends Model
 {
     /**
+     * @var string
+     */
+    public $id;
+
+    /**
+     * @var string
+     */
+    public $thumbUrl;
+
+    /**
      * @example 我是具体显示值
      *
      * @var string
      */
     public $title;
     protected $_name = [
-        'title' => 'title',
+        'id'       => 'id',
+        'thumbUrl' => 'thumbUrl',
+        'title'    => 'title',
     ];
 
     public function validate()
@@ -25,6 +37,12 @@ class value extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->id) {
+            $res['id'] = $this->id;
+        }
+        if (null !== $this->thumbUrl) {
+            $res['thumbUrl'] = $this->thumbUrl;
+        }
         if (null !== $this->title) {
             $res['title'] = $this->title;
         }
@@ -40,6 +58,12 @@ class value extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['id'])) {
+            $model->id = $map['id'];
+        }
+        if (isset($map['thumbUrl'])) {
+            $model->thumbUrl = $map['thumbUrl'];
+        }
         if (isset($map['title'])) {
             $model->title = $map['title'];
         }

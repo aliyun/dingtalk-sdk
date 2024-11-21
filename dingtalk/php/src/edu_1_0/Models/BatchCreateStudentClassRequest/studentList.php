@@ -16,6 +16,13 @@ class studentList extends Model
     public $attributes;
 
     /**
+     * @example 小明
+     *
+     * @var string
+     */
+    public $studentName;
+
+    /**
      * @example studentxxx
      *
      * @var string
@@ -23,6 +30,7 @@ class studentList extends Model
     public $studentUserId;
     protected $_name = [
         'attributes'    => 'attributes',
+        'studentName'   => 'studentName',
         'studentUserId' => 'studentUserId',
     ];
 
@@ -35,6 +43,9 @@ class studentList extends Model
         $res = [];
         if (null !== $this->attributes) {
             $res['attributes'] = $this->attributes;
+        }
+        if (null !== $this->studentName) {
+            $res['studentName'] = $this->studentName;
         }
         if (null !== $this->studentUserId) {
             $res['studentUserId'] = $this->studentUserId;
@@ -53,6 +64,9 @@ class studentList extends Model
         $model = new self();
         if (isset($map['attributes'])) {
             $model->attributes = $map['attributes'];
+        }
+        if (isset($map['studentName'])) {
+            $model->studentName = $map['studentName'];
         }
         if (isset($map['studentUserId'])) {
             $model->studentUserId = $map['studentUserId'];

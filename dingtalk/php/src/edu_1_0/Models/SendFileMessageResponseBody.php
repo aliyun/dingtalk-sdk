@@ -2,15 +2,14 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\AddCommentResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
-class AddCommentResponseBody extends Model
+class SendFileMessageResponseBody extends Model
 {
     /**
-     * @var result
+     * @var bool
      */
     public $result;
 
@@ -31,7 +30,7 @@ class AddCommentResponseBody extends Model
     {
         $res = [];
         if (null !== $this->result) {
-            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
+            $res['result'] = $this->result;
         }
         if (null !== $this->success) {
             $res['success'] = $this->success;
@@ -43,13 +42,13 @@ class AddCommentResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return AddCommentResponseBody
+     * @return SendFileMessageResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
         if (isset($map['result'])) {
-            $model->result = result::fromMap($map['result']);
+            $model->result = $map['result'];
         }
         if (isset($map['success'])) {
             $model->success = $map['success'];

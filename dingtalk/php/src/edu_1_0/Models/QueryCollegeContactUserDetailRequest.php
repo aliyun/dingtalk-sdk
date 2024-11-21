@@ -9,6 +9,13 @@ use AlibabaCloud\Tea\Model;
 class QueryCollegeContactUserDetailRequest extends Model
 {
     /**
+     * @example 12122294
+     *
+     * @var string
+     */
+    public $jobNumber;
+
+    /**
      * @example zh_CN
      *
      * @var string
@@ -16,16 +23,15 @@ class QueryCollegeContactUserDetailRequest extends Model
     public $language;
 
     /**
-     * @description This parameter is required.
-     *
      * @example zhangsan666
      *
      * @var string
      */
     public $userid;
     protected $_name = [
-        'language' => 'language',
-        'userid'   => 'userid',
+        'jobNumber' => 'jobNumber',
+        'language'  => 'language',
+        'userid'    => 'userid',
     ];
 
     public function validate()
@@ -35,6 +41,9 @@ class QueryCollegeContactUserDetailRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->jobNumber) {
+            $res['jobNumber'] = $this->jobNumber;
+        }
         if (null !== $this->language) {
             $res['language'] = $this->language;
         }
@@ -53,6 +62,9 @@ class QueryCollegeContactUserDetailRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['jobNumber'])) {
+            $model->jobNumber = $map['jobNumber'];
+        }
         if (isset($map['language'])) {
             $model->language = $map['language'];
         }

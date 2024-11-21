@@ -81,6 +81,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIQueryDatasetPermissionR
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIRemoveDatasetPermissionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIRemoveDatasetPermissionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAIRemoveDatasetPermissionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAITextSentimentAnalysisHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAITextSentimentAnalysisRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAITextSentimentAnalysisResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAiTravelListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAiTravelListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAiTravelListResponse;
@@ -2138,6 +2141,66 @@ class Dingtalk extends OpenApiClient
         $headers = new ChatAIRemoveDatasetPermissionHeaders([]);
 
         return $this->chatAIRemoveDatasetPermissionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary Chai文本情感分析
+     *  *
+     * @param ChatAITextSentimentAnalysisRequest $request ChatAITextSentimentAnalysisRequest
+     * @param ChatAITextSentimentAnalysisHeaders $headers ChatAITextSentimentAnalysisHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ChatAITextSentimentAnalysisResponse ChatAITextSentimentAnalysisResponse
+     */
+    public function chatAITextSentimentAnalysisWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->history)) {
+            $body['history'] = $request->history;
+        }
+        if (!Utils::isUnset($request->text)) {
+            $body['text'] = $request->text;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatAITextSentimentAnalysis',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatai/abilities/sentiments/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatAITextSentimentAnalysisResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary Chai文本情感分析
+     *  *
+     * @param ChatAITextSentimentAnalysisRequest $request ChatAITextSentimentAnalysisRequest
+     *
+     * @return ChatAITextSentimentAnalysisResponse ChatAITextSentimentAnalysisResponse
+     */
+    public function chatAITextSentimentAnalysis($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatAITextSentimentAnalysisHeaders([]);
+
+        return $this->chatAITextSentimentAnalysisWithOptions($request, $headers, $runtime);
     }
 
     /**

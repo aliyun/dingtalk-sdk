@@ -2,25 +2,19 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\AddCommentResponseBody\result;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatAITextSentimentAnalysisResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
-class AddCommentResponseBody extends Model
+class ChatAITextSentimentAnalysisResponseBody extends Model
 {
     /**
      * @var result
      */
     public $result;
-
-    /**
-     * @var bool
-     */
-    public $success;
     protected $_name = [
-        'result'  => 'result',
-        'success' => 'success',
+        'result' => 'result',
     ];
 
     public function validate()
@@ -33,9 +27,6 @@ class AddCommentResponseBody extends Model
         if (null !== $this->result) {
             $res['result'] = null !== $this->result ? $this->result->toMap() : null;
         }
-        if (null !== $this->success) {
-            $res['success'] = $this->success;
-        }
 
         return $res;
     }
@@ -43,16 +34,13 @@ class AddCommentResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return AddCommentResponseBody
+     * @return ChatAITextSentimentAnalysisResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
         if (isset($map['result'])) {
             $model->result = result::fromMap($map['result']);
-        }
-        if (isset($map['success'])) {
-            $model->success = $map['success'];
         }
 
         return $model;

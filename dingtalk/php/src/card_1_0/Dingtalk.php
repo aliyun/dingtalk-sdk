@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceWithDelegateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceWithDelegateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\AppendSpaceWithDelegateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CloseTopCardHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CloseTopCardRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CloseTopCardResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CopyTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CopyTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\CopyTemplateResponse;
@@ -218,6 +221,66 @@ class Dingtalk extends OpenApiClient
         $headers = new AppendSpaceWithDelegateHeaders([]);
 
         return $this->appendSpaceWithDelegateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 关闭吊顶卡片接口
+     *  *
+     * @param CloseTopCardRequest $request CloseTopCardRequest
+     * @param CloseTopCardHeaders $headers CloseTopCardHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CloseTopCardResponse CloseTopCardResponse
+     */
+    public function closeTopCardWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $query['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->outTrackId)) {
+            $query['outTrackId'] = $request->outTrackId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'CloseTopCard',
+            'version'     => 'card_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/card/tops/close',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CloseTopCardResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 关闭吊顶卡片接口
+     *  *
+     * @param CloseTopCardRequest $request CloseTopCardRequest
+     *
+     * @return CloseTopCardResponse CloseTopCardResponse
+     */
+    public function closeTopCard($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CloseTopCardHeaders([]);
+
+        return $this->closeTopCardWithOptions($request, $headers, $runtime);
     }
 
     /**

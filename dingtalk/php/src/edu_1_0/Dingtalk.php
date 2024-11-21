@@ -465,6 +465,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendAiCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendAiCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendAiCardResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendFileMessageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendFileMessageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendFileMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendMessageResponse;
@@ -774,6 +777,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->deptOrderList)) {
             $body['deptOrderList'] = $request->deptOrderList;
         }
+        if (!Utils::isUnset($request->deptPositionSet)) {
+            $body['deptPositionSet'] = $request->deptPositionSet;
+        }
         if (!Utils::isUnset($request->deptTitleList)) {
             $body['deptTitleList'] = $request->deptTitleList;
         }
@@ -905,6 +911,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->deptOrderList)) {
             $body['deptOrderList'] = $request->deptOrderList;
+        }
+        if (!Utils::isUnset($request->deptPositionSet)) {
+            $body['deptPositionSet'] = $request->deptPositionSet;
         }
         if (!Utils::isUnset($request->deptTitleList)) {
             $body['deptTitleList'] = $request->deptTitleList;
@@ -8943,6 +8952,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->jobNumber)) {
+            $query['jobNumber'] = $request->jobNumber;
+        }
         if (!Utils::isUnset($request->language)) {
             $query['language'] = $request->language;
         }
@@ -11060,6 +11072,78 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 收藏文件消息发送
+     *  *
+     * @param SendFileMessageRequest $request SendFileMessageRequest
+     * @param SendFileMessageHeaders $headers SendFileMessageHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SendFileMessageResponse SendFileMessageResponse
+     */
+    public function sendFileMessageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->extension)) {
+            $body['extension'] = $request->extension;
+        }
+        if (!Utils::isUnset($request->fileName)) {
+            $body['fileName'] = $request->fileName;
+        }
+        if (!Utils::isUnset($request->fileSize)) {
+            $body['fileSize'] = $request->fileSize;
+        }
+        if (!Utils::isUnset($request->fileUrl)) {
+            $body['fileUrl'] = $request->fileUrl;
+        }
+        if (!Utils::isUnset($request->sendType)) {
+            $body['sendType'] = $request->sendType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SendFileMessage',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/contents/files/messages/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SendFileMessageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 收藏文件消息发送
+     *  *
+     * @param SendFileMessageRequest $request SendFileMessageRequest
+     *
+     * @return SendFileMessageResponse SendFileMessageResponse
+     */
+    public function sendFileMessage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendFileMessageHeaders([]);
+
+        return $this->sendFileMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 亲情通话发消息
      *  *
      * @param SendMessageRequest $request SendMessageRequest
@@ -11659,6 +11743,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->deptOrderList)) {
             $body['deptOrderList'] = $request->deptOrderList;
         }
+        if (!Utils::isUnset($request->deptPositionSet)) {
+            $body['deptPositionSet'] = $request->deptPositionSet;
+        }
         if (!Utils::isUnset($request->deptTitleList)) {
             $body['deptTitleList'] = $request->deptTitleList;
         }
@@ -11787,6 +11874,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->deptOrderList)) {
             $body['deptOrderList'] = $request->deptOrderList;
+        }
+        if (!Utils::isUnset($request->deptPositionSet)) {
+            $body['deptPositionSet'] = $request->deptPositionSet;
         }
         if (!Utils::isUnset($request->deptTitleList)) {
             $body['deptTitleList'] = $request->deptTitleList;

@@ -55,6 +55,11 @@ class result extends Model
     public $name;
 
     /**
+     * @var string
+     */
+    public $summary;
+
+    /**
      * @example 100
      *
      * @var int
@@ -68,6 +73,7 @@ class result extends Model
         'id'                 => 'id',
         'items'              => 'items',
         'name'               => 'name',
+        'summary'            => 'summary',
         'total'              => 'total',
     ];
 
@@ -104,6 +110,9 @@ class result extends Model
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->summary) {
+            $res['summary'] = $this->summary;
         }
         if (null !== $this->total) {
             $res['total'] = $this->total;
@@ -146,6 +155,9 @@ class result extends Model
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['summary'])) {
+            $model->summary = $map['summary'];
         }
         if (isset($map['total'])) {
             $model->total = $map['total'];
