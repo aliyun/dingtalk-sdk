@@ -21,6 +21,12 @@ public class CreateTaskResponseBody extends TeaModel {
     }
 
     public static class CreateTaskResponseBodyResultCustomfieldsValue extends TeaModel {
+        @NameInMap("id")
+        public String id;
+
+        @NameInMap("thumbUrl")
+        public String thumbUrl;
+
         /**
          * <strong>example:</strong>
          * <p>我是自定义字段显示值</p>
@@ -31,6 +37,22 @@ public class CreateTaskResponseBody extends TeaModel {
         public static CreateTaskResponseBodyResultCustomfieldsValue build(java.util.Map<String, ?> map) throws Exception {
             CreateTaskResponseBodyResultCustomfieldsValue self = new CreateTaskResponseBodyResultCustomfieldsValue();
             return TeaModel.build(map, self);
+        }
+
+        public CreateTaskResponseBodyResultCustomfieldsValue setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
+        }
+
+        public CreateTaskResponseBodyResultCustomfieldsValue setThumbUrl(String thumbUrl) {
+            this.thumbUrl = thumbUrl;
+            return this;
+        }
+        public String getThumbUrl() {
+            return this.thumbUrl;
         }
 
         public CreateTaskResponseBodyResultCustomfieldsValue setTitle(String title) {

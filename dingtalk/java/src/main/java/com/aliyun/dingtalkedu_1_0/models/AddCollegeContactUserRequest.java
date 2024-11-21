@@ -13,6 +13,9 @@ public class AddCollegeContactUserRequest extends TeaModel {
     @NameInMap("deptOrderList")
     public java.util.List<AddCollegeContactUserRequestDeptOrderList> deptOrderList;
 
+    @NameInMap("deptPositionSet")
+    public java.util.List<AddCollegeContactUserRequestDeptPositionSet> deptPositionSet;
+
     @NameInMap("deptTitleList")
     public java.util.List<AddCollegeContactUserRequestDeptTitleList> deptTitleList;
 
@@ -143,7 +146,7 @@ public class AddCollegeContactUserRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
-     * <p>阿里巴巴c区</p>
+     * <p>学工处办公室</p>
      */
     @NameInMap("workPlace")
     public String workPlace;
@@ -167,6 +170,14 @@ public class AddCollegeContactUserRequest extends TeaModel {
     }
     public java.util.List<AddCollegeContactUserRequestDeptOrderList> getDeptOrderList() {
         return this.deptOrderList;
+    }
+
+    public AddCollegeContactUserRequest setDeptPositionSet(java.util.List<AddCollegeContactUserRequestDeptPositionSet> deptPositionSet) {
+        this.deptPositionSet = deptPositionSet;
+        return this;
+    }
+    public java.util.List<AddCollegeContactUserRequestDeptPositionSet> getDeptPositionSet() {
+        return this.deptPositionSet;
     }
 
     public AddCollegeContactUserRequest setDeptTitleList(java.util.List<AddCollegeContactUserRequestDeptTitleList> deptTitleList) {
@@ -371,6 +382,74 @@ public class AddCollegeContactUserRequest extends TeaModel {
         }
         public Integer getOrder() {
             return this.order;
+        }
+
+    }
+
+    public static class AddCollegeContactUserRequestDeptPositionSet extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>123456</p>
+         */
+        @NameInMap("deptId")
+        public Long deptId;
+
+        /**
+         * <strong>example:</strong>
+         * <p>001</p>
+         */
+        @NameInMap("managerUserId")
+        public String managerUserId;
+
+        /**
+         * <strong>example:</strong>
+         * <p>学工处处长</p>
+         */
+        @NameInMap("title")
+        public String title;
+
+        /**
+         * <strong>example:</strong>
+         * <p>学工处办公室</p>
+         */
+        @NameInMap("workPlace")
+        public String workPlace;
+
+        public static AddCollegeContactUserRequestDeptPositionSet build(java.util.Map<String, ?> map) throws Exception {
+            AddCollegeContactUserRequestDeptPositionSet self = new AddCollegeContactUserRequestDeptPositionSet();
+            return TeaModel.build(map, self);
+        }
+
+        public AddCollegeContactUserRequestDeptPositionSet setDeptId(Long deptId) {
+            this.deptId = deptId;
+            return this;
+        }
+        public Long getDeptId() {
+            return this.deptId;
+        }
+
+        public AddCollegeContactUserRequestDeptPositionSet setManagerUserId(String managerUserId) {
+            this.managerUserId = managerUserId;
+            return this;
+        }
+        public String getManagerUserId() {
+            return this.managerUserId;
+        }
+
+        public AddCollegeContactUserRequestDeptPositionSet setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+        public String getTitle() {
+            return this.title;
+        }
+
+        public AddCollegeContactUserRequestDeptPositionSet setWorkPlace(String workPlace) {
+            this.workPlace = workPlace;
+            return this;
+        }
+        public String getWorkPlace() {
+            return this.workPlace;
         }
 
     }

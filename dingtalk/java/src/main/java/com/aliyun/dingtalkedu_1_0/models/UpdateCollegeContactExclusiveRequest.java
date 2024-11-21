@@ -17,6 +17,9 @@ public class UpdateCollegeContactExclusiveRequest extends TeaModel {
     @NameInMap("deptOrderList")
     public java.util.List<UpdateCollegeContactExclusiveRequestDeptOrderList> deptOrderList;
 
+    @NameInMap("deptPositionSet")
+    public java.util.List<UpdateCollegeContactExclusiveRequestDeptPositionSet> deptPositionSet;
+
     @NameInMap("deptTitleList")
     public java.util.List<UpdateCollegeContactExclusiveRequestDeptTitleList> deptTitleList;
 
@@ -143,7 +146,7 @@ public class UpdateCollegeContactExclusiveRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
-     * <p>学生会主席</p>
+     * <p>学工处处长</p>
      */
     @NameInMap("title")
     public String title;
@@ -159,7 +162,7 @@ public class UpdateCollegeContactExclusiveRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
-     * <p>阿里巴巴c区</p>
+     * <p>学工处办公室</p>
      */
     @NameInMap("workPlace")
     public String workPlace;
@@ -191,6 +194,14 @@ public class UpdateCollegeContactExclusiveRequest extends TeaModel {
     }
     public java.util.List<UpdateCollegeContactExclusiveRequestDeptOrderList> getDeptOrderList() {
         return this.deptOrderList;
+    }
+
+    public UpdateCollegeContactExclusiveRequest setDeptPositionSet(java.util.List<UpdateCollegeContactExclusiveRequestDeptPositionSet> deptPositionSet) {
+        this.deptPositionSet = deptPositionSet;
+        return this;
+    }
+    public java.util.List<UpdateCollegeContactExclusiveRequestDeptPositionSet> getDeptPositionSet() {
+        return this.deptPositionSet;
     }
 
     public UpdateCollegeContactExclusiveRequest setDeptTitleList(java.util.List<UpdateCollegeContactExclusiveRequestDeptTitleList> deptTitleList) {
@@ -411,6 +422,74 @@ public class UpdateCollegeContactExclusiveRequest extends TeaModel {
         }
         public Integer getOrder() {
             return this.order;
+        }
+
+    }
+
+    public static class UpdateCollegeContactExclusiveRequestDeptPositionSet extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>123456</p>
+         */
+        @NameInMap("deptId")
+        public Long deptId;
+
+        /**
+         * <strong>example:</strong>
+         * <p>001</p>
+         */
+        @NameInMap("managerUserId")
+        public String managerUserId;
+
+        /**
+         * <strong>example:</strong>
+         * <p>学工处处长</p>
+         */
+        @NameInMap("title")
+        public String title;
+
+        /**
+         * <strong>example:</strong>
+         * <p>学工处办公室</p>
+         */
+        @NameInMap("workPlace")
+        public String workPlace;
+
+        public static UpdateCollegeContactExclusiveRequestDeptPositionSet build(java.util.Map<String, ?> map) throws Exception {
+            UpdateCollegeContactExclusiveRequestDeptPositionSet self = new UpdateCollegeContactExclusiveRequestDeptPositionSet();
+            return TeaModel.build(map, self);
+        }
+
+        public UpdateCollegeContactExclusiveRequestDeptPositionSet setDeptId(Long deptId) {
+            this.deptId = deptId;
+            return this;
+        }
+        public Long getDeptId() {
+            return this.deptId;
+        }
+
+        public UpdateCollegeContactExclusiveRequestDeptPositionSet setManagerUserId(String managerUserId) {
+            this.managerUserId = managerUserId;
+            return this;
+        }
+        public String getManagerUserId() {
+            return this.managerUserId;
+        }
+
+        public UpdateCollegeContactExclusiveRequestDeptPositionSet setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+        public String getTitle() {
+            return this.title;
+        }
+
+        public UpdateCollegeContactExclusiveRequestDeptPositionSet setWorkPlace(String workPlace) {
+            this.workPlace = workPlace;
+            return this;
+        }
+        public String getWorkPlace() {
+            return this.workPlace;
         }
 
     }

@@ -21,6 +21,12 @@ public class UpdateCustomfieldValueResponseBody extends TeaModel {
     }
 
     public static class UpdateCustomfieldValueResponseBodyResultCustomFieldsValue extends TeaModel {
+        @NameInMap("id")
+        public String id;
+
+        @NameInMap("thumbUrl")
+        public String thumbUrl;
+
         /**
          * <strong>example:</strong>
          * <p>我是具体显示值</p>
@@ -31,6 +37,22 @@ public class UpdateCustomfieldValueResponseBody extends TeaModel {
         public static UpdateCustomfieldValueResponseBodyResultCustomFieldsValue build(java.util.Map<String, ?> map) throws Exception {
             UpdateCustomfieldValueResponseBodyResultCustomFieldsValue self = new UpdateCustomfieldValueResponseBodyResultCustomFieldsValue();
             return TeaModel.build(map, self);
+        }
+
+        public UpdateCustomfieldValueResponseBodyResultCustomFieldsValue setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
+        }
+
+        public UpdateCustomfieldValueResponseBodyResultCustomFieldsValue setThumbUrl(String thumbUrl) {
+            this.thumbUrl = thumbUrl;
+            return this;
+        }
+        public String getThumbUrl() {
+            return this.thumbUrl;
         }
 
         public UpdateCustomfieldValueResponseBodyResultCustomFieldsValue setTitle(String title) {

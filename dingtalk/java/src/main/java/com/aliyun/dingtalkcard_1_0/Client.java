@@ -164,6 +164,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>关闭吊顶卡片接口</p>
+     * 
+     * @param request CloseTopCardRequest
+     * @param headers CloseTopCardHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CloseTopCardResponse
+     */
+    public CloseTopCardResponse closeTopCardWithOptions(CloseTopCardRequest request, CloseTopCardHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.openConversationId)) {
+            query.put("openConversationId", request.openConversationId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.outTrackId)) {
+            query.put("outTrackId", request.outTrackId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CloseTopCard"),
+            new TeaPair("version", "card_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/card/tops/close"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CloseTopCardResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>关闭吊顶卡片接口</p>
+     * 
+     * @param request CloseTopCardRequest
+     * @return CloseTopCardResponse
+     */
+    public CloseTopCardResponse closeTopCard(CloseTopCardRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CloseTopCardHeaders headers = new CloseTopCardHeaders();
+        return this.closeTopCardWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>复制模板</p>
      * 
      * @param request CopyTemplateRequest

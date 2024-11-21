@@ -6,14 +6,19 @@ import com.aliyun.tea.*;
 public class QueryCollegeContactUserDetailRequest extends TeaModel {
     /**
      * <strong>example:</strong>
+     * <p>12122294</p>
+     */
+    @NameInMap("jobNumber")
+    public String jobNumber;
+
+    /**
+     * <strong>example:</strong>
      * <p>zh_CN</p>
      */
     @NameInMap("language")
     public String language;
 
     /**
-     * <p>This parameter is required.</p>
-     * 
      * <strong>example:</strong>
      * <p>zhangsan666</p>
      */
@@ -23,6 +28,14 @@ public class QueryCollegeContactUserDetailRequest extends TeaModel {
     public static QueryCollegeContactUserDetailRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryCollegeContactUserDetailRequest self = new QueryCollegeContactUserDetailRequest();
         return TeaModel.build(map, self);
+    }
+
+    public QueryCollegeContactUserDetailRequest setJobNumber(String jobNumber) {
+        this.jobNumber = jobNumber;
+        return this;
+    }
+    public String getJobNumber() {
+        return this.jobNumber;
     }
 
     public QueryCollegeContactUserDetailRequest setLanguage(String language) {

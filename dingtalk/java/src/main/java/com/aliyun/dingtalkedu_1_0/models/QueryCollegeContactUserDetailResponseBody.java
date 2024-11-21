@@ -69,6 +69,85 @@ public class QueryCollegeContactUserDetailResponseBody extends TeaModel {
 
     }
 
+    public static class QueryCollegeContactUserDetailResponseBodyResultDeptPositionSet extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>123456</p>
+         */
+        @NameInMap("deptId")
+        public Long deptId;
+
+        @NameInMap("isMain")
+        public Boolean isMain;
+
+        /**
+         * <strong>example:</strong>
+         * <p>001</p>
+         */
+        @NameInMap("managerUserId")
+        public String managerUserId;
+
+        /**
+         * <strong>example:</strong>
+         * <p>学工处处长</p>
+         */
+        @NameInMap("title")
+        public String title;
+
+        /**
+         * <strong>example:</strong>
+         * <p>学工处办公室</p>
+         */
+        @NameInMap("workPlace")
+        public String workPlace;
+
+        public static QueryCollegeContactUserDetailResponseBodyResultDeptPositionSet build(java.util.Map<String, ?> map) throws Exception {
+            QueryCollegeContactUserDetailResponseBodyResultDeptPositionSet self = new QueryCollegeContactUserDetailResponseBodyResultDeptPositionSet();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryCollegeContactUserDetailResponseBodyResultDeptPositionSet setDeptId(Long deptId) {
+            this.deptId = deptId;
+            return this;
+        }
+        public Long getDeptId() {
+            return this.deptId;
+        }
+
+        public QueryCollegeContactUserDetailResponseBodyResultDeptPositionSet setIsMain(Boolean isMain) {
+            this.isMain = isMain;
+            return this;
+        }
+        public Boolean getIsMain() {
+            return this.isMain;
+        }
+
+        public QueryCollegeContactUserDetailResponseBodyResultDeptPositionSet setManagerUserId(String managerUserId) {
+            this.managerUserId = managerUserId;
+            return this;
+        }
+        public String getManagerUserId() {
+            return this.managerUserId;
+        }
+
+        public QueryCollegeContactUserDetailResponseBodyResultDeptPositionSet setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+        public String getTitle() {
+            return this.title;
+        }
+
+        public QueryCollegeContactUserDetailResponseBodyResultDeptPositionSet setWorkPlace(String workPlace) {
+            this.workPlace = workPlace;
+            return this;
+        }
+        public String getWorkPlace() {
+            return this.workPlace;
+        }
+
+    }
+
     public static class QueryCollegeContactUserDetailResponseBodyResultDeptTypeSet extends TeaModel {
         /**
          * <strong>example:</strong>
@@ -349,6 +428,9 @@ public class QueryCollegeContactUserDetailResponseBody extends TeaModel {
         @NameInMap("deptOrderList")
         public java.util.List<QueryCollegeContactUserDetailResponseBodyResultDeptOrderList> deptOrderList;
 
+        @NameInMap("deptPositionSet")
+        public java.util.List<QueryCollegeContactUserDetailResponseBodyResultDeptPositionSet> deptPositionSet;
+
         @NameInMap("deptTypeSet")
         public java.util.List<QueryCollegeContactUserDetailResponseBodyResultDeptTypeSet> deptTypeSet;
 
@@ -501,7 +583,7 @@ public class QueryCollegeContactUserDetailResponseBody extends TeaModel {
 
         /**
          * <strong>example:</strong>
-         * <p>寝室长</p>
+         * <p>学工处处长</p>
          */
         @NameInMap("title")
         public String title;
@@ -525,7 +607,7 @@ public class QueryCollegeContactUserDetailResponseBody extends TeaModel {
 
         /**
          * <strong>example:</strong>
-         * <p>勤奋楼</p>
+         * <p>学工处办公室</p>
          */
         @NameInMap("workPlace")
         public String workPlace;
@@ -581,6 +663,14 @@ public class QueryCollegeContactUserDetailResponseBody extends TeaModel {
         }
         public java.util.List<QueryCollegeContactUserDetailResponseBodyResultDeptOrderList> getDeptOrderList() {
             return this.deptOrderList;
+        }
+
+        public QueryCollegeContactUserDetailResponseBodyResult setDeptPositionSet(java.util.List<QueryCollegeContactUserDetailResponseBodyResultDeptPositionSet> deptPositionSet) {
+            this.deptPositionSet = deptPositionSet;
+            return this;
+        }
+        public java.util.List<QueryCollegeContactUserDetailResponseBodyResultDeptPositionSet> getDeptPositionSet() {
+            return this.deptPositionSet;
         }
 
         public QueryCollegeContactUserDetailResponseBodyResult setDeptTypeSet(java.util.List<QueryCollegeContactUserDetailResponseBodyResultDeptTypeSet> deptTypeSet) {

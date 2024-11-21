@@ -20,6 +20,47 @@ public class BatchGetTaskResultResponseBody extends TeaModel {
         return this.tasks;
     }
 
+    public static class BatchGetTaskResultResponseBodyTasksResultItemsSubs extends TeaModel {
+        @NameInMap("point")
+        public Long point;
+
+        @NameInMap("reference")
+        public String reference;
+
+        @NameInMap("subInfo")
+        public String subInfo;
+
+        public static BatchGetTaskResultResponseBodyTasksResultItemsSubs build(java.util.Map<String, ?> map) throws Exception {
+            BatchGetTaskResultResponseBodyTasksResultItemsSubs self = new BatchGetTaskResultResponseBodyTasksResultItemsSubs();
+            return TeaModel.build(map, self);
+        }
+
+        public BatchGetTaskResultResponseBodyTasksResultItemsSubs setPoint(Long point) {
+            this.point = point;
+            return this;
+        }
+        public Long getPoint() {
+            return this.point;
+        }
+
+        public BatchGetTaskResultResponseBodyTasksResultItemsSubs setReference(String reference) {
+            this.reference = reference;
+            return this;
+        }
+        public String getReference() {
+            return this.reference;
+        }
+
+        public BatchGetTaskResultResponseBodyTasksResultItemsSubs setSubInfo(String subInfo) {
+            this.subInfo = subInfo;
+            return this;
+        }
+        public String getSubInfo() {
+            return this.subInfo;
+        }
+
+    }
+
     public static class BatchGetTaskResultResponseBodyTasksResultItems extends TeaModel {
         /**
          * <strong>example:</strong>
@@ -41,6 +82,12 @@ public class BatchGetTaskResultResponseBody extends TeaModel {
          */
         @NameInMap("point")
         public Long point;
+
+        @NameInMap("reference")
+        public String reference;
+
+        @NameInMap("subs")
+        public java.util.List<BatchGetTaskResultResponseBodyTasksResultItemsSubs> subs;
 
         public static BatchGetTaskResultResponseBodyTasksResultItems build(java.util.Map<String, ?> map) throws Exception {
             BatchGetTaskResultResponseBodyTasksResultItems self = new BatchGetTaskResultResponseBodyTasksResultItems();
@@ -69,6 +116,22 @@ public class BatchGetTaskResultResponseBody extends TeaModel {
         }
         public Long getPoint() {
             return this.point;
+        }
+
+        public BatchGetTaskResultResponseBodyTasksResultItems setReference(String reference) {
+            this.reference = reference;
+            return this;
+        }
+        public String getReference() {
+            return this.reference;
+        }
+
+        public BatchGetTaskResultResponseBodyTasksResultItems setSubs(java.util.List<BatchGetTaskResultResponseBodyTasksResultItemsSubs> subs) {
+            this.subs = subs;
+            return this;
+        }
+        public java.util.List<BatchGetTaskResultResponseBodyTasksResultItemsSubs> getSubs() {
+            return this.subs;
         }
 
     }
@@ -114,6 +177,9 @@ public class BatchGetTaskResultResponseBody extends TeaModel {
          */
         @NameInMap("name")
         public String name;
+
+        @NameInMap("summary")
+        public String summary;
 
         /**
          * <strong>example:</strong>
@@ -181,6 +247,14 @@ public class BatchGetTaskResultResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
+        }
+
+        public BatchGetTaskResultResponseBodyTasksResult setSummary(String summary) {
+            this.summary = summary;
+            return this;
+        }
+        public String getSummary() {
+            return this.summary;
         }
 
         public BatchGetTaskResultResponseBodyTasksResult setTotal(Long total) {

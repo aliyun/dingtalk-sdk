@@ -105,6 +105,13 @@ public class BatchCreateStudentClassRequest extends TeaModel {
 
         /**
          * <strong>example:</strong>
+         * <p>小明</p>
+         */
+        @NameInMap("studentName")
+        public String studentName;
+
+        /**
+         * <strong>example:</strong>
          * <p>studentxxx</p>
          */
         @NameInMap("studentUserId")
@@ -121,6 +128,14 @@ public class BatchCreateStudentClassRequest extends TeaModel {
         }
         public String getAttributes() {
             return this.attributes;
+        }
+
+        public BatchCreateStudentClassRequestStudentList setStudentName(String studentName) {
+            this.studentName = studentName;
+            return this;
+        }
+        public String getStudentName() {
+            return this.studentName;
         }
 
         public BatchCreateStudentClassRequestStudentList setStudentUserId(String studentUserId) {
