@@ -4334,6 +4334,162 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>Chai文本情感分析</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatAITextSentimentAnalysisRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatAITextSentimentAnalysisHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatAITextSentimentAnalysisResponse
+        /// </returns>
+        public ChatAITextSentimentAnalysisResponse ChatAITextSentimentAnalysisWithOptions(ChatAITextSentimentAnalysisRequest request, ChatAITextSentimentAnalysisHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.History))
+            {
+                body["history"] = request.History;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Text))
+            {
+                body["text"] = request.Text;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatAITextSentimentAnalysis",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatai/abilities/sentiments/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatAITextSentimentAnalysisResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>Chai文本情感分析</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatAITextSentimentAnalysisRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatAITextSentimentAnalysisHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatAITextSentimentAnalysisResponse
+        /// </returns>
+        public async Task<ChatAITextSentimentAnalysisResponse> ChatAITextSentimentAnalysisWithOptionsAsync(ChatAITextSentimentAnalysisRequest request, ChatAITextSentimentAnalysisHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.History))
+            {
+                body["history"] = request.History;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Text))
+            {
+                body["text"] = request.Text;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatAITextSentimentAnalysis",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatai/abilities/sentiments/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatAITextSentimentAnalysisResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>Chai文本情感分析</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatAITextSentimentAnalysisRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatAITextSentimentAnalysisResponse
+        /// </returns>
+        public ChatAITextSentimentAnalysisResponse ChatAITextSentimentAnalysis(ChatAITextSentimentAnalysisRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatAITextSentimentAnalysisHeaders headers = new ChatAITextSentimentAnalysisHeaders();
+            return ChatAITextSentimentAnalysisWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>Chai文本情感分析</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatAITextSentimentAnalysisRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatAITextSentimentAnalysisResponse
+        /// </returns>
+        public async Task<ChatAITextSentimentAnalysisResponse> ChatAITextSentimentAnalysisAsync(ChatAITextSentimentAnalysisRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatAITextSentimentAnalysisHeaders headers = new ChatAITextSentimentAnalysisHeaders();
+            return await ChatAITextSentimentAnalysisWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取差旅单列表</para>
         /// </summary>
         /// 

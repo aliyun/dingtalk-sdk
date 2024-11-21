@@ -390,6 +390,162 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>关闭吊顶卡片接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CloseTopCardRequest
+        /// </param>
+        /// <param name="headers">
+        /// CloseTopCardHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CloseTopCardResponse
+        /// </returns>
+        public CloseTopCardResponse CloseTopCardWithOptions(CloseTopCardRequest request, CloseTopCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                query["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTrackId))
+            {
+                query["outTrackId"] = request.OutTrackId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CloseTopCard",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/tops/close",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CloseTopCardResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>关闭吊顶卡片接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CloseTopCardRequest
+        /// </param>
+        /// <param name="headers">
+        /// CloseTopCardHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CloseTopCardResponse
+        /// </returns>
+        public async Task<CloseTopCardResponse> CloseTopCardWithOptionsAsync(CloseTopCardRequest request, CloseTopCardHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                query["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OutTrackId))
+            {
+                query["outTrackId"] = request.OutTrackId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CloseTopCard",
+                Version = "card_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/card/tops/close",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CloseTopCardResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>关闭吊顶卡片接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CloseTopCardRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CloseTopCardResponse
+        /// </returns>
+        public CloseTopCardResponse CloseTopCard(CloseTopCardRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CloseTopCardHeaders headers = new CloseTopCardHeaders();
+            return CloseTopCardWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>关闭吊顶卡片接口</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CloseTopCardRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CloseTopCardResponse
+        /// </returns>
+        public async Task<CloseTopCardResponse> CloseTopCardAsync(CloseTopCardRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CloseTopCardHeaders headers = new CloseTopCardHeaders();
+            return await CloseTopCardWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>复制模板</para>
         /// </summary>
         /// 

@@ -610,6 +610,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             {
                 body["deptOrderList"] = request.DeptOrderList;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptPositionSet))
+            {
+                body["deptPositionSet"] = request.DeptPositionSet;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptTitleList))
             {
                 body["deptTitleList"] = request.DeptTitleList;
@@ -768,6 +772,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptOrderList))
             {
                 body["deptOrderList"] = request.DeptOrderList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptPositionSet))
+            {
+                body["deptPositionSet"] = request.DeptPositionSet;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptTitleList))
             {
@@ -962,6 +970,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             {
                 body["deptOrderList"] = request.DeptOrderList;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptPositionSet))
+            {
+                body["deptPositionSet"] = request.DeptPositionSet;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptTitleList))
             {
                 body["deptTitleList"] = request.DeptTitleList;
@@ -1104,6 +1116,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptOrderList))
             {
                 body["deptOrderList"] = request.DeptOrderList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptPositionSet))
+            {
+                body["deptPositionSet"] = request.DeptPositionSet;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptTitleList))
             {
@@ -21838,6 +21854,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobNumber))
+            {
+                query["jobNumber"] = request.JobNumber;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
             {
                 query["language"] = request.Language;
@@ -21897,6 +21917,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JobNumber))
+            {
+                query["jobNumber"] = request.JobNumber;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
             {
                 query["language"] = request.Language;
@@ -27358,6 +27382,194 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>收藏文件消息发送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendFileMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendFileMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendFileMessageResponse
+        /// </returns>
+        public SendFileMessageResponse SendFileMessageWithOptions(SendFileMessageRequest request, SendFileMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileName))
+            {
+                body["fileName"] = request.FileName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileSize))
+            {
+                body["fileSize"] = request.FileSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileUrl))
+            {
+                body["fileUrl"] = request.FileUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SendType))
+            {
+                body["sendType"] = request.SendType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SendFileMessage",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/contents/files/messages/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SendFileMessageResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>收藏文件消息发送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendFileMessageRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendFileMessageHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendFileMessageResponse
+        /// </returns>
+        public async Task<SendFileMessageResponse> SendFileMessageWithOptionsAsync(SendFileMessageRequest request, SendFileMessageHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileName))
+            {
+                body["fileName"] = request.FileName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileSize))
+            {
+                body["fileSize"] = request.FileSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FileUrl))
+            {
+                body["fileUrl"] = request.FileUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SendType))
+            {
+                body["sendType"] = request.SendType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SendFileMessage",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/contents/files/messages/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SendFileMessageResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>收藏文件消息发送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendFileMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendFileMessageResponse
+        /// </returns>
+        public SendFileMessageResponse SendFileMessage(SendFileMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendFileMessageHeaders headers = new SendFileMessageHeaders();
+            return SendFileMessageWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>收藏文件消息发送</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendFileMessageRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendFileMessageResponse
+        /// </returns>
+        public async Task<SendFileMessageResponse> SendFileMessageAsync(SendFileMessageRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendFileMessageHeaders headers = new SendFileMessageHeaders();
+            return await SendFileMessageWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>亲情通话发消息</para>
         /// </summary>
         /// 
@@ -28898,6 +29110,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             {
                 body["deptOrderList"] = request.DeptOrderList;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptPositionSet))
+            {
+                body["deptPositionSet"] = request.DeptPositionSet;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptTitleList))
             {
                 body["deptTitleList"] = request.DeptTitleList;
@@ -29052,6 +29268,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptOrderList))
             {
                 body["deptOrderList"] = request.DeptOrderList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptPositionSet))
+            {
+                body["deptPositionSet"] = request.DeptPositionSet;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptTitleList))
             {
@@ -29242,6 +29462,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             {
                 body["deptOrderList"] = request.DeptOrderList;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptPositionSet))
+            {
+                body["deptPositionSet"] = request.DeptPositionSet;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptTitleList))
             {
                 body["deptTitleList"] = request.DeptTitleList;
@@ -29376,6 +29600,10 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptOrderList))
             {
                 body["deptOrderList"] = request.DeptOrderList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptPositionSet))
+            {
+                body["deptPositionSet"] = request.DeptPositionSet;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeptTitleList))
             {

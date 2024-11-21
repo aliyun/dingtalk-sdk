@@ -13,9 +13,17 @@ namespace AlibabaCloud.SDK.Dingtalkdatacenter_1_0.Models
         [Validation(Required=false)]
         public bool? Buy { get; set; }
 
+        [NameInMap("endDate")]
+        [Validation(Required=false)]
+        public string EndDate { get; set; }
+
         [NameInMap("quota")]
         [Validation(Required=false)]
         public long? Quota { get; set; }
+
+        [NameInMap("startDate")]
+        [Validation(Required=false)]
+        public string StartDate { get; set; }
 
         [NameInMap("success")]
         [Validation(Required=false)]

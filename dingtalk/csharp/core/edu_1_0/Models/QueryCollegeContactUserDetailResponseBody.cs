@@ -59,6 +59,48 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
             }
 
+            [NameInMap("deptPositionSet")]
+            [Validation(Required=false)]
+            public List<QueryCollegeContactUserDetailResponseBodyResultDeptPositionSet> DeptPositionSet { get; set; }
+            public class QueryCollegeContactUserDetailResponseBodyResultDeptPositionSet : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>123456</para>
+                /// </summary>
+                [NameInMap("deptId")]
+                [Validation(Required=false)]
+                public long? DeptId { get; set; }
+
+                [NameInMap("isMain")]
+                [Validation(Required=false)]
+                public bool? IsMain { get; set; }
+
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>001</para>
+                /// </summary>
+                [NameInMap("managerUserId")]
+                [Validation(Required=false)]
+                public string ManagerUserId { get; set; }
+
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>学工处处长</para>
+                /// </summary>
+                [NameInMap("title")]
+                [Validation(Required=false)]
+                public string Title { get; set; }
+
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>学工处办公室</para>
+                /// </summary>
+                [NameInMap("workPlace")]
+                [Validation(Required=false)]
+                public string WorkPlace { get; set; }
+
+            }
+
             [NameInMap("deptTypeSet")]
             [Validation(Required=false)]
             public List<QueryCollegeContactUserDetailResponseBodyResultDeptTypeSet> DeptTypeSet { get; set; }
@@ -319,7 +361,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
             /// <summary>
             /// <b>Example:</b>
-            /// <para>寝室长</para>
+            /// <para>学工处处长</para>
             /// </summary>
             [NameInMap("title")]
             [Validation(Required=false)]
@@ -387,7 +429,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
             /// <summary>
             /// <b>Example:</b>
-            /// <para>勤奋楼</para>
+            /// <para>学工处办公室</para>
             /// </summary>
             [NameInMap("workPlace")]
             [Validation(Required=false)]

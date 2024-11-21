@@ -43,6 +43,44 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
         }
 
+        [NameInMap("deptPositionSet")]
+        [Validation(Required=false)]
+        public List<UpdateCollegeContactExclusiveRequestDeptPositionSet> DeptPositionSet { get; set; }
+        public class UpdateCollegeContactExclusiveRequestDeptPositionSet : TeaModel {
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>123456</para>
+            /// </summary>
+            [NameInMap("deptId")]
+            [Validation(Required=false)]
+            public long? DeptId { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>001</para>
+            /// </summary>
+            [NameInMap("managerUserId")]
+            [Validation(Required=false)]
+            public string ManagerUserId { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>学工处处长</para>
+            /// </summary>
+            [NameInMap("title")]
+            [Validation(Required=false)]
+            public string Title { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>学工处办公室</para>
+            /// </summary>
+            [NameInMap("workPlace")]
+            [Validation(Required=false)]
+            public string WorkPlace { get; set; }
+
+        }
+
         [NameInMap("deptTitleList")]
         [Validation(Required=false)]
         public List<UpdateCollegeContactExclusiveRequestDeptTitleList> DeptTitleList { get; set; }
@@ -207,7 +245,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
         /// <summary>
         /// <b>Example:</b>
-        /// <para>学生会主席</para>
+        /// <para>学工处处长</para>
         /// </summary>
         [NameInMap("title")]
         [Validation(Required=false)]
@@ -225,7 +263,7 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
         /// <summary>
         /// <b>Example:</b>
-        /// <para>阿里巴巴c区</para>
+        /// <para>学工处办公室</para>
         /// </summary>
         [NameInMap("workPlace")]
         [Validation(Required=false)]

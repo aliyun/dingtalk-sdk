@@ -81,6 +81,28 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                     [Validation(Required=false)]
                     public long? Point { get; set; }
 
+                    [NameInMap("reference")]
+                    [Validation(Required=false)]
+                    public string Reference { get; set; }
+
+                    [NameInMap("subs")]
+                    [Validation(Required=false)]
+                    public List<BatchGetTaskResultResponseBodyTasksResultItemsSubs> Subs { get; set; }
+                    public class BatchGetTaskResultResponseBodyTasksResultItemsSubs : TeaModel {
+                        [NameInMap("point")]
+                        [Validation(Required=false)]
+                        public long? Point { get; set; }
+
+                        [NameInMap("reference")]
+                        [Validation(Required=false)]
+                        public string Reference { get; set; }
+
+                        [NameInMap("subInfo")]
+                        [Validation(Required=false)]
+                        public string SubInfo { get; set; }
+
+                    }
+
                 }
 
                 /// <summary>
@@ -90,6 +112,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                 [NameInMap("name")]
                 [Validation(Required=false)]
                 public string Name { get; set; }
+
+                [NameInMap("summary")]
+                [Validation(Required=false)]
+                public string Summary { get; set; }
 
                 /// <summary>
                 /// <b>Example:</b>

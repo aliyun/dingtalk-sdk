@@ -11,6 +11,14 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
     public class QueryCollegeContactUserDetailRequest : TeaModel {
         /// <summary>
         /// <b>Example:</b>
+        /// <para>12122294</para>
+        /// </summary>
+        [NameInMap("jobNumber")]
+        [Validation(Required=false)]
+        public string JobNumber { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
         /// <para>zh_CN</para>
         /// </summary>
         [NameInMap("language")]
@@ -18,8 +26,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
         public string Language { get; set; }
 
         /// <summary>
-        /// <para>This parameter is required.</para>
-        /// 
         /// <b>Example:</b>
         /// <para>zhangsan666</para>
         /// </summary>

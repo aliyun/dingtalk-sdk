@@ -53,6 +53,14 @@ namespace AlibabaCloud.SDK.Dingtalkproject_1_0.Models
                 [Validation(Required=false)]
                 public List<CreateTaskResponseBodyResultCustomfieldsValue> Value { get; set; }
                 public class CreateTaskResponseBodyResultCustomfieldsValue : TeaModel {
+                    [NameInMap("id")]
+                    [Validation(Required=false)]
+                    public string Id { get; set; }
+
+                    [NameInMap("thumbUrl")]
+                    [Validation(Required=false)]
+                    public string ThumbUrl { get; set; }
+
                     /// <summary>
                     /// <b>Example:</b>
                     /// <para>我是自定义字段显示值</para>

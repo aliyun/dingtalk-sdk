@@ -63,6 +63,14 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
             /// <summary>
             /// <b>Example:</b>
+            /// <para>小明</para>
+            /// </summary>
+            [NameInMap("studentName")]
+            [Validation(Required=false)]
+            public string StudentName { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
             /// <para>studentxxx</para>
             /// </summary>
             [NameInMap("studentUserId")]
