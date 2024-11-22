@@ -79,11 +79,11 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
             /// <summary>
             /// <b>Example:</b>
-            /// <para>0</para>
+            /// <para>2024-11-11 00:00:00</para>
             /// </summary>
             [NameInMap("courseDate")]
             [Validation(Required=false)]
-            public long? CourseDate { get; set; }
+            public string CourseDate { get; set; }
 
             /// <summary>
             /// <b>Example:</b>
@@ -103,11 +103,11 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
             /// <summary>
             /// <b>Example:</b>
-            /// <para>0</para>
+            /// <para>2024-11-12 09:00:00</para>
             /// </summary>
             [NameInMap("endTime")]
             [Validation(Required=false)]
-            public long? EndTime { get; set; }
+            public string EndTime { get; set; }
 
             /// <summary>
             /// <b>Example:</b>
@@ -151,11 +151,11 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
             /// <summary>
             /// <b>Example:</b>
-            /// <para>0</para>
+            /// <para>2024-11-12 09:00:00</para>
             /// </summary>
             [NameInMap("startTime")]
             [Validation(Required=false)]
-            public long? StartTime { get; set; }
+            public string StartTime { get; set; }
 
             /// <summary>
             /// <b>Example:</b>

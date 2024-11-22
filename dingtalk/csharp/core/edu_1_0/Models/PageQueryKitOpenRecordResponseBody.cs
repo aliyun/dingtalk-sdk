@@ -47,19 +47,19 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0.Models
 
             /// <summary>
             /// <b>Example:</b>
-            /// <para>0</para>
+            /// <para>2024-08-20 00:00:00</para>
             /// </summary>
             [NameInMap("openEndTime")]
             [Validation(Required=false)]
-            public long? OpenEndTime { get; set; }
+            public string OpenEndTime { get; set; }
 
             /// <summary>
             /// <b>Example:</b>
-            /// <para>0</para>
+            /// <para>2024-01-20 00:00:00</para>
             /// </summary>
             [NameInMap("openStartTime")]
             [Validation(Required=false)]
-            public long? OpenStartTime { get; set; }
+            public string OpenStartTime { get; set; }
 
             /// <summary>
             /// <b>Example:</b>
