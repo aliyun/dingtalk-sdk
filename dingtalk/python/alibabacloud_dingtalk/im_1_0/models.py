@@ -1833,8 +1833,10 @@ class CopyUnfurlingRegisterRequest(TeaModel):
 class CopyUnfurlingRegisterResponseBody(TeaModel):
     def __init__(
         self,
+        result: int = None,
         success: bool = None,
     ):
+        self.result = result
         self.success = success
 
     def validate(self):
@@ -1846,12 +1848,16 @@ class CopyUnfurlingRegisterResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.result is not None:
+            result['result'] = self.result
         if self.success is not None:
             result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
         if m.get('success') is not None:
             self.success = m.get('success')
         return self
