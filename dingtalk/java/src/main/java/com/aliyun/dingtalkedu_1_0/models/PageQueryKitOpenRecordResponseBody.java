@@ -62,17 +62,17 @@ public class PageQueryKitOpenRecordResponseBody extends TeaModel {
 
         /**
          * <strong>example:</strong>
-         * <p>0</p>
+         * <p>2024-08-20 00:00:00</p>
          */
         @NameInMap("openEndTime")
-        public Long openEndTime;
+        public String openEndTime;
 
         /**
          * <strong>example:</strong>
-         * <p>0</p>
+         * <p>2024-01-20 00:00:00</p>
          */
         @NameInMap("openStartTime")
-        public Long openStartTime;
+        public String openStartTime;
 
         /**
          * <strong>example:</strong>
@@ -118,19 +118,19 @@ public class PageQueryKitOpenRecordResponseBody extends TeaModel {
             return this.isvProductScene;
         }
 
-        public PageQueryKitOpenRecordResponseBodyResult setOpenEndTime(Long openEndTime) {
+        public PageQueryKitOpenRecordResponseBodyResult setOpenEndTime(String openEndTime) {
             this.openEndTime = openEndTime;
             return this;
         }
-        public Long getOpenEndTime() {
+        public String getOpenEndTime() {
             return this.openEndTime;
         }
 
-        public PageQueryKitOpenRecordResponseBodyResult setOpenStartTime(Long openStartTime) {
+        public PageQueryKitOpenRecordResponseBodyResult setOpenStartTime(String openStartTime) {
             this.openStartTime = openStartTime;
             return this;
         }
-        public Long getOpenStartTime() {
+        public String getOpenStartTime() {
             return this.openStartTime;
         }
 

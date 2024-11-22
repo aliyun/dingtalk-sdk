@@ -570,6 +570,118 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>批量查询智能报价结果</p>
+     * 
+     * @param request SmartQuoteBatchQueryResultServiceRequest
+     * @param headers SmartQuoteBatchQueryResultServiceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SmartQuoteBatchQueryResultServiceResponse
+     */
+    public SmartQuoteBatchQueryResultServiceResponse smartQuoteBatchQueryResultServiceWithOptions(SmartQuoteBatchQueryResultServiceRequest request, SmartQuoteBatchQueryResultServiceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.taskId)) {
+            body.put("taskId", request.taskId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SmartQuoteBatchQueryResultService"),
+            new TeaPair("version", "aiPaaS_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/aiPaaS/nl2x/smartQuotations/results/batchQuery"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SmartQuoteBatchQueryResultServiceResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>批量查询智能报价结果</p>
+     * 
+     * @param request SmartQuoteBatchQueryResultServiceRequest
+     * @return SmartQuoteBatchQueryResultServiceResponse
+     */
+    public SmartQuoteBatchQueryResultServiceResponse smartQuoteBatchQueryResultService(SmartQuoteBatchQueryResultServiceRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SmartQuoteBatchQueryResultServiceHeaders headers = new SmartQuoteBatchQueryResultServiceHeaders();
+        return this.smartQuoteBatchQueryResultServiceWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>批量查询智能报价</p>
+     * 
+     * @param request SmartQuoteBatchQueryServiceRequest
+     * @param headers SmartQuoteBatchQueryServiceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SmartQuoteBatchQueryServiceResponse
+     */
+    public SmartQuoteBatchQueryServiceResponse smartQuoteBatchQueryServiceWithOptions(SmartQuoteBatchQueryServiceRequest request, SmartQuoteBatchQueryServiceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.request)) {
+            body.put("request", request.request);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SmartQuoteBatchQueryService"),
+            new TeaPair("version", "aiPaaS_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/aiPaaS/nl2x/smartQuotations/batchQuery"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SmartQuoteBatchQueryServiceResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>批量查询智能报价</p>
+     * 
+     * @param request SmartQuoteBatchQueryServiceRequest
+     * @return SmartQuoteBatchQueryServiceResponse
+     */
+    public SmartQuoteBatchQueryServiceResponse smartQuoteBatchQueryService(SmartQuoteBatchQueryServiceRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SmartQuoteBatchQueryServiceHeaders headers = new SmartQuoteBatchQueryServiceHeaders();
+        return this.smartQuoteBatchQueryServiceWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>添加智能报价数据</p>
      * 
      * @param request SmartQuoteDataServiceRequest

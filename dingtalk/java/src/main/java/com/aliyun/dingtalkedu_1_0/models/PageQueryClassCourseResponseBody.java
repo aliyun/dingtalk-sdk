@@ -90,10 +90,10 @@ public class PageQueryClassCourseResponseBody extends TeaModel {
 
         /**
          * <strong>example:</strong>
-         * <p>0</p>
+         * <p>2024-11-21 00:00:00</p>
          */
         @NameInMap("courseDate")
-        public Long courseDate;
+        public String courseDate;
 
         /**
          * <strong>example:</strong>
@@ -111,10 +111,10 @@ public class PageQueryClassCourseResponseBody extends TeaModel {
 
         /**
          * <strong>example:</strong>
-         * <p>0</p>
+         * <p>2024-11-21 00:00:00</p>
          */
         @NameInMap("endTime")
-        public Long endTime;
+        public String endTime;
 
         /**
          * <strong>example:</strong>
@@ -153,10 +153,10 @@ public class PageQueryClassCourseResponseBody extends TeaModel {
 
         /**
          * <strong>example:</strong>
-         * <p>0</p>
+         * <p>2024-11-21 00:00:00</p>
          */
         @NameInMap("startTime")
-        public Long startTime;
+        public String startTime;
 
         /**
          * <strong>example:</strong>
@@ -262,11 +262,11 @@ public class PageQueryClassCourseResponseBody extends TeaModel {
             return this.courseCode;
         }
 
-        public PageQueryClassCourseResponseBodyResult setCourseDate(Long courseDate) {
+        public PageQueryClassCourseResponseBodyResult setCourseDate(String courseDate) {
             this.courseDate = courseDate;
             return this;
         }
-        public Long getCourseDate() {
+        public String getCourseDate() {
             return this.courseDate;
         }
 
@@ -286,11 +286,11 @@ public class PageQueryClassCourseResponseBody extends TeaModel {
             return this.courseWeek;
         }
 
-        public PageQueryClassCourseResponseBodyResult setEndTime(Long endTime) {
+        public PageQueryClassCourseResponseBodyResult setEndTime(String endTime) {
             this.endTime = endTime;
             return this;
         }
-        public Long getEndTime() {
+        public String getEndTime() {
             return this.endTime;
         }
 
@@ -334,11 +334,11 @@ public class PageQueryClassCourseResponseBody extends TeaModel {
             return this.semester;
         }
 
-        public PageQueryClassCourseResponseBodyResult setStartTime(Long startTime) {
+        public PageQueryClassCourseResponseBodyResult setStartTime(String startTime) {
             this.startTime = startTime;
             return this;
         }
-        public Long getStartTime() {
+        public String getStartTime() {
             return this.startTime;
         }
 
