@@ -2,14 +2,15 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models;
+namespace AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\SmartQuoteBatchQueryServiceResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
-class CopyUnfurlingRegisterResponseBody extends Model
+class SmartQuoteBatchQueryServiceResponseBody extends Model
 {
     /**
-     * @var int
+     * @var result
      */
     public $result;
 
@@ -30,7 +31,7 @@ class CopyUnfurlingRegisterResponseBody extends Model
     {
         $res = [];
         if (null !== $this->result) {
-            $res['result'] = $this->result;
+            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
         }
         if (null !== $this->success) {
             $res['success'] = $this->success;
@@ -42,13 +43,13 @@ class CopyUnfurlingRegisterResponseBody extends Model
     /**
      * @param array $map
      *
-     * @return CopyUnfurlingRegisterResponseBody
+     * @return SmartQuoteBatchQueryServiceResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
         if (isset($map['result'])) {
-            $model->result = $map['result'];
+            $model->result = result::fromMap($map['result']);
         }
         if (isset($map['success'])) {
             $model->success = $map['success'];

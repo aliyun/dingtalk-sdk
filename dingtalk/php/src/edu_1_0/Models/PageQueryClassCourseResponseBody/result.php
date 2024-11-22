@@ -65,9 +65,9 @@ class result extends Model
     public $courseCode;
 
     /**
-     * @example 0
+     * @example 2024-11-21 00:00:00
      *
-     * @var int
+     * @var string
      */
     public $courseDate;
 
@@ -86,9 +86,9 @@ class result extends Model
     public $courseWeek;
 
     /**
-     * @example 0
+     * @example 2024-11-21 00:00:00
      *
-     * @var int
+     * @var string
      */
     public $endTime;
 
@@ -128,9 +128,9 @@ class result extends Model
     public $semester;
 
     /**
-     * @example 0
+     * @example 2024-11-21 00:00:00
      *
-     * @var int
+     * @var string
      */
     public $startTime;
 

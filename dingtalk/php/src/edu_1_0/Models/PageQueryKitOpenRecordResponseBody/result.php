@@ -37,16 +37,16 @@ class result extends Model
     public $isvProductScene;
 
     /**
-     * @example 0
+     * @example 2024-08-20 00:00:00
      *
-     * @var int
+     * @var string
      */
     public $openEndTime;
 
     /**
-     * @example 0
+     * @example 2024-01-20 00:00:00
      *
-     * @var int
+     * @var string
      */
     public $openStartTime;
 
