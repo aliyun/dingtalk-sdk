@@ -3592,6 +3592,120 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.GetCalenderSummaryHeaders()
         return await self.get_calender_summary_with_options_async(data_id, headers, runtime)
 
+    def get_cids_by_bot_code_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetCidsByBotCodeRequest,
+        headers: dingtalkexclusive__1__0_models.GetCidsByBotCodeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetCidsByBotCodeResponse:
+        """
+        @summary 根据机器人code获取群openConversationId列表
+        
+        @param request: GetCidsByBotCodeRequest
+        @param headers: GetCidsByBotCodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCidsByBotCodeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.robot_code):
+            query['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetCidsByBotCode',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/groups/openConversationIds',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetCidsByBotCodeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_cids_by_bot_code_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetCidsByBotCodeRequest,
+        headers: dingtalkexclusive__1__0_models.GetCidsByBotCodeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetCidsByBotCodeResponse:
+        """
+        @summary 根据机器人code获取群openConversationId列表
+        
+        @param request: GetCidsByBotCodeRequest
+        @param headers: GetCidsByBotCodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetCidsByBotCodeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.robot_code):
+            query['robotCode'] = request.robot_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetCidsByBotCode',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/groups/openConversationIds',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetCidsByBotCodeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_cids_by_bot_code(
+        self,
+        request: dingtalkexclusive__1__0_models.GetCidsByBotCodeRequest,
+    ) -> dingtalkexclusive__1__0_models.GetCidsByBotCodeResponse:
+        """
+        @summary 根据机器人code获取群openConversationId列表
+        
+        @param request: GetCidsByBotCodeRequest
+        @return: GetCidsByBotCodeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetCidsByBotCodeHeaders()
+        return self.get_cids_by_bot_code_with_options(request, headers, runtime)
+
+    async def get_cids_by_bot_code_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetCidsByBotCodeRequest,
+    ) -> dingtalkexclusive__1__0_models.GetCidsByBotCodeResponse:
+        """
+        @summary 根据机器人code获取群openConversationId列表
+        
+        @param request: GetCidsByBotCodeRequest
+        @return: GetCidsByBotCodeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetCidsByBotCodeHeaders()
+        return await self.get_cids_by_bot_code_with_options_async(request, headers, runtime)
+
     def get_comment_list_with_options(
         self,
         publisher_id: str,
@@ -5043,6 +5157,234 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkexclusive__1__0_models.GetGroupActiveInfoHeaders()
         return await self.get_group_active_info_with_options_async(request, headers, runtime)
+
+    def get_group_info_by_cid_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetGroupInfoByCidRequest,
+        headers: dingtalkexclusive__1__0_models.GetGroupInfoByCidHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetGroupInfoByCidResponse:
+        """
+        @summary 根据群会话id获取群相关信息
+        
+        @param request: GetGroupInfoByCidRequest
+        @param headers: GetGroupInfoByCidHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetGroupInfoByCidResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetGroupInfoByCid',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/groups/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetGroupInfoByCidResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_group_info_by_cid_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetGroupInfoByCidRequest,
+        headers: dingtalkexclusive__1__0_models.GetGroupInfoByCidHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetGroupInfoByCidResponse:
+        """
+        @summary 根据群会话id获取群相关信息
+        
+        @param request: GetGroupInfoByCidRequest
+        @param headers: GetGroupInfoByCidHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetGroupInfoByCidResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetGroupInfoByCid',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/groups/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetGroupInfoByCidResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_group_info_by_cid(
+        self,
+        request: dingtalkexclusive__1__0_models.GetGroupInfoByCidRequest,
+    ) -> dingtalkexclusive__1__0_models.GetGroupInfoByCidResponse:
+        """
+        @summary 根据群会话id获取群相关信息
+        
+        @param request: GetGroupInfoByCidRequest
+        @return: GetGroupInfoByCidResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetGroupInfoByCidHeaders()
+        return self.get_group_info_by_cid_with_options(request, headers, runtime)
+
+    async def get_group_info_by_cid_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetGroupInfoByCidRequest,
+    ) -> dingtalkexclusive__1__0_models.GetGroupInfoByCidResponse:
+        """
+        @summary 根据群会话id获取群相关信息
+        
+        @param request: GetGroupInfoByCidRequest
+        @return: GetGroupInfoByCidResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetGroupInfoByCidHeaders()
+        return await self.get_group_info_by_cid_with_options_async(request, headers, runtime)
+
+    def get_group_org_by_cid_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetGroupOrgByCidRequest,
+        headers: dingtalkexclusive__1__0_models.GetGroupOrgByCidHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetGroupOrgByCidResponse:
+        """
+        @summary 根据群会话id获取组织id
+        
+        @param request: GetGroupOrgByCidRequest
+        @param headers: GetGroupOrgByCidHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetGroupOrgByCidResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetGroupOrgByCid',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/groups/organizations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetGroupOrgByCidResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_group_org_by_cid_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetGroupOrgByCidRequest,
+        headers: dingtalkexclusive__1__0_models.GetGroupOrgByCidHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetGroupOrgByCidResponse:
+        """
+        @summary 根据群会话id获取组织id
+        
+        @param request: GetGroupOrgByCidRequest
+        @param headers: GetGroupOrgByCidHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetGroupOrgByCidResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetGroupOrgByCid',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/groups/organizations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetGroupOrgByCidResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_group_org_by_cid(
+        self,
+        request: dingtalkexclusive__1__0_models.GetGroupOrgByCidRequest,
+    ) -> dingtalkexclusive__1__0_models.GetGroupOrgByCidResponse:
+        """
+        @summary 根据群会话id获取组织id
+        
+        @param request: GetGroupOrgByCidRequest
+        @return: GetGroupOrgByCidResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetGroupOrgByCidHeaders()
+        return self.get_group_org_by_cid_with_options(request, headers, runtime)
+
+    async def get_group_org_by_cid_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetGroupOrgByCidRequest,
+    ) -> dingtalkexclusive__1__0_models.GetGroupOrgByCidResponse:
+        """
+        @summary 根据群会话id获取组织id
+        
+        @param request: GetGroupOrgByCidRequest
+        @return: GetGroupOrgByCidResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetGroupOrgByCidHeaders()
+        return await self.get_group_org_by_cid_with_options_async(request, headers, runtime)
 
     def get_in_active_user_list_with_options(
         self,

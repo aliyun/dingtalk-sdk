@@ -5139,6 +5139,134 @@ class GetCalenderSummaryResponse(TeaModel):
         return self
 
 
+class GetCidsByBotCodeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetCidsByBotCodeRequest(TeaModel):
+    def __init__(
+        self,
+        robot_code: str = None,
+    ):
+        self.robot_code = robot_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.robot_code is not None:
+            result['robotCode'] = self.robot_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('robotCode') is not None:
+            self.robot_code = m.get('robotCode')
+        return self
+
+
+class GetCidsByBotCodeResponseBody(TeaModel):
+    def __init__(
+        self,
+        open_conversation_ids: List[str] = None,
+    ):
+        self.open_conversation_ids = open_conversation_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_ids is not None:
+            result['openConversationIds'] = self.open_conversation_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationIds') is not None:
+            self.open_conversation_ids = m.get('openConversationIds')
+        return self
+
+
+class GetCidsByBotCodeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetCidsByBotCodeResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetCidsByBotCodeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetCommentListHeaders(TeaModel):
     def __init__(
         self,
@@ -7467,6 +7595,321 @@ class GetGroupActiveInfoResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetGroupActiveInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetGroupInfoByCidHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetGroupInfoByCidRequest(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+    ):
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class GetGroupInfoByCidResponseBodyGroupInfo(TeaModel):
+    def __init__(
+        self,
+        all_org_member: bool = None,
+        group_name: str = None,
+        group_number: int = None,
+        group_organization: int = None,
+        join_group_url: str = None,
+        open_conversation_id: str = None,
+    ):
+        self.all_org_member = all_org_member
+        self.group_name = group_name
+        self.group_number = group_number
+        self.group_organization = group_organization
+        self.join_group_url = join_group_url
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.all_org_member is not None:
+            result['allOrgMember'] = self.all_org_member
+        if self.group_name is not None:
+            result['groupName'] = self.group_name
+        if self.group_number is not None:
+            result['groupNumber'] = self.group_number
+        if self.group_organization is not None:
+            result['groupOrganization'] = self.group_organization
+        if self.join_group_url is not None:
+            result['joinGroupUrl'] = self.join_group_url
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('allOrgMember') is not None:
+            self.all_org_member = m.get('allOrgMember')
+        if m.get('groupName') is not None:
+            self.group_name = m.get('groupName')
+        if m.get('groupNumber') is not None:
+            self.group_number = m.get('groupNumber')
+        if m.get('groupOrganization') is not None:
+            self.group_organization = m.get('groupOrganization')
+        if m.get('joinGroupUrl') is not None:
+            self.join_group_url = m.get('joinGroupUrl')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class GetGroupInfoByCidResponseBody(TeaModel):
+    def __init__(
+        self,
+        group_info: GetGroupInfoByCidResponseBodyGroupInfo = None,
+    ):
+        self.group_info = group_info
+
+    def validate(self):
+        if self.group_info:
+            self.group_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_info is not None:
+            result['groupInfo'] = self.group_info.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupInfo') is not None:
+            temp_model = GetGroupInfoByCidResponseBodyGroupInfo()
+            self.group_info = temp_model.from_map(m['groupInfo'])
+        return self
+
+
+class GetGroupInfoByCidResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetGroupInfoByCidResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetGroupInfoByCidResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetGroupOrgByCidHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetGroupOrgByCidRequest(TeaModel):
+    def __init__(
+        self,
+        open_conversation_id: str = None,
+    ):
+        self.open_conversation_id = open_conversation_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class GetGroupOrgByCidResponseBody(TeaModel):
+    def __init__(
+        self,
+        group_organization: int = None,
+    ):
+        self.group_organization = group_organization
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.group_organization is not None:
+            result['groupOrganization'] = self.group_organization
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('groupOrganization') is not None:
+            self.group_organization = m.get('groupOrganization')
+        return self
+
+
+class GetGroupOrgByCidResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetGroupOrgByCidResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetGroupOrgByCidResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

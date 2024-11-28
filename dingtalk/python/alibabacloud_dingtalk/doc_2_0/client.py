@@ -2258,6 +2258,132 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__2__0_models.GetMySpaceHeaders()
         return await self.get_my_space_with_options_async(request, headers, runtime)
 
+    def get_org_or_web_open_doc_content_with_options(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.GetOrgOrWebOpenDocContentRequest,
+        headers: dingtalkdoc__2__0_models.GetOrgOrWebOpenDocContentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetOrgOrWebOpenDocContentResponse:
+        """
+        @summary 委托权限获取企业内公开或者或联网公开文档内容
+        
+        @param request: GetOrgOrWebOpenDocContentRequest
+        @param headers: GetOrgOrWebOpenDocContentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetOrgOrWebOpenDocContentResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.generate_cp):
+            query['generateCp'] = request.generate_cp
+        if not UtilClient.is_unset(request.scope_type):
+            query['scopeType'] = request.scope_type
+        if not UtilClient.is_unset(request.target_format):
+            query['targetFormat'] = request.target_format
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetOrgOrWebOpenDocContent',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/me/dentries/{dentry_uuid}/contents',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetOrgOrWebOpenDocContentResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_org_or_web_open_doc_content_with_options_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.GetOrgOrWebOpenDocContentRequest,
+        headers: dingtalkdoc__2__0_models.GetOrgOrWebOpenDocContentHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__2__0_models.GetOrgOrWebOpenDocContentResponse:
+        """
+        @summary 委托权限获取企业内公开或者或联网公开文档内容
+        
+        @param request: GetOrgOrWebOpenDocContentRequest
+        @param headers: GetOrgOrWebOpenDocContentHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetOrgOrWebOpenDocContentResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.generate_cp):
+            query['generateCp'] = request.generate_cp
+        if not UtilClient.is_unset(request.scope_type):
+            query['scopeType'] = request.scope_type
+        if not UtilClient.is_unset(request.target_format):
+            query['targetFormat'] = request.target_format
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetOrgOrWebOpenDocContent',
+            version='doc_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/doc/me/dentries/{dentry_uuid}/contents',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__2__0_models.GetOrgOrWebOpenDocContentResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_org_or_web_open_doc_content(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.GetOrgOrWebOpenDocContentRequest,
+    ) -> dingtalkdoc__2__0_models.GetOrgOrWebOpenDocContentResponse:
+        """
+        @summary 委托权限获取企业内公开或者或联网公开文档内容
+        
+        @param request: GetOrgOrWebOpenDocContentRequest
+        @return: GetOrgOrWebOpenDocContentResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetOrgOrWebOpenDocContentHeaders()
+        return self.get_org_or_web_open_doc_content_with_options(dentry_uuid, request, headers, runtime)
+
+    async def get_org_or_web_open_doc_content_async(
+        self,
+        dentry_uuid: str,
+        request: dingtalkdoc__2__0_models.GetOrgOrWebOpenDocContentRequest,
+    ) -> dingtalkdoc__2__0_models.GetOrgOrWebOpenDocContentResponse:
+        """
+        @summary 委托权限获取企业内公开或者或联网公开文档内容
+        
+        @param request: GetOrgOrWebOpenDocContentRequest
+        @return: GetOrgOrWebOpenDocContentResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__2__0_models.GetOrgOrWebOpenDocContentHeaders()
+        return await self.get_org_or_web_open_doc_content_with_options_async(dentry_uuid, request, headers, runtime)
+
     def get_schema_with_options(
         self,
         team_id: str,
