@@ -59,6 +59,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetDocContentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetMySpaceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetMySpaceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetMySpaceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetOrgOrWebOpenDocContentHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetOrgOrWebOpenDocContentRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetOrgOrWebOpenDocContentResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSchemaHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSchemaRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_2_0\Models\GetSchemaResponse;
@@ -1343,6 +1346,71 @@ class Dingtalk extends OpenApiClient
         $headers = new GetMySpaceHeaders([]);
 
         return $this->getMySpaceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 委托权限获取企业内公开或者或联网公开文档内容
+     *  *
+     * @param string                           $dentryUuid
+     * @param GetOrgOrWebOpenDocContentRequest $request    GetOrgOrWebOpenDocContentRequest
+     * @param GetOrgOrWebOpenDocContentHeaders $headers    GetOrgOrWebOpenDocContentHeaders
+     * @param RuntimeOptions                   $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return GetOrgOrWebOpenDocContentResponse GetOrgOrWebOpenDocContentResponse
+     */
+    public function getOrgOrWebOpenDocContentWithOptions($dentryUuid, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->generateCp)) {
+            $query['generateCp'] = $request->generateCp;
+        }
+        if (!Utils::isUnset($request->scopeType)) {
+            $query['scopeType'] = $request->scopeType;
+        }
+        if (!Utils::isUnset($request->targetFormat)) {
+            $query['targetFormat'] = $request->targetFormat;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetOrgOrWebOpenDocContent',
+            'version'     => 'doc_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/doc/me/dentries/' . $dentryUuid . '/contents',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetOrgOrWebOpenDocContentResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 委托权限获取企业内公开或者或联网公开文档内容
+     *  *
+     * @param string                           $dentryUuid
+     * @param GetOrgOrWebOpenDocContentRequest $request    GetOrgOrWebOpenDocContentRequest
+     *
+     * @return GetOrgOrWebOpenDocContentResponse GetOrgOrWebOpenDocContentResponse
+     */
+    public function getOrgOrWebOpenDocContent($dentryUuid, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetOrgOrWebOpenDocContentHeaders([]);
+
+        return $this->getOrgOrWebOpenDocContentWithOptions($dentryUuid, $request, $headers, $runtime);
     }
 
     /**

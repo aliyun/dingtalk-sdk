@@ -90,6 +90,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAppDispatchInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetAppDispatchInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCalenderSummaryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCalenderSummaryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCidsByBotCodeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCidsByBotCodeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCidsByBotCodeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCommentListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCommentListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetCommentListResponse;
@@ -124,6 +127,12 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGeneralFormCreatedSummary
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupActiveInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupActiveInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupActiveInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupInfoByCidHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupInfoByCidRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupInfoByCidResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupOrgByCidHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupOrgByCidRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetGroupOrgByCidResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetInActiveUserListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetInActiveUserListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetInActiveUserListResponse;
@@ -2223,6 +2232,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据机器人code获取群openConversationId列表
+     *  *
+     * @param GetCidsByBotCodeRequest $request GetCidsByBotCodeRequest
+     * @param GetCidsByBotCodeHeaders $headers GetCidsByBotCodeHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetCidsByBotCodeResponse GetCidsByBotCodeResponse
+     */
+    public function getCidsByBotCodeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->robotCode)) {
+            $query['robotCode'] = $request->robotCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetCidsByBotCode',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/groups/openConversationIds',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetCidsByBotCodeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据机器人code获取群openConversationId列表
+     *  *
+     * @param GetCidsByBotCodeRequest $request GetCidsByBotCodeRequest
+     *
+     * @return GetCidsByBotCodeResponse GetCidsByBotCodeResponse
+     */
+    public function getCidsByBotCode($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetCidsByBotCodeHeaders([]);
+
+        return $this->getCidsByBotCodeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取发布号的评论列表
      *  *
      * @param string                $publisherId
@@ -2960,6 +3026,120 @@ class Dingtalk extends OpenApiClient
         $headers = new GetGroupActiveInfoHeaders([]);
 
         return $this->getGroupActiveInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据群会话id获取群相关信息
+     *  *
+     * @param GetGroupInfoByCidRequest $request GetGroupInfoByCidRequest
+     * @param GetGroupInfoByCidHeaders $headers GetGroupInfoByCidHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetGroupInfoByCidResponse GetGroupInfoByCidResponse
+     */
+    public function getGroupInfoByCidWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $query['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetGroupInfoByCid',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/groups/infos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetGroupInfoByCidResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据群会话id获取群相关信息
+     *  *
+     * @param GetGroupInfoByCidRequest $request GetGroupInfoByCidRequest
+     *
+     * @return GetGroupInfoByCidResponse GetGroupInfoByCidResponse
+     */
+    public function getGroupInfoByCid($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetGroupInfoByCidHeaders([]);
+
+        return $this->getGroupInfoByCidWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据群会话id获取组织id
+     *  *
+     * @param GetGroupOrgByCidRequest $request GetGroupOrgByCidRequest
+     * @param GetGroupOrgByCidHeaders $headers GetGroupOrgByCidHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetGroupOrgByCidResponse GetGroupOrgByCidResponse
+     */
+    public function getGroupOrgByCidWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $query['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetGroupOrgByCid',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/groups/organizations',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetGroupOrgByCidResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据群会话id获取组织id
+     *  *
+     * @param GetGroupOrgByCidRequest $request GetGroupOrgByCidRequest
+     *
+     * @return GetGroupOrgByCidResponse GetGroupOrgByCidResponse
+     */
+    public function getGroupOrgByCid($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetGroupOrgByCidHeaders([]);
+
+        return $this->getGroupOrgByCidWithOptions($request, $headers, $runtime);
     }
 
     /**
