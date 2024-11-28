@@ -2966,6 +2966,170 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_2_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>委托权限获取企业内公开或者或联网公开文档内容</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetOrgOrWebOpenDocContentRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetOrgOrWebOpenDocContentHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetOrgOrWebOpenDocContentResponse
+        /// </returns>
+        public GetOrgOrWebOpenDocContentResponse GetOrgOrWebOpenDocContentWithOptions(string dentryUuid, GetOrgOrWebOpenDocContentRequest request, GetOrgOrWebOpenDocContentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GenerateCp))
+            {
+                query["generateCp"] = request.GenerateCp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScopeType))
+            {
+                query["scopeType"] = request.ScopeType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetFormat))
+            {
+                query["targetFormat"] = request.TargetFormat;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetOrgOrWebOpenDocContent",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/me/dentries/" + dentryUuid + "/contents",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetOrgOrWebOpenDocContentResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>委托权限获取企业内公开或者或联网公开文档内容</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetOrgOrWebOpenDocContentRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetOrgOrWebOpenDocContentHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetOrgOrWebOpenDocContentResponse
+        /// </returns>
+        public async Task<GetOrgOrWebOpenDocContentResponse> GetOrgOrWebOpenDocContentWithOptionsAsync(string dentryUuid, GetOrgOrWebOpenDocContentRequest request, GetOrgOrWebOpenDocContentHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.GenerateCp))
+            {
+                query["generateCp"] = request.GenerateCp;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScopeType))
+            {
+                query["scopeType"] = request.ScopeType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TargetFormat))
+            {
+                query["targetFormat"] = request.TargetFormat;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetOrgOrWebOpenDocContent",
+                Version = "doc_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/doc/me/dentries/" + dentryUuid + "/contents",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetOrgOrWebOpenDocContentResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>委托权限获取企业内公开或者或联网公开文档内容</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetOrgOrWebOpenDocContentRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetOrgOrWebOpenDocContentResponse
+        /// </returns>
+        public GetOrgOrWebOpenDocContentResponse GetOrgOrWebOpenDocContent(string dentryUuid, GetOrgOrWebOpenDocContentRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetOrgOrWebOpenDocContentHeaders headers = new GetOrgOrWebOpenDocContentHeaders();
+            return GetOrgOrWebOpenDocContentWithOptions(dentryUuid, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>委托权限获取企业内公开或者或联网公开文档内容</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetOrgOrWebOpenDocContentRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetOrgOrWebOpenDocContentResponse
+        /// </returns>
+        public async Task<GetOrgOrWebOpenDocContentResponse> GetOrgOrWebOpenDocContentAsync(string dentryUuid, GetOrgOrWebOpenDocContentRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetOrgOrWebOpenDocContentHeaders headers = new GetOrgOrWebOpenDocContentHeaders();
+            return await GetOrgOrWebOpenDocContentWithOptionsAsync(dentryUuid, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询小组主页schema （包括轮播图、公告、便捷入口）</para>
         /// </summary>
         /// 
