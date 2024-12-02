@@ -37,61 +37,13 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0.Models
             [Validation(Required=false)]
             public string CreatorId { get; set; }
 
-            [NameInMap("customfields")]
-            [Validation(Required=false)]
-            public List<SearchProjectsV3ResponseBodyResultCustomfields> Customfields { get; set; }
-            public class SearchProjectsV3ResponseBodyResultCustomfields : TeaModel {
-                [NameInMap("customfieldId")]
-                [Validation(Required=false)]
-                public string CustomfieldId { get; set; }
-
-                [NameInMap("type")]
-                [Validation(Required=false)]
-                public string Type { get; set; }
-
-                [NameInMap("value")]
-                [Validation(Required=false)]
-                public List<SearchProjectsV3ResponseBodyResultCustomfieldsValue> Value { get; set; }
-                public class SearchProjectsV3ResponseBodyResultCustomfieldsValue : TeaModel {
-                    [NameInMap("id")]
-                    [Validation(Required=false)]
-                    public string Id { get; set; }
-
-                    [NameInMap("metaString")]
-                    [Validation(Required=false)]
-                    public string MetaString { get; set; }
-
-                    [NameInMap("title")]
-                    [Validation(Required=false)]
-                    public string Title { get; set; }
-
-                }
-
-            }
-
             [NameInMap("description")]
             [Validation(Required=false)]
             public string Description { get; set; }
 
-            /// <summary>
-            /// <b>Example:</b>
-            /// <para>2022-07-04T03:29:34.770Z</para>
-            /// </summary>
-            [NameInMap("endDate")]
-            [Validation(Required=false)]
-            public string EndDate { get; set; }
-
             [NameInMap("id")]
             [Validation(Required=false)]
             public string Id { get; set; }
-
-            [NameInMap("isArchived")]
-            [Validation(Required=false)]
-            public bool? IsArchived { get; set; }
-
-            [NameInMap("isSuspended")]
-            [Validation(Required=false)]
-            public bool? IsSuspended { get; set; }
 
             [NameInMap("isTemplate")]
             [Validation(Required=false)]
@@ -117,25 +69,9 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0.Models
             /// <b>Example:</b>
             /// <para>2022-07-04T03:29:34.770Z</para>
             /// </summary>
-            [NameInMap("startDate")]
-            [Validation(Required=false)]
-            public string StartDate { get; set; }
-
-            [NameInMap("uniqueIdPrefix")]
-            [Validation(Required=false)]
-            public string UniqueIdPrefix { get; set; }
-
-            /// <summary>
-            /// <b>Example:</b>
-            /// <para>2022-07-04T03:29:34.770Z</para>
-            /// </summary>
             [NameInMap("updated")]
             [Validation(Required=false)]
             public string Updated { get; set; }
-
-            [NameInMap("visibility")]
-            [Validation(Required=false)]
-            public string Visibility { get; set; }
 
         }
 

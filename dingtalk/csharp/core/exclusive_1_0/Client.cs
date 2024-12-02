@@ -4790,6 +4790,14 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
             {
                 query["robotCode"] = request.RobotCode;
@@ -4814,7 +4822,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
                 Version = "exclusive_1.0",
                 Protocol = "HTTP",
                 Pathname = "/v1.0/exclusive/groups/openConversationIds",
-                Method = "GET",
+                Method = "POST",
                 AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
@@ -4845,6 +4853,14 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RobotCode))
             {
                 query["robotCode"] = request.RobotCode;
@@ -4869,7 +4885,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
                 Version = "exclusive_1.0",
                 Protocol = "HTTP",
                 Pathname = "/v1.0/exclusive/groups/openConversationIds",
-                Method = "GET",
+                Method = "POST",
                 AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",

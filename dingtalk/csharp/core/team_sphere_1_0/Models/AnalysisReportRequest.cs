@@ -8,10 +8,10 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0.Models
 {
-    public class QueryTasksV3Request : TeaModel {
-        [NameInMap("taskId")]
+    public class AnalysisReportRequest : TeaModel {
+        [NameInMap("reportId")]
         [Validation(Required=false)]
-        public string TaskId { get; set; }
+        public string ReportId { get; set; }
 
     }
 

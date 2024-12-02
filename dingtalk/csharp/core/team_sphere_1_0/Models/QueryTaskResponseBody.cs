@@ -8,15 +8,23 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0.Models
 {
-    public class QueryTasksV3ResponseBody : TeaModel {
+    public class QueryTaskResponseBody : TeaModel {
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>f279e812-e431-428d-846d-cxxxxxx</para>
+        /// </summary>
+        [NameInMap("nextToken")]
+        [Validation(Required=false)]
+        public string NextToken { get; set; }
+
         [NameInMap("requestId")]
         [Validation(Required=false)]
         public string RequestId { get; set; }
 
         [NameInMap("result")]
         [Validation(Required=false)]
-        public List<QueryTasksV3ResponseBodyResult> Result { get; set; }
-        public class QueryTasksV3ResponseBodyResult : TeaModel {
+        public List<QueryTaskResponseBodyResult> Result { get; set; }
+        public class QueryTaskResponseBodyResult : TeaModel {
             [NameInMap("accomplishTime")]
             [Validation(Required=false)]
             public string AccomplishTime { get; set; }
@@ -39,8 +47,8 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0.Models
 
             [NameInMap("customfields")]
             [Validation(Required=false)]
-            public List<QueryTasksV3ResponseBodyResultCustomfields> Customfields { get; set; }
-            public class QueryTasksV3ResponseBodyResultCustomfields : TeaModel {
+            public List<QueryTaskResponseBodyResultCustomfields> Customfields { get; set; }
+            public class QueryTaskResponseBodyResultCustomfields : TeaModel {
                 [NameInMap("cfId")]
                 [Validation(Required=false)]
                 public string CfId { get; set; }
@@ -51,8 +59,8 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0.Models
 
                 [NameInMap("value")]
                 [Validation(Required=false)]
-                public List<QueryTasksV3ResponseBodyResultCustomfieldsValue> Value { get; set; }
-                public class QueryTasksV3ResponseBodyResultCustomfieldsValue : TeaModel {
+                public List<QueryTaskResponseBodyResultCustomfieldsValue> Value { get; set; }
+                public class QueryTaskResponseBodyResultCustomfieldsValue : TeaModel {
                     [NameInMap("id")]
                     [Validation(Required=false)]
                     public string Id { get; set; }
@@ -96,10 +104,6 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0.Models
             [NameInMap("projectId")]
             [Validation(Required=false)]
             public string ProjectId { get; set; }
-
-            [NameInMap("sourceId")]
-            [Validation(Required=false)]
-            public string SourceId { get; set; }
 
             /// <term><b>Obsolete</b></term>
             [NameInMap("taskId")]

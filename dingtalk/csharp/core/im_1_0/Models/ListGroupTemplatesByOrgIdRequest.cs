@@ -6,9 +6,12 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
-    public class GetCidsByBotCodeRequest : TeaModel {
+    public class ListGroupTemplatesByOrgIdRequest : TeaModel {
+        /// <summary>
+        /// <para>This parameter is required.</para>
+        /// </summary>
         [NameInMap("pageNumber")]
         [Validation(Required=false)]
         public int? PageNumber { get; set; }
@@ -16,10 +19,6 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [NameInMap("pageSize")]
         [Validation(Required=false)]
         public int? PageSize { get; set; }
-
-        [NameInMap("robotCode")]
-        [Validation(Required=false)]
-        public string RobotCode { get; set; }
 
     }
 

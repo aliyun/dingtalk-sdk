@@ -6730,6 +6730,162 @@ namespace AlibabaCloud.SDK.Dingtalkim_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查组织下所有的场景群模版列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListGroupTemplatesByOrgIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListGroupTemplatesByOrgIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListGroupTemplatesByOrgIdResponse
+        /// </returns>
+        public ListGroupTemplatesByOrgIdResponse ListGroupTemplatesByOrgIdWithOptions(ListGroupTemplatesByOrgIdRequest request, ListGroupTemplatesByOrgIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListGroupTemplatesByOrgId",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/chats/sceneGroups/templates/lists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListGroupTemplatesByOrgIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查组织下所有的场景群模版列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListGroupTemplatesByOrgIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListGroupTemplatesByOrgIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListGroupTemplatesByOrgIdResponse
+        /// </returns>
+        public async Task<ListGroupTemplatesByOrgIdResponse> ListGroupTemplatesByOrgIdWithOptionsAsync(ListGroupTemplatesByOrgIdRequest request, ListGroupTemplatesByOrgIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListGroupTemplatesByOrgId",
+                Version = "im_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/im/chats/sceneGroups/templates/lists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListGroupTemplatesByOrgIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查组织下所有的场景群模版列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListGroupTemplatesByOrgIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListGroupTemplatesByOrgIdResponse
+        /// </returns>
+        public ListGroupTemplatesByOrgIdResponse ListGroupTemplatesByOrgId(ListGroupTemplatesByOrgIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListGroupTemplatesByOrgIdHeaders headers = new ListGroupTemplatesByOrgIdHeaders();
+            return ListGroupTemplatesByOrgIdWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查组织下所有的场景群模版列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListGroupTemplatesByOrgIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListGroupTemplatesByOrgIdResponse
+        /// </returns>
+        public async Task<ListGroupTemplatesByOrgIdResponse> ListGroupTemplatesByOrgIdAsync(ListGroupTemplatesByOrgIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListGroupTemplatesByOrgIdHeaders headers = new ListGroupTemplatesByOrgIdHeaders();
+            return await ListGroupTemplatesByOrgIdWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>拉取企业的所有文字表情，包含正常使用的、已经删除了的、安全审核不通过的文字表情</para>
         /// </summary>
         /// 

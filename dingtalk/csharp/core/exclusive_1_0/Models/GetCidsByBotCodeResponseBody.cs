@@ -9,9 +9,27 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class GetCidsByBotCodeResponseBody : TeaModel {
-        [NameInMap("openConversationIds")]
+        [NameInMap("groupInfos")]
         [Validation(Required=false)]
-        public List<string> OpenConversationIds { get; set; }
+        public List<GetCidsByBotCodeResponseBodyGroupInfos> GroupInfos { get; set; }
+        public class GetCidsByBotCodeResponseBodyGroupInfos : TeaModel {
+            [NameInMap("botCreator")]
+            [Validation(Required=false)]
+            public string BotCreator { get; set; }
+
+            [NameInMap("botCreatorIsOrgMember")]
+            [Validation(Required=false)]
+            public bool? BotCreatorIsOrgMember { get; set; }
+
+            [NameInMap("openConversationId")]
+            [Validation(Required=false)]
+            public string OpenConversationId { get; set; }
+
+        }
+
+        [NameInMap("hasMore")]
+        [Validation(Required=false)]
+        public bool? HasMore { get; set; }
 
     }
 

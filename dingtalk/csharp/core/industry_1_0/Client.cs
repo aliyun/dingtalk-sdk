@@ -4982,6 +4982,334 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>新增知识图谱节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoAddKnowledgeGraphNodeRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoAddKnowledgeGraphNodeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoAddKnowledgeGraphNodeResponse
+        /// </returns>
+        public ChatMemoAddKnowledgeGraphNodeResponse ChatMemoAddKnowledgeGraphNodeWithOptions(ChatMemoAddKnowledgeGraphNodeRequest request, ChatMemoAddKnowledgeGraphNodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                body["datasetId"] = request.DatasetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NodeInfo))
+            {
+                body["nodeInfo"] = request.NodeInfo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatMemoAddKnowledgeGraphNode",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatmemo/nodes",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatMemoAddKnowledgeGraphNodeResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增知识图谱节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoAddKnowledgeGraphNodeRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoAddKnowledgeGraphNodeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoAddKnowledgeGraphNodeResponse
+        /// </returns>
+        public async Task<ChatMemoAddKnowledgeGraphNodeResponse> ChatMemoAddKnowledgeGraphNodeWithOptionsAsync(ChatMemoAddKnowledgeGraphNodeRequest request, ChatMemoAddKnowledgeGraphNodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                body["datasetId"] = request.DatasetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NodeInfo))
+            {
+                body["nodeInfo"] = request.NodeInfo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatMemoAddKnowledgeGraphNode",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatmemo/nodes",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatMemoAddKnowledgeGraphNodeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增知识图谱节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoAddKnowledgeGraphNodeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoAddKnowledgeGraphNodeResponse
+        /// </returns>
+        public ChatMemoAddKnowledgeGraphNodeResponse ChatMemoAddKnowledgeGraphNode(ChatMemoAddKnowledgeGraphNodeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatMemoAddKnowledgeGraphNodeHeaders headers = new ChatMemoAddKnowledgeGraphNodeHeaders();
+            return ChatMemoAddKnowledgeGraphNodeWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增知识图谱节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoAddKnowledgeGraphNodeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoAddKnowledgeGraphNodeResponse
+        /// </returns>
+        public async Task<ChatMemoAddKnowledgeGraphNodeResponse> ChatMemoAddKnowledgeGraphNodeAsync(ChatMemoAddKnowledgeGraphNodeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatMemoAddKnowledgeGraphNodeHeaders headers = new ChatMemoAddKnowledgeGraphNodeHeaders();
+            return await ChatMemoAddKnowledgeGraphNodeWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增知识图谱关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoAddKnowledgeGraphRelationRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoAddKnowledgeGraphRelationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoAddKnowledgeGraphRelationResponse
+        /// </returns>
+        public ChatMemoAddKnowledgeGraphRelationResponse ChatMemoAddKnowledgeGraphRelationWithOptions(ChatMemoAddKnowledgeGraphRelationRequest request, ChatMemoAddKnowledgeGraphRelationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                body["datasetId"] = request.DatasetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelationInfo))
+            {
+                body["relationInfo"] = request.RelationInfo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatMemoAddKnowledgeGraphRelation",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatmemo/relations",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatMemoAddKnowledgeGraphRelationResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增知识图谱关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoAddKnowledgeGraphRelationRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoAddKnowledgeGraphRelationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoAddKnowledgeGraphRelationResponse
+        /// </returns>
+        public async Task<ChatMemoAddKnowledgeGraphRelationResponse> ChatMemoAddKnowledgeGraphRelationWithOptionsAsync(ChatMemoAddKnowledgeGraphRelationRequest request, ChatMemoAddKnowledgeGraphRelationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                body["datasetId"] = request.DatasetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelationInfo))
+            {
+                body["relationInfo"] = request.RelationInfo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatMemoAddKnowledgeGraphRelation",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatmemo/relations",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatMemoAddKnowledgeGraphRelationResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增知识图谱关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoAddKnowledgeGraphRelationRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoAddKnowledgeGraphRelationResponse
+        /// </returns>
+        public ChatMemoAddKnowledgeGraphRelationResponse ChatMemoAddKnowledgeGraphRelation(ChatMemoAddKnowledgeGraphRelationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatMemoAddKnowledgeGraphRelationHeaders headers = new ChatMemoAddKnowledgeGraphRelationHeaders();
+            return ChatMemoAddKnowledgeGraphRelationWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>新增知识图谱关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoAddKnowledgeGraphRelationRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoAddKnowledgeGraphRelationResponse
+        /// </returns>
+        public async Task<ChatMemoAddKnowledgeGraphRelationResponse> ChatMemoAddKnowledgeGraphRelationAsync(ChatMemoAddKnowledgeGraphRelationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatMemoAddKnowledgeGraphRelationHeaders headers = new ChatMemoAddKnowledgeGraphRelationHeaders();
+            return await ChatMemoAddKnowledgeGraphRelationWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>删除普通文件</para>
         /// </summary>
         /// 
@@ -5134,6 +5462,334 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ChatMemoDeleteGeneralFileHeaders headers = new ChatMemoDeleteGeneralFileHeaders();
             return await ChatMemoDeleteGeneralFileWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除知识图谱节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoDeleteKnowledgeGraphNodeRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoDeleteKnowledgeGraphNodeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoDeleteKnowledgeGraphNodeResponse
+        /// </returns>
+        public ChatMemoDeleteKnowledgeGraphNodeResponse ChatMemoDeleteKnowledgeGraphNodeWithOptions(ChatMemoDeleteKnowledgeGraphNodeRequest request, ChatMemoDeleteKnowledgeGraphNodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                body["datasetId"] = request.DatasetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaId))
+            {
+                body["mediaId"] = request.MediaId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatMemoDeleteKnowledgeGraphNode",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatmemo/nodes/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatMemoDeleteKnowledgeGraphNodeResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除知识图谱节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoDeleteKnowledgeGraphNodeRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoDeleteKnowledgeGraphNodeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoDeleteKnowledgeGraphNodeResponse
+        /// </returns>
+        public async Task<ChatMemoDeleteKnowledgeGraphNodeResponse> ChatMemoDeleteKnowledgeGraphNodeWithOptionsAsync(ChatMemoDeleteKnowledgeGraphNodeRequest request, ChatMemoDeleteKnowledgeGraphNodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                body["datasetId"] = request.DatasetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaId))
+            {
+                body["mediaId"] = request.MediaId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatMemoDeleteKnowledgeGraphNode",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatmemo/nodes/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatMemoDeleteKnowledgeGraphNodeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除知识图谱节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoDeleteKnowledgeGraphNodeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoDeleteKnowledgeGraphNodeResponse
+        /// </returns>
+        public ChatMemoDeleteKnowledgeGraphNodeResponse ChatMemoDeleteKnowledgeGraphNode(ChatMemoDeleteKnowledgeGraphNodeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatMemoDeleteKnowledgeGraphNodeHeaders headers = new ChatMemoDeleteKnowledgeGraphNodeHeaders();
+            return ChatMemoDeleteKnowledgeGraphNodeWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除知识图谱节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoDeleteKnowledgeGraphNodeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoDeleteKnowledgeGraphNodeResponse
+        /// </returns>
+        public async Task<ChatMemoDeleteKnowledgeGraphNodeResponse> ChatMemoDeleteKnowledgeGraphNodeAsync(ChatMemoDeleteKnowledgeGraphNodeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatMemoDeleteKnowledgeGraphNodeHeaders headers = new ChatMemoDeleteKnowledgeGraphNodeHeaders();
+            return await ChatMemoDeleteKnowledgeGraphNodeWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除知识图谱关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoDeleteKnowledgeGraphRelationRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoDeleteKnowledgeGraphRelationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoDeleteKnowledgeGraphRelationResponse
+        /// </returns>
+        public ChatMemoDeleteKnowledgeGraphRelationResponse ChatMemoDeleteKnowledgeGraphRelationWithOptions(ChatMemoDeleteKnowledgeGraphRelationRequest request, ChatMemoDeleteKnowledgeGraphRelationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                body["datasetId"] = request.DatasetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaId))
+            {
+                body["mediaId"] = request.MediaId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatMemoDeleteKnowledgeGraphRelation",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatmemo/relations/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatMemoDeleteKnowledgeGraphRelationResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除知识图谱关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoDeleteKnowledgeGraphRelationRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoDeleteKnowledgeGraphRelationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoDeleteKnowledgeGraphRelationResponse
+        /// </returns>
+        public async Task<ChatMemoDeleteKnowledgeGraphRelationResponse> ChatMemoDeleteKnowledgeGraphRelationWithOptionsAsync(ChatMemoDeleteKnowledgeGraphRelationRequest request, ChatMemoDeleteKnowledgeGraphRelationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                body["datasetId"] = request.DatasetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaId))
+            {
+                body["mediaId"] = request.MediaId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatMemoDeleteKnowledgeGraphRelation",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatmemo/relations/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatMemoDeleteKnowledgeGraphRelationResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除知识图谱关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoDeleteKnowledgeGraphRelationRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoDeleteKnowledgeGraphRelationResponse
+        /// </returns>
+        public ChatMemoDeleteKnowledgeGraphRelationResponse ChatMemoDeleteKnowledgeGraphRelation(ChatMemoDeleteKnowledgeGraphRelationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatMemoDeleteKnowledgeGraphRelationHeaders headers = new ChatMemoDeleteKnowledgeGraphRelationHeaders();
+            return ChatMemoDeleteKnowledgeGraphRelationWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除知识图谱关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoDeleteKnowledgeGraphRelationRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoDeleteKnowledgeGraphRelationResponse
+        /// </returns>
+        public async Task<ChatMemoDeleteKnowledgeGraphRelationResponse> ChatMemoDeleteKnowledgeGraphRelationAsync(ChatMemoDeleteKnowledgeGraphRelationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatMemoDeleteKnowledgeGraphRelationHeaders headers = new ChatMemoDeleteKnowledgeGraphRelationHeaders();
+            return await ChatMemoDeleteKnowledgeGraphRelationWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -5954,6 +6610,662 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ChatMemoGetFileStatusHeaders headers = new ChatMemoGetFileStatusHeaders();
             return await ChatMemoGetFileStatusWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询知识图谱节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoQueryKnowledgeGraphNodeRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoQueryKnowledgeGraphNodeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoQueryKnowledgeGraphNodeResponse
+        /// </returns>
+        public ChatMemoQueryKnowledgeGraphNodeResponse ChatMemoQueryKnowledgeGraphNodeWithOptions(ChatMemoQueryKnowledgeGraphNodeRequest request, ChatMemoQueryKnowledgeGraphNodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                body["datasetId"] = request.DatasetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaId))
+            {
+                body["mediaId"] = request.MediaId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatMemoQueryKnowledgeGraphNode",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatmemo/nodes/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatMemoQueryKnowledgeGraphNodeResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询知识图谱节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoQueryKnowledgeGraphNodeRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoQueryKnowledgeGraphNodeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoQueryKnowledgeGraphNodeResponse
+        /// </returns>
+        public async Task<ChatMemoQueryKnowledgeGraphNodeResponse> ChatMemoQueryKnowledgeGraphNodeWithOptionsAsync(ChatMemoQueryKnowledgeGraphNodeRequest request, ChatMemoQueryKnowledgeGraphNodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                body["datasetId"] = request.DatasetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaId))
+            {
+                body["mediaId"] = request.MediaId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatMemoQueryKnowledgeGraphNode",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatmemo/nodes/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatMemoQueryKnowledgeGraphNodeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询知识图谱节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoQueryKnowledgeGraphNodeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoQueryKnowledgeGraphNodeResponse
+        /// </returns>
+        public ChatMemoQueryKnowledgeGraphNodeResponse ChatMemoQueryKnowledgeGraphNode(ChatMemoQueryKnowledgeGraphNodeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatMemoQueryKnowledgeGraphNodeHeaders headers = new ChatMemoQueryKnowledgeGraphNodeHeaders();
+            return ChatMemoQueryKnowledgeGraphNodeWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询知识图谱节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoQueryKnowledgeGraphNodeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoQueryKnowledgeGraphNodeResponse
+        /// </returns>
+        public async Task<ChatMemoQueryKnowledgeGraphNodeResponse> ChatMemoQueryKnowledgeGraphNodeAsync(ChatMemoQueryKnowledgeGraphNodeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatMemoQueryKnowledgeGraphNodeHeaders headers = new ChatMemoQueryKnowledgeGraphNodeHeaders();
+            return await ChatMemoQueryKnowledgeGraphNodeWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询知识图谱关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoQueryKnowledgeGraphRelationRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoQueryKnowledgeGraphRelationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoQueryKnowledgeGraphRelationResponse
+        /// </returns>
+        public ChatMemoQueryKnowledgeGraphRelationResponse ChatMemoQueryKnowledgeGraphRelationWithOptions(ChatMemoQueryKnowledgeGraphRelationRequest request, ChatMemoQueryKnowledgeGraphRelationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                body["datasetId"] = request.DatasetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaId))
+            {
+                body["mediaId"] = request.MediaId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatMemoQueryKnowledgeGraphRelation",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatmemo/relations/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatMemoQueryKnowledgeGraphRelationResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询知识图谱关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoQueryKnowledgeGraphRelationRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoQueryKnowledgeGraphRelationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoQueryKnowledgeGraphRelationResponse
+        /// </returns>
+        public async Task<ChatMemoQueryKnowledgeGraphRelationResponse> ChatMemoQueryKnowledgeGraphRelationWithOptionsAsync(ChatMemoQueryKnowledgeGraphRelationRequest request, ChatMemoQueryKnowledgeGraphRelationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                body["datasetId"] = request.DatasetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MediaId))
+            {
+                body["mediaId"] = request.MediaId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatMemoQueryKnowledgeGraphRelation",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatmemo/relations/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatMemoQueryKnowledgeGraphRelationResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询知识图谱关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoQueryKnowledgeGraphRelationRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoQueryKnowledgeGraphRelationResponse
+        /// </returns>
+        public ChatMemoQueryKnowledgeGraphRelationResponse ChatMemoQueryKnowledgeGraphRelation(ChatMemoQueryKnowledgeGraphRelationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatMemoQueryKnowledgeGraphRelationHeaders headers = new ChatMemoQueryKnowledgeGraphRelationHeaders();
+            return ChatMemoQueryKnowledgeGraphRelationWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询知识图谱关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoQueryKnowledgeGraphRelationRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoQueryKnowledgeGraphRelationResponse
+        /// </returns>
+        public async Task<ChatMemoQueryKnowledgeGraphRelationResponse> ChatMemoQueryKnowledgeGraphRelationAsync(ChatMemoQueryKnowledgeGraphRelationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatMemoQueryKnowledgeGraphRelationHeaders headers = new ChatMemoQueryKnowledgeGraphRelationHeaders();
+            return await ChatMemoQueryKnowledgeGraphRelationWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新知识图谱节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoUpdateKnowledgeGraphNodeRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoUpdateKnowledgeGraphNodeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoUpdateKnowledgeGraphNodeResponse
+        /// </returns>
+        public ChatMemoUpdateKnowledgeGraphNodeResponse ChatMemoUpdateKnowledgeGraphNodeWithOptions(ChatMemoUpdateKnowledgeGraphNodeRequest request, ChatMemoUpdateKnowledgeGraphNodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                body["datasetId"] = request.DatasetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NodeInfo))
+            {
+                body["nodeInfo"] = request.NodeInfo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatMemoUpdateKnowledgeGraphNode",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatmemo/nodes",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatMemoUpdateKnowledgeGraphNodeResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新知识图谱节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoUpdateKnowledgeGraphNodeRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoUpdateKnowledgeGraphNodeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoUpdateKnowledgeGraphNodeResponse
+        /// </returns>
+        public async Task<ChatMemoUpdateKnowledgeGraphNodeResponse> ChatMemoUpdateKnowledgeGraphNodeWithOptionsAsync(ChatMemoUpdateKnowledgeGraphNodeRequest request, ChatMemoUpdateKnowledgeGraphNodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                body["datasetId"] = request.DatasetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NodeInfo))
+            {
+                body["nodeInfo"] = request.NodeInfo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatMemoUpdateKnowledgeGraphNode",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatmemo/nodes",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatMemoUpdateKnowledgeGraphNodeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新知识图谱节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoUpdateKnowledgeGraphNodeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoUpdateKnowledgeGraphNodeResponse
+        /// </returns>
+        public ChatMemoUpdateKnowledgeGraphNodeResponse ChatMemoUpdateKnowledgeGraphNode(ChatMemoUpdateKnowledgeGraphNodeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatMemoUpdateKnowledgeGraphNodeHeaders headers = new ChatMemoUpdateKnowledgeGraphNodeHeaders();
+            return ChatMemoUpdateKnowledgeGraphNodeWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新知识图谱节点</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoUpdateKnowledgeGraphNodeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoUpdateKnowledgeGraphNodeResponse
+        /// </returns>
+        public async Task<ChatMemoUpdateKnowledgeGraphNodeResponse> ChatMemoUpdateKnowledgeGraphNodeAsync(ChatMemoUpdateKnowledgeGraphNodeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatMemoUpdateKnowledgeGraphNodeHeaders headers = new ChatMemoUpdateKnowledgeGraphNodeHeaders();
+            return await ChatMemoUpdateKnowledgeGraphNodeWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新知识图谱关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoUpdateKnowledgeGraphRelationRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoUpdateKnowledgeGraphRelationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoUpdateKnowledgeGraphRelationResponse
+        /// </returns>
+        public ChatMemoUpdateKnowledgeGraphRelationResponse ChatMemoUpdateKnowledgeGraphRelationWithOptions(ChatMemoUpdateKnowledgeGraphRelationRequest request, ChatMemoUpdateKnowledgeGraphRelationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                body["datasetId"] = request.DatasetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelationInfo))
+            {
+                body["relationInfo"] = request.RelationInfo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatMemoUpdateKnowledgeGraphRelation",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatmemo/relations",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatMemoUpdateKnowledgeGraphRelationResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新知识图谱关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoUpdateKnowledgeGraphRelationRequest
+        /// </param>
+        /// <param name="headers">
+        /// ChatMemoUpdateKnowledgeGraphRelationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoUpdateKnowledgeGraphRelationResponse
+        /// </returns>
+        public async Task<ChatMemoUpdateKnowledgeGraphRelationResponse> ChatMemoUpdateKnowledgeGraphRelationWithOptionsAsync(ChatMemoUpdateKnowledgeGraphRelationRequest request, ChatMemoUpdateKnowledgeGraphRelationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizId))
+            {
+                body["bizId"] = request.BizId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DatasetId))
+            {
+                body["datasetId"] = request.DatasetId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RelationInfo))
+            {
+                body["relationInfo"] = request.RelationInfo;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ChatMemoUpdateKnowledgeGraphRelation",
+                Version = "industry_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/industry/chatmemo/relations",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ChatMemoUpdateKnowledgeGraphRelationResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新知识图谱关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoUpdateKnowledgeGraphRelationRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoUpdateKnowledgeGraphRelationResponse
+        /// </returns>
+        public ChatMemoUpdateKnowledgeGraphRelationResponse ChatMemoUpdateKnowledgeGraphRelation(ChatMemoUpdateKnowledgeGraphRelationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatMemoUpdateKnowledgeGraphRelationHeaders headers = new ChatMemoUpdateKnowledgeGraphRelationHeaders();
+            return ChatMemoUpdateKnowledgeGraphRelationWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新知识图谱关系</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ChatMemoUpdateKnowledgeGraphRelationRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ChatMemoUpdateKnowledgeGraphRelationResponse
+        /// </returns>
+        public async Task<ChatMemoUpdateKnowledgeGraphRelationResponse> ChatMemoUpdateKnowledgeGraphRelationAsync(ChatMemoUpdateKnowledgeGraphRelationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ChatMemoUpdateKnowledgeGraphRelationHeaders headers = new ChatMemoUpdateKnowledgeGraphRelationHeaders();
+            return await ChatMemoUpdateKnowledgeGraphRelationWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

@@ -10,6 +10,8 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
 {
     public class CloseTopCardRequest : TeaModel {
         /// <summary>
+        /// <para>This parameter is required.</para>
+        /// 
         /// <b>Example:</b>
         /// <para>example_open_conversation_id</para>
         /// </summary>
