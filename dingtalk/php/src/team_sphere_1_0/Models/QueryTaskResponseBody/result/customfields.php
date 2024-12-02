@@ -2,9 +2,9 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\SearchProjectsV3ResponseBody\result;
+namespace AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\QueryTaskResponseBody\result;
 
-use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\SearchProjectsV3ResponseBody\result\customfields\value;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\QueryTaskResponseBody\result\customfields\value;
 use AlibabaCloud\Tea\Model;
 
 class customfields extends Model
@@ -12,7 +12,7 @@ class customfields extends Model
     /**
      * @var string
      */
-    public $customfieldId;
+    public $cfId;
 
     /**
      * @var string
@@ -24,9 +24,9 @@ class customfields extends Model
      */
     public $value;
     protected $_name = [
-        'customfieldId' => 'customfieldId',
-        'type'          => 'type',
-        'value'         => 'value',
+        'cfId'  => 'cfId',
+        'type'  => 'type',
+        'value' => 'value',
     ];
 
     public function validate()
@@ -36,8 +36,8 @@ class customfields extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->customfieldId) {
-            $res['customfieldId'] = $this->customfieldId;
+        if (null !== $this->cfId) {
+            $res['cfId'] = $this->cfId;
         }
         if (null !== $this->type) {
             $res['type'] = $this->type;
@@ -63,8 +63,8 @@ class customfields extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['customfieldId'])) {
-            $model->customfieldId = $map['customfieldId'];
+        if (isset($map['cfId'])) {
+            $model->cfId = $map['cfId'];
         }
         if (isset($map['type'])) {
             $model->type = $map['type'];

@@ -121,6 +121,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InstallRobotToOrgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\InteractiveCardCreateInstanceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListGroupTemplatesByOrgIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListGroupTemplatesByOrgIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListGroupTemplatesByOrgIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListOrgTextEmotionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListOrgTextEmotionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\ListSceneGroupsByTemplateIdHeaders;
@@ -2895,6 +2898,66 @@ class Dingtalk extends OpenApiClient
         $headers = new InteractiveCardCreateInstanceHeaders([]);
 
         return $this->interactiveCardCreateInstanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查组织下所有的场景群模版列表
+     *  *
+     * @param ListGroupTemplatesByOrgIdRequest $request ListGroupTemplatesByOrgIdRequest
+     * @param ListGroupTemplatesByOrgIdHeaders $headers ListGroupTemplatesByOrgIdHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListGroupTemplatesByOrgIdResponse ListGroupTemplatesByOrgIdResponse
+     */
+    public function listGroupTemplatesByOrgIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ListGroupTemplatesByOrgId',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/chats/sceneGroups/templates/lists',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListGroupTemplatesByOrgIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查组织下所有的场景群模版列表
+     *  *
+     * @param ListGroupTemplatesByOrgIdRequest $request ListGroupTemplatesByOrgIdRequest
+     *
+     * @return ListGroupTemplatesByOrgIdResponse ListGroupTemplatesByOrgIdResponse
+     */
+    public function listGroupTemplatesByOrgId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListGroupTemplatesByOrgIdHeaders([]);
+
+        return $this->listGroupTemplatesByOrgIdWithOptions($request, $headers, $runtime);
     }
 
     /**

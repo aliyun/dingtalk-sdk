@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class CloseTopCardRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example example_open_conversation_id
      *
      * @var string

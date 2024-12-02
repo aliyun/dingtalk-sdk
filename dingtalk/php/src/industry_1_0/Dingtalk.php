@@ -93,9 +93,21 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatFormGetDataForApiAccessRe
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoAddGeneralFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoAddGeneralFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoAddGeneralFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoAddKnowledgeGraphNodeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoAddKnowledgeGraphNodeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoAddKnowledgeGraphNodeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoAddKnowledgeGraphRelationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoAddKnowledgeGraphRelationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoAddKnowledgeGraphRelationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoDeleteGeneralFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoDeleteGeneralFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoDeleteGeneralFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoDeleteKnowledgeGraphNodeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoDeleteKnowledgeGraphNodeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoDeleteKnowledgeGraphNodeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoDeleteKnowledgeGraphRelationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoDeleteKnowledgeGraphRelationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoDeleteKnowledgeGraphRelationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoFaqAddHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoFaqAddRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoFaqAddResponse;
@@ -111,6 +123,18 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoGetFileListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoGetFileStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoGetFileStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoGetFileStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoQueryKnowledgeGraphNodeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoQueryKnowledgeGraphNodeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoQueryKnowledgeGraphNodeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoQueryKnowledgeGraphRelationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoQueryKnowledgeGraphRelationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoQueryKnowledgeGraphRelationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoUpdateKnowledgeGraphNodeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoUpdateKnowledgeGraphNodeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoUpdateKnowledgeGraphNodeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoUpdateKnowledgeGraphRelationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoUpdateKnowledgeGraphRelationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ChatMemoUpdateKnowledgeGraphRelationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeActiveCollegeDeptGroupHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeActiveCollegeDeptGroupRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\CollegeActiveCollegeDeptGroupResponse;
@@ -2393,6 +2417,132 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 新增知识图谱节点
+     *  *
+     * @param ChatMemoAddKnowledgeGraphNodeRequest $request ChatMemoAddKnowledgeGraphNodeRequest
+     * @param ChatMemoAddKnowledgeGraphNodeHeaders $headers ChatMemoAddKnowledgeGraphNodeHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ChatMemoAddKnowledgeGraphNodeResponse ChatMemoAddKnowledgeGraphNodeResponse
+     */
+    public function chatMemoAddKnowledgeGraphNodeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->datasetId)) {
+            $body['datasetId'] = $request->datasetId;
+        }
+        if (!Utils::isUnset($request->nodeInfo)) {
+            $body['nodeInfo'] = $request->nodeInfo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatMemoAddKnowledgeGraphNode',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatmemo/nodes',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatMemoAddKnowledgeGraphNodeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 新增知识图谱节点
+     *  *
+     * @param ChatMemoAddKnowledgeGraphNodeRequest $request ChatMemoAddKnowledgeGraphNodeRequest
+     *
+     * @return ChatMemoAddKnowledgeGraphNodeResponse ChatMemoAddKnowledgeGraphNodeResponse
+     */
+    public function chatMemoAddKnowledgeGraphNode($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatMemoAddKnowledgeGraphNodeHeaders([]);
+
+        return $this->chatMemoAddKnowledgeGraphNodeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 新增知识图谱关系
+     *  *
+     * @param ChatMemoAddKnowledgeGraphRelationRequest $request ChatMemoAddKnowledgeGraphRelationRequest
+     * @param ChatMemoAddKnowledgeGraphRelationHeaders $headers ChatMemoAddKnowledgeGraphRelationHeaders
+     * @param RuntimeOptions                           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ChatMemoAddKnowledgeGraphRelationResponse ChatMemoAddKnowledgeGraphRelationResponse
+     */
+    public function chatMemoAddKnowledgeGraphRelationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->datasetId)) {
+            $body['datasetId'] = $request->datasetId;
+        }
+        if (!Utils::isUnset($request->relationInfo)) {
+            $body['relationInfo'] = $request->relationInfo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatMemoAddKnowledgeGraphRelation',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatmemo/relations',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatMemoAddKnowledgeGraphRelationResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 新增知识图谱关系
+     *  *
+     * @param ChatMemoAddKnowledgeGraphRelationRequest $request ChatMemoAddKnowledgeGraphRelationRequest
+     *
+     * @return ChatMemoAddKnowledgeGraphRelationResponse ChatMemoAddKnowledgeGraphRelationResponse
+     */
+    public function chatMemoAddKnowledgeGraphRelation($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatMemoAddKnowledgeGraphRelationHeaders([]);
+
+        return $this->chatMemoAddKnowledgeGraphRelationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 删除普通文件
      *  *
      * @param ChatMemoDeleteGeneralFileRequest $request ChatMemoDeleteGeneralFileRequest
@@ -2450,6 +2600,132 @@ class Dingtalk extends OpenApiClient
         $headers = new ChatMemoDeleteGeneralFileHeaders([]);
 
         return $this->chatMemoDeleteGeneralFileWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除知识图谱节点
+     *  *
+     * @param ChatMemoDeleteKnowledgeGraphNodeRequest $request ChatMemoDeleteKnowledgeGraphNodeRequest
+     * @param ChatMemoDeleteKnowledgeGraphNodeHeaders $headers ChatMemoDeleteKnowledgeGraphNodeHeaders
+     * @param RuntimeOptions                          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ChatMemoDeleteKnowledgeGraphNodeResponse ChatMemoDeleteKnowledgeGraphNodeResponse
+     */
+    public function chatMemoDeleteKnowledgeGraphNodeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->datasetId)) {
+            $body['datasetId'] = $request->datasetId;
+        }
+        if (!Utils::isUnset($request->mediaId)) {
+            $body['mediaId'] = $request->mediaId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatMemoDeleteKnowledgeGraphNode',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatmemo/nodes/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatMemoDeleteKnowledgeGraphNodeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除知识图谱节点
+     *  *
+     * @param ChatMemoDeleteKnowledgeGraphNodeRequest $request ChatMemoDeleteKnowledgeGraphNodeRequest
+     *
+     * @return ChatMemoDeleteKnowledgeGraphNodeResponse ChatMemoDeleteKnowledgeGraphNodeResponse
+     */
+    public function chatMemoDeleteKnowledgeGraphNode($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatMemoDeleteKnowledgeGraphNodeHeaders([]);
+
+        return $this->chatMemoDeleteKnowledgeGraphNodeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除知识图谱关系
+     *  *
+     * @param ChatMemoDeleteKnowledgeGraphRelationRequest $request ChatMemoDeleteKnowledgeGraphRelationRequest
+     * @param ChatMemoDeleteKnowledgeGraphRelationHeaders $headers ChatMemoDeleteKnowledgeGraphRelationHeaders
+     * @param RuntimeOptions                              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ChatMemoDeleteKnowledgeGraphRelationResponse ChatMemoDeleteKnowledgeGraphRelationResponse
+     */
+    public function chatMemoDeleteKnowledgeGraphRelationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->datasetId)) {
+            $body['datasetId'] = $request->datasetId;
+        }
+        if (!Utils::isUnset($request->mediaId)) {
+            $body['mediaId'] = $request->mediaId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatMemoDeleteKnowledgeGraphRelation',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatmemo/relations/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatMemoDeleteKnowledgeGraphRelationResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除知识图谱关系
+     *  *
+     * @param ChatMemoDeleteKnowledgeGraphRelationRequest $request ChatMemoDeleteKnowledgeGraphRelationRequest
+     *
+     * @return ChatMemoDeleteKnowledgeGraphRelationResponse ChatMemoDeleteKnowledgeGraphRelationResponse
+     */
+    public function chatMemoDeleteKnowledgeGraphRelation($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatMemoDeleteKnowledgeGraphRelationHeaders([]);
+
+        return $this->chatMemoDeleteKnowledgeGraphRelationWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2765,6 +3041,258 @@ class Dingtalk extends OpenApiClient
         $headers = new ChatMemoGetFileStatusHeaders([]);
 
         return $this->chatMemoGetFileStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询知识图谱节点
+     *  *
+     * @param ChatMemoQueryKnowledgeGraphNodeRequest $request ChatMemoQueryKnowledgeGraphNodeRequest
+     * @param ChatMemoQueryKnowledgeGraphNodeHeaders $headers ChatMemoQueryKnowledgeGraphNodeHeaders
+     * @param RuntimeOptions                         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ChatMemoQueryKnowledgeGraphNodeResponse ChatMemoQueryKnowledgeGraphNodeResponse
+     */
+    public function chatMemoQueryKnowledgeGraphNodeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->datasetId)) {
+            $body['datasetId'] = $request->datasetId;
+        }
+        if (!Utils::isUnset($request->mediaId)) {
+            $body['mediaId'] = $request->mediaId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatMemoQueryKnowledgeGraphNode',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatmemo/nodes/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatMemoQueryKnowledgeGraphNodeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询知识图谱节点
+     *  *
+     * @param ChatMemoQueryKnowledgeGraphNodeRequest $request ChatMemoQueryKnowledgeGraphNodeRequest
+     *
+     * @return ChatMemoQueryKnowledgeGraphNodeResponse ChatMemoQueryKnowledgeGraphNodeResponse
+     */
+    public function chatMemoQueryKnowledgeGraphNode($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatMemoQueryKnowledgeGraphNodeHeaders([]);
+
+        return $this->chatMemoQueryKnowledgeGraphNodeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询知识图谱关系
+     *  *
+     * @param ChatMemoQueryKnowledgeGraphRelationRequest $request ChatMemoQueryKnowledgeGraphRelationRequest
+     * @param ChatMemoQueryKnowledgeGraphRelationHeaders $headers ChatMemoQueryKnowledgeGraphRelationHeaders
+     * @param RuntimeOptions                             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ChatMemoQueryKnowledgeGraphRelationResponse ChatMemoQueryKnowledgeGraphRelationResponse
+     */
+    public function chatMemoQueryKnowledgeGraphRelationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->datasetId)) {
+            $body['datasetId'] = $request->datasetId;
+        }
+        if (!Utils::isUnset($request->mediaId)) {
+            $body['mediaId'] = $request->mediaId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatMemoQueryKnowledgeGraphRelation',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatmemo/relations/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatMemoQueryKnowledgeGraphRelationResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询知识图谱关系
+     *  *
+     * @param ChatMemoQueryKnowledgeGraphRelationRequest $request ChatMemoQueryKnowledgeGraphRelationRequest
+     *
+     * @return ChatMemoQueryKnowledgeGraphRelationResponse ChatMemoQueryKnowledgeGraphRelationResponse
+     */
+    public function chatMemoQueryKnowledgeGraphRelation($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatMemoQueryKnowledgeGraphRelationHeaders([]);
+
+        return $this->chatMemoQueryKnowledgeGraphRelationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新知识图谱节点
+     *  *
+     * @param ChatMemoUpdateKnowledgeGraphNodeRequest $request ChatMemoUpdateKnowledgeGraphNodeRequest
+     * @param ChatMemoUpdateKnowledgeGraphNodeHeaders $headers ChatMemoUpdateKnowledgeGraphNodeHeaders
+     * @param RuntimeOptions                          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ChatMemoUpdateKnowledgeGraphNodeResponse ChatMemoUpdateKnowledgeGraphNodeResponse
+     */
+    public function chatMemoUpdateKnowledgeGraphNodeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->datasetId)) {
+            $body['datasetId'] = $request->datasetId;
+        }
+        if (!Utils::isUnset($request->nodeInfo)) {
+            $body['nodeInfo'] = $request->nodeInfo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatMemoUpdateKnowledgeGraphNode',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatmemo/nodes',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatMemoUpdateKnowledgeGraphNodeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新知识图谱节点
+     *  *
+     * @param ChatMemoUpdateKnowledgeGraphNodeRequest $request ChatMemoUpdateKnowledgeGraphNodeRequest
+     *
+     * @return ChatMemoUpdateKnowledgeGraphNodeResponse ChatMemoUpdateKnowledgeGraphNodeResponse
+     */
+    public function chatMemoUpdateKnowledgeGraphNode($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatMemoUpdateKnowledgeGraphNodeHeaders([]);
+
+        return $this->chatMemoUpdateKnowledgeGraphNodeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新知识图谱关系
+     *  *
+     * @param ChatMemoUpdateKnowledgeGraphRelationRequest $request ChatMemoUpdateKnowledgeGraphRelationRequest
+     * @param ChatMemoUpdateKnowledgeGraphRelationHeaders $headers ChatMemoUpdateKnowledgeGraphRelationHeaders
+     * @param RuntimeOptions                              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ChatMemoUpdateKnowledgeGraphRelationResponse ChatMemoUpdateKnowledgeGraphRelationResponse
+     */
+    public function chatMemoUpdateKnowledgeGraphRelationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizId)) {
+            $body['bizId'] = $request->bizId;
+        }
+        if (!Utils::isUnset($request->datasetId)) {
+            $body['datasetId'] = $request->datasetId;
+        }
+        if (!Utils::isUnset($request->relationInfo)) {
+            $body['relationInfo'] = $request->relationInfo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ChatMemoUpdateKnowledgeGraphRelation',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/chatmemo/relations',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ChatMemoUpdateKnowledgeGraphRelationResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新知识图谱关系
+     *  *
+     * @param ChatMemoUpdateKnowledgeGraphRelationRequest $request ChatMemoUpdateKnowledgeGraphRelationRequest
+     *
+     * @return ChatMemoUpdateKnowledgeGraphRelationResponse ChatMemoUpdateKnowledgeGraphRelationResponse
+     */
+    public function chatMemoUpdateKnowledgeGraphRelation($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ChatMemoUpdateKnowledgeGraphRelationHeaders([]);
+
+        return $this->chatMemoUpdateKnowledgeGraphRelationWithOptions($request, $headers, $runtime);
     }
 
     /**

@@ -2244,6 +2244,12 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
         if (!Utils::isUnset($request->robotCode)) {
             $query['robotCode'] = $request->robotCode;
         }
@@ -2263,7 +2269,7 @@ class Dingtalk extends OpenApiClient
             'version'     => 'exclusive_1.0',
             'protocol'    => 'HTTP',
             'pathname'    => '/v1.0/exclusive/groups/openConversationIds',
-            'method'      => 'GET',
+            'method'      => 'POST',
             'authType'    => 'AK',
             'style'       => 'ROA',
             'reqBodyType' => 'none',
