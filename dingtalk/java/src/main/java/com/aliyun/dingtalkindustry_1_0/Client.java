@@ -1964,6 +1964,134 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>新增知识图谱节点</p>
+     * 
+     * @param request ChatMemoAddKnowledgeGraphNodeRequest
+     * @param headers ChatMemoAddKnowledgeGraphNodeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ChatMemoAddKnowledgeGraphNodeResponse
+     */
+    public ChatMemoAddKnowledgeGraphNodeResponse chatMemoAddKnowledgeGraphNodeWithOptions(ChatMemoAddKnowledgeGraphNodeRequest request, ChatMemoAddKnowledgeGraphNodeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizId)) {
+            body.put("bizId", request.bizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.datasetId)) {
+            body.put("datasetId", request.datasetId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nodeInfo)) {
+            body.put("nodeInfo", request.nodeInfo);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ChatMemoAddKnowledgeGraphNode"),
+            new TeaPair("version", "industry_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/industry/chatmemo/nodes"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ChatMemoAddKnowledgeGraphNodeResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>新增知识图谱节点</p>
+     * 
+     * @param request ChatMemoAddKnowledgeGraphNodeRequest
+     * @return ChatMemoAddKnowledgeGraphNodeResponse
+     */
+    public ChatMemoAddKnowledgeGraphNodeResponse chatMemoAddKnowledgeGraphNode(ChatMemoAddKnowledgeGraphNodeRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ChatMemoAddKnowledgeGraphNodeHeaders headers = new ChatMemoAddKnowledgeGraphNodeHeaders();
+        return this.chatMemoAddKnowledgeGraphNodeWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>新增知识图谱关系</p>
+     * 
+     * @param request ChatMemoAddKnowledgeGraphRelationRequest
+     * @param headers ChatMemoAddKnowledgeGraphRelationHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ChatMemoAddKnowledgeGraphRelationResponse
+     */
+    public ChatMemoAddKnowledgeGraphRelationResponse chatMemoAddKnowledgeGraphRelationWithOptions(ChatMemoAddKnowledgeGraphRelationRequest request, ChatMemoAddKnowledgeGraphRelationHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizId)) {
+            body.put("bizId", request.bizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.datasetId)) {
+            body.put("datasetId", request.datasetId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.relationInfo)) {
+            body.put("relationInfo", request.relationInfo);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ChatMemoAddKnowledgeGraphRelation"),
+            new TeaPair("version", "industry_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/industry/chatmemo/relations"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ChatMemoAddKnowledgeGraphRelationResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>新增知识图谱关系</p>
+     * 
+     * @param request ChatMemoAddKnowledgeGraphRelationRequest
+     * @return ChatMemoAddKnowledgeGraphRelationResponse
+     */
+    public ChatMemoAddKnowledgeGraphRelationResponse chatMemoAddKnowledgeGraphRelation(ChatMemoAddKnowledgeGraphRelationRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ChatMemoAddKnowledgeGraphRelationHeaders headers = new ChatMemoAddKnowledgeGraphRelationHeaders();
+        return this.chatMemoAddKnowledgeGraphRelationWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>删除普通文件</p>
      * 
      * @param request ChatMemoDeleteGeneralFileRequest
@@ -2020,6 +2148,134 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ChatMemoDeleteGeneralFileHeaders headers = new ChatMemoDeleteGeneralFileHeaders();
         return this.chatMemoDeleteGeneralFileWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除知识图谱节点</p>
+     * 
+     * @param request ChatMemoDeleteKnowledgeGraphNodeRequest
+     * @param headers ChatMemoDeleteKnowledgeGraphNodeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ChatMemoDeleteKnowledgeGraphNodeResponse
+     */
+    public ChatMemoDeleteKnowledgeGraphNodeResponse chatMemoDeleteKnowledgeGraphNodeWithOptions(ChatMemoDeleteKnowledgeGraphNodeRequest request, ChatMemoDeleteKnowledgeGraphNodeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizId)) {
+            body.put("bizId", request.bizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.datasetId)) {
+            body.put("datasetId", request.datasetId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mediaId)) {
+            body.put("mediaId", request.mediaId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ChatMemoDeleteKnowledgeGraphNode"),
+            new TeaPair("version", "industry_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/industry/chatmemo/nodes/remove"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ChatMemoDeleteKnowledgeGraphNodeResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除知识图谱节点</p>
+     * 
+     * @param request ChatMemoDeleteKnowledgeGraphNodeRequest
+     * @return ChatMemoDeleteKnowledgeGraphNodeResponse
+     */
+    public ChatMemoDeleteKnowledgeGraphNodeResponse chatMemoDeleteKnowledgeGraphNode(ChatMemoDeleteKnowledgeGraphNodeRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ChatMemoDeleteKnowledgeGraphNodeHeaders headers = new ChatMemoDeleteKnowledgeGraphNodeHeaders();
+        return this.chatMemoDeleteKnowledgeGraphNodeWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除知识图谱关系</p>
+     * 
+     * @param request ChatMemoDeleteKnowledgeGraphRelationRequest
+     * @param headers ChatMemoDeleteKnowledgeGraphRelationHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ChatMemoDeleteKnowledgeGraphRelationResponse
+     */
+    public ChatMemoDeleteKnowledgeGraphRelationResponse chatMemoDeleteKnowledgeGraphRelationWithOptions(ChatMemoDeleteKnowledgeGraphRelationRequest request, ChatMemoDeleteKnowledgeGraphRelationHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizId)) {
+            body.put("bizId", request.bizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.datasetId)) {
+            body.put("datasetId", request.datasetId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mediaId)) {
+            body.put("mediaId", request.mediaId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ChatMemoDeleteKnowledgeGraphRelation"),
+            new TeaPair("version", "industry_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/industry/chatmemo/relations/remove"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ChatMemoDeleteKnowledgeGraphRelationResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除知识图谱关系</p>
+     * 
+     * @param request ChatMemoDeleteKnowledgeGraphRelationRequest
+     * @return ChatMemoDeleteKnowledgeGraphRelationResponse
+     */
+    public ChatMemoDeleteKnowledgeGraphRelationResponse chatMemoDeleteKnowledgeGraphRelation(ChatMemoDeleteKnowledgeGraphRelationRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ChatMemoDeleteKnowledgeGraphRelationHeaders headers = new ChatMemoDeleteKnowledgeGraphRelationHeaders();
+        return this.chatMemoDeleteKnowledgeGraphRelationWithOptions(request, headers, runtime);
     }
 
     /**
@@ -2340,6 +2596,262 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ChatMemoGetFileStatusHeaders headers = new ChatMemoGetFileStatusHeaders();
         return this.chatMemoGetFileStatusWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询知识图谱节点</p>
+     * 
+     * @param request ChatMemoQueryKnowledgeGraphNodeRequest
+     * @param headers ChatMemoQueryKnowledgeGraphNodeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ChatMemoQueryKnowledgeGraphNodeResponse
+     */
+    public ChatMemoQueryKnowledgeGraphNodeResponse chatMemoQueryKnowledgeGraphNodeWithOptions(ChatMemoQueryKnowledgeGraphNodeRequest request, ChatMemoQueryKnowledgeGraphNodeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizId)) {
+            body.put("bizId", request.bizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.datasetId)) {
+            body.put("datasetId", request.datasetId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mediaId)) {
+            body.put("mediaId", request.mediaId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ChatMemoQueryKnowledgeGraphNode"),
+            new TeaPair("version", "industry_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/industry/chatmemo/nodes/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ChatMemoQueryKnowledgeGraphNodeResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询知识图谱节点</p>
+     * 
+     * @param request ChatMemoQueryKnowledgeGraphNodeRequest
+     * @return ChatMemoQueryKnowledgeGraphNodeResponse
+     */
+    public ChatMemoQueryKnowledgeGraphNodeResponse chatMemoQueryKnowledgeGraphNode(ChatMemoQueryKnowledgeGraphNodeRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ChatMemoQueryKnowledgeGraphNodeHeaders headers = new ChatMemoQueryKnowledgeGraphNodeHeaders();
+        return this.chatMemoQueryKnowledgeGraphNodeWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询知识图谱关系</p>
+     * 
+     * @param request ChatMemoQueryKnowledgeGraphRelationRequest
+     * @param headers ChatMemoQueryKnowledgeGraphRelationHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ChatMemoQueryKnowledgeGraphRelationResponse
+     */
+    public ChatMemoQueryKnowledgeGraphRelationResponse chatMemoQueryKnowledgeGraphRelationWithOptions(ChatMemoQueryKnowledgeGraphRelationRequest request, ChatMemoQueryKnowledgeGraphRelationHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizId)) {
+            body.put("bizId", request.bizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.datasetId)) {
+            body.put("datasetId", request.datasetId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.mediaId)) {
+            body.put("mediaId", request.mediaId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ChatMemoQueryKnowledgeGraphRelation"),
+            new TeaPair("version", "industry_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/industry/chatmemo/relations/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ChatMemoQueryKnowledgeGraphRelationResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询知识图谱关系</p>
+     * 
+     * @param request ChatMemoQueryKnowledgeGraphRelationRequest
+     * @return ChatMemoQueryKnowledgeGraphRelationResponse
+     */
+    public ChatMemoQueryKnowledgeGraphRelationResponse chatMemoQueryKnowledgeGraphRelation(ChatMemoQueryKnowledgeGraphRelationRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ChatMemoQueryKnowledgeGraphRelationHeaders headers = new ChatMemoQueryKnowledgeGraphRelationHeaders();
+        return this.chatMemoQueryKnowledgeGraphRelationWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新知识图谱节点</p>
+     * 
+     * @param request ChatMemoUpdateKnowledgeGraphNodeRequest
+     * @param headers ChatMemoUpdateKnowledgeGraphNodeHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ChatMemoUpdateKnowledgeGraphNodeResponse
+     */
+    public ChatMemoUpdateKnowledgeGraphNodeResponse chatMemoUpdateKnowledgeGraphNodeWithOptions(ChatMemoUpdateKnowledgeGraphNodeRequest request, ChatMemoUpdateKnowledgeGraphNodeHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizId)) {
+            body.put("bizId", request.bizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.datasetId)) {
+            body.put("datasetId", request.datasetId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nodeInfo)) {
+            body.put("nodeInfo", request.nodeInfo);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ChatMemoUpdateKnowledgeGraphNode"),
+            new TeaPair("version", "industry_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/industry/chatmemo/nodes"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ChatMemoUpdateKnowledgeGraphNodeResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新知识图谱节点</p>
+     * 
+     * @param request ChatMemoUpdateKnowledgeGraphNodeRequest
+     * @return ChatMemoUpdateKnowledgeGraphNodeResponse
+     */
+    public ChatMemoUpdateKnowledgeGraphNodeResponse chatMemoUpdateKnowledgeGraphNode(ChatMemoUpdateKnowledgeGraphNodeRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ChatMemoUpdateKnowledgeGraphNodeHeaders headers = new ChatMemoUpdateKnowledgeGraphNodeHeaders();
+        return this.chatMemoUpdateKnowledgeGraphNodeWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新知识图谱关系</p>
+     * 
+     * @param request ChatMemoUpdateKnowledgeGraphRelationRequest
+     * @param headers ChatMemoUpdateKnowledgeGraphRelationHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ChatMemoUpdateKnowledgeGraphRelationResponse
+     */
+    public ChatMemoUpdateKnowledgeGraphRelationResponse chatMemoUpdateKnowledgeGraphRelationWithOptions(ChatMemoUpdateKnowledgeGraphRelationRequest request, ChatMemoUpdateKnowledgeGraphRelationHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizId)) {
+            body.put("bizId", request.bizId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.datasetId)) {
+            body.put("datasetId", request.datasetId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.relationInfo)) {
+            body.put("relationInfo", request.relationInfo);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ChatMemoUpdateKnowledgeGraphRelation"),
+            new TeaPair("version", "industry_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/industry/chatmemo/relations"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ChatMemoUpdateKnowledgeGraphRelationResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新知识图谱关系</p>
+     * 
+     * @param request ChatMemoUpdateKnowledgeGraphRelationRequest
+     * @return ChatMemoUpdateKnowledgeGraphRelationResponse
+     */
+    public ChatMemoUpdateKnowledgeGraphRelationResponse chatMemoUpdateKnowledgeGraphRelation(ChatMemoUpdateKnowledgeGraphRelationRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ChatMemoUpdateKnowledgeGraphRelationHeaders headers = new ChatMemoUpdateKnowledgeGraphRelationHeaders();
+        return this.chatMemoUpdateKnowledgeGraphRelationWithOptions(request, headers, runtime);
     }
 
     /**

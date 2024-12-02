@@ -5,6 +5,8 @@ import com.aliyun.tea.*;
 
 public class CloseTopCardRequest extends TeaModel {
     /**
+     * <p>This parameter is required.</p>
+     * 
      * <strong>example:</strong>
      * <p>example_open_conversation_id</p>
      */

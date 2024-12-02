@@ -3,19 +3,34 @@ package com.aliyun.dingtalkteam_sphere_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class QueryTasksV3ResponseBody extends TeaModel {
+public class QueryTaskResponseBody extends TeaModel {
+    /**
+     * <strong>example:</strong>
+     * <p>f279e812-e431-428d-846d-cxxxxxx</p>
+     */
+    @NameInMap("nextToken")
+    public String nextToken;
+
     @NameInMap("requestId")
     public String requestId;
 
     @NameInMap("result")
-    public java.util.List<QueryTasksV3ResponseBodyResult> result;
+    public java.util.List<QueryTaskResponseBodyResult> result;
 
-    public static QueryTasksV3ResponseBody build(java.util.Map<String, ?> map) throws Exception {
-        QueryTasksV3ResponseBody self = new QueryTasksV3ResponseBody();
+    public static QueryTaskResponseBody build(java.util.Map<String, ?> map) throws Exception {
+        QueryTaskResponseBody self = new QueryTaskResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public QueryTasksV3ResponseBody setRequestId(String requestId) {
+    public QueryTaskResponseBody setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    public QueryTaskResponseBody setRequestId(String requestId) {
         this.requestId = requestId;
         return this;
     }
@@ -23,15 +38,15 @@ public class QueryTasksV3ResponseBody extends TeaModel {
         return this.requestId;
     }
 
-    public QueryTasksV3ResponseBody setResult(java.util.List<QueryTasksV3ResponseBodyResult> result) {
+    public QueryTaskResponseBody setResult(java.util.List<QueryTaskResponseBodyResult> result) {
         this.result = result;
         return this;
     }
-    public java.util.List<QueryTasksV3ResponseBodyResult> getResult() {
+    public java.util.List<QueryTaskResponseBodyResult> getResult() {
         return this.result;
     }
 
-    public static class QueryTasksV3ResponseBodyResultCustomfieldsValue extends TeaModel {
+    public static class QueryTaskResponseBodyResultCustomfieldsValue extends TeaModel {
         @NameInMap("id")
         public String id;
 
@@ -41,12 +56,12 @@ public class QueryTasksV3ResponseBody extends TeaModel {
         @NameInMap("title")
         public String title;
 
-        public static QueryTasksV3ResponseBodyResultCustomfieldsValue build(java.util.Map<String, ?> map) throws Exception {
-            QueryTasksV3ResponseBodyResultCustomfieldsValue self = new QueryTasksV3ResponseBodyResultCustomfieldsValue();
+        public static QueryTaskResponseBodyResultCustomfieldsValue build(java.util.Map<String, ?> map) throws Exception {
+            QueryTaskResponseBodyResultCustomfieldsValue self = new QueryTaskResponseBodyResultCustomfieldsValue();
             return TeaModel.build(map, self);
         }
 
-        public QueryTasksV3ResponseBodyResultCustomfieldsValue setId(String id) {
+        public QueryTaskResponseBodyResultCustomfieldsValue setId(String id) {
             this.id = id;
             return this;
         }
@@ -54,7 +69,7 @@ public class QueryTasksV3ResponseBody extends TeaModel {
             return this.id;
         }
 
-        public QueryTasksV3ResponseBodyResultCustomfieldsValue setMetaString(String metaString) {
+        public QueryTaskResponseBodyResultCustomfieldsValue setMetaString(String metaString) {
             this.metaString = metaString;
             return this;
         }
@@ -62,7 +77,7 @@ public class QueryTasksV3ResponseBody extends TeaModel {
             return this.metaString;
         }
 
-        public QueryTasksV3ResponseBodyResultCustomfieldsValue setTitle(String title) {
+        public QueryTaskResponseBodyResultCustomfieldsValue setTitle(String title) {
             this.title = title;
             return this;
         }
@@ -72,7 +87,7 @@ public class QueryTasksV3ResponseBody extends TeaModel {
 
     }
 
-    public static class QueryTasksV3ResponseBodyResultCustomfields extends TeaModel {
+    public static class QueryTaskResponseBodyResultCustomfields extends TeaModel {
         @NameInMap("cfId")
         public String cfId;
 
@@ -80,14 +95,14 @@ public class QueryTasksV3ResponseBody extends TeaModel {
         public String type;
 
         @NameInMap("value")
-        public java.util.List<QueryTasksV3ResponseBodyResultCustomfieldsValue> value;
+        public java.util.List<QueryTaskResponseBodyResultCustomfieldsValue> value;
 
-        public static QueryTasksV3ResponseBodyResultCustomfields build(java.util.Map<String, ?> map) throws Exception {
-            QueryTasksV3ResponseBodyResultCustomfields self = new QueryTasksV3ResponseBodyResultCustomfields();
+        public static QueryTaskResponseBodyResultCustomfields build(java.util.Map<String, ?> map) throws Exception {
+            QueryTaskResponseBodyResultCustomfields self = new QueryTaskResponseBodyResultCustomfields();
             return TeaModel.build(map, self);
         }
 
-        public QueryTasksV3ResponseBodyResultCustomfields setCfId(String cfId) {
+        public QueryTaskResponseBodyResultCustomfields setCfId(String cfId) {
             this.cfId = cfId;
             return this;
         }
@@ -95,7 +110,7 @@ public class QueryTasksV3ResponseBody extends TeaModel {
             return this.cfId;
         }
 
-        public QueryTasksV3ResponseBodyResultCustomfields setType(String type) {
+        public QueryTaskResponseBodyResultCustomfields setType(String type) {
             this.type = type;
             return this;
         }
@@ -103,17 +118,17 @@ public class QueryTasksV3ResponseBody extends TeaModel {
             return this.type;
         }
 
-        public QueryTasksV3ResponseBodyResultCustomfields setValue(java.util.List<QueryTasksV3ResponseBodyResultCustomfieldsValue> value) {
+        public QueryTaskResponseBodyResultCustomfields setValue(java.util.List<QueryTaskResponseBodyResultCustomfieldsValue> value) {
             this.value = value;
             return this;
         }
-        public java.util.List<QueryTasksV3ResponseBodyResultCustomfieldsValue> getValue() {
+        public java.util.List<QueryTaskResponseBodyResultCustomfieldsValue> getValue() {
             return this.value;
         }
 
     }
 
-    public static class QueryTasksV3ResponseBodyResult extends TeaModel {
+    public static class QueryTaskResponseBodyResult extends TeaModel {
         @NameInMap("accomplishTime")
         public String accomplishTime;
 
@@ -131,7 +146,7 @@ public class QueryTasksV3ResponseBody extends TeaModel {
         public String creatorId;
 
         @NameInMap("customfields")
-        public java.util.List<QueryTasksV3ResponseBodyResultCustomfields> customfields;
+        public java.util.List<QueryTaskResponseBodyResultCustomfields> customfields;
 
         @NameInMap("dueDate")
         public String dueDate;
@@ -154,9 +169,6 @@ public class QueryTasksV3ResponseBody extends TeaModel {
         @NameInMap("projectId")
         public String projectId;
 
-        @NameInMap("sourceId")
-        public String sourceId;
-
         @NameInMap("taskId")
         @Deprecated
         public String taskId;
@@ -168,12 +180,12 @@ public class QueryTasksV3ResponseBody extends TeaModel {
         @NameInMap("updated")
         public String updated;
 
-        public static QueryTasksV3ResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
-            QueryTasksV3ResponseBodyResult self = new QueryTasksV3ResponseBodyResult();
+        public static QueryTaskResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
+            QueryTaskResponseBodyResult self = new QueryTaskResponseBodyResult();
             return TeaModel.build(map, self);
         }
 
-        public QueryTasksV3ResponseBodyResult setAccomplishTime(String accomplishTime) {
+        public QueryTaskResponseBodyResult setAccomplishTime(String accomplishTime) {
             this.accomplishTime = accomplishTime;
             return this;
         }
@@ -181,7 +193,7 @@ public class QueryTasksV3ResponseBody extends TeaModel {
             return this.accomplishTime;
         }
 
-        public QueryTasksV3ResponseBodyResult setContent(String content) {
+        public QueryTaskResponseBodyResult setContent(String content) {
             this.content = content;
             return this;
         }
@@ -189,7 +201,7 @@ public class QueryTasksV3ResponseBody extends TeaModel {
             return this.content;
         }
 
-        public QueryTasksV3ResponseBodyResult setCreated(String created) {
+        public QueryTaskResponseBodyResult setCreated(String created) {
             this.created = created;
             return this;
         }
@@ -197,7 +209,7 @@ public class QueryTasksV3ResponseBody extends TeaModel {
             return this.created;
         }
 
-        public QueryTasksV3ResponseBodyResult setCreatorId(String creatorId) {
+        public QueryTaskResponseBodyResult setCreatorId(String creatorId) {
             this.creatorId = creatorId;
             return this;
         }
@@ -205,15 +217,15 @@ public class QueryTasksV3ResponseBody extends TeaModel {
             return this.creatorId;
         }
 
-        public QueryTasksV3ResponseBodyResult setCustomfields(java.util.List<QueryTasksV3ResponseBodyResultCustomfields> customfields) {
+        public QueryTaskResponseBodyResult setCustomfields(java.util.List<QueryTaskResponseBodyResultCustomfields> customfields) {
             this.customfields = customfields;
             return this;
         }
-        public java.util.List<QueryTasksV3ResponseBodyResultCustomfields> getCustomfields() {
+        public java.util.List<QueryTaskResponseBodyResultCustomfields> getCustomfields() {
             return this.customfields;
         }
 
-        public QueryTasksV3ResponseBodyResult setDueDate(String dueDate) {
+        public QueryTaskResponseBodyResult setDueDate(String dueDate) {
             this.dueDate = dueDate;
             return this;
         }
@@ -221,7 +233,7 @@ public class QueryTasksV3ResponseBody extends TeaModel {
             return this.dueDate;
         }
 
-        public QueryTasksV3ResponseBodyResult setExecutorId(String executorId) {
+        public QueryTaskResponseBodyResult setExecutorId(String executorId) {
             this.executorId = executorId;
             return this;
         }
@@ -229,7 +241,7 @@ public class QueryTasksV3ResponseBody extends TeaModel {
             return this.executorId;
         }
 
-        public QueryTasksV3ResponseBodyResult setId(String id) {
+        public QueryTaskResponseBodyResult setId(String id) {
             this.id = id;
             return this;
         }
@@ -237,7 +249,7 @@ public class QueryTasksV3ResponseBody extends TeaModel {
             return this.id;
         }
 
-        public QueryTasksV3ResponseBodyResult setInvolveMembers(java.util.List<String> involveMembers) {
+        public QueryTaskResponseBodyResult setInvolveMembers(java.util.List<String> involveMembers) {
             this.involveMembers = involveMembers;
             return this;
         }
@@ -245,7 +257,7 @@ public class QueryTasksV3ResponseBody extends TeaModel {
             return this.involveMembers;
         }
 
-        public QueryTasksV3ResponseBodyResult setIsDone(Boolean isDone) {
+        public QueryTaskResponseBodyResult setIsDone(Boolean isDone) {
             this.isDone = isDone;
             return this;
         }
@@ -253,7 +265,7 @@ public class QueryTasksV3ResponseBody extends TeaModel {
             return this.isDone;
         }
 
-        public QueryTasksV3ResponseBodyResult setNote(String note) {
+        public QueryTaskResponseBodyResult setNote(String note) {
             this.note = note;
             return this;
         }
@@ -261,7 +273,7 @@ public class QueryTasksV3ResponseBody extends TeaModel {
             return this.note;
         }
 
-        public QueryTasksV3ResponseBodyResult setProjectId(String projectId) {
+        public QueryTaskResponseBodyResult setProjectId(String projectId) {
             this.projectId = projectId;
             return this;
         }
@@ -269,15 +281,7 @@ public class QueryTasksV3ResponseBody extends TeaModel {
             return this.projectId;
         }
 
-        public QueryTasksV3ResponseBodyResult setSourceId(String sourceId) {
-            this.sourceId = sourceId;
-            return this;
-        }
-        public String getSourceId() {
-            return this.sourceId;
-        }
-
-        public QueryTasksV3ResponseBodyResult setTaskId(String taskId) {
+        public QueryTaskResponseBodyResult setTaskId(String taskId) {
             this.taskId = taskId;
             return this;
         }
@@ -285,7 +289,7 @@ public class QueryTasksV3ResponseBody extends TeaModel {
             return this.taskId;
         }
 
-        public QueryTasksV3ResponseBodyResult setUpdated(String updated) {
+        public QueryTaskResponseBodyResult setUpdated(String updated) {
             this.updated = updated;
             return this;
         }
