@@ -3608,6 +3608,10 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.robot_code):
             query['robotCode'] = request.robot_code
         real_headers = {}
@@ -3624,7 +3628,7 @@ class Client(OpenApiClient):
             version='exclusive_1.0',
             protocol='HTTP',
             pathname=f'/v1.0/exclusive/groups/openConversationIds',
-            method='GET',
+            method='POST',
             auth_type='AK',
             style='ROA',
             req_body_type='none',
@@ -3651,6 +3655,10 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
         if not UtilClient.is_unset(request.robot_code):
             query['robotCode'] = request.robot_code
         real_headers = {}
@@ -3667,7 +3675,7 @@ class Client(OpenApiClient):
             version='exclusive_1.0',
             protocol='HTTP',
             pathname=f'/v1.0/exclusive/groups/openConversationIds',
-            method='GET',
+            method='POST',
             auth_type='AK',
             style='ROA',
             req_body_type='none',

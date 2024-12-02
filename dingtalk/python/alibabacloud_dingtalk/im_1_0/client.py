@@ -4928,6 +4928,124 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.InteractiveCardCreateInstanceHeaders()
         return await self.interactive_card_create_instance_with_options_async(request, headers, runtime)
 
+    def list_group_templates_by_org_id_with_options(
+        self,
+        request: dingtalkim__1__0_models.ListGroupTemplatesByOrgIdRequest,
+        headers: dingtalkim__1__0_models.ListGroupTemplatesByOrgIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.ListGroupTemplatesByOrgIdResponse:
+        """
+        @summary 查组织下所有的场景群模版列表
+        
+        @param request: ListGroupTemplatesByOrgIdRequest
+        @param headers: ListGroupTemplatesByOrgIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListGroupTemplatesByOrgIdResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListGroupTemplatesByOrgId',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/sceneGroups/templates/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.ListGroupTemplatesByOrgIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_group_templates_by_org_id_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.ListGroupTemplatesByOrgIdRequest,
+        headers: dingtalkim__1__0_models.ListGroupTemplatesByOrgIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.ListGroupTemplatesByOrgIdResponse:
+        """
+        @summary 查组织下所有的场景群模版列表
+        
+        @param request: ListGroupTemplatesByOrgIdRequest
+        @param headers: ListGroupTemplatesByOrgIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListGroupTemplatesByOrgIdResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListGroupTemplatesByOrgId',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/sceneGroups/templates/lists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.ListGroupTemplatesByOrgIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_group_templates_by_org_id(
+        self,
+        request: dingtalkim__1__0_models.ListGroupTemplatesByOrgIdRequest,
+    ) -> dingtalkim__1__0_models.ListGroupTemplatesByOrgIdResponse:
+        """
+        @summary 查组织下所有的场景群模版列表
+        
+        @param request: ListGroupTemplatesByOrgIdRequest
+        @return: ListGroupTemplatesByOrgIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.ListGroupTemplatesByOrgIdHeaders()
+        return self.list_group_templates_by_org_id_with_options(request, headers, runtime)
+
+    async def list_group_templates_by_org_id_async(
+        self,
+        request: dingtalkim__1__0_models.ListGroupTemplatesByOrgIdRequest,
+    ) -> dingtalkim__1__0_models.ListGroupTemplatesByOrgIdResponse:
+        """
+        @summary 查组织下所有的场景群模版列表
+        
+        @param request: ListGroupTemplatesByOrgIdRequest
+        @return: ListGroupTemplatesByOrgIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.ListGroupTemplatesByOrgIdHeaders()
+        return await self.list_group_templates_by_org_id_with_options_async(request, headers, runtime)
+
     def list_org_text_emotion_with_options(
         self,
         headers: dingtalkim__1__0_models.ListOrgTextEmotionHeaders,

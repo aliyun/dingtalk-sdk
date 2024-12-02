@@ -26,6 +26,124 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def analysis_report_with_options(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.AnalysisReportRequest,
+        headers: dingtalkteam_sphere__1__0_models.AnalysisReportHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.AnalysisReportResponse:
+        """
+        @summary 查询任务概览
+        
+        @param request: AnalysisReportRequest
+        @param headers: AnalysisReportHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AnalysisReportResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.report_id):
+            body['reportId'] = request.report_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AnalysisReport',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/analyses/report',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.AnalysisReportResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def analysis_report_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.AnalysisReportRequest,
+        headers: dingtalkteam_sphere__1__0_models.AnalysisReportHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.AnalysisReportResponse:
+        """
+        @summary 查询任务概览
+        
+        @param request: AnalysisReportRequest
+        @param headers: AnalysisReportHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AnalysisReportResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.report_id):
+            body['reportId'] = request.report_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AnalysisReport',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/analyses/report',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.AnalysisReportResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def analysis_report(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.AnalysisReportRequest,
+    ) -> dingtalkteam_sphere__1__0_models.AnalysisReportResponse:
+        """
+        @summary 查询任务概览
+        
+        @param request: AnalysisReportRequest
+        @return: AnalysisReportResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.AnalysisReportHeaders()
+        return self.analysis_report_with_options(user_id, request, headers, runtime)
+
+    async def analysis_report_async(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.AnalysisReportRequest,
+    ) -> dingtalkteam_sphere__1__0_models.AnalysisReportResponse:
+        """
+        @summary 查询任务概览
+        
+        @param request: AnalysisReportRequest
+        @return: AnalysisReportResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.AnalysisReportHeaders()
+        return await self.analysis_report_with_options_async(user_id, request, headers, runtime)
+
     def create_organization_task_with_options(
         self,
         user_id: str,
@@ -171,6 +289,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkteam_sphere__1__0_models.CreateOrganizationTaskHeaders()
         return await self.create_organization_task_with_options_async(user_id, request, headers, runtime)
+
+    def create_project_v3with_options(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.CreateProjectV3Request,
+        headers: dingtalkteam_sphere__1__0_models.CreateProjectV3Headers,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.CreateProjectV3Response:
+        """
+        @summary 创建协作空间。
+        
+        @param request: CreateProjectV3Request
+        @param headers: CreateProjectV3Headers
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateProjectV3Response
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.organization_id):
+            query['organizationId'] = request.organization_id
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateProjectV3',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/projects',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.CreateProjectV3Response(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_project_v3with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.CreateProjectV3Request,
+        headers: dingtalkteam_sphere__1__0_models.CreateProjectV3Headers,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.CreateProjectV3Response:
+        """
+        @summary 创建协作空间。
+        
+        @param request: CreateProjectV3Request
+        @param headers: CreateProjectV3Headers
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateProjectV3Response
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.organization_id):
+            query['organizationId'] = request.organization_id
+        body = {}
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateProjectV3',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/projects',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.CreateProjectV3Response(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_project_v3(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.CreateProjectV3Request,
+    ) -> dingtalkteam_sphere__1__0_models.CreateProjectV3Response:
+        """
+        @summary 创建协作空间。
+        
+        @param request: CreateProjectV3Request
+        @return: CreateProjectV3Response
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.CreateProjectV3Headers()
+        return self.create_project_v3with_options(user_id, request, headers, runtime)
+
+    async def create_project_v3_async(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.CreateProjectV3Request,
+    ) -> dingtalkteam_sphere__1__0_models.CreateProjectV3Response:
+        """
+        @summary 创建协作空间。
+        
+        @param request: CreateProjectV3Request
+        @return: CreateProjectV3Response
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.CreateProjectV3Headers()
+        return await self.create_project_v3with_options_async(user_id, request, headers, runtime)
 
     def create_task_with_options(
         self,
@@ -546,6 +790,602 @@ class Client(OpenApiClient):
         headers = dingtalkteam_sphere__1__0_models.GetTbUserIdByDingUserIdHeaders()
         return await self.get_tb_user_id_by_ding_user_id_with_options_async(request, headers, runtime)
 
+    def get_thing_org_id_by_ding_org_id_with_options(
+        self,
+        headers: dingtalkteam_sphere__1__0_models.GetThingOrgIdByDingOrgIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.GetThingOrgIdByDingOrgIdResponse:
+        """
+        @summary 获取快办企业ID
+        
+        @param headers: GetThingOrgIdByDingOrgIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetThingOrgIdByDingOrgIdResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetThingOrgIdByDingOrgId',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/organizations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.GetThingOrgIdByDingOrgIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_thing_org_id_by_ding_org_id_with_options_async(
+        self,
+        headers: dingtalkteam_sphere__1__0_models.GetThingOrgIdByDingOrgIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.GetThingOrgIdByDingOrgIdResponse:
+        """
+        @summary 获取快办企业ID
+        
+        @param headers: GetThingOrgIdByDingOrgIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetThingOrgIdByDingOrgIdResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetThingOrgIdByDingOrgId',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/organizations',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.GetThingOrgIdByDingOrgIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_thing_org_id_by_ding_org_id(self) -> dingtalkteam_sphere__1__0_models.GetThingOrgIdByDingOrgIdResponse:
+        """
+        @summary 获取快办企业ID
+        
+        @return: GetThingOrgIdByDingOrgIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.GetThingOrgIdByDingOrgIdHeaders()
+        return self.get_thing_org_id_by_ding_org_id_with_options(headers, runtime)
+
+    async def get_thing_org_id_by_ding_org_id_async(self) -> dingtalkteam_sphere__1__0_models.GetThingOrgIdByDingOrgIdResponse:
+        """
+        @summary 获取快办企业ID
+        
+        @return: GetThingOrgIdByDingOrgIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.GetThingOrgIdByDingOrgIdHeaders()
+        return await self.get_thing_org_id_by_ding_org_id_with_options_async(headers, runtime)
+
+    def get_user_joined_projects_v3with_options(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.GetUserJoinedProjectsV3Request,
+        headers: dingtalkteam_sphere__1__0_models.GetUserJoinedProjectsV3Headers,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.GetUserJoinedProjectsV3Response:
+        """
+        @summary 获取用户参与项目。
+        
+        @param request: GetUserJoinedProjectsV3Request
+        @param headers: GetUserJoinedProjectsV3Headers
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserJoinedProjectsV3Response
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.project_ids):
+            query['projectIds'] = request.project_ids
+        if not UtilClient.is_unset(request.project_role_levels):
+            query['projectRoleLevels'] = request.project_role_levels
+        if not UtilClient.is_unset(request.sort_by):
+            query['sortBy'] = request.sort_by
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetUserJoinedProjectsV3',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/projects/userJoined',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.GetUserJoinedProjectsV3Response(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_user_joined_projects_v3with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.GetUserJoinedProjectsV3Request,
+        headers: dingtalkteam_sphere__1__0_models.GetUserJoinedProjectsV3Headers,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.GetUserJoinedProjectsV3Response:
+        """
+        @summary 获取用户参与项目。
+        
+        @param request: GetUserJoinedProjectsV3Request
+        @param headers: GetUserJoinedProjectsV3Headers
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetUserJoinedProjectsV3Response
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.project_ids):
+            query['projectIds'] = request.project_ids
+        if not UtilClient.is_unset(request.project_role_levels):
+            query['projectRoleLevels'] = request.project_role_levels
+        if not UtilClient.is_unset(request.sort_by):
+            query['sortBy'] = request.sort_by
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetUserJoinedProjectsV3',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/projects/userJoined',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.GetUserJoinedProjectsV3Response(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_user_joined_projects_v3(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.GetUserJoinedProjectsV3Request,
+    ) -> dingtalkteam_sphere__1__0_models.GetUserJoinedProjectsV3Response:
+        """
+        @summary 获取用户参与项目。
+        
+        @param request: GetUserJoinedProjectsV3Request
+        @return: GetUserJoinedProjectsV3Response
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.GetUserJoinedProjectsV3Headers()
+        return self.get_user_joined_projects_v3with_options(user_id, request, headers, runtime)
+
+    async def get_user_joined_projects_v3_async(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.GetUserJoinedProjectsV3Request,
+    ) -> dingtalkteam_sphere__1__0_models.GetUserJoinedProjectsV3Response:
+        """
+        @summary 获取用户参与项目。
+        
+        @param request: GetUserJoinedProjectsV3Request
+        @return: GetUserJoinedProjectsV3Response
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.GetUserJoinedProjectsV3Headers()
+        return await self.get_user_joined_projects_v3with_options_async(user_id, request, headers, runtime)
+
+    def list_all_task_view_with_options(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.ListAllTaskViewRequest,
+        headers: dingtalkteam_sphere__1__0_models.ListAllTaskViewHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.ListAllTaskViewResponse:
+        """
+        @summary 获取全部任务
+        
+        @param request: ListAllTaskViewRequest
+        @param headers: ListAllTaskViewHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAllTaskViewResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListAllTaskView',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/allTaskViews',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.ListAllTaskViewResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_all_task_view_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.ListAllTaskViewRequest,
+        headers: dingtalkteam_sphere__1__0_models.ListAllTaskViewHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.ListAllTaskViewResponse:
+        """
+        @summary 获取全部任务
+        
+        @param request: ListAllTaskViewRequest
+        @param headers: ListAllTaskViewHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAllTaskViewResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListAllTaskView',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/allTaskViews',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.ListAllTaskViewResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_all_task_view(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.ListAllTaskViewRequest,
+    ) -> dingtalkteam_sphere__1__0_models.ListAllTaskViewResponse:
+        """
+        @summary 获取全部任务
+        
+        @param request: ListAllTaskViewRequest
+        @return: ListAllTaskViewResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.ListAllTaskViewHeaders()
+        return self.list_all_task_view_with_options(user_id, request, headers, runtime)
+
+    async def list_all_task_view_async(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.ListAllTaskViewRequest,
+    ) -> dingtalkteam_sphere__1__0_models.ListAllTaskViewResponse:
+        """
+        @summary 获取全部任务
+        
+        @param request: ListAllTaskViewRequest
+        @return: ListAllTaskViewResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.ListAllTaskViewHeaders()
+        return await self.list_all_task_view_with_options_async(user_id, request, headers, runtime)
+
+    def list_my_shortcut_views_with_options(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.ListMyShortcutViewsRequest,
+        headers: dingtalkteam_sphere__1__0_models.ListMyShortcutViewsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.ListMyShortcutViewsResponse:
+        """
+        @summary 查询我的捷径
+        
+        @param request: ListMyShortcutViewsRequest
+        @param headers: ListMyShortcutViewsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListMyShortcutViewsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListMyShortcutViews',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/shortcutViews',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.ListMyShortcutViewsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_my_shortcut_views_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.ListMyShortcutViewsRequest,
+        headers: dingtalkteam_sphere__1__0_models.ListMyShortcutViewsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.ListMyShortcutViewsResponse:
+        """
+        @summary 查询我的捷径
+        
+        @param request: ListMyShortcutViewsRequest
+        @param headers: ListMyShortcutViewsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListMyShortcutViewsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListMyShortcutViews',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/shortcutViews',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.ListMyShortcutViewsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_my_shortcut_views(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.ListMyShortcutViewsRequest,
+    ) -> dingtalkteam_sphere__1__0_models.ListMyShortcutViewsResponse:
+        """
+        @summary 查询我的捷径
+        
+        @param request: ListMyShortcutViewsRequest
+        @return: ListMyShortcutViewsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.ListMyShortcutViewsHeaders()
+        return self.list_my_shortcut_views_with_options(user_id, request, headers, runtime)
+
+    async def list_my_shortcut_views_async(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.ListMyShortcutViewsRequest,
+    ) -> dingtalkteam_sphere__1__0_models.ListMyShortcutViewsResponse:
+        """
+        @summary 查询我的捷径
+        
+        @param request: ListMyShortcutViewsRequest
+        @return: ListMyShortcutViewsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.ListMyShortcutViewsHeaders()
+        return await self.list_my_shortcut_views_with_options_async(user_id, request, headers, runtime)
+
+    def query_task_with_options(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.QueryTaskRequest,
+        headers: dingtalkteam_sphere__1__0_models.QueryTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.QueryTaskResponse:
+        """
+        @summary 查询我的任务
+        
+        @param request: QueryTaskRequest
+        @param headers: QueryTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.tql):
+            body['tql'] = request.tql
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryTask',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/tasks/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.QueryTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_task_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.QueryTaskRequest,
+        headers: dingtalkteam_sphere__1__0_models.QueryTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.QueryTaskResponse:
+        """
+        @summary 查询我的任务
+        
+        @param request: QueryTaskRequest
+        @param headers: QueryTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_results):
+            body['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.tql):
+            body['tql'] = request.tql
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='QueryTask',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/tasks/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.QueryTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_task(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.QueryTaskRequest,
+    ) -> dingtalkteam_sphere__1__0_models.QueryTaskResponse:
+        """
+        @summary 查询我的任务
+        
+        @param request: QueryTaskRequest
+        @return: QueryTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.QueryTaskHeaders()
+        return self.query_task_with_options(user_id, request, headers, runtime)
+
+    async def query_task_async(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.QueryTaskRequest,
+    ) -> dingtalkteam_sphere__1__0_models.QueryTaskResponse:
+        """
+        @summary 查询我的任务
+        
+        @param request: QueryTaskRequest
+        @return: QueryTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.QueryTaskHeaders()
+        return await self.query_task_with_options_async(user_id, request, headers, runtime)
+
     def query_tasks_v3with_options(
         self,
         user_id: str,
@@ -563,10 +1403,6 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.parent_task_id):
-            query['parentTaskId'] = request.parent_task_id
-        if not UtilClient.is_unset(request.short_ids):
-            query['shortIds'] = request.short_ids
         if not UtilClient.is_unset(request.task_id):
             query['taskId'] = request.task_id
         real_headers = {}
@@ -611,10 +1447,6 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         query = {}
-        if not UtilClient.is_unset(request.parent_task_id):
-            query['parentTaskId'] = request.parent_task_id
-        if not UtilClient.is_unset(request.short_ids):
-            query['shortIds'] = request.short_ids
         if not UtilClient.is_unset(request.task_id):
             query['taskId'] = request.task_id
         real_headers = {}
@@ -935,3 +1767,129 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkteam_sphere__1__0_models.SearchProjectsV3Headers()
         return await self.search_projects_v3with_options_async(request, headers, runtime)
+
+    def update_project_v3with_options(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkteam_sphere__1__0_models.UpdateProjectV3Request,
+        headers: dingtalkteam_sphere__1__0_models.UpdateProjectV3Headers,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.UpdateProjectV3Response:
+        """
+        @summary 更新协作空间。
+        
+        @param request: UpdateProjectV3Request
+        @param headers: UpdateProjectV3Headers
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateProjectV3Response
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateProjectV3',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/projects/{project_id}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.UpdateProjectV3Response(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_project_v3with_options_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkteam_sphere__1__0_models.UpdateProjectV3Request,
+        headers: dingtalkteam_sphere__1__0_models.UpdateProjectV3Headers,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.UpdateProjectV3Response:
+        """
+        @summary 更新协作空间。
+        
+        @param request: UpdateProjectV3Request
+        @param headers: UpdateProjectV3Headers
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateProjectV3Response
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateProjectV3',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/projects/{project_id}',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.UpdateProjectV3Response(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_project_v3(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkteam_sphere__1__0_models.UpdateProjectV3Request,
+    ) -> dingtalkteam_sphere__1__0_models.UpdateProjectV3Response:
+        """
+        @summary 更新协作空间。
+        
+        @param request: UpdateProjectV3Request
+        @return: UpdateProjectV3Response
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.UpdateProjectV3Headers()
+        return self.update_project_v3with_options(user_id, project_id, request, headers, runtime)
+
+    async def update_project_v3_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkteam_sphere__1__0_models.UpdateProjectV3Request,
+    ) -> dingtalkteam_sphere__1__0_models.UpdateProjectV3Response:
+        """
+        @summary 更新协作空间。
+        
+        @param request: UpdateProjectV3Request
+        @return: UpdateProjectV3Response
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.UpdateProjectV3Headers()
+        return await self.update_project_v3with_options_async(user_id, project_id, request, headers, runtime)

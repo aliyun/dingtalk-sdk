@@ -1006,6 +1006,7 @@ class CloseTopCardRequest(TeaModel):
         open_conversation_id: str = None,
         out_track_id: str = None,
     ):
+        # This parameter is required.
         self.open_conversation_id = open_conversation_id
         # This parameter is required.
         self.out_track_id = out_track_id

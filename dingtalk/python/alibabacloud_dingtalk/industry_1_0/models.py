@@ -5207,6 +5207,395 @@ class ChatMemoAddGeneralFileResponse(TeaModel):
         return self
 
 
+class ChatMemoAddKnowledgeGraphNodeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ChatMemoAddKnowledgeGraphNodeRequestNodeInfo(TeaModel):
+    def __init__(
+        self,
+        node_label: str = None,
+        node_name: str = None,
+        properties_string: str = None,
+    ):
+        # This parameter is required.
+        self.node_label = node_label
+        # This parameter is required.
+        self.node_name = node_name
+        self.properties_string = properties_string
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.node_label is not None:
+            result['nodeLabel'] = self.node_label
+        if self.node_name is not None:
+            result['nodeName'] = self.node_name
+        if self.properties_string is not None:
+            result['propertiesString'] = self.properties_string
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nodeLabel') is not None:
+            self.node_label = m.get('nodeLabel')
+        if m.get('nodeName') is not None:
+            self.node_name = m.get('nodeName')
+        if m.get('propertiesString') is not None:
+            self.properties_string = m.get('propertiesString')
+        return self
+
+
+class ChatMemoAddKnowledgeGraphNodeRequest(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        dataset_id: int = None,
+        node_info: ChatMemoAddKnowledgeGraphNodeRequestNodeInfo = None,
+    ):
+        self.biz_id = biz_id
+        # This parameter is required.
+        self.dataset_id = dataset_id
+        # This parameter is required.
+        self.node_info = node_info
+
+    def validate(self):
+        if self.node_info:
+            self.node_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.dataset_id is not None:
+            result['datasetId'] = self.dataset_id
+        if self.node_info is not None:
+            result['nodeInfo'] = self.node_info.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('datasetId') is not None:
+            self.dataset_id = m.get('datasetId')
+        if m.get('nodeInfo') is not None:
+            temp_model = ChatMemoAddKnowledgeGraphNodeRequestNodeInfo()
+            self.node_info = temp_model.from_map(m['nodeInfo'])
+        return self
+
+
+class ChatMemoAddKnowledgeGraphNodeResponseBody(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        media_id: str = None,
+    ):
+        self.biz_id = biz_id
+        self.media_id = media_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        return self
+
+
+class ChatMemoAddKnowledgeGraphNodeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ChatMemoAddKnowledgeGraphNodeResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ChatMemoAddKnowledgeGraphNodeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ChatMemoAddKnowledgeGraphRelationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ChatMemoAddKnowledgeGraphRelationRequestRelationInfo(TeaModel):
+    def __init__(
+        self,
+        end_id: str = None,
+        properties_string: str = None,
+        relation_name: str = None,
+        start_id: str = None,
+    ):
+        # This parameter is required.
+        self.end_id = end_id
+        self.properties_string = properties_string
+        # This parameter is required.
+        self.relation_name = relation_name
+        # This parameter is required.
+        self.start_id = start_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_id is not None:
+            result['endId'] = self.end_id
+        if self.properties_string is not None:
+            result['propertiesString'] = self.properties_string
+        if self.relation_name is not None:
+            result['relationName'] = self.relation_name
+        if self.start_id is not None:
+            result['startId'] = self.start_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endId') is not None:
+            self.end_id = m.get('endId')
+        if m.get('propertiesString') is not None:
+            self.properties_string = m.get('propertiesString')
+        if m.get('relationName') is not None:
+            self.relation_name = m.get('relationName')
+        if m.get('startId') is not None:
+            self.start_id = m.get('startId')
+        return self
+
+
+class ChatMemoAddKnowledgeGraphRelationRequest(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        dataset_id: int = None,
+        relation_info: ChatMemoAddKnowledgeGraphRelationRequestRelationInfo = None,
+    ):
+        self.biz_id = biz_id
+        # This parameter is required.
+        self.dataset_id = dataset_id
+        # This parameter is required.
+        self.relation_info = relation_info
+
+    def validate(self):
+        if self.relation_info:
+            self.relation_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.dataset_id is not None:
+            result['datasetId'] = self.dataset_id
+        if self.relation_info is not None:
+            result['relationInfo'] = self.relation_info.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('datasetId') is not None:
+            self.dataset_id = m.get('datasetId')
+        if m.get('relationInfo') is not None:
+            temp_model = ChatMemoAddKnowledgeGraphRelationRequestRelationInfo()
+            self.relation_info = temp_model.from_map(m['relationInfo'])
+        return self
+
+
+class ChatMemoAddKnowledgeGraphRelationResponseBody(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        media_id: str = None,
+    ):
+        self.biz_id = biz_id
+        self.media_id = media_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        return self
+
+
+class ChatMemoAddKnowledgeGraphRelationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ChatMemoAddKnowledgeGraphRelationResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ChatMemoAddKnowledgeGraphRelationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ChatMemoDeleteGeneralFileHeaders(TeaModel):
     def __init__(
         self,
@@ -5339,6 +5728,302 @@ class ChatMemoDeleteGeneralFileResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ChatMemoDeleteGeneralFileResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ChatMemoDeleteKnowledgeGraphNodeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ChatMemoDeleteKnowledgeGraphNodeRequest(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        dataset_id: int = None,
+        media_id: str = None,
+    ):
+        self.biz_id = biz_id
+        # This parameter is required.
+        self.dataset_id = dataset_id
+        # This parameter is required.
+        self.media_id = media_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.dataset_id is not None:
+            result['datasetId'] = self.dataset_id
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('datasetId') is not None:
+            self.dataset_id = m.get('datasetId')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        return self
+
+
+class ChatMemoDeleteKnowledgeGraphNodeResponseBody(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        success: bool = None,
+    ):
+        self.biz_id = biz_id
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ChatMemoDeleteKnowledgeGraphNodeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ChatMemoDeleteKnowledgeGraphNodeResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ChatMemoDeleteKnowledgeGraphNodeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ChatMemoDeleteKnowledgeGraphRelationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ChatMemoDeleteKnowledgeGraphRelationRequest(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        dataset_id: int = None,
+        media_id: str = None,
+    ):
+        self.biz_id = biz_id
+        # This parameter is required.
+        self.dataset_id = dataset_id
+        # This parameter is required.
+        self.media_id = media_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.dataset_id is not None:
+            result['datasetId'] = self.dataset_id
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('datasetId') is not None:
+            self.dataset_id = m.get('datasetId')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        return self
+
+
+class ChatMemoDeleteKnowledgeGraphRelationResponseBody(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        success: bool = None,
+    ):
+        self.biz_id = biz_id
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ChatMemoDeleteKnowledgeGraphRelationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ChatMemoDeleteKnowledgeGraphRelationResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ChatMemoDeleteKnowledgeGraphRelationResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -6230,6 +6915,776 @@ class ChatMemoGetFileStatusResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ChatMemoGetFileStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ChatMemoQueryKnowledgeGraphNodeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ChatMemoQueryKnowledgeGraphNodeRequest(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        dataset_id: int = None,
+        media_id: str = None,
+    ):
+        self.biz_id = biz_id
+        # This parameter is required.
+        self.dataset_id = dataset_id
+        # This parameter is required.
+        self.media_id = media_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.dataset_id is not None:
+            result['datasetId'] = self.dataset_id
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('datasetId') is not None:
+            self.dataset_id = m.get('datasetId')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        return self
+
+
+class ChatMemoQueryKnowledgeGraphNodeResponseBodyNodeInfo(TeaModel):
+    def __init__(
+        self,
+        media_id: str = None,
+        node_label: str = None,
+        node_name: str = None,
+        properties_string: str = None,
+    ):
+        self.media_id = media_id
+        # This parameter is required.
+        self.node_label = node_label
+        # This parameter is required.
+        self.node_name = node_name
+        self.properties_string = properties_string
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        if self.node_label is not None:
+            result['nodeLabel'] = self.node_label
+        if self.node_name is not None:
+            result['nodeName'] = self.node_name
+        if self.properties_string is not None:
+            result['propertiesString'] = self.properties_string
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        if m.get('nodeLabel') is not None:
+            self.node_label = m.get('nodeLabel')
+        if m.get('nodeName') is not None:
+            self.node_name = m.get('nodeName')
+        if m.get('propertiesString') is not None:
+            self.properties_string = m.get('propertiesString')
+        return self
+
+
+class ChatMemoQueryKnowledgeGraphNodeResponseBody(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        node_info: ChatMemoQueryKnowledgeGraphNodeResponseBodyNodeInfo = None,
+    ):
+        self.biz_id = biz_id
+        # This parameter is required.
+        self.node_info = node_info
+
+    def validate(self):
+        if self.node_info:
+            self.node_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.node_info is not None:
+            result['nodeInfo'] = self.node_info.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('nodeInfo') is not None:
+            temp_model = ChatMemoQueryKnowledgeGraphNodeResponseBodyNodeInfo()
+            self.node_info = temp_model.from_map(m['nodeInfo'])
+        return self
+
+
+class ChatMemoQueryKnowledgeGraphNodeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ChatMemoQueryKnowledgeGraphNodeResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ChatMemoQueryKnowledgeGraphNodeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ChatMemoQueryKnowledgeGraphRelationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ChatMemoQueryKnowledgeGraphRelationRequest(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        dataset_id: int = None,
+        media_id: str = None,
+    ):
+        self.biz_id = biz_id
+        # This parameter is required.
+        self.dataset_id = dataset_id
+        # This parameter is required.
+        self.media_id = media_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.dataset_id is not None:
+            result['datasetId'] = self.dataset_id
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('datasetId') is not None:
+            self.dataset_id = m.get('datasetId')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        return self
+
+
+class ChatMemoQueryKnowledgeGraphRelationResponseBodyRelationInfo(TeaModel):
+    def __init__(
+        self,
+        end_id: str = None,
+        media_id: str = None,
+        properties_string: str = None,
+        relation_name: str = None,
+        start_id: str = None,
+    ):
+        self.end_id = end_id
+        self.media_id = media_id
+        self.properties_string = properties_string
+        # This parameter is required.
+        self.relation_name = relation_name
+        # This parameter is required.
+        self.start_id = start_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_id is not None:
+            result['endId'] = self.end_id
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        if self.properties_string is not None:
+            result['propertiesString'] = self.properties_string
+        if self.relation_name is not None:
+            result['relationName'] = self.relation_name
+        if self.start_id is not None:
+            result['startId'] = self.start_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endId') is not None:
+            self.end_id = m.get('endId')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        if m.get('propertiesString') is not None:
+            self.properties_string = m.get('propertiesString')
+        if m.get('relationName') is not None:
+            self.relation_name = m.get('relationName')
+        if m.get('startId') is not None:
+            self.start_id = m.get('startId')
+        return self
+
+
+class ChatMemoQueryKnowledgeGraphRelationResponseBody(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        relation_info: ChatMemoQueryKnowledgeGraphRelationResponseBodyRelationInfo = None,
+    ):
+        self.biz_id = biz_id
+        # This parameter is required.
+        self.relation_info = relation_info
+
+    def validate(self):
+        if self.relation_info:
+            self.relation_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.relation_info is not None:
+            result['relationInfo'] = self.relation_info.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('relationInfo') is not None:
+            temp_model = ChatMemoQueryKnowledgeGraphRelationResponseBodyRelationInfo()
+            self.relation_info = temp_model.from_map(m['relationInfo'])
+        return self
+
+
+class ChatMemoQueryKnowledgeGraphRelationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ChatMemoQueryKnowledgeGraphRelationResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ChatMemoQueryKnowledgeGraphRelationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ChatMemoUpdateKnowledgeGraphNodeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ChatMemoUpdateKnowledgeGraphNodeRequestNodeInfo(TeaModel):
+    def __init__(
+        self,
+        media_id: str = None,
+        properties_string: str = None,
+    ):
+        # This parameter is required.
+        self.media_id = media_id
+        self.properties_string = properties_string
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        if self.properties_string is not None:
+            result['propertiesString'] = self.properties_string
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        if m.get('propertiesString') is not None:
+            self.properties_string = m.get('propertiesString')
+        return self
+
+
+class ChatMemoUpdateKnowledgeGraphNodeRequest(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        dataset_id: int = None,
+        node_info: ChatMemoUpdateKnowledgeGraphNodeRequestNodeInfo = None,
+    ):
+        self.biz_id = biz_id
+        # This parameter is required.
+        self.dataset_id = dataset_id
+        # This parameter is required.
+        self.node_info = node_info
+
+    def validate(self):
+        if self.node_info:
+            self.node_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.dataset_id is not None:
+            result['datasetId'] = self.dataset_id
+        if self.node_info is not None:
+            result['nodeInfo'] = self.node_info.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('datasetId') is not None:
+            self.dataset_id = m.get('datasetId')
+        if m.get('nodeInfo') is not None:
+            temp_model = ChatMemoUpdateKnowledgeGraphNodeRequestNodeInfo()
+            self.node_info = temp_model.from_map(m['nodeInfo'])
+        return self
+
+
+class ChatMemoUpdateKnowledgeGraphNodeResponseBody(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        success: bool = None,
+    ):
+        self.biz_id = biz_id
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ChatMemoUpdateKnowledgeGraphNodeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ChatMemoUpdateKnowledgeGraphNodeResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ChatMemoUpdateKnowledgeGraphNodeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ChatMemoUpdateKnowledgeGraphRelationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ChatMemoUpdateKnowledgeGraphRelationRequestRelationInfo(TeaModel):
+    def __init__(
+        self,
+        media_id: str = None,
+        properties_string: str = None,
+    ):
+        # This parameter is required.
+        self.media_id = media_id
+        self.properties_string = properties_string
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        if self.properties_string is not None:
+            result['propertiesString'] = self.properties_string
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        if m.get('propertiesString') is not None:
+            self.properties_string = m.get('propertiesString')
+        return self
+
+
+class ChatMemoUpdateKnowledgeGraphRelationRequest(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        dataset_id: int = None,
+        relation_info: ChatMemoUpdateKnowledgeGraphRelationRequestRelationInfo = None,
+    ):
+        self.biz_id = biz_id
+        # This parameter is required.
+        self.dataset_id = dataset_id
+        # This parameter is required.
+        self.relation_info = relation_info
+
+    def validate(self):
+        if self.relation_info:
+            self.relation_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.dataset_id is not None:
+            result['datasetId'] = self.dataset_id
+        if self.relation_info is not None:
+            result['relationInfo'] = self.relation_info.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('datasetId') is not None:
+            self.dataset_id = m.get('datasetId')
+        if m.get('relationInfo') is not None:
+            temp_model = ChatMemoUpdateKnowledgeGraphRelationRequestRelationInfo()
+            self.relation_info = temp_model.from_map(m['relationInfo'])
+        return self
+
+
+class ChatMemoUpdateKnowledgeGraphRelationResponseBody(TeaModel):
+    def __init__(
+        self,
+        biz_id: str = None,
+        success: bool = None,
+    ):
+        self.biz_id = biz_id
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_id is not None:
+            result['bizId'] = self.biz_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizId') is not None:
+            self.biz_id = m.get('bizId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ChatMemoUpdateKnowledgeGraphRelationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ChatMemoUpdateKnowledgeGraphRelationResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ChatMemoUpdateKnowledgeGraphRelationResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

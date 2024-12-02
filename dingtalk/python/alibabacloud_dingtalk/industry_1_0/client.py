@@ -3686,6 +3686,250 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.ChatMemoAddGeneralFileHeaders()
         return await self.chat_memo_add_general_file_with_options_async(request, headers, runtime)
 
+    def chat_memo_add_knowledge_graph_node_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphNodeRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphNodeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphNodeResponse:
+        """
+        @summary 新增知识图谱节点
+        
+        @param request: ChatMemoAddKnowledgeGraphNodeRequest
+        @param headers: ChatMemoAddKnowledgeGraphNodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatMemoAddKnowledgeGraphNodeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.node_info):
+            body['nodeInfo'] = request.node_info
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoAddKnowledgeGraphNode',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/nodes',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphNodeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_memo_add_knowledge_graph_node_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphNodeRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphNodeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphNodeResponse:
+        """
+        @summary 新增知识图谱节点
+        
+        @param request: ChatMemoAddKnowledgeGraphNodeRequest
+        @param headers: ChatMemoAddKnowledgeGraphNodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatMemoAddKnowledgeGraphNodeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.node_info):
+            body['nodeInfo'] = request.node_info
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoAddKnowledgeGraphNode',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/nodes',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphNodeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_memo_add_knowledge_graph_node(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphNodeRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphNodeResponse:
+        """
+        @summary 新增知识图谱节点
+        
+        @param request: ChatMemoAddKnowledgeGraphNodeRequest
+        @return: ChatMemoAddKnowledgeGraphNodeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphNodeHeaders()
+        return self.chat_memo_add_knowledge_graph_node_with_options(request, headers, runtime)
+
+    async def chat_memo_add_knowledge_graph_node_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphNodeRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphNodeResponse:
+        """
+        @summary 新增知识图谱节点
+        
+        @param request: ChatMemoAddKnowledgeGraphNodeRequest
+        @return: ChatMemoAddKnowledgeGraphNodeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphNodeHeaders()
+        return await self.chat_memo_add_knowledge_graph_node_with_options_async(request, headers, runtime)
+
+    def chat_memo_add_knowledge_graph_relation_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphRelationRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphRelationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphRelationResponse:
+        """
+        @summary 新增知识图谱关系
+        
+        @param request: ChatMemoAddKnowledgeGraphRelationRequest
+        @param headers: ChatMemoAddKnowledgeGraphRelationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatMemoAddKnowledgeGraphRelationResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.relation_info):
+            body['relationInfo'] = request.relation_info
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoAddKnowledgeGraphRelation',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/relations',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphRelationResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_memo_add_knowledge_graph_relation_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphRelationRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphRelationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphRelationResponse:
+        """
+        @summary 新增知识图谱关系
+        
+        @param request: ChatMemoAddKnowledgeGraphRelationRequest
+        @param headers: ChatMemoAddKnowledgeGraphRelationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatMemoAddKnowledgeGraphRelationResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.relation_info):
+            body['relationInfo'] = request.relation_info
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoAddKnowledgeGraphRelation',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/relations',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphRelationResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_memo_add_knowledge_graph_relation(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphRelationRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphRelationResponse:
+        """
+        @summary 新增知识图谱关系
+        
+        @param request: ChatMemoAddKnowledgeGraphRelationRequest
+        @return: ChatMemoAddKnowledgeGraphRelationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphRelationHeaders()
+        return self.chat_memo_add_knowledge_graph_relation_with_options(request, headers, runtime)
+
+    async def chat_memo_add_knowledge_graph_relation_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphRelationRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphRelationResponse:
+        """
+        @summary 新增知识图谱关系
+        
+        @param request: ChatMemoAddKnowledgeGraphRelationRequest
+        @return: ChatMemoAddKnowledgeGraphRelationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoAddKnowledgeGraphRelationHeaders()
+        return await self.chat_memo_add_knowledge_graph_relation_with_options_async(request, headers, runtime)
+
     def chat_memo_delete_general_file_with_options(
         self,
         request: dingtalkindustry__1__0_models.ChatMemoDeleteGeneralFileRequest,
@@ -3803,6 +4047,250 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkindustry__1__0_models.ChatMemoDeleteGeneralFileHeaders()
         return await self.chat_memo_delete_general_file_with_options_async(request, headers, runtime)
+
+    def chat_memo_delete_knowledge_graph_node_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphNodeRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphNodeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphNodeResponse:
+        """
+        @summary 删除知识图谱节点
+        
+        @param request: ChatMemoDeleteKnowledgeGraphNodeRequest
+        @param headers: ChatMemoDeleteKnowledgeGraphNodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatMemoDeleteKnowledgeGraphNodeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoDeleteKnowledgeGraphNode',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/nodes/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphNodeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_memo_delete_knowledge_graph_node_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphNodeRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphNodeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphNodeResponse:
+        """
+        @summary 删除知识图谱节点
+        
+        @param request: ChatMemoDeleteKnowledgeGraphNodeRequest
+        @param headers: ChatMemoDeleteKnowledgeGraphNodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatMemoDeleteKnowledgeGraphNodeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoDeleteKnowledgeGraphNode',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/nodes/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphNodeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_memo_delete_knowledge_graph_node(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphNodeRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphNodeResponse:
+        """
+        @summary 删除知识图谱节点
+        
+        @param request: ChatMemoDeleteKnowledgeGraphNodeRequest
+        @return: ChatMemoDeleteKnowledgeGraphNodeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphNodeHeaders()
+        return self.chat_memo_delete_knowledge_graph_node_with_options(request, headers, runtime)
+
+    async def chat_memo_delete_knowledge_graph_node_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphNodeRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphNodeResponse:
+        """
+        @summary 删除知识图谱节点
+        
+        @param request: ChatMemoDeleteKnowledgeGraphNodeRequest
+        @return: ChatMemoDeleteKnowledgeGraphNodeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphNodeHeaders()
+        return await self.chat_memo_delete_knowledge_graph_node_with_options_async(request, headers, runtime)
+
+    def chat_memo_delete_knowledge_graph_relation_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphRelationRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphRelationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphRelationResponse:
+        """
+        @summary 删除知识图谱关系
+        
+        @param request: ChatMemoDeleteKnowledgeGraphRelationRequest
+        @param headers: ChatMemoDeleteKnowledgeGraphRelationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatMemoDeleteKnowledgeGraphRelationResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoDeleteKnowledgeGraphRelation',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/relations/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphRelationResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_memo_delete_knowledge_graph_relation_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphRelationRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphRelationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphRelationResponse:
+        """
+        @summary 删除知识图谱关系
+        
+        @param request: ChatMemoDeleteKnowledgeGraphRelationRequest
+        @param headers: ChatMemoDeleteKnowledgeGraphRelationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatMemoDeleteKnowledgeGraphRelationResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoDeleteKnowledgeGraphRelation',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/relations/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphRelationResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_memo_delete_knowledge_graph_relation(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphRelationRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphRelationResponse:
+        """
+        @summary 删除知识图谱关系
+        
+        @param request: ChatMemoDeleteKnowledgeGraphRelationRequest
+        @return: ChatMemoDeleteKnowledgeGraphRelationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphRelationHeaders()
+        return self.chat_memo_delete_knowledge_graph_relation_with_options(request, headers, runtime)
+
+    async def chat_memo_delete_knowledge_graph_relation_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphRelationRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphRelationResponse:
+        """
+        @summary 删除知识图谱关系
+        
+        @param request: ChatMemoDeleteKnowledgeGraphRelationRequest
+        @return: ChatMemoDeleteKnowledgeGraphRelationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoDeleteKnowledgeGraphRelationHeaders()
+        return await self.chat_memo_delete_knowledge_graph_relation_with_options_async(request, headers, runtime)
 
     def chat_memo_faq_add_with_options(
         self,
@@ -4413,6 +4901,494 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkindustry__1__0_models.ChatMemoGetFileStatusHeaders()
         return await self.chat_memo_get_file_status_with_options_async(request, headers, runtime)
+
+    def chat_memo_query_knowledge_graph_node_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphNodeRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphNodeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphNodeResponse:
+        """
+        @summary 查询知识图谱节点
+        
+        @param request: ChatMemoQueryKnowledgeGraphNodeRequest
+        @param headers: ChatMemoQueryKnowledgeGraphNodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatMemoQueryKnowledgeGraphNodeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoQueryKnowledgeGraphNode',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/nodes/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphNodeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_memo_query_knowledge_graph_node_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphNodeRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphNodeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphNodeResponse:
+        """
+        @summary 查询知识图谱节点
+        
+        @param request: ChatMemoQueryKnowledgeGraphNodeRequest
+        @param headers: ChatMemoQueryKnowledgeGraphNodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatMemoQueryKnowledgeGraphNodeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoQueryKnowledgeGraphNode',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/nodes/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphNodeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_memo_query_knowledge_graph_node(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphNodeRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphNodeResponse:
+        """
+        @summary 查询知识图谱节点
+        
+        @param request: ChatMemoQueryKnowledgeGraphNodeRequest
+        @return: ChatMemoQueryKnowledgeGraphNodeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphNodeHeaders()
+        return self.chat_memo_query_knowledge_graph_node_with_options(request, headers, runtime)
+
+    async def chat_memo_query_knowledge_graph_node_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphNodeRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphNodeResponse:
+        """
+        @summary 查询知识图谱节点
+        
+        @param request: ChatMemoQueryKnowledgeGraphNodeRequest
+        @return: ChatMemoQueryKnowledgeGraphNodeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphNodeHeaders()
+        return await self.chat_memo_query_knowledge_graph_node_with_options_async(request, headers, runtime)
+
+    def chat_memo_query_knowledge_graph_relation_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphRelationRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphRelationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphRelationResponse:
+        """
+        @summary 查询知识图谱关系
+        
+        @param request: ChatMemoQueryKnowledgeGraphRelationRequest
+        @param headers: ChatMemoQueryKnowledgeGraphRelationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatMemoQueryKnowledgeGraphRelationResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoQueryKnowledgeGraphRelation',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/relations/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphRelationResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_memo_query_knowledge_graph_relation_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphRelationRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphRelationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphRelationResponse:
+        """
+        @summary 查询知识图谱关系
+        
+        @param request: ChatMemoQueryKnowledgeGraphRelationRequest
+        @param headers: ChatMemoQueryKnowledgeGraphRelationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatMemoQueryKnowledgeGraphRelationResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.media_id):
+            body['mediaId'] = request.media_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoQueryKnowledgeGraphRelation',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/relations/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphRelationResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_memo_query_knowledge_graph_relation(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphRelationRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphRelationResponse:
+        """
+        @summary 查询知识图谱关系
+        
+        @param request: ChatMemoQueryKnowledgeGraphRelationRequest
+        @return: ChatMemoQueryKnowledgeGraphRelationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphRelationHeaders()
+        return self.chat_memo_query_knowledge_graph_relation_with_options(request, headers, runtime)
+
+    async def chat_memo_query_knowledge_graph_relation_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphRelationRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphRelationResponse:
+        """
+        @summary 查询知识图谱关系
+        
+        @param request: ChatMemoQueryKnowledgeGraphRelationRequest
+        @return: ChatMemoQueryKnowledgeGraphRelationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoQueryKnowledgeGraphRelationHeaders()
+        return await self.chat_memo_query_knowledge_graph_relation_with_options_async(request, headers, runtime)
+
+    def chat_memo_update_knowledge_graph_node_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphNodeRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphNodeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphNodeResponse:
+        """
+        @summary 更新知识图谱节点
+        
+        @param request: ChatMemoUpdateKnowledgeGraphNodeRequest
+        @param headers: ChatMemoUpdateKnowledgeGraphNodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatMemoUpdateKnowledgeGraphNodeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.node_info):
+            body['nodeInfo'] = request.node_info
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoUpdateKnowledgeGraphNode',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/nodes',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphNodeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_memo_update_knowledge_graph_node_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphNodeRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphNodeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphNodeResponse:
+        """
+        @summary 更新知识图谱节点
+        
+        @param request: ChatMemoUpdateKnowledgeGraphNodeRequest
+        @param headers: ChatMemoUpdateKnowledgeGraphNodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatMemoUpdateKnowledgeGraphNodeResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.node_info):
+            body['nodeInfo'] = request.node_info
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoUpdateKnowledgeGraphNode',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/nodes',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphNodeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_memo_update_knowledge_graph_node(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphNodeRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphNodeResponse:
+        """
+        @summary 更新知识图谱节点
+        
+        @param request: ChatMemoUpdateKnowledgeGraphNodeRequest
+        @return: ChatMemoUpdateKnowledgeGraphNodeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphNodeHeaders()
+        return self.chat_memo_update_knowledge_graph_node_with_options(request, headers, runtime)
+
+    async def chat_memo_update_knowledge_graph_node_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphNodeRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphNodeResponse:
+        """
+        @summary 更新知识图谱节点
+        
+        @param request: ChatMemoUpdateKnowledgeGraphNodeRequest
+        @return: ChatMemoUpdateKnowledgeGraphNodeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphNodeHeaders()
+        return await self.chat_memo_update_knowledge_graph_node_with_options_async(request, headers, runtime)
+
+    def chat_memo_update_knowledge_graph_relation_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphRelationRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphRelationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphRelationResponse:
+        """
+        @summary 更新知识图谱关系
+        
+        @param request: ChatMemoUpdateKnowledgeGraphRelationRequest
+        @param headers: ChatMemoUpdateKnowledgeGraphRelationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatMemoUpdateKnowledgeGraphRelationResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.relation_info):
+            body['relationInfo'] = request.relation_info
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoUpdateKnowledgeGraphRelation',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/relations',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphRelationResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def chat_memo_update_knowledge_graph_relation_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphRelationRequest,
+        headers: dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphRelationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphRelationResponse:
+        """
+        @summary 更新知识图谱关系
+        
+        @param request: ChatMemoUpdateKnowledgeGraphRelationRequest
+        @param headers: ChatMemoUpdateKnowledgeGraphRelationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ChatMemoUpdateKnowledgeGraphRelationResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_id):
+            body['bizId'] = request.biz_id
+        if not UtilClient.is_unset(request.dataset_id):
+            body['datasetId'] = request.dataset_id
+        if not UtilClient.is_unset(request.relation_info):
+            body['relationInfo'] = request.relation_info
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ChatMemoUpdateKnowledgeGraphRelation',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/chatmemo/relations',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphRelationResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def chat_memo_update_knowledge_graph_relation(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphRelationRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphRelationResponse:
+        """
+        @summary 更新知识图谱关系
+        
+        @param request: ChatMemoUpdateKnowledgeGraphRelationRequest
+        @return: ChatMemoUpdateKnowledgeGraphRelationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphRelationHeaders()
+        return self.chat_memo_update_knowledge_graph_relation_with_options(request, headers, runtime)
+
+    async def chat_memo_update_knowledge_graph_relation_async(
+        self,
+        request: dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphRelationRequest,
+    ) -> dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphRelationResponse:
+        """
+        @summary 更新知识图谱关系
+        
+        @param request: ChatMemoUpdateKnowledgeGraphRelationRequest
+        @return: ChatMemoUpdateKnowledgeGraphRelationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.ChatMemoUpdateKnowledgeGraphRelationHeaders()
+        return await self.chat_memo_update_knowledge_graph_relation_with_options_async(request, headers, runtime)
 
     def college_active_college_dept_group_with_options(
         self,

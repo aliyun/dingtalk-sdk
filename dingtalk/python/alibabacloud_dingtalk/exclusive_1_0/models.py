@@ -5175,8 +5175,12 @@ class GetCidsByBotCodeHeaders(TeaModel):
 class GetCidsByBotCodeRequest(TeaModel):
     def __init__(
         self,
+        page_number: int = None,
+        page_size: int = None,
         robot_code: str = None,
     ):
+        self.page_number = page_number
+        self.page_size = page_size
         self.robot_code = robot_code
 
     def validate(self):
@@ -5188,23 +5192,35 @@ class GetCidsByBotCodeRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
         if self.robot_code is not None:
             result['robotCode'] = self.robot_code
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
         if m.get('robotCode') is not None:
             self.robot_code = m.get('robotCode')
         return self
 
 
-class GetCidsByBotCodeResponseBody(TeaModel):
+class GetCidsByBotCodeResponseBodyGroupInfos(TeaModel):
     def __init__(
         self,
-        open_conversation_ids: List[str] = None,
+        bot_creator: str = None,
+        bot_creator_is_org_member: bool = None,
+        open_conversation_id: str = None,
     ):
-        self.open_conversation_ids = open_conversation_ids
+        self.bot_creator = bot_creator
+        self.bot_creator_is_org_member = bot_creator_is_org_member
+        self.open_conversation_id = open_conversation_id
 
     def validate(self):
         pass
@@ -5215,14 +5231,63 @@ class GetCidsByBotCodeResponseBody(TeaModel):
             return _map
 
         result = dict()
-        if self.open_conversation_ids is not None:
-            result['openConversationIds'] = self.open_conversation_ids
+        if self.bot_creator is not None:
+            result['botCreator'] = self.bot_creator
+        if self.bot_creator_is_org_member is not None:
+            result['botCreatorIsOrgMember'] = self.bot_creator_is_org_member
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('openConversationIds') is not None:
-            self.open_conversation_ids = m.get('openConversationIds')
+        if m.get('botCreator') is not None:
+            self.bot_creator = m.get('botCreator')
+        if m.get('botCreatorIsOrgMember') is not None:
+            self.bot_creator_is_org_member = m.get('botCreatorIsOrgMember')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        return self
+
+
+class GetCidsByBotCodeResponseBody(TeaModel):
+    def __init__(
+        self,
+        group_infos: List[GetCidsByBotCodeResponseBodyGroupInfos] = None,
+        has_more: bool = None,
+    ):
+        self.group_infos = group_infos
+        self.has_more = has_more
+
+    def validate(self):
+        if self.group_infos:
+            for k in self.group_infos:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['groupInfos'] = []
+        if self.group_infos is not None:
+            for k in self.group_infos:
+                result['groupInfos'].append(k.to_map() if k else None)
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.group_infos = []
+        if m.get('groupInfos') is not None:
+            for k in m.get('groupInfos'):
+                temp_model = GetCidsByBotCodeResponseBodyGroupInfos()
+                self.group_infos.append(temp_model.from_map(k))
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
         return self
 
 
