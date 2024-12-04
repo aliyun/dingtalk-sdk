@@ -10418,6 +10418,112 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.GetBindChildInfoHeaders()
         return await self.get_bind_child_info_with_options_async(request, headers, runtime)
 
+    def get_children_with_options(
+        self,
+        request: dingtalkedu__1__0_models.GetChildrenRequest,
+        headers: dingtalkedu__1__0_models.GetChildrenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetChildrenResponse:
+        """
+        @summary 查询用户的孩子列表
+        
+        @param request: GetChildrenRequest
+        @param headers: GetChildrenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetChildrenResponse
+        """
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetChildren',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/children/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetChildrenResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_children_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.GetChildrenRequest,
+        headers: dingtalkedu__1__0_models.GetChildrenHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetChildrenResponse:
+        """
+        @summary 查询用户的孩子列表
+        
+        @param request: GetChildrenRequest
+        @param headers: GetChildrenHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetChildrenResponse
+        """
+        UtilClient.validate_model(request)
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetChildren',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/children/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetChildrenResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_children(
+        self,
+        request: dingtalkedu__1__0_models.GetChildrenRequest,
+    ) -> dingtalkedu__1__0_models.GetChildrenResponse:
+        """
+        @summary 查询用户的孩子列表
+        
+        @param request: GetChildrenRequest
+        @return: GetChildrenResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetChildrenHeaders()
+        return self.get_children_with_options(request, headers, runtime)
+
+    async def get_children_async(
+        self,
+        request: dingtalkedu__1__0_models.GetChildrenRequest,
+    ) -> dingtalkedu__1__0_models.GetChildrenResponse:
+        """
+        @summary 查询用户的孩子列表
+        
+        @param request: GetChildrenRequest
+        @return: GetChildrenResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetChildrenHeaders()
+        return await self.get_children_with_options_async(request, headers, runtime)
+
     def get_college_alumni_depts_with_options(
         self,
         request: dingtalkedu__1__0_models.GetCollegeAlumniDeptsRequest,
