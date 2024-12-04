@@ -233,6 +233,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetBindChildInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetBindChildInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetBindChildInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetChildrenHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetChildrenRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetChildrenResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeAlumniDeptsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeAlumniDeptsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeAlumniDeptsResponse;
@@ -6158,6 +6161,58 @@ class Dingtalk extends OpenApiClient
         $headers = new GetBindChildInfoHeaders([]);
 
         return $this->getBindChildInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询用户的孩子列表
+     *  *
+     * @param GetChildrenRequest $request GetChildrenRequest
+     * @param GetChildrenHeaders $headers GetChildrenHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetChildrenResponse GetChildrenResponse
+     */
+    public function getChildrenWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'GetChildren',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/children/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetChildrenResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询用户的孩子列表
+     *  *
+     * @param GetChildrenRequest $request GetChildrenRequest
+     *
+     * @return GetChildrenResponse GetChildrenResponse
+     */
+    public function getChildren($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetChildrenHeaders([]);
+
+        return $this->getChildrenWithOptions($request, $headers, $runtime);
     }
 
     /**
