@@ -14650,6 +14650,142 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询用户的孩子列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetChildrenRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetChildrenHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetChildrenResponse
+        /// </returns>
+        public GetChildrenResponse GetChildrenWithOptions(GetChildrenRequest request, GetChildrenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetChildren",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/children/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetChildrenResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询用户的孩子列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetChildrenRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetChildrenHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetChildrenResponse
+        /// </returns>
+        public async Task<GetChildrenResponse> GetChildrenWithOptionsAsync(GetChildrenRequest request, GetChildrenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetChildren",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/children/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetChildrenResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询用户的孩子列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetChildrenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetChildrenResponse
+        /// </returns>
+        public GetChildrenResponse GetChildren(GetChildrenRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetChildrenHeaders headers = new GetChildrenHeaders();
+            return GetChildrenWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询用户的孩子列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetChildrenRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetChildrenResponse
+        /// </returns>
+        public async Task<GetChildrenResponse> GetChildrenAsync(GetChildrenRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetChildrenHeaders headers = new GetChildrenHeaders();
+            return await GetChildrenWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>高校校友会获取当前部门的所有子部门</para>
         /// </summary>
         /// 
