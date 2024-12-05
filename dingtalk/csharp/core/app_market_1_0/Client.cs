@@ -670,6 +670,178 @@ namespace AlibabaCloud.SDK.Dingtalkapp_market_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>销售助理CRM数据变更回调通知</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// NotifyOnCrmDataChangeRequest
+        /// </param>
+        /// <param name="headers">
+        /// NotifyOnCrmDataChangeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// NotifyOnCrmDataChangeResponse
+        /// </returns>
+        public NotifyOnCrmDataChangeResponse NotifyOnCrmDataChangeWithOptions(NotifyOnCrmDataChangeRequest request, NotifyOnCrmDataChangeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataId))
+            {
+                body["dataId"] = request.DataId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operate))
+            {
+                body["operate"] = request.Operate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "NotifyOnCrmDataChange",
+                Version = "appMarket_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/appMarket/saleAssistants/crmDataChanges/notify",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<NotifyOnCrmDataChangeResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>销售助理CRM数据变更回调通知</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// NotifyOnCrmDataChangeRequest
+        /// </param>
+        /// <param name="headers">
+        /// NotifyOnCrmDataChangeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// NotifyOnCrmDataChangeResponse
+        /// </returns>
+        public async Task<NotifyOnCrmDataChangeResponse> NotifyOnCrmDataChangeWithOptionsAsync(NotifyOnCrmDataChangeRequest request, NotifyOnCrmDataChangeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DataId))
+            {
+                body["dataId"] = request.DataId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extension))
+            {
+                body["extension"] = request.Extension;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operate))
+            {
+                body["operate"] = request.Operate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
+            {
+                body["type"] = request.Type;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "NotifyOnCrmDataChange",
+                Version = "appMarket_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/appMarket/saleAssistants/crmDataChanges/notify",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<NotifyOnCrmDataChangeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>销售助理CRM数据变更回调通知</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// NotifyOnCrmDataChangeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// NotifyOnCrmDataChangeResponse
+        /// </returns>
+        public NotifyOnCrmDataChangeResponse NotifyOnCrmDataChange(NotifyOnCrmDataChangeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            NotifyOnCrmDataChangeHeaders headers = new NotifyOnCrmDataChangeHeaders();
+            return NotifyOnCrmDataChangeWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>销售助理CRM数据变更回调通知</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// NotifyOnCrmDataChangeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// NotifyOnCrmDataChangeResponse
+        /// </returns>
+        public async Task<NotifyOnCrmDataChangeResponse> NotifyOnCrmDataChangeAsync(NotifyOnCrmDataChangeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            NotifyOnCrmDataChangeHeaders headers = new NotifyOnCrmDataChangeHeaders();
+            return await NotifyOnCrmDataChangeWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>应用市场订单查询</para>
         /// </summary>
         /// 

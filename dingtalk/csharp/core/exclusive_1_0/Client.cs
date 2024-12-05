@@ -17094,6 +17094,170 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>设置会话副标题</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetConversationSubtitleRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetConversationSubtitleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetConversationSubtitleResponse
+        /// </returns>
+        public SetConversationSubtitleResponse SetConversationSubtitleWithOptions(SetConversationSubtitleRequest request, SetConversationSubtitleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subtitle))
+            {
+                body["subtitle"] = request.Subtitle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubtitleColor))
+            {
+                body["subtitleColor"] = request.SubtitleColor;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetConversationSubtitle",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/conversations/subtitles/set",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetConversationSubtitleResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置会话副标题</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetConversationSubtitleRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetConversationSubtitleHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetConversationSubtitleResponse
+        /// </returns>
+        public async Task<SetConversationSubtitleResponse> SetConversationSubtitleWithOptionsAsync(SetConversationSubtitleRequest request, SetConversationSubtitleHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenConversationId))
+            {
+                body["openConversationId"] = request.OpenConversationId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subtitle))
+            {
+                body["subtitle"] = request.Subtitle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubtitleColor))
+            {
+                body["subtitleColor"] = request.SubtitleColor;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetConversationSubtitle",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/conversations/subtitles/set",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetConversationSubtitleResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置会话副标题</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetConversationSubtitleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetConversationSubtitleResponse
+        /// </returns>
+        public SetConversationSubtitleResponse SetConversationSubtitle(SetConversationSubtitleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetConversationSubtitleHeaders headers = new SetConversationSubtitleHeaders();
+            return SetConversationSubtitleWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>设置会话副标题</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetConversationSubtitleRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetConversationSubtitleResponse
+        /// </returns>
+        public async Task<SetConversationSubtitleResponse> SetConversationSubtitleAsync(SetConversationSubtitleRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetConversationSubtitleHeaders headers = new SetConversationSubtitleHeaders();
+            return await SetConversationSubtitleWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>设置会话所属顶部分组</para>
         /// </summary>
         /// 
