@@ -12804,6 +12804,128 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.SetConversationCategoryHeaders()
         return await self.set_conversation_category_with_options_async(request, headers, runtime)
 
+    def set_conversation_subtitle_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.SetConversationSubtitleRequest,
+        headers: dingtalkexclusive__1__0_models.SetConversationSubtitleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SetConversationSubtitleResponse:
+        """
+        @summary 设置会话副标题
+        
+        @param request: SetConversationSubtitleRequest
+        @param headers: SetConversationSubtitleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetConversationSubtitleResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.subtitle):
+            body['subtitle'] = request.subtitle
+        if not UtilClient.is_unset(request.subtitle_color):
+            body['subtitleColor'] = request.subtitle_color
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetConversationSubtitle',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/conversations/subtitles/set',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SetConversationSubtitleResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def set_conversation_subtitle_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SetConversationSubtitleRequest,
+        headers: dingtalkexclusive__1__0_models.SetConversationSubtitleHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.SetConversationSubtitleResponse:
+        """
+        @summary 设置会话副标题
+        
+        @param request: SetConversationSubtitleRequest
+        @param headers: SetConversationSubtitleHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetConversationSubtitleResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.subtitle):
+            body['subtitle'] = request.subtitle
+        if not UtilClient.is_unset(request.subtitle_color):
+            body['subtitleColor'] = request.subtitle_color
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetConversationSubtitle',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/conversations/subtitles/set',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.SetConversationSubtitleResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def set_conversation_subtitle(
+        self,
+        request: dingtalkexclusive__1__0_models.SetConversationSubtitleRequest,
+    ) -> dingtalkexclusive__1__0_models.SetConversationSubtitleResponse:
+        """
+        @summary 设置会话副标题
+        
+        @param request: SetConversationSubtitleRequest
+        @return: SetConversationSubtitleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SetConversationSubtitleHeaders()
+        return self.set_conversation_subtitle_with_options(request, headers, runtime)
+
+    async def set_conversation_subtitle_async(
+        self,
+        request: dingtalkexclusive__1__0_models.SetConversationSubtitleRequest,
+    ) -> dingtalkexclusive__1__0_models.SetConversationSubtitleResponse:
+        """
+        @summary 设置会话副标题
+        
+        @param request: SetConversationSubtitleRequest
+        @return: SetConversationSubtitleResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.SetConversationSubtitleHeaders()
+        return await self.set_conversation_subtitle_with_options_async(request, headers, runtime)
+
     def set_conversation_top_category_with_options(
         self,
         request: dingtalkexclusive__1__0_models.SetConversationTopCategoryRequest,

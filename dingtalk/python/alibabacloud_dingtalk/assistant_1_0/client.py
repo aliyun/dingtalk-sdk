@@ -2308,6 +2308,136 @@ class Client(OpenApiClient):
         headers = dingtalkassistant__1__0_models.ListVisibleAssistantHeaders()
         return await self.list_visible_assistant_with_options_async(request, headers, runtime)
 
+    def log_list_with_options(
+        self,
+        request: dingtalkassistant__1__0_models.LogListRequest,
+        headers: dingtalkassistant__1__0_models.LogListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.LogListResponse:
+        """
+        @summary 获取对话明细列表
+        
+        @param request: LogListRequest
+        @param headers: LogListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: LogListResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.assistant_id):
+            query['assistantId'] = request.assistant_id
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='LogList',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/logs/list',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.LogListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def log_list_with_options_async(
+        self,
+        request: dingtalkassistant__1__0_models.LogListRequest,
+        headers: dingtalkassistant__1__0_models.LogListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.LogListResponse:
+        """
+        @summary 获取对话明细列表
+        
+        @param request: LogListRequest
+        @param headers: LogListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: LogListResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.assistant_id):
+            query['assistantId'] = request.assistant_id
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='LogList',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/logs/list',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.LogListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def log_list(
+        self,
+        request: dingtalkassistant__1__0_models.LogListRequest,
+    ) -> dingtalkassistant__1__0_models.LogListResponse:
+        """
+        @summary 获取对话明细列表
+        
+        @param request: LogListRequest
+        @return: LogListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.LogListHeaders()
+        return self.log_list_with_options(request, headers, runtime)
+
+    async def log_list_async(
+        self,
+        request: dingtalkassistant__1__0_models.LogListRequest,
+    ) -> dingtalkassistant__1__0_models.LogListResponse:
+        """
+        @summary 获取对话明细列表
+        
+        @param request: LogListRequest
+        @return: LogListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.LogListHeaders()
+        return await self.log_list_with_options_async(request, headers, runtime)
+
     def relearn_knowledge_with_options(
         self,
         request: dingtalkassistant__1__0_models.RelearnKnowledgeRequest,
