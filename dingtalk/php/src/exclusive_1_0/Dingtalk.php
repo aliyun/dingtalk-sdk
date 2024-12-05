@@ -310,6 +310,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SendPhoneDingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetConversationCategoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetConversationCategoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetConversationCategoryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetConversationSubtitleHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetConversationSubtitleRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetConversationSubtitleResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetConversationTopCategoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetConversationTopCategoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\SetConversationTopCategoryResponse;
@@ -7016,6 +7019,69 @@ class Dingtalk extends OpenApiClient
         $headers = new SetConversationCategoryHeaders([]);
 
         return $this->setConversationCategoryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 设置会话副标题
+     *  *
+     * @param SetConversationSubtitleRequest $request SetConversationSubtitleRequest
+     * @param SetConversationSubtitleHeaders $headers SetConversationSubtitleHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SetConversationSubtitleResponse SetConversationSubtitleResponse
+     */
+    public function setConversationSubtitleWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $body['openConversationId'] = $request->openConversationId;
+        }
+        if (!Utils::isUnset($request->subtitle)) {
+            $body['subtitle'] = $request->subtitle;
+        }
+        if (!Utils::isUnset($request->subtitleColor)) {
+            $body['subtitleColor'] = $request->subtitleColor;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SetConversationSubtitle',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/conversations/subtitles/set',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SetConversationSubtitleResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 设置会话副标题
+     *  *
+     * @param SetConversationSubtitleRequest $request SetConversationSubtitleRequest
+     *
+     * @return SetConversationSubtitleResponse SetConversationSubtitleResponse
+     */
+    public function setConversationSubtitle($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetConversationSubtitleHeaders([]);
+
+        return $this->setConversationSubtitleWithOptions($request, $headers, $runtime);
     }
 
     /**

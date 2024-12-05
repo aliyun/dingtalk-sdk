@@ -60,6 +60,9 @@ use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\ListAssistantRunResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\ListVisibleAssistantHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\ListVisibleAssistantRequest;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\ListVisibleAssistantResponse;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\LogListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\LogListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\LogListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RelearnKnowledgeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RelearnKnowledgeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RelearnKnowledgeResponse;
@@ -1276,6 +1279,75 @@ class Dingtalk extends OpenApiClient
         $headers = new ListVisibleAssistantHeaders([]);
 
         return $this->listVisibleAssistantWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取对话明细列表
+     *  *
+     * @param LogListRequest $request LogListRequest
+     * @param LogListHeaders $headers LogListHeaders
+     * @param RuntimeOptions $runtime runtime options for this request RuntimeOptions
+     *
+     * @return LogListResponse LogListResponse
+     */
+    public function logListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->assistantId)) {
+            $query['assistantId'] = $request->assistantId;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            $query['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $query['startTime'] = $request->startTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'LogList',
+            'version'     => 'assistant_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/assistant/logs/list',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return LogListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取对话明细列表
+     *  *
+     * @param LogListRequest $request LogListRequest
+     *
+     * @return LogListResponse LogListResponse
+     */
+    public function logList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new LogListHeaders([]);
+
+        return $this->logListWithOptions($request, $headers, $runtime);
     }
 
     /**

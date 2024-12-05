@@ -17,6 +17,9 @@ use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetInAppSkuUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetPersonalExperienceInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetPersonalExperienceInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\GetPersonalExperienceInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\NotifyOnCrmDataChangeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\NotifyOnCrmDataChangeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\NotifyOnCrmDataChangeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\QueryMarketOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\QueryMarketOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vapp_market_1_0\Models\UserTaskReportHeaders;
@@ -286,6 +289,72 @@ class Dingtalk extends OpenApiClient
         $headers = new GetPersonalExperienceInfoHeaders([]);
 
         return $this->getPersonalExperienceInfoWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 销售助理CRM数据变更回调通知
+     *  *
+     * @param NotifyOnCrmDataChangeRequest $request NotifyOnCrmDataChangeRequest
+     * @param NotifyOnCrmDataChangeHeaders $headers NotifyOnCrmDataChangeHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return NotifyOnCrmDataChangeResponse NotifyOnCrmDataChangeResponse
+     */
+    public function notifyOnCrmDataChangeWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dataId)) {
+            $body['dataId'] = $request->dataId;
+        }
+        if (!Utils::isUnset($request->extension)) {
+            $body['extension'] = $request->extension;
+        }
+        if (!Utils::isUnset($request->operate)) {
+            $body['operate'] = $request->operate;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'NotifyOnCrmDataChange',
+            'version'     => 'appMarket_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/appMarket/saleAssistants/crmDataChanges/notify',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return NotifyOnCrmDataChangeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 销售助理CRM数据变更回调通知
+     *  *
+     * @param NotifyOnCrmDataChangeRequest $request NotifyOnCrmDataChangeRequest
+     *
+     * @return NotifyOnCrmDataChangeResponse NotifyOnCrmDataChangeResponse
+     */
+    public function notifyOnCrmDataChange($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new NotifyOnCrmDataChangeHeaders([]);
+
+        return $this->notifyOnCrmDataChangeWithOptions($request, $headers, $runtime);
     }
 
     /**
