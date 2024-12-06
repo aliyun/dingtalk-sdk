@@ -17,6 +17,10 @@ use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\CreateProjectV3Response;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\CreateTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\CreateTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\CreateTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetFootprintProjectHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetFootprintProjectResponse;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetFootprintTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetFootprintTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetFreeTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetFreeTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetFreeTaskResponse;
@@ -29,11 +33,13 @@ use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetUserJoinedProjectsV3Hea
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetUserJoinedProjectsV3Request;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetUserJoinedProjectsV3Response;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\ListAllTaskViewHeaders;
-use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\ListAllTaskViewRequest;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\ListAllTaskViewResponse;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\ListMyShortcutViewsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\ListMyShortcutViewsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\ListMyShortcutViewsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\QueryAllTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\QueryAllTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\QueryAllTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\QueryTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\QueryTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\QueryTaskResponse;
@@ -347,6 +353,108 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取最近访问的项目
+     *  *
+     * @param string                     $userId
+     * @param GetFootprintProjectHeaders $headers GetFootprintProjectHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetFootprintProjectResponse GetFootprintProjectResponse
+     */
+    public function getFootprintProjectWithOptions($userId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'GetFootprintProject',
+            'version'     => 'teamSphere_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/footprints/projects',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetFootprintProjectResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取最近访问的项目
+     *  *
+     * @param string $userId
+     *
+     * @return GetFootprintProjectResponse GetFootprintProjectResponse
+     */
+    public function getFootprintProject($userId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFootprintProjectHeaders([]);
+
+        return $this->getFootprintProjectWithOptions($userId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取最近访问的任务
+     *  *
+     * @param string                  $userId
+     * @param GetFootprintTaskHeaders $headers GetFootprintTaskHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetFootprintTaskResponse GetFootprintTaskResponse
+     */
+    public function getFootprintTaskWithOptions($userId, $headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'GetFootprintTask',
+            'version'     => 'teamSphere_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/footprints/tasks',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetFootprintTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取最近访问的任务
+     *  *
+     * @param string $userId
+     *
+     * @return GetFootprintTaskResponse GetFootprintTaskResponse
+     */
+    public function getFootprintTask($userId)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFootprintTaskHeaders([]);
+
+        return $this->getFootprintTaskWithOptions($userId, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询轻任务详情。
      *  *
      * @param string             $taskId
@@ -588,22 +696,13 @@ class Dingtalk extends OpenApiClient
      * @summary 获取全部任务
      *  *
      * @param string                 $userId
-     * @param ListAllTaskViewRequest $request ListAllTaskViewRequest
      * @param ListAllTaskViewHeaders $headers ListAllTaskViewHeaders
      * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
      *
      * @return ListAllTaskViewResponse ListAllTaskViewResponse
      */
-    public function listAllTaskViewWithOptions($userId, $request, $headers, $runtime)
+    public function listAllTaskViewWithOptions($userId, $headers, $runtime)
     {
-        Utils::validateModel($request);
-        $query = [];
-        if (!Utils::isUnset($request->maxResults)) {
-            $query['maxResults'] = $request->maxResults;
-        }
-        if (!Utils::isUnset($request->nextToken)) {
-            $query['nextToken'] = $request->nextToken;
-        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -613,7 +712,6 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
             'action'      => 'ListAllTaskView',
@@ -633,17 +731,16 @@ class Dingtalk extends OpenApiClient
     /**
      * @summary 获取全部任务
      *  *
-     * @param string                 $userId
-     * @param ListAllTaskViewRequest $request ListAllTaskViewRequest
+     * @param string $userId
      *
      * @return ListAllTaskViewResponse ListAllTaskViewResponse
      */
-    public function listAllTaskView($userId, $request)
+    public function listAllTaskView($userId)
     {
         $runtime = new RuntimeOptions([]);
         $headers = new ListAllTaskViewHeaders([]);
 
-        return $this->listAllTaskViewWithOptions($userId, $request, $headers, $runtime);
+        return $this->listAllTaskViewWithOptions($userId, $headers, $runtime);
     }
 
     /**
@@ -706,6 +803,65 @@ class Dingtalk extends OpenApiClient
         $headers = new ListMyShortcutViewsHeaders([]);
 
         return $this->listMyShortcutViewsWithOptions($userId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询自由任务和项目任务详情。
+     *  *
+     * @param string              $userId
+     * @param QueryAllTaskRequest $request QueryAllTaskRequest
+     * @param QueryAllTaskHeaders $headers QueryAllTaskHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryAllTaskResponse QueryAllTaskResponse
+     */
+    public function queryAllTaskWithOptions($userId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->taskId)) {
+            $query['taskId'] = $request->taskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryAllTask',
+            'version'     => 'teamSphere_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/tasks/query',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryAllTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询自由任务和项目任务详情。
+     *  *
+     * @param string              $userId
+     * @param QueryAllTaskRequest $request QueryAllTaskRequest
+     *
+     * @return QueryAllTaskResponse QueryAllTaskResponse
+     */
+    public function queryAllTask($userId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryAllTaskHeaders([]);
+
+        return $this->queryAllTaskWithOptions($userId, $request, $headers, $runtime);
     }
 
     /**

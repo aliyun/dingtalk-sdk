@@ -7,6 +7,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\ListAllTaskViewRespo
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\ListAllTaskViewResponseBody\result\groupType;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\ListAllTaskViewResponseBody\result\orderType;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\ListAllTaskViewResponseBody\result\showType;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\ListAllTaskViewResponseBody\result\toolbarInfo;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\ListAllTaskViewResponseBody\result\viewSetting;
 use AlibabaCloud\Tea\Model;
 
@@ -85,6 +86,11 @@ class result extends Model
     public $showType;
 
     /**
+     * @var toolbarInfo
+     */
+    public $toolbarInfo;
+
+    /**
      * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
@@ -108,6 +114,7 @@ class result extends Model
         'orderType'         => 'orderType',
         'organizationId'    => 'organizationId',
         'showType'          => 'showType',
+        'toolbarInfo'       => 'toolbarInfo',
         'updated'           => 'updated',
         'viewSetting'       => 'viewSetting',
     ];
@@ -154,6 +161,9 @@ class result extends Model
         }
         if (null !== $this->showType) {
             $res['showType'] = null !== $this->showType ? $this->showType->toMap() : null;
+        }
+        if (null !== $this->toolbarInfo) {
+            $res['toolbarInfo'] = null !== $this->toolbarInfo ? $this->toolbarInfo->toMap() : null;
         }
         if (null !== $this->updated) {
             $res['updated'] = $this->updated;
@@ -208,6 +218,9 @@ class result extends Model
         }
         if (isset($map['showType'])) {
             $model->showType = showType::fromMap($map['showType']);
+        }
+        if (isset($map['toolbarInfo'])) {
+            $model->toolbarInfo = toolbarInfo::fromMap($map['toolbarInfo']);
         }
         if (isset($map['updated'])) {
             $model->updated = $map['updated'];
