@@ -132,6 +132,233 @@ public class ListAllTaskViewResponseBody extends TeaModel {
 
     }
 
+    public static class ListAllTaskViewResponseBodyResultToolbarInfoGroupTypesSetting extends TeaModel {
+        @NameInMap("dateType")
+        public String dateType;
+
+        @NameInMap("fieldName")
+        public String fieldName;
+
+        @NameInMap("fieldType")
+        public String fieldType;
+
+        public static ListAllTaskViewResponseBodyResultToolbarInfoGroupTypesSetting build(java.util.Map<String, ?> map) throws Exception {
+            ListAllTaskViewResponseBodyResultToolbarInfoGroupTypesSetting self = new ListAllTaskViewResponseBodyResultToolbarInfoGroupTypesSetting();
+            return TeaModel.build(map, self);
+        }
+
+        public ListAllTaskViewResponseBodyResultToolbarInfoGroupTypesSetting setDateType(String dateType) {
+            this.dateType = dateType;
+            return this;
+        }
+        public String getDateType() {
+            return this.dateType;
+        }
+
+        public ListAllTaskViewResponseBodyResultToolbarInfoGroupTypesSetting setFieldName(String fieldName) {
+            this.fieldName = fieldName;
+            return this;
+        }
+        public String getFieldName() {
+            return this.fieldName;
+        }
+
+        public ListAllTaskViewResponseBodyResultToolbarInfoGroupTypesSetting setFieldType(String fieldType) {
+            this.fieldType = fieldType;
+            return this;
+        }
+        public String getFieldType() {
+            return this.fieldType;
+        }
+
+    }
+
+    public static class ListAllTaskViewResponseBodyResultToolbarInfoGroupTypes extends TeaModel {
+        @NameInMap("canCreateGroup")
+        public Boolean canCreateGroup;
+
+        @NameInMap("name")
+        public String name;
+
+        @NameInMap("serviceName")
+        public String serviceName;
+
+        @NameInMap("setting")
+        public ListAllTaskViewResponseBodyResultToolbarInfoGroupTypesSetting setting;
+
+        @NameInMap("value")
+        public String value;
+
+        public static ListAllTaskViewResponseBodyResultToolbarInfoGroupTypes build(java.util.Map<String, ?> map) throws Exception {
+            ListAllTaskViewResponseBodyResultToolbarInfoGroupTypes self = new ListAllTaskViewResponseBodyResultToolbarInfoGroupTypes();
+            return TeaModel.build(map, self);
+        }
+
+        public ListAllTaskViewResponseBodyResultToolbarInfoGroupTypes setCanCreateGroup(Boolean canCreateGroup) {
+            this.canCreateGroup = canCreateGroup;
+            return this;
+        }
+        public Boolean getCanCreateGroup() {
+            return this.canCreateGroup;
+        }
+
+        public ListAllTaskViewResponseBodyResultToolbarInfoGroupTypes setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public ListAllTaskViewResponseBodyResultToolbarInfoGroupTypes setServiceName(String serviceName) {
+            this.serviceName = serviceName;
+            return this;
+        }
+        public String getServiceName() {
+            return this.serviceName;
+        }
+
+        public ListAllTaskViewResponseBodyResultToolbarInfoGroupTypes setSetting(ListAllTaskViewResponseBodyResultToolbarInfoGroupTypesSetting setting) {
+            this.setting = setting;
+            return this;
+        }
+        public ListAllTaskViewResponseBodyResultToolbarInfoGroupTypesSetting getSetting() {
+            return this.setting;
+        }
+
+        public ListAllTaskViewResponseBodyResultToolbarInfoGroupTypes setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
+    public static class ListAllTaskViewResponseBodyResultToolbarInfoOrderTypes extends TeaModel {
+        @NameInMap("direction")
+        public String direction;
+
+        @NameInMap("name")
+        public String name;
+
+        @NameInMap("supportDirection")
+        public String supportDirection;
+
+        @NameInMap("value")
+        public String value;
+
+        public static ListAllTaskViewResponseBodyResultToolbarInfoOrderTypes build(java.util.Map<String, ?> map) throws Exception {
+            ListAllTaskViewResponseBodyResultToolbarInfoOrderTypes self = new ListAllTaskViewResponseBodyResultToolbarInfoOrderTypes();
+            return TeaModel.build(map, self);
+        }
+
+        public ListAllTaskViewResponseBodyResultToolbarInfoOrderTypes setDirection(String direction) {
+            this.direction = direction;
+            return this;
+        }
+        public String getDirection() {
+            return this.direction;
+        }
+
+        public ListAllTaskViewResponseBodyResultToolbarInfoOrderTypes setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public ListAllTaskViewResponseBodyResultToolbarInfoOrderTypes setSupportDirection(String supportDirection) {
+            this.supportDirection = supportDirection;
+            return this;
+        }
+        public String getSupportDirection() {
+            return this.supportDirection;
+        }
+
+        public ListAllTaskViewResponseBodyResultToolbarInfoOrderTypes setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
+    public static class ListAllTaskViewResponseBodyResultToolbarInfoShowTypes extends TeaModel {
+        @NameInMap("name")
+        public String name;
+
+        @NameInMap("value")
+        public String value;
+
+        public static ListAllTaskViewResponseBodyResultToolbarInfoShowTypes build(java.util.Map<String, ?> map) throws Exception {
+            ListAllTaskViewResponseBodyResultToolbarInfoShowTypes self = new ListAllTaskViewResponseBodyResultToolbarInfoShowTypes();
+            return TeaModel.build(map, self);
+        }
+
+        public ListAllTaskViewResponseBodyResultToolbarInfoShowTypes setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public ListAllTaskViewResponseBodyResultToolbarInfoShowTypes setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
+    public static class ListAllTaskViewResponseBodyResultToolbarInfo extends TeaModel {
+        @NameInMap("groupTypes")
+        public java.util.List<ListAllTaskViewResponseBodyResultToolbarInfoGroupTypes> groupTypes;
+
+        @NameInMap("orderTypes")
+        public java.util.List<ListAllTaskViewResponseBodyResultToolbarInfoOrderTypes> orderTypes;
+
+        @NameInMap("showTypes")
+        public java.util.List<ListAllTaskViewResponseBodyResultToolbarInfoShowTypes> showTypes;
+
+        public static ListAllTaskViewResponseBodyResultToolbarInfo build(java.util.Map<String, ?> map) throws Exception {
+            ListAllTaskViewResponseBodyResultToolbarInfo self = new ListAllTaskViewResponseBodyResultToolbarInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public ListAllTaskViewResponseBodyResultToolbarInfo setGroupTypes(java.util.List<ListAllTaskViewResponseBodyResultToolbarInfoGroupTypes> groupTypes) {
+            this.groupTypes = groupTypes;
+            return this;
+        }
+        public java.util.List<ListAllTaskViewResponseBodyResultToolbarInfoGroupTypes> getGroupTypes() {
+            return this.groupTypes;
+        }
+
+        public ListAllTaskViewResponseBodyResultToolbarInfo setOrderTypes(java.util.List<ListAllTaskViewResponseBodyResultToolbarInfoOrderTypes> orderTypes) {
+            this.orderTypes = orderTypes;
+            return this;
+        }
+        public java.util.List<ListAllTaskViewResponseBodyResultToolbarInfoOrderTypes> getOrderTypes() {
+            return this.orderTypes;
+        }
+
+        public ListAllTaskViewResponseBodyResultToolbarInfo setShowTypes(java.util.List<ListAllTaskViewResponseBodyResultToolbarInfoShowTypes> showTypes) {
+            this.showTypes = showTypes;
+            return this;
+        }
+        public java.util.List<ListAllTaskViewResponseBodyResultToolbarInfoShowTypes> getShowTypes() {
+            return this.showTypes;
+        }
+
+    }
+
     public static class ListAllTaskViewResponseBodyResultViewSetting extends TeaModel {
         /**
          * <strong>example:</strong>
@@ -230,6 +457,9 @@ public class ListAllTaskViewResponseBody extends TeaModel {
 
         @NameInMap("showType")
         public ListAllTaskViewResponseBodyResultShowType showType;
+
+        @NameInMap("toolbarInfo")
+        public ListAllTaskViewResponseBodyResultToolbarInfo toolbarInfo;
 
         /**
          * <strong>example:</strong>
@@ -340,6 +570,14 @@ public class ListAllTaskViewResponseBody extends TeaModel {
         }
         public ListAllTaskViewResponseBodyResultShowType getShowType() {
             return this.showType;
+        }
+
+        public ListAllTaskViewResponseBodyResult setToolbarInfo(ListAllTaskViewResponseBodyResultToolbarInfo toolbarInfo) {
+            this.toolbarInfo = toolbarInfo;
+            return this;
+        }
+        public ListAllTaskViewResponseBodyResultToolbarInfo getToolbarInfo() {
+            return this.toolbarInfo;
         }
 
         public ListAllTaskViewResponseBodyResult setUpdated(String updated) {

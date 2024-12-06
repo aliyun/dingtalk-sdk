@@ -147,6 +147,233 @@ public class ListMyShortcutViewsResponseBody extends TeaModel {
 
     }
 
+    public static class ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypesSetting extends TeaModel {
+        @NameInMap("dateType")
+        public String dateType;
+
+        @NameInMap("fieldName")
+        public String fieldName;
+
+        @NameInMap("fieldType")
+        public String fieldType;
+
+        public static ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypesSetting build(java.util.Map<String, ?> map) throws Exception {
+            ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypesSetting self = new ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypesSetting();
+            return TeaModel.build(map, self);
+        }
+
+        public ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypesSetting setDateType(String dateType) {
+            this.dateType = dateType;
+            return this;
+        }
+        public String getDateType() {
+            return this.dateType;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypesSetting setFieldName(String fieldName) {
+            this.fieldName = fieldName;
+            return this;
+        }
+        public String getFieldName() {
+            return this.fieldName;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypesSetting setFieldType(String fieldType) {
+            this.fieldType = fieldType;
+            return this;
+        }
+        public String getFieldType() {
+            return this.fieldType;
+        }
+
+    }
+
+    public static class ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypes extends TeaModel {
+        @NameInMap("canCreateGroup")
+        public Boolean canCreateGroup;
+
+        @NameInMap("name")
+        public String name;
+
+        @NameInMap("serviceName")
+        public String serviceName;
+
+        @NameInMap("setting")
+        public ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypesSetting setting;
+
+        @NameInMap("value")
+        public String value;
+
+        public static ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypes build(java.util.Map<String, ?> map) throws Exception {
+            ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypes self = new ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypes();
+            return TeaModel.build(map, self);
+        }
+
+        public ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypes setCanCreateGroup(Boolean canCreateGroup) {
+            this.canCreateGroup = canCreateGroup;
+            return this;
+        }
+        public Boolean getCanCreateGroup() {
+            return this.canCreateGroup;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypes setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypes setServiceName(String serviceName) {
+            this.serviceName = serviceName;
+            return this;
+        }
+        public String getServiceName() {
+            return this.serviceName;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypes setSetting(ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypesSetting setting) {
+            this.setting = setting;
+            return this;
+        }
+        public ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypesSetting getSetting() {
+            return this.setting;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypes setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
+    public static class ListMyShortcutViewsResponseBodyResultToolbarInfoOrderTypes extends TeaModel {
+        @NameInMap("direction")
+        public String direction;
+
+        @NameInMap("name")
+        public String name;
+
+        @NameInMap("supportDirection")
+        public String supportDirection;
+
+        @NameInMap("value")
+        public String value;
+
+        public static ListMyShortcutViewsResponseBodyResultToolbarInfoOrderTypes build(java.util.Map<String, ?> map) throws Exception {
+            ListMyShortcutViewsResponseBodyResultToolbarInfoOrderTypes self = new ListMyShortcutViewsResponseBodyResultToolbarInfoOrderTypes();
+            return TeaModel.build(map, self);
+        }
+
+        public ListMyShortcutViewsResponseBodyResultToolbarInfoOrderTypes setDirection(String direction) {
+            this.direction = direction;
+            return this;
+        }
+        public String getDirection() {
+            return this.direction;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultToolbarInfoOrderTypes setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultToolbarInfoOrderTypes setSupportDirection(String supportDirection) {
+            this.supportDirection = supportDirection;
+            return this;
+        }
+        public String getSupportDirection() {
+            return this.supportDirection;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultToolbarInfoOrderTypes setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
+    public static class ListMyShortcutViewsResponseBodyResultToolbarInfoShowTypes extends TeaModel {
+        @NameInMap("name")
+        public String name;
+
+        @NameInMap("value")
+        public String value;
+
+        public static ListMyShortcutViewsResponseBodyResultToolbarInfoShowTypes build(java.util.Map<String, ?> map) throws Exception {
+            ListMyShortcutViewsResponseBodyResultToolbarInfoShowTypes self = new ListMyShortcutViewsResponseBodyResultToolbarInfoShowTypes();
+            return TeaModel.build(map, self);
+        }
+
+        public ListMyShortcutViewsResponseBodyResultToolbarInfoShowTypes setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultToolbarInfoShowTypes setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
+    public static class ListMyShortcutViewsResponseBodyResultToolbarInfo extends TeaModel {
+        @NameInMap("groupTypes")
+        public java.util.List<ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypes> groupTypes;
+
+        @NameInMap("orderTypes")
+        public java.util.List<ListMyShortcutViewsResponseBodyResultToolbarInfoOrderTypes> orderTypes;
+
+        @NameInMap("showTypes")
+        public java.util.List<ListMyShortcutViewsResponseBodyResultToolbarInfoShowTypes> showTypes;
+
+        public static ListMyShortcutViewsResponseBodyResultToolbarInfo build(java.util.Map<String, ?> map) throws Exception {
+            ListMyShortcutViewsResponseBodyResultToolbarInfo self = new ListMyShortcutViewsResponseBodyResultToolbarInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public ListMyShortcutViewsResponseBodyResultToolbarInfo setGroupTypes(java.util.List<ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypes> groupTypes) {
+            this.groupTypes = groupTypes;
+            return this;
+        }
+        public java.util.List<ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypes> getGroupTypes() {
+            return this.groupTypes;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultToolbarInfo setOrderTypes(java.util.List<ListMyShortcutViewsResponseBodyResultToolbarInfoOrderTypes> orderTypes) {
+            this.orderTypes = orderTypes;
+            return this;
+        }
+        public java.util.List<ListMyShortcutViewsResponseBodyResultToolbarInfoOrderTypes> getOrderTypes() {
+            return this.orderTypes;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultToolbarInfo setShowTypes(java.util.List<ListMyShortcutViewsResponseBodyResultToolbarInfoShowTypes> showTypes) {
+            this.showTypes = showTypes;
+            return this;
+        }
+        public java.util.List<ListMyShortcutViewsResponseBodyResultToolbarInfoShowTypes> getShowTypes() {
+            return this.showTypes;
+        }
+
+    }
+
     public static class ListMyShortcutViewsResponseBodyResultViewSetting extends TeaModel {
         /**
          * <strong>example:</strong>
@@ -245,6 +472,9 @@ public class ListMyShortcutViewsResponseBody extends TeaModel {
 
         @NameInMap("showType")
         public ListMyShortcutViewsResponseBodyResultShowType showType;
+
+        @NameInMap("toolbarInfo")
+        public ListMyShortcutViewsResponseBodyResultToolbarInfo toolbarInfo;
 
         /**
          * <strong>example:</strong>
@@ -355,6 +585,14 @@ public class ListMyShortcutViewsResponseBody extends TeaModel {
         }
         public ListMyShortcutViewsResponseBodyResultShowType getShowType() {
             return this.showType;
+        }
+
+        public ListMyShortcutViewsResponseBodyResult setToolbarInfo(ListMyShortcutViewsResponseBodyResultToolbarInfo toolbarInfo) {
+            this.toolbarInfo = toolbarInfo;
+            return this;
+        }
+        public ListMyShortcutViewsResponseBodyResultToolbarInfo getToolbarInfo() {
+            return this.toolbarInfo;
         }
 
         public ListMyShortcutViewsResponseBodyResult setUpdated(String updated) {
