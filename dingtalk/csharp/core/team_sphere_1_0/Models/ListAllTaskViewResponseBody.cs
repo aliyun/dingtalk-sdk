@@ -123,6 +123,88 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0.Models
 
             }
 
+            [NameInMap("toolbarInfo")]
+            [Validation(Required=false)]
+            public ListAllTaskViewResponseBodyResultToolbarInfo ToolbarInfo { get; set; }
+            public class ListAllTaskViewResponseBodyResultToolbarInfo : TeaModel {
+                [NameInMap("groupTypes")]
+                [Validation(Required=false)]
+                public List<ListAllTaskViewResponseBodyResultToolbarInfoGroupTypes> GroupTypes { get; set; }
+                public class ListAllTaskViewResponseBodyResultToolbarInfoGroupTypes : TeaModel {
+                    [NameInMap("canCreateGroup")]
+                    [Validation(Required=false)]
+                    public bool? CanCreateGroup { get; set; }
+
+                    [NameInMap("name")]
+                    [Validation(Required=false)]
+                    public string Name { get; set; }
+
+                    [NameInMap("serviceName")]
+                    [Validation(Required=false)]
+                    public string ServiceName { get; set; }
+
+                    [NameInMap("setting")]
+                    [Validation(Required=false)]
+                    public ListAllTaskViewResponseBodyResultToolbarInfoGroupTypesSetting Setting { get; set; }
+                    public class ListAllTaskViewResponseBodyResultToolbarInfoGroupTypesSetting : TeaModel {
+                        [NameInMap("dateType")]
+                        [Validation(Required=false)]
+                        public string DateType { get; set; }
+
+                        [NameInMap("fieldName")]
+                        [Validation(Required=false)]
+                        public string FieldName { get; set; }
+
+                        [NameInMap("fieldType")]
+                        [Validation(Required=false)]
+                        public string FieldType { get; set; }
+
+                    }
+
+                    [NameInMap("value")]
+                    [Validation(Required=false)]
+                    public string Value { get; set; }
+
+                }
+
+                [NameInMap("orderTypes")]
+                [Validation(Required=false)]
+                public List<ListAllTaskViewResponseBodyResultToolbarInfoOrderTypes> OrderTypes { get; set; }
+                public class ListAllTaskViewResponseBodyResultToolbarInfoOrderTypes : TeaModel {
+                    [NameInMap("direction")]
+                    [Validation(Required=false)]
+                    public string Direction { get; set; }
+
+                    [NameInMap("name")]
+                    [Validation(Required=false)]
+                    public string Name { get; set; }
+
+                    [NameInMap("supportDirection")]
+                    [Validation(Required=false)]
+                    public string SupportDirection { get; set; }
+
+                    [NameInMap("value")]
+                    [Validation(Required=false)]
+                    public string Value { get; set; }
+
+                }
+
+                [NameInMap("showTypes")]
+                [Validation(Required=false)]
+                public List<ListAllTaskViewResponseBodyResultToolbarInfoShowTypes> ShowTypes { get; set; }
+                public class ListAllTaskViewResponseBodyResultToolbarInfoShowTypes : TeaModel {
+                    [NameInMap("name")]
+                    [Validation(Required=false)]
+                    public string Name { get; set; }
+
+                    [NameInMap("value")]
+                    [Validation(Required=false)]
+                    public string Value { get; set; }
+
+                }
+
+            }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>2022-07-04T03:29:34.770Z</para>

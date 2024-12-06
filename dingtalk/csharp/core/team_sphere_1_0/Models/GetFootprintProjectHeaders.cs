@@ -8,14 +8,14 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0.Models
 {
-    public class ListAllTaskViewRequest : TeaModel {
-        [NameInMap("maxResults")]
+    public class GetFootprintProjectHeaders : TeaModel {
+        [NameInMap("commonHeaders")]
         [Validation(Required=false)]
-        public int? MaxResults { get; set; }
+        public Dictionary<string, string> CommonHeaders { get; set; }
 
-        [NameInMap("nextToken")]
+        [NameInMap("x-acs-dingtalk-access-token")]
         [Validation(Required=false)]
-        public string NextToken { get; set; }
+        public string XAcsDingtalkAccessToken { get; set; }
 
     }
 

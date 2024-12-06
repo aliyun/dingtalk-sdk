@@ -131,6 +131,88 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0.Models
 
             }
 
+            [NameInMap("toolbarInfo")]
+            [Validation(Required=false)]
+            public ListMyShortcutViewsResponseBodyResultToolbarInfo ToolbarInfo { get; set; }
+            public class ListMyShortcutViewsResponseBodyResultToolbarInfo : TeaModel {
+                [NameInMap("groupTypes")]
+                [Validation(Required=false)]
+                public List<ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypes> GroupTypes { get; set; }
+                public class ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypes : TeaModel {
+                    [NameInMap("canCreateGroup")]
+                    [Validation(Required=false)]
+                    public bool? CanCreateGroup { get; set; }
+
+                    [NameInMap("name")]
+                    [Validation(Required=false)]
+                    public string Name { get; set; }
+
+                    [NameInMap("serviceName")]
+                    [Validation(Required=false)]
+                    public string ServiceName { get; set; }
+
+                    [NameInMap("setting")]
+                    [Validation(Required=false)]
+                    public ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypesSetting Setting { get; set; }
+                    public class ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypesSetting : TeaModel {
+                        [NameInMap("dateType")]
+                        [Validation(Required=false)]
+                        public string DateType { get; set; }
+
+                        [NameInMap("fieldName")]
+                        [Validation(Required=false)]
+                        public string FieldName { get; set; }
+
+                        [NameInMap("fieldType")]
+                        [Validation(Required=false)]
+                        public string FieldType { get; set; }
+
+                    }
+
+                    [NameInMap("value")]
+                    [Validation(Required=false)]
+                    public string Value { get; set; }
+
+                }
+
+                [NameInMap("orderTypes")]
+                [Validation(Required=false)]
+                public List<ListMyShortcutViewsResponseBodyResultToolbarInfoOrderTypes> OrderTypes { get; set; }
+                public class ListMyShortcutViewsResponseBodyResultToolbarInfoOrderTypes : TeaModel {
+                    [NameInMap("direction")]
+                    [Validation(Required=false)]
+                    public string Direction { get; set; }
+
+                    [NameInMap("name")]
+                    [Validation(Required=false)]
+                    public string Name { get; set; }
+
+                    [NameInMap("supportDirection")]
+                    [Validation(Required=false)]
+                    public string SupportDirection { get; set; }
+
+                    [NameInMap("value")]
+                    [Validation(Required=false)]
+                    public string Value { get; set; }
+
+                }
+
+                [NameInMap("showTypes")]
+                [Validation(Required=false)]
+                public List<ListMyShortcutViewsResponseBodyResultToolbarInfoShowTypes> ShowTypes { get; set; }
+                public class ListMyShortcutViewsResponseBodyResultToolbarInfoShowTypes : TeaModel {
+                    [NameInMap("name")]
+                    [Validation(Required=false)]
+                    public string Name { get; set; }
+
+                    [NameInMap("value")]
+                    [Validation(Required=false)]
+                    public string Value { get; set; }
+
+                }
+
+            }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>2022-07-04T03:29:34.770Z</para>
