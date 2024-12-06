@@ -554,6 +554,206 @@ class Client(OpenApiClient):
         headers = dingtalkteam_sphere__1__0_models.CreateTaskHeaders()
         return await self.create_task_with_options_async(user_id, request, headers, runtime)
 
+    def get_footprint_project_with_options(
+        self,
+        user_id: str,
+        headers: dingtalkteam_sphere__1__0_models.GetFootprintProjectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.GetFootprintProjectResponse:
+        """
+        @summary 获取最近访问的项目
+        
+        @param headers: GetFootprintProjectHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFootprintProjectResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetFootprintProject',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/footprints/projects',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.GetFootprintProjectResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_footprint_project_with_options_async(
+        self,
+        user_id: str,
+        headers: dingtalkteam_sphere__1__0_models.GetFootprintProjectHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.GetFootprintProjectResponse:
+        """
+        @summary 获取最近访问的项目
+        
+        @param headers: GetFootprintProjectHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFootprintProjectResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetFootprintProject',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/footprints/projects',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.GetFootprintProjectResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_footprint_project(
+        self,
+        user_id: str,
+    ) -> dingtalkteam_sphere__1__0_models.GetFootprintProjectResponse:
+        """
+        @summary 获取最近访问的项目
+        
+        @return: GetFootprintProjectResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.GetFootprintProjectHeaders()
+        return self.get_footprint_project_with_options(user_id, headers, runtime)
+
+    async def get_footprint_project_async(
+        self,
+        user_id: str,
+    ) -> dingtalkteam_sphere__1__0_models.GetFootprintProjectResponse:
+        """
+        @summary 获取最近访问的项目
+        
+        @return: GetFootprintProjectResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.GetFootprintProjectHeaders()
+        return await self.get_footprint_project_with_options_async(user_id, headers, runtime)
+
+    def get_footprint_task_with_options(
+        self,
+        user_id: str,
+        headers: dingtalkteam_sphere__1__0_models.GetFootprintTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.GetFootprintTaskResponse:
+        """
+        @summary 获取最近访问的任务
+        
+        @param headers: GetFootprintTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFootprintTaskResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetFootprintTask',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/footprints/tasks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.GetFootprintTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_footprint_task_with_options_async(
+        self,
+        user_id: str,
+        headers: dingtalkteam_sphere__1__0_models.GetFootprintTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.GetFootprintTaskResponse:
+        """
+        @summary 获取最近访问的任务
+        
+        @param headers: GetFootprintTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFootprintTaskResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetFootprintTask',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/footprints/tasks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.GetFootprintTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_footprint_task(
+        self,
+        user_id: str,
+    ) -> dingtalkteam_sphere__1__0_models.GetFootprintTaskResponse:
+        """
+        @summary 获取最近访问的任务
+        
+        @return: GetFootprintTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.GetFootprintTaskHeaders()
+        return self.get_footprint_task_with_options(user_id, headers, runtime)
+
+    async def get_footprint_task_async(
+        self,
+        user_id: str,
+    ) -> dingtalkteam_sphere__1__0_models.GetFootprintTaskResponse:
+        """
+        @summary 获取最近访问的任务
+        
+        @return: GetFootprintTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.GetFootprintTaskHeaders()
+        return await self.get_footprint_task_with_options_async(user_id, headers, runtime)
+
     def get_free_task_with_options(
         self,
         task_id: str,
@@ -1019,32 +1219,23 @@ class Client(OpenApiClient):
     def list_all_task_view_with_options(
         self,
         user_id: str,
-        request: dingtalkteam_sphere__1__0_models.ListAllTaskViewRequest,
         headers: dingtalkteam_sphere__1__0_models.ListAllTaskViewHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkteam_sphere__1__0_models.ListAllTaskViewResponse:
         """
         @summary 获取全部任务
         
-        @param request: ListAllTaskViewRequest
         @param headers: ListAllTaskViewHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: ListAllTaskViewResponse
         """
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.max_results):
-            query['maxResults'] = request.max_results
-        if not UtilClient.is_unset(request.next_token):
-            query['nextToken'] = request.next_token
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            headers=real_headers
         )
         params = open_api_models.Params(
             action='ListAllTaskView',
@@ -1065,32 +1256,23 @@ class Client(OpenApiClient):
     async def list_all_task_view_with_options_async(
         self,
         user_id: str,
-        request: dingtalkteam_sphere__1__0_models.ListAllTaskViewRequest,
         headers: dingtalkteam_sphere__1__0_models.ListAllTaskViewHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkteam_sphere__1__0_models.ListAllTaskViewResponse:
         """
         @summary 获取全部任务
         
-        @param request: ListAllTaskViewRequest
         @param headers: ListAllTaskViewHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: ListAllTaskViewResponse
         """
-        UtilClient.validate_model(request)
-        query = {}
-        if not UtilClient.is_unset(request.max_results):
-            query['maxResults'] = request.max_results
-        if not UtilClient.is_unset(request.next_token):
-            query['nextToken'] = request.next_token
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
         if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
-            headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            headers=real_headers
         )
         params = open_api_models.Params(
             action='ListAllTaskView',
@@ -1111,32 +1293,28 @@ class Client(OpenApiClient):
     def list_all_task_view(
         self,
         user_id: str,
-        request: dingtalkteam_sphere__1__0_models.ListAllTaskViewRequest,
     ) -> dingtalkteam_sphere__1__0_models.ListAllTaskViewResponse:
         """
         @summary 获取全部任务
         
-        @param request: ListAllTaskViewRequest
         @return: ListAllTaskViewResponse
         """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkteam_sphere__1__0_models.ListAllTaskViewHeaders()
-        return self.list_all_task_view_with_options(user_id, request, headers, runtime)
+        return self.list_all_task_view_with_options(user_id, headers, runtime)
 
     async def list_all_task_view_async(
         self,
         user_id: str,
-        request: dingtalkteam_sphere__1__0_models.ListAllTaskViewRequest,
     ) -> dingtalkteam_sphere__1__0_models.ListAllTaskViewResponse:
         """
         @summary 获取全部任务
         
-        @param request: ListAllTaskViewRequest
         @return: ListAllTaskViewResponse
         """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkteam_sphere__1__0_models.ListAllTaskViewHeaders()
-        return await self.list_all_task_view_with_options_async(user_id, request, headers, runtime)
+        return await self.list_all_task_view_with_options_async(user_id, headers, runtime)
 
     def list_my_shortcut_views_with_options(
         self,
@@ -1259,6 +1437,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkteam_sphere__1__0_models.ListMyShortcutViewsHeaders()
         return await self.list_my_shortcut_views_with_options_async(user_id, request, headers, runtime)
+
+    def query_all_task_with_options(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.QueryAllTaskRequest,
+        headers: dingtalkteam_sphere__1__0_models.QueryAllTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.QueryAllTaskResponse:
+        """
+        @summary 查询自由任务和项目任务详情。
+        
+        @param request: QueryAllTaskRequest
+        @param headers: QueryAllTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryAllTaskResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.task_id):
+            query['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryAllTask',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/tasks/query',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.QueryAllTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_all_task_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.QueryAllTaskRequest,
+        headers: dingtalkteam_sphere__1__0_models.QueryAllTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.QueryAllTaskResponse:
+        """
+        @summary 查询自由任务和项目任务详情。
+        
+        @param request: QueryAllTaskRequest
+        @param headers: QueryAllTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryAllTaskResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.task_id):
+            query['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryAllTask',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/tasks/query',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.QueryAllTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_all_task(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.QueryAllTaskRequest,
+    ) -> dingtalkteam_sphere__1__0_models.QueryAllTaskResponse:
+        """
+        @summary 查询自由任务和项目任务详情。
+        
+        @param request: QueryAllTaskRequest
+        @return: QueryAllTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.QueryAllTaskHeaders()
+        return self.query_all_task_with_options(user_id, request, headers, runtime)
+
+    async def query_all_task_async(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.QueryAllTaskRequest,
+    ) -> dingtalkteam_sphere__1__0_models.QueryAllTaskResponse:
+        """
+        @summary 查询自由任务和项目任务详情。
+        
+        @param request: QueryAllTaskRequest
+        @return: QueryAllTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.QueryAllTaskHeaders()
+        return await self.query_all_task_with_options_async(user_id, request, headers, runtime)
 
     def query_task_with_options(
         self,

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List
+from typing import Dict, List, Any
 
 
 class AnalysisReportHeaders(TeaModel):
@@ -1363,6 +1363,529 @@ class CreateTaskResponse(TeaModel):
         return self
 
 
+class GetFootprintProjectHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetFootprintProjectResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        created: str = None,
+        creator_id: str = None,
+        description: str = None,
+        id: str = None,
+        is_deleted: bool = None,
+        name: str = None,
+        organization_id: str = None,
+        updated: str = None,
+        visibility: str = None,
+    ):
+        self.created = created
+        self.creator_id = creator_id
+        self.description = description
+        self.id = id
+        self.is_deleted = is_deleted
+        self.name = name
+        self.organization_id = organization_id
+        self.updated = updated
+        self.visibility = visibility
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.created is not None:
+            result['created'] = self.created
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.description is not None:
+            result['description'] = self.description
+        if self.id is not None:
+            result['id'] = self.id
+        if self.is_deleted is not None:
+            result['isDeleted'] = self.is_deleted
+        if self.name is not None:
+            result['name'] = self.name
+        if self.organization_id is not None:
+            result['organizationId'] = self.organization_id
+        if self.updated is not None:
+            result['updated'] = self.updated
+        if self.visibility is not None:
+            result['visibility'] = self.visibility
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('isDeleted') is not None:
+            self.is_deleted = m.get('isDeleted')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('organizationId') is not None:
+            self.organization_id = m.get('organizationId')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        if m.get('visibility') is not None:
+            self.visibility = m.get('visibility')
+        return self
+
+
+class GetFootprintProjectResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetFootprintProjectResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetFootprintProjectResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GetFootprintProjectResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetFootprintProjectResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetFootprintProjectResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetFootprintTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetFootprintTaskResponseBodyResultCustomfields(TeaModel):
+    def __init__(
+        self,
+        customfield_id: str = None,
+        type: str = None,
+        value: List[Dict[str, Any]] = None,
+        values: List[str] = None,
+    ):
+        self.customfield_id = customfield_id
+        self.type = type
+        self.value = value
+        self.values = values
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.customfield_id is not None:
+            result['customfieldId'] = self.customfield_id
+        if self.type is not None:
+            result['type'] = self.type
+        if self.value is not None:
+            result['value'] = self.value
+        if self.values is not None:
+            result['values'] = self.values
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('customfieldId') is not None:
+            self.customfield_id = m.get('customfieldId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        if m.get('values') is not None:
+            self.values = m.get('values')
+        return self
+
+
+class GetFootprintTaskResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        accomplished: str = None,
+        basic_pos: str = None,
+        content: str = None,
+        created: str = None,
+        creator_id: str = None,
+        customfields: List[GetFootprintTaskResponseBodyResultCustomfields] = None,
+        due_date: str = None,
+        executor_id: str = None,
+        id: str = None,
+        involve_members: List[str] = None,
+        is_archived: bool = None,
+        is_deleted: bool = None,
+        is_done: bool = None,
+        note: str = None,
+        organization_id: str = None,
+        pos: int = None,
+        priority: int = None,
+        project_id: str = None,
+        sfc_id: str = None,
+        stage_id: str = None,
+        start_date: str = None,
+        tasklist_id: str = None,
+        tfs_id: str = None,
+        unique_id: int = None,
+        updated: str = None,
+        visible: str = None,
+    ):
+        self.accomplished = accomplished
+        self.basic_pos = basic_pos
+        self.content = content
+        self.created = created
+        self.creator_id = creator_id
+        self.customfields = customfields
+        self.due_date = due_date
+        self.executor_id = executor_id
+        self.id = id
+        self.involve_members = involve_members
+        self.is_archived = is_archived
+        self.is_deleted = is_deleted
+        self.is_done = is_done
+        self.note = note
+        self.organization_id = organization_id
+        self.pos = pos
+        self.priority = priority
+        self.project_id = project_id
+        self.sfc_id = sfc_id
+        self.stage_id = stage_id
+        self.start_date = start_date
+        self.tasklist_id = tasklist_id
+        self.tfs_id = tfs_id
+        self.unique_id = unique_id
+        self.updated = updated
+        self.visible = visible
+
+    def validate(self):
+        if self.customfields:
+            for k in self.customfields:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.accomplished is not None:
+            result['accomplished'] = self.accomplished
+        if self.basic_pos is not None:
+            result['basicPos'] = self.basic_pos
+        if self.content is not None:
+            result['content'] = self.content
+        if self.created is not None:
+            result['created'] = self.created
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        result['customfields'] = []
+        if self.customfields is not None:
+            for k in self.customfields:
+                result['customfields'].append(k.to_map() if k else None)
+        if self.due_date is not None:
+            result['dueDate'] = self.due_date
+        if self.executor_id is not None:
+            result['executorId'] = self.executor_id
+        if self.id is not None:
+            result['id'] = self.id
+        if self.involve_members is not None:
+            result['involveMembers'] = self.involve_members
+        if self.is_archived is not None:
+            result['isArchived'] = self.is_archived
+        if self.is_deleted is not None:
+            result['isDeleted'] = self.is_deleted
+        if self.is_done is not None:
+            result['isDone'] = self.is_done
+        if self.note is not None:
+            result['note'] = self.note
+        if self.organization_id is not None:
+            result['organizationId'] = self.organization_id
+        if self.pos is not None:
+            result['pos'] = self.pos
+        if self.priority is not None:
+            result['priority'] = self.priority
+        if self.project_id is not None:
+            result['projectId'] = self.project_id
+        if self.sfc_id is not None:
+            result['sfcId'] = self.sfc_id
+        if self.stage_id is not None:
+            result['stageId'] = self.stage_id
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.tasklist_id is not None:
+            result['tasklistId'] = self.tasklist_id
+        if self.tfs_id is not None:
+            result['tfsId'] = self.tfs_id
+        if self.unique_id is not None:
+            result['uniqueId'] = self.unique_id
+        if self.updated is not None:
+            result['updated'] = self.updated
+        if self.visible is not None:
+            result['visible'] = self.visible
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accomplished') is not None:
+            self.accomplished = m.get('accomplished')
+        if m.get('basicPos') is not None:
+            self.basic_pos = m.get('basicPos')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        self.customfields = []
+        if m.get('customfields') is not None:
+            for k in m.get('customfields'):
+                temp_model = GetFootprintTaskResponseBodyResultCustomfields()
+                self.customfields.append(temp_model.from_map(k))
+        if m.get('dueDate') is not None:
+            self.due_date = m.get('dueDate')
+        if m.get('executorId') is not None:
+            self.executor_id = m.get('executorId')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('involveMembers') is not None:
+            self.involve_members = m.get('involveMembers')
+        if m.get('isArchived') is not None:
+            self.is_archived = m.get('isArchived')
+        if m.get('isDeleted') is not None:
+            self.is_deleted = m.get('isDeleted')
+        if m.get('isDone') is not None:
+            self.is_done = m.get('isDone')
+        if m.get('note') is not None:
+            self.note = m.get('note')
+        if m.get('organizationId') is not None:
+            self.organization_id = m.get('organizationId')
+        if m.get('pos') is not None:
+            self.pos = m.get('pos')
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
+        if m.get('projectId') is not None:
+            self.project_id = m.get('projectId')
+        if m.get('sfcId') is not None:
+            self.sfc_id = m.get('sfcId')
+        if m.get('stageId') is not None:
+            self.stage_id = m.get('stageId')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('tasklistId') is not None:
+            self.tasklist_id = m.get('tasklistId')
+        if m.get('tfsId') is not None:
+            self.tfs_id = m.get('tfsId')
+        if m.get('uniqueId') is not None:
+            self.unique_id = m.get('uniqueId')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        if m.get('visible') is not None:
+            self.visible = m.get('visible')
+        return self
+
+
+class GetFootprintTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetFootprintTaskResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetFootprintTaskResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GetFootprintTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetFootprintTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetFootprintTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetFreeTaskHeaders(TeaModel):
     def __init__(
         self,
@@ -2159,39 +2682,6 @@ class ListAllTaskViewHeaders(TeaModel):
         return self
 
 
-class ListAllTaskViewRequest(TeaModel):
-    def __init__(
-        self,
-        max_results: int = None,
-        next_token: str = None,
-    ):
-        self.max_results = max_results
-        self.next_token = next_token
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.max_results is not None:
-            result['maxResults'] = self.max_results
-        if self.next_token is not None:
-            result['nextToken'] = self.next_token
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('maxResults') is not None:
-            self.max_results = m.get('maxResults')
-        if m.get('nextToken') is not None:
-            self.next_token = m.get('nextToken')
-        return self
-
-
 class ListAllTaskViewResponseBodyResultGroupType(TeaModel):
     def __init__(
         self,
@@ -2303,6 +2793,241 @@ class ListAllTaskViewResponseBodyResultShowType(TeaModel):
         return self
 
 
+class ListAllTaskViewResponseBodyResultToolbarInfoGroupTypesSetting(TeaModel):
+    def __init__(
+        self,
+        date_type: str = None,
+        field_name: str = None,
+        field_type: str = None,
+    ):
+        self.date_type = date_type
+        self.field_name = field_name
+        self.field_type = field_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.date_type is not None:
+            result['dateType'] = self.date_type
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        if self.field_type is not None:
+            result['fieldType'] = self.field_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dateType') is not None:
+            self.date_type = m.get('dateType')
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        if m.get('fieldType') is not None:
+            self.field_type = m.get('fieldType')
+        return self
+
+
+class ListAllTaskViewResponseBodyResultToolbarInfoGroupTypes(TeaModel):
+    def __init__(
+        self,
+        can_create_group: bool = None,
+        name: str = None,
+        service_name: str = None,
+        setting: ListAllTaskViewResponseBodyResultToolbarInfoGroupTypesSetting = None,
+        value: str = None,
+    ):
+        self.can_create_group = can_create_group
+        self.name = name
+        self.service_name = service_name
+        self.setting = setting
+        self.value = value
+
+    def validate(self):
+        if self.setting:
+            self.setting.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.can_create_group is not None:
+            result['canCreateGroup'] = self.can_create_group
+        if self.name is not None:
+            result['name'] = self.name
+        if self.service_name is not None:
+            result['serviceName'] = self.service_name
+        if self.setting is not None:
+            result['setting'] = self.setting.to_map()
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('canCreateGroup') is not None:
+            self.can_create_group = m.get('canCreateGroup')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('serviceName') is not None:
+            self.service_name = m.get('serviceName')
+        if m.get('setting') is not None:
+            temp_model = ListAllTaskViewResponseBodyResultToolbarInfoGroupTypesSetting()
+            self.setting = temp_model.from_map(m['setting'])
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class ListAllTaskViewResponseBodyResultToolbarInfoOrderTypes(TeaModel):
+    def __init__(
+        self,
+        direction: str = None,
+        name: str = None,
+        support_direction: str = None,
+        value: str = None,
+    ):
+        self.direction = direction
+        self.name = name
+        self.support_direction = support_direction
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.direction is not None:
+            result['direction'] = self.direction
+        if self.name is not None:
+            result['name'] = self.name
+        if self.support_direction is not None:
+            result['supportDirection'] = self.support_direction
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('direction') is not None:
+            self.direction = m.get('direction')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('supportDirection') is not None:
+            self.support_direction = m.get('supportDirection')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class ListAllTaskViewResponseBodyResultToolbarInfoShowTypes(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        value: str = None,
+    ):
+        self.name = name
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class ListAllTaskViewResponseBodyResultToolbarInfo(TeaModel):
+    def __init__(
+        self,
+        group_types: List[ListAllTaskViewResponseBodyResultToolbarInfoGroupTypes] = None,
+        order_types: List[ListAllTaskViewResponseBodyResultToolbarInfoOrderTypes] = None,
+        show_types: List[ListAllTaskViewResponseBodyResultToolbarInfoShowTypes] = None,
+    ):
+        self.group_types = group_types
+        self.order_types = order_types
+        self.show_types = show_types
+
+    def validate(self):
+        if self.group_types:
+            for k in self.group_types:
+                if k:
+                    k.validate()
+        if self.order_types:
+            for k in self.order_types:
+                if k:
+                    k.validate()
+        if self.show_types:
+            for k in self.show_types:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['groupTypes'] = []
+        if self.group_types is not None:
+            for k in self.group_types:
+                result['groupTypes'].append(k.to_map() if k else None)
+        result['orderTypes'] = []
+        if self.order_types is not None:
+            for k in self.order_types:
+                result['orderTypes'].append(k.to_map() if k else None)
+        result['showTypes'] = []
+        if self.show_types is not None:
+            for k in self.show_types:
+                result['showTypes'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.group_types = []
+        if m.get('groupTypes') is not None:
+            for k in m.get('groupTypes'):
+                temp_model = ListAllTaskViewResponseBodyResultToolbarInfoGroupTypes()
+                self.group_types.append(temp_model.from_map(k))
+        self.order_types = []
+        if m.get('orderTypes') is not None:
+            for k in m.get('orderTypes'):
+                temp_model = ListAllTaskViewResponseBodyResultToolbarInfoOrderTypes()
+                self.order_types.append(temp_model.from_map(k))
+        self.show_types = []
+        if m.get('showTypes') is not None:
+            for k in m.get('showTypes'):
+                temp_model = ListAllTaskViewResponseBodyResultToolbarInfoShowTypes()
+                self.show_types.append(temp_model.from_map(k))
+        return self
+
+
 class ListAllTaskViewResponseBodyResultViewSetting(TeaModel):
     def __init__(
         self,
@@ -2351,6 +3076,7 @@ class ListAllTaskViewResponseBodyResult(TeaModel):
         order_type: ListAllTaskViewResponseBodyResultOrderType = None,
         organization_id: str = None,
         show_type: ListAllTaskViewResponseBodyResultShowType = None,
+        toolbar_info: ListAllTaskViewResponseBodyResultToolbarInfo = None,
         updated: str = None,
         view_setting: ListAllTaskViewResponseBodyResultViewSetting = None,
     ):
@@ -2366,6 +3092,7 @@ class ListAllTaskViewResponseBodyResult(TeaModel):
         self.order_type = order_type
         self.organization_id = organization_id
         self.show_type = show_type
+        self.toolbar_info = toolbar_info
         self.updated = updated
         self.view_setting = view_setting
 
@@ -2376,6 +3103,8 @@ class ListAllTaskViewResponseBodyResult(TeaModel):
             self.order_type.validate()
         if self.show_type:
             self.show_type.validate()
+        if self.toolbar_info:
+            self.toolbar_info.validate()
         if self.view_setting:
             self.view_setting.validate()
 
@@ -2409,6 +3138,8 @@ class ListAllTaskViewResponseBodyResult(TeaModel):
             result['organizationId'] = self.organization_id
         if self.show_type is not None:
             result['showType'] = self.show_type.to_map()
+        if self.toolbar_info is not None:
+            result['toolbarInfo'] = self.toolbar_info.to_map()
         if self.updated is not None:
             result['updated'] = self.updated
         if self.view_setting is not None:
@@ -2444,6 +3175,9 @@ class ListAllTaskViewResponseBodyResult(TeaModel):
         if m.get('showType') is not None:
             temp_model = ListAllTaskViewResponseBodyResultShowType()
             self.show_type = temp_model.from_map(m['showType'])
+        if m.get('toolbarInfo') is not None:
+            temp_model = ListAllTaskViewResponseBodyResultToolbarInfo()
+            self.toolbar_info = temp_model.from_map(m['toolbarInfo'])
         if m.get('updated') is not None:
             self.updated = m.get('updated')
         if m.get('viewSetting') is not None:
@@ -2699,6 +3433,241 @@ class ListMyShortcutViewsResponseBodyResultShowType(TeaModel):
         return self
 
 
+class ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypesSetting(TeaModel):
+    def __init__(
+        self,
+        date_type: str = None,
+        field_name: str = None,
+        field_type: str = None,
+    ):
+        self.date_type = date_type
+        self.field_name = field_name
+        self.field_type = field_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.date_type is not None:
+            result['dateType'] = self.date_type
+        if self.field_name is not None:
+            result['fieldName'] = self.field_name
+        if self.field_type is not None:
+            result['fieldType'] = self.field_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dateType') is not None:
+            self.date_type = m.get('dateType')
+        if m.get('fieldName') is not None:
+            self.field_name = m.get('fieldName')
+        if m.get('fieldType') is not None:
+            self.field_type = m.get('fieldType')
+        return self
+
+
+class ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypes(TeaModel):
+    def __init__(
+        self,
+        can_create_group: bool = None,
+        name: str = None,
+        service_name: str = None,
+        setting: ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypesSetting = None,
+        value: str = None,
+    ):
+        self.can_create_group = can_create_group
+        self.name = name
+        self.service_name = service_name
+        self.setting = setting
+        self.value = value
+
+    def validate(self):
+        if self.setting:
+            self.setting.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.can_create_group is not None:
+            result['canCreateGroup'] = self.can_create_group
+        if self.name is not None:
+            result['name'] = self.name
+        if self.service_name is not None:
+            result['serviceName'] = self.service_name
+        if self.setting is not None:
+            result['setting'] = self.setting.to_map()
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('canCreateGroup') is not None:
+            self.can_create_group = m.get('canCreateGroup')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('serviceName') is not None:
+            self.service_name = m.get('serviceName')
+        if m.get('setting') is not None:
+            temp_model = ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypesSetting()
+            self.setting = temp_model.from_map(m['setting'])
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class ListMyShortcutViewsResponseBodyResultToolbarInfoOrderTypes(TeaModel):
+    def __init__(
+        self,
+        direction: str = None,
+        name: str = None,
+        support_direction: str = None,
+        value: str = None,
+    ):
+        self.direction = direction
+        self.name = name
+        self.support_direction = support_direction
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.direction is not None:
+            result['direction'] = self.direction
+        if self.name is not None:
+            result['name'] = self.name
+        if self.support_direction is not None:
+            result['supportDirection'] = self.support_direction
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('direction') is not None:
+            self.direction = m.get('direction')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('supportDirection') is not None:
+            self.support_direction = m.get('supportDirection')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class ListMyShortcutViewsResponseBodyResultToolbarInfoShowTypes(TeaModel):
+    def __init__(
+        self,
+        name: str = None,
+        value: str = None,
+    ):
+        self.name = name
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class ListMyShortcutViewsResponseBodyResultToolbarInfo(TeaModel):
+    def __init__(
+        self,
+        group_types: List[ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypes] = None,
+        order_types: List[ListMyShortcutViewsResponseBodyResultToolbarInfoOrderTypes] = None,
+        show_types: List[ListMyShortcutViewsResponseBodyResultToolbarInfoShowTypes] = None,
+    ):
+        self.group_types = group_types
+        self.order_types = order_types
+        self.show_types = show_types
+
+    def validate(self):
+        if self.group_types:
+            for k in self.group_types:
+                if k:
+                    k.validate()
+        if self.order_types:
+            for k in self.order_types:
+                if k:
+                    k.validate()
+        if self.show_types:
+            for k in self.show_types:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['groupTypes'] = []
+        if self.group_types is not None:
+            for k in self.group_types:
+                result['groupTypes'].append(k.to_map() if k else None)
+        result['orderTypes'] = []
+        if self.order_types is not None:
+            for k in self.order_types:
+                result['orderTypes'].append(k.to_map() if k else None)
+        result['showTypes'] = []
+        if self.show_types is not None:
+            for k in self.show_types:
+                result['showTypes'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.group_types = []
+        if m.get('groupTypes') is not None:
+            for k in m.get('groupTypes'):
+                temp_model = ListMyShortcutViewsResponseBodyResultToolbarInfoGroupTypes()
+                self.group_types.append(temp_model.from_map(k))
+        self.order_types = []
+        if m.get('orderTypes') is not None:
+            for k in m.get('orderTypes'):
+                temp_model = ListMyShortcutViewsResponseBodyResultToolbarInfoOrderTypes()
+                self.order_types.append(temp_model.from_map(k))
+        self.show_types = []
+        if m.get('showTypes') is not None:
+            for k in m.get('showTypes'):
+                temp_model = ListMyShortcutViewsResponseBodyResultToolbarInfoShowTypes()
+                self.show_types.append(temp_model.from_map(k))
+        return self
+
+
 class ListMyShortcutViewsResponseBodyResultViewSetting(TeaModel):
     def __init__(
         self,
@@ -2747,6 +3716,7 @@ class ListMyShortcutViewsResponseBodyResult(TeaModel):
         order_type: ListMyShortcutViewsResponseBodyResultOrderType = None,
         organization_id: str = None,
         show_type: ListMyShortcutViewsResponseBodyResultShowType = None,
+        toolbar_info: ListMyShortcutViewsResponseBodyResultToolbarInfo = None,
         updated: str = None,
         view_setting: ListMyShortcutViewsResponseBodyResultViewSetting = None,
     ):
@@ -2762,6 +3732,7 @@ class ListMyShortcutViewsResponseBodyResult(TeaModel):
         self.order_type = order_type
         self.organization_id = organization_id
         self.show_type = show_type
+        self.toolbar_info = toolbar_info
         self.updated = updated
         self.view_setting = view_setting
 
@@ -2772,6 +3743,8 @@ class ListMyShortcutViewsResponseBodyResult(TeaModel):
             self.order_type.validate()
         if self.show_type:
             self.show_type.validate()
+        if self.toolbar_info:
+            self.toolbar_info.validate()
         if self.view_setting:
             self.view_setting.validate()
 
@@ -2805,6 +3778,8 @@ class ListMyShortcutViewsResponseBodyResult(TeaModel):
             result['organizationId'] = self.organization_id
         if self.show_type is not None:
             result['showType'] = self.show_type.to_map()
+        if self.toolbar_info is not None:
+            result['toolbarInfo'] = self.toolbar_info.to_map()
         if self.updated is not None:
             result['updated'] = self.updated
         if self.view_setting is not None:
@@ -2840,6 +3815,9 @@ class ListMyShortcutViewsResponseBodyResult(TeaModel):
         if m.get('showType') is not None:
             temp_model = ListMyShortcutViewsResponseBodyResultShowType()
             self.show_type = temp_model.from_map(m['showType'])
+        if m.get('toolbarInfo') is not None:
+            temp_model = ListMyShortcutViewsResponseBodyResultToolbarInfo()
+            self.toolbar_info = temp_model.from_map(m['toolbarInfo'])
         if m.get('updated') is not None:
             self.updated = m.get('updated')
         if m.get('viewSetting') is not None:
@@ -2926,6 +3904,420 @@ class ListMyShortcutViewsResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListMyShortcutViewsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryAllTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryAllTaskRequest(TeaModel):
+    def __init__(
+        self,
+        task_id: str = None,
+    ):
+        # This parameter is required.
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class QueryAllTaskResponseBodyResultCustomfieldsValue(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        meta_string: str = None,
+        title: str = None,
+    ):
+        self.id = id
+        self.meta_string = meta_string
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.meta_string is not None:
+            result['metaString'] = self.meta_string
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('metaString') is not None:
+            self.meta_string = m.get('metaString')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class QueryAllTaskResponseBodyResultCustomfields(TeaModel):
+    def __init__(
+        self,
+        cf_id: str = None,
+        type: str = None,
+        value: List[QueryAllTaskResponseBodyResultCustomfieldsValue] = None,
+    ):
+        self.cf_id = cf_id
+        self.type = type
+        self.value = value
+
+    def validate(self):
+        if self.value:
+            for k in self.value:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cf_id is not None:
+            result['cfId'] = self.cf_id
+        if self.type is not None:
+            result['type'] = self.type
+        result['value'] = []
+        if self.value is not None:
+            for k in self.value:
+                result['value'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cfId') is not None:
+            self.cf_id = m.get('cfId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        self.value = []
+        if m.get('value') is not None:
+            for k in m.get('value'):
+                temp_model = QueryAllTaskResponseBodyResultCustomfieldsValue()
+                self.value.append(temp_model.from_map(k))
+        return self
+
+
+class QueryAllTaskResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        accomplish_time: str = None,
+        ancestor_ids: List[str] = None,
+        content: str = None,
+        created: str = None,
+        creator_id: str = None,
+        customfields: List[QueryAllTaskResponseBodyResultCustomfields] = None,
+        due_date: str = None,
+        executor_id: str = None,
+        id: str = None,
+        involve_members: List[str] = None,
+        is_archived: bool = None,
+        is_done: bool = None,
+        note: str = None,
+        parent_task_id: str = None,
+        priority: int = None,
+        project_id: str = None,
+        sfc_id: str = None,
+        stage_id: str = None,
+        start_date: str = None,
+        tag_ids: List[str] = None,
+        task_id: str = None,
+        tasklist_id: str = None,
+        tfs_id: str = None,
+        unique_id: str = None,
+        updated: str = None,
+        visible: str = None,
+    ):
+        self.accomplish_time = accomplish_time
+        self.ancestor_ids = ancestor_ids
+        self.content = content
+        self.created = created
+        self.creator_id = creator_id
+        self.customfields = customfields
+        self.due_date = due_date
+        self.executor_id = executor_id
+        self.id = id
+        self.involve_members = involve_members
+        self.is_archived = is_archived
+        self.is_done = is_done
+        self.note = note
+        self.parent_task_id = parent_task_id
+        self.priority = priority
+        self.project_id = project_id
+        self.sfc_id = sfc_id
+        self.stage_id = stage_id
+        self.start_date = start_date
+        self.tag_ids = tag_ids
+        self.task_id = task_id
+        self.tasklist_id = tasklist_id
+        self.tfs_id = tfs_id
+        self.unique_id = unique_id
+        self.updated = updated
+        self.visible = visible
+
+    def validate(self):
+        if self.customfields:
+            for k in self.customfields:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.accomplish_time is not None:
+            result['accomplishTime'] = self.accomplish_time
+        if self.ancestor_ids is not None:
+            result['ancestorIds'] = self.ancestor_ids
+        if self.content is not None:
+            result['content'] = self.content
+        if self.created is not None:
+            result['created'] = self.created
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        result['customfields'] = []
+        if self.customfields is not None:
+            for k in self.customfields:
+                result['customfields'].append(k.to_map() if k else None)
+        if self.due_date is not None:
+            result['dueDate'] = self.due_date
+        if self.executor_id is not None:
+            result['executorId'] = self.executor_id
+        if self.id is not None:
+            result['id'] = self.id
+        if self.involve_members is not None:
+            result['involveMembers'] = self.involve_members
+        if self.is_archived is not None:
+            result['isArchived'] = self.is_archived
+        if self.is_done is not None:
+            result['isDone'] = self.is_done
+        if self.note is not None:
+            result['note'] = self.note
+        if self.parent_task_id is not None:
+            result['parentTaskId'] = self.parent_task_id
+        if self.priority is not None:
+            result['priority'] = self.priority
+        if self.project_id is not None:
+            result['projectId'] = self.project_id
+        if self.sfc_id is not None:
+            result['sfcId'] = self.sfc_id
+        if self.stage_id is not None:
+            result['stageId'] = self.stage_id
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        if self.tag_ids is not None:
+            result['tagIds'] = self.tag_ids
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        if self.tasklist_id is not None:
+            result['tasklistId'] = self.tasklist_id
+        if self.tfs_id is not None:
+            result['tfsId'] = self.tfs_id
+        if self.unique_id is not None:
+            result['uniqueId'] = self.unique_id
+        if self.updated is not None:
+            result['updated'] = self.updated
+        if self.visible is not None:
+            result['visible'] = self.visible
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accomplishTime') is not None:
+            self.accomplish_time = m.get('accomplishTime')
+        if m.get('ancestorIds') is not None:
+            self.ancestor_ids = m.get('ancestorIds')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        self.customfields = []
+        if m.get('customfields') is not None:
+            for k in m.get('customfields'):
+                temp_model = QueryAllTaskResponseBodyResultCustomfields()
+                self.customfields.append(temp_model.from_map(k))
+        if m.get('dueDate') is not None:
+            self.due_date = m.get('dueDate')
+        if m.get('executorId') is not None:
+            self.executor_id = m.get('executorId')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('involveMembers') is not None:
+            self.involve_members = m.get('involveMembers')
+        if m.get('isArchived') is not None:
+            self.is_archived = m.get('isArchived')
+        if m.get('isDone') is not None:
+            self.is_done = m.get('isDone')
+        if m.get('note') is not None:
+            self.note = m.get('note')
+        if m.get('parentTaskId') is not None:
+            self.parent_task_id = m.get('parentTaskId')
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
+        if m.get('projectId') is not None:
+            self.project_id = m.get('projectId')
+        if m.get('sfcId') is not None:
+            self.sfc_id = m.get('sfcId')
+        if m.get('stageId') is not None:
+            self.stage_id = m.get('stageId')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        if m.get('tagIds') is not None:
+            self.tag_ids = m.get('tagIds')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        if m.get('tasklistId') is not None:
+            self.tasklist_id = m.get('tasklistId')
+        if m.get('tfsId') is not None:
+            self.tfs_id = m.get('tfsId')
+        if m.get('uniqueId') is not None:
+            self.unique_id = m.get('uniqueId')
+        if m.get('updated') is not None:
+            self.updated = m.get('updated')
+        if m.get('visible') is not None:
+            self.visible = m.get('visible')
+        return self
+
+
+class QueryAllTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: List[QueryAllTaskResponseBodyResult] = None,
+    ):
+        self.request_id = request_id
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = QueryAllTaskResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class QueryAllTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryAllTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryAllTaskResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
