@@ -4534,6 +4534,154 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>根据传入的文档ID将文档导出为截图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DocExportSnapshotRequest
+        /// </param>
+        /// <param name="headers">
+        /// DocExportSnapshotHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DocExportSnapshotResponse
+        /// </returns>
+        public DocExportSnapshotResponse DocExportSnapshotWithOptions(string documentId, DocExportSnapshotRequest request, DocExportSnapshotHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DocExportSnapshot",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/suites/documents/" + documentId + "/export/snapshot",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DocExportSnapshotResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据传入的文档ID将文档导出为截图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DocExportSnapshotRequest
+        /// </param>
+        /// <param name="headers">
+        /// DocExportSnapshotHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DocExportSnapshotResponse
+        /// </returns>
+        public async Task<DocExportSnapshotResponse> DocExportSnapshotWithOptionsAsync(string documentId, DocExportSnapshotRequest request, DocExportSnapshotHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DocExportSnapshot",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/suites/documents/" + documentId + "/export/snapshot",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DocExportSnapshotResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据传入的文档ID将文档导出为截图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DocExportSnapshotRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DocExportSnapshotResponse
+        /// </returns>
+        public DocExportSnapshotResponse DocExportSnapshot(string documentId, DocExportSnapshotRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DocExportSnapshotHeaders headers = new DocExportSnapshotHeaders();
+            return DocExportSnapshotWithOptions(documentId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据传入的文档ID将文档导出为截图</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DocExportSnapshotRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DocExportSnapshotResponse
+        /// </returns>
+        public async Task<DocExportSnapshotResponse> DocExportSnapshotAsync(string documentId, DocExportSnapshotRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DocExportSnapshotHeaders headers = new DocExportSnapshotHeaders();
+            return await DocExportSnapshotWithOptionsAsync(documentId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>插入指定Block元素</para>
         /// </summary>
         /// 
@@ -4714,6 +4862,314 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             DocInsertBlocksHeaders headers = new DocInsertBlocksHeaders();
             return await DocInsertBlocksWithOptionsAsync(docKey, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据传入参数更新文档插槽</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DocSlotsModifyRequest
+        /// </param>
+        /// <param name="headers">
+        /// DocSlotsModifyHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DocSlotsModifyResponse
+        /// </returns>
+        public DocSlotsModifyResponse DocSlotsModifyWithOptions(string documentId, DocSlotsModifyRequest request, DocSlotsModifyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Request))
+            {
+                body["request"] = request.Request;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DocSlotsModify",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/suites/documents/" + documentId + "/slots",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DocSlotsModifyResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据传入参数更新文档插槽</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DocSlotsModifyRequest
+        /// </param>
+        /// <param name="headers">
+        /// DocSlotsModifyHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DocSlotsModifyResponse
+        /// </returns>
+        public async Task<DocSlotsModifyResponse> DocSlotsModifyWithOptionsAsync(string documentId, DocSlotsModifyRequest request, DocSlotsModifyHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Request))
+            {
+                body["request"] = request.Request;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DocSlotsModify",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/suites/documents/" + documentId + "/slots",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DocSlotsModifyResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据传入参数更新文档插槽</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DocSlotsModifyRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DocSlotsModifyResponse
+        /// </returns>
+        public DocSlotsModifyResponse DocSlotsModify(string documentId, DocSlotsModifyRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DocSlotsModifyHeaders headers = new DocSlotsModifyHeaders();
+            return DocSlotsModifyWithOptions(documentId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据传入参数更新文档插槽</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DocSlotsModifyRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DocSlotsModifyResponse
+        /// </returns>
+        public async Task<DocSlotsModifyResponse> DocSlotsModifyAsync(string documentId, DocSlotsModifyRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DocSlotsModifyHeaders headers = new DocSlotsModifyHeaders();
+            return await DocSlotsModifyWithOptionsAsync(documentId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据传入参数查询文档中所有的插槽</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DocSlotsQueryRequest
+        /// </param>
+        /// <param name="headers">
+        /// DocSlotsQueryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DocSlotsQueryResponse
+        /// </returns>
+        public DocSlotsQueryResponse DocSlotsQueryWithOptions(string documentId, DocSlotsQueryRequest request, DocSlotsQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DocSlotsQuery",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/suites/documents/" + documentId + "/slots",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DocSlotsQueryResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据传入参数查询文档中所有的插槽</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DocSlotsQueryRequest
+        /// </param>
+        /// <param name="headers">
+        /// DocSlotsQueryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DocSlotsQueryResponse
+        /// </returns>
+        public async Task<DocSlotsQueryResponse> DocSlotsQueryWithOptionsAsync(string documentId, DocSlotsQueryRequest request, DocSlotsQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DocSlotsQuery",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/suites/documents/" + documentId + "/slots",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DocSlotsQueryResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据传入参数查询文档中所有的插槽</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DocSlotsQueryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DocSlotsQueryResponse
+        /// </returns>
+        public DocSlotsQueryResponse DocSlotsQuery(string documentId, DocSlotsQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DocSlotsQueryHeaders headers = new DocSlotsQueryHeaders();
+            return DocSlotsQueryWithOptions(documentId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据传入参数查询文档中所有的插槽</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DocSlotsQueryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DocSlotsQueryResponse
+        /// </returns>
+        public async Task<DocSlotsQueryResponse> DocSlotsQueryAsync(string documentId, DocSlotsQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DocSlotsQueryHeaders headers = new DocSlotsQueryHeaders();
+            return await DocSlotsQueryWithOptionsAsync(documentId, request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

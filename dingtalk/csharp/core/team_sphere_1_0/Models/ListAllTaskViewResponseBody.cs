@@ -49,6 +49,124 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0.Models
             [Validation(Required=false)]
             public string Description { get; set; }
 
+            [NameInMap("filter")]
+            [Validation(Required=false)]
+            public ListAllTaskViewResponseBodyResultFilter Filter { get; set; }
+            public class ListAllTaskViewResponseBodyResultFilter : TeaModel {
+                [NameInMap("conditions")]
+                [Validation(Required=false)]
+                public List<ListAllTaskViewResponseBodyResultFilterConditions> Conditions { get; set; }
+                public class ListAllTaskViewResponseBodyResultFilterConditions : TeaModel {
+                    [NameInMap("fixed")]
+                    [Validation(Required=false)]
+                    public bool? Fixed { get; set; }
+
+                    [NameInMap("key")]
+                    [Validation(Required=false)]
+                    public string Key { get; set; }
+
+                    [NameInMap("op")]
+                    [Validation(Required=false)]
+                    public ListAllTaskViewResponseBodyResultFilterConditionsOp Op { get; set; }
+                    public class ListAllTaskViewResponseBodyResultFilterConditionsOp : TeaModel {
+                        [NameInMap("value")]
+                        [Validation(Required=false)]
+                        public string Value { get; set; }
+
+                    }
+
+                    [NameInMap("values")]
+                    [Validation(Required=false)]
+                    public List<ListAllTaskViewResponseBodyResultFilterConditionsValues> Values { get; set; }
+                    public class ListAllTaskViewResponseBodyResultFilterConditionsValues : TeaModel {
+                        [NameInMap("deep")]
+                        [Validation(Required=false)]
+                        public string Deep { get; set; }
+
+                        [NameInMap("id")]
+                        [Validation(Required=false)]
+                        public string Id { get; set; }
+
+                        [NameInMap("label")]
+                        [Validation(Required=false)]
+                        public string Label { get; set; }
+
+                        [NameInMap("name")]
+                        [Validation(Required=false)]
+                        public string Name { get; set; }
+
+                        [NameInMap("value")]
+                        [Validation(Required=false)]
+                        public string Value { get; set; }
+
+                    }
+
+                }
+
+                [NameInMap("invisibleConditions")]
+                [Validation(Required=false)]
+                public List<ListAllTaskViewResponseBodyResultFilterInvisibleConditions> InvisibleConditions { get; set; }
+                public class ListAllTaskViewResponseBodyResultFilterInvisibleConditions : TeaModel {
+                    [NameInMap("fixed")]
+                    [Validation(Required=false)]
+                    public bool? Fixed { get; set; }
+
+                    [NameInMap("key")]
+                    [Validation(Required=false)]
+                    public string Key { get; set; }
+
+                    [NameInMap("op")]
+                    [Validation(Required=false)]
+                    public ListAllTaskViewResponseBodyResultFilterInvisibleConditionsOp Op { get; set; }
+                    public class ListAllTaskViewResponseBodyResultFilterInvisibleConditionsOp : TeaModel {
+                        [NameInMap("value")]
+                        [Validation(Required=false)]
+                        public string Value { get; set; }
+
+                    }
+
+                    [NameInMap("values")]
+                    [Validation(Required=false)]
+                    public List<ListAllTaskViewResponseBodyResultFilterInvisibleConditionsValues> Values { get; set; }
+                    public class ListAllTaskViewResponseBodyResultFilterInvisibleConditionsValues : TeaModel {
+                        [NameInMap("deep")]
+                        [Validation(Required=false)]
+                        public string Deep { get; set; }
+
+                        [NameInMap("id")]
+                        [Validation(Required=false)]
+                        public string Id { get; set; }
+
+                        [NameInMap("label")]
+                        [Validation(Required=false)]
+                        public string Label { get; set; }
+
+                        [NameInMap("name")]
+                        [Validation(Required=false)]
+                        public string Name { get; set; }
+
+                        [NameInMap("value")]
+                        [Validation(Required=false)]
+                        public string Value { get; set; }
+
+                    }
+
+                }
+
+                [NameInMap("logic")]
+                [Validation(Required=false)]
+                public string Logic { get; set; }
+
+                [NameInMap("logicDisabled")]
+                [Validation(Required=false)]
+                public bool? LogicDisabled { get; set; }
+
+                [NameInMap("q")]
+                [Validation(Required=false)]
+                public string Q { get; set; }
+
+            }
+
             [NameInMap("groupType")]
             [Validation(Required=false)]
             public ListAllTaskViewResponseBodyResultGroupType GroupType { get; set; }
@@ -204,6 +322,10 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0.Models
                 }
 
             }
+
+            [NameInMap("tql")]
+            [Validation(Required=false)]
+            public string Tql { get; set; }
 
             /// <summary>
             /// <b>Example:</b>

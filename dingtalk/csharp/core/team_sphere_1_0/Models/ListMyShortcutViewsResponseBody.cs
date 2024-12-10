@@ -57,6 +57,124 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0.Models
             [Validation(Required=false)]
             public string Description { get; set; }
 
+            [NameInMap("filter")]
+            [Validation(Required=false)]
+            public ListMyShortcutViewsResponseBodyResultFilter Filter { get; set; }
+            public class ListMyShortcutViewsResponseBodyResultFilter : TeaModel {
+                [NameInMap("conditions")]
+                [Validation(Required=false)]
+                public List<ListMyShortcutViewsResponseBodyResultFilterConditions> Conditions { get; set; }
+                public class ListMyShortcutViewsResponseBodyResultFilterConditions : TeaModel {
+                    [NameInMap("fixed")]
+                    [Validation(Required=false)]
+                    public bool? Fixed { get; set; }
+
+                    [NameInMap("key")]
+                    [Validation(Required=false)]
+                    public string Key { get; set; }
+
+                    [NameInMap("op")]
+                    [Validation(Required=false)]
+                    public ListMyShortcutViewsResponseBodyResultFilterConditionsOp Op { get; set; }
+                    public class ListMyShortcutViewsResponseBodyResultFilterConditionsOp : TeaModel {
+                        [NameInMap("value")]
+                        [Validation(Required=false)]
+                        public string Value { get; set; }
+
+                    }
+
+                    [NameInMap("values")]
+                    [Validation(Required=false)]
+                    public List<ListMyShortcutViewsResponseBodyResultFilterConditionsValues> Values { get; set; }
+                    public class ListMyShortcutViewsResponseBodyResultFilterConditionsValues : TeaModel {
+                        [NameInMap("deep")]
+                        [Validation(Required=false)]
+                        public string Deep { get; set; }
+
+                        [NameInMap("id")]
+                        [Validation(Required=false)]
+                        public string Id { get; set; }
+
+                        [NameInMap("label")]
+                        [Validation(Required=false)]
+                        public string Label { get; set; }
+
+                        [NameInMap("name")]
+                        [Validation(Required=false)]
+                        public string Name { get; set; }
+
+                        [NameInMap("value")]
+                        [Validation(Required=false)]
+                        public string Value { get; set; }
+
+                    }
+
+                }
+
+                [NameInMap("invisibleConditions")]
+                [Validation(Required=false)]
+                public List<ListMyShortcutViewsResponseBodyResultFilterInvisibleConditions> InvisibleConditions { get; set; }
+                public class ListMyShortcutViewsResponseBodyResultFilterInvisibleConditions : TeaModel {
+                    [NameInMap("fixed")]
+                    [Validation(Required=false)]
+                    public bool? Fixed { get; set; }
+
+                    [NameInMap("key")]
+                    [Validation(Required=false)]
+                    public string Key { get; set; }
+
+                    [NameInMap("op")]
+                    [Validation(Required=false)]
+                    public ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsOp Op { get; set; }
+                    public class ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsOp : TeaModel {
+                        [NameInMap("value")]
+                        [Validation(Required=false)]
+                        public string Value { get; set; }
+
+                    }
+
+                    [NameInMap("values")]
+                    [Validation(Required=false)]
+                    public List<ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsValues> Values { get; set; }
+                    public class ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsValues : TeaModel {
+                        [NameInMap("deep")]
+                        [Validation(Required=false)]
+                        public string Deep { get; set; }
+
+                        [NameInMap("id")]
+                        [Validation(Required=false)]
+                        public string Id { get; set; }
+
+                        [NameInMap("label")]
+                        [Validation(Required=false)]
+                        public string Label { get; set; }
+
+                        [NameInMap("name")]
+                        [Validation(Required=false)]
+                        public string Name { get; set; }
+
+                        [NameInMap("value")]
+                        [Validation(Required=false)]
+                        public string Value { get; set; }
+
+                    }
+
+                }
+
+                [NameInMap("logic")]
+                [Validation(Required=false)]
+                public string Logic { get; set; }
+
+                [NameInMap("logicDisabled")]
+                [Validation(Required=false)]
+                public bool? LogicDisabled { get; set; }
+
+                [NameInMap("q")]
+                [Validation(Required=false)]
+                public string Q { get; set; }
+
+            }
+
             [NameInMap("groupType")]
             [Validation(Required=false)]
             public ListMyShortcutViewsResponseBodyResultGroupType GroupType { get; set; }
@@ -212,6 +330,10 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0.Models
                 }
 
             }
+
+            [NameInMap("tql")]
+            [Validation(Required=false)]
+            public string Tql { get; set; }
 
             /// <summary>
             /// <b>Example:</b>

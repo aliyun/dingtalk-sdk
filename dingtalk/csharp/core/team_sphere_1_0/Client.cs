@@ -382,6 +382,154 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>创建项目成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateProjectMembersV3Request
+        /// </param>
+        /// <param name="headers">
+        /// CreateProjectMembersV3Headers
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateProjectMembersV3Response
+        /// </returns>
+        public CreateProjectMembersV3Response CreateProjectMembersV3WithOptions(string userId, string projectId, CreateProjectMembersV3Request request, CreateProjectMembersV3Headers headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateProjectMembersV3",
+                Version = "teamSphere_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/teamSphere/users/" + userId + "/projects/" + projectId + "/members",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateProjectMembersV3Response>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建项目成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateProjectMembersV3Request
+        /// </param>
+        /// <param name="headers">
+        /// CreateProjectMembersV3Headers
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateProjectMembersV3Response
+        /// </returns>
+        public async Task<CreateProjectMembersV3Response> CreateProjectMembersV3WithOptionsAsync(string userId, string projectId, CreateProjectMembersV3Request request, CreateProjectMembersV3Headers headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateProjectMembersV3",
+                Version = "teamSphere_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/teamSphere/users/" + userId + "/projects/" + projectId + "/members",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateProjectMembersV3Response>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建项目成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateProjectMembersV3Request
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateProjectMembersV3Response
+        /// </returns>
+        public CreateProjectMembersV3Response CreateProjectMembersV3(string userId, string projectId, CreateProjectMembersV3Request request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateProjectMembersV3Headers headers = new CreateProjectMembersV3Headers();
+            return CreateProjectMembersV3WithOptions(userId, projectId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建项目成员</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateProjectMembersV3Request
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateProjectMembersV3Response
+        /// </returns>
+        public async Task<CreateProjectMembersV3Response> CreateProjectMembersV3Async(string userId, string projectId, CreateProjectMembersV3Request request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateProjectMembersV3Headers headers = new CreateProjectMembersV3Headers();
+            return await CreateProjectMembersV3WithOptionsAsync(userId, projectId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>创建协作空间。</para>
         /// </summary>
         /// 
@@ -726,6 +874,154 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             CreateTaskHeaders headers = new CreateTaskHeaders();
             return await CreateTaskWithOptionsAsync(userId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除项目成员。</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteProjectMembersV3Request
+        /// </param>
+        /// <param name="headers">
+        /// DeleteProjectMembersV3Headers
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteProjectMembersV3Response
+        /// </returns>
+        public DeleteProjectMembersV3Response DeleteProjectMembersV3WithOptions(string userId, string projectId, DeleteProjectMembersV3Request request, DeleteProjectMembersV3Headers headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteProjectMembersV3",
+                Version = "teamSphere_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/teamSphere/users/" + userId + "/projects/" + projectId + "/members/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteProjectMembersV3Response>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除项目成员。</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteProjectMembersV3Request
+        /// </param>
+        /// <param name="headers">
+        /// DeleteProjectMembersV3Headers
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteProjectMembersV3Response
+        /// </returns>
+        public async Task<DeleteProjectMembersV3Response> DeleteProjectMembersV3WithOptionsAsync(string userId, string projectId, DeleteProjectMembersV3Request request, DeleteProjectMembersV3Headers headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                body["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteProjectMembersV3",
+                Version = "teamSphere_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/teamSphere/users/" + userId + "/projects/" + projectId + "/members/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteProjectMembersV3Response>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除项目成员。</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteProjectMembersV3Request
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteProjectMembersV3Response
+        /// </returns>
+        public DeleteProjectMembersV3Response DeleteProjectMembersV3(string userId, string projectId, DeleteProjectMembersV3Request request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteProjectMembersV3Headers headers = new DeleteProjectMembersV3Headers();
+            return DeleteProjectMembersV3WithOptions(userId, projectId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除项目成员。</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteProjectMembersV3Request
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteProjectMembersV3Response
+        /// </returns>
+        public async Task<DeleteProjectMembersV3Response> DeleteProjectMembersV3Async(string userId, string projectId, DeleteProjectMembersV3Request request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteProjectMembersV3Headers headers = new DeleteProjectMembersV3Headers();
+            return await DeleteProjectMembersV3WithOptionsAsync(userId, projectId, request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -1114,6 +1410,178 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetFreeTaskHeaders headers = new GetFreeTaskHeaders();
             return await GetFreeTaskWithOptionsAsync(taskId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取协作空间成员列表。</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetProjectMembersV3Request
+        /// </param>
+        /// <param name="headers">
+        /// GetProjectMembersV3Headers
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetProjectMembersV3Response
+        /// </returns>
+        public GetProjectMembersV3Response GetProjectMembersV3WithOptions(string userId, string projectId, GetProjectMembersV3Request request, GetProjectMembersV3Headers headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProjectRoleId))
+            {
+                query["projectRoleId"] = request.ProjectRoleId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                query["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetProjectMembersV3",
+                Version = "teamSphere_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/teamSphere/users/" + userId + "/projects/" + projectId + "/members",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetProjectMembersV3Response>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取协作空间成员列表。</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetProjectMembersV3Request
+        /// </param>
+        /// <param name="headers">
+        /// GetProjectMembersV3Headers
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetProjectMembersV3Response
+        /// </returns>
+        public async Task<GetProjectMembersV3Response> GetProjectMembersV3WithOptionsAsync(string userId, string projectId, GetProjectMembersV3Request request, GetProjectMembersV3Headers headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProjectRoleId))
+            {
+                query["projectRoleId"] = request.ProjectRoleId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserIds))
+            {
+                query["userIds"] = request.UserIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetProjectMembersV3",
+                Version = "teamSphere_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/teamSphere/users/" + userId + "/projects/" + projectId + "/members",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetProjectMembersV3Response>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取协作空间成员列表。</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetProjectMembersV3Request
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetProjectMembersV3Response
+        /// </returns>
+        public GetProjectMembersV3Response GetProjectMembersV3(string userId, string projectId, GetProjectMembersV3Request request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetProjectMembersV3Headers headers = new GetProjectMembersV3Headers();
+            return GetProjectMembersV3WithOptions(userId, projectId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取协作空间成员列表。</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetProjectMembersV3Request
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetProjectMembersV3Response
+        /// </returns>
+        public async Task<GetProjectMembersV3Response> GetProjectMembersV3Async(string userId, string projectId, GetProjectMembersV3Request request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetProjectMembersV3Headers headers = new GetProjectMembersV3Headers();
+            return await GetProjectMembersV3WithOptionsAsync(userId, projectId, request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
