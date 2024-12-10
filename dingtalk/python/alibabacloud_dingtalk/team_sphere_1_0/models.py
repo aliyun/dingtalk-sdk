@@ -769,6 +769,200 @@ class CreateOrganizationTaskResponse(TeaModel):
         return self
 
 
+class CreateProjectMembersV3Headers(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateProjectMembersV3Request(TeaModel):
+    def __init__(
+        self,
+        user_ids: List[str] = None,
+    ):
+        # This parameter is required.
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class CreateProjectMembersV3ResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        bound_to_object_id: str = None,
+        bound_to_object_type: str = None,
+        joined: str = None,
+        role: int = None,
+        user_id: str = None,
+    ):
+        self.bound_to_object_id = bound_to_object_id
+        self.bound_to_object_type = bound_to_object_type
+        self.joined = joined
+        self.role = role
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bound_to_object_id is not None:
+            result['boundToObjectId'] = self.bound_to_object_id
+        if self.bound_to_object_type is not None:
+            result['boundToObjectType'] = self.bound_to_object_type
+        if self.joined is not None:
+            result['joined'] = self.joined
+        if self.role is not None:
+            result['role'] = self.role
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('boundToObjectId') is not None:
+            self.bound_to_object_id = m.get('boundToObjectId')
+        if m.get('boundToObjectType') is not None:
+            self.bound_to_object_type = m.get('boundToObjectType')
+        if m.get('joined') is not None:
+            self.joined = m.get('joined')
+        if m.get('role') is not None:
+            self.role = m.get('role')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class CreateProjectMembersV3ResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: List[CreateProjectMembersV3ResponseBodyResult] = None,
+    ):
+        self.request_id = request_id
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = CreateProjectMembersV3ResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class CreateProjectMembersV3Response(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateProjectMembersV3ResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateProjectMembersV3ResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateProjectV3Headers(TeaModel):
     def __init__(
         self,
@@ -1359,6 +1553,181 @@ class CreateTaskResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DeleteProjectMembersV3Headers(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteProjectMembersV3Request(TeaModel):
+    def __init__(
+        self,
+        user_ids: List[str] = None,
+    ):
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class DeleteProjectMembersV3ResponseBodyErrors(TeaModel):
+    def __init__(
+        self,
+        message: str = None,
+    ):
+        self.message = message
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.message is not None:
+            result['message'] = self.message
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('message') is not None:
+            self.message = m.get('message')
+        return self
+
+
+class DeleteProjectMembersV3ResponseBody(TeaModel):
+    def __init__(
+        self,
+        errors: List[DeleteProjectMembersV3ResponseBodyErrors] = None,
+        request_id: str = None,
+        result: List[str] = None,
+    ):
+        self.errors = errors
+        self.request_id = request_id
+        self.result = result
+
+    def validate(self):
+        if self.errors:
+            for k in self.errors:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['errors'] = []
+        if self.errors is not None:
+            for k in self.errors:
+                result['errors'].append(k.to_map() if k else None)
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.errors = []
+        if m.get('errors') is not None:
+            for k in m.get('errors'):
+                temp_model = DeleteProjectMembersV3ResponseBodyErrors()
+                self.errors.append(temp_model.from_map(k))
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class DeleteProjectMembersV3Response(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteProjectMembersV3ResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteProjectMembersV3ResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2170,6 +2539,205 @@ class GetFreeTaskResponse(TeaModel):
         return self
 
 
+class GetProjectMembersV3Headers(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetProjectMembersV3Request(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+        project_role_id: str = None,
+        user_ids: str = None,
+    ):
+        self.max_results = max_results
+        self.next_token = next_token
+        self.project_role_id = project_role_id
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.project_role_id is not None:
+            result['projectRoleId'] = self.project_role_id
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('projectRoleId') is not None:
+            self.project_role_id = m.get('projectRoleId')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class GetProjectMembersV3ResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        role: int = None,
+        user_id: str = None,
+    ):
+        self.role = role
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.role is not None:
+            result['role'] = self.role
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('role') is not None:
+            self.role = m.get('role')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetProjectMembersV3ResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        request_id: str = None,
+        result: List[GetProjectMembersV3ResponseBodyResult] = None,
+    ):
+        self.next_token = next_token
+        self.request_id = request_id
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetProjectMembersV3ResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GetProjectMembersV3Response(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetProjectMembersV3ResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetProjectMembersV3ResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetTbUserIdByDingUserIdHeaders(TeaModel):
     def __init__(
         self,
@@ -2682,6 +3250,342 @@ class ListAllTaskViewHeaders(TeaModel):
         return self
 
 
+class ListAllTaskViewResponseBodyResultFilterConditionsOp(TeaModel):
+    def __init__(
+        self,
+        value: str = None,
+    ):
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class ListAllTaskViewResponseBodyResultFilterConditionsValues(TeaModel):
+    def __init__(
+        self,
+        deep: str = None,
+        id: str = None,
+        label: str = None,
+        name: str = None,
+        value: str = None,
+    ):
+        self.deep = deep
+        self.id = id
+        self.label = label
+        self.name = name
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.deep is not None:
+            result['deep'] = self.deep
+        if self.id is not None:
+            result['id'] = self.id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deep') is not None:
+            self.deep = m.get('deep')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class ListAllTaskViewResponseBodyResultFilterConditions(TeaModel):
+    def __init__(
+        self,
+        fixed: bool = None,
+        key: str = None,
+        op: ListAllTaskViewResponseBodyResultFilterConditionsOp = None,
+        values: List[ListAllTaskViewResponseBodyResultFilterConditionsValues] = None,
+    ):
+        self.fixed = fixed
+        self.key = key
+        self.op = op
+        self.values = values
+
+    def validate(self):
+        if self.op:
+            self.op.validate()
+        if self.values:
+            for k in self.values:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.fixed is not None:
+            result['fixed'] = self.fixed
+        if self.key is not None:
+            result['key'] = self.key
+        if self.op is not None:
+            result['op'] = self.op.to_map()
+        result['values'] = []
+        if self.values is not None:
+            for k in self.values:
+                result['values'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fixed') is not None:
+            self.fixed = m.get('fixed')
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('op') is not None:
+            temp_model = ListAllTaskViewResponseBodyResultFilterConditionsOp()
+            self.op = temp_model.from_map(m['op'])
+        self.values = []
+        if m.get('values') is not None:
+            for k in m.get('values'):
+                temp_model = ListAllTaskViewResponseBodyResultFilterConditionsValues()
+                self.values.append(temp_model.from_map(k))
+        return self
+
+
+class ListAllTaskViewResponseBodyResultFilterInvisibleConditionsOp(TeaModel):
+    def __init__(
+        self,
+        value: str = None,
+    ):
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class ListAllTaskViewResponseBodyResultFilterInvisibleConditionsValues(TeaModel):
+    def __init__(
+        self,
+        deep: str = None,
+        id: str = None,
+        label: str = None,
+        name: str = None,
+        value: str = None,
+    ):
+        self.deep = deep
+        self.id = id
+        self.label = label
+        self.name = name
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.deep is not None:
+            result['deep'] = self.deep
+        if self.id is not None:
+            result['id'] = self.id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deep') is not None:
+            self.deep = m.get('deep')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class ListAllTaskViewResponseBodyResultFilterInvisibleConditions(TeaModel):
+    def __init__(
+        self,
+        fixed: bool = None,
+        key: str = None,
+        op: ListAllTaskViewResponseBodyResultFilterInvisibleConditionsOp = None,
+        values: List[ListAllTaskViewResponseBodyResultFilterInvisibleConditionsValues] = None,
+    ):
+        self.fixed = fixed
+        self.key = key
+        self.op = op
+        self.values = values
+
+    def validate(self):
+        if self.op:
+            self.op.validate()
+        if self.values:
+            for k in self.values:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.fixed is not None:
+            result['fixed'] = self.fixed
+        if self.key is not None:
+            result['key'] = self.key
+        if self.op is not None:
+            result['op'] = self.op.to_map()
+        result['values'] = []
+        if self.values is not None:
+            for k in self.values:
+                result['values'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fixed') is not None:
+            self.fixed = m.get('fixed')
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('op') is not None:
+            temp_model = ListAllTaskViewResponseBodyResultFilterInvisibleConditionsOp()
+            self.op = temp_model.from_map(m['op'])
+        self.values = []
+        if m.get('values') is not None:
+            for k in m.get('values'):
+                temp_model = ListAllTaskViewResponseBodyResultFilterInvisibleConditionsValues()
+                self.values.append(temp_model.from_map(k))
+        return self
+
+
+class ListAllTaskViewResponseBodyResultFilter(TeaModel):
+    def __init__(
+        self,
+        conditions: List[ListAllTaskViewResponseBodyResultFilterConditions] = None,
+        invisible_conditions: List[ListAllTaskViewResponseBodyResultFilterInvisibleConditions] = None,
+        logic: str = None,
+        logic_disabled: bool = None,
+        q: str = None,
+    ):
+        self.conditions = conditions
+        self.invisible_conditions = invisible_conditions
+        self.logic = logic
+        self.logic_disabled = logic_disabled
+        self.q = q
+
+    def validate(self):
+        if self.conditions:
+            for k in self.conditions:
+                if k:
+                    k.validate()
+        if self.invisible_conditions:
+            for k in self.invisible_conditions:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['conditions'] = []
+        if self.conditions is not None:
+            for k in self.conditions:
+                result['conditions'].append(k.to_map() if k else None)
+        result['invisibleConditions'] = []
+        if self.invisible_conditions is not None:
+            for k in self.invisible_conditions:
+                result['invisibleConditions'].append(k.to_map() if k else None)
+        if self.logic is not None:
+            result['logic'] = self.logic
+        if self.logic_disabled is not None:
+            result['logicDisabled'] = self.logic_disabled
+        if self.q is not None:
+            result['q'] = self.q
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.conditions = []
+        if m.get('conditions') is not None:
+            for k in m.get('conditions'):
+                temp_model = ListAllTaskViewResponseBodyResultFilterConditions()
+                self.conditions.append(temp_model.from_map(k))
+        self.invisible_conditions = []
+        if m.get('invisibleConditions') is not None:
+            for k in m.get('invisibleConditions'):
+                temp_model = ListAllTaskViewResponseBodyResultFilterInvisibleConditions()
+                self.invisible_conditions.append(temp_model.from_map(k))
+        if m.get('logic') is not None:
+            self.logic = m.get('logic')
+        if m.get('logicDisabled') is not None:
+            self.logic_disabled = m.get('logicDisabled')
+        if m.get('q') is not None:
+            self.q = m.get('q')
+        return self
+
+
 class ListAllTaskViewResponseBodyResultGroupType(TeaModel):
     def __init__(
         self,
@@ -3069,6 +3973,7 @@ class ListAllTaskViewResponseBodyResult(TeaModel):
         created: str = None,
         creator_id: str = None,
         description: str = None,
+        filter: ListAllTaskViewResponseBodyResultFilter = None,
         group_type: ListAllTaskViewResponseBodyResultGroupType = None,
         id: str = None,
         is_deleted: bool = None,
@@ -3077,6 +3982,7 @@ class ListAllTaskViewResponseBodyResult(TeaModel):
         organization_id: str = None,
         show_type: ListAllTaskViewResponseBodyResultShowType = None,
         toolbar_info: ListAllTaskViewResponseBodyResultToolbarInfo = None,
+        tql: str = None,
         updated: str = None,
         view_setting: ListAllTaskViewResponseBodyResultViewSetting = None,
     ):
@@ -3085,6 +3991,7 @@ class ListAllTaskViewResponseBodyResult(TeaModel):
         self.created = created
         self.creator_id = creator_id
         self.description = description
+        self.filter = filter
         self.group_type = group_type
         self.id = id
         self.is_deleted = is_deleted
@@ -3093,10 +4000,13 @@ class ListAllTaskViewResponseBodyResult(TeaModel):
         self.organization_id = organization_id
         self.show_type = show_type
         self.toolbar_info = toolbar_info
+        self.tql = tql
         self.updated = updated
         self.view_setting = view_setting
 
     def validate(self):
+        if self.filter:
+            self.filter.validate()
         if self.group_type:
             self.group_type.validate()
         if self.order_type:
@@ -3124,6 +4034,8 @@ class ListAllTaskViewResponseBodyResult(TeaModel):
             result['creatorId'] = self.creator_id
         if self.description is not None:
             result['description'] = self.description
+        if self.filter is not None:
+            result['filter'] = self.filter.to_map()
         if self.group_type is not None:
             result['groupType'] = self.group_type.to_map()
         if self.id is not None:
@@ -3140,6 +4052,8 @@ class ListAllTaskViewResponseBodyResult(TeaModel):
             result['showType'] = self.show_type.to_map()
         if self.toolbar_info is not None:
             result['toolbarInfo'] = self.toolbar_info.to_map()
+        if self.tql is not None:
+            result['tql'] = self.tql
         if self.updated is not None:
             result['updated'] = self.updated
         if self.view_setting is not None:
@@ -3158,6 +4072,9 @@ class ListAllTaskViewResponseBodyResult(TeaModel):
             self.creator_id = m.get('creatorId')
         if m.get('description') is not None:
             self.description = m.get('description')
+        if m.get('filter') is not None:
+            temp_model = ListAllTaskViewResponseBodyResultFilter()
+            self.filter = temp_model.from_map(m['filter'])
         if m.get('groupType') is not None:
             temp_model = ListAllTaskViewResponseBodyResultGroupType()
             self.group_type = temp_model.from_map(m['groupType'])
@@ -3178,6 +4095,8 @@ class ListAllTaskViewResponseBodyResult(TeaModel):
         if m.get('toolbarInfo') is not None:
             temp_model = ListAllTaskViewResponseBodyResultToolbarInfo()
             self.toolbar_info = temp_model.from_map(m['toolbarInfo'])
+        if m.get('tql') is not None:
+            self.tql = m.get('tql')
         if m.get('updated') is not None:
             self.updated = m.get('updated')
         if m.get('viewSetting') is not None:
@@ -3319,6 +4238,342 @@ class ListMyShortcutViewsRequest(TeaModel):
             self.max_results = m.get('maxResults')
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
+        return self
+
+
+class ListMyShortcutViewsResponseBodyResultFilterConditionsOp(TeaModel):
+    def __init__(
+        self,
+        value: str = None,
+    ):
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class ListMyShortcutViewsResponseBodyResultFilterConditionsValues(TeaModel):
+    def __init__(
+        self,
+        deep: str = None,
+        id: str = None,
+        label: str = None,
+        name: str = None,
+        value: str = None,
+    ):
+        self.deep = deep
+        self.id = id
+        self.label = label
+        self.name = name
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.deep is not None:
+            result['deep'] = self.deep
+        if self.id is not None:
+            result['id'] = self.id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deep') is not None:
+            self.deep = m.get('deep')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class ListMyShortcutViewsResponseBodyResultFilterConditions(TeaModel):
+    def __init__(
+        self,
+        fixed: bool = None,
+        key: str = None,
+        op: ListMyShortcutViewsResponseBodyResultFilterConditionsOp = None,
+        values: List[ListMyShortcutViewsResponseBodyResultFilterConditionsValues] = None,
+    ):
+        self.fixed = fixed
+        self.key = key
+        self.op = op
+        self.values = values
+
+    def validate(self):
+        if self.op:
+            self.op.validate()
+        if self.values:
+            for k in self.values:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.fixed is not None:
+            result['fixed'] = self.fixed
+        if self.key is not None:
+            result['key'] = self.key
+        if self.op is not None:
+            result['op'] = self.op.to_map()
+        result['values'] = []
+        if self.values is not None:
+            for k in self.values:
+                result['values'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fixed') is not None:
+            self.fixed = m.get('fixed')
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('op') is not None:
+            temp_model = ListMyShortcutViewsResponseBodyResultFilterConditionsOp()
+            self.op = temp_model.from_map(m['op'])
+        self.values = []
+        if m.get('values') is not None:
+            for k in m.get('values'):
+                temp_model = ListMyShortcutViewsResponseBodyResultFilterConditionsValues()
+                self.values.append(temp_model.from_map(k))
+        return self
+
+
+class ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsOp(TeaModel):
+    def __init__(
+        self,
+        value: str = None,
+    ):
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsValues(TeaModel):
+    def __init__(
+        self,
+        deep: str = None,
+        id: str = None,
+        label: str = None,
+        name: str = None,
+        value: str = None,
+    ):
+        self.deep = deep
+        self.id = id
+        self.label = label
+        self.name = name
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.deep is not None:
+            result['deep'] = self.deep
+        if self.id is not None:
+            result['id'] = self.id
+        if self.label is not None:
+            result['label'] = self.label
+        if self.name is not None:
+            result['name'] = self.name
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deep') is not None:
+            self.deep = m.get('deep')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('label') is not None:
+            self.label = m.get('label')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class ListMyShortcutViewsResponseBodyResultFilterInvisibleConditions(TeaModel):
+    def __init__(
+        self,
+        fixed: bool = None,
+        key: str = None,
+        op: ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsOp = None,
+        values: List[ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsValues] = None,
+    ):
+        self.fixed = fixed
+        self.key = key
+        self.op = op
+        self.values = values
+
+    def validate(self):
+        if self.op:
+            self.op.validate()
+        if self.values:
+            for k in self.values:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.fixed is not None:
+            result['fixed'] = self.fixed
+        if self.key is not None:
+            result['key'] = self.key
+        if self.op is not None:
+            result['op'] = self.op.to_map()
+        result['values'] = []
+        if self.values is not None:
+            for k in self.values:
+                result['values'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fixed') is not None:
+            self.fixed = m.get('fixed')
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('op') is not None:
+            temp_model = ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsOp()
+            self.op = temp_model.from_map(m['op'])
+        self.values = []
+        if m.get('values') is not None:
+            for k in m.get('values'):
+                temp_model = ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsValues()
+                self.values.append(temp_model.from_map(k))
+        return self
+
+
+class ListMyShortcutViewsResponseBodyResultFilter(TeaModel):
+    def __init__(
+        self,
+        conditions: List[ListMyShortcutViewsResponseBodyResultFilterConditions] = None,
+        invisible_conditions: List[ListMyShortcutViewsResponseBodyResultFilterInvisibleConditions] = None,
+        logic: str = None,
+        logic_disabled: bool = None,
+        q: str = None,
+    ):
+        self.conditions = conditions
+        self.invisible_conditions = invisible_conditions
+        self.logic = logic
+        self.logic_disabled = logic_disabled
+        self.q = q
+
+    def validate(self):
+        if self.conditions:
+            for k in self.conditions:
+                if k:
+                    k.validate()
+        if self.invisible_conditions:
+            for k in self.invisible_conditions:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['conditions'] = []
+        if self.conditions is not None:
+            for k in self.conditions:
+                result['conditions'].append(k.to_map() if k else None)
+        result['invisibleConditions'] = []
+        if self.invisible_conditions is not None:
+            for k in self.invisible_conditions:
+                result['invisibleConditions'].append(k.to_map() if k else None)
+        if self.logic is not None:
+            result['logic'] = self.logic
+        if self.logic_disabled is not None:
+            result['logicDisabled'] = self.logic_disabled
+        if self.q is not None:
+            result['q'] = self.q
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.conditions = []
+        if m.get('conditions') is not None:
+            for k in m.get('conditions'):
+                temp_model = ListMyShortcutViewsResponseBodyResultFilterConditions()
+                self.conditions.append(temp_model.from_map(k))
+        self.invisible_conditions = []
+        if m.get('invisibleConditions') is not None:
+            for k in m.get('invisibleConditions'):
+                temp_model = ListMyShortcutViewsResponseBodyResultFilterInvisibleConditions()
+                self.invisible_conditions.append(temp_model.from_map(k))
+        if m.get('logic') is not None:
+            self.logic = m.get('logic')
+        if m.get('logicDisabled') is not None:
+            self.logic_disabled = m.get('logicDisabled')
+        if m.get('q') is not None:
+            self.q = m.get('q')
         return self
 
 
@@ -3709,6 +4964,7 @@ class ListMyShortcutViewsResponseBodyResult(TeaModel):
         created: str = None,
         creator_id: str = None,
         description: str = None,
+        filter: ListMyShortcutViewsResponseBodyResultFilter = None,
         group_type: ListMyShortcutViewsResponseBodyResultGroupType = None,
         id: str = None,
         is_deleted: bool = None,
@@ -3717,6 +4973,7 @@ class ListMyShortcutViewsResponseBodyResult(TeaModel):
         organization_id: str = None,
         show_type: ListMyShortcutViewsResponseBodyResultShowType = None,
         toolbar_info: ListMyShortcutViewsResponseBodyResultToolbarInfo = None,
+        tql: str = None,
         updated: str = None,
         view_setting: ListMyShortcutViewsResponseBodyResultViewSetting = None,
     ):
@@ -3725,6 +4982,7 @@ class ListMyShortcutViewsResponseBodyResult(TeaModel):
         self.created = created
         self.creator_id = creator_id
         self.description = description
+        self.filter = filter
         self.group_type = group_type
         self.id = id
         self.is_deleted = is_deleted
@@ -3733,10 +4991,13 @@ class ListMyShortcutViewsResponseBodyResult(TeaModel):
         self.organization_id = organization_id
         self.show_type = show_type
         self.toolbar_info = toolbar_info
+        self.tql = tql
         self.updated = updated
         self.view_setting = view_setting
 
     def validate(self):
+        if self.filter:
+            self.filter.validate()
         if self.group_type:
             self.group_type.validate()
         if self.order_type:
@@ -3764,6 +5025,8 @@ class ListMyShortcutViewsResponseBodyResult(TeaModel):
             result['creatorId'] = self.creator_id
         if self.description is not None:
             result['description'] = self.description
+        if self.filter is not None:
+            result['filter'] = self.filter.to_map()
         if self.group_type is not None:
             result['groupType'] = self.group_type.to_map()
         if self.id is not None:
@@ -3780,6 +5043,8 @@ class ListMyShortcutViewsResponseBodyResult(TeaModel):
             result['showType'] = self.show_type.to_map()
         if self.toolbar_info is not None:
             result['toolbarInfo'] = self.toolbar_info.to_map()
+        if self.tql is not None:
+            result['tql'] = self.tql
         if self.updated is not None:
             result['updated'] = self.updated
         if self.view_setting is not None:
@@ -3798,6 +5063,9 @@ class ListMyShortcutViewsResponseBodyResult(TeaModel):
             self.creator_id = m.get('creatorId')
         if m.get('description') is not None:
             self.description = m.get('description')
+        if m.get('filter') is not None:
+            temp_model = ListMyShortcutViewsResponseBodyResultFilter()
+            self.filter = temp_model.from_map(m['filter'])
         if m.get('groupType') is not None:
             temp_model = ListMyShortcutViewsResponseBodyResultGroupType()
             self.group_type = temp_model.from_map(m['groupType'])
@@ -3818,6 +5086,8 @@ class ListMyShortcutViewsResponseBodyResult(TeaModel):
         if m.get('toolbarInfo') is not None:
             temp_model = ListMyShortcutViewsResponseBodyResultToolbarInfo()
             self.toolbar_info = temp_model.from_map(m['toolbarInfo'])
+        if m.get('tql') is not None:
+            self.tql = m.get('tql')
         if m.get('updated') is not None:
             self.updated = m.get('updated')
         if m.get('viewSetting') is not None:

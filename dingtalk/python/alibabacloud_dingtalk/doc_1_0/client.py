@@ -3610,6 +3610,124 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__1__0_models.DocDeleteBlockHeaders()
         return await self.doc_delete_block_with_options_async(doc_key, block_id, request, headers, runtime)
 
+    def doc_export_snapshot_with_options(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.DocExportSnapshotRequest,
+        headers: dingtalkdoc__1__0_models.DocExportSnapshotHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocExportSnapshotResponse:
+        """
+        @summary 根据传入的文档ID将文档导出为截图
+        
+        @param request: DocExportSnapshotRequest
+        @param headers: DocExportSnapshotHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocExportSnapshotResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DocExportSnapshot',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{document_id}/export/snapshot',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocExportSnapshotResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def doc_export_snapshot_with_options_async(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.DocExportSnapshotRequest,
+        headers: dingtalkdoc__1__0_models.DocExportSnapshotHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocExportSnapshotResponse:
+        """
+        @summary 根据传入的文档ID将文档导出为截图
+        
+        @param request: DocExportSnapshotRequest
+        @param headers: DocExportSnapshotHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocExportSnapshotResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DocExportSnapshot',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{document_id}/export/snapshot',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocExportSnapshotResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def doc_export_snapshot(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.DocExportSnapshotRequest,
+    ) -> dingtalkdoc__1__0_models.DocExportSnapshotResponse:
+        """
+        @summary 根据传入的文档ID将文档导出为截图
+        
+        @param request: DocExportSnapshotRequest
+        @return: DocExportSnapshotResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocExportSnapshotHeaders()
+        return self.doc_export_snapshot_with_options(document_id, request, headers, runtime)
+
+    async def doc_export_snapshot_async(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.DocExportSnapshotRequest,
+    ) -> dingtalkdoc__1__0_models.DocExportSnapshotResponse:
+        """
+        @summary 根据传入的文档ID将文档导出为截图
+        
+        @param request: DocExportSnapshotRequest
+        @return: DocExportSnapshotResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocExportSnapshotHeaders()
+        return await self.doc_export_snapshot_with_options_async(document_id, request, headers, runtime)
+
     def doc_insert_blocks_with_options(
         self,
         doc_key: str,
@@ -3747,6 +3865,250 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.DocInsertBlocksHeaders()
         return await self.doc_insert_blocks_with_options_async(doc_key, request, headers, runtime)
+
+    def doc_slots_modify_with_options(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.DocSlotsModifyRequest,
+        headers: dingtalkdoc__1__0_models.DocSlotsModifyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocSlotsModifyResponse:
+        """
+        @summary 根据传入参数更新文档插槽
+        
+        @param request: DocSlotsModifyRequest
+        @param headers: DocSlotsModifyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocSlotsModifyResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.request):
+            body['request'] = request.request
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DocSlotsModify',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{document_id}/slots',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocSlotsModifyResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def doc_slots_modify_with_options_async(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.DocSlotsModifyRequest,
+        headers: dingtalkdoc__1__0_models.DocSlotsModifyHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocSlotsModifyResponse:
+        """
+        @summary 根据传入参数更新文档插槽
+        
+        @param request: DocSlotsModifyRequest
+        @param headers: DocSlotsModifyHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocSlotsModifyResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.request):
+            body['request'] = request.request
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DocSlotsModify',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{document_id}/slots',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocSlotsModifyResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def doc_slots_modify(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.DocSlotsModifyRequest,
+    ) -> dingtalkdoc__1__0_models.DocSlotsModifyResponse:
+        """
+        @summary 根据传入参数更新文档插槽
+        
+        @param request: DocSlotsModifyRequest
+        @return: DocSlotsModifyResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocSlotsModifyHeaders()
+        return self.doc_slots_modify_with_options(document_id, request, headers, runtime)
+
+    async def doc_slots_modify_async(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.DocSlotsModifyRequest,
+    ) -> dingtalkdoc__1__0_models.DocSlotsModifyResponse:
+        """
+        @summary 根据传入参数更新文档插槽
+        
+        @param request: DocSlotsModifyRequest
+        @return: DocSlotsModifyResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocSlotsModifyHeaders()
+        return await self.doc_slots_modify_with_options_async(document_id, request, headers, runtime)
+
+    def doc_slots_query_with_options(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.DocSlotsQueryRequest,
+        headers: dingtalkdoc__1__0_models.DocSlotsQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocSlotsQueryResponse:
+        """
+        @summary 根据传入参数查询文档中所有的插槽
+        
+        @param request: DocSlotsQueryRequest
+        @param headers: DocSlotsQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocSlotsQueryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DocSlotsQuery',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{document_id}/slots',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocSlotsQueryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def doc_slots_query_with_options_async(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.DocSlotsQueryRequest,
+        headers: dingtalkdoc__1__0_models.DocSlotsQueryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.DocSlotsQueryResponse:
+        """
+        @summary 根据传入参数查询文档中所有的插槽
+        
+        @param request: DocSlotsQueryRequest
+        @param headers: DocSlotsQueryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DocSlotsQueryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DocSlotsQuery',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{document_id}/slots',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.DocSlotsQueryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def doc_slots_query(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.DocSlotsQueryRequest,
+    ) -> dingtalkdoc__1__0_models.DocSlotsQueryResponse:
+        """
+        @summary 根据传入参数查询文档中所有的插槽
+        
+        @param request: DocSlotsQueryRequest
+        @return: DocSlotsQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocSlotsQueryHeaders()
+        return self.doc_slots_query_with_options(document_id, request, headers, runtime)
+
+    async def doc_slots_query_async(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.DocSlotsQueryRequest,
+    ) -> dingtalkdoc__1__0_models.DocSlotsQueryResponse:
+        """
+        @summary 根据传入参数查询文档中所有的插槽
+        
+        @param request: DocSlotsQueryRequest
+        @return: DocSlotsQueryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.DocSlotsQueryHeaders()
+        return await self.doc_slots_query_with_options_async(document_id, request, headers, runtime)
 
     def doc_update_content_with_options(
         self,
