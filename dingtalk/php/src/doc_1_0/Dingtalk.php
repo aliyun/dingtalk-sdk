@@ -89,9 +89,18 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocBlocksQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocDeleteBlockHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocDeleteBlockRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocDeleteBlockResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocExportSnapshotHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocExportSnapshotRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocExportSnapshotResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocInsertBlocksHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocInsertBlocksRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocInsertBlocksResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocSlotsModifyHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocSlotsModifyRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocSlotsModifyResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocSlotsQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocSlotsQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocSlotsQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocUpdateContentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocUpdateContentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocUpdateContentResponse;
@@ -2039,6 +2048,65 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 根据传入的文档ID将文档导出为截图
+     *  *
+     * @param string                   $documentId
+     * @param DocExportSnapshotRequest $request    DocExportSnapshotRequest
+     * @param DocExportSnapshotHeaders $headers    DocExportSnapshotHeaders
+     * @param RuntimeOptions           $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return DocExportSnapshotResponse DocExportSnapshotResponse
+     */
+    public function docExportSnapshotWithOptions($documentId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'DocExportSnapshot',
+            'version'     => 'doc_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/doc/suites/documents/' . $documentId . '/export/snapshot',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DocExportSnapshotResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据传入的文档ID将文档导出为截图
+     *  *
+     * @param string                   $documentId
+     * @param DocExportSnapshotRequest $request    DocExportSnapshotRequest
+     *
+     * @return DocExportSnapshotResponse DocExportSnapshotResponse
+     */
+    public function docExportSnapshot($documentId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DocExportSnapshotHeaders([]);
+
+        return $this->docExportSnapshotWithOptions($documentId, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 插入指定Block元素
      *  *
      * @param string                 $docKey
@@ -2109,6 +2177,129 @@ class Dingtalk extends OpenApiClient
         $headers = new DocInsertBlocksHeaders([]);
 
         return $this->docInsertBlocksWithOptions($docKey, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据传入参数更新文档插槽
+     *  *
+     * @param string                $documentId
+     * @param DocSlotsModifyRequest $request    DocSlotsModifyRequest
+     * @param DocSlotsModifyHeaders $headers    DocSlotsModifyHeaders
+     * @param RuntimeOptions        $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return DocSlotsModifyResponse DocSlotsModifyResponse
+     */
+    public function docSlotsModifyWithOptions($documentId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->request)) {
+            $body['request'] = $request->request;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DocSlotsModify',
+            'version'     => 'doc_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/doc/suites/documents/' . $documentId . '/slots',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DocSlotsModifyResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据传入参数更新文档插槽
+     *  *
+     * @param string                $documentId
+     * @param DocSlotsModifyRequest $request    DocSlotsModifyRequest
+     *
+     * @return DocSlotsModifyResponse DocSlotsModifyResponse
+     */
+    public function docSlotsModify($documentId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DocSlotsModifyHeaders([]);
+
+        return $this->docSlotsModifyWithOptions($documentId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据传入参数查询文档中所有的插槽
+     *  *
+     * @param string               $documentId
+     * @param DocSlotsQueryRequest $request    DocSlotsQueryRequest
+     * @param DocSlotsQueryHeaders $headers    DocSlotsQueryHeaders
+     * @param RuntimeOptions       $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return DocSlotsQueryResponse DocSlotsQueryResponse
+     */
+    public function docSlotsQueryWithOptions($documentId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'DocSlotsQuery',
+            'version'     => 'doc_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/doc/suites/documents/' . $documentId . '/slots',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DocSlotsQueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据传入参数查询文档中所有的插槽
+     *  *
+     * @param string               $documentId
+     * @param DocSlotsQueryRequest $request    DocSlotsQueryRequest
+     *
+     * @return DocSlotsQueryResponse DocSlotsQueryResponse
+     */
+    public function docSlotsQuery($documentId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DocSlotsQueryHeaders([]);
+
+        return $this->docSlotsQueryWithOptions($documentId, $request, $headers, $runtime);
     }
 
     /**

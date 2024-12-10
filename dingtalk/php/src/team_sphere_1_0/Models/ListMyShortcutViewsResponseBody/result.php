@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\ListMyShortcutViewsResponseBody;
 
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\ListMyShortcutViewsResponseBody\result\filter;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\ListMyShortcutViewsResponseBody\result\groupType;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\ListMyShortcutViewsResponseBody\result\orderType;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\ListMyShortcutViewsResponseBody\result\showType;
@@ -45,6 +46,11 @@ class result extends Model
      * @var string
      */
     public $description;
+
+    /**
+     * @var filter
+     */
+    public $filter;
 
     /**
      * @var groupType
@@ -91,6 +97,11 @@ class result extends Model
     public $toolbarInfo;
 
     /**
+     * @var string
+     */
+    public $tql;
+
+    /**
      * @example 2022-07-04T03:29:34.770Z
      *
      * @var string
@@ -107,6 +118,7 @@ class result extends Model
         'created'           => 'created',
         'creatorId'         => 'creatorId',
         'description'       => 'description',
+        'filter'            => 'filter',
         'groupType'         => 'groupType',
         'id'                => 'id',
         'isDeleted'         => 'isDeleted',
@@ -115,6 +127,7 @@ class result extends Model
         'organizationId'    => 'organizationId',
         'showType'          => 'showType',
         'toolbarInfo'       => 'toolbarInfo',
+        'tql'               => 'tql',
         'updated'           => 'updated',
         'viewSetting'       => 'viewSetting',
     ];
@@ -141,6 +154,9 @@ class result extends Model
         if (null !== $this->description) {
             $res['description'] = $this->description;
         }
+        if (null !== $this->filter) {
+            $res['filter'] = null !== $this->filter ? $this->filter->toMap() : null;
+        }
         if (null !== $this->groupType) {
             $res['groupType'] = null !== $this->groupType ? $this->groupType->toMap() : null;
         }
@@ -164,6 +180,9 @@ class result extends Model
         }
         if (null !== $this->toolbarInfo) {
             $res['toolbarInfo'] = null !== $this->toolbarInfo ? $this->toolbarInfo->toMap() : null;
+        }
+        if (null !== $this->tql) {
+            $res['tql'] = $this->tql;
         }
         if (null !== $this->updated) {
             $res['updated'] = $this->updated;
@@ -198,6 +217,9 @@ class result extends Model
         if (isset($map['description'])) {
             $model->description = $map['description'];
         }
+        if (isset($map['filter'])) {
+            $model->filter = filter::fromMap($map['filter']);
+        }
         if (isset($map['groupType'])) {
             $model->groupType = groupType::fromMap($map['groupType']);
         }
@@ -221,6 +243,9 @@ class result extends Model
         }
         if (isset($map['toolbarInfo'])) {
             $model->toolbarInfo = toolbarInfo::fromMap($map['toolbarInfo']);
+        }
+        if (isset($map['tql'])) {
+            $model->tql = $map['tql'];
         }
         if (isset($map['updated'])) {
             $model->updated = $map['updated'];

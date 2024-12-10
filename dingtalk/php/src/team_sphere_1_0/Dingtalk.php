@@ -11,12 +11,18 @@ use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\AnalysisReportResponse;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\CreateOrganizationTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\CreateOrganizationTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\CreateOrganizationTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\CreateProjectMembersV3Headers;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\CreateProjectMembersV3Request;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\CreateProjectMembersV3Response;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\CreateProjectV3Headers;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\CreateProjectV3Request;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\CreateProjectV3Response;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\CreateTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\CreateTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\CreateTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\DeleteProjectMembersV3Headers;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\DeleteProjectMembersV3Request;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\DeleteProjectMembersV3Response;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetFootprintProjectHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetFootprintProjectResponse;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetFootprintTaskHeaders;
@@ -24,6 +30,9 @@ use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetFootprintTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetFreeTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetFreeTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetFreeTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetProjectMembersV3Headers;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetProjectMembersV3Request;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetProjectMembersV3Response;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetTbUserIdByDingUserIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetTbUserIdByDingUserIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetTbUserIdByDingUserIdResponse;
@@ -215,6 +224,67 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建项目成员
+     *  *
+     * @param string                        $userId
+     * @param string                        $projectId
+     * @param CreateProjectMembersV3Request $request   CreateProjectMembersV3Request
+     * @param CreateProjectMembersV3Headers $headers   CreateProjectMembersV3Headers
+     * @param RuntimeOptions                $runtime   runtime options for this request RuntimeOptions
+     *
+     * @return CreateProjectMembersV3Response CreateProjectMembersV3Response
+     */
+    public function createProjectMembersV3WithOptions($userId, $projectId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userIds)) {
+            $body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateProjectMembersV3',
+            'version'     => 'teamSphere_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/projects/' . $projectId . '/members',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateProjectMembersV3Response::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建项目成员
+     *  *
+     * @param string                        $userId
+     * @param string                        $projectId
+     * @param CreateProjectMembersV3Request $request   CreateProjectMembersV3Request
+     *
+     * @return CreateProjectMembersV3Response CreateProjectMembersV3Response
+     */
+    public function createProjectMembersV3($userId, $projectId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateProjectMembersV3Headers([]);
+
+        return $this->createProjectMembersV3WithOptions($userId, $projectId, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 创建协作空间。
      *  *
      * @param string                 $userId
@@ -350,6 +420,67 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateTaskHeaders([]);
 
         return $this->createTaskWithOptions($userId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除项目成员。
+     *  *
+     * @param string                        $userId
+     * @param string                        $projectId
+     * @param DeleteProjectMembersV3Request $request   DeleteProjectMembersV3Request
+     * @param DeleteProjectMembersV3Headers $headers   DeleteProjectMembersV3Headers
+     * @param RuntimeOptions                $runtime   runtime options for this request RuntimeOptions
+     *
+     * @return DeleteProjectMembersV3Response DeleteProjectMembersV3Response
+     */
+    public function deleteProjectMembersV3WithOptions($userId, $projectId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userIds)) {
+            $body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteProjectMembersV3',
+            'version'     => 'teamSphere_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/projects/' . $projectId . '/members/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DeleteProjectMembersV3Response::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除项目成员。
+     *  *
+     * @param string                        $userId
+     * @param string                        $projectId
+     * @param DeleteProjectMembersV3Request $request   DeleteProjectMembersV3Request
+     *
+     * @return DeleteProjectMembersV3Response DeleteProjectMembersV3Response
+     */
+    public function deleteProjectMembersV3($userId, $projectId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteProjectMembersV3Headers([]);
+
+        return $this->deleteProjectMembersV3WithOptions($userId, $projectId, $request, $headers, $runtime);
     }
 
     /**
@@ -511,6 +642,76 @@ class Dingtalk extends OpenApiClient
         $headers = new GetFreeTaskHeaders([]);
 
         return $this->getFreeTaskWithOptions($taskId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取协作空间成员列表。
+     *  *
+     * @param string                     $userId
+     * @param string                     $projectId
+     * @param GetProjectMembersV3Request $request   GetProjectMembersV3Request
+     * @param GetProjectMembersV3Headers $headers   GetProjectMembersV3Headers
+     * @param RuntimeOptions             $runtime   runtime options for this request RuntimeOptions
+     *
+     * @return GetProjectMembersV3Response GetProjectMembersV3Response
+     */
+    public function getProjectMembersV3WithOptions($userId, $projectId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->projectRoleId)) {
+            $query['projectRoleId'] = $request->projectRoleId;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            $query['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetProjectMembersV3',
+            'version'     => 'teamSphere_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/projects/' . $projectId . '/members',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetProjectMembersV3Response::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取协作空间成员列表。
+     *  *
+     * @param string                     $userId
+     * @param string                     $projectId
+     * @param GetProjectMembersV3Request $request   GetProjectMembersV3Request
+     *
+     * @return GetProjectMembersV3Response GetProjectMembersV3Response
+     */
+    public function getProjectMembersV3($userId, $projectId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetProjectMembersV3Headers([]);
+
+        return $this->getProjectMembersV3WithOptions($userId, $projectId, $request, $headers, $runtime);
     }
 
     /**
