@@ -1768,6 +1768,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>根据传入的文档ID将文档导出为截图</p>
+     * 
+     * @param request DocExportSnapshotRequest
+     * @param headers DocExportSnapshotHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DocExportSnapshotResponse
+     */
+    public DocExportSnapshotResponse docExportSnapshotWithOptions(String documentId, DocExportSnapshotRequest request, DocExportSnapshotHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DocExportSnapshot"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/suites/documents/" + documentId + "/export/snapshot"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DocExportSnapshotResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>根据传入的文档ID将文档导出为截图</p>
+     * 
+     * @param request DocExportSnapshotRequest
+     * @return DocExportSnapshotResponse
+     */
+    public DocExportSnapshotResponse docExportSnapshot(String documentId, DocExportSnapshotRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DocExportSnapshotHeaders headers = new DocExportSnapshotHeaders();
+        return this.docExportSnapshotWithOptions(documentId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>插入指定Block元素</p>
      * 
      * @param request DocInsertBlocksRequest
@@ -1838,6 +1894,124 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DocInsertBlocksHeaders headers = new DocInsertBlocksHeaders();
         return this.docInsertBlocksWithOptions(docKey, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>根据传入参数更新文档插槽</p>
+     * 
+     * @param request DocSlotsModifyRequest
+     * @param headers DocSlotsModifyHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DocSlotsModifyResponse
+     */
+    public DocSlotsModifyResponse docSlotsModifyWithOptions(String documentId, DocSlotsModifyRequest request, DocSlotsModifyHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.request)) {
+            body.put("request", request.request);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DocSlotsModify"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/suites/documents/" + documentId + "/slots"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DocSlotsModifyResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>根据传入参数更新文档插槽</p>
+     * 
+     * @param request DocSlotsModifyRequest
+     * @return DocSlotsModifyResponse
+     */
+    public DocSlotsModifyResponse docSlotsModify(String documentId, DocSlotsModifyRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DocSlotsModifyHeaders headers = new DocSlotsModifyHeaders();
+        return this.docSlotsModifyWithOptions(documentId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>根据传入参数查询文档中所有的插槽</p>
+     * 
+     * @param request DocSlotsQueryRequest
+     * @param headers DocSlotsQueryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DocSlotsQueryResponse
+     */
+    public DocSlotsQueryResponse docSlotsQueryWithOptions(String documentId, DocSlotsQueryRequest request, DocSlotsQueryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DocSlotsQuery"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/suites/documents/" + documentId + "/slots"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DocSlotsQueryResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>根据传入参数查询文档中所有的插槽</p>
+     * 
+     * @param request DocSlotsQueryRequest
+     * @return DocSlotsQueryResponse
+     */
+    public DocSlotsQueryResponse docSlotsQuery(String documentId, DocSlotsQueryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DocSlotsQueryHeaders headers = new DocSlotsQueryHeaders();
+        return this.docSlotsQueryWithOptions(documentId, request, headers, runtime);
     }
 
     /**

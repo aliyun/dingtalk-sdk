@@ -160,6 +160,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>创建项目成员</p>
+     * 
+     * @param request CreateProjectMembersV3Request
+     * @param headers CreateProjectMembersV3Headers
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateProjectMembersV3Response
+     */
+    public CreateProjectMembersV3Response createProjectMembersV3WithOptions(String userId, String projectId, CreateProjectMembersV3Request request, CreateProjectMembersV3Headers headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
+            body.put("userIds", request.userIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateProjectMembersV3"),
+            new TeaPair("version", "teamSphere_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/teamSphere/users/" + userId + "/projects/" + projectId + "/members"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateProjectMembersV3Response());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建项目成员</p>
+     * 
+     * @param request CreateProjectMembersV3Request
+     * @return CreateProjectMembersV3Response
+     */
+    public CreateProjectMembersV3Response createProjectMembersV3(String userId, String projectId, CreateProjectMembersV3Request request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateProjectMembersV3Headers headers = new CreateProjectMembersV3Headers();
+        return this.createProjectMembersV3WithOptions(userId, projectId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>创建协作空间。</p>
      * 
      * @param request CreateProjectV3Request
@@ -294,6 +350,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateTaskHeaders headers = new CreateTaskHeaders();
         return this.createTaskWithOptions(userId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除项目成员。</p>
+     * 
+     * @param request DeleteProjectMembersV3Request
+     * @param headers DeleteProjectMembersV3Headers
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteProjectMembersV3Response
+     */
+    public DeleteProjectMembersV3Response deleteProjectMembersV3WithOptions(String userId, String projectId, DeleteProjectMembersV3Request request, DeleteProjectMembersV3Headers headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
+            body.put("userIds", request.userIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteProjectMembersV3"),
+            new TeaPair("version", "teamSphere_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/teamSphere/users/" + userId + "/projects/" + projectId + "/members/remove"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteProjectMembersV3Response());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除项目成员。</p>
+     * 
+     * @param request DeleteProjectMembersV3Request
+     * @return DeleteProjectMembersV3Response
+     */
+    public DeleteProjectMembersV3Response deleteProjectMembersV3(String userId, String projectId, DeleteProjectMembersV3Request request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteProjectMembersV3Headers headers = new DeleteProjectMembersV3Headers();
+        return this.deleteProjectMembersV3WithOptions(userId, projectId, request, headers, runtime);
     }
 
     /**
@@ -442,6 +554,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetFreeTaskHeaders headers = new GetFreeTaskHeaders();
         return this.getFreeTaskWithOptions(taskId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取协作空间成员列表。</p>
+     * 
+     * @param request GetProjectMembersV3Request
+     * @param headers GetProjectMembersV3Headers
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetProjectMembersV3Response
+     */
+    public GetProjectMembersV3Response getProjectMembersV3WithOptions(String userId, String projectId, GetProjectMembersV3Request request, GetProjectMembersV3Headers headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.projectRoleId)) {
+            query.put("projectRoleId", request.projectRoleId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
+            query.put("userIds", request.userIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetProjectMembersV3"),
+            new TeaPair("version", "teamSphere_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/teamSphere/users/" + userId + "/projects/" + projectId + "/members"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetProjectMembersV3Response());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取协作空间成员列表。</p>
+     * 
+     * @param request GetProjectMembersV3Request
+     * @return GetProjectMembersV3Response
+     */
+    public GetProjectMembersV3Response getProjectMembersV3(String userId, String projectId, GetProjectMembersV3Request request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetProjectMembersV3Headers headers = new GetProjectMembersV3Headers();
+        return this.getProjectMembersV3WithOptions(userId, projectId, request, headers, runtime);
     }
 
     /**

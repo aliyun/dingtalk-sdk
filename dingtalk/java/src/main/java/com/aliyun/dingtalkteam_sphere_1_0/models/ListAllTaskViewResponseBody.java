@@ -20,6 +20,337 @@ public class ListAllTaskViewResponseBody extends TeaModel {
         return this.result;
     }
 
+    public static class ListAllTaskViewResponseBodyResultFilterConditionsOp extends TeaModel {
+        @NameInMap("value")
+        public String value;
+
+        public static ListAllTaskViewResponseBodyResultFilterConditionsOp build(java.util.Map<String, ?> map) throws Exception {
+            ListAllTaskViewResponseBodyResultFilterConditionsOp self = new ListAllTaskViewResponseBodyResultFilterConditionsOp();
+            return TeaModel.build(map, self);
+        }
+
+        public ListAllTaskViewResponseBodyResultFilterConditionsOp setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
+    public static class ListAllTaskViewResponseBodyResultFilterConditionsValues extends TeaModel {
+        @NameInMap("deep")
+        public String deep;
+
+        @NameInMap("id")
+        public String id;
+
+        @NameInMap("label")
+        public String label;
+
+        @NameInMap("name")
+        public String name;
+
+        @NameInMap("value")
+        public String value;
+
+        public static ListAllTaskViewResponseBodyResultFilterConditionsValues build(java.util.Map<String, ?> map) throws Exception {
+            ListAllTaskViewResponseBodyResultFilterConditionsValues self = new ListAllTaskViewResponseBodyResultFilterConditionsValues();
+            return TeaModel.build(map, self);
+        }
+
+        public ListAllTaskViewResponseBodyResultFilterConditionsValues setDeep(String deep) {
+            this.deep = deep;
+            return this;
+        }
+        public String getDeep() {
+            return this.deep;
+        }
+
+        public ListAllTaskViewResponseBodyResultFilterConditionsValues setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
+        }
+
+        public ListAllTaskViewResponseBodyResultFilterConditionsValues setLabel(String label) {
+            this.label = label;
+            return this;
+        }
+        public String getLabel() {
+            return this.label;
+        }
+
+        public ListAllTaskViewResponseBodyResultFilterConditionsValues setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public ListAllTaskViewResponseBodyResultFilterConditionsValues setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
+    public static class ListAllTaskViewResponseBodyResultFilterConditions extends TeaModel {
+        @NameInMap("fixed")
+        public Boolean fixed;
+
+        @NameInMap("key")
+        public String key;
+
+        @NameInMap("op")
+        public ListAllTaskViewResponseBodyResultFilterConditionsOp op;
+
+        @NameInMap("values")
+        public java.util.List<ListAllTaskViewResponseBodyResultFilterConditionsValues> values;
+
+        public static ListAllTaskViewResponseBodyResultFilterConditions build(java.util.Map<String, ?> map) throws Exception {
+            ListAllTaskViewResponseBodyResultFilterConditions self = new ListAllTaskViewResponseBodyResultFilterConditions();
+            return TeaModel.build(map, self);
+        }
+
+        public ListAllTaskViewResponseBodyResultFilterConditions setFixed(Boolean fixed) {
+            this.fixed = fixed;
+            return this;
+        }
+        public Boolean getFixed() {
+            return this.fixed;
+        }
+
+        public ListAllTaskViewResponseBodyResultFilterConditions setKey(String key) {
+            this.key = key;
+            return this;
+        }
+        public String getKey() {
+            return this.key;
+        }
+
+        public ListAllTaskViewResponseBodyResultFilterConditions setOp(ListAllTaskViewResponseBodyResultFilterConditionsOp op) {
+            this.op = op;
+            return this;
+        }
+        public ListAllTaskViewResponseBodyResultFilterConditionsOp getOp() {
+            return this.op;
+        }
+
+        public ListAllTaskViewResponseBodyResultFilterConditions setValues(java.util.List<ListAllTaskViewResponseBodyResultFilterConditionsValues> values) {
+            this.values = values;
+            return this;
+        }
+        public java.util.List<ListAllTaskViewResponseBodyResultFilterConditionsValues> getValues() {
+            return this.values;
+        }
+
+    }
+
+    public static class ListAllTaskViewResponseBodyResultFilterInvisibleConditionsOp extends TeaModel {
+        @NameInMap("value")
+        public String value;
+
+        public static ListAllTaskViewResponseBodyResultFilterInvisibleConditionsOp build(java.util.Map<String, ?> map) throws Exception {
+            ListAllTaskViewResponseBodyResultFilterInvisibleConditionsOp self = new ListAllTaskViewResponseBodyResultFilterInvisibleConditionsOp();
+            return TeaModel.build(map, self);
+        }
+
+        public ListAllTaskViewResponseBodyResultFilterInvisibleConditionsOp setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
+    public static class ListAllTaskViewResponseBodyResultFilterInvisibleConditionsValues extends TeaModel {
+        @NameInMap("deep")
+        public String deep;
+
+        @NameInMap("id")
+        public String id;
+
+        @NameInMap("label")
+        public String label;
+
+        @NameInMap("name")
+        public String name;
+
+        @NameInMap("value")
+        public String value;
+
+        public static ListAllTaskViewResponseBodyResultFilterInvisibleConditionsValues build(java.util.Map<String, ?> map) throws Exception {
+            ListAllTaskViewResponseBodyResultFilterInvisibleConditionsValues self = new ListAllTaskViewResponseBodyResultFilterInvisibleConditionsValues();
+            return TeaModel.build(map, self);
+        }
+
+        public ListAllTaskViewResponseBodyResultFilterInvisibleConditionsValues setDeep(String deep) {
+            this.deep = deep;
+            return this;
+        }
+        public String getDeep() {
+            return this.deep;
+        }
+
+        public ListAllTaskViewResponseBodyResultFilterInvisibleConditionsValues setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
+        }
+
+        public ListAllTaskViewResponseBodyResultFilterInvisibleConditionsValues setLabel(String label) {
+            this.label = label;
+            return this;
+        }
+        public String getLabel() {
+            return this.label;
+        }
+
+        public ListAllTaskViewResponseBodyResultFilterInvisibleConditionsValues setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public ListAllTaskViewResponseBodyResultFilterInvisibleConditionsValues setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
+    public static class ListAllTaskViewResponseBodyResultFilterInvisibleConditions extends TeaModel {
+        @NameInMap("fixed")
+        public Boolean fixed;
+
+        @NameInMap("key")
+        public String key;
+
+        @NameInMap("op")
+        public ListAllTaskViewResponseBodyResultFilterInvisibleConditionsOp op;
+
+        @NameInMap("values")
+        public java.util.List<ListAllTaskViewResponseBodyResultFilterInvisibleConditionsValues> values;
+
+        public static ListAllTaskViewResponseBodyResultFilterInvisibleConditions build(java.util.Map<String, ?> map) throws Exception {
+            ListAllTaskViewResponseBodyResultFilterInvisibleConditions self = new ListAllTaskViewResponseBodyResultFilterInvisibleConditions();
+            return TeaModel.build(map, self);
+        }
+
+        public ListAllTaskViewResponseBodyResultFilterInvisibleConditions setFixed(Boolean fixed) {
+            this.fixed = fixed;
+            return this;
+        }
+        public Boolean getFixed() {
+            return this.fixed;
+        }
+
+        public ListAllTaskViewResponseBodyResultFilterInvisibleConditions setKey(String key) {
+            this.key = key;
+            return this;
+        }
+        public String getKey() {
+            return this.key;
+        }
+
+        public ListAllTaskViewResponseBodyResultFilterInvisibleConditions setOp(ListAllTaskViewResponseBodyResultFilterInvisibleConditionsOp op) {
+            this.op = op;
+            return this;
+        }
+        public ListAllTaskViewResponseBodyResultFilterInvisibleConditionsOp getOp() {
+            return this.op;
+        }
+
+        public ListAllTaskViewResponseBodyResultFilterInvisibleConditions setValues(java.util.List<ListAllTaskViewResponseBodyResultFilterInvisibleConditionsValues> values) {
+            this.values = values;
+            return this;
+        }
+        public java.util.List<ListAllTaskViewResponseBodyResultFilterInvisibleConditionsValues> getValues() {
+            return this.values;
+        }
+
+    }
+
+    public static class ListAllTaskViewResponseBodyResultFilter extends TeaModel {
+        @NameInMap("conditions")
+        public java.util.List<ListAllTaskViewResponseBodyResultFilterConditions> conditions;
+
+        @NameInMap("invisibleConditions")
+        public java.util.List<ListAllTaskViewResponseBodyResultFilterInvisibleConditions> invisibleConditions;
+
+        @NameInMap("logic")
+        public String logic;
+
+        @NameInMap("logicDisabled")
+        public Boolean logicDisabled;
+
+        @NameInMap("q")
+        public String q;
+
+        public static ListAllTaskViewResponseBodyResultFilter build(java.util.Map<String, ?> map) throws Exception {
+            ListAllTaskViewResponseBodyResultFilter self = new ListAllTaskViewResponseBodyResultFilter();
+            return TeaModel.build(map, self);
+        }
+
+        public ListAllTaskViewResponseBodyResultFilter setConditions(java.util.List<ListAllTaskViewResponseBodyResultFilterConditions> conditions) {
+            this.conditions = conditions;
+            return this;
+        }
+        public java.util.List<ListAllTaskViewResponseBodyResultFilterConditions> getConditions() {
+            return this.conditions;
+        }
+
+        public ListAllTaskViewResponseBodyResultFilter setInvisibleConditions(java.util.List<ListAllTaskViewResponseBodyResultFilterInvisibleConditions> invisibleConditions) {
+            this.invisibleConditions = invisibleConditions;
+            return this;
+        }
+        public java.util.List<ListAllTaskViewResponseBodyResultFilterInvisibleConditions> getInvisibleConditions() {
+            return this.invisibleConditions;
+        }
+
+        public ListAllTaskViewResponseBodyResultFilter setLogic(String logic) {
+            this.logic = logic;
+            return this;
+        }
+        public String getLogic() {
+            return this.logic;
+        }
+
+        public ListAllTaskViewResponseBodyResultFilter setLogicDisabled(Boolean logicDisabled) {
+            this.logicDisabled = logicDisabled;
+            return this;
+        }
+        public Boolean getLogicDisabled() {
+            return this.logicDisabled;
+        }
+
+        public ListAllTaskViewResponseBodyResultFilter setQ(String q) {
+            this.q = q;
+            return this;
+        }
+        public String getQ() {
+            return this.q;
+        }
+
+    }
+
     public static class ListAllTaskViewResponseBodyResultGroupType extends TeaModel {
         @NameInMap("canCreateGroup")
         public Boolean canCreateGroup;
@@ -429,6 +760,9 @@ public class ListAllTaskViewResponseBody extends TeaModel {
         @NameInMap("description")
         public String description;
 
+        @NameInMap("filter")
+        public ListAllTaskViewResponseBodyResultFilter filter;
+
         @NameInMap("groupType")
         public ListAllTaskViewResponseBodyResultGroupType groupType;
 
@@ -460,6 +794,9 @@ public class ListAllTaskViewResponseBody extends TeaModel {
 
         @NameInMap("toolbarInfo")
         public ListAllTaskViewResponseBodyResultToolbarInfo toolbarInfo;
+
+        @NameInMap("tql")
+        public String tql;
 
         /**
          * <strong>example:</strong>
@@ -514,6 +851,14 @@ public class ListAllTaskViewResponseBody extends TeaModel {
         }
         public String getDescription() {
             return this.description;
+        }
+
+        public ListAllTaskViewResponseBodyResult setFilter(ListAllTaskViewResponseBodyResultFilter filter) {
+            this.filter = filter;
+            return this;
+        }
+        public ListAllTaskViewResponseBodyResultFilter getFilter() {
+            return this.filter;
         }
 
         public ListAllTaskViewResponseBodyResult setGroupType(ListAllTaskViewResponseBodyResultGroupType groupType) {
@@ -578,6 +923,14 @@ public class ListAllTaskViewResponseBody extends TeaModel {
         }
         public ListAllTaskViewResponseBodyResultToolbarInfo getToolbarInfo() {
             return this.toolbarInfo;
+        }
+
+        public ListAllTaskViewResponseBodyResult setTql(String tql) {
+            this.tql = tql;
+            return this;
+        }
+        public String getTql() {
+            return this.tql;
         }
 
         public ListAllTaskViewResponseBodyResult setUpdated(String updated) {

@@ -35,6 +35,337 @@ public class ListMyShortcutViewsResponseBody extends TeaModel {
         return this.result;
     }
 
+    public static class ListMyShortcutViewsResponseBodyResultFilterConditionsOp extends TeaModel {
+        @NameInMap("value")
+        public String value;
+
+        public static ListMyShortcutViewsResponseBodyResultFilterConditionsOp build(java.util.Map<String, ?> map) throws Exception {
+            ListMyShortcutViewsResponseBodyResultFilterConditionsOp self = new ListMyShortcutViewsResponseBodyResultFilterConditionsOp();
+            return TeaModel.build(map, self);
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilterConditionsOp setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
+    public static class ListMyShortcutViewsResponseBodyResultFilterConditionsValues extends TeaModel {
+        @NameInMap("deep")
+        public String deep;
+
+        @NameInMap("id")
+        public String id;
+
+        @NameInMap("label")
+        public String label;
+
+        @NameInMap("name")
+        public String name;
+
+        @NameInMap("value")
+        public String value;
+
+        public static ListMyShortcutViewsResponseBodyResultFilterConditionsValues build(java.util.Map<String, ?> map) throws Exception {
+            ListMyShortcutViewsResponseBodyResultFilterConditionsValues self = new ListMyShortcutViewsResponseBodyResultFilterConditionsValues();
+            return TeaModel.build(map, self);
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilterConditionsValues setDeep(String deep) {
+            this.deep = deep;
+            return this;
+        }
+        public String getDeep() {
+            return this.deep;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilterConditionsValues setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilterConditionsValues setLabel(String label) {
+            this.label = label;
+            return this;
+        }
+        public String getLabel() {
+            return this.label;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilterConditionsValues setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilterConditionsValues setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
+    public static class ListMyShortcutViewsResponseBodyResultFilterConditions extends TeaModel {
+        @NameInMap("fixed")
+        public Boolean fixed;
+
+        @NameInMap("key")
+        public String key;
+
+        @NameInMap("op")
+        public ListMyShortcutViewsResponseBodyResultFilterConditionsOp op;
+
+        @NameInMap("values")
+        public java.util.List<ListMyShortcutViewsResponseBodyResultFilterConditionsValues> values;
+
+        public static ListMyShortcutViewsResponseBodyResultFilterConditions build(java.util.Map<String, ?> map) throws Exception {
+            ListMyShortcutViewsResponseBodyResultFilterConditions self = new ListMyShortcutViewsResponseBodyResultFilterConditions();
+            return TeaModel.build(map, self);
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilterConditions setFixed(Boolean fixed) {
+            this.fixed = fixed;
+            return this;
+        }
+        public Boolean getFixed() {
+            return this.fixed;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilterConditions setKey(String key) {
+            this.key = key;
+            return this;
+        }
+        public String getKey() {
+            return this.key;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilterConditions setOp(ListMyShortcutViewsResponseBodyResultFilterConditionsOp op) {
+            this.op = op;
+            return this;
+        }
+        public ListMyShortcutViewsResponseBodyResultFilterConditionsOp getOp() {
+            return this.op;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilterConditions setValues(java.util.List<ListMyShortcutViewsResponseBodyResultFilterConditionsValues> values) {
+            this.values = values;
+            return this;
+        }
+        public java.util.List<ListMyShortcutViewsResponseBodyResultFilterConditionsValues> getValues() {
+            return this.values;
+        }
+
+    }
+
+    public static class ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsOp extends TeaModel {
+        @NameInMap("value")
+        public String value;
+
+        public static ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsOp build(java.util.Map<String, ?> map) throws Exception {
+            ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsOp self = new ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsOp();
+            return TeaModel.build(map, self);
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsOp setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
+    public static class ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsValues extends TeaModel {
+        @NameInMap("deep")
+        public String deep;
+
+        @NameInMap("id")
+        public String id;
+
+        @NameInMap("label")
+        public String label;
+
+        @NameInMap("name")
+        public String name;
+
+        @NameInMap("value")
+        public String value;
+
+        public static ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsValues build(java.util.Map<String, ?> map) throws Exception {
+            ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsValues self = new ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsValues();
+            return TeaModel.build(map, self);
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsValues setDeep(String deep) {
+            this.deep = deep;
+            return this;
+        }
+        public String getDeep() {
+            return this.deep;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsValues setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsValues setLabel(String label) {
+            this.label = label;
+            return this;
+        }
+        public String getLabel() {
+            return this.label;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsValues setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsValues setValue(String value) {
+            this.value = value;
+            return this;
+        }
+        public String getValue() {
+            return this.value;
+        }
+
+    }
+
+    public static class ListMyShortcutViewsResponseBodyResultFilterInvisibleConditions extends TeaModel {
+        @NameInMap("fixed")
+        public Boolean fixed;
+
+        @NameInMap("key")
+        public String key;
+
+        @NameInMap("op")
+        public ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsOp op;
+
+        @NameInMap("values")
+        public java.util.List<ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsValues> values;
+
+        public static ListMyShortcutViewsResponseBodyResultFilterInvisibleConditions build(java.util.Map<String, ?> map) throws Exception {
+            ListMyShortcutViewsResponseBodyResultFilterInvisibleConditions self = new ListMyShortcutViewsResponseBodyResultFilterInvisibleConditions();
+            return TeaModel.build(map, self);
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilterInvisibleConditions setFixed(Boolean fixed) {
+            this.fixed = fixed;
+            return this;
+        }
+        public Boolean getFixed() {
+            return this.fixed;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilterInvisibleConditions setKey(String key) {
+            this.key = key;
+            return this;
+        }
+        public String getKey() {
+            return this.key;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilterInvisibleConditions setOp(ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsOp op) {
+            this.op = op;
+            return this;
+        }
+        public ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsOp getOp() {
+            return this.op;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilterInvisibleConditions setValues(java.util.List<ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsValues> values) {
+            this.values = values;
+            return this;
+        }
+        public java.util.List<ListMyShortcutViewsResponseBodyResultFilterInvisibleConditionsValues> getValues() {
+            return this.values;
+        }
+
+    }
+
+    public static class ListMyShortcutViewsResponseBodyResultFilter extends TeaModel {
+        @NameInMap("conditions")
+        public java.util.List<ListMyShortcutViewsResponseBodyResultFilterConditions> conditions;
+
+        @NameInMap("invisibleConditions")
+        public java.util.List<ListMyShortcutViewsResponseBodyResultFilterInvisibleConditions> invisibleConditions;
+
+        @NameInMap("logic")
+        public String logic;
+
+        @NameInMap("logicDisabled")
+        public Boolean logicDisabled;
+
+        @NameInMap("q")
+        public String q;
+
+        public static ListMyShortcutViewsResponseBodyResultFilter build(java.util.Map<String, ?> map) throws Exception {
+            ListMyShortcutViewsResponseBodyResultFilter self = new ListMyShortcutViewsResponseBodyResultFilter();
+            return TeaModel.build(map, self);
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilter setConditions(java.util.List<ListMyShortcutViewsResponseBodyResultFilterConditions> conditions) {
+            this.conditions = conditions;
+            return this;
+        }
+        public java.util.List<ListMyShortcutViewsResponseBodyResultFilterConditions> getConditions() {
+            return this.conditions;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilter setInvisibleConditions(java.util.List<ListMyShortcutViewsResponseBodyResultFilterInvisibleConditions> invisibleConditions) {
+            this.invisibleConditions = invisibleConditions;
+            return this;
+        }
+        public java.util.List<ListMyShortcutViewsResponseBodyResultFilterInvisibleConditions> getInvisibleConditions() {
+            return this.invisibleConditions;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilter setLogic(String logic) {
+            this.logic = logic;
+            return this;
+        }
+        public String getLogic() {
+            return this.logic;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilter setLogicDisabled(Boolean logicDisabled) {
+            this.logicDisabled = logicDisabled;
+            return this;
+        }
+        public Boolean getLogicDisabled() {
+            return this.logicDisabled;
+        }
+
+        public ListMyShortcutViewsResponseBodyResultFilter setQ(String q) {
+            this.q = q;
+            return this;
+        }
+        public String getQ() {
+            return this.q;
+        }
+
+    }
+
     public static class ListMyShortcutViewsResponseBodyResultGroupType extends TeaModel {
         @NameInMap("canCreateGroup")
         public Boolean canCreateGroup;
@@ -444,6 +775,9 @@ public class ListMyShortcutViewsResponseBody extends TeaModel {
         @NameInMap("description")
         public String description;
 
+        @NameInMap("filter")
+        public ListMyShortcutViewsResponseBodyResultFilter filter;
+
         @NameInMap("groupType")
         public ListMyShortcutViewsResponseBodyResultGroupType groupType;
 
@@ -475,6 +809,9 @@ public class ListMyShortcutViewsResponseBody extends TeaModel {
 
         @NameInMap("toolbarInfo")
         public ListMyShortcutViewsResponseBodyResultToolbarInfo toolbarInfo;
+
+        @NameInMap("tql")
+        public String tql;
 
         /**
          * <strong>example:</strong>
@@ -529,6 +866,14 @@ public class ListMyShortcutViewsResponseBody extends TeaModel {
         }
         public String getDescription() {
             return this.description;
+        }
+
+        public ListMyShortcutViewsResponseBodyResult setFilter(ListMyShortcutViewsResponseBodyResultFilter filter) {
+            this.filter = filter;
+            return this;
+        }
+        public ListMyShortcutViewsResponseBodyResultFilter getFilter() {
+            return this.filter;
         }
 
         public ListMyShortcutViewsResponseBodyResult setGroupType(ListMyShortcutViewsResponseBodyResultGroupType groupType) {
@@ -593,6 +938,14 @@ public class ListMyShortcutViewsResponseBody extends TeaModel {
         }
         public ListMyShortcutViewsResponseBodyResultToolbarInfo getToolbarInfo() {
             return this.toolbarInfo;
+        }
+
+        public ListMyShortcutViewsResponseBodyResult setTql(String tql) {
+            this.tql = tql;
+            return this;
+        }
+        public String getTql() {
+            return this.tql;
         }
 
         public ListMyShortcutViewsResponseBodyResult setUpdated(String updated) {
