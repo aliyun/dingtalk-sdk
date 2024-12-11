@@ -3594,6 +3594,124 @@ class Client(OpenApiClient):
         headers = dingtalkconference__1__0_models.QueryMinutesTextHeaders()
         return await self.query_minutes_text_with_options_async(conference_id, request, headers, runtime)
 
+    def query_org_conference_list_with_options(
+        self,
+        request: dingtalkconference__1__0_models.QueryOrgConferenceListRequest,
+        headers: dingtalkconference__1__0_models.QueryOrgConferenceListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.QueryOrgConferenceListResponse:
+        """
+        @summary 查询企业进行中会议列表
+        
+        @param request: QueryOrgConferenceListRequest
+        @param headers: QueryOrgConferenceListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOrgConferenceListResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryOrgConferenceList',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/orgConferences',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.QueryOrgConferenceListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_org_conference_list_with_options_async(
+        self,
+        request: dingtalkconference__1__0_models.QueryOrgConferenceListRequest,
+        headers: dingtalkconference__1__0_models.QueryOrgConferenceListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.QueryOrgConferenceListResponse:
+        """
+        @summary 查询企业进行中会议列表
+        
+        @param request: QueryOrgConferenceListRequest
+        @param headers: QueryOrgConferenceListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOrgConferenceListResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryOrgConferenceList',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/orgConferences',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.QueryOrgConferenceListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_org_conference_list(
+        self,
+        request: dingtalkconference__1__0_models.QueryOrgConferenceListRequest,
+    ) -> dingtalkconference__1__0_models.QueryOrgConferenceListResponse:
+        """
+        @summary 查询企业进行中会议列表
+        
+        @param request: QueryOrgConferenceListRequest
+        @return: QueryOrgConferenceListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.QueryOrgConferenceListHeaders()
+        return self.query_org_conference_list_with_options(request, headers, runtime)
+
+    async def query_org_conference_list_async(
+        self,
+        request: dingtalkconference__1__0_models.QueryOrgConferenceListRequest,
+    ) -> dingtalkconference__1__0_models.QueryOrgConferenceListResponse:
+        """
+        @summary 查询企业进行中会议列表
+        
+        @param request: QueryOrgConferenceListRequest
+        @return: QueryOrgConferenceListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.QueryOrgConferenceListHeaders()
+        return await self.query_org_conference_list_with_options_async(request, headers, runtime)
+
     def query_record_minutes_url_with_options(
         self,
         conference_id: str,

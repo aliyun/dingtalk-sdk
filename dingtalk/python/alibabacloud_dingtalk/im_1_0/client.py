@@ -1580,6 +1580,98 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.CountOpenMsgSceneGroupsHeaders()
         return await self.count_open_msg_scene_groups_with_options_async(request, headers, runtime)
 
+    def count_org_message_open_scene_groups_with_options(
+        self,
+        headers: dingtalkim__1__0_models.CountOrgMessageOpenSceneGroupsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CountOrgMessageOpenSceneGroupsResponse:
+        """
+        @summary 获取企业下消息开放场景群数量
+        
+        @param headers: CountOrgMessageOpenSceneGroupsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CountOrgMessageOpenSceneGroupsResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='CountOrgMessageOpenSceneGroups',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/sceneGroups/counts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CountOrgMessageOpenSceneGroupsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def count_org_message_open_scene_groups_with_options_async(
+        self,
+        headers: dingtalkim__1__0_models.CountOrgMessageOpenSceneGroupsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.CountOrgMessageOpenSceneGroupsResponse:
+        """
+        @summary 获取企业下消息开放场景群数量
+        
+        @param headers: CountOrgMessageOpenSceneGroupsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CountOrgMessageOpenSceneGroupsResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='CountOrgMessageOpenSceneGroups',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/sceneGroups/counts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.CountOrgMessageOpenSceneGroupsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def count_org_message_open_scene_groups(self) -> dingtalkim__1__0_models.CountOrgMessageOpenSceneGroupsResponse:
+        """
+        @summary 获取企业下消息开放场景群数量
+        
+        @return: CountOrgMessageOpenSceneGroupsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CountOrgMessageOpenSceneGroupsHeaders()
+        return self.count_org_message_open_scene_groups_with_options(headers, runtime)
+
+    async def count_org_message_open_scene_groups_async(self) -> dingtalkim__1__0_models.CountOrgMessageOpenSceneGroupsResponse:
+        """
+        @summary 获取企业下消息开放场景群数量
+        
+        @return: CountOrgMessageOpenSceneGroupsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.CountOrgMessageOpenSceneGroupsHeaders()
+        return await self.count_org_message_open_scene_groups_with_options_async(headers, runtime)
+
     def count_scene_groups_by_template_id_with_options(
         self,
         template_id: str,

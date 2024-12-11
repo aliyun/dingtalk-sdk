@@ -5197,8 +5197,8 @@ class Client(OpenApiClient):
             action='GetGroupInfoByCid',
             version='exclusive_1.0',
             protocol='HTTP',
-            pathname=f'/v1.0/exclusive/groups/infos',
-            method='GET',
+            pathname=f'/v1.0/exclusive/groups/infos/query',
+            method='POST',
             auth_type='AK',
             style='ROA',
             req_body_type='none',
@@ -5240,8 +5240,8 @@ class Client(OpenApiClient):
             action='GetGroupInfoByCid',
             version='exclusive_1.0',
             protocol='HTTP',
-            pathname=f'/v1.0/exclusive/groups/infos',
-            method='GET',
+            pathname=f'/v1.0/exclusive/groups/infos/query',
+            method='POST',
             auth_type='AK',
             style='ROA',
             req_body_type='none',
@@ -5287,7 +5287,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetGroupOrgByCidResponse:
         """
-        @summary 根据群会话id获取组织id
+        @summary 根据群会话id获取组织cropid
         
         @param request: GetGroupOrgByCidRequest
         @param headers: GetGroupOrgByCidHeaders
@@ -5311,8 +5311,8 @@ class Client(OpenApiClient):
             action='GetGroupOrgByCid',
             version='exclusive_1.0',
             protocol='HTTP',
-            pathname=f'/v1.0/exclusive/groups/organizations',
-            method='GET',
+            pathname=f'/v1.0/exclusive/groups/organizations/query',
+            method='POST',
             auth_type='AK',
             style='ROA',
             req_body_type='none',
@@ -5330,7 +5330,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkexclusive__1__0_models.GetGroupOrgByCidResponse:
         """
-        @summary 根据群会话id获取组织id
+        @summary 根据群会话id获取组织cropid
         
         @param request: GetGroupOrgByCidRequest
         @param headers: GetGroupOrgByCidHeaders
@@ -5354,8 +5354,8 @@ class Client(OpenApiClient):
             action='GetGroupOrgByCid',
             version='exclusive_1.0',
             protocol='HTTP',
-            pathname=f'/v1.0/exclusive/groups/organizations',
-            method='GET',
+            pathname=f'/v1.0/exclusive/groups/organizations/query',
+            method='POST',
             auth_type='AK',
             style='ROA',
             req_body_type='none',
@@ -5371,7 +5371,7 @@ class Client(OpenApiClient):
         request: dingtalkexclusive__1__0_models.GetGroupOrgByCidRequest,
     ) -> dingtalkexclusive__1__0_models.GetGroupOrgByCidResponse:
         """
-        @summary 根据群会话id获取组织id
+        @summary 根据群会话id获取组织cropid
         
         @param request: GetGroupOrgByCidRequest
         @return: GetGroupOrgByCidResponse
@@ -5385,7 +5385,7 @@ class Client(OpenApiClient):
         request: dingtalkexclusive__1__0_models.GetGroupOrgByCidRequest,
     ) -> dingtalkexclusive__1__0_models.GetGroupOrgByCidResponse:
         """
-        @summary 根据群会话id获取组织id
+        @summary 根据群会话id获取组织cropid
         
         @param request: GetGroupOrgByCidRequest
         @return: GetGroupOrgByCidResponse

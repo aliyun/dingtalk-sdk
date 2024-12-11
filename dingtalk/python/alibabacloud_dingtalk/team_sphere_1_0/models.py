@@ -1773,6 +1773,7 @@ class GetFootprintProjectResponseBodyResult(TeaModel):
         description: str = None,
         id: str = None,
         is_deleted: bool = None,
+        logo: str = None,
         name: str = None,
         organization_id: str = None,
         updated: str = None,
@@ -1783,6 +1784,7 @@ class GetFootprintProjectResponseBodyResult(TeaModel):
         self.description = description
         self.id = id
         self.is_deleted = is_deleted
+        self.logo = logo
         self.name = name
         self.organization_id = organization_id
         self.updated = updated
@@ -1807,6 +1809,8 @@ class GetFootprintProjectResponseBodyResult(TeaModel):
             result['id'] = self.id
         if self.is_deleted is not None:
             result['isDeleted'] = self.is_deleted
+        if self.logo is not None:
+            result['logo'] = self.logo
         if self.name is not None:
             result['name'] = self.name
         if self.organization_id is not None:
@@ -1829,6 +1833,8 @@ class GetFootprintProjectResponseBodyResult(TeaModel):
             self.id = m.get('id')
         if m.get('isDeleted') is not None:
             self.is_deleted = m.get('isDeleted')
+        if m.get('logo') is not None:
+            self.logo = m.get('logo')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('organizationId') is not None:
@@ -5750,6 +5756,102 @@ class QueryTaskResponseBodyResultCustomfields(TeaModel):
         return self
 
 
+class QueryTaskResponseBodyResultExecutorUserInfo(TeaModel):
+    def __init__(
+        self,
+        avatar_url: str = None,
+        id: str = None,
+        member_id: str = None,
+        name: str = None,
+        user_id: str = None,
+    ):
+        self.avatar_url = avatar_url
+        self.id = id
+        self.member_id = member_id
+        self.name = name
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.avatar_url is not None:
+            result['avatarUrl'] = self.avatar_url
+        if self.id is not None:
+            result['id'] = self.id
+        if self.member_id is not None:
+            result['memberId'] = self.member_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('avatarUrl') is not None:
+            self.avatar_url = m.get('avatarUrl')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('memberId') is not None:
+            self.member_id = m.get('memberId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class QueryTaskResponseBodyResultProjectInfo(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        logo: str = None,
+        name: str = None,
+        organization_id: str = None,
+    ):
+        self.id = id
+        self.logo = logo
+        self.name = name
+        self.organization_id = organization_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.logo is not None:
+            result['logo'] = self.logo
+        if self.name is not None:
+            result['name'] = self.name
+        if self.organization_id is not None:
+            result['organizationId'] = self.organization_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('logo') is not None:
+            self.logo = m.get('logo')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('organizationId') is not None:
+            self.organization_id = m.get('organizationId')
+        return self
+
+
 class QueryTaskResponseBodyResult(TeaModel):
     def __init__(
         self,
@@ -5760,11 +5862,13 @@ class QueryTaskResponseBodyResult(TeaModel):
         customfields: List[QueryTaskResponseBodyResultCustomfields] = None,
         due_date: str = None,
         executor_id: str = None,
+        executor_user_info: QueryTaskResponseBodyResultExecutorUserInfo = None,
         id: str = None,
         involve_members: List[str] = None,
         is_done: bool = None,
         note: str = None,
         project_id: str = None,
+        project_info: QueryTaskResponseBodyResultProjectInfo = None,
         task_id: str = None,
         updated: str = None,
     ):
@@ -5775,11 +5879,13 @@ class QueryTaskResponseBodyResult(TeaModel):
         self.customfields = customfields
         self.due_date = due_date
         self.executor_id = executor_id
+        self.executor_user_info = executor_user_info
         self.id = id
         self.involve_members = involve_members
         self.is_done = is_done
         self.note = note
         self.project_id = project_id
+        self.project_info = project_info
         self.task_id = task_id
         self.updated = updated
 
@@ -5788,6 +5894,10 @@ class QueryTaskResponseBodyResult(TeaModel):
             for k in self.customfields:
                 if k:
                     k.validate()
+        if self.executor_user_info:
+            self.executor_user_info.validate()
+        if self.project_info:
+            self.project_info.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -5811,6 +5921,8 @@ class QueryTaskResponseBodyResult(TeaModel):
             result['dueDate'] = self.due_date
         if self.executor_id is not None:
             result['executorId'] = self.executor_id
+        if self.executor_user_info is not None:
+            result['executorUserInfo'] = self.executor_user_info.to_map()
         if self.id is not None:
             result['id'] = self.id
         if self.involve_members is not None:
@@ -5821,6 +5933,8 @@ class QueryTaskResponseBodyResult(TeaModel):
             result['note'] = self.note
         if self.project_id is not None:
             result['projectId'] = self.project_id
+        if self.project_info is not None:
+            result['projectInfo'] = self.project_info.to_map()
         if self.task_id is not None:
             result['taskId'] = self.task_id
         if self.updated is not None:
@@ -5846,6 +5960,9 @@ class QueryTaskResponseBodyResult(TeaModel):
             self.due_date = m.get('dueDate')
         if m.get('executorId') is not None:
             self.executor_id = m.get('executorId')
+        if m.get('executorUserInfo') is not None:
+            temp_model = QueryTaskResponseBodyResultExecutorUserInfo()
+            self.executor_user_info = temp_model.from_map(m['executorUserInfo'])
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('involveMembers') is not None:
@@ -5856,6 +5973,9 @@ class QueryTaskResponseBodyResult(TeaModel):
             self.note = m.get('note')
         if m.get('projectId') is not None:
             self.project_id = m.get('projectId')
+        if m.get('projectInfo') is not None:
+            temp_model = QueryTaskResponseBodyResultProjectInfo()
+            self.project_info = temp_model.from_map(m['projectInfo'])
         if m.get('taskId') is not None:
             self.task_id = m.get('taskId')
         if m.get('updated') is not None:

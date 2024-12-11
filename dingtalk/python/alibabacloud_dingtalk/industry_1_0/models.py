@@ -17182,6 +17182,354 @@ class ExternalQueryExternalOrgsResponse(TeaModel):
         return self
 
 
+class GetTaskPackageResultHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetTaskPackageResultRequest(TeaModel):
+    def __init__(
+        self,
+        biz_code: str = None,
+        task_package_id: str = None,
+    ):
+        self.biz_code = biz_code
+        # This parameter is required.
+        self.task_package_id = task_package_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
+        if self.task_package_id is not None:
+            result['taskPackageId'] = self.task_package_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
+        if m.get('taskPackageId') is not None:
+            self.task_package_id = m.get('taskPackageId')
+        return self
+
+
+class GetTaskPackageResultResponseBodyTasksResultItems(TeaModel):
+    def __init__(
+        self,
+        advantages: str = None,
+        fab_reference: str = None,
+        info: str = None,
+        name: str = None,
+        point: int = None,
+        reference: str = None,
+        res: bool = None,
+        suggestion: str = None,
+    ):
+        self.advantages = advantages
+        self.fab_reference = fab_reference
+        self.info = info
+        self.name = name
+        self.point = point
+        self.reference = reference
+        self.res = res
+        self.suggestion = suggestion
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.advantages is not None:
+            result['advantages'] = self.advantages
+        if self.fab_reference is not None:
+            result['fabReference'] = self.fab_reference
+        if self.info is not None:
+            result['info'] = self.info
+        if self.name is not None:
+            result['name'] = self.name
+        if self.point is not None:
+            result['point'] = self.point
+        if self.reference is not None:
+            result['reference'] = self.reference
+        if self.res is not None:
+            result['res'] = self.res
+        if self.suggestion is not None:
+            result['suggestion'] = self.suggestion
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('advantages') is not None:
+            self.advantages = m.get('advantages')
+        if m.get('fabReference') is not None:
+            self.fab_reference = m.get('fabReference')
+        if m.get('info') is not None:
+            self.info = m.get('info')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('point') is not None:
+            self.point = m.get('point')
+        if m.get('reference') is not None:
+            self.reference = m.get('reference')
+        if m.get('res') is not None:
+            self.res = m.get('res')
+        if m.get('suggestion') is not None:
+            self.suggestion = m.get('suggestion')
+        return self
+
+
+class GetTaskPackageResultResponseBodyTasksResult(TeaModel):
+    def __init__(
+        self,
+        audio_text: str = None,
+        audio_text_formatted: str = None,
+        date: str = None,
+        desc: str = None,
+        id: int = None,
+        items: List[GetTaskPackageResultResponseBodyTasksResultItems] = None,
+        name: str = None,
+        summary: str = None,
+        total: int = None,
+    ):
+        self.audio_text = audio_text
+        self.audio_text_formatted = audio_text_formatted
+        self.date = date
+        self.desc = desc
+        self.id = id
+        self.items = items
+        self.name = name
+        self.summary = summary
+        self.total = total
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.audio_text is not None:
+            result['audioText'] = self.audio_text
+        if self.audio_text_formatted is not None:
+            result['audioTextFormatted'] = self.audio_text_formatted
+        if self.date is not None:
+            result['date'] = self.date
+        if self.desc is not None:
+            result['desc'] = self.desc
+        if self.id is not None:
+            result['id'] = self.id
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.name is not None:
+            result['name'] = self.name
+        if self.summary is not None:
+            result['summary'] = self.summary
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('audioText') is not None:
+            self.audio_text = m.get('audioText')
+        if m.get('audioTextFormatted') is not None:
+            self.audio_text_formatted = m.get('audioTextFormatted')
+        if m.get('date') is not None:
+            self.date = m.get('date')
+        if m.get('desc') is not None:
+            self.desc = m.get('desc')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = GetTaskPackageResultResponseBodyTasksResultItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('summary') is not None:
+            self.summary = m.get('summary')
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class GetTaskPackageResultResponseBodyTasks(TeaModel):
+    def __init__(
+        self,
+        result: GetTaskPackageResultResponseBodyTasksResult = None,
+        status: str = None,
+        status_info: str = None,
+        task_id: str = None,
+    ):
+        self.result = result
+        self.status = status
+        self.status_info = status_info
+        self.task_id = task_id
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.status is not None:
+            result['status'] = self.status
+        if self.status_info is not None:
+            result['statusInfo'] = self.status_info
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = GetTaskPackageResultResponseBodyTasksResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('statusInfo') is not None:
+            self.status_info = m.get('statusInfo')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class GetTaskPackageResultResponseBody(TeaModel):
+    def __init__(
+        self,
+        task_package_id: str = None,
+        tasks: List[GetTaskPackageResultResponseBodyTasks] = None,
+    ):
+        self.task_package_id = task_package_id
+        self.tasks = tasks
+
+    def validate(self):
+        if self.tasks:
+            for k in self.tasks:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.task_package_id is not None:
+            result['taskPackageId'] = self.task_package_id
+        result['tasks'] = []
+        if self.tasks is not None:
+            for k in self.tasks:
+                result['tasks'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('taskPackageId') is not None:
+            self.task_package_id = m.get('taskPackageId')
+        self.tasks = []
+        if m.get('tasks') is not None:
+            for k in m.get('tasks'):
+                temp_model = GetTaskPackageResultResponseBodyTasks()
+                self.tasks.append(temp_model.from_map(k))
+        return self
+
+
+class GetTaskPackageResultResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetTaskPackageResultResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetTaskPackageResultResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class HospitalDataCheckHeaders(TeaModel):
     def __init__(
         self,
@@ -28922,6 +29270,242 @@ class SubmitTaskResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SubmitTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SubmitTaskPackageHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SubmitTaskPackageRequestData(TeaModel):
+    def __init__(
+        self,
+        extension: str = None,
+        file_url: str = None,
+        file_urls: List[str] = None,
+        task_name: str = None,
+        text_content: str = None,
+    ):
+        self.extension = extension
+        self.file_url = file_url
+        self.file_urls = file_urls
+        self.task_name = task_name
+        self.text_content = text_content
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.extension is not None:
+            result['extension'] = self.extension
+        if self.file_url is not None:
+            result['fileUrl'] = self.file_url
+        if self.file_urls is not None:
+            result['fileUrls'] = self.file_urls
+        if self.task_name is not None:
+            result['taskName'] = self.task_name
+        if self.text_content is not None:
+            result['textContent'] = self.text_content
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
+        if m.get('fileUrl') is not None:
+            self.file_url = m.get('fileUrl')
+        if m.get('fileUrls') is not None:
+            self.file_urls = m.get('fileUrls')
+        if m.get('taskName') is not None:
+            self.task_name = m.get('taskName')
+        if m.get('textContent') is not None:
+            self.text_content = m.get('textContent')
+        return self
+
+
+class SubmitTaskPackageRequest(TeaModel):
+    def __init__(
+        self,
+        app_id: int = None,
+        app_secret: str = None,
+        biz_code: str = None,
+        data: List[SubmitTaskPackageRequestData] = None,
+        desc: str = None,
+        file_type: str = None,
+        task_package_name: str = None,
+        version: str = None,
+    ):
+        self.app_id = app_id
+        self.app_secret = app_secret
+        # This parameter is required.
+        self.biz_code = biz_code
+        self.data = data
+        self.desc = desc
+        self.file_type = file_type
+        self.task_package_name = task_package_name
+        self.version = version
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_id is not None:
+            result['appId'] = self.app_id
+        if self.app_secret is not None:
+            result['appSecret'] = self.app_secret
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.desc is not None:
+            result['desc'] = self.desc
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.task_package_name is not None:
+            result['taskPackageName'] = self.task_package_name
+        if self.version is not None:
+            result['version'] = self.version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appId') is not None:
+            self.app_id = m.get('appId')
+        if m.get('appSecret') is not None:
+            self.app_secret = m.get('appSecret')
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = SubmitTaskPackageRequestData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('desc') is not None:
+            self.desc = m.get('desc')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('taskPackageName') is not None:
+            self.task_package_name = m.get('taskPackageName')
+        if m.get('version') is not None:
+            self.version = m.get('version')
+        return self
+
+
+class SubmitTaskPackageResponseBody(TeaModel):
+    def __init__(
+        self,
+        task_id_list: List[str] = None,
+        task_package_id: str = None,
+    ):
+        self.task_id_list = task_id_list
+        self.task_package_id = task_package_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.task_id_list is not None:
+            result['taskIdList'] = self.task_id_list
+        if self.task_package_id is not None:
+            result['taskPackageId'] = self.task_package_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('taskIdList') is not None:
+            self.task_id_list = m.get('taskIdList')
+        if m.get('taskPackageId') is not None:
+            self.task_package_id = m.get('taskPackageId')
+        return self
+
+
+class SubmitTaskPackageResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SubmitTaskPackageResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SubmitTaskPackageResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

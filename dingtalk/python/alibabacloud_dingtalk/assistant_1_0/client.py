@@ -309,6 +309,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.content):
             body['content'] = request.content
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
         if not UtilClient.is_unset(request.metadata):
             body['metadata'] = request.metadata
         if not UtilClient.is_unset(request.role):
@@ -357,6 +359,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.content):
             body['content'] = request.content
+        if not UtilClient.is_unset(request.extension):
+            body['extension'] = request.extension
         if not UtilClient.is_unset(request.metadata):
             body['metadata'] = request.metadata
         if not UtilClient.is_unset(request.role):

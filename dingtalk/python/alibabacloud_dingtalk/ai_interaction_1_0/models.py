@@ -588,11 +588,12 @@ class SendRequest(TeaModel):
         return self
 
 
-class SendResponseBodyResult(TeaModel):
+class SendResponseBody(TeaModel):
     def __init__(
         self,
         success: bool = None,
     ):
+        # This parameter is required.
         self.success = success
 
     def validate(self):
@@ -612,35 +613,6 @@ class SendResponseBodyResult(TeaModel):
         m = m or dict()
         if m.get('success') is not None:
             self.success = m.get('success')
-        return self
-
-
-class SendResponseBody(TeaModel):
-    def __init__(
-        self,
-        result: SendResponseBodyResult = None,
-    ):
-        self.result = result
-
-    def validate(self):
-        if self.result:
-            self.result.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.result is not None:
-            result['result'] = self.result.to_map()
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('result') is not None:
-            temp_model = SendResponseBodyResult()
-            self.result = temp_model.from_map(m['result'])
         return self
 
 

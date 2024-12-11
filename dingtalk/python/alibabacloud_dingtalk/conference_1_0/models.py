@@ -6725,6 +6725,241 @@ class QueryMinutesTextResponse(TeaModel):
         return self
 
 
+class QueryOrgConferenceListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryOrgConferenceListRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+    ):
+        self.max_results = max_results
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class QueryOrgConferenceListResponseBodyOnGoingConfList(TeaModel):
+    def __init__(
+        self,
+        biz_type: str = None,
+        conference_id: str = None,
+        creator_id: str = None,
+        creator_nick: str = None,
+        end_time: int = None,
+        room_code: str = None,
+        start_time: int = None,
+        status: int = None,
+        title: str = None,
+    ):
+        self.biz_type = biz_type
+        self.conference_id = conference_id
+        self.creator_id = creator_id
+        self.creator_nick = creator_nick
+        self.end_time = end_time
+        self.room_code = room_code
+        self.start_time = start_time
+        self.status = status
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.conference_id is not None:
+            result['conferenceId'] = self.conference_id
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.creator_nick is not None:
+            result['creatorNick'] = self.creator_nick
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.room_code is not None:
+            result['roomCode'] = self.room_code
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.status is not None:
+            result['status'] = self.status
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('conferenceId') is not None:
+            self.conference_id = m.get('conferenceId')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('creatorNick') is not None:
+            self.creator_nick = m.get('creatorNick')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('roomCode') is not None:
+            self.room_code = m.get('roomCode')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class QueryOrgConferenceListResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        next_token: str = None,
+        on_going_conf_list: List[QueryOrgConferenceListResponseBodyOnGoingConfList] = None,
+        total_count: int = None,
+    ):
+        self.has_more = has_more
+        self.next_token = next_token
+        self.on_going_conf_list = on_going_conf_list
+        self.total_count = total_count
+
+    def validate(self):
+        if self.on_going_conf_list:
+            for k in self.on_going_conf_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        result['onGoingConfList'] = []
+        if self.on_going_conf_list is not None:
+            for k in self.on_going_conf_list:
+                result['onGoingConfList'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        self.on_going_conf_list = []
+        if m.get('onGoingConfList') is not None:
+            for k in m.get('onGoingConfList'):
+                temp_model = QueryOrgConferenceListResponseBodyOnGoingConfList()
+                self.on_going_conf_list.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryOrgConferenceListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryOrgConferenceListResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryOrgConferenceListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryRecordMinutesUrlHeaders(TeaModel):
     def __init__(
         self,

@@ -490,11 +490,13 @@ class CreateAssistantMessageRequest(TeaModel):
     def __init__(
         self,
         content: str = None,
+        extension: Dict[str, str] = None,
         metadata: Dict[str, Any] = None,
         role: str = None,
     ):
         # This parameter is required.
         self.content = content
+        self.extension = extension
         self.metadata = metadata
         # This parameter is required.
         self.role = role
@@ -510,6 +512,8 @@ class CreateAssistantMessageRequest(TeaModel):
         result = dict()
         if self.content is not None:
             result['content'] = self.content
+        if self.extension is not None:
+            result['extension'] = self.extension
         if self.metadata is not None:
             result['metadata'] = self.metadata
         if self.role is not None:
@@ -520,6 +524,8 @@ class CreateAssistantMessageRequest(TeaModel):
         m = m or dict()
         if m.get('content') is not None:
             self.content = m.get('content')
+        if m.get('extension') is not None:
+            self.extension = m.get('extension')
         if m.get('metadata') is not None:
             self.metadata = m.get('metadata')
         if m.get('role') is not None:

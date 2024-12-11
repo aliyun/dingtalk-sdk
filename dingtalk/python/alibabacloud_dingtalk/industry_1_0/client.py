@@ -11878,6 +11878,124 @@ class Client(OpenApiClient):
         headers = dingtalkindustry__1__0_models.ExternalQueryExternalOrgsHeaders()
         return await self.external_query_external_orgs_with_options_async(request, headers, runtime)
 
+    def get_task_package_result_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.GetTaskPackageResultRequest,
+        headers: dingtalkindustry__1__0_models.GetTaskPackageResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.GetTaskPackageResultResponse:
+        """
+        @summary getTaskPackageResult
+        
+        @param request: GetTaskPackageResultRequest
+        @param headers: GetTaskPackageResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTaskPackageResultResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.task_package_id):
+            body['taskPackageId'] = request.task_package_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetTaskPackageResult',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/ai/taskPackages/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.GetTaskPackageResultResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_task_package_result_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.GetTaskPackageResultRequest,
+        headers: dingtalkindustry__1__0_models.GetTaskPackageResultHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.GetTaskPackageResultResponse:
+        """
+        @summary getTaskPackageResult
+        
+        @param request: GetTaskPackageResultRequest
+        @param headers: GetTaskPackageResultHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTaskPackageResultResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.task_package_id):
+            body['taskPackageId'] = request.task_package_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetTaskPackageResult',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/ai/taskPackages/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.GetTaskPackageResultResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_task_package_result(
+        self,
+        request: dingtalkindustry__1__0_models.GetTaskPackageResultRequest,
+    ) -> dingtalkindustry__1__0_models.GetTaskPackageResultResponse:
+        """
+        @summary getTaskPackageResult
+        
+        @param request: GetTaskPackageResultRequest
+        @return: GetTaskPackageResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.GetTaskPackageResultHeaders()
+        return self.get_task_package_result_with_options(request, headers, runtime)
+
+    async def get_task_package_result_async(
+        self,
+        request: dingtalkindustry__1__0_models.GetTaskPackageResultRequest,
+    ) -> dingtalkindustry__1__0_models.GetTaskPackageResultResponse:
+        """
+        @summary getTaskPackageResult
+        
+        @param request: GetTaskPackageResultRequest
+        @return: GetTaskPackageResultResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.GetTaskPackageResultHeaders()
+        return await self.get_task_package_result_with_options_async(request, headers, runtime)
+
     def hospital_data_check_with_options(
         self,
         request: dingtalkindustry__1__0_models.HospitalDataCheckRequest,
@@ -17543,6 +17661,148 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkindustry__1__0_models.SubmitTaskHeaders()
         return await self.submit_task_with_options_async(request, headers, runtime)
+
+    def submit_task_package_with_options(
+        self,
+        request: dingtalkindustry__1__0_models.SubmitTaskPackageRequest,
+        headers: dingtalkindustry__1__0_models.SubmitTaskPackageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SubmitTaskPackageResponse:
+        """
+        @summary submitTaskPackage
+        
+        @param request: SubmitTaskPackageRequest
+        @param headers: SubmitTaskPackageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubmitTaskPackageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.app_secret):
+            body['appSecret'] = request.app_secret
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.data):
+            body['data'] = request.data
+        if not UtilClient.is_unset(request.desc):
+            body['desc'] = request.desc
+        if not UtilClient.is_unset(request.file_type):
+            body['fileType'] = request.file_type
+        if not UtilClient.is_unset(request.task_package_name):
+            body['taskPackageName'] = request.task_package_name
+        if not UtilClient.is_unset(request.version):
+            body['version'] = request.version
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SubmitTaskPackage',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/ai/taskPackages/submit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SubmitTaskPackageResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def submit_task_package_with_options_async(
+        self,
+        request: dingtalkindustry__1__0_models.SubmitTaskPackageRequest,
+        headers: dingtalkindustry__1__0_models.SubmitTaskPackageHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkindustry__1__0_models.SubmitTaskPackageResponse:
+        """
+        @summary submitTaskPackage
+        
+        @param request: SubmitTaskPackageRequest
+        @param headers: SubmitTaskPackageHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SubmitTaskPackageResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_id):
+            body['appId'] = request.app_id
+        if not UtilClient.is_unset(request.app_secret):
+            body['appSecret'] = request.app_secret
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.data):
+            body['data'] = request.data
+        if not UtilClient.is_unset(request.desc):
+            body['desc'] = request.desc
+        if not UtilClient.is_unset(request.file_type):
+            body['fileType'] = request.file_type
+        if not UtilClient.is_unset(request.task_package_name):
+            body['taskPackageName'] = request.task_package_name
+        if not UtilClient.is_unset(request.version):
+            body['version'] = request.version
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SubmitTaskPackage',
+            version='industry_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/industry/ai/taskPackages/submit',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkindustry__1__0_models.SubmitTaskPackageResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def submit_task_package(
+        self,
+        request: dingtalkindustry__1__0_models.SubmitTaskPackageRequest,
+    ) -> dingtalkindustry__1__0_models.SubmitTaskPackageResponse:
+        """
+        @summary submitTaskPackage
+        
+        @param request: SubmitTaskPackageRequest
+        @return: SubmitTaskPackageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SubmitTaskPackageHeaders()
+        return self.submit_task_package_with_options(request, headers, runtime)
+
+    async def submit_task_package_async(
+        self,
+        request: dingtalkindustry__1__0_models.SubmitTaskPackageRequest,
+    ) -> dingtalkindustry__1__0_models.SubmitTaskPackageResponse:
+        """
+        @summary submitTaskPackage
+        
+        @param request: SubmitTaskPackageRequest
+        @return: SubmitTaskPackageResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkindustry__1__0_models.SubmitTaskPackageHeaders()
+        return await self.submit_task_package_with_options_async(request, headers, runtime)
 
     def suppl_add_role_with_options(
         self,

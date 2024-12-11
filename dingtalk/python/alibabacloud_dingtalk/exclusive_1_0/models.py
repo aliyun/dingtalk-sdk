@@ -7730,7 +7730,7 @@ class GetGroupInfoByCidResponseBodyGroupInfo(TeaModel):
         all_org_member: bool = None,
         group_name: str = None,
         group_number: int = None,
-        group_organization: int = None,
+        group_organization: str = None,
         join_group_url: str = None,
         open_conversation_id: str = None,
     ):
@@ -7914,7 +7914,7 @@ class GetGroupOrgByCidRequest(TeaModel):
 class GetGroupOrgByCidResponseBody(TeaModel):
     def __init__(
         self,
-        group_organization: int = None,
+        group_organization: str = None,
     ):
         self.group_organization = group_organization
 
