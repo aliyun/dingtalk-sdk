@@ -128,6 +128,121 @@ public class QueryTaskResponseBody extends TeaModel {
 
     }
 
+    public static class QueryTaskResponseBodyResultExecutorUserInfo extends TeaModel {
+        @NameInMap("avatarUrl")
+        public String avatarUrl;
+
+        @NameInMap("id")
+        public String id;
+
+        @NameInMap("memberId")
+        public String memberId;
+
+        @NameInMap("name")
+        public String name;
+
+        @NameInMap("userId")
+        public String userId;
+
+        public static QueryTaskResponseBodyResultExecutorUserInfo build(java.util.Map<String, ?> map) throws Exception {
+            QueryTaskResponseBodyResultExecutorUserInfo self = new QueryTaskResponseBodyResultExecutorUserInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryTaskResponseBodyResultExecutorUserInfo setAvatarUrl(String avatarUrl) {
+            this.avatarUrl = avatarUrl;
+            return this;
+        }
+        public String getAvatarUrl() {
+            return this.avatarUrl;
+        }
+
+        public QueryTaskResponseBodyResultExecutorUserInfo setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
+        }
+
+        public QueryTaskResponseBodyResultExecutorUserInfo setMemberId(String memberId) {
+            this.memberId = memberId;
+            return this;
+        }
+        public String getMemberId() {
+            return this.memberId;
+        }
+
+        public QueryTaskResponseBodyResultExecutorUserInfo setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public QueryTaskResponseBodyResultExecutorUserInfo setUserId(String userId) {
+            this.userId = userId;
+            return this;
+        }
+        public String getUserId() {
+            return this.userId;
+        }
+
+    }
+
+    public static class QueryTaskResponseBodyResultProjectInfo extends TeaModel {
+        @NameInMap("id")
+        public String id;
+
+        @NameInMap("logo")
+        public String logo;
+
+        @NameInMap("name")
+        public String name;
+
+        @NameInMap("organizationId")
+        public String organizationId;
+
+        public static QueryTaskResponseBodyResultProjectInfo build(java.util.Map<String, ?> map) throws Exception {
+            QueryTaskResponseBodyResultProjectInfo self = new QueryTaskResponseBodyResultProjectInfo();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryTaskResponseBodyResultProjectInfo setId(String id) {
+            this.id = id;
+            return this;
+        }
+        public String getId() {
+            return this.id;
+        }
+
+        public QueryTaskResponseBodyResultProjectInfo setLogo(String logo) {
+            this.logo = logo;
+            return this;
+        }
+        public String getLogo() {
+            return this.logo;
+        }
+
+        public QueryTaskResponseBodyResultProjectInfo setName(String name) {
+            this.name = name;
+            return this;
+        }
+        public String getName() {
+            return this.name;
+        }
+
+        public QueryTaskResponseBodyResultProjectInfo setOrganizationId(String organizationId) {
+            this.organizationId = organizationId;
+            return this;
+        }
+        public String getOrganizationId() {
+            return this.organizationId;
+        }
+
+    }
+
     public static class QueryTaskResponseBodyResult extends TeaModel {
         @NameInMap("accomplishTime")
         public String accomplishTime;
@@ -154,6 +269,9 @@ public class QueryTaskResponseBody extends TeaModel {
         @NameInMap("executorId")
         public String executorId;
 
+        @NameInMap("executorUserInfo")
+        public QueryTaskResponseBodyResultExecutorUserInfo executorUserInfo;
+
         @NameInMap("id")
         public String id;
 
@@ -168,6 +286,9 @@ public class QueryTaskResponseBody extends TeaModel {
 
         @NameInMap("projectId")
         public String projectId;
+
+        @NameInMap("projectInfo")
+        public QueryTaskResponseBodyResultProjectInfo projectInfo;
 
         @NameInMap("taskId")
         @Deprecated
@@ -241,6 +362,14 @@ public class QueryTaskResponseBody extends TeaModel {
             return this.executorId;
         }
 
+        public QueryTaskResponseBodyResult setExecutorUserInfo(QueryTaskResponseBodyResultExecutorUserInfo executorUserInfo) {
+            this.executorUserInfo = executorUserInfo;
+            return this;
+        }
+        public QueryTaskResponseBodyResultExecutorUserInfo getExecutorUserInfo() {
+            return this.executorUserInfo;
+        }
+
         public QueryTaskResponseBodyResult setId(String id) {
             this.id = id;
             return this;
@@ -279,6 +408,14 @@ public class QueryTaskResponseBody extends TeaModel {
         }
         public String getProjectId() {
             return this.projectId;
+        }
+
+        public QueryTaskResponseBodyResult setProjectInfo(QueryTaskResponseBodyResultProjectInfo projectInfo) {
+            this.projectInfo = projectInfo;
+            return this;
+        }
+        public QueryTaskResponseBodyResultProjectInfo getProjectInfo() {
+            return this.projectInfo;
         }
 
         public QueryTaskResponseBodyResult setTaskId(String taskId) {

@@ -10,6 +10,9 @@ public class CreateAssistantMessageRequest extends TeaModel {
     @NameInMap("content")
     public String content;
 
+    @NameInMap("extension")
+    public java.util.Map<String, String> extension;
+
     @NameInMap("metadata")
     public java.util.Map<String, ?> metadata;
 
@@ -30,6 +33,14 @@ public class CreateAssistantMessageRequest extends TeaModel {
     }
     public String getContent() {
         return this.content;
+    }
+
+    public CreateAssistantMessageRequest setExtension(java.util.Map<String, String> extension) {
+        this.extension = extension;
+        return this;
+    }
+    public java.util.Map<String, String> getExtension() {
+        return this.extension;
     }
 
     public CreateAssistantMessageRequest setMetadata(java.util.Map<String, ?> metadata) {

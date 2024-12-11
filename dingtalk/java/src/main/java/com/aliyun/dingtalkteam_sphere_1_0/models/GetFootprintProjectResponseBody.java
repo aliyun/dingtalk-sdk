@@ -58,6 +58,13 @@ public class GetFootprintProjectResponseBody extends TeaModel {
 
         /**
          * <strong>example:</strong>
+         * <p><a href="https://things.teambition.net?icon_logo=%F0%9F%92%A5">https://things.teambition.net?icon_logo=%F0%9F%92%A5</a></p>
+         */
+        @NameInMap("logo")
+        public String logo;
+
+        /**
+         * <strong>example:</strong>
          * <p>x项目</p>
          */
         @NameInMap("name")
@@ -127,6 +134,14 @@ public class GetFootprintProjectResponseBody extends TeaModel {
         }
         public Boolean getIsDeleted() {
             return this.isDeleted;
+        }
+
+        public GetFootprintProjectResponseBodyResult setLogo(String logo) {
+            this.logo = logo;
+            return this;
+        }
+        public String getLogo() {
+            return this.logo;
         }
 
         public GetFootprintProjectResponseBodyResult setName(String name) {

@@ -31,7 +31,7 @@ public class GetGroupInfoByCidResponseBody extends TeaModel {
         public Long groupNumber;
 
         @NameInMap("groupOrganization")
-        public Long groupOrganization;
+        public String groupOrganization;
 
         @NameInMap("joinGroupUrl")
         public String joinGroupUrl;
@@ -68,11 +68,11 @@ public class GetGroupInfoByCidResponseBody extends TeaModel {
             return this.groupNumber;
         }
 
-        public GetGroupInfoByCidResponseBodyGroupInfo setGroupOrganization(Long groupOrganization) {
+        public GetGroupInfoByCidResponseBodyGroupInfo setGroupOrganization(String groupOrganization) {
             this.groupOrganization = groupOrganization;
             return this;
         }
-        public Long getGroupOrganization() {
+        public String getGroupOrganization() {
             return this.groupOrganization;
         }
 

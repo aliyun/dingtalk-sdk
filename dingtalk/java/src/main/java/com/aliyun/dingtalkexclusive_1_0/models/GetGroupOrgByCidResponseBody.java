@@ -5,18 +5,18 @@ import com.aliyun.tea.*;
 
 public class GetGroupOrgByCidResponseBody extends TeaModel {
     @NameInMap("groupOrganization")
-    public Long groupOrganization;
+    public String groupOrganization;
 
     public static GetGroupOrgByCidResponseBody build(java.util.Map<String, ?> map) throws Exception {
         GetGroupOrgByCidResponseBody self = new GetGroupOrgByCidResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public GetGroupOrgByCidResponseBody setGroupOrganization(Long groupOrganization) {
+    public GetGroupOrgByCidResponseBody setGroupOrganization(String groupOrganization) {
         this.groupOrganization = groupOrganization;
         return this;
     }
-    public Long getGroupOrganization() {
+    public String getGroupOrganization() {
         return this.groupOrganization;
     }
 

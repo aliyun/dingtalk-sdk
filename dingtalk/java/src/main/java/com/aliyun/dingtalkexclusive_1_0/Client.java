@@ -2675,8 +2675,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("action", "GetGroupInfoByCid"),
             new TeaPair("version", "exclusive_1.0"),
             new TeaPair("protocol", "HTTP"),
-            new TeaPair("pathname", "/v1.0/exclusive/groups/infos"),
-            new TeaPair("method", "GET"),
+            new TeaPair("pathname", "/v1.0/exclusive/groups/infos/query"),
+            new TeaPair("method", "POST"),
             new TeaPair("authType", "AK"),
             new TeaPair("style", "ROA"),
             new TeaPair("reqBodyType", "none"),
@@ -2700,7 +2700,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>根据群会话id获取组织id</p>
+     * <p>根据群会话id获取组织cropid</p>
      * 
      * @param request GetGroupOrgByCidRequest
      * @param headers GetGroupOrgByCidHeaders
@@ -2731,8 +2731,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
             new TeaPair("action", "GetGroupOrgByCid"),
             new TeaPair("version", "exclusive_1.0"),
             new TeaPair("protocol", "HTTP"),
-            new TeaPair("pathname", "/v1.0/exclusive/groups/organizations"),
-            new TeaPair("method", "GET"),
+            new TeaPair("pathname", "/v1.0/exclusive/groups/organizations/query"),
+            new TeaPair("method", "POST"),
             new TeaPair("authType", "AK"),
             new TeaPair("style", "ROA"),
             new TeaPair("reqBodyType", "none"),
@@ -2743,7 +2743,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>根据群会话id获取组织id</p>
+     * <p>根据群会话id获取组织cropid</p>
      * 
      * @param request GetGroupOrgByCidRequest
      * @return GetGroupOrgByCidResponse
