@@ -85,6 +85,32 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0.Models
             [Validation(Required=false)]
             public string ExecutorId { get; set; }
 
+            [NameInMap("executorUserInfo")]
+            [Validation(Required=false)]
+            public QueryTaskResponseBodyResultExecutorUserInfo ExecutorUserInfo { get; set; }
+            public class QueryTaskResponseBodyResultExecutorUserInfo : TeaModel {
+                [NameInMap("avatarUrl")]
+                [Validation(Required=false)]
+                public string AvatarUrl { get; set; }
+
+                [NameInMap("id")]
+                [Validation(Required=false)]
+                public string Id { get; set; }
+
+                [NameInMap("memberId")]
+                [Validation(Required=false)]
+                public string MemberId { get; set; }
+
+                [NameInMap("name")]
+                [Validation(Required=false)]
+                public string Name { get; set; }
+
+                [NameInMap("userId")]
+                [Validation(Required=false)]
+                public string UserId { get; set; }
+
+            }
+
             [NameInMap("id")]
             [Validation(Required=false)]
             public string Id { get; set; }
@@ -104,6 +130,28 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0.Models
             [NameInMap("projectId")]
             [Validation(Required=false)]
             public string ProjectId { get; set; }
+
+            [NameInMap("projectInfo")]
+            [Validation(Required=false)]
+            public QueryTaskResponseBodyResultProjectInfo ProjectInfo { get; set; }
+            public class QueryTaskResponseBodyResultProjectInfo : TeaModel {
+                [NameInMap("id")]
+                [Validation(Required=false)]
+                public string Id { get; set; }
+
+                [NameInMap("logo")]
+                [Validation(Required=false)]
+                public string Logo { get; set; }
+
+                [NameInMap("name")]
+                [Validation(Required=false)]
+                public string Name { get; set; }
+
+                [NameInMap("organizationId")]
+                [Validation(Required=false)]
+                public string OrganizationId { get; set; }
+
+            }
 
             /// <term><b>Obsolete</b></term>
             [NameInMap("taskId")]

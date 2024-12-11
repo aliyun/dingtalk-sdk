@@ -6,12 +6,13 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkai_interaction_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkim_1_0.Models
 {
-    public class SendResponseBody : TeaModel {
-        /// <summary>
-        /// <para>This parameter is required.</para>
-        /// </summary>
+    public class CountOrgMessageOpenSceneGroupsResponseBody : TeaModel {
+        [NameInMap("count")]
+        [Validation(Required=false)]
+        public int? Count { get; set; }
+
         [NameInMap("success")]
         [Validation(Required=false)]
         public bool? Success { get; set; }

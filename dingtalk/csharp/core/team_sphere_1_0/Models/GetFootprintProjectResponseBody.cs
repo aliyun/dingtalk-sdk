@@ -55,6 +55,14 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0.Models
 
             /// <summary>
             /// <b>Example:</b>
+            /// <para><a href="https://things.teambition.net?icon_logo=%F0%9F%92%A5">https://things.teambition.net?icon_logo=%F0%9F%92%A5</a></para>
+            /// </summary>
+            [NameInMap("logo")]
+            [Validation(Required=false)]
+            public string Logo { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
             /// <para>x项目</para>
             /// </summary>
             [NameInMap("name")]

@@ -16,6 +16,10 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0.Models
         [Validation(Required=false)]
         public string Content { get; set; }
 
+        [NameInMap("extension")]
+        [Validation(Required=false)]
+        public Dictionary<string, string> Extension { get; set; }
+
         [NameInMap("metadata")]
         [Validation(Required=false)]
         public Dictionary<string, object> Metadata { get; set; }

@@ -27,7 +27,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 
             [NameInMap("groupOrganization")]
             [Validation(Required=false)]
-            public long? GroupOrganization { get; set; }
+            public string GroupOrganization { get; set; }
 
             [NameInMap("joinGroupUrl")]
             [Validation(Required=false)]

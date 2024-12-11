@@ -6825,8 +6825,8 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
                 Action = "GetGroupInfoByCid",
                 Version = "exclusive_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/exclusive/groups/infos",
-                Method = "GET",
+                Pathname = "/v1.0/exclusive/groups/infos/query",
+                Method = "POST",
                 AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
@@ -6880,8 +6880,8 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
                 Action = "GetGroupInfoByCid",
                 Version = "exclusive_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/exclusive/groups/infos",
-                Method = "GET",
+                Pathname = "/v1.0/exclusive/groups/infos/query",
+                Method = "POST",
                 AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
@@ -6930,7 +6930,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>根据群会话id获取组织id</para>
+        /// <para>根据群会话id获取组织cropid</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -6973,8 +6973,8 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
                 Action = "GetGroupOrgByCid",
                 Version = "exclusive_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/exclusive/groups/organizations",
-                Method = "GET",
+                Pathname = "/v1.0/exclusive/groups/organizations/query",
+                Method = "POST",
                 AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
@@ -6985,7 +6985,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>根据群会话id获取组织id</para>
+        /// <para>根据群会话id获取组织cropid</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -7028,8 +7028,8 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
                 Action = "GetGroupOrgByCid",
                 Version = "exclusive_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/exclusive/groups/organizations",
-                Method = "GET",
+                Pathname = "/v1.0/exclusive/groups/organizations/query",
+                Method = "POST",
                 AuthType = "AK",
                 Style = "ROA",
                 ReqBodyType = "none",
@@ -7040,7 +7040,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>根据群会话id获取组织id</para>
+        /// <para>根据群会话id获取组织cropid</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -7059,7 +7059,7 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>根据群会话id获取组织id</para>
+        /// <para>根据群会话id获取组织cropid</para>
         /// </summary>
         /// 
         /// <param name="request">
