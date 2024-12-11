@@ -2,17 +2,23 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vai_interaction_1_0\Models\SendResponseBody;
+namespace AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class result extends Model
+class CountOrgMessageOpenSceneGroupsResponseBody extends Model
 {
+    /**
+     * @var int
+     */
+    public $count;
+
     /**
      * @var bool
      */
     public $success;
     protected $_name = [
+        'count'   => 'count',
         'success' => 'success',
     ];
 
@@ -23,6 +29,9 @@ class result extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->count) {
+            $res['count'] = $this->count;
+        }
         if (null !== $this->success) {
             $res['success'] = $this->success;
         }
@@ -33,11 +42,14 @@ class result extends Model
     /**
      * @param array $map
      *
-     * @return result
+     * @return CountOrgMessageOpenSceneGroupsResponseBody
      */
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['count'])) {
+            $model->count = $map['count'];
+        }
         if (isset($map['success'])) {
             $model->success = $map['success'];
         }

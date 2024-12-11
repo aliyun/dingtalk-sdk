@@ -4,17 +4,18 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vai_interaction_1_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vai_interaction_1_0\Models\SendResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
 class SendResponseBody extends Model
 {
     /**
-     * @var result
+     * @description This parameter is required.
+     *
+     * @var bool
      */
-    public $result;
+    public $success;
     protected $_name = [
-        'result' => 'result',
+        'success' => 'success',
     ];
 
     public function validate()
@@ -24,8 +25,8 @@ class SendResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->result) {
-            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
+        if (null !== $this->success) {
+            $res['success'] = $this->success;
         }
 
         return $res;
@@ -39,8 +40,8 @@ class SendResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['result'])) {
-            $model->result = result::fromMap($map['result']);
+        if (isset($map['success'])) {
+            $model->success = $map['success'];
         }
 
         return $model;

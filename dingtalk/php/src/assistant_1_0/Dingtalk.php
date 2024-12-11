@@ -265,6 +265,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->content)) {
             $body['content'] = $request->content;
         }
+        if (!Utils::isUnset($request->extension)) {
+            $body['extension'] = $request->extension;
+        }
         if (!Utils::isUnset($request->metadata)) {
             $body['metadata'] = $request->metadata;
         }

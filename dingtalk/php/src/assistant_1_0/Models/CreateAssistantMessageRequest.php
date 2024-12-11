@@ -16,6 +16,11 @@ class CreateAssistantMessageRequest extends Model
     public $content;
 
     /**
+     * @var string[]
+     */
+    public $extension;
+
+    /**
      * @var mixed[]
      */
     public $metadata;
@@ -27,9 +32,10 @@ class CreateAssistantMessageRequest extends Model
      */
     public $role;
     protected $_name = [
-        'content'  => 'content',
-        'metadata' => 'metadata',
-        'role'     => 'role',
+        'content'   => 'content',
+        'extension' => 'extension',
+        'metadata'  => 'metadata',
+        'role'      => 'role',
     ];
 
     public function validate()
@@ -41,6 +47,9 @@ class CreateAssistantMessageRequest extends Model
         $res = [];
         if (null !== $this->content) {
             $res['content'] = $this->content;
+        }
+        if (null !== $this->extension) {
+            $res['extension'] = $this->extension;
         }
         if (null !== $this->metadata) {
             $res['metadata'] = $this->metadata;
@@ -62,6 +71,9 @@ class CreateAssistantMessageRequest extends Model
         $model = new self();
         if (isset($map['content'])) {
             $model->content = $map['content'];
+        }
+        if (isset($map['extension'])) {
+            $model->extension = $map['extension'];
         }
         if (isset($map['metadata'])) {
             $model->metadata = $map['metadata'];

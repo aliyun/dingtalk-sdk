@@ -44,6 +44,13 @@ class result extends Model
     public $isDeleted;
 
     /**
+     * @example https://things.teambition.net?icon_logo=%F0%9F%92%A5
+     *
+     * @var string
+     */
+    public $logo;
+
+    /**
      * @example x项目
      *
      * @var string
@@ -76,6 +83,7 @@ class result extends Model
         'description'    => 'description',
         'id'             => 'id',
         'isDeleted'      => 'isDeleted',
+        'logo'           => 'logo',
         'name'           => 'name',
         'organizationId' => 'organizationId',
         'updated'        => 'updated',
@@ -103,6 +111,9 @@ class result extends Model
         }
         if (null !== $this->isDeleted) {
             $res['isDeleted'] = $this->isDeleted;
+        }
+        if (null !== $this->logo) {
+            $res['logo'] = $this->logo;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -142,6 +153,9 @@ class result extends Model
         }
         if (isset($map['isDeleted'])) {
             $model->isDeleted = $map['isDeleted'];
+        }
+        if (isset($map['logo'])) {
+            $model->logo = $map['logo'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];

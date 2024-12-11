@@ -9,7 +9,7 @@ use AlibabaCloud\Tea\Model;
 class GetGroupOrgByCidResponseBody extends Model
 {
     /**
-     * @var int
+     * @var string
      */
     public $groupOrganization;
     protected $_name = [

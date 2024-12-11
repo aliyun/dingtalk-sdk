@@ -5,6 +5,8 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\QueryTaskResponseBody;
 
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\QueryTaskResponseBody\result\customfields;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\QueryTaskResponseBody\result\executorUserInfo;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\QueryTaskResponseBody\result\projectInfo;
 use AlibabaCloud\Tea\Model;
 
 class result extends Model
@@ -47,6 +49,11 @@ class result extends Model
     public $executorId;
 
     /**
+     * @var executorUserInfo
+     */
+    public $executorUserInfo;
+
+    /**
      * @var string
      */
     public $id;
@@ -72,6 +79,11 @@ class result extends Model
     public $projectId;
 
     /**
+     * @var projectInfo
+     */
+    public $projectInfo;
+
+    /**
      * @deprecated
      *
      * @var string
@@ -85,20 +97,22 @@ class result extends Model
      */
     public $updated;
     protected $_name = [
-        'accomplishTime' => 'accomplishTime',
-        'content'        => 'content',
-        'created'        => 'created',
-        'creatorId'      => 'creatorId',
-        'customfields'   => 'customfields',
-        'dueDate'        => 'dueDate',
-        'executorId'     => 'executorId',
-        'id'             => 'id',
-        'involveMembers' => 'involveMembers',
-        'isDone'         => 'isDone',
-        'note'           => 'note',
-        'projectId'      => 'projectId',
-        'taskId'         => 'taskId',
-        'updated'        => 'updated',
+        'accomplishTime'   => 'accomplishTime',
+        'content'          => 'content',
+        'created'          => 'created',
+        'creatorId'        => 'creatorId',
+        'customfields'     => 'customfields',
+        'dueDate'          => 'dueDate',
+        'executorId'       => 'executorId',
+        'executorUserInfo' => 'executorUserInfo',
+        'id'               => 'id',
+        'involveMembers'   => 'involveMembers',
+        'isDone'           => 'isDone',
+        'note'             => 'note',
+        'projectId'        => 'projectId',
+        'projectInfo'      => 'projectInfo',
+        'taskId'           => 'taskId',
+        'updated'          => 'updated',
     ];
 
     public function validate()
@@ -135,6 +149,9 @@ class result extends Model
         if (null !== $this->executorId) {
             $res['executorId'] = $this->executorId;
         }
+        if (null !== $this->executorUserInfo) {
+            $res['executorUserInfo'] = null !== $this->executorUserInfo ? $this->executorUserInfo->toMap() : null;
+        }
         if (null !== $this->id) {
             $res['id'] = $this->id;
         }
@@ -149,6 +166,9 @@ class result extends Model
         }
         if (null !== $this->projectId) {
             $res['projectId'] = $this->projectId;
+        }
+        if (null !== $this->projectInfo) {
+            $res['projectInfo'] = null !== $this->projectInfo ? $this->projectInfo->toMap() : null;
         }
         if (null !== $this->taskId) {
             $res['taskId'] = $this->taskId;
@@ -195,6 +215,9 @@ class result extends Model
         if (isset($map['executorId'])) {
             $model->executorId = $map['executorId'];
         }
+        if (isset($map['executorUserInfo'])) {
+            $model->executorUserInfo = executorUserInfo::fromMap($map['executorUserInfo']);
+        }
         if (isset($map['id'])) {
             $model->id = $map['id'];
         }
@@ -211,6 +234,9 @@ class result extends Model
         }
         if (isset($map['projectId'])) {
             $model->projectId = $map['projectId'];
+        }
+        if (isset($map['projectInfo'])) {
+            $model->projectInfo = projectInfo::fromMap($map['projectInfo']);
         }
         if (isset($map['taskId'])) {
             $model->taskId = $map['taskId'];

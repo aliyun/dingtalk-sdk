@@ -24,7 +24,7 @@ class groupInfo extends Model
     public $groupNumber;
 
     /**
-     * @var int
+     * @var string
      */
     public $groupOrganization;
 

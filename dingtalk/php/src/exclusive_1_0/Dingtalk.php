@@ -3068,8 +3068,8 @@ class Dingtalk extends OpenApiClient
             'action'      => 'GetGroupInfoByCid',
             'version'     => 'exclusive_1.0',
             'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/groups/infos',
-            'method'      => 'GET',
+            'pathname'    => '/v1.0/exclusive/groups/infos/query',
+            'method'      => 'POST',
             'authType'    => 'AK',
             'style'       => 'ROA',
             'reqBodyType' => 'none',
@@ -3095,7 +3095,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 根据群会话id获取组织id
+     * @summary 根据群会话id获取组织cropid
      *  *
      * @param GetGroupOrgByCidRequest $request GetGroupOrgByCidRequest
      * @param GetGroupOrgByCidHeaders $headers GetGroupOrgByCidHeaders
@@ -3125,8 +3125,8 @@ class Dingtalk extends OpenApiClient
             'action'      => 'GetGroupOrgByCid',
             'version'     => 'exclusive_1.0',
             'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/exclusive/groups/organizations',
-            'method'      => 'GET',
+            'pathname'    => '/v1.0/exclusive/groups/organizations/query',
+            'method'      => 'POST',
             'authType'    => 'AK',
             'style'       => 'ROA',
             'reqBodyType' => 'none',
@@ -3137,7 +3137,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 根据群会话id获取组织id
+     * @summary 根据群会话id获取组织cropid
      *  *
      * @param GetGroupOrgByCidRequest $request GetGroupOrgByCidRequest
      *

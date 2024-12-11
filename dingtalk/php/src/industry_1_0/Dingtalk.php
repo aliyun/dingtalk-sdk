@@ -296,6 +296,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalBelongMa
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalOrgsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalOrgsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\ExternalQueryExternalOrgsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\GetTaskPackageResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\GetTaskPackageResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\GetTaskPackageResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\HospitalDataCheckHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\HospitalDataCheckRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\HospitalDataCheckResponse;
@@ -411,6 +414,9 @@ use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SaveUserExtendValuesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SaveUserExtendValuesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SaveUserExtendValuesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SubmitTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SubmitTaskPackageHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SubmitTaskPackageRequest;
+use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SubmitTaskPackageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SubmitTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SubmitTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vindustry_1_0\Models\SupplAddRoleHeaders;
@@ -6631,6 +6637,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary getTaskPackageResult
+     *  *
+     * @param GetTaskPackageResultRequest $request GetTaskPackageResultRequest
+     * @param GetTaskPackageResultHeaders $headers GetTaskPackageResultHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetTaskPackageResultResponse GetTaskPackageResultResponse
+     */
+    public function getTaskPackageResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            $body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->taskPackageId)) {
+            $body['taskPackageId'] = $request->taskPackageId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetTaskPackageResult',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/ai/taskPackages/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetTaskPackageResultResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary getTaskPackageResult
+     *  *
+     * @param GetTaskPackageResultRequest $request GetTaskPackageResultRequest
+     *
+     * @return GetTaskPackageResultResponse GetTaskPackageResultResponse
+     */
+    public function getTaskPackageResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTaskPackageResultHeaders([]);
+
+        return $this->getTaskPackageResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 医疗数据对账
      *  *
      * @param HospitalDataCheckRequest $request HospitalDataCheckRequest
@@ -9730,6 +9796,84 @@ class Dingtalk extends OpenApiClient
         $headers = new SubmitTaskHeaders([]);
 
         return $this->submitTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary submitTaskPackage
+     *  *
+     * @param SubmitTaskPackageRequest $request SubmitTaskPackageRequest
+     * @param SubmitTaskPackageHeaders $headers SubmitTaskPackageHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SubmitTaskPackageResponse SubmitTaskPackageResponse
+     */
+    public function submitTaskPackageWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appId)) {
+            $body['appId'] = $request->appId;
+        }
+        if (!Utils::isUnset($request->appSecret)) {
+            $body['appSecret'] = $request->appSecret;
+        }
+        if (!Utils::isUnset($request->bizCode)) {
+            $body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->data)) {
+            $body['data'] = $request->data;
+        }
+        if (!Utils::isUnset($request->desc)) {
+            $body['desc'] = $request->desc;
+        }
+        if (!Utils::isUnset($request->fileType)) {
+            $body['fileType'] = $request->fileType;
+        }
+        if (!Utils::isUnset($request->taskPackageName)) {
+            $body['taskPackageName'] = $request->taskPackageName;
+        }
+        if (!Utils::isUnset($request->version)) {
+            $body['version'] = $request->version;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SubmitTaskPackage',
+            'version'     => 'industry_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/industry/ai/taskPackages/submit',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SubmitTaskPackageResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary submitTaskPackage
+     *  *
+     * @param SubmitTaskPackageRequest $request SubmitTaskPackageRequest
+     *
+     * @return SubmitTaskPackageResponse SubmitTaskPackageResponse
+     */
+    public function submitTaskPackage($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SubmitTaskPackageHeaders([]);
+
+        return $this->submitTaskPackageWithOptions($request, $headers, $runtime);
     }
 
     /**

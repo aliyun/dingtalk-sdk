@@ -91,6 +91,9 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesSummaryResponse
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesTextHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesTextRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryMinutesTextResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryOrgConferenceListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryOrgConferenceListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryOrgConferenceListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryRecordMinutesUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryRecordMinutesUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryRecordMinutesUrlResponse;
@@ -1985,6 +1988,66 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryMinutesTextHeaders([]);
 
         return $this->queryMinutesTextWithOptions($conferenceId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询企业进行中会议列表
+     *  *
+     * @param QueryOrgConferenceListRequest $request QueryOrgConferenceListRequest
+     * @param QueryOrgConferenceListHeaders $headers QueryOrgConferenceListHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryOrgConferenceListResponse QueryOrgConferenceListResponse
+     */
+    public function queryOrgConferenceListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryOrgConferenceList',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/orgConferences',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryOrgConferenceListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询企业进行中会议列表
+     *  *
+     * @param QueryOrgConferenceListRequest $request QueryOrgConferenceListRequest
+     *
+     * @return QueryOrgConferenceListResponse QueryOrgConferenceListResponse
+     */
+    public function queryOrgConferenceList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryOrgConferenceListHeaders([]);
+
+        return $this->queryOrgConferenceListWithOptions($request, $headers, $runtime);
     }
 
     /**

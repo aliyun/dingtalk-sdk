@@ -45,6 +45,8 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CopyUnfurlingRegisterResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CountOpenMsgSceneGroupsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CountOpenMsgSceneGroupsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CountOpenMsgSceneGroupsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CountOrgMessageOpenSceneGroupsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CountOrgMessageOpenSceneGroupsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CountSceneGroupsByTemplateIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CountSceneGroupsByTemplateIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\CreateCoupleGroupConversationHeaders;
@@ -1119,6 +1121,54 @@ class Dingtalk extends OpenApiClient
         $headers = new CountOpenMsgSceneGroupsHeaders([]);
 
         return $this->countOpenMsgSceneGroupsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取企业下消息开放场景群数量
+     *  *
+     * @param CountOrgMessageOpenSceneGroupsHeaders $headers CountOrgMessageOpenSceneGroupsHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CountOrgMessageOpenSceneGroupsResponse CountOrgMessageOpenSceneGroupsResponse
+     */
+    public function countOrgMessageOpenSceneGroupsWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'CountOrgMessageOpenSceneGroups',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/chats/sceneGroups/counts',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CountOrgMessageOpenSceneGroupsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取企业下消息开放场景群数量
+     *  *
+     * @return CountOrgMessageOpenSceneGroupsResponse CountOrgMessageOpenSceneGroupsResponse
+     */
+    public function countOrgMessageOpenSceneGroups()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CountOrgMessageOpenSceneGroupsHeaders([]);
+
+        return $this->countOrgMessageOpenSceneGroupsWithOptions($headers, $runtime);
     }
 
     /**
