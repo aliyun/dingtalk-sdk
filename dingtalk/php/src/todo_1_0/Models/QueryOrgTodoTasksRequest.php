@@ -17,9 +17,15 @@ class QueryOrgTodoTasksRequest extends Model
      * @var string
      */
     public $nextToken;
+
+    /**
+     * @var string[][]
+     */
+    public $roleTypes;
     protected $_name = [
         'isDone'    => 'isDone',
         'nextToken' => 'nextToken',
+        'roleTypes' => 'roleTypes',
     ];
 
     public function validate()
@@ -34,6 +40,9 @@ class QueryOrgTodoTasksRequest extends Model
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
+        }
+        if (null !== $this->roleTypes) {
+            $res['roleTypes'] = $this->roleTypes;
         }
 
         return $res;
@@ -52,6 +61,11 @@ class QueryOrgTodoTasksRequest extends Model
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
+        }
+        if (isset($map['roleTypes'])) {
+            if (!empty($map['roleTypes'])) {
+                $model->roleTypes = $map['roleTypes'];
+            }
         }
 
         return $model;

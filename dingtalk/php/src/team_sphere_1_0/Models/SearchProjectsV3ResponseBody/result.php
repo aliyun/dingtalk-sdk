@@ -33,6 +33,11 @@ class result extends Model
     /**
      * @var bool
      */
+    public $isArchived;
+
+    /**
+     * @var bool
+     */
     public $isTemplate;
 
     /**
@@ -66,6 +71,7 @@ class result extends Model
         'creatorId'      => 'creatorId',
         'description'    => 'description',
         'id'             => 'id',
+        'isArchived'     => 'isArchived',
         'isTemplate'     => 'isTemplate',
         'logo'           => 'logo',
         'name'           => 'name',
@@ -92,6 +98,9 @@ class result extends Model
         }
         if (null !== $this->id) {
             $res['id'] = $this->id;
+        }
+        if (null !== $this->isArchived) {
+            $res['isArchived'] = $this->isArchived;
         }
         if (null !== $this->isTemplate) {
             $res['isTemplate'] = $this->isTemplate;
@@ -134,6 +143,9 @@ class result extends Model
         }
         if (isset($map['id'])) {
             $model->id = $map['id'];
+        }
+        if (isset($map['isArchived'])) {
+            $model->isArchived = $map['isArchived'];
         }
         if (isset($map['isTemplate'])) {
             $model->isTemplate = $map['isTemplate'];

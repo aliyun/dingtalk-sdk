@@ -5,6 +5,7 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateRangeProtectionRequest\editableSetting;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateRangeProtectionRequest\members;
 use AlibabaCloud\Tea\Model;
 
 class CreateRangeProtectionRequest extends Model
@@ -13,6 +14,11 @@ class CreateRangeProtectionRequest extends Model
      * @var editableSetting
      */
     public $editableSetting;
+
+    /**
+     * @var members[]
+     */
+    public $members;
 
     /**
      * @description This parameter is required.
@@ -31,6 +37,7 @@ class CreateRangeProtectionRequest extends Model
     public $operatorId;
     protected $_name = [
         'editableSetting'     => 'editableSetting',
+        'members'             => 'members',
         'otherUserPermission' => 'otherUserPermission',
         'operatorId'          => 'operatorId',
     ];
@@ -44,6 +51,15 @@ class CreateRangeProtectionRequest extends Model
         $res = [];
         if (null !== $this->editableSetting) {
             $res['editableSetting'] = null !== $this->editableSetting ? $this->editableSetting->toMap() : null;
+        }
+        if (null !== $this->members) {
+            $res['members'] = [];
+            if (null !== $this->members && \is_array($this->members)) {
+                $n = 0;
+                foreach ($this->members as $item) {
+                    $res['members'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->otherUserPermission) {
             $res['otherUserPermission'] = $this->otherUserPermission;
@@ -65,6 +81,15 @@ class CreateRangeProtectionRequest extends Model
         $model = new self();
         if (isset($map['editableSetting'])) {
             $model->editableSetting = editableSetting::fromMap($map['editableSetting']);
+        }
+        if (isset($map['members'])) {
+            if (!empty($map['members'])) {
+                $model->members = [];
+                $n              = 0;
+                foreach ($map['members'] as $item) {
+                    $model->members[$n++] = null !== $item ? members::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['otherUserPermission'])) {
             $model->otherUserPermission = $map['otherUserPermission'];

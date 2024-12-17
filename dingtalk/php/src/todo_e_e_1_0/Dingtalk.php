@@ -5,6 +5,21 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\AppCreateEnterpriseTodoTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\AppCreateEnterpriseTodoTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\AppCreateEnterpriseTodoTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\AppDeleteTodoEETaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\AppDeleteTodoEETaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\AppDeleteTodoEETaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\AppGetUserTaskListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\AppGetUserTaskListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\AppGetUserTaskListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\AppUpdateTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\AppUpdateTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\AppUpdateTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\AppUpdateUserTaskStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\AppUpdateUserTaskStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\AppUpdateUserTaskStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\CreateEnterpriseTodoTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\CreateEnterpriseTodoTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\CreateEnterpriseTodoTaskResponse;
@@ -50,6 +65,360 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 创建专属待办
+     *  *
+     * @param AppCreateEnterpriseTodoTaskRequest $request AppCreateEnterpriseTodoTaskRequest
+     * @param AppCreateEnterpriseTodoTaskHeaders $headers AppCreateEnterpriseTodoTaskHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AppCreateEnterpriseTodoTaskResponse AppCreateEnterpriseTodoTaskResponse
+     */
+    public function appCreateEnterpriseTodoTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizCategoryId)) {
+            $body['bizCategoryId'] = $request->bizCategoryId;
+        }
+        if (!Utils::isUnset($request->customFields)) {
+            $body['customFields'] = $request->customFields;
+        }
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->detailUrl)) {
+            $body['detailUrl'] = $request->detailUrl;
+        }
+        if (!Utils::isUnset($request->dueTime)) {
+            $body['dueTime'] = $request->dueTime;
+        }
+        if (!Utils::isUnset($request->executorIds)) {
+            $body['executorIds'] = $request->executorIds;
+        }
+        if (!Utils::isUnset($request->notifyConfigs)) {
+            $body['notifyConfigs'] = $request->notifyConfigs;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $body['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->priority)) {
+            $body['priority'] = $request->priority;
+        }
+        if (!Utils::isUnset($request->sourceId)) {
+            $body['sourceId'] = $request->sourceId;
+        }
+        if (!Utils::isUnset($request->sourceTitle)) {
+            $body['sourceTitle'] = $request->sourceTitle;
+        }
+        if (!Utils::isUnset($request->subject)) {
+            $body['subject'] = $request->subject;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AppCreateEnterpriseTodoTask',
+            'version'     => 'todoEE_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todoEE/apps/users/tasks',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AppCreateEnterpriseTodoTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建专属待办
+     *  *
+     * @param AppCreateEnterpriseTodoTaskRequest $request AppCreateEnterpriseTodoTaskRequest
+     *
+     * @return AppCreateEnterpriseTodoTaskResponse AppCreateEnterpriseTodoTaskResponse
+     */
+    public function appCreateEnterpriseTodoTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AppCreateEnterpriseTodoTaskHeaders([]);
+
+        return $this->appCreateEnterpriseTodoTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除专属待办
+     *  *
+     * @param AppDeleteTodoEETaskRequest $request AppDeleteTodoEETaskRequest
+     * @param AppDeleteTodoEETaskHeaders $headers AppDeleteTodoEETaskHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AppDeleteTodoEETaskResponse AppDeleteTodoEETaskResponse
+     */
+    public function appDeleteTodoEETaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $body['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->taskIds)) {
+            $body['taskIds'] = $request->taskIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AppDeleteTodoEETask',
+            'version'     => 'todoEE_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todoEE/apps/users/tasks/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AppDeleteTodoEETaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除专属待办
+     *  *
+     * @param AppDeleteTodoEETaskRequest $request AppDeleteTodoEETaskRequest
+     *
+     * @return AppDeleteTodoEETaskResponse AppDeleteTodoEETaskResponse
+     */
+    public function appDeleteTodoEETask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AppDeleteTodoEETaskHeaders([]);
+
+        return $this->appDeleteTodoEETaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询用户待办列表
+     *  *
+     * @param AppGetUserTaskListRequest $request AppGetUserTaskListRequest
+     * @param AppGetUserTaskListHeaders $headers AppGetUserTaskListHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AppGetUserTaskListResponse AppGetUserTaskListResponse
+     */
+    public function appGetUserTaskListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->done)) {
+            $body['done'] = $request->done;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AppGetUserTaskList',
+            'version'     => 'todoEE_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todoEE/apps/users/tasks/list',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AppGetUserTaskListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询用户待办列表
+     *  *
+     * @param AppGetUserTaskListRequest $request AppGetUserTaskListRequest
+     *
+     * @return AppGetUserTaskListResponse AppGetUserTaskListResponse
+     */
+    public function appGetUserTaskList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AppGetUserTaskListHeaders([]);
+
+        return $this->appGetUserTaskListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新专属待办信息
+     *  *
+     * @param AppUpdateTaskRequest $request AppUpdateTaskRequest
+     * @param AppUpdateTaskHeaders $headers AppUpdateTaskHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AppUpdateTaskResponse AppUpdateTaskResponse
+     */
+    public function appUpdateTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->done)) {
+            $body['done'] = $request->done;
+        }
+        if (!Utils::isUnset($request->dueTime)) {
+            $body['dueTime'] = $request->dueTime;
+        }
+        if (!Utils::isUnset($request->executorIds)) {
+            $body['executorIds'] = $request->executorIds;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $body['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->subject)) {
+            $body['subject'] = $request->subject;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            $body['taskId'] = $request->taskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AppUpdateTask',
+            'version'     => 'todoEE_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todoEE/apps/users/tasks/infos',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AppUpdateTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新专属待办信息
+     *  *
+     * @param AppUpdateTaskRequest $request AppUpdateTaskRequest
+     *
+     * @return AppUpdateTaskResponse AppUpdateTaskResponse
+     */
+    public function appUpdateTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AppUpdateTaskHeaders([]);
+
+        return $this->appUpdateTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新用户的待办状态
+     *  *
+     * @param AppUpdateUserTaskStatusRequest $request AppUpdateUserTaskStatusRequest
+     * @param AppUpdateUserTaskStatusHeaders $headers AppUpdateUserTaskStatusHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AppUpdateUserTaskStatusResponse AppUpdateUserTaskStatusResponse
+     */
+    public function appUpdateUserTaskStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $body['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->userTaskStatuses)) {
+            $body['userTaskStatuses'] = $request->userTaskStatuses;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AppUpdateUserTaskStatus',
+            'version'     => 'todoEE_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todoEE/apps/users/tasks/statuses',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AppUpdateUserTaskStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新用户的待办状态
+     *  *
+     * @param AppUpdateUserTaskStatusRequest $request AppUpdateUserTaskStatusRequest
+     *
+     * @return AppUpdateUserTaskStatusResponse AppUpdateUserTaskStatusResponse
+     */
+    public function appUpdateUserTaskStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AppUpdateUserTaskStatusHeaders([]);
+
+        return $this->appUpdateUserTaskStatusWithOptions($request, $headers, $runtime);
     }
 
     /**

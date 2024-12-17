@@ -28,6 +28,10 @@ use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTypeConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\GetTodoTypeConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\ListAllBizCategoryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\ListAllBizCategoryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryOrgConfigHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryOrgConfigResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryOrgTodoByUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryOrgTodoByUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryOrgTodoByUserResponse;
@@ -37,6 +41,15 @@ use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryOrgTodoTasksResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryTodoTasksHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryTodoTasksRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\QueryTodoTasksResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\RemoveBizCategoryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\RemoveBizCategoryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\RemoveBizCategoryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\SetBizCategoryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\SetBizCategoryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\SetBizCategoryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\SetOrgConfigHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\SetOrgConfigRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\SetOrgConfigResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdateTodoTaskExecutorStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdateTodoTaskExecutorStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_1_0\Models\UpdateTodoTaskExecutorStatusResponse;
@@ -668,6 +681,102 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询待办应用下所有二级分类
+     *  *
+     * @param ListAllBizCategoryHeaders $headers ListAllBizCategoryHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListAllBizCategoryResponse ListAllBizCategoryResponse
+     */
+    public function listAllBizCategoryWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'ListAllBizCategory',
+            'version'     => 'todo_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todo/apps/allBizcategories/list',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListAllBizCategoryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询待办应用下所有二级分类
+     *  *
+     * @return ListAllBizCategoryResponse ListAllBizCategoryResponse
+     */
+    public function listAllBizCategory()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListAllBizCategoryHeaders([]);
+
+        return $this->listAllBizCategoryWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @summary 查询企业配置
+     *  *
+     * @param QueryOrgConfigHeaders $headers QueryOrgConfigHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryOrgConfigResponse QueryOrgConfigResponse
+     */
+    public function queryOrgConfigWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'QueryOrgConfig',
+            'version'     => 'todo_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todo/organizations/configs',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryOrgConfigResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询企业配置
+     *  *
+     * @return QueryOrgConfigResponse QueryOrgConfigResponse
+     */
+    public function queryOrgConfig()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryOrgConfigHeaders([]);
+
+        return $this->queryOrgConfigWithOptions($headers, $runtime);
+    }
+
+    /**
      * @summary 查询用户企业类型待办列表，支持查询当前企业的一方应用、三方应用、自建应用产生的工作待办数据
      *  *
      * @param string                    $unionId
@@ -769,6 +878,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->nextToken)) {
             $body['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->roleTypes)) {
+            $body['roleTypes'] = $request->roleTypes;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -893,6 +1005,198 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryTodoTasksHeaders([]);
 
         return $this->queryTodoTasksWithOptions($unionId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除二级分类
+     *  *
+     * @param RemoveBizCategoryRequest $request RemoveBizCategoryRequest
+     * @param RemoveBizCategoryHeaders $headers RemoveBizCategoryHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return RemoveBizCategoryResponse RemoveBizCategoryResponse
+     */
+    public function removeBizCategoryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizCategoryId)) {
+            $query['bizCategoryId'] = $request->bizCategoryId;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'RemoveBizCategory',
+            'version'     => 'todo_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todo/apps/bizcategories',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return RemoveBizCategoryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除二级分类
+     *  *
+     * @param RemoveBizCategoryRequest $request RemoveBizCategoryRequest
+     *
+     * @return RemoveBizCategoryResponse RemoveBizCategoryResponse
+     */
+    public function removeBizCategory($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RemoveBizCategoryHeaders([]);
+
+        return $this->removeBizCategoryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 保存二级分类
+     *  *
+     * @param SetBizCategoryRequest $request SetBizCategoryRequest
+     * @param SetBizCategoryHeaders $headers SetBizCategoryHeaders
+     * @param RuntimeOptions        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SetBizCategoryResponse SetBizCategoryResponse
+     */
+    public function setBizCategoryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->bizCategoryId)) {
+            $query['bizCategoryId'] = $request->bizCategoryId;
+        }
+        if (!Utils::isUnset($request->description)) {
+            $query['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $query['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SetBizCategory',
+            'version'     => 'todo_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todo/apps/bizcategories/save',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SetBizCategoryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 保存二级分类
+     *  *
+     * @param SetBizCategoryRequest $request SetBizCategoryRequest
+     *
+     * @return SetBizCategoryResponse SetBizCategoryResponse
+     */
+    public function setBizCategory($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetBizCategoryHeaders([]);
+
+        return $this->setBizCategoryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 保存企业配置
+     *  *
+     * @param SetOrgConfigRequest $request SetOrgConfigRequest
+     * @param SetOrgConfigHeaders $headers SetOrgConfigHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SetOrgConfigResponse SetOrgConfigResponse
+     */
+    public function setOrgConfigWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->appDisplayStyle)) {
+            $body['appDisplayStyle'] = $request->appDisplayStyle;
+        }
+        if (!Utils::isUnset($request->homepageCatalogs)) {
+            $body['homepageCatalogs'] = $request->homepageCatalogs;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $body['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->status)) {
+            $body['status'] = $request->status;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SetOrgConfig',
+            'version'     => 'todo_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todo/organizations/configs/save',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SetOrgConfigResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 保存企业配置
+     *  *
+     * @param SetOrgConfigRequest $request SetOrgConfigRequest
+     *
+     * @return SetOrgConfigResponse SetOrgConfigResponse
+     */
+    public function setOrgConfig($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetOrgConfigHeaders([]);
+
+        return $this->setOrgConfigWithOptions($request, $headers, $runtime);
     }
 
     /**

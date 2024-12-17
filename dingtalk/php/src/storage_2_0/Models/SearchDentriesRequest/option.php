@@ -45,6 +45,11 @@ class option extends Model
     public $nextToken;
 
     /**
+     * @var int[]
+     */
+    public $spaceIds;
+
+    /**
      * @var visitTimeRange
      */
     public $visitTimeRange;
@@ -55,6 +60,7 @@ class option extends Model
         'maxResults'       => 'maxResults',
         'modifierIds'      => 'modifierIds',
         'nextToken'        => 'nextToken',
+        'spaceIds'         => 'spaceIds',
         'visitTimeRange'   => 'visitTimeRange',
     ];
 
@@ -82,6 +88,9 @@ class option extends Model
         }
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
+        }
+        if (null !== $this->spaceIds) {
+            $res['spaceIds'] = $this->spaceIds;
         }
         if (null !== $this->visitTimeRange) {
             $res['visitTimeRange'] = null !== $this->visitTimeRange ? $this->visitTimeRange->toMap() : null;
@@ -121,6 +130,11 @@ class option extends Model
         }
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
+        }
+        if (isset($map['spaceIds'])) {
+            if (!empty($map['spaceIds'])) {
+                $model->spaceIds = $map['spaceIds'];
+            }
         }
         if (isset($map['visitTimeRange'])) {
             $model->visitTimeRange = visitTimeRange::fromMap($map['visitTimeRange']);

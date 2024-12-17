@@ -33,6 +33,9 @@ use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetFreeTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetProjectMembersV3Headers;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetProjectMembersV3Request;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetProjectMembersV3Response;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetProjectRolesV3Headers;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetProjectRolesV3Request;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetProjectRolesV3Response;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetTbUserIdByDingUserIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetTbUserIdByDingUserIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetTbUserIdByDingUserIdResponse;
@@ -61,6 +64,9 @@ use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\SearchAllTasksByTqlRespons
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\SearchProjectsV3Headers;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\SearchProjectsV3Request;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\SearchProjectsV3Response;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\UpdateProjectMemberRoleV3Headers;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\UpdateProjectMemberRoleV3Request;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\UpdateProjectMemberRoleV3Response;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\UpdateProjectV3Headers;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\UpdateProjectV3Request;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\UpdateProjectV3Response;
@@ -715,6 +721,76 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取项目角色列表。
+     *  *
+     * @param string                   $userId
+     * @param string                   $projectId
+     * @param GetProjectRolesV3Request $request   GetProjectRolesV3Request
+     * @param GetProjectRolesV3Headers $headers   GetProjectRolesV3Headers
+     * @param RuntimeOptions           $runtime   runtime options for this request RuntimeOptions
+     *
+     * @return GetProjectRolesV3Response GetProjectRolesV3Response
+     */
+    public function getProjectRolesV3WithOptions($userId, $projectId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->includeHidden)) {
+            $query['includeHidden'] = $request->includeHidden;
+        }
+        if (!Utils::isUnset($request->level)) {
+            $query['level'] = $request->level;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetProjectRolesV3',
+            'version'     => 'teamSphere_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/projects/' . $projectId . '/roles',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetProjectRolesV3Response::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取项目角色列表。
+     *  *
+     * @param string                   $userId
+     * @param string                   $projectId
+     * @param GetProjectRolesV3Request $request   GetProjectRolesV3Request
+     *
+     * @return GetProjectRolesV3Response GetProjectRolesV3Response
+     */
+    public function getProjectRolesV3($userId, $projectId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetProjectRolesV3Headers([]);
+
+        return $this->getProjectRolesV3WithOptions($userId, $projectId, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 钉钉 userId 查询 24位长 userId。
      *  *
      * @param GetTbUserIdByDingUserIdRequest $request GetTbUserIdByDingUserIdRequest
@@ -1328,6 +1404,70 @@ class Dingtalk extends OpenApiClient
         $headers = new SearchProjectsV3Headers([]);
 
         return $this->searchProjectsV3WithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 修改项目成员的角色。
+     *  *
+     * @param string                           $userId
+     * @param string                           $projectId
+     * @param UpdateProjectMemberRoleV3Request $request   UpdateProjectMemberRoleV3Request
+     * @param UpdateProjectMemberRoleV3Headers $headers   UpdateProjectMemberRoleV3Headers
+     * @param RuntimeOptions                   $runtime   runtime options for this request RuntimeOptions
+     *
+     * @return UpdateProjectMemberRoleV3Response UpdateProjectMemberRoleV3Response
+     */
+    public function updateProjectMemberRoleV3WithOptions($userId, $projectId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->roleIds)) {
+            $body['roleIds'] = $request->roleIds;
+        }
+        if (!Utils::isUnset($request->userIds)) {
+            $body['userIds'] = $request->userIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateProjectMemberRoleV3',
+            'version'     => 'teamSphere_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/projects/' . $projectId . '/roles/assign',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateProjectMemberRoleV3Response::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 修改项目成员的角色。
+     *  *
+     * @param string                           $userId
+     * @param string                           $projectId
+     * @param UpdateProjectMemberRoleV3Request $request   UpdateProjectMemberRoleV3Request
+     *
+     * @return UpdateProjectMemberRoleV3Response UpdateProjectMemberRoleV3Response
+     */
+    public function updateProjectMemberRoleV3($userId, $projectId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateProjectMemberRoleV3Headers([]);
+
+        return $this->updateProjectMemberRoleV3WithOptions($userId, $projectId, $request, $headers, $runtime);
     }
 
     /**
