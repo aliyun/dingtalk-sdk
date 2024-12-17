@@ -2744,6 +2744,229 @@ class GetProjectMembersV3Response(TeaModel):
         return self
 
 
+class GetProjectRolesV3Headers(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetProjectRolesV3Request(TeaModel):
+    def __init__(
+        self,
+        include_hidden: bool = None,
+        level: int = None,
+        max_results: int = None,
+        next_token: str = None,
+    ):
+        self.include_hidden = include_hidden
+        self.level = level
+        self.max_results = max_results
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.include_hidden is not None:
+            result['includeHidden'] = self.include_hidden
+        if self.level is not None:
+            result['level'] = self.level
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('includeHidden') is not None:
+            self.include_hidden = m.get('includeHidden')
+        if m.get('level') is not None:
+            self.level = m.get('level')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class GetProjectRolesV3ResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        display: bool = None,
+        id: str = None,
+        is_default_role: bool = None,
+        level: int = None,
+        name: str = None,
+        original_id: str = None,
+    ):
+        self.display = display
+        self.id = id
+        self.is_default_role = is_default_role
+        self.level = level
+        self.name = name
+        self.original_id = original_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.display is not None:
+            result['display'] = self.display
+        if self.id is not None:
+            result['id'] = self.id
+        if self.is_default_role is not None:
+            result['isDefaultRole'] = self.is_default_role
+        if self.level is not None:
+            result['level'] = self.level
+        if self.name is not None:
+            result['name'] = self.name
+        if self.original_id is not None:
+            result['originalId'] = self.original_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('display') is not None:
+            self.display = m.get('display')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('isDefaultRole') is not None:
+            self.is_default_role = m.get('isDefaultRole')
+        if m.get('level') is not None:
+            self.level = m.get('level')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('originalId') is not None:
+            self.original_id = m.get('originalId')
+        return self
+
+
+class GetProjectRolesV3ResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        request_id: str = None,
+        result: List[GetProjectRolesV3ResponseBodyResult] = None,
+    ):
+        self.next_token = next_token
+        self.request_id = request_id
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetProjectRolesV3ResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class GetProjectRolesV3Response(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetProjectRolesV3ResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetProjectRolesV3ResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetTbUserIdByDingUserIdHeaders(TeaModel):
     def __init__(
         self,
@@ -6687,6 +6910,7 @@ class SearchProjectsV3ResponseBodyResult(TeaModel):
         creator_id: str = None,
         description: str = None,
         id: str = None,
+        is_archived: bool = None,
         is_template: bool = None,
         logo: str = None,
         name: str = None,
@@ -6698,6 +6922,7 @@ class SearchProjectsV3ResponseBodyResult(TeaModel):
         self.creator_id = creator_id
         self.description = description
         self.id = id
+        self.is_archived = is_archived
         self.is_template = is_template
         self.logo = logo
         self.name = name
@@ -6722,6 +6947,8 @@ class SearchProjectsV3ResponseBodyResult(TeaModel):
             result['description'] = self.description
         if self.id is not None:
             result['id'] = self.id
+        if self.is_archived is not None:
+            result['isArchived'] = self.is_archived
         if self.is_template is not None:
             result['isTemplate'] = self.is_template
         if self.logo is not None:
@@ -6746,6 +6973,8 @@ class SearchProjectsV3ResponseBodyResult(TeaModel):
             self.description = m.get('description')
         if m.get('id') is not None:
             self.id = m.get('id')
+        if m.get('isArchived') is not None:
+            self.is_archived = m.get('isArchived')
         if m.get('isTemplate') is not None:
             self.is_template = m.get('isTemplate')
         if m.get('logo') is not None:
@@ -6845,6 +7074,199 @@ class SearchProjectsV3Response(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SearchProjectsV3ResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateProjectMemberRoleV3Headers(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateProjectMemberRoleV3Request(TeaModel):
+    def __init__(
+        self,
+        role_ids: List[str] = None,
+        user_ids: List[str] = None,
+    ):
+        self.role_ids = role_ids
+        self.user_ids = user_ids
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.role_ids is not None:
+            result['roleIds'] = self.role_ids
+        if self.user_ids is not None:
+            result['userIds'] = self.user_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('roleIds') is not None:
+            self.role_ids = m.get('roleIds')
+        if m.get('userIds') is not None:
+            self.user_ids = m.get('userIds')
+        return self
+
+
+class UpdateProjectMemberRoleV3ResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        role: int = None,
+        role_ids: List[str] = None,
+        user_id: str = None,
+    ):
+        self.id = id
+        self.role = role
+        self.role_ids = role_ids
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.role is not None:
+            result['role'] = self.role
+        if self.role_ids is not None:
+            result['roleIds'] = self.role_ids
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('role') is not None:
+            self.role = m.get('role')
+        if m.get('roleIds') is not None:
+            self.role_ids = m.get('roleIds')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class UpdateProjectMemberRoleV3ResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: List[UpdateProjectMemberRoleV3ResponseBodyResult] = None,
+    ):
+        self.request_id = request_id
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = UpdateProjectMemberRoleV3ResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class UpdateProjectMemberRoleV3Response(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateProjectMemberRoleV3ResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateProjectMemberRoleV3ResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

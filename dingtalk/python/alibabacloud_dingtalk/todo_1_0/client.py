@@ -1160,6 +1160,190 @@ class Client(OpenApiClient):
         headers = dingtalktodo__1__0_models.GetTodoTypeConfigHeaders()
         return await self.get_todo_type_config_with_options_async(union_id, card_type_id, headers, runtime)
 
+    def list_all_biz_category_with_options(
+        self,
+        headers: dingtalktodo__1__0_models.ListAllBizCategoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.ListAllBizCategoryResponse:
+        """
+        @summary 查询待办应用下所有二级分类
+        
+        @param headers: ListAllBizCategoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAllBizCategoryResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='ListAllBizCategory',
+            version='todo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todo/apps/allBizcategories/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.ListAllBizCategoryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_all_biz_category_with_options_async(
+        self,
+        headers: dingtalktodo__1__0_models.ListAllBizCategoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.ListAllBizCategoryResponse:
+        """
+        @summary 查询待办应用下所有二级分类
+        
+        @param headers: ListAllBizCategoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListAllBizCategoryResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='ListAllBizCategory',
+            version='todo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todo/apps/allBizcategories/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.ListAllBizCategoryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_all_biz_category(self) -> dingtalktodo__1__0_models.ListAllBizCategoryResponse:
+        """
+        @summary 查询待办应用下所有二级分类
+        
+        @return: ListAllBizCategoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.ListAllBizCategoryHeaders()
+        return self.list_all_biz_category_with_options(headers, runtime)
+
+    async def list_all_biz_category_async(self) -> dingtalktodo__1__0_models.ListAllBizCategoryResponse:
+        """
+        @summary 查询待办应用下所有二级分类
+        
+        @return: ListAllBizCategoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.ListAllBizCategoryHeaders()
+        return await self.list_all_biz_category_with_options_async(headers, runtime)
+
+    def query_org_config_with_options(
+        self,
+        headers: dingtalktodo__1__0_models.QueryOrgConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.QueryOrgConfigResponse:
+        """
+        @summary 查询企业配置
+        
+        @param headers: QueryOrgConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOrgConfigResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryOrgConfig',
+            version='todo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todo/organizations/configs',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.QueryOrgConfigResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_org_config_with_options_async(
+        self,
+        headers: dingtalktodo__1__0_models.QueryOrgConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.QueryOrgConfigResponse:
+        """
+        @summary 查询企业配置
+        
+        @param headers: QueryOrgConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryOrgConfigResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryOrgConfig',
+            version='todo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todo/organizations/configs',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.QueryOrgConfigResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_org_config(self) -> dingtalktodo__1__0_models.QueryOrgConfigResponse:
+        """
+        @summary 查询企业配置
+        
+        @return: QueryOrgConfigResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.QueryOrgConfigHeaders()
+        return self.query_org_config_with_options(headers, runtime)
+
+    async def query_org_config_async(self) -> dingtalktodo__1__0_models.QueryOrgConfigResponse:
+        """
+        @summary 查询企业配置
+        
+        @return: QueryOrgConfigResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.QueryOrgConfigHeaders()
+        return await self.query_org_config_with_options_async(headers, runtime)
+
     def query_org_todo_by_user_with_options(
         self,
         union_id: str,
@@ -1331,6 +1515,8 @@ class Client(OpenApiClient):
             body['isDone'] = request.is_done
         if not UtilClient.is_unset(request.next_token):
             body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.role_types):
+            body['roleTypes'] = request.role_types
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1377,6 +1563,8 @@ class Client(OpenApiClient):
             body['isDone'] = request.is_done
         if not UtilClient.is_unset(request.next_token):
             body['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.role_types):
+            body['roleTypes'] = request.role_types
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1581,6 +1769,376 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo__1__0_models.QueryTodoTasksHeaders()
         return await self.query_todo_tasks_with_options_async(union_id, request, headers, runtime)
+
+    def remove_biz_category_with_options(
+        self,
+        request: dingtalktodo__1__0_models.RemoveBizCategoryRequest,
+        headers: dingtalktodo__1__0_models.RemoveBizCategoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.RemoveBizCategoryResponse:
+        """
+        @summary 删除二级分类
+        
+        @param request: RemoveBizCategoryRequest
+        @param headers: RemoveBizCategoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveBizCategoryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_category_id):
+            query['bizCategoryId'] = request.biz_category_id
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='RemoveBizCategory',
+            version='todo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todo/apps/bizcategories',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.RemoveBizCategoryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def remove_biz_category_with_options_async(
+        self,
+        request: dingtalktodo__1__0_models.RemoveBizCategoryRequest,
+        headers: dingtalktodo__1__0_models.RemoveBizCategoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.RemoveBizCategoryResponse:
+        """
+        @summary 删除二级分类
+        
+        @param request: RemoveBizCategoryRequest
+        @param headers: RemoveBizCategoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveBizCategoryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_category_id):
+            query['bizCategoryId'] = request.biz_category_id
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='RemoveBizCategory',
+            version='todo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todo/apps/bizcategories',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.RemoveBizCategoryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def remove_biz_category(
+        self,
+        request: dingtalktodo__1__0_models.RemoveBizCategoryRequest,
+    ) -> dingtalktodo__1__0_models.RemoveBizCategoryResponse:
+        """
+        @summary 删除二级分类
+        
+        @param request: RemoveBizCategoryRequest
+        @return: RemoveBizCategoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.RemoveBizCategoryHeaders()
+        return self.remove_biz_category_with_options(request, headers, runtime)
+
+    async def remove_biz_category_async(
+        self,
+        request: dingtalktodo__1__0_models.RemoveBizCategoryRequest,
+    ) -> dingtalktodo__1__0_models.RemoveBizCategoryResponse:
+        """
+        @summary 删除二级分类
+        
+        @param request: RemoveBizCategoryRequest
+        @return: RemoveBizCategoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.RemoveBizCategoryHeaders()
+        return await self.remove_biz_category_with_options_async(request, headers, runtime)
+
+    def set_biz_category_with_options(
+        self,
+        request: dingtalktodo__1__0_models.SetBizCategoryRequest,
+        headers: dingtalktodo__1__0_models.SetBizCategoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.SetBizCategoryResponse:
+        """
+        @summary 保存二级分类
+        
+        @param request: SetBizCategoryRequest
+        @param headers: SetBizCategoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetBizCategoryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_category_id):
+            query['bizCategoryId'] = request.biz_category_id
+        if not UtilClient.is_unset(request.description):
+            query['description'] = request.description
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SetBizCategory',
+            version='todo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todo/apps/bizcategories/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.SetBizCategoryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def set_biz_category_with_options_async(
+        self,
+        request: dingtalktodo__1__0_models.SetBizCategoryRequest,
+        headers: dingtalktodo__1__0_models.SetBizCategoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.SetBizCategoryResponse:
+        """
+        @summary 保存二级分类
+        
+        @param request: SetBizCategoryRequest
+        @param headers: SetBizCategoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetBizCategoryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.biz_category_id):
+            query['bizCategoryId'] = request.biz_category_id
+        if not UtilClient.is_unset(request.description):
+            query['description'] = request.description
+        if not UtilClient.is_unset(request.name):
+            query['name'] = request.name
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SetBizCategory',
+            version='todo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todo/apps/bizcategories/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.SetBizCategoryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def set_biz_category(
+        self,
+        request: dingtalktodo__1__0_models.SetBizCategoryRequest,
+    ) -> dingtalktodo__1__0_models.SetBizCategoryResponse:
+        """
+        @summary 保存二级分类
+        
+        @param request: SetBizCategoryRequest
+        @return: SetBizCategoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.SetBizCategoryHeaders()
+        return self.set_biz_category_with_options(request, headers, runtime)
+
+    async def set_biz_category_async(
+        self,
+        request: dingtalktodo__1__0_models.SetBizCategoryRequest,
+    ) -> dingtalktodo__1__0_models.SetBizCategoryResponse:
+        """
+        @summary 保存二级分类
+        
+        @param request: SetBizCategoryRequest
+        @return: SetBizCategoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.SetBizCategoryHeaders()
+        return await self.set_biz_category_with_options_async(request, headers, runtime)
+
+    def set_org_config_with_options(
+        self,
+        request: dingtalktodo__1__0_models.SetOrgConfigRequest,
+        headers: dingtalktodo__1__0_models.SetOrgConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.SetOrgConfigResponse:
+        """
+        @summary 保存企业配置
+        
+        @param request: SetOrgConfigRequest
+        @param headers: SetOrgConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetOrgConfigResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_display_style):
+            body['appDisplayStyle'] = request.app_display_style
+        if not UtilClient.is_unset(request.homepage_catalogs):
+            body['homepageCatalogs'] = request.homepage_catalogs
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetOrgConfig',
+            version='todo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todo/organizations/configs/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.SetOrgConfigResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def set_org_config_with_options_async(
+        self,
+        request: dingtalktodo__1__0_models.SetOrgConfigRequest,
+        headers: dingtalktodo__1__0_models.SetOrgConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo__1__0_models.SetOrgConfigResponse:
+        """
+        @summary 保存企业配置
+        
+        @param request: SetOrgConfigRequest
+        @param headers: SetOrgConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetOrgConfigResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.app_display_style):
+            body['appDisplayStyle'] = request.app_display_style
+        if not UtilClient.is_unset(request.homepage_catalogs):
+            body['homepageCatalogs'] = request.homepage_catalogs
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.status):
+            body['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetOrgConfig',
+            version='todo_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todo/organizations/configs/save',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo__1__0_models.SetOrgConfigResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def set_org_config(
+        self,
+        request: dingtalktodo__1__0_models.SetOrgConfigRequest,
+    ) -> dingtalktodo__1__0_models.SetOrgConfigResponse:
+        """
+        @summary 保存企业配置
+        
+        @param request: SetOrgConfigRequest
+        @return: SetOrgConfigResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.SetOrgConfigHeaders()
+        return self.set_org_config_with_options(request, headers, runtime)
+
+    async def set_org_config_async(
+        self,
+        request: dingtalktodo__1__0_models.SetOrgConfigRequest,
+    ) -> dingtalktodo__1__0_models.SetOrgConfigResponse:
+        """
+        @summary 保存企业配置
+        
+        @param request: SetOrgConfigRequest
+        @return: SetOrgConfigResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo__1__0_models.SetOrgConfigHeaders()
+        return await self.set_org_config_with_options_async(request, headers, runtime)
 
     def update_todo_task_with_options(
         self,

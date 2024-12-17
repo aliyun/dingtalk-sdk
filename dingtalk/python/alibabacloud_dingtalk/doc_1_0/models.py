@@ -2392,14 +2392,67 @@ class CreateRangeProtectionRequestEditableSetting(TeaModel):
         return self
 
 
+class CreateRangeProtectionRequestMembers(TeaModel):
+    def __init__(
+        self,
+        dept_id: str = None,
+        member_type: str = None,
+        open_conversation_id: str = None,
+        permission: str = None,
+        union_id: str = None,
+    ):
+        self.dept_id = dept_id
+        self.member_type = member_type
+        self.open_conversation_id = open_conversation_id
+        self.permission = permission
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.member_type is not None:
+            result['memberType'] = self.member_type
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.permission is not None:
+            result['permission'] = self.permission
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('memberType') is not None:
+            self.member_type = m.get('memberType')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('permission') is not None:
+            self.permission = m.get('permission')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
 class CreateRangeProtectionRequest(TeaModel):
     def __init__(
         self,
         editable_setting: CreateRangeProtectionRequestEditableSetting = None,
+        members: List[CreateRangeProtectionRequestMembers] = None,
         other_user_permission: str = None,
         operator_id: str = None,
     ):
         self.editable_setting = editable_setting
+        self.members = members
         # This parameter is required.
         self.other_user_permission = other_user_permission
         # This parameter is required.
@@ -2408,6 +2461,10 @@ class CreateRangeProtectionRequest(TeaModel):
     def validate(self):
         if self.editable_setting:
             self.editable_setting.validate()
+        if self.members:
+            for k in self.members:
+                if k:
+                    k.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -2417,6 +2474,10 @@ class CreateRangeProtectionRequest(TeaModel):
         result = dict()
         if self.editable_setting is not None:
             result['editableSetting'] = self.editable_setting.to_map()
+        result['members'] = []
+        if self.members is not None:
+            for k in self.members:
+                result['members'].append(k.to_map() if k else None)
         if self.other_user_permission is not None:
             result['otherUserPermission'] = self.other_user_permission
         if self.operator_id is not None:
@@ -2428,6 +2489,11 @@ class CreateRangeProtectionRequest(TeaModel):
         if m.get('editableSetting') is not None:
             temp_model = CreateRangeProtectionRequestEditableSetting()
             self.editable_setting = temp_model.from_map(m['editableSetting'])
+        self.members = []
+        if m.get('members') is not None:
+            for k in m.get('members'):
+                temp_model = CreateRangeProtectionRequestMembers()
+                self.members.append(temp_model.from_map(k))
         if m.get('otherUserPermission') is not None:
             self.other_user_permission = m.get('otherUserPermission')
         if m.get('operatorId') is not None:

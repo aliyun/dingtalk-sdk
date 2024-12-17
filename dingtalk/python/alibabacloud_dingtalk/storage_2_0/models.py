@@ -2188,6 +2188,7 @@ class SearchDentriesRequestOption(TeaModel):
         max_results: int = None,
         modifier_ids: List[str] = None,
         next_token: str = None,
+        space_ids: List[int] = None,
         visit_time_range: SearchDentriesRequestOptionVisitTimeRange = None,
     ):
         self.create_time_range = create_time_range
@@ -2196,6 +2197,7 @@ class SearchDentriesRequestOption(TeaModel):
         self.max_results = max_results
         self.modifier_ids = modifier_ids
         self.next_token = next_token
+        self.space_ids = space_ids
         self.visit_time_range = visit_time_range
 
     def validate(self):
@@ -2222,6 +2224,8 @@ class SearchDentriesRequestOption(TeaModel):
             result['modifierIds'] = self.modifier_ids
         if self.next_token is not None:
             result['nextToken'] = self.next_token
+        if self.space_ids is not None:
+            result['spaceIds'] = self.space_ids
         if self.visit_time_range is not None:
             result['visitTimeRange'] = self.visit_time_range.to_map()
         return result
@@ -2241,6 +2245,8 @@ class SearchDentriesRequestOption(TeaModel):
             self.modifier_ids = m.get('modifierIds')
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
+        if m.get('spaceIds') is not None:
+            self.space_ids = m.get('spaceIds')
         if m.get('visitTimeRange') is not None:
             temp_model = SearchDentriesRequestOptionVisitTimeRange()
             self.visit_time_range = temp_model.from_map(m['visitTimeRange'])
@@ -2356,24 +2362,69 @@ class SearchDentriesResponseBodyItemsModifier(TeaModel):
         return self
 
 
+class SearchDentriesResponseBodyItemsPath(TeaModel):
+    def __init__(
+        self,
+        long_path: str = None,
+        path: str = None,
+        url: str = None,
+    ):
+        self.long_path = long_path
+        self.path = path
+        self.url = url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.long_path is not None:
+            result['longPath'] = self.long_path
+        if self.path is not None:
+            result['path'] = self.path
+        if self.url is not None:
+            result['url'] = self.url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('longPath') is not None:
+            self.long_path = m.get('longPath')
+        if m.get('path') is not None:
+            self.path = m.get('path')
+        if m.get('url') is not None:
+            self.url = m.get('url')
+        return self
+
+
 class SearchDentriesResponseBodyItems(TeaModel):
     def __init__(
         self,
         creator: SearchDentriesResponseBodyItemsCreator = None,
         dentry_uuid: str = None,
+        last_modify_time: int = None,
         modifier: SearchDentriesResponseBodyItemsModifier = None,
         name: str = None,
+        path: SearchDentriesResponseBodyItemsPath = None,
     ):
         self.creator = creator
         self.dentry_uuid = dentry_uuid
+        self.last_modify_time = last_modify_time
         self.modifier = modifier
         self.name = name
+        self.path = path
 
     def validate(self):
         if self.creator:
             self.creator.validate()
         if self.modifier:
             self.modifier.validate()
+        if self.path:
+            self.path.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -2385,10 +2436,14 @@ class SearchDentriesResponseBodyItems(TeaModel):
             result['creator'] = self.creator.to_map()
         if self.dentry_uuid is not None:
             result['dentryUuid'] = self.dentry_uuid
+        if self.last_modify_time is not None:
+            result['lastModifyTime'] = self.last_modify_time
         if self.modifier is not None:
             result['modifier'] = self.modifier.to_map()
         if self.name is not None:
             result['name'] = self.name
+        if self.path is not None:
+            result['path'] = self.path.to_map()
         return result
 
     def from_map(self, m: dict = None):
@@ -2398,11 +2453,16 @@ class SearchDentriesResponseBodyItems(TeaModel):
             self.creator = temp_model.from_map(m['creator'])
         if m.get('dentryUuid') is not None:
             self.dentry_uuid = m.get('dentryUuid')
+        if m.get('lastModifyTime') is not None:
+            self.last_modify_time = m.get('lastModifyTime')
         if m.get('modifier') is not None:
             temp_model = SearchDentriesResponseBodyItemsModifier()
             self.modifier = temp_model.from_map(m['modifier'])
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('path') is not None:
+            temp_model = SearchDentriesResponseBodyItemsPath()
+            self.path = temp_model.from_map(m['path'])
         return self
 
 

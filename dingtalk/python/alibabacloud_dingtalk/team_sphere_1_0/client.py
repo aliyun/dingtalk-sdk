@@ -1250,6 +1250,140 @@ class Client(OpenApiClient):
         headers = dingtalkteam_sphere__1__0_models.GetProjectMembersV3Headers()
         return await self.get_project_members_v3with_options_async(user_id, project_id, request, headers, runtime)
 
+    def get_project_roles_v3with_options(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkteam_sphere__1__0_models.GetProjectRolesV3Request,
+        headers: dingtalkteam_sphere__1__0_models.GetProjectRolesV3Headers,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.GetProjectRolesV3Response:
+        """
+        @summary 获取项目角色列表。
+        
+        @param request: GetProjectRolesV3Request
+        @param headers: GetProjectRolesV3Headers
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetProjectRolesV3Response
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.include_hidden):
+            query['includeHidden'] = request.include_hidden
+        if not UtilClient.is_unset(request.level):
+            query['level'] = request.level
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetProjectRolesV3',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/projects/{project_id}/roles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.GetProjectRolesV3Response(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_project_roles_v3with_options_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkteam_sphere__1__0_models.GetProjectRolesV3Request,
+        headers: dingtalkteam_sphere__1__0_models.GetProjectRolesV3Headers,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.GetProjectRolesV3Response:
+        """
+        @summary 获取项目角色列表。
+        
+        @param request: GetProjectRolesV3Request
+        @param headers: GetProjectRolesV3Headers
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetProjectRolesV3Response
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.include_hidden):
+            query['includeHidden'] = request.include_hidden
+        if not UtilClient.is_unset(request.level):
+            query['level'] = request.level
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetProjectRolesV3',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/projects/{project_id}/roles',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.GetProjectRolesV3Response(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_project_roles_v3(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkteam_sphere__1__0_models.GetProjectRolesV3Request,
+    ) -> dingtalkteam_sphere__1__0_models.GetProjectRolesV3Response:
+        """
+        @summary 获取项目角色列表。
+        
+        @param request: GetProjectRolesV3Request
+        @return: GetProjectRolesV3Response
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.GetProjectRolesV3Headers()
+        return self.get_project_roles_v3with_options(user_id, project_id, request, headers, runtime)
+
+    async def get_project_roles_v3_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkteam_sphere__1__0_models.GetProjectRolesV3Request,
+    ) -> dingtalkteam_sphere__1__0_models.GetProjectRolesV3Response:
+        """
+        @summary 获取项目角色列表。
+        
+        @param request: GetProjectRolesV3Request
+        @return: GetProjectRolesV3Response
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.GetProjectRolesV3Headers()
+        return await self.get_project_roles_v3with_options_async(user_id, project_id, request, headers, runtime)
+
     def get_tb_user_id_by_ding_user_id_with_options(
         self,
         request: dingtalkteam_sphere__1__0_models.GetTbUserIdByDingUserIdRequest,
@@ -2441,6 +2575,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkteam_sphere__1__0_models.SearchProjectsV3Headers()
         return await self.search_projects_v3with_options_async(request, headers, runtime)
+
+    def update_project_member_role_v3with_options(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkteam_sphere__1__0_models.UpdateProjectMemberRoleV3Request,
+        headers: dingtalkteam_sphere__1__0_models.UpdateProjectMemberRoleV3Headers,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.UpdateProjectMemberRoleV3Response:
+        """
+        @summary 修改项目成员的角色。
+        
+        @param request: UpdateProjectMemberRoleV3Request
+        @param headers: UpdateProjectMemberRoleV3Headers
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateProjectMemberRoleV3Response
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.role_ids):
+            body['roleIds'] = request.role_ids
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateProjectMemberRoleV3',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/projects/{project_id}/roles/assign',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.UpdateProjectMemberRoleV3Response(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_project_member_role_v3with_options_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkteam_sphere__1__0_models.UpdateProjectMemberRoleV3Request,
+        headers: dingtalkteam_sphere__1__0_models.UpdateProjectMemberRoleV3Headers,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.UpdateProjectMemberRoleV3Response:
+        """
+        @summary 修改项目成员的角色。
+        
+        @param request: UpdateProjectMemberRoleV3Request
+        @param headers: UpdateProjectMemberRoleV3Headers
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateProjectMemberRoleV3Response
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.role_ids):
+            body['roleIds'] = request.role_ids
+        if not UtilClient.is_unset(request.user_ids):
+            body['userIds'] = request.user_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateProjectMemberRoleV3',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/projects/{project_id}/roles/assign',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.UpdateProjectMemberRoleV3Response(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_project_member_role_v3(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkteam_sphere__1__0_models.UpdateProjectMemberRoleV3Request,
+    ) -> dingtalkteam_sphere__1__0_models.UpdateProjectMemberRoleV3Response:
+        """
+        @summary 修改项目成员的角色。
+        
+        @param request: UpdateProjectMemberRoleV3Request
+        @return: UpdateProjectMemberRoleV3Response
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.UpdateProjectMemberRoleV3Headers()
+        return self.update_project_member_role_v3with_options(user_id, project_id, request, headers, runtime)
+
+    async def update_project_member_role_v3_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkteam_sphere__1__0_models.UpdateProjectMemberRoleV3Request,
+    ) -> dingtalkteam_sphere__1__0_models.UpdateProjectMemberRoleV3Response:
+        """
+        @summary 修改项目成员的角色。
+        
+        @param request: UpdateProjectMemberRoleV3Request
+        @return: UpdateProjectMemberRoleV3Response
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.UpdateProjectMemberRoleV3Headers()
+        return await self.update_project_member_role_v3with_options_async(user_id, project_id, request, headers, runtime)
 
     def update_project_v3with_options(
         self,

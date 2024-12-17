@@ -1578,6 +1578,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.editable_setting):
             body['editableSetting'] = request.editable_setting
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
         if not UtilClient.is_unset(request.other_user_permission):
             body['otherUserPermission'] = request.other_user_permission
         real_headers = {}
@@ -1630,6 +1632,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.editable_setting):
             body['editableSetting'] = request.editable_setting
+        if not UtilClient.is_unset(request.members):
+            body['members'] = request.members
         if not UtilClient.is_unset(request.other_user_permission):
             body['otherUserPermission'] = request.other_user_permission
         real_headers = {}
