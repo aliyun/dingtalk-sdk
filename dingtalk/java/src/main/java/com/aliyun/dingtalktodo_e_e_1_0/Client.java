@@ -20,6 +20,378 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>创建专属待办</p>
+     * 
+     * @param request AppCreateEnterpriseTodoTaskRequest
+     * @param headers AppCreateEnterpriseTodoTaskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AppCreateEnterpriseTodoTaskResponse
+     */
+    public AppCreateEnterpriseTodoTaskResponse appCreateEnterpriseTodoTaskWithOptions(AppCreateEnterpriseTodoTaskRequest request, AppCreateEnterpriseTodoTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizCategoryId)) {
+            body.put("bizCategoryId", request.bizCategoryId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.customFields)) {
+            body.put("customFields", request.customFields);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.detailUrl)) {
+            body.put("detailUrl", request.detailUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dueTime)) {
+            body.put("dueTime", request.dueTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.executorIds)) {
+            body.put("executorIds", request.executorIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.notifyConfigs)) {
+            body.put("notifyConfigs", request.notifyConfigs);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            body.put("operatorId", request.operatorId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.priority)) {
+            body.put("priority", request.priority);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sourceId)) {
+            body.put("sourceId", request.sourceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sourceTitle)) {
+            body.put("sourceTitle", request.sourceTitle);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.subject)) {
+            body.put("subject", request.subject);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.type)) {
+            body.put("type", request.type);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AppCreateEnterpriseTodoTask"),
+            new TeaPair("version", "todoEE_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/todoEE/apps/users/tasks"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AppCreateEnterpriseTodoTaskResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建专属待办</p>
+     * 
+     * @param request AppCreateEnterpriseTodoTaskRequest
+     * @return AppCreateEnterpriseTodoTaskResponse
+     */
+    public AppCreateEnterpriseTodoTaskResponse appCreateEnterpriseTodoTask(AppCreateEnterpriseTodoTaskRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AppCreateEnterpriseTodoTaskHeaders headers = new AppCreateEnterpriseTodoTaskHeaders();
+        return this.appCreateEnterpriseTodoTaskWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除专属待办</p>
+     * 
+     * @param request AppDeleteTodoEETaskRequest
+     * @param headers AppDeleteTodoEETaskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AppDeleteTodoEETaskResponse
+     */
+    public AppDeleteTodoEETaskResponse appDeleteTodoEETaskWithOptions(AppDeleteTodoEETaskRequest request, AppDeleteTodoEETaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            body.put("operatorId", request.operatorId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskIds)) {
+            body.put("taskIds", request.taskIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AppDeleteTodoEETask"),
+            new TeaPair("version", "todoEE_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/todoEE/apps/users/tasks/remove"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AppDeleteTodoEETaskResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除专属待办</p>
+     * 
+     * @param request AppDeleteTodoEETaskRequest
+     * @return AppDeleteTodoEETaskResponse
+     */
+    public AppDeleteTodoEETaskResponse appDeleteTodoEETask(AppDeleteTodoEETaskRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AppDeleteTodoEETaskHeaders headers = new AppDeleteTodoEETaskHeaders();
+        return this.appDeleteTodoEETaskWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询用户待办列表</p>
+     * 
+     * @param request AppGetUserTaskListRequest
+     * @param headers AppGetUserTaskListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AppGetUserTaskListResponse
+     */
+    public AppGetUserTaskListResponse appGetUserTaskListWithOptions(AppGetUserTaskListRequest request, AppGetUserTaskListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.done)) {
+            body.put("done", request.done);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            body.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.type)) {
+            body.put("type", request.type);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AppGetUserTaskList"),
+            new TeaPair("version", "todoEE_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/todoEE/apps/users/tasks/list"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AppGetUserTaskListResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询用户待办列表</p>
+     * 
+     * @param request AppGetUserTaskListRequest
+     * @return AppGetUserTaskListResponse
+     */
+    public AppGetUserTaskListResponse appGetUserTaskList(AppGetUserTaskListRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AppGetUserTaskListHeaders headers = new AppGetUserTaskListHeaders();
+        return this.appGetUserTaskListWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新专属待办信息</p>
+     * 
+     * @param request AppUpdateTaskRequest
+     * @param headers AppUpdateTaskHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AppUpdateTaskResponse
+     */
+    public AppUpdateTaskResponse appUpdateTaskWithOptions(AppUpdateTaskRequest request, AppUpdateTaskHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.done)) {
+            body.put("done", request.done);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.dueTime)) {
+            body.put("dueTime", request.dueTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.executorIds)) {
+            body.put("executorIds", request.executorIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            body.put("operatorId", request.operatorId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.subject)) {
+            body.put("subject", request.subject);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taskId)) {
+            body.put("taskId", request.taskId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AppUpdateTask"),
+            new TeaPair("version", "todoEE_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/todoEE/apps/users/tasks/infos"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AppUpdateTaskResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新专属待办信息</p>
+     * 
+     * @param request AppUpdateTaskRequest
+     * @return AppUpdateTaskResponse
+     */
+    public AppUpdateTaskResponse appUpdateTask(AppUpdateTaskRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AppUpdateTaskHeaders headers = new AppUpdateTaskHeaders();
+        return this.appUpdateTaskWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新用户的待办状态</p>
+     * 
+     * @param request AppUpdateUserTaskStatusRequest
+     * @param headers AppUpdateUserTaskStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AppUpdateUserTaskStatusResponse
+     */
+    public AppUpdateUserTaskStatusResponse appUpdateUserTaskStatusWithOptions(AppUpdateUserTaskStatusRequest request, AppUpdateUserTaskStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            body.put("operatorId", request.operatorId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userTaskStatuses)) {
+            body.put("userTaskStatuses", request.userTaskStatuses);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AppUpdateUserTaskStatus"),
+            new TeaPair("version", "todoEE_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/todoEE/apps/users/tasks/statuses"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AppUpdateUserTaskStatusResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新用户的待办状态</p>
+     * 
+     * @param request AppUpdateUserTaskStatusRequest
+     * @return AppUpdateUserTaskStatusResponse
+     */
+    public AppUpdateUserTaskStatusResponse appUpdateUserTaskStatus(AppUpdateUserTaskStatusRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AppUpdateUserTaskStatusHeaders headers = new AppUpdateUserTaskStatusHeaders();
+        return this.appUpdateUserTaskStatusWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>创建企业待办</p>
      * 
      * @param request CreateEnterpriseTodoTaskRequest

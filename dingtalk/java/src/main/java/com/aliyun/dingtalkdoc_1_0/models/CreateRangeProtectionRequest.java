@@ -7,6 +7,9 @@ public class CreateRangeProtectionRequest extends TeaModel {
     @NameInMap("editableSetting")
     public CreateRangeProtectionRequestEditableSetting editableSetting;
 
+    @NameInMap("members")
+    public java.util.List<CreateRangeProtectionRequestMembers> members;
+
     /**
      * <p>This parameter is required.</p>
      */
@@ -33,6 +36,14 @@ public class CreateRangeProtectionRequest extends TeaModel {
     }
     public CreateRangeProtectionRequestEditableSetting getEditableSetting() {
         return this.editableSetting;
+    }
+
+    public CreateRangeProtectionRequest setMembers(java.util.List<CreateRangeProtectionRequestMembers> members) {
+        this.members = members;
+        return this;
+    }
+    public java.util.List<CreateRangeProtectionRequestMembers> getMembers() {
+        return this.members;
     }
 
     public CreateRangeProtectionRequest setOtherUserPermission(String otherUserPermission) {
@@ -143,6 +154,69 @@ public class CreateRangeProtectionRequest extends TeaModel {
         }
         public Boolean getToggleRowsVisibility() {
             return this.toggleRowsVisibility;
+        }
+
+    }
+
+    public static class CreateRangeProtectionRequestMembers extends TeaModel {
+        @NameInMap("deptId")
+        public String deptId;
+
+        @NameInMap("memberType")
+        public String memberType;
+
+        @NameInMap("openConversationId")
+        public String openConversationId;
+
+        @NameInMap("permission")
+        public String permission;
+
+        @NameInMap("unionId")
+        public String unionId;
+
+        public static CreateRangeProtectionRequestMembers build(java.util.Map<String, ?> map) throws Exception {
+            CreateRangeProtectionRequestMembers self = new CreateRangeProtectionRequestMembers();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateRangeProtectionRequestMembers setDeptId(String deptId) {
+            this.deptId = deptId;
+            return this;
+        }
+        public String getDeptId() {
+            return this.deptId;
+        }
+
+        public CreateRangeProtectionRequestMembers setMemberType(String memberType) {
+            this.memberType = memberType;
+            return this;
+        }
+        public String getMemberType() {
+            return this.memberType;
+        }
+
+        public CreateRangeProtectionRequestMembers setOpenConversationId(String openConversationId) {
+            this.openConversationId = openConversationId;
+            return this;
+        }
+        public String getOpenConversationId() {
+            return this.openConversationId;
+        }
+
+        public CreateRangeProtectionRequestMembers setPermission(String permission) {
+            this.permission = permission;
+            return this;
+        }
+        public String getPermission() {
+            return this.permission;
+        }
+
+        public CreateRangeProtectionRequestMembers setUnionId(String unionId) {
+            this.unionId = unionId;
+            return this;
+        }
+        public String getUnionId() {
+            return this.unionId;
         }
 
     }

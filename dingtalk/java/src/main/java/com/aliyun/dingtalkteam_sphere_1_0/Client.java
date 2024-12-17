@@ -626,6 +626,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>获取项目角色列表。</p>
+     * 
+     * @param request GetProjectRolesV3Request
+     * @param headers GetProjectRolesV3Headers
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetProjectRolesV3Response
+     */
+    public GetProjectRolesV3Response getProjectRolesV3WithOptions(String userId, String projectId, GetProjectRolesV3Request request, GetProjectRolesV3Headers headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.includeHidden)) {
+            query.put("includeHidden", request.includeHidden);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.level)) {
+            query.put("level", request.level);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.maxResults)) {
+            query.put("maxResults", request.maxResults);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
+            query.put("nextToken", request.nextToken);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetProjectRolesV3"),
+            new TeaPair("version", "teamSphere_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/teamSphere/users/" + userId + "/projects/" + projectId + "/roles"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetProjectRolesV3Response());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取项目角色列表。</p>
+     * 
+     * @param request GetProjectRolesV3Request
+     * @return GetProjectRolesV3Response
+     */
+    public GetProjectRolesV3Response getProjectRolesV3(String userId, String projectId, GetProjectRolesV3Request request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetProjectRolesV3Headers headers = new GetProjectRolesV3Headers();
+        return this.getProjectRolesV3WithOptions(userId, projectId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>钉钉 userId 查询 24位长 userId。</p>
      * 
      * @param request GetTbUserIdByDingUserIdRequest
@@ -1230,6 +1298,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SearchProjectsV3Headers headers = new SearchProjectsV3Headers();
         return this.searchProjectsV3WithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改项目成员的角色。</p>
+     * 
+     * @param request UpdateProjectMemberRoleV3Request
+     * @param headers UpdateProjectMemberRoleV3Headers
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateProjectMemberRoleV3Response
+     */
+    public UpdateProjectMemberRoleV3Response updateProjectMemberRoleV3WithOptions(String userId, String projectId, UpdateProjectMemberRoleV3Request request, UpdateProjectMemberRoleV3Headers headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.roleIds)) {
+            body.put("roleIds", request.roleIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userIds)) {
+            body.put("userIds", request.userIds);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateProjectMemberRoleV3"),
+            new TeaPair("version", "teamSphere_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/teamSphere/users/" + userId + "/projects/" + projectId + "/roles/assign"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateProjectMemberRoleV3Response());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改项目成员的角色。</p>
+     * 
+     * @param request UpdateProjectMemberRoleV3Request
+     * @return UpdateProjectMemberRoleV3Response
+     */
+    public UpdateProjectMemberRoleV3Response updateProjectMemberRoleV3(String userId, String projectId, UpdateProjectMemberRoleV3Request request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateProjectMemberRoleV3Headers headers = new UpdateProjectMemberRoleV3Headers();
+        return this.updateProjectMemberRoleV3WithOptions(userId, projectId, request, headers, runtime);
     }
 
     /**

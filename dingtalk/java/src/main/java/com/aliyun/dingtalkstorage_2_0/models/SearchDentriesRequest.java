@@ -157,6 +157,9 @@ public class SearchDentriesRequest extends TeaModel {
         @NameInMap("nextToken")
         public String nextToken;
 
+        @NameInMap("spaceIds")
+        public java.util.List<Long> spaceIds;
+
         @NameInMap("visitTimeRange")
         public SearchDentriesRequestOptionVisitTimeRange visitTimeRange;
 
@@ -211,6 +214,14 @@ public class SearchDentriesRequest extends TeaModel {
         }
         public String getNextToken() {
             return this.nextToken;
+        }
+
+        public SearchDentriesRequestOption setSpaceIds(java.util.List<Long> spaceIds) {
+            this.spaceIds = spaceIds;
+            return this;
+        }
+        public java.util.List<Long> getSpaceIds() {
+            return this.spaceIds;
         }
 
         public SearchDentriesRequestOption setVisitTimeRange(SearchDentriesRequestOptionVisitTimeRange visitTimeRange) {

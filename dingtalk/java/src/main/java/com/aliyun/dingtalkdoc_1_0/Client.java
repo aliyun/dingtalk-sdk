@@ -791,6 +791,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("editableSetting", request.editableSetting);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.members)) {
+            body.put("members", request.members);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.otherUserPermission)) {
             body.put("otherUserPermission", request.otherUserPermission);
         }

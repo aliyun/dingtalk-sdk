@@ -10,6 +10,9 @@ public class QueryOrgTodoTasksRequest extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
+    @NameInMap("roleTypes")
+    public java.util.List<java.util.List<String>> roleTypes;
+
     public static QueryOrgTodoTasksRequest build(java.util.Map<String, ?> map) throws Exception {
         QueryOrgTodoTasksRequest self = new QueryOrgTodoTasksRequest();
         return TeaModel.build(map, self);
@@ -29,6 +32,14 @@ public class QueryOrgTodoTasksRequest extends TeaModel {
     }
     public String getNextToken() {
         return this.nextToken;
+    }
+
+    public QueryOrgTodoTasksRequest setRoleTypes(java.util.List<java.util.List<String>> roleTypes) {
+        this.roleTypes = roleTypes;
+        return this;
+    }
+    public java.util.List<java.util.List<String>> getRoleTypes() {
+        return this.roleTypes;
     }
 
 }

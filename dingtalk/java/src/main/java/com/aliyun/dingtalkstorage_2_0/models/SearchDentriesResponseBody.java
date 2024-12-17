@@ -111,6 +111,59 @@ public class SearchDentriesResponseBody extends TeaModel {
 
     }
 
+    public static class SearchDentriesResponseBodyItemsPath extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>folderA/folderB</p>
+         */
+        @NameInMap("longPath")
+        public String longPath;
+
+        /**
+         * <strong>example:</strong>
+         * <p>folderA:folderB</p>
+         */
+        @NameInMap("path")
+        public String path;
+
+        /**
+         * <strong>example:</strong>
+         * <p>url</p>
+         */
+        @NameInMap("url")
+        public String url;
+
+        public static SearchDentriesResponseBodyItemsPath build(java.util.Map<String, ?> map) throws Exception {
+            SearchDentriesResponseBodyItemsPath self = new SearchDentriesResponseBodyItemsPath();
+            return TeaModel.build(map, self);
+        }
+
+        public SearchDentriesResponseBodyItemsPath setLongPath(String longPath) {
+            this.longPath = longPath;
+            return this;
+        }
+        public String getLongPath() {
+            return this.longPath;
+        }
+
+        public SearchDentriesResponseBodyItemsPath setPath(String path) {
+            this.path = path;
+            return this;
+        }
+        public String getPath() {
+            return this.path;
+        }
+
+        public SearchDentriesResponseBodyItemsPath setUrl(String url) {
+            this.url = url;
+            return this;
+        }
+        public String getUrl() {
+            return this.url;
+        }
+
+    }
+
     public static class SearchDentriesResponseBodyItems extends TeaModel {
         @NameInMap("creator")
         public SearchDentriesResponseBodyItemsCreator creator;
@@ -122,6 +175,9 @@ public class SearchDentriesResponseBody extends TeaModel {
         @NameInMap("dentryUuid")
         public String dentryUuid;
 
+        @NameInMap("lastModifyTime")
+        public Long lastModifyTime;
+
         @NameInMap("modifier")
         public SearchDentriesResponseBodyItemsModifier modifier;
 
@@ -131,6 +187,9 @@ public class SearchDentriesResponseBody extends TeaModel {
          */
         @NameInMap("name")
         public String name;
+
+        @NameInMap("path")
+        public SearchDentriesResponseBodyItemsPath path;
 
         public static SearchDentriesResponseBodyItems build(java.util.Map<String, ?> map) throws Exception {
             SearchDentriesResponseBodyItems self = new SearchDentriesResponseBodyItems();
@@ -153,6 +212,14 @@ public class SearchDentriesResponseBody extends TeaModel {
             return this.dentryUuid;
         }
 
+        public SearchDentriesResponseBodyItems setLastModifyTime(Long lastModifyTime) {
+            this.lastModifyTime = lastModifyTime;
+            return this;
+        }
+        public Long getLastModifyTime() {
+            return this.lastModifyTime;
+        }
+
         public SearchDentriesResponseBodyItems setModifier(SearchDentriesResponseBodyItemsModifier modifier) {
             this.modifier = modifier;
             return this;
@@ -167,6 +234,14 @@ public class SearchDentriesResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
+        }
+
+        public SearchDentriesResponseBodyItems setPath(SearchDentriesResponseBodyItemsPath path) {
+            this.path = path;
+            return this;
+        }
+        public SearchDentriesResponseBodyItemsPath getPath() {
+            return this.path;
         }
 
     }

@@ -608,6 +608,98 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询待办应用下所有二级分类</p>
+     * 
+     * @param headers ListAllBizCategoryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListAllBizCategoryResponse
+     */
+    public ListAllBizCategoryResponse listAllBizCategoryWithOptions(ListAllBizCategoryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListAllBizCategory"),
+            new TeaPair("version", "todo_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/todo/apps/allBizcategories/list"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListAllBizCategoryResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询待办应用下所有二级分类</p>
+     * @return ListAllBizCategoryResponse
+     */
+    public ListAllBizCategoryResponse listAllBizCategory() throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListAllBizCategoryHeaders headers = new ListAllBizCategoryHeaders();
+        return this.listAllBizCategoryWithOptions(headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询企业配置</p>
+     * 
+     * @param headers QueryOrgConfigHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryOrgConfigResponse
+     */
+    public QueryOrgConfigResponse queryOrgConfigWithOptions(QueryOrgConfigHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryOrgConfig"),
+            new TeaPair("version", "todo_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/todo/organizations/configs"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryOrgConfigResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询企业配置</p>
+     * @return QueryOrgConfigResponse
+     */
+    public QueryOrgConfigResponse queryOrgConfig() throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryOrgConfigHeaders headers = new QueryOrgConfigHeaders();
+        return this.queryOrgConfigWithOptions(headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>查询用户企业类型待办列表，支持查询当前企业的一方应用、三方应用、自建应用产生的工作待办数据</p>
      * 
      * @param request QueryOrgTodoByUserRequest
@@ -712,6 +804,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
             body.put("nextToken", request.nextToken);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.roleTypes)) {
+            body.put("roleTypes", request.roleTypes);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -840,6 +936,202 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryTodoTasksHeaders headers = new QueryTodoTasksHeaders();
         return this.queryTodoTasksWithOptions(unionId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除二级分类</p>
+     * 
+     * @param request RemoveBizCategoryRequest
+     * @param headers RemoveBizCategoryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RemoveBizCategoryResponse
+     */
+    public RemoveBizCategoryResponse removeBizCategoryWithOptions(RemoveBizCategoryRequest request, RemoveBizCategoryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizCategoryId)) {
+            query.put("bizCategoryId", request.bizCategoryId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "RemoveBizCategory"),
+            new TeaPair("version", "todo_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/todo/apps/bizcategories"),
+            new TeaPair("method", "DELETE"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new RemoveBizCategoryResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除二级分类</p>
+     * 
+     * @param request RemoveBizCategoryRequest
+     * @return RemoveBizCategoryResponse
+     */
+    public RemoveBizCategoryResponse removeBizCategory(RemoveBizCategoryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        RemoveBizCategoryHeaders headers = new RemoveBizCategoryHeaders();
+        return this.removeBizCategoryWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>保存二级分类</p>
+     * 
+     * @param request SetBizCategoryRequest
+     * @param headers SetBizCategoryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SetBizCategoryResponse
+     */
+    public SetBizCategoryResponse setBizCategoryWithOptions(SetBizCategoryRequest request, SetBizCategoryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizCategoryId)) {
+            query.put("bizCategoryId", request.bizCategoryId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            query.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            query.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SetBizCategory"),
+            new TeaPair("version", "todo_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/todo/apps/bizcategories/save"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SetBizCategoryResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>保存二级分类</p>
+     * 
+     * @param request SetBizCategoryRequest
+     * @return SetBizCategoryResponse
+     */
+    public SetBizCategoryResponse setBizCategory(SetBizCategoryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SetBizCategoryHeaders headers = new SetBizCategoryHeaders();
+        return this.setBizCategoryWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>保存企业配置</p>
+     * 
+     * @param request SetOrgConfigRequest
+     * @param headers SetOrgConfigHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SetOrgConfigResponse
+     */
+    public SetOrgConfigResponse setOrgConfigWithOptions(SetOrgConfigRequest request, SetOrgConfigHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.appDisplayStyle)) {
+            body.put("appDisplayStyle", request.appDisplayStyle);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.homepageCatalogs)) {
+            body.put("homepageCatalogs", request.homepageCatalogs);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            body.put("operatorId", request.operatorId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.status)) {
+            body.put("status", request.status);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SetOrgConfig"),
+            new TeaPair("version", "todo_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/todo/organizations/configs/save"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SetOrgConfigResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>保存企业配置</p>
+     * 
+     * @param request SetOrgConfigRequest
+     * @return SetOrgConfigResponse
+     */
+    public SetOrgConfigResponse setOrgConfig(SetOrgConfigRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SetOrgConfigHeaders headers = new SetOrgConfigHeaders();
+        return this.setOrgConfigWithOptions(request, headers, runtime);
     }
 
     /**

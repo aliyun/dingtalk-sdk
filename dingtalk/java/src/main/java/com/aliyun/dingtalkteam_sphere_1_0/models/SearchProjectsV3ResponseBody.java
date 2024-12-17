@@ -63,6 +63,9 @@ public class SearchProjectsV3ResponseBody extends TeaModel {
         @NameInMap("id")
         public String id;
 
+        @NameInMap("isArchived")
+        public Boolean isArchived;
+
         @NameInMap("isTemplate")
         public Boolean isTemplate;
 
@@ -120,6 +123,14 @@ public class SearchProjectsV3ResponseBody extends TeaModel {
         }
         public String getId() {
             return this.id;
+        }
+
+        public SearchProjectsV3ResponseBodyResult setIsArchived(Boolean isArchived) {
+            this.isArchived = isArchived;
+            return this;
+        }
+        public Boolean getIsArchived() {
+            return this.isArchived;
         }
 
         public SearchProjectsV3ResponseBodyResult setIsTemplate(Boolean isTemplate) {
