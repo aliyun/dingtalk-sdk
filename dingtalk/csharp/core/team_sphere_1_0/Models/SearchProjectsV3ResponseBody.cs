@@ -45,6 +45,10 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0.Models
             [Validation(Required=false)]
             public string Id { get; set; }
 
+            [NameInMap("isArchived")]
+            [Validation(Required=false)]
+            public bool? IsArchived { get; set; }
+
             [NameInMap("isTemplate")]
             [Validation(Required=false)]
             public bool? IsTemplate { get; set; }

@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_1_0.Models
         [Validation(Required=false)]
         public string NextToken { get; set; }
 
+        [NameInMap("roleTypes")]
+        [Validation(Required=false)]
+        public List<List<string>> RoleTypes { get; set; }
+
     }
 
 }

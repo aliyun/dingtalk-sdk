@@ -73,6 +73,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_2_0.Models
             [Validation(Required=false)]
             public string NextToken { get; set; }
 
+            [NameInMap("spaceIds")]
+            [Validation(Required=false)]
+            public List<long?> SpaceIds { get; set; }
+
             [NameInMap("visitTimeRange")]
             [Validation(Required=false)]
             public SearchDentriesRequestOptionVisitTimeRange VisitTimeRange { get; set; }

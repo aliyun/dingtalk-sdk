@@ -1995,6 +1995,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             {
                 body["editableSetting"] = request.EditableSetting;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
+            {
+                body["members"] = request.Members;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OtherUserPermission))
             {
                 body["otherUserPermission"] = request.OtherUserPermission;
@@ -2059,6 +2063,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EditableSetting))
             {
                 body["editableSetting"] = request.EditableSetting;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Members))
+            {
+                body["members"] = request.Members;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OtherUserPermission))
             {

@@ -43,6 +43,10 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_2_0.Models
             [Validation(Required=false)]
             public string DentryUuid { get; set; }
 
+            [NameInMap("lastModifyTime")]
+            [Validation(Required=false)]
+            public long? LastModifyTime { get; set; }
+
             [NameInMap("modifier")]
             [Validation(Required=false)]
             public SearchDentriesResponseBodyItemsModifier Modifier { get; set; }
@@ -72,6 +76,36 @@ namespace AlibabaCloud.SDK.Dingtalkstorage_2_0.Models
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }
+
+            [NameInMap("path")]
+            [Validation(Required=false)]
+            public SearchDentriesResponseBodyItemsPath Path { get; set; }
+            public class SearchDentriesResponseBodyItemsPath : TeaModel {
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>folderA/folderB</para>
+                /// </summary>
+                [NameInMap("longPath")]
+                [Validation(Required=false)]
+                public string LongPath { get; set; }
+
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>folderA:folderB</para>
+                /// </summary>
+                [NameInMap("path")]
+                [Validation(Required=false)]
+                public string Path { get; set; }
+
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>url</para>
+                /// </summary>
+                [NameInMap("url")]
+                [Validation(Required=false)]
+                public string Url { get; set; }
+
+            }
 
         }
 

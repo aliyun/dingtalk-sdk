@@ -47,6 +47,32 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 
         }
 
+        [NameInMap("members")]
+        [Validation(Required=false)]
+        public List<CreateRangeProtectionRequestMembers> Members { get; set; }
+        public class CreateRangeProtectionRequestMembers : TeaModel {
+            [NameInMap("deptId")]
+            [Validation(Required=false)]
+            public string DeptId { get; set; }
+
+            [NameInMap("memberType")]
+            [Validation(Required=false)]
+            public string MemberType { get; set; }
+
+            [NameInMap("openConversationId")]
+            [Validation(Required=false)]
+            public string OpenConversationId { get; set; }
+
+            [NameInMap("permission")]
+            [Validation(Required=false)]
+            public string Permission { get; set; }
+
+            [NameInMap("unionId")]
+            [Validation(Required=false)]
+            public string UnionId { get; set; }
+
+        }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>
