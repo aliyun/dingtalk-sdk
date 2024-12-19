@@ -445,6 +445,18 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
         @NameInMap("remark")
         public String remark;
 
+        @NameInMap("showPurchaserAccountInRemark")
+        public Boolean showPurchaserAccountInRemark;
+
+        @NameInMap("showPurchaserContactInRemark")
+        public Boolean showPurchaserContactInRemark;
+
+        @NameInMap("showSellerAccountInRemark")
+        public String showSellerAccountInRemark;
+
+        @NameInMap("showSellerContactInRemark")
+        public Boolean showSellerContactInRemark;
+
         /**
          * <strong>example:</strong>
          * <p>approval</p>
@@ -653,6 +665,38 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
         }
         public String getRemark() {
             return this.remark;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResult setShowPurchaserAccountInRemark(Boolean showPurchaserAccountInRemark) {
+            this.showPurchaserAccountInRemark = showPurchaserAccountInRemark;
+            return this;
+        }
+        public Boolean getShowPurchaserAccountInRemark() {
+            return this.showPurchaserAccountInRemark;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResult setShowPurchaserContactInRemark(Boolean showPurchaserContactInRemark) {
+            this.showPurchaserContactInRemark = showPurchaserContactInRemark;
+            return this;
+        }
+        public Boolean getShowPurchaserContactInRemark() {
+            return this.showPurchaserContactInRemark;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResult setShowSellerAccountInRemark(String showSellerAccountInRemark) {
+            this.showSellerAccountInRemark = showSellerAccountInRemark;
+            return this;
+        }
+        public String getShowSellerAccountInRemark() {
+            return this.showSellerAccountInRemark;
+        }
+
+        public QueryReceiptDetailForInvoiceResponseBodyResult setShowSellerContactInRemark(Boolean showSellerContactInRemark) {
+            this.showSellerContactInRemark = showSellerContactInRemark;
+            return this;
+        }
+        public Boolean getShowSellerContactInRemark() {
+            return this.showSellerContactInRemark;
         }
 
         public QueryReceiptDetailForInvoiceResponseBodyResult setSource(String source) {

@@ -3233,6 +3233,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("extras", request.extras);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.freedomLeave)) {
+            body.put("freedomLeave", request.freedomLeave);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.hoursInPerDay)) {
             body.put("hoursInPerDay", request.hoursInPerDay);
         }

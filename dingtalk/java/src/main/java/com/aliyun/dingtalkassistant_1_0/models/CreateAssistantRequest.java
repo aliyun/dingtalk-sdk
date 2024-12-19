@@ -4,12 +4,6 @@ package com.aliyun.dingtalkassistant_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateAssistantRequest extends TeaModel {
-    @NameInMap("customAgentMobileLink")
-    public String customAgentMobileLink;
-
-    @NameInMap("customAgentPCLink")
-    public String customAgentPCLink;
-
     /**
      * <p>This parameter is required.</p>
      */
@@ -52,22 +46,6 @@ public class CreateAssistantRequest extends TeaModel {
     public static CreateAssistantRequest build(java.util.Map<String, ?> map) throws Exception {
         CreateAssistantRequest self = new CreateAssistantRequest();
         return TeaModel.build(map, self);
-    }
-
-    public CreateAssistantRequest setCustomAgentMobileLink(String customAgentMobileLink) {
-        this.customAgentMobileLink = customAgentMobileLink;
-        return this;
-    }
-    public String getCustomAgentMobileLink() {
-        return this.customAgentMobileLink;
-    }
-
-    public CreateAssistantRequest setCustomAgentPCLink(String customAgentPCLink) {
-        this.customAgentPCLink = customAgentPCLink;
-        return this;
-    }
-    public String getCustomAgentPCLink() {
-        return this.customAgentPCLink;
     }
 
     public CreateAssistantRequest setDescription(String description) {

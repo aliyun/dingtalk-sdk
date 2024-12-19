@@ -20,6 +20,148 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>增加直播间互动插件</p>
+     * 
+     * @param tmpReq AddLiveInteractionPluginRequest
+     * @param headers AddLiveInteractionPluginHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddLiveInteractionPluginResponse
+     */
+    public AddLiveInteractionPluginResponse addLiveInteractionPluginWithOptions(AddLiveInteractionPluginRequest tmpReq, AddLiveInteractionPluginHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        AddLiveInteractionPluginShrinkRequest request = new AddLiveInteractionPluginShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.pluginInfo)) {
+            request.pluginInfoShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.pluginInfo, "pluginInfo", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.liveId)) {
+            query.put("liveId", request.liveId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pluginInfoShrink)) {
+            query.put("pluginInfo", request.pluginInfoShrink);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddLiveInteractionPlugin"),
+            new TeaPair("version", "live_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/live/interactionPlugins"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddLiveInteractionPluginResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>增加直播间互动插件</p>
+     * 
+     * @param request AddLiveInteractionPluginRequest
+     * @return AddLiveInteractionPluginResponse
+     */
+    public AddLiveInteractionPluginResponse addLiveInteractionPlugin(AddLiveInteractionPluginRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AddLiveInteractionPluginHeaders headers = new AddLiveInteractionPluginHeaders();
+        return this.addLiveInteractionPluginWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>增加直播间的公告槽位信息</p>
+     * 
+     * @param request AddLiveNoticeWidgetRequest
+     * @param headers AddLiveNoticeWidgetHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddLiveNoticeWidgetResponse
+     */
+    public AddLiveNoticeWidgetResponse addLiveNoticeWidgetWithOptions(AddLiveNoticeWidgetRequest request, AddLiveNoticeWidgetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.iconUrl)) {
+            query.put("iconUrl", request.iconUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.jumpUrl)) {
+            query.put("jumpUrl", request.jumpUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.liveId)) {
+            query.put("liveId", request.liveId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.noticeText)) {
+            query.put("noticeText", request.noticeText);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddLiveNoticeWidget"),
+            new TeaPair("version", "live_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/live/noticeWidgets"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddLiveNoticeWidgetResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>增加直播间的公告槽位信息</p>
+     * 
+     * @param request AddLiveNoticeWidgetRequest
+     * @return AddLiveNoticeWidgetResponse
+     */
+    public AddLiveNoticeWidgetResponse addLiveNoticeWidget(AddLiveNoticeWidgetRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AddLiveNoticeWidgetHeaders headers = new AddLiveNoticeWidgetHeaders();
+        return this.addLiveNoticeWidgetWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>添加云导播联播群列表</p>
      * 
      * @param request AddShareCidListRequest
@@ -236,6 +378,130 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CreateLiveHeaders headers = new CreateLiveHeaders();
         return this.createLiveWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除直播间内某一互动插件</p>
+     * 
+     * @param request DelLiveInteractionPluginRequest
+     * @param headers DelLiveInteractionPluginHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DelLiveInteractionPluginResponse
+     */
+    public DelLiveInteractionPluginResponse delLiveInteractionPluginWithOptions(DelLiveInteractionPluginRequest request, DelLiveInteractionPluginHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.liveId)) {
+            query.put("liveId", request.liveId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pluginId)) {
+            query.put("pluginId", request.pluginId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DelLiveInteractionPlugin"),
+            new TeaPair("version", "live_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/live/interactionPlugins"),
+            new TeaPair("method", "DELETE"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DelLiveInteractionPluginResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除直播间内某一互动插件</p>
+     * 
+     * @param request DelLiveInteractionPluginRequest
+     * @return DelLiveInteractionPluginResponse
+     */
+    public DelLiveInteractionPluginResponse delLiveInteractionPlugin(DelLiveInteractionPluginRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DelLiveInteractionPluginHeaders headers = new DelLiveInteractionPluginHeaders();
+        return this.delLiveInteractionPluginWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除直播间的公告槽位信息</p>
+     * 
+     * @param request DelLiveNoticeWidgetRequest
+     * @param headers DelLiveNoticeWidgetHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DelLiveNoticeWidgetResponse
+     */
+    public DelLiveNoticeWidgetResponse delLiveNoticeWidgetWithOptions(DelLiveNoticeWidgetRequest request, DelLiveNoticeWidgetHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.liveId)) {
+            query.put("liveId", request.liveId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DelLiveNoticeWidget"),
+            new TeaPair("version", "live_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/live/noticeWidgets"),
+            new TeaPair("method", "DELETE"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DelLiveNoticeWidgetResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除直播间的公告槽位信息</p>
+     * 
+     * @param request DelLiveNoticeWidgetRequest
+     * @return DelLiveNoticeWidgetResponse
+     */
+    public DelLiveNoticeWidgetResponse delLiveNoticeWidget(DelLiveNoticeWidgetRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DelLiveNoticeWidgetHeaders headers = new DelLiveNoticeWidgetHeaders();
+        return this.delLiveNoticeWidgetWithOptions(request, headers, runtime);
     }
 
     /**
@@ -1030,6 +1296,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询直播间内某一互动插件的信息</p>
+     * 
+     * @param request QueryLiveInteractionPluginRequest
+     * @param headers QueryLiveInteractionPluginHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryLiveInteractionPluginResponse
+     */
+    public QueryLiveInteractionPluginResponse queryLiveInteractionPluginWithOptions(QueryLiveInteractionPluginRequest request, QueryLiveInteractionPluginHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.liveId)) {
+            query.put("liveId", request.liveId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pluginId)) {
+            query.put("pluginId", request.pluginId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryLiveInteractionPlugin"),
+            new TeaPair("version", "live_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/live/interactionPlugins"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryLiveInteractionPluginResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询直播间内某一互动插件的信息</p>
+     * 
+     * @param request QueryLiveInteractionPluginRequest
+     * @return QueryLiveInteractionPluginResponse
+     */
+    public QueryLiveInteractionPluginResponse queryLiveInteractionPlugin(QueryLiveInteractionPluginRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryLiveInteractionPluginHeaders headers = new QueryLiveInteractionPluginHeaders();
+        return this.queryLiveInteractionPluginWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取直播的观看数据</p>
      * 
      * @param request QueryLiveWatchDetailRequest
@@ -1220,6 +1550,146 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QuerySubscribeStatusHeaders headers = new QuerySubscribeStatusHeaders();
         return this.querySubscribeStatusWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>用户对互动插件进行操作广播到直播间</p>
+     * 
+     * @param tmpReq SendLiveInteractionPluginEffectsMsgRequest
+     * @param headers SendLiveInteractionPluginEffectsMsgHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SendLiveInteractionPluginEffectsMsgResponse
+     */
+    public SendLiveInteractionPluginEffectsMsgResponse sendLiveInteractionPluginEffectsMsgWithOptions(SendLiveInteractionPluginEffectsMsgRequest tmpReq, SendLiveInteractionPluginEffectsMsgHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        SendLiveInteractionPluginEffectsMsgShrinkRequest request = new SendLiveInteractionPluginEffectsMsgShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.pluginEffectsMessage)) {
+            request.pluginEffectsMessageShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.pluginEffectsMessage, "pluginEffectsMessage", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.liveId)) {
+            query.put("liveId", request.liveId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pluginEffectsMessageShrink)) {
+            query.put("pluginEffectsMessage", request.pluginEffectsMessageShrink);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pluginId)) {
+            query.put("pluginId", request.pluginId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SendLiveInteractionPluginEffectsMsg"),
+            new TeaPair("version", "live_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/live/interactionPlugins/effectMessages/send"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SendLiveInteractionPluginEffectsMsgResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>用户对互动插件进行操作广播到直播间</p>
+     * 
+     * @param request SendLiveInteractionPluginEffectsMsgRequest
+     * @return SendLiveInteractionPluginEffectsMsgResponse
+     */
+    public SendLiveInteractionPluginEffectsMsgResponse sendLiveInteractionPluginEffectsMsg(SendLiveInteractionPluginEffectsMsgRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SendLiveInteractionPluginEffectsMsgHeaders headers = new SendLiveInteractionPluginEffectsMsgHeaders();
+        return this.sendLiveInteractionPluginEffectsMsgWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>用户对互动插件进行操作广播到直播间</p>
+     * 
+     * @param tmpReq SendLivePluginUserActionMsgRequest
+     * @param headers SendLivePluginUserActionMsgHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SendLivePluginUserActionMsgResponse
+     */
+    public SendLivePluginUserActionMsgResponse sendLivePluginUserActionMsgWithOptions(SendLivePluginUserActionMsgRequest tmpReq, SendLivePluginUserActionMsgHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        SendLivePluginUserActionMsgShrinkRequest request = new SendLivePluginUserActionMsgShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.pluginEffectsMessage)) {
+            request.pluginEffectsMessageShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.pluginEffectsMessage, "pluginEffectsMessage", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.liveId)) {
+            query.put("liveId", request.liveId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pluginEffectsMessageShrink)) {
+            query.put("pluginEffectsMessage", request.pluginEffectsMessageShrink);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pluginId)) {
+            query.put("pluginId", request.pluginId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SendLivePluginUserActionMsg"),
+            new TeaPair("version", "live_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/live/interactionPlugins/actionMessages/send"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SendLivePluginUserActionMsgResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>用户对互动插件进行操作广播到直播间</p>
+     * 
+     * @param request SendLivePluginUserActionMsgRequest
+     * @return SendLivePluginUserActionMsgResponse
+     */
+    public SendLivePluginUserActionMsgResponse sendLivePluginUserActionMsg(SendLivePluginUserActionMsgRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SendLivePluginUserActionMsgHeaders headers = new SendLivePluginUserActionMsgHeaders();
+        return this.sendLivePluginUserActionMsgWithOptions(request, headers, runtime);
     }
 
     /**
@@ -1548,5 +2018,79 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateLiveFeedHeaders headers = new UpdateLiveFeedHeaders();
         return this.updateLiveFeedWithOptions(feedId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改直播间内某一互动插件的信息</p>
+     * 
+     * @param tmpReq UpdateLiveInteractionPluginRequest
+     * @param headers UpdateLiveInteractionPluginHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateLiveInteractionPluginResponse
+     */
+    public UpdateLiveInteractionPluginResponse updateLiveInteractionPluginWithOptions(UpdateLiveInteractionPluginRequest tmpReq, UpdateLiveInteractionPluginHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        UpdateLiveInteractionPluginShrinkRequest request = new UpdateLiveInteractionPluginShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.pluginInfo)) {
+            request.pluginInfoShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.pluginInfo, "pluginInfo", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.liveId)) {
+            query.put("liveId", request.liveId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pluginId)) {
+            query.put("pluginId", request.pluginId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pluginInfoShrink)) {
+            query.put("pluginInfo", request.pluginInfoShrink);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateLiveInteractionPlugin"),
+            new TeaPair("version", "live_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/live/interactionPlugins"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateLiveInteractionPluginResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>修改直播间内某一互动插件的信息</p>
+     * 
+     * @param request UpdateLiveInteractionPluginRequest
+     * @return UpdateLiveInteractionPluginResponse
+     */
+    public UpdateLiveInteractionPluginResponse updateLiveInteractionPlugin(UpdateLiveInteractionPluginRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateLiveInteractionPluginHeaders headers = new UpdateLiveInteractionPluginHeaders();
+        return this.updateLiveInteractionPluginWithOptions(request, headers, runtime);
     }
 }

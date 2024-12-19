@@ -20,6 +20,9 @@ public class UpdateLeaveTypeRequest extends TeaModel {
     @NameInMap("extras")
     public String extras;
 
+    @NameInMap("freedomLeave")
+    public Boolean freedomLeave;
+
     /**
      * <strong>example:</strong>
      * <p>1000</p>
@@ -96,6 +99,14 @@ public class UpdateLeaveTypeRequest extends TeaModel {
     }
     public String getExtras() {
         return this.extras;
+    }
+
+    public UpdateLeaveTypeRequest setFreedomLeave(Boolean freedomLeave) {
+        this.freedomLeave = freedomLeave;
+        return this;
+    }
+    public Boolean getFreedomLeave() {
+        return this.freedomLeave;
     }
 
     public UpdateLeaveTypeRequest setHoursInPerDay(Long hoursInPerDay) {

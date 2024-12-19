@@ -201,6 +201,9 @@ public class UpdateLeaveTypeResponseBody extends TeaModel {
         @NameInMap("bizType")
         public String bizType;
 
+        @NameInMap("freedomLeave")
+        public Boolean freedomLeave;
+
         /**
          * <strong>example:</strong>
          * <p>1000</p>
@@ -256,6 +259,14 @@ public class UpdateLeaveTypeResponseBody extends TeaModel {
         }
         public String getBizType() {
             return this.bizType;
+        }
+
+        public UpdateLeaveTypeResponseBodyResult setFreedomLeave(Boolean freedomLeave) {
+            this.freedomLeave = freedomLeave;
+            return this;
+        }
+        public Boolean getFreedomLeave() {
+            return this.freedomLeave;
         }
 
         public UpdateLeaveTypeResponseBodyResult setHoursInPerDay(Long hoursInPerDay) {
