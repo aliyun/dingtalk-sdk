@@ -30,6 +30,362 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>增加直播间互动插件</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// AddLiveInteractionPluginRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddLiveInteractionPluginHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddLiveInteractionPluginResponse
+        /// </returns>
+        public AddLiveInteractionPluginResponse AddLiveInteractionPluginWithOptions(AddLiveInteractionPluginRequest tmpReq, AddLiveInteractionPluginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            AddLiveInteractionPluginShrinkRequest request = new AddLiveInteractionPluginShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.PluginInfo))
+            {
+                request.PluginInfoShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.PluginInfo, "pluginInfo", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
+            {
+                query["liveId"] = request.LiveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginInfoShrink))
+            {
+                query["pluginInfo"] = request.PluginInfoShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddLiveInteractionPlugin",
+                Version = "live_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/live/interactionPlugins",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddLiveInteractionPluginResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>增加直播间互动插件</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// AddLiveInteractionPluginRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddLiveInteractionPluginHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddLiveInteractionPluginResponse
+        /// </returns>
+        public async Task<AddLiveInteractionPluginResponse> AddLiveInteractionPluginWithOptionsAsync(AddLiveInteractionPluginRequest tmpReq, AddLiveInteractionPluginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            AddLiveInteractionPluginShrinkRequest request = new AddLiveInteractionPluginShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.PluginInfo))
+            {
+                request.PluginInfoShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.PluginInfo, "pluginInfo", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
+            {
+                query["liveId"] = request.LiveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginInfoShrink))
+            {
+                query["pluginInfo"] = request.PluginInfoShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddLiveInteractionPlugin",
+                Version = "live_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/live/interactionPlugins",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddLiveInteractionPluginResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>增加直播间互动插件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddLiveInteractionPluginRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddLiveInteractionPluginResponse
+        /// </returns>
+        public AddLiveInteractionPluginResponse AddLiveInteractionPlugin(AddLiveInteractionPluginRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddLiveInteractionPluginHeaders headers = new AddLiveInteractionPluginHeaders();
+            return AddLiveInteractionPluginWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>增加直播间互动插件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddLiveInteractionPluginRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddLiveInteractionPluginResponse
+        /// </returns>
+        public async Task<AddLiveInteractionPluginResponse> AddLiveInteractionPluginAsync(AddLiveInteractionPluginRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddLiveInteractionPluginHeaders headers = new AddLiveInteractionPluginHeaders();
+            return await AddLiveInteractionPluginWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>增加直播间的公告槽位信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddLiveNoticeWidgetRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddLiveNoticeWidgetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddLiveNoticeWidgetResponse
+        /// </returns>
+        public AddLiveNoticeWidgetResponse AddLiveNoticeWidgetWithOptions(AddLiveNoticeWidgetRequest request, AddLiveNoticeWidgetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IconUrl))
+            {
+                query["iconUrl"] = request.IconUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JumpUrl))
+            {
+                query["jumpUrl"] = request.JumpUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
+            {
+                query["liveId"] = request.LiveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NoticeText))
+            {
+                query["noticeText"] = request.NoticeText;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddLiveNoticeWidget",
+                Version = "live_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/live/noticeWidgets",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddLiveNoticeWidgetResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>增加直播间的公告槽位信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddLiveNoticeWidgetRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddLiveNoticeWidgetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddLiveNoticeWidgetResponse
+        /// </returns>
+        public async Task<AddLiveNoticeWidgetResponse> AddLiveNoticeWidgetWithOptionsAsync(AddLiveNoticeWidgetRequest request, AddLiveNoticeWidgetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IconUrl))
+            {
+                query["iconUrl"] = request.IconUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.JumpUrl))
+            {
+                query["jumpUrl"] = request.JumpUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
+            {
+                query["liveId"] = request.LiveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NoticeText))
+            {
+                query["noticeText"] = request.NoticeText;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddLiveNoticeWidget",
+                Version = "live_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/live/noticeWidgets",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddLiveNoticeWidgetResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>增加直播间的公告槽位信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddLiveNoticeWidgetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddLiveNoticeWidgetResponse
+        /// </returns>
+        public AddLiveNoticeWidgetResponse AddLiveNoticeWidget(AddLiveNoticeWidgetRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddLiveNoticeWidgetHeaders headers = new AddLiveNoticeWidgetHeaders();
+            return AddLiveNoticeWidgetWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>增加直播间的公告槽位信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddLiveNoticeWidgetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddLiveNoticeWidgetResponse
+        /// </returns>
+        public async Task<AddLiveNoticeWidgetResponse> AddLiveNoticeWidgetAsync(AddLiveNoticeWidgetRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddLiveNoticeWidgetHeaders headers = new AddLiveNoticeWidgetHeaders();
+            return await AddLiveNoticeWidgetWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>添加云导播联播群列表</para>
         /// </summary>
         /// 
@@ -574,6 +930,326 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             CreateLiveHeaders headers = new CreateLiveHeaders();
             return await CreateLiveWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除直播间内某一互动插件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DelLiveInteractionPluginRequest
+        /// </param>
+        /// <param name="headers">
+        /// DelLiveInteractionPluginHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DelLiveInteractionPluginResponse
+        /// </returns>
+        public DelLiveInteractionPluginResponse DelLiveInteractionPluginWithOptions(DelLiveInteractionPluginRequest request, DelLiveInteractionPluginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
+            {
+                query["liveId"] = request.LiveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginId))
+            {
+                query["pluginId"] = request.PluginId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DelLiveInteractionPlugin",
+                Version = "live_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/live/interactionPlugins",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DelLiveInteractionPluginResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除直播间内某一互动插件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DelLiveInteractionPluginRequest
+        /// </param>
+        /// <param name="headers">
+        /// DelLiveInteractionPluginHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DelLiveInteractionPluginResponse
+        /// </returns>
+        public async Task<DelLiveInteractionPluginResponse> DelLiveInteractionPluginWithOptionsAsync(DelLiveInteractionPluginRequest request, DelLiveInteractionPluginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
+            {
+                query["liveId"] = request.LiveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginId))
+            {
+                query["pluginId"] = request.PluginId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DelLiveInteractionPlugin",
+                Version = "live_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/live/interactionPlugins",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DelLiveInteractionPluginResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除直播间内某一互动插件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DelLiveInteractionPluginRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DelLiveInteractionPluginResponse
+        /// </returns>
+        public DelLiveInteractionPluginResponse DelLiveInteractionPlugin(DelLiveInteractionPluginRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DelLiveInteractionPluginHeaders headers = new DelLiveInteractionPluginHeaders();
+            return DelLiveInteractionPluginWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除直播间内某一互动插件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DelLiveInteractionPluginRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DelLiveInteractionPluginResponse
+        /// </returns>
+        public async Task<DelLiveInteractionPluginResponse> DelLiveInteractionPluginAsync(DelLiveInteractionPluginRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DelLiveInteractionPluginHeaders headers = new DelLiveInteractionPluginHeaders();
+            return await DelLiveInteractionPluginWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除直播间的公告槽位信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DelLiveNoticeWidgetRequest
+        /// </param>
+        /// <param name="headers">
+        /// DelLiveNoticeWidgetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DelLiveNoticeWidgetResponse
+        /// </returns>
+        public DelLiveNoticeWidgetResponse DelLiveNoticeWidgetWithOptions(DelLiveNoticeWidgetRequest request, DelLiveNoticeWidgetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
+            {
+                query["liveId"] = request.LiveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DelLiveNoticeWidget",
+                Version = "live_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/live/noticeWidgets",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DelLiveNoticeWidgetResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除直播间的公告槽位信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DelLiveNoticeWidgetRequest
+        /// </param>
+        /// <param name="headers">
+        /// DelLiveNoticeWidgetHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DelLiveNoticeWidgetResponse
+        /// </returns>
+        public async Task<DelLiveNoticeWidgetResponse> DelLiveNoticeWidgetWithOptionsAsync(DelLiveNoticeWidgetRequest request, DelLiveNoticeWidgetHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
+            {
+                query["liveId"] = request.LiveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DelLiveNoticeWidget",
+                Version = "live_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/live/noticeWidgets",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DelLiveNoticeWidgetResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除直播间的公告槽位信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DelLiveNoticeWidgetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DelLiveNoticeWidgetResponse
+        /// </returns>
+        public DelLiveNoticeWidgetResponse DelLiveNoticeWidget(DelLiveNoticeWidgetRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DelLiveNoticeWidgetHeaders headers = new DelLiveNoticeWidgetHeaders();
+            return DelLiveNoticeWidgetWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除直播间的公告槽位信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DelLiveNoticeWidgetRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DelLiveNoticeWidgetResponse
+        /// </returns>
+        public async Task<DelLiveNoticeWidgetResponse> DelLiveNoticeWidgetAsync(DelLiveNoticeWidgetRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DelLiveNoticeWidgetHeaders headers = new DelLiveNoticeWidgetHeaders();
+            return await DelLiveNoticeWidgetWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -2590,6 +3266,170 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询直播间内某一互动插件的信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryLiveInteractionPluginRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryLiveInteractionPluginHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryLiveInteractionPluginResponse
+        /// </returns>
+        public QueryLiveInteractionPluginResponse QueryLiveInteractionPluginWithOptions(QueryLiveInteractionPluginRequest request, QueryLiveInteractionPluginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
+            {
+                query["liveId"] = request.LiveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginId))
+            {
+                query["pluginId"] = request.PluginId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryLiveInteractionPlugin",
+                Version = "live_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/live/interactionPlugins",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryLiveInteractionPluginResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询直播间内某一互动插件的信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryLiveInteractionPluginRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryLiveInteractionPluginHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryLiveInteractionPluginResponse
+        /// </returns>
+        public async Task<QueryLiveInteractionPluginResponse> QueryLiveInteractionPluginWithOptionsAsync(QueryLiveInteractionPluginRequest request, QueryLiveInteractionPluginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
+            {
+                query["liveId"] = request.LiveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginId))
+            {
+                query["pluginId"] = request.PluginId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryLiveInteractionPlugin",
+                Version = "live_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/live/interactionPlugins",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryLiveInteractionPluginResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询直播间内某一互动插件的信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryLiveInteractionPluginRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryLiveInteractionPluginResponse
+        /// </returns>
+        public QueryLiveInteractionPluginResponse QueryLiveInteractionPlugin(QueryLiveInteractionPluginRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryLiveInteractionPluginHeaders headers = new QueryLiveInteractionPluginHeaders();
+            return QueryLiveInteractionPluginWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询直播间内某一互动插件的信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryLiveInteractionPluginRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryLiveInteractionPluginResponse
+        /// </returns>
+        public async Task<QueryLiveInteractionPluginResponse> QueryLiveInteractionPluginAsync(QueryLiveInteractionPluginRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryLiveInteractionPluginHeaders headers = new QueryLiveInteractionPluginHeaders();
+            return await QueryLiveInteractionPluginWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取直播的观看数据</para>
         /// </summary>
         /// 
@@ -3082,6 +3922,358 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QuerySubscribeStatusHeaders headers = new QuerySubscribeStatusHeaders();
             return await QuerySubscribeStatusWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用户对互动插件进行操作广播到直播间</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// SendLiveInteractionPluginEffectsMsgRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendLiveInteractionPluginEffectsMsgHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendLiveInteractionPluginEffectsMsgResponse
+        /// </returns>
+        public SendLiveInteractionPluginEffectsMsgResponse SendLiveInteractionPluginEffectsMsgWithOptions(SendLiveInteractionPluginEffectsMsgRequest tmpReq, SendLiveInteractionPluginEffectsMsgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            SendLiveInteractionPluginEffectsMsgShrinkRequest request = new SendLiveInteractionPluginEffectsMsgShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.PluginEffectsMessage))
+            {
+                request.PluginEffectsMessageShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.PluginEffectsMessage, "pluginEffectsMessage", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
+            {
+                query["liveId"] = request.LiveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginEffectsMessageShrink))
+            {
+                query["pluginEffectsMessage"] = request.PluginEffectsMessageShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginId))
+            {
+                query["pluginId"] = request.PluginId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SendLiveInteractionPluginEffectsMsg",
+                Version = "live_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/live/interactionPlugins/effectMessages/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SendLiveInteractionPluginEffectsMsgResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用户对互动插件进行操作广播到直播间</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// SendLiveInteractionPluginEffectsMsgRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendLiveInteractionPluginEffectsMsgHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendLiveInteractionPluginEffectsMsgResponse
+        /// </returns>
+        public async Task<SendLiveInteractionPluginEffectsMsgResponse> SendLiveInteractionPluginEffectsMsgWithOptionsAsync(SendLiveInteractionPluginEffectsMsgRequest tmpReq, SendLiveInteractionPluginEffectsMsgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            SendLiveInteractionPluginEffectsMsgShrinkRequest request = new SendLiveInteractionPluginEffectsMsgShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.PluginEffectsMessage))
+            {
+                request.PluginEffectsMessageShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.PluginEffectsMessage, "pluginEffectsMessage", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
+            {
+                query["liveId"] = request.LiveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginEffectsMessageShrink))
+            {
+                query["pluginEffectsMessage"] = request.PluginEffectsMessageShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginId))
+            {
+                query["pluginId"] = request.PluginId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SendLiveInteractionPluginEffectsMsg",
+                Version = "live_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/live/interactionPlugins/effectMessages/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SendLiveInteractionPluginEffectsMsgResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用户对互动插件进行操作广播到直播间</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendLiveInteractionPluginEffectsMsgRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendLiveInteractionPluginEffectsMsgResponse
+        /// </returns>
+        public SendLiveInteractionPluginEffectsMsgResponse SendLiveInteractionPluginEffectsMsg(SendLiveInteractionPluginEffectsMsgRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendLiveInteractionPluginEffectsMsgHeaders headers = new SendLiveInteractionPluginEffectsMsgHeaders();
+            return SendLiveInteractionPluginEffectsMsgWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用户对互动插件进行操作广播到直播间</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendLiveInteractionPluginEffectsMsgRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendLiveInteractionPluginEffectsMsgResponse
+        /// </returns>
+        public async Task<SendLiveInteractionPluginEffectsMsgResponse> SendLiveInteractionPluginEffectsMsgAsync(SendLiveInteractionPluginEffectsMsgRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendLiveInteractionPluginEffectsMsgHeaders headers = new SendLiveInteractionPluginEffectsMsgHeaders();
+            return await SendLiveInteractionPluginEffectsMsgWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用户对互动插件进行操作广播到直播间</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// SendLivePluginUserActionMsgRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendLivePluginUserActionMsgHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendLivePluginUserActionMsgResponse
+        /// </returns>
+        public SendLivePluginUserActionMsgResponse SendLivePluginUserActionMsgWithOptions(SendLivePluginUserActionMsgRequest tmpReq, SendLivePluginUserActionMsgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            SendLivePluginUserActionMsgShrinkRequest request = new SendLivePluginUserActionMsgShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.PluginEffectsMessage))
+            {
+                request.PluginEffectsMessageShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.PluginEffectsMessage, "pluginEffectsMessage", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
+            {
+                query["liveId"] = request.LiveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginEffectsMessageShrink))
+            {
+                query["pluginEffectsMessage"] = request.PluginEffectsMessageShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginId))
+            {
+                query["pluginId"] = request.PluginId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SendLivePluginUserActionMsg",
+                Version = "live_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/live/interactionPlugins/actionMessages/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SendLivePluginUserActionMsgResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用户对互动插件进行操作广播到直播间</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// SendLivePluginUserActionMsgRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendLivePluginUserActionMsgHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendLivePluginUserActionMsgResponse
+        /// </returns>
+        public async Task<SendLivePluginUserActionMsgResponse> SendLivePluginUserActionMsgWithOptionsAsync(SendLivePluginUserActionMsgRequest tmpReq, SendLivePluginUserActionMsgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            SendLivePluginUserActionMsgShrinkRequest request = new SendLivePluginUserActionMsgShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.PluginEffectsMessage))
+            {
+                request.PluginEffectsMessageShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.PluginEffectsMessage, "pluginEffectsMessage", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
+            {
+                query["liveId"] = request.LiveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginEffectsMessageShrink))
+            {
+                query["pluginEffectsMessage"] = request.PluginEffectsMessageShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginId))
+            {
+                query["pluginId"] = request.PluginId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SendLivePluginUserActionMsg",
+                Version = "live_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/live/interactionPlugins/actionMessages/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SendLivePluginUserActionMsgResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用户对互动插件进行操作广播到直播间</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendLivePluginUserActionMsgRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendLivePluginUserActionMsgResponse
+        /// </returns>
+        public SendLivePluginUserActionMsgResponse SendLivePluginUserActionMsg(SendLivePluginUserActionMsgRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendLivePluginUserActionMsgHeaders headers = new SendLivePluginUserActionMsgHeaders();
+            return SendLivePluginUserActionMsgWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用户对互动插件进行操作广播到直播间</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendLivePluginUserActionMsgRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendLivePluginUserActionMsgResponse
+        /// </returns>
+        public async Task<SendLivePluginUserActionMsgResponse> SendLivePluginUserActionMsgAsync(SendLivePluginUserActionMsgRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendLivePluginUserActionMsgHeaders headers = new SendLivePluginUserActionMsgHeaders();
+            return await SendLivePluginUserActionMsgWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -3918,6 +5110,190 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateLiveFeedHeaders headers = new UpdateLiveFeedHeaders();
             return await UpdateLiveFeedWithOptionsAsync(feedId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改直播间内某一互动插件的信息</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// UpdateLiveInteractionPluginRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateLiveInteractionPluginHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateLiveInteractionPluginResponse
+        /// </returns>
+        public UpdateLiveInteractionPluginResponse UpdateLiveInteractionPluginWithOptions(UpdateLiveInteractionPluginRequest tmpReq, UpdateLiveInteractionPluginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            UpdateLiveInteractionPluginShrinkRequest request = new UpdateLiveInteractionPluginShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.PluginInfo))
+            {
+                request.PluginInfoShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.PluginInfo, "pluginInfo", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
+            {
+                query["liveId"] = request.LiveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginId))
+            {
+                query["pluginId"] = request.PluginId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginInfoShrink))
+            {
+                query["pluginInfo"] = request.PluginInfoShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateLiveInteractionPlugin",
+                Version = "live_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/live/interactionPlugins",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateLiveInteractionPluginResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改直播间内某一互动插件的信息</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// UpdateLiveInteractionPluginRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateLiveInteractionPluginHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateLiveInteractionPluginResponse
+        /// </returns>
+        public async Task<UpdateLiveInteractionPluginResponse> UpdateLiveInteractionPluginWithOptionsAsync(UpdateLiveInteractionPluginRequest tmpReq, UpdateLiveInteractionPluginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            UpdateLiveInteractionPluginShrinkRequest request = new UpdateLiveInteractionPluginShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.PluginInfo))
+            {
+                request.PluginInfoShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.PluginInfo, "pluginInfo", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
+            {
+                query["liveId"] = request.LiveId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginId))
+            {
+                query["pluginId"] = request.PluginId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginInfoShrink))
+            {
+                query["pluginInfo"] = request.PluginInfoShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateLiveInteractionPlugin",
+                Version = "live_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/live/interactionPlugins",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateLiveInteractionPluginResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改直播间内某一互动插件的信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateLiveInteractionPluginRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateLiveInteractionPluginResponse
+        /// </returns>
+        public UpdateLiveInteractionPluginResponse UpdateLiveInteractionPlugin(UpdateLiveInteractionPluginRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateLiveInteractionPluginHeaders headers = new UpdateLiveInteractionPluginHeaders();
+            return UpdateLiveInteractionPluginWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>修改直播间内某一互动插件的信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateLiveInteractionPluginRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateLiveInteractionPluginResponse
+        /// </returns>
+        public async Task<UpdateLiveInteractionPluginResponse> UpdateLiveInteractionPluginAsync(UpdateLiveInteractionPluginRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateLiveInteractionPluginHeaders headers = new UpdateLiveInteractionPluginHeaders();
+            return await UpdateLiveInteractionPluginWithOptionsAsync(request, headers, runtime);
         }
 
     }

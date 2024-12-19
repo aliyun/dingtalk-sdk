@@ -9,14 +9,6 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkassistant_1_0.Models
 {
     public class CreateAssistantRequest : TeaModel {
-        [NameInMap("customAgentMobileLink")]
-        [Validation(Required=false)]
-        public string CustomAgentMobileLink { get; set; }
-
-        [NameInMap("customAgentPCLink")]
-        [Validation(Required=false)]
-        public string CustomAgentPCLink { get; set; }
-
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>

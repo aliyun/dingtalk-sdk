@@ -27,6 +27,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
         [Validation(Required=false)]
         public string Extras { get; set; }
 
+        [NameInMap("freedomLeave")]
+        [Validation(Required=false)]
+        public bool? FreedomLeave { get; set; }
+
         /// <summary>
         /// <b>Example:</b>
         /// <para>1000</para>

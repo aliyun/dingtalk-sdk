@@ -323,6 +323,22 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string Remark { get; set; }
 
+            [NameInMap("showPurchaserAccountInRemark")]
+            [Validation(Required=false)]
+            public bool? ShowPurchaserAccountInRemark { get; set; }
+
+            [NameInMap("showPurchaserContactInRemark")]
+            [Validation(Required=false)]
+            public bool? ShowPurchaserContactInRemark { get; set; }
+
+            [NameInMap("showSellerAccountInRemark")]
+            [Validation(Required=false)]
+            public string ShowSellerAccountInRemark { get; set; }
+
+            [NameInMap("showSellerContactInRemark")]
+            [Validation(Required=false)]
+            public bool? ShowSellerContactInRemark { get; set; }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>approval</para>

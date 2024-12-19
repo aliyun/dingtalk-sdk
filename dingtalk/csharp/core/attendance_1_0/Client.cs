@@ -7975,6 +7975,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             {
                 body["extras"] = request.Extras;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreedomLeave))
+            {
+                body["freedomLeave"] = request.FreedomLeave;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HoursInPerDay))
             {
                 body["hoursInPerDay"] = request.HoursInPerDay;
@@ -8071,6 +8075,10 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Extras))
             {
                 body["extras"] = request.Extras;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FreedomLeave))
+            {
+                body["freedomLeave"] = request.FreedomLeave;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HoursInPerDay))
             {

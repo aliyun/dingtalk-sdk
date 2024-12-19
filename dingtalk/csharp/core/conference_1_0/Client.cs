@@ -3882,6 +3882,162 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>根据会议号查询会议信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryConferenceInfoByRoomCodeRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryConferenceInfoByRoomCodeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryConferenceInfoByRoomCodeResponse
+        /// </returns>
+        public QueryConferenceInfoByRoomCodeResponse QueryConferenceInfoByRoomCodeWithOptions(string roomCode, QueryConferenceInfoByRoomCodeRequest request, QueryConferenceInfoByRoomCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryConferenceInfoByRoomCode",
+                Version = "conference_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/conference/roomCodes/" + roomCode + "/infos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryConferenceInfoByRoomCodeResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据会议号查询会议信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryConferenceInfoByRoomCodeRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryConferenceInfoByRoomCodeHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryConferenceInfoByRoomCodeResponse
+        /// </returns>
+        public async Task<QueryConferenceInfoByRoomCodeResponse> QueryConferenceInfoByRoomCodeWithOptionsAsync(string roomCode, QueryConferenceInfoByRoomCodeRequest request, QueryConferenceInfoByRoomCodeHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryConferenceInfoByRoomCode",
+                Version = "conference_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/conference/roomCodes/" + roomCode + "/infos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryConferenceInfoByRoomCodeResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据会议号查询会议信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryConferenceInfoByRoomCodeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryConferenceInfoByRoomCodeResponse
+        /// </returns>
+        public QueryConferenceInfoByRoomCodeResponse QueryConferenceInfoByRoomCode(string roomCode, QueryConferenceInfoByRoomCodeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryConferenceInfoByRoomCodeHeaders headers = new QueryConferenceInfoByRoomCodeHeaders();
+            return QueryConferenceInfoByRoomCodeWithOptions(roomCode, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>根据会议号查询会议信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryConferenceInfoByRoomCodeRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryConferenceInfoByRoomCodeResponse
+        /// </returns>
+        public async Task<QueryConferenceInfoByRoomCodeResponse> QueryConferenceInfoByRoomCodeAsync(string roomCode, QueryConferenceInfoByRoomCodeRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryConferenceInfoByRoomCodeHeaders headers = new QueryConferenceInfoByRoomCodeHeaders();
+            return await QueryConferenceInfoByRoomCodeWithOptionsAsync(roomCode, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询视频会议成员</para>
         /// </summary>
         /// 
