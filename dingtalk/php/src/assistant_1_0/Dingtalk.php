@@ -180,12 +180,6 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->customAgentMobileLink)) {
-            $body['customAgentMobileLink'] = $request->customAgentMobileLink;
-        }
-        if (!Utils::isUnset($request->customAgentPCLink)) {
-            $body['customAgentPCLink'] = $request->customAgentPCLink;
-        }
         if (!Utils::isUnset($request->description)) {
             $body['description'] = $request->description;
         }

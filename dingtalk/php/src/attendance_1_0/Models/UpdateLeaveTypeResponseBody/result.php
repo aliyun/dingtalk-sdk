@@ -19,6 +19,11 @@ class result extends Model
     public $bizType;
 
     /**
+     * @var bool
+     */
+    public $freedomLeave;
+
+    /**
      * @example 1000
      *
      * @var int
@@ -69,6 +74,7 @@ class result extends Model
     public $visibilityRules;
     protected $_name = [
         'bizType'          => 'bizType',
+        'freedomLeave'     => 'freedomLeave',
         'hoursInPerDay'    => 'hoursInPerDay',
         'leaveCertificate' => 'leaveCertificate',
         'leaveCode'        => 'leaveCode',
@@ -88,6 +94,9 @@ class result extends Model
         $res = [];
         if (null !== $this->bizType) {
             $res['bizType'] = $this->bizType;
+        }
+        if (null !== $this->freedomLeave) {
+            $res['freedomLeave'] = $this->freedomLeave;
         }
         if (null !== $this->hoursInPerDay) {
             $res['hoursInPerDay'] = $this->hoursInPerDay;
@@ -133,6 +142,9 @@ class result extends Model
         $model = new self();
         if (isset($map['bizType'])) {
             $model->bizType = $map['bizType'];
+        }
+        if (isset($map['freedomLeave'])) {
+            $model->freedomLeave = $map['freedomLeave'];
         }
         if (isset($map['hoursInPerDay'])) {
             $model->hoursInPerDay = $map['hoursInPerDay'];

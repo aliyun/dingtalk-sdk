@@ -167,6 +167,26 @@ class result extends Model
     public $remark;
 
     /**
+     * @var bool
+     */
+    public $showPurchaserAccountInRemark;
+
+    /**
+     * @var bool
+     */
+    public $showPurchaserContactInRemark;
+
+    /**
+     * @var string
+     */
+    public $showSellerAccountInRemark;
+
+    /**
+     * @var bool
+     */
+    public $showSellerContactInRemark;
+
+    /**
      * @example approval
      *
      * @var string
@@ -187,32 +207,36 @@ class result extends Model
      */
     public $title;
     protected $_name = [
-        'accountantBookId'  => 'accountantBookId',
-        'amount'            => 'amount',
-        'applyStatus'       => 'applyStatus',
-        'bizStatus'         => 'bizStatus',
-        'businessId'        => 'businessId',
-        'companyCode'       => 'companyCode',
-        'createTime'        => 'createTime',
-        'creator'           => 'creator',
-        'customer'          => 'customer',
-        'drawerEmail'       => 'drawerEmail',
-        'drawerTelephone'   => 'drawerTelephone',
-        'invoiceType'       => 'invoiceType',
-        'modelId'           => 'modelId',
-        'productInfoList'   => 'productInfoList',
-        'purchaserAccount'  => 'purchaserAccount',
-        'purchaserAddress'  => 'purchaserAddress',
-        'purchaserBankName' => 'purchaserBankName',
-        'purchaserName'     => 'purchaserName',
-        'purchaserTaxNo'    => 'purchaserTaxNo',
-        'purchaserTel'      => 'purchaserTel',
-        'receiptId'         => 'receiptId',
-        'recordTime'        => 'recordTime',
-        'remark'            => 'remark',
-        'source'            => 'source',
-        'status'            => 'status',
-        'title'             => 'title',
+        'accountantBookId'             => 'accountantBookId',
+        'amount'                       => 'amount',
+        'applyStatus'                  => 'applyStatus',
+        'bizStatus'                    => 'bizStatus',
+        'businessId'                   => 'businessId',
+        'companyCode'                  => 'companyCode',
+        'createTime'                   => 'createTime',
+        'creator'                      => 'creator',
+        'customer'                     => 'customer',
+        'drawerEmail'                  => 'drawerEmail',
+        'drawerTelephone'              => 'drawerTelephone',
+        'invoiceType'                  => 'invoiceType',
+        'modelId'                      => 'modelId',
+        'productInfoList'              => 'productInfoList',
+        'purchaserAccount'             => 'purchaserAccount',
+        'purchaserAddress'             => 'purchaserAddress',
+        'purchaserBankName'            => 'purchaserBankName',
+        'purchaserName'                => 'purchaserName',
+        'purchaserTaxNo'               => 'purchaserTaxNo',
+        'purchaserTel'                 => 'purchaserTel',
+        'receiptId'                    => 'receiptId',
+        'recordTime'                   => 'recordTime',
+        'remark'                       => 'remark',
+        'showPurchaserAccountInRemark' => 'showPurchaserAccountInRemark',
+        'showPurchaserContactInRemark' => 'showPurchaserContactInRemark',
+        'showSellerAccountInRemark'    => 'showSellerAccountInRemark',
+        'showSellerContactInRemark'    => 'showSellerContactInRemark',
+        'source'                       => 'source',
+        'status'                       => 'status',
+        'title'                        => 'title',
     ];
 
     public function validate()
@@ -296,6 +320,18 @@ class result extends Model
         }
         if (null !== $this->remark) {
             $res['remark'] = $this->remark;
+        }
+        if (null !== $this->showPurchaserAccountInRemark) {
+            $res['showPurchaserAccountInRemark'] = $this->showPurchaserAccountInRemark;
+        }
+        if (null !== $this->showPurchaserContactInRemark) {
+            $res['showPurchaserContactInRemark'] = $this->showPurchaserContactInRemark;
+        }
+        if (null !== $this->showSellerAccountInRemark) {
+            $res['showSellerAccountInRemark'] = $this->showSellerAccountInRemark;
+        }
+        if (null !== $this->showSellerContactInRemark) {
+            $res['showSellerContactInRemark'] = $this->showSellerContactInRemark;
         }
         if (null !== $this->source) {
             $res['source'] = $this->source;
@@ -392,6 +428,18 @@ class result extends Model
         }
         if (isset($map['remark'])) {
             $model->remark = $map['remark'];
+        }
+        if (isset($map['showPurchaserAccountInRemark'])) {
+            $model->showPurchaserAccountInRemark = $map['showPurchaserAccountInRemark'];
+        }
+        if (isset($map['showPurchaserContactInRemark'])) {
+            $model->showPurchaserContactInRemark = $map['showPurchaserContactInRemark'];
+        }
+        if (isset($map['showSellerAccountInRemark'])) {
+            $model->showSellerAccountInRemark = $map['showSellerAccountInRemark'];
+        }
+        if (isset($map['showSellerContactInRemark'])) {
+            $model->showSellerContactInRemark = $map['showSellerContactInRemark'];
         }
         if (isset($map['source'])) {
             $model->source = $map['source'];

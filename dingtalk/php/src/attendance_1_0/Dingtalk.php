@@ -3229,6 +3229,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->extras)) {
             $body['extras'] = $request->extras;
         }
+        if (!Utils::isUnset($request->freedomLeave)) {
+            $body['freedomLeave'] = $request->freedomLeave;
+        }
         if (!Utils::isUnset($request->hoursInPerDay)) {
             $body['hoursInPerDay'] = $request->hoursInPerDay;
         }

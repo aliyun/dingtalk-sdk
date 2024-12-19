@@ -28,6 +28,11 @@ class UpdateLeaveTypeRequest extends Model
     public $extras;
 
     /**
+     * @var bool
+     */
+    public $freedomLeave;
+
+    /**
      * @example 1000
      *
      * @var int
@@ -92,6 +97,7 @@ class UpdateLeaveTypeRequest extends Model
     protected $_name = [
         'bizType'          => 'bizType',
         'extras'           => 'extras',
+        'freedomLeave'     => 'freedomLeave',
         'hoursInPerDay'    => 'hoursInPerDay',
         'leaveCertificate' => 'leaveCertificate',
         'leaveCode'        => 'leaveCode',
@@ -115,6 +121,9 @@ class UpdateLeaveTypeRequest extends Model
         }
         if (null !== $this->extras) {
             $res['extras'] = $this->extras;
+        }
+        if (null !== $this->freedomLeave) {
+            $res['freedomLeave'] = $this->freedomLeave;
         }
         if (null !== $this->hoursInPerDay) {
             $res['hoursInPerDay'] = $this->hoursInPerDay;
@@ -166,6 +175,9 @@ class UpdateLeaveTypeRequest extends Model
         }
         if (isset($map['extras'])) {
             $model->extras = $map['extras'];
+        }
+        if (isset($map['freedomLeave'])) {
+            $model->freedomLeave = $map['freedomLeave'];
         }
         if (isset($map['hoursInPerDay'])) {
             $model->hoursInPerDay = $map['hoursInPerDay'];

@@ -74,6 +74,9 @@ use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryCloudRecordVideoRespon
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceInfoBatchHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceInfoBatchRequest;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceInfoBatchResponse;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceInfoByRoomCodeHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceInfoByRoomCodeRequest;
+use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceInfoByRoomCodeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vconference_1_0\Models\QueryConferenceMembersHeaders;
@@ -1675,6 +1678,68 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryConferenceInfoBatchHeaders([]);
 
         return $this->queryConferenceInfoBatchWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据会议号查询会议信息
+     *  *
+     * @param string                               $roomCode
+     * @param QueryConferenceInfoByRoomCodeRequest $request  QueryConferenceInfoByRoomCodeRequest
+     * @param QueryConferenceInfoByRoomCodeHeaders $headers  QueryConferenceInfoByRoomCodeHeaders
+     * @param RuntimeOptions                       $runtime  runtime options for this request RuntimeOptions
+     *
+     * @return QueryConferenceInfoByRoomCodeResponse QueryConferenceInfoByRoomCodeResponse
+     */
+    public function queryConferenceInfoByRoomCodeWithOptions($roomCode, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryConferenceInfoByRoomCode',
+            'version'     => 'conference_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/conference/roomCodes/' . $roomCode . '/infos',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryConferenceInfoByRoomCodeResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据会议号查询会议信息
+     *  *
+     * @param string                               $roomCode
+     * @param QueryConferenceInfoByRoomCodeRequest $request  QueryConferenceInfoByRoomCodeRequest
+     *
+     * @return QueryConferenceInfoByRoomCodeResponse QueryConferenceInfoByRoomCodeResponse
+     */
+    public function queryConferenceInfoByRoomCode($roomCode, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryConferenceInfoByRoomCodeHeaders([]);
+
+        return $this->queryConferenceInfoByRoomCodeWithOptions($roomCode, $request, $headers, $runtime);
     }
 
     /**

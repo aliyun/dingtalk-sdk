@@ -5,6 +5,13 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vlive_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\AddLiveInteractionPluginHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\AddLiveInteractionPluginRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\AddLiveInteractionPluginResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\AddLiveInteractionPluginShrinkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\AddLiveNoticeWidgetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\AddLiveNoticeWidgetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\AddLiveNoticeWidgetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\AddShareCidListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\AddShareCidListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\AddShareCidListResponse;
@@ -20,6 +27,12 @@ use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\DeleteLiveFeedResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\DeleteLiveHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\DeleteLiveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\DeleteLiveResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\DelLiveInteractionPluginHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\DelLiveInteractionPluginRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\DelLiveInteractionPluginResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\DelLiveNoticeWidgetHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\DelLiveNoticeWidgetRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\DelLiveNoticeWidgetResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\EditFeedReplayHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\EditFeedReplayRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\EditFeedReplayResponse;
@@ -53,6 +66,9 @@ use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\QueryFeedWhiteListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\QueryLiveInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\QueryLiveInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\QueryLiveInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\QueryLiveInteractionPluginHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\QueryLiveInteractionPluginRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\QueryLiveInteractionPluginResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\QueryLiveWatchDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\QueryLiveWatchDetailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\QueryLiveWatchDetailResponse;
@@ -63,6 +79,14 @@ use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\QuerySubscribeStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\QuerySubscribeStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\QuerySubscribeStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\QuerySubscribeStatusShrinkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\SendLiveInteractionPluginEffectsMsgHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\SendLiveInteractionPluginEffectsMsgRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\SendLiveInteractionPluginEffectsMsgResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\SendLiveInteractionPluginEffectsMsgShrinkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\SendLivePluginUserActionMsgHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\SendLivePluginUserActionMsgRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\SendLivePluginUserActionMsgResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\SendLivePluginUserActionMsgShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\StartCloudFeedHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\StartCloudFeedRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\StartCloudFeedResponse;
@@ -76,6 +100,10 @@ use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\UpdateLiveFeedHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\UpdateLiveFeedRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\UpdateLiveFeedResponse;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\UpdateLiveHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\UpdateLiveInteractionPluginHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\UpdateLiveInteractionPluginRequest;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\UpdateLiveInteractionPluginResponse;
+use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\UpdateLiveInteractionPluginShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\UpdateLiveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\UpdateLiveResponse;
 use AlibabaCloud\Tea\Utils\Utils;
@@ -96,6 +124,143 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 增加直播间互动插件
+     *  *
+     * @param AddLiveInteractionPluginRequest $tmpReq  AddLiveInteractionPluginRequest
+     * @param AddLiveInteractionPluginHeaders $headers AddLiveInteractionPluginHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddLiveInteractionPluginResponse AddLiveInteractionPluginResponse
+     */
+    public function addLiveInteractionPluginWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new AddLiveInteractionPluginShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->pluginInfo)) {
+            $request->pluginInfoShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->pluginInfo, 'pluginInfo', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->liveId)) {
+            $query['liveId'] = $request->liveId;
+        }
+        if (!Utils::isUnset($request->pluginInfoShrink)) {
+            $query['pluginInfo'] = $request->pluginInfoShrink;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'AddLiveInteractionPlugin',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/interactionPlugins',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddLiveInteractionPluginResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 增加直播间互动插件
+     *  *
+     * @param AddLiveInteractionPluginRequest $request AddLiveInteractionPluginRequest
+     *
+     * @return AddLiveInteractionPluginResponse AddLiveInteractionPluginResponse
+     */
+    public function addLiveInteractionPlugin($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddLiveInteractionPluginHeaders([]);
+
+        return $this->addLiveInteractionPluginWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 增加直播间的公告槽位信息
+     *  *
+     * @param AddLiveNoticeWidgetRequest $request AddLiveNoticeWidgetRequest
+     * @param AddLiveNoticeWidgetHeaders $headers AddLiveNoticeWidgetHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddLiveNoticeWidgetResponse AddLiveNoticeWidgetResponse
+     */
+    public function addLiveNoticeWidgetWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->iconUrl)) {
+            $query['iconUrl'] = $request->iconUrl;
+        }
+        if (!Utils::isUnset($request->jumpUrl)) {
+            $query['jumpUrl'] = $request->jumpUrl;
+        }
+        if (!Utils::isUnset($request->liveId)) {
+            $query['liveId'] = $request->liveId;
+        }
+        if (!Utils::isUnset($request->noticeText)) {
+            $query['noticeText'] = $request->noticeText;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'AddLiveNoticeWidget',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/noticeWidgets',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddLiveNoticeWidgetResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 增加直播间的公告槽位信息
+     *  *
+     * @param AddLiveNoticeWidgetRequest $request AddLiveNoticeWidgetRequest
+     *
+     * @return AddLiveNoticeWidgetResponse AddLiveNoticeWidgetResponse
+     */
+    public function addLiveNoticeWidget($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddLiveNoticeWidgetHeaders([]);
+
+        return $this->addLiveNoticeWidgetWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -308,6 +473,129 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateLiveHeaders([]);
 
         return $this->createLiveWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除直播间内某一互动插件
+     *  *
+     * @param DelLiveInteractionPluginRequest $request DelLiveInteractionPluginRequest
+     * @param DelLiveInteractionPluginHeaders $headers DelLiveInteractionPluginHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DelLiveInteractionPluginResponse DelLiveInteractionPluginResponse
+     */
+    public function delLiveInteractionPluginWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->liveId)) {
+            $query['liveId'] = $request->liveId;
+        }
+        if (!Utils::isUnset($request->pluginId)) {
+            $query['pluginId'] = $request->pluginId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'DelLiveInteractionPlugin',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/interactionPlugins',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DelLiveInteractionPluginResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除直播间内某一互动插件
+     *  *
+     * @param DelLiveInteractionPluginRequest $request DelLiveInteractionPluginRequest
+     *
+     * @return DelLiveInteractionPluginResponse DelLiveInteractionPluginResponse
+     */
+    public function delLiveInteractionPlugin($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DelLiveInteractionPluginHeaders([]);
+
+        return $this->delLiveInteractionPluginWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除直播间的公告槽位信息
+     *  *
+     * @param DelLiveNoticeWidgetRequest $request DelLiveNoticeWidgetRequest
+     * @param DelLiveNoticeWidgetHeaders $headers DelLiveNoticeWidgetHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DelLiveNoticeWidgetResponse DelLiveNoticeWidgetResponse
+     */
+    public function delLiveNoticeWidgetWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->liveId)) {
+            $query['liveId'] = $request->liveId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'DelLiveNoticeWidget',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/noticeWidgets',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DelLiveNoticeWidgetResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除直播间的公告槽位信息
+     *  *
+     * @param DelLiveNoticeWidgetRequest $request DelLiveNoticeWidgetRequest
+     *
+     * @return DelLiveNoticeWidgetResponse DelLiveNoticeWidgetResponse
+     */
+    public function delLiveNoticeWidget($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DelLiveNoticeWidgetHeaders([]);
+
+        return $this->delLiveNoticeWidgetWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1094,6 +1382,69 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询直播间内某一互动插件的信息
+     *  *
+     * @param QueryLiveInteractionPluginRequest $request QueryLiveInteractionPluginRequest
+     * @param QueryLiveInteractionPluginHeaders $headers QueryLiveInteractionPluginHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryLiveInteractionPluginResponse QueryLiveInteractionPluginResponse
+     */
+    public function queryLiveInteractionPluginWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->liveId)) {
+            $query['liveId'] = $request->liveId;
+        }
+        if (!Utils::isUnset($request->pluginId)) {
+            $query['pluginId'] = $request->pluginId;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryLiveInteractionPlugin',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/interactionPlugins',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryLiveInteractionPluginResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询直播间内某一互动插件的信息
+     *  *
+     * @param QueryLiveInteractionPluginRequest $request QueryLiveInteractionPluginRequest
+     *
+     * @return QueryLiveInteractionPluginResponse QueryLiveInteractionPluginResponse
+     */
+    public function queryLiveInteractionPlugin($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryLiveInteractionPluginHeaders([]);
+
+        return $this->queryLiveInteractionPluginWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取直播的观看数据
      *  *
      * @param QueryLiveWatchDetailRequest $request QueryLiveWatchDetailRequest
@@ -1282,6 +1633,142 @@ class Dingtalk extends OpenApiClient
         $headers = new QuerySubscribeStatusHeaders([]);
 
         return $this->querySubscribeStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 用户对互动插件进行操作广播到直播间
+     *  *
+     * @param SendLiveInteractionPluginEffectsMsgRequest $tmpReq  SendLiveInteractionPluginEffectsMsgRequest
+     * @param SendLiveInteractionPluginEffectsMsgHeaders $headers SendLiveInteractionPluginEffectsMsgHeaders
+     * @param RuntimeOptions                             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SendLiveInteractionPluginEffectsMsgResponse SendLiveInteractionPluginEffectsMsgResponse
+     */
+    public function sendLiveInteractionPluginEffectsMsgWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new SendLiveInteractionPluginEffectsMsgShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->pluginEffectsMessage)) {
+            $request->pluginEffectsMessageShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->pluginEffectsMessage, 'pluginEffectsMessage', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->liveId)) {
+            $query['liveId'] = $request->liveId;
+        }
+        if (!Utils::isUnset($request->pluginEffectsMessageShrink)) {
+            $query['pluginEffectsMessage'] = $request->pluginEffectsMessageShrink;
+        }
+        if (!Utils::isUnset($request->pluginId)) {
+            $query['pluginId'] = $request->pluginId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SendLiveInteractionPluginEffectsMsg',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/interactionPlugins/effectMessages/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SendLiveInteractionPluginEffectsMsgResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 用户对互动插件进行操作广播到直播间
+     *  *
+     * @param SendLiveInteractionPluginEffectsMsgRequest $request SendLiveInteractionPluginEffectsMsgRequest
+     *
+     * @return SendLiveInteractionPluginEffectsMsgResponse SendLiveInteractionPluginEffectsMsgResponse
+     */
+    public function sendLiveInteractionPluginEffectsMsg($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendLiveInteractionPluginEffectsMsgHeaders([]);
+
+        return $this->sendLiveInteractionPluginEffectsMsgWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 用户对互动插件进行操作广播到直播间
+     *  *
+     * @param SendLivePluginUserActionMsgRequest $tmpReq  SendLivePluginUserActionMsgRequest
+     * @param SendLivePluginUserActionMsgHeaders $headers SendLivePluginUserActionMsgHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SendLivePluginUserActionMsgResponse SendLivePluginUserActionMsgResponse
+     */
+    public function sendLivePluginUserActionMsgWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new SendLivePluginUserActionMsgShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->pluginEffectsMessage)) {
+            $request->pluginEffectsMessageShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->pluginEffectsMessage, 'pluginEffectsMessage', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->liveId)) {
+            $query['liveId'] = $request->liveId;
+        }
+        if (!Utils::isUnset($request->pluginEffectsMessageShrink)) {
+            $query['pluginEffectsMessage'] = $request->pluginEffectsMessageShrink;
+        }
+        if (!Utils::isUnset($request->pluginId)) {
+            $query['pluginId'] = $request->pluginId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SendLivePluginUserActionMsg',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/interactionPlugins/actionMessages/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SendLivePluginUserActionMsgResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 用户对互动插件进行操作广播到直播间
+     *  *
+     * @param SendLivePluginUserActionMsgRequest $request SendLivePluginUserActionMsgRequest
+     *
+     * @return SendLivePluginUserActionMsgResponse SendLivePluginUserActionMsgResponse
+     */
+    public function sendLivePluginUserActionMsg($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendLivePluginUserActionMsgHeaders([]);
+
+        return $this->sendLivePluginUserActionMsgWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1609,5 +2096,76 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateLiveFeedHeaders([]);
 
         return $this->updateLiveFeedWithOptions($feedId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 修改直播间内某一互动插件的信息
+     *  *
+     * @param UpdateLiveInteractionPluginRequest $tmpReq  UpdateLiveInteractionPluginRequest
+     * @param UpdateLiveInteractionPluginHeaders $headers UpdateLiveInteractionPluginHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateLiveInteractionPluginResponse UpdateLiveInteractionPluginResponse
+     */
+    public function updateLiveInteractionPluginWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new UpdateLiveInteractionPluginShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->pluginInfo)) {
+            $request->pluginInfoShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->pluginInfo, 'pluginInfo', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->liveId)) {
+            $query['liveId'] = $request->liveId;
+        }
+        if (!Utils::isUnset($request->pluginId)) {
+            $query['pluginId'] = $request->pluginId;
+        }
+        if (!Utils::isUnset($request->pluginInfoShrink)) {
+            $query['pluginInfo'] = $request->pluginInfoShrink;
+        }
+        if (!Utils::isUnset($request->unionId)) {
+            $query['unionId'] = $request->unionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateLiveInteractionPlugin',
+            'version'     => 'live_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/live/interactionPlugins',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateLiveInteractionPluginResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 修改直播间内某一互动插件的信息
+     *  *
+     * @param UpdateLiveInteractionPluginRequest $request UpdateLiveInteractionPluginRequest
+     *
+     * @return UpdateLiveInteractionPluginResponse UpdateLiveInteractionPluginResponse
+     */
+    public function updateLiveInteractionPlugin($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateLiveInteractionPluginHeaders([]);
+
+        return $this->updateLiveInteractionPluginWithOptions($request, $headers, $runtime);
     }
 }
