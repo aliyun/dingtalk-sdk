@@ -5225,6 +5225,259 @@ class QueryConferenceInfoBatchResponse(TeaModel):
         return self
 
 
+class QueryConferenceInfoByRoomCodeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryConferenceInfoByRoomCodeRequest(TeaModel):
+    def __init__(
+        self,
+        max_results: int = None,
+        next_token: str = None,
+    ):
+        self.max_results = max_results
+        self.next_token = next_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class QueryConferenceInfoByRoomCodeResponseBodyConferenceList(TeaModel):
+    def __init__(
+        self,
+        biz_type: str = None,
+        conf_duration: int = None,
+        conference_id: str = None,
+        creator_id: str = None,
+        creator_nick: str = None,
+        end_time: int = None,
+        external_link_url: str = None,
+        room_code: str = None,
+        schedule_conference_id: str = None,
+        start_time: int = None,
+        status: int = None,
+        title: str = None,
+    ):
+        self.biz_type = biz_type
+        self.conf_duration = conf_duration
+        self.conference_id = conference_id
+        self.creator_id = creator_id
+        self.creator_nick = creator_nick
+        self.end_time = end_time
+        self.external_link_url = external_link_url
+        self.room_code = room_code
+        self.schedule_conference_id = schedule_conference_id
+        self.start_time = start_time
+        self.status = status
+        self.title = title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_type is not None:
+            result['bizType'] = self.biz_type
+        if self.conf_duration is not None:
+            result['confDuration'] = self.conf_duration
+        if self.conference_id is not None:
+            result['conferenceId'] = self.conference_id
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.creator_nick is not None:
+            result['creatorNick'] = self.creator_nick
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.external_link_url is not None:
+            result['externalLinkUrl'] = self.external_link_url
+        if self.room_code is not None:
+            result['roomCode'] = self.room_code
+        if self.schedule_conference_id is not None:
+            result['scheduleConferenceId'] = self.schedule_conference_id
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.status is not None:
+            result['status'] = self.status
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizType') is not None:
+            self.biz_type = m.get('bizType')
+        if m.get('confDuration') is not None:
+            self.conf_duration = m.get('confDuration')
+        if m.get('conferenceId') is not None:
+            self.conference_id = m.get('conferenceId')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('creatorNick') is not None:
+            self.creator_nick = m.get('creatorNick')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('externalLinkUrl') is not None:
+            self.external_link_url = m.get('externalLinkUrl')
+        if m.get('roomCode') is not None:
+            self.room_code = m.get('roomCode')
+        if m.get('scheduleConferenceId') is not None:
+            self.schedule_conference_id = m.get('scheduleConferenceId')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class QueryConferenceInfoByRoomCodeResponseBody(TeaModel):
+    def __init__(
+        self,
+        conference_list: List[QueryConferenceInfoByRoomCodeResponseBodyConferenceList] = None,
+        has_more: bool = None,
+        next_token: str = None,
+        total_count: int = None,
+    ):
+        self.conference_list = conference_list
+        self.has_more = has_more
+        self.next_token = next_token
+        self.total_count = total_count
+
+    def validate(self):
+        if self.conference_list:
+            for k in self.conference_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['conferenceList'] = []
+        if self.conference_list is not None:
+            for k in self.conference_list:
+                result['conferenceList'].append(k.to_map() if k else None)
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.conference_list = []
+        if m.get('conferenceList') is not None:
+            for k in m.get('conferenceList'):
+                temp_model = QueryConferenceInfoByRoomCodeResponseBodyConferenceList()
+                self.conference_list.append(temp_model.from_map(k))
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryConferenceInfoByRoomCodeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryConferenceInfoByRoomCodeResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryConferenceInfoByRoomCodeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryConferenceMembersHeaders(TeaModel):
     def __init__(
         self,

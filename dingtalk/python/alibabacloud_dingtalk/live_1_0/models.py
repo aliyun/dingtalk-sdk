@@ -4,6 +4,463 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class AddLiveInteractionPluginHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddLiveInteractionPluginRequestPluginInfo(TeaModel):
+    def __init__(
+        self,
+        anchor_jump_url: str = None,
+        plugin_icon_url: str = None,
+        plugin_name: str = None,
+        plugin_name_en: str = None,
+        viewer_jump_url: str = None,
+    ):
+        # This parameter is required.
+        self.anchor_jump_url = anchor_jump_url
+        # This parameter is required.
+        self.plugin_icon_url = plugin_icon_url
+        # This parameter is required.
+        self.plugin_name = plugin_name
+        self.plugin_name_en = plugin_name_en
+        # This parameter is required.
+        self.viewer_jump_url = viewer_jump_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.anchor_jump_url is not None:
+            result['anchorJumpUrl'] = self.anchor_jump_url
+        if self.plugin_icon_url is not None:
+            result['pluginIconUrl'] = self.plugin_icon_url
+        if self.plugin_name is not None:
+            result['pluginName'] = self.plugin_name
+        if self.plugin_name_en is not None:
+            result['pluginNameEn'] = self.plugin_name_en
+        if self.viewer_jump_url is not None:
+            result['viewerJumpUrl'] = self.viewer_jump_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('anchorJumpUrl') is not None:
+            self.anchor_jump_url = m.get('anchorJumpUrl')
+        if m.get('pluginIconUrl') is not None:
+            self.plugin_icon_url = m.get('pluginIconUrl')
+        if m.get('pluginName') is not None:
+            self.plugin_name = m.get('pluginName')
+        if m.get('pluginNameEn') is not None:
+            self.plugin_name_en = m.get('pluginNameEn')
+        if m.get('viewerJumpUrl') is not None:
+            self.viewer_jump_url = m.get('viewerJumpUrl')
+        return self
+
+
+class AddLiveInteractionPluginRequest(TeaModel):
+    def __init__(
+        self,
+        live_id: str = None,
+        plugin_info: AddLiveInteractionPluginRequestPluginInfo = None,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.live_id = live_id
+        # This parameter is required.
+        self.plugin_info = plugin_info
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        if self.plugin_info:
+            self.plugin_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.live_id is not None:
+            result['liveId'] = self.live_id
+        if self.plugin_info is not None:
+            result['pluginInfo'] = self.plugin_info.to_map()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('liveId') is not None:
+            self.live_id = m.get('liveId')
+        if m.get('pluginInfo') is not None:
+            temp_model = AddLiveInteractionPluginRequestPluginInfo()
+            self.plugin_info = temp_model.from_map(m['pluginInfo'])
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class AddLiveInteractionPluginShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        live_id: str = None,
+        plugin_info_shrink: str = None,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.live_id = live_id
+        # This parameter is required.
+        self.plugin_info_shrink = plugin_info_shrink
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.live_id is not None:
+            result['liveId'] = self.live_id
+        if self.plugin_info_shrink is not None:
+            result['pluginInfo'] = self.plugin_info_shrink
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('liveId') is not None:
+            self.live_id = m.get('liveId')
+        if m.get('pluginInfo') is not None:
+            self.plugin_info_shrink = m.get('pluginInfo')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class AddLiveInteractionPluginResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        plugin_id: str = None,
+    ):
+        self.plugin_id = plugin_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.plugin_id is not None:
+            result['pluginId'] = self.plugin_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pluginId') is not None:
+            self.plugin_id = m.get('pluginId')
+        return self
+
+
+class AddLiveInteractionPluginResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: AddLiveInteractionPluginResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = AddLiveInteractionPluginResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class AddLiveInteractionPluginResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AddLiveInteractionPluginResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AddLiveInteractionPluginResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AddLiveNoticeWidgetHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddLiveNoticeWidgetRequest(TeaModel):
+    def __init__(
+        self,
+        icon_url: str = None,
+        jump_url: str = None,
+        live_id: str = None,
+        notice_text: str = None,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.icon_url = icon_url
+        # This parameter is required.
+        self.jump_url = jump_url
+        # This parameter is required.
+        self.live_id = live_id
+        # This parameter is required.
+        self.notice_text = notice_text
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.icon_url is not None:
+            result['iconUrl'] = self.icon_url
+        if self.jump_url is not None:
+            result['jumpUrl'] = self.jump_url
+        if self.live_id is not None:
+            result['liveId'] = self.live_id
+        if self.notice_text is not None:
+            result['noticeText'] = self.notice_text
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('iconUrl') is not None:
+            self.icon_url = m.get('iconUrl')
+        if m.get('jumpUrl') is not None:
+            self.jump_url = m.get('jumpUrl')
+        if m.get('liveId') is not None:
+            self.live_id = m.get('liveId')
+        if m.get('noticeText') is not None:
+            self.notice_text = m.get('noticeText')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class AddLiveNoticeWidgetResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AddLiveNoticeWidgetResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: AddLiveNoticeWidgetResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = AddLiveNoticeWidgetResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class AddLiveNoticeWidgetResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AddLiveNoticeWidgetResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AddLiveNoticeWidgetResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AddShareCidListHeaders(TeaModel):
     def __init__(
         self,
@@ -508,6 +965,343 @@ class CreateLiveResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = CreateLiveResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DelLiveInteractionPluginHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DelLiveInteractionPluginRequest(TeaModel):
+    def __init__(
+        self,
+        live_id: str = None,
+        plugin_id: str = None,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.live_id = live_id
+        # This parameter is required.
+        self.plugin_id = plugin_id
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.live_id is not None:
+            result['liveId'] = self.live_id
+        if self.plugin_id is not None:
+            result['pluginId'] = self.plugin_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('liveId') is not None:
+            self.live_id = m.get('liveId')
+        if m.get('pluginId') is not None:
+            self.plugin_id = m.get('pluginId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class DelLiveInteractionPluginResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DelLiveInteractionPluginResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: DelLiveInteractionPluginResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = DelLiveInteractionPluginResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class DelLiveInteractionPluginResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DelLiveInteractionPluginResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DelLiveInteractionPluginResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class DelLiveNoticeWidgetHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DelLiveNoticeWidgetRequest(TeaModel):
+    def __init__(
+        self,
+        live_id: str = None,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.live_id = live_id
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.live_id is not None:
+            result['liveId'] = self.live_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('liveId') is not None:
+            self.live_id = m.get('liveId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class DelLiveNoticeWidgetResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DelLiveNoticeWidgetResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: DelLiveNoticeWidgetResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = DelLiveNoticeWidgetResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class DelLiveNoticeWidgetResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DelLiveNoticeWidgetResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DelLiveNoticeWidgetResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -3641,6 +4435,243 @@ class QueryLiveInfoResponse(TeaModel):
         return self
 
 
+class QueryLiveInteractionPluginHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryLiveInteractionPluginRequest(TeaModel):
+    def __init__(
+        self,
+        live_id: str = None,
+        plugin_id: str = None,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.live_id = live_id
+        # This parameter is required.
+        self.plugin_id = plugin_id
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.live_id is not None:
+            result['liveId'] = self.live_id
+        if self.plugin_id is not None:
+            result['pluginId'] = self.plugin_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('liveId') is not None:
+            self.live_id = m.get('liveId')
+        if m.get('pluginId') is not None:
+            self.plugin_id = m.get('pluginId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class QueryLiveInteractionPluginResponseBodyResultLivePluginList(TeaModel):
+    def __init__(
+        self,
+        anchor_jump_url: str = None,
+        plugin_icon_url: str = None,
+        plugin_id: str = None,
+        plugin_name: str = None,
+        plugin_name_en: str = None,
+        viewer_jump_url: str = None,
+    ):
+        self.anchor_jump_url = anchor_jump_url
+        self.plugin_icon_url = plugin_icon_url
+        self.plugin_id = plugin_id
+        self.plugin_name = plugin_name
+        self.plugin_name_en = plugin_name_en
+        self.viewer_jump_url = viewer_jump_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.anchor_jump_url is not None:
+            result['anchorJumpUrl'] = self.anchor_jump_url
+        if self.plugin_icon_url is not None:
+            result['pluginIconUrl'] = self.plugin_icon_url
+        if self.plugin_id is not None:
+            result['pluginId'] = self.plugin_id
+        if self.plugin_name is not None:
+            result['pluginName'] = self.plugin_name
+        if self.plugin_name_en is not None:
+            result['pluginNameEn'] = self.plugin_name_en
+        if self.viewer_jump_url is not None:
+            result['viewerJumpUrl'] = self.viewer_jump_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('anchorJumpUrl') is not None:
+            self.anchor_jump_url = m.get('anchorJumpUrl')
+        if m.get('pluginIconUrl') is not None:
+            self.plugin_icon_url = m.get('pluginIconUrl')
+        if m.get('pluginId') is not None:
+            self.plugin_id = m.get('pluginId')
+        if m.get('pluginName') is not None:
+            self.plugin_name = m.get('pluginName')
+        if m.get('pluginNameEn') is not None:
+            self.plugin_name_en = m.get('pluginNameEn')
+        if m.get('viewerJumpUrl') is not None:
+            self.viewer_jump_url = m.get('viewerJumpUrl')
+        return self
+
+
+class QueryLiveInteractionPluginResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        live_plugin_list: List[QueryLiveInteractionPluginResponseBodyResultLivePluginList] = None,
+    ):
+        self.live_plugin_list = live_plugin_list
+
+    def validate(self):
+        if self.live_plugin_list:
+            for k in self.live_plugin_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['livePluginList'] = []
+        if self.live_plugin_list is not None:
+            for k in self.live_plugin_list:
+                result['livePluginList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.live_plugin_list = []
+        if m.get('livePluginList') is not None:
+            for k in m.get('livePluginList'):
+                temp_model = QueryLiveInteractionPluginResponseBodyResultLivePluginList()
+                self.live_plugin_list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryLiveInteractionPluginResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryLiveInteractionPluginResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryLiveInteractionPluginResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class QueryLiveInteractionPluginResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryLiveInteractionPluginResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryLiveInteractionPluginResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryLiveWatchDetailHeaders(TeaModel):
     def __init__(
         self,
@@ -4423,6 +5454,533 @@ class QuerySubscribeStatusResponse(TeaModel):
         return self
 
 
+class SendLiveInteractionPluginEffectsMsgHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SendLiveInteractionPluginEffectsMsgRequestPluginEffectsMessage(TeaModel):
+    def __init__(
+        self,
+        count: int = None,
+        lottie_file_url: str = None,
+        msg_icon_url: str = None,
+        msg_text: str = None,
+        plugin_sub_id: str = None,
+        sender_union_id: str = None,
+    ):
+        # This parameter is required.
+        self.count = count
+        self.lottie_file_url = lottie_file_url
+        # This parameter is required.
+        self.msg_icon_url = msg_icon_url
+        # This parameter is required.
+        self.msg_text = msg_text
+        # This parameter is required.
+        self.plugin_sub_id = plugin_sub_id
+        # This parameter is required.
+        self.sender_union_id = sender_union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.count is not None:
+            result['count'] = self.count
+        if self.lottie_file_url is not None:
+            result['lottieFileUrl'] = self.lottie_file_url
+        if self.msg_icon_url is not None:
+            result['msgIconUrl'] = self.msg_icon_url
+        if self.msg_text is not None:
+            result['msgText'] = self.msg_text
+        if self.plugin_sub_id is not None:
+            result['pluginSubId'] = self.plugin_sub_id
+        if self.sender_union_id is not None:
+            result['senderUnionId'] = self.sender_union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('count') is not None:
+            self.count = m.get('count')
+        if m.get('lottieFileUrl') is not None:
+            self.lottie_file_url = m.get('lottieFileUrl')
+        if m.get('msgIconUrl') is not None:
+            self.msg_icon_url = m.get('msgIconUrl')
+        if m.get('msgText') is not None:
+            self.msg_text = m.get('msgText')
+        if m.get('pluginSubId') is not None:
+            self.plugin_sub_id = m.get('pluginSubId')
+        if m.get('senderUnionId') is not None:
+            self.sender_union_id = m.get('senderUnionId')
+        return self
+
+
+class SendLiveInteractionPluginEffectsMsgRequest(TeaModel):
+    def __init__(
+        self,
+        live_id: str = None,
+        plugin_effects_message: SendLiveInteractionPluginEffectsMsgRequestPluginEffectsMessage = None,
+        plugin_id: str = None,
+    ):
+        # This parameter is required.
+        self.live_id = live_id
+        # This parameter is required.
+        self.plugin_effects_message = plugin_effects_message
+        # This parameter is required.
+        self.plugin_id = plugin_id
+
+    def validate(self):
+        if self.plugin_effects_message:
+            self.plugin_effects_message.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.live_id is not None:
+            result['liveId'] = self.live_id
+        if self.plugin_effects_message is not None:
+            result['pluginEffectsMessage'] = self.plugin_effects_message.to_map()
+        if self.plugin_id is not None:
+            result['pluginId'] = self.plugin_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('liveId') is not None:
+            self.live_id = m.get('liveId')
+        if m.get('pluginEffectsMessage') is not None:
+            temp_model = SendLiveInteractionPluginEffectsMsgRequestPluginEffectsMessage()
+            self.plugin_effects_message = temp_model.from_map(m['pluginEffectsMessage'])
+        if m.get('pluginId') is not None:
+            self.plugin_id = m.get('pluginId')
+        return self
+
+
+class SendLiveInteractionPluginEffectsMsgShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        live_id: str = None,
+        plugin_effects_message_shrink: str = None,
+        plugin_id: str = None,
+    ):
+        # This parameter is required.
+        self.live_id = live_id
+        # This parameter is required.
+        self.plugin_effects_message_shrink = plugin_effects_message_shrink
+        # This parameter is required.
+        self.plugin_id = plugin_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.live_id is not None:
+            result['liveId'] = self.live_id
+        if self.plugin_effects_message_shrink is not None:
+            result['pluginEffectsMessage'] = self.plugin_effects_message_shrink
+        if self.plugin_id is not None:
+            result['pluginId'] = self.plugin_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('liveId') is not None:
+            self.live_id = m.get('liveId')
+        if m.get('pluginEffectsMessage') is not None:
+            self.plugin_effects_message_shrink = m.get('pluginEffectsMessage')
+        if m.get('pluginId') is not None:
+            self.plugin_id = m.get('pluginId')
+        return self
+
+
+class SendLiveInteractionPluginEffectsMsgResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SendLiveInteractionPluginEffectsMsgResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: SendLiveInteractionPluginEffectsMsgResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = SendLiveInteractionPluginEffectsMsgResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class SendLiveInteractionPluginEffectsMsgResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SendLiveInteractionPluginEffectsMsgResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SendLiveInteractionPluginEffectsMsgResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SendLivePluginUserActionMsgHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SendLivePluginUserActionMsgRequestPluginEffectsMessage(TeaModel):
+    def __init__(
+        self,
+        count: int = None,
+        lottie_file_url: str = None,
+        msg_icon_url: str = None,
+        msg_text: str = None,
+        plugin_sub_id: str = None,
+        sender_union_id: str = None,
+    ):
+        # This parameter is required.
+        self.count = count
+        self.lottie_file_url = lottie_file_url
+        # This parameter is required.
+        self.msg_icon_url = msg_icon_url
+        # This parameter is required.
+        self.msg_text = msg_text
+        # This parameter is required.
+        self.plugin_sub_id = plugin_sub_id
+        # This parameter is required.
+        self.sender_union_id = sender_union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.count is not None:
+            result['count'] = self.count
+        if self.lottie_file_url is not None:
+            result['lottieFileUrl'] = self.lottie_file_url
+        if self.msg_icon_url is not None:
+            result['msgIconUrl'] = self.msg_icon_url
+        if self.msg_text is not None:
+            result['msgText'] = self.msg_text
+        if self.plugin_sub_id is not None:
+            result['pluginSubId'] = self.plugin_sub_id
+        if self.sender_union_id is not None:
+            result['senderUnionId'] = self.sender_union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('count') is not None:
+            self.count = m.get('count')
+        if m.get('lottieFileUrl') is not None:
+            self.lottie_file_url = m.get('lottieFileUrl')
+        if m.get('msgIconUrl') is not None:
+            self.msg_icon_url = m.get('msgIconUrl')
+        if m.get('msgText') is not None:
+            self.msg_text = m.get('msgText')
+        if m.get('pluginSubId') is not None:
+            self.plugin_sub_id = m.get('pluginSubId')
+        if m.get('senderUnionId') is not None:
+            self.sender_union_id = m.get('senderUnionId')
+        return self
+
+
+class SendLivePluginUserActionMsgRequest(TeaModel):
+    def __init__(
+        self,
+        live_id: str = None,
+        plugin_effects_message: SendLivePluginUserActionMsgRequestPluginEffectsMessage = None,
+        plugin_id: str = None,
+    ):
+        # This parameter is required.
+        self.live_id = live_id
+        # This parameter is required.
+        self.plugin_effects_message = plugin_effects_message
+        # This parameter is required.
+        self.plugin_id = plugin_id
+
+    def validate(self):
+        if self.plugin_effects_message:
+            self.plugin_effects_message.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.live_id is not None:
+            result['liveId'] = self.live_id
+        if self.plugin_effects_message is not None:
+            result['pluginEffectsMessage'] = self.plugin_effects_message.to_map()
+        if self.plugin_id is not None:
+            result['pluginId'] = self.plugin_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('liveId') is not None:
+            self.live_id = m.get('liveId')
+        if m.get('pluginEffectsMessage') is not None:
+            temp_model = SendLivePluginUserActionMsgRequestPluginEffectsMessage()
+            self.plugin_effects_message = temp_model.from_map(m['pluginEffectsMessage'])
+        if m.get('pluginId') is not None:
+            self.plugin_id = m.get('pluginId')
+        return self
+
+
+class SendLivePluginUserActionMsgShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        live_id: str = None,
+        plugin_effects_message_shrink: str = None,
+        plugin_id: str = None,
+    ):
+        # This parameter is required.
+        self.live_id = live_id
+        # This parameter is required.
+        self.plugin_effects_message_shrink = plugin_effects_message_shrink
+        # This parameter is required.
+        self.plugin_id = plugin_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.live_id is not None:
+            result['liveId'] = self.live_id
+        if self.plugin_effects_message_shrink is not None:
+            result['pluginEffectsMessage'] = self.plugin_effects_message_shrink
+        if self.plugin_id is not None:
+            result['pluginId'] = self.plugin_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('liveId') is not None:
+            self.live_id = m.get('liveId')
+        if m.get('pluginEffectsMessage') is not None:
+            self.plugin_effects_message_shrink = m.get('pluginEffectsMessage')
+        if m.get('pluginId') is not None:
+            self.plugin_id = m.get('pluginId')
+        return self
+
+
+class SendLivePluginUserActionMsgResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SendLivePluginUserActionMsgResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SendLivePluginUserActionMsgResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SendLivePluginUserActionMsgResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class StartCloudFeedHeaders(TeaModel):
     def __init__(
         self,
@@ -5197,6 +6755,287 @@ class UpdateLiveFeedResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateLiveFeedResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateLiveInteractionPluginHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateLiveInteractionPluginRequestPluginInfo(TeaModel):
+    def __init__(
+        self,
+        anchor_jump_url: str = None,
+        plugin_icon_url: str = None,
+        plugin_name: str = None,
+        plugin_name_en: str = None,
+        viewer_jump_url: str = None,
+    ):
+        self.anchor_jump_url = anchor_jump_url
+        self.plugin_icon_url = plugin_icon_url
+        self.plugin_name = plugin_name
+        self.plugin_name_en = plugin_name_en
+        self.viewer_jump_url = viewer_jump_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.anchor_jump_url is not None:
+            result['anchorJumpUrl'] = self.anchor_jump_url
+        if self.plugin_icon_url is not None:
+            result['pluginIconUrl'] = self.plugin_icon_url
+        if self.plugin_name is not None:
+            result['pluginName'] = self.plugin_name
+        if self.plugin_name_en is not None:
+            result['pluginNameEn'] = self.plugin_name_en
+        if self.viewer_jump_url is not None:
+            result['viewerJumpUrl'] = self.viewer_jump_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('anchorJumpUrl') is not None:
+            self.anchor_jump_url = m.get('anchorJumpUrl')
+        if m.get('pluginIconUrl') is not None:
+            self.plugin_icon_url = m.get('pluginIconUrl')
+        if m.get('pluginName') is not None:
+            self.plugin_name = m.get('pluginName')
+        if m.get('pluginNameEn') is not None:
+            self.plugin_name_en = m.get('pluginNameEn')
+        if m.get('viewerJumpUrl') is not None:
+            self.viewer_jump_url = m.get('viewerJumpUrl')
+        return self
+
+
+class UpdateLiveInteractionPluginRequest(TeaModel):
+    def __init__(
+        self,
+        live_id: str = None,
+        plugin_id: str = None,
+        plugin_info: UpdateLiveInteractionPluginRequestPluginInfo = None,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.live_id = live_id
+        # This parameter is required.
+        self.plugin_id = plugin_id
+        # This parameter is required.
+        self.plugin_info = plugin_info
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        if self.plugin_info:
+            self.plugin_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.live_id is not None:
+            result['liveId'] = self.live_id
+        if self.plugin_id is not None:
+            result['pluginId'] = self.plugin_id
+        if self.plugin_info is not None:
+            result['pluginInfo'] = self.plugin_info.to_map()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('liveId') is not None:
+            self.live_id = m.get('liveId')
+        if m.get('pluginId') is not None:
+            self.plugin_id = m.get('pluginId')
+        if m.get('pluginInfo') is not None:
+            temp_model = UpdateLiveInteractionPluginRequestPluginInfo()
+            self.plugin_info = temp_model.from_map(m['pluginInfo'])
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class UpdateLiveInteractionPluginShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        live_id: str = None,
+        plugin_id: str = None,
+        plugin_info_shrink: str = None,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.live_id = live_id
+        # This parameter is required.
+        self.plugin_id = plugin_id
+        # This parameter is required.
+        self.plugin_info_shrink = plugin_info_shrink
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.live_id is not None:
+            result['liveId'] = self.live_id
+        if self.plugin_id is not None:
+            result['pluginId'] = self.plugin_id
+        if self.plugin_info_shrink is not None:
+            result['pluginInfo'] = self.plugin_info_shrink
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('liveId') is not None:
+            self.live_id = m.get('liveId')
+        if m.get('pluginId') is not None:
+            self.plugin_id = m.get('pluginId')
+        if m.get('pluginInfo') is not None:
+            self.plugin_info_shrink = m.get('pluginInfo')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class UpdateLiveInteractionPluginResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateLiveInteractionPluginResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpdateLiveInteractionPluginResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpdateLiveInteractionPluginResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class UpdateLiveInteractionPluginResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateLiveInteractionPluginResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateLiveInteractionPluginResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

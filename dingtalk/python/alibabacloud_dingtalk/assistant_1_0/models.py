@@ -223,8 +223,6 @@ class CreateAssistantHeaders(TeaModel):
 class CreateAssistantRequest(TeaModel):
     def __init__(
         self,
-        custom_agent_mobile_link: str = None,
-        custom_agent_pclink: str = None,
         description: str = None,
         icon: str = None,
         instructions: str = None,
@@ -233,8 +231,6 @@ class CreateAssistantRequest(TeaModel):
         recommend_prompts: List[str] = None,
         welcome_content: str = None,
     ):
-        self.custom_agent_mobile_link = custom_agent_mobile_link
-        self.custom_agent_pclink = custom_agent_pclink
         # This parameter is required.
         self.description = description
         # This parameter is required.
@@ -258,10 +254,6 @@ class CreateAssistantRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.custom_agent_mobile_link is not None:
-            result['customAgentMobileLink'] = self.custom_agent_mobile_link
-        if self.custom_agent_pclink is not None:
-            result['customAgentPCLink'] = self.custom_agent_pclink
         if self.description is not None:
             result['description'] = self.description
         if self.icon is not None:
@@ -280,10 +272,6 @@ class CreateAssistantRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('customAgentMobileLink') is not None:
-            self.custom_agent_mobile_link = m.get('customAgentMobileLink')
-        if m.get('customAgentPCLink') is not None:
-            self.custom_agent_pclink = m.get('customAgentPCLink')
         if m.get('description') is not None:
             self.description = m.get('description')
         if m.get('icon') is not None:

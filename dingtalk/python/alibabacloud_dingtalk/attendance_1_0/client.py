@@ -5755,6 +5755,8 @@ class Client(OpenApiClient):
             body['bizType'] = request.biz_type
         if not UtilClient.is_unset(request.extras):
             body['extras'] = request.extras
+        if not UtilClient.is_unset(request.freedom_leave):
+            body['freedomLeave'] = request.freedom_leave
         if not UtilClient.is_unset(request.hours_in_per_day):
             body['hoursInPerDay'] = request.hours_in_per_day
         if not UtilClient.is_unset(request.leave_certificate):
@@ -5820,6 +5822,8 @@ class Client(OpenApiClient):
             body['bizType'] = request.biz_type
         if not UtilClient.is_unset(request.extras):
             body['extras'] = request.extras
+        if not UtilClient.is_unset(request.freedom_leave):
+            body['freedomLeave'] = request.freedom_leave
         if not UtilClient.is_unset(request.hours_in_per_day):
             body['hoursInPerDay'] = request.hours_in_per_day
         if not UtilClient.is_unset(request.leave_certificate):

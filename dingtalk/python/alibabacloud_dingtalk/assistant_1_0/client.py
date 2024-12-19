@@ -160,10 +160,6 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.custom_agent_mobile_link):
-            body['customAgentMobileLink'] = request.custom_agent_mobile_link
-        if not UtilClient.is_unset(request.custom_agent_pclink):
-            body['customAgentPCLink'] = request.custom_agent_pclink
         if not UtilClient.is_unset(request.description):
             body['description'] = request.description
         if not UtilClient.is_unset(request.icon):
@@ -219,10 +215,6 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
-        if not UtilClient.is_unset(request.custom_agent_mobile_link):
-            body['customAgentMobileLink'] = request.custom_agent_mobile_link
-        if not UtilClient.is_unset(request.custom_agent_pclink):
-            body['customAgentPCLink'] = request.custom_agent_pclink
         if not UtilClient.is_unset(request.description):
             body['description'] = request.description
         if not UtilClient.is_unset(request.icon):

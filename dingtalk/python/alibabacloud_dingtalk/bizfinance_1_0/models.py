@@ -9372,6 +9372,10 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
         receipt_id: str = None,
         record_time: str = None,
         remark: str = None,
+        show_purchaser_account_in_remark: bool = None,
+        show_purchaser_contact_in_remark: bool = None,
+        show_seller_account_in_remark: str = None,
+        show_seller_contact_in_remark: bool = None,
         source: str = None,
         status: str = None,
         title: str = None,
@@ -9399,6 +9403,10 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
         self.receipt_id = receipt_id
         self.record_time = record_time
         self.remark = remark
+        self.show_purchaser_account_in_remark = show_purchaser_account_in_remark
+        self.show_purchaser_contact_in_remark = show_purchaser_contact_in_remark
+        self.show_seller_account_in_remark = show_seller_account_in_remark
+        self.show_seller_contact_in_remark = show_seller_contact_in_remark
         self.source = source
         self.status = status
         self.title = title
@@ -9467,6 +9475,14 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
             result['recordTime'] = self.record_time
         if self.remark is not None:
             result['remark'] = self.remark
+        if self.show_purchaser_account_in_remark is not None:
+            result['showPurchaserAccountInRemark'] = self.show_purchaser_account_in_remark
+        if self.show_purchaser_contact_in_remark is not None:
+            result['showPurchaserContactInRemark'] = self.show_purchaser_contact_in_remark
+        if self.show_seller_account_in_remark is not None:
+            result['showSellerAccountInRemark'] = self.show_seller_account_in_remark
+        if self.show_seller_contact_in_remark is not None:
+            result['showSellerContactInRemark'] = self.show_seller_contact_in_remark
         if self.source is not None:
             result['source'] = self.source
         if self.status is not None:
@@ -9528,6 +9544,14 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
             self.record_time = m.get('recordTime')
         if m.get('remark') is not None:
             self.remark = m.get('remark')
+        if m.get('showPurchaserAccountInRemark') is not None:
+            self.show_purchaser_account_in_remark = m.get('showPurchaserAccountInRemark')
+        if m.get('showPurchaserContactInRemark') is not None:
+            self.show_purchaser_contact_in_remark = m.get('showPurchaserContactInRemark')
+        if m.get('showSellerAccountInRemark') is not None:
+            self.show_seller_account_in_remark = m.get('showSellerAccountInRemark')
+        if m.get('showSellerContactInRemark') is not None:
+            self.show_seller_contact_in_remark = m.get('showSellerContactInRemark')
         if m.get('source') is not None:
             self.source = m.get('source')
         if m.get('status') is not None:

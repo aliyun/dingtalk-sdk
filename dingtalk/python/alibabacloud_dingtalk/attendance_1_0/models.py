@@ -12796,6 +12796,7 @@ class UpdateLeaveTypeRequest(TeaModel):
         self,
         biz_type: str = None,
         extras: str = None,
+        freedom_leave: bool = None,
         hours_in_per_day: int = None,
         leave_certificate: UpdateLeaveTypeRequestLeaveCertificate = None,
         leave_code: str = None,
@@ -12809,6 +12810,7 @@ class UpdateLeaveTypeRequest(TeaModel):
         # This parameter is required.
         self.biz_type = biz_type
         self.extras = extras
+        self.freedom_leave = freedom_leave
         self.hours_in_per_day = hours_in_per_day
         self.leave_certificate = leave_certificate
         # This parameter is required.
@@ -12842,6 +12844,8 @@ class UpdateLeaveTypeRequest(TeaModel):
             result['bizType'] = self.biz_type
         if self.extras is not None:
             result['extras'] = self.extras
+        if self.freedom_leave is not None:
+            result['freedomLeave'] = self.freedom_leave
         if self.hours_in_per_day is not None:
             result['hoursInPerDay'] = self.hours_in_per_day
         if self.leave_certificate is not None:
@@ -12870,6 +12874,8 @@ class UpdateLeaveTypeRequest(TeaModel):
             self.biz_type = m.get('bizType')
         if m.get('extras') is not None:
             self.extras = m.get('extras')
+        if m.get('freedomLeave') is not None:
+            self.freedom_leave = m.get('freedomLeave')
         if m.get('hoursInPerDay') is not None:
             self.hours_in_per_day = m.get('hoursInPerDay')
         if m.get('leaveCertificate') is not None:
@@ -13023,6 +13029,7 @@ class UpdateLeaveTypeResponseBodyResult(TeaModel):
     def __init__(
         self,
         biz_type: str = None,
+        freedom_leave: bool = None,
         hours_in_per_day: int = None,
         leave_certificate: UpdateLeaveTypeResponseBodyResultLeaveCertificate = None,
         leave_code: str = None,
@@ -13033,6 +13040,7 @@ class UpdateLeaveTypeResponseBodyResult(TeaModel):
         visibility_rules: List[UpdateLeaveTypeResponseBodyResultVisibilityRules] = None,
     ):
         self.biz_type = biz_type
+        self.freedom_leave = freedom_leave
         self.hours_in_per_day = hours_in_per_day
         self.leave_certificate = leave_certificate
         self.leave_code = leave_code
@@ -13060,6 +13068,8 @@ class UpdateLeaveTypeResponseBodyResult(TeaModel):
         result = dict()
         if self.biz_type is not None:
             result['bizType'] = self.biz_type
+        if self.freedom_leave is not None:
+            result['freedomLeave'] = self.freedom_leave
         if self.hours_in_per_day is not None:
             result['hoursInPerDay'] = self.hours_in_per_day
         if self.leave_certificate is not None:
@@ -13084,6 +13094,8 @@ class UpdateLeaveTypeResponseBodyResult(TeaModel):
         m = m or dict()
         if m.get('bizType') is not None:
             self.biz_type = m.get('bizType')
+        if m.get('freedomLeave') is not None:
+            self.freedom_leave = m.get('freedomLeave')
         if m.get('hoursInPerDay') is not None:
             self.hours_in_per_day = m.get('hoursInPerDay')
         if m.get('leaveCertificate') is not None:

@@ -26,6 +26,266 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def add_live_interaction_plugin_with_options(
+        self,
+        tmp_req: dingtalklive__1__0_models.AddLiveInteractionPluginRequest,
+        headers: dingtalklive__1__0_models.AddLiveInteractionPluginHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.AddLiveInteractionPluginResponse:
+        """
+        @summary 增加直播间互动插件
+        
+        @param tmp_req: AddLiveInteractionPluginRequest
+        @param headers: AddLiveInteractionPluginHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddLiveInteractionPluginResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalklive__1__0_models.AddLiveInteractionPluginShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.plugin_info):
+            request.plugin_info_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.plugin_info, 'pluginInfo', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.live_id):
+            query['liveId'] = request.live_id
+        if not UtilClient.is_unset(request.plugin_info_shrink):
+            query['pluginInfo'] = request.plugin_info_shrink
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AddLiveInteractionPlugin',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/interactionPlugins',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.AddLiveInteractionPluginResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_live_interaction_plugin_with_options_async(
+        self,
+        tmp_req: dingtalklive__1__0_models.AddLiveInteractionPluginRequest,
+        headers: dingtalklive__1__0_models.AddLiveInteractionPluginHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.AddLiveInteractionPluginResponse:
+        """
+        @summary 增加直播间互动插件
+        
+        @param tmp_req: AddLiveInteractionPluginRequest
+        @param headers: AddLiveInteractionPluginHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddLiveInteractionPluginResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalklive__1__0_models.AddLiveInteractionPluginShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.plugin_info):
+            request.plugin_info_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.plugin_info, 'pluginInfo', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.live_id):
+            query['liveId'] = request.live_id
+        if not UtilClient.is_unset(request.plugin_info_shrink):
+            query['pluginInfo'] = request.plugin_info_shrink
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AddLiveInteractionPlugin',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/interactionPlugins',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.AddLiveInteractionPluginResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_live_interaction_plugin(
+        self,
+        request: dingtalklive__1__0_models.AddLiveInteractionPluginRequest,
+    ) -> dingtalklive__1__0_models.AddLiveInteractionPluginResponse:
+        """
+        @summary 增加直播间互动插件
+        
+        @param request: AddLiveInteractionPluginRequest
+        @return: AddLiveInteractionPluginResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.AddLiveInteractionPluginHeaders()
+        return self.add_live_interaction_plugin_with_options(request, headers, runtime)
+
+    async def add_live_interaction_plugin_async(
+        self,
+        request: dingtalklive__1__0_models.AddLiveInteractionPluginRequest,
+    ) -> dingtalklive__1__0_models.AddLiveInteractionPluginResponse:
+        """
+        @summary 增加直播间互动插件
+        
+        @param request: AddLiveInteractionPluginRequest
+        @return: AddLiveInteractionPluginResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.AddLiveInteractionPluginHeaders()
+        return await self.add_live_interaction_plugin_with_options_async(request, headers, runtime)
+
+    def add_live_notice_widget_with_options(
+        self,
+        request: dingtalklive__1__0_models.AddLiveNoticeWidgetRequest,
+        headers: dingtalklive__1__0_models.AddLiveNoticeWidgetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.AddLiveNoticeWidgetResponse:
+        """
+        @summary 增加直播间的公告槽位信息
+        
+        @param request: AddLiveNoticeWidgetRequest
+        @param headers: AddLiveNoticeWidgetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddLiveNoticeWidgetResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.icon_url):
+            query['iconUrl'] = request.icon_url
+        if not UtilClient.is_unset(request.jump_url):
+            query['jumpUrl'] = request.jump_url
+        if not UtilClient.is_unset(request.live_id):
+            query['liveId'] = request.live_id
+        if not UtilClient.is_unset(request.notice_text):
+            query['noticeText'] = request.notice_text
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AddLiveNoticeWidget',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/noticeWidgets',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.AddLiveNoticeWidgetResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_live_notice_widget_with_options_async(
+        self,
+        request: dingtalklive__1__0_models.AddLiveNoticeWidgetRequest,
+        headers: dingtalklive__1__0_models.AddLiveNoticeWidgetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.AddLiveNoticeWidgetResponse:
+        """
+        @summary 增加直播间的公告槽位信息
+        
+        @param request: AddLiveNoticeWidgetRequest
+        @param headers: AddLiveNoticeWidgetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddLiveNoticeWidgetResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.icon_url):
+            query['iconUrl'] = request.icon_url
+        if not UtilClient.is_unset(request.jump_url):
+            query['jumpUrl'] = request.jump_url
+        if not UtilClient.is_unset(request.live_id):
+            query['liveId'] = request.live_id
+        if not UtilClient.is_unset(request.notice_text):
+            query['noticeText'] = request.notice_text
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AddLiveNoticeWidget',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/noticeWidgets',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.AddLiveNoticeWidgetResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_live_notice_widget(
+        self,
+        request: dingtalklive__1__0_models.AddLiveNoticeWidgetRequest,
+    ) -> dingtalklive__1__0_models.AddLiveNoticeWidgetResponse:
+        """
+        @summary 增加直播间的公告槽位信息
+        
+        @param request: AddLiveNoticeWidgetRequest
+        @return: AddLiveNoticeWidgetResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.AddLiveNoticeWidgetHeaders()
+        return self.add_live_notice_widget_with_options(request, headers, runtime)
+
+    async def add_live_notice_widget_async(
+        self,
+        request: dingtalklive__1__0_models.AddLiveNoticeWidgetRequest,
+    ) -> dingtalklive__1__0_models.AddLiveNoticeWidgetResponse:
+        """
+        @summary 增加直播间的公告槽位信息
+        
+        @param request: AddLiveNoticeWidgetRequest
+        @return: AddLiveNoticeWidgetResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.AddLiveNoticeWidgetHeaders()
+        return await self.add_live_notice_widget_with_options_async(request, headers, runtime)
+
     def add_share_cid_list_with_options(
         self,
         feed_id: str,
@@ -423,6 +683,246 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.CreateLiveHeaders()
         return await self.create_live_with_options_async(request, headers, runtime)
+
+    def del_live_interaction_plugin_with_options(
+        self,
+        request: dingtalklive__1__0_models.DelLiveInteractionPluginRequest,
+        headers: dingtalklive__1__0_models.DelLiveInteractionPluginHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.DelLiveInteractionPluginResponse:
+        """
+        @summary 删除直播间内某一互动插件
+        
+        @param request: DelLiveInteractionPluginRequest
+        @param headers: DelLiveInteractionPluginHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DelLiveInteractionPluginResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.live_id):
+            query['liveId'] = request.live_id
+        if not UtilClient.is_unset(request.plugin_id):
+            query['pluginId'] = request.plugin_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DelLiveInteractionPlugin',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/interactionPlugins',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.DelLiveInteractionPluginResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def del_live_interaction_plugin_with_options_async(
+        self,
+        request: dingtalklive__1__0_models.DelLiveInteractionPluginRequest,
+        headers: dingtalklive__1__0_models.DelLiveInteractionPluginHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.DelLiveInteractionPluginResponse:
+        """
+        @summary 删除直播间内某一互动插件
+        
+        @param request: DelLiveInteractionPluginRequest
+        @param headers: DelLiveInteractionPluginHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DelLiveInteractionPluginResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.live_id):
+            query['liveId'] = request.live_id
+        if not UtilClient.is_unset(request.plugin_id):
+            query['pluginId'] = request.plugin_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DelLiveInteractionPlugin',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/interactionPlugins',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.DelLiveInteractionPluginResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def del_live_interaction_plugin(
+        self,
+        request: dingtalklive__1__0_models.DelLiveInteractionPluginRequest,
+    ) -> dingtalklive__1__0_models.DelLiveInteractionPluginResponse:
+        """
+        @summary 删除直播间内某一互动插件
+        
+        @param request: DelLiveInteractionPluginRequest
+        @return: DelLiveInteractionPluginResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.DelLiveInteractionPluginHeaders()
+        return self.del_live_interaction_plugin_with_options(request, headers, runtime)
+
+    async def del_live_interaction_plugin_async(
+        self,
+        request: dingtalklive__1__0_models.DelLiveInteractionPluginRequest,
+    ) -> dingtalklive__1__0_models.DelLiveInteractionPluginResponse:
+        """
+        @summary 删除直播间内某一互动插件
+        
+        @param request: DelLiveInteractionPluginRequest
+        @return: DelLiveInteractionPluginResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.DelLiveInteractionPluginHeaders()
+        return await self.del_live_interaction_plugin_with_options_async(request, headers, runtime)
+
+    def del_live_notice_widget_with_options(
+        self,
+        request: dingtalklive__1__0_models.DelLiveNoticeWidgetRequest,
+        headers: dingtalklive__1__0_models.DelLiveNoticeWidgetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.DelLiveNoticeWidgetResponse:
+        """
+        @summary 删除直播间的公告槽位信息
+        
+        @param request: DelLiveNoticeWidgetRequest
+        @param headers: DelLiveNoticeWidgetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DelLiveNoticeWidgetResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.live_id):
+            query['liveId'] = request.live_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DelLiveNoticeWidget',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/noticeWidgets',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.DelLiveNoticeWidgetResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def del_live_notice_widget_with_options_async(
+        self,
+        request: dingtalklive__1__0_models.DelLiveNoticeWidgetRequest,
+        headers: dingtalklive__1__0_models.DelLiveNoticeWidgetHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.DelLiveNoticeWidgetResponse:
+        """
+        @summary 删除直播间的公告槽位信息
+        
+        @param request: DelLiveNoticeWidgetRequest
+        @param headers: DelLiveNoticeWidgetHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DelLiveNoticeWidgetResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.live_id):
+            query['liveId'] = request.live_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='DelLiveNoticeWidget',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/noticeWidgets',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.DelLiveNoticeWidgetResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def del_live_notice_widget(
+        self,
+        request: dingtalklive__1__0_models.DelLiveNoticeWidgetRequest,
+    ) -> dingtalklive__1__0_models.DelLiveNoticeWidgetResponse:
+        """
+        @summary 删除直播间的公告槽位信息
+        
+        @param request: DelLiveNoticeWidgetRequest
+        @return: DelLiveNoticeWidgetResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.DelLiveNoticeWidgetHeaders()
+        return self.del_live_notice_widget_with_options(request, headers, runtime)
+
+    async def del_live_notice_widget_async(
+        self,
+        request: dingtalklive__1__0_models.DelLiveNoticeWidgetRequest,
+    ) -> dingtalklive__1__0_models.DelLiveNoticeWidgetResponse:
+        """
+        @summary 删除直播间的公告槽位信息
+        
+        @param request: DelLiveNoticeWidgetRequest
+        @return: DelLiveNoticeWidgetResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.DelLiveNoticeWidgetHeaders()
+        return await self.del_live_notice_widget_with_options_async(request, headers, runtime)
 
     def delete_live_with_options(
         self,
@@ -1936,6 +2436,128 @@ class Client(OpenApiClient):
         headers = dingtalklive__1__0_models.QueryLiveInfoHeaders()
         return await self.query_live_info_with_options_async(request, headers, runtime)
 
+    def query_live_interaction_plugin_with_options(
+        self,
+        request: dingtalklive__1__0_models.QueryLiveInteractionPluginRequest,
+        headers: dingtalklive__1__0_models.QueryLiveInteractionPluginHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.QueryLiveInteractionPluginResponse:
+        """
+        @summary 查询直播间内某一互动插件的信息
+        
+        @param request: QueryLiveInteractionPluginRequest
+        @param headers: QueryLiveInteractionPluginHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryLiveInteractionPluginResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.live_id):
+            query['liveId'] = request.live_id
+        if not UtilClient.is_unset(request.plugin_id):
+            query['pluginId'] = request.plugin_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryLiveInteractionPlugin',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/interactionPlugins',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.QueryLiveInteractionPluginResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_live_interaction_plugin_with_options_async(
+        self,
+        request: dingtalklive__1__0_models.QueryLiveInteractionPluginRequest,
+        headers: dingtalklive__1__0_models.QueryLiveInteractionPluginHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.QueryLiveInteractionPluginResponse:
+        """
+        @summary 查询直播间内某一互动插件的信息
+        
+        @param request: QueryLiveInteractionPluginRequest
+        @param headers: QueryLiveInteractionPluginHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryLiveInteractionPluginResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.live_id):
+            query['liveId'] = request.live_id
+        if not UtilClient.is_unset(request.plugin_id):
+            query['pluginId'] = request.plugin_id
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryLiveInteractionPlugin',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/interactionPlugins',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.QueryLiveInteractionPluginResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_live_interaction_plugin(
+        self,
+        request: dingtalklive__1__0_models.QueryLiveInteractionPluginRequest,
+    ) -> dingtalklive__1__0_models.QueryLiveInteractionPluginResponse:
+        """
+        @summary 查询直播间内某一互动插件的信息
+        
+        @param request: QueryLiveInteractionPluginRequest
+        @return: QueryLiveInteractionPluginResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.QueryLiveInteractionPluginHeaders()
+        return self.query_live_interaction_plugin_with_options(request, headers, runtime)
+
+    async def query_live_interaction_plugin_async(
+        self,
+        request: dingtalklive__1__0_models.QueryLiveInteractionPluginRequest,
+    ) -> dingtalklive__1__0_models.QueryLiveInteractionPluginResponse:
+        """
+        @summary 查询直播间内某一互动插件的信息
+        
+        @param request: QueryLiveInteractionPluginRequest
+        @return: QueryLiveInteractionPluginResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.QueryLiveInteractionPluginHeaders()
+        return await self.query_live_interaction_plugin_with_options_async(request, headers, runtime)
+
     def query_live_watch_detail_with_options(
         self,
         request: dingtalklive__1__0_models.QueryLiveWatchDetailRequest,
@@ -2305,6 +2927,266 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.QuerySubscribeStatusHeaders()
         return await self.query_subscribe_status_with_options_async(request, headers, runtime)
+
+    def send_live_interaction_plugin_effects_msg_with_options(
+        self,
+        tmp_req: dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgRequest,
+        headers: dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgResponse:
+        """
+        @summary 用户对互动插件进行操作广播到直播间
+        
+        @param tmp_req: SendLiveInteractionPluginEffectsMsgRequest
+        @param headers: SendLiveInteractionPluginEffectsMsgHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendLiveInteractionPluginEffectsMsgResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.plugin_effects_message):
+            request.plugin_effects_message_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.plugin_effects_message, 'pluginEffectsMessage', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.live_id):
+            query['liveId'] = request.live_id
+        if not UtilClient.is_unset(request.plugin_effects_message_shrink):
+            query['pluginEffectsMessage'] = request.plugin_effects_message_shrink
+        if not UtilClient.is_unset(request.plugin_id):
+            query['pluginId'] = request.plugin_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SendLiveInteractionPluginEffectsMsg',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/interactionPlugins/effectMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def send_live_interaction_plugin_effects_msg_with_options_async(
+        self,
+        tmp_req: dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgRequest,
+        headers: dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgResponse:
+        """
+        @summary 用户对互动插件进行操作广播到直播间
+        
+        @param tmp_req: SendLiveInteractionPluginEffectsMsgRequest
+        @param headers: SendLiveInteractionPluginEffectsMsgHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendLiveInteractionPluginEffectsMsgResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.plugin_effects_message):
+            request.plugin_effects_message_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.plugin_effects_message, 'pluginEffectsMessage', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.live_id):
+            query['liveId'] = request.live_id
+        if not UtilClient.is_unset(request.plugin_effects_message_shrink):
+            query['pluginEffectsMessage'] = request.plugin_effects_message_shrink
+        if not UtilClient.is_unset(request.plugin_id):
+            query['pluginId'] = request.plugin_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SendLiveInteractionPluginEffectsMsg',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/interactionPlugins/effectMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def send_live_interaction_plugin_effects_msg(
+        self,
+        request: dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgRequest,
+    ) -> dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgResponse:
+        """
+        @summary 用户对互动插件进行操作广播到直播间
+        
+        @param request: SendLiveInteractionPluginEffectsMsgRequest
+        @return: SendLiveInteractionPluginEffectsMsgResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgHeaders()
+        return self.send_live_interaction_plugin_effects_msg_with_options(request, headers, runtime)
+
+    async def send_live_interaction_plugin_effects_msg_async(
+        self,
+        request: dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgRequest,
+    ) -> dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgResponse:
+        """
+        @summary 用户对互动插件进行操作广播到直播间
+        
+        @param request: SendLiveInteractionPluginEffectsMsgRequest
+        @return: SendLiveInteractionPluginEffectsMsgResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgHeaders()
+        return await self.send_live_interaction_plugin_effects_msg_with_options_async(request, headers, runtime)
+
+    def send_live_plugin_user_action_msg_with_options(
+        self,
+        tmp_req: dingtalklive__1__0_models.SendLivePluginUserActionMsgRequest,
+        headers: dingtalklive__1__0_models.SendLivePluginUserActionMsgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.SendLivePluginUserActionMsgResponse:
+        """
+        @summary 用户对互动插件进行操作广播到直播间
+        
+        @param tmp_req: SendLivePluginUserActionMsgRequest
+        @param headers: SendLivePluginUserActionMsgHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendLivePluginUserActionMsgResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalklive__1__0_models.SendLivePluginUserActionMsgShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.plugin_effects_message):
+            request.plugin_effects_message_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.plugin_effects_message, 'pluginEffectsMessage', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.live_id):
+            query['liveId'] = request.live_id
+        if not UtilClient.is_unset(request.plugin_effects_message_shrink):
+            query['pluginEffectsMessage'] = request.plugin_effects_message_shrink
+        if not UtilClient.is_unset(request.plugin_id):
+            query['pluginId'] = request.plugin_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SendLivePluginUserActionMsg',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/interactionPlugins/actionMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.SendLivePluginUserActionMsgResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def send_live_plugin_user_action_msg_with_options_async(
+        self,
+        tmp_req: dingtalklive__1__0_models.SendLivePluginUserActionMsgRequest,
+        headers: dingtalklive__1__0_models.SendLivePluginUserActionMsgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.SendLivePluginUserActionMsgResponse:
+        """
+        @summary 用户对互动插件进行操作广播到直播间
+        
+        @param tmp_req: SendLivePluginUserActionMsgRequest
+        @param headers: SendLivePluginUserActionMsgHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendLivePluginUserActionMsgResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalklive__1__0_models.SendLivePluginUserActionMsgShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.plugin_effects_message):
+            request.plugin_effects_message_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.plugin_effects_message, 'pluginEffectsMessage', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.live_id):
+            query['liveId'] = request.live_id
+        if not UtilClient.is_unset(request.plugin_effects_message_shrink):
+            query['pluginEffectsMessage'] = request.plugin_effects_message_shrink
+        if not UtilClient.is_unset(request.plugin_id):
+            query['pluginId'] = request.plugin_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SendLivePluginUserActionMsg',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/interactionPlugins/actionMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.SendLivePluginUserActionMsgResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def send_live_plugin_user_action_msg(
+        self,
+        request: dingtalklive__1__0_models.SendLivePluginUserActionMsgRequest,
+    ) -> dingtalklive__1__0_models.SendLivePluginUserActionMsgResponse:
+        """
+        @summary 用户对互动插件进行操作广播到直播间
+        
+        @param request: SendLivePluginUserActionMsgRequest
+        @return: SendLivePluginUserActionMsgResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.SendLivePluginUserActionMsgHeaders()
+        return self.send_live_plugin_user_action_msg_with_options(request, headers, runtime)
+
+    async def send_live_plugin_user_action_msg_async(
+        self,
+        request: dingtalklive__1__0_models.SendLivePluginUserActionMsgRequest,
+    ) -> dingtalklive__1__0_models.SendLivePluginUserActionMsgResponse:
+        """
+        @summary 用户对互动插件进行操作广播到直播间
+        
+        @param request: SendLivePluginUserActionMsgRequest
+        @return: SendLivePluginUserActionMsgResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.SendLivePluginUserActionMsgHeaders()
+        return await self.send_live_plugin_user_action_msg_with_options_async(request, headers, runtime)
 
     def start_cloud_feed_with_options(
         self,
@@ -2935,3 +3817,137 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalklive__1__0_models.UpdateLiveFeedHeaders()
         return await self.update_live_feed_with_options_async(feed_id, request, headers, runtime)
+
+    def update_live_interaction_plugin_with_options(
+        self,
+        tmp_req: dingtalklive__1__0_models.UpdateLiveInteractionPluginRequest,
+        headers: dingtalklive__1__0_models.UpdateLiveInteractionPluginHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.UpdateLiveInteractionPluginResponse:
+        """
+        @summary 修改直播间内某一互动插件的信息
+        
+        @param tmp_req: UpdateLiveInteractionPluginRequest
+        @param headers: UpdateLiveInteractionPluginHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateLiveInteractionPluginResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalklive__1__0_models.UpdateLiveInteractionPluginShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.plugin_info):
+            request.plugin_info_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.plugin_info, 'pluginInfo', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.live_id):
+            query['liveId'] = request.live_id
+        if not UtilClient.is_unset(request.plugin_id):
+            query['pluginId'] = request.plugin_id
+        if not UtilClient.is_unset(request.plugin_info_shrink):
+            query['pluginInfo'] = request.plugin_info_shrink
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UpdateLiveInteractionPlugin',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/interactionPlugins',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.UpdateLiveInteractionPluginResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_live_interaction_plugin_with_options_async(
+        self,
+        tmp_req: dingtalklive__1__0_models.UpdateLiveInteractionPluginRequest,
+        headers: dingtalklive__1__0_models.UpdateLiveInteractionPluginHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalklive__1__0_models.UpdateLiveInteractionPluginResponse:
+        """
+        @summary 修改直播间内某一互动插件的信息
+        
+        @param tmp_req: UpdateLiveInteractionPluginRequest
+        @param headers: UpdateLiveInteractionPluginHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateLiveInteractionPluginResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalklive__1__0_models.UpdateLiveInteractionPluginShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.plugin_info):
+            request.plugin_info_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.plugin_info, 'pluginInfo', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.live_id):
+            query['liveId'] = request.live_id
+        if not UtilClient.is_unset(request.plugin_id):
+            query['pluginId'] = request.plugin_id
+        if not UtilClient.is_unset(request.plugin_info_shrink):
+            query['pluginInfo'] = request.plugin_info_shrink
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UpdateLiveInteractionPlugin',
+            version='live_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/live/interactionPlugins',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalklive__1__0_models.UpdateLiveInteractionPluginResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_live_interaction_plugin(
+        self,
+        request: dingtalklive__1__0_models.UpdateLiveInteractionPluginRequest,
+    ) -> dingtalklive__1__0_models.UpdateLiveInteractionPluginResponse:
+        """
+        @summary 修改直播间内某一互动插件的信息
+        
+        @param request: UpdateLiveInteractionPluginRequest
+        @return: UpdateLiveInteractionPluginResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.UpdateLiveInteractionPluginHeaders()
+        return self.update_live_interaction_plugin_with_options(request, headers, runtime)
+
+    async def update_live_interaction_plugin_async(
+        self,
+        request: dingtalklive__1__0_models.UpdateLiveInteractionPluginRequest,
+    ) -> dingtalklive__1__0_models.UpdateLiveInteractionPluginResponse:
+        """
+        @summary 修改直播间内某一互动插件的信息
+        
+        @param request: UpdateLiveInteractionPluginRequest
+        @return: UpdateLiveInteractionPluginResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalklive__1__0_models.UpdateLiveInteractionPluginHeaders()
+        return await self.update_live_interaction_plugin_with_options_async(request, headers, runtime)

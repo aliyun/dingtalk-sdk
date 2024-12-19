@@ -2980,6 +2980,128 @@ class Client(OpenApiClient):
         headers = dingtalkconference__1__0_models.QueryConferenceInfoBatchHeaders()
         return await self.query_conference_info_batch_with_options_async(request, headers, runtime)
 
+    def query_conference_info_by_room_code_with_options(
+        self,
+        room_code: str,
+        request: dingtalkconference__1__0_models.QueryConferenceInfoByRoomCodeRequest,
+        headers: dingtalkconference__1__0_models.QueryConferenceInfoByRoomCodeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.QueryConferenceInfoByRoomCodeResponse:
+        """
+        @summary 根据会议号查询会议信息
+        
+        @param request: QueryConferenceInfoByRoomCodeRequest
+        @param headers: QueryConferenceInfoByRoomCodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryConferenceInfoByRoomCodeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryConferenceInfoByRoomCode',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/roomCodes/{room_code}/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.QueryConferenceInfoByRoomCodeResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_conference_info_by_room_code_with_options_async(
+        self,
+        room_code: str,
+        request: dingtalkconference__1__0_models.QueryConferenceInfoByRoomCodeRequest,
+        headers: dingtalkconference__1__0_models.QueryConferenceInfoByRoomCodeHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkconference__1__0_models.QueryConferenceInfoByRoomCodeResponse:
+        """
+        @summary 根据会议号查询会议信息
+        
+        @param request: QueryConferenceInfoByRoomCodeRequest
+        @param headers: QueryConferenceInfoByRoomCodeHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryConferenceInfoByRoomCodeResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryConferenceInfoByRoomCode',
+            version='conference_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/conference/roomCodes/{room_code}/infos',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkconference__1__0_models.QueryConferenceInfoByRoomCodeResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_conference_info_by_room_code(
+        self,
+        room_code: str,
+        request: dingtalkconference__1__0_models.QueryConferenceInfoByRoomCodeRequest,
+    ) -> dingtalkconference__1__0_models.QueryConferenceInfoByRoomCodeResponse:
+        """
+        @summary 根据会议号查询会议信息
+        
+        @param request: QueryConferenceInfoByRoomCodeRequest
+        @return: QueryConferenceInfoByRoomCodeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.QueryConferenceInfoByRoomCodeHeaders()
+        return self.query_conference_info_by_room_code_with_options(room_code, request, headers, runtime)
+
+    async def query_conference_info_by_room_code_async(
+        self,
+        room_code: str,
+        request: dingtalkconference__1__0_models.QueryConferenceInfoByRoomCodeRequest,
+    ) -> dingtalkconference__1__0_models.QueryConferenceInfoByRoomCodeResponse:
+        """
+        @summary 根据会议号查询会议信息
+        
+        @param request: QueryConferenceInfoByRoomCodeRequest
+        @return: QueryConferenceInfoByRoomCodeResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkconference__1__0_models.QueryConferenceInfoByRoomCodeHeaders()
+        return await self.query_conference_info_by_room_code_with_options_async(room_code, request, headers, runtime)
+
     def query_conference_members_with_options(
         self,
         conference_id: str,
