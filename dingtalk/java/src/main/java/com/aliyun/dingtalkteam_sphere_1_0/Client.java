@@ -30,6 +30,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
     public AnalysisReportResponse analysisReportWithOptions(String userId, AnalysisReportRequest request, AnalysisReportHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.filter)) {
+            body.put("filter", request.filter);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.reportId)) {
             body.put("reportId", request.reportId);
         }
@@ -294,6 +298,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.customfields)) {
             body.put("customfields", request.customfields);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.disableActivity)) {
+            body.put("disableActivity", request.disableActivity);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.disableNotification)) {
+            body.put("disableNotification", request.disableNotification);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.dueDate)) {

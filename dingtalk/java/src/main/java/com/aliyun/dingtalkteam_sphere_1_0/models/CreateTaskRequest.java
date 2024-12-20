@@ -16,6 +16,12 @@ public class CreateTaskRequest extends TeaModel {
     @NameInMap("customfields")
     public java.util.List<CreateTaskRequestCustomfields> customfields;
 
+    @NameInMap("disableActivity")
+    public Boolean disableActivity;
+
+    @NameInMap("disableNotification")
+    public Boolean disableNotification;
+
     /**
      * <strong>example:</strong>
      * <p>2022-06-13T07:36:50.318Z</p>
@@ -65,6 +71,22 @@ public class CreateTaskRequest extends TeaModel {
     }
     public java.util.List<CreateTaskRequestCustomfields> getCustomfields() {
         return this.customfields;
+    }
+
+    public CreateTaskRequest setDisableActivity(Boolean disableActivity) {
+        this.disableActivity = disableActivity;
+        return this;
+    }
+    public Boolean getDisableActivity() {
+        return this.disableActivity;
+    }
+
+    public CreateTaskRequest setDisableNotification(Boolean disableNotification) {
+        this.disableNotification = disableNotification;
+        return this;
+    }
+    public Boolean getDisableNotification() {
+        return this.disableNotification;
     }
 
     public CreateTaskRequest setDueDate(String dueDate) {

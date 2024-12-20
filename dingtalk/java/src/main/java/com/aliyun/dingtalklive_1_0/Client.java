@@ -22,30 +22,41 @@ public class Client extends com.aliyun.teaopenapi.Client {
      * <b>summary</b> : 
      * <p>增加直播间互动插件</p>
      * 
-     * @param tmpReq AddLiveInteractionPluginRequest
+     * @param request AddLiveInteractionPluginRequest
      * @param headers AddLiveInteractionPluginHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return AddLiveInteractionPluginResponse
      */
-    public AddLiveInteractionPluginResponse addLiveInteractionPluginWithOptions(AddLiveInteractionPluginRequest tmpReq, AddLiveInteractionPluginHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(tmpReq);
-        AddLiveInteractionPluginShrinkRequest request = new AddLiveInteractionPluginShrinkRequest();
-        com.aliyun.openapiutil.Client.convert(tmpReq, request);
-        if (!com.aliyun.teautil.Common.isUnset(tmpReq.pluginInfo)) {
-            request.pluginInfoShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.pluginInfo, "pluginInfo", "json");
-        }
-
+    public AddLiveInteractionPluginResponse addLiveInteractionPluginWithOptions(AddLiveInteractionPluginRequest request, AddLiveInteractionPluginHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.liveId)) {
             query.put("liveId", request.liveId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.pluginInfoShrink)) {
-            query.put("pluginInfo", request.pluginInfoShrink);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
             query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.anchorJumpUrl)) {
+            body.put("anchorJumpUrl", request.anchorJumpUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pluginIconUrl)) {
+            body.put("pluginIconUrl", request.pluginIconUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pluginName)) {
+            body.put("pluginName", request.pluginName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pluginNameEn)) {
+            body.put("pluginNameEn", request.pluginNameEn);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.viewerJumpUrl)) {
+            body.put("viewerJumpUrl", request.viewerJumpUrl);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -59,7 +70,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "AddLiveInteractionPlugin"),
@@ -1556,30 +1568,45 @@ public class Client extends com.aliyun.teaopenapi.Client {
      * <b>summary</b> : 
      * <p>用户对互动插件进行操作广播到直播间</p>
      * 
-     * @param tmpReq SendLiveInteractionPluginEffectsMsgRequest
+     * @param request SendLiveInteractionPluginEffectsMsgRequest
      * @param headers SendLiveInteractionPluginEffectsMsgHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return SendLiveInteractionPluginEffectsMsgResponse
      */
-    public SendLiveInteractionPluginEffectsMsgResponse sendLiveInteractionPluginEffectsMsgWithOptions(SendLiveInteractionPluginEffectsMsgRequest tmpReq, SendLiveInteractionPluginEffectsMsgHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(tmpReq);
-        SendLiveInteractionPluginEffectsMsgShrinkRequest request = new SendLiveInteractionPluginEffectsMsgShrinkRequest();
-        com.aliyun.openapiutil.Client.convert(tmpReq, request);
-        if (!com.aliyun.teautil.Common.isUnset(tmpReq.pluginEffectsMessage)) {
-            request.pluginEffectsMessageShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.pluginEffectsMessage, "pluginEffectsMessage", "json");
-        }
-
+    public SendLiveInteractionPluginEffectsMsgResponse sendLiveInteractionPluginEffectsMsgWithOptions(SendLiveInteractionPluginEffectsMsgRequest request, SendLiveInteractionPluginEffectsMsgHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.liveId)) {
             query.put("liveId", request.liveId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.pluginEffectsMessageShrink)) {
-            query.put("pluginEffectsMessage", request.pluginEffectsMessageShrink);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.pluginId)) {
             query.put("pluginId", request.pluginId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.count)) {
+            body.put("count", request.count);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.lottieFileUrl)) {
+            body.put("lottieFileUrl", request.lottieFileUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.msgIconUrl)) {
+            body.put("msgIconUrl", request.msgIconUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.msgText)) {
+            body.put("msgText", request.msgText);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pluginSubId)) {
+            body.put("pluginSubId", request.pluginSubId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.senderUnionId)) {
+            body.put("senderUnionId", request.senderUnionId);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -1593,7 +1620,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "SendLiveInteractionPluginEffectsMsg"),
@@ -2024,19 +2052,13 @@ public class Client extends com.aliyun.teaopenapi.Client {
      * <b>summary</b> : 
      * <p>修改直播间内某一互动插件的信息</p>
      * 
-     * @param tmpReq UpdateLiveInteractionPluginRequest
+     * @param request UpdateLiveInteractionPluginRequest
      * @param headers UpdateLiveInteractionPluginHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return UpdateLiveInteractionPluginResponse
      */
-    public UpdateLiveInteractionPluginResponse updateLiveInteractionPluginWithOptions(UpdateLiveInteractionPluginRequest tmpReq, UpdateLiveInteractionPluginHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(tmpReq);
-        UpdateLiveInteractionPluginShrinkRequest request = new UpdateLiveInteractionPluginShrinkRequest();
-        com.aliyun.openapiutil.Client.convert(tmpReq, request);
-        if (!com.aliyun.teautil.Common.isUnset(tmpReq.pluginInfo)) {
-            request.pluginInfoShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.pluginInfo, "pluginInfo", "json");
-        }
-
+    public UpdateLiveInteractionPluginResponse updateLiveInteractionPluginWithOptions(UpdateLiveInteractionPluginRequest request, UpdateLiveInteractionPluginHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
         java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.liveId)) {
             query.put("liveId", request.liveId);
@@ -2046,12 +2068,29 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("pluginId", request.pluginId);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.pluginInfoShrink)) {
-            query.put("pluginInfo", request.pluginInfoShrink);
-        }
-
         if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
             query.put("unionId", request.unionId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.anchorJumpUrl)) {
+            body.put("anchorJumpUrl", request.anchorJumpUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pluginIconUrl)) {
+            body.put("pluginIconUrl", request.pluginIconUrl);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pluginName)) {
+            body.put("pluginName", request.pluginName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pluginNameEn)) {
+            body.put("pluginNameEn", request.pluginNameEn);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.viewerJumpUrl)) {
+            body.put("viewerJumpUrl", request.viewerJumpUrl);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -2065,7 +2104,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "UpdateLiveInteractionPlugin"),
