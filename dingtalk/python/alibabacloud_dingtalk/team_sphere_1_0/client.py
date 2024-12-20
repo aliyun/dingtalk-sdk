@@ -43,6 +43,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.filter):
+            body['filter'] = request.filter
         if not UtilClient.is_unset(request.report_id):
             body['reportId'] = request.report_id
         real_headers = {}
@@ -87,6 +89,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.filter):
+            body['filter'] = request.filter
         if not UtilClient.is_unset(request.report_id):
             body['reportId'] = request.report_id
         real_headers = {}
@@ -559,6 +563,10 @@ class Client(OpenApiClient):
             body['content'] = request.content
         if not UtilClient.is_unset(request.customfields):
             body['customfields'] = request.customfields
+        if not UtilClient.is_unset(request.disable_activity):
+            body['disableActivity'] = request.disable_activity
+        if not UtilClient.is_unset(request.disable_notification):
+            body['disableNotification'] = request.disable_notification
         if not UtilClient.is_unset(request.due_date):
             body['dueDate'] = request.due_date
         if not UtilClient.is_unset(request.executor_id):
@@ -613,6 +621,10 @@ class Client(OpenApiClient):
             body['content'] = request.content
         if not UtilClient.is_unset(request.customfields):
             body['customfields'] = request.customfields
+        if not UtilClient.is_unset(request.disable_activity):
+            body['disableActivity'] = request.disable_activity
+        if not UtilClient.is_unset(request.disable_notification):
+            body['disableNotification'] = request.disable_notification
         if not UtilClient.is_unset(request.due_date):
             body['dueDate'] = request.due_date
         if not UtilClient.is_unset(request.executor_id):

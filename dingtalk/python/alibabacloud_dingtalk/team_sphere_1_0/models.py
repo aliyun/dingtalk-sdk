@@ -37,12 +37,12 @@ class AnalysisReportHeaders(TeaModel):
         return self
 
 
-class AnalysisReportRequest(TeaModel):
+class AnalysisReportRequestFilter(TeaModel):
     def __init__(
         self,
-        report_id: str = None,
+        created: str = None,
     ):
-        self.report_id = report_id
+        self.created = created
 
     def validate(self):
         pass
@@ -53,12 +53,47 @@ class AnalysisReportRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.created is not None:
+            result['created'] = self.created
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        return self
+
+
+class AnalysisReportRequest(TeaModel):
+    def __init__(
+        self,
+        filter: AnalysisReportRequestFilter = None,
+        report_id: str = None,
+    ):
+        self.filter = filter
+        self.report_id = report_id
+
+    def validate(self):
+        if self.filter:
+            self.filter.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.filter is not None:
+            result['filter'] = self.filter.to_map()
         if self.report_id is not None:
             result['reportId'] = self.report_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('filter') is not None:
+            temp_model = AnalysisReportRequestFilter()
+            self.filter = temp_model.from_map(m['filter'])
         if m.get('reportId') is not None:
             self.report_id = m.get('reportId')
         return self
@@ -1256,6 +1291,8 @@ class CreateTaskRequest(TeaModel):
         self,
         content: str = None,
         customfields: List[CreateTaskRequestCustomfields] = None,
+        disable_activity: bool = None,
+        disable_notification: bool = None,
         due_date: str = None,
         executor_id: str = None,
         note: str = None,
@@ -1264,6 +1301,8 @@ class CreateTaskRequest(TeaModel):
         # This parameter is required.
         self.content = content
         self.customfields = customfields
+        self.disable_activity = disable_activity
+        self.disable_notification = disable_notification
         self.due_date = due_date
         self.executor_id = executor_id
         self.note = note
@@ -1288,6 +1327,10 @@ class CreateTaskRequest(TeaModel):
         if self.customfields is not None:
             for k in self.customfields:
                 result['customfields'].append(k.to_map() if k else None)
+        if self.disable_activity is not None:
+            result['disableActivity'] = self.disable_activity
+        if self.disable_notification is not None:
+            result['disableNotification'] = self.disable_notification
         if self.due_date is not None:
             result['dueDate'] = self.due_date
         if self.executor_id is not None:
@@ -1307,6 +1350,10 @@ class CreateTaskRequest(TeaModel):
             for k in m.get('customfields'):
                 temp_model = CreateTaskRequestCustomfields()
                 self.customfields.append(temp_model.from_map(k))
+        if m.get('disableActivity') is not None:
+            self.disable_activity = m.get('disableActivity')
+        if m.get('disableNotification') is not None:
+            self.disable_notification = m.get('disableNotification')
         if m.get('dueDate') is not None:
             self.due_date = m.get('dueDate')
         if m.get('executorId') is not None:

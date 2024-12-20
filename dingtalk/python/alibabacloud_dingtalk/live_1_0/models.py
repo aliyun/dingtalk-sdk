@@ -37,7 +37,7 @@ class AddLiveInteractionPluginHeaders(TeaModel):
         return self
 
 
-class AddLiveInteractionPluginRequestPluginInfo(TeaModel):
+class AddLiveInteractionPluginRequest(TeaModel):
     def __init__(
         self,
         anchor_jump_url: str = None,
@@ -45,6 +45,8 @@ class AddLiveInteractionPluginRequestPluginInfo(TeaModel):
         plugin_name: str = None,
         plugin_name_en: str = None,
         viewer_jump_url: str = None,
+        live_id: str = None,
+        union_id: str = None,
     ):
         # This parameter is required.
         self.anchor_jump_url = anchor_jump_url
@@ -55,6 +57,10 @@ class AddLiveInteractionPluginRequestPluginInfo(TeaModel):
         self.plugin_name_en = plugin_name_en
         # This parameter is required.
         self.viewer_jump_url = viewer_jump_url
+        # This parameter is required.
+        self.live_id = live_id
+        # This parameter is required.
+        self.union_id = union_id
 
     def validate(self):
         pass
@@ -75,6 +81,10 @@ class AddLiveInteractionPluginRequestPluginInfo(TeaModel):
             result['pluginNameEn'] = self.plugin_name_en
         if self.viewer_jump_url is not None:
             result['viewerJumpUrl'] = self.viewer_jump_url
+        if self.live_id is not None:
+            result['liveId'] = self.live_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
         return result
 
     def from_map(self, m: dict = None):
@@ -89,90 +99,8 @@ class AddLiveInteractionPluginRequestPluginInfo(TeaModel):
             self.plugin_name_en = m.get('pluginNameEn')
         if m.get('viewerJumpUrl') is not None:
             self.viewer_jump_url = m.get('viewerJumpUrl')
-        return self
-
-
-class AddLiveInteractionPluginRequest(TeaModel):
-    def __init__(
-        self,
-        live_id: str = None,
-        plugin_info: AddLiveInteractionPluginRequestPluginInfo = None,
-        union_id: str = None,
-    ):
-        # This parameter is required.
-        self.live_id = live_id
-        # This parameter is required.
-        self.plugin_info = plugin_info
-        # This parameter is required.
-        self.union_id = union_id
-
-    def validate(self):
-        if self.plugin_info:
-            self.plugin_info.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.live_id is not None:
-            result['liveId'] = self.live_id
-        if self.plugin_info is not None:
-            result['pluginInfo'] = self.plugin_info.to_map()
-        if self.union_id is not None:
-            result['unionId'] = self.union_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
         if m.get('liveId') is not None:
             self.live_id = m.get('liveId')
-        if m.get('pluginInfo') is not None:
-            temp_model = AddLiveInteractionPluginRequestPluginInfo()
-            self.plugin_info = temp_model.from_map(m['pluginInfo'])
-        if m.get('unionId') is not None:
-            self.union_id = m.get('unionId')
-        return self
-
-
-class AddLiveInteractionPluginShrinkRequest(TeaModel):
-    def __init__(
-        self,
-        live_id: str = None,
-        plugin_info_shrink: str = None,
-        union_id: str = None,
-    ):
-        # This parameter is required.
-        self.live_id = live_id
-        # This parameter is required.
-        self.plugin_info_shrink = plugin_info_shrink
-        # This parameter is required.
-        self.union_id = union_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.live_id is not None:
-            result['liveId'] = self.live_id
-        if self.plugin_info_shrink is not None:
-            result['pluginInfo'] = self.plugin_info_shrink
-        if self.union_id is not None:
-            result['unionId'] = self.union_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('liveId') is not None:
-            self.live_id = m.get('liveId')
-        if m.get('pluginInfo') is not None:
-            self.plugin_info_shrink = m.get('pluginInfo')
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
         return self
@@ -5487,7 +5415,7 @@ class SendLiveInteractionPluginEffectsMsgHeaders(TeaModel):
         return self
 
 
-class SendLiveInteractionPluginEffectsMsgRequestPluginEffectsMessage(TeaModel):
+class SendLiveInteractionPluginEffectsMsgRequest(TeaModel):
     def __init__(
         self,
         count: int = None,
@@ -5496,6 +5424,8 @@ class SendLiveInteractionPluginEffectsMsgRequestPluginEffectsMessage(TeaModel):
         msg_text: str = None,
         plugin_sub_id: str = None,
         sender_union_id: str = None,
+        live_id: str = None,
+        plugin_id: str = None,
     ):
         # This parameter is required.
         self.count = count
@@ -5508,6 +5438,10 @@ class SendLiveInteractionPluginEffectsMsgRequestPluginEffectsMessage(TeaModel):
         self.plugin_sub_id = plugin_sub_id
         # This parameter is required.
         self.sender_union_id = sender_union_id
+        # This parameter is required.
+        self.live_id = live_id
+        # This parameter is required.
+        self.plugin_id = plugin_id
 
     def validate(self):
         pass
@@ -5530,6 +5464,10 @@ class SendLiveInteractionPluginEffectsMsgRequestPluginEffectsMessage(TeaModel):
             result['pluginSubId'] = self.plugin_sub_id
         if self.sender_union_id is not None:
             result['senderUnionId'] = self.sender_union_id
+        if self.live_id is not None:
+            result['liveId'] = self.live_id
+        if self.plugin_id is not None:
+            result['pluginId'] = self.plugin_id
         return result
 
     def from_map(self, m: dict = None):
@@ -5546,90 +5484,8 @@ class SendLiveInteractionPluginEffectsMsgRequestPluginEffectsMessage(TeaModel):
             self.plugin_sub_id = m.get('pluginSubId')
         if m.get('senderUnionId') is not None:
             self.sender_union_id = m.get('senderUnionId')
-        return self
-
-
-class SendLiveInteractionPluginEffectsMsgRequest(TeaModel):
-    def __init__(
-        self,
-        live_id: str = None,
-        plugin_effects_message: SendLiveInteractionPluginEffectsMsgRequestPluginEffectsMessage = None,
-        plugin_id: str = None,
-    ):
-        # This parameter is required.
-        self.live_id = live_id
-        # This parameter is required.
-        self.plugin_effects_message = plugin_effects_message
-        # This parameter is required.
-        self.plugin_id = plugin_id
-
-    def validate(self):
-        if self.plugin_effects_message:
-            self.plugin_effects_message.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.live_id is not None:
-            result['liveId'] = self.live_id
-        if self.plugin_effects_message is not None:
-            result['pluginEffectsMessage'] = self.plugin_effects_message.to_map()
-        if self.plugin_id is not None:
-            result['pluginId'] = self.plugin_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
         if m.get('liveId') is not None:
             self.live_id = m.get('liveId')
-        if m.get('pluginEffectsMessage') is not None:
-            temp_model = SendLiveInteractionPluginEffectsMsgRequestPluginEffectsMessage()
-            self.plugin_effects_message = temp_model.from_map(m['pluginEffectsMessage'])
-        if m.get('pluginId') is not None:
-            self.plugin_id = m.get('pluginId')
-        return self
-
-
-class SendLiveInteractionPluginEffectsMsgShrinkRequest(TeaModel):
-    def __init__(
-        self,
-        live_id: str = None,
-        plugin_effects_message_shrink: str = None,
-        plugin_id: str = None,
-    ):
-        # This parameter is required.
-        self.live_id = live_id
-        # This parameter is required.
-        self.plugin_effects_message_shrink = plugin_effects_message_shrink
-        # This parameter is required.
-        self.plugin_id = plugin_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.live_id is not None:
-            result['liveId'] = self.live_id
-        if self.plugin_effects_message_shrink is not None:
-            result['pluginEffectsMessage'] = self.plugin_effects_message_shrink
-        if self.plugin_id is not None:
-            result['pluginId'] = self.plugin_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('liveId') is not None:
-            self.live_id = m.get('liveId')
-        if m.get('pluginEffectsMessage') is not None:
-            self.plugin_effects_message_shrink = m.get('pluginEffectsMessage')
         if m.get('pluginId') is not None:
             self.plugin_id = m.get('pluginId')
         return self
@@ -6792,7 +6648,7 @@ class UpdateLiveInteractionPluginHeaders(TeaModel):
         return self
 
 
-class UpdateLiveInteractionPluginRequestPluginInfo(TeaModel):
+class UpdateLiveInteractionPluginRequest(TeaModel):
     def __init__(
         self,
         anchor_jump_url: str = None,
@@ -6800,12 +6656,21 @@ class UpdateLiveInteractionPluginRequestPluginInfo(TeaModel):
         plugin_name: str = None,
         plugin_name_en: str = None,
         viewer_jump_url: str = None,
+        live_id: str = None,
+        plugin_id: str = None,
+        union_id: str = None,
     ):
         self.anchor_jump_url = anchor_jump_url
         self.plugin_icon_url = plugin_icon_url
         self.plugin_name = plugin_name
         self.plugin_name_en = plugin_name_en
         self.viewer_jump_url = viewer_jump_url
+        # This parameter is required.
+        self.live_id = live_id
+        # This parameter is required.
+        self.plugin_id = plugin_id
+        # This parameter is required.
+        self.union_id = union_id
 
     def validate(self):
         pass
@@ -6826,6 +6691,12 @@ class UpdateLiveInteractionPluginRequestPluginInfo(TeaModel):
             result['pluginNameEn'] = self.plugin_name_en
         if self.viewer_jump_url is not None:
             result['viewerJumpUrl'] = self.viewer_jump_url
+        if self.live_id is not None:
+            result['liveId'] = self.live_id
+        if self.plugin_id is not None:
+            result['pluginId'] = self.plugin_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
         return result
 
     def from_map(self, m: dict = None):
@@ -6840,104 +6711,10 @@ class UpdateLiveInteractionPluginRequestPluginInfo(TeaModel):
             self.plugin_name_en = m.get('pluginNameEn')
         if m.get('viewerJumpUrl') is not None:
             self.viewer_jump_url = m.get('viewerJumpUrl')
-        return self
-
-
-class UpdateLiveInteractionPluginRequest(TeaModel):
-    def __init__(
-        self,
-        live_id: str = None,
-        plugin_id: str = None,
-        plugin_info: UpdateLiveInteractionPluginRequestPluginInfo = None,
-        union_id: str = None,
-    ):
-        # This parameter is required.
-        self.live_id = live_id
-        # This parameter is required.
-        self.plugin_id = plugin_id
-        # This parameter is required.
-        self.plugin_info = plugin_info
-        # This parameter is required.
-        self.union_id = union_id
-
-    def validate(self):
-        if self.plugin_info:
-            self.plugin_info.validate()
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.live_id is not None:
-            result['liveId'] = self.live_id
-        if self.plugin_id is not None:
-            result['pluginId'] = self.plugin_id
-        if self.plugin_info is not None:
-            result['pluginInfo'] = self.plugin_info.to_map()
-        if self.union_id is not None:
-            result['unionId'] = self.union_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
         if m.get('liveId') is not None:
             self.live_id = m.get('liveId')
         if m.get('pluginId') is not None:
             self.plugin_id = m.get('pluginId')
-        if m.get('pluginInfo') is not None:
-            temp_model = UpdateLiveInteractionPluginRequestPluginInfo()
-            self.plugin_info = temp_model.from_map(m['pluginInfo'])
-        if m.get('unionId') is not None:
-            self.union_id = m.get('unionId')
-        return self
-
-
-class UpdateLiveInteractionPluginShrinkRequest(TeaModel):
-    def __init__(
-        self,
-        live_id: str = None,
-        plugin_id: str = None,
-        plugin_info_shrink: str = None,
-        union_id: str = None,
-    ):
-        # This parameter is required.
-        self.live_id = live_id
-        # This parameter is required.
-        self.plugin_id = plugin_id
-        # This parameter is required.
-        self.plugin_info_shrink = plugin_info_shrink
-        # This parameter is required.
-        self.union_id = union_id
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.live_id is not None:
-            result['liveId'] = self.live_id
-        if self.plugin_id is not None:
-            result['pluginId'] = self.plugin_id
-        if self.plugin_info_shrink is not None:
-            result['pluginInfo'] = self.plugin_info_shrink
-        if self.union_id is not None:
-            result['unionId'] = self.union_id
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('liveId') is not None:
-            self.live_id = m.get('liveId')
-        if m.get('pluginId') is not None:
-            self.plugin_id = m.get('pluginId')
-        if m.get('pluginInfo') is not None:
-            self.plugin_info_shrink = m.get('pluginInfo')
         if m.get('unionId') is not None:
             self.union_id = m.get('unionId')
         return self
