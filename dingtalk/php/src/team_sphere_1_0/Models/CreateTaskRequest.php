@@ -24,6 +24,16 @@ class CreateTaskRequest extends Model
     public $customfields;
 
     /**
+     * @var bool
+     */
+    public $disableActivity;
+
+    /**
+     * @var bool
+     */
+    public $disableNotification;
+
+    /**
      * @example 2022-06-13T07:36:50.318Z
      *
      * @var string
@@ -53,12 +63,14 @@ class CreateTaskRequest extends Model
      */
     public $projectId;
     protected $_name = [
-        'content'      => 'content',
-        'customfields' => 'customfields',
-        'dueDate'      => 'dueDate',
-        'executorId'   => 'executorId',
-        'note'         => 'note',
-        'projectId'    => 'projectId',
+        'content'             => 'content',
+        'customfields'        => 'customfields',
+        'disableActivity'     => 'disableActivity',
+        'disableNotification' => 'disableNotification',
+        'dueDate'             => 'dueDate',
+        'executorId'          => 'executorId',
+        'note'                => 'note',
+        'projectId'           => 'projectId',
     ];
 
     public function validate()
@@ -79,6 +91,12 @@ class CreateTaskRequest extends Model
                     $res['customfields'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->disableActivity) {
+            $res['disableActivity'] = $this->disableActivity;
+        }
+        if (null !== $this->disableNotification) {
+            $res['disableNotification'] = $this->disableNotification;
         }
         if (null !== $this->dueDate) {
             $res['dueDate'] = $this->dueDate;
@@ -115,6 +133,12 @@ class CreateTaskRequest extends Model
                     $model->customfields[$n++] = null !== $item ? customfields::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['disableActivity'])) {
+            $model->disableActivity = $map['disableActivity'];
+        }
+        if (isset($map['disableNotification'])) {
+            $model->disableNotification = $map['disableNotification'];
         }
         if (isset($map['dueDate'])) {
             $model->dueDate = $map['dueDate'];

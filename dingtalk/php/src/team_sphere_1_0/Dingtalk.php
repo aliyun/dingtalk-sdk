@@ -104,6 +104,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->filter)) {
+            $body['filter'] = $request->filter;
+        }
         if (!Utils::isUnset($request->reportId)) {
             $body['reportId'] = $request->reportId;
         }
@@ -373,6 +376,12 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->customfields)) {
             $body['customfields'] = $request->customfields;
+        }
+        if (!Utils::isUnset($request->disableActivity)) {
+            $body['disableActivity'] = $request->disableActivity;
+        }
+        if (!Utils::isUnset($request->disableNotification)) {
+            $body['disableNotification'] = $request->disableNotification;
         }
         if (!Utils::isUnset($request->dueDate)) {
             $body['dueDate'] = $request->dueDate;

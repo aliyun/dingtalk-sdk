@@ -8,7 +8,6 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\AddLiveInteractionPluginHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\AddLiveInteractionPluginRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\AddLiveInteractionPluginResponse;
-use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\AddLiveInteractionPluginShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\AddLiveNoticeWidgetHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\AddLiveNoticeWidgetRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\AddLiveNoticeWidgetResponse;
@@ -82,7 +81,6 @@ use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\QuerySubscribeStatusShrinkRequest
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\SendLiveInteractionPluginEffectsMsgHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\SendLiveInteractionPluginEffectsMsgRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\SendLiveInteractionPluginEffectsMsgResponse;
-use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\SendLiveInteractionPluginEffectsMsgShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\SendLivePluginUserActionMsgHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\SendLivePluginUserActionMsgRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\SendLivePluginUserActionMsgResponse;
@@ -103,7 +101,6 @@ use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\UpdateLiveHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\UpdateLiveInteractionPluginHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\UpdateLiveInteractionPluginRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\UpdateLiveInteractionPluginResponse;
-use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\UpdateLiveInteractionPluginShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\UpdateLiveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vlive_1_0\Models\UpdateLiveResponse;
 use AlibabaCloud\Tea\Utils\Utils;
@@ -129,29 +126,37 @@ class Dingtalk extends OpenApiClient
     /**
      * @summary 增加直播间互动插件
      *  *
-     * @param AddLiveInteractionPluginRequest $tmpReq  AddLiveInteractionPluginRequest
+     * @param AddLiveInteractionPluginRequest $request AddLiveInteractionPluginRequest
      * @param AddLiveInteractionPluginHeaders $headers AddLiveInteractionPluginHeaders
      * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
      *
      * @return AddLiveInteractionPluginResponse AddLiveInteractionPluginResponse
      */
-    public function addLiveInteractionPluginWithOptions($tmpReq, $headers, $runtime)
+    public function addLiveInteractionPluginWithOptions($request, $headers, $runtime)
     {
-        Utils::validateModel($tmpReq);
-        $request = new AddLiveInteractionPluginShrinkRequest([]);
-        OpenApiUtilClient::convert($tmpReq, $request);
-        if (!Utils::isUnset($tmpReq->pluginInfo)) {
-            $request->pluginInfoShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->pluginInfo, 'pluginInfo', 'json');
-        }
+        Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->liveId)) {
             $query['liveId'] = $request->liveId;
         }
-        if (!Utils::isUnset($request->pluginInfoShrink)) {
-            $query['pluginInfo'] = $request->pluginInfoShrink;
-        }
         if (!Utils::isUnset($request->unionId)) {
             $query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->anchorJumpUrl)) {
+            $body['anchorJumpUrl'] = $request->anchorJumpUrl;
+        }
+        if (!Utils::isUnset($request->pluginIconUrl)) {
+            $body['pluginIconUrl'] = $request->pluginIconUrl;
+        }
+        if (!Utils::isUnset($request->pluginName)) {
+            $body['pluginName'] = $request->pluginName;
+        }
+        if (!Utils::isUnset($request->pluginNameEn)) {
+            $body['pluginNameEn'] = $request->pluginNameEn;
+        }
+        if (!Utils::isUnset($request->viewerJumpUrl)) {
+            $body['viewerJumpUrl'] = $request->viewerJumpUrl;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -163,6 +168,7 @@ class Dingtalk extends OpenApiClient
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
             'action'      => 'AddLiveInteractionPlugin',
@@ -1638,29 +1644,40 @@ class Dingtalk extends OpenApiClient
     /**
      * @summary 用户对互动插件进行操作广播到直播间
      *  *
-     * @param SendLiveInteractionPluginEffectsMsgRequest $tmpReq  SendLiveInteractionPluginEffectsMsgRequest
+     * @param SendLiveInteractionPluginEffectsMsgRequest $request SendLiveInteractionPluginEffectsMsgRequest
      * @param SendLiveInteractionPluginEffectsMsgHeaders $headers SendLiveInteractionPluginEffectsMsgHeaders
      * @param RuntimeOptions                             $runtime runtime options for this request RuntimeOptions
      *
      * @return SendLiveInteractionPluginEffectsMsgResponse SendLiveInteractionPluginEffectsMsgResponse
      */
-    public function sendLiveInteractionPluginEffectsMsgWithOptions($tmpReq, $headers, $runtime)
+    public function sendLiveInteractionPluginEffectsMsgWithOptions($request, $headers, $runtime)
     {
-        Utils::validateModel($tmpReq);
-        $request = new SendLiveInteractionPluginEffectsMsgShrinkRequest([]);
-        OpenApiUtilClient::convert($tmpReq, $request);
-        if (!Utils::isUnset($tmpReq->pluginEffectsMessage)) {
-            $request->pluginEffectsMessageShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->pluginEffectsMessage, 'pluginEffectsMessage', 'json');
-        }
+        Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->liveId)) {
             $query['liveId'] = $request->liveId;
         }
-        if (!Utils::isUnset($request->pluginEffectsMessageShrink)) {
-            $query['pluginEffectsMessage'] = $request->pluginEffectsMessageShrink;
-        }
         if (!Utils::isUnset($request->pluginId)) {
             $query['pluginId'] = $request->pluginId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->count)) {
+            $body['count'] = $request->count;
+        }
+        if (!Utils::isUnset($request->lottieFileUrl)) {
+            $body['lottieFileUrl'] = $request->lottieFileUrl;
+        }
+        if (!Utils::isUnset($request->msgIconUrl)) {
+            $body['msgIconUrl'] = $request->msgIconUrl;
+        }
+        if (!Utils::isUnset($request->msgText)) {
+            $body['msgText'] = $request->msgText;
+        }
+        if (!Utils::isUnset($request->pluginSubId)) {
+            $body['pluginSubId'] = $request->pluginSubId;
+        }
+        if (!Utils::isUnset($request->senderUnionId)) {
+            $body['senderUnionId'] = $request->senderUnionId;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -1672,6 +1689,7 @@ class Dingtalk extends OpenApiClient
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
             'action'      => 'SendLiveInteractionPluginEffectsMsg',
@@ -2101,20 +2119,15 @@ class Dingtalk extends OpenApiClient
     /**
      * @summary 修改直播间内某一互动插件的信息
      *  *
-     * @param UpdateLiveInteractionPluginRequest $tmpReq  UpdateLiveInteractionPluginRequest
+     * @param UpdateLiveInteractionPluginRequest $request UpdateLiveInteractionPluginRequest
      * @param UpdateLiveInteractionPluginHeaders $headers UpdateLiveInteractionPluginHeaders
      * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
      *
      * @return UpdateLiveInteractionPluginResponse UpdateLiveInteractionPluginResponse
      */
-    public function updateLiveInteractionPluginWithOptions($tmpReq, $headers, $runtime)
+    public function updateLiveInteractionPluginWithOptions($request, $headers, $runtime)
     {
-        Utils::validateModel($tmpReq);
-        $request = new UpdateLiveInteractionPluginShrinkRequest([]);
-        OpenApiUtilClient::convert($tmpReq, $request);
-        if (!Utils::isUnset($tmpReq->pluginInfo)) {
-            $request->pluginInfoShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->pluginInfo, 'pluginInfo', 'json');
-        }
+        Utils::validateModel($request);
         $query = [];
         if (!Utils::isUnset($request->liveId)) {
             $query['liveId'] = $request->liveId;
@@ -2122,11 +2135,24 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->pluginId)) {
             $query['pluginId'] = $request->pluginId;
         }
-        if (!Utils::isUnset($request->pluginInfoShrink)) {
-            $query['pluginInfo'] = $request->pluginInfoShrink;
-        }
         if (!Utils::isUnset($request->unionId)) {
             $query['unionId'] = $request->unionId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->anchorJumpUrl)) {
+            $body['anchorJumpUrl'] = $request->anchorJumpUrl;
+        }
+        if (!Utils::isUnset($request->pluginIconUrl)) {
+            $body['pluginIconUrl'] = $request->pluginIconUrl;
+        }
+        if (!Utils::isUnset($request->pluginName)) {
+            $body['pluginName'] = $request->pluginName;
+        }
+        if (!Utils::isUnset($request->pluginNameEn)) {
+            $body['pluginNameEn'] = $request->pluginNameEn;
+        }
+        if (!Utils::isUnset($request->viewerJumpUrl)) {
+            $body['viewerJumpUrl'] = $request->viewerJumpUrl;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -2138,6 +2164,7 @@ class Dingtalk extends OpenApiClient
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
             'action'      => 'UpdateLiveInteractionPlugin',
