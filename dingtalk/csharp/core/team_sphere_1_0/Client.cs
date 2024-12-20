@@ -50,6 +50,10 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Filter))
+            {
+                body["filter"] = request.Filter;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReportId))
             {
                 body["reportId"] = request.ReportId;
@@ -105,6 +109,10 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Filter))
+            {
+                body["filter"] = request.Filter;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReportId))
             {
                 body["reportId"] = request.ReportId;
@@ -718,6 +726,14 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0
             {
                 body["customfields"] = request.Customfields;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DisableActivity))
+            {
+                body["disableActivity"] = request.DisableActivity;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DisableNotification))
+            {
+                body["disableNotification"] = request.DisableNotification;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DueDate))
             {
                 body["dueDate"] = request.DueDate;
@@ -792,6 +808,14 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Customfields))
             {
                 body["customfields"] = request.Customfields;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DisableActivity))
+            {
+                body["disableActivity"] = request.DisableActivity;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DisableNotification))
+            {
+                body["disableNotification"] = request.DisableNotification;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DueDate))
             {

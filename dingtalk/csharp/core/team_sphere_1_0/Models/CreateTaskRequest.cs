@@ -63,6 +63,14 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0.Models
 
         }
 
+        [NameInMap("disableActivity")]
+        [Validation(Required=false)]
+        public bool? DisableActivity { get; set; }
+
+        [NameInMap("disableNotification")]
+        [Validation(Required=false)]
+        public bool? DisableNotification { get; set; }
+
         /// <summary>
         /// <b>Example:</b>
         /// <para>2022-06-13T07:36:50.318Z</para>

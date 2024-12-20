@@ -12,57 +12,48 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>
-        [NameInMap("liveId")]
+        [NameInMap("count")]
         [Validation(Required=false)]
-        public string LiveId { get; set; }
+        public long? Count { get; set; }
+
+        [NameInMap("lottieFileUrl")]
+        [Validation(Required=false)]
+        public string LottieFileUrl { get; set; }
 
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>
-        [NameInMap("pluginEffectsMessage")]
+        [NameInMap("msgIconUrl")]
         [Validation(Required=false)]
-        public SendLiveInteractionPluginEffectsMsgRequestPluginEffectsMessage PluginEffectsMessage { get; set; }
-        public class SendLiveInteractionPluginEffectsMsgRequestPluginEffectsMessage : TeaModel {
-            /// <summary>
-            /// <para>This parameter is required.</para>
-            /// </summary>
-            [NameInMap("count")]
-            [Validation(Required=false)]
-            public long? Count { get; set; }
+        public string MsgIconUrl { get; set; }
 
-            [NameInMap("lottieFileUrl")]
-            [Validation(Required=false)]
-            public string LottieFileUrl { get; set; }
+        /// <summary>
+        /// <para>This parameter is required.</para>
+        /// </summary>
+        [NameInMap("msgText")]
+        [Validation(Required=false)]
+        public string MsgText { get; set; }
 
-            /// <summary>
-            /// <para>This parameter is required.</para>
-            /// </summary>
-            [NameInMap("msgIconUrl")]
-            [Validation(Required=false)]
-            public string MsgIconUrl { get; set; }
+        /// <summary>
+        /// <para>This parameter is required.</para>
+        /// </summary>
+        [NameInMap("pluginSubId")]
+        [Validation(Required=false)]
+        public string PluginSubId { get; set; }
 
-            /// <summary>
-            /// <para>This parameter is required.</para>
-            /// </summary>
-            [NameInMap("msgText")]
-            [Validation(Required=false)]
-            public string MsgText { get; set; }
+        /// <summary>
+        /// <para>This parameter is required.</para>
+        /// </summary>
+        [NameInMap("senderUnionId")]
+        [Validation(Required=false)]
+        public string SenderUnionId { get; set; }
 
-            /// <summary>
-            /// <para>This parameter is required.</para>
-            /// </summary>
-            [NameInMap("pluginSubId")]
-            [Validation(Required=false)]
-            public string PluginSubId { get; set; }
-
-            /// <summary>
-            /// <para>This parameter is required.</para>
-            /// </summary>
-            [NameInMap("senderUnionId")]
-            [Validation(Required=false)]
-            public string SenderUnionId { get; set; }
-
-        }
+        /// <summary>
+        /// <para>This parameter is required.</para>
+        /// </summary>
+        [NameInMap("liveId")]
+        [Validation(Required=false)]
+        public string LiveId { get; set; }
 
         /// <summary>
         /// <para>This parameter is required.</para>

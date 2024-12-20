@@ -9,6 +9,26 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
 {
     public class UpdateLiveInteractionPluginRequest : TeaModel {
+        [NameInMap("anchorJumpUrl")]
+        [Validation(Required=false)]
+        public string AnchorJumpUrl { get; set; }
+
+        [NameInMap("pluginIconUrl")]
+        [Validation(Required=false)]
+        public string PluginIconUrl { get; set; }
+
+        [NameInMap("pluginName")]
+        [Validation(Required=false)]
+        public string PluginName { get; set; }
+
+        [NameInMap("pluginNameEn")]
+        [Validation(Required=false)]
+        public string PluginNameEn { get; set; }
+
+        [NameInMap("viewerJumpUrl")]
+        [Validation(Required=false)]
+        public string ViewerJumpUrl { get; set; }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>
@@ -22,35 +42,6 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0.Models
         [NameInMap("pluginId")]
         [Validation(Required=false)]
         public string PluginId { get; set; }
-
-        /// <summary>
-        /// <para>This parameter is required.</para>
-        /// </summary>
-        [NameInMap("pluginInfo")]
-        [Validation(Required=false)]
-        public UpdateLiveInteractionPluginRequestPluginInfo PluginInfo { get; set; }
-        public class UpdateLiveInteractionPluginRequestPluginInfo : TeaModel {
-            [NameInMap("anchorJumpUrl")]
-            [Validation(Required=false)]
-            public string AnchorJumpUrl { get; set; }
-
-            [NameInMap("pluginIconUrl")]
-            [Validation(Required=false)]
-            public string PluginIconUrl { get; set; }
-
-            [NameInMap("pluginName")]
-            [Validation(Required=false)]
-            public string PluginName { get; set; }
-
-            [NameInMap("pluginNameEn")]
-            [Validation(Required=false)]
-            public string PluginNameEn { get; set; }
-
-            [NameInMap("viewerJumpUrl")]
-            [Validation(Required=false)]
-            public string ViewerJumpUrl { get; set; }
-
-        }
 
         /// <summary>
         /// <para>This parameter is required.</para>

@@ -33,7 +33,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         /// <para>增加直播间互动插件</para>
         /// </summary>
         /// 
-        /// <param name="tmpReq">
+        /// <param name="request">
         /// AddLiveInteractionPluginRequest
         /// </param>
         /// <param name="headers">
@@ -46,27 +46,38 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         /// <returns>
         /// AddLiveInteractionPluginResponse
         /// </returns>
-        public AddLiveInteractionPluginResponse AddLiveInteractionPluginWithOptions(AddLiveInteractionPluginRequest tmpReq, AddLiveInteractionPluginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public AddLiveInteractionPluginResponse AddLiveInteractionPluginWithOptions(AddLiveInteractionPluginRequest request, AddLiveInteractionPluginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
-            AddLiveInteractionPluginShrinkRequest request = new AddLiveInteractionPluginShrinkRequest();
-            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.PluginInfo))
-            {
-                request.PluginInfoShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.PluginInfo, "pluginInfo", "json");
-            }
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
             {
                 query["liveId"] = request.LiveId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginInfoShrink))
-            {
-                query["pluginInfo"] = request.PluginInfoShrink;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
                 query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AnchorJumpUrl))
+            {
+                body["anchorJumpUrl"] = request.AnchorJumpUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginIconUrl))
+            {
+                body["pluginIconUrl"] = request.PluginIconUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginName))
+            {
+                body["pluginName"] = request.PluginName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginNameEn))
+            {
+                body["pluginNameEn"] = request.PluginNameEn;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ViewerJumpUrl))
+            {
+                body["viewerJumpUrl"] = request.ViewerJumpUrl;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -81,6 +92,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
@@ -102,7 +114,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         /// <para>增加直播间互动插件</para>
         /// </summary>
         /// 
-        /// <param name="tmpReq">
+        /// <param name="request">
         /// AddLiveInteractionPluginRequest
         /// </param>
         /// <param name="headers">
@@ -115,27 +127,38 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         /// <returns>
         /// AddLiveInteractionPluginResponse
         /// </returns>
-        public async Task<AddLiveInteractionPluginResponse> AddLiveInteractionPluginWithOptionsAsync(AddLiveInteractionPluginRequest tmpReq, AddLiveInteractionPluginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<AddLiveInteractionPluginResponse> AddLiveInteractionPluginWithOptionsAsync(AddLiveInteractionPluginRequest request, AddLiveInteractionPluginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
-            AddLiveInteractionPluginShrinkRequest request = new AddLiveInteractionPluginShrinkRequest();
-            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.PluginInfo))
-            {
-                request.PluginInfoShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.PluginInfo, "pluginInfo", "json");
-            }
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
             {
                 query["liveId"] = request.LiveId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginInfoShrink))
-            {
-                query["pluginInfo"] = request.PluginInfoShrink;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
                 query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AnchorJumpUrl))
+            {
+                body["anchorJumpUrl"] = request.AnchorJumpUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginIconUrl))
+            {
+                body["pluginIconUrl"] = request.PluginIconUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginName))
+            {
+                body["pluginName"] = request.PluginName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginNameEn))
+            {
+                body["pluginNameEn"] = request.PluginNameEn;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ViewerJumpUrl))
+            {
+                body["viewerJumpUrl"] = request.ViewerJumpUrl;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -150,6 +173,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
@@ -3929,7 +3953,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         /// <para>用户对互动插件进行操作广播到直播间</para>
         /// </summary>
         /// 
-        /// <param name="tmpReq">
+        /// <param name="request">
         /// SendLiveInteractionPluginEffectsMsgRequest
         /// </param>
         /// <param name="headers">
@@ -3942,27 +3966,42 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         /// <returns>
         /// SendLiveInteractionPluginEffectsMsgResponse
         /// </returns>
-        public SendLiveInteractionPluginEffectsMsgResponse SendLiveInteractionPluginEffectsMsgWithOptions(SendLiveInteractionPluginEffectsMsgRequest tmpReq, SendLiveInteractionPluginEffectsMsgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public SendLiveInteractionPluginEffectsMsgResponse SendLiveInteractionPluginEffectsMsgWithOptions(SendLiveInteractionPluginEffectsMsgRequest request, SendLiveInteractionPluginEffectsMsgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
-            SendLiveInteractionPluginEffectsMsgShrinkRequest request = new SendLiveInteractionPluginEffectsMsgShrinkRequest();
-            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.PluginEffectsMessage))
-            {
-                request.PluginEffectsMessageShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.PluginEffectsMessage, "pluginEffectsMessage", "json");
-            }
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
             {
                 query["liveId"] = request.LiveId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginEffectsMessageShrink))
-            {
-                query["pluginEffectsMessage"] = request.PluginEffectsMessageShrink;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginId))
             {
                 query["pluginId"] = request.PluginId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Count))
+            {
+                body["count"] = request.Count;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LottieFileUrl))
+            {
+                body["lottieFileUrl"] = request.LottieFileUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgIconUrl))
+            {
+                body["msgIconUrl"] = request.MsgIconUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgText))
+            {
+                body["msgText"] = request.MsgText;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginSubId))
+            {
+                body["pluginSubId"] = request.PluginSubId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderUnionId))
+            {
+                body["senderUnionId"] = request.SenderUnionId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -3977,6 +4016,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
@@ -3998,7 +4038,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         /// <para>用户对互动插件进行操作广播到直播间</para>
         /// </summary>
         /// 
-        /// <param name="tmpReq">
+        /// <param name="request">
         /// SendLiveInteractionPluginEffectsMsgRequest
         /// </param>
         /// <param name="headers">
@@ -4011,27 +4051,42 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         /// <returns>
         /// SendLiveInteractionPluginEffectsMsgResponse
         /// </returns>
-        public async Task<SendLiveInteractionPluginEffectsMsgResponse> SendLiveInteractionPluginEffectsMsgWithOptionsAsync(SendLiveInteractionPluginEffectsMsgRequest tmpReq, SendLiveInteractionPluginEffectsMsgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<SendLiveInteractionPluginEffectsMsgResponse> SendLiveInteractionPluginEffectsMsgWithOptionsAsync(SendLiveInteractionPluginEffectsMsgRequest request, SendLiveInteractionPluginEffectsMsgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
-            SendLiveInteractionPluginEffectsMsgShrinkRequest request = new SendLiveInteractionPluginEffectsMsgShrinkRequest();
-            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.PluginEffectsMessage))
-            {
-                request.PluginEffectsMessageShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.PluginEffectsMessage, "pluginEffectsMessage", "json");
-            }
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
             {
                 query["liveId"] = request.LiveId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginEffectsMessageShrink))
-            {
-                query["pluginEffectsMessage"] = request.PluginEffectsMessageShrink;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginId))
             {
                 query["pluginId"] = request.PluginId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Count))
+            {
+                body["count"] = request.Count;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LottieFileUrl))
+            {
+                body["lottieFileUrl"] = request.LottieFileUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgIconUrl))
+            {
+                body["msgIconUrl"] = request.MsgIconUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MsgText))
+            {
+                body["msgText"] = request.MsgText;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginSubId))
+            {
+                body["pluginSubId"] = request.PluginSubId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SenderUnionId))
+            {
+                body["senderUnionId"] = request.SenderUnionId;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -4046,6 +4101,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
@@ -5117,7 +5173,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         /// <para>修改直播间内某一互动插件的信息</para>
         /// </summary>
         /// 
-        /// <param name="tmpReq">
+        /// <param name="request">
         /// UpdateLiveInteractionPluginRequest
         /// </param>
         /// <param name="headers">
@@ -5130,15 +5186,9 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         /// <returns>
         /// UpdateLiveInteractionPluginResponse
         /// </returns>
-        public UpdateLiveInteractionPluginResponse UpdateLiveInteractionPluginWithOptions(UpdateLiveInteractionPluginRequest tmpReq, UpdateLiveInteractionPluginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public UpdateLiveInteractionPluginResponse UpdateLiveInteractionPluginWithOptions(UpdateLiveInteractionPluginRequest request, UpdateLiveInteractionPluginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
-            UpdateLiveInteractionPluginShrinkRequest request = new UpdateLiveInteractionPluginShrinkRequest();
-            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.PluginInfo))
-            {
-                request.PluginInfoShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.PluginInfo, "pluginInfo", "json");
-            }
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
             {
@@ -5148,13 +5198,30 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             {
                 query["pluginId"] = request.PluginId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginInfoShrink))
-            {
-                query["pluginInfo"] = request.PluginInfoShrink;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
                 query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AnchorJumpUrl))
+            {
+                body["anchorJumpUrl"] = request.AnchorJumpUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginIconUrl))
+            {
+                body["pluginIconUrl"] = request.PluginIconUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginName))
+            {
+                body["pluginName"] = request.PluginName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginNameEn))
+            {
+                body["pluginNameEn"] = request.PluginNameEn;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ViewerJumpUrl))
+            {
+                body["viewerJumpUrl"] = request.ViewerJumpUrl;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -5169,6 +5236,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
@@ -5190,7 +5258,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         /// <para>修改直播间内某一互动插件的信息</para>
         /// </summary>
         /// 
-        /// <param name="tmpReq">
+        /// <param name="request">
         /// UpdateLiveInteractionPluginRequest
         /// </param>
         /// <param name="headers">
@@ -5203,15 +5271,9 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
         /// <returns>
         /// UpdateLiveInteractionPluginResponse
         /// </returns>
-        public async Task<UpdateLiveInteractionPluginResponse> UpdateLiveInteractionPluginWithOptionsAsync(UpdateLiveInteractionPluginRequest tmpReq, UpdateLiveInteractionPluginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<UpdateLiveInteractionPluginResponse> UpdateLiveInteractionPluginWithOptionsAsync(UpdateLiveInteractionPluginRequest request, UpdateLiveInteractionPluginHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
-            UpdateLiveInteractionPluginShrinkRequest request = new UpdateLiveInteractionPluginShrinkRequest();
-            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.PluginInfo))
-            {
-                request.PluginInfoShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.PluginInfo, "pluginInfo", "json");
-            }
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LiveId))
             {
@@ -5221,13 +5283,30 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             {
                 query["pluginId"] = request.PluginId;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginInfoShrink))
-            {
-                query["pluginInfo"] = request.PluginInfoShrink;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
             {
                 query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AnchorJumpUrl))
+            {
+                body["anchorJumpUrl"] = request.AnchorJumpUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginIconUrl))
+            {
+                body["pluginIconUrl"] = request.PluginIconUrl;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginName))
+            {
+                body["pluginName"] = request.PluginName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PluginNameEn))
+            {
+                body["pluginNameEn"] = request.PluginNameEn;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ViewerJumpUrl))
+            {
+                body["viewerJumpUrl"] = request.ViewerJumpUrl;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -5242,6 +5321,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
             {
                 Headers = realHeaders,
                 Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
