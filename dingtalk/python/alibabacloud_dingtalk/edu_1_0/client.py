@@ -4476,6 +4476,140 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.CreateCollegeContactDeptHeaders()
         return await self.create_college_contact_dept_with_options_async(request, headers, runtime)
 
+    def create_college_contact_scene_stru_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CreateCollegeContactSceneStruRequest,
+        headers: dingtalkedu__1__0_models.CreateCollegeContactSceneStruHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateCollegeContactSceneStruResponse:
+        """
+        @summary 创建高校通讯录场景架构
+        
+        @param request: CreateCollegeContactSceneStruRequest
+        @param headers: CreateCollegeContactSceneStruHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCollegeContactSceneStruResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.has_stru_fixed_dept):
+            body['hasStruFixedDept'] = request.has_stru_fixed_dept
+        if not UtilClient.is_unset(request.order):
+            body['order'] = request.order
+        if not UtilClient.is_unset(request.source_identifier):
+            body['sourceIdentifier'] = request.source_identifier
+        if not UtilClient.is_unset(request.stru_brief):
+            body['struBrief'] = request.stru_brief
+        if not UtilClient.is_unset(request.stru_name):
+            body['struName'] = request.stru_name
+        if not UtilClient.is_unset(request.stru_type):
+            body['struType'] = request.stru_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateCollegeContactSceneStru',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/depts/structures/scenes',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateCollegeContactSceneStruResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_college_contact_scene_stru_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateCollegeContactSceneStruRequest,
+        headers: dingtalkedu__1__0_models.CreateCollegeContactSceneStruHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateCollegeContactSceneStruResponse:
+        """
+        @summary 创建高校通讯录场景架构
+        
+        @param request: CreateCollegeContactSceneStruRequest
+        @param headers: CreateCollegeContactSceneStruHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCollegeContactSceneStruResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.has_stru_fixed_dept):
+            body['hasStruFixedDept'] = request.has_stru_fixed_dept
+        if not UtilClient.is_unset(request.order):
+            body['order'] = request.order
+        if not UtilClient.is_unset(request.source_identifier):
+            body['sourceIdentifier'] = request.source_identifier
+        if not UtilClient.is_unset(request.stru_brief):
+            body['struBrief'] = request.stru_brief
+        if not UtilClient.is_unset(request.stru_name):
+            body['struName'] = request.stru_name
+        if not UtilClient.is_unset(request.stru_type):
+            body['struType'] = request.stru_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateCollegeContactSceneStru',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/depts/structures/scenes',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateCollegeContactSceneStruResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_college_contact_scene_stru(
+        self,
+        request: dingtalkedu__1__0_models.CreateCollegeContactSceneStruRequest,
+    ) -> dingtalkedu__1__0_models.CreateCollegeContactSceneStruResponse:
+        """
+        @summary 创建高校通讯录场景架构
+        
+        @param request: CreateCollegeContactSceneStruRequest
+        @return: CreateCollegeContactSceneStruResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateCollegeContactSceneStruHeaders()
+        return self.create_college_contact_scene_stru_with_options(request, headers, runtime)
+
+    async def create_college_contact_scene_stru_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateCollegeContactSceneStruRequest,
+    ) -> dingtalkedu__1__0_models.CreateCollegeContactSceneStruResponse:
+        """
+        @summary 创建高校通讯录场景架构
+        
+        @param request: CreateCollegeContactSceneStruRequest
+        @return: CreateCollegeContactSceneStruResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateCollegeContactSceneStruHeaders()
+        return await self.create_college_contact_scene_stru_with_options_async(request, headers, runtime)
+
     def create_course_with_options(
         self,
         request: dingtalkedu__1__0_models.CreateCourseRequest,
@@ -8238,6 +8372,120 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.DeleteCollegeAlumniUserInfoHeaders()
         return await self.delete_college_alumni_user_info_with_options_async(request, headers, runtime)
 
+    def delete_college_contact_scene_stru_with_options(
+        self,
+        request: dingtalkedu__1__0_models.DeleteCollegeContactSceneStruRequest,
+        headers: dingtalkedu__1__0_models.DeleteCollegeContactSceneStruHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeleteCollegeContactSceneStruResponse:
+        """
+        @summary 删除高校通讯录场景架构
+        
+        @param request: DeleteCollegeContactSceneStruRequest
+        @param headers: DeleteCollegeContactSceneStruHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteCollegeContactSceneStruResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.stru_id):
+            body['struId'] = request.stru_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteCollegeContactSceneStru',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/depts/structures/scenes/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeleteCollegeContactSceneStruResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_college_contact_scene_stru_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.DeleteCollegeContactSceneStruRequest,
+        headers: dingtalkedu__1__0_models.DeleteCollegeContactSceneStruHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeleteCollegeContactSceneStruResponse:
+        """
+        @summary 删除高校通讯录场景架构
+        
+        @param request: DeleteCollegeContactSceneStruRequest
+        @param headers: DeleteCollegeContactSceneStruHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteCollegeContactSceneStruResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.stru_id):
+            body['struId'] = request.stru_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteCollegeContactSceneStru',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/depts/structures/scenes/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeleteCollegeContactSceneStruResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_college_contact_scene_stru(
+        self,
+        request: dingtalkedu__1__0_models.DeleteCollegeContactSceneStruRequest,
+    ) -> dingtalkedu__1__0_models.DeleteCollegeContactSceneStruResponse:
+        """
+        @summary 删除高校通讯录场景架构
+        
+        @param request: DeleteCollegeContactSceneStruRequest
+        @return: DeleteCollegeContactSceneStruResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeleteCollegeContactSceneStruHeaders()
+        return self.delete_college_contact_scene_stru_with_options(request, headers, runtime)
+
+    async def delete_college_contact_scene_stru_async(
+        self,
+        request: dingtalkedu__1__0_models.DeleteCollegeContactSceneStruRequest,
+    ) -> dingtalkedu__1__0_models.DeleteCollegeContactSceneStruResponse:
+        """
+        @summary 删除高校通讯录场景架构
+        
+        @param request: DeleteCollegeContactSceneStruRequest
+        @return: DeleteCollegeContactSceneStruResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeleteCollegeContactSceneStruHeaders()
+        return await self.delete_college_contact_scene_stru_with_options_async(request, headers, runtime)
+
     def delete_dept_with_options(
         self,
         dept_id: str,
@@ -9796,6 +10044,120 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.DeviceHeartbeatHeaders()
         return await self.device_heartbeat_with_options_async(request, headers, runtime)
 
+    def disable_college_contact_scene_stru_with_options(
+        self,
+        request: dingtalkedu__1__0_models.DisableCollegeContactSceneStruRequest,
+        headers: dingtalkedu__1__0_models.DisableCollegeContactSceneStruHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DisableCollegeContactSceneStruResponse:
+        """
+        @summary 停用高校通讯录场景架构
+        
+        @param request: DisableCollegeContactSceneStruRequest
+        @param headers: DisableCollegeContactSceneStruHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DisableCollegeContactSceneStruResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.stru_id):
+            body['struId'] = request.stru_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DisableCollegeContactSceneStru',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/depts/structures/scenes/disable',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DisableCollegeContactSceneStruResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def disable_college_contact_scene_stru_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.DisableCollegeContactSceneStruRequest,
+        headers: dingtalkedu__1__0_models.DisableCollegeContactSceneStruHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DisableCollegeContactSceneStruResponse:
+        """
+        @summary 停用高校通讯录场景架构
+        
+        @param request: DisableCollegeContactSceneStruRequest
+        @param headers: DisableCollegeContactSceneStruHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DisableCollegeContactSceneStruResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.stru_id):
+            body['struId'] = request.stru_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DisableCollegeContactSceneStru',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/depts/structures/scenes/disable',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DisableCollegeContactSceneStruResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def disable_college_contact_scene_stru(
+        self,
+        request: dingtalkedu__1__0_models.DisableCollegeContactSceneStruRequest,
+    ) -> dingtalkedu__1__0_models.DisableCollegeContactSceneStruResponse:
+        """
+        @summary 停用高校通讯录场景架构
+        
+        @param request: DisableCollegeContactSceneStruRequest
+        @return: DisableCollegeContactSceneStruResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DisableCollegeContactSceneStruHeaders()
+        return self.disable_college_contact_scene_stru_with_options(request, headers, runtime)
+
+    async def disable_college_contact_scene_stru_async(
+        self,
+        request: dingtalkedu__1__0_models.DisableCollegeContactSceneStruRequest,
+    ) -> dingtalkedu__1__0_models.DisableCollegeContactSceneStruResponse:
+        """
+        @summary 停用高校通讯录场景架构
+        
+        @param request: DisableCollegeContactSceneStruRequest
+        @return: DisableCollegeContactSceneStruResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DisableCollegeContactSceneStruHeaders()
+        return await self.disable_college_contact_scene_stru_with_options_async(request, headers, runtime)
+
     def edu_find_user_roles_by_user_id_with_options(
         self,
         request: dingtalkedu__1__0_models.EduFindUserRolesByUserIdRequest,
@@ -10161,6 +10523,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.EduTeacherListHeaders()
         return await self.edu_teacher_list_with_options_async(request, headers, runtime)
+
+    def enable_college_contact_scene_stru_with_options(
+        self,
+        request: dingtalkedu__1__0_models.EnableCollegeContactSceneStruRequest,
+        headers: dingtalkedu__1__0_models.EnableCollegeContactSceneStruHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.EnableCollegeContactSceneStruResponse:
+        """
+        @summary 启用高校通讯录场景架构
+        
+        @param request: EnableCollegeContactSceneStruRequest
+        @param headers: EnableCollegeContactSceneStruHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EnableCollegeContactSceneStruResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.stru_id):
+            body['struId'] = request.stru_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EnableCollegeContactSceneStru',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/depts/structures/scenes/enable',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.EnableCollegeContactSceneStruResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def enable_college_contact_scene_stru_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.EnableCollegeContactSceneStruRequest,
+        headers: dingtalkedu__1__0_models.EnableCollegeContactSceneStruHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.EnableCollegeContactSceneStruResponse:
+        """
+        @summary 启用高校通讯录场景架构
+        
+        @param request: EnableCollegeContactSceneStruRequest
+        @param headers: EnableCollegeContactSceneStruHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EnableCollegeContactSceneStruResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.stru_id):
+            body['struId'] = request.stru_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EnableCollegeContactSceneStru',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/depts/structures/scenes/enable',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.EnableCollegeContactSceneStruResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def enable_college_contact_scene_stru(
+        self,
+        request: dingtalkedu__1__0_models.EnableCollegeContactSceneStruRequest,
+    ) -> dingtalkedu__1__0_models.EnableCollegeContactSceneStruResponse:
+        """
+        @summary 启用高校通讯录场景架构
+        
+        @param request: EnableCollegeContactSceneStruRequest
+        @return: EnableCollegeContactSceneStruResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.EnableCollegeContactSceneStruHeaders()
+        return self.enable_college_contact_scene_stru_with_options(request, headers, runtime)
+
+    async def enable_college_contact_scene_stru_async(
+        self,
+        request: dingtalkedu__1__0_models.EnableCollegeContactSceneStruRequest,
+    ) -> dingtalkedu__1__0_models.EnableCollegeContactSceneStruResponse:
+        """
+        @summary 启用高校通讯录场景架构
+        
+        @param request: EnableCollegeContactSceneStruRequest
+        @return: EnableCollegeContactSceneStruResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.EnableCollegeContactSceneStruHeaders()
+        return await self.enable_college_contact_scene_stru_with_options_async(request, headers, runtime)
 
     def end_course_with_options(
         self,
@@ -13819,6 +14295,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.ListCollegeContactDeptTypeConfigHeaders()
         return await self.list_college_contact_dept_type_config_with_options_async(request, headers, runtime)
+
+    def list_college_contact_scene_strus_with_options(
+        self,
+        request: dingtalkedu__1__0_models.ListCollegeContactSceneStrusRequest,
+        headers: dingtalkedu__1__0_models.ListCollegeContactSceneStrusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.ListCollegeContactSceneStrusResponse:
+        """
+        @summary 获取高校通讯录场景架构列表
+        
+        @param request: ListCollegeContactSceneStrusRequest
+        @param headers: ListCollegeContactSceneStrusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListCollegeContactSceneStrusResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListCollegeContactSceneStrus',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/depts/structures/scenes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.ListCollegeContactSceneStrusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_college_contact_scene_strus_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.ListCollegeContactSceneStrusRequest,
+        headers: dingtalkedu__1__0_models.ListCollegeContactSceneStrusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.ListCollegeContactSceneStrusResponse:
+        """
+        @summary 获取高校通讯录场景架构列表
+        
+        @param request: ListCollegeContactSceneStrusRequest
+        @param headers: ListCollegeContactSceneStrusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListCollegeContactSceneStrusResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.language):
+            query['language'] = request.language
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListCollegeContactSceneStrus',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/depts/structures/scenes',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.ListCollegeContactSceneStrusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_college_contact_scene_strus(
+        self,
+        request: dingtalkedu__1__0_models.ListCollegeContactSceneStrusRequest,
+    ) -> dingtalkedu__1__0_models.ListCollegeContactSceneStrusResponse:
+        """
+        @summary 获取高校通讯录场景架构列表
+        
+        @param request: ListCollegeContactSceneStrusRequest
+        @return: ListCollegeContactSceneStrusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.ListCollegeContactSceneStrusHeaders()
+        return self.list_college_contact_scene_strus_with_options(request, headers, runtime)
+
+    async def list_college_contact_scene_strus_async(
+        self,
+        request: dingtalkedu__1__0_models.ListCollegeContactSceneStrusRequest,
+    ) -> dingtalkedu__1__0_models.ListCollegeContactSceneStrusResponse:
+        """
+        @summary 获取高校通讯录场景架构列表
+        
+        @param request: ListCollegeContactSceneStrusRequest
+        @return: ListCollegeContactSceneStrusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.ListCollegeContactSceneStrusHeaders()
+        return await self.list_college_contact_scene_strus_with_options_async(request, headers, runtime)
 
     def list_college_contact_sub_depts_with_options(
         self,
@@ -21361,6 +21951,140 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.UpdateCollegeContactExclusiveHeaders()
         return await self.update_college_contact_exclusive_with_options_async(request, headers, runtime)
+
+    def update_college_contact_scene_stru_with_options(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeContactSceneStruRequest,
+        headers: dingtalkedu__1__0_models.UpdateCollegeContactSceneStruHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeContactSceneStruResponse:
+        """
+        @summary 更新高校通讯录场景架构
+        
+        @param request: UpdateCollegeContactSceneStruRequest
+        @param headers: UpdateCollegeContactSceneStruHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCollegeContactSceneStruResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.order):
+            body['order'] = request.order
+        if not UtilClient.is_unset(request.source_identifier):
+            body['sourceIdentifier'] = request.source_identifier
+        if not UtilClient.is_unset(request.stru_brief):
+            body['struBrief'] = request.stru_brief
+        if not UtilClient.is_unset(request.stru_id):
+            body['struId'] = request.stru_id
+        if not UtilClient.is_unset(request.stru_name):
+            body['struName'] = request.stru_name
+        if not UtilClient.is_unset(request.stru_type):
+            body['struType'] = request.stru_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCollegeContactSceneStru',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/depts/structures/scenes',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateCollegeContactSceneStruResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_college_contact_scene_stru_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeContactSceneStruRequest,
+        headers: dingtalkedu__1__0_models.UpdateCollegeContactSceneStruHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeContactSceneStruResponse:
+        """
+        @summary 更新高校通讯录场景架构
+        
+        @param request: UpdateCollegeContactSceneStruRequest
+        @param headers: UpdateCollegeContactSceneStruHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateCollegeContactSceneStruResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.order):
+            body['order'] = request.order
+        if not UtilClient.is_unset(request.source_identifier):
+            body['sourceIdentifier'] = request.source_identifier
+        if not UtilClient.is_unset(request.stru_brief):
+            body['struBrief'] = request.stru_brief
+        if not UtilClient.is_unset(request.stru_id):
+            body['struId'] = request.stru_id
+        if not UtilClient.is_unset(request.stru_name):
+            body['struName'] = request.stru_name
+        if not UtilClient.is_unset(request.stru_type):
+            body['struType'] = request.stru_type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateCollegeContactSceneStru',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/collegeContact/depts/structures/scenes',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateCollegeContactSceneStruResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_college_contact_scene_stru(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeContactSceneStruRequest,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeContactSceneStruResponse:
+        """
+        @summary 更新高校通讯录场景架构
+        
+        @param request: UpdateCollegeContactSceneStruRequest
+        @return: UpdateCollegeContactSceneStruResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateCollegeContactSceneStruHeaders()
+        return self.update_college_contact_scene_stru_with_options(request, headers, runtime)
+
+    async def update_college_contact_scene_stru_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateCollegeContactSceneStruRequest,
+    ) -> dingtalkedu__1__0_models.UpdateCollegeContactSceneStruResponse:
+        """
+        @summary 更新高校通讯录场景架构
+        
+        @param request: UpdateCollegeContactSceneStruRequest
+        @return: UpdateCollegeContactSceneStruResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateCollegeContactSceneStruHeaders()
+        return await self.update_college_contact_scene_stru_with_options_async(request, headers, runtime)
 
     def update_college_contact_user_with_options(
         self,

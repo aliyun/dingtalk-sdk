@@ -8123,6 +8123,214 @@ class CreateCollegeContactDeptResponse(TeaModel):
         return self
 
 
+class CreateCollegeContactSceneStruHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateCollegeContactSceneStruRequest(TeaModel):
+    def __init__(
+        self,
+        has_stru_fixed_dept: bool = None,
+        order: int = None,
+        source_identifier: str = None,
+        stru_brief: str = None,
+        stru_name: str = None,
+        stru_type: str = None,
+    ):
+        # This parameter is required.
+        self.has_stru_fixed_dept = has_stru_fixed_dept
+        self.order = order
+        self.source_identifier = source_identifier
+        self.stru_brief = stru_brief
+        # This parameter is required.
+        self.stru_name = stru_name
+        # This parameter is required.
+        self.stru_type = stru_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_stru_fixed_dept is not None:
+            result['hasStruFixedDept'] = self.has_stru_fixed_dept
+        if self.order is not None:
+            result['order'] = self.order
+        if self.source_identifier is not None:
+            result['sourceIdentifier'] = self.source_identifier
+        if self.stru_brief is not None:
+            result['struBrief'] = self.stru_brief
+        if self.stru_name is not None:
+            result['struName'] = self.stru_name
+        if self.stru_type is not None:
+            result['struType'] = self.stru_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasStruFixedDept') is not None:
+            self.has_stru_fixed_dept = m.get('hasStruFixedDept')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        if m.get('sourceIdentifier') is not None:
+            self.source_identifier = m.get('sourceIdentifier')
+        if m.get('struBrief') is not None:
+            self.stru_brief = m.get('struBrief')
+        if m.get('struName') is not None:
+            self.stru_name = m.get('struName')
+        if m.get('struType') is not None:
+            self.stru_type = m.get('struType')
+        return self
+
+
+class CreateCollegeContactSceneStruResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        stru_id: int = None,
+        student_dept_id: int = None,
+        teacher_dept_id: int = None,
+    ):
+        self.stru_id = stru_id
+        self.student_dept_id = student_dept_id
+        self.teacher_dept_id = teacher_dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.stru_id is not None:
+            result['struId'] = self.stru_id
+        if self.student_dept_id is not None:
+            result['studentDeptId'] = self.student_dept_id
+        if self.teacher_dept_id is not None:
+            result['teacherDeptId'] = self.teacher_dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('struId') is not None:
+            self.stru_id = m.get('struId')
+        if m.get('studentDeptId') is not None:
+            self.student_dept_id = m.get('studentDeptId')
+        if m.get('teacherDeptId') is not None:
+            self.teacher_dept_id = m.get('teacherDeptId')
+        return self
+
+
+class CreateCollegeContactSceneStruResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CreateCollegeContactSceneStruResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CreateCollegeContactSceneStruResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateCollegeContactSceneStruResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateCollegeContactSceneStruResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateCollegeContactSceneStruResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateCourseHeaders(TeaModel):
     def __init__(
         self,
@@ -14043,6 +14251,135 @@ class DeleteCollegeAlumniUserInfoResponse(TeaModel):
         return self
 
 
+class DeleteCollegeContactSceneStruHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DeleteCollegeContactSceneStruRequest(TeaModel):
+    def __init__(
+        self,
+        stru_id: int = None,
+    ):
+        # This parameter is required.
+        self.stru_id = stru_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.stru_id is not None:
+            result['struId'] = self.stru_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('struId') is not None:
+            self.stru_id = m.get('struId')
+        return self
+
+
+class DeleteCollegeContactSceneStruResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DeleteCollegeContactSceneStruResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DeleteCollegeContactSceneStruResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DeleteCollegeContactSceneStruResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeleteDeptHeaders(TeaModel):
     def __init__(
         self,
@@ -15803,6 +16140,135 @@ class DeviceHeartbeatResponse(TeaModel):
         return self
 
 
+class DisableCollegeContactSceneStruHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class DisableCollegeContactSceneStruRequest(TeaModel):
+    def __init__(
+        self,
+        stru_id: int = None,
+    ):
+        # This parameter is required.
+        self.stru_id = stru_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.stru_id is not None:
+            result['struId'] = self.stru_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('struId') is not None:
+            self.stru_id = m.get('struId')
+        return self
+
+
+class DisableCollegeContactSceneStruResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class DisableCollegeContactSceneStruResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: DisableCollegeContactSceneStruResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = DisableCollegeContactSceneStruResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class EduFindUserRolesByUserIdHeaders(TeaModel):
     def __init__(
         self,
@@ -16386,6 +16852,135 @@ class EduTeacherListResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = EduTeacherListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class EnableCollegeContactSceneStruHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class EnableCollegeContactSceneStruRequest(TeaModel):
+    def __init__(
+        self,
+        stru_id: int = None,
+    ):
+        # This parameter is required.
+        self.stru_id = stru_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.stru_id is not None:
+            result['struId'] = self.stru_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('struId') is not None:
+            self.stru_id = m.get('struId')
+        return self
+
+
+class EnableCollegeContactSceneStruResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class EnableCollegeContactSceneStruResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: EnableCollegeContactSceneStruResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = EnableCollegeContactSceneStruResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -23278,6 +23873,217 @@ class ListCollegeContactDeptTypeConfigResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListCollegeContactDeptTypeConfigResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListCollegeContactSceneStrusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListCollegeContactSceneStrusRequest(TeaModel):
+    def __init__(
+        self,
+        language: str = None,
+    ):
+        self.language = language
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.language is not None:
+            result['language'] = self.language
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('language') is not None:
+            self.language = m.get('language')
+        return self
+
+
+class ListCollegeContactSceneStrusResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        enable: bool = None,
+        has_stru_fixed_dept: bool = None,
+        stru_brief: str = None,
+        stru_id: int = None,
+        stru_name: str = None,
+        stru_type: str = None,
+        student_dept_id: int = None,
+        teacher_dept_id: int = None,
+    ):
+        self.enable = enable
+        self.has_stru_fixed_dept = has_stru_fixed_dept
+        self.stru_brief = stru_brief
+        self.stru_id = stru_id
+        self.stru_name = stru_name
+        self.stru_type = stru_type
+        self.student_dept_id = student_dept_id
+        self.teacher_dept_id = teacher_dept_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enable is not None:
+            result['enable'] = self.enable
+        if self.has_stru_fixed_dept is not None:
+            result['hasStruFixedDept'] = self.has_stru_fixed_dept
+        if self.stru_brief is not None:
+            result['struBrief'] = self.stru_brief
+        if self.stru_id is not None:
+            result['struId'] = self.stru_id
+        if self.stru_name is not None:
+            result['struName'] = self.stru_name
+        if self.stru_type is not None:
+            result['struType'] = self.stru_type
+        if self.student_dept_id is not None:
+            result['studentDeptId'] = self.student_dept_id
+        if self.teacher_dept_id is not None:
+            result['teacherDeptId'] = self.teacher_dept_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enable') is not None:
+            self.enable = m.get('enable')
+        if m.get('hasStruFixedDept') is not None:
+            self.has_stru_fixed_dept = m.get('hasStruFixedDept')
+        if m.get('struBrief') is not None:
+            self.stru_brief = m.get('struBrief')
+        if m.get('struId') is not None:
+            self.stru_id = m.get('struId')
+        if m.get('struName') is not None:
+            self.stru_name = m.get('struName')
+        if m.get('struType') is not None:
+            self.stru_type = m.get('struType')
+        if m.get('studentDeptId') is not None:
+            self.student_dept_id = m.get('studentDeptId')
+        if m.get('teacherDeptId') is not None:
+            self.teacher_dept_id = m.get('teacherDeptId')
+        return self
+
+
+class ListCollegeContactSceneStrusResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[ListCollegeContactSceneStrusResponseBodyResult] = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = ListCollegeContactSceneStrusResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ListCollegeContactSceneStrusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListCollegeContactSceneStrusResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListCollegeContactSceneStrusResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -37386,6 +38192,165 @@ class UpdateCollegeContactExclusiveResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateCollegeContactExclusiveResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateCollegeContactSceneStruHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateCollegeContactSceneStruRequest(TeaModel):
+    def __init__(
+        self,
+        order: int = None,
+        source_identifier: str = None,
+        stru_brief: str = None,
+        stru_id: int = None,
+        stru_name: str = None,
+        stru_type: str = None,
+    ):
+        self.order = order
+        self.source_identifier = source_identifier
+        self.stru_brief = stru_brief
+        # This parameter is required.
+        self.stru_id = stru_id
+        self.stru_name = stru_name
+        self.stru_type = stru_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.order is not None:
+            result['order'] = self.order
+        if self.source_identifier is not None:
+            result['sourceIdentifier'] = self.source_identifier
+        if self.stru_brief is not None:
+            result['struBrief'] = self.stru_brief
+        if self.stru_id is not None:
+            result['struId'] = self.stru_id
+        if self.stru_name is not None:
+            result['struName'] = self.stru_name
+        if self.stru_type is not None:
+            result['struType'] = self.stru_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        if m.get('sourceIdentifier') is not None:
+            self.source_identifier = m.get('sourceIdentifier')
+        if m.get('struBrief') is not None:
+            self.stru_brief = m.get('struBrief')
+        if m.get('struId') is not None:
+            self.stru_id = m.get('struId')
+        if m.get('struName') is not None:
+            self.stru_name = m.get('struName')
+        if m.get('struType') is not None:
+            self.stru_type = m.get('struType')
+        return self
+
+
+class UpdateCollegeContactSceneStruResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateCollegeContactSceneStruResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateCollegeContactSceneStruResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateCollegeContactSceneStruResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

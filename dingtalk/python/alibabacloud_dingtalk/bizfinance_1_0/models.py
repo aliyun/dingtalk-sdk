@@ -8177,6 +8177,7 @@ class QueryMultiCompanyInfoResponseBodyListAdvancedSettingList(TeaModel):
 class QueryMultiCompanyInfoResponseBodyList(TeaModel):
     def __init__(
         self,
+        accountant_book_id: str = None,
         advanced_setting_list: List[QueryMultiCompanyInfoResponseBodyListAdvancedSettingList] = None,
         company_code: str = None,
         company_name: str = None,
@@ -8186,6 +8187,7 @@ class QueryMultiCompanyInfoResponseBodyList(TeaModel):
         tax_nature: str = None,
         tax_no: str = None,
     ):
+        self.accountant_book_id = accountant_book_id
         self.advanced_setting_list = advanced_setting_list
         self.company_code = company_code
         self.company_name = company_name
@@ -8207,6 +8209,8 @@ class QueryMultiCompanyInfoResponseBodyList(TeaModel):
             return _map
 
         result = dict()
+        if self.accountant_book_id is not None:
+            result['accountantBookId'] = self.accountant_book_id
         result['advancedSettingList'] = []
         if self.advanced_setting_list is not None:
             for k in self.advanced_setting_list:
@@ -8229,6 +8233,8 @@ class QueryMultiCompanyInfoResponseBodyList(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('accountantBookId') is not None:
+            self.accountant_book_id = m.get('accountantBookId')
         self.advanced_setting_list = []
         if m.get('advancedSettingList') is not None:
             for k in m.get('advancedSettingList'):
@@ -9374,7 +9380,7 @@ class QueryReceiptDetailForInvoiceResponseBodyResult(TeaModel):
         remark: str = None,
         show_purchaser_account_in_remark: bool = None,
         show_purchaser_contact_in_remark: bool = None,
-        show_seller_account_in_remark: str = None,
+        show_seller_account_in_remark: bool = None,
         show_seller_contact_in_remark: bool = None,
         source: str = None,
         status: str = None,
