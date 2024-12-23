@@ -98,6 +98,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateAppOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCollegeContactDeptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCollegeContactDeptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCollegeContactDeptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCollegeContactSceneStruHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCollegeContactSceneStruRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCollegeContactSceneStruResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCourseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCourseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateCourseResponse;
@@ -179,6 +182,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteCollegeAlumniDeptResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteCollegeAlumniUserInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteCollegeAlumniUserInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteCollegeAlumniUserInfoResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteCollegeContactSceneStruHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteCollegeContactSceneStruRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteCollegeContactSceneStruResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeptResponse;
@@ -218,6 +224,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteUniversityTeacherResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeviceHeartbeatHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeviceHeartbeatRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeviceHeartbeatResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DisableCollegeContactSceneStruHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DisableCollegeContactSceneStruRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DisableCollegeContactSceneStruResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduFindUserRolesByUserIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduFindUserRolesByUserIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduFindUserRolesByUserIdResponse;
@@ -227,6 +236,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduListUserByFromUserIdsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduTeacherListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduTeacherListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduTeacherListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EnableCollegeContactSceneStruHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EnableCollegeContactSceneStruRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EnableCollegeContactSceneStruResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EndCourseResponse;
@@ -317,6 +329,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsvMetadataQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListCollegeContactDeptTypeConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListCollegeContactDeptTypeConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListCollegeContactDeptTypeConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListCollegeContactSceneStrusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListCollegeContactSceneStrusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListCollegeContactSceneStrusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListCollegeContactSubDeptsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListCollegeContactSubDeptsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListCollegeContactSubDeptsResponse;
@@ -495,6 +510,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeContactDeptResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeContactExclusiveHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeContactExclusiveRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeContactExclusiveResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeContactSceneStruHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeContactSceneStruRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeContactSceneStruResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeContactUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeContactUserRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeContactUserResponse;
@@ -3003,6 +3021,78 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建高校通讯录场景架构
+     *  *
+     * @param CreateCollegeContactSceneStruRequest $request CreateCollegeContactSceneStruRequest
+     * @param CreateCollegeContactSceneStruHeaders $headers CreateCollegeContactSceneStruHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateCollegeContactSceneStruResponse CreateCollegeContactSceneStruResponse
+     */
+    public function createCollegeContactSceneStruWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->hasStruFixedDept)) {
+            $body['hasStruFixedDept'] = $request->hasStruFixedDept;
+        }
+        if (!Utils::isUnset($request->order)) {
+            $body['order'] = $request->order;
+        }
+        if (!Utils::isUnset($request->sourceIdentifier)) {
+            $body['sourceIdentifier'] = $request->sourceIdentifier;
+        }
+        if (!Utils::isUnset($request->struBrief)) {
+            $body['struBrief'] = $request->struBrief;
+        }
+        if (!Utils::isUnset($request->struName)) {
+            $body['struName'] = $request->struName;
+        }
+        if (!Utils::isUnset($request->struType)) {
+            $body['struType'] = $request->struType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateCollegeContactSceneStru',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeContact/depts/structures/scenes',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateCollegeContactSceneStruResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建高校通讯录场景架构
+     *  *
+     * @param CreateCollegeContactSceneStruRequest $request CreateCollegeContactSceneStruRequest
+     *
+     * @return CreateCollegeContactSceneStruResponse CreateCollegeContactSceneStruResponse
+     */
+    public function createCollegeContactSceneStru($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateCollegeContactSceneStruHeaders([]);
+
+        return $this->createCollegeContactSceneStruWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 创建课程
      *  *
      * @param CreateCourseRequest $request CreateCourseRequest
@@ -5051,6 +5141,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除高校通讯录场景架构
+     *  *
+     * @param DeleteCollegeContactSceneStruRequest $request DeleteCollegeContactSceneStruRequest
+     * @param DeleteCollegeContactSceneStruHeaders $headers DeleteCollegeContactSceneStruHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteCollegeContactSceneStruResponse DeleteCollegeContactSceneStruResponse
+     */
+    public function deleteCollegeContactSceneStruWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->struId)) {
+            $body['struId'] = $request->struId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteCollegeContactSceneStru',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeContact/depts/structures/scenes/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DeleteCollegeContactSceneStruResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除高校通讯录场景架构
+     *  *
+     * @param DeleteCollegeContactSceneStruRequest $request DeleteCollegeContactSceneStruRequest
+     *
+     * @return DeleteCollegeContactSceneStruResponse DeleteCollegeContactSceneStruResponse
+     */
+    public function deleteCollegeContactSceneStru($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteCollegeContactSceneStruHeaders([]);
+
+        return $this->deleteCollegeContactSceneStruWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 删除家校部门
      *  *
      * @param string            $deptId
@@ -5841,6 +5988,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 停用高校通讯录场景架构
+     *  *
+     * @param DisableCollegeContactSceneStruRequest $request DisableCollegeContactSceneStruRequest
+     * @param DisableCollegeContactSceneStruHeaders $headers DisableCollegeContactSceneStruHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DisableCollegeContactSceneStruResponse DisableCollegeContactSceneStruResponse
+     */
+    public function disableCollegeContactSceneStruWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->struId)) {
+            $body['struId'] = $request->struId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DisableCollegeContactSceneStru',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeContact/depts/structures/scenes/disable',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DisableCollegeContactSceneStruResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 停用高校通讯录场景架构
+     *  *
+     * @param DisableCollegeContactSceneStruRequest $request DisableCollegeContactSceneStruRequest
+     *
+     * @return DisableCollegeContactSceneStruResponse DisableCollegeContactSceneStruResponse
+     */
+    public function disableCollegeContactSceneStru($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DisableCollegeContactSceneStruHeaders([]);
+
+        return $this->disableCollegeContactSceneStruWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 教育侧用户的所有角色
      *  *
      * @param EduFindUserRolesByUserIdRequest $request EduFindUserRolesByUserIdRequest
@@ -6027,6 +6231,63 @@ class Dingtalk extends OpenApiClient
         $headers = new EduTeacherListHeaders([]);
 
         return $this->eduTeacherListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 启用高校通讯录场景架构
+     *  *
+     * @param EnableCollegeContactSceneStruRequest $request EnableCollegeContactSceneStruRequest
+     * @param EnableCollegeContactSceneStruHeaders $headers EnableCollegeContactSceneStruHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return EnableCollegeContactSceneStruResponse EnableCollegeContactSceneStruResponse
+     */
+    public function enableCollegeContactSceneStruWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->struId)) {
+            $body['struId'] = $request->struId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'EnableCollegeContactSceneStru',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeContact/depts/structures/scenes/enable',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return EnableCollegeContactSceneStruResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 启用高校通讯录场景架构
+     *  *
+     * @param EnableCollegeContactSceneStruRequest $request EnableCollegeContactSceneStruRequest
+     *
+     * @return EnableCollegeContactSceneStruResponse EnableCollegeContactSceneStruResponse
+     */
+    public function enableCollegeContactSceneStru($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EnableCollegeContactSceneStruHeaders([]);
+
+        return $this->enableCollegeContactSceneStruWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -7906,6 +8167,63 @@ class Dingtalk extends OpenApiClient
         $headers = new ListCollegeContactDeptTypeConfigHeaders([]);
 
         return $this->listCollegeContactDeptTypeConfigWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取高校通讯录场景架构列表
+     *  *
+     * @param ListCollegeContactSceneStrusRequest $request ListCollegeContactSceneStrusRequest
+     * @param ListCollegeContactSceneStrusHeaders $headers ListCollegeContactSceneStrusHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListCollegeContactSceneStrusResponse ListCollegeContactSceneStrusResponse
+     */
+    public function listCollegeContactSceneStrusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->language)) {
+            $query['language'] = $request->language;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'ListCollegeContactSceneStrus',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeContact/depts/structures/scenes',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListCollegeContactSceneStrusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取高校通讯录场景架构列表
+     *  *
+     * @param ListCollegeContactSceneStrusRequest $request ListCollegeContactSceneStrusRequest
+     *
+     * @return ListCollegeContactSceneStrusResponse ListCollegeContactSceneStrusResponse
+     */
+    public function listCollegeContactSceneStrus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListCollegeContactSceneStrusHeaders([]);
+
+        return $this->listCollegeContactSceneStrusWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -11909,6 +12227,78 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateCollegeContactExclusiveHeaders([]);
 
         return $this->updateCollegeContactExclusiveWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新高校通讯录场景架构
+     *  *
+     * @param UpdateCollegeContactSceneStruRequest $request UpdateCollegeContactSceneStruRequest
+     * @param UpdateCollegeContactSceneStruHeaders $headers UpdateCollegeContactSceneStruHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateCollegeContactSceneStruResponse UpdateCollegeContactSceneStruResponse
+     */
+    public function updateCollegeContactSceneStruWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->order)) {
+            $body['order'] = $request->order;
+        }
+        if (!Utils::isUnset($request->sourceIdentifier)) {
+            $body['sourceIdentifier'] = $request->sourceIdentifier;
+        }
+        if (!Utils::isUnset($request->struBrief)) {
+            $body['struBrief'] = $request->struBrief;
+        }
+        if (!Utils::isUnset($request->struId)) {
+            $body['struId'] = $request->struId;
+        }
+        if (!Utils::isUnset($request->struName)) {
+            $body['struName'] = $request->struName;
+        }
+        if (!Utils::isUnset($request->struType)) {
+            $body['struType'] = $request->struType;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateCollegeContactSceneStru',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/collegeContact/depts/structures/scenes',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateCollegeContactSceneStruResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新高校通讯录场景架构
+     *  *
+     * @param UpdateCollegeContactSceneStruRequest $request UpdateCollegeContactSceneStruRequest
+     *
+     * @return UpdateCollegeContactSceneStruResponse UpdateCollegeContactSceneStruResponse
+     */
+    public function updateCollegeContactSceneStru($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateCollegeContactSceneStruHeaders([]);
+
+        return $this->updateCollegeContactSceneStruWithOptions($request, $headers, $runtime);
     }
 
     /**

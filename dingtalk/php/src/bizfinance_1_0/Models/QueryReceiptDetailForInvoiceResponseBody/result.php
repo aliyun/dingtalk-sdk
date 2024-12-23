@@ -177,7 +177,7 @@ class result extends Model
     public $showPurchaserContactInRemark;
 
     /**
-     * @var string
+     * @var bool
      */
     public $showSellerAccountInRemark;
 

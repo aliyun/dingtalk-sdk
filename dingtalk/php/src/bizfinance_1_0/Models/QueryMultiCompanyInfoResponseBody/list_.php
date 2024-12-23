@@ -10,6 +10,11 @@ use AlibabaCloud\Tea\Model;
 class list_ extends Model
 {
     /**
+     * @var string
+     */
+    public $accountantBookId;
+
+    /**
      * @var advancedSettingList[]
      */
     public $advancedSettingList;
@@ -63,6 +68,7 @@ class list_ extends Model
      */
     public $taxNo;
     protected $_name = [
+        'accountantBookId'    => 'accountantBookId',
         'advancedSettingList' => 'advancedSettingList',
         'companyCode'         => 'companyCode',
         'companyName'         => 'companyName',
@@ -80,6 +86,9 @@ class list_ extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->accountantBookId) {
+            $res['accountantBookId'] = $this->accountantBookId;
+        }
         if (null !== $this->advancedSettingList) {
             $res['advancedSettingList'] = [];
             if (null !== $this->advancedSettingList && \is_array($this->advancedSettingList)) {
@@ -122,6 +131,9 @@ class list_ extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['accountantBookId'])) {
+            $model->accountantBookId = $map['accountantBookId'];
+        }
         if (isset($map['advancedSettingList'])) {
             if (!empty($map['advancedSettingList'])) {
                 $model->advancedSettingList = [];
