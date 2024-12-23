@@ -2672,6 +2672,82 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>创建高校通讯录场景架构</p>
+     * 
+     * @param request CreateCollegeContactSceneStruRequest
+     * @param headers CreateCollegeContactSceneStruHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateCollegeContactSceneStruResponse
+     */
+    public CreateCollegeContactSceneStruResponse createCollegeContactSceneStruWithOptions(CreateCollegeContactSceneStruRequest request, CreateCollegeContactSceneStruHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.hasStruFixedDept)) {
+            body.put("hasStruFixedDept", request.hasStruFixedDept);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.order)) {
+            body.put("order", request.order);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sourceIdentifier)) {
+            body.put("sourceIdentifier", request.sourceIdentifier);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.struBrief)) {
+            body.put("struBrief", request.struBrief);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.struName)) {
+            body.put("struName", request.struName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.struType)) {
+            body.put("struType", request.struType);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateCollegeContactSceneStru"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/collegeContact/depts/structures/scenes"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateCollegeContactSceneStruResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建高校通讯录场景架构</p>
+     * 
+     * @param request CreateCollegeContactSceneStruRequest
+     * @return CreateCollegeContactSceneStruResponse
+     */
+    public CreateCollegeContactSceneStruResponse createCollegeContactSceneStru(CreateCollegeContactSceneStruRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateCollegeContactSceneStruHeaders headers = new CreateCollegeContactSceneStruHeaders();
+        return this.createCollegeContactSceneStruWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>创建课程</p>
      * 
      * @param request CreateCourseRequest
@@ -4860,6 +4936,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>删除高校通讯录场景架构</p>
+     * 
+     * @param request DeleteCollegeContactSceneStruRequest
+     * @param headers DeleteCollegeContactSceneStruHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteCollegeContactSceneStruResponse
+     */
+    public DeleteCollegeContactSceneStruResponse deleteCollegeContactSceneStruWithOptions(DeleteCollegeContactSceneStruRequest request, DeleteCollegeContactSceneStruHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.struId)) {
+            body.put("struId", request.struId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteCollegeContactSceneStru"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/collegeContact/depts/structures/scenes/remove"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteCollegeContactSceneStruResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除高校通讯录场景架构</p>
+     * 
+     * @param request DeleteCollegeContactSceneStruRequest
+     * @return DeleteCollegeContactSceneStruResponse
+     */
+    public DeleteCollegeContactSceneStruResponse deleteCollegeContactSceneStru(DeleteCollegeContactSceneStruRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteCollegeContactSceneStruHeaders headers = new DeleteCollegeContactSceneStruHeaders();
+        return this.deleteCollegeContactSceneStruWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>删除家校部门</p>
      * 
      * @param request DeleteDeptRequest
@@ -5632,6 +5764,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>停用高校通讯录场景架构</p>
+     * 
+     * @param request DisableCollegeContactSceneStruRequest
+     * @param headers DisableCollegeContactSceneStruHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DisableCollegeContactSceneStruResponse
+     */
+    public DisableCollegeContactSceneStruResponse disableCollegeContactSceneStruWithOptions(DisableCollegeContactSceneStruRequest request, DisableCollegeContactSceneStruHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.struId)) {
+            body.put("struId", request.struId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DisableCollegeContactSceneStru"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/collegeContact/depts/structures/scenes/disable"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DisableCollegeContactSceneStruResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>停用高校通讯录场景架构</p>
+     * 
+     * @param request DisableCollegeContactSceneStruRequest
+     * @return DisableCollegeContactSceneStruResponse
+     */
+    public DisableCollegeContactSceneStruResponse disableCollegeContactSceneStru(DisableCollegeContactSceneStruRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DisableCollegeContactSceneStruHeaders headers = new DisableCollegeContactSceneStruHeaders();
+        return this.disableCollegeContactSceneStruWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>教育侧用户的所有角色</p>
      * 
      * @param request EduFindUserRolesByUserIdRequest
@@ -5820,6 +6008,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EduTeacherListHeaders headers = new EduTeacherListHeaders();
         return this.eduTeacherListWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>启用高校通讯录场景架构</p>
+     * 
+     * @param request EnableCollegeContactSceneStruRequest
+     * @param headers EnableCollegeContactSceneStruHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EnableCollegeContactSceneStruResponse
+     */
+    public EnableCollegeContactSceneStruResponse enableCollegeContactSceneStruWithOptions(EnableCollegeContactSceneStruRequest request, EnableCollegeContactSceneStruHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.struId)) {
+            body.put("struId", request.struId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "EnableCollegeContactSceneStru"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/collegeContact/depts/structures/scenes/enable"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new EnableCollegeContactSceneStruResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>启用高校通讯录场景架构</p>
+     * 
+     * @param request EnableCollegeContactSceneStruRequest
+     * @return EnableCollegeContactSceneStruResponse
+     */
+    public EnableCollegeContactSceneStruResponse enableCollegeContactSceneStru(EnableCollegeContactSceneStruRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        EnableCollegeContactSceneStruHeaders headers = new EnableCollegeContactSceneStruHeaders();
+        return this.enableCollegeContactSceneStruWithOptions(request, headers, runtime);
     }
 
     /**
@@ -7698,6 +7942,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         ListCollegeContactDeptTypeConfigHeaders headers = new ListCollegeContactDeptTypeConfigHeaders();
         return this.listCollegeContactDeptTypeConfigWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取高校通讯录场景架构列表</p>
+     * 
+     * @param request ListCollegeContactSceneStrusRequest
+     * @param headers ListCollegeContactSceneStrusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ListCollegeContactSceneStrusResponse
+     */
+    public ListCollegeContactSceneStrusResponse listCollegeContactSceneStrusWithOptions(ListCollegeContactSceneStrusRequest request, ListCollegeContactSceneStrusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.language)) {
+            query.put("language", request.language);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ListCollegeContactSceneStrus"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/collegeContact/depts/structures/scenes"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ListCollegeContactSceneStrusResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取高校通讯录场景架构列表</p>
+     * 
+     * @param request ListCollegeContactSceneStrusRequest
+     * @return ListCollegeContactSceneStrusResponse
+     */
+    public ListCollegeContactSceneStrusResponse listCollegeContactSceneStrus(ListCollegeContactSceneStrusRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ListCollegeContactSceneStrusHeaders headers = new ListCollegeContactSceneStrusHeaders();
+        return this.listCollegeContactSceneStrusWithOptions(request, headers, runtime);
     }
 
     /**
@@ -11872,6 +12172,82 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateCollegeContactExclusiveHeaders headers = new UpdateCollegeContactExclusiveHeaders();
         return this.updateCollegeContactExclusiveWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新高校通讯录场景架构</p>
+     * 
+     * @param request UpdateCollegeContactSceneStruRequest
+     * @param headers UpdateCollegeContactSceneStruHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateCollegeContactSceneStruResponse
+     */
+    public UpdateCollegeContactSceneStruResponse updateCollegeContactSceneStruWithOptions(UpdateCollegeContactSceneStruRequest request, UpdateCollegeContactSceneStruHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.order)) {
+            body.put("order", request.order);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.sourceIdentifier)) {
+            body.put("sourceIdentifier", request.sourceIdentifier);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.struBrief)) {
+            body.put("struBrief", request.struBrief);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.struId)) {
+            body.put("struId", request.struId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.struName)) {
+            body.put("struName", request.struName);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.struType)) {
+            body.put("struType", request.struType);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateCollegeContactSceneStru"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/collegeContact/depts/structures/scenes"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateCollegeContactSceneStruResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新高校通讯录场景架构</p>
+     * 
+     * @param request UpdateCollegeContactSceneStruRequest
+     * @return UpdateCollegeContactSceneStruResponse
+     */
+    public UpdateCollegeContactSceneStruResponse updateCollegeContactSceneStru(UpdateCollegeContactSceneStruRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateCollegeContactSceneStruHeaders headers = new UpdateCollegeContactSceneStruHeaders();
+        return this.updateCollegeContactSceneStruWithOptions(request, headers, runtime);
     }
 
     /**

@@ -452,7 +452,7 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
         public Boolean showPurchaserContactInRemark;
 
         @NameInMap("showSellerAccountInRemark")
-        public String showSellerAccountInRemark;
+        public Boolean showSellerAccountInRemark;
 
         @NameInMap("showSellerContactInRemark")
         public Boolean showSellerContactInRemark;
@@ -683,11 +683,11 @@ public class QueryReceiptDetailForInvoiceResponseBody extends TeaModel {
             return this.showPurchaserContactInRemark;
         }
 
-        public QueryReceiptDetailForInvoiceResponseBodyResult setShowSellerAccountInRemark(String showSellerAccountInRemark) {
+        public QueryReceiptDetailForInvoiceResponseBodyResult setShowSellerAccountInRemark(Boolean showSellerAccountInRemark) {
             this.showSellerAccountInRemark = showSellerAccountInRemark;
             return this;
         }
-        public String getShowSellerAccountInRemark() {
+        public Boolean getShowSellerAccountInRemark() {
             return this.showSellerAccountInRemark;
         }
 

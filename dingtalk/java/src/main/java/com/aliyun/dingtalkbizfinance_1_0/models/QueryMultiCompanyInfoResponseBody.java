@@ -96,6 +96,9 @@ public class QueryMultiCompanyInfoResponseBody extends TeaModel {
     }
 
     public static class QueryMultiCompanyInfoResponseBodyList extends TeaModel {
+        @NameInMap("accountantBookId")
+        public String accountantBookId;
+
         @NameInMap("advancedSettingList")
         public java.util.List<QueryMultiCompanyInfoResponseBodyListAdvancedSettingList> advancedSettingList;
 
@@ -151,6 +154,14 @@ public class QueryMultiCompanyInfoResponseBody extends TeaModel {
         public static QueryMultiCompanyInfoResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
             QueryMultiCompanyInfoResponseBodyList self = new QueryMultiCompanyInfoResponseBodyList();
             return TeaModel.build(map, self);
+        }
+
+        public QueryMultiCompanyInfoResponseBodyList setAccountantBookId(String accountantBookId) {
+            this.accountantBookId = accountantBookId;
+            return this;
+        }
+        public String getAccountantBookId() {
+            return this.accountantBookId;
         }
 
         public QueryMultiCompanyInfoResponseBodyList setAdvancedSettingList(java.util.List<QueryMultiCompanyInfoResponseBodyListAdvancedSettingList> advancedSettingList) {
