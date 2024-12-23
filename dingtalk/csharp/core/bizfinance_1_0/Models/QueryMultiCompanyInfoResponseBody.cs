@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
         [Validation(Required=false)]
         public List<QueryMultiCompanyInfoResponseBodyList> List { get; set; }
         public class QueryMultiCompanyInfoResponseBodyList : TeaModel {
+            [NameInMap("accountantBookId")]
+            [Validation(Required=false)]
+            public string AccountantBookId { get; set; }
+
             [NameInMap("advancedSettingList")]
             [Validation(Required=false)]
             public List<QueryMultiCompanyInfoResponseBodyListAdvancedSettingList> AdvancedSettingList { get; set; }

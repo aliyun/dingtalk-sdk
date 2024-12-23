@@ -6450,6 +6450,194 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>创建高校通讯录场景架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateCollegeContactSceneStruRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateCollegeContactSceneStruHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateCollegeContactSceneStruResponse
+        /// </returns>
+        public CreateCollegeContactSceneStruResponse CreateCollegeContactSceneStruWithOptions(CreateCollegeContactSceneStruRequest request, CreateCollegeContactSceneStruHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HasStruFixedDept))
+            {
+                body["hasStruFixedDept"] = request.HasStruFixedDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Order))
+            {
+                body["order"] = request.Order;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceIdentifier))
+            {
+                body["sourceIdentifier"] = request.SourceIdentifier;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruBrief))
+            {
+                body["struBrief"] = request.StruBrief;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruName))
+            {
+                body["struName"] = request.StruName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruType))
+            {
+                body["struType"] = request.StruType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateCollegeContactSceneStru",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/depts/structures/scenes",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateCollegeContactSceneStruResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建高校通讯录场景架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateCollegeContactSceneStruRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateCollegeContactSceneStruHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateCollegeContactSceneStruResponse
+        /// </returns>
+        public async Task<CreateCollegeContactSceneStruResponse> CreateCollegeContactSceneStruWithOptionsAsync(CreateCollegeContactSceneStruRequest request, CreateCollegeContactSceneStruHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.HasStruFixedDept))
+            {
+                body["hasStruFixedDept"] = request.HasStruFixedDept;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Order))
+            {
+                body["order"] = request.Order;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceIdentifier))
+            {
+                body["sourceIdentifier"] = request.SourceIdentifier;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruBrief))
+            {
+                body["struBrief"] = request.StruBrief;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruName))
+            {
+                body["struName"] = request.StruName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruType))
+            {
+                body["struType"] = request.StruType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateCollegeContactSceneStru",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/depts/structures/scenes",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateCollegeContactSceneStruResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建高校通讯录场景架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateCollegeContactSceneStruRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateCollegeContactSceneStruResponse
+        /// </returns>
+        public CreateCollegeContactSceneStruResponse CreateCollegeContactSceneStru(CreateCollegeContactSceneStruRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateCollegeContactSceneStruHeaders headers = new CreateCollegeContactSceneStruHeaders();
+            return CreateCollegeContactSceneStruWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建高校通讯录场景架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateCollegeContactSceneStruRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateCollegeContactSceneStruResponse
+        /// </returns>
+        public async Task<CreateCollegeContactSceneStruResponse> CreateCollegeContactSceneStruAsync(CreateCollegeContactSceneStruRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateCollegeContactSceneStruHeaders headers = new CreateCollegeContactSceneStruHeaders();
+            return await CreateCollegeContactSceneStruWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>创建课程</para>
         /// </summary>
         /// 
@@ -11798,6 +11986,154 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>删除高校通讯录场景架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteCollegeContactSceneStruRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteCollegeContactSceneStruHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteCollegeContactSceneStruResponse
+        /// </returns>
+        public DeleteCollegeContactSceneStruResponse DeleteCollegeContactSceneStruWithOptions(DeleteCollegeContactSceneStruRequest request, DeleteCollegeContactSceneStruHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruId))
+            {
+                body["struId"] = request.StruId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteCollegeContactSceneStru",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/depts/structures/scenes/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteCollegeContactSceneStruResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除高校通讯录场景架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteCollegeContactSceneStruRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteCollegeContactSceneStruHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteCollegeContactSceneStruResponse
+        /// </returns>
+        public async Task<DeleteCollegeContactSceneStruResponse> DeleteCollegeContactSceneStruWithOptionsAsync(DeleteCollegeContactSceneStruRequest request, DeleteCollegeContactSceneStruHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruId))
+            {
+                body["struId"] = request.StruId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteCollegeContactSceneStru",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/depts/structures/scenes/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteCollegeContactSceneStruResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除高校通讯录场景架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteCollegeContactSceneStruRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteCollegeContactSceneStruResponse
+        /// </returns>
+        public DeleteCollegeContactSceneStruResponse DeleteCollegeContactSceneStru(DeleteCollegeContactSceneStruRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteCollegeContactSceneStruHeaders headers = new DeleteCollegeContactSceneStruHeaders();
+            return DeleteCollegeContactSceneStruWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除高校通讯录场景架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteCollegeContactSceneStruRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteCollegeContactSceneStruResponse
+        /// </returns>
+        public async Task<DeleteCollegeContactSceneStruResponse> DeleteCollegeContactSceneStruAsync(DeleteCollegeContactSceneStruRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteCollegeContactSceneStruHeaders headers = new DeleteCollegeContactSceneStruHeaders();
+            return await DeleteCollegeContactSceneStruWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>删除家校部门</para>
         /// </summary>
         /// 
@@ -13810,6 +14146,154 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>停用高校通讯录场景架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DisableCollegeContactSceneStruRequest
+        /// </param>
+        /// <param name="headers">
+        /// DisableCollegeContactSceneStruHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DisableCollegeContactSceneStruResponse
+        /// </returns>
+        public DisableCollegeContactSceneStruResponse DisableCollegeContactSceneStruWithOptions(DisableCollegeContactSceneStruRequest request, DisableCollegeContactSceneStruHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruId))
+            {
+                body["struId"] = request.StruId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DisableCollegeContactSceneStru",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/depts/structures/scenes/disable",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DisableCollegeContactSceneStruResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>停用高校通讯录场景架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DisableCollegeContactSceneStruRequest
+        /// </param>
+        /// <param name="headers">
+        /// DisableCollegeContactSceneStruHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DisableCollegeContactSceneStruResponse
+        /// </returns>
+        public async Task<DisableCollegeContactSceneStruResponse> DisableCollegeContactSceneStruWithOptionsAsync(DisableCollegeContactSceneStruRequest request, DisableCollegeContactSceneStruHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruId))
+            {
+                body["struId"] = request.StruId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DisableCollegeContactSceneStru",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/depts/structures/scenes/disable",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DisableCollegeContactSceneStruResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>停用高校通讯录场景架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DisableCollegeContactSceneStruRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DisableCollegeContactSceneStruResponse
+        /// </returns>
+        public DisableCollegeContactSceneStruResponse DisableCollegeContactSceneStru(DisableCollegeContactSceneStruRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DisableCollegeContactSceneStruHeaders headers = new DisableCollegeContactSceneStruHeaders();
+            return DisableCollegeContactSceneStruWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>停用高校通讯录场景架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DisableCollegeContactSceneStruRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DisableCollegeContactSceneStruResponse
+        /// </returns>
+        public async Task<DisableCollegeContactSceneStruResponse> DisableCollegeContactSceneStruAsync(DisableCollegeContactSceneStruRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DisableCollegeContactSceneStruHeaders headers = new DisableCollegeContactSceneStruHeaders();
+            return await DisableCollegeContactSceneStruWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>教育侧用户的所有角色</para>
         /// </summary>
         /// 
@@ -14298,6 +14782,154 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             EduTeacherListHeaders headers = new EduTeacherListHeaders();
             return await EduTeacherListWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>启用高校通讯录场景架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EnableCollegeContactSceneStruRequest
+        /// </param>
+        /// <param name="headers">
+        /// EnableCollegeContactSceneStruHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// EnableCollegeContactSceneStruResponse
+        /// </returns>
+        public EnableCollegeContactSceneStruResponse EnableCollegeContactSceneStruWithOptions(EnableCollegeContactSceneStruRequest request, EnableCollegeContactSceneStruHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruId))
+            {
+                body["struId"] = request.StruId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EnableCollegeContactSceneStru",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/depts/structures/scenes/enable",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EnableCollegeContactSceneStruResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>启用高校通讯录场景架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EnableCollegeContactSceneStruRequest
+        /// </param>
+        /// <param name="headers">
+        /// EnableCollegeContactSceneStruHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// EnableCollegeContactSceneStruResponse
+        /// </returns>
+        public async Task<EnableCollegeContactSceneStruResponse> EnableCollegeContactSceneStruWithOptionsAsync(EnableCollegeContactSceneStruRequest request, EnableCollegeContactSceneStruHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruId))
+            {
+                body["struId"] = request.StruId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EnableCollegeContactSceneStru",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/depts/structures/scenes/enable",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EnableCollegeContactSceneStruResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>启用高校通讯录场景架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EnableCollegeContactSceneStruRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// EnableCollegeContactSceneStruResponse
+        /// </returns>
+        public EnableCollegeContactSceneStruResponse EnableCollegeContactSceneStru(EnableCollegeContactSceneStruRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            EnableCollegeContactSceneStruHeaders headers = new EnableCollegeContactSceneStruHeaders();
+            return EnableCollegeContactSceneStruWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>启用高校通讯录场景架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EnableCollegeContactSceneStruRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// EnableCollegeContactSceneStruResponse
+        /// </returns>
+        public async Task<EnableCollegeContactSceneStruResponse> EnableCollegeContactSceneStruAsync(EnableCollegeContactSceneStruRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            EnableCollegeContactSceneStruHeaders headers = new EnableCollegeContactSceneStruHeaders();
+            return await EnableCollegeContactSceneStruWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -19138,6 +19770,154 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             ListCollegeContactDeptTypeConfigHeaders headers = new ListCollegeContactDeptTypeConfigHeaders();
             return await ListCollegeContactDeptTypeConfigWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取高校通讯录场景架构列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListCollegeContactSceneStrusRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListCollegeContactSceneStrusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListCollegeContactSceneStrusResponse
+        /// </returns>
+        public ListCollegeContactSceneStrusResponse ListCollegeContactSceneStrusWithOptions(ListCollegeContactSceneStrusRequest request, ListCollegeContactSceneStrusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
+            {
+                query["language"] = request.Language;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListCollegeContactSceneStrus",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/depts/structures/scenes",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListCollegeContactSceneStrusResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取高校通讯录场景架构列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListCollegeContactSceneStrusRequest
+        /// </param>
+        /// <param name="headers">
+        /// ListCollegeContactSceneStrusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListCollegeContactSceneStrusResponse
+        /// </returns>
+        public async Task<ListCollegeContactSceneStrusResponse> ListCollegeContactSceneStrusWithOptionsAsync(ListCollegeContactSceneStrusRequest request, ListCollegeContactSceneStrusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Language))
+            {
+                query["language"] = request.Language;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ListCollegeContactSceneStrus",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/depts/structures/scenes",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ListCollegeContactSceneStrusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取高校通讯录场景架构列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListCollegeContactSceneStrusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListCollegeContactSceneStrusResponse
+        /// </returns>
+        public ListCollegeContactSceneStrusResponse ListCollegeContactSceneStrus(ListCollegeContactSceneStrusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListCollegeContactSceneStrusHeaders headers = new ListCollegeContactSceneStrusHeaders();
+            return ListCollegeContactSceneStrusWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取高校通讯录场景架构列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ListCollegeContactSceneStrusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ListCollegeContactSceneStrusResponse
+        /// </returns>
+        public async Task<ListCollegeContactSceneStrusResponse> ListCollegeContactSceneStrusAsync(ListCollegeContactSceneStrusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ListCollegeContactSceneStrusHeaders headers = new ListCollegeContactSceneStrusHeaders();
+            return await ListCollegeContactSceneStrusWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -29566,6 +30346,194 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateCollegeContactExclusiveHeaders headers = new UpdateCollegeContactExclusiveHeaders();
             return await UpdateCollegeContactExclusiveWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新高校通讯录场景架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateCollegeContactSceneStruRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateCollegeContactSceneStruHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateCollegeContactSceneStruResponse
+        /// </returns>
+        public UpdateCollegeContactSceneStruResponse UpdateCollegeContactSceneStruWithOptions(UpdateCollegeContactSceneStruRequest request, UpdateCollegeContactSceneStruHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Order))
+            {
+                body["order"] = request.Order;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceIdentifier))
+            {
+                body["sourceIdentifier"] = request.SourceIdentifier;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruBrief))
+            {
+                body["struBrief"] = request.StruBrief;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruId))
+            {
+                body["struId"] = request.StruId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruName))
+            {
+                body["struName"] = request.StruName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruType))
+            {
+                body["struType"] = request.StruType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCollegeContactSceneStru",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/depts/structures/scenes",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCollegeContactSceneStruResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新高校通讯录场景架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateCollegeContactSceneStruRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateCollegeContactSceneStruHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateCollegeContactSceneStruResponse
+        /// </returns>
+        public async Task<UpdateCollegeContactSceneStruResponse> UpdateCollegeContactSceneStruWithOptionsAsync(UpdateCollegeContactSceneStruRequest request, UpdateCollegeContactSceneStruHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Order))
+            {
+                body["order"] = request.Order;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SourceIdentifier))
+            {
+                body["sourceIdentifier"] = request.SourceIdentifier;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruBrief))
+            {
+                body["struBrief"] = request.StruBrief;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruId))
+            {
+                body["struId"] = request.StruId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruName))
+            {
+                body["struName"] = request.StruName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StruType))
+            {
+                body["struType"] = request.StruType;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateCollegeContactSceneStru",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/collegeContact/depts/structures/scenes",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateCollegeContactSceneStruResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新高校通讯录场景架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateCollegeContactSceneStruRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateCollegeContactSceneStruResponse
+        /// </returns>
+        public UpdateCollegeContactSceneStruResponse UpdateCollegeContactSceneStru(UpdateCollegeContactSceneStruRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCollegeContactSceneStruHeaders headers = new UpdateCollegeContactSceneStruHeaders();
+            return UpdateCollegeContactSceneStruWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新高校通讯录场景架构</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateCollegeContactSceneStruRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateCollegeContactSceneStruResponse
+        /// </returns>
+        public async Task<UpdateCollegeContactSceneStruResponse> UpdateCollegeContactSceneStruAsync(UpdateCollegeContactSceneStruRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateCollegeContactSceneStruHeaders headers = new UpdateCollegeContactSceneStruHeaders();
+            return await UpdateCollegeContactSceneStruWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

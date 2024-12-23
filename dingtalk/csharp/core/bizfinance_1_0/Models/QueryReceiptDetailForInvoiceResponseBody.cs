@@ -333,7 +333,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 
             [NameInMap("showSellerAccountInRemark")]
             [Validation(Required=false)]
-            public string ShowSellerAccountInRemark { get; set; }
+            public bool? ShowSellerAccountInRemark { get; set; }
 
             [NameInMap("showSellerContactInRemark")]
             [Validation(Required=false)]
