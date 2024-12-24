@@ -1396,6 +1396,132 @@ class Client(OpenApiClient):
         headers = dingtalkteam_sphere__1__0_models.GetProjectRolesV3Headers()
         return await self.get_project_roles_v3with_options_async(user_id, project_id, request, headers, runtime)
 
+    def get_stared_projects_with_options(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.GetStaredProjectsRequest,
+        headers: dingtalkteam_sphere__1__0_models.GetStaredProjectsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.GetStaredProjectsResponse:
+        """
+        @summary 获取用户星标协作空间
+        
+        @param request: GetStaredProjectsRequest
+        @param headers: GetStaredProjectsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetStaredProjectsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.sort_by):
+            query['sortBy'] = request.sort_by
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetStaredProjects',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/staredProjects',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.GetStaredProjectsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_stared_projects_with_options_async(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.GetStaredProjectsRequest,
+        headers: dingtalkteam_sphere__1__0_models.GetStaredProjectsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.GetStaredProjectsResponse:
+        """
+        @summary 获取用户星标协作空间
+        
+        @param request: GetStaredProjectsRequest
+        @param headers: GetStaredProjectsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetStaredProjectsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.sort_by):
+            query['sortBy'] = request.sort_by
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetStaredProjects',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/staredProjects',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.GetStaredProjectsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_stared_projects(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.GetStaredProjectsRequest,
+    ) -> dingtalkteam_sphere__1__0_models.GetStaredProjectsResponse:
+        """
+        @summary 获取用户星标协作空间
+        
+        @param request: GetStaredProjectsRequest
+        @return: GetStaredProjectsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.GetStaredProjectsHeaders()
+        return self.get_stared_projects_with_options(user_id, request, headers, runtime)
+
+    async def get_stared_projects_async(
+        self,
+        user_id: str,
+        request: dingtalkteam_sphere__1__0_models.GetStaredProjectsRequest,
+    ) -> dingtalkteam_sphere__1__0_models.GetStaredProjectsResponse:
+        """
+        @summary 获取用户星标协作空间
+        
+        @param request: GetStaredProjectsRequest
+        @return: GetStaredProjectsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.GetStaredProjectsHeaders()
+        return await self.get_stared_projects_with_options_async(user_id, request, headers, runtime)
+
     def get_tb_user_id_by_ding_user_id_with_options(
         self,
         request: dingtalkteam_sphere__1__0_models.GetTbUserIdByDingUserIdRequest,
