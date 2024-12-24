@@ -1782,6 +1782,170 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>获取用户星标协作空间</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetStaredProjectsRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetStaredProjectsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetStaredProjectsResponse
+        /// </returns>
+        public GetStaredProjectsResponse GetStaredProjectsWithOptions(string userId, GetStaredProjectsRequest request, GetStaredProjectsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SortBy))
+            {
+                query["sortBy"] = request.SortBy;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetStaredProjects",
+                Version = "teamSphere_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/teamSphere/users/" + userId + "/staredProjects",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetStaredProjectsResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户星标协作空间</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetStaredProjectsRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetStaredProjectsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetStaredProjectsResponse
+        /// </returns>
+        public async Task<GetStaredProjectsResponse> GetStaredProjectsWithOptionsAsync(string userId, GetStaredProjectsRequest request, GetStaredProjectsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SortBy))
+            {
+                query["sortBy"] = request.SortBy;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetStaredProjects",
+                Version = "teamSphere_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/teamSphere/users/" + userId + "/staredProjects",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetStaredProjectsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户星标协作空间</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetStaredProjectsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetStaredProjectsResponse
+        /// </returns>
+        public GetStaredProjectsResponse GetStaredProjects(string userId, GetStaredProjectsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetStaredProjectsHeaders headers = new GetStaredProjectsHeaders();
+            return GetStaredProjectsWithOptions(userId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取用户星标协作空间</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetStaredProjectsRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetStaredProjectsResponse
+        /// </returns>
+        public async Task<GetStaredProjectsResponse> GetStaredProjectsAsync(string userId, GetStaredProjectsRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetStaredProjectsHeaders headers = new GetStaredProjectsHeaders();
+            return await GetStaredProjectsWithOptionsAsync(userId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>钉钉 userId 查询 24位长 userId。</para>
         /// </summary>
         /// 
