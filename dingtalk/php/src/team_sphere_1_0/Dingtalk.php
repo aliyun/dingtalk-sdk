@@ -36,6 +36,9 @@ use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetProjectMembersV3Respons
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetProjectRolesV3Headers;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetProjectRolesV3Request;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetProjectRolesV3Response;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetStaredProjectsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetStaredProjectsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetStaredProjectsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetTbUserIdByDingUserIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetTbUserIdByDingUserIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\GetTbUserIdByDingUserIdResponse;
@@ -797,6 +800,71 @@ class Dingtalk extends OpenApiClient
         $headers = new GetProjectRolesV3Headers([]);
 
         return $this->getProjectRolesV3WithOptions($userId, $projectId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取用户星标协作空间
+     *  *
+     * @param string                   $userId
+     * @param GetStaredProjectsRequest $request GetStaredProjectsRequest
+     * @param GetStaredProjectsHeaders $headers GetStaredProjectsHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetStaredProjectsResponse GetStaredProjectsResponse
+     */
+    public function getStaredProjectsWithOptions($userId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->sortBy)) {
+            $query['sortBy'] = $request->sortBy;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetStaredProjects',
+            'version'     => 'teamSphere_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/staredProjects',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetStaredProjectsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取用户星标协作空间
+     *  *
+     * @param string                   $userId
+     * @param GetStaredProjectsRequest $request GetStaredProjectsRequest
+     *
+     * @return GetStaredProjectsResponse GetStaredProjectsResponse
+     */
+    public function getStaredProjects($userId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetStaredProjectsHeaders([]);
+
+        return $this->getStaredProjectsWithOptions($userId, $request, $headers, $runtime);
     }
 
     /**
