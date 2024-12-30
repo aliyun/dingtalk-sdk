@@ -795,8 +795,10 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         invoice_status: str = None,
         invoice_type: str = None,
         machine_code: str = None,
+        ofd_url: str = None,
         oil_flag: str = None,
         payee: str = None,
+        pdf_url: str = None,
         process_inst_code: str = None,
         process_inst_type: str = None,
         purchaser_address: str = None,
@@ -825,6 +827,7 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         verify_status: str = None,
         voucher_code: str = None,
         voucher_status: str = None,
+        xml_url: str = None,
     ):
         self.account_period = account_period
         self.amount = amount
@@ -844,8 +847,10 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         self.invoice_status = invoice_status
         self.invoice_type = invoice_type
         self.machine_code = machine_code
+        self.ofd_url = ofd_url
         self.oil_flag = oil_flag
         self.payee = payee
+        self.pdf_url = pdf_url
         self.process_inst_code = process_inst_code
         self.process_inst_type = process_inst_type
         self.purchaser_address = purchaser_address
@@ -874,6 +879,7 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         self.verify_status = verify_status
         self.voucher_code = voucher_code
         self.voucher_status = voucher_status
+        self.xml_url = xml_url
 
     def validate(self):
         if self.general_invoice_detail_volist:
@@ -937,10 +943,14 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             result['invoiceType'] = self.invoice_type
         if self.machine_code is not None:
             result['machineCode'] = self.machine_code
+        if self.ofd_url is not None:
+            result['ofdUrl'] = self.ofd_url
         if self.oil_flag is not None:
             result['oilFlag'] = self.oil_flag
         if self.payee is not None:
             result['payee'] = self.payee
+        if self.pdf_url is not None:
+            result['pdfUrl'] = self.pdf_url
         if self.process_inst_code is not None:
             result['processInstCode'] = self.process_inst_code
         if self.process_inst_type is not None:
@@ -1003,6 +1013,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             result['voucherCode'] = self.voucher_code
         if self.voucher_status is not None:
             result['voucherStatus'] = self.voucher_status
+        if self.xml_url is not None:
+            result['xmlUrl'] = self.xml_url
         return result
 
     def from_map(self, m: dict = None):
@@ -1046,10 +1058,14 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             self.invoice_type = m.get('invoiceType')
         if m.get('machineCode') is not None:
             self.machine_code = m.get('machineCode')
+        if m.get('ofdUrl') is not None:
+            self.ofd_url = m.get('ofdUrl')
         if m.get('oilFlag') is not None:
             self.oil_flag = m.get('oilFlag')
         if m.get('payee') is not None:
             self.payee = m.get('payee')
+        if m.get('pdfUrl') is not None:
+            self.pdf_url = m.get('pdfUrl')
         if m.get('processInstCode') is not None:
             self.process_inst_code = m.get('processInstCode')
         if m.get('processInstType') is not None:
@@ -1115,6 +1131,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             self.voucher_code = m.get('voucherCode')
         if m.get('voucherStatus') is not None:
             self.voucher_status = m.get('voucherStatus')
+        if m.get('xmlUrl') is not None:
+            self.xml_url = m.get('xmlUrl')
         return self
 
 

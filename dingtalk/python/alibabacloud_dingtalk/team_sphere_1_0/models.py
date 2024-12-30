@@ -3090,11 +3090,9 @@ class GetStaredProjectsResponseBody(TeaModel):
     def __init__(
         self,
         next_token: str = None,
-        request_id: str = None,
         result: List[str] = None,
     ):
         self.next_token = next_token
-        self.request_id = request_id
         self.result = result
 
     def validate(self):
@@ -3108,8 +3106,6 @@ class GetStaredProjectsResponseBody(TeaModel):
         result = dict()
         if self.next_token is not None:
             result['nextToken'] = self.next_token
-        if self.request_id is not None:
-            result['requestId'] = self.request_id
         if self.result is not None:
             result['result'] = self.result
         return result
@@ -3118,8 +3114,6 @@ class GetStaredProjectsResponseBody(TeaModel):
         m = m or dict()
         if m.get('nextToken') is not None:
             self.next_token = m.get('nextToken')
-        if m.get('requestId') is not None:
-            self.request_id = m.get('requestId')
         if m.get('result') is not None:
             self.result = m.get('result')
         return self

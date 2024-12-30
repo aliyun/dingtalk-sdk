@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.core import TeaCore
+from typing import Dict
 
 from alibabacloud_tea_openapi.client import Client as OpenApiClient
 from alibabacloud_tea_openapi import models as open_api_models
@@ -22,6 +23,7 @@ class Client(OpenApiClient):
         super().__init__(config)
         gateway_client = GatewayClientClient()
         self._spi = gateway_client
+        self._signature_algorithm = 'v2'
         self._endpoint_rule = ''
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
@@ -1045,6 +1047,214 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkai_paa_s__1__0_models.QueryMemoryLearningTaskHeaders()
         return await self.query_memory_learning_task_with_options_async(request, headers, runtime)
+
+    def smart_formula_result_service_with_options(
+        self,
+        request: dingtalkai_paa_s__1__0_models.SmartFormulaResultServiceRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_paa_s__1__0_models.SmartFormulaResultServiceResponse:
+        """
+        @summary 中信金属智能配料任务结果
+        
+        @param request: SmartFormulaResultServiceRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SmartFormulaResultServiceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SmartFormulaResultService',
+            version='aiPaaS_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiPaaS/nl2x/smartFormulas/results/query',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_paa_s__1__0_models.SmartFormulaResultServiceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def smart_formula_result_service_with_options_async(
+        self,
+        request: dingtalkai_paa_s__1__0_models.SmartFormulaResultServiceRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_paa_s__1__0_models.SmartFormulaResultServiceResponse:
+        """
+        @summary 中信金属智能配料任务结果
+        
+        @param request: SmartFormulaResultServiceRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SmartFormulaResultServiceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.task_id):
+            body['taskId'] = request.task_id
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SmartFormulaResultService',
+            version='aiPaaS_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiPaaS/nl2x/smartFormulas/results/query',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_paa_s__1__0_models.SmartFormulaResultServiceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def smart_formula_result_service(
+        self,
+        request: dingtalkai_paa_s__1__0_models.SmartFormulaResultServiceRequest,
+    ) -> dingtalkai_paa_s__1__0_models.SmartFormulaResultServiceResponse:
+        """
+        @summary 中信金属智能配料任务结果
+        
+        @param request: SmartFormulaResultServiceRequest
+        @return: SmartFormulaResultServiceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.smart_formula_result_service_with_options(request, headers, runtime)
+
+    async def smart_formula_result_service_async(
+        self,
+        request: dingtalkai_paa_s__1__0_models.SmartFormulaResultServiceRequest,
+    ) -> dingtalkai_paa_s__1__0_models.SmartFormulaResultServiceResponse:
+        """
+        @summary 中信金属智能配料任务结果
+        
+        @param request: SmartFormulaResultServiceRequest
+        @return: SmartFormulaResultServiceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.smart_formula_result_service_with_options_async(request, headers, runtime)
+
+    def smart_formula_trigger_service_with_options(
+        self,
+        request: dingtalkai_paa_s__1__0_models.SmartFormulaTriggerServiceRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_paa_s__1__0_models.SmartFormulaTriggerServiceResponse:
+        """
+        @summary 中信金属智能配料任务触发
+        
+        @param request: SmartFormulaTriggerServiceRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SmartFormulaTriggerServiceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.request):
+            body['request'] = request.request
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SmartFormulaTriggerService',
+            version='aiPaaS_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiPaaS/nl2x/smartFormulas/trigger',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_paa_s__1__0_models.SmartFormulaTriggerServiceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def smart_formula_trigger_service_with_options_async(
+        self,
+        request: dingtalkai_paa_s__1__0_models.SmartFormulaTriggerServiceRequest,
+        headers: Dict[str, str],
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_paa_s__1__0_models.SmartFormulaTriggerServiceResponse:
+        """
+        @summary 中信金属智能配料任务触发
+        
+        @param request: SmartFormulaTriggerServiceRequest
+        @param headers: map
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SmartFormulaTriggerServiceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.request):
+            body['request'] = request.request
+        req = open_api_models.OpenApiRequest(
+            headers=headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SmartFormulaTriggerService',
+            version='aiPaaS_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiPaaS/nl2x/smartFormulas/trigger',
+            method='POST',
+            auth_type='Anonymous',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_paa_s__1__0_models.SmartFormulaTriggerServiceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def smart_formula_trigger_service(
+        self,
+        request: dingtalkai_paa_s__1__0_models.SmartFormulaTriggerServiceRequest,
+    ) -> dingtalkai_paa_s__1__0_models.SmartFormulaTriggerServiceResponse:
+        """
+        @summary 中信金属智能配料任务触发
+        
+        @param request: SmartFormulaTriggerServiceRequest
+        @return: SmartFormulaTriggerServiceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return self.smart_formula_trigger_service_with_options(request, headers, runtime)
+
+    async def smart_formula_trigger_service_async(
+        self,
+        request: dingtalkai_paa_s__1__0_models.SmartFormulaTriggerServiceRequest,
+    ) -> dingtalkai_paa_s__1__0_models.SmartFormulaTriggerServiceResponse:
+        """
+        @summary 中信金属智能配料任务触发
+        
+        @param request: SmartFormulaTriggerServiceRequest
+        @return: SmartFormulaTriggerServiceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = {}
+        return await self.smart_formula_trigger_service_with_options_async(request, headers, runtime)
 
     def smart_quote_batch_query_result_service_with_options(
         self,

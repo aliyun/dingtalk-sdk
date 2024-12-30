@@ -270,6 +270,128 @@ class Client(OpenApiClient):
         headers = dingtalkworkflow__1__0_models.AddProcessInstanceCommentHeaders()
         return await self.add_process_instance_comment_with_options_async(request, headers, runtime)
 
+    def archive_process_instance_with_options(
+        self,
+        request: dingtalkworkflow__1__0_models.ArchiveProcessInstanceRequest,
+        headers: dingtalkworkflow__1__0_models.ArchiveProcessInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.ArchiveProcessInstanceResponse:
+        """
+        @summary 归档审批实例(OA高级版专享)
+        
+        @param request: ArchiveProcessInstanceRequest
+        @param headers: ArchiveProcessInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ArchiveProcessInstanceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.is_system):
+            body['isSystem'] = request.is_system
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ArchiveProcessInstance',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processInstances/archive',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.ArchiveProcessInstanceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def archive_process_instance_with_options_async(
+        self,
+        request: dingtalkworkflow__1__0_models.ArchiveProcessInstanceRequest,
+        headers: dingtalkworkflow__1__0_models.ArchiveProcessInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkworkflow__1__0_models.ArchiveProcessInstanceResponse:
+        """
+        @summary 归档审批实例(OA高级版专享)
+        
+        @param request: ArchiveProcessInstanceRequest
+        @param headers: ArchiveProcessInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ArchiveProcessInstanceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.is_system):
+            body['isSystem'] = request.is_system
+        if not UtilClient.is_unset(request.op_user_id):
+            body['opUserId'] = request.op_user_id
+        if not UtilClient.is_unset(request.process_instance_id):
+            body['processInstanceId'] = request.process_instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ArchiveProcessInstance',
+            version='workflow_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/workflow/premium/processInstances/archive',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkworkflow__1__0_models.ArchiveProcessInstanceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def archive_process_instance(
+        self,
+        request: dingtalkworkflow__1__0_models.ArchiveProcessInstanceRequest,
+    ) -> dingtalkworkflow__1__0_models.ArchiveProcessInstanceResponse:
+        """
+        @summary 归档审批实例(OA高级版专享)
+        
+        @param request: ArchiveProcessInstanceRequest
+        @return: ArchiveProcessInstanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.ArchiveProcessInstanceHeaders()
+        return self.archive_process_instance_with_options(request, headers, runtime)
+
+    async def archive_process_instance_async(
+        self,
+        request: dingtalkworkflow__1__0_models.ArchiveProcessInstanceRequest,
+    ) -> dingtalkworkflow__1__0_models.ArchiveProcessInstanceResponse:
+        """
+        @summary 归档审批实例(OA高级版专享)
+        
+        @param request: ArchiveProcessInstanceRequest
+        @return: ArchiveProcessInstanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkworkflow__1__0_models.ArchiveProcessInstanceHeaders()
+        return await self.archive_process_instance_with_options_async(request, headers, runtime)
+
     def batch_execute_process_instances_with_options(
         self,
         request: dingtalkworkflow__1__0_models.BatchExecuteProcessInstancesRequest,

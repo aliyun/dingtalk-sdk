@@ -6438,3 +6438,340 @@ class UpdateInvoiceDataTransferDoneResponse(TeaModel):
         return self
 
 
+class UpdateInvoiceUrlHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateInvoiceUrlRequestBodyUrlList(TeaModel):
+    def __init__(
+        self,
+        invoice_code: str = None,
+        invoice_no: str = None,
+        ofd_url: str = None,
+        pdf_url: str = None,
+        xml_url: str = None,
+    ):
+        self.invoice_code = invoice_code
+        self.invoice_no = invoice_no
+        self.ofd_url = ofd_url
+        self.pdf_url = pdf_url
+        self.xml_url = xml_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        if self.ofd_url is not None:
+            result['ofdUrl'] = self.ofd_url
+        if self.pdf_url is not None:
+            result['pdfUrl'] = self.pdf_url
+        if self.xml_url is not None:
+            result['xmlUrl'] = self.xml_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        if m.get('ofdUrl') is not None:
+            self.ofd_url = m.get('ofdUrl')
+        if m.get('pdfUrl') is not None:
+            self.pdf_url = m.get('pdfUrl')
+        if m.get('xmlUrl') is not None:
+            self.xml_url = m.get('xmlUrl')
+        return self
+
+
+class UpdateInvoiceUrlRequestBody(TeaModel):
+    def __init__(
+        self,
+        company_code: str = None,
+        operator: str = None,
+        url_list: List[UpdateInvoiceUrlRequestBodyUrlList] = None,
+    ):
+        self.company_code = company_code
+        self.operator = operator
+        self.url_list = url_list
+
+    def validate(self):
+        if self.url_list:
+            for k in self.url_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
+        if self.operator is not None:
+            result['operator'] = self.operator
+        result['urlList'] = []
+        if self.url_list is not None:
+            for k in self.url_list:
+                result['urlList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        self.url_list = []
+        if m.get('urlList') is not None:
+            for k in m.get('urlList'):
+                temp_model = UpdateInvoiceUrlRequestBodyUrlList()
+                self.url_list.append(temp_model.from_map(k))
+        return self
+
+
+class UpdateInvoiceUrlRequest(TeaModel):
+    def __init__(
+        self,
+        body: UpdateInvoiceUrlRequestBody = None,
+    ):
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            temp_model = UpdateInvoiceUrlRequestBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateInvoiceUrlShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        body_shrink: str = None,
+    ):
+        self.body_shrink = body_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body_shrink is not None:
+            result['body'] = self.body_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            self.body_shrink = m.get('body')
+        return self
+
+
+class UpdateInvoiceUrlResponseBodyResultFailInvoiceList(TeaModel):
+    def __init__(
+        self,
+        error_msg: str = None,
+        invoice_code: str = None,
+        invoice_no: str = None,
+    ):
+        self.error_msg = error_msg
+        self.invoice_code = invoice_code
+        self.invoice_no = invoice_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        return self
+
+
+class UpdateInvoiceUrlResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        fail_invoice_list: List[UpdateInvoiceUrlResponseBodyResultFailInvoiceList] = None,
+        is_all_success: str = None,
+    ):
+        self.fail_invoice_list = fail_invoice_list
+        self.is_all_success = is_all_success
+
+    def validate(self):
+        if self.fail_invoice_list:
+            for k in self.fail_invoice_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['failInvoiceList'] = []
+        if self.fail_invoice_list is not None:
+            for k in self.fail_invoice_list:
+                result['failInvoiceList'].append(k.to_map() if k else None)
+        if self.is_all_success is not None:
+            result['isAllSuccess'] = self.is_all_success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.fail_invoice_list = []
+        if m.get('failInvoiceList') is not None:
+            for k in m.get('failInvoiceList'):
+                temp_model = UpdateInvoiceUrlResponseBodyResultFailInvoiceList()
+                self.fail_invoice_list.append(temp_model.from_map(k))
+        if m.get('isAllSuccess') is not None:
+            self.is_all_success = m.get('isAllSuccess')
+        return self
+
+
+class UpdateInvoiceUrlResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: UpdateInvoiceUrlResponseBodyResult = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = UpdateInvoiceUrlResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        return self
+
+
+class UpdateInvoiceUrlResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateInvoiceUrlResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateInvoiceUrlResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+

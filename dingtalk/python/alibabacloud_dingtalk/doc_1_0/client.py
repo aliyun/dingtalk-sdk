@@ -4484,6 +4484,124 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__1__0_models.GetDeveloperMetadataHeaders()
         return await self.get_developer_metadata_with_options_async(workbook_id, developer_metadata_id, request, headers, runtime)
 
+    def get_import_document_mark_with_options(
+        self,
+        doc_id: str,
+        request: dingtalkdoc__1__0_models.GetImportDocumentMarkRequest,
+        headers: dingtalkdoc__1__0_models.GetImportDocumentMarkHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetImportDocumentMarkResponse:
+        """
+        @summary 文档标签信息查询
+        
+        @param request: GetImportDocumentMarkRequest
+        @param headers: GetImportDocumentMarkHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetImportDocumentMarkResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetImportDocumentMark',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/docs/{doc_id}/marks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetImportDocumentMarkResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_import_document_mark_with_options_async(
+        self,
+        doc_id: str,
+        request: dingtalkdoc__1__0_models.GetImportDocumentMarkRequest,
+        headers: dingtalkdoc__1__0_models.GetImportDocumentMarkHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.GetImportDocumentMarkResponse:
+        """
+        @summary 文档标签信息查询
+        
+        @param request: GetImportDocumentMarkRequest
+        @param headers: GetImportDocumentMarkHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetImportDocumentMarkResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetImportDocumentMark',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/docs/{doc_id}/marks',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.GetImportDocumentMarkResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_import_document_mark(
+        self,
+        doc_id: str,
+        request: dingtalkdoc__1__0_models.GetImportDocumentMarkRequest,
+    ) -> dingtalkdoc__1__0_models.GetImportDocumentMarkResponse:
+        """
+        @summary 文档标签信息查询
+        
+        @param request: GetImportDocumentMarkRequest
+        @return: GetImportDocumentMarkResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetImportDocumentMarkHeaders()
+        return self.get_import_document_mark_with_options(doc_id, request, headers, runtime)
+
+    async def get_import_document_mark_async(
+        self,
+        doc_id: str,
+        request: dingtalkdoc__1__0_models.GetImportDocumentMarkRequest,
+    ) -> dingtalkdoc__1__0_models.GetImportDocumentMarkResponse:
+        """
+        @summary 文档标签信息查询
+        
+        @param request: GetImportDocumentMarkRequest
+        @return: GetImportDocumentMarkResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.GetImportDocumentMarkHeaders()
+        return await self.get_import_document_mark_with_options_async(doc_id, request, headers, runtime)
+
     def get_range_with_options(
         self,
         workbook_id: str,

@@ -66,6 +66,8 @@ class Client(OpenApiClient):
             body['sourceTitle'] = request.source_title
         if not UtilClient.is_unset(request.subject):
             body['subject'] = request.subject
+        if not UtilClient.is_unset(request.toolbar_template_key):
+            body['toolbarTemplateKey'] = request.toolbar_template_key
         if not UtilClient.is_unset(request.type):
             body['type'] = request.type
         real_headers = {}
@@ -133,6 +135,8 @@ class Client(OpenApiClient):
             body['sourceTitle'] = request.source_title
         if not UtilClient.is_unset(request.subject):
             body['subject'] = request.subject
+        if not UtilClient.is_unset(request.toolbar_template_key):
+            body['toolbarTemplateKey'] = request.toolbar_template_key
         if not UtilClient.is_unset(request.type):
             body['type'] = request.type
         real_headers = {}
@@ -324,6 +328,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.done):
             body['done'] = request.done
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
         if not UtilClient.is_unset(request.page_number):
             body['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
@@ -373,6 +379,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.done):
             body['done'] = request.done
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
         if not UtilClient.is_unset(request.page_number):
             body['pageNumber'] = request.page_number
         if not UtilClient.is_unset(request.page_size):
@@ -462,6 +470,8 @@ class Client(OpenApiClient):
             body['subject'] = request.subject
         if not UtilClient.is_unset(request.task_id):
             body['taskId'] = request.task_id
+        if not UtilClient.is_unset(request.toolbar_template_key):
+            body['toolbarTemplateKey'] = request.toolbar_template_key
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -517,6 +527,8 @@ class Client(OpenApiClient):
             body['subject'] = request.subject
         if not UtilClient.is_unset(request.task_id):
             body['taskId'] = request.task_id
+        if not UtilClient.is_unset(request.toolbar_template_key):
+            body['toolbarTemplateKey'] = request.toolbar_template_key
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -854,6 +866,136 @@ class Client(OpenApiClient):
         headers = dingtalktodo_e_e__1__0_models.CreateEnterpriseTodoTaskHeaders()
         return await self.create_enterprise_todo_task_with_options_async(request, headers, runtime)
 
+    def create_standard_template_with_options(
+        self,
+        request: dingtalktodo_e_e__1__0_models.CreateStandardTemplateRequest,
+        headers: dingtalktodo_e_e__1__0_models.CreateStandardTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo_e_e__1__0_models.CreateStandardTemplateResponse:
+        """
+        @summary 创建专属待办模板实例
+        
+        @param request: CreateStandardTemplateRequest
+        @param headers: CreateStandardTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateStandardTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.actions):
+            body['actions'] = request.actions
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.service):
+            body['service'] = request.service
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateStandardTemplate',
+            version='todoEE_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todoEE/standards/templates',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo_e_e__1__0_models.CreateStandardTemplateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_standard_template_with_options_async(
+        self,
+        request: dingtalktodo_e_e__1__0_models.CreateStandardTemplateRequest,
+        headers: dingtalktodo_e_e__1__0_models.CreateStandardTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo_e_e__1__0_models.CreateStandardTemplateResponse:
+        """
+        @summary 创建专属待办模板实例
+        
+        @param request: CreateStandardTemplateRequest
+        @param headers: CreateStandardTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateStandardTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.actions):
+            body['actions'] = request.actions
+        if not UtilClient.is_unset(request.description):
+            body['description'] = request.description
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.service):
+            body['service'] = request.service
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateStandardTemplate',
+            version='todoEE_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todoEE/standards/templates',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo_e_e__1__0_models.CreateStandardTemplateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_standard_template(
+        self,
+        request: dingtalktodo_e_e__1__0_models.CreateStandardTemplateRequest,
+    ) -> dingtalktodo_e_e__1__0_models.CreateStandardTemplateResponse:
+        """
+        @summary 创建专属待办模板实例
+        
+        @param request: CreateStandardTemplateRequest
+        @return: CreateStandardTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo_e_e__1__0_models.CreateStandardTemplateHeaders()
+        return self.create_standard_template_with_options(request, headers, runtime)
+
+    async def create_standard_template_async(
+        self,
+        request: dingtalktodo_e_e__1__0_models.CreateStandardTemplateRequest,
+    ) -> dingtalktodo_e_e__1__0_models.CreateStandardTemplateResponse:
+        """
+        @summary 创建专属待办模板实例
+        
+        @param request: CreateStandardTemplateRequest
+        @return: CreateStandardTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo_e_e__1__0_models.CreateStandardTemplateHeaders()
+        return await self.create_standard_template_with_options_async(request, headers, runtime)
+
     def delete_category_source_config_with_options(
         self,
         request: dingtalktodo_e_e__1__0_models.DeleteCategorySourceConfigRequest,
@@ -1097,9 +1239,9 @@ class Client(OpenApiClient):
         @return: GetCategorySourceConfigListResponse
         """
         UtilClient.validate_model(request)
-        body = {}
+        query = {}
         if not UtilClient.is_unset(request.next_token):
-            body['nextToken'] = request.next_token
+            query['nextToken'] = request.next_token
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1107,7 +1249,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
+            query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
             action='GetCategorySourceConfigList',
@@ -1140,9 +1282,9 @@ class Client(OpenApiClient):
         @return: GetCategorySourceConfigListResponse
         """
         UtilClient.validate_model(request)
-        body = {}
+        query = {}
         if not UtilClient.is_unset(request.next_token):
-            body['nextToken'] = request.next_token
+            query['nextToken'] = request.next_token
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -1150,7 +1292,7 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            body=OpenApiUtilClient.parse_to_map(body)
+            query=OpenApiUtilClient.query(query)
         )
         params = open_api_models.Params(
             action='GetCategorySourceConfigList',
@@ -1195,6 +1337,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo_e_e__1__0_models.GetCategorySourceConfigListHeaders()
         return await self.get_category_source_config_list_with_options_async(request, headers, runtime)
+
+    def get_template_list_with_options(
+        self,
+        request: dingtalktodo_e_e__1__0_models.GetTemplateListRequest,
+        headers: dingtalktodo_e_e__1__0_models.GetTemplateListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo_e_e__1__0_models.GetTemplateListResponse:
+        """
+        @summary 查询创建的Template列表
+        
+        @param request: GetTemplateListRequest
+        @param headers: GetTemplateListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTemplateListResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetTemplateList',
+            version='todoEE_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todoEE/templates/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo_e_e__1__0_models.GetTemplateListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_template_list_with_options_async(
+        self,
+        request: dingtalktodo_e_e__1__0_models.GetTemplateListRequest,
+        headers: dingtalktodo_e_e__1__0_models.GetTemplateListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo_e_e__1__0_models.GetTemplateListResponse:
+        """
+        @summary 查询创建的Template列表
+        
+        @param request: GetTemplateListRequest
+        @param headers: GetTemplateListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetTemplateListResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetTemplateList',
+            version='todoEE_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todoEE/templates/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo_e_e__1__0_models.GetTemplateListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_template_list(
+        self,
+        request: dingtalktodo_e_e__1__0_models.GetTemplateListRequest,
+    ) -> dingtalktodo_e_e__1__0_models.GetTemplateListResponse:
+        """
+        @summary 查询创建的Template列表
+        
+        @param request: GetTemplateListRequest
+        @return: GetTemplateListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo_e_e__1__0_models.GetTemplateListHeaders()
+        return self.get_template_list_with_options(request, headers, runtime)
+
+    async def get_template_list_async(
+        self,
+        request: dingtalktodo_e_e__1__0_models.GetTemplateListRequest,
+    ) -> dingtalktodo_e_e__1__0_models.GetTemplateListResponse:
+        """
+        @summary 查询创建的Template列表
+        
+        @param request: GetTemplateListRequest
+        @return: GetTemplateListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo_e_e__1__0_models.GetTemplateListHeaders()
+        return await self.get_template_list_with_options_async(request, headers, runtime)
 
     def get_user_task_list_with_options(
         self,
@@ -1565,6 +1825,132 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo_e_e__1__0_models.UpdateCategorySourceConfigHeaders()
         return await self.update_category_source_config_with_options_async(request, headers, runtime)
+
+    def update_standard_template_with_options(
+        self,
+        request: dingtalktodo_e_e__1__0_models.UpdateStandardTemplateRequest,
+        headers: dingtalktodo_e_e__1__0_models.UpdateStandardTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo_e_e__1__0_models.UpdateStandardTemplateResponse:
+        """
+        @summary 更新标准模板
+        
+        @param request: UpdateStandardTemplateRequest
+        @param headers: UpdateStandardTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateStandardTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.actions):
+            body['actions'] = request.actions
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.service):
+            body['service'] = request.service
+        if not UtilClient.is_unset(request.template_key):
+            body['templateKey'] = request.template_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateStandardTemplate',
+            version='todoEE_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todoEE/standards/templates/infos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo_e_e__1__0_models.UpdateStandardTemplateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_standard_template_with_options_async(
+        self,
+        request: dingtalktodo_e_e__1__0_models.UpdateStandardTemplateRequest,
+        headers: dingtalktodo_e_e__1__0_models.UpdateStandardTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo_e_e__1__0_models.UpdateStandardTemplateResponse:
+        """
+        @summary 更新标准模板
+        
+        @param request: UpdateStandardTemplateRequest
+        @param headers: UpdateStandardTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateStandardTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.actions):
+            body['actions'] = request.actions
+        if not UtilClient.is_unset(request.operator_id):
+            body['operatorId'] = request.operator_id
+        if not UtilClient.is_unset(request.service):
+            body['service'] = request.service
+        if not UtilClient.is_unset(request.template_key):
+            body['templateKey'] = request.template_key
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateStandardTemplate',
+            version='todoEE_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todoEE/standards/templates/infos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo_e_e__1__0_models.UpdateStandardTemplateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_standard_template(
+        self,
+        request: dingtalktodo_e_e__1__0_models.UpdateStandardTemplateRequest,
+    ) -> dingtalktodo_e_e__1__0_models.UpdateStandardTemplateResponse:
+        """
+        @summary 更新标准模板
+        
+        @param request: UpdateStandardTemplateRequest
+        @return: UpdateStandardTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo_e_e__1__0_models.UpdateStandardTemplateHeaders()
+        return self.update_standard_template_with_options(request, headers, runtime)
+
+    async def update_standard_template_async(
+        self,
+        request: dingtalktodo_e_e__1__0_models.UpdateStandardTemplateRequest,
+    ) -> dingtalktodo_e_e__1__0_models.UpdateStandardTemplateResponse:
+        """
+        @summary 更新标准模板
+        
+        @param request: UpdateStandardTemplateRequest
+        @return: UpdateStandardTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo_e_e__1__0_models.UpdateStandardTemplateHeaders()
+        return await self.update_standard_template_with_options_async(request, headers, runtime)
 
     def update_task_with_options(
         self,

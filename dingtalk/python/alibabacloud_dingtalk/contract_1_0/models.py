@@ -208,6 +208,998 @@ class ContractBenefitConsumeResponse(TeaModel):
         return self
 
 
+class CreateContractCompareTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateContractCompareTaskRequestComparativeFile(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        file_name: str = None,
+        file_size: int = None,
+        file_type: str = None,
+        space_id: str = None,
+    ):
+        self.file_id = file_id
+        self.file_name = file_name
+        self.file_size = file_size
+        self.file_type = file_type
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class CreateContractCompareTaskRequestStandardFile(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        file_name: str = None,
+        file_size: int = None,
+        file_type: str = None,
+        space_id: str = None,
+    ):
+        self.file_id = file_id
+        self.file_name = file_name
+        self.file_size = file_size
+        self.file_type = file_type
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class CreateContractCompareTaskRequest(TeaModel):
+    def __init__(
+        self,
+        comparative_file: CreateContractCompareTaskRequestComparativeFile = None,
+        comparative_file_download_url: str = None,
+        comparative_file_name: str = None,
+        file_source: str = None,
+        request_id: str = None,
+        standard_file: CreateContractCompareTaskRequestStandardFile = None,
+        standard_file_download_url: str = None,
+        standard_file_name: str = None,
+    ):
+        self.comparative_file = comparative_file
+        self.comparative_file_download_url = comparative_file_download_url
+        # This parameter is required.
+        self.comparative_file_name = comparative_file_name
+        # This parameter is required.
+        self.file_source = file_source
+        # This parameter is required.
+        self.request_id = request_id
+        self.standard_file = standard_file
+        self.standard_file_download_url = standard_file_download_url
+        # This parameter is required.
+        self.standard_file_name = standard_file_name
+
+    def validate(self):
+        if self.comparative_file:
+            self.comparative_file.validate()
+        if self.standard_file:
+            self.standard_file.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.comparative_file is not None:
+            result['comparativeFile'] = self.comparative_file.to_map()
+        if self.comparative_file_download_url is not None:
+            result['comparativeFileDownloadUrl'] = self.comparative_file_download_url
+        if self.comparative_file_name is not None:
+            result['comparativeFileName'] = self.comparative_file_name
+        if self.file_source is not None:
+            result['fileSource'] = self.file_source
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.standard_file is not None:
+            result['standardFile'] = self.standard_file.to_map()
+        if self.standard_file_download_url is not None:
+            result['standardFileDownloadUrl'] = self.standard_file_download_url
+        if self.standard_file_name is not None:
+            result['standardFileName'] = self.standard_file_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('comparativeFile') is not None:
+            temp_model = CreateContractCompareTaskRequestComparativeFile()
+            self.comparative_file = temp_model.from_map(m['comparativeFile'])
+        if m.get('comparativeFileDownloadUrl') is not None:
+            self.comparative_file_download_url = m.get('comparativeFileDownloadUrl')
+        if m.get('comparativeFileName') is not None:
+            self.comparative_file_name = m.get('comparativeFileName')
+        if m.get('fileSource') is not None:
+            self.file_source = m.get('fileSource')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('standardFile') is not None:
+            temp_model = CreateContractCompareTaskRequestStandardFile()
+            self.standard_file = temp_model.from_map(m['standardFile'])
+        if m.get('standardFileDownloadUrl') is not None:
+            self.standard_file_download_url = m.get('standardFileDownloadUrl')
+        if m.get('standardFileName') is not None:
+            self.standard_file_name = m.get('standardFileName')
+        return self
+
+
+class CreateContractCompareTaskResponseBodyResultData(TeaModel):
+    def __init__(
+        self,
+        compare_task_id: str = None,
+    ):
+        self.compare_task_id = compare_task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.compare_task_id is not None:
+            result['compareTaskId'] = self.compare_task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('compareTaskId') is not None:
+            self.compare_task_id = m.get('compareTaskId')
+        return self
+
+
+class CreateContractCompareTaskResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        data: CreateContractCompareTaskResponseBodyResultData = None,
+        request_id: str = None,
+    ):
+        self.data = data
+        self.request_id = request_id
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = CreateContractCompareTaskResponseBodyResultData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class CreateContractCompareTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CreateContractCompareTaskResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CreateContractCompareTaskResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateContractCompareTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateContractCompareTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateContractCompareTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateContractExtractTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateContractExtractTaskRequestContractFile(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        file_name: str = None,
+        file_size: int = None,
+        file_type: str = None,
+        space_id: str = None,
+    ):
+        self.file_id = file_id
+        self.file_name = file_name
+        self.file_size = file_size
+        self.file_type = file_type
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class CreateContractExtractTaskRequest(TeaModel):
+    def __init__(
+        self,
+        contract_file: CreateContractExtractTaskRequestContractFile = None,
+        contract_file_download_url: str = None,
+        contract_file_name: str = None,
+        extract_keys: List[str] = None,
+        file_source: str = None,
+        request_id: str = None,
+    ):
+        self.contract_file = contract_file
+        self.contract_file_download_url = contract_file_download_url
+        # This parameter is required.
+        self.contract_file_name = contract_file_name
+        # This parameter is required.
+        self.extract_keys = extract_keys
+        # This parameter is required.
+        self.file_source = file_source
+        # This parameter is required.
+        self.request_id = request_id
+
+    def validate(self):
+        if self.contract_file:
+            self.contract_file.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.contract_file is not None:
+            result['contractFile'] = self.contract_file.to_map()
+        if self.contract_file_download_url is not None:
+            result['contractFileDownloadUrl'] = self.contract_file_download_url
+        if self.contract_file_name is not None:
+            result['contractFileName'] = self.contract_file_name
+        if self.extract_keys is not None:
+            result['extractKeys'] = self.extract_keys
+        if self.file_source is not None:
+            result['fileSource'] = self.file_source
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contractFile') is not None:
+            temp_model = CreateContractExtractTaskRequestContractFile()
+            self.contract_file = temp_model.from_map(m['contractFile'])
+        if m.get('contractFileDownloadUrl') is not None:
+            self.contract_file_download_url = m.get('contractFileDownloadUrl')
+        if m.get('contractFileName') is not None:
+            self.contract_file_name = m.get('contractFileName')
+        if m.get('extractKeys') is not None:
+            self.extract_keys = m.get('extractKeys')
+        if m.get('fileSource') is not None:
+            self.file_source = m.get('fileSource')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class CreateContractExtractTaskResponseBodyResultData(TeaModel):
+    def __init__(
+        self,
+        extract_task_id: str = None,
+    ):
+        self.extract_task_id = extract_task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.extract_task_id is not None:
+            result['extractTaskId'] = self.extract_task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('extractTaskId') is not None:
+            self.extract_task_id = m.get('extractTaskId')
+        return self
+
+
+class CreateContractExtractTaskResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        data: CreateContractExtractTaskResponseBodyResultData = None,
+        request_id: str = None,
+    ):
+        self.data = data
+        self.request_id = request_id
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = CreateContractExtractTaskResponseBodyResultData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class CreateContractExtractTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CreateContractExtractTaskResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CreateContractExtractTaskResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateContractExtractTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateContractExtractTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateContractExtractTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class CreateContractReviewTaskHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateContractReviewTaskRequestContractFile(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        file_name: str = None,
+        file_size: int = None,
+        file_type: str = None,
+        space_id: str = None,
+    ):
+        self.file_id = file_id
+        self.file_name = file_name
+        self.file_size = file_size
+        self.file_type = file_type
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class CreateContractReviewTaskRequestReviewCustomRules(TeaModel):
+    def __init__(
+        self,
+        risk_level: str = None,
+        rule_desc: str = None,
+        rule_sequence: str = None,
+        rule_tag: str = None,
+        rule_title: str = None,
+    ):
+        self.risk_level = risk_level
+        self.rule_desc = rule_desc
+        self.rule_sequence = rule_sequence
+        self.rule_tag = rule_tag
+        self.rule_title = rule_title
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.risk_level is not None:
+            result['riskLevel'] = self.risk_level
+        if self.rule_desc is not None:
+            result['ruleDesc'] = self.rule_desc
+        if self.rule_sequence is not None:
+            result['ruleSequence'] = self.rule_sequence
+        if self.rule_tag is not None:
+            result['ruleTag'] = self.rule_tag
+        if self.rule_title is not None:
+            result['ruleTitle'] = self.rule_title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('riskLevel') is not None:
+            self.risk_level = m.get('riskLevel')
+        if m.get('ruleDesc') is not None:
+            self.rule_desc = m.get('ruleDesc')
+        if m.get('ruleSequence') is not None:
+            self.rule_sequence = m.get('ruleSequence')
+        if m.get('ruleTag') is not None:
+            self.rule_tag = m.get('ruleTag')
+        if m.get('ruleTitle') is not None:
+            self.rule_title = m.get('ruleTitle')
+        return self
+
+
+class CreateContractReviewTaskRequest(TeaModel):
+    def __init__(
+        self,
+        contract_file: CreateContractReviewTaskRequestContractFile = None,
+        contract_file_download_url: str = None,
+        contract_file_name: str = None,
+        file_source: str = None,
+        request_id: str = None,
+        review_custom_rules: List[CreateContractReviewTaskRequestReviewCustomRules] = None,
+        rule_type: str = None,
+        standpoint: str = None,
+    ):
+        self.contract_file = contract_file
+        self.contract_file_download_url = contract_file_download_url
+        # This parameter is required.
+        self.contract_file_name = contract_file_name
+        # This parameter is required.
+        self.file_source = file_source
+        # This parameter is required.
+        self.request_id = request_id
+        self.review_custom_rules = review_custom_rules
+        self.rule_type = rule_type
+        self.standpoint = standpoint
+
+    def validate(self):
+        if self.contract_file:
+            self.contract_file.validate()
+        if self.review_custom_rules:
+            for k in self.review_custom_rules:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.contract_file is not None:
+            result['contractFile'] = self.contract_file.to_map()
+        if self.contract_file_download_url is not None:
+            result['contractFileDownloadUrl'] = self.contract_file_download_url
+        if self.contract_file_name is not None:
+            result['contractFileName'] = self.contract_file_name
+        if self.file_source is not None:
+            result['fileSource'] = self.file_source
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        result['reviewCustomRules'] = []
+        if self.review_custom_rules is not None:
+            for k in self.review_custom_rules:
+                result['reviewCustomRules'].append(k.to_map() if k else None)
+        if self.rule_type is not None:
+            result['ruleType'] = self.rule_type
+        if self.standpoint is not None:
+            result['standpoint'] = self.standpoint
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('contractFile') is not None:
+            temp_model = CreateContractReviewTaskRequestContractFile()
+            self.contract_file = temp_model.from_map(m['contractFile'])
+        if m.get('contractFileDownloadUrl') is not None:
+            self.contract_file_download_url = m.get('contractFileDownloadUrl')
+        if m.get('contractFileName') is not None:
+            self.contract_file_name = m.get('contractFileName')
+        if m.get('fileSource') is not None:
+            self.file_source = m.get('fileSource')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        self.review_custom_rules = []
+        if m.get('reviewCustomRules') is not None:
+            for k in m.get('reviewCustomRules'):
+                temp_model = CreateContractReviewTaskRequestReviewCustomRules()
+                self.review_custom_rules.append(temp_model.from_map(k))
+        if m.get('ruleType') is not None:
+            self.rule_type = m.get('ruleType')
+        if m.get('standpoint') is not None:
+            self.standpoint = m.get('standpoint')
+        return self
+
+
+class CreateContractReviewTaskResponseBodyResultData(TeaModel):
+    def __init__(
+        self,
+        review_task_id: str = None,
+    ):
+        self.review_task_id = review_task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.review_task_id is not None:
+            result['reviewTaskId'] = self.review_task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('reviewTaskId') is not None:
+            self.review_task_id = m.get('reviewTaskId')
+        return self
+
+
+class CreateContractReviewTaskResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        data: CreateContractReviewTaskResponseBodyResultData = None,
+        request_id: str = None,
+    ):
+        self.data = data
+        self.request_id = request_id
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = CreateContractReviewTaskResponseBodyResultData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class CreateContractReviewTaskResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: CreateContractReviewTaskResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = CreateContractReviewTaskResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CreateContractReviewTaskResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateContractReviewTaskResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateContractReviewTaskResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class EsignQueryApprovalInfoHeaders(TeaModel):
     def __init__(
         self,
@@ -1513,6 +2505,1063 @@ class QueryAdvancedContractVersionResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryAdvancedContractVersionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryContractCompareResultHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryContractCompareResultRequest(TeaModel):
+    def __init__(
+        self,
+        compare_task_id: str = None,
+        request_id: str = None,
+    ):
+        # This parameter is required.
+        self.compare_task_id = compare_task_id
+        # This parameter is required.
+        self.request_id = request_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.compare_task_id is not None:
+            result['compareTaskId'] = self.compare_task_id
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('compareTaskId') is not None:
+            self.compare_task_id = m.get('compareTaskId')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class QueryContractCompareResultResponseBodyResultDataCompareDetailDetails(TeaModel):
+    def __init__(
+        self,
+        compare_words: str = None,
+        original_words: str = None,
+        type: int = None,
+    ):
+        self.compare_words = compare_words
+        self.original_words = original_words
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.compare_words is not None:
+            result['compareWords'] = self.compare_words
+        if self.original_words is not None:
+            result['originalWords'] = self.original_words
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('compareWords') is not None:
+            self.compare_words = m.get('compareWords')
+        if m.get('originalWords') is not None:
+            self.original_words = m.get('originalWords')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class QueryContractCompareResultResponseBodyResultDataCompareDetailDifferenceCount(TeaModel):
+    def __init__(
+        self,
+        add: int = None,
+        delete: int = None,
+        replace: int = None,
+        total: int = None,
+    ):
+        self.add = add
+        self.delete = delete
+        self.replace = replace
+        self.total = total
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.add is not None:
+            result['add'] = self.add
+        if self.delete is not None:
+            result['delete'] = self.delete
+        if self.replace is not None:
+            result['replace'] = self.replace
+        if self.total is not None:
+            result['total'] = self.total
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('add') is not None:
+            self.add = m.get('add')
+        if m.get('delete') is not None:
+            self.delete = m.get('delete')
+        if m.get('replace') is not None:
+            self.replace = m.get('replace')
+        if m.get('total') is not None:
+            self.total = m.get('total')
+        return self
+
+
+class QueryContractCompareResultResponseBodyResultDataCompareDetail(TeaModel):
+    def __init__(
+        self,
+        details: List[QueryContractCompareResultResponseBodyResultDataCompareDetailDetails] = None,
+        difference_count: QueryContractCompareResultResponseBodyResultDataCompareDetailDifferenceCount = None,
+    ):
+        self.details = details
+        self.difference_count = difference_count
+
+    def validate(self):
+        if self.details:
+            for k in self.details:
+                if k:
+                    k.validate()
+        if self.difference_count:
+            self.difference_count.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['details'] = []
+        if self.details is not None:
+            for k in self.details:
+                result['details'].append(k.to_map() if k else None)
+        if self.difference_count is not None:
+            result['differenceCount'] = self.difference_count.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.details = []
+        if m.get('details') is not None:
+            for k in m.get('details'):
+                temp_model = QueryContractCompareResultResponseBodyResultDataCompareDetailDetails()
+                self.details.append(temp_model.from_map(k))
+        if m.get('differenceCount') is not None:
+            temp_model = QueryContractCompareResultResponseBodyResultDataCompareDetailDifferenceCount()
+            self.difference_count = temp_model.from_map(m['differenceCount'])
+        return self
+
+
+class QueryContractCompareResultResponseBodyResultData(TeaModel):
+    def __init__(
+        self,
+        compare_detail: QueryContractCompareResultResponseBodyResultDataCompareDetail = None,
+        compare_detail_url: str = None,
+        compare_status: str = None,
+    ):
+        self.compare_detail = compare_detail
+        self.compare_detail_url = compare_detail_url
+        self.compare_status = compare_status
+
+    def validate(self):
+        if self.compare_detail:
+            self.compare_detail.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.compare_detail is not None:
+            result['compareDetail'] = self.compare_detail.to_map()
+        if self.compare_detail_url is not None:
+            result['compareDetailUrl'] = self.compare_detail_url
+        if self.compare_status is not None:
+            result['compareStatus'] = self.compare_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('compareDetail') is not None:
+            temp_model = QueryContractCompareResultResponseBodyResultDataCompareDetail()
+            self.compare_detail = temp_model.from_map(m['compareDetail'])
+        if m.get('compareDetailUrl') is not None:
+            self.compare_detail_url = m.get('compareDetailUrl')
+        if m.get('compareStatus') is not None:
+            self.compare_status = m.get('compareStatus')
+        return self
+
+
+class QueryContractCompareResultResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        data: QueryContractCompareResultResponseBodyResultData = None,
+        request_id: str = None,
+    ):
+        self.data = data
+        self.request_id = request_id
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = QueryContractCompareResultResponseBodyResultData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class QueryContractCompareResultResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryContractCompareResultResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryContractCompareResultResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryContractCompareResultResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryContractCompareResultResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryContractCompareResultResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryContractExtractResultHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryContractExtractResultRequest(TeaModel):
+    def __init__(
+        self,
+        extract_task_id: str = None,
+        request_id: str = None,
+    ):
+        # This parameter is required.
+        self.extract_task_id = extract_task_id
+        # This parameter is required.
+        self.request_id = request_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.extract_task_id is not None:
+            result['extractTaskId'] = self.extract_task_id
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('extractTaskId') is not None:
+            self.extract_task_id = m.get('extractTaskId')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class QueryContractExtractResultResponseBodyResultDataExtractEntities(TeaModel):
+    def __init__(
+        self,
+        key: str = None,
+        value: str = None,
+    ):
+        self.key = key
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.key is not None:
+            result['key'] = self.key
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('key') is not None:
+            self.key = m.get('key')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class QueryContractExtractResultResponseBodyResultData(TeaModel):
+    def __init__(
+        self,
+        extract_entities: List[QueryContractExtractResultResponseBodyResultDataExtractEntities] = None,
+        extract_status: str = None,
+    ):
+        self.extract_entities = extract_entities
+        self.extract_status = extract_status
+
+    def validate(self):
+        if self.extract_entities:
+            for k in self.extract_entities:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['extractEntities'] = []
+        if self.extract_entities is not None:
+            for k in self.extract_entities:
+                result['extractEntities'].append(k.to_map() if k else None)
+        if self.extract_status is not None:
+            result['extractStatus'] = self.extract_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.extract_entities = []
+        if m.get('extractEntities') is not None:
+            for k in m.get('extractEntities'):
+                temp_model = QueryContractExtractResultResponseBodyResultDataExtractEntities()
+                self.extract_entities.append(temp_model.from_map(k))
+        if m.get('extractStatus') is not None:
+            self.extract_status = m.get('extractStatus')
+        return self
+
+
+class QueryContractExtractResultResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        data: QueryContractExtractResultResponseBodyResultData = None,
+        request_id: str = None,
+    ):
+        self.data = data
+        self.request_id = request_id
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = QueryContractExtractResultResponseBodyResultData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class QueryContractExtractResultResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryContractExtractResultResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryContractExtractResultResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryContractExtractResultResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryContractExtractResultResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryContractExtractResultResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryContractReviewResultHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryContractReviewResultRequest(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        review_task_id: str = None,
+    ):
+        # This parameter is required.
+        self.request_id = request_id
+        # This parameter is required.
+        self.review_task_id = review_task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.review_task_id is not None:
+            result['reviewTaskId'] = self.review_task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('reviewTaskId') is not None:
+            self.review_task_id = m.get('reviewTaskId')
+        return self
+
+
+class QueryContractReviewResultResponseBodyResultDataReviewRiskDetailSubRisks(TeaModel):
+    def __init__(
+        self,
+        original_content: str = None,
+        result_content: str = None,
+        result_type: str = None,
+        risk_brief: str = None,
+        risk_clause: str = None,
+        risk_explain: str = None,
+    ):
+        self.original_content = original_content
+        self.result_content = result_content
+        self.result_type = result_type
+        self.risk_brief = risk_brief
+        self.risk_clause = risk_clause
+        self.risk_explain = risk_explain
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.original_content is not None:
+            result['originalContent'] = self.original_content
+        if self.result_content is not None:
+            result['resultContent'] = self.result_content
+        if self.result_type is not None:
+            result['resultType'] = self.result_type
+        if self.risk_brief is not None:
+            result['riskBrief'] = self.risk_brief
+        if self.risk_clause is not None:
+            result['riskClause'] = self.risk_clause
+        if self.risk_explain is not None:
+            result['riskExplain'] = self.risk_explain
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('originalContent') is not None:
+            self.original_content = m.get('originalContent')
+        if m.get('resultContent') is not None:
+            self.result_content = m.get('resultContent')
+        if m.get('resultType') is not None:
+            self.result_type = m.get('resultType')
+        if m.get('riskBrief') is not None:
+            self.risk_brief = m.get('riskBrief')
+        if m.get('riskClause') is not None:
+            self.risk_clause = m.get('riskClause')
+        if m.get('riskExplain') is not None:
+            self.risk_explain = m.get('riskExplain')
+        return self
+
+
+class QueryContractReviewResultResponseBodyResultDataReviewRiskDetail(TeaModel):
+    def __init__(
+        self,
+        examine_brief: str = None,
+        examine_result: str = None,
+        examine_status: str = None,
+        risk_level: str = None,
+        rule_sequence: str = None,
+        rule_tag: str = None,
+        rule_title: str = None,
+        sub_risks: List[QueryContractReviewResultResponseBodyResultDataReviewRiskDetailSubRisks] = None,
+    ):
+        self.examine_brief = examine_brief
+        self.examine_result = examine_result
+        self.examine_status = examine_status
+        self.risk_level = risk_level
+        self.rule_sequence = rule_sequence
+        self.rule_tag = rule_tag
+        self.rule_title = rule_title
+        self.sub_risks = sub_risks
+
+    def validate(self):
+        if self.sub_risks:
+            for k in self.sub_risks:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.examine_brief is not None:
+            result['examineBrief'] = self.examine_brief
+        if self.examine_result is not None:
+            result['examineResult'] = self.examine_result
+        if self.examine_status is not None:
+            result['examineStatus'] = self.examine_status
+        if self.risk_level is not None:
+            result['riskLevel'] = self.risk_level
+        if self.rule_sequence is not None:
+            result['ruleSequence'] = self.rule_sequence
+        if self.rule_tag is not None:
+            result['ruleTag'] = self.rule_tag
+        if self.rule_title is not None:
+            result['ruleTitle'] = self.rule_title
+        result['subRisks'] = []
+        if self.sub_risks is not None:
+            for k in self.sub_risks:
+                result['subRisks'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('examineBrief') is not None:
+            self.examine_brief = m.get('examineBrief')
+        if m.get('examineResult') is not None:
+            self.examine_result = m.get('examineResult')
+        if m.get('examineStatus') is not None:
+            self.examine_status = m.get('examineStatus')
+        if m.get('riskLevel') is not None:
+            self.risk_level = m.get('riskLevel')
+        if m.get('ruleSequence') is not None:
+            self.rule_sequence = m.get('ruleSequence')
+        if m.get('ruleTag') is not None:
+            self.rule_tag = m.get('ruleTag')
+        if m.get('ruleTitle') is not None:
+            self.rule_title = m.get('ruleTitle')
+        self.sub_risks = []
+        if m.get('subRisks') is not None:
+            for k in m.get('subRisks'):
+                temp_model = QueryContractReviewResultResponseBodyResultDataReviewRiskDetailSubRisks()
+                self.sub_risks.append(temp_model.from_map(k))
+        return self
+
+
+class QueryContractReviewResultResponseBodyResultDataReviewRiskOverview(TeaModel):
+    def __init__(
+        self,
+        has_risk: bool = None,
+        high_risk: int = None,
+        low_risk: int = None,
+        medium_risk: int = None,
+    ):
+        self.has_risk = has_risk
+        self.high_risk = high_risk
+        self.low_risk = low_risk
+        self.medium_risk = medium_risk
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_risk is not None:
+            result['hasRisk'] = self.has_risk
+        if self.high_risk is not None:
+            result['highRisk'] = self.high_risk
+        if self.low_risk is not None:
+            result['lowRisk'] = self.low_risk
+        if self.medium_risk is not None:
+            result['mediumRisk'] = self.medium_risk
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasRisk') is not None:
+            self.has_risk = m.get('hasRisk')
+        if m.get('highRisk') is not None:
+            self.high_risk = m.get('highRisk')
+        if m.get('lowRisk') is not None:
+            self.low_risk = m.get('lowRisk')
+        if m.get('mediumRisk') is not None:
+            self.medium_risk = m.get('mediumRisk')
+        return self
+
+
+class QueryContractReviewResultResponseBodyResultDataReviewStatus(TeaModel):
+    def __init__(
+        self,
+        overview: str = None,
+        result: str = None,
+        rule: str = None,
+        stage: str = None,
+    ):
+        self.overview = overview
+        self.result = result
+        self.rule = rule
+        self.stage = stage
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.overview is not None:
+            result['overview'] = self.overview
+        if self.result is not None:
+            result['result'] = self.result
+        if self.rule is not None:
+            result['rule'] = self.rule
+        if self.stage is not None:
+            result['stage'] = self.stage
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('overview') is not None:
+            self.overview = m.get('overview')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('rule') is not None:
+            self.rule = m.get('rule')
+        if m.get('stage') is not None:
+            self.stage = m.get('stage')
+        return self
+
+
+class QueryContractReviewResultResponseBodyResultData(TeaModel):
+    def __init__(
+        self,
+        review_risk_detail: List[QueryContractReviewResultResponseBodyResultDataReviewRiskDetail] = None,
+        review_risk_overview: QueryContractReviewResultResponseBodyResultDataReviewRiskOverview = None,
+        review_status: QueryContractReviewResultResponseBodyResultDataReviewStatus = None,
+    ):
+        self.review_risk_detail = review_risk_detail
+        self.review_risk_overview = review_risk_overview
+        self.review_status = review_status
+
+    def validate(self):
+        if self.review_risk_detail:
+            for k in self.review_risk_detail:
+                if k:
+                    k.validate()
+        if self.review_risk_overview:
+            self.review_risk_overview.validate()
+        if self.review_status:
+            self.review_status.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['reviewRiskDetail'] = []
+        if self.review_risk_detail is not None:
+            for k in self.review_risk_detail:
+                result['reviewRiskDetail'].append(k.to_map() if k else None)
+        if self.review_risk_overview is not None:
+            result['reviewRiskOverview'] = self.review_risk_overview.to_map()
+        if self.review_status is not None:
+            result['reviewStatus'] = self.review_status.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.review_risk_detail = []
+        if m.get('reviewRiskDetail') is not None:
+            for k in m.get('reviewRiskDetail'):
+                temp_model = QueryContractReviewResultResponseBodyResultDataReviewRiskDetail()
+                self.review_risk_detail.append(temp_model.from_map(k))
+        if m.get('reviewRiskOverview') is not None:
+            temp_model = QueryContractReviewResultResponseBodyResultDataReviewRiskOverview()
+            self.review_risk_overview = temp_model.from_map(m['reviewRiskOverview'])
+        if m.get('reviewStatus') is not None:
+            temp_model = QueryContractReviewResultResponseBodyResultDataReviewStatus()
+            self.review_status = temp_model.from_map(m['reviewStatus'])
+        return self
+
+
+class QueryContractReviewResultResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        data: QueryContractReviewResultResponseBodyResultData = None,
+        request_id: str = None,
+    ):
+        self.data = data
+        self.request_id = request_id
+
+    def validate(self):
+        if self.data:
+            self.data.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            temp_model = QueryContractReviewResultResponseBodyResultData()
+            self.data = temp_model.from_map(m['data'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        return self
+
+
+class QueryContractReviewResultResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: QueryContractReviewResultResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = QueryContractReviewResultResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class QueryContractReviewResultResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryContractReviewResultResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryContractReviewResultResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

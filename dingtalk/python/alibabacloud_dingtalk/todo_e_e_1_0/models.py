@@ -163,6 +163,7 @@ class AppCreateEnterpriseTodoTaskRequest(TeaModel):
         source_id: str = None,
         source_title: str = None,
         subject: str = None,
+        toolbar_template_key: str = None,
         type: str = None,
     ):
         self.biz_category_id = biz_category_id
@@ -177,6 +178,7 @@ class AppCreateEnterpriseTodoTaskRequest(TeaModel):
         self.source_id = source_id
         self.source_title = source_title
         self.subject = subject
+        self.toolbar_template_key = toolbar_template_key
         self.type = type
 
     def validate(self):
@@ -221,6 +223,8 @@ class AppCreateEnterpriseTodoTaskRequest(TeaModel):
             result['sourceTitle'] = self.source_title
         if self.subject is not None:
             result['subject'] = self.subject
+        if self.toolbar_template_key is not None:
+            result['toolbarTemplateKey'] = self.toolbar_template_key
         if self.type is not None:
             result['type'] = self.type
         return result
@@ -256,6 +260,8 @@ class AppCreateEnterpriseTodoTaskRequest(TeaModel):
             self.source_title = m.get('sourceTitle')
         if m.get('subject') is not None:
             self.subject = m.get('subject')
+        if m.get('toolbarTemplateKey') is not None:
+            self.toolbar_template_key = m.get('toolbarTemplateKey')
         if m.get('type') is not None:
             self.type = m.get('type')
         return self
@@ -607,11 +613,13 @@ class AppGetUserTaskListRequest(TeaModel):
     def __init__(
         self,
         done: bool = None,
+        operator_id: str = None,
         page_number: int = None,
         page_size: int = None,
         type: str = None,
     ):
         self.done = done
+        self.operator_id = operator_id
         self.page_number = page_number
         self.page_size = page_size
         self.type = type
@@ -627,6 +635,8 @@ class AppGetUserTaskListRequest(TeaModel):
         result = dict()
         if self.done is not None:
             result['done'] = self.done
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
         if self.page_number is not None:
             result['pageNumber'] = self.page_number
         if self.page_size is not None:
@@ -639,6 +649,8 @@ class AppGetUserTaskListRequest(TeaModel):
         m = m or dict()
         if m.get('done') is not None:
             self.done = m.get('done')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
         if m.get('pageNumber') is not None:
             self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:
@@ -848,6 +860,7 @@ class AppUpdateTaskRequest(TeaModel):
         operator_id: str = None,
         subject: str = None,
         task_id: int = None,
+        toolbar_template_key: str = None,
     ):
         self.description = description
         self.done = done
@@ -856,6 +869,7 @@ class AppUpdateTaskRequest(TeaModel):
         self.operator_id = operator_id
         self.subject = subject
         self.task_id = task_id
+        self.toolbar_template_key = toolbar_template_key
 
     def validate(self):
         pass
@@ -880,6 +894,8 @@ class AppUpdateTaskRequest(TeaModel):
             result['subject'] = self.subject
         if self.task_id is not None:
             result['taskId'] = self.task_id
+        if self.toolbar_template_key is not None:
+            result['toolbarTemplateKey'] = self.toolbar_template_key
         return result
 
     def from_map(self, m: dict = None):
@@ -898,6 +914,8 @@ class AppUpdateTaskRequest(TeaModel):
             self.subject = m.get('subject')
         if m.get('taskId') is not None:
             self.task_id = m.get('taskId')
+        if m.get('toolbarTemplateKey') is not None:
+            self.toolbar_template_key = m.get('toolbarTemplateKey')
         return self
 
 
@@ -1576,6 +1594,336 @@ class CreateEnterpriseTodoTaskResponse(TeaModel):
         return self
 
 
+class CreateStandardTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateStandardTemplateRequestActions(TeaModel):
+    def __init__(
+        self,
+        action_group: str = None,
+        name: str = None,
+        need_reason: bool = None,
+        need_reason_required: bool = None,
+        order: int = None,
+        style_type: int = None,
+    ):
+        self.action_group = action_group
+        self.name = name
+        self.need_reason = need_reason
+        self.need_reason_required = need_reason_required
+        self.order = order
+        self.style_type = style_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_group is not None:
+            result['actionGroup'] = self.action_group
+        if self.name is not None:
+            result['name'] = self.name
+        if self.need_reason is not None:
+            result['needReason'] = self.need_reason
+        if self.need_reason_required is not None:
+            result['needReasonRequired'] = self.need_reason_required
+        if self.order is not None:
+            result['order'] = self.order
+        if self.style_type is not None:
+            result['styleType'] = self.style_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionGroup') is not None:
+            self.action_group = m.get('actionGroup')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('needReason') is not None:
+            self.need_reason = m.get('needReason')
+        if m.get('needReasonRequired') is not None:
+            self.need_reason_required = m.get('needReasonRequired')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        if m.get('styleType') is not None:
+            self.style_type = m.get('styleType')
+        return self
+
+
+class CreateStandardTemplateRequestService(TeaModel):
+    def __init__(
+        self,
+        callback_url: str = None,
+    ):
+        self.callback_url = callback_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.callback_url is not None:
+            result['callbackUrl'] = self.callback_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('callbackUrl') is not None:
+            self.callback_url = m.get('callbackUrl')
+        return self
+
+
+class CreateStandardTemplateRequest(TeaModel):
+    def __init__(
+        self,
+        actions: List[CreateStandardTemplateRequestActions] = None,
+        description: str = None,
+        name: str = None,
+        operator_id: str = None,
+        service: CreateStandardTemplateRequestService = None,
+    ):
+        self.actions = actions
+        self.description = description
+        self.name = name
+        self.operator_id = operator_id
+        self.service = service
+
+    def validate(self):
+        if self.actions:
+            for k in self.actions:
+                if k:
+                    k.validate()
+        if self.service:
+            self.service.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['actions'] = []
+        if self.actions is not None:
+            for k in self.actions:
+                result['actions'].append(k.to_map() if k else None)
+        if self.description is not None:
+            result['description'] = self.description
+        if self.name is not None:
+            result['name'] = self.name
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.service is not None:
+            result['service'] = self.service.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.actions = []
+        if m.get('actions') is not None:
+            for k in m.get('actions'):
+                temp_model = CreateStandardTemplateRequestActions()
+                self.actions.append(temp_model.from_map(k))
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('service') is not None:
+            temp_model = CreateStandardTemplateRequestService()
+            self.service = temp_model.from_map(m['service'])
+        return self
+
+
+class CreateStandardTemplateResponseBodyActions(TeaModel):
+    def __init__(
+        self,
+        action_key: str = None,
+        name: str = None,
+        need_reason: bool = None,
+        need_reason_required: bool = None,
+        order: int = None,
+        style_type: int = None,
+    ):
+        self.action_key = action_key
+        self.name = name
+        self.need_reason = need_reason
+        self.need_reason_required = need_reason_required
+        self.order = order
+        self.style_type = style_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_key is not None:
+            result['actionKey'] = self.action_key
+        if self.name is not None:
+            result['name'] = self.name
+        if self.need_reason is not None:
+            result['needReason'] = self.need_reason
+        if self.need_reason_required is not None:
+            result['needReasonRequired'] = self.need_reason_required
+        if self.order is not None:
+            result['order'] = self.order
+        if self.style_type is not None:
+            result['styleType'] = self.style_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionKey') is not None:
+            self.action_key = m.get('actionKey')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('needReason') is not None:
+            self.need_reason = m.get('needReason')
+        if m.get('needReasonRequired') is not None:
+            self.need_reason_required = m.get('needReasonRequired')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        if m.get('styleType') is not None:
+            self.style_type = m.get('styleType')
+        return self
+
+
+class CreateStandardTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        actions: List[CreateStandardTemplateResponseBodyActions] = None,
+        description: str = None,
+        name: str = None,
+        template_key: str = None,
+    ):
+        self.actions = actions
+        self.description = description
+        self.name = name
+        self.template_key = template_key
+
+    def validate(self):
+        if self.actions:
+            for k in self.actions:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['actions'] = []
+        if self.actions is not None:
+            for k in self.actions:
+                result['actions'].append(k.to_map() if k else None)
+        if self.description is not None:
+            result['description'] = self.description
+        if self.name is not None:
+            result['name'] = self.name
+        if self.template_key is not None:
+            result['templateKey'] = self.template_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.actions = []
+        if m.get('actions') is not None:
+            for k in m.get('actions'):
+                temp_model = CreateStandardTemplateResponseBodyActions()
+                self.actions.append(temp_model.from_map(k))
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('templateKey') is not None:
+            self.template_key = m.get('templateKey')
+        return self
+
+
+class CreateStandardTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateStandardTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateStandardTemplateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class DeleteCategorySourceConfigHeaders(TeaModel):
     def __init__(
         self,
@@ -2016,6 +2364,306 @@ class GetCategorySourceConfigListResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetCategorySourceConfigListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetTemplateListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetTemplateListRequest(TeaModel):
+    def __init__(
+        self,
+        page_number: int = None,
+        page_size: int = None,
+    ):
+        self.page_number = page_number
+        self.page_size = page_size
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        return self
+
+
+class GetTemplateListResponseBodyDataActions(TeaModel):
+    def __init__(
+        self,
+        action_key: str = None,
+        description: str = None,
+        name: str = None,
+        need_reason: bool = None,
+        need_reason_required: bool = None,
+        order: int = None,
+        style_type: int = None,
+    ):
+        self.action_key = action_key
+        self.description = description
+        self.name = name
+        self.need_reason = need_reason
+        self.need_reason_required = need_reason_required
+        self.order = order
+        self.style_type = style_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_key is not None:
+            result['actionKey'] = self.action_key
+        if self.description is not None:
+            result['description'] = self.description
+        if self.name is not None:
+            result['name'] = self.name
+        if self.need_reason is not None:
+            result['needReason'] = self.need_reason
+        if self.need_reason_required is not None:
+            result['needReasonRequired'] = self.need_reason_required
+        if self.order is not None:
+            result['order'] = self.order
+        if self.style_type is not None:
+            result['styleType'] = self.style_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionKey') is not None:
+            self.action_key = m.get('actionKey')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('needReason') is not None:
+            self.need_reason = m.get('needReason')
+        if m.get('needReasonRequired') is not None:
+            self.need_reason_required = m.get('needReasonRequired')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        if m.get('styleType') is not None:
+            self.style_type = m.get('styleType')
+        return self
+
+
+class GetTemplateListResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        actions: List[GetTemplateListResponseBodyDataActions] = None,
+        create_time: int = None,
+        creator_id: str = None,
+        description: str = None,
+        modified_time: int = None,
+        modifier_id: str = None,
+        name: str = None,
+        template_key: str = None,
+    ):
+        self.actions = actions
+        self.create_time = create_time
+        self.creator_id = creator_id
+        self.description = description
+        self.modified_time = modified_time
+        self.modifier_id = modifier_id
+        self.name = name
+        self.template_key = template_key
+
+    def validate(self):
+        if self.actions:
+            for k in self.actions:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['actions'] = []
+        if self.actions is not None:
+            for k in self.actions:
+                result['actions'].append(k.to_map() if k else None)
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.description is not None:
+            result['description'] = self.description
+        if self.modified_time is not None:
+            result['modifiedTime'] = self.modified_time
+        if self.modifier_id is not None:
+            result['modifierId'] = self.modifier_id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.template_key is not None:
+            result['templateKey'] = self.template_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.actions = []
+        if m.get('actions') is not None:
+            for k in m.get('actions'):
+                temp_model = GetTemplateListResponseBodyDataActions()
+                self.actions.append(temp_model.from_map(k))
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('modifiedTime') is not None:
+            self.modified_time = m.get('modifiedTime')
+        if m.get('modifierId') is not None:
+            self.modifier_id = m.get('modifierId')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('templateKey') is not None:
+            self.template_key = m.get('templateKey')
+        return self
+
+
+class GetTemplateListResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[GetTemplateListResponseBodyData] = None,
+        page_number: int = None,
+        page_size: int = None,
+        total_count: int = None,
+    ):
+        self.data = data
+        self.page_number = page_number
+        self.page_size = page_size
+        self.total_count = total_count
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = GetTemplateListResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class GetTemplateListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetTemplateListResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetTemplateListResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -2529,6 +3177,247 @@ class UpdateCategorySourceConfigResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = UpdateCategorySourceConfigResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateStandardTemplateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateStandardTemplateRequestActions(TeaModel):
+    def __init__(
+        self,
+        action_group: str = None,
+        name: str = None,
+        need_reason: bool = None,
+        need_reason_required: bool = None,
+        order: int = None,
+        style_type: int = None,
+    ):
+        self.action_group = action_group
+        self.name = name
+        self.need_reason = need_reason
+        self.need_reason_required = need_reason_required
+        self.order = order
+        self.style_type = style_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_group is not None:
+            result['actionGroup'] = self.action_group
+        if self.name is not None:
+            result['name'] = self.name
+        if self.need_reason is not None:
+            result['needReason'] = self.need_reason
+        if self.need_reason_required is not None:
+            result['needReasonRequired'] = self.need_reason_required
+        if self.order is not None:
+            result['order'] = self.order
+        if self.style_type is not None:
+            result['styleType'] = self.style_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionGroup') is not None:
+            self.action_group = m.get('actionGroup')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('needReason') is not None:
+            self.need_reason = m.get('needReason')
+        if m.get('needReasonRequired') is not None:
+            self.need_reason_required = m.get('needReasonRequired')
+        if m.get('order') is not None:
+            self.order = m.get('order')
+        if m.get('styleType') is not None:
+            self.style_type = m.get('styleType')
+        return self
+
+
+class UpdateStandardTemplateRequestService(TeaModel):
+    def __init__(
+        self,
+        callback_url: str = None,
+    ):
+        self.callback_url = callback_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.callback_url is not None:
+            result['callbackUrl'] = self.callback_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('callbackUrl') is not None:
+            self.callback_url = m.get('callbackUrl')
+        return self
+
+
+class UpdateStandardTemplateRequest(TeaModel):
+    def __init__(
+        self,
+        actions: List[UpdateStandardTemplateRequestActions] = None,
+        operator_id: str = None,
+        service: UpdateStandardTemplateRequestService = None,
+        template_key: str = None,
+    ):
+        self.actions = actions
+        self.operator_id = operator_id
+        self.service = service
+        self.template_key = template_key
+
+    def validate(self):
+        if self.actions:
+            for k in self.actions:
+                if k:
+                    k.validate()
+        if self.service:
+            self.service.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['actions'] = []
+        if self.actions is not None:
+            for k in self.actions:
+                result['actions'].append(k.to_map() if k else None)
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.service is not None:
+            result['service'] = self.service.to_map()
+        if self.template_key is not None:
+            result['templateKey'] = self.template_key
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.actions = []
+        if m.get('actions') is not None:
+            for k in m.get('actions'):
+                temp_model = UpdateStandardTemplateRequestActions()
+                self.actions.append(temp_model.from_map(k))
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('service') is not None:
+            temp_model = UpdateStandardTemplateRequestService()
+            self.service = temp_model.from_map(m['service'])
+        if m.get('templateKey') is not None:
+            self.template_key = m.get('templateKey')
+        return self
+
+
+class UpdateStandardTemplateResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateStandardTemplateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateStandardTemplateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateStandardTemplateResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

@@ -67,8 +67,10 @@ class QueryVipMemberInfoRequest(TeaModel):
 class QueryVipMemberInfoResponseBody(TeaModel):
     def __init__(
         self,
+        expire_time: str = None,
         is_vip: bool = None,
     ):
+        self.expire_time = expire_time
         self.is_vip = is_vip
 
     def validate(self):
@@ -80,12 +82,16 @@ class QueryVipMemberInfoResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.expire_time is not None:
+            result['expireTime'] = self.expire_time
         if self.is_vip is not None:
             result['isVip'] = self.is_vip
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('expireTime') is not None:
+            self.expire_time = m.get('expireTime')
         if m.get('isVip') is not None:
             self.is_vip = m.get('isVip')
         return self

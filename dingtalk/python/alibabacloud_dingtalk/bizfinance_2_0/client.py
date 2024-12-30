@@ -3463,3 +3463,125 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbizfinance__2__0_models.UpdateInvoiceDataTransferDoneHeaders()
         return await self.update_invoice_data_transfer_done_with_options_async(headers, runtime)
+
+    def update_invoice_url_with_options(
+        self,
+        tmp_req: dingtalkbizfinance__2__0_models.UpdateInvoiceUrlRequest,
+        headers: dingtalkbizfinance__2__0_models.UpdateInvoiceUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.UpdateInvoiceUrlResponse:
+        """
+        @summary 用于更新智能财务企业票池内对应发票的下载链接
+        
+        @param tmp_req: UpdateInvoiceUrlRequest
+        @param headers: UpdateInvoiceUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateInvoiceUrlResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkbizfinance__2__0_models.UpdateInvoiceUrlShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.body):
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.body_shrink):
+            query['body'] = request.body_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UpdateInvoiceUrl',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/invoices/urls',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.UpdateInvoiceUrlResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_invoice_url_with_options_async(
+        self,
+        tmp_req: dingtalkbizfinance__2__0_models.UpdateInvoiceUrlRequest,
+        headers: dingtalkbizfinance__2__0_models.UpdateInvoiceUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.UpdateInvoiceUrlResponse:
+        """
+        @summary 用于更新智能财务企业票池内对应发票的下载链接
+        
+        @param tmp_req: UpdateInvoiceUrlRequest
+        @param headers: UpdateInvoiceUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateInvoiceUrlResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkbizfinance__2__0_models.UpdateInvoiceUrlShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.body):
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.body_shrink):
+            query['body'] = request.body_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='UpdateInvoiceUrl',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/invoices/urls',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.UpdateInvoiceUrlResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_invoice_url(
+        self,
+        request: dingtalkbizfinance__2__0_models.UpdateInvoiceUrlRequest,
+    ) -> dingtalkbizfinance__2__0_models.UpdateInvoiceUrlResponse:
+        """
+        @summary 用于更新智能财务企业票池内对应发票的下载链接
+        
+        @param request: UpdateInvoiceUrlRequest
+        @return: UpdateInvoiceUrlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.UpdateInvoiceUrlHeaders()
+        return self.update_invoice_url_with_options(request, headers, runtime)
+
+    async def update_invoice_url_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.UpdateInvoiceUrlRequest,
+    ) -> dingtalkbizfinance__2__0_models.UpdateInvoiceUrlResponse:
+        """
+        @summary 用于更新智能财务企业票池内对应发票的下载链接
+        
+        @param request: UpdateInvoiceUrlRequest
+        @return: UpdateInvoiceUrlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.UpdateInvoiceUrlHeaders()
+        return await self.update_invoice_url_with_options_async(request, headers, runtime)

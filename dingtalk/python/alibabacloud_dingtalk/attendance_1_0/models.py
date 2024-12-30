@@ -7015,6 +7015,7 @@ class GetShiftResponseBodyResultShiftSetting(TeaModel):
         gmt_modified: str = None,
         shift_id: int = None,
         shift_setting_id: int = None,
+        shift_type: str = None,
         work_time_minutes: int = None,
     ):
         self.attend_days = attend_days
@@ -7025,6 +7026,7 @@ class GetShiftResponseBodyResultShiftSetting(TeaModel):
         self.gmt_modified = gmt_modified
         self.shift_id = shift_id
         self.shift_setting_id = shift_setting_id
+        self.shift_type = shift_type
         self.work_time_minutes = work_time_minutes
 
     def validate(self):
@@ -7048,6 +7050,8 @@ class GetShiftResponseBodyResultShiftSetting(TeaModel):
             result['shiftId'] = self.shift_id
         if self.shift_setting_id is not None:
             result['shiftSettingId'] = self.shift_setting_id
+        if self.shift_type is not None:
+            result['shiftType'] = self.shift_type
         if self.work_time_minutes is not None:
             result['workTimeMinutes'] = self.work_time_minutes
         return result
@@ -7066,6 +7070,8 @@ class GetShiftResponseBodyResultShiftSetting(TeaModel):
             self.shift_id = m.get('shiftId')
         if m.get('shiftSettingId') is not None:
             self.shift_setting_id = m.get('shiftSettingId')
+        if m.get('shiftType') is not None:
+            self.shift_type = m.get('shiftType')
         if m.get('workTimeMinutes') is not None:
             self.work_time_minutes = m.get('workTimeMinutes')
         return self
@@ -12212,7 +12218,9 @@ class ShiftAddRequestSetting(TeaModel):
         extras: Dict[str, Any] = None,
         is_flexible: bool = None,
         late_back_setting: ShiftAddRequestSettingLateBackSetting = None,
+        reference_class_id: int = None,
         serious_late_minutes: int = None,
+        shift_type: str = None,
         tags: str = None,
         top_rest_time_list: List[ShiftAddRequestSettingTopRestTimeList] = None,
     ):
@@ -12223,7 +12231,9 @@ class ShiftAddRequestSetting(TeaModel):
         self.extras = extras
         self.is_flexible = is_flexible
         self.late_back_setting = late_back_setting
+        self.reference_class_id = reference_class_id
         self.serious_late_minutes = serious_late_minutes
+        self.shift_type = shift_type
         self.tags = tags
         self.top_rest_time_list = top_rest_time_list
 
@@ -12255,8 +12265,12 @@ class ShiftAddRequestSetting(TeaModel):
             result['isFlexible'] = self.is_flexible
         if self.late_back_setting is not None:
             result['lateBackSetting'] = self.late_back_setting.to_map()
+        if self.reference_class_id is not None:
+            result['referenceClassId'] = self.reference_class_id
         if self.serious_late_minutes is not None:
             result['seriousLateMinutes'] = self.serious_late_minutes
+        if self.shift_type is not None:
+            result['shiftType'] = self.shift_type
         if self.tags is not None:
             result['tags'] = self.tags
         result['topRestTimeList'] = []
@@ -12282,8 +12296,12 @@ class ShiftAddRequestSetting(TeaModel):
         if m.get('lateBackSetting') is not None:
             temp_model = ShiftAddRequestSettingLateBackSetting()
             self.late_back_setting = temp_model.from_map(m['lateBackSetting'])
+        if m.get('referenceClassId') is not None:
+            self.reference_class_id = m.get('referenceClassId')
         if m.get('seriousLateMinutes') is not None:
             self.serious_late_minutes = m.get('seriousLateMinutes')
+        if m.get('shiftType') is not None:
+            self.shift_type = m.get('shiftType')
         if m.get('tags') is not None:
             self.tags = m.get('tags')
         self.top_rest_time_list = []
