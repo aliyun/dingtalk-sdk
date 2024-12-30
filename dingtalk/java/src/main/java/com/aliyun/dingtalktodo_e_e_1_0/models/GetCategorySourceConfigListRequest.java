@@ -4,10 +4,6 @@ package com.aliyun.dingtalktodo_e_e_1_0.models;
 import com.aliyun.tea.*;
 
 public class GetCategorySourceConfigListRequest extends TeaModel {
-    /**
-     * <strong>example:</strong>
-     * <p>aabcdefe</p>
-     */
     @NameInMap("nextToken")
     public String nextToken;
 

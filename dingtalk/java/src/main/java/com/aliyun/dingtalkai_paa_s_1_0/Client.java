@@ -10,6 +10,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
         super(config);
         com.aliyun.gateway.dingtalk.Client gatewayClient = new com.aliyun.gateway.dingtalk.Client();
         this._spi = gatewayClient;
+        this._signatureAlgorithm = "v2";
         this._endpointRule = "";
         if (com.aliyun.teautil.Common.empty(_endpoint)) {
             this._endpoint = "api.dingtalk.com";
@@ -566,6 +567,100 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryMemoryLearningTaskHeaders headers = new QueryMemoryLearningTaskHeaders();
         return this.queryMemoryLearningTaskWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>中信金属智能配料任务结果</p>
+     * 
+     * @param request SmartFormulaResultServiceRequest
+     * @param headers map
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SmartFormulaResultServiceResponse
+     */
+    public SmartFormulaResultServiceResponse smartFormulaResultServiceWithOptions(SmartFormulaResultServiceRequest request, java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.taskId)) {
+            body.put("taskId", request.taskId);
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", headers),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SmartFormulaResultService"),
+            new TeaPair("version", "aiPaaS_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/aiPaaS/nl2x/smartFormulas/results/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "Anonymous"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SmartFormulaResultServiceResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>中信金属智能配料任务结果</p>
+     * 
+     * @param request SmartFormulaResultServiceRequest
+     * @return SmartFormulaResultServiceResponse
+     */
+    public SmartFormulaResultServiceResponse smartFormulaResultService(SmartFormulaResultServiceRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        java.util.Map<String, String> headers = new java.util.HashMap<>();
+        return this.smartFormulaResultServiceWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>中信金属智能配料任务触发</p>
+     * 
+     * @param request SmartFormulaTriggerServiceRequest
+     * @param headers map
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SmartFormulaTriggerServiceResponse
+     */
+    public SmartFormulaTriggerServiceResponse smartFormulaTriggerServiceWithOptions(SmartFormulaTriggerServiceRequest request, java.util.Map<String, String> headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.request)) {
+            body.put("request", request.request);
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", headers),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SmartFormulaTriggerService"),
+            new TeaPair("version", "aiPaaS_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/aiPaaS/nl2x/smartFormulas/trigger"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "Anonymous"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SmartFormulaTriggerServiceResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>中信金属智能配料任务触发</p>
+     * 
+     * @param request SmartFormulaTriggerServiceRequest
+     * @return SmartFormulaTriggerServiceResponse
+     */
+    public SmartFormulaTriggerServiceResponse smartFormulaTriggerService(SmartFormulaTriggerServiceRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        java.util.Map<String, String> headers = new java.util.HashMap<>();
+        return this.smartFormulaTriggerServiceWithOptions(request, headers, runtime);
     }
 
     /**

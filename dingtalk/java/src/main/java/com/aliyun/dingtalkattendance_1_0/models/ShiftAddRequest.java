@@ -403,10 +403,27 @@ public class ShiftAddRequest extends TeaModel {
 
         /**
          * <strong>example:</strong>
+         * <p>1234</p>
+         */
+        @NameInMap("referenceClassId")
+        public Long referenceClassId;
+
+        /**
+         * <strong>example:</strong>
          * <p>31</p>
          */
         @NameInMap("seriousLateMinutes")
         public Integer seriousLateMinutes;
+
+        /**
+         * <strong>example:</strong>
+         * <p>NORMAL</p>
+         * 
+         * <strong>if can be null:</strong>
+         * <p>false</p>
+         */
+        @NameInMap("shiftType")
+        public String shiftType;
 
         /**
          * <strong>example:</strong>
@@ -479,12 +496,28 @@ public class ShiftAddRequest extends TeaModel {
             return this.lateBackSetting;
         }
 
+        public ShiftAddRequestSetting setReferenceClassId(Long referenceClassId) {
+            this.referenceClassId = referenceClassId;
+            return this;
+        }
+        public Long getReferenceClassId() {
+            return this.referenceClassId;
+        }
+
         public ShiftAddRequestSetting setSeriousLateMinutes(Integer seriousLateMinutes) {
             this.seriousLateMinutes = seriousLateMinutes;
             return this;
         }
         public Integer getSeriousLateMinutes() {
             return this.seriousLateMinutes;
+        }
+
+        public ShiftAddRequestSetting setShiftType(String shiftType) {
+            this.shiftType = shiftType;
+            return this;
+        }
+        public String getShiftType() {
+            return this.shiftType;
         }
 
         public ShiftAddRequestSetting setTags(String tags) {

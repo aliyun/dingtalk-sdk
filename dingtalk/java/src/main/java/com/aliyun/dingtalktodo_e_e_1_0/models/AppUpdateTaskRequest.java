@@ -25,6 +25,9 @@ public class AppUpdateTaskRequest extends TeaModel {
     @NameInMap("taskId")
     public Long taskId;
 
+    @NameInMap("toolbarTemplateKey")
+    public String toolbarTemplateKey;
+
     public static AppUpdateTaskRequest build(java.util.Map<String, ?> map) throws Exception {
         AppUpdateTaskRequest self = new AppUpdateTaskRequest();
         return TeaModel.build(map, self);
@@ -84,6 +87,14 @@ public class AppUpdateTaskRequest extends TeaModel {
     }
     public Long getTaskId() {
         return this.taskId;
+    }
+
+    public AppUpdateTaskRequest setToolbarTemplateKey(String toolbarTemplateKey) {
+        this.toolbarTemplateKey = toolbarTemplateKey;
+        return this;
+    }
+    public String getToolbarTemplateKey() {
+        return this.toolbarTemplateKey;
     }
 
 }

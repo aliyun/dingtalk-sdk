@@ -7,6 +7,9 @@ public class AppGetUserTaskListRequest extends TeaModel {
     @NameInMap("done")
     public Boolean done;
 
+    @NameInMap("operatorId")
+    public String operatorId;
+
     @NameInMap("pageNumber")
     public Integer pageNumber;
 
@@ -27,6 +30,14 @@ public class AppGetUserTaskListRequest extends TeaModel {
     }
     public Boolean getDone() {
         return this.done;
+    }
+
+    public AppGetUserTaskListRequest setOperatorId(String operatorId) {
+        this.operatorId = operatorId;
+        return this;
+    }
+    public String getOperatorId() {
+        return this.operatorId;
     }
 
     public AppGetUserTaskListRequest setPageNumber(Integer pageNumber) {

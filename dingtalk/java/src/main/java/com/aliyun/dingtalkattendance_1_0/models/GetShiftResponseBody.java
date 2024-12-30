@@ -380,6 +380,13 @@ public class GetShiftResponseBody extends TeaModel {
 
         /**
          * <strong>example:</strong>
+         * <p>NORMAL</p>
+         */
+        @NameInMap("shiftType")
+        public String shiftType;
+
+        /**
+         * <strong>example:</strong>
          * <p>600</p>
          */
         @NameInMap("workTimeMinutes")
@@ -436,6 +443,14 @@ public class GetShiftResponseBody extends TeaModel {
         }
         public Long getShiftSettingId() {
             return this.shiftSettingId;
+        }
+
+        public GetShiftResponseBodyResultShiftSetting setShiftType(String shiftType) {
+            this.shiftType = shiftType;
+            return this;
+        }
+        public String getShiftType() {
+            return this.shiftType;
         }
 
         public GetShiftResponseBodyResultShiftSetting setWorkTimeMinutes(Long workTimeMinutes) {

@@ -1840,4 +1840,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
         UpdateInvoiceDataTransferDoneHeaders headers = new UpdateInvoiceDataTransferDoneHeaders();
         return this.updateInvoiceDataTransferDoneWithOptions(headers, runtime);
     }
+
+    /**
+     * <b>summary</b> : 
+     * <p>用于更新智能财务企业票池内对应发票的下载链接</p>
+     * 
+     * @param tmpReq UpdateInvoiceUrlRequest
+     * @param headers UpdateInvoiceUrlHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateInvoiceUrlResponse
+     */
+    public UpdateInvoiceUrlResponse updateInvoiceUrlWithOptions(UpdateInvoiceUrlRequest tmpReq, UpdateInvoiceUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        UpdateInvoiceUrlShrinkRequest request = new UpdateInvoiceUrlShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.body)) {
+            request.bodyShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.body, "body", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bodyShrink)) {
+            query.put("body", request.bodyShrink);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateInvoiceUrl"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/invoices/urls"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateInvoiceUrlResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>用于更新智能财务企业票池内对应发票的下载链接</p>
+     * 
+     * @param request UpdateInvoiceUrlRequest
+     * @return UpdateInvoiceUrlResponse
+     */
+    public UpdateInvoiceUrlResponse updateInvoiceUrl(UpdateInvoiceUrlRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateInvoiceUrlHeaders headers = new UpdateInvoiceUrlHeaders();
+        return this.updateInvoiceUrlWithOptions(request, headers, runtime);
+    }
 }

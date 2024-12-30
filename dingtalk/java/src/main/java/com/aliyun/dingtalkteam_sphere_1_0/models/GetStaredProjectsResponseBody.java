@@ -11,9 +11,6 @@ public class GetStaredProjectsResponseBody extends TeaModel {
     @NameInMap("nextToken")
     public String nextToken;
 
-    @NameInMap("requestId")
-    public String requestId;
-
     @NameInMap("result")
     public java.util.List<String> result;
 
@@ -28,14 +25,6 @@ public class GetStaredProjectsResponseBody extends TeaModel {
     }
     public String getNextToken() {
         return this.nextToken;
-    }
-
-    public GetStaredProjectsResponseBody setRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-    public String getRequestId() {
-        return this.requestId;
     }
 
     public GetStaredProjectsResponseBody setResult(java.util.List<String> result) {

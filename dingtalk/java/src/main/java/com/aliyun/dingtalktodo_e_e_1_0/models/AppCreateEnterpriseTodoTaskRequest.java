@@ -40,6 +40,9 @@ public class AppCreateEnterpriseTodoTaskRequest extends TeaModel {
     @NameInMap("subject")
     public String subject;
 
+    @NameInMap("toolbarTemplateKey")
+    public String toolbarTemplateKey;
+
     @NameInMap("type")
     public String type;
 
@@ -142,6 +145,14 @@ public class AppCreateEnterpriseTodoTaskRequest extends TeaModel {
     }
     public String getSubject() {
         return this.subject;
+    }
+
+    public AppCreateEnterpriseTodoTaskRequest setToolbarTemplateKey(String toolbarTemplateKey) {
+        this.toolbarTemplateKey = toolbarTemplateKey;
+        return this;
+    }
+    public String getToolbarTemplateKey() {
+        return this.toolbarTemplateKey;
     }
 
     public AppCreateEnterpriseTodoTaskRequest setType(String type) {

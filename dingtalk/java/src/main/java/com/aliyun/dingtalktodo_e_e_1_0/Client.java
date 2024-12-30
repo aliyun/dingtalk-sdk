@@ -78,6 +78,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("subject", request.subject);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.toolbarTemplateKey)) {
+            body.put("toolbarTemplateKey", request.toolbarTemplateKey);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.type)) {
             body.put("type", request.type);
         }
@@ -198,6 +202,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("done", request.done);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            body.put("operatorId", request.operatorId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
             body.put("pageNumber", request.pageNumber);
         }
@@ -288,6 +296,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.taskId)) {
             body.put("taskId", request.taskId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.toolbarTemplateKey)) {
+            body.put("toolbarTemplateKey", request.toolbarTemplateKey);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -500,6 +512,78 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>创建专属待办模板实例</p>
+     * 
+     * @param request CreateStandardTemplateRequest
+     * @param headers CreateStandardTemplateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateStandardTemplateResponse
+     */
+    public CreateStandardTemplateResponse createStandardTemplateWithOptions(CreateStandardTemplateRequest request, CreateStandardTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.actions)) {
+            body.put("actions", request.actions);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.description)) {
+            body.put("description", request.description);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            body.put("operatorId", request.operatorId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.service)) {
+            body.put("service", request.service);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateStandardTemplate"),
+            new TeaPair("version", "todoEE_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/todoEE/standards/templates"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateStandardTemplateResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建专属待办模板实例</p>
+     * 
+     * @param request CreateStandardTemplateRequest
+     * @return CreateStandardTemplateResponse
+     */
+    public CreateStandardTemplateResponse createStandardTemplate(CreateStandardTemplateRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateStandardTemplateHeaders headers = new CreateStandardTemplateHeaders();
+        return this.createStandardTemplateWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>删除应用类目信息</p>
      * 
      * @param request DeleteCategorySourceConfigRequest
@@ -621,9 +705,9 @@ public class Client extends com.aliyun.teaopenapi.Client {
      */
     public GetCategorySourceConfigListResponse getCategorySourceConfigListWithOptions(GetCategorySourceConfigListRequest request, GetCategorySourceConfigListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         com.aliyun.teautil.Common.validateModel(request);
-        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.nextToken)) {
-            body.put("nextToken", request.nextToken);
+            query.put("nextToken", request.nextToken);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -637,7 +721,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "GetCategorySourceConfigList"),
@@ -664,6 +748,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetCategorySourceConfigListHeaders headers = new GetCategorySourceConfigListHeaders();
         return this.getCategorySourceConfigListWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询创建的Template列表</p>
+     * 
+     * @param request GetTemplateListRequest
+     * @param headers GetTemplateListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetTemplateListResponse
+     */
+    public GetTemplateListResponse getTemplateListWithOptions(GetTemplateListRequest request, GetTemplateListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            body.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetTemplateList"),
+            new TeaPair("version", "todoEE_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/todoEE/templates/list"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetTemplateListResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询创建的Template列表</p>
+     * 
+     * @param request GetTemplateListRequest
+     * @return GetTemplateListResponse
+     */
+    public GetTemplateListResponse getTemplateList(GetTemplateListRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetTemplateListHeaders headers = new GetTemplateListHeaders();
+        return this.getTemplateListWithOptions(request, headers, runtime);
     }
 
     /**
@@ -860,6 +1004,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateCategorySourceConfigHeaders headers = new UpdateCategorySourceConfigHeaders();
         return this.updateCategorySourceConfigWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新标准模板</p>
+     * 
+     * @param request UpdateStandardTemplateRequest
+     * @param headers UpdateStandardTemplateHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateStandardTemplateResponse
+     */
+    public UpdateStandardTemplateResponse updateStandardTemplateWithOptions(UpdateStandardTemplateRequest request, UpdateStandardTemplateHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.actions)) {
+            body.put("actions", request.actions);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            body.put("operatorId", request.operatorId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.service)) {
+            body.put("service", request.service);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.templateKey)) {
+            body.put("templateKey", request.templateKey);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateStandardTemplate"),
+            new TeaPair("version", "todoEE_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/todoEE/standards/templates/infos"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateStandardTemplateResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新标准模板</p>
+     * 
+     * @param request UpdateStandardTemplateRequest
+     * @return UpdateStandardTemplateResponse
+     */
+    public UpdateStandardTemplateResponse updateStandardTemplate(UpdateStandardTemplateRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateStandardTemplateHeaders headers = new UpdateStandardTemplateHeaders();
+        return this.updateStandardTemplateWithOptions(request, headers, runtime);
     }
 
     /**

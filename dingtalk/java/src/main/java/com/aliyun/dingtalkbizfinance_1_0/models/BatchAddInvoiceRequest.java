@@ -814,6 +814,9 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("machineCode")
         public String machineCode;
 
+        @NameInMap("ofdUrl")
+        public String ofdUrl;
+
         /**
          * <strong>example:</strong>
          * <p>abc</p>
@@ -827,6 +830,9 @@ public class BatchAddInvoiceRequest extends TeaModel {
          */
         @NameInMap("payee")
         public String payee;
+
+        @NameInMap("pdfUrl")
+        public String pdfUrl;
 
         /**
          * <strong>example:</strong>
@@ -984,6 +990,9 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("voucherStatus")
         public String voucherStatus;
 
+        @NameInMap("xmlUrl")
+        public String xmlUrl;
+
         public static BatchAddInvoiceRequestGeneralInvoiceVOList build(java.util.Map<String, ?> map) throws Exception {
             BatchAddInvoiceRequestGeneralInvoiceVOList self = new BatchAddInvoiceRequestGeneralInvoiceVOList();
             return TeaModel.build(map, self);
@@ -1133,6 +1142,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.machineCode;
         }
 
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setOfdUrl(String ofdUrl) {
+            this.ofdUrl = ofdUrl;
+            return this;
+        }
+        public String getOfdUrl() {
+            return this.ofdUrl;
+        }
+
         public BatchAddInvoiceRequestGeneralInvoiceVOList setOilFlag(String oilFlag) {
             this.oilFlag = oilFlag;
             return this;
@@ -1147,6 +1164,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
         }
         public String getPayee() {
             return this.payee;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setPdfUrl(String pdfUrl) {
+            this.pdfUrl = pdfUrl;
+            return this;
+        }
+        public String getPdfUrl() {
+            return this.pdfUrl;
         }
 
         public BatchAddInvoiceRequestGeneralInvoiceVOList setProcessInstCode(String processInstCode) {
@@ -1371,6 +1396,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
         }
         public String getVoucherStatus() {
             return this.voucherStatus;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setXmlUrl(String xmlUrl) {
+            this.xmlUrl = xmlUrl;
+            return this;
+        }
+        public String getXmlUrl() {
+            return this.xmlUrl;
         }
 
     }
