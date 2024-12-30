@@ -246,6 +246,14 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 
                 /// <summary>
                 /// <b>Example:</b>
+                /// <para>NORMAL</para>
+                /// </summary>
+                [NameInMap("shiftType")]
+                [Validation(Required=false)]
+                public string ShiftType { get; set; }
+
+                /// <summary>
+                /// <b>Example:</b>
                 /// <para>600</para>
                 /// </summary>
                 [NameInMap("workTimeMinutes")]

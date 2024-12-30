@@ -181,11 +181,30 @@ namespace AlibabaCloud.SDK.Dingtalkattendance_1_0.Models
 
             /// <summary>
             /// <b>Example:</b>
+            /// <para>1234</para>
+            /// </summary>
+            [NameInMap("referenceClassId")]
+            [Validation(Required=false)]
+            public long? ReferenceClassId { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
             /// <para>31</para>
             /// </summary>
             [NameInMap("seriousLateMinutes")]
             [Validation(Required=false)]
             public int? SeriousLateMinutes { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
+            /// <para>NORMAL</para>
+            /// 
+            /// <b>if can be null:</b>
+            /// <c>false</c>
+            /// </summary>
+            [NameInMap("shiftType")]
+            [Validation(Required=false)]
+            public string ShiftType { get; set; }
 
             /// <summary>
             /// <b>Example:</b>

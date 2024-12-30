@@ -98,6 +98,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
             {
                 body["subject"] = request.Subject;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToolbarTemplateKey))
+            {
+                body["toolbarTemplateKey"] = request.ToolbarTemplateKey;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
             {
                 body["type"] = request.Type;
@@ -200,6 +204,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subject))
             {
                 body["subject"] = request.Subject;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToolbarTemplateKey))
+            {
+                body["toolbarTemplateKey"] = request.ToolbarTemplateKey;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Type))
             {
@@ -454,6 +462,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
             {
                 body["done"] = request.Done;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
                 body["pageNumber"] = request.PageNumber;
@@ -520,6 +532,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Done))
             {
                 body["done"] = request.Done;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
             {
@@ -650,6 +666,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
             {
                 body["taskId"] = request.TaskId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToolbarTemplateKey))
+            {
+                body["toolbarTemplateKey"] = request.ToolbarTemplateKey;
+            }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -728,6 +748,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
             {
                 body["taskId"] = request.TaskId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToolbarTemplateKey))
+            {
+                body["toolbarTemplateKey"] = request.ToolbarTemplateKey;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1206,6 +1230,186 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>创建专属待办模板实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateStandardTemplateRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateStandardTemplateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateStandardTemplateResponse
+        /// </returns>
+        public CreateStandardTemplateResponse CreateStandardTemplateWithOptions(CreateStandardTemplateRequest request, CreateStandardTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Actions))
+            {
+                body["actions"] = request.Actions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Service))
+            {
+                body["service"] = request.Service;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateStandardTemplate",
+                Version = "todoEE_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/todoEE/standards/templates",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateStandardTemplateResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建专属待办模板实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateStandardTemplateRequest
+        /// </param>
+        /// <param name="headers">
+        /// CreateStandardTemplateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateStandardTemplateResponse
+        /// </returns>
+        public async Task<CreateStandardTemplateResponse> CreateStandardTemplateWithOptionsAsync(CreateStandardTemplateRequest request, CreateStandardTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Actions))
+            {
+                body["actions"] = request.Actions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
+            {
+                body["description"] = request.Description;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Name))
+            {
+                body["name"] = request.Name;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Service))
+            {
+                body["service"] = request.Service;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "CreateStandardTemplate",
+                Version = "todoEE_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/todoEE/standards/templates",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<CreateStandardTemplateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建专属待办模板实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateStandardTemplateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateStandardTemplateResponse
+        /// </returns>
+        public CreateStandardTemplateResponse CreateStandardTemplate(CreateStandardTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateStandardTemplateHeaders headers = new CreateStandardTemplateHeaders();
+            return CreateStandardTemplateWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>创建专属待办模板实例</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// CreateStandardTemplateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// CreateStandardTemplateResponse
+        /// </returns>
+        public async Task<CreateStandardTemplateResponse> CreateStandardTemplateAsync(CreateStandardTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            CreateStandardTemplateHeaders headers = new CreateStandardTemplateHeaders();
+            return await CreateStandardTemplateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>删除应用类目信息</para>
         /// </summary>
         /// 
@@ -1521,10 +1725,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
         public GetCategorySourceConfigListResponse GetCategorySourceConfigListWithOptions(GetCategorySourceConfigListRequest request, GetCategorySourceConfigListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
-                body["nextToken"] = request.NextToken;
+                query["nextToken"] = request.NextToken;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1538,7 +1742,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
@@ -1576,10 +1780,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
         public async Task<GetCategorySourceConfigListResponse> GetCategorySourceConfigListWithOptionsAsync(GetCategorySourceConfigListRequest request, GetCategorySourceConfigListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
-            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
             {
-                body["nextToken"] = request.NextToken;
+                query["nextToken"] = request.NextToken;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -1593,7 +1797,7 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
@@ -1646,6 +1850,162 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetCategorySourceConfigListHeaders headers = new GetCategorySourceConfigListHeaders();
             return await GetCategorySourceConfigListWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询创建的Template列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetTemplateListRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetTemplateListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetTemplateListResponse
+        /// </returns>
+        public GetTemplateListResponse GetTemplateListWithOptions(GetTemplateListRequest request, GetTemplateListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                body["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetTemplateList",
+                Version = "todoEE_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/todoEE/templates/list",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetTemplateListResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询创建的Template列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetTemplateListRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetTemplateListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetTemplateListResponse
+        /// </returns>
+        public async Task<GetTemplateListResponse> GetTemplateListWithOptionsAsync(GetTemplateListRequest request, GetTemplateListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                body["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                body["pageSize"] = request.PageSize;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetTemplateList",
+                Version = "todoEE_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/todoEE/templates/list",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetTemplateListResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询创建的Template列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetTemplateListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetTemplateListResponse
+        /// </returns>
+        public GetTemplateListResponse GetTemplateList(GetTemplateListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetTemplateListHeaders headers = new GetTemplateListHeaders();
+            return GetTemplateListWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询创建的Template列表</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetTemplateListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetTemplateListResponse
+        /// </returns>
+        public async Task<GetTemplateListResponse> GetTemplateListAsync(GetTemplateListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetTemplateListHeaders headers = new GetTemplateListHeaders();
+            return await GetTemplateListWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -2146,6 +2506,178 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateCategorySourceConfigHeaders headers = new UpdateCategorySourceConfigHeaders();
             return await UpdateCategorySourceConfigWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新标准模板</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateStandardTemplateRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateStandardTemplateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateStandardTemplateResponse
+        /// </returns>
+        public UpdateStandardTemplateResponse UpdateStandardTemplateWithOptions(UpdateStandardTemplateRequest request, UpdateStandardTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Actions))
+            {
+                body["actions"] = request.Actions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Service))
+            {
+                body["service"] = request.Service;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateKey))
+            {
+                body["templateKey"] = request.TemplateKey;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateStandardTemplate",
+                Version = "todoEE_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/todoEE/standards/templates/infos",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateStandardTemplateResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新标准模板</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateStandardTemplateRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateStandardTemplateHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateStandardTemplateResponse
+        /// </returns>
+        public async Task<UpdateStandardTemplateResponse> UpdateStandardTemplateWithOptionsAsync(UpdateStandardTemplateRequest request, UpdateStandardTemplateHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Actions))
+            {
+                body["actions"] = request.Actions;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                body["operatorId"] = request.OperatorId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Service))
+            {
+                body["service"] = request.Service;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TemplateKey))
+            {
+                body["templateKey"] = request.TemplateKey;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateStandardTemplate",
+                Version = "todoEE_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/todoEE/standards/templates/infos",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateStandardTemplateResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新标准模板</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateStandardTemplateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateStandardTemplateResponse
+        /// </returns>
+        public UpdateStandardTemplateResponse UpdateStandardTemplate(UpdateStandardTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateStandardTemplateHeaders headers = new UpdateStandardTemplateHeaders();
+            return UpdateStandardTemplateWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新标准模板</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateStandardTemplateRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateStandardTemplateResponse
+        /// </returns>
+        public async Task<UpdateStandardTemplateResponse> UpdateStandardTemplateAsync(UpdateStandardTemplateRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateStandardTemplateHeaders headers = new UpdateStandardTemplateHeaders();
+            return await UpdateStandardTemplateWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

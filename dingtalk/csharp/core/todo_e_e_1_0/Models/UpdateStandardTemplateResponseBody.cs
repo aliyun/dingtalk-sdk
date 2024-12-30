@@ -8,10 +8,10 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0.Models
 {
-    public class GetCategorySourceConfigListRequest : TeaModel {
-        [NameInMap("nextToken")]
+    public class UpdateStandardTemplateResponseBody : TeaModel {
+        [NameInMap("success")]
         [Validation(Required=false)]
-        public string NextToken { get; set; }
+        public bool? Success { get; set; }
 
     }
 

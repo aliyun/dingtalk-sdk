@@ -37,6 +37,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0.Models
         [Validation(Required=false)]
         public long? TaskId { get; set; }
 
+        [NameInMap("toolbarTemplateKey")]
+        [Validation(Required=false)]
+        public string ToolbarTemplateKey { get; set; }
+
     }
 
 }

@@ -358,6 +358,170 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>归档审批实例(OA高级版专享)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ArchiveProcessInstanceRequest
+        /// </param>
+        /// <param name="headers">
+        /// ArchiveProcessInstanceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ArchiveProcessInstanceResponse
+        /// </returns>
+        public ArchiveProcessInstanceResponse ArchiveProcessInstanceWithOptions(ArchiveProcessInstanceRequest request, ArchiveProcessInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsSystem))
+            {
+                body["isSystem"] = request.IsSystem;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
+            {
+                body["opUserId"] = request.OpUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
+            {
+                body["processInstanceId"] = request.ProcessInstanceId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ArchiveProcessInstance",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/premium/processInstances/archive",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ArchiveProcessInstanceResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>归档审批实例(OA高级版专享)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ArchiveProcessInstanceRequest
+        /// </param>
+        /// <param name="headers">
+        /// ArchiveProcessInstanceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ArchiveProcessInstanceResponse
+        /// </returns>
+        public async Task<ArchiveProcessInstanceResponse> ArchiveProcessInstanceWithOptionsAsync(ArchiveProcessInstanceRequest request, ArchiveProcessInstanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsSystem))
+            {
+                body["isSystem"] = request.IsSystem;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
+            {
+                body["opUserId"] = request.OpUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
+            {
+                body["processInstanceId"] = request.ProcessInstanceId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ArchiveProcessInstance",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/premium/processInstances/archive",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ArchiveProcessInstanceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>归档审批实例(OA高级版专享)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ArchiveProcessInstanceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ArchiveProcessInstanceResponse
+        /// </returns>
+        public ArchiveProcessInstanceResponse ArchiveProcessInstance(ArchiveProcessInstanceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ArchiveProcessInstanceHeaders headers = new ArchiveProcessInstanceHeaders();
+            return ArchiveProcessInstanceWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>归档审批实例(OA高级版专享)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ArchiveProcessInstanceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ArchiveProcessInstanceResponse
+        /// </returns>
+        public async Task<ArchiveProcessInstanceResponse> ArchiveProcessInstanceAsync(ArchiveProcessInstanceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ArchiveProcessInstanceHeaders headers = new ArchiveProcessInstanceHeaders();
+            return await ArchiveProcessInstanceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>批量同意或拒绝审批任务</para>
         /// </summary>
         /// 

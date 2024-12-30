@@ -17,10 +17,6 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0.Models
         [Validation(Required=false)]
         public string NextToken { get; set; }
 
-        [NameInMap("requestId")]
-        [Validation(Required=false)]
-        public string RequestId { get; set; }
-
         [NameInMap("result")]
         [Validation(Required=false)]
         public List<string> Result { get; set; }

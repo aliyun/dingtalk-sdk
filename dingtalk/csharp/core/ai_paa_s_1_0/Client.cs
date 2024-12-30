@@ -20,6 +20,7 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
         {
             AlibabaCloud.GatewayDingTalk.Client gatewayClient = new AlibabaCloud.GatewayDingTalk.Client();
             this._spi = gatewayClient;
+            this._signatureAlgorithm = "v2";
             this._endpointRule = "";
             if (AlibabaCloud.TeaUtil.Common.Empty(_endpoint))
             {
@@ -1414,6 +1415,266 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryMemoryLearningTaskHeaders headers = new QueryMemoryLearningTaskHeaders();
             return await QueryMemoryLearningTaskWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>中信金属智能配料任务结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SmartFormulaResultServiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SmartFormulaResultServiceResponse
+        /// </returns>
+        public SmartFormulaResultServiceResponse SmartFormulaResultServiceWithOptions(SmartFormulaResultServiceRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SmartFormulaResultService",
+                Version = "aiPaaS_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiPaaS/nl2x/smartFormulas/results/query",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SmartFormulaResultServiceResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>中信金属智能配料任务结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SmartFormulaResultServiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SmartFormulaResultServiceResponse
+        /// </returns>
+        public async Task<SmartFormulaResultServiceResponse> SmartFormulaResultServiceWithOptionsAsync(SmartFormulaResultServiceRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                body["taskId"] = request.TaskId;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SmartFormulaResultService",
+                Version = "aiPaaS_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiPaaS/nl2x/smartFormulas/results/query",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SmartFormulaResultServiceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>中信金属智能配料任务结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SmartFormulaResultServiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SmartFormulaResultServiceResponse
+        /// </returns>
+        public SmartFormulaResultServiceResponse SmartFormulaResultService(SmartFormulaResultServiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return SmartFormulaResultServiceWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>中信金属智能配料任务结果</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SmartFormulaResultServiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SmartFormulaResultServiceResponse
+        /// </returns>
+        public async Task<SmartFormulaResultServiceResponse> SmartFormulaResultServiceAsync(SmartFormulaResultServiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await SmartFormulaResultServiceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>中信金属智能配料任务触发</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SmartFormulaTriggerServiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SmartFormulaTriggerServiceResponse
+        /// </returns>
+        public SmartFormulaTriggerServiceResponse SmartFormulaTriggerServiceWithOptions(SmartFormulaTriggerServiceRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Request))
+            {
+                body["request"] = request.Request;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SmartFormulaTriggerService",
+                Version = "aiPaaS_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiPaaS/nl2x/smartFormulas/trigger",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SmartFormulaTriggerServiceResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>中信金属智能配料任务触发</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SmartFormulaTriggerServiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// map
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SmartFormulaTriggerServiceResponse
+        /// </returns>
+        public async Task<SmartFormulaTriggerServiceResponse> SmartFormulaTriggerServiceWithOptionsAsync(SmartFormulaTriggerServiceRequest request, Dictionary<string, string> headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Request))
+            {
+                body["request"] = request.Request;
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = headers,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SmartFormulaTriggerService",
+                Version = "aiPaaS_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiPaaS/nl2x/smartFormulas/trigger",
+                Method = "POST",
+                AuthType = "Anonymous",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SmartFormulaTriggerServiceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>中信金属智能配料任务触发</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SmartFormulaTriggerServiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SmartFormulaTriggerServiceResponse
+        /// </returns>
+        public SmartFormulaTriggerServiceResponse SmartFormulaTriggerService(SmartFormulaTriggerServiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return SmartFormulaTriggerServiceWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>中信金属智能配料任务触发</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SmartFormulaTriggerServiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SmartFormulaTriggerServiceResponse
+        /// </returns>
+        public async Task<SmartFormulaTriggerServiceResponse> SmartFormulaTriggerServiceAsync(SmartFormulaTriggerServiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            Dictionary<string, string> headers = new Dictionary<string, string>(){};
+            return await SmartFormulaTriggerServiceWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

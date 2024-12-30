@@ -5646,6 +5646,154 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>文档标签信息查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetImportDocumentMarkRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetImportDocumentMarkHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetImportDocumentMarkResponse
+        /// </returns>
+        public GetImportDocumentMarkResponse GetImportDocumentMarkWithOptions(string docId, GetImportDocumentMarkRequest request, GetImportDocumentMarkHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetImportDocumentMark",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/docs/" + docId + "/marks",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetImportDocumentMarkResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>文档标签信息查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetImportDocumentMarkRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetImportDocumentMarkHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetImportDocumentMarkResponse
+        /// </returns>
+        public async Task<GetImportDocumentMarkResponse> GetImportDocumentMarkWithOptionsAsync(string docId, GetImportDocumentMarkRequest request, GetImportDocumentMarkHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetImportDocumentMark",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/docs/" + docId + "/marks",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetImportDocumentMarkResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>文档标签信息查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetImportDocumentMarkRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetImportDocumentMarkResponse
+        /// </returns>
+        public GetImportDocumentMarkResponse GetImportDocumentMark(string docId, GetImportDocumentMarkRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetImportDocumentMarkHeaders headers = new GetImportDocumentMarkHeaders();
+            return GetImportDocumentMarkWithOptions(docId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>文档标签信息查询</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetImportDocumentMarkRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetImportDocumentMarkResponse
+        /// </returns>
+        public async Task<GetImportDocumentMarkResponse> GetImportDocumentMarkAsync(string docId, GetImportDocumentMarkRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetImportDocumentMarkHeaders headers = new GetImportDocumentMarkHeaders();
+            return await GetImportDocumentMarkWithOptionsAsync(docId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取单元格区域</para>
         /// </summary>
         /// 

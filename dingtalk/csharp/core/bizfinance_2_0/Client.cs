@@ -4666,5 +4666,165 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             return await UpdateInvoiceDataTransferDoneWithOptionsAsync(headers, runtime);
         }
 
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用于更新智能财务企业票池内对应发票的下载链接</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// UpdateInvoiceUrlRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateInvoiceUrlHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceUrlResponse
+        /// </returns>
+        public UpdateInvoiceUrlResponse UpdateInvoiceUrlWithOptions(UpdateInvoiceUrlRequest tmpReq, UpdateInvoiceUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            UpdateInvoiceUrlShrinkRequest request = new UpdateInvoiceUrlShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body))
+            {
+                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body, "body", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BodyShrink))
+            {
+                query["body"] = request.BodyShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateInvoiceUrl",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/invoices/urls",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateInvoiceUrlResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用于更新智能财务企业票池内对应发票的下载链接</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// UpdateInvoiceUrlRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateInvoiceUrlHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceUrlResponse
+        /// </returns>
+        public async Task<UpdateInvoiceUrlResponse> UpdateInvoiceUrlWithOptionsAsync(UpdateInvoiceUrlRequest tmpReq, UpdateInvoiceUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            UpdateInvoiceUrlShrinkRequest request = new UpdateInvoiceUrlShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.Body))
+            {
+                request.BodyShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.Body, "body", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BodyShrink))
+            {
+                query["body"] = request.BodyShrink;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateInvoiceUrl",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/invoices/urls",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateInvoiceUrlResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用于更新智能财务企业票池内对应发票的下载链接</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceUrlRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceUrlResponse
+        /// </returns>
+        public UpdateInvoiceUrlResponse UpdateInvoiceUrl(UpdateInvoiceUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateInvoiceUrlHeaders headers = new UpdateInvoiceUrlHeaders();
+            return UpdateInvoiceUrlWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>用于更新智能财务企业票池内对应发票的下载链接</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateInvoiceUrlRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateInvoiceUrlResponse
+        /// </returns>
+        public async Task<UpdateInvoiceUrlResponse> UpdateInvoiceUrlAsync(UpdateInvoiceUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateInvoiceUrlHeaders headers = new UpdateInvoiceUrlHeaders();
+            return await UpdateInvoiceUrlWithOptionsAsync(request, headers, runtime);
+        }
+
     }
 }

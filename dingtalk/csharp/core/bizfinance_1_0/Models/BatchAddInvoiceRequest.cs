@@ -207,6 +207,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string MachineCode { get; set; }
 
+            [NameInMap("ofdUrl")]
+            [Validation(Required=false)]
+            public string OfdUrl { get; set; }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>abc</para>
@@ -222,6 +226,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [NameInMap("payee")]
             [Validation(Required=false)]
             public string Payee { get; set; }
+
+            [NameInMap("pdfUrl")]
+            [Validation(Required=false)]
+            public string PdfUrl { get; set; }
 
             /// <summary>
             /// <b>Example:</b>
@@ -576,6 +584,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [NameInMap("voucherStatus")]
             [Validation(Required=false)]
             public string VoucherStatus { get; set; }
+
+            [NameInMap("xmlUrl")]
+            [Validation(Required=false)]
+            public string XmlUrl { get; set; }
 
         }
 
