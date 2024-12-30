@@ -135,6 +135,11 @@ class generalInvoiceVOList extends Model
     public $machineCode;
 
     /**
+     * @var string
+     */
+    public $ofdUrl;
+
+    /**
      * @example abc
      *
      * @var string
@@ -147,6 +152,11 @@ class generalInvoiceVOList extends Model
      * @var string
      */
     public $payee;
+
+    /**
+     * @var string
+     */
+    public $pdfUrl;
 
     /**
      * @example abc
@@ -323,6 +333,11 @@ class generalInvoiceVOList extends Model
      * @var string
      */
     public $voucherStatus;
+
+    /**
+     * @var string
+     */
+    public $xmlUrl;
     protected $_name = [
         'accountPeriod'                  => 'accountPeriod',
         'amount'                         => 'amount',
@@ -342,8 +357,10 @@ class generalInvoiceVOList extends Model
         'invoiceStatus'                  => 'invoiceStatus',
         'invoiceType'                    => 'invoiceType',
         'machineCode'                    => 'machineCode',
+        'ofdUrl'                         => 'ofdUrl',
         'oilFlag'                        => 'oilFlag',
         'payee'                          => 'payee',
+        'pdfUrl'                         => 'pdfUrl',
         'processInstCode'                => 'processInstCode',
         'processInstType'                => 'processInstType',
         'purchaserAddress'               => 'purchaserAddress',
@@ -372,6 +389,7 @@ class generalInvoiceVOList extends Model
         'verifyStatus'                   => 'verifyStatus',
         'voucherCode'                    => 'voucherCode',
         'voucherStatus'                  => 'voucherStatus',
+        'xmlUrl'                         => 'xmlUrl',
     ];
 
     public function validate()
@@ -441,11 +459,17 @@ class generalInvoiceVOList extends Model
         if (null !== $this->machineCode) {
             $res['machineCode'] = $this->machineCode;
         }
+        if (null !== $this->ofdUrl) {
+            $res['ofdUrl'] = $this->ofdUrl;
+        }
         if (null !== $this->oilFlag) {
             $res['oilFlag'] = $this->oilFlag;
         }
         if (null !== $this->payee) {
             $res['payee'] = $this->payee;
+        }
+        if (null !== $this->pdfUrl) {
+            $res['pdfUrl'] = $this->pdfUrl;
         }
         if (null !== $this->processInstCode) {
             $res['processInstCode'] = $this->processInstCode;
@@ -549,6 +573,9 @@ class generalInvoiceVOList extends Model
         if (null !== $this->voucherStatus) {
             $res['voucherStatus'] = $this->voucherStatus;
         }
+        if (null !== $this->xmlUrl) {
+            $res['xmlUrl'] = $this->xmlUrl;
+        }
 
         return $res;
     }
@@ -621,11 +648,17 @@ class generalInvoiceVOList extends Model
         if (isset($map['machineCode'])) {
             $model->machineCode = $map['machineCode'];
         }
+        if (isset($map['ofdUrl'])) {
+            $model->ofdUrl = $map['ofdUrl'];
+        }
         if (isset($map['oilFlag'])) {
             $model->oilFlag = $map['oilFlag'];
         }
         if (isset($map['payee'])) {
             $model->payee = $map['payee'];
+        }
+        if (isset($map['pdfUrl'])) {
+            $model->pdfUrl = $map['pdfUrl'];
         }
         if (isset($map['processInstCode'])) {
             $model->processInstCode = $map['processInstCode'];
@@ -728,6 +761,9 @@ class generalInvoiceVOList extends Model
         }
         if (isset($map['voucherStatus'])) {
             $model->voucherStatus = $map['voucherStatus'];
+        }
+        if (isset($map['xmlUrl'])) {
+            $model->xmlUrl = $map['xmlUrl'];
         }
 
         return $model;

@@ -9,8 +9,6 @@ use AlibabaCloud\Tea\Model;
 class GetCategorySourceConfigListRequest extends Model
 {
     /**
-     * @example aabcdefe
-     *
      * @var string
      */
     public $nextToken;

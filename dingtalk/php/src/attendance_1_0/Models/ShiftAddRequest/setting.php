@@ -52,11 +52,25 @@ class setting extends Model
     public $lateBackSetting;
 
     /**
+     * @example 1234
+     *
+     * @var int
+     */
+    public $referenceClassId;
+
+    /**
      * @example 31
      *
      * @var int
      */
     public $seriousLateMinutes;
+
+    /**
+     * @example NORMAL
+     *
+     * @var string
+     */
+    public $shiftType;
 
     /**
      * @example temp:schedule:isv
@@ -77,7 +91,9 @@ class setting extends Model
         'extras'                 => 'extras',
         'isFlexible'             => 'isFlexible',
         'lateBackSetting'        => 'lateBackSetting',
+        'referenceClassId'       => 'referenceClassId',
         'seriousLateMinutes'     => 'seriousLateMinutes',
+        'shiftType'              => 'shiftType',
         'tags'                   => 'tags',
         'topRestTimeList'        => 'topRestTimeList',
     ];
@@ -110,8 +126,14 @@ class setting extends Model
         if (null !== $this->lateBackSetting) {
             $res['lateBackSetting'] = null !== $this->lateBackSetting ? $this->lateBackSetting->toMap() : null;
         }
+        if (null !== $this->referenceClassId) {
+            $res['referenceClassId'] = $this->referenceClassId;
+        }
         if (null !== $this->seriousLateMinutes) {
             $res['seriousLateMinutes'] = $this->seriousLateMinutes;
+        }
+        if (null !== $this->shiftType) {
+            $res['shiftType'] = $this->shiftType;
         }
         if (null !== $this->tags) {
             $res['tags'] = $this->tags;
@@ -158,8 +180,14 @@ class setting extends Model
         if (isset($map['lateBackSetting'])) {
             $model->lateBackSetting = lateBackSetting::fromMap($map['lateBackSetting']);
         }
+        if (isset($map['referenceClassId'])) {
+            $model->referenceClassId = $map['referenceClassId'];
+        }
         if (isset($map['seriousLateMinutes'])) {
             $model->seriousLateMinutes = $map['seriousLateMinutes'];
+        }
+        if (isset($map['shiftType'])) {
+            $model->shiftType = $map['shiftType'];
         }
         if (isset($map['tags'])) {
             $model->tags = $map['tags'];

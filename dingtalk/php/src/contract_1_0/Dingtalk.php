@@ -8,6 +8,15 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractBenefitConsumeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractBenefitConsumeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractBenefitConsumeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractCompareTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractCompareTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractCompareTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractExtractTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractExtractTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractExtractTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractReviewTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractReviewTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CreateContractReviewTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignQueryApprovalInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignQueryApprovalInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\EsignQueryApprovalInfoResponse;
@@ -29,6 +38,15 @@ use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\FinishReviewOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryAdvancedContractVersionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryAdvancedContractVersionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryAdvancedContractVersionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractCompareResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractCompareResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractCompareResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractExtractResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractExtractResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractExtractResultResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractReviewResultHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractReviewResultRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\QueryContractReviewResultResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SendContractCardHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SendContractCardRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\SendContractCardResponse;
@@ -125,6 +143,234 @@ class Dingtalk extends OpenApiClient
         $headers = new ContractBenefitConsumeHeaders([]);
 
         return $this->contractBenefitConsumeWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建合同比对任务
+     *  *
+     * @param CreateContractCompareTaskRequest $request CreateContractCompareTaskRequest
+     * @param CreateContractCompareTaskHeaders $headers CreateContractCompareTaskHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateContractCompareTaskResponse CreateContractCompareTaskResponse
+     */
+    public function createContractCompareTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->comparativeFile)) {
+            $body['comparativeFile'] = $request->comparativeFile;
+        }
+        if (!Utils::isUnset($request->comparativeFileDownloadUrl)) {
+            $body['comparativeFileDownloadUrl'] = $request->comparativeFileDownloadUrl;
+        }
+        if (!Utils::isUnset($request->comparativeFileName)) {
+            $body['comparativeFileName'] = $request->comparativeFileName;
+        }
+        if (!Utils::isUnset($request->fileSource)) {
+            $body['fileSource'] = $request->fileSource;
+        }
+        if (!Utils::isUnset($request->requestId)) {
+            $body['requestId'] = $request->requestId;
+        }
+        if (!Utils::isUnset($request->standardFile)) {
+            $body['standardFile'] = $request->standardFile;
+        }
+        if (!Utils::isUnset($request->standardFileDownloadUrl)) {
+            $body['standardFileDownloadUrl'] = $request->standardFileDownloadUrl;
+        }
+        if (!Utils::isUnset($request->standardFileName)) {
+            $body['standardFileName'] = $request->standardFileName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateContractCompareTask',
+            'version'     => 'contract_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contract/comparisonTasks',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateContractCompareTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建合同比对任务
+     *  *
+     * @param CreateContractCompareTaskRequest $request CreateContractCompareTaskRequest
+     *
+     * @return CreateContractCompareTaskResponse CreateContractCompareTaskResponse
+     */
+    public function createContractCompareTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateContractCompareTaskHeaders([]);
+
+        return $this->createContractCompareTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建合同提取任务
+     *  *
+     * @param CreateContractExtractTaskRequest $request CreateContractExtractTaskRequest
+     * @param CreateContractExtractTaskHeaders $headers CreateContractExtractTaskHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateContractExtractTaskResponse CreateContractExtractTaskResponse
+     */
+    public function createContractExtractTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->contractFile)) {
+            $body['contractFile'] = $request->contractFile;
+        }
+        if (!Utils::isUnset($request->contractFileDownloadUrl)) {
+            $body['contractFileDownloadUrl'] = $request->contractFileDownloadUrl;
+        }
+        if (!Utils::isUnset($request->contractFileName)) {
+            $body['contractFileName'] = $request->contractFileName;
+        }
+        if (!Utils::isUnset($request->extractKeys)) {
+            $body['extractKeys'] = $request->extractKeys;
+        }
+        if (!Utils::isUnset($request->fileSource)) {
+            $body['fileSource'] = $request->fileSource;
+        }
+        if (!Utils::isUnset($request->requestId)) {
+            $body['requestId'] = $request->requestId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateContractExtractTask',
+            'version'     => 'contract_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contract/extractTasks',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateContractExtractTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建合同提取任务
+     *  *
+     * @param CreateContractExtractTaskRequest $request CreateContractExtractTaskRequest
+     *
+     * @return CreateContractExtractTaskResponse CreateContractExtractTaskResponse
+     */
+    public function createContractExtractTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateContractExtractTaskHeaders([]);
+
+        return $this->createContractExtractTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建合同审查任务
+     *  *
+     * @param CreateContractReviewTaskRequest $request CreateContractReviewTaskRequest
+     * @param CreateContractReviewTaskHeaders $headers CreateContractReviewTaskHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateContractReviewTaskResponse CreateContractReviewTaskResponse
+     */
+    public function createContractReviewTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->contractFile)) {
+            $body['contractFile'] = $request->contractFile;
+        }
+        if (!Utils::isUnset($request->contractFileDownloadUrl)) {
+            $body['contractFileDownloadUrl'] = $request->contractFileDownloadUrl;
+        }
+        if (!Utils::isUnset($request->contractFileName)) {
+            $body['contractFileName'] = $request->contractFileName;
+        }
+        if (!Utils::isUnset($request->fileSource)) {
+            $body['fileSource'] = $request->fileSource;
+        }
+        if (!Utils::isUnset($request->requestId)) {
+            $body['requestId'] = $request->requestId;
+        }
+        if (!Utils::isUnset($request->reviewCustomRules)) {
+            $body['reviewCustomRules'] = $request->reviewCustomRules;
+        }
+        if (!Utils::isUnset($request->ruleType)) {
+            $body['ruleType'] = $request->ruleType;
+        }
+        if (!Utils::isUnset($request->standpoint)) {
+            $body['standpoint'] = $request->standpoint;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateContractReviewTask',
+            'version'     => 'contract_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contract/reviewTasks',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateContractReviewTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建合同审查任务
+     *  *
+     * @param CreateContractReviewTaskRequest $request CreateContractReviewTaskRequest
+     *
+     * @return CreateContractReviewTaskResponse CreateContractReviewTaskResponse
+     */
+    public function createContractReviewTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateContractReviewTaskHeaders([]);
+
+        return $this->createContractReviewTaskWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -566,6 +812,186 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryAdvancedContractVersionHeaders([]);
 
         return $this->queryAdvancedContractVersionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询合同比对结果
+     *  *
+     * @param QueryContractCompareResultRequest $request QueryContractCompareResultRequest
+     * @param QueryContractCompareResultHeaders $headers QueryContractCompareResultHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryContractCompareResultResponse QueryContractCompareResultResponse
+     */
+    public function queryContractCompareResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->compareTaskId)) {
+            $body['compareTaskId'] = $request->compareTaskId;
+        }
+        if (!Utils::isUnset($request->requestId)) {
+            $body['requestId'] = $request->requestId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryContractCompareResult',
+            'version'     => 'contract_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contract/comparisonResults/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryContractCompareResultResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询合同比对结果
+     *  *
+     * @param QueryContractCompareResultRequest $request QueryContractCompareResultRequest
+     *
+     * @return QueryContractCompareResultResponse QueryContractCompareResultResponse
+     */
+    public function queryContractCompareResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryContractCompareResultHeaders([]);
+
+        return $this->queryContractCompareResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询合同提取结果
+     *  *
+     * @param QueryContractExtractResultRequest $request QueryContractExtractResultRequest
+     * @param QueryContractExtractResultHeaders $headers QueryContractExtractResultHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryContractExtractResultResponse QueryContractExtractResultResponse
+     */
+    public function queryContractExtractResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->extractTaskId)) {
+            $body['extractTaskId'] = $request->extractTaskId;
+        }
+        if (!Utils::isUnset($request->requestId)) {
+            $body['requestId'] = $request->requestId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryContractExtractResult',
+            'version'     => 'contract_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contract/extractResults/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryContractExtractResultResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询合同提取结果
+     *  *
+     * @param QueryContractExtractResultRequest $request QueryContractExtractResultRequest
+     *
+     * @return QueryContractExtractResultResponse QueryContractExtractResultResponse
+     */
+    public function queryContractExtractResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryContractExtractResultHeaders([]);
+
+        return $this->queryContractExtractResultWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询合同审查结果
+     *  *
+     * @param QueryContractReviewResultRequest $request QueryContractReviewResultRequest
+     * @param QueryContractReviewResultHeaders $headers QueryContractReviewResultHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryContractReviewResultResponse QueryContractReviewResultResponse
+     */
+    public function queryContractReviewResultWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->requestId)) {
+            $body['requestId'] = $request->requestId;
+        }
+        if (!Utils::isUnset($request->reviewTaskId)) {
+            $body['reviewTaskId'] = $request->reviewTaskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryContractReviewResult',
+            'version'     => 'contract_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contract/reviewResults/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryContractReviewResultResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询合同审查结果
+     *  *
+     * @param QueryContractReviewResultRequest $request QueryContractReviewResultRequest
+     *
+     * @return QueryContractReviewResultResponse QueryContractReviewResultResponse
+     */
+    public function queryContractReviewResult($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryContractReviewResultHeaders([]);
+
+        return $this->queryContractReviewResultWithOptions($request, $headers, $runtime);
     }
 
     /**

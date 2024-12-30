@@ -89,6 +89,10 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateInstanceOrderInfoResp
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateInstanceOrderInfoShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateInvoiceDataTransferDoneHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateInvoiceDataTransferDoneResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateInvoiceUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateInvoiceUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateInvoiceUrlResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\UpdateInvoiceUrlShrinkRequest;
 use AlibabaCloud\Tea\Utils\Utils;
 use AlibabaCloud\Tea\Utils\Utils\RuntimeOptions;
 use Darabonba\GatewayDingTalk\Client;
@@ -1898,5 +1902,67 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateInvoiceDataTransferDoneHeaders([]);
 
         return $this->updateInvoiceDataTransferDoneWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @summary 用于更新智能财务企业票池内对应发票的下载链接
+     *  *
+     * @param UpdateInvoiceUrlRequest $tmpReq  UpdateInvoiceUrlRequest
+     * @param UpdateInvoiceUrlHeaders $headers UpdateInvoiceUrlHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateInvoiceUrlResponse UpdateInvoiceUrlResponse
+     */
+    public function updateInvoiceUrlWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new UpdateInvoiceUrlShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->body)) {
+            $request->bodyShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->body, 'body', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->bodyShrink)) {
+            $query['body'] = $request->bodyShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateInvoiceUrl',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/invoices/urls',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateInvoiceUrlResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 用于更新智能财务企业票池内对应发票的下载链接
+     *  *
+     * @param UpdateInvoiceUrlRequest $request UpdateInvoiceUrlRequest
+     *
+     * @return UpdateInvoiceUrlResponse UpdateInvoiceUrlResponse
+     */
+    public function updateInvoiceUrl($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateInvoiceUrlHeaders([]);
+
+        return $this->updateInvoiceUrlWithOptions($request, $headers, $runtime);
     }
 }

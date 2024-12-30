@@ -74,21 +74,27 @@ class AppCreateEnterpriseTodoTaskRequest extends Model
     /**
      * @var string
      */
+    public $toolbarTemplateKey;
+
+    /**
+     * @var string
+     */
     public $type;
     protected $_name = [
-        'bizCategoryId' => 'bizCategoryId',
-        'customFields'  => 'customFields',
-        'description'   => 'description',
-        'detailUrl'     => 'detailUrl',
-        'dueTime'       => 'dueTime',
-        'executorIds'   => 'executorIds',
-        'notifyConfigs' => 'notifyConfigs',
-        'operatorId'    => 'operatorId',
-        'priority'      => 'priority',
-        'sourceId'      => 'sourceId',
-        'sourceTitle'   => 'sourceTitle',
-        'subject'       => 'subject',
-        'type'          => 'type',
+        'bizCategoryId'      => 'bizCategoryId',
+        'customFields'       => 'customFields',
+        'description'        => 'description',
+        'detailUrl'          => 'detailUrl',
+        'dueTime'            => 'dueTime',
+        'executorIds'        => 'executorIds',
+        'notifyConfigs'      => 'notifyConfigs',
+        'operatorId'         => 'operatorId',
+        'priority'           => 'priority',
+        'sourceId'           => 'sourceId',
+        'sourceTitle'        => 'sourceTitle',
+        'subject'            => 'subject',
+        'toolbarTemplateKey' => 'toolbarTemplateKey',
+        'type'               => 'type',
     ];
 
     public function validate()
@@ -139,6 +145,9 @@ class AppCreateEnterpriseTodoTaskRequest extends Model
         }
         if (null !== $this->subject) {
             $res['subject'] = $this->subject;
+        }
+        if (null !== $this->toolbarTemplateKey) {
+            $res['toolbarTemplateKey'] = $this->toolbarTemplateKey;
         }
         if (null !== $this->type) {
             $res['type'] = $this->type;
@@ -198,6 +207,9 @@ class AppCreateEnterpriseTodoTaskRequest extends Model
         }
         if (isset($map['subject'])) {
             $model->subject = $map['subject'];
+        }
+        if (isset($map['toolbarTemplateKey'])) {
+            $model->toolbarTemplateKey = $map['toolbarTemplateKey'];
         }
         if (isset($map['type'])) {
             $model->type = $map['type'];

@@ -42,14 +42,20 @@ class AppUpdateTaskRequest extends Model
      * @var int
      */
     public $taskId;
+
+    /**
+     * @var string
+     */
+    public $toolbarTemplateKey;
     protected $_name = [
-        'description' => 'description',
-        'done'        => 'done',
-        'dueTime'     => 'dueTime',
-        'executorIds' => 'executorIds',
-        'operatorId'  => 'operatorId',
-        'subject'     => 'subject',
-        'taskId'      => 'taskId',
+        'description'        => 'description',
+        'done'               => 'done',
+        'dueTime'            => 'dueTime',
+        'executorIds'        => 'executorIds',
+        'operatorId'         => 'operatorId',
+        'subject'            => 'subject',
+        'taskId'             => 'taskId',
+        'toolbarTemplateKey' => 'toolbarTemplateKey',
     ];
 
     public function validate()
@@ -79,6 +85,9 @@ class AppUpdateTaskRequest extends Model
         }
         if (null !== $this->taskId) {
             $res['taskId'] = $this->taskId;
+        }
+        if (null !== $this->toolbarTemplateKey) {
+            $res['toolbarTemplateKey'] = $this->toolbarTemplateKey;
         }
 
         return $res;
@@ -114,6 +123,9 @@ class AppUpdateTaskRequest extends Model
         }
         if (isset($map['taskId'])) {
             $model->taskId = $map['taskId'];
+        }
+        if (isset($map['toolbarTemplateKey'])) {
+            $model->toolbarTemplateKey = $map['toolbarTemplateKey'];
         }
 
         return $model;

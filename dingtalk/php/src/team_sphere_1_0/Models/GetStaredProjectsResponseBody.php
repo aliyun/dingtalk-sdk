@@ -16,17 +16,11 @@ class GetStaredProjectsResponseBody extends Model
     public $nextToken;
 
     /**
-     * @var string
-     */
-    public $requestId;
-
-    /**
      * @var string[]
      */
     public $result;
     protected $_name = [
         'nextToken' => 'nextToken',
-        'requestId' => 'requestId',
         'result'    => 'result',
     ];
 
@@ -39,9 +33,6 @@ class GetStaredProjectsResponseBody extends Model
         $res = [];
         if (null !== $this->nextToken) {
             $res['nextToken'] = $this->nextToken;
-        }
-        if (null !== $this->requestId) {
-            $res['requestId'] = $this->requestId;
         }
         if (null !== $this->result) {
             $res['result'] = $this->result;
@@ -60,9 +51,6 @@ class GetStaredProjectsResponseBody extends Model
         $model = new self();
         if (isset($map['nextToken'])) {
             $model->nextToken = $map['nextToken'];
-        }
-        if (isset($map['requestId'])) {
-            $model->requestId = $map['requestId'];
         }
         if (isset($map['result'])) {
             if (!empty($map['result'])) {

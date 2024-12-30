@@ -30,6 +30,10 @@ use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\QueryConversationMessageForAI
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\QueryMemoryLearningTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\QueryMemoryLearningTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\QueryMemoryLearningTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\SmartFormulaResultServiceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\SmartFormulaResultServiceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\SmartFormulaTriggerServiceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\SmartFormulaTriggerServiceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\SmartQuoteBatchQueryResultServiceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\SmartQuoteBatchQueryResultServiceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\SmartQuoteBatchQueryResultServiceResponse;
@@ -61,9 +65,10 @@ class Dingtalk extends OpenApiClient
     public function __construct($config)
     {
         parent::__construct($config);
-        $gatewayClient       = new Client();
-        $this->_spi          = $gatewayClient;
-        $this->_endpointRule = '';
+        $gatewayClient             = new Client();
+        $this->_spi                = $gatewayClient;
+        $this->_signatureAlgorithm = 'v2';
+        $this->_endpointRule       = '';
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
@@ -602,6 +607,106 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryMemoryLearningTaskHeaders([]);
 
         return $this->queryMemoryLearningTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 中信金属智能配料任务结果
+     *  *
+     * @param SmartFormulaResultServiceRequest $request SmartFormulaResultServiceRequest
+     * @param string[]                         $headers map
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SmartFormulaResultServiceResponse SmartFormulaResultServiceResponse
+     */
+    public function smartFormulaResultServiceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->taskId)) {
+            $body['taskId'] = $request->taskId;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SmartFormulaResultService',
+            'version'     => 'aiPaaS_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/aiPaaS/nl2x/smartFormulas/results/query',
+            'method'      => 'POST',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SmartFormulaResultServiceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 中信金属智能配料任务结果
+     *  *
+     * @param SmartFormulaResultServiceRequest $request SmartFormulaResultServiceRequest
+     *
+     * @return SmartFormulaResultServiceResponse SmartFormulaResultServiceResponse
+     */
+    public function smartFormulaResultService($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->smartFormulaResultServiceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 中信金属智能配料任务触发
+     *  *
+     * @param SmartFormulaTriggerServiceRequest $request SmartFormulaTriggerServiceRequest
+     * @param string[]                          $headers map
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SmartFormulaTriggerServiceResponse SmartFormulaTriggerServiceResponse
+     */
+    public function smartFormulaTriggerServiceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->request)) {
+            $body['request'] = $request->request;
+        }
+        $req = new OpenApiRequest([
+            'headers' => $headers,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SmartFormulaTriggerService',
+            'version'     => 'aiPaaS_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/aiPaaS/nl2x/smartFormulas/trigger',
+            'method'      => 'POST',
+            'authType'    => 'Anonymous',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SmartFormulaTriggerServiceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 中信金属智能配料任务触发
+     *  *
+     * @param SmartFormulaTriggerServiceRequest $request SmartFormulaTriggerServiceRequest
+     *
+     * @return SmartFormulaTriggerServiceResponse SmartFormulaTriggerServiceResponse
+     */
+    public function smartFormulaTriggerService($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+
+        return $this->smartFormulaTriggerServiceWithOptions($request, $headers, $runtime);
     }
 
     /**

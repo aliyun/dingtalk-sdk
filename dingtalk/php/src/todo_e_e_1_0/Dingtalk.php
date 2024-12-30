@@ -23,6 +23,9 @@ use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\AppUpdateUserTaskStatusRespon
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\CreateEnterpriseTodoTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\CreateEnterpriseTodoTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\CreateEnterpriseTodoTaskResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\CreateStandardTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\CreateStandardTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\CreateStandardTemplateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\DeleteCategorySourceConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\DeleteCategorySourceConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\DeleteCategorySourceConfigResponse;
@@ -32,6 +35,9 @@ use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\DeleteTodoEETaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\GetCategorySourceConfigListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\GetCategorySourceConfigListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\GetCategorySourceConfigListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\GetTemplateListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\GetTemplateListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\GetTemplateListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\GetUserTaskListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\GetUserTaskListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\GetUserTaskListResponse;
@@ -41,6 +47,9 @@ use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\RegisterCategorySourceConfigR
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\UpdateCategorySourceConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\UpdateCategorySourceConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\UpdateCategorySourceConfigResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\UpdateStandardTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\UpdateStandardTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\UpdateStandardTemplateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\UpdateTaskHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\UpdateTaskRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\UpdateTaskResponse;
@@ -115,6 +124,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->subject)) {
             $body['subject'] = $request->subject;
+        }
+        if (!Utils::isUnset($request->toolbarTemplateKey)) {
+            $body['toolbarTemplateKey'] = $request->toolbarTemplateKey;
         }
         if (!Utils::isUnset($request->type)) {
             $body['type'] = $request->type;
@@ -236,6 +248,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->done)) {
             $body['done'] = $request->done;
         }
+        if (!Utils::isUnset($request->operatorId)) {
+            $body['operatorId'] = $request->operatorId;
+        }
         if (!Utils::isUnset($request->pageNumber)) {
             $body['pageNumber'] = $request->pageNumber;
         }
@@ -319,6 +334,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->taskId)) {
             $body['taskId'] = $request->taskId;
+        }
+        if (!Utils::isUnset($request->toolbarTemplateKey)) {
+            $body['toolbarTemplateKey'] = $request->toolbarTemplateKey;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -518,6 +536,75 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 创建专属待办模板实例
+     *  *
+     * @param CreateStandardTemplateRequest $request CreateStandardTemplateRequest
+     * @param CreateStandardTemplateHeaders $headers CreateStandardTemplateHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateStandardTemplateResponse CreateStandardTemplateResponse
+     */
+    public function createStandardTemplateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actions)) {
+            $body['actions'] = $request->actions;
+        }
+        if (!Utils::isUnset($request->description)) {
+            $body['description'] = $request->description;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $body['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->service)) {
+            $body['service'] = $request->service;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateStandardTemplate',
+            'version'     => 'todoEE_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todoEE/standards/templates',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateStandardTemplateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建专属待办模板实例
+     *  *
+     * @param CreateStandardTemplateRequest $request CreateStandardTemplateRequest
+     *
+     * @return CreateStandardTemplateResponse CreateStandardTemplateResponse
+     */
+    public function createStandardTemplate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateStandardTemplateHeaders([]);
+
+        return $this->createStandardTemplateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 删除应用类目信息
      *  *
      * @param DeleteCategorySourceConfigRequest $request DeleteCategorySourceConfigRequest
@@ -643,9 +730,9 @@ class Dingtalk extends OpenApiClient
     public function getCategorySourceConfigListWithOptions($request, $headers, $runtime)
     {
         Utils::validateModel($request);
-        $body = [];
+        $query = [];
         if (!Utils::isUnset($request->nextToken)) {
-            $body['nextToken'] = $request->nextToken;
+            $query['nextToken'] = $request->nextToken;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -656,7 +743,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'body'    => OpenApiUtilClient::parseToMap($body),
+            'query'   => OpenApiUtilClient::query($query),
         ]);
         $params = new Params([
             'action'      => 'GetCategorySourceConfigList',
@@ -686,6 +773,66 @@ class Dingtalk extends OpenApiClient
         $headers = new GetCategorySourceConfigListHeaders([]);
 
         return $this->getCategorySourceConfigListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询创建的Template列表
+     *  *
+     * @param GetTemplateListRequest $request GetTemplateListRequest
+     * @param GetTemplateListHeaders $headers GetTemplateListHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetTemplateListResponse GetTemplateListResponse
+     */
+    public function getTemplateListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetTemplateList',
+            'version'     => 'todoEE_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todoEE/templates/list',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetTemplateListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询创建的Template列表
+     *  *
+     * @param GetTemplateListRequest $request GetTemplateListRequest
+     *
+     * @return GetTemplateListResponse GetTemplateListResponse
+     */
+    public function getTemplateList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetTemplateListHeaders([]);
+
+        return $this->getTemplateListWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -878,6 +1025,72 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateCategorySourceConfigHeaders([]);
 
         return $this->updateCategorySourceConfigWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新标准模板
+     *  *
+     * @param UpdateStandardTemplateRequest $request UpdateStandardTemplateRequest
+     * @param UpdateStandardTemplateHeaders $headers UpdateStandardTemplateHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateStandardTemplateResponse UpdateStandardTemplateResponse
+     */
+    public function updateStandardTemplateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actions)) {
+            $body['actions'] = $request->actions;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $body['operatorId'] = $request->operatorId;
+        }
+        if (!Utils::isUnset($request->service)) {
+            $body['service'] = $request->service;
+        }
+        if (!Utils::isUnset($request->templateKey)) {
+            $body['templateKey'] = $request->templateKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateStandardTemplate',
+            'version'     => 'todoEE_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todoEE/standards/templates/infos',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateStandardTemplateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新标准模板
+     *  *
+     * @param UpdateStandardTemplateRequest $request UpdateStandardTemplateRequest
+     *
+     * @return UpdateStandardTemplateResponse UpdateStandardTemplateResponse
+     */
+    public function updateStandardTemplate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateStandardTemplateHeaders([]);
+
+        return $this->updateStandardTemplateWithOptions($request, $headers, $runtime);
     }
 
     /**

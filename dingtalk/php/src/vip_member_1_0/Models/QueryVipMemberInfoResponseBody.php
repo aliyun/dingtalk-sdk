@@ -9,11 +9,17 @@ use AlibabaCloud\Tea\Model;
 class QueryVipMemberInfoResponseBody extends Model
 {
     /**
+     * @var string
+     */
+    public $expireTime;
+
+    /**
      * @var bool
      */
     public $isVip;
     protected $_name = [
-        'isVip' => 'isVip',
+        'expireTime' => 'expireTime',
+        'isVip'      => 'isVip',
     ];
 
     public function validate()
@@ -23,6 +29,9 @@ class QueryVipMemberInfoResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->expireTime) {
+            $res['expireTime'] = $this->expireTime;
+        }
         if (null !== $this->isVip) {
             $res['isVip'] = $this->isVip;
         }
@@ -38,6 +47,9 @@ class QueryVipMemberInfoResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['expireTime'])) {
+            $model->expireTime = $map['expireTime'];
+        }
         if (isset($map['isVip'])) {
             $model->isVip = $map['isVip'];
         }

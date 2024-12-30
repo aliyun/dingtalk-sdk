@@ -55,6 +55,13 @@ class shiftSetting extends Model
     public $shiftSettingId;
 
     /**
+     * @example NORMAL
+     *
+     * @var string
+     */
+    public $shiftType;
+
+    /**
      * @example 600
      *
      * @var int
@@ -67,6 +74,7 @@ class shiftSetting extends Model
         'gmtModified'     => 'gmtModified',
         'shiftId'         => 'shiftId',
         'shiftSettingId'  => 'shiftSettingId',
+        'shiftType'       => 'shiftType',
         'workTimeMinutes' => 'workTimeMinutes',
     ];
 
@@ -94,6 +102,9 @@ class shiftSetting extends Model
         }
         if (null !== $this->shiftSettingId) {
             $res['shiftSettingId'] = $this->shiftSettingId;
+        }
+        if (null !== $this->shiftType) {
+            $res['shiftType'] = $this->shiftType;
         }
         if (null !== $this->workTimeMinutes) {
             $res['workTimeMinutes'] = $this->workTimeMinutes;
@@ -127,6 +138,9 @@ class shiftSetting extends Model
         }
         if (isset($map['shiftSettingId'])) {
             $model->shiftSettingId = $map['shiftSettingId'];
+        }
+        if (isset($map['shiftType'])) {
+            $model->shiftType = $map['shiftType'];
         }
         if (isset($map['workTimeMinutes'])) {
             $model->workTimeMinutes = $map['workTimeMinutes'];

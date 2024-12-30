@@ -110,6 +110,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetAllSheetsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetDeveloperMetadataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetDeveloperMetadataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetDeveloperMetadataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetImportDocumentMarkHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetImportDocumentMarkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetImportDocumentMarkResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRangeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRangeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\GetRangeResponse;
@@ -2490,6 +2493,65 @@ class Dingtalk extends OpenApiClient
         $headers = new GetDeveloperMetadataHeaders([]);
 
         return $this->getDeveloperMetadataWithOptions($workbookId, $developerMetadataId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 文档标签信息查询
+     *  *
+     * @param string                       $docId
+     * @param GetImportDocumentMarkRequest $request GetImportDocumentMarkRequest
+     * @param GetImportDocumentMarkHeaders $headers GetImportDocumentMarkHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetImportDocumentMarkResponse GetImportDocumentMarkResponse
+     */
+    public function getImportDocumentMarkWithOptions($docId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetImportDocumentMark',
+            'version'     => 'doc_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/doc/docs/' . $docId . '/marks',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetImportDocumentMarkResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 文档标签信息查询
+     *  *
+     * @param string                       $docId
+     * @param GetImportDocumentMarkRequest $request GetImportDocumentMarkRequest
+     *
+     * @return GetImportDocumentMarkResponse GetImportDocumentMarkResponse
+     */
+    public function getImportDocumentMark($docId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetImportDocumentMarkHeaders([]);
+
+        return $this->getImportDocumentMarkWithOptions($docId, $request, $headers, $runtime);
     }
 
     /**

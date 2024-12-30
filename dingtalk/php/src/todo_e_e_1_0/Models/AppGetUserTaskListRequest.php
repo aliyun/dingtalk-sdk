@@ -14,6 +14,11 @@ class AppGetUserTaskListRequest extends Model
     public $done;
 
     /**
+     * @var string
+     */
+    public $operatorId;
+
+    /**
      * @var int
      */
     public $pageNumber;
@@ -29,6 +34,7 @@ class AppGetUserTaskListRequest extends Model
     public $type;
     protected $_name = [
         'done'       => 'done',
+        'operatorId' => 'operatorId',
         'pageNumber' => 'pageNumber',
         'pageSize'   => 'pageSize',
         'type'       => 'type',
@@ -43,6 +49,9 @@ class AppGetUserTaskListRequest extends Model
         $res = [];
         if (null !== $this->done) {
             $res['done'] = $this->done;
+        }
+        if (null !== $this->operatorId) {
+            $res['operatorId'] = $this->operatorId;
         }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
@@ -67,6 +76,9 @@ class AppGetUserTaskListRequest extends Model
         $model = new self();
         if (isset($map['done'])) {
             $model->done = $map['done'];
+        }
+        if (isset($map['operatorId'])) {
+            $model->operatorId = $map['operatorId'];
         }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];

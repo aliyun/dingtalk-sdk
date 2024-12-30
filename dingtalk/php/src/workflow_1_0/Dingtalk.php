@@ -11,6 +11,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\AddApproveDentryAuthResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\AddProcessInstanceCommentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\AddProcessInstanceCommentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\AddProcessInstanceCommentResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ArchiveProcessInstanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ArchiveProcessInstanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\ArchiveProcessInstanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchExecuteProcessInstancesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchExecuteProcessInstancesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\BatchExecuteProcessInstancesResponse;
@@ -380,6 +383,69 @@ class Dingtalk extends OpenApiClient
         $headers = new AddProcessInstanceCommentHeaders([]);
 
         return $this->addProcessInstanceCommentWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 归档审批实例(OA高级版专享)
+     *  *
+     * @param ArchiveProcessInstanceRequest $request ArchiveProcessInstanceRequest
+     * @param ArchiveProcessInstanceHeaders $headers ArchiveProcessInstanceHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ArchiveProcessInstanceResponse ArchiveProcessInstanceResponse
+     */
+    public function archiveProcessInstanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->isSystem)) {
+            $body['isSystem'] = $request->isSystem;
+        }
+        if (!Utils::isUnset($request->opUserId)) {
+            $body['opUserId'] = $request->opUserId;
+        }
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $body['processInstanceId'] = $request->processInstanceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ArchiveProcessInstance',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processInstances/archive',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ArchiveProcessInstanceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 归档审批实例(OA高级版专享)
+     *  *
+     * @param ArchiveProcessInstanceRequest $request ArchiveProcessInstanceRequest
+     *
+     * @return ArchiveProcessInstanceResponse ArchiveProcessInstanceResponse
+     */
+    public function archiveProcessInstance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ArchiveProcessInstanceHeaders([]);
+
+        return $this->archiveProcessInstanceWithOptions($request, $headers, $runtime);
     }
 
     /**
