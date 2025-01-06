@@ -4529,6 +4529,7 @@ class GetAutoFlowLogDetailRequest(TeaModel):
     def __init__(
         self,
         corp_id: str = None,
+        env: str = None,
         page_number: int = None,
         page_size: int = None,
         proc_instance_id: str = None,
@@ -4537,6 +4538,7 @@ class GetAutoFlowLogDetailRequest(TeaModel):
     ):
         # This parameter is required.
         self.corp_id = corp_id
+        self.env = env
         # This parameter is required.
         self.page_number = page_number
         # This parameter is required.
@@ -4559,6 +4561,8 @@ class GetAutoFlowLogDetailRequest(TeaModel):
         result = dict()
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
+        if self.env is not None:
+            result['env'] = self.env
         if self.page_number is not None:
             result['pageNumber'] = self.page_number
         if self.page_size is not None:
@@ -4575,6 +4579,8 @@ class GetAutoFlowLogDetailRequest(TeaModel):
         m = m or dict()
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('pageNumber') is not None:
             self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:
@@ -4802,6 +4808,7 @@ class GetCorpAccomplishmentTasksRequest(TeaModel):
         app_types: str = None,
         create_from_time_gmt: int = None,
         create_to_time_gmt: int = None,
+        env: str = None,
         keyword: str = None,
         language: str = None,
         page_number: int = None,
@@ -4812,6 +4819,7 @@ class GetCorpAccomplishmentTasksRequest(TeaModel):
         self.app_types = app_types
         self.create_from_time_gmt = create_from_time_gmt
         self.create_to_time_gmt = create_to_time_gmt
+        self.env = env
         self.keyword = keyword
         self.language = language
         self.page_number = page_number
@@ -4835,6 +4843,8 @@ class GetCorpAccomplishmentTasksRequest(TeaModel):
             result['createFromTimeGMT'] = self.create_from_time_gmt
         if self.create_to_time_gmt is not None:
             result['createToTimeGMT'] = self.create_to_time_gmt
+        if self.env is not None:
+            result['env'] = self.env
         if self.keyword is not None:
             result['keyword'] = self.keyword
         if self.language is not None:
@@ -4857,6 +4867,8 @@ class GetCorpAccomplishmentTasksRequest(TeaModel):
             self.create_from_time_gmt = m.get('createFromTimeGMT')
         if m.get('createToTimeGMT') is not None:
             self.create_to_time_gmt = m.get('createToTimeGMT')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('keyword') is not None:
             self.keyword = m.get('keyword')
         if m.get('language') is not None:
@@ -5269,6 +5281,7 @@ class GetCorpTasksRequest(TeaModel):
         corp_id: str = None,
         create_from_time_gmt: int = None,
         create_to_time_gmt: int = None,
+        env: str = None,
         keyword: str = None,
         language: str = None,
         page_number: int = None,
@@ -5282,6 +5295,7 @@ class GetCorpTasksRequest(TeaModel):
         self.corp_id = corp_id
         self.create_from_time_gmt = create_from_time_gmt
         self.create_to_time_gmt = create_to_time_gmt
+        self.env = env
         self.keyword = keyword
         self.language = language
         self.page_number = page_number
@@ -5309,6 +5323,8 @@ class GetCorpTasksRequest(TeaModel):
             result['createFromTimeGMT'] = self.create_from_time_gmt
         if self.create_to_time_gmt is not None:
             result['createToTimeGMT'] = self.create_to_time_gmt
+        if self.env is not None:
+            result['env'] = self.env
         if self.keyword is not None:
             result['keyword'] = self.keyword
         if self.language is not None:
@@ -5335,6 +5351,8 @@ class GetCorpTasksRequest(TeaModel):
             self.create_from_time_gmt = m.get('createFromTimeGMT')
         if m.get('createToTimeGMT') is not None:
             self.create_to_time_gmt = m.get('createToTimeGMT')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('keyword') is not None:
             self.keyword = m.get('keyword')
         if m.get('language') is not None:
@@ -8373,6 +8391,7 @@ class GetMeCorpSubmissionRequest(TeaModel):
         corp_id: str = None,
         create_from_time_gmt: int = None,
         create_to_time_gmt: int = None,
+        env: str = None,
         keyword: str = None,
         language: str = None,
         page_number: int = None,
@@ -8385,6 +8404,7 @@ class GetMeCorpSubmissionRequest(TeaModel):
         self.corp_id = corp_id
         self.create_from_time_gmt = create_from_time_gmt
         self.create_to_time_gmt = create_to_time_gmt
+        self.env = env
         self.keyword = keyword
         self.language = language
         self.page_number = page_number
@@ -8410,6 +8430,8 @@ class GetMeCorpSubmissionRequest(TeaModel):
             result['createFromTimeGMT'] = self.create_from_time_gmt
         if self.create_to_time_gmt is not None:
             result['createToTimeGMT'] = self.create_to_time_gmt
+        if self.env is not None:
+            result['env'] = self.env
         if self.keyword is not None:
             result['keyword'] = self.keyword
         if self.language is not None:
@@ -8434,6 +8456,8 @@ class GetMeCorpSubmissionRequest(TeaModel):
             self.create_from_time_gmt = m.get('createFromTimeGMT')
         if m.get('createToTimeGMT') is not None:
             self.create_to_time_gmt = m.get('createToTimeGMT')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('keyword') is not None:
             self.keyword = m.get('keyword')
         if m.get('language') is not None:
@@ -8951,6 +8975,7 @@ class GetNotifyMeRequest(TeaModel):
         corp_id: str = None,
         create_from_time_gmt: int = None,
         create_to_time_gmt: int = None,
+        env: str = None,
         instance_create_from_time_gmt: int = None,
         instance_create_to_time_gmt: int = None,
         keyword: str = None,
@@ -8965,6 +8990,7 @@ class GetNotifyMeRequest(TeaModel):
         self.corp_id = corp_id
         self.create_from_time_gmt = create_from_time_gmt
         self.create_to_time_gmt = create_to_time_gmt
+        self.env = env
         self.instance_create_from_time_gmt = instance_create_from_time_gmt
         self.instance_create_to_time_gmt = instance_create_to_time_gmt
         self.keyword = keyword
@@ -8992,6 +9018,8 @@ class GetNotifyMeRequest(TeaModel):
             result['createFromTimeGMT'] = self.create_from_time_gmt
         if self.create_to_time_gmt is not None:
             result['createToTimeGMT'] = self.create_to_time_gmt
+        if self.env is not None:
+            result['env'] = self.env
         if self.instance_create_from_time_gmt is not None:
             result['instanceCreateFromTimeGMT'] = self.instance_create_from_time_gmt
         if self.instance_create_to_time_gmt is not None:
@@ -9020,6 +9048,8 @@ class GetNotifyMeRequest(TeaModel):
             self.create_from_time_gmt = m.get('createFromTimeGMT')
         if m.get('createToTimeGMT') is not None:
             self.create_to_time_gmt = m.get('createToTimeGMT')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('instanceCreateFromTimeGMT') is not None:
             self.instance_create_from_time_gmt = m.get('instanceCreateFromTimeGMT')
         if m.get('instanceCreateToTimeGMT') is not None:
@@ -13433,6 +13463,7 @@ class ListApplicationRequest(TeaModel):
         app_filter: str = None,
         app_name_search_keyword: str = None,
         corp_id: str = None,
+        env: str = None,
         page_number: int = None,
         page_size: int = None,
         token: str = None,
@@ -13442,6 +13473,7 @@ class ListApplicationRequest(TeaModel):
         self.app_name_search_keyword = app_name_search_keyword
         # This parameter is required.
         self.corp_id = corp_id
+        self.env = env
         self.page_number = page_number
         self.page_size = page_size
         # This parameter is required.
@@ -13464,6 +13496,8 @@ class ListApplicationRequest(TeaModel):
             result['appNameSearchKeyword'] = self.app_name_search_keyword
         if self.corp_id is not None:
             result['corpId'] = self.corp_id
+        if self.env is not None:
+            result['env'] = self.env
         if self.page_number is not None:
             result['pageNumber'] = self.page_number
         if self.page_size is not None:
@@ -13482,6 +13516,8 @@ class ListApplicationRequest(TeaModel):
             self.app_name_search_keyword = m.get('appNameSearchKeyword')
         if m.get('corpId') is not None:
             self.corp_id = m.get('corpId')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('pageNumber') is not None:
             self.page_number = m.get('pageNumber')
         if m.get('pageSize') is not None:
@@ -16089,6 +16125,7 @@ class PageAutoFlowLogRequest(TeaModel):
         app_type: str = None,
         corp_id: str = None,
         end_time_gmt: int = None,
+        env: str = None,
         form_uuid: str = None,
         page_number: int = None,
         page_size: int = None,
@@ -16102,6 +16139,7 @@ class PageAutoFlowLogRequest(TeaModel):
         # This parameter is required.
         self.corp_id = corp_id
         self.end_time_gmt = end_time_gmt
+        self.env = env
         self.form_uuid = form_uuid
         # This parameter is required.
         self.page_number = page_number
@@ -16130,6 +16168,8 @@ class PageAutoFlowLogRequest(TeaModel):
             result['corpId'] = self.corp_id
         if self.end_time_gmt is not None:
             result['endTimeGMT'] = self.end_time_gmt
+        if self.env is not None:
+            result['env'] = self.env
         if self.form_uuid is not None:
             result['formUuid'] = self.form_uuid
         if self.page_number is not None:
@@ -16156,6 +16196,8 @@ class PageAutoFlowLogRequest(TeaModel):
             self.corp_id = m.get('corpId')
         if m.get('endTimeGMT') is not None:
             self.end_time_gmt = m.get('endTimeGMT')
+        if m.get('env') is not None:
+            self.env = m.get('env')
         if m.get('formUuid') is not None:
             self.form_uuid = m.get('formUuid')
         if m.get('pageNumber') is not None:

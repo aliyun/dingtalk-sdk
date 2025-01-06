@@ -266,6 +266,262 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.BatchDeleteReceiptHeaders()
         return await self.batch_delete_receipt_with_options_async(request, headers, runtime)
 
+    def batch_query_org_invoice_url_with_options(
+        self,
+        tmp_req: dingtalkbizfinance__2__0_models.BatchQueryOrgInvoiceUrlRequest,
+        headers: dingtalkbizfinance__2__0_models.BatchQueryOrgInvoiceUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.BatchQueryOrgInvoiceUrlResponse:
+        """
+        @summary 批量查询企业票池发票下载链接
+        
+        @param tmp_req: BatchQueryOrgInvoiceUrlRequest
+        @param headers: BatchQueryOrgInvoiceUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchQueryOrgInvoiceUrlResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkbizfinance__2__0_models.BatchQueryOrgInvoiceUrlShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.invoice_key_volist):
+            request.invoice_key_volist_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.invoice_key_volist, 'invoiceKeyVOList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.company_code):
+            query['companyCode'] = request.company_code
+        if not UtilClient.is_unset(request.invoice_key_volist_shrink):
+            query['invoiceKeyVOList'] = request.invoice_key_volist_shrink
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='BatchQueryOrgInvoiceUrl',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/invoices/urls/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.BatchQueryOrgInvoiceUrlResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_query_org_invoice_url_with_options_async(
+        self,
+        tmp_req: dingtalkbizfinance__2__0_models.BatchQueryOrgInvoiceUrlRequest,
+        headers: dingtalkbizfinance__2__0_models.BatchQueryOrgInvoiceUrlHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.BatchQueryOrgInvoiceUrlResponse:
+        """
+        @summary 批量查询企业票池发票下载链接
+        
+        @param tmp_req: BatchQueryOrgInvoiceUrlRequest
+        @param headers: BatchQueryOrgInvoiceUrlHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchQueryOrgInvoiceUrlResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkbizfinance__2__0_models.BatchQueryOrgInvoiceUrlShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.invoice_key_volist):
+            request.invoice_key_volist_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.invoice_key_volist, 'invoiceKeyVOList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.company_code):
+            query['companyCode'] = request.company_code
+        if not UtilClient.is_unset(request.invoice_key_volist_shrink):
+            query['invoiceKeyVOList'] = request.invoice_key_volist_shrink
+        if not UtilClient.is_unset(request.operator):
+            query['operator'] = request.operator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='BatchQueryOrgInvoiceUrl',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/invoices/urls/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.BatchQueryOrgInvoiceUrlResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_query_org_invoice_url(
+        self,
+        request: dingtalkbizfinance__2__0_models.BatchQueryOrgInvoiceUrlRequest,
+    ) -> dingtalkbizfinance__2__0_models.BatchQueryOrgInvoiceUrlResponse:
+        """
+        @summary 批量查询企业票池发票下载链接
+        
+        @param request: BatchQueryOrgInvoiceUrlRequest
+        @return: BatchQueryOrgInvoiceUrlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.BatchQueryOrgInvoiceUrlHeaders()
+        return self.batch_query_org_invoice_url_with_options(request, headers, runtime)
+
+    async def batch_query_org_invoice_url_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.BatchQueryOrgInvoiceUrlRequest,
+    ) -> dingtalkbizfinance__2__0_models.BatchQueryOrgInvoiceUrlResponse:
+        """
+        @summary 批量查询企业票池发票下载链接
+        
+        @param request: BatchQueryOrgInvoiceUrlRequest
+        @return: BatchQueryOrgInvoiceUrlResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.BatchQueryOrgInvoiceUrlHeaders()
+        return await self.batch_query_org_invoice_url_with_options_async(request, headers, runtime)
+
+    def batch_query_payment_recall_file_with_options(
+        self,
+        tmp_req: dingtalkbizfinance__2__0_models.BatchQueryPaymentRecallFileRequest,
+        headers: dingtalkbizfinance__2__0_models.BatchQueryPaymentRecallFileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.BatchQueryPaymentRecallFileResponse:
+        """
+        @summary 批量查询支付回单文件
+        
+        @param tmp_req: BatchQueryPaymentRecallFileRequest
+        @param headers: BatchQueryPaymentRecallFileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchQueryPaymentRecallFileResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkbizfinance__2__0_models.BatchQueryPaymentRecallFileShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.detail_id_list):
+            request.detail_id_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.detail_id_list, 'detailIdList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.detail_id_list_shrink):
+            query['detailIdList'] = request.detail_id_list_shrink
+        if not UtilClient.is_unset(request.opeator):
+            query['opeator'] = request.opeator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='BatchQueryPaymentRecallFile',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/payments/recallFiles/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.BatchQueryPaymentRecallFileResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_query_payment_recall_file_with_options_async(
+        self,
+        tmp_req: dingtalkbizfinance__2__0_models.BatchQueryPaymentRecallFileRequest,
+        headers: dingtalkbizfinance__2__0_models.BatchQueryPaymentRecallFileHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.BatchQueryPaymentRecallFileResponse:
+        """
+        @summary 批量查询支付回单文件
+        
+        @param tmp_req: BatchQueryPaymentRecallFileRequest
+        @param headers: BatchQueryPaymentRecallFileHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchQueryPaymentRecallFileResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkbizfinance__2__0_models.BatchQueryPaymentRecallFileShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.detail_id_list):
+            request.detail_id_list_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.detail_id_list, 'detailIdList', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.detail_id_list_shrink):
+            query['detailIdList'] = request.detail_id_list_shrink
+        if not UtilClient.is_unset(request.opeator):
+            query['opeator'] = request.opeator
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='BatchQueryPaymentRecallFile',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/payments/recallFiles/batchQuery',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.BatchQueryPaymentRecallFileResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_query_payment_recall_file(
+        self,
+        request: dingtalkbizfinance__2__0_models.BatchQueryPaymentRecallFileRequest,
+    ) -> dingtalkbizfinance__2__0_models.BatchQueryPaymentRecallFileResponse:
+        """
+        @summary 批量查询支付回单文件
+        
+        @param request: BatchQueryPaymentRecallFileRequest
+        @return: BatchQueryPaymentRecallFileResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.BatchQueryPaymentRecallFileHeaders()
+        return self.batch_query_payment_recall_file_with_options(request, headers, runtime)
+
+    async def batch_query_payment_recall_file_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.BatchQueryPaymentRecallFileRequest,
+    ) -> dingtalkbizfinance__2__0_models.BatchQueryPaymentRecallFileResponse:
+        """
+        @summary 批量查询支付回单文件
+        
+        @param request: BatchQueryPaymentRecallFileRequest
+        @return: BatchQueryPaymentRecallFileResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.BatchQueryPaymentRecallFileHeaders()
+        return await self.batch_query_payment_recall_file_with_options_async(request, headers, runtime)
+
     def batch_sync_bank_receipt_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.BatchSyncBankReceiptRequest,

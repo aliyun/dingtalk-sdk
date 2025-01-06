@@ -278,6 +278,589 @@ class BatchDeleteReceiptResponse(TeaModel):
         return self
 
 
+class BatchQueryOrgInvoiceUrlHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchQueryOrgInvoiceUrlRequestInvoiceKeyVOList(TeaModel):
+    def __init__(
+        self,
+        invoice_code: str = None,
+        invoice_no: str = None,
+    ):
+        self.invoice_code = invoice_code
+        self.invoice_no = invoice_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        return self
+
+
+class BatchQueryOrgInvoiceUrlRequest(TeaModel):
+    def __init__(
+        self,
+        company_code: str = None,
+        invoice_key_volist: List[BatchQueryOrgInvoiceUrlRequestInvoiceKeyVOList] = None,
+        operator: str = None,
+    ):
+        self.company_code = company_code
+        self.invoice_key_volist = invoice_key_volist
+        self.operator = operator
+
+    def validate(self):
+        if self.invoice_key_volist:
+            for k in self.invoice_key_volist:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
+        result['invoiceKeyVOList'] = []
+        if self.invoice_key_volist is not None:
+            for k in self.invoice_key_volist:
+                result['invoiceKeyVOList'].append(k.to_map() if k else None)
+        if self.operator is not None:
+            result['operator'] = self.operator
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
+        self.invoice_key_volist = []
+        if m.get('invoiceKeyVOList') is not None:
+            for k in m.get('invoiceKeyVOList'):
+                temp_model = BatchQueryOrgInvoiceUrlRequestInvoiceKeyVOList()
+                self.invoice_key_volist.append(temp_model.from_map(k))
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        return self
+
+
+class BatchQueryOrgInvoiceUrlShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        company_code: str = None,
+        invoice_key_volist_shrink: str = None,
+        operator: str = None,
+    ):
+        self.company_code = company_code
+        self.invoice_key_volist_shrink = invoice_key_volist_shrink
+        self.operator = operator
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
+        if self.invoice_key_volist_shrink is not None:
+            result['invoiceKeyVOList'] = self.invoice_key_volist_shrink
+        if self.operator is not None:
+            result['operator'] = self.operator
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
+        if m.get('invoiceKeyVOList') is not None:
+            self.invoice_key_volist_shrink = m.get('invoiceKeyVOList')
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        return self
+
+
+class BatchQueryOrgInvoiceUrlResponseBodyFailInvoiceList(TeaModel):
+    def __init__(
+        self,
+        error_msg: str = None,
+        invoice_code: str = None,
+        invoice_no: str = None,
+    ):
+        self.error_msg = error_msg
+        self.invoice_code = invoice_code
+        self.invoice_no = invoice_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.error_msg is not None:
+            result['errorMsg'] = self.error_msg
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('errorMsg') is not None:
+            self.error_msg = m.get('errorMsg')
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        return self
+
+
+class BatchQueryOrgInvoiceUrlResponseBodyOrgInvoiceUrlList(TeaModel):
+    def __init__(
+        self,
+        invoice_code: str = None,
+        invoice_no: str = None,
+        ofd_url: str = None,
+        origin_file_type: str = None,
+        origin_file_url: str = None,
+        pdf_url: str = None,
+        xml_url: str = None,
+    ):
+        self.invoice_code = invoice_code
+        self.invoice_no = invoice_no
+        self.ofd_url = ofd_url
+        self.origin_file_type = origin_file_type
+        self.origin_file_url = origin_file_url
+        self.pdf_url = pdf_url
+        self.xml_url = xml_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        if self.ofd_url is not None:
+            result['ofdUrl'] = self.ofd_url
+        if self.origin_file_type is not None:
+            result['originFileType'] = self.origin_file_type
+        if self.origin_file_url is not None:
+            result['originFileUrl'] = self.origin_file_url
+        if self.pdf_url is not None:
+            result['pdfUrl'] = self.pdf_url
+        if self.xml_url is not None:
+            result['xmlUrl'] = self.xml_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        if m.get('ofdUrl') is not None:
+            self.ofd_url = m.get('ofdUrl')
+        if m.get('originFileType') is not None:
+            self.origin_file_type = m.get('originFileType')
+        if m.get('originFileUrl') is not None:
+            self.origin_file_url = m.get('originFileUrl')
+        if m.get('pdfUrl') is not None:
+            self.pdf_url = m.get('pdfUrl')
+        if m.get('xmlUrl') is not None:
+            self.xml_url = m.get('xmlUrl')
+        return self
+
+
+class BatchQueryOrgInvoiceUrlResponseBody(TeaModel):
+    def __init__(
+        self,
+        fail_invoice_list: List[BatchQueryOrgInvoiceUrlResponseBodyFailInvoiceList] = None,
+        org_invoice_url_list: List[BatchQueryOrgInvoiceUrlResponseBodyOrgInvoiceUrlList] = None,
+    ):
+        self.fail_invoice_list = fail_invoice_list
+        self.org_invoice_url_list = org_invoice_url_list
+
+    def validate(self):
+        if self.fail_invoice_list:
+            for k in self.fail_invoice_list:
+                if k:
+                    k.validate()
+        if self.org_invoice_url_list:
+            for k in self.org_invoice_url_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['failInvoiceList'] = []
+        if self.fail_invoice_list is not None:
+            for k in self.fail_invoice_list:
+                result['failInvoiceList'].append(k.to_map() if k else None)
+        result['orgInvoiceUrlList'] = []
+        if self.org_invoice_url_list is not None:
+            for k in self.org_invoice_url_list:
+                result['orgInvoiceUrlList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.fail_invoice_list = []
+        if m.get('failInvoiceList') is not None:
+            for k in m.get('failInvoiceList'):
+                temp_model = BatchQueryOrgInvoiceUrlResponseBodyFailInvoiceList()
+                self.fail_invoice_list.append(temp_model.from_map(k))
+        self.org_invoice_url_list = []
+        if m.get('orgInvoiceUrlList') is not None:
+            for k in m.get('orgInvoiceUrlList'):
+                temp_model = BatchQueryOrgInvoiceUrlResponseBodyOrgInvoiceUrlList()
+                self.org_invoice_url_list.append(temp_model.from_map(k))
+        return self
+
+
+class BatchQueryOrgInvoiceUrlResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: BatchQueryOrgInvoiceUrlResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = BatchQueryOrgInvoiceUrlResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class BatchQueryPaymentRecallFileHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchQueryPaymentRecallFileRequest(TeaModel):
+    def __init__(
+        self,
+        detail_id_list: List[str] = None,
+        opeator: str = None,
+    ):
+        self.detail_id_list = detail_id_list
+        self.opeator = opeator
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.detail_id_list is not None:
+            result['detailIdList'] = self.detail_id_list
+        if self.opeator is not None:
+            result['opeator'] = self.opeator
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('detailIdList') is not None:
+            self.detail_id_list = m.get('detailIdList')
+        if m.get('opeator') is not None:
+            self.opeator = m.get('opeator')
+        return self
+
+
+class BatchQueryPaymentRecallFileShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        detail_id_list_shrink: str = None,
+        opeator: str = None,
+    ):
+        self.detail_id_list_shrink = detail_id_list_shrink
+        self.opeator = opeator
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.detail_id_list_shrink is not None:
+            result['detailIdList'] = self.detail_id_list_shrink
+        if self.opeator is not None:
+            result['opeator'] = self.opeator
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('detailIdList') is not None:
+            self.detail_id_list_shrink = m.get('detailIdList')
+        if m.get('opeator') is not None:
+            self.opeator = m.get('opeator')
+        return self
+
+
+class BatchQueryPaymentRecallFileResponseBodyPaymentRecallFileList(TeaModel):
+    def __init__(
+        self,
+        detail_id: str = None,
+        file_id: str = None,
+        file_name: str = None,
+        file_size: str = None,
+        file_type: str = None,
+        recall_file_url: str = None,
+        space_id: str = None,
+    ):
+        self.detail_id = detail_id
+        self.file_id = file_id
+        self.file_name = file_name
+        self.file_size = file_size
+        self.file_type = file_type
+        self.recall_file_url = recall_file_url
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.detail_id is not None:
+            result['detailId'] = self.detail_id
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.file_size is not None:
+            result['fileSize'] = self.file_size
+        if self.file_type is not None:
+            result['fileType'] = self.file_type
+        if self.recall_file_url is not None:
+            result['recallFileUrl'] = self.recall_file_url
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('detailId') is not None:
+            self.detail_id = m.get('detailId')
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('fileSize') is not None:
+            self.file_size = m.get('fileSize')
+        if m.get('fileType') is not None:
+            self.file_type = m.get('fileType')
+        if m.get('recallFileUrl') is not None:
+            self.recall_file_url = m.get('recallFileUrl')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class BatchQueryPaymentRecallFileResponseBody(TeaModel):
+    def __init__(
+        self,
+        payment_recall_file_list: List[BatchQueryPaymentRecallFileResponseBodyPaymentRecallFileList] = None,
+    ):
+        self.payment_recall_file_list = payment_recall_file_list
+
+    def validate(self):
+        if self.payment_recall_file_list:
+            for k in self.payment_recall_file_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['paymentRecallFileList'] = []
+        if self.payment_recall_file_list is not None:
+            for k in self.payment_recall_file_list:
+                result['paymentRecallFileList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.payment_recall_file_list = []
+        if m.get('paymentRecallFileList') is not None:
+            for k in m.get('paymentRecallFileList'):
+                temp_model = BatchQueryPaymentRecallFileResponseBodyPaymentRecallFileList()
+                self.payment_recall_file_list.append(temp_model.from_map(k))
+        return self
+
+
+class BatchQueryPaymentRecallFileResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: BatchQueryPaymentRecallFileResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = BatchQueryPaymentRecallFileResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class BatchSyncBankReceiptHeaders(TeaModel):
     def __init__(
         self,
@@ -2465,6 +3048,7 @@ class QueryAccountTradeByPageResponseBodyResult(TeaModel):
     def __init__(
         self,
         balance: str = None,
+        detail_id: str = None,
         instance_id: str = None,
         instance_title: str = None,
         instance_url: str = None,
@@ -2478,6 +3062,7 @@ class QueryAccountTradeByPageResponseBodyResult(TeaModel):
         trade_type: str = None,
     ):
         self.balance = balance
+        self.detail_id = detail_id
         self.instance_id = instance_id
         self.instance_title = instance_title
         self.instance_url = instance_url
@@ -2502,6 +3087,8 @@ class QueryAccountTradeByPageResponseBodyResult(TeaModel):
         result = dict()
         if self.balance is not None:
             result['balance'] = self.balance
+        if self.detail_id is not None:
+            result['detailId'] = self.detail_id
         if self.instance_id is not None:
             result['instanceId'] = self.instance_id
         if self.instance_title is not None:
@@ -2530,6 +3117,8 @@ class QueryAccountTradeByPageResponseBodyResult(TeaModel):
         m = m or dict()
         if m.get('balance') is not None:
             self.balance = m.get('balance')
+        if m.get('detailId') is not None:
+            self.detail_id = m.get('detailId')
         if m.get('instanceId') is not None:
             self.instance_id = m.get('instanceId')
         if m.get('instanceTitle') is not None:
@@ -3160,6 +3749,9 @@ class QueryEnterpriseAccountByPageResponseBodyList(TeaModel):
         bank_name: str = None,
         create_time: int = None,
         creator: str = None,
+        sign_status: str = None,
+        support_receipt: bool = None,
+        support_trade_detail: bool = None,
     ):
         # This parameter is required.
         self.account_code = account_code
@@ -3176,6 +3768,9 @@ class QueryEnterpriseAccountByPageResponseBodyList(TeaModel):
         self.create_time = create_time
         # This parameter is required.
         self.creator = creator
+        self.sign_status = sign_status
+        self.support_receipt = support_receipt
+        self.support_trade_detail = support_trade_detail
 
     def validate(self):
         pass
@@ -3206,6 +3801,12 @@ class QueryEnterpriseAccountByPageResponseBodyList(TeaModel):
             result['createTime'] = self.create_time
         if self.creator is not None:
             result['creator'] = self.creator
+        if self.sign_status is not None:
+            result['signStatus'] = self.sign_status
+        if self.support_receipt is not None:
+            result['supportReceipt'] = self.support_receipt
+        if self.support_trade_detail is not None:
+            result['supportTradeDetail'] = self.support_trade_detail
         return result
 
     def from_map(self, m: dict = None):
@@ -3230,6 +3831,12 @@ class QueryEnterpriseAccountByPageResponseBodyList(TeaModel):
             self.create_time = m.get('createTime')
         if m.get('creator') is not None:
             self.creator = m.get('creator')
+        if m.get('signStatus') is not None:
+            self.sign_status = m.get('signStatus')
+        if m.get('supportReceipt') is not None:
+            self.support_receipt = m.get('supportReceipt')
+        if m.get('supportTradeDetail') is not None:
+            self.support_trade_detail = m.get('supportTradeDetail')
         return self
 
 

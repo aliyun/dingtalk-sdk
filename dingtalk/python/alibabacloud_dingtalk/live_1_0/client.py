@@ -2947,7 +2947,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgResponse:
         """
-        @summary 用户对互动插件进行操作广播到直播间
+        @summary 用户推送互动插件特效消息到直播间
         
         @param request: SendLiveInteractionPluginEffectsMsgRequest
         @param headers: SendLiveInteractionPluginEffectsMsgHeaders
@@ -3006,7 +3006,7 @@ class Client(OpenApiClient):
         runtime: util_models.RuntimeOptions,
     ) -> dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgResponse:
         """
-        @summary 用户对互动插件进行操作广播到直播间
+        @summary 用户推送互动插件特效消息到直播间
         
         @param request: SendLiveInteractionPluginEffectsMsgRequest
         @param headers: SendLiveInteractionPluginEffectsMsgHeaders
@@ -3063,7 +3063,7 @@ class Client(OpenApiClient):
         request: dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgRequest,
     ) -> dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgResponse:
         """
-        @summary 用户对互动插件进行操作广播到直播间
+        @summary 用户推送互动插件特效消息到直播间
         
         @param request: SendLiveInteractionPluginEffectsMsgRequest
         @return: SendLiveInteractionPluginEffectsMsgResponse
@@ -3077,7 +3077,7 @@ class Client(OpenApiClient):
         request: dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgRequest,
     ) -> dingtalklive__1__0_models.SendLiveInteractionPluginEffectsMsgResponse:
         """
-        @summary 用户对互动插件进行操作广播到直播间
+        @summary 用户推送互动插件特效消息到直播间
         
         @param request: SendLiveInteractionPluginEffectsMsgRequest
         @return: SendLiveInteractionPluginEffectsMsgResponse
