@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
             [Validation(Required=false)]
             public string Balance { get; set; }
 
+            [NameInMap("detailId")]
+            [Validation(Required=false)]
+            public string DetailId { get; set; }
+
             [NameInMap("instanceId")]
             [Validation(Required=false)]
             public string InstanceId { get; set; }

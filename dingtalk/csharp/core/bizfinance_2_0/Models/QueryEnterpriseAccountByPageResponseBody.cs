@@ -108,6 +108,18 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
             [Validation(Required=false)]
             public string Creator { get; set; }
 
+            [NameInMap("signStatus")]
+            [Validation(Required=false)]
+            public string SignStatus { get; set; }
+
+            [NameInMap("supportReceipt")]
+            [Validation(Required=false)]
+            public bool? SupportReceipt { get; set; }
+
+            [NameInMap("supportTradeDetail")]
+            [Validation(Required=false)]
+            public bool? SupportTradeDetail { get; set; }
+
         }
 
     }

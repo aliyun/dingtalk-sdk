@@ -350,6 +350,350 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>批量查询企业票池发票下载链接</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// BatchQueryOrgInvoiceUrlRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchQueryOrgInvoiceUrlHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchQueryOrgInvoiceUrlResponse
+        /// </returns>
+        public BatchQueryOrgInvoiceUrlResponse BatchQueryOrgInvoiceUrlWithOptions(BatchQueryOrgInvoiceUrlRequest tmpReq, BatchQueryOrgInvoiceUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            BatchQueryOrgInvoiceUrlShrinkRequest request = new BatchQueryOrgInvoiceUrlShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.InvoiceKeyVOList))
+            {
+                request.InvoiceKeyVOListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.InvoiceKeyVOList, "invoiceKeyVOList", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                query["companyCode"] = request.CompanyCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceKeyVOListShrink))
+            {
+                query["invoiceKeyVOList"] = request.InvoiceKeyVOListShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                query["operator"] = request.Operator;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchQueryOrgInvoiceUrl",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/invoices/urls/batchQuery",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchQueryOrgInvoiceUrlResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询企业票池发票下载链接</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// BatchQueryOrgInvoiceUrlRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchQueryOrgInvoiceUrlHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchQueryOrgInvoiceUrlResponse
+        /// </returns>
+        public async Task<BatchQueryOrgInvoiceUrlResponse> BatchQueryOrgInvoiceUrlWithOptionsAsync(BatchQueryOrgInvoiceUrlRequest tmpReq, BatchQueryOrgInvoiceUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            BatchQueryOrgInvoiceUrlShrinkRequest request = new BatchQueryOrgInvoiceUrlShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.InvoiceKeyVOList))
+            {
+                request.InvoiceKeyVOListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.InvoiceKeyVOList, "invoiceKeyVOList", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
+            {
+                query["companyCode"] = request.CompanyCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceKeyVOListShrink))
+            {
+                query["invoiceKeyVOList"] = request.InvoiceKeyVOListShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
+            {
+                query["operator"] = request.Operator;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchQueryOrgInvoiceUrl",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/invoices/urls/batchQuery",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchQueryOrgInvoiceUrlResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询企业票池发票下载链接</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchQueryOrgInvoiceUrlRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchQueryOrgInvoiceUrlResponse
+        /// </returns>
+        public BatchQueryOrgInvoiceUrlResponse BatchQueryOrgInvoiceUrl(BatchQueryOrgInvoiceUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchQueryOrgInvoiceUrlHeaders headers = new BatchQueryOrgInvoiceUrlHeaders();
+            return BatchQueryOrgInvoiceUrlWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询企业票池发票下载链接</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchQueryOrgInvoiceUrlRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchQueryOrgInvoiceUrlResponse
+        /// </returns>
+        public async Task<BatchQueryOrgInvoiceUrlResponse> BatchQueryOrgInvoiceUrlAsync(BatchQueryOrgInvoiceUrlRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchQueryOrgInvoiceUrlHeaders headers = new BatchQueryOrgInvoiceUrlHeaders();
+            return await BatchQueryOrgInvoiceUrlWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询支付回单文件</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// BatchQueryPaymentRecallFileRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchQueryPaymentRecallFileHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchQueryPaymentRecallFileResponse
+        /// </returns>
+        public BatchQueryPaymentRecallFileResponse BatchQueryPaymentRecallFileWithOptions(BatchQueryPaymentRecallFileRequest tmpReq, BatchQueryPaymentRecallFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            BatchQueryPaymentRecallFileShrinkRequest request = new BatchQueryPaymentRecallFileShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.DetailIdList))
+            {
+                request.DetailIdListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.DetailIdList, "detailIdList", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DetailIdListShrink))
+            {
+                query["detailIdList"] = request.DetailIdListShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Opeator))
+            {
+                query["opeator"] = request.Opeator;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchQueryPaymentRecallFile",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/payments/recallFiles/batchQuery",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchQueryPaymentRecallFileResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询支付回单文件</para>
+        /// </summary>
+        /// 
+        /// <param name="tmpReq">
+        /// BatchQueryPaymentRecallFileRequest
+        /// </param>
+        /// <param name="headers">
+        /// BatchQueryPaymentRecallFileHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchQueryPaymentRecallFileResponse
+        /// </returns>
+        public async Task<BatchQueryPaymentRecallFileResponse> BatchQueryPaymentRecallFileWithOptionsAsync(BatchQueryPaymentRecallFileRequest tmpReq, BatchQueryPaymentRecallFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
+            BatchQueryPaymentRecallFileShrinkRequest request = new BatchQueryPaymentRecallFileShrinkRequest();
+            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.DetailIdList))
+            {
+                request.DetailIdListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.DetailIdList, "detailIdList", "json");
+            }
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DetailIdListShrink))
+            {
+                query["detailIdList"] = request.DetailIdListShrink;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Opeator))
+            {
+                query["opeator"] = request.Opeator;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "BatchQueryPaymentRecallFile",
+                Version = "bizfinance_2.0",
+                Protocol = "HTTP",
+                Pathname = "/v2.0/bizfinance/payments/recallFiles/batchQuery",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<BatchQueryPaymentRecallFileResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询支付回单文件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchQueryPaymentRecallFileRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchQueryPaymentRecallFileResponse
+        /// </returns>
+        public BatchQueryPaymentRecallFileResponse BatchQueryPaymentRecallFile(BatchQueryPaymentRecallFileRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchQueryPaymentRecallFileHeaders headers = new BatchQueryPaymentRecallFileHeaders();
+            return BatchQueryPaymentRecallFileWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量查询支付回单文件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// BatchQueryPaymentRecallFileRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// BatchQueryPaymentRecallFileResponse
+        /// </returns>
+        public async Task<BatchQueryPaymentRecallFileResponse> BatchQueryPaymentRecallFileAsync(BatchQueryPaymentRecallFileRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            BatchQueryPaymentRecallFileHeaders headers = new BatchQueryPaymentRecallFileHeaders();
+            return await BatchQueryPaymentRecallFileWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>批量同步银行回单</para>
         /// </summary>
         /// 

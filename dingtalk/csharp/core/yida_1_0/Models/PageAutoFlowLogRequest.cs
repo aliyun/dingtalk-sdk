@@ -37,6 +37,14 @@ namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 
         /// <summary>
         /// <b>Example:</b>
+        /// <para>vpc(国内版宜搭)/sgp_vpc(海外版宜搭)</para>
+        /// </summary>
+        [NameInMap("env")]
+        [Validation(Required=false)]
+        public string Env { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
         /// <para>FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA</para>
         /// </summary>
         [NameInMap("formUuid")]

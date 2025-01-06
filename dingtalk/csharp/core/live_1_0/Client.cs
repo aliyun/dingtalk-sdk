@@ -3950,7 +3950,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>用户对互动插件进行操作广播到直播间</para>
+        /// <para>用户推送互动插件特效消息到直播间</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -4035,7 +4035,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>用户对互动插件进行操作广播到直播间</para>
+        /// <para>用户推送互动插件特效消息到直播间</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -4120,7 +4120,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>用户对互动插件进行操作广播到直播间</para>
+        /// <para>用户推送互动插件特效消息到直播间</para>
         /// </summary>
         /// 
         /// <param name="request">
@@ -4139,7 +4139,7 @@ namespace AlibabaCloud.SDK.Dingtalklive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
-        /// <para>用户对互动插件进行操作广播到直播间</para>
+        /// <para>用户推送互动插件特效消息到直播间</para>
         /// </summary>
         /// 
         /// <param name="request">
