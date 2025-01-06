@@ -109,6 +109,9 @@ public class QueryAccountTradeByPageResponseBody extends TeaModel {
         @NameInMap("balance")
         public String balance;
 
+        @NameInMap("detailId")
+        public String detailId;
+
         @NameInMap("instanceId")
         public String instanceId;
 
@@ -153,6 +156,14 @@ public class QueryAccountTradeByPageResponseBody extends TeaModel {
         }
         public String getBalance() {
             return this.balance;
+        }
+
+        public QueryAccountTradeByPageResponseBodyResult setDetailId(String detailId) {
+            this.detailId = detailId;
+            return this;
+        }
+        public String getDetailId() {
+            return this.detailId;
         }
 
         public QueryAccountTradeByPageResponseBodyResult setInstanceId(String instanceId) {

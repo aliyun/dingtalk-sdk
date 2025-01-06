@@ -29,6 +29,13 @@ public class ListApplicationRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
+     * <p>vpc(国内版宜搭)/sgp_vpc(海外版宜搭)</p>
+     */
+    @NameInMap("env")
+    public String env;
+
+    /**
+     * <strong>example:</strong>
      * <p>1</p>
      */
     @NameInMap("pageNumber")
@@ -86,6 +93,14 @@ public class ListApplicationRequest extends TeaModel {
     }
     public String getCorpId() {
         return this.corpId;
+    }
+
+    public ListApplicationRequest setEnv(String env) {
+        this.env = env;
+        return this;
+    }
+    public String getEnv() {
+        return this.env;
     }
 
     public ListApplicationRequest setPageNumber(Integer pageNumber) {

@@ -1566,7 +1566,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>用户对互动插件进行操作广播到直播间</p>
+     * <p>用户推送互动插件特效消息到直播间</p>
      * 
      * @param request SendLiveInteractionPluginEffectsMsgRequest
      * @param headers SendLiveInteractionPluginEffectsMsgHeaders
@@ -1639,7 +1639,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
-     * <p>用户对互动插件进行操作广播到直播间</p>
+     * <p>用户推送互动插件特效消息到直播间</p>
      * 
      * @param request SendLiveInteractionPluginEffectsMsgRequest
      * @return SendLiveInteractionPluginEffectsMsgResponse

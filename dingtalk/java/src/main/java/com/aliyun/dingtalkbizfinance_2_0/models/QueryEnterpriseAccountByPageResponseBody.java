@@ -113,6 +113,15 @@ public class QueryEnterpriseAccountByPageResponseBody extends TeaModel {
         @NameInMap("creator")
         public String creator;
 
+        @NameInMap("signStatus")
+        public String signStatus;
+
+        @NameInMap("supportReceipt")
+        public Boolean supportReceipt;
+
+        @NameInMap("supportTradeDetail")
+        public Boolean supportTradeDetail;
+
         public static QueryEnterpriseAccountByPageResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
             QueryEnterpriseAccountByPageResponseBodyList self = new QueryEnterpriseAccountByPageResponseBodyList();
             return TeaModel.build(map, self);
@@ -196,6 +205,30 @@ public class QueryEnterpriseAccountByPageResponseBody extends TeaModel {
         }
         public String getCreator() {
             return this.creator;
+        }
+
+        public QueryEnterpriseAccountByPageResponseBodyList setSignStatus(String signStatus) {
+            this.signStatus = signStatus;
+            return this;
+        }
+        public String getSignStatus() {
+            return this.signStatus;
+        }
+
+        public QueryEnterpriseAccountByPageResponseBodyList setSupportReceipt(Boolean supportReceipt) {
+            this.supportReceipt = supportReceipt;
+            return this;
+        }
+        public Boolean getSupportReceipt() {
+            return this.supportReceipt;
+        }
+
+        public QueryEnterpriseAccountByPageResponseBodyList setSupportTradeDetail(Boolean supportTradeDetail) {
+            this.supportTradeDetail = supportTradeDetail;
+            return this;
+        }
+        public Boolean getSupportTradeDetail() {
+            return this.supportTradeDetail;
         }
 
     }

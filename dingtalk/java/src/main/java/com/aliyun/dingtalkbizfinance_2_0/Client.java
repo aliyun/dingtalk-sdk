@@ -144,6 +144,142 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>批量查询企业票池发票下载链接</p>
+     * 
+     * @param tmpReq BatchQueryOrgInvoiceUrlRequest
+     * @param headers BatchQueryOrgInvoiceUrlHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return BatchQueryOrgInvoiceUrlResponse
+     */
+    public BatchQueryOrgInvoiceUrlResponse batchQueryOrgInvoiceUrlWithOptions(BatchQueryOrgInvoiceUrlRequest tmpReq, BatchQueryOrgInvoiceUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        BatchQueryOrgInvoiceUrlShrinkRequest request = new BatchQueryOrgInvoiceUrlShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.invoiceKeyVOList)) {
+            request.invoiceKeyVOListShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.invoiceKeyVOList, "invoiceKeyVOList", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.companyCode)) {
+            query.put("companyCode", request.companyCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.invoiceKeyVOListShrink)) {
+            query.put("invoiceKeyVOList", request.invoiceKeyVOListShrink);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operator)) {
+            query.put("operator", request.operator);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "BatchQueryOrgInvoiceUrl"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/invoices/urls/batchQuery"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new BatchQueryOrgInvoiceUrlResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>批量查询企业票池发票下载链接</p>
+     * 
+     * @param request BatchQueryOrgInvoiceUrlRequest
+     * @return BatchQueryOrgInvoiceUrlResponse
+     */
+    public BatchQueryOrgInvoiceUrlResponse batchQueryOrgInvoiceUrl(BatchQueryOrgInvoiceUrlRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        BatchQueryOrgInvoiceUrlHeaders headers = new BatchQueryOrgInvoiceUrlHeaders();
+        return this.batchQueryOrgInvoiceUrlWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>批量查询支付回单文件</p>
+     * 
+     * @param tmpReq BatchQueryPaymentRecallFileRequest
+     * @param headers BatchQueryPaymentRecallFileHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return BatchQueryPaymentRecallFileResponse
+     */
+    public BatchQueryPaymentRecallFileResponse batchQueryPaymentRecallFileWithOptions(BatchQueryPaymentRecallFileRequest tmpReq, BatchQueryPaymentRecallFileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(tmpReq);
+        BatchQueryPaymentRecallFileShrinkRequest request = new BatchQueryPaymentRecallFileShrinkRequest();
+        com.aliyun.openapiutil.Client.convert(tmpReq, request);
+        if (!com.aliyun.teautil.Common.isUnset(tmpReq.detailIdList)) {
+            request.detailIdListShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.detailIdList, "detailIdList", "json");
+        }
+
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.detailIdListShrink)) {
+            query.put("detailIdList", request.detailIdListShrink);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.opeator)) {
+            query.put("opeator", request.opeator);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "BatchQueryPaymentRecallFile"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/payments/recallFiles/batchQuery"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new BatchQueryPaymentRecallFileResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>批量查询支付回单文件</p>
+     * 
+     * @param request BatchQueryPaymentRecallFileRequest
+     * @return BatchQueryPaymentRecallFileResponse
+     */
+    public BatchQueryPaymentRecallFileResponse batchQueryPaymentRecallFile(BatchQueryPaymentRecallFileRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        BatchQueryPaymentRecallFileHeaders headers = new BatchQueryPaymentRecallFileHeaders();
+        return this.batchQueryPaymentRecallFileWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>批量同步银行回单</p>
      * 
      * @param request BatchSyncBankReceiptRequest

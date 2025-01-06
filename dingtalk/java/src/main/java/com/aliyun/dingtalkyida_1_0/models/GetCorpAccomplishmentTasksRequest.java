@@ -27,6 +27,13 @@ public class GetCorpAccomplishmentTasksRequest extends TeaModel {
 
     /**
      * <strong>example:</strong>
+     * <p>vpc(国内版宜搭)/sgp_vpc(海外版宜搭)</p>
+     */
+    @NameInMap("env")
+    public String env;
+
+    /**
+     * <strong>example:</strong>
      * <p>未知</p>
      */
     @NameInMap("keyword")
@@ -96,6 +103,14 @@ public class GetCorpAccomplishmentTasksRequest extends TeaModel {
     }
     public Long getCreateToTimeGMT() {
         return this.createToTimeGMT;
+    }
+
+    public GetCorpAccomplishmentTasksRequest setEnv(String env) {
+        this.env = env;
+        return this;
+    }
+    public String getEnv() {
+        return this.env;
     }
 
     public GetCorpAccomplishmentTasksRequest setKeyword(String keyword) {
