@@ -32,6 +32,13 @@ class ListApplicationRequest extends Model
     public $corpId;
 
     /**
+     * @example vpc(国内版宜搭)/sgp_vpc(海外版宜搭)
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @example 1
      *
      * @var int
@@ -66,6 +73,7 @@ class ListApplicationRequest extends Model
         'appFilter'            => 'appFilter',
         'appNameSearchKeyword' => 'appNameSearchKeyword',
         'corpId'               => 'corpId',
+        'env'                  => 'env',
         'pageNumber'           => 'pageNumber',
         'pageSize'             => 'pageSize',
         'token'                => 'token',
@@ -87,6 +95,9 @@ class ListApplicationRequest extends Model
         }
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
@@ -120,6 +131,9 @@ class ListApplicationRequest extends Model
         }
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];

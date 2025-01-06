@@ -2096,6 +2096,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->corpId)) {
             $query['corpId'] = $request->corpId;
         }
+        if (!Utils::isUnset($request->env)) {
+            $query['env'] = $request->env;
+        }
         if (!Utils::isUnset($request->pageNumber)) {
             $query['pageNumber'] = $request->pageNumber;
         }
@@ -2175,6 +2178,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->createToTimeGMT)) {
             $query['createToTimeGMT'] = $request->createToTimeGMT;
+        }
+        if (!Utils::isUnset($request->env)) {
+            $query['env'] = $request->env;
         }
         if (!Utils::isUnset($request->keyword)) {
             $query['keyword'] = $request->keyword;
@@ -2318,6 +2324,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->createToTimeGMT)) {
             $query['createToTimeGMT'] = $request->createToTimeGMT;
+        }
+        if (!Utils::isUnset($request->env)) {
+            $query['env'] = $request->env;
         }
         if (!Utils::isUnset($request->keyword)) {
             $query['keyword'] = $request->keyword;
@@ -3097,6 +3106,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->createToTimeGMT)) {
             $query['createToTimeGMT'] = $request->createToTimeGMT;
         }
+        if (!Utils::isUnset($request->env)) {
+            $query['env'] = $request->env;
+        }
         if (!Utils::isUnset($request->keyword)) {
             $query['keyword'] = $request->keyword;
         }
@@ -3182,6 +3194,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->createToTimeGMT)) {
             $query['createToTimeGMT'] = $request->createToTimeGMT;
+        }
+        if (!Utils::isUnset($request->env)) {
+            $query['env'] = $request->env;
         }
         if (!Utils::isUnset($request->instanceCreateFromTimeGMT)) {
             $query['instanceCreateFromTimeGMT'] = $request->instanceCreateFromTimeGMT;
@@ -4105,6 +4120,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->corpId)) {
             $query['corpId'] = $request->corpId;
         }
+        if (!Utils::isUnset($request->env)) {
+            $query['env'] = $request->env;
+        }
         if (!Utils::isUnset($request->pageNumber)) {
             $query['pageNumber'] = $request->pageNumber;
         }
@@ -4945,6 +4963,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->endTimeGMT)) {
             $body['endTimeGMT'] = $request->endTimeGMT;
+        }
+        if (!Utils::isUnset($request->env)) {
+            $body['env'] = $request->env;
         }
         if (!Utils::isUnset($request->formUuid)) {
             $body['formUuid'] = $request->formUuid;

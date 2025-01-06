@@ -17,6 +17,11 @@ class result extends Model
     /**
      * @var string
      */
+    public $detailId;
+
+    /**
+     * @var string
+     */
     public $instanceId;
 
     /**
@@ -70,6 +75,7 @@ class result extends Model
     public $tradeType;
     protected $_name = [
         'balance'          => 'balance',
+        'detailId'         => 'detailId',
         'instanceId'       => 'instanceId',
         'instanceTitle'    => 'instanceTitle',
         'instanceUrl'      => 'instanceUrl',
@@ -92,6 +98,9 @@ class result extends Model
         $res = [];
         if (null !== $this->balance) {
             $res['balance'] = $this->balance;
+        }
+        if (null !== $this->detailId) {
+            $res['detailId'] = $this->detailId;
         }
         if (null !== $this->instanceId) {
             $res['instanceId'] = $this->instanceId;
@@ -140,6 +149,9 @@ class result extends Model
         $model = new self();
         if (isset($map['balance'])) {
             $model->balance = $map['balance'];
+        }
+        if (isset($map['detailId'])) {
+            $model->detailId = $map['detailId'];
         }
         if (isset($map['instanceId'])) {
             $model->instanceId = $map['instanceId'];

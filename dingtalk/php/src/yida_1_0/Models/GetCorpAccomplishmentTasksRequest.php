@@ -30,6 +30,13 @@ class GetCorpAccomplishmentTasksRequest extends Model
     public $createToTimeGMT;
 
     /**
+     * @example vpc(国内版宜搭)/sgp_vpc(海外版宜搭)
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @example 未知
      *
      * @var string
@@ -76,6 +83,7 @@ class GetCorpAccomplishmentTasksRequest extends Model
         'appTypes'          => 'appTypes',
         'createFromTimeGMT' => 'createFromTimeGMT',
         'createToTimeGMT'   => 'createToTimeGMT',
+        'env'               => 'env',
         'keyword'           => 'keyword',
         'language'          => 'language',
         'pageNumber'        => 'pageNumber',
@@ -99,6 +107,9 @@ class GetCorpAccomplishmentTasksRequest extends Model
         }
         if (null !== $this->createToTimeGMT) {
             $res['createToTimeGMT'] = $this->createToTimeGMT;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->keyword) {
             $res['keyword'] = $this->keyword;
@@ -138,6 +149,9 @@ class GetCorpAccomplishmentTasksRequest extends Model
         }
         if (isset($map['createToTimeGMT'])) {
             $model->createToTimeGMT = $map['createToTimeGMT'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['keyword'])) {
             $model->keyword = $map['keyword'];

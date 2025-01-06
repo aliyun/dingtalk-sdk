@@ -11,6 +11,14 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BankGatewayInvokeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchDeleteReceiptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchDeleteReceiptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchDeleteReceiptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchQueryOrgInvoiceUrlHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchQueryOrgInvoiceUrlRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchQueryOrgInvoiceUrlResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchQueryOrgInvoiceUrlShrinkRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchQueryPaymentRecallFileHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchQueryPaymentRecallFileRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchQueryPaymentRecallFileResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchQueryPaymentRecallFileShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchSyncBankReceiptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchSyncBankReceiptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchSyncBankReceiptResponse;
@@ -234,6 +242,139 @@ class Dingtalk extends OpenApiClient
         $headers = new BatchDeleteReceiptHeaders([]);
 
         return $this->batchDeleteReceiptWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量查询企业票池发票下载链接
+     *  *
+     * @param BatchQueryOrgInvoiceUrlRequest $tmpReq  BatchQueryOrgInvoiceUrlRequest
+     * @param BatchQueryOrgInvoiceUrlHeaders $headers BatchQueryOrgInvoiceUrlHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return BatchQueryOrgInvoiceUrlResponse BatchQueryOrgInvoiceUrlResponse
+     */
+    public function batchQueryOrgInvoiceUrlWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new BatchQueryOrgInvoiceUrlShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->invoiceKeyVOList)) {
+            $request->invoiceKeyVOListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->invoiceKeyVOList, 'invoiceKeyVOList', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->companyCode)) {
+            $query['companyCode'] = $request->companyCode;
+        }
+        if (!Utils::isUnset($request->invoiceKeyVOListShrink)) {
+            $query['invoiceKeyVOList'] = $request->invoiceKeyVOListShrink;
+        }
+        if (!Utils::isUnset($request->operator)) {
+            $query['operator'] = $request->operator;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'BatchQueryOrgInvoiceUrl',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/invoices/urls/batchQuery',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return BatchQueryOrgInvoiceUrlResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量查询企业票池发票下载链接
+     *  *
+     * @param BatchQueryOrgInvoiceUrlRequest $request BatchQueryOrgInvoiceUrlRequest
+     *
+     * @return BatchQueryOrgInvoiceUrlResponse BatchQueryOrgInvoiceUrlResponse
+     */
+    public function batchQueryOrgInvoiceUrl($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchQueryOrgInvoiceUrlHeaders([]);
+
+        return $this->batchQueryOrgInvoiceUrlWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量查询支付回单文件
+     *  *
+     * @param BatchQueryPaymentRecallFileRequest $tmpReq  BatchQueryPaymentRecallFileRequest
+     * @param BatchQueryPaymentRecallFileHeaders $headers BatchQueryPaymentRecallFileHeaders
+     * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return BatchQueryPaymentRecallFileResponse BatchQueryPaymentRecallFileResponse
+     */
+    public function batchQueryPaymentRecallFileWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new BatchQueryPaymentRecallFileShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->detailIdList)) {
+            $request->detailIdListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->detailIdList, 'detailIdList', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->detailIdListShrink)) {
+            $query['detailIdList'] = $request->detailIdListShrink;
+        }
+        if (!Utils::isUnset($request->opeator)) {
+            $query['opeator'] = $request->opeator;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'BatchQueryPaymentRecallFile',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/payments/recallFiles/batchQuery',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return BatchQueryPaymentRecallFileResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量查询支付回单文件
+     *  *
+     * @param BatchQueryPaymentRecallFileRequest $request BatchQueryPaymentRecallFileRequest
+     *
+     * @return BatchQueryPaymentRecallFileResponse BatchQueryPaymentRecallFileResponse
+     */
+    public function batchQueryPaymentRecallFile($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchQueryPaymentRecallFileHeaders([]);
+
+        return $this->batchQueryPaymentRecallFileWithOptions($request, $headers, $runtime);
     }
 
     /**

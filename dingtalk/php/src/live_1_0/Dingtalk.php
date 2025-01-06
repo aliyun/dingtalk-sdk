@@ -1642,7 +1642,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 用户对互动插件进行操作广播到直播间
+     * @summary 用户推送互动插件特效消息到直播间
      *  *
      * @param SendLiveInteractionPluginEffectsMsgRequest $request SendLiveInteractionPluginEffectsMsgRequest
      * @param SendLiveInteractionPluginEffectsMsgHeaders $headers SendLiveInteractionPluginEffectsMsgHeaders
@@ -1707,7 +1707,7 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
-     * @summary 用户对互动插件进行操作广播到直播间
+     * @summary 用户推送互动插件特效消息到直播间
      *  *
      * @param SendLiveInteractionPluginEffectsMsgRequest $request SendLiveInteractionPluginEffectsMsgRequest
      *

@@ -83,17 +83,35 @@ class list_ extends Model
      * @var string
      */
     public $creator;
+
+    /**
+     * @var string
+     */
+    public $signStatus;
+
+    /**
+     * @var bool
+     */
+    public $supportReceipt;
+
+    /**
+     * @var bool
+     */
+    public $supportTradeDetail;
     protected $_name = [
-        'accountCode'   => 'accountCode',
-        'accountId'     => 'accountId',
-        'accountName'   => 'accountName',
-        'accountRemark' => 'accountRemark',
-        'accountType'   => 'accountType',
-        'amount'        => 'amount',
-        'bankCode'      => 'bankCode',
-        'bankName'      => 'bankName',
-        'createTime'    => 'createTime',
-        'creator'       => 'creator',
+        'accountCode'        => 'accountCode',
+        'accountId'          => 'accountId',
+        'accountName'        => 'accountName',
+        'accountRemark'      => 'accountRemark',
+        'accountType'        => 'accountType',
+        'amount'             => 'amount',
+        'bankCode'           => 'bankCode',
+        'bankName'           => 'bankName',
+        'createTime'         => 'createTime',
+        'creator'            => 'creator',
+        'signStatus'         => 'signStatus',
+        'supportReceipt'     => 'supportReceipt',
+        'supportTradeDetail' => 'supportTradeDetail',
     ];
 
     public function validate()
@@ -132,6 +150,15 @@ class list_ extends Model
         }
         if (null !== $this->creator) {
             $res['creator'] = $this->creator;
+        }
+        if (null !== $this->signStatus) {
+            $res['signStatus'] = $this->signStatus;
+        }
+        if (null !== $this->supportReceipt) {
+            $res['supportReceipt'] = $this->supportReceipt;
+        }
+        if (null !== $this->supportTradeDetail) {
+            $res['supportTradeDetail'] = $this->supportTradeDetail;
         }
 
         return $res;
@@ -174,6 +201,15 @@ class list_ extends Model
         }
         if (isset($map['creator'])) {
             $model->creator = $map['creator'];
+        }
+        if (isset($map['signStatus'])) {
+            $model->signStatus = $map['signStatus'];
+        }
+        if (isset($map['supportReceipt'])) {
+            $model->supportReceipt = $map['supportReceipt'];
+        }
+        if (isset($map['supportTradeDetail'])) {
+            $model->supportTradeDetail = $map['supportTradeDetail'];
         }
 
         return $model;

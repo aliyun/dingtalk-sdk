@@ -18,6 +18,13 @@ class GetAutoFlowLogDetailRequest extends Model
     public $corpId;
 
     /**
+     * @example vpc(国内版宜搭)/sgp_vpc(海外版宜搭)
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @description This parameter is required.
      *
      * @example 1
@@ -61,6 +68,7 @@ class GetAutoFlowLogDetailRequest extends Model
     public $userId;
     protected $_name = [
         'corpId'         => 'corpId',
+        'env'            => 'env',
         'pageNumber'     => 'pageNumber',
         'pageSize'       => 'pageSize',
         'procInstanceId' => 'procInstanceId',
@@ -77,6 +85,9 @@ class GetAutoFlowLogDetailRequest extends Model
         $res = [];
         if (null !== $this->corpId) {
             $res['corpId'] = $this->corpId;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->pageNumber) {
             $res['pageNumber'] = $this->pageNumber;
@@ -107,6 +118,9 @@ class GetAutoFlowLogDetailRequest extends Model
         $model = new self();
         if (isset($map['corpId'])) {
             $model->corpId = $map['corpId'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['pageNumber'])) {
             $model->pageNumber = $map['pageNumber'];

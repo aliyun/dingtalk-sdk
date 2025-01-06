@@ -32,6 +32,13 @@ class PageAutoFlowLogRequest extends Model
     public $endTimeGMT;
 
     /**
+     * @example vpc(国内版宜搭)/sgp_vpc(海外版宜搭)
+     *
+     * @var string
+     */
+    public $env;
+
+    /**
      * @example FORM-GX866MC1NC1VOFF6WVQW33FD16E23L3CPMKVKA
      *
      * @var string
@@ -94,6 +101,7 @@ class PageAutoFlowLogRequest extends Model
         'appType'      => 'appType',
         'corpId'       => 'corpId',
         'endTimeGMT'   => 'endTimeGMT',
+        'env'          => 'env',
         'formUuid'     => 'formUuid',
         'pageNumber'   => 'pageNumber',
         'pageSize'     => 'pageSize',
@@ -119,6 +127,9 @@ class PageAutoFlowLogRequest extends Model
         }
         if (null !== $this->endTimeGMT) {
             $res['endTimeGMT'] = $this->endTimeGMT;
+        }
+        if (null !== $this->env) {
+            $res['env'] = $this->env;
         }
         if (null !== $this->formUuid) {
             $res['formUuid'] = $this->formUuid;
@@ -164,6 +175,9 @@ class PageAutoFlowLogRequest extends Model
         }
         if (isset($map['endTimeGMT'])) {
             $model->endTimeGMT = $map['endTimeGMT'];
+        }
+        if (isset($map['env'])) {
+            $model->env = $map['env'];
         }
         if (isset($map['formUuid'])) {
             $model->formUuid = $map['formUuid'];
