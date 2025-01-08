@@ -4,6 +4,8 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BatchAddInvoiceRequest;
 
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BatchAddInvoiceRequest\generalInvoiceVOList\eFlightItineraryDetailVOList;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BatchAddInvoiceRequest\generalInvoiceVOList\eTrainTicketDetailVOList;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BatchAddInvoiceRequest\generalInvoiceVOList\generalInvoiceDetailVOList;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BatchAddInvoiceRequest\generalInvoiceVOList\secondHandCarInvoiceDetailList;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_1_0\Models\BatchAddInvoiceRequest\generalInvoiceVOList\usedVehicleSaleDetailVOList;
@@ -60,6 +62,16 @@ class generalInvoiceVOList extends Model
      * @var string
      */
     public $drewDate;
+
+    /**
+     * @var eFlightItineraryDetailVOList[]
+     */
+    public $eFlightItineraryDetailVOList;
+
+    /**
+     * @var eTrainTicketDetailVOList[]
+     */
+    public $eTrainTicketDetailVOList;
 
     /**
      * @example abc
@@ -346,6 +358,8 @@ class generalInvoiceVOList extends Model
         'checkTime'                      => 'checkTime',
         'drawerName'                     => 'drawerName',
         'drewDate'                       => 'drewDate',
+        'eFlightItineraryDetailVOList'   => 'eFlightItineraryDetailVOList',
+        'eTrainTicketDetailVOList'       => 'eTrainTicketDetailVOList',
         'electronicUrl'                  => 'electronicUrl',
         'fileId'                         => 'fileId',
         'financeType'                    => 'financeType',
@@ -419,6 +433,24 @@ class generalInvoiceVOList extends Model
         }
         if (null !== $this->drewDate) {
             $res['drewDate'] = $this->drewDate;
+        }
+        if (null !== $this->eFlightItineraryDetailVOList) {
+            $res['eFlightItineraryDetailVOList'] = [];
+            if (null !== $this->eFlightItineraryDetailVOList && \is_array($this->eFlightItineraryDetailVOList)) {
+                $n = 0;
+                foreach ($this->eFlightItineraryDetailVOList as $item) {
+                    $res['eFlightItineraryDetailVOList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
+        if (null !== $this->eTrainTicketDetailVOList) {
+            $res['eTrainTicketDetailVOList'] = [];
+            if (null !== $this->eTrainTicketDetailVOList && \is_array($this->eTrainTicketDetailVOList)) {
+                $n = 0;
+                foreach ($this->eTrainTicketDetailVOList as $item) {
+                    $res['eTrainTicketDetailVOList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
         }
         if (null !== $this->electronicUrl) {
             $res['electronicUrl'] = $this->electronicUrl;
@@ -608,6 +640,24 @@ class generalInvoiceVOList extends Model
         }
         if (isset($map['drewDate'])) {
             $model->drewDate = $map['drewDate'];
+        }
+        if (isset($map['eFlightItineraryDetailVOList'])) {
+            if (!empty($map['eFlightItineraryDetailVOList'])) {
+                $model->eFlightItineraryDetailVOList = [];
+                $n                                   = 0;
+                foreach ($map['eFlightItineraryDetailVOList'] as $item) {
+                    $model->eFlightItineraryDetailVOList[$n++] = null !== $item ? eFlightItineraryDetailVOList::fromMap($item) : $item;
+                }
+            }
+        }
+        if (isset($map['eTrainTicketDetailVOList'])) {
+            if (!empty($map['eTrainTicketDetailVOList'])) {
+                $model->eTrainTicketDetailVOList = [];
+                $n                               = 0;
+                foreach ($map['eTrainTicketDetailVOList'] as $item) {
+                    $model->eTrainTicketDetailVOList[$n++] = null !== $item ? eTrainTicketDetailVOList::fromMap($item) : $item;
+                }
+            }
         }
         if (isset($map['electronicUrl'])) {
             $model->electronicUrl = $map['electronicUrl'];

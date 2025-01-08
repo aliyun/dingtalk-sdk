@@ -41,6 +41,9 @@ use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\GetTemplateListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\GetUserTaskListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\GetUserTaskListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\GetUserTaskListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\QueryTaskExecutionStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\QueryTaskExecutionStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\QueryTaskExecutionStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\RegisterCategorySourceConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\RegisterCategorySourceConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\RegisterCategorySourceConfigResponse;
@@ -91,6 +94,9 @@ class Dingtalk extends OpenApiClient
         $body = [];
         if (!Utils::isUnset($request->bizCategoryId)) {
             $body['bizCategoryId'] = $request->bizCategoryId;
+        }
+        if (!Utils::isUnset($request->bizCreatedTime)) {
+            $body['bizCreatedTime'] = $request->bizCreatedTime;
         }
         if (!Utils::isUnset($request->customFields)) {
             $body['customFields'] = $request->customFields;
@@ -314,6 +320,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->bizCreatedTime)) {
+            $body['bizCreatedTime'] = $request->bizCreatedTime;
+        }
         if (!Utils::isUnset($request->description)) {
             $body['description'] = $request->description;
         }
@@ -899,6 +908,69 @@ class Dingtalk extends OpenApiClient
         $headers = new GetUserTaskListHeaders([]);
 
         return $this->getUserTaskListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询任务所有执行人的完成状态
+     *  *
+     * @param QueryTaskExecutionStatusRequest $request QueryTaskExecutionStatusRequest
+     * @param QueryTaskExecutionStatusHeaders $headers QueryTaskExecutionStatusHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryTaskExecutionStatusResponse QueryTaskExecutionStatusResponse
+     */
+    public function queryTaskExecutionStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->taskId)) {
+            $query['taskId'] = $request->taskId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryTaskExecutionStatus',
+            'version'     => 'todoEE_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/todoEE/apps/users/tasks/executionStatuses',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryTaskExecutionStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询任务所有执行人的完成状态
+     *  *
+     * @param QueryTaskExecutionStatusRequest $request QueryTaskExecutionStatusRequest
+     *
+     * @return QueryTaskExecutionStatusResponse QueryTaskExecutionStatusResponse
+     */
+    public function queryTaskExecutionStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryTaskExecutionStatusHeaders([]);
+
+        return $this->queryTaskExecutionStatusWithOptions($request, $headers, $runtime);
     }
 
     /**

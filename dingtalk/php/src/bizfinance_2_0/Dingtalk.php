@@ -14,11 +14,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchDeleteReceiptResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchQueryOrgInvoiceUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchQueryOrgInvoiceUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchQueryOrgInvoiceUrlResponse;
-use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchQueryOrgInvoiceUrlShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchQueryPaymentRecallFileHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchQueryPaymentRecallFileRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchQueryPaymentRecallFileResponse;
-use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchQueryPaymentRecallFileShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchSyncBankReceiptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchSyncBankReceiptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchSyncBankReceiptResponse;
@@ -247,29 +245,24 @@ class Dingtalk extends OpenApiClient
     /**
      * @summary 批量查询企业票池发票下载链接
      *  *
-     * @param BatchQueryOrgInvoiceUrlRequest $tmpReq  BatchQueryOrgInvoiceUrlRequest
+     * @param BatchQueryOrgInvoiceUrlRequest $request BatchQueryOrgInvoiceUrlRequest
      * @param BatchQueryOrgInvoiceUrlHeaders $headers BatchQueryOrgInvoiceUrlHeaders
      * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
      *
      * @return BatchQueryOrgInvoiceUrlResponse BatchQueryOrgInvoiceUrlResponse
      */
-    public function batchQueryOrgInvoiceUrlWithOptions($tmpReq, $headers, $runtime)
+    public function batchQueryOrgInvoiceUrlWithOptions($request, $headers, $runtime)
     {
-        Utils::validateModel($tmpReq);
-        $request = new BatchQueryOrgInvoiceUrlShrinkRequest([]);
-        OpenApiUtilClient::convert($tmpReq, $request);
-        if (!Utils::isUnset($tmpReq->invoiceKeyVOList)) {
-            $request->invoiceKeyVOListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->invoiceKeyVOList, 'invoiceKeyVOList', 'json');
-        }
-        $query = [];
+        Utils::validateModel($request);
+        $body = [];
         if (!Utils::isUnset($request->companyCode)) {
-            $query['companyCode'] = $request->companyCode;
+            $body['companyCode'] = $request->companyCode;
         }
-        if (!Utils::isUnset($request->invoiceKeyVOListShrink)) {
-            $query['invoiceKeyVOList'] = $request->invoiceKeyVOListShrink;
+        if (!Utils::isUnset($request->invoiceKeyVOList)) {
+            $body['invoiceKeyVOList'] = $request->invoiceKeyVOList;
         }
         if (!Utils::isUnset($request->operator)) {
-            $query['operator'] = $request->operator;
+            $body['operator'] = $request->operator;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -280,7 +273,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
             'action'      => 'BatchQueryOrgInvoiceUrl',
@@ -315,26 +308,21 @@ class Dingtalk extends OpenApiClient
     /**
      * @summary 批量查询支付回单文件
      *  *
-     * @param BatchQueryPaymentRecallFileRequest $tmpReq  BatchQueryPaymentRecallFileRequest
+     * @param BatchQueryPaymentRecallFileRequest $request BatchQueryPaymentRecallFileRequest
      * @param BatchQueryPaymentRecallFileHeaders $headers BatchQueryPaymentRecallFileHeaders
      * @param RuntimeOptions                     $runtime runtime options for this request RuntimeOptions
      *
      * @return BatchQueryPaymentRecallFileResponse BatchQueryPaymentRecallFileResponse
      */
-    public function batchQueryPaymentRecallFileWithOptions($tmpReq, $headers, $runtime)
+    public function batchQueryPaymentRecallFileWithOptions($request, $headers, $runtime)
     {
-        Utils::validateModel($tmpReq);
-        $request = new BatchQueryPaymentRecallFileShrinkRequest([]);
-        OpenApiUtilClient::convert($tmpReq, $request);
-        if (!Utils::isUnset($tmpReq->detailIdList)) {
-            $request->detailIdListShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->detailIdList, 'detailIdList', 'json');
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->detailIdList)) {
+            $body['detailIdList'] = $request->detailIdList;
         }
-        $query = [];
-        if (!Utils::isUnset($request->detailIdListShrink)) {
-            $query['detailIdList'] = $request->detailIdListShrink;
-        }
-        if (!Utils::isUnset($request->opeator)) {
-            $query['opeator'] = $request->opeator;
+        if (!Utils::isUnset($request->operator)) {
+            $body['operator'] = $request->operator;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -345,7 +333,7 @@ class Dingtalk extends OpenApiClient
         }
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
-            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
             'action'      => 'BatchQueryPaymentRecallFile',

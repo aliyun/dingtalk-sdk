@@ -17,6 +17,11 @@ class AppCreateEnterpriseTodoTaskRequest extends Model
     public $bizCategoryId;
 
     /**
+     * @var int
+     */
+    public $bizCreatedTime;
+
+    /**
      * @var customFields[]
      */
     public $customFields;
@@ -82,6 +87,7 @@ class AppCreateEnterpriseTodoTaskRequest extends Model
     public $type;
     protected $_name = [
         'bizCategoryId'      => 'bizCategoryId',
+        'bizCreatedTime'     => 'bizCreatedTime',
         'customFields'       => 'customFields',
         'description'        => 'description',
         'detailUrl'          => 'detailUrl',
@@ -106,6 +112,9 @@ class AppCreateEnterpriseTodoTaskRequest extends Model
         $res = [];
         if (null !== $this->bizCategoryId) {
             $res['bizCategoryId'] = $this->bizCategoryId;
+        }
+        if (null !== $this->bizCreatedTime) {
+            $res['bizCreatedTime'] = $this->bizCreatedTime;
         }
         if (null !== $this->customFields) {
             $res['customFields'] = [];
@@ -166,6 +175,9 @@ class AppCreateEnterpriseTodoTaskRequest extends Model
         $model = new self();
         if (isset($map['bizCategoryId'])) {
             $model->bizCategoryId = $map['bizCategoryId'];
+        }
+        if (isset($map['bizCreatedTime'])) {
+            $model->bizCreatedTime = $map['bizCreatedTime'];
         }
         if (isset($map['customFields'])) {
             if (!empty($map['customFields'])) {

@@ -39,6 +39,13 @@ class CreateTrustedDeviceRequest extends Model
     public $status;
 
     /**
+     * @example 设备名称
+     *
+     * @var string
+     */
+    public $title;
+
+    /**
      * @description This parameter is required.
      *
      * @example 65224157501039784
@@ -51,6 +58,7 @@ class CreateTrustedDeviceRequest extends Model
         'macAddress' => 'macAddress',
         'platform'   => 'platform',
         'status'     => 'status',
+        'title'      => 'title',
         'userId'     => 'userId',
     ];
 
@@ -72,6 +80,9 @@ class CreateTrustedDeviceRequest extends Model
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -99,6 +110,9 @@ class CreateTrustedDeviceRequest extends Model
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

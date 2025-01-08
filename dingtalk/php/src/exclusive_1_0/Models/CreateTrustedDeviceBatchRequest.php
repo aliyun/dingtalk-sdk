@@ -4,13 +4,17 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\CreateTrustedDeviceBatchRequest\detailList;
 use AlibabaCloud\Tea\Model;
 
 class CreateTrustedDeviceBatchRequest extends Model
 {
     /**
-     * @description This parameter is required.
-     *
+     * @var detailList[]
+     */
+    public $detailList;
+
+    /**
      * @var string[]
      */
     public $macAddressList;
@@ -33,6 +37,7 @@ class CreateTrustedDeviceBatchRequest extends Model
      */
     public $userId;
     protected $_name = [
+        'detailList'     => 'detailList',
         'macAddressList' => 'macAddressList',
         'platform'       => 'platform',
         'userId'         => 'userId',
@@ -45,6 +50,15 @@ class CreateTrustedDeviceBatchRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->detailList) {
+            $res['detailList'] = [];
+            if (null !== $this->detailList && \is_array($this->detailList)) {
+                $n = 0;
+                foreach ($this->detailList as $item) {
+                    $res['detailList'][$n++] = null !== $item ? $item->toMap() : $item;
+                }
+            }
+        }
         if (null !== $this->macAddressList) {
             $res['macAddressList'] = $this->macAddressList;
         }
@@ -66,6 +80,15 @@ class CreateTrustedDeviceBatchRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['detailList'])) {
+            if (!empty($map['detailList'])) {
+                $model->detailList = [];
+                $n                 = 0;
+                foreach ($map['detailList'] as $item) {
+                    $model->detailList[$n++] = null !== $item ? detailList::fromMap($item) : $item;
+                }
+            }
+        }
         if (isset($map['macAddressList'])) {
             if (!empty($map['macAddressList'])) {
                 $model->macAddressList = $map['macAddressList'];

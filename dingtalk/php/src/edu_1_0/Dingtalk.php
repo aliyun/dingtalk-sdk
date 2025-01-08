@@ -227,9 +227,15 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeviceHeartbeatResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DisableCollegeContactSceneStruHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DisableCollegeContactSceneStruRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DisableCollegeContactSceneStruResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduAIGCCallbackHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduAIGCCallbackRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduAIGCCallbackResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduFindUserRolesByUserIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduFindUserRolesByUserIdRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduFindUserRolesByUserIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduGetFileSpaceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduGetFileSpaceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduGetFileSpaceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduListUserByFromUserIdsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduListUserByFromUserIdsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\EduListUserByFromUserIdsResponse;
@@ -6045,6 +6051,87 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 教育三方aigc结果回调
+     *  *
+     * @param EduAIGCCallbackRequest $request EduAIGCCallbackRequest
+     * @param EduAIGCCallbackHeaders $headers EduAIGCCallbackHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return EduAIGCCallbackResponse EduAIGCCallbackResponse
+     */
+    public function eduAIGCCallbackWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->channelCode)) {
+            $body['channelCode'] = $request->channelCode;
+        }
+        if (!Utils::isUnset($request->commitTime)) {
+            $body['commitTime'] = $request->commitTime;
+        }
+        if (!Utils::isUnset($request->completeTime)) {
+            $body['completeTime'] = $request->completeTime;
+        }
+        if (!Utils::isUnset($request->content)) {
+            $body['content'] = $request->content;
+        }
+        if (!Utils::isUnset($request->contentSize)) {
+            $body['contentSize'] = $request->contentSize;
+        }
+        if (!Utils::isUnset($request->contentType)) {
+            $body['contentType'] = $request->contentType;
+        }
+        if (!Utils::isUnset($request->ext)) {
+            $body['ext'] = $request->ext;
+        }
+        if (!Utils::isUnset($request->prompt)) {
+            $body['prompt'] = $request->prompt;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'EduAIGCCallback',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/aigc/callback',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return EduAIGCCallbackResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 教育三方aigc结果回调
+     *  *
+     * @param EduAIGCCallbackRequest $request EduAIGCCallbackRequest
+     *
+     * @return EduAIGCCallbackResponse EduAIGCCallbackResponse
+     */
+    public function eduAIGCCallback($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EduAIGCCallbackHeaders([]);
+
+        return $this->eduAIGCCallbackWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 教育侧用户的所有角色
      *  *
      * @param EduFindUserRolesByUserIdRequest $request EduFindUserRolesByUserIdRequest
@@ -6108,6 +6195,63 @@ class Dingtalk extends OpenApiClient
         $headers = new EduFindUserRolesByUserIdHeaders([]);
 
         return $this->eduFindUserRolesByUserIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取用户文件存储空间信息
+     *  *
+     * @param EduGetFileSpaceRequest $request EduGetFileSpaceRequest
+     * @param EduGetFileSpaceHeaders $headers EduGetFileSpaceHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return EduGetFileSpaceResponse EduGetFileSpaceResponse
+     */
+    public function eduGetFileSpaceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->channelCode)) {
+            $body['channelCode'] = $request->channelCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'EduGetFileSpace',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/files/spaces/infos/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return EduGetFileSpaceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取用户文件存储空间信息
+     *  *
+     * @param EduGetFileSpaceRequest $request EduGetFileSpaceRequest
+     *
+     * @return EduGetFileSpaceResponse EduGetFileSpaceResponse
+     */
+    public function eduGetFileSpace($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EduGetFileSpaceHeaders([]);
+
+        return $this->eduGetFileSpaceWithOptions($request, $headers, $runtime);
     }
 
     /**

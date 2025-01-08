@@ -16,10 +16,10 @@ class BatchQueryPaymentRecallFileRequest extends Model
     /**
      * @var string
      */
-    public $opeator;
+    public $operator;
     protected $_name = [
         'detailIdList' => 'detailIdList',
-        'opeator'      => 'opeator',
+        'operator'     => 'operator',
     ];
 
     public function validate()
@@ -32,8 +32,8 @@ class BatchQueryPaymentRecallFileRequest extends Model
         if (null !== $this->detailIdList) {
             $res['detailIdList'] = $this->detailIdList;
         }
-        if (null !== $this->opeator) {
-            $res['opeator'] = $this->opeator;
+        if (null !== $this->operator) {
+            $res['operator'] = $this->operator;
         }
 
         return $res;
@@ -52,8 +52,8 @@ class BatchQueryPaymentRecallFileRequest extends Model
                 $model->detailIdList = $map['detailIdList'];
             }
         }
-        if (isset($map['opeator'])) {
-            $model->opeator = $map['opeator'];
+        if (isset($map['operator'])) {
+            $model->operator = $map['operator'];
         }
 
         return $model;

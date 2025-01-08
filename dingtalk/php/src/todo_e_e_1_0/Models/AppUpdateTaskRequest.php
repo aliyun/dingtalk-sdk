@@ -9,6 +9,11 @@ use AlibabaCloud\Tea\Model;
 class AppUpdateTaskRequest extends Model
 {
     /**
+     * @var int
+     */
+    public $bizCreatedTime;
+
+    /**
      * @var string
      */
     public $description;
@@ -48,6 +53,7 @@ class AppUpdateTaskRequest extends Model
      */
     public $toolbarTemplateKey;
     protected $_name = [
+        'bizCreatedTime'     => 'bizCreatedTime',
         'description'        => 'description',
         'done'               => 'done',
         'dueTime'            => 'dueTime',
@@ -65,6 +71,9 @@ class AppUpdateTaskRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->bizCreatedTime) {
+            $res['bizCreatedTime'] = $this->bizCreatedTime;
+        }
         if (null !== $this->description) {
             $res['description'] = $this->description;
         }
@@ -101,6 +110,9 @@ class AppUpdateTaskRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['bizCreatedTime'])) {
+            $model->bizCreatedTime = $map['bizCreatedTime'];
+        }
         if (isset($map['description'])) {
             $model->description = $map['description'];
         }

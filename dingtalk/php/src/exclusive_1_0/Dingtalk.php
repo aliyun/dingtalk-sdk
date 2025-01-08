@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\AddCustomSignConfigHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\AddCustomSignConfigRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\AddCustomSignConfigResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\AddOrgHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\AddOrgRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\AddOrgResponse;
@@ -388,6 +391,87 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 添加自主协议
+     *  *
+     * @param AddCustomSignConfigRequest $request AddCustomSignConfigRequest
+     * @param AddCustomSignConfigHeaders $headers AddCustomSignConfigHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddCustomSignConfigResponse AddCustomSignConfigResponse
+     */
+    public function addCustomSignConfigWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->allEffect)) {
+            $body['allEffect'] = $request->allEffect;
+        }
+        if (!Utils::isUnset($request->canDownload)) {
+            $body['canDownload'] = $request->canDownload;
+        }
+        if (!Utils::isUnset($request->protocolName)) {
+            $body['protocolName'] = $request->protocolName;
+        }
+        if (!Utils::isUnset($request->pushDeptIds)) {
+            $body['pushDeptIds'] = $request->pushDeptIds;
+        }
+        if (!Utils::isUnset($request->pushStaffIds)) {
+            $body['pushStaffIds'] = $request->pushStaffIds;
+        }
+        if (!Utils::isUnset($request->signTermFiles)) {
+            $body['signTermFiles'] = $request->signTermFiles;
+        }
+        if (!Utils::isUnset($request->termMessage)) {
+            $body['termMessage'] = $request->termMessage;
+        }
+        if (!Utils::isUnset($request->unpushDeptIds)) {
+            $body['unpushDeptIds'] = $request->unpushDeptIds;
+        }
+        if (!Utils::isUnset($request->unpushStaffIds)) {
+            $body['unpushStaffIds'] = $request->unpushStaffIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddCustomSignConfig',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/sign/addCustomSignConfig',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddCustomSignConfigResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 添加自主协议
+     *  *
+     * @param AddCustomSignConfigRequest $request AddCustomSignConfigRequest
+     *
+     * @return AddCustomSignConfigResponse AddCustomSignConfigResponse
+     */
+    public function addCustomSignConfig($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddCustomSignConfigHeaders([]);
+
+        return $this->addCustomSignConfigWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -853,6 +937,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->status)) {
             $body['status'] = $request->status;
         }
+        if (!Utils::isUnset($request->title)) {
+            $body['title'] = $request->title;
+        }
         if (!Utils::isUnset($request->userId)) {
             $body['userId'] = $request->userId;
         }
@@ -910,6 +997,9 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
+        if (!Utils::isUnset($request->detailList)) {
+            $body['detailList'] = $request->detailList;
+        }
         if (!Utils::isUnset($request->macAddressList)) {
             $body['macAddressList'] = $request->macAddressList;
         }
