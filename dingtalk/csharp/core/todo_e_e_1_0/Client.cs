@@ -54,6 +54,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
             {
                 body["bizCategoryId"] = request.BizCategoryId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCreatedTime))
+            {
+                body["bizCreatedTime"] = request.BizCreatedTime;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomFields))
             {
                 body["customFields"] = request.CustomFields;
@@ -160,6 +164,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCategoryId))
             {
                 body["bizCategoryId"] = request.BizCategoryId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCreatedTime))
+            {
+                body["bizCreatedTime"] = request.BizCreatedTime;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CustomFields))
             {
@@ -638,6 +646,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCreatedTime))
+            {
+                body["bizCreatedTime"] = request.BizCreatedTime;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
                 body["description"] = request.Description;
@@ -721,6 +733,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCreatedTime))
+            {
+                body["bizCreatedTime"] = request.BizCreatedTime;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Description))
             {
                 body["description"] = request.Description;
@@ -2178,6 +2194,170 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetUserTaskListHeaders headers = new GetUserTaskListHeaders();
             return await GetUserTaskListWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询任务所有执行人的完成状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryTaskExecutionStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryTaskExecutionStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryTaskExecutionStatusResponse
+        /// </returns>
+        public QueryTaskExecutionStatusResponse QueryTaskExecutionStatusWithOptions(QueryTaskExecutionStatusRequest request, QueryTaskExecutionStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                query["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryTaskExecutionStatus",
+                Version = "todoEE_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/todoEE/apps/users/tasks/executionStatuses",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryTaskExecutionStatusResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询任务所有执行人的完成状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryTaskExecutionStatusRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryTaskExecutionStatusHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryTaskExecutionStatusResponse
+        /// </returns>
+        public async Task<QueryTaskExecutionStatusResponse> QueryTaskExecutionStatusWithOptionsAsync(QueryTaskExecutionStatusRequest request, QueryTaskExecutionStatusHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageNumber))
+            {
+                query["pageNumber"] = request.PageNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PageSize))
+            {
+                query["pageSize"] = request.PageSize;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskId))
+            {
+                query["taskId"] = request.TaskId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryTaskExecutionStatus",
+                Version = "todoEE_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/todoEE/apps/users/tasks/executionStatuses",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryTaskExecutionStatusResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询任务所有执行人的完成状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryTaskExecutionStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryTaskExecutionStatusResponse
+        /// </returns>
+        public QueryTaskExecutionStatusResponse QueryTaskExecutionStatus(QueryTaskExecutionStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryTaskExecutionStatusHeaders headers = new QueryTaskExecutionStatusHeaders();
+            return QueryTaskExecutionStatusWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询任务所有执行人的完成状态</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryTaskExecutionStatusRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryTaskExecutionStatusResponse
+        /// </returns>
+        public async Task<QueryTaskExecutionStatusResponse> QueryTaskExecutionStatusAsync(QueryTaskExecutionStatusRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryTaskExecutionStatusHeaders headers = new QueryTaskExecutionStatusHeaders();
+            return await QueryTaskExecutionStatusWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

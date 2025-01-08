@@ -77,6 +77,118 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string DrewDate { get; set; }
 
+            [NameInMap("eFlightItineraryDetailVOList")]
+            [Validation(Required=false)]
+            public List<BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList> EFlightItineraryDetailVOList { get; set; }
+            public class BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList : TeaModel {
+                [NameInMap("carrier")]
+                [Validation(Required=false)]
+                public string Carrier { get; set; }
+
+                [NameInMap("className")]
+                [Validation(Required=false)]
+                public string ClassName { get; set; }
+
+                [NameInMap("flightNumber")]
+                [Validation(Required=false)]
+                public string FlightNumber { get; set; }
+
+                [NameInMap("flyDate")]
+                [Validation(Required=false)]
+                public string FlyDate { get; set; }
+
+                [NameInMap("flyFrom")]
+                [Validation(Required=false)]
+                public string FlyFrom { get; set; }
+
+                [NameInMap("flyTime")]
+                [Validation(Required=false)]
+                public string FlyTime { get; set; }
+
+                [NameInMap("flyTo")]
+                [Validation(Required=false)]
+                public string FlyTo { get; set; }
+
+                [NameInMap("invoiceDetailNumber")]
+                [Validation(Required=false)]
+                public string InvoiceDetailNumber { get; set; }
+
+                [NameInMap("invoiceId")]
+                [Validation(Required=false)]
+                public string InvoiceId { get; set; }
+
+                [NameInMap("seat")]
+                [Validation(Required=false)]
+                public string Seat { get; set; }
+
+            }
+
+            [NameInMap("eTrainTicketDetailVOList")]
+            [Validation(Required=false)]
+            public List<BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList> ETrainTicketDetailVOList { get; set; }
+            public class BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList : TeaModel {
+                [NameInMap("airConditionType")]
+                [Validation(Required=false)]
+                public string AirConditionType { get; set; }
+
+                [NameInMap("carriageNo")]
+                [Validation(Required=false)]
+                public string CarriageNo { get; set; }
+
+                [NameInMap("destination")]
+                [Validation(Required=false)]
+                public string Destination { get; set; }
+
+                [NameInMap("eticketNo")]
+                [Validation(Required=false)]
+                public string EticketNo { get; set; }
+
+                [NameInMap("getOnTime")]
+                [Validation(Required=false)]
+                public string GetOnTime { get; set; }
+
+                [NameInMap("invoiceId")]
+                [Validation(Required=false)]
+                public string InvoiceId { get; set; }
+
+                [NameInMap("origin")]
+                [Validation(Required=false)]
+                public string Origin { get; set; }
+
+                [NameInMap("passenger")]
+                [Validation(Required=false)]
+                public string Passenger { get; set; }
+
+                [NameInMap("passengerUserId")]
+                [Validation(Required=false)]
+                public string PassengerUserId { get; set; }
+
+                [NameInMap("remark")]
+                [Validation(Required=false)]
+                public string Remark { get; set; }
+
+                [NameInMap("seatClass")]
+                [Validation(Required=false)]
+                public string SeatClass { get; set; }
+
+                [NameInMap("startTime")]
+                [Validation(Required=false)]
+                public string StartTime { get; set; }
+
+                [NameInMap("taxRate")]
+                [Validation(Required=false)]
+                public string TaxRate { get; set; }
+
+                [NameInMap("ticketType")]
+                [Validation(Required=false)]
+                public string TicketType { get; set; }
+
+                [NameInMap("trainNo")]
+                [Validation(Required=false)]
+                public string TrainNo { get; set; }
+
+            }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>abc</para>

@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0.Models
 {
     public class AppUpdateTaskRequest : TeaModel {
+        [NameInMap("bizCreatedTime")]
+        [Validation(Required=false)]
+        public long? BizCreatedTime { get; set; }
+
         [NameInMap("description")]
         [Validation(Required=false)]
         public string Description { get; set; }

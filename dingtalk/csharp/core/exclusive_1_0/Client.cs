@@ -30,6 +30,218 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>添加自主协议</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddCustomSignConfigRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddCustomSignConfigHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddCustomSignConfigResponse
+        /// </returns>
+        public AddCustomSignConfigResponse AddCustomSignConfigWithOptions(AddCustomSignConfigRequest request, AddCustomSignConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AllEffect))
+            {
+                body["allEffect"] = request.AllEffect;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CanDownload))
+            {
+                body["canDownload"] = request.CanDownload;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProtocolName))
+            {
+                body["protocolName"] = request.ProtocolName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PushDeptIds))
+            {
+                body["pushDeptIds"] = request.PushDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PushStaffIds))
+            {
+                body["pushStaffIds"] = request.PushStaffIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignTermFiles))
+            {
+                body["signTermFiles"] = request.SignTermFiles;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TermMessage))
+            {
+                body["termMessage"] = request.TermMessage;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnpushDeptIds))
+            {
+                body["unpushDeptIds"] = request.UnpushDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnpushStaffIds))
+            {
+                body["unpushStaffIds"] = request.UnpushStaffIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddCustomSignConfig",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/sign/addCustomSignConfig",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddCustomSignConfigResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加自主协议</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddCustomSignConfigRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddCustomSignConfigHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddCustomSignConfigResponse
+        /// </returns>
+        public async Task<AddCustomSignConfigResponse> AddCustomSignConfigWithOptionsAsync(AddCustomSignConfigRequest request, AddCustomSignConfigHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AllEffect))
+            {
+                body["allEffect"] = request.AllEffect;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CanDownload))
+            {
+                body["canDownload"] = request.CanDownload;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProtocolName))
+            {
+                body["protocolName"] = request.ProtocolName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PushDeptIds))
+            {
+                body["pushDeptIds"] = request.PushDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PushStaffIds))
+            {
+                body["pushStaffIds"] = request.PushStaffIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SignTermFiles))
+            {
+                body["signTermFiles"] = request.SignTermFiles;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TermMessage))
+            {
+                body["termMessage"] = request.TermMessage;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnpushDeptIds))
+            {
+                body["unpushDeptIds"] = request.UnpushDeptIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnpushStaffIds))
+            {
+                body["unpushStaffIds"] = request.UnpushStaffIds;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddCustomSignConfig",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/sign/addCustomSignConfig",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddCustomSignConfigResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加自主协议</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddCustomSignConfigRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddCustomSignConfigResponse
+        /// </returns>
+        public AddCustomSignConfigResponse AddCustomSignConfig(AddCustomSignConfigRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddCustomSignConfigHeaders headers = new AddCustomSignConfigHeaders();
+            return AddCustomSignConfigWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加自主协议</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddCustomSignConfigRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddCustomSignConfigResponse
+        /// </returns>
+        public async Task<AddCustomSignConfigResponse> AddCustomSignConfigAsync(AddCustomSignConfigRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddCustomSignConfigHeaders headers = new AddCustomSignConfigHeaders();
+            return await AddCustomSignConfigWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>新增企业</para>
         /// </summary>
         /// 
@@ -1206,6 +1418,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             {
                 body["status"] = request.Status;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
                 body["userId"] = request.UserId;
@@ -1276,6 +1492,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Status))
             {
                 body["status"] = request.Status;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Title))
+            {
+                body["title"] = request.Title;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
@@ -1370,6 +1590,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DetailList))
+            {
+                body["detailList"] = request.DetailList;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MacAddressList))
             {
                 body["macAddressList"] = request.MacAddressList;
@@ -1433,6 +1657,10 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DetailList))
+            {
+                body["detailList"] = request.DetailList;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MacAddressList))
             {
                 body["macAddressList"] = request.MacAddressList;

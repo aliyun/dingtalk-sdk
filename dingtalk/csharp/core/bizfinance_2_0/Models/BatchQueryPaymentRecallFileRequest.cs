@@ -13,9 +13,9 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
         [Validation(Required=false)]
         public List<string> DetailIdList { get; set; }
 
-        [NameInMap("opeator")]
+        [NameInMap("operator")]
         [Validation(Required=false)]
-        public string Opeator { get; set; }
+        public string Operator { get; set; }
 
     }
 

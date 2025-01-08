@@ -9,9 +9,20 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
 {
     public class CreateTrustedDeviceBatchRequest : TeaModel {
-        /// <summary>
-        /// <para>This parameter is required.</para>
-        /// </summary>
+        [NameInMap("detailList")]
+        [Validation(Required=false)]
+        public List<CreateTrustedDeviceBatchRequestDetailList> DetailList { get; set; }
+        public class CreateTrustedDeviceBatchRequestDetailList : TeaModel {
+            [NameInMap("macAddress")]
+            [Validation(Required=false)]
+            public string MacAddress { get; set; }
+
+            [NameInMap("title")]
+            [Validation(Required=false)]
+            public string Title { get; set; }
+
+        }
+
         [NameInMap("macAddressList")]
         [Validation(Required=false)]
         public List<string> MacAddressList { get; set; }

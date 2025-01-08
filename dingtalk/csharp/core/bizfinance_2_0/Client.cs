@@ -353,7 +353,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
         /// <para>批量查询企业票池发票下载链接</para>
         /// </summary>
         /// 
-        /// <param name="tmpReq">
+        /// <param name="request">
         /// BatchQueryOrgInvoiceUrlRequest
         /// </param>
         /// <param name="headers">
@@ -366,27 +366,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
         /// <returns>
         /// BatchQueryOrgInvoiceUrlResponse
         /// </returns>
-        public BatchQueryOrgInvoiceUrlResponse BatchQueryOrgInvoiceUrlWithOptions(BatchQueryOrgInvoiceUrlRequest tmpReq, BatchQueryOrgInvoiceUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public BatchQueryOrgInvoiceUrlResponse BatchQueryOrgInvoiceUrlWithOptions(BatchQueryOrgInvoiceUrlRequest request, BatchQueryOrgInvoiceUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
-            BatchQueryOrgInvoiceUrlShrinkRequest request = new BatchQueryOrgInvoiceUrlShrinkRequest();
-            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.InvoiceKeyVOList))
-            {
-                request.InvoiceKeyVOListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.InvoiceKeyVOList, "invoiceKeyVOList", "json");
-            }
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
             {
-                query["companyCode"] = request.CompanyCode;
+                body["companyCode"] = request.CompanyCode;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceKeyVOListShrink))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceKeyVOList))
             {
-                query["invoiceKeyVOList"] = request.InvoiceKeyVOListShrink;
+                body["invoiceKeyVOList"] = request.InvoiceKeyVOList;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
             {
-                query["operator"] = request.Operator;
+                body["operator"] = request.Operator;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -400,7 +394,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
@@ -422,7 +416,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
         /// <para>批量查询企业票池发票下载链接</para>
         /// </summary>
         /// 
-        /// <param name="tmpReq">
+        /// <param name="request">
         /// BatchQueryOrgInvoiceUrlRequest
         /// </param>
         /// <param name="headers">
@@ -435,27 +429,21 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
         /// <returns>
         /// BatchQueryOrgInvoiceUrlResponse
         /// </returns>
-        public async Task<BatchQueryOrgInvoiceUrlResponse> BatchQueryOrgInvoiceUrlWithOptionsAsync(BatchQueryOrgInvoiceUrlRequest tmpReq, BatchQueryOrgInvoiceUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<BatchQueryOrgInvoiceUrlResponse> BatchQueryOrgInvoiceUrlWithOptionsAsync(BatchQueryOrgInvoiceUrlRequest request, BatchQueryOrgInvoiceUrlHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
-            BatchQueryOrgInvoiceUrlShrinkRequest request = new BatchQueryOrgInvoiceUrlShrinkRequest();
-            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.InvoiceKeyVOList))
-            {
-                request.InvoiceKeyVOListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.InvoiceKeyVOList, "invoiceKeyVOList", "json");
-            }
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CompanyCode))
             {
-                query["companyCode"] = request.CompanyCode;
+                body["companyCode"] = request.CompanyCode;
             }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceKeyVOListShrink))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.InvoiceKeyVOList))
             {
-                query["invoiceKeyVOList"] = request.InvoiceKeyVOListShrink;
+                body["invoiceKeyVOList"] = request.InvoiceKeyVOList;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
             {
-                query["operator"] = request.Operator;
+                body["operator"] = request.Operator;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -469,7 +457,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
@@ -529,7 +517,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
         /// <para>批量查询支付回单文件</para>
         /// </summary>
         /// 
-        /// <param name="tmpReq">
+        /// <param name="request">
         /// BatchQueryPaymentRecallFileRequest
         /// </param>
         /// <param name="headers">
@@ -542,23 +530,17 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
         /// <returns>
         /// BatchQueryPaymentRecallFileResponse
         /// </returns>
-        public BatchQueryPaymentRecallFileResponse BatchQueryPaymentRecallFileWithOptions(BatchQueryPaymentRecallFileRequest tmpReq, BatchQueryPaymentRecallFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public BatchQueryPaymentRecallFileResponse BatchQueryPaymentRecallFileWithOptions(BatchQueryPaymentRecallFileRequest request, BatchQueryPaymentRecallFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
-            BatchQueryPaymentRecallFileShrinkRequest request = new BatchQueryPaymentRecallFileShrinkRequest();
-            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.DetailIdList))
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DetailIdList))
             {
-                request.DetailIdListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.DetailIdList, "detailIdList", "json");
+                body["detailIdList"] = request.DetailIdList;
             }
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DetailIdListShrink))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
             {
-                query["detailIdList"] = request.DetailIdListShrink;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Opeator))
-            {
-                query["opeator"] = request.Opeator;
+                body["operator"] = request.Operator;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -572,7 +554,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {
@@ -594,7 +576,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
         /// <para>批量查询支付回单文件</para>
         /// </summary>
         /// 
-        /// <param name="tmpReq">
+        /// <param name="request">
         /// BatchQueryPaymentRecallFileRequest
         /// </param>
         /// <param name="headers">
@@ -607,23 +589,17 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
         /// <returns>
         /// BatchQueryPaymentRecallFileResponse
         /// </returns>
-        public async Task<BatchQueryPaymentRecallFileResponse> BatchQueryPaymentRecallFileWithOptionsAsync(BatchQueryPaymentRecallFileRequest tmpReq, BatchQueryPaymentRecallFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<BatchQueryPaymentRecallFileResponse> BatchQueryPaymentRecallFileWithOptionsAsync(BatchQueryPaymentRecallFileRequest request, BatchQueryPaymentRecallFileHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(tmpReq);
-            BatchQueryPaymentRecallFileShrinkRequest request = new BatchQueryPaymentRecallFileShrinkRequest();
-            AlibabaCloud.OpenApiUtil.Client.Convert(tmpReq, request);
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(tmpReq.DetailIdList))
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DetailIdList))
             {
-                request.DetailIdListShrink = AlibabaCloud.OpenApiUtil.Client.ArrayToStringWithSpecifiedStyle(tmpReq.DetailIdList, "detailIdList", "json");
+                body["detailIdList"] = request.DetailIdList;
             }
-            Dictionary<string, object> query = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DetailIdListShrink))
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Operator))
             {
-                query["detailIdList"] = request.DetailIdListShrink;
-            }
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Opeator))
-            {
-                query["opeator"] = request.Opeator;
+                body["operator"] = request.Operator;
             }
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
@@ -637,7 +613,7 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0
             AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
             {
                 Headers = realHeaders,
-                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
             };
             AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
             {

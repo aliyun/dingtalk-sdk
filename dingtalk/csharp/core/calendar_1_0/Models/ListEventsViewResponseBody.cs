@@ -82,6 +82,16 @@ namespace AlibabaCloud.SDK.Dingtalkcalendar_1_0.Models
             [Validation(Required=false)]
             public ListEventsViewResponseBodyEventsExtendedProperties ExtendedProperties { get; set; }
             public class ListEventsViewResponseBodyEventsExtendedProperties : TeaModel {
+                [NameInMap("privateProperties")]
+                [Validation(Required=false)]
+                public ListEventsViewResponseBodyEventsExtendedPropertiesPrivateProperties PrivateProperties { get; set; }
+                public class ListEventsViewResponseBodyEventsExtendedPropertiesPrivateProperties : TeaModel {
+                    [NameInMap("dingtalkDetailUrl")]
+                    [Validation(Required=false)]
+                    public string DingtalkDetailUrl { get; set; }
+
+                }
+
                 [NameInMap("sharedProperties")]
                 [Validation(Required=false)]
                 public ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties SharedProperties { get; set; }

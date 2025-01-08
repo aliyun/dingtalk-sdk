@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0.Models
         [Validation(Required=false)]
         public string BizCategoryId { get; set; }
 
+        [NameInMap("bizCreatedTime")]
+        [Validation(Required=false)]
+        public long? BizCreatedTime { get; set; }
+
         [NameInMap("customFields")]
         [Validation(Required=false)]
         public List<AppCreateEnterpriseTodoTaskRequestCustomFields> CustomFields { get; set; }
@@ -69,6 +73,10 @@ namespace AlibabaCloud.SDK.Dingtalktodo_e_e_1_0.Models
         [Validation(Required=false)]
         public AppCreateEnterpriseTodoTaskRequestNotifyConfigs NotifyConfigs { get; set; }
         public class AppCreateEnterpriseTodoTaskRequestNotifyConfigs : TeaModel {
+            [NameInMap("assistance")]
+            [Validation(Required=false)]
+            public string Assistance { get; set; }
+
             [NameInMap("dingNotify")]
             [Validation(Required=false)]
             public string DingNotify { get; set; }
