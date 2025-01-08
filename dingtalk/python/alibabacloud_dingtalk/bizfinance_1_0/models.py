@@ -372,6 +372,198 @@ class BatchAddInvoiceHeaders(TeaModel):
         return self
 
 
+class BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList(TeaModel):
+    def __init__(
+        self,
+        carrier: str = None,
+        class_name: str = None,
+        flight_number: str = None,
+        fly_date: str = None,
+        fly_from: str = None,
+        fly_time: str = None,
+        fly_to: str = None,
+        invoice_detail_number: str = None,
+        invoice_id: str = None,
+        seat: str = None,
+    ):
+        self.carrier = carrier
+        self.class_name = class_name
+        self.flight_number = flight_number
+        self.fly_date = fly_date
+        self.fly_from = fly_from
+        self.fly_time = fly_time
+        self.fly_to = fly_to
+        self.invoice_detail_number = invoice_detail_number
+        self.invoice_id = invoice_id
+        self.seat = seat
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.carrier is not None:
+            result['carrier'] = self.carrier
+        if self.class_name is not None:
+            result['className'] = self.class_name
+        if self.flight_number is not None:
+            result['flightNumber'] = self.flight_number
+        if self.fly_date is not None:
+            result['flyDate'] = self.fly_date
+        if self.fly_from is not None:
+            result['flyFrom'] = self.fly_from
+        if self.fly_time is not None:
+            result['flyTime'] = self.fly_time
+        if self.fly_to is not None:
+            result['flyTo'] = self.fly_to
+        if self.invoice_detail_number is not None:
+            result['invoiceDetailNumber'] = self.invoice_detail_number
+        if self.invoice_id is not None:
+            result['invoiceId'] = self.invoice_id
+        if self.seat is not None:
+            result['seat'] = self.seat
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('carrier') is not None:
+            self.carrier = m.get('carrier')
+        if m.get('className') is not None:
+            self.class_name = m.get('className')
+        if m.get('flightNumber') is not None:
+            self.flight_number = m.get('flightNumber')
+        if m.get('flyDate') is not None:
+            self.fly_date = m.get('flyDate')
+        if m.get('flyFrom') is not None:
+            self.fly_from = m.get('flyFrom')
+        if m.get('flyTime') is not None:
+            self.fly_time = m.get('flyTime')
+        if m.get('flyTo') is not None:
+            self.fly_to = m.get('flyTo')
+        if m.get('invoiceDetailNumber') is not None:
+            self.invoice_detail_number = m.get('invoiceDetailNumber')
+        if m.get('invoiceId') is not None:
+            self.invoice_id = m.get('invoiceId')
+        if m.get('seat') is not None:
+            self.seat = m.get('seat')
+        return self
+
+
+class BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList(TeaModel):
+    def __init__(
+        self,
+        air_condition_type: str = None,
+        carriage_no: str = None,
+        destination: str = None,
+        eticket_no: str = None,
+        get_on_time: str = None,
+        invoice_id: str = None,
+        origin: str = None,
+        passenger: str = None,
+        passenger_user_id: str = None,
+        remark: str = None,
+        seat_class: str = None,
+        start_time: str = None,
+        tax_rate: str = None,
+        ticket_type: str = None,
+        train_no: str = None,
+    ):
+        self.air_condition_type = air_condition_type
+        self.carriage_no = carriage_no
+        self.destination = destination
+        self.eticket_no = eticket_no
+        self.get_on_time = get_on_time
+        self.invoice_id = invoice_id
+        self.origin = origin
+        self.passenger = passenger
+        self.passenger_user_id = passenger_user_id
+        self.remark = remark
+        self.seat_class = seat_class
+        self.start_time = start_time
+        self.tax_rate = tax_rate
+        self.ticket_type = ticket_type
+        self.train_no = train_no
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.air_condition_type is not None:
+            result['airConditionType'] = self.air_condition_type
+        if self.carriage_no is not None:
+            result['carriageNo'] = self.carriage_no
+        if self.destination is not None:
+            result['destination'] = self.destination
+        if self.eticket_no is not None:
+            result['eticketNo'] = self.eticket_no
+        if self.get_on_time is not None:
+            result['getOnTime'] = self.get_on_time
+        if self.invoice_id is not None:
+            result['invoiceId'] = self.invoice_id
+        if self.origin is not None:
+            result['origin'] = self.origin
+        if self.passenger is not None:
+            result['passenger'] = self.passenger
+        if self.passenger_user_id is not None:
+            result['passengerUserId'] = self.passenger_user_id
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.seat_class is not None:
+            result['seatClass'] = self.seat_class
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.tax_rate is not None:
+            result['taxRate'] = self.tax_rate
+        if self.ticket_type is not None:
+            result['ticketType'] = self.ticket_type
+        if self.train_no is not None:
+            result['trainNo'] = self.train_no
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('airConditionType') is not None:
+            self.air_condition_type = m.get('airConditionType')
+        if m.get('carriageNo') is not None:
+            self.carriage_no = m.get('carriageNo')
+        if m.get('destination') is not None:
+            self.destination = m.get('destination')
+        if m.get('eticketNo') is not None:
+            self.eticket_no = m.get('eticketNo')
+        if m.get('getOnTime') is not None:
+            self.get_on_time = m.get('getOnTime')
+        if m.get('invoiceId') is not None:
+            self.invoice_id = m.get('invoiceId')
+        if m.get('origin') is not None:
+            self.origin = m.get('origin')
+        if m.get('passenger') is not None:
+            self.passenger = m.get('passenger')
+        if m.get('passengerUserId') is not None:
+            self.passenger_user_id = m.get('passengerUserId')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('seatClass') is not None:
+            self.seat_class = m.get('seatClass')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('taxRate') is not None:
+            self.tax_rate = m.get('taxRate')
+        if m.get('ticketType') is not None:
+            self.ticket_type = m.get('ticketType')
+        if m.get('trainNo') is not None:
+            self.train_no = m.get('trainNo')
+        return self
+
+
 class BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList(TeaModel):
     def __init__(
         self,
@@ -784,6 +976,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         check_time: str = None,
         drawer_name: str = None,
         drew_date: str = None,
+        e_flight_itinerary_detail_volist: List[BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList] = None,
+        e_train_ticket_detail_volist: List[BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList] = None,
         electronic_url: str = None,
         file_id: str = None,
         finance_type: str = None,
@@ -836,6 +1030,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         self.check_time = check_time
         self.drawer_name = drawer_name
         self.drew_date = drew_date
+        self.e_flight_itinerary_detail_volist = e_flight_itinerary_detail_volist
+        self.e_train_ticket_detail_volist = e_train_ticket_detail_volist
         self.electronic_url = electronic_url
         self.file_id = file_id
         self.finance_type = finance_type
@@ -882,6 +1078,14 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         self.xml_url = xml_url
 
     def validate(self):
+        if self.e_flight_itinerary_detail_volist:
+            for k in self.e_flight_itinerary_detail_volist:
+                if k:
+                    k.validate()
+        if self.e_train_ticket_detail_volist:
+            for k in self.e_train_ticket_detail_volist:
+                if k:
+                    k.validate()
         if self.general_invoice_detail_volist:
             for k in self.general_invoice_detail_volist:
                 if k:
@@ -919,6 +1123,14 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             result['drawerName'] = self.drawer_name
         if self.drew_date is not None:
             result['drewDate'] = self.drew_date
+        result['eFlightItineraryDetailVOList'] = []
+        if self.e_flight_itinerary_detail_volist is not None:
+            for k in self.e_flight_itinerary_detail_volist:
+                result['eFlightItineraryDetailVOList'].append(k.to_map() if k else None)
+        result['eTrainTicketDetailVOList'] = []
+        if self.e_train_ticket_detail_volist is not None:
+            for k in self.e_train_ticket_detail_volist:
+                result['eTrainTicketDetailVOList'].append(k.to_map() if k else None)
         if self.electronic_url is not None:
             result['electronicUrl'] = self.electronic_url
         if self.file_id is not None:
@@ -1033,6 +1245,16 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             self.drawer_name = m.get('drawerName')
         if m.get('drewDate') is not None:
             self.drew_date = m.get('drewDate')
+        self.e_flight_itinerary_detail_volist = []
+        if m.get('eFlightItineraryDetailVOList') is not None:
+            for k in m.get('eFlightItineraryDetailVOList'):
+                temp_model = BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList()
+                self.e_flight_itinerary_detail_volist.append(temp_model.from_map(k))
+        self.e_train_ticket_detail_volist = []
+        if m.get('eTrainTicketDetailVOList') is not None:
+            for k in m.get('eTrainTicketDetailVOList'):
+                temp_model = BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList()
+                self.e_train_ticket_detail_volist.append(temp_model.from_map(k))
         if m.get('electronicUrl') is not None:
             self.electronic_url = m.get('electronicUrl')
         if m.get('fileId') is not None:

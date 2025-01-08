@@ -16269,6 +16269,187 @@ class DisableCollegeContactSceneStruResponse(TeaModel):
         return self
 
 
+class EduAIGCCallbackHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class EduAIGCCallbackRequest(TeaModel):
+    def __init__(
+        self,
+        channel_code: str = None,
+        commit_time: int = None,
+        complete_time: int = None,
+        content: str = None,
+        content_size: int = None,
+        content_type: str = None,
+        ext: str = None,
+        prompt: str = None,
+        remark: str = None,
+    ):
+        # This parameter is required.
+        self.channel_code = channel_code
+        self.commit_time = commit_time
+        self.complete_time = complete_time
+        # This parameter is required.
+        self.content = content
+        # This parameter is required.
+        self.content_size = content_size
+        # This parameter is required.
+        self.content_type = content_type
+        self.ext = ext
+        # This parameter is required.
+        self.prompt = prompt
+        self.remark = remark
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.channel_code is not None:
+            result['channelCode'] = self.channel_code
+        if self.commit_time is not None:
+            result['commitTime'] = self.commit_time
+        if self.complete_time is not None:
+            result['completeTime'] = self.complete_time
+        if self.content is not None:
+            result['content'] = self.content
+        if self.content_size is not None:
+            result['contentSize'] = self.content_size
+        if self.content_type is not None:
+            result['contentType'] = self.content_type
+        if self.ext is not None:
+            result['ext'] = self.ext
+        if self.prompt is not None:
+            result['prompt'] = self.prompt
+        if self.remark is not None:
+            result['remark'] = self.remark
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('channelCode') is not None:
+            self.channel_code = m.get('channelCode')
+        if m.get('commitTime') is not None:
+            self.commit_time = m.get('commitTime')
+        if m.get('completeTime') is not None:
+            self.complete_time = m.get('completeTime')
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('contentSize') is not None:
+            self.content_size = m.get('contentSize')
+        if m.get('contentType') is not None:
+            self.content_type = m.get('contentType')
+        if m.get('ext') is not None:
+            self.ext = m.get('ext')
+        if m.get('prompt') is not None:
+            self.prompt = m.get('prompt')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        return self
+
+
+class EduAIGCCallbackResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class EduAIGCCallbackResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: EduAIGCCallbackResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = EduAIGCCallbackResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class EduFindUserRolesByUserIdHeaders(TeaModel):
     def __init__(
         self,
@@ -16411,6 +16592,175 @@ class EduFindUserRolesByUserIdResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = EduFindUserRolesByUserIdResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class EduGetFileSpaceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class EduGetFileSpaceRequest(TeaModel):
+    def __init__(
+        self,
+        channel_code: str = None,
+    ):
+        self.channel_code = channel_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.channel_code is not None:
+            result['channelCode'] = self.channel_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('channelCode') is not None:
+            self.channel_code = m.get('channelCode')
+        return self
+
+
+class EduGetFileSpaceResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        folder_id: str = None,
+        space_id: str = None,
+    ):
+        self.folder_id = folder_id
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.folder_id is not None:
+            result['folderId'] = self.folder_id
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('folderId') is not None:
+            self.folder_id = m.get('folderId')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class EduGetFileSpaceResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: EduGetFileSpaceResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = EduGetFileSpaceResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class EduGetFileSpaceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: EduGetFileSpaceResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = EduGetFileSpaceResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

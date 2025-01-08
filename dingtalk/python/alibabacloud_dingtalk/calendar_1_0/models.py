@@ -9492,6 +9492,33 @@ class ListEventsViewResponseBodyEventsEnd(TeaModel):
         return self
 
 
+class ListEventsViewResponseBodyEventsExtendedPropertiesPrivateProperties(TeaModel):
+    def __init__(
+        self,
+        dingtalk_detail_url: str = None,
+    ):
+        self.dingtalk_detail_url = dingtalk_detail_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dingtalk_detail_url is not None:
+            result['dingtalkDetailUrl'] = self.dingtalk_detail_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingtalkDetailUrl') is not None:
+            self.dingtalk_detail_url = m.get('dingtalkDetailUrl')
+        return self
+
+
 class ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties(TeaModel):
     def __init__(
         self,
@@ -9528,11 +9555,15 @@ class ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties(TeaMode
 class ListEventsViewResponseBodyEventsExtendedProperties(TeaModel):
     def __init__(
         self,
+        private_properties: ListEventsViewResponseBodyEventsExtendedPropertiesPrivateProperties = None,
         shared_properties: ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties = None,
     ):
+        self.private_properties = private_properties
         self.shared_properties = shared_properties
 
     def validate(self):
+        if self.private_properties:
+            self.private_properties.validate()
         if self.shared_properties:
             self.shared_properties.validate()
 
@@ -9542,12 +9573,17 @@ class ListEventsViewResponseBodyEventsExtendedProperties(TeaModel):
             return _map
 
         result = dict()
+        if self.private_properties is not None:
+            result['privateProperties'] = self.private_properties.to_map()
         if self.shared_properties is not None:
             result['sharedProperties'] = self.shared_properties.to_map()
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('privateProperties') is not None:
+            temp_model = ListEventsViewResponseBodyEventsExtendedPropertiesPrivateProperties()
+            self.private_properties = temp_model.from_map(m['privateProperties'])
         if m.get('sharedProperties') is not None:
             temp_model = ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties()
             self.shared_properties = temp_model.from_map(m['sharedProperties'])

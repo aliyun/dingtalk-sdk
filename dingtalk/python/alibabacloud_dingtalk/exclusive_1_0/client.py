@@ -26,6 +26,152 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def add_custom_sign_config_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.AddCustomSignConfigRequest,
+        headers: dingtalkexclusive__1__0_models.AddCustomSignConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.AddCustomSignConfigResponse:
+        """
+        @summary 添加自主协议
+        
+        @param request: AddCustomSignConfigRequest
+        @param headers: AddCustomSignConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCustomSignConfigResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.all_effect):
+            body['allEffect'] = request.all_effect
+        if not UtilClient.is_unset(request.can_download):
+            body['canDownload'] = request.can_download
+        if not UtilClient.is_unset(request.protocol_name):
+            body['protocolName'] = request.protocol_name
+        if not UtilClient.is_unset(request.push_dept_ids):
+            body['pushDeptIds'] = request.push_dept_ids
+        if not UtilClient.is_unset(request.push_staff_ids):
+            body['pushStaffIds'] = request.push_staff_ids
+        if not UtilClient.is_unset(request.sign_term_files):
+            body['signTermFiles'] = request.sign_term_files
+        if not UtilClient.is_unset(request.term_message):
+            body['termMessage'] = request.term_message
+        if not UtilClient.is_unset(request.unpush_dept_ids):
+            body['unpushDeptIds'] = request.unpush_dept_ids
+        if not UtilClient.is_unset(request.unpush_staff_ids):
+            body['unpushStaffIds'] = request.unpush_staff_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddCustomSignConfig',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/sign/addCustomSignConfig',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.AddCustomSignConfigResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_custom_sign_config_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.AddCustomSignConfigRequest,
+        headers: dingtalkexclusive__1__0_models.AddCustomSignConfigHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.AddCustomSignConfigResponse:
+        """
+        @summary 添加自主协议
+        
+        @param request: AddCustomSignConfigRequest
+        @param headers: AddCustomSignConfigHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddCustomSignConfigResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.all_effect):
+            body['allEffect'] = request.all_effect
+        if not UtilClient.is_unset(request.can_download):
+            body['canDownload'] = request.can_download
+        if not UtilClient.is_unset(request.protocol_name):
+            body['protocolName'] = request.protocol_name
+        if not UtilClient.is_unset(request.push_dept_ids):
+            body['pushDeptIds'] = request.push_dept_ids
+        if not UtilClient.is_unset(request.push_staff_ids):
+            body['pushStaffIds'] = request.push_staff_ids
+        if not UtilClient.is_unset(request.sign_term_files):
+            body['signTermFiles'] = request.sign_term_files
+        if not UtilClient.is_unset(request.term_message):
+            body['termMessage'] = request.term_message
+        if not UtilClient.is_unset(request.unpush_dept_ids):
+            body['unpushDeptIds'] = request.unpush_dept_ids
+        if not UtilClient.is_unset(request.unpush_staff_ids):
+            body['unpushStaffIds'] = request.unpush_staff_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddCustomSignConfig',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/sign/addCustomSignConfig',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.AddCustomSignConfigResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_custom_sign_config(
+        self,
+        request: dingtalkexclusive__1__0_models.AddCustomSignConfigRequest,
+    ) -> dingtalkexclusive__1__0_models.AddCustomSignConfigResponse:
+        """
+        @summary 添加自主协议
+        
+        @param request: AddCustomSignConfigRequest
+        @return: AddCustomSignConfigResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.AddCustomSignConfigHeaders()
+        return self.add_custom_sign_config_with_options(request, headers, runtime)
+
+    async def add_custom_sign_config_async(
+        self,
+        request: dingtalkexclusive__1__0_models.AddCustomSignConfigRequest,
+    ) -> dingtalkexclusive__1__0_models.AddCustomSignConfigResponse:
+        """
+        @summary 添加自主协议
+        
+        @param request: AddCustomSignConfigRequest
+        @return: AddCustomSignConfigResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.AddCustomSignConfigHeaders()
+        return await self.add_custom_sign_config_with_options_async(request, headers, runtime)
+
     def add_org_with_options(
         self,
         request: dingtalkexclusive__1__0_models.AddOrgRequest,
@@ -900,6 +1046,8 @@ class Client(OpenApiClient):
             body['platform'] = request.platform
         if not UtilClient.is_unset(request.status):
             body['status'] = request.status
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}
@@ -951,6 +1099,8 @@ class Client(OpenApiClient):
             body['platform'] = request.platform
         if not UtilClient.is_unset(request.status):
             body['status'] = request.status
+        if not UtilClient.is_unset(request.title):
+            body['title'] = request.title
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}
@@ -1022,6 +1172,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.detail_list):
+            body['detailList'] = request.detail_list
         if not UtilClient.is_unset(request.mac_address_list):
             body['macAddressList'] = request.mac_address_list
         if not UtilClient.is_unset(request.platform):
@@ -1069,6 +1221,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.detail_list):
+            body['detailList'] = request.detail_list
         if not UtilClient.is_unset(request.mac_address_list):
             body['macAddressList'] = request.mac_address_list
         if not UtilClient.is_unset(request.platform):

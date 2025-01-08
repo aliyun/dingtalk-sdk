@@ -400,6 +400,124 @@ class Client(OpenApiClient):
         headers = dingtalkdatacenter__1__0_models.CreateScreenHeaders()
         return await self.create_screen_with_options_async(request, headers, runtime)
 
+    def data_market_service_with_options(
+        self,
+        request: dingtalkdatacenter__1__0_models.DataMarketServiceRequest,
+        headers: dingtalkdatacenter__1__0_models.DataMarketServiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.DataMarketServiceResponse:
+        """
+        @summary 数据流通中心获取数据服务
+        
+        @param request: DataMarketServiceRequest
+        @param headers: DataMarketServiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DataMarketServiceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.api_id):
+            body['apiId'] = request.api_id
+        if not UtilClient.is_unset(request.args):
+            body['args'] = request.args
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DataMarketService',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/dataMarketServices/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.DataMarketServiceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def data_market_service_with_options_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.DataMarketServiceRequest,
+        headers: dingtalkdatacenter__1__0_models.DataMarketServiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdatacenter__1__0_models.DataMarketServiceResponse:
+        """
+        @summary 数据流通中心获取数据服务
+        
+        @param request: DataMarketServiceRequest
+        @param headers: DataMarketServiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DataMarketServiceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.api_id):
+            body['apiId'] = request.api_id
+        if not UtilClient.is_unset(request.args):
+            body['args'] = request.args
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DataMarketService',
+            version='datacenter_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/datacenter/dataMarketServices/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdatacenter__1__0_models.DataMarketServiceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def data_market_service(
+        self,
+        request: dingtalkdatacenter__1__0_models.DataMarketServiceRequest,
+    ) -> dingtalkdatacenter__1__0_models.DataMarketServiceResponse:
+        """
+        @summary 数据流通中心获取数据服务
+        
+        @param request: DataMarketServiceRequest
+        @return: DataMarketServiceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.DataMarketServiceHeaders()
+        return self.data_market_service_with_options(request, headers, runtime)
+
+    async def data_market_service_async(
+        self,
+        request: dingtalkdatacenter__1__0_models.DataMarketServiceRequest,
+    ) -> dingtalkdatacenter__1__0_models.DataMarketServiceResponse:
+        """
+        @summary 数据流通中心获取数据服务
+        
+        @param request: DataMarketServiceRequest
+        @return: DataMarketServiceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdatacenter__1__0_models.DataMarketServiceHeaders()
+        return await self.data_market_service_with_options_async(request, headers, runtime)
+
     def get_abnormal_operation_with_options(
         self,
         request: dingtalkdatacenter__1__0_models.GetAbnormalOperationRequest,

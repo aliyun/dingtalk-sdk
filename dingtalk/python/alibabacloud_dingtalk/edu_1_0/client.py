@@ -10158,6 +10158,152 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.DisableCollegeContactSceneStruHeaders()
         return await self.disable_college_contact_scene_stru_with_options_async(request, headers, runtime)
 
+    def edu_aigccallback_with_options(
+        self,
+        request: dingtalkedu__1__0_models.EduAIGCCallbackRequest,
+        headers: dingtalkedu__1__0_models.EduAIGCCallbackHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.EduAIGCCallbackResponse:
+        """
+        @summary 教育三方aigc结果回调
+        
+        @param request: EduAIGCCallbackRequest
+        @param headers: EduAIGCCallbackHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EduAIGCCallbackResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel_code):
+            body['channelCode'] = request.channel_code
+        if not UtilClient.is_unset(request.commit_time):
+            body['commitTime'] = request.commit_time
+        if not UtilClient.is_unset(request.complete_time):
+            body['completeTime'] = request.complete_time
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.content_size):
+            body['contentSize'] = request.content_size
+        if not UtilClient.is_unset(request.content_type):
+            body['contentType'] = request.content_type
+        if not UtilClient.is_unset(request.ext):
+            body['ext'] = request.ext
+        if not UtilClient.is_unset(request.prompt):
+            body['prompt'] = request.prompt
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EduAIGCCallback',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/aigc/callback',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.EduAIGCCallbackResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def edu_aigccallback_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.EduAIGCCallbackRequest,
+        headers: dingtalkedu__1__0_models.EduAIGCCallbackHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.EduAIGCCallbackResponse:
+        """
+        @summary 教育三方aigc结果回调
+        
+        @param request: EduAIGCCallbackRequest
+        @param headers: EduAIGCCallbackHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EduAIGCCallbackResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel_code):
+            body['channelCode'] = request.channel_code
+        if not UtilClient.is_unset(request.commit_time):
+            body['commitTime'] = request.commit_time
+        if not UtilClient.is_unset(request.complete_time):
+            body['completeTime'] = request.complete_time
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.content_size):
+            body['contentSize'] = request.content_size
+        if not UtilClient.is_unset(request.content_type):
+            body['contentType'] = request.content_type
+        if not UtilClient.is_unset(request.ext):
+            body['ext'] = request.ext
+        if not UtilClient.is_unset(request.prompt):
+            body['prompt'] = request.prompt
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EduAIGCCallback',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/aigc/callback',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.EduAIGCCallbackResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def edu_aigccallback(
+        self,
+        request: dingtalkedu__1__0_models.EduAIGCCallbackRequest,
+    ) -> dingtalkedu__1__0_models.EduAIGCCallbackResponse:
+        """
+        @summary 教育三方aigc结果回调
+        
+        @param request: EduAIGCCallbackRequest
+        @return: EduAIGCCallbackResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.EduAIGCCallbackHeaders()
+        return self.edu_aigccallback_with_options(request, headers, runtime)
+
+    async def edu_aigccallback_async(
+        self,
+        request: dingtalkedu__1__0_models.EduAIGCCallbackRequest,
+    ) -> dingtalkedu__1__0_models.EduAIGCCallbackResponse:
+        """
+        @summary 教育三方aigc结果回调
+        
+        @param request: EduAIGCCallbackRequest
+        @return: EduAIGCCallbackResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.EduAIGCCallbackHeaders()
+        return await self.edu_aigccallback_with_options_async(request, headers, runtime)
+
     def edu_find_user_roles_by_user_id_with_options(
         self,
         request: dingtalkedu__1__0_models.EduFindUserRolesByUserIdRequest,
@@ -10283,6 +10429,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.EduFindUserRolesByUserIdHeaders()
         return await self.edu_find_user_roles_by_user_id_with_options_async(request, headers, runtime)
+
+    def edu_get_file_space_with_options(
+        self,
+        request: dingtalkedu__1__0_models.EduGetFileSpaceRequest,
+        headers: dingtalkedu__1__0_models.EduGetFileSpaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.EduGetFileSpaceResponse:
+        """
+        @summary 获取用户文件存储空间信息
+        
+        @param request: EduGetFileSpaceRequest
+        @param headers: EduGetFileSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EduGetFileSpaceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel_code):
+            body['channelCode'] = request.channel_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EduGetFileSpace',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/files/spaces/infos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.EduGetFileSpaceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def edu_get_file_space_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.EduGetFileSpaceRequest,
+        headers: dingtalkedu__1__0_models.EduGetFileSpaceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.EduGetFileSpaceResponse:
+        """
+        @summary 获取用户文件存储空间信息
+        
+        @param request: EduGetFileSpaceRequest
+        @param headers: EduGetFileSpaceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EduGetFileSpaceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.channel_code):
+            body['channelCode'] = request.channel_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EduGetFileSpace',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/files/spaces/infos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.EduGetFileSpaceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def edu_get_file_space(
+        self,
+        request: dingtalkedu__1__0_models.EduGetFileSpaceRequest,
+    ) -> dingtalkedu__1__0_models.EduGetFileSpaceResponse:
+        """
+        @summary 获取用户文件存储空间信息
+        
+        @param request: EduGetFileSpaceRequest
+        @return: EduGetFileSpaceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.EduGetFileSpaceHeaders()
+        return self.edu_get_file_space_with_options(request, headers, runtime)
+
+    async def edu_get_file_space_async(
+        self,
+        request: dingtalkedu__1__0_models.EduGetFileSpaceRequest,
+    ) -> dingtalkedu__1__0_models.EduGetFileSpaceResponse:
+        """
+        @summary 获取用户文件存储空间信息
+        
+        @param request: EduGetFileSpaceRequest
+        @return: EduGetFileSpaceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.EduGetFileSpaceHeaders()
+        return await self.edu_get_file_space_with_options_async(request, headers, runtime)
 
     def edu_list_user_by_from_user_ids_with_options(
         self,

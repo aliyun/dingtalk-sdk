@@ -67,6 +67,226 @@ class ConversationCategoryModel(TeaModel):
         return self
 
 
+class AddCustomSignConfigHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddCustomSignConfigRequestSignTermFiles(TeaModel):
+    def __init__(
+        self,
+        file_name: str = None,
+        media_id: str = None,
+    ):
+        self.file_name = file_name
+        self.media_id = media_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_name is not None:
+            result['fileName'] = self.file_name
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileName') is not None:
+            self.file_name = m.get('fileName')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        return self
+
+
+class AddCustomSignConfigRequest(TeaModel):
+    def __init__(
+        self,
+        all_effect: bool = None,
+        can_download: bool = None,
+        protocol_name: str = None,
+        push_dept_ids: List[str] = None,
+        push_staff_ids: List[str] = None,
+        sign_term_files: List[AddCustomSignConfigRequestSignTermFiles] = None,
+        term_message: str = None,
+        unpush_dept_ids: List[str] = None,
+        unpush_staff_ids: List[str] = None,
+    ):
+        self.all_effect = all_effect
+        self.can_download = can_download
+        # This parameter is required.
+        self.protocol_name = protocol_name
+        self.push_dept_ids = push_dept_ids
+        self.push_staff_ids = push_staff_ids
+        # This parameter is required.
+        self.sign_term_files = sign_term_files
+        # This parameter is required.
+        self.term_message = term_message
+        self.unpush_dept_ids = unpush_dept_ids
+        self.unpush_staff_ids = unpush_staff_ids
+
+    def validate(self):
+        if self.sign_term_files:
+            for k in self.sign_term_files:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.all_effect is not None:
+            result['allEffect'] = self.all_effect
+        if self.can_download is not None:
+            result['canDownload'] = self.can_download
+        if self.protocol_name is not None:
+            result['protocolName'] = self.protocol_name
+        if self.push_dept_ids is not None:
+            result['pushDeptIds'] = self.push_dept_ids
+        if self.push_staff_ids is not None:
+            result['pushStaffIds'] = self.push_staff_ids
+        result['signTermFiles'] = []
+        if self.sign_term_files is not None:
+            for k in self.sign_term_files:
+                result['signTermFiles'].append(k.to_map() if k else None)
+        if self.term_message is not None:
+            result['termMessage'] = self.term_message
+        if self.unpush_dept_ids is not None:
+            result['unpushDeptIds'] = self.unpush_dept_ids
+        if self.unpush_staff_ids is not None:
+            result['unpushStaffIds'] = self.unpush_staff_ids
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('allEffect') is not None:
+            self.all_effect = m.get('allEffect')
+        if m.get('canDownload') is not None:
+            self.can_download = m.get('canDownload')
+        if m.get('protocolName') is not None:
+            self.protocol_name = m.get('protocolName')
+        if m.get('pushDeptIds') is not None:
+            self.push_dept_ids = m.get('pushDeptIds')
+        if m.get('pushStaffIds') is not None:
+            self.push_staff_ids = m.get('pushStaffIds')
+        self.sign_term_files = []
+        if m.get('signTermFiles') is not None:
+            for k in m.get('signTermFiles'):
+                temp_model = AddCustomSignConfigRequestSignTermFiles()
+                self.sign_term_files.append(temp_model.from_map(k))
+        if m.get('termMessage') is not None:
+            self.term_message = m.get('termMessage')
+        if m.get('unpushDeptIds') is not None:
+            self.unpush_dept_ids = m.get('unpushDeptIds')
+        if m.get('unpushStaffIds') is not None:
+            self.unpush_staff_ids = m.get('unpushStaffIds')
+        return self
+
+
+class AddCustomSignConfigResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AddCustomSignConfigResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AddCustomSignConfigResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AddCustomSignConfigResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AddOrgHeaders(TeaModel):
     def __init__(
         self,
@@ -1235,6 +1455,7 @@ class CreateTrustedDeviceRequest(TeaModel):
         mac_address: str = None,
         platform: str = None,
         status: int = None,
+        title: str = None,
         user_id: str = None,
     ):
         self.did = did
@@ -1242,6 +1463,7 @@ class CreateTrustedDeviceRequest(TeaModel):
         # This parameter is required.
         self.platform = platform
         self.status = status
+        self.title = title
         # This parameter is required.
         self.user_id = user_id
 
@@ -1262,6 +1484,8 @@ class CreateTrustedDeviceRequest(TeaModel):
             result['platform'] = self.platform
         if self.status is not None:
             result['status'] = self.status
+        if self.title is not None:
+            result['title'] = self.title
         if self.user_id is not None:
             result['userId'] = self.user_id
         return result
@@ -1276,6 +1500,8 @@ class CreateTrustedDeviceRequest(TeaModel):
             self.platform = m.get('platform')
         if m.get('status') is not None:
             self.status = m.get('status')
+        if m.get('title') is not None:
+            self.title = m.get('title')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
         return self
@@ -1383,19 +1609,14 @@ class CreateTrustedDeviceBatchHeaders(TeaModel):
         return self
 
 
-class CreateTrustedDeviceBatchRequest(TeaModel):
+class CreateTrustedDeviceBatchRequestDetailList(TeaModel):
     def __init__(
         self,
-        mac_address_list: List[str] = None,
-        platform: str = None,
-        user_id: str = None,
+        mac_address: str = None,
+        title: str = None,
     ):
-        # This parameter is required.
-        self.mac_address_list = mac_address_list
-        # This parameter is required.
-        self.platform = platform
-        # This parameter is required.
-        self.user_id = user_id
+        self.mac_address = mac_address
+        self.title = title
 
     def validate(self):
         pass
@@ -1406,6 +1627,52 @@ class CreateTrustedDeviceBatchRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.mac_address is not None:
+            result['macAddress'] = self.mac_address
+        if self.title is not None:
+            result['title'] = self.title
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('macAddress') is not None:
+            self.mac_address = m.get('macAddress')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        return self
+
+
+class CreateTrustedDeviceBatchRequest(TeaModel):
+    def __init__(
+        self,
+        detail_list: List[CreateTrustedDeviceBatchRequestDetailList] = None,
+        mac_address_list: List[str] = None,
+        platform: str = None,
+        user_id: str = None,
+    ):
+        self.detail_list = detail_list
+        self.mac_address_list = mac_address_list
+        # This parameter is required.
+        self.platform = platform
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        if self.detail_list:
+            for k in self.detail_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['detailList'] = []
+        if self.detail_list is not None:
+            for k in self.detail_list:
+                result['detailList'].append(k.to_map() if k else None)
         if self.mac_address_list is not None:
             result['macAddressList'] = self.mac_address_list
         if self.platform is not None:
@@ -1416,6 +1683,11 @@ class CreateTrustedDeviceBatchRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        self.detail_list = []
+        if m.get('detailList') is not None:
+            for k in m.get('detailList'):
+                temp_model = CreateTrustedDeviceBatchRequestDetailList()
+                self.detail_list.append(temp_model.from_map(k))
         if m.get('macAddressList') is not None:
             self.mac_address_list = m.get('macAddressList')
         if m.get('platform') is not None:

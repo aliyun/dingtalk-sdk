@@ -44,6 +44,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.biz_category_id):
             body['bizCategoryId'] = request.biz_category_id
+        if not UtilClient.is_unset(request.biz_created_time):
+            body['bizCreatedTime'] = request.biz_created_time
         if not UtilClient.is_unset(request.custom_fields):
             body['customFields'] = request.custom_fields
         if not UtilClient.is_unset(request.description):
@@ -113,6 +115,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.biz_category_id):
             body['bizCategoryId'] = request.biz_category_id
+        if not UtilClient.is_unset(request.biz_created_time):
+            body['bizCreatedTime'] = request.biz_created_time
         if not UtilClient.is_unset(request.custom_fields):
             body['customFields'] = request.custom_fields
         if not UtilClient.is_unset(request.description):
@@ -456,6 +460,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.biz_created_time):
+            body['bizCreatedTime'] = request.biz_created_time
         if not UtilClient.is_unset(request.description):
             body['description'] = request.description
         if not UtilClient.is_unset(request.done):
@@ -513,6 +519,8 @@ class Client(OpenApiClient):
         """
         UtilClient.validate_model(request)
         body = {}
+        if not UtilClient.is_unset(request.biz_created_time):
+            body['bizCreatedTime'] = request.biz_created_time
         if not UtilClient.is_unset(request.description):
             body['description'] = request.description
         if not UtilClient.is_unset(request.done):
@@ -1581,6 +1589,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalktodo_e_e__1__0_models.GetUserTaskListHeaders()
         return await self.get_user_task_list_with_options_async(request, headers, runtime)
+
+    def query_task_execution_status_with_options(
+        self,
+        request: dingtalktodo_e_e__1__0_models.QueryTaskExecutionStatusRequest,
+        headers: dingtalktodo_e_e__1__0_models.QueryTaskExecutionStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo_e_e__1__0_models.QueryTaskExecutionStatusResponse:
+        """
+        @summary 查询任务所有执行人的完成状态
+        
+        @param request: QueryTaskExecutionStatusRequest
+        @param headers: QueryTaskExecutionStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTaskExecutionStatusResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.task_id):
+            query['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryTaskExecutionStatus',
+            version='todoEE_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todoEE/apps/users/tasks/executionStatuses',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo_e_e__1__0_models.QueryTaskExecutionStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_task_execution_status_with_options_async(
+        self,
+        request: dingtalktodo_e_e__1__0_models.QueryTaskExecutionStatusRequest,
+        headers: dingtalktodo_e_e__1__0_models.QueryTaskExecutionStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalktodo_e_e__1__0_models.QueryTaskExecutionStatusResponse:
+        """
+        @summary 查询任务所有执行人的完成状态
+        
+        @param request: QueryTaskExecutionStatusRequest
+        @param headers: QueryTaskExecutionStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryTaskExecutionStatusResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.task_id):
+            query['taskId'] = request.task_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryTaskExecutionStatus',
+            version='todoEE_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/todoEE/apps/users/tasks/executionStatuses',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalktodo_e_e__1__0_models.QueryTaskExecutionStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_task_execution_status(
+        self,
+        request: dingtalktodo_e_e__1__0_models.QueryTaskExecutionStatusRequest,
+    ) -> dingtalktodo_e_e__1__0_models.QueryTaskExecutionStatusResponse:
+        """
+        @summary 查询任务所有执行人的完成状态
+        
+        @param request: QueryTaskExecutionStatusRequest
+        @return: QueryTaskExecutionStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo_e_e__1__0_models.QueryTaskExecutionStatusHeaders()
+        return self.query_task_execution_status_with_options(request, headers, runtime)
+
+    async def query_task_execution_status_async(
+        self,
+        request: dingtalktodo_e_e__1__0_models.QueryTaskExecutionStatusRequest,
+    ) -> dingtalktodo_e_e__1__0_models.QueryTaskExecutionStatusResponse:
+        """
+        @summary 查询任务所有执行人的完成状态
+        
+        @param request: QueryTaskExecutionStatusRequest
+        @return: QueryTaskExecutionStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalktodo_e_e__1__0_models.QueryTaskExecutionStatusHeaders()
+        return await self.query_task_execution_status_with_options_async(request, headers, runtime)
 
     def register_category_source_config_with_options(
         self,

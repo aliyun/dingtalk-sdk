@@ -124,8 +124,10 @@ class AppCreateEnterpriseTodoTaskRequestDetailUrl(TeaModel):
 class AppCreateEnterpriseTodoTaskRequestNotifyConfigs(TeaModel):
     def __init__(
         self,
+        assistance: str = None,
         ding_notify: str = None,
     ):
+        self.assistance = assistance
         self.ding_notify = ding_notify
 
     def validate(self):
@@ -137,12 +139,16 @@ class AppCreateEnterpriseTodoTaskRequestNotifyConfigs(TeaModel):
             return _map
 
         result = dict()
+        if self.assistance is not None:
+            result['assistance'] = self.assistance
         if self.ding_notify is not None:
             result['dingNotify'] = self.ding_notify
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('assistance') is not None:
+            self.assistance = m.get('assistance')
         if m.get('dingNotify') is not None:
             self.ding_notify = m.get('dingNotify')
         return self
@@ -152,6 +158,7 @@ class AppCreateEnterpriseTodoTaskRequest(TeaModel):
     def __init__(
         self,
         biz_category_id: str = None,
+        biz_created_time: int = None,
         custom_fields: List[AppCreateEnterpriseTodoTaskRequestCustomFields] = None,
         description: str = None,
         detail_url: AppCreateEnterpriseTodoTaskRequestDetailUrl = None,
@@ -167,6 +174,7 @@ class AppCreateEnterpriseTodoTaskRequest(TeaModel):
         type: str = None,
     ):
         self.biz_category_id = biz_category_id
+        self.biz_created_time = biz_created_time
         self.custom_fields = custom_fields
         self.description = description
         self.detail_url = detail_url
@@ -199,6 +207,8 @@ class AppCreateEnterpriseTodoTaskRequest(TeaModel):
         result = dict()
         if self.biz_category_id is not None:
             result['bizCategoryId'] = self.biz_category_id
+        if self.biz_created_time is not None:
+            result['bizCreatedTime'] = self.biz_created_time
         result['customFields'] = []
         if self.custom_fields is not None:
             for k in self.custom_fields:
@@ -233,6 +243,8 @@ class AppCreateEnterpriseTodoTaskRequest(TeaModel):
         m = m or dict()
         if m.get('bizCategoryId') is not None:
             self.biz_category_id = m.get('bizCategoryId')
+        if m.get('bizCreatedTime') is not None:
+            self.biz_created_time = m.get('bizCreatedTime')
         self.custom_fields = []
         if m.get('customFields') is not None:
             for k in m.get('customFields'):
@@ -853,6 +865,7 @@ class AppUpdateTaskHeaders(TeaModel):
 class AppUpdateTaskRequest(TeaModel):
     def __init__(
         self,
+        biz_created_time: int = None,
         description: str = None,
         done: bool = None,
         due_time: int = None,
@@ -862,6 +875,7 @@ class AppUpdateTaskRequest(TeaModel):
         task_id: int = None,
         toolbar_template_key: str = None,
     ):
+        self.biz_created_time = biz_created_time
         self.description = description
         self.done = done
         self.due_time = due_time
@@ -880,6 +894,8 @@ class AppUpdateTaskRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.biz_created_time is not None:
+            result['bizCreatedTime'] = self.biz_created_time
         if self.description is not None:
             result['description'] = self.description
         if self.done is not None:
@@ -900,6 +916,8 @@ class AppUpdateTaskRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('bizCreatedTime') is not None:
+            self.biz_created_time = m.get('bizCreatedTime')
         if m.get('description') is not None:
             self.description = m.get('description')
         if m.get('done') is not None:
@@ -2893,6 +2911,218 @@ class GetUserTaskListResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetUserTaskListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryTaskExecutionStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryTaskExecutionStatusRequest(TeaModel):
+    def __init__(
+        self,
+        page_number: int = None,
+        page_size: int = None,
+        task_id: str = None,
+    ):
+        self.page_number = page_number
+        self.page_size = page_size
+        # This parameter is required.
+        self.task_id = task_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.task_id is not None:
+            result['taskId'] = self.task_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('taskId') is not None:
+            self.task_id = m.get('taskId')
+        return self
+
+
+class QueryTaskExecutionStatusResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        done: bool = None,
+        executor_id: str = None,
+        finish_date: int = None,
+    ):
+        self.done = done
+        self.executor_id = executor_id
+        self.finish_date = finish_date
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.done is not None:
+            result['done'] = self.done
+        if self.executor_id is not None:
+            result['executorId'] = self.executor_id
+        if self.finish_date is not None:
+            result['finishDate'] = self.finish_date
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('done') is not None:
+            self.done = m.get('done')
+        if m.get('executorId') is not None:
+            self.executor_id = m.get('executorId')
+        if m.get('finishDate') is not None:
+            self.finish_date = m.get('finishDate')
+        return self
+
+
+class QueryTaskExecutionStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: List[QueryTaskExecutionStatusResponseBodyData] = None,
+        has_more: bool = None,
+        page_number: int = None,
+        page_size: int = None,
+        total_count: int = None,
+    ):
+        self.data = data
+        self.has_more = has_more
+        self.page_number = page_number
+        self.page_size = page_size
+        self.total_count = total_count
+
+    def validate(self):
+        if self.data:
+            for k in self.data:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['data'] = []
+        if self.data is not None:
+            for k in self.data:
+                result['data'].append(k.to_map() if k else None)
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.data = []
+        if m.get('data') is not None:
+            for k in m.get('data'):
+                temp_model = QueryTaskExecutionStatusResponseBodyData()
+                self.data.append(temp_model.from_map(k))
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class QueryTaskExecutionStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryTaskExecutionStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryTaskExecutionStatusResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

@@ -391,45 +391,6 @@ class BatchQueryOrgInvoiceUrlRequest(TeaModel):
         return self
 
 
-class BatchQueryOrgInvoiceUrlShrinkRequest(TeaModel):
-    def __init__(
-        self,
-        company_code: str = None,
-        invoice_key_volist_shrink: str = None,
-        operator: str = None,
-    ):
-        self.company_code = company_code
-        self.invoice_key_volist_shrink = invoice_key_volist_shrink
-        self.operator = operator
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.company_code is not None:
-            result['companyCode'] = self.company_code
-        if self.invoice_key_volist_shrink is not None:
-            result['invoiceKeyVOList'] = self.invoice_key_volist_shrink
-        if self.operator is not None:
-            result['operator'] = self.operator
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('companyCode') is not None:
-            self.company_code = m.get('companyCode')
-        if m.get('invoiceKeyVOList') is not None:
-            self.invoice_key_volist_shrink = m.get('invoiceKeyVOList')
-        if m.get('operator') is not None:
-            self.operator = m.get('operator')
-        return self
-
-
 class BatchQueryOrgInvoiceUrlResponseBodyFailInvoiceList(TeaModel):
     def __init__(
         self,
@@ -660,10 +621,10 @@ class BatchQueryPaymentRecallFileRequest(TeaModel):
     def __init__(
         self,
         detail_id_list: List[str] = None,
-        opeator: str = None,
+        operator: str = None,
     ):
         self.detail_id_list = detail_id_list
-        self.opeator = opeator
+        self.operator = operator
 
     def validate(self):
         pass
@@ -676,49 +637,16 @@ class BatchQueryPaymentRecallFileRequest(TeaModel):
         result = dict()
         if self.detail_id_list is not None:
             result['detailIdList'] = self.detail_id_list
-        if self.opeator is not None:
-            result['opeator'] = self.opeator
+        if self.operator is not None:
+            result['operator'] = self.operator
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('detailIdList') is not None:
             self.detail_id_list = m.get('detailIdList')
-        if m.get('opeator') is not None:
-            self.opeator = m.get('opeator')
-        return self
-
-
-class BatchQueryPaymentRecallFileShrinkRequest(TeaModel):
-    def __init__(
-        self,
-        detail_id_list_shrink: str = None,
-        opeator: str = None,
-    ):
-        self.detail_id_list_shrink = detail_id_list_shrink
-        self.opeator = opeator
-
-    def validate(self):
-        pass
-
-    def to_map(self):
-        _map = super().to_map()
-        if _map is not None:
-            return _map
-
-        result = dict()
-        if self.detail_id_list_shrink is not None:
-            result['detailIdList'] = self.detail_id_list_shrink
-        if self.opeator is not None:
-            result['opeator'] = self.opeator
-        return result
-
-    def from_map(self, m: dict = None):
-        m = m or dict()
-        if m.get('detailIdList') is not None:
-            self.detail_id_list_shrink = m.get('detailIdList')
-        if m.get('opeator') is not None:
-            self.opeator = m.get('opeator')
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
         return self
 
 
