@@ -7,6 +7,9 @@ public class AppCreateEnterpriseTodoTaskRequest extends TeaModel {
     @NameInMap("bizCategoryId")
     public String bizCategoryId;
 
+    @NameInMap("bizCreatedTime")
+    public Long bizCreatedTime;
+
     @NameInMap("customFields")
     public java.util.List<AppCreateEnterpriseTodoTaskRequestCustomFields> customFields;
 
@@ -57,6 +60,14 @@ public class AppCreateEnterpriseTodoTaskRequest extends TeaModel {
     }
     public String getBizCategoryId() {
         return this.bizCategoryId;
+    }
+
+    public AppCreateEnterpriseTodoTaskRequest setBizCreatedTime(Long bizCreatedTime) {
+        this.bizCreatedTime = bizCreatedTime;
+        return this;
+    }
+    public Long getBizCreatedTime() {
+        return this.bizCreatedTime;
     }
 
     public AppCreateEnterpriseTodoTaskRequest setCustomFields(java.util.List<AppCreateEnterpriseTodoTaskRequestCustomFields> customFields) {
@@ -257,12 +268,23 @@ public class AppCreateEnterpriseTodoTaskRequest extends TeaModel {
     }
 
     public static class AppCreateEnterpriseTodoTaskRequestNotifyConfigs extends TeaModel {
+        @NameInMap("assistance")
+        public String assistance;
+
         @NameInMap("dingNotify")
         public String dingNotify;
 
         public static AppCreateEnterpriseTodoTaskRequestNotifyConfigs build(java.util.Map<String, ?> map) throws Exception {
             AppCreateEnterpriseTodoTaskRequestNotifyConfigs self = new AppCreateEnterpriseTodoTaskRequestNotifyConfigs();
             return TeaModel.build(map, self);
+        }
+
+        public AppCreateEnterpriseTodoTaskRequestNotifyConfigs setAssistance(String assistance) {
+            this.assistance = assistance;
+            return this;
+        }
+        public String getAssistance() {
+            return this.assistance;
         }
 
         public AppCreateEnterpriseTodoTaskRequestNotifyConfigs setDingNotify(String dingNotify) {

@@ -7,8 +7,8 @@ public class BatchQueryPaymentRecallFileRequest extends TeaModel {
     @NameInMap("detailIdList")
     public java.util.List<String> detailIdList;
 
-    @NameInMap("opeator")
-    public String opeator;
+    @NameInMap("operator")
+    public String operator;
 
     public static BatchQueryPaymentRecallFileRequest build(java.util.Map<String, ?> map) throws Exception {
         BatchQueryPaymentRecallFileRequest self = new BatchQueryPaymentRecallFileRequest();
@@ -23,12 +23,12 @@ public class BatchQueryPaymentRecallFileRequest extends TeaModel {
         return this.detailIdList;
     }
 
-    public BatchQueryPaymentRecallFileRequest setOpeator(String opeator) {
-        this.opeator = opeator;
+    public BatchQueryPaymentRecallFileRequest setOperator(String operator) {
+        this.operator = operator;
         return this;
     }
-    public String getOpeator() {
-        return this.opeator;
+    public String getOperator() {
+        return this.operator;
     }
 
 }

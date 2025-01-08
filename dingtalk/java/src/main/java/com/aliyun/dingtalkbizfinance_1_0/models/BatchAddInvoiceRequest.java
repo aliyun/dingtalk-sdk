@@ -80,6 +80,297 @@ public class BatchAddInvoiceRequest extends TeaModel {
         return this.source;
     }
 
+    public static class BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList extends TeaModel {
+        @NameInMap("carrier")
+        public String carrier;
+
+        @NameInMap("className")
+        public String className;
+
+        @NameInMap("flightNumber")
+        public String flightNumber;
+
+        @NameInMap("flyDate")
+        public String flyDate;
+
+        @NameInMap("flyFrom")
+        public String flyFrom;
+
+        @NameInMap("flyTime")
+        public String flyTime;
+
+        @NameInMap("flyTo")
+        public String flyTo;
+
+        @NameInMap("invoiceDetailNumber")
+        public String invoiceDetailNumber;
+
+        @NameInMap("invoiceId")
+        public String invoiceId;
+
+        @NameInMap("seat")
+        public String seat;
+
+        public static BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList build(java.util.Map<String, ?> map) throws Exception {
+            BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList self = new BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList();
+            return TeaModel.build(map, self);
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList setCarrier(String carrier) {
+            this.carrier = carrier;
+            return this;
+        }
+        public String getCarrier() {
+            return this.carrier;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList setClassName(String className) {
+            this.className = className;
+            return this;
+        }
+        public String getClassName() {
+            return this.className;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList setFlightNumber(String flightNumber) {
+            this.flightNumber = flightNumber;
+            return this;
+        }
+        public String getFlightNumber() {
+            return this.flightNumber;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList setFlyDate(String flyDate) {
+            this.flyDate = flyDate;
+            return this;
+        }
+        public String getFlyDate() {
+            return this.flyDate;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList setFlyFrom(String flyFrom) {
+            this.flyFrom = flyFrom;
+            return this;
+        }
+        public String getFlyFrom() {
+            return this.flyFrom;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList setFlyTime(String flyTime) {
+            this.flyTime = flyTime;
+            return this;
+        }
+        public String getFlyTime() {
+            return this.flyTime;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList setFlyTo(String flyTo) {
+            this.flyTo = flyTo;
+            return this;
+        }
+        public String getFlyTo() {
+            return this.flyTo;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList setInvoiceDetailNumber(String invoiceDetailNumber) {
+            this.invoiceDetailNumber = invoiceDetailNumber;
+            return this;
+        }
+        public String getInvoiceDetailNumber() {
+            return this.invoiceDetailNumber;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList setInvoiceId(String invoiceId) {
+            this.invoiceId = invoiceId;
+            return this;
+        }
+        public String getInvoiceId() {
+            return this.invoiceId;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList setSeat(String seat) {
+            this.seat = seat;
+            return this;
+        }
+        public String getSeat() {
+            return this.seat;
+        }
+
+    }
+
+    public static class BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList extends TeaModel {
+        @NameInMap("airConditionType")
+        public String airConditionType;
+
+        @NameInMap("carriageNo")
+        public String carriageNo;
+
+        @NameInMap("destination")
+        public String destination;
+
+        @NameInMap("eticketNo")
+        public String eticketNo;
+
+        @NameInMap("getOnTime")
+        public String getOnTime;
+
+        @NameInMap("invoiceId")
+        public String invoiceId;
+
+        @NameInMap("origin")
+        public String origin;
+
+        @NameInMap("passenger")
+        public String passenger;
+
+        @NameInMap("passengerUserId")
+        public String passengerUserId;
+
+        @NameInMap("remark")
+        public String remark;
+
+        @NameInMap("seatClass")
+        public String seatClass;
+
+        @NameInMap("startTime")
+        public String startTime;
+
+        @NameInMap("taxRate")
+        public String taxRate;
+
+        @NameInMap("ticketType")
+        public String ticketType;
+
+        @NameInMap("trainNo")
+        public String trainNo;
+
+        public static BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList build(java.util.Map<String, ?> map) throws Exception {
+            BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList self = new BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList();
+            return TeaModel.build(map, self);
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList setAirConditionType(String airConditionType) {
+            this.airConditionType = airConditionType;
+            return this;
+        }
+        public String getAirConditionType() {
+            return this.airConditionType;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList setCarriageNo(String carriageNo) {
+            this.carriageNo = carriageNo;
+            return this;
+        }
+        public String getCarriageNo() {
+            return this.carriageNo;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList setDestination(String destination) {
+            this.destination = destination;
+            return this;
+        }
+        public String getDestination() {
+            return this.destination;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList setEticketNo(String eticketNo) {
+            this.eticketNo = eticketNo;
+            return this;
+        }
+        public String getEticketNo() {
+            return this.eticketNo;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList setGetOnTime(String getOnTime) {
+            this.getOnTime = getOnTime;
+            return this;
+        }
+        public String getGetOnTime() {
+            return this.getOnTime;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList setInvoiceId(String invoiceId) {
+            this.invoiceId = invoiceId;
+            return this;
+        }
+        public String getInvoiceId() {
+            return this.invoiceId;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList setOrigin(String origin) {
+            this.origin = origin;
+            return this;
+        }
+        public String getOrigin() {
+            return this.origin;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList setPassenger(String passenger) {
+            this.passenger = passenger;
+            return this;
+        }
+        public String getPassenger() {
+            return this.passenger;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList setPassengerUserId(String passengerUserId) {
+            this.passengerUserId = passengerUserId;
+            return this;
+        }
+        public String getPassengerUserId() {
+            return this.passengerUserId;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList setRemark(String remark) {
+            this.remark = remark;
+            return this;
+        }
+        public String getRemark() {
+            return this.remark;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList setSeatClass(String seatClass) {
+            this.seatClass = seatClass;
+            return this;
+        }
+        public String getSeatClass() {
+            return this.seatClass;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList setStartTime(String startTime) {
+            this.startTime = startTime;
+            return this;
+        }
+        public String getStartTime() {
+            return this.startTime;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList setTaxRate(String taxRate) {
+            this.taxRate = taxRate;
+            return this;
+        }
+        public String getTaxRate() {
+            return this.taxRate;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList setTicketType(String ticketType) {
+            this.ticketType = ticketType;
+            return this;
+        }
+        public String getTicketType() {
+            return this.ticketType;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList setTrainNo(String trainNo) {
+            this.trainNo = trainNo;
+            return this;
+        }
+        public String getTrainNo() {
+            return this.trainNo;
+        }
+
+    }
+
     public static class BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList extends TeaModel {
         @NameInMap("amount")
         public String amount;
@@ -745,6 +1036,12 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("drewDate")
         public String drewDate;
 
+        @NameInMap("eFlightItineraryDetailVOList")
+        public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList> eFlightItineraryDetailVOList;
+
+        @NameInMap("eTrainTicketDetailVOList")
+        public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList> eTrainTicketDetailVOList;
+
         /**
          * <strong>example:</strong>
          * <p>abc</p>
@@ -1052,6 +1349,22 @@ public class BatchAddInvoiceRequest extends TeaModel {
         }
         public String getDrewDate() {
             return this.drewDate;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setEFlightItineraryDetailVOList(java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList> eFlightItineraryDetailVOList) {
+            this.eFlightItineraryDetailVOList = eFlightItineraryDetailVOList;
+            return this;
+        }
+        public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList> getEFlightItineraryDetailVOList() {
+            return this.eFlightItineraryDetailVOList;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setETrainTicketDetailVOList(java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList> eTrainTicketDetailVOList) {
+            this.eTrainTicketDetailVOList = eTrainTicketDetailVOList;
+            return this;
+        }
+        public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList> getETrainTicketDetailVOList() {
+            return this.eTrainTicketDetailVOList;
         }
 
         public BatchAddInvoiceRequestGeneralInvoiceVOList setElectronicUrl(String electronicUrl) {

@@ -154,6 +154,25 @@ public class ListEventsViewResponseBody extends TeaModel {
 
     }
 
+    public static class ListEventsViewResponseBodyEventsExtendedPropertiesPrivateProperties extends TeaModel {
+        @NameInMap("dingtalkDetailUrl")
+        public String dingtalkDetailUrl;
+
+        public static ListEventsViewResponseBodyEventsExtendedPropertiesPrivateProperties build(java.util.Map<String, ?> map) throws Exception {
+            ListEventsViewResponseBodyEventsExtendedPropertiesPrivateProperties self = new ListEventsViewResponseBodyEventsExtendedPropertiesPrivateProperties();
+            return TeaModel.build(map, self);
+        }
+
+        public ListEventsViewResponseBodyEventsExtendedPropertiesPrivateProperties setDingtalkDetailUrl(String dingtalkDetailUrl) {
+            this.dingtalkDetailUrl = dingtalkDetailUrl;
+            return this;
+        }
+        public String getDingtalkDetailUrl() {
+            return this.dingtalkDetailUrl;
+        }
+
+    }
+
     public static class ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties extends TeaModel {
         @NameInMap("belongCorpId")
         public String belongCorpId;
@@ -185,12 +204,23 @@ public class ListEventsViewResponseBody extends TeaModel {
     }
 
     public static class ListEventsViewResponseBodyEventsExtendedProperties extends TeaModel {
+        @NameInMap("privateProperties")
+        public ListEventsViewResponseBodyEventsExtendedPropertiesPrivateProperties privateProperties;
+
         @NameInMap("sharedProperties")
         public ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties sharedProperties;
 
         public static ListEventsViewResponseBodyEventsExtendedProperties build(java.util.Map<String, ?> map) throws Exception {
             ListEventsViewResponseBodyEventsExtendedProperties self = new ListEventsViewResponseBodyEventsExtendedProperties();
             return TeaModel.build(map, self);
+        }
+
+        public ListEventsViewResponseBodyEventsExtendedProperties setPrivateProperties(ListEventsViewResponseBodyEventsExtendedPropertiesPrivateProperties privateProperties) {
+            this.privateProperties = privateProperties;
+            return this;
+        }
+        public ListEventsViewResponseBodyEventsExtendedPropertiesPrivateProperties getPrivateProperties() {
+            return this.privateProperties;
         }
 
         public ListEventsViewResponseBodyEventsExtendedProperties setSharedProperties(ListEventsViewResponseBodyEventsExtendedPropertiesSharedProperties sharedProperties) {

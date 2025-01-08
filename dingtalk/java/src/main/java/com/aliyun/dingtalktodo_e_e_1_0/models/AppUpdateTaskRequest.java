@@ -4,6 +4,9 @@ package com.aliyun.dingtalktodo_e_e_1_0.models;
 import com.aliyun.tea.*;
 
 public class AppUpdateTaskRequest extends TeaModel {
+    @NameInMap("bizCreatedTime")
+    public Long bizCreatedTime;
+
     @NameInMap("description")
     public String description;
 
@@ -31,6 +34,14 @@ public class AppUpdateTaskRequest extends TeaModel {
     public static AppUpdateTaskRequest build(java.util.Map<String, ?> map) throws Exception {
         AppUpdateTaskRequest self = new AppUpdateTaskRequest();
         return TeaModel.build(map, self);
+    }
+
+    public AppUpdateTaskRequest setBizCreatedTime(Long bizCreatedTime) {
+        this.bizCreatedTime = bizCreatedTime;
+        return this;
+    }
+    public Long getBizCreatedTime() {
+        return this.bizCreatedTime;
     }
 
     public AppUpdateTaskRequest setDescription(String description) {

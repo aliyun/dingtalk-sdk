@@ -146,30 +146,24 @@ public class Client extends com.aliyun.teaopenapi.Client {
      * <b>summary</b> : 
      * <p>批量查询企业票池发票下载链接</p>
      * 
-     * @param tmpReq BatchQueryOrgInvoiceUrlRequest
+     * @param request BatchQueryOrgInvoiceUrlRequest
      * @param headers BatchQueryOrgInvoiceUrlHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return BatchQueryOrgInvoiceUrlResponse
      */
-    public BatchQueryOrgInvoiceUrlResponse batchQueryOrgInvoiceUrlWithOptions(BatchQueryOrgInvoiceUrlRequest tmpReq, BatchQueryOrgInvoiceUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(tmpReq);
-        BatchQueryOrgInvoiceUrlShrinkRequest request = new BatchQueryOrgInvoiceUrlShrinkRequest();
-        com.aliyun.openapiutil.Client.convert(tmpReq, request);
-        if (!com.aliyun.teautil.Common.isUnset(tmpReq.invoiceKeyVOList)) {
-            request.invoiceKeyVOListShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.invoiceKeyVOList, "invoiceKeyVOList", "json");
-        }
-
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
+    public BatchQueryOrgInvoiceUrlResponse batchQueryOrgInvoiceUrlWithOptions(BatchQueryOrgInvoiceUrlRequest request, BatchQueryOrgInvoiceUrlHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(request.companyCode)) {
-            query.put("companyCode", request.companyCode);
+            body.put("companyCode", request.companyCode);
         }
 
-        if (!com.aliyun.teautil.Common.isUnset(request.invoiceKeyVOListShrink)) {
-            query.put("invoiceKeyVOList", request.invoiceKeyVOListShrink);
+        if (!com.aliyun.teautil.Common.isUnset(request.invoiceKeyVOList)) {
+            body.put("invoiceKeyVOList", request.invoiceKeyVOList);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.operator)) {
-            query.put("operator", request.operator);
+            body.put("operator", request.operator);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -183,7 +177,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "BatchQueryOrgInvoiceUrl"),
@@ -216,26 +210,20 @@ public class Client extends com.aliyun.teaopenapi.Client {
      * <b>summary</b> : 
      * <p>批量查询支付回单文件</p>
      * 
-     * @param tmpReq BatchQueryPaymentRecallFileRequest
+     * @param request BatchQueryPaymentRecallFileRequest
      * @param headers BatchQueryPaymentRecallFileHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return BatchQueryPaymentRecallFileResponse
      */
-    public BatchQueryPaymentRecallFileResponse batchQueryPaymentRecallFileWithOptions(BatchQueryPaymentRecallFileRequest tmpReq, BatchQueryPaymentRecallFileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(tmpReq);
-        BatchQueryPaymentRecallFileShrinkRequest request = new BatchQueryPaymentRecallFileShrinkRequest();
-        com.aliyun.openapiutil.Client.convert(tmpReq, request);
-        if (!com.aliyun.teautil.Common.isUnset(tmpReq.detailIdList)) {
-            request.detailIdListShrink = com.aliyun.openapiutil.Client.arrayToStringWithSpecifiedStyle(tmpReq.detailIdList, "detailIdList", "json");
+    public BatchQueryPaymentRecallFileResponse batchQueryPaymentRecallFileWithOptions(BatchQueryPaymentRecallFileRequest request, BatchQueryPaymentRecallFileHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.detailIdList)) {
+            body.put("detailIdList", request.detailIdList);
         }
 
-        java.util.Map<String, Object> query = new java.util.HashMap<>();
-        if (!com.aliyun.teautil.Common.isUnset(request.detailIdListShrink)) {
-            query.put("detailIdList", request.detailIdListShrink);
-        }
-
-        if (!com.aliyun.teautil.Common.isUnset(request.opeator)) {
-            query.put("opeator", request.opeator);
+        if (!com.aliyun.teautil.Common.isUnset(request.operator)) {
+            body.put("operator", request.operator);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -249,7 +237,7 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "BatchQueryPaymentRecallFile"),

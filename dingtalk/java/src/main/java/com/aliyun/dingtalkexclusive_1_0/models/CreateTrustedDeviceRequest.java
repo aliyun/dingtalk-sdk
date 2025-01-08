@@ -35,6 +35,13 @@ public class CreateTrustedDeviceRequest extends TeaModel {
     public Integer status;
 
     /**
+     * <strong>example:</strong>
+     * <p>设备名称</p>
+     */
+    @NameInMap("title")
+    public String title;
+
+    /**
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
@@ -78,6 +85,14 @@ public class CreateTrustedDeviceRequest extends TeaModel {
     }
     public Integer getStatus() {
         return this.status;
+    }
+
+    public CreateTrustedDeviceRequest setTitle(String title) {
+        this.title = title;
+        return this;
+    }
+    public String getTitle() {
+        return this.title;
     }
 
     public CreateTrustedDeviceRequest setUserId(String userId) {

@@ -5820,6 +5820,94 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>教育三方aigc结果回调</p>
+     * 
+     * @param request EduAIGCCallbackRequest
+     * @param headers EduAIGCCallbackHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EduAIGCCallbackResponse
+     */
+    public EduAIGCCallbackResponse eduAIGCCallbackWithOptions(EduAIGCCallbackRequest request, EduAIGCCallbackHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.channelCode)) {
+            body.put("channelCode", request.channelCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.commitTime)) {
+            body.put("commitTime", request.commitTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.completeTime)) {
+            body.put("completeTime", request.completeTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.content)) {
+            body.put("content", request.content);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.contentSize)) {
+            body.put("contentSize", request.contentSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.contentType)) {
+            body.put("contentType", request.contentType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.ext)) {
+            body.put("ext", request.ext);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.prompt)) {
+            body.put("prompt", request.prompt);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.remark)) {
+            body.put("remark", request.remark);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "EduAIGCCallback"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/aigc/callback"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new EduAIGCCallbackResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>教育三方aigc结果回调</p>
+     * 
+     * @param request EduAIGCCallbackRequest
+     * @return EduAIGCCallbackResponse
+     */
+    public EduAIGCCallbackResponse eduAIGCCallback(EduAIGCCallbackRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        EduAIGCCallbackHeaders headers = new EduAIGCCallbackHeaders();
+        return this.eduAIGCCallbackWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>教育侧用户的所有角色</p>
      * 
      * @param request EduFindUserRolesByUserIdRequest
@@ -5884,6 +5972,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EduFindUserRolesByUserIdHeaders headers = new EduFindUserRolesByUserIdHeaders();
         return this.eduFindUserRolesByUserIdWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取用户文件存储空间信息</p>
+     * 
+     * @param request EduGetFileSpaceRequest
+     * @param headers EduGetFileSpaceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EduGetFileSpaceResponse
+     */
+    public EduGetFileSpaceResponse eduGetFileSpaceWithOptions(EduGetFileSpaceRequest request, EduGetFileSpaceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.channelCode)) {
+            body.put("channelCode", request.channelCode);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "EduGetFileSpace"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/files/spaces/infos/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new EduGetFileSpaceResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取用户文件存储空间信息</p>
+     * 
+     * @param request EduGetFileSpaceRequest
+     * @return EduGetFileSpaceResponse
+     */
+    public EduGetFileSpaceResponse eduGetFileSpace(EduGetFileSpaceRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        EduGetFileSpaceHeaders headers = new EduGetFileSpaceHeaders();
+        return this.eduGetFileSpaceWithOptions(request, headers, runtime);
     }
 
     /**

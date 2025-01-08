@@ -4,9 +4,9 @@ package com.aliyun.dingtalkexclusive_1_0.models;
 import com.aliyun.tea.*;
 
 public class CreateTrustedDeviceBatchRequest extends TeaModel {
-    /**
-     * <p>This parameter is required.</p>
-     */
+    @NameInMap("detailList")
+    public java.util.List<CreateTrustedDeviceBatchRequestDetailList> detailList;
+
     @NameInMap("macAddressList")
     public java.util.List<String> macAddressList;
 
@@ -33,6 +33,14 @@ public class CreateTrustedDeviceBatchRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
+    public CreateTrustedDeviceBatchRequest setDetailList(java.util.List<CreateTrustedDeviceBatchRequestDetailList> detailList) {
+        this.detailList = detailList;
+        return this;
+    }
+    public java.util.List<CreateTrustedDeviceBatchRequestDetailList> getDetailList() {
+        return this.detailList;
+    }
+
     public CreateTrustedDeviceBatchRequest setMacAddressList(java.util.List<String> macAddressList) {
         this.macAddressList = macAddressList;
         return this;
@@ -55,6 +63,36 @@ public class CreateTrustedDeviceBatchRequest extends TeaModel {
     }
     public String getUserId() {
         return this.userId;
+    }
+
+    public static class CreateTrustedDeviceBatchRequestDetailList extends TeaModel {
+        @NameInMap("macAddress")
+        public String macAddress;
+
+        @NameInMap("title")
+        public String title;
+
+        public static CreateTrustedDeviceBatchRequestDetailList build(java.util.Map<String, ?> map) throws Exception {
+            CreateTrustedDeviceBatchRequestDetailList self = new CreateTrustedDeviceBatchRequestDetailList();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateTrustedDeviceBatchRequestDetailList setMacAddress(String macAddress) {
+            this.macAddress = macAddress;
+            return this;
+        }
+        public String getMacAddress() {
+            return this.macAddress;
+        }
+
+        public CreateTrustedDeviceBatchRequestDetailList setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+        public String getTitle() {
+            return this.title;
+        }
+
     }
 
 }
