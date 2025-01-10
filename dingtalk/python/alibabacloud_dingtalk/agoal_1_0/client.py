@@ -160,6 +160,128 @@ class Client(OpenApiClient):
         headers = dingtalkagoal__1__0_models.AgoalCreateProgressHeaders()
         return await self.agoal_create_progress_with_options_async(request, headers, runtime)
 
+    def agoal_field_update_with_options(
+        self,
+        tmp_req: dingtalkagoal__1__0_models.AgoalFieldUpdateRequest,
+        headers: dingtalkagoal__1__0_models.AgoalFieldUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalFieldUpdateResponse:
+        """
+        @summary 更新 Agoal 字段值
+        
+        @param tmp_req: AgoalFieldUpdateRequest
+        @param headers: AgoalFieldUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalFieldUpdateResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkagoal__1__0_models.AgoalFieldUpdateShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.body):
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.body_shrink):
+            query['body'] = request.body_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AgoalFieldUpdate',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/fields',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalFieldUpdateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def agoal_field_update_with_options_async(
+        self,
+        tmp_req: dingtalkagoal__1__0_models.AgoalFieldUpdateRequest,
+        headers: dingtalkagoal__1__0_models.AgoalFieldUpdateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalFieldUpdateResponse:
+        """
+        @summary 更新 Agoal 字段值
+        
+        @param tmp_req: AgoalFieldUpdateRequest
+        @param headers: AgoalFieldUpdateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalFieldUpdateResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkagoal__1__0_models.AgoalFieldUpdateShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.body):
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.body_shrink):
+            query['body'] = request.body_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AgoalFieldUpdate',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/fields',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalFieldUpdateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def agoal_field_update(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalFieldUpdateRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalFieldUpdateResponse:
+        """
+        @summary 更新 Agoal 字段值
+        
+        @param request: AgoalFieldUpdateRequest
+        @return: AgoalFieldUpdateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalFieldUpdateHeaders()
+        return self.agoal_field_update_with_options(request, headers, runtime)
+
+    async def agoal_field_update_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalFieldUpdateRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalFieldUpdateResponse:
+        """
+        @summary 更新 Agoal 字段值
+        
+        @param request: AgoalFieldUpdateRequest
+        @return: AgoalFieldUpdateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalFieldUpdateHeaders()
+        return await self.agoal_field_update_with_options_async(request, headers, runtime)
+
     def agoal_objective_key_action_list_with_options(
         self,
         request: dingtalkagoal__1__0_models.AgoalObjectiveKeyActionListRequest,
@@ -396,6 +518,132 @@ class Client(OpenApiClient):
         headers = dingtalkagoal__1__0_models.AgoalObjectiveRulePeriodListHeaders()
         return await self.agoal_objective_rule_period_list_with_options_async(request, headers, runtime)
 
+    def agoal_org_objective_list_with_options(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalOrgObjectiveListRequest,
+        headers: dingtalkagoal__1__0_models.AgoalOrgObjectiveListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalOrgObjectiveListResponse:
+        """
+        @summary 获取 Agoal 组织目标列表
+        
+        @param request: AgoalOrgObjectiveListRequest
+        @param headers: AgoalOrgObjectiveListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalOrgObjectiveListResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_team_id):
+            query['dingTeamId'] = request.ding_team_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.period_id):
+            query['periodId'] = request.period_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AgoalOrgObjectiveList',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/orgObjectives/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalOrgObjectiveListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def agoal_org_objective_list_with_options_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalOrgObjectiveListRequest,
+        headers: dingtalkagoal__1__0_models.AgoalOrgObjectiveListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalOrgObjectiveListResponse:
+        """
+        @summary 获取 Agoal 组织目标列表
+        
+        @param request: AgoalOrgObjectiveListRequest
+        @param headers: AgoalOrgObjectiveListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalOrgObjectiveListResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.ding_team_id):
+            query['dingTeamId'] = request.ding_team_id
+        if not UtilClient.is_unset(request.page_number):
+            query['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.period_id):
+            query['periodId'] = request.period_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AgoalOrgObjectiveList',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/orgObjectives/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalOrgObjectiveListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def agoal_org_objective_list(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalOrgObjectiveListRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalOrgObjectiveListResponse:
+        """
+        @summary 获取 Agoal 组织目标列表
+        
+        @param request: AgoalOrgObjectiveListRequest
+        @return: AgoalOrgObjectiveListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalOrgObjectiveListHeaders()
+        return self.agoal_org_objective_list_with_options(request, headers, runtime)
+
+    async def agoal_org_objective_list_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalOrgObjectiveListRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalOrgObjectiveListResponse:
+        """
+        @summary 获取 Agoal 组织目标列表
+        
+        @param request: AgoalOrgObjectiveListRequest
+        @return: AgoalOrgObjectiveListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalOrgObjectiveListHeaders()
+        return await self.agoal_org_objective_list_with_options_async(request, headers, runtime)
+
     def agoal_org_objective_rule_list_with_options(
         self,
         headers: dingtalkagoal__1__0_models.AgoalOrgObjectiveRuleListHeaders,
@@ -487,6 +735,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkagoal__1__0_models.AgoalOrgObjectiveRuleListHeaders()
         return await self.agoal_org_objective_rule_list_with_options_async(headers, runtime)
+
+    def agoal_period_list_with_options(
+        self,
+        tmp_req: dingtalkagoal__1__0_models.AgoalPeriodListRequest,
+        headers: dingtalkagoal__1__0_models.AgoalPeriodListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalPeriodListResponse:
+        """
+        @summary 获取 Agoal 周期列表
+        
+        @param tmp_req: AgoalPeriodListRequest
+        @param headers: AgoalPeriodListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalPeriodListResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkagoal__1__0_models.AgoalPeriodListShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.body):
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.body_shrink):
+            query['body'] = request.body_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AgoalPeriodList',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/periods/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalPeriodListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def agoal_period_list_with_options_async(
+        self,
+        tmp_req: dingtalkagoal__1__0_models.AgoalPeriodListRequest,
+        headers: dingtalkagoal__1__0_models.AgoalPeriodListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkagoal__1__0_models.AgoalPeriodListResponse:
+        """
+        @summary 获取 Agoal 周期列表
+        
+        @param tmp_req: AgoalPeriodListRequest
+        @param headers: AgoalPeriodListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AgoalPeriodListResponse
+        """
+        UtilClient.validate_model(tmp_req)
+        request = dingtalkagoal__1__0_models.AgoalPeriodListShrinkRequest()
+        OpenApiUtilClient.convert(tmp_req, request)
+        if not UtilClient.is_unset(tmp_req.body):
+            request.body_shrink = OpenApiUtilClient.array_to_string_with_specified_style(tmp_req.body, 'body', 'json')
+        query = {}
+        if not UtilClient.is_unset(request.body_shrink):
+            query['body'] = request.body_shrink
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='AgoalPeriodList',
+            version='agoal_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/agoal/periods/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkagoal__1__0_models.AgoalPeriodListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def agoal_period_list(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalPeriodListRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalPeriodListResponse:
+        """
+        @summary 获取 Agoal 周期列表
+        
+        @param request: AgoalPeriodListRequest
+        @return: AgoalPeriodListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalPeriodListHeaders()
+        return self.agoal_period_list_with_options(request, headers, runtime)
+
+    async def agoal_period_list_async(
+        self,
+        request: dingtalkagoal__1__0_models.AgoalPeriodListRequest,
+    ) -> dingtalkagoal__1__0_models.AgoalPeriodListResponse:
+        """
+        @summary 获取 Agoal 周期列表
+        
+        @param request: AgoalPeriodListRequest
+        @return: AgoalPeriodListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkagoal__1__0_models.AgoalPeriodListHeaders()
+        return await self.agoal_period_list_with_options_async(request, headers, runtime)
 
     def agoal_send_message_with_options(
         self,

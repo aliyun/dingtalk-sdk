@@ -1665,6 +1665,196 @@ class ECertQueryResponse(TeaModel):
         return self
 
 
+class EmpStartDismissionHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class EmpStartDismissionRequest(TeaModel):
+    def __init__(
+        self,
+        last_work_date: int = None,
+        partner: bool = None,
+        remark: str = None,
+        termination_reason_passive: List[str] = None,
+        termination_reason_voluntary: List[str] = None,
+        to_hire_black_list: bool = None,
+        to_hire_dismission_talent: bool = None,
+        to_hrm_black_list: bool = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.last_work_date = last_work_date
+        self.partner = partner
+        self.remark = remark
+        self.termination_reason_passive = termination_reason_passive
+        self.termination_reason_voluntary = termination_reason_voluntary
+        self.to_hire_black_list = to_hire_black_list
+        self.to_hire_dismission_talent = to_hire_dismission_talent
+        self.to_hrm_black_list = to_hrm_black_list
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.last_work_date is not None:
+            result['lastWorkDate'] = self.last_work_date
+        if self.partner is not None:
+            result['partner'] = self.partner
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.termination_reason_passive is not None:
+            result['terminationReasonPassive'] = self.termination_reason_passive
+        if self.termination_reason_voluntary is not None:
+            result['terminationReasonVoluntary'] = self.termination_reason_voluntary
+        if self.to_hire_black_list is not None:
+            result['toHireBlackList'] = self.to_hire_black_list
+        if self.to_hire_dismission_talent is not None:
+            result['toHireDismissionTalent'] = self.to_hire_dismission_talent
+        if self.to_hrm_black_list is not None:
+            result['toHrmBlackList'] = self.to_hrm_black_list
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('lastWorkDate') is not None:
+            self.last_work_date = m.get('lastWorkDate')
+        if m.get('partner') is not None:
+            self.partner = m.get('partner')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('terminationReasonPassive') is not None:
+            self.termination_reason_passive = m.get('terminationReasonPassive')
+        if m.get('terminationReasonVoluntary') is not None:
+            self.termination_reason_voluntary = m.get('terminationReasonVoluntary')
+        if m.get('toHireBlackList') is not None:
+            self.to_hire_black_list = m.get('toHireBlackList')
+        if m.get('toHireDismissionTalent') is not None:
+            self.to_hire_dismission_talent = m.get('toHireDismissionTalent')
+        if m.get('toHrmBlackList') is not None:
+            self.to_hrm_black_list = m.get('toHrmBlackList')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class EmpStartDismissionResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.request_id = request_id
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class EmpStartDismissionResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: EmpStartDismissionResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = EmpStartDismissionResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class EmployeeAttachmentUpdateHeaders(TeaModel):
     def __init__(
         self,
@@ -1953,6 +2143,237 @@ class EsignRollbackResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = EsignRollbackResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetAllDismissionReasonsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetAllDismissionReasonsResponseBodyResultPassiveList(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        name: str = None,
+    ):
+        self.id = id
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class GetAllDismissionReasonsResponseBodyResultVoluntaryList(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        name: str = None,
+    ):
+        self.id = id
+        self.name = name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        return self
+
+
+class GetAllDismissionReasonsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        passive_list: List[GetAllDismissionReasonsResponseBodyResultPassiveList] = None,
+        voluntary_list: List[GetAllDismissionReasonsResponseBodyResultVoluntaryList] = None,
+    ):
+        self.passive_list = passive_list
+        self.voluntary_list = voluntary_list
+
+    def validate(self):
+        if self.passive_list:
+            for k in self.passive_list:
+                if k:
+                    k.validate()
+        if self.voluntary_list:
+            for k in self.voluntary_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['passiveList'] = []
+        if self.passive_list is not None:
+            for k in self.passive_list:
+                result['passiveList'].append(k.to_map() if k else None)
+        result['voluntaryList'] = []
+        if self.voluntary_list is not None:
+            for k in self.voluntary_list:
+                result['voluntaryList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.passive_list = []
+        if m.get('passiveList') is not None:
+            for k in m.get('passiveList'):
+                temp_model = GetAllDismissionReasonsResponseBodyResultPassiveList()
+                self.passive_list.append(temp_model.from_map(k))
+        self.voluntary_list = []
+        if m.get('voluntaryList') is not None:
+            for k in m.get('voluntaryList'):
+                temp_model = GetAllDismissionReasonsResponseBodyResultVoluntaryList()
+                self.voluntary_list.append(temp_model.from_map(k))
+        return self
+
+
+class GetAllDismissionReasonsResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: GetAllDismissionReasonsResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.request_id = request_id
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            temp_model = GetAllDismissionReasonsResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetAllDismissionReasonsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetAllDismissionReasonsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetAllDismissionReasonsResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -9824,6 +10245,146 @@ class RevokeSignRecordsResponse(TeaModel):
         return self
 
 
+class RevokeTerminationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RevokeTerminationRequest(TeaModel):
+    def __init__(
+        self,
+        user_id: str = None,
+    ):
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class RevokeTerminationResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.request_id = request_id
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class RevokeTerminationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: RevokeTerminationResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = RevokeTerminationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class RosterMetaAvailableFieldListHeaders(TeaModel):
     def __init__(
         self,
@@ -11168,6 +11729,178 @@ class SyncTaskTemplateResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SyncTaskTemplateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class UpdateEmpDismissionInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class UpdateEmpDismissionInfoRequest(TeaModel):
+    def __init__(
+        self,
+        dismission_memo: str = None,
+        last_work_date: int = None,
+        partner: bool = None,
+        termination_reason_passive: List[str] = None,
+        termination_reason_voluntary: List[str] = None,
+        user_id: str = None,
+    ):
+        self.dismission_memo = dismission_memo
+        # This parameter is required.
+        self.last_work_date = last_work_date
+        self.partner = partner
+        self.termination_reason_passive = termination_reason_passive
+        self.termination_reason_voluntary = termination_reason_voluntary
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dismission_memo is not None:
+            result['dismissionMemo'] = self.dismission_memo
+        if self.last_work_date is not None:
+            result['lastWorkDate'] = self.last_work_date
+        if self.partner is not None:
+            result['partner'] = self.partner
+        if self.termination_reason_passive is not None:
+            result['terminationReasonPassive'] = self.termination_reason_passive
+        if self.termination_reason_voluntary is not None:
+            result['terminationReasonVoluntary'] = self.termination_reason_voluntary
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dismissionMemo') is not None:
+            self.dismission_memo = m.get('dismissionMemo')
+        if m.get('lastWorkDate') is not None:
+            self.last_work_date = m.get('lastWorkDate')
+        if m.get('partner') is not None:
+            self.partner = m.get('partner')
+        if m.get('terminationReasonPassive') is not None:
+            self.termination_reason_passive = m.get('terminationReasonPassive')
+        if m.get('terminationReasonVoluntary') is not None:
+            self.termination_reason_voluntary = m.get('terminationReasonVoluntary')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class UpdateEmpDismissionInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.request_id = request_id
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class UpdateEmpDismissionInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: UpdateEmpDismissionInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = UpdateEmpDismissionInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

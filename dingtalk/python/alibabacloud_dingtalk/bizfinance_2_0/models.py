@@ -970,6 +970,194 @@ class BatchSyncBankReceiptResponse(TeaModel):
         return self
 
 
+class CheckVoucherStatusHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CheckVoucherStatusRequest(TeaModel):
+    def __init__(
+        self,
+        company_code: str = None,
+        end_time: int = None,
+        finance_type: str = None,
+        invoice_code: str = None,
+        invoice_no: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        start_time: int = None,
+        tax_no: str = None,
+        verify_status: str = None,
+    ):
+        self.company_code = company_code
+        self.end_time = end_time
+        self.finance_type = finance_type
+        self.invoice_code = invoice_code
+        self.invoice_no = invoice_no
+        self.page_number = page_number
+        self.page_size = page_size
+        self.start_time = start_time
+        self.tax_no = tax_no
+        self.verify_status = verify_status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.company_code is not None:
+            result['companyCode'] = self.company_code
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.finance_type is not None:
+            result['financeType'] = self.finance_type
+        if self.invoice_code is not None:
+            result['invoiceCode'] = self.invoice_code
+        if self.invoice_no is not None:
+            result['invoiceNo'] = self.invoice_no
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.tax_no is not None:
+            result['taxNo'] = self.tax_no
+        if self.verify_status is not None:
+            result['verifyStatus'] = self.verify_status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('companyCode') is not None:
+            self.company_code = m.get('companyCode')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('financeType') is not None:
+            self.finance_type = m.get('financeType')
+        if m.get('invoiceCode') is not None:
+            self.invoice_code = m.get('invoiceCode')
+        if m.get('invoiceNo') is not None:
+            self.invoice_no = m.get('invoiceNo')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('taxNo') is not None:
+            self.tax_no = m.get('taxNo')
+        if m.get('verifyStatus') is not None:
+            self.verify_status = m.get('verifyStatus')
+        return self
+
+
+class CheckVoucherStatusResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class CheckVoucherStatusResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CheckVoucherStatusResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CheckVoucherStatusResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetCategoryHeaders(TeaModel):
     def __init__(
         self,

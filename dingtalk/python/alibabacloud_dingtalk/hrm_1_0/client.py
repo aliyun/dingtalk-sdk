@@ -740,6 +740,152 @@ class Client(OpenApiClient):
         headers = dingtalkhrm__1__0_models.ECertQueryHeaders()
         return await self.e_cert_query_with_options_async(request, headers, runtime)
 
+    def emp_start_dismission_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.EmpStartDismissionRequest,
+        headers: dingtalkhrm__1__0_models.EmpStartDismissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.EmpStartDismissionResponse:
+        """
+        @summary 加入待离职
+        
+        @param request: EmpStartDismissionRequest
+        @param headers: EmpStartDismissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EmpStartDismissionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.last_work_date):
+            body['lastWorkDate'] = request.last_work_date
+        if not UtilClient.is_unset(request.partner):
+            body['partner'] = request.partner
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.termination_reason_passive):
+            body['terminationReasonPassive'] = request.termination_reason_passive
+        if not UtilClient.is_unset(request.termination_reason_voluntary):
+            body['terminationReasonVoluntary'] = request.termination_reason_voluntary
+        if not UtilClient.is_unset(request.to_hire_black_list):
+            body['toHireBlackList'] = request.to_hire_black_list
+        if not UtilClient.is_unset(request.to_hire_dismission_talent):
+            body['toHireDismissionTalent'] = request.to_hire_dismission_talent
+        if not UtilClient.is_unset(request.to_hrm_black_list):
+            body['toHrmBlackList'] = request.to_hrm_black_list
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EmpStartDismission',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/pendingDismission/start',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.EmpStartDismissionResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def emp_start_dismission_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.EmpStartDismissionRequest,
+        headers: dingtalkhrm__1__0_models.EmpStartDismissionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.EmpStartDismissionResponse:
+        """
+        @summary 加入待离职
+        
+        @param request: EmpStartDismissionRequest
+        @param headers: EmpStartDismissionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EmpStartDismissionResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.last_work_date):
+            body['lastWorkDate'] = request.last_work_date
+        if not UtilClient.is_unset(request.partner):
+            body['partner'] = request.partner
+        if not UtilClient.is_unset(request.remark):
+            body['remark'] = request.remark
+        if not UtilClient.is_unset(request.termination_reason_passive):
+            body['terminationReasonPassive'] = request.termination_reason_passive
+        if not UtilClient.is_unset(request.termination_reason_voluntary):
+            body['terminationReasonVoluntary'] = request.termination_reason_voluntary
+        if not UtilClient.is_unset(request.to_hire_black_list):
+            body['toHireBlackList'] = request.to_hire_black_list
+        if not UtilClient.is_unset(request.to_hire_dismission_talent):
+            body['toHireDismissionTalent'] = request.to_hire_dismission_talent
+        if not UtilClient.is_unset(request.to_hrm_black_list):
+            body['toHrmBlackList'] = request.to_hrm_black_list
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EmpStartDismission',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/pendingDismission/start',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.EmpStartDismissionResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def emp_start_dismission(
+        self,
+        request: dingtalkhrm__1__0_models.EmpStartDismissionRequest,
+    ) -> dingtalkhrm__1__0_models.EmpStartDismissionResponse:
+        """
+        @summary 加入待离职
+        
+        @param request: EmpStartDismissionRequest
+        @return: EmpStartDismissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.EmpStartDismissionHeaders()
+        return self.emp_start_dismission_with_options(request, headers, runtime)
+
+    async def emp_start_dismission_async(
+        self,
+        request: dingtalkhrm__1__0_models.EmpStartDismissionRequest,
+    ) -> dingtalkhrm__1__0_models.EmpStartDismissionResponse:
+        """
+        @summary 加入待离职
+        
+        @param request: EmpStartDismissionRequest
+        @return: EmpStartDismissionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.EmpStartDismissionHeaders()
+        return await self.emp_start_dismission_with_options_async(request, headers, runtime)
+
     def employee_attachment_update_with_options(
         self,
         request: dingtalkhrm__1__0_models.EmployeeAttachmentUpdateRequest,
@@ -987,6 +1133,98 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrm__1__0_models.EsignRollbackHeaders()
         return await self.esign_rollback_with_options_async(request, headers, runtime)
+
+    def get_all_dismission_reasons_with_options(
+        self,
+        headers: dingtalkhrm__1__0_models.GetAllDismissionReasonsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.GetAllDismissionReasonsResponse:
+        """
+        @summary 获取所有离职原因
+        
+        @param headers: GetAllDismissionReasonsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAllDismissionReasonsResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetAllDismissionReasons',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/dismission/reasons',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.GetAllDismissionReasonsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_all_dismission_reasons_with_options_async(
+        self,
+        headers: dingtalkhrm__1__0_models.GetAllDismissionReasonsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.GetAllDismissionReasonsResponse:
+        """
+        @summary 获取所有离职原因
+        
+        @param headers: GetAllDismissionReasonsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAllDismissionReasonsResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='GetAllDismissionReasons',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/dismission/reasons',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.GetAllDismissionReasonsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_all_dismission_reasons(self) -> dingtalkhrm__1__0_models.GetAllDismissionReasonsResponse:
+        """
+        @summary 获取所有离职原因
+        
+        @return: GetAllDismissionReasonsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.GetAllDismissionReasonsHeaders()
+        return self.get_all_dismission_reasons_with_options(headers, runtime)
+
+    async def get_all_dismission_reasons_async(self) -> dingtalkhrm__1__0_models.GetAllDismissionReasonsResponse:
+        """
+        @summary 获取所有离职原因
+        
+        @return: GetAllDismissionReasonsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.GetAllDismissionReasonsHeaders()
+        return await self.get_all_dismission_reasons_with_options_async(headers, runtime)
 
     def get_employee_roster_by_field_with_options(
         self,
@@ -4962,6 +5200,120 @@ class Client(OpenApiClient):
         headers = dingtalkhrm__1__0_models.RevokeSignRecordsHeaders()
         return await self.revoke_sign_records_with_options_async(request, headers, runtime)
 
+    def revoke_termination_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.RevokeTerminationRequest,
+        headers: dingtalkhrm__1__0_models.RevokeTerminationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.RevokeTerminationResponse:
+        """
+        @summary 撤销待离职
+        
+        @param request: RevokeTerminationRequest
+        @param headers: RevokeTerminationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RevokeTerminationResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RevokeTermination',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/pendingDismission/revoke',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.RevokeTerminationResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def revoke_termination_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.RevokeTerminationRequest,
+        headers: dingtalkhrm__1__0_models.RevokeTerminationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.RevokeTerminationResponse:
+        """
+        @summary 撤销待离职
+        
+        @param request: RevokeTerminationRequest
+        @param headers: RevokeTerminationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RevokeTerminationResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='RevokeTermination',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/pendingDismission/revoke',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.RevokeTerminationResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def revoke_termination(
+        self,
+        request: dingtalkhrm__1__0_models.RevokeTerminationRequest,
+    ) -> dingtalkhrm__1__0_models.RevokeTerminationResponse:
+        """
+        @summary 撤销待离职
+        
+        @param request: RevokeTerminationRequest
+        @return: RevokeTerminationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.RevokeTerminationHeaders()
+        return self.revoke_termination_with_options(request, headers, runtime)
+
+    async def revoke_termination_async(
+        self,
+        request: dingtalkhrm__1__0_models.RevokeTerminationRequest,
+    ) -> dingtalkhrm__1__0_models.RevokeTerminationResponse:
+        """
+        @summary 撤销待离职
+        
+        @param request: RevokeTerminationRequest
+        @return: RevokeTerminationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.RevokeTerminationHeaders()
+        return await self.revoke_termination_with_options_async(request, headers, runtime)
+
     def roster_meta_available_field_list_with_options(
         self,
         request: dingtalkhrm__1__0_models.RosterMetaAvailableFieldListRequest,
@@ -5947,6 +6299,140 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkhrm__1__0_models.SyncTaskTemplateHeaders()
         return await self.sync_task_template_with_options_async(request, headers, runtime)
+
+    def update_emp_dismission_info_with_options(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateEmpDismissionInfoRequest,
+        headers: dingtalkhrm__1__0_models.UpdateEmpDismissionInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.UpdateEmpDismissionInfoResponse:
+        """
+        @summary 更新待离职信息
+        
+        @param request: UpdateEmpDismissionInfoRequest
+        @param headers: UpdateEmpDismissionInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateEmpDismissionInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dismission_memo):
+            body['dismissionMemo'] = request.dismission_memo
+        if not UtilClient.is_unset(request.last_work_date):
+            body['lastWorkDate'] = request.last_work_date
+        if not UtilClient.is_unset(request.partner):
+            body['partner'] = request.partner
+        if not UtilClient.is_unset(request.termination_reason_passive):
+            body['terminationReasonPassive'] = request.termination_reason_passive
+        if not UtilClient.is_unset(request.termination_reason_voluntary):
+            body['terminationReasonVoluntary'] = request.termination_reason_voluntary
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateEmpDismissionInfo',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/pendingDismission/infos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.UpdateEmpDismissionInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_emp_dismission_info_with_options_async(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateEmpDismissionInfoRequest,
+        headers: dingtalkhrm__1__0_models.UpdateEmpDismissionInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.UpdateEmpDismissionInfoResponse:
+        """
+        @summary 更新待离职信息
+        
+        @param request: UpdateEmpDismissionInfoRequest
+        @param headers: UpdateEmpDismissionInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateEmpDismissionInfoResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dismission_memo):
+            body['dismissionMemo'] = request.dismission_memo
+        if not UtilClient.is_unset(request.last_work_date):
+            body['lastWorkDate'] = request.last_work_date
+        if not UtilClient.is_unset(request.partner):
+            body['partner'] = request.partner
+        if not UtilClient.is_unset(request.termination_reason_passive):
+            body['terminationReasonPassive'] = request.termination_reason_passive
+        if not UtilClient.is_unset(request.termination_reason_voluntary):
+            body['terminationReasonVoluntary'] = request.termination_reason_voluntary
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateEmpDismissionInfo',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/pendingDismission/infos',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.UpdateEmpDismissionInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_emp_dismission_info(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateEmpDismissionInfoRequest,
+    ) -> dingtalkhrm__1__0_models.UpdateEmpDismissionInfoResponse:
+        """
+        @summary 更新待离职信息
+        
+        @param request: UpdateEmpDismissionInfoRequest
+        @return: UpdateEmpDismissionInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.UpdateEmpDismissionInfoHeaders()
+        return self.update_emp_dismission_info_with_options(request, headers, runtime)
+
+    async def update_emp_dismission_info_async(
+        self,
+        request: dingtalkhrm__1__0_models.UpdateEmpDismissionInfoRequest,
+    ) -> dingtalkhrm__1__0_models.UpdateEmpDismissionInfoResponse:
+        """
+        @summary 更新待离职信息
+        
+        @param request: UpdateEmpDismissionInfoRequest
+        @return: UpdateEmpDismissionInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.UpdateEmpDismissionInfoHeaders()
+        return await self.update_emp_dismission_info_with_options_async(request, headers, runtime)
 
     def update_hrm_legal_entity_name_with_options(
         self,

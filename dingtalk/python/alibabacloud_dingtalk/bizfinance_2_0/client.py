@@ -614,6 +614,156 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.BatchSyncBankReceiptHeaders()
         return await self.batch_sync_bank_receipt_with_options_async(request, headers, runtime)
 
+    def check_voucher_status_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.CheckVoucherStatusRequest,
+        headers: dingtalkbizfinance__2__0_models.CheckVoucherStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.CheckVoucherStatusResponse:
+        """
+        @summary 查验发票是否生成凭证
+        
+        @param request: CheckVoucherStatusRequest
+        @param headers: CheckVoucherStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CheckVoucherStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.finance_type):
+            body['financeType'] = request.finance_type
+        if not UtilClient.is_unset(request.invoice_code):
+            body['invoiceCode'] = request.invoice_code
+        if not UtilClient.is_unset(request.invoice_no):
+            body['invoiceNo'] = request.invoice_no
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.tax_no):
+            body['taxNo'] = request.tax_no
+        if not UtilClient.is_unset(request.verify_status):
+            body['verifyStatus'] = request.verify_status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CheckVoucherStatus',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/invoices/checkVoucherStatus/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.CheckVoucherStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def check_voucher_status_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.CheckVoucherStatusRequest,
+        headers: dingtalkbizfinance__2__0_models.CheckVoucherStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.CheckVoucherStatusResponse:
+        """
+        @summary 查验发票是否生成凭证
+        
+        @param request: CheckVoucherStatusRequest
+        @param headers: CheckVoucherStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CheckVoucherStatusResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.company_code):
+            body['companyCode'] = request.company_code
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.finance_type):
+            body['financeType'] = request.finance_type
+        if not UtilClient.is_unset(request.invoice_code):
+            body['invoiceCode'] = request.invoice_code
+        if not UtilClient.is_unset(request.invoice_no):
+            body['invoiceNo'] = request.invoice_no
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.tax_no):
+            body['taxNo'] = request.tax_no
+        if not UtilClient.is_unset(request.verify_status):
+            body['verifyStatus'] = request.verify_status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CheckVoucherStatus',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/invoices/checkVoucherStatus/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.CheckVoucherStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def check_voucher_status(
+        self,
+        request: dingtalkbizfinance__2__0_models.CheckVoucherStatusRequest,
+    ) -> dingtalkbizfinance__2__0_models.CheckVoucherStatusResponse:
+        """
+        @summary 查验发票是否生成凭证
+        
+        @param request: CheckVoucherStatusRequest
+        @return: CheckVoucherStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.CheckVoucherStatusHeaders()
+        return self.check_voucher_status_with_options(request, headers, runtime)
+
+    async def check_voucher_status_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.CheckVoucherStatusRequest,
+    ) -> dingtalkbizfinance__2__0_models.CheckVoucherStatusResponse:
+        """
+        @summary 查验发票是否生成凭证
+        
+        @param request: CheckVoucherStatusRequest
+        @return: CheckVoucherStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.CheckVoucherStatusHeaders()
+        return await self.check_voucher_status_with_options_async(request, headers, runtime)
+
     def get_category_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.GetCategoryRequest,

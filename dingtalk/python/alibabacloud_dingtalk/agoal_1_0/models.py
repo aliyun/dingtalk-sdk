@@ -1,7 +1,154 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import List, Dict
+from typing import List, Dict, Any
+
+
+class OpenAgoalAlignDTO(TeaModel):
+    def __init__(
+        self,
+        align_type: str = None,
+        object_id: str = None,
+        object_type: str = None,
+        objective_id: str = None,
+    ):
+        # This parameter is required.
+        self.align_type = align_type
+        # This parameter is required.
+        self.object_id = object_id
+        # This parameter is required.
+        self.object_type = object_type
+        # This parameter is required.
+        self.objective_id = objective_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.align_type is not None:
+            result['alignType'] = self.align_type
+        if self.object_id is not None:
+            result['objectId'] = self.object_id
+        if self.object_type is not None:
+            result['objectType'] = self.object_type
+        if self.objective_id is not None:
+            result['objectiveId'] = self.objective_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('alignType') is not None:
+            self.align_type = m.get('alignType')
+        if m.get('objectId') is not None:
+            self.object_id = m.get('objectId')
+        if m.get('objectType') is not None:
+            self.object_type = m.get('objectType')
+        if m.get('objectiveId') is not None:
+            self.objective_id = m.get('objectiveId')
+        return self
+
+
+class OpenAgoalFieldMetaDTO(TeaModel):
+    def __init__(
+        self,
+        active: bool = None,
+        alias: str = None,
+        code: str = None,
+        entity_type: str = None,
+        field_id: str = None,
+        note: str = None,
+        source: str = None,
+        title: str = None,
+        type: str = None,
+    ):
+        # 是否启用
+        # 
+        # This parameter is required.
+        self.active = active
+        # 字段元数据别名
+        self.alias = alias
+        # 字段元数据标识
+        # 
+        # This parameter is required.
+        self.code = code
+        # 实体类型
+        # 
+        # This parameter is required.
+        self.entity_type = entity_type
+        # 字段ID
+        # 
+        # This parameter is required.
+        self.field_id = field_id
+        # 字段备注
+        self.note = note
+        # 字段数据来源
+        # 
+        # This parameter is required.
+        self.source = source
+        # 字段元数据名称
+        # 
+        # This parameter is required.
+        self.title = title
+        # 字段类型
+        # 
+        # This parameter is required.
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.active is not None:
+            result['active'] = self.active
+        if self.alias is not None:
+            result['alias'] = self.alias
+        if self.code is not None:
+            result['code'] = self.code
+        if self.entity_type is not None:
+            result['entityType'] = self.entity_type
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        if self.note is not None:
+            result['note'] = self.note
+        if self.source is not None:
+            result['source'] = self.source
+        if self.title is not None:
+            result['title'] = self.title
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('active') is not None:
+            self.active = m.get('active')
+        if m.get('alias') is not None:
+            self.alias = m.get('alias')
+        if m.get('code') is not None:
+            self.code = m.get('code')
+        if m.get('entityType') is not None:
+            self.entity_type = m.get('entityType')
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        if m.get('note') is not None:
+            self.note = m.get('note')
+        if m.get('source') is not None:
+            self.source = m.get('source')
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
 
 
 class OpenAgoalKeyActionDTO(TeaModel):
@@ -553,6 +700,300 @@ class OpenAgoalObjectiveDTO(TeaModel):
         return self
 
 
+class OpenAgoalObjectiveDimensionDTO(TeaModel):
+    def __init__(
+        self,
+        children: List['OpenAgoalObjectiveDimensionDTO'] = None,
+        dimension_id: str = None,
+        field_config: List[OpenAgoalFieldMetaDTO] = None,
+        field_value_map: Dict[str, Any] = None,
+    ):
+        # This parameter is required.
+        self.children = children
+        # This parameter is required.
+        self.dimension_id = dimension_id
+        # This parameter is required.
+        self.field_config = field_config
+        # This parameter is required.
+        self.field_value_map = field_value_map
+
+    def validate(self):
+        if self.children:
+            for k in self.children:
+                if k:
+                    k.validate()
+        if self.field_config:
+            for k in self.field_config:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['children'] = []
+        if self.children is not None:
+            for k in self.children:
+                result['children'].append(k.to_map() if k else None)
+        if self.dimension_id is not None:
+            result['dimensionId'] = self.dimension_id
+        result['fieldConfig'] = []
+        if self.field_config is not None:
+            for k in self.field_config:
+                result['fieldConfig'].append(k.to_map() if k else None)
+        if self.field_value_map is not None:
+            result['fieldValueMap'] = self.field_value_map
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.children = []
+        if m.get('children') is not None:
+            for k in m.get('children'):
+                temp_model = OpenAgoalObjectiveDimensionDTO()
+                self.children.append(temp_model.from_map(k))
+        if m.get('dimensionId') is not None:
+            self.dimension_id = m.get('dimensionId')
+        self.field_config = []
+        if m.get('fieldConfig') is not None:
+            for k in m.get('fieldConfig'):
+                temp_model = OpenAgoalFieldMetaDTO()
+                self.field_config.append(temp_model.from_map(k))
+        if m.get('fieldValueMap') is not None:
+            self.field_value_map = m.get('fieldValueMap')
+        return self
+
+
+class OpenAgoalOrgObjectiveDTO(TeaModel):
+    def __init__(
+        self,
+        dimension: OpenAgoalObjectiveDimensionDTO = None,
+        down_align_objects: List[OpenAgoalAlignDTO] = None,
+        executor: OpenAgoalUserDTO = None,
+        field_config: List[OpenAgoalFieldMetaDTO] = None,
+        field_value_map: Dict[str, Any] = None,
+        objective_id: str = None,
+        period: OpenObjectiveRulePeriodDTO = None,
+        team: OpenAgoalTeamDTO = None,
+        title: str = None,
+        up_align_objects: List[OpenAgoalAlignDTO] = None,
+    ):
+        # This parameter is required.
+        self.dimension = dimension
+        # This parameter is required.
+        self.down_align_objects = down_align_objects
+        # This parameter is required.
+        self.executor = executor
+        # This parameter is required.
+        self.field_config = field_config
+        # This parameter is required.
+        self.field_value_map = field_value_map
+        # This parameter is required.
+        self.objective_id = objective_id
+        # This parameter is required.
+        self.period = period
+        # This parameter is required.
+        self.team = team
+        # This parameter is required.
+        self.title = title
+        # This parameter is required.
+        self.up_align_objects = up_align_objects
+
+    def validate(self):
+        if self.dimension:
+            self.dimension.validate()
+        if self.down_align_objects:
+            for k in self.down_align_objects:
+                if k:
+                    k.validate()
+        if self.executor:
+            self.executor.validate()
+        if self.field_config:
+            for k in self.field_config:
+                if k:
+                    k.validate()
+        if self.period:
+            self.period.validate()
+        if self.team:
+            self.team.validate()
+        if self.up_align_objects:
+            for k in self.up_align_objects:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.dimension is not None:
+            result['dimension'] = self.dimension.to_map()
+        result['downAlignObjects'] = []
+        if self.down_align_objects is not None:
+            for k in self.down_align_objects:
+                result['downAlignObjects'].append(k.to_map() if k else None)
+        if self.executor is not None:
+            result['executor'] = self.executor.to_map()
+        result['fieldConfig'] = []
+        if self.field_config is not None:
+            for k in self.field_config:
+                result['fieldConfig'].append(k.to_map() if k else None)
+        if self.field_value_map is not None:
+            result['fieldValueMap'] = self.field_value_map
+        if self.objective_id is not None:
+            result['objectiveId'] = self.objective_id
+        if self.period is not None:
+            result['period'] = self.period.to_map()
+        if self.team is not None:
+            result['team'] = self.team.to_map()
+        if self.title is not None:
+            result['title'] = self.title
+        result['upAlignObjects'] = []
+        if self.up_align_objects is not None:
+            for k in self.up_align_objects:
+                result['upAlignObjects'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dimension') is not None:
+            temp_model = OpenAgoalObjectiveDimensionDTO()
+            self.dimension = temp_model.from_map(m['dimension'])
+        self.down_align_objects = []
+        if m.get('downAlignObjects') is not None:
+            for k in m.get('downAlignObjects'):
+                temp_model = OpenAgoalAlignDTO()
+                self.down_align_objects.append(temp_model.from_map(k))
+        if m.get('executor') is not None:
+            temp_model = OpenAgoalUserDTO()
+            self.executor = temp_model.from_map(m['executor'])
+        self.field_config = []
+        if m.get('fieldConfig') is not None:
+            for k in m.get('fieldConfig'):
+                temp_model = OpenAgoalFieldMetaDTO()
+                self.field_config.append(temp_model.from_map(k))
+        if m.get('fieldValueMap') is not None:
+            self.field_value_map = m.get('fieldValueMap')
+        if m.get('objectiveId') is not None:
+            self.objective_id = m.get('objectiveId')
+        if m.get('period') is not None:
+            temp_model = OpenObjectiveRulePeriodDTO()
+            self.period = temp_model.from_map(m['period'])
+        if m.get('team') is not None:
+            temp_model = OpenAgoalTeamDTO()
+            self.team = temp_model.from_map(m['team'])
+        if m.get('title') is not None:
+            self.title = m.get('title')
+        self.up_align_objects = []
+        if m.get('upAlignObjects') is not None:
+            for k in m.get('upAlignObjects'):
+                temp_model = OpenAgoalAlignDTO()
+                self.up_align_objects.append(temp_model.from_map(k))
+        return self
+
+
+class OpenAgoalOrgObjectiveListDTO(TeaModel):
+    def __init__(
+        self,
+        objective_list: List[OpenAgoalOrgObjectiveDTO] = None,
+        total_count: int = None,
+    ):
+        # This parameter is required.
+        self.objective_list = objective_list
+        # This parameter is required.
+        self.total_count = total_count
+
+    def validate(self):
+        if self.objective_list:
+            for k in self.objective_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['objectiveList'] = []
+        if self.objective_list is not None:
+            for k in self.objective_list:
+                result['objectiveList'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.objective_list = []
+        if m.get('objectiveList') is not None:
+            for k in m.get('objectiveList'):
+                temp_model = OpenAgoalOrgObjectiveDTO()
+                self.objective_list.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class OpenAgoalPeriodDTO(TeaModel):
+    def __init__(
+        self,
+        end_date: int = None,
+        name: str = None,
+        period_id: str = None,
+        period_type: str = None,
+        start_date: int = None,
+    ):
+        # This parameter is required.
+        self.end_date = end_date
+        # This parameter is required.
+        self.name = name
+        # This parameter is required.
+        self.period_id = period_id
+        # This parameter is required.
+        self.period_type = period_type
+        # This parameter is required.
+        self.start_date = start_date
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_date is not None:
+            result['endDate'] = self.end_date
+        if self.name is not None:
+            result['name'] = self.name
+        if self.period_id is not None:
+            result['periodId'] = self.period_id
+        if self.period_type is not None:
+            result['periodType'] = self.period_type
+        if self.start_date is not None:
+            result['startDate'] = self.start_date
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endDate') is not None:
+            self.end_date = m.get('endDate')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('periodId') is not None:
+            self.period_id = m.get('periodId')
+        if m.get('periodType') is not None:
+            self.period_type = m.get('periodType')
+        if m.get('startDate') is not None:
+            self.start_date = m.get('startDate')
+        return self
+
+
 class OpenAgoalProgressDTO(TeaModel):
     def __init__(
         self,
@@ -878,6 +1319,223 @@ class AgoalCreateProgressResponse(TeaModel):
         return self
 
 
+class AgoalFieldUpdateHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AgoalFieldUpdateRequestBody(TeaModel):
+    def __init__(
+        self,
+        entity_id: str = None,
+        entity_type: str = None,
+        field_code: str = None,
+        value: str = None,
+    ):
+        # This parameter is required.
+        self.entity_id = entity_id
+        # This parameter is required.
+        self.entity_type = entity_type
+        # This parameter is required.
+        self.field_code = field_code
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.entity_id is not None:
+            result['entityId'] = self.entity_id
+        if self.entity_type is not None:
+            result['entityType'] = self.entity_type
+        if self.field_code is not None:
+            result['fieldCode'] = self.field_code
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('entityId') is not None:
+            self.entity_id = m.get('entityId')
+        if m.get('entityType') is not None:
+            self.entity_type = m.get('entityType')
+        if m.get('fieldCode') is not None:
+            self.field_code = m.get('fieldCode')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class AgoalFieldUpdateRequest(TeaModel):
+    def __init__(
+        self,
+        body: AgoalFieldUpdateRequestBody = None,
+    ):
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            temp_model = AgoalFieldUpdateRequestBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AgoalFieldUpdateShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        body_shrink: str = None,
+    ):
+        self.body_shrink = body_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body_shrink is not None:
+            result['body'] = self.body_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            self.body_shrink = m.get('body')
+        return self
+
+
+class AgoalFieldUpdateResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: bool = None,
+        request_id: str = None,
+        success: str = None,
+    ):
+        self.content = content
+        self.request_id = request_id
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AgoalFieldUpdateResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AgoalFieldUpdateResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AgoalFieldUpdateResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AgoalObjectiveKeyActionListHeaders(TeaModel):
     def __init__(
         self,
@@ -1193,6 +1851,167 @@ class AgoalObjectiveRulePeriodListResponse(TeaModel):
         return self
 
 
+class AgoalOrgObjectiveListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AgoalOrgObjectiveListRequest(TeaModel):
+    def __init__(
+        self,
+        ding_team_id: str = None,
+        page_number: int = None,
+        page_size: int = None,
+        period_id: str = None,
+    ):
+        self.ding_team_id = ding_team_id
+        # This parameter is required.
+        self.page_number = page_number
+        self.page_size = page_size
+        self.period_id = period_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.ding_team_id is not None:
+            result['dingTeamId'] = self.ding_team_id
+        if self.page_number is not None:
+            result['pageNumber'] = self.page_number
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.period_id is not None:
+            result['periodId'] = self.period_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('dingTeamId') is not None:
+            self.ding_team_id = m.get('dingTeamId')
+        if m.get('pageNumber') is not None:
+            self.page_number = m.get('pageNumber')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('periodId') is not None:
+            self.period_id = m.get('periodId')
+        return self
+
+
+class AgoalOrgObjectiveListResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: OpenAgoalOrgObjectiveListDTO = None,
+        request_id: str = None,
+        success: bool = None,
+    ):
+        self.content = content
+        self.request_id = request_id
+        self.success = success
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            temp_model = OpenAgoalOrgObjectiveListDTO()
+            self.content = temp_model.from_map(m['content'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AgoalOrgObjectiveListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AgoalOrgObjectiveListResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AgoalOrgObjectiveListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class AgoalOrgObjectiveRuleListHeaders(TeaModel):
     def __init__(
         self,
@@ -1312,6 +2131,210 @@ class AgoalOrgObjectiveRuleListResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AgoalOrgObjectiveRuleListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AgoalPeriodListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AgoalPeriodListRequestBody(TeaModel):
+    def __init__(
+        self,
+        period_types: List[str] = None,
+    ):
+        self.period_types = period_types
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.period_types is not None:
+            result['periodTypes'] = self.period_types
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('periodTypes') is not None:
+            self.period_types = m.get('periodTypes')
+        return self
+
+
+class AgoalPeriodListRequest(TeaModel):
+    def __init__(
+        self,
+        body: AgoalPeriodListRequestBody = None,
+    ):
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            temp_model = AgoalPeriodListRequestBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AgoalPeriodListShrinkRequest(TeaModel):
+    def __init__(
+        self,
+        body_shrink: str = None,
+    ):
+        self.body_shrink = body_shrink
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.body_shrink is not None:
+            result['body'] = self.body_shrink
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('body') is not None:
+            self.body_shrink = m.get('body')
+        return self
+
+
+class AgoalPeriodListResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: List[OpenAgoalPeriodDTO] = None,
+        request_id: str = None,
+        success: bool = None,
+    ):
+        self.content = content
+        self.request_id = request_id
+        self.success = success
+
+    def validate(self):
+        if self.content:
+            for k in self.content:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['content'] = []
+        if self.content is not None:
+            for k in self.content:
+                result['content'].append(k.to_map() if k else None)
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.content = []
+        if m.get('content') is not None:
+            for k in m.get('content'):
+                temp_model = OpenAgoalPeriodDTO()
+                self.content.append(temp_model.from_map(k))
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AgoalPeriodListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AgoalPeriodListResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AgoalPeriodListResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

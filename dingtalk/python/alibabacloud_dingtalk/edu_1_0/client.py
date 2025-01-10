@@ -11156,19 +11156,16 @@ class Client(OpenApiClient):
 
     def get_children_with_options(
         self,
-        request: dingtalkedu__1__0_models.GetChildrenRequest,
         headers: dingtalkedu__1__0_models.GetChildrenHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.GetChildrenResponse:
         """
         @summary 查询用户的孩子列表
         
-        @param request: GetChildrenRequest
         @param headers: GetChildrenHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: GetChildrenResponse
         """
-        UtilClient.validate_model(request)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -11195,19 +11192,16 @@ class Client(OpenApiClient):
 
     async def get_children_with_options_async(
         self,
-        request: dingtalkedu__1__0_models.GetChildrenRequest,
         headers: dingtalkedu__1__0_models.GetChildrenHeaders,
         runtime: util_models.RuntimeOptions,
     ) -> dingtalkedu__1__0_models.GetChildrenResponse:
         """
         @summary 查询用户的孩子列表
         
-        @param request: GetChildrenRequest
         @param headers: GetChildrenHeaders
         @param runtime: runtime options for this request RuntimeOptions
         @return: GetChildrenResponse
         """
-        UtilClient.validate_model(request)
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -11232,33 +11226,25 @@ class Client(OpenApiClient):
             await self.execute_async(params, req, runtime)
         )
 
-    def get_children(
-        self,
-        request: dingtalkedu__1__0_models.GetChildrenRequest,
-    ) -> dingtalkedu__1__0_models.GetChildrenResponse:
+    def get_children(self) -> dingtalkedu__1__0_models.GetChildrenResponse:
         """
         @summary 查询用户的孩子列表
         
-        @param request: GetChildrenRequest
         @return: GetChildrenResponse
         """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.GetChildrenHeaders()
-        return self.get_children_with_options(request, headers, runtime)
+        return self.get_children_with_options(headers, runtime)
 
-    async def get_children_async(
-        self,
-        request: dingtalkedu__1__0_models.GetChildrenRequest,
-    ) -> dingtalkedu__1__0_models.GetChildrenResponse:
+    async def get_children_async(self) -> dingtalkedu__1__0_models.GetChildrenResponse:
         """
         @summary 查询用户的孩子列表
         
-        @param request: GetChildrenRequest
         @return: GetChildrenResponse
         """
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.GetChildrenHeaders()
-        return await self.get_children_with_options_async(request, headers, runtime)
+        return await self.get_children_with_options_async(headers, runtime)
 
     def get_college_alumni_depts_with_options(
         self,

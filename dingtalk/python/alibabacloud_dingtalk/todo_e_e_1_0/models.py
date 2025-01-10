@@ -672,22 +672,14 @@ class AppGetUserTaskListRequest(TeaModel):
         return self
 
 
-class AppGetUserTaskListResponseBodyData(TeaModel):
+class AppGetUserTaskListResponseBodyDataDetailUrl(TeaModel):
     def __init__(
         self,
-        created_time: int = None,
-        description: str = None,
-        done: bool = None,
-        due_time: int = None,
-        subject: str = None,
-        task_id: str = None,
+        app_url: str = None,
+        web_url: str = None,
     ):
-        self.created_time = created_time
-        self.description = description
-        self.done = done
-        self.due_time = due_time
-        self.subject = subject
-        self.task_id = task_id
+        self.app_url = app_url
+        self.web_url = web_url
 
     def validate(self):
         pass
@@ -698,14 +690,76 @@ class AppGetUserTaskListResponseBodyData(TeaModel):
             return _map
 
         result = dict()
+        if self.app_url is not None:
+            result['appUrl'] = self.app_url
+        if self.web_url is not None:
+            result['webUrl'] = self.web_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUrl') is not None:
+            self.app_url = m.get('appUrl')
+        if m.get('webUrl') is not None:
+            self.web_url = m.get('webUrl')
+        return self
+
+
+class AppGetUserTaskListResponseBodyData(TeaModel):
+    def __init__(
+        self,
+        biz_category_id: str = None,
+        created_time: int = None,
+        description: str = None,
+        detail_url: AppGetUserTaskListResponseBodyDataDetailUrl = None,
+        done: bool = None,
+        due_time: int = None,
+        modified_time: int = None,
+        operator_id: str = None,
+        priority: int = None,
+        subject: str = None,
+        task_id: str = None,
+    ):
+        self.biz_category_id = biz_category_id
+        self.created_time = created_time
+        self.description = description
+        self.detail_url = detail_url
+        self.done = done
+        self.due_time = due_time
+        self.modified_time = modified_time
+        self.operator_id = operator_id
+        self.priority = priority
+        self.subject = subject
+        self.task_id = task_id
+
+    def validate(self):
+        if self.detail_url:
+            self.detail_url.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_category_id is not None:
+            result['bizCategoryId'] = self.biz_category_id
         if self.created_time is not None:
             result['createdTime'] = self.created_time
         if self.description is not None:
             result['description'] = self.description
+        if self.detail_url is not None:
+            result['detailUrl'] = self.detail_url.to_map()
         if self.done is not None:
             result['done'] = self.done
         if self.due_time is not None:
             result['dueTime'] = self.due_time
+        if self.modified_time is not None:
+            result['modifiedTime'] = self.modified_time
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.priority is not None:
+            result['priority'] = self.priority
         if self.subject is not None:
             result['subject'] = self.subject
         if self.task_id is not None:
@@ -714,14 +768,25 @@ class AppGetUserTaskListResponseBodyData(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('bizCategoryId') is not None:
+            self.biz_category_id = m.get('bizCategoryId')
         if m.get('createdTime') is not None:
             self.created_time = m.get('createdTime')
         if m.get('description') is not None:
             self.description = m.get('description')
+        if m.get('detailUrl') is not None:
+            temp_model = AppGetUserTaskListResponseBodyDataDetailUrl()
+            self.detail_url = temp_model.from_map(m['detailUrl'])
         if m.get('done') is not None:
             self.done = m.get('done')
         if m.get('dueTime') is not None:
             self.due_time = m.get('dueTime')
+        if m.get('modifiedTime') is not None:
+            self.modified_time = m.get('modifiedTime')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('priority') is not None:
+            self.priority = m.get('priority')
         if m.get('subject') is not None:
             self.subject = m.get('subject')
         if m.get('taskId') is not None:
