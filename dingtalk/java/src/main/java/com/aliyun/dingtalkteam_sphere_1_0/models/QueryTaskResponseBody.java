@@ -418,6 +418,7 @@ public class QueryTaskResponseBody extends TeaModel {
             return this.projectInfo;
         }
 
+        @Deprecated
         public QueryTaskResponseBodyResult setTaskId(String taskId) {
             this.taskId = taskId;
             return this;

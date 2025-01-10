@@ -370,6 +370,7 @@ public class QueryAllTaskResponseBody extends TeaModel {
             return this.tagIds;
         }
 
+        @Deprecated
         public QueryAllTaskResponseBodyResult setTaskId(String taskId) {
             this.taskId = taskId;
             return this;

@@ -30,6 +30,7 @@ public class SaveWhiteAppRequest extends TeaModel {
         return TeaModel.build(map, self);
     }
 
+    @Deprecated
     public SaveWhiteAppRequest setAgentIdList(java.util.List<Long> agentIdList) {
         this.agentIdList = agentIdList;
         return this;
@@ -46,6 +47,7 @@ public class SaveWhiteAppRequest extends TeaModel {
         return this.agentIdMap;
     }
 
+    @Deprecated
     public SaveWhiteAppRequest setOperation(String operation) {
         this.operation = operation;
         return this;

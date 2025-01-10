@@ -86,6 +86,7 @@ public class UploadInvoiceRequest extends TeaModel {
             return this.bizCode;
         }
 
+        @Deprecated
         public UploadInvoiceRequestExtension setOrderNo(String orderNo) {
             this.orderNo = orderNo;
             return this;

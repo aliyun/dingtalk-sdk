@@ -89,6 +89,7 @@ public class PremiumSaveIntegratedProcessRequest extends TeaModel {
         return this.processFeatureConfig;
     }
 
+    @Deprecated
     public PremiumSaveIntegratedProcessRequest setTemplateConfig(PremiumSaveIntegratedProcessRequestTemplateConfig templateConfig) {
         this.templateConfig = templateConfig;
         return this;
@@ -295,6 +296,7 @@ public class PremiumSaveIntegratedProcessRequest extends TeaModel {
             return TeaModel.build(map, self);
         }
 
+        @Deprecated
         public PremiumSaveIntegratedProcessRequestTemplateConfig setCreateInstanceMobileUrl(String createInstanceMobileUrl) {
             this.createInstanceMobileUrl = createInstanceMobileUrl;
             return this;
@@ -303,6 +305,7 @@ public class PremiumSaveIntegratedProcessRequest extends TeaModel {
             return this.createInstanceMobileUrl;
         }
 
+        @Deprecated
         public PremiumSaveIntegratedProcessRequestTemplateConfig setCreateInstancePcUrl(String createInstancePcUrl) {
             this.createInstancePcUrl = createInstancePcUrl;
             return this;
@@ -327,6 +330,7 @@ public class PremiumSaveIntegratedProcessRequest extends TeaModel {
             return this.hidden;
         }
 
+        @Deprecated
         public PremiumSaveIntegratedProcessRequestTemplateConfig setTemplateEditUrl(String templateEditUrl) {
             this.templateEditUrl = templateEditUrl;
             return this;

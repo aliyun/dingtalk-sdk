@@ -319,6 +319,98 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查验发票是否生成凭证</p>
+     * 
+     * @param request CheckVoucherStatusRequest
+     * @param headers CheckVoucherStatusHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CheckVoucherStatusResponse
+     */
+    public CheckVoucherStatusResponse checkVoucherStatusWithOptions(CheckVoucherStatusRequest request, CheckVoucherStatusHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.companyCode)) {
+            body.put("companyCode", request.companyCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.endTime)) {
+            body.put("endTime", request.endTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.financeType)) {
+            body.put("financeType", request.financeType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.invoiceCode)) {
+            body.put("invoiceCode", request.invoiceCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.invoiceNo)) {
+            body.put("invoiceNo", request.invoiceNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            body.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.startTime)) {
+            body.put("startTime", request.startTime);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.taxNo)) {
+            body.put("taxNo", request.taxNo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.verifyStatus)) {
+            body.put("verifyStatus", request.verifyStatus);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CheckVoucherStatus"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/invoices/checkVoucherStatus/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CheckVoucherStatusResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查验发票是否生成凭证</p>
+     * 
+     * @param request CheckVoucherStatusRequest
+     * @return CheckVoucherStatusResponse
+     */
+    public CheckVoucherStatusResponse checkVoucherStatus(CheckVoucherStatusRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CheckVoucherStatusHeaders headers = new CheckVoucherStatusHeaders();
+        return this.checkVoucherStatusWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取费用类别</p>
      * 
      * @param request GetCategoryRequest

@@ -6352,13 +6352,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
      * <b>summary</b> : 
      * <p>查询用户的孩子列表</p>
      * 
-     * @param request GetChildrenRequest
      * @param headers GetChildrenHeaders
      * @param runtime runtime options for this request RuntimeOptions
      * @return GetChildrenResponse
      */
-    public GetChildrenResponse getChildrenWithOptions(GetChildrenRequest request, GetChildrenHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
-        com.aliyun.teautil.Common.validateModel(request);
+    public GetChildrenResponse getChildrenWithOptions(GetChildrenHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -6388,14 +6386,12 @@ public class Client extends com.aliyun.teaopenapi.Client {
     /**
      * <b>summary</b> : 
      * <p>查询用户的孩子列表</p>
-     * 
-     * @param request GetChildrenRequest
      * @return GetChildrenResponse
      */
-    public GetChildrenResponse getChildren(GetChildrenRequest request) throws Exception {
+    public GetChildrenResponse getChildren() throws Exception {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetChildrenHeaders headers = new GetChildrenHeaders();
-        return this.getChildrenWithOptions(request, headers, runtime);
+        return this.getChildrenWithOptions(headers, runtime);
     }
 
     /**

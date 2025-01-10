@@ -409,6 +409,94 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>加入待离职</p>
+     * 
+     * @param request EmpStartDismissionRequest
+     * @param headers EmpStartDismissionHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return EmpStartDismissionResponse
+     */
+    public EmpStartDismissionResponse empStartDismissionWithOptions(EmpStartDismissionRequest request, EmpStartDismissionHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.lastWorkDate)) {
+            body.put("lastWorkDate", request.lastWorkDate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.partner)) {
+            body.put("partner", request.partner);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.remark)) {
+            body.put("remark", request.remark);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.terminationReasonPassive)) {
+            body.put("terminationReasonPassive", request.terminationReasonPassive);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.terminationReasonVoluntary)) {
+            body.put("terminationReasonVoluntary", request.terminationReasonVoluntary);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.toHireBlackList)) {
+            body.put("toHireBlackList", request.toHireBlackList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.toHireDismissionTalent)) {
+            body.put("toHireDismissionTalent", request.toHireDismissionTalent);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.toHrmBlackList)) {
+            body.put("toHrmBlackList", request.toHrmBlackList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "EmpStartDismission"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/pendingDismission/start"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new EmpStartDismissionResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>加入待离职</p>
+     * 
+     * @param request EmpStartDismissionRequest
+     * @return EmpStartDismissionResponse
+     */
+    public EmpStartDismissionResponse empStartDismission(EmpStartDismissionRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        EmpStartDismissionHeaders headers = new EmpStartDismissionHeaders();
+        return this.empStartDismissionWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>智能人事员工档案附件更新</p>
      * 
      * @param request EmployeeAttachmentUpdateRequest
@@ -535,6 +623,52 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         EsignRollbackHeaders headers = new EsignRollbackHeaders();
         return this.esignRollbackWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取所有离职原因</p>
+     * 
+     * @param headers GetAllDismissionReasonsHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetAllDismissionReasonsResponse
+     */
+    public GetAllDismissionReasonsResponse getAllDismissionReasonsWithOptions(GetAllDismissionReasonsHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders)
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetAllDismissionReasons"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/dismission/reasons"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetAllDismissionReasonsResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取所有离职原因</p>
+     * @return GetAllDismissionReasonsResponse
+     */
+    public GetAllDismissionReasonsResponse getAllDismissionReasons() throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetAllDismissionReasonsHeaders headers = new GetAllDismissionReasonsHeaders();
+        return this.getAllDismissionReasonsWithOptions(headers, runtime);
     }
 
     /**
@@ -2652,6 +2786,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>撤销待离职</p>
+     * 
+     * @param request RevokeTerminationRequest
+     * @param headers RevokeTerminationHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RevokeTerminationResponse
+     */
+    public RevokeTerminationResponse revokeTerminationWithOptions(RevokeTerminationRequest request, RevokeTerminationHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "RevokeTermination"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/pendingDismission/revoke"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new RevokeTerminationResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>撤销待离职</p>
+     * 
+     * @param request RevokeTerminationRequest
+     * @return RevokeTerminationResponse
+     */
+    public RevokeTerminationResponse revokeTermination(RevokeTerminationRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        RevokeTerminationHeaders headers = new RevokeTerminationHeaders();
+        return this.revokeTerminationWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>查询花名册中有权限的字段列表</p>
      * 
      * @param request RosterMetaAvailableFieldListRequest
@@ -3218,6 +3408,82 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SyncTaskTemplateHeaders headers = new SyncTaskTemplateHeaders();
         return this.syncTaskTemplateWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新待离职信息</p>
+     * 
+     * @param request UpdateEmpDismissionInfoRequest
+     * @param headers UpdateEmpDismissionInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateEmpDismissionInfoResponse
+     */
+    public UpdateEmpDismissionInfoResponse updateEmpDismissionInfoWithOptions(UpdateEmpDismissionInfoRequest request, UpdateEmpDismissionInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.dismissionMemo)) {
+            body.put("dismissionMemo", request.dismissionMemo);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.lastWorkDate)) {
+            body.put("lastWorkDate", request.lastWorkDate);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.partner)) {
+            body.put("partner", request.partner);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.terminationReasonPassive)) {
+            body.put("terminationReasonPassive", request.terminationReasonPassive);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.terminationReasonVoluntary)) {
+            body.put("terminationReasonVoluntary", request.terminationReasonVoluntary);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateEmpDismissionInfo"),
+            new TeaPair("version", "hrm_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/hrm/pendingDismission/infos"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateEmpDismissionInfoResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新待离职信息</p>
+     * 
+     * @param request UpdateEmpDismissionInfoRequest
+     * @return UpdateEmpDismissionInfoResponse
+     */
+    public UpdateEmpDismissionInfoResponse updateEmpDismissionInfo(UpdateEmpDismissionInfoRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateEmpDismissionInfoHeaders headers = new UpdateEmpDismissionInfoHeaders();
+        return this.updateEmpDismissionInfoWithOptions(request, headers, runtime);
     }
 
     /**

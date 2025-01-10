@@ -51,6 +51,7 @@ public class GetProjectMemebersResponseBody extends TeaModel {
             return TeaModel.build(map, self);
         }
 
+        @Deprecated
         public GetProjectMemebersResponseBodyResult setMemberId(String memberId) {
             this.memberId = memberId;
             return this;

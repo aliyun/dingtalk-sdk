@@ -277,6 +277,7 @@ public class QueryTasksV3ResponseBody extends TeaModel {
             return this.sourceId;
         }
 
+        @Deprecated
         public QueryTasksV3ResponseBodyResult setTaskId(String taskId) {
             this.taskId = taskId;
             return this;

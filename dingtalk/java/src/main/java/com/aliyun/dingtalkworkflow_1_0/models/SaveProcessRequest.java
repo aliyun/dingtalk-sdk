@@ -89,6 +89,7 @@ public class SaveProcessRequest extends TeaModel {
         return this.processFeatureConfig;
     }
 
+    @Deprecated
     public SaveProcessRequest setTemplateConfig(SaveProcessRequestTemplateConfig templateConfig) {
         this.templateConfig = templateConfig;
         return this;
@@ -310,6 +311,7 @@ public class SaveProcessRequest extends TeaModel {
             return TeaModel.build(map, self);
         }
 
+        @Deprecated
         public SaveProcessRequestTemplateConfig setCreateInstanceMobileUrl(String createInstanceMobileUrl) {
             this.createInstanceMobileUrl = createInstanceMobileUrl;
             return this;
@@ -318,6 +320,7 @@ public class SaveProcessRequest extends TeaModel {
             return this.createInstanceMobileUrl;
         }
 
+        @Deprecated
         public SaveProcessRequestTemplateConfig setCreateInstancePcUrl(String createInstancePcUrl) {
             this.createInstancePcUrl = createInstancePcUrl;
             return this;
@@ -342,6 +345,7 @@ public class SaveProcessRequest extends TeaModel {
             return this.hidden;
         }
 
+        @Deprecated
         public SaveProcessRequestTemplateConfig setTemplateEditUrl(String templateEditUrl) {
             this.templateEditUrl = templateEditUrl;
             return this;
