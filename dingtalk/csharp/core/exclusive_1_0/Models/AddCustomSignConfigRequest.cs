@@ -42,10 +42,16 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0.Models
         [Validation(Required=false)]
         public List<AddCustomSignConfigRequestSignTermFiles> SignTermFiles { get; set; }
         public class AddCustomSignConfigRequestSignTermFiles : TeaModel {
+            /// <summary>
+            /// <para>This parameter is required.</para>
+            /// </summary>
             [NameInMap("fileName")]
             [Validation(Required=false)]
             public string FileName { get; set; }
 
+            /// <summary>
+            /// <para>This parameter is required.</para>
+            /// </summary>
             [NameInMap("mediaId")]
             [Validation(Required=false)]
             public string MediaId { get; set; }

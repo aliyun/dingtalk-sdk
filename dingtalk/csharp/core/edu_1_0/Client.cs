@@ -15645,9 +15645,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         /// <para>查询用户的孩子列表</para>
         /// </summary>
         /// 
-        /// <param name="request">
-        /// GetChildrenRequest
-        /// </param>
         /// <param name="headers">
         /// GetChildrenHeaders
         /// </param>
@@ -15658,9 +15655,8 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         /// <returns>
         /// GetChildrenResponse
         /// </returns>
-        public GetChildrenResponse GetChildrenWithOptions(GetChildrenRequest request, GetChildrenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public GetChildrenResponse GetChildrenWithOptions(GetChildrenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -15694,9 +15690,6 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         /// <para>查询用户的孩子列表</para>
         /// </summary>
         /// 
-        /// <param name="request">
-        /// GetChildrenRequest
-        /// </param>
         /// <param name="headers">
         /// GetChildrenHeaders
         /// </param>
@@ -15707,9 +15700,8 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         /// <returns>
         /// GetChildrenResponse
         /// </returns>
-        public async Task<GetChildrenResponse> GetChildrenWithOptionsAsync(GetChildrenRequest request, GetChildrenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        public async Task<GetChildrenResponse> GetChildrenWithOptionsAsync(GetChildrenHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
         {
-            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
             {
@@ -15743,18 +15735,14 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         /// <para>查询用户的孩子列表</para>
         /// </summary>
         /// 
-        /// <param name="request">
-        /// GetChildrenRequest
-        /// </param>
-        /// 
         /// <returns>
         /// GetChildrenResponse
         /// </returns>
-        public GetChildrenResponse GetChildren(GetChildrenRequest request)
+        public GetChildrenResponse GetChildren()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetChildrenHeaders headers = new GetChildrenHeaders();
-            return GetChildrenWithOptions(request, headers, runtime);
+            return GetChildrenWithOptions(headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -15762,18 +15750,14 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
         /// <para>查询用户的孩子列表</para>
         /// </summary>
         /// 
-        /// <param name="request">
-        /// GetChildrenRequest
-        /// </param>
-        /// 
         /// <returns>
         /// GetChildrenResponse
         /// </returns>
-        public async Task<GetChildrenResponse> GetChildrenAsync(GetChildrenRequest request)
+        public async Task<GetChildrenResponse> GetChildrenAsync()
         {
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetChildrenHeaders headers = new GetChildrenHeaders();
-            return await GetChildrenWithOptionsAsync(request, headers, runtime);
+            return await GetChildrenWithOptionsAsync(headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

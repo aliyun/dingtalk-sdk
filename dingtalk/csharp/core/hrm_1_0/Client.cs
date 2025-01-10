@@ -1007,6 +1007,218 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>加入待离职</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EmpStartDismissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// EmpStartDismissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// EmpStartDismissionResponse
+        /// </returns>
+        public EmpStartDismissionResponse EmpStartDismissionWithOptions(EmpStartDismissionRequest request, EmpStartDismissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LastWorkDate))
+            {
+                body["lastWorkDate"] = request.LastWorkDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Partner))
+            {
+                body["partner"] = request.Partner;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TerminationReasonPassive))
+            {
+                body["terminationReasonPassive"] = request.TerminationReasonPassive;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TerminationReasonVoluntary))
+            {
+                body["terminationReasonVoluntary"] = request.TerminationReasonVoluntary;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToHireBlackList))
+            {
+                body["toHireBlackList"] = request.ToHireBlackList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToHireDismissionTalent))
+            {
+                body["toHireDismissionTalent"] = request.ToHireDismissionTalent;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToHrmBlackList))
+            {
+                body["toHrmBlackList"] = request.ToHrmBlackList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EmpStartDismission",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/pendingDismission/start",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EmpStartDismissionResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>加入待离职</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EmpStartDismissionRequest
+        /// </param>
+        /// <param name="headers">
+        /// EmpStartDismissionHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// EmpStartDismissionResponse
+        /// </returns>
+        public async Task<EmpStartDismissionResponse> EmpStartDismissionWithOptionsAsync(EmpStartDismissionRequest request, EmpStartDismissionHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LastWorkDate))
+            {
+                body["lastWorkDate"] = request.LastWorkDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Partner))
+            {
+                body["partner"] = request.Partner;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Remark))
+            {
+                body["remark"] = request.Remark;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TerminationReasonPassive))
+            {
+                body["terminationReasonPassive"] = request.TerminationReasonPassive;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TerminationReasonVoluntary))
+            {
+                body["terminationReasonVoluntary"] = request.TerminationReasonVoluntary;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToHireBlackList))
+            {
+                body["toHireBlackList"] = request.ToHireBlackList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToHireDismissionTalent))
+            {
+                body["toHireDismissionTalent"] = request.ToHireDismissionTalent;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ToHrmBlackList))
+            {
+                body["toHrmBlackList"] = request.ToHrmBlackList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "EmpStartDismission",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/pendingDismission/start",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<EmpStartDismissionResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>加入待离职</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EmpStartDismissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// EmpStartDismissionResponse
+        /// </returns>
+        public EmpStartDismissionResponse EmpStartDismission(EmpStartDismissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            EmpStartDismissionHeaders headers = new EmpStartDismissionHeaders();
+            return EmpStartDismissionWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>加入待离职</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// EmpStartDismissionRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// EmpStartDismissionResponse
+        /// </returns>
+        public async Task<EmpStartDismissionResponse> EmpStartDismissionAsync(EmpStartDismissionRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            EmpStartDismissionHeaders headers = new EmpStartDismissionHeaders();
+            return await EmpStartDismissionWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>智能人事员工档案附件更新</para>
         /// </summary>
         /// 
@@ -1335,6 +1547,126 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             EsignRollbackHeaders headers = new EsignRollbackHeaders();
             return await EsignRollbackWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取所有离职原因</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetAllDismissionReasonsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAllDismissionReasonsResponse
+        /// </returns>
+        public GetAllDismissionReasonsResponse GetAllDismissionReasonsWithOptions(GetAllDismissionReasonsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAllDismissionReasons",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/dismission/reasons",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetAllDismissionReasonsResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取所有离职原因</para>
+        /// </summary>
+        /// 
+        /// <param name="headers">
+        /// GetAllDismissionReasonsHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAllDismissionReasonsResponse
+        /// </returns>
+        public async Task<GetAllDismissionReasonsResponse> GetAllDismissionReasonsWithOptionsAsync(GetAllDismissionReasonsHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAllDismissionReasons",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/dismission/reasons",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetAllDismissionReasonsResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取所有离职原因</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetAllDismissionReasonsResponse
+        /// </returns>
+        public GetAllDismissionReasonsResponse GetAllDismissionReasons()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetAllDismissionReasonsHeaders headers = new GetAllDismissionReasonsHeaders();
+            return GetAllDismissionReasonsWithOptions(headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取所有离职原因</para>
+        /// </summary>
+        /// 
+        /// <returns>
+        /// GetAllDismissionReasonsResponse
+        /// </returns>
+        public async Task<GetAllDismissionReasonsResponse> GetAllDismissionReasonsAsync()
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetAllDismissionReasonsHeaders headers = new GetAllDismissionReasonsHeaders();
+            return await GetAllDismissionReasonsWithOptionsAsync(headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -6717,6 +7049,154 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>撤销待离职</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RevokeTerminationRequest
+        /// </param>
+        /// <param name="headers">
+        /// RevokeTerminationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RevokeTerminationResponse
+        /// </returns>
+        public RevokeTerminationResponse RevokeTerminationWithOptions(RevokeTerminationRequest request, RevokeTerminationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RevokeTermination",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/pendingDismission/revoke",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RevokeTerminationResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>撤销待离职</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RevokeTerminationRequest
+        /// </param>
+        /// <param name="headers">
+        /// RevokeTerminationHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RevokeTerminationResponse
+        /// </returns>
+        public async Task<RevokeTerminationResponse> RevokeTerminationWithOptionsAsync(RevokeTerminationRequest request, RevokeTerminationHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RevokeTermination",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/pendingDismission/revoke",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RevokeTerminationResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>撤销待离职</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RevokeTerminationRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RevokeTerminationResponse
+        /// </returns>
+        public RevokeTerminationResponse RevokeTermination(RevokeTerminationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RevokeTerminationHeaders headers = new RevokeTerminationHeaders();
+            return RevokeTerminationWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>撤销待离职</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RevokeTerminationRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RevokeTerminationResponse
+        /// </returns>
+        public async Task<RevokeTerminationResponse> RevokeTerminationAsync(RevokeTerminationRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RevokeTerminationHeaders headers = new RevokeTerminationHeaders();
+            return await RevokeTerminationWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询花名册中有权限的字段列表</para>
         /// </summary>
         /// 
@@ -8105,6 +8585,194 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             SyncTaskTemplateHeaders headers = new SyncTaskTemplateHeaders();
             return await SyncTaskTemplateWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新待离职信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateEmpDismissionInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateEmpDismissionInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateEmpDismissionInfoResponse
+        /// </returns>
+        public UpdateEmpDismissionInfoResponse UpdateEmpDismissionInfoWithOptions(UpdateEmpDismissionInfoRequest request, UpdateEmpDismissionInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DismissionMemo))
+            {
+                body["dismissionMemo"] = request.DismissionMemo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LastWorkDate))
+            {
+                body["lastWorkDate"] = request.LastWorkDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Partner))
+            {
+                body["partner"] = request.Partner;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TerminationReasonPassive))
+            {
+                body["terminationReasonPassive"] = request.TerminationReasonPassive;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TerminationReasonVoluntary))
+            {
+                body["terminationReasonVoluntary"] = request.TerminationReasonVoluntary;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateEmpDismissionInfo",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/pendingDismission/infos",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateEmpDismissionInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新待离职信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateEmpDismissionInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateEmpDismissionInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateEmpDismissionInfoResponse
+        /// </returns>
+        public async Task<UpdateEmpDismissionInfoResponse> UpdateEmpDismissionInfoWithOptionsAsync(UpdateEmpDismissionInfoRequest request, UpdateEmpDismissionInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DismissionMemo))
+            {
+                body["dismissionMemo"] = request.DismissionMemo;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.LastWorkDate))
+            {
+                body["lastWorkDate"] = request.LastWorkDate;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Partner))
+            {
+                body["partner"] = request.Partner;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TerminationReasonPassive))
+            {
+                body["terminationReasonPassive"] = request.TerminationReasonPassive;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TerminationReasonVoluntary))
+            {
+                body["terminationReasonVoluntary"] = request.TerminationReasonVoluntary;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateEmpDismissionInfo",
+                Version = "hrm_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/hrm/pendingDismission/infos",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateEmpDismissionInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新待离职信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateEmpDismissionInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateEmpDismissionInfoResponse
+        /// </returns>
+        public UpdateEmpDismissionInfoResponse UpdateEmpDismissionInfo(UpdateEmpDismissionInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateEmpDismissionInfoHeaders headers = new UpdateEmpDismissionInfoHeaders();
+            return UpdateEmpDismissionInfoWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新待离职信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateEmpDismissionInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateEmpDismissionInfoResponse
+        /// </returns>
+        public async Task<UpdateEmpDismissionInfoResponse> UpdateEmpDismissionInfoAsync(UpdateEmpDismissionInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateEmpDismissionInfoHeaders headers = new UpdateEmpDismissionInfoHeaders();
+            return await UpdateEmpDismissionInfoWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
