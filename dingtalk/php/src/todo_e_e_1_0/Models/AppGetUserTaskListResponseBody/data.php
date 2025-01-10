@@ -4,10 +4,16 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\AppGetUserTaskListResponseBody;
 
+use AlibabaCloud\SDK\Dingtalk\Vtodo_e_e_1_0\Models\AppGetUserTaskListResponseBody\data\detailUrl;
 use AlibabaCloud\Tea\Model;
 
 class data extends Model
 {
+    /**
+     * @var string
+     */
+    public $bizCategoryId;
+
     /**
      * @var int
      */
@@ -17,6 +23,11 @@ class data extends Model
      * @var string
      */
     public $description;
+
+    /**
+     * @var detailUrl
+     */
+    public $detailUrl;
 
     /**
      * @var bool
@@ -29,6 +40,21 @@ class data extends Model
     public $dueTime;
 
     /**
+     * @var int
+     */
+    public $modifiedTime;
+
+    /**
+     * @var string
+     */
+    public $operatorId;
+
+    /**
+     * @var int
+     */
+    public $priority;
+
+    /**
      * @var string
      */
     public $subject;
@@ -38,12 +64,17 @@ class data extends Model
      */
     public $taskId;
     protected $_name = [
-        'createdTime' => 'createdTime',
-        'description' => 'description',
-        'done'        => 'done',
-        'dueTime'     => 'dueTime',
-        'subject'     => 'subject',
-        'taskId'      => 'taskId',
+        'bizCategoryId' => 'bizCategoryId',
+        'createdTime'   => 'createdTime',
+        'description'   => 'description',
+        'detailUrl'     => 'detailUrl',
+        'done'          => 'done',
+        'dueTime'       => 'dueTime',
+        'modifiedTime'  => 'modifiedTime',
+        'operatorId'    => 'operatorId',
+        'priority'      => 'priority',
+        'subject'       => 'subject',
+        'taskId'        => 'taskId',
     ];
 
     public function validate()
@@ -53,17 +84,32 @@ class data extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->bizCategoryId) {
+            $res['bizCategoryId'] = $this->bizCategoryId;
+        }
         if (null !== $this->createdTime) {
             $res['createdTime'] = $this->createdTime;
         }
         if (null !== $this->description) {
             $res['description'] = $this->description;
         }
+        if (null !== $this->detailUrl) {
+            $res['detailUrl'] = null !== $this->detailUrl ? $this->detailUrl->toMap() : null;
+        }
         if (null !== $this->done) {
             $res['done'] = $this->done;
         }
         if (null !== $this->dueTime) {
             $res['dueTime'] = $this->dueTime;
+        }
+        if (null !== $this->modifiedTime) {
+            $res['modifiedTime'] = $this->modifiedTime;
+        }
+        if (null !== $this->operatorId) {
+            $res['operatorId'] = $this->operatorId;
+        }
+        if (null !== $this->priority) {
+            $res['priority'] = $this->priority;
         }
         if (null !== $this->subject) {
             $res['subject'] = $this->subject;
@@ -83,17 +129,32 @@ class data extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['bizCategoryId'])) {
+            $model->bizCategoryId = $map['bizCategoryId'];
+        }
         if (isset($map['createdTime'])) {
             $model->createdTime = $map['createdTime'];
         }
         if (isset($map['description'])) {
             $model->description = $map['description'];
         }
+        if (isset($map['detailUrl'])) {
+            $model->detailUrl = detailUrl::fromMap($map['detailUrl']);
+        }
         if (isset($map['done'])) {
             $model->done = $map['done'];
         }
         if (isset($map['dueTime'])) {
             $model->dueTime = $map['dueTime'];
+        }
+        if (isset($map['modifiedTime'])) {
+            $model->modifiedTime = $map['modifiedTime'];
+        }
+        if (isset($map['operatorId'])) {
+            $model->operatorId = $map['operatorId'];
+        }
+        if (isset($map['priority'])) {
+            $model->priority = $map['priority'];
         }
         if (isset($map['subject'])) {
             $model->subject = $map['subject'];

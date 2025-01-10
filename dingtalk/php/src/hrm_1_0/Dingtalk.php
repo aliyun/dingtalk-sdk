@@ -22,9 +22,14 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\ECertQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EmployeeAttachmentUpdateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EmployeeAttachmentUpdateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EmployeeAttachmentUpdateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EmpStartDismissionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EmpStartDismissionRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EmpStartDismissionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EsignRollbackHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EsignRollbackRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\EsignRollbackResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetAllDismissionReasonsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetAllDismissionReasonsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetEmployeeRosterByFieldHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetEmployeeRosterByFieldRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\GetEmployeeRosterByFieldResponse;
@@ -122,6 +127,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RevokeSignRecordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RevokeSignRecordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RevokeSignRecordsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RevokeTerminationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RevokeTerminationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RevokeTerminationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaAvailableFieldListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaAvailableFieldListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RosterMetaAvailableFieldListResponse;
@@ -143,6 +151,9 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncSolutionStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\SyncTaskTemplateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateEmpDismissionInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateEmpDismissionInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateEmpDismissionInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateHrmLegalEntityNameHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateHrmLegalEntityNameRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\UpdateHrmLegalEntityNameResponse;
@@ -558,6 +569,87 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 加入待离职
+     *  *
+     * @param EmpStartDismissionRequest $request EmpStartDismissionRequest
+     * @param EmpStartDismissionHeaders $headers EmpStartDismissionHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return EmpStartDismissionResponse EmpStartDismissionResponse
+     */
+    public function empStartDismissionWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->lastWorkDate)) {
+            $body['lastWorkDate'] = $request->lastWorkDate;
+        }
+        if (!Utils::isUnset($request->partner)) {
+            $body['partner'] = $request->partner;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            $body['remark'] = $request->remark;
+        }
+        if (!Utils::isUnset($request->terminationReasonPassive)) {
+            $body['terminationReasonPassive'] = $request->terminationReasonPassive;
+        }
+        if (!Utils::isUnset($request->terminationReasonVoluntary)) {
+            $body['terminationReasonVoluntary'] = $request->terminationReasonVoluntary;
+        }
+        if (!Utils::isUnset($request->toHireBlackList)) {
+            $body['toHireBlackList'] = $request->toHireBlackList;
+        }
+        if (!Utils::isUnset($request->toHireDismissionTalent)) {
+            $body['toHireDismissionTalent'] = $request->toHireDismissionTalent;
+        }
+        if (!Utils::isUnset($request->toHrmBlackList)) {
+            $body['toHrmBlackList'] = $request->toHrmBlackList;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'EmpStartDismission',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/pendingDismission/start',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return EmpStartDismissionResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 加入待离职
+     *  *
+     * @param EmpStartDismissionRequest $request EmpStartDismissionRequest
+     *
+     * @return EmpStartDismissionResponse EmpStartDismissionResponse
+     */
+    public function empStartDismission($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new EmpStartDismissionHeaders([]);
+
+        return $this->empStartDismissionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 智能人事员工档案附件更新
      *  *
      * @param EmployeeAttachmentUpdateRequest $request EmployeeAttachmentUpdateRequest
@@ -683,6 +775,54 @@ class Dingtalk extends OpenApiClient
         $headers = new EsignRollbackHeaders([]);
 
         return $this->esignRollbackWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取所有离职原因
+     *  *
+     * @param GetAllDismissionReasonsHeaders $headers GetAllDismissionReasonsHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetAllDismissionReasonsResponse GetAllDismissionReasonsResponse
+     */
+    public function getAllDismissionReasonsWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'GetAllDismissionReasons',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/dismission/reasons',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetAllDismissionReasonsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取所有离职原因
+     *  *
+     * @return GetAllDismissionReasonsResponse GetAllDismissionReasonsResponse
+     */
+    public function getAllDismissionReasons()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAllDismissionReasonsHeaders([]);
+
+        return $this->getAllDismissionReasonsWithOptions($headers, $runtime);
     }
 
     /**
@@ -2752,6 +2892,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 撤销待离职
+     *  *
+     * @param RevokeTerminationRequest $request RevokeTerminationRequest
+     * @param RevokeTerminationHeaders $headers RevokeTerminationHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return RevokeTerminationResponse RevokeTerminationResponse
+     */
+    public function revokeTerminationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'RevokeTermination',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/pendingDismission/revoke',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return RevokeTerminationResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 撤销待离职
+     *  *
+     * @param RevokeTerminationRequest $request RevokeTerminationRequest
+     *
+     * @return RevokeTerminationResponse RevokeTerminationResponse
+     */
+    public function revokeTermination($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RevokeTerminationHeaders([]);
+
+        return $this->revokeTerminationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询花名册中有权限的字段列表
      *  *
      * @param RosterMetaAvailableFieldListRequest $request RosterMetaAvailableFieldListRequest
@@ -3284,6 +3481,78 @@ class Dingtalk extends OpenApiClient
         $headers = new SyncTaskTemplateHeaders([]);
 
         return $this->syncTaskTemplateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新待离职信息
+     *  *
+     * @param UpdateEmpDismissionInfoRequest $request UpdateEmpDismissionInfoRequest
+     * @param UpdateEmpDismissionInfoHeaders $headers UpdateEmpDismissionInfoHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateEmpDismissionInfoResponse UpdateEmpDismissionInfoResponse
+     */
+    public function updateEmpDismissionInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dismissionMemo)) {
+            $body['dismissionMemo'] = $request->dismissionMemo;
+        }
+        if (!Utils::isUnset($request->lastWorkDate)) {
+            $body['lastWorkDate'] = $request->lastWorkDate;
+        }
+        if (!Utils::isUnset($request->partner)) {
+            $body['partner'] = $request->partner;
+        }
+        if (!Utils::isUnset($request->terminationReasonPassive)) {
+            $body['terminationReasonPassive'] = $request->terminationReasonPassive;
+        }
+        if (!Utils::isUnset($request->terminationReasonVoluntary)) {
+            $body['terminationReasonVoluntary'] = $request->terminationReasonVoluntary;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateEmpDismissionInfo',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/pendingDismission/infos',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateEmpDismissionInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新待离职信息
+     *  *
+     * @param UpdateEmpDismissionInfoRequest $request UpdateEmpDismissionInfoRequest
+     *
+     * @return UpdateEmpDismissionInfoResponse UpdateEmpDismissionInfoResponse
+     */
+    public function updateEmpDismissionInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateEmpDismissionInfoHeaders([]);
+
+        return $this->updateEmpDismissionInfoWithOptions($request, $headers, $runtime);
     }
 
     /**

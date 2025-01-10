@@ -252,7 +252,6 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetBindChildInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetBindChildInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetBindChildInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetChildrenHeaders;
-use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetChildrenRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetChildrenResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeAlumniDeptsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetCollegeAlumniDeptsRequest;
@@ -6571,15 +6570,13 @@ class Dingtalk extends OpenApiClient
     /**
      * @summary 查询用户的孩子列表
      *  *
-     * @param GetChildrenRequest $request GetChildrenRequest
      * @param GetChildrenHeaders $headers GetChildrenHeaders
      * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
      *
      * @return GetChildrenResponse GetChildrenResponse
      */
-    public function getChildrenWithOptions($request, $headers, $runtime)
+    public function getChildrenWithOptions($headers, $runtime)
     {
-        Utils::validateModel($request);
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -6608,16 +6605,14 @@ class Dingtalk extends OpenApiClient
     /**
      * @summary 查询用户的孩子列表
      *  *
-     * @param GetChildrenRequest $request GetChildrenRequest
-     *
      * @return GetChildrenResponse GetChildrenResponse
      */
-    public function getChildren($request)
+    public function getChildren()
     {
         $runtime = new RuntimeOptions([]);
         $headers = new GetChildrenHeaders([]);
 
-        return $this->getChildrenWithOptions($request, $headers, $runtime);
+        return $this->getChildrenWithOptions($headers, $runtime);
     }
 
     /**

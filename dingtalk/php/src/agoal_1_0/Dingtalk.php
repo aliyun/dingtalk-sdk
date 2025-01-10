@@ -8,14 +8,25 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalCreateProgressHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalCreateProgressRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalCreateProgressResponse;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalFieldUpdateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalFieldUpdateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalFieldUpdateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalFieldUpdateShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveKeyActionListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveKeyActionListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveKeyActionListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveRulePeriodListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveRulePeriodListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveRulePeriodListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveRuleListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveRuleListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalPeriodListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalPeriodListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalPeriodListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalPeriodListShrinkRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalSendMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalSendMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalSendMessageResponse;
@@ -117,6 +128,68 @@ class Dingtalk extends OpenApiClient
         $headers = new AgoalCreateProgressHeaders([]);
 
         return $this->agoalCreateProgressWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新 Agoal 字段值
+     *  *
+     * @param AgoalFieldUpdateRequest $tmpReq  AgoalFieldUpdateRequest
+     * @param AgoalFieldUpdateHeaders $headers AgoalFieldUpdateHeaders
+     * @param RuntimeOptions          $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AgoalFieldUpdateResponse AgoalFieldUpdateResponse
+     */
+    public function agoalFieldUpdateWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new AgoalFieldUpdateShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->body)) {
+            $request->bodyShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->body, 'body', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->bodyShrink)) {
+            $query['body'] = $request->bodyShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'AgoalFieldUpdate',
+            'version'     => 'agoal_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/agoal/fields',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AgoalFieldUpdateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新 Agoal 字段值
+     *  *
+     * @param AgoalFieldUpdateRequest $request AgoalFieldUpdateRequest
+     *
+     * @return AgoalFieldUpdateResponse AgoalFieldUpdateResponse
+     */
+    public function agoalFieldUpdate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AgoalFieldUpdateHeaders([]);
+
+        return $this->agoalFieldUpdateWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -240,6 +313,72 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取 Agoal 组织目标列表
+     *  *
+     * @param AgoalOrgObjectiveListRequest $request AgoalOrgObjectiveListRequest
+     * @param AgoalOrgObjectiveListHeaders $headers AgoalOrgObjectiveListHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AgoalOrgObjectiveListResponse AgoalOrgObjectiveListResponse
+     */
+    public function agoalOrgObjectiveListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->dingTeamId)) {
+            $query['dingTeamId'] = $request->dingTeamId;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $query['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $query['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->periodId)) {
+            $query['periodId'] = $request->periodId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'AgoalOrgObjectiveList',
+            'version'     => 'agoal_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/agoal/orgObjectives/list',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AgoalOrgObjectiveListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取 Agoal 组织目标列表
+     *  *
+     * @param AgoalOrgObjectiveListRequest $request AgoalOrgObjectiveListRequest
+     *
+     * @return AgoalOrgObjectiveListResponse AgoalOrgObjectiveListResponse
+     */
+    public function agoalOrgObjectiveList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AgoalOrgObjectiveListHeaders([]);
+
+        return $this->agoalOrgObjectiveListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取Agoal目标规则列表
      *  *
      * @param AgoalOrgObjectiveRuleListHeaders $headers AgoalOrgObjectiveRuleListHeaders
@@ -285,6 +424,68 @@ class Dingtalk extends OpenApiClient
         $headers = new AgoalOrgObjectiveRuleListHeaders([]);
 
         return $this->agoalOrgObjectiveRuleListWithOptions($headers, $runtime);
+    }
+
+    /**
+     * @summary 获取 Agoal 周期列表
+     *  *
+     * @param AgoalPeriodListRequest $tmpReq  AgoalPeriodListRequest
+     * @param AgoalPeriodListHeaders $headers AgoalPeriodListHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AgoalPeriodListResponse AgoalPeriodListResponse
+     */
+    public function agoalPeriodListWithOptions($tmpReq, $headers, $runtime)
+    {
+        Utils::validateModel($tmpReq);
+        $request = new AgoalPeriodListShrinkRequest([]);
+        OpenApiUtilClient::convert($tmpReq, $request);
+        if (!Utils::isUnset($tmpReq->body)) {
+            $request->bodyShrink = OpenApiUtilClient::arrayToStringWithSpecifiedStyle($tmpReq->body, 'body', 'json');
+        }
+        $query = [];
+        if (!Utils::isUnset($request->bodyShrink)) {
+            $query['body'] = $request->bodyShrink;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'AgoalPeriodList',
+            'version'     => 'agoal_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/agoal/periods/list',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AgoalPeriodListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取 Agoal 周期列表
+     *  *
+     * @param AgoalPeriodListRequest $request AgoalPeriodListRequest
+     *
+     * @return AgoalPeriodListResponse AgoalPeriodListResponse
+     */
+    public function agoalPeriodList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AgoalPeriodListHeaders([]);
+
+        return $this->agoalPeriodListWithOptions($request, $headers, $runtime);
     }
 
     /**

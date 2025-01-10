@@ -20,6 +20,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchQueryPaymentRecallFile
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchSyncBankReceiptHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchSyncBankReceiptRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchSyncBankReceiptResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CheckVoucherStatusHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CheckVoucherStatusRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CheckVoucherStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetCategoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetCategoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetCategoryResponse;
@@ -416,6 +419,90 @@ class Dingtalk extends OpenApiClient
         $headers = new BatchSyncBankReceiptHeaders([]);
 
         return $this->batchSyncBankReceiptWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查验发票是否生成凭证
+     *  *
+     * @param CheckVoucherStatusRequest $request CheckVoucherStatusRequest
+     * @param CheckVoucherStatusHeaders $headers CheckVoucherStatusHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CheckVoucherStatusResponse CheckVoucherStatusResponse
+     */
+    public function checkVoucherStatusWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->companyCode)) {
+            $body['companyCode'] = $request->companyCode;
+        }
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->financeType)) {
+            $body['financeType'] = $request->financeType;
+        }
+        if (!Utils::isUnset($request->invoiceCode)) {
+            $body['invoiceCode'] = $request->invoiceCode;
+        }
+        if (!Utils::isUnset($request->invoiceNo)) {
+            $body['invoiceNo'] = $request->invoiceNo;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        if (!Utils::isUnset($request->taxNo)) {
+            $body['taxNo'] = $request->taxNo;
+        }
+        if (!Utils::isUnset($request->verifyStatus)) {
+            $body['verifyStatus'] = $request->verifyStatus;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CheckVoucherStatus',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/invoices/checkVoucherStatus/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CheckVoucherStatusResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查验发票是否生成凭证
+     *  *
+     * @param CheckVoucherStatusRequest $request CheckVoucherStatusRequest
+     *
+     * @return CheckVoucherStatusResponse CheckVoucherStatusResponse
+     */
+    public function checkVoucherStatus($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CheckVoucherStatusHeaders([]);
+
+        return $this->checkVoucherStatusWithOptions($request, $headers, $runtime);
     }
 
     /**

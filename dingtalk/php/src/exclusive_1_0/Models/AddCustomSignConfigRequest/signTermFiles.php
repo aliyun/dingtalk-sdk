@@ -9,11 +9,15 @@ use AlibabaCloud\Tea\Model;
 class signTermFiles extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $fileName;
 
     /**
+     * @description This parameter is required.
+     *
      * @var string
      */
     public $mediaId;
