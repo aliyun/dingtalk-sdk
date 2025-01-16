@@ -12038,6 +12038,120 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.GetFileDownloadInfoHeaders()
         return await self.get_file_download_info_with_options_async(request, headers, runtime)
 
+    def get_file_download_info_by_package_id_with_options(
+        self,
+        request: dingtalkedu__1__0_models.GetFileDownloadInfoByPackageIdRequest,
+        headers: dingtalkedu__1__0_models.GetFileDownloadInfoByPackageIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetFileDownloadInfoByPackageIdResponse:
+        """
+        @summary 查询文件和图片ID信息
+        
+        @param request: GetFileDownloadInfoByPackageIdRequest
+        @param headers: GetFileDownloadInfoByPackageIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFileDownloadInfoByPackageIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.package_id):
+            body['packageId'] = request.package_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetFileDownloadInfoByPackageId',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/fileAndImages/ids/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetFileDownloadInfoByPackageIdResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_file_download_info_by_package_id_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.GetFileDownloadInfoByPackageIdRequest,
+        headers: dingtalkedu__1__0_models.GetFileDownloadInfoByPackageIdHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.GetFileDownloadInfoByPackageIdResponse:
+        """
+        @summary 查询文件和图片ID信息
+        
+        @param request: GetFileDownloadInfoByPackageIdRequest
+        @param headers: GetFileDownloadInfoByPackageIdHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetFileDownloadInfoByPackageIdResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.package_id):
+            body['packageId'] = request.package_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetFileDownloadInfoByPackageId',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/fileAndImages/ids/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.GetFileDownloadInfoByPackageIdResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_file_download_info_by_package_id(
+        self,
+        request: dingtalkedu__1__0_models.GetFileDownloadInfoByPackageIdRequest,
+    ) -> dingtalkedu__1__0_models.GetFileDownloadInfoByPackageIdResponse:
+        """
+        @summary 查询文件和图片ID信息
+        
+        @param request: GetFileDownloadInfoByPackageIdRequest
+        @return: GetFileDownloadInfoByPackageIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetFileDownloadInfoByPackageIdHeaders()
+        return self.get_file_download_info_by_package_id_with_options(request, headers, runtime)
+
+    async def get_file_download_info_by_package_id_async(
+        self,
+        request: dingtalkedu__1__0_models.GetFileDownloadInfoByPackageIdRequest,
+    ) -> dingtalkedu__1__0_models.GetFileDownloadInfoByPackageIdResponse:
+        """
+        @summary 查询文件和图片ID信息
+        
+        @param request: GetFileDownloadInfoByPackageIdRequest
+        @return: GetFileDownloadInfoByPackageIdResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.GetFileDownloadInfoByPackageIdHeaders()
+        return await self.get_file_download_info_by_package_id_with_options_async(request, headers, runtime)
+
     def get_image_temp_download_url_with_options(
         self,
         request: dingtalkedu__1__0_models.GetImageTempDownloadUrlRequest,
@@ -21067,6 +21181,144 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.SendMessageHeaders()
         return await self.send_message_with_options_async(request, headers, runtime)
+
+    def send_print_order_notice_msg_with_options(
+        self,
+        request: dingtalkedu__1__0_models.SendPrintOrderNoticeMsgRequest,
+        headers: dingtalkedu__1__0_models.SendPrintOrderNoticeMsgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.SendPrintOrderNoticeMsgResponse:
+        """
+        @summary 发送打印订单提醒消息
+        
+        @param request: SendPrintOrderNoticeMsgRequest
+        @param headers: SendPrintOrderNoticeMsgHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendPrintOrderNoticeMsgResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.create_order_time):
+            body['createOrderTime'] = request.create_order_time
+        if not UtilClient.is_unset(request.delivery_company_name):
+            body['deliveryCompanyName'] = request.delivery_company_name
+        if not UtilClient.is_unset(request.delivery_number):
+            body['deliveryNumber'] = request.delivery_number
+        if not UtilClient.is_unset(request.delivery_time):
+            body['deliveryTime'] = request.delivery_time
+        if not UtilClient.is_unset(request.payment_time):
+            body['paymentTime'] = request.payment_time
+        if not UtilClient.is_unset(request.price):
+            body['price'] = request.price
+        if not UtilClient.is_unset(request.scene_code):
+            body['sceneCode'] = request.scene_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SendPrintOrderNoticeMsg',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/files/printOrders/noticeMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.SendPrintOrderNoticeMsgResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def send_print_order_notice_msg_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.SendPrintOrderNoticeMsgRequest,
+        headers: dingtalkedu__1__0_models.SendPrintOrderNoticeMsgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.SendPrintOrderNoticeMsgResponse:
+        """
+        @summary 发送打印订单提醒消息
+        
+        @param request: SendPrintOrderNoticeMsgRequest
+        @param headers: SendPrintOrderNoticeMsgHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendPrintOrderNoticeMsgResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.create_order_time):
+            body['createOrderTime'] = request.create_order_time
+        if not UtilClient.is_unset(request.delivery_company_name):
+            body['deliveryCompanyName'] = request.delivery_company_name
+        if not UtilClient.is_unset(request.delivery_number):
+            body['deliveryNumber'] = request.delivery_number
+        if not UtilClient.is_unset(request.delivery_time):
+            body['deliveryTime'] = request.delivery_time
+        if not UtilClient.is_unset(request.payment_time):
+            body['paymentTime'] = request.payment_time
+        if not UtilClient.is_unset(request.price):
+            body['price'] = request.price
+        if not UtilClient.is_unset(request.scene_code):
+            body['sceneCode'] = request.scene_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SendPrintOrderNoticeMsg',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/files/printOrders/noticeMessages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.SendPrintOrderNoticeMsgResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def send_print_order_notice_msg(
+        self,
+        request: dingtalkedu__1__0_models.SendPrintOrderNoticeMsgRequest,
+    ) -> dingtalkedu__1__0_models.SendPrintOrderNoticeMsgResponse:
+        """
+        @summary 发送打印订单提醒消息
+        
+        @param request: SendPrintOrderNoticeMsgRequest
+        @return: SendPrintOrderNoticeMsgResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.SendPrintOrderNoticeMsgHeaders()
+        return self.send_print_order_notice_msg_with_options(request, headers, runtime)
+
+    async def send_print_order_notice_msg_async(
+        self,
+        request: dingtalkedu__1__0_models.SendPrintOrderNoticeMsgRequest,
+    ) -> dingtalkedu__1__0_models.SendPrintOrderNoticeMsgResponse:
+        """
+        @summary 发送打印订单提醒消息
+        
+        @param request: SendPrintOrderNoticeMsgRequest
+        @return: SendPrintOrderNoticeMsgResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.SendPrintOrderNoticeMsgHeaders()
+        return await self.send_print_order_notice_msg_with_options_async(request, headers, runtime)
 
     def start_course_with_options(
         self,

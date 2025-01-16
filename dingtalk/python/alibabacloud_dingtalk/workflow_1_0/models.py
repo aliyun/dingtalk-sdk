@@ -1005,12 +1005,10 @@ class ArchiveProcessInstanceHeaders(TeaModel):
 class ArchiveProcessInstanceRequest(TeaModel):
     def __init__(
         self,
-        is_system: bool = None,
         op_user_id: str = None,
         process_instance_id: str = None,
     ):
         # This parameter is required.
-        self.is_system = is_system
         self.op_user_id = op_user_id
         # This parameter is required.
         self.process_instance_id = process_instance_id
@@ -1024,8 +1022,6 @@ class ArchiveProcessInstanceRequest(TeaModel):
             return _map
 
         result = dict()
-        if self.is_system is not None:
-            result['isSystem'] = self.is_system
         if self.op_user_id is not None:
             result['opUserId'] = self.op_user_id
         if self.process_instance_id is not None:
@@ -1034,8 +1030,6 @@ class ArchiveProcessInstanceRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('isSystem') is not None:
-            self.is_system = m.get('isSystem')
         if m.get('opUserId') is not None:
             self.op_user_id = m.get('opUserId')
         if m.get('processInstanceId') is not None:
@@ -11982,6 +11976,195 @@ class PremiumGetFormSchemaResponse(TeaModel):
         return self
 
 
+class PremiumGetInstFieldSettingHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PremiumGetInstFieldSettingRequest(TeaModel):
+    def __init__(
+        self,
+        process_instance_id: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.process_instance_id = process_instance_id
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.process_instance_id is not None:
+            result['processInstanceId'] = self.process_instance_id
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('processInstanceId') is not None:
+            self.process_instance_id = m.get('processInstanceId')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class PremiumGetInstFieldSettingResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        component_type: str = None,
+        field_behavior: str = None,
+        field_id: str = None,
+    ):
+        self.component_type = component_type
+        self.field_behavior = field_behavior
+        self.field_id = field_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.component_type is not None:
+            result['componentType'] = self.component_type
+        if self.field_behavior is not None:
+            result['fieldBehavior'] = self.field_behavior
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('componentType') is not None:
+            self.component_type = m.get('componentType')
+        if m.get('fieldBehavior') is not None:
+            self.field_behavior = m.get('fieldBehavior')
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        return self
+
+
+class PremiumGetInstFieldSettingResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[PremiumGetInstFieldSettingResponseBodyResult] = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = PremiumGetInstFieldSettingResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PremiumGetInstFieldSettingResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PremiumGetInstFieldSettingResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PremiumGetInstFieldSettingResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class PremiumGetNoticedInstancesHeaders(TeaModel):
     def __init__(
         self,
@@ -14029,6 +14212,260 @@ class PremiumInsertOrUpdateDirResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = PremiumInsertOrUpdateDirResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class PremiumQuerySchemaAndProcessByCodeListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class PremiumQuerySchemaAndProcessByCodeListRequest(TeaModel):
+    def __init__(
+        self,
+        process_codes: List[str] = None,
+    ):
+        # This parameter is required.
+        self.process_codes = process_codes
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.process_codes is not None:
+            result['processCodes'] = self.process_codes
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('processCodes') is not None:
+            self.process_codes = m.get('processCodes')
+        return self
+
+
+class PremiumQuerySchemaAndProcessByCodeListResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        app_uuid: str = None,
+        biz_category_id: str = None,
+        create_time: int = None,
+        creator_user_id: str = None,
+        form_uuid: str = None,
+        icon: str = None,
+        memo: str = None,
+        modifier_user_id: str = None,
+        modify_time: int = None,
+        name: str = None,
+        process_code: str = None,
+        process_config: str = None,
+        process_id: int = None,
+        schema_content: str = None,
+        status: str = None,
+    ):
+        self.app_uuid = app_uuid
+        self.biz_category_id = biz_category_id
+        self.create_time = create_time
+        self.creator_user_id = creator_user_id
+        self.form_uuid = form_uuid
+        self.icon = icon
+        self.memo = memo
+        self.modifier_user_id = modifier_user_id
+        self.modify_time = modify_time
+        self.name = name
+        self.process_code = process_code
+        self.process_config = process_config
+        self.process_id = process_id
+        self.schema_content = schema_content
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_uuid is not None:
+            result['appUuid'] = self.app_uuid
+        if self.biz_category_id is not None:
+            result['bizCategoryId'] = self.biz_category_id
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.creator_user_id is not None:
+            result['creatorUserId'] = self.creator_user_id
+        if self.form_uuid is not None:
+            result['formUuid'] = self.form_uuid
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.memo is not None:
+            result['memo'] = self.memo
+        if self.modifier_user_id is not None:
+            result['modifierUserId'] = self.modifier_user_id
+        if self.modify_time is not None:
+            result['modifyTime'] = self.modify_time
+        if self.name is not None:
+            result['name'] = self.name
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.process_config is not None:
+            result['processConfig'] = self.process_config
+        if self.process_id is not None:
+            result['processId'] = self.process_id
+        if self.schema_content is not None:
+            result['schemaContent'] = self.schema_content
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appUuid') is not None:
+            self.app_uuid = m.get('appUuid')
+        if m.get('bizCategoryId') is not None:
+            self.biz_category_id = m.get('bizCategoryId')
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('creatorUserId') is not None:
+            self.creator_user_id = m.get('creatorUserId')
+        if m.get('formUuid') is not None:
+            self.form_uuid = m.get('formUuid')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('memo') is not None:
+            self.memo = m.get('memo')
+        if m.get('modifierUserId') is not None:
+            self.modifier_user_id = m.get('modifierUserId')
+        if m.get('modifyTime') is not None:
+            self.modify_time = m.get('modifyTime')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('processConfig') is not None:
+            self.process_config = m.get('processConfig')
+        if m.get('processId') is not None:
+            self.process_id = m.get('processId')
+        if m.get('schemaContent') is not None:
+            self.schema_content = m.get('schemaContent')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class PremiumQuerySchemaAndProcessByCodeListResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[PremiumQuerySchemaAndProcessByCodeListResponseBodyResult] = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = PremiumQuerySchemaAndProcessByCodeListResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class PremiumQuerySchemaAndProcessByCodeListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: PremiumQuerySchemaAndProcessByCodeListResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = PremiumQuerySchemaAndProcessByCodeListResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

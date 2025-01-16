@@ -5264,6 +5264,8 @@ class HrmProcessTerminationAndHandoverRequest(TeaModel):
         last_work_date: int = None,
         opt_user_id: str = None,
         permission_handover_user_id: str = None,
+        termination_reason_passive: List[str] = None,
+        termination_reason_voluntary: List[str] = None,
         user_id: str = None,
     ):
         self.aflow_hand_over_user_id = aflow_hand_over_user_id
@@ -5271,7 +5273,6 @@ class HrmProcessTerminationAndHandoverRequest(TeaModel):
         self.direct_subordinates_handover_user_id = direct_subordinates_handover_user_id
         # This parameter is required.
         self.dismission_memo = dismission_memo
-        # This parameter is required.
         self.dismission_reason = dismission_reason
         self.doc_note_handover_user_id = doc_note_handover_user_id
         # This parameter is required.
@@ -5279,6 +5280,8 @@ class HrmProcessTerminationAndHandoverRequest(TeaModel):
         # This parameter is required.
         self.opt_user_id = opt_user_id
         self.permission_handover_user_id = permission_handover_user_id
+        self.termination_reason_passive = termination_reason_passive
+        self.termination_reason_voluntary = termination_reason_voluntary
         # This parameter is required.
         self.user_id = user_id
 
@@ -5309,6 +5312,10 @@ class HrmProcessTerminationAndHandoverRequest(TeaModel):
             result['optUserId'] = self.opt_user_id
         if self.permission_handover_user_id is not None:
             result['permissionHandoverUserId'] = self.permission_handover_user_id
+        if self.termination_reason_passive is not None:
+            result['terminationReasonPassive'] = self.termination_reason_passive
+        if self.termination_reason_voluntary is not None:
+            result['terminationReasonVoluntary'] = self.termination_reason_voluntary
         if self.user_id is not None:
             result['userId'] = self.user_id
         return result
@@ -5333,6 +5340,10 @@ class HrmProcessTerminationAndHandoverRequest(TeaModel):
             self.opt_user_id = m.get('optUserId')
         if m.get('permissionHandoverUserId') is not None:
             self.permission_handover_user_id = m.get('permissionHandoverUserId')
+        if m.get('terminationReasonPassive') is not None:
+            self.termination_reason_passive = m.get('terminationReasonPassive')
+        if m.get('terminationReasonVoluntary') is not None:
+            self.termination_reason_voluntary = m.get('terminationReasonVoluntary')
         if m.get('userId') is not None:
             self.user_id = m.get('userId')
         return self

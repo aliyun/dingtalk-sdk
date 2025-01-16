@@ -19622,6 +19622,188 @@ class GetFileDownloadInfoResponse(TeaModel):
         return self
 
 
+class GetFileDownloadInfoByPackageIdHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetFileDownloadInfoByPackageIdRequest(TeaModel):
+    def __init__(
+        self,
+        package_id: str = None,
+    ):
+        # This parameter is required.
+        self.package_id = package_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.package_id is not None:
+            result['packageId'] = self.package_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('packageId') is not None:
+            self.package_id = m.get('packageId')
+        return self
+
+
+class GetFileDownloadInfoByPackageIdResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        file_id: str = None,
+        media_id: str = None,
+        space_id: int = None,
+    ):
+        self.file_id = file_id
+        self.media_id = media_id
+        self.space_id = space_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.file_id is not None:
+            result['fileId'] = self.file_id
+        if self.media_id is not None:
+            result['mediaId'] = self.media_id
+        if self.space_id is not None:
+            result['spaceId'] = self.space_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fileId') is not None:
+            self.file_id = m.get('fileId')
+        if m.get('mediaId') is not None:
+            self.media_id = m.get('mediaId')
+        if m.get('spaceId') is not None:
+            self.space_id = m.get('spaceId')
+        return self
+
+
+class GetFileDownloadInfoByPackageIdResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[GetFileDownloadInfoByPackageIdResponseBodyResult] = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = GetFileDownloadInfoByPackageIdResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class GetFileDownloadInfoByPackageIdResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetFileDownloadInfoByPackageIdResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetFileDownloadInfoByPackageIdResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetImageTempDownloadUrlHeaders(TeaModel):
     def __init__(
         self,
@@ -36763,6 +36945,179 @@ class SendMessageResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SendMessageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SendPrintOrderNoticeMsgHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SendPrintOrderNoticeMsgRequest(TeaModel):
+    def __init__(
+        self,
+        create_order_time: str = None,
+        delivery_company_name: str = None,
+        delivery_number: str = None,
+        delivery_time: str = None,
+        payment_time: str = None,
+        price: str = None,
+        scene_code: str = None,
+    ):
+        # This parameter is required.
+        self.create_order_time = create_order_time
+        self.delivery_company_name = delivery_company_name
+        self.delivery_number = delivery_number
+        self.delivery_time = delivery_time
+        self.payment_time = payment_time
+        # This parameter is required.
+        self.price = price
+        # This parameter is required.
+        self.scene_code = scene_code
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.create_order_time is not None:
+            result['createOrderTime'] = self.create_order_time
+        if self.delivery_company_name is not None:
+            result['deliveryCompanyName'] = self.delivery_company_name
+        if self.delivery_number is not None:
+            result['deliveryNumber'] = self.delivery_number
+        if self.delivery_time is not None:
+            result['deliveryTime'] = self.delivery_time
+        if self.payment_time is not None:
+            result['paymentTime'] = self.payment_time
+        if self.price is not None:
+            result['price'] = self.price
+        if self.scene_code is not None:
+            result['sceneCode'] = self.scene_code
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('createOrderTime') is not None:
+            self.create_order_time = m.get('createOrderTime')
+        if m.get('deliveryCompanyName') is not None:
+            self.delivery_company_name = m.get('deliveryCompanyName')
+        if m.get('deliveryNumber') is not None:
+            self.delivery_number = m.get('deliveryNumber')
+        if m.get('deliveryTime') is not None:
+            self.delivery_time = m.get('deliveryTime')
+        if m.get('paymentTime') is not None:
+            self.payment_time = m.get('paymentTime')
+        if m.get('price') is not None:
+            self.price = m.get('price')
+        if m.get('sceneCode') is not None:
+            self.scene_code = m.get('sceneCode')
+        return self
+
+
+class SendPrintOrderNoticeMsgResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: bool = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SendPrintOrderNoticeMsgResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SendPrintOrderNoticeMsgResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SendPrintOrderNoticeMsgResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

@@ -69,11 +69,15 @@ class BatchGetTaskResultResponseBodyTasksResultItemsSubs(TeaModel):
         self,
         point: int = None,
         reference: str = None,
+        reference_frame: List[str] = None,
         sub_info: str = None,
+        sub_name: str = None,
     ):
         self.point = point
         self.reference = reference
+        self.reference_frame = reference_frame
         self.sub_info = sub_info
+        self.sub_name = sub_name
 
     def validate(self):
         pass
@@ -88,8 +92,12 @@ class BatchGetTaskResultResponseBodyTasksResultItemsSubs(TeaModel):
             result['point'] = self.point
         if self.reference is not None:
             result['reference'] = self.reference
+        if self.reference_frame is not None:
+            result['referenceFrame'] = self.reference_frame
         if self.sub_info is not None:
             result['subInfo'] = self.sub_info
+        if self.sub_name is not None:
+            result['subName'] = self.sub_name
         return result
 
     def from_map(self, m: dict = None):
@@ -98,8 +106,12 @@ class BatchGetTaskResultResponseBodyTasksResultItemsSubs(TeaModel):
             self.point = m.get('point')
         if m.get('reference') is not None:
             self.reference = m.get('reference')
+        if m.get('referenceFrame') is not None:
+            self.reference_frame = m.get('referenceFrame')
         if m.get('subInfo') is not None:
             self.sub_info = m.get('subInfo')
+        if m.get('subName') is not None:
+            self.sub_name = m.get('subName')
         return self
 
 
@@ -110,12 +122,14 @@ class BatchGetTaskResultResponseBodyTasksResultItems(TeaModel):
         name: str = None,
         point: int = None,
         reference: str = None,
+        reference_frame: List[str] = None,
         subs: List[BatchGetTaskResultResponseBodyTasksResultItemsSubs] = None,
     ):
         self.info = info
         self.name = name
         self.point = point
         self.reference = reference
+        self.reference_frame = reference_frame
         self.subs = subs
 
     def validate(self):
@@ -138,6 +152,8 @@ class BatchGetTaskResultResponseBodyTasksResultItems(TeaModel):
             result['point'] = self.point
         if self.reference is not None:
             result['reference'] = self.reference
+        if self.reference_frame is not None:
+            result['referenceFrame'] = self.reference_frame
         result['subs'] = []
         if self.subs is not None:
             for k in self.subs:
@@ -154,6 +170,8 @@ class BatchGetTaskResultResponseBodyTasksResultItems(TeaModel):
             self.point = m.get('point')
         if m.get('reference') is not None:
             self.reference = m.get('reference')
+        if m.get('referenceFrame') is not None:
+            self.reference_frame = m.get('referenceFrame')
         self.subs = []
         if m.get('subs') is not None:
             for k in m.get('subs'):

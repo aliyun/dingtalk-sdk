@@ -11892,6 +11892,691 @@ class GetProcessDesignResponse(TeaModel):
         return self
 
 
+class GetProcessDesignByCodeHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetProcessDesignByCodeRequest(TeaModel):
+    def __init__(
+        self,
+        app_type: str = None,
+        process_code: str = None,
+        process_id: int = None,
+        system_token: str = None,
+        user_id: str = None,
+    ):
+        # This parameter is required.
+        self.app_type = app_type
+        # This parameter is required.
+        self.process_code = process_code
+        self.process_id = process_id
+        # This parameter is required.
+        self.system_token = system_token
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.app_type is not None:
+            result['appType'] = self.app_type
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.process_id is not None:
+            result['processId'] = self.process_id
+        if self.system_token is not None:
+            result['systemToken'] = self.system_token
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('appType') is not None:
+            self.app_type = m.get('appType')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('processId') is not None:
+            self.process_id = m.get('processId')
+        if m.get('systemToken') is not None:
+            self.system_token = m.get('systemToken')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class GetProcessDesignByCodeResponseBodyApprovalSummaryTitle(TeaModel):
+    def __init__(
+        self,
+        en_us: str = None,
+        type: str = None,
+        zh_cn: str = None,
+    ):
+        self.en_us = en_us
+        self.type = type
+        self.zh_cn = zh_cn
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.en_us is not None:
+            result['en_US'] = self.en_us
+        if self.type is not None:
+            result['type'] = self.type
+        if self.zh_cn is not None:
+            result['zh_CN'] = self.zh_cn
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('en_US') is not None:
+            self.en_us = m.get('en_US')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        if m.get('zh_CN') is not None:
+            self.zh_cn = m.get('zh_CN')
+        return self
+
+
+class GetProcessDesignByCodeResponseBodyApprovalSummary(TeaModel):
+    def __init__(
+        self,
+        title: GetProcessDesignByCodeResponseBodyApprovalSummaryTitle = None,
+    ):
+        self.title = title
+
+    def validate(self):
+        if self.title:
+            self.title.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.title is not None:
+            result['title'] = self.title.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('title') is not None:
+            temp_model = GetProcessDesignByCodeResponseBodyApprovalSummaryTitle()
+            self.title = temp_model.from_map(m['title'])
+        return self
+
+
+class GetProcessDesignByCodeResponseBodyFlowConfigSidInstDetail(TeaModel):
+    def __init__(
+        self,
+        field_behavior: str = None,
+        field_id: str = None,
+    ):
+        self.field_behavior = field_behavior
+        self.field_id = field_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.field_behavior is not None:
+            result['fieldBehavior'] = self.field_behavior
+        if self.field_id is not None:
+            result['fieldId'] = self.field_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('fieldBehavior') is not None:
+            self.field_behavior = m.get('fieldBehavior')
+        if m.get('fieldId') is not None:
+            self.field_id = m.get('fieldId')
+        return self
+
+
+class GetProcessDesignByCodeResponseBodyFlowConfig(TeaModel):
+    def __init__(
+        self,
+        sid_inst_detail: List[GetProcessDesignByCodeResponseBodyFlowConfigSidInstDetail] = None,
+    ):
+        self.sid_inst_detail = sid_inst_detail
+
+    def validate(self):
+        if self.sid_inst_detail:
+            for k in self.sid_inst_detail:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['sid_instDetail'] = []
+        if self.sid_inst_detail is not None:
+            for k in self.sid_inst_detail:
+                result['sid_instDetail'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.sid_inst_detail = []
+        if m.get('sid_instDetail') is not None:
+            for k in m.get('sid_instDetail'):
+                temp_model = GetProcessDesignByCodeResponseBodyFlowConfigSidInstDetail()
+                self.sid_inst_detail.append(temp_model.from_map(k))
+        return self
+
+
+class GetProcessDesignByCodeResponseBodyFormulaRulesName(TeaModel):
+    def __init__(
+        self,
+        en_us: str = None,
+        zh_cn: str = None,
+    ):
+        self.en_us = en_us
+        self.zh_cn = zh_cn
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.en_us is not None:
+            result['en_US'] = self.en_us
+        if self.zh_cn is not None:
+            result['zh_CN'] = self.zh_cn
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('en_US') is not None:
+            self.en_us = m.get('en_US')
+        if m.get('zh_CN') is not None:
+            self.zh_cn = m.get('zh_CN')
+        return self
+
+
+class GetProcessDesignByCodeResponseBodyFormulaRulesRule(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        display_rule: str = None,
+        source: str = None,
+    ):
+        self.content = content
+        self.display_rule = display_rule
+        self.source = source
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.display_rule is not None:
+            result['displayRule'] = self.display_rule
+        if self.source is not None:
+            result['source'] = self.source
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('displayRule') is not None:
+            self.display_rule = m.get('displayRule')
+        if m.get('source') is not None:
+            self.source = m.get('source')
+        return self
+
+
+class GetProcessDesignByCodeResponseBodyFormulaRules(TeaModel):
+    def __init__(
+        self,
+        activity_action: List[str] = None,
+        activity_id: List[str] = None,
+        block: str = None,
+        message: str = None,
+        name: GetProcessDesignByCodeResponseBodyFormulaRulesName = None,
+        node_type: str = None,
+        rule: GetProcessDesignByCodeResponseBodyFormulaRulesRule = None,
+        rule_type: str = None,
+        trigger_mode: str = None,
+    ):
+        self.activity_action = activity_action
+        self.activity_id = activity_id
+        self.block = block
+        self.message = message
+        self.name = name
+        self.node_type = node_type
+        self.rule = rule
+        self.rule_type = rule_type
+        self.trigger_mode = trigger_mode
+
+    def validate(self):
+        if self.name:
+            self.name.validate()
+        if self.rule:
+            self.rule.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.activity_action is not None:
+            result['activityAction'] = self.activity_action
+        if self.activity_id is not None:
+            result['activityId'] = self.activity_id
+        if self.block is not None:
+            result['block'] = self.block
+        if self.message is not None:
+            result['message'] = self.message
+        if self.name is not None:
+            result['name'] = self.name.to_map()
+        if self.node_type is not None:
+            result['nodeType'] = self.node_type
+        if self.rule is not None:
+            result['rule'] = self.rule.to_map()
+        if self.rule_type is not None:
+            result['ruleType'] = self.rule_type
+        if self.trigger_mode is not None:
+            result['triggerMode'] = self.trigger_mode
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('activityAction') is not None:
+            self.activity_action = m.get('activityAction')
+        if m.get('activityId') is not None:
+            self.activity_id = m.get('activityId')
+        if m.get('block') is not None:
+            self.block = m.get('block')
+        if m.get('message') is not None:
+            self.message = m.get('message')
+        if m.get('name') is not None:
+            temp_model = GetProcessDesignByCodeResponseBodyFormulaRulesName()
+            self.name = temp_model.from_map(m['name'])
+        if m.get('nodeType') is not None:
+            self.node_type = m.get('nodeType')
+        if m.get('rule') is not None:
+            temp_model = GetProcessDesignByCodeResponseBodyFormulaRulesRule()
+            self.rule = temp_model.from_map(m['rule'])
+        if m.get('ruleType') is not None:
+            self.rule_type = m.get('ruleType')
+        if m.get('triggerMode') is not None:
+            self.trigger_mode = m.get('triggerMode')
+        return self
+
+
+class GetProcessDesignByCodeResponseBodyNodesName(TeaModel):
+    def __init__(
+        self,
+        en_us: str = None,
+        zh_cn: str = None,
+    ):
+        self.en_us = en_us
+        self.zh_cn = zh_cn
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.en_us is not None:
+            result['en_US'] = self.en_us
+        if self.zh_cn is not None:
+            result['zh_CN'] = self.zh_cn
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('en_US') is not None:
+            self.en_us = m.get('en_US')
+        if m.get('zh_CN') is not None:
+            self.zh_cn = m.get('zh_CN')
+        return self
+
+
+class GetProcessDesignByCodeResponseBodyNodes(TeaModel):
+    def __init__(
+        self,
+        child_nodes: List[Dict[str, Any]] = None,
+        description: str = None,
+        name: GetProcessDesignByCodeResponseBodyNodesName = None,
+        next_id: List[str] = None,
+        node_id: str = None,
+        prev_id: str = None,
+        props: Dict[str, Any] = None,
+        type: str = None,
+    ):
+        self.child_nodes = child_nodes
+        self.description = description
+        self.name = name
+        self.next_id = next_id
+        self.node_id = node_id
+        self.prev_id = prev_id
+        self.props = props
+        self.type = type
+
+    def validate(self):
+        if self.name:
+            self.name.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.child_nodes is not None:
+            result['childNodes'] = self.child_nodes
+        if self.description is not None:
+            result['description'] = self.description
+        if self.name is not None:
+            result['name'] = self.name.to_map()
+        if self.next_id is not None:
+            result['nextId'] = self.next_id
+        if self.node_id is not None:
+            result['nodeId'] = self.node_id
+        if self.prev_id is not None:
+            result['prevId'] = self.prev_id
+        if self.props is not None:
+            result['props'] = self.props
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('childNodes') is not None:
+            self.child_nodes = m.get('childNodes')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('name') is not None:
+            temp_model = GetProcessDesignByCodeResponseBodyNodesName()
+            self.name = temp_model.from_map(m['name'])
+        if m.get('nextId') is not None:
+            self.next_id = m.get('nextId')
+        if m.get('nodeId') is not None:
+            self.node_id = m.get('nodeId')
+        if m.get('prevId') is not None:
+            self.prev_id = m.get('prevId')
+        if m.get('props') is not None:
+            self.props = m.get('props')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class GetProcessDesignByCodeResponseBodyProps(TeaModel):
+    def __init__(
+        self,
+        allow_collaboration: bool = None,
+        allow_temporary_storage: bool = None,
+        allow_withdraw: bool = None,
+        binding_form: str = None,
+        no_record_recall: bool = None,
+        process_code: str = None,
+        process_detail_url: str = None,
+        process_init_url: str = None,
+        process_mobile_detail_url: str = None,
+        stop_association_rules_if_failed: bool = None,
+    ):
+        self.allow_collaboration = allow_collaboration
+        self.allow_temporary_storage = allow_temporary_storage
+        self.allow_withdraw = allow_withdraw
+        self.binding_form = binding_form
+        self.no_record_recall = no_record_recall
+        self.process_code = process_code
+        self.process_detail_url = process_detail_url
+        self.process_init_url = process_init_url
+        self.process_mobile_detail_url = process_mobile_detail_url
+        self.stop_association_rules_if_failed = stop_association_rules_if_failed
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.allow_collaboration is not None:
+            result['allowCollaboration'] = self.allow_collaboration
+        if self.allow_temporary_storage is not None:
+            result['allowTemporaryStorage'] = self.allow_temporary_storage
+        if self.allow_withdraw is not None:
+            result['allowWithdraw'] = self.allow_withdraw
+        if self.binding_form is not None:
+            result['bindingForm'] = self.binding_form
+        if self.no_record_recall is not None:
+            result['noRecordRecall'] = self.no_record_recall
+        if self.process_code is not None:
+            result['processCode'] = self.process_code
+        if self.process_detail_url is not None:
+            result['processDetailUrl'] = self.process_detail_url
+        if self.process_init_url is not None:
+            result['processInitUrl'] = self.process_init_url
+        if self.process_mobile_detail_url is not None:
+            result['processMobileDetailUrl'] = self.process_mobile_detail_url
+        if self.stop_association_rules_if_failed is not None:
+            result['stopAssociationRulesIfFailed'] = self.stop_association_rules_if_failed
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('allowCollaboration') is not None:
+            self.allow_collaboration = m.get('allowCollaboration')
+        if m.get('allowTemporaryStorage') is not None:
+            self.allow_temporary_storage = m.get('allowTemporaryStorage')
+        if m.get('allowWithdraw') is not None:
+            self.allow_withdraw = m.get('allowWithdraw')
+        if m.get('bindingForm') is not None:
+            self.binding_form = m.get('bindingForm')
+        if m.get('noRecordRecall') is not None:
+            self.no_record_recall = m.get('noRecordRecall')
+        if m.get('processCode') is not None:
+            self.process_code = m.get('processCode')
+        if m.get('processDetailUrl') is not None:
+            self.process_detail_url = m.get('processDetailUrl')
+        if m.get('processInitUrl') is not None:
+            self.process_init_url = m.get('processInitUrl')
+        if m.get('processMobileDetailUrl') is not None:
+            self.process_mobile_detail_url = m.get('processMobileDetailUrl')
+        if m.get('stopAssociationRulesIfFailed') is not None:
+            self.stop_association_rules_if_failed = m.get('stopAssociationRulesIfFailed')
+        return self
+
+
+class GetProcessDesignByCodeResponseBody(TeaModel):
+    def __init__(
+        self,
+        approval_summary: List[GetProcessDesignByCodeResponseBodyApprovalSummary] = None,
+        flow_config: GetProcessDesignByCodeResponseBodyFlowConfig = None,
+        formula_rules: List[GetProcessDesignByCodeResponseBodyFormulaRules] = None,
+        nodes: List[GetProcessDesignByCodeResponseBodyNodes] = None,
+        props: GetProcessDesignByCodeResponseBodyProps = None,
+    ):
+        self.approval_summary = approval_summary
+        self.flow_config = flow_config
+        self.formula_rules = formula_rules
+        self.nodes = nodes
+        self.props = props
+
+    def validate(self):
+        if self.approval_summary:
+            for k in self.approval_summary:
+                if k:
+                    k.validate()
+        if self.flow_config:
+            self.flow_config.validate()
+        if self.formula_rules:
+            for k in self.formula_rules:
+                if k:
+                    k.validate()
+        if self.nodes:
+            for k in self.nodes:
+                if k:
+                    k.validate()
+        if self.props:
+            self.props.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['approvalSummary'] = []
+        if self.approval_summary is not None:
+            for k in self.approval_summary:
+                result['approvalSummary'].append(k.to_map() if k else None)
+        if self.flow_config is not None:
+            result['flowConfig'] = self.flow_config.to_map()
+        result['formulaRules'] = []
+        if self.formula_rules is not None:
+            for k in self.formula_rules:
+                result['formulaRules'].append(k.to_map() if k else None)
+        result['nodes'] = []
+        if self.nodes is not None:
+            for k in self.nodes:
+                result['nodes'].append(k.to_map() if k else None)
+        if self.props is not None:
+            result['props'] = self.props.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.approval_summary = []
+        if m.get('approvalSummary') is not None:
+            for k in m.get('approvalSummary'):
+                temp_model = GetProcessDesignByCodeResponseBodyApprovalSummary()
+                self.approval_summary.append(temp_model.from_map(k))
+        if m.get('flowConfig') is not None:
+            temp_model = GetProcessDesignByCodeResponseBodyFlowConfig()
+            self.flow_config = temp_model.from_map(m['flowConfig'])
+        self.formula_rules = []
+        if m.get('formulaRules') is not None:
+            for k in m.get('formulaRules'):
+                temp_model = GetProcessDesignByCodeResponseBodyFormulaRules()
+                self.formula_rules.append(temp_model.from_map(k))
+        self.nodes = []
+        if m.get('nodes') is not None:
+            for k in m.get('nodes'):
+                temp_model = GetProcessDesignByCodeResponseBodyNodes()
+                self.nodes.append(temp_model.from_map(k))
+        if m.get('props') is not None:
+            temp_model = GetProcessDesignByCodeResponseBodyProps()
+            self.props = temp_model.from_map(m['props'])
+        return self
+
+
+class GetProcessDesignByCodeResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetProcessDesignByCodeResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetProcessDesignByCodeResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetRunningTaskListHeaders(TeaModel):
     def __init__(
         self,

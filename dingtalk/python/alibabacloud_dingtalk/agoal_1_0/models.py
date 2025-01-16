@@ -707,6 +707,7 @@ class OpenAgoalObjectiveDimensionDTO(TeaModel):
         dimension_id: str = None,
         field_config: List[OpenAgoalFieldMetaDTO] = None,
         field_value_map: Dict[str, Any] = None,
+        title: str = None,
     ):
         # This parameter is required.
         self.children = children
@@ -716,6 +717,8 @@ class OpenAgoalObjectiveDimensionDTO(TeaModel):
         self.field_config = field_config
         # This parameter is required.
         self.field_value_map = field_value_map
+        # This parameter is required.
+        self.title = title
 
     def validate(self):
         if self.children:
@@ -745,6 +748,8 @@ class OpenAgoalObjectiveDimensionDTO(TeaModel):
                 result['fieldConfig'].append(k.to_map() if k else None)
         if self.field_value_map is not None:
             result['fieldValueMap'] = self.field_value_map
+        if self.title is not None:
+            result['title'] = self.title
         return result
 
     def from_map(self, m: dict = None):
@@ -763,6 +768,8 @@ class OpenAgoalObjectiveDimensionDTO(TeaModel):
                 self.field_config.append(temp_model.from_map(k))
         if m.get('fieldValueMap') is not None:
             self.field_value_map = m.get('fieldValueMap')
+        if m.get('title') is not None:
+            self.title = m.get('title')
         return self
 
 
@@ -776,6 +783,7 @@ class OpenAgoalOrgObjectiveDTO(TeaModel):
         field_value_map: Dict[str, Any] = None,
         objective_id: str = None,
         period: OpenObjectiveRulePeriodDTO = None,
+        status: str = None,
         team: OpenAgoalTeamDTO = None,
         title: str = None,
         up_align_objects: List[OpenAgoalAlignDTO] = None,
@@ -794,6 +802,8 @@ class OpenAgoalOrgObjectiveDTO(TeaModel):
         self.objective_id = objective_id
         # This parameter is required.
         self.period = period
+        # This parameter is required.
+        self.status = status
         # This parameter is required.
         self.team = team
         # This parameter is required.
@@ -847,6 +857,8 @@ class OpenAgoalOrgObjectiveDTO(TeaModel):
             result['objectiveId'] = self.objective_id
         if self.period is not None:
             result['period'] = self.period.to_map()
+        if self.status is not None:
+            result['status'] = self.status
         if self.team is not None:
             result['team'] = self.team.to_map()
         if self.title is not None:
@@ -882,6 +894,8 @@ class OpenAgoalOrgObjectiveDTO(TeaModel):
         if m.get('period') is not None:
             temp_model = OpenObjectiveRulePeriodDTO()
             self.period = temp_model.from_map(m['period'])
+        if m.get('status') is not None:
+            self.status = m.get('status')
         if m.get('team') is not None:
             temp_model = OpenAgoalTeamDTO()
             self.team = temp_model.from_map(m['team'])
@@ -2008,6 +2022,149 @@ class AgoalOrgObjectiveListResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = AgoalOrgObjectiveListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class AgoalOrgObjectiveQueryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AgoalOrgObjectiveQueryRequest(TeaModel):
+    def __init__(
+        self,
+        objective_id: str = None,
+    ):
+        # This parameter is required.
+        self.objective_id = objective_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.objective_id is not None:
+            result['objectiveId'] = self.objective_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('objectiveId') is not None:
+            self.objective_id = m.get('objectiveId')
+        return self
+
+
+class AgoalOrgObjectiveQueryResponseBody(TeaModel):
+    def __init__(
+        self,
+        content: OpenAgoalOrgObjectiveDTO = None,
+        request_id: str = None,
+        success: bool = None,
+    ):
+        self.content = content
+        self.request_id = request_id
+        self.success = success
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            temp_model = OpenAgoalOrgObjectiveDTO()
+            self.content = temp_model.from_map(m['content'])
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AgoalOrgObjectiveQueryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AgoalOrgObjectiveQueryResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AgoalOrgObjectiveQueryResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

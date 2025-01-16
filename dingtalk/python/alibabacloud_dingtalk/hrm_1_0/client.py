@@ -2580,6 +2580,10 @@ class Client(OpenApiClient):
             body['optUserId'] = request.opt_user_id
         if not UtilClient.is_unset(request.permission_handover_user_id):
             body['permissionHandoverUserId'] = request.permission_handover_user_id
+        if not UtilClient.is_unset(request.termination_reason_passive):
+            body['terminationReasonPassive'] = request.termination_reason_passive
+        if not UtilClient.is_unset(request.termination_reason_voluntary):
+            body['terminationReasonVoluntary'] = request.termination_reason_voluntary
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}
@@ -2641,6 +2645,10 @@ class Client(OpenApiClient):
             body['optUserId'] = request.opt_user_id
         if not UtilClient.is_unset(request.permission_handover_user_id):
             body['permissionHandoverUserId'] = request.permission_handover_user_id
+        if not UtilClient.is_unset(request.termination_reason_passive):
+            body['terminationReasonPassive'] = request.termination_reason_passive
+        if not UtilClient.is_unset(request.termination_reason_voluntary):
+            body['terminationReasonVoluntary'] = request.termination_reason_voluntary
         if not UtilClient.is_unset(request.user_id):
             body['userId'] = request.user_id
         real_headers = {}
