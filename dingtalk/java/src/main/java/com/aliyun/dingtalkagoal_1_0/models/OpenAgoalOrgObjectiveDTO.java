@@ -51,6 +51,15 @@ public class OpenAgoalOrgObjectiveDTO extends TeaModel {
 
     /**
      * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>formalEffective</p>
+     */
+    @NameInMap("status")
+    public String status;
+
+    /**
+     * <p>This parameter is required.</p>
      */
     @NameInMap("team")
     public OpenAgoalTeamDTO team;
@@ -129,6 +138,14 @@ public class OpenAgoalOrgObjectiveDTO extends TeaModel {
     }
     public OpenObjectiveRulePeriodDTO getPeriod() {
         return this.period;
+    }
+
+    public OpenAgoalOrgObjectiveDTO setStatus(String status) {
+        this.status = status;
+        return this;
+    }
+    public String getStatus() {
+        return this.status;
     }
 
     public OpenAgoalOrgObjectiveDTO setTeam(OpenAgoalTeamDTO team) {

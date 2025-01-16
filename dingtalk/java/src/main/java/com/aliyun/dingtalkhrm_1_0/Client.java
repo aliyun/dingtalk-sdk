@@ -1402,6 +1402,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("permissionHandoverUserId", request.permissionHandoverUserId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.terminationReasonPassive)) {
+            body.put("terminationReasonPassive", request.terminationReasonPassive);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.terminationReasonVoluntary)) {
+            body.put("terminationReasonVoluntary", request.terminationReasonVoluntary);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
             body.put("userId", request.userId);
         }

@@ -35,8 +35,6 @@ public class HrmProcessTerminationAndHandoverRequest extends TeaModel {
     public String dismissionMemo;
 
     /**
-     * <p>This parameter is required.</p>
-     * 
      * <strong>example:</strong>
      * <p>1</p>
      */
@@ -74,6 +72,12 @@ public class HrmProcessTerminationAndHandoverRequest extends TeaModel {
      */
     @NameInMap("permissionHandoverUserId")
     public String permissionHandoverUserId;
+
+    @NameInMap("terminationReasonPassive")
+    public java.util.List<String> terminationReasonPassive;
+
+    @NameInMap("terminationReasonVoluntary")
+    public java.util.List<String> terminationReasonVoluntary;
 
     /**
      * <p>This parameter is required.</p>
@@ -159,6 +163,22 @@ public class HrmProcessTerminationAndHandoverRequest extends TeaModel {
     }
     public String getPermissionHandoverUserId() {
         return this.permissionHandoverUserId;
+    }
+
+    public HrmProcessTerminationAndHandoverRequest setTerminationReasonPassive(java.util.List<String> terminationReasonPassive) {
+        this.terminationReasonPassive = terminationReasonPassive;
+        return this;
+    }
+    public java.util.List<String> getTerminationReasonPassive() {
+        return this.terminationReasonPassive;
+    }
+
+    public HrmProcessTerminationAndHandoverRequest setTerminationReasonVoluntary(java.util.List<String> terminationReasonVoluntary) {
+        this.terminationReasonVoluntary = terminationReasonVoluntary;
+        return this;
+    }
+    public java.util.List<String> getTerminationReasonVoluntary() {
+        return this.terminationReasonVoluntary;
     }
 
     public HrmProcessTerminationAndHandoverRequest setUserId(String userId) {

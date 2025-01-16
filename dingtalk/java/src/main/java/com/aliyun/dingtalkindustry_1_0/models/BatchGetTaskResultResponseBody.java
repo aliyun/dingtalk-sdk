@@ -27,8 +27,14 @@ public class BatchGetTaskResultResponseBody extends TeaModel {
         @NameInMap("reference")
         public String reference;
 
+        @NameInMap("referenceFrame")
+        public java.util.List<String> referenceFrame;
+
         @NameInMap("subInfo")
         public String subInfo;
+
+        @NameInMap("subName")
+        public String subName;
 
         public static BatchGetTaskResultResponseBodyTasksResultItemsSubs build(java.util.Map<String, ?> map) throws Exception {
             BatchGetTaskResultResponseBodyTasksResultItemsSubs self = new BatchGetTaskResultResponseBodyTasksResultItemsSubs();
@@ -51,12 +57,28 @@ public class BatchGetTaskResultResponseBody extends TeaModel {
             return this.reference;
         }
 
+        public BatchGetTaskResultResponseBodyTasksResultItemsSubs setReferenceFrame(java.util.List<String> referenceFrame) {
+            this.referenceFrame = referenceFrame;
+            return this;
+        }
+        public java.util.List<String> getReferenceFrame() {
+            return this.referenceFrame;
+        }
+
         public BatchGetTaskResultResponseBodyTasksResultItemsSubs setSubInfo(String subInfo) {
             this.subInfo = subInfo;
             return this;
         }
         public String getSubInfo() {
             return this.subInfo;
+        }
+
+        public BatchGetTaskResultResponseBodyTasksResultItemsSubs setSubName(String subName) {
+            this.subName = subName;
+            return this;
+        }
+        public String getSubName() {
+            return this.subName;
         }
 
     }
@@ -85,6 +107,9 @@ public class BatchGetTaskResultResponseBody extends TeaModel {
 
         @NameInMap("reference")
         public String reference;
+
+        @NameInMap("referenceFrame")
+        public java.util.List<String> referenceFrame;
 
         @NameInMap("subs")
         public java.util.List<BatchGetTaskResultResponseBodyTasksResultItemsSubs> subs;
@@ -124,6 +149,14 @@ public class BatchGetTaskResultResponseBody extends TeaModel {
         }
         public String getReference() {
             return this.reference;
+        }
+
+        public BatchGetTaskResultResponseBodyTasksResultItems setReferenceFrame(java.util.List<String> referenceFrame) {
+            this.referenceFrame = referenceFrame;
+            return this;
+        }
+        public java.util.List<String> getReferenceFrame() {
+            return this.referenceFrame;
         }
 
         public BatchGetTaskResultResponseBodyTasksResultItems setSubs(java.util.List<BatchGetTaskResultResponseBodyTasksResultItemsSubs> subs) {

@@ -31,6 +31,15 @@ public class OpenAgoalObjectiveDimensionDTO extends TeaModel {
     @NameInMap("fieldValueMap")
     public java.util.Map<String, ?> fieldValueMap;
 
+    /**
+     * <p>This parameter is required.</p>
+     * 
+     * <strong>example:</strong>
+     * <p>这是维度标题</p>
+     */
+    @NameInMap("title")
+    public String title;
+
     public static OpenAgoalObjectiveDimensionDTO build(java.util.Map<String, ?> map) throws Exception {
         OpenAgoalObjectiveDimensionDTO self = new OpenAgoalObjectiveDimensionDTO();
         return TeaModel.build(map, self);
@@ -66,6 +75,14 @@ public class OpenAgoalObjectiveDimensionDTO extends TeaModel {
     }
     public java.util.Map<String, ?> getFieldValueMap() {
         return this.fieldValueMap;
+    }
+
+    public OpenAgoalObjectiveDimensionDTO setTitle(String title) {
+        this.title = title;
+        return this;
+    }
+    public String getTitle() {
+        return this.title;
     }
 
 }
