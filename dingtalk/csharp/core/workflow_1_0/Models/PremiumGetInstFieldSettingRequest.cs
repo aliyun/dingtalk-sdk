@@ -8,26 +8,26 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
-    public class ArchiveProcessInstanceRequest : TeaModel {
+    public class PremiumGetInstFieldSettingRequest : TeaModel {
         /// <summary>
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>
-        /// <para>133743186427339452</para>
+        /// <para>proc-FF6Y2xxxx</para>
         /// </summary>
-        [NameInMap("opUserId")]
+        [NameInMap("processInstanceId")]
         [Validation(Required=false)]
-        public string OpUserId { get; set; }
+        public string ProcessInstanceId { get; set; }
 
         /// <summary>
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>
-        /// <para>a171de6c-8bxxxx</para>
+        /// <para>userId123</para>
         /// </summary>
-        [NameInMap("processInstanceId")]
+        [NameInMap("userId")]
         [Validation(Required=false)]
-        public string ProcessInstanceId { get; set; }
+        public string UserId { get; set; }
 
     }
 

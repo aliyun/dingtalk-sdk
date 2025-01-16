@@ -862,6 +862,154 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询组织目标详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalOrgObjectiveQueryRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalOrgObjectiveQueryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalOrgObjectiveQueryResponse
+        /// </returns>
+        public AgoalOrgObjectiveQueryResponse AgoalOrgObjectiveQueryWithOptions(AgoalOrgObjectiveQueryRequest request, AgoalOrgObjectiveQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectiveId))
+            {
+                query["objectiveId"] = request.ObjectiveId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalOrgObjectiveQuery",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/orgObjectives",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalOrgObjectiveQueryResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询组织目标详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalOrgObjectiveQueryRequest
+        /// </param>
+        /// <param name="headers">
+        /// AgoalOrgObjectiveQueryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalOrgObjectiveQueryResponse
+        /// </returns>
+        public async Task<AgoalOrgObjectiveQueryResponse> AgoalOrgObjectiveQueryWithOptionsAsync(AgoalOrgObjectiveQueryRequest request, AgoalOrgObjectiveQueryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ObjectiveId))
+            {
+                query["objectiveId"] = request.ObjectiveId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AgoalOrgObjectiveQuery",
+                Version = "agoal_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/agoal/orgObjectives",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AgoalOrgObjectiveQueryResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询组织目标详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalOrgObjectiveQueryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalOrgObjectiveQueryResponse
+        /// </returns>
+        public AgoalOrgObjectiveQueryResponse AgoalOrgObjectiveQuery(AgoalOrgObjectiveQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalOrgObjectiveQueryHeaders headers = new AgoalOrgObjectiveQueryHeaders();
+            return AgoalOrgObjectiveQueryWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询组织目标详情</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AgoalOrgObjectiveQueryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AgoalOrgObjectiveQueryResponse
+        /// </returns>
+        public async Task<AgoalOrgObjectiveQueryResponse> AgoalOrgObjectiveQueryAsync(AgoalOrgObjectiveQueryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AgoalOrgObjectiveQueryHeaders headers = new AgoalOrgObjectiveQueryHeaders();
+            return await AgoalOrgObjectiveQueryWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取Agoal目标规则列表</para>
         /// </summary>
         /// 

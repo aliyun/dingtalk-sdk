@@ -85,6 +85,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                     [Validation(Required=false)]
                     public string Reference { get; set; }
 
+                    [NameInMap("referenceFrame")]
+                    [Validation(Required=false)]
+                    public List<string> ReferenceFrame { get; set; }
+
                     [NameInMap("subs")]
                     [Validation(Required=false)]
                     public List<BatchGetTaskResultResponseBodyTasksResultItemsSubs> Subs { get; set; }
@@ -97,9 +101,17 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
                         [Validation(Required=false)]
                         public string Reference { get; set; }
 
+                        [NameInMap("referenceFrame")]
+                        [Validation(Required=false)]
+                        public List<string> ReferenceFrame { get; set; }
+
                         [NameInMap("subInfo")]
                         [Validation(Required=false)]
                         public string SubInfo { get; set; }
+
+                        [NameInMap("subName")]
+                        [Validation(Required=false)]
+                        public string SubName { get; set; }
 
                     }
 

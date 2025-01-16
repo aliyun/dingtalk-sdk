@@ -63,6 +63,16 @@ namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
 
         /// <summary>
         /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>formalEffective</para>
+        /// </summary>
+        [NameInMap("status")]
+        [Validation(Required=false)]
+        public string Status { get; set; }
+
+        /// <summary>
+        /// <para>This parameter is required.</para>
         /// </summary>
         [NameInMap("team")]
         [Validation(Required=false)]

@@ -16802,6 +16802,154 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询文件和图片ID信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFileDownloadInfoByPackageIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFileDownloadInfoByPackageIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFileDownloadInfoByPackageIdResponse
+        /// </returns>
+        public GetFileDownloadInfoByPackageIdResponse GetFileDownloadInfoByPackageIdWithOptions(GetFileDownloadInfoByPackageIdRequest request, GetFileDownloadInfoByPackageIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PackageId))
+            {
+                body["packageId"] = request.PackageId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFileDownloadInfoByPackageId",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/fileAndImages/ids/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFileDownloadInfoByPackageIdResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询文件和图片ID信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFileDownloadInfoByPackageIdRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetFileDownloadInfoByPackageIdHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFileDownloadInfoByPackageIdResponse
+        /// </returns>
+        public async Task<GetFileDownloadInfoByPackageIdResponse> GetFileDownloadInfoByPackageIdWithOptionsAsync(GetFileDownloadInfoByPackageIdRequest request, GetFileDownloadInfoByPackageIdHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PackageId))
+            {
+                body["packageId"] = request.PackageId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetFileDownloadInfoByPackageId",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/fileAndImages/ids/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetFileDownloadInfoByPackageIdResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询文件和图片ID信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFileDownloadInfoByPackageIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFileDownloadInfoByPackageIdResponse
+        /// </returns>
+        public GetFileDownloadInfoByPackageIdResponse GetFileDownloadInfoByPackageId(GetFileDownloadInfoByPackageIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetFileDownloadInfoByPackageIdHeaders headers = new GetFileDownloadInfoByPackageIdHeaders();
+            return GetFileDownloadInfoByPackageIdWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询文件和图片ID信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetFileDownloadInfoByPackageIdRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetFileDownloadInfoByPackageIdResponse
+        /// </returns>
+        public async Task<GetFileDownloadInfoByPackageIdResponse> GetFileDownloadInfoByPackageIdAsync(GetFileDownloadInfoByPackageIdRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetFileDownloadInfoByPackageIdHeaders headers = new GetFileDownloadInfoByPackageIdHeaders();
+            return await GetFileDownloadInfoByPackageIdWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取图片下载信息</para>
         /// </summary>
         /// 
@@ -29006,6 +29154,202 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             SendMessageHeaders headers = new SendMessageHeaders();
             return await SendMessageWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送打印订单提醒消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendPrintOrderNoticeMsgRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendPrintOrderNoticeMsgHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendPrintOrderNoticeMsgResponse
+        /// </returns>
+        public SendPrintOrderNoticeMsgResponse SendPrintOrderNoticeMsgWithOptions(SendPrintOrderNoticeMsgRequest request, SendPrintOrderNoticeMsgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateOrderTime))
+            {
+                body["createOrderTime"] = request.CreateOrderTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeliveryCompanyName))
+            {
+                body["deliveryCompanyName"] = request.DeliveryCompanyName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeliveryNumber))
+            {
+                body["deliveryNumber"] = request.DeliveryNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeliveryTime))
+            {
+                body["deliveryTime"] = request.DeliveryTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PaymentTime))
+            {
+                body["paymentTime"] = request.PaymentTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Price))
+            {
+                body["price"] = request.Price;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SceneCode))
+            {
+                body["sceneCode"] = request.SceneCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SendPrintOrderNoticeMsg",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/files/printOrders/noticeMessages/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SendPrintOrderNoticeMsgResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送打印订单提醒消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendPrintOrderNoticeMsgRequest
+        /// </param>
+        /// <param name="headers">
+        /// SendPrintOrderNoticeMsgHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendPrintOrderNoticeMsgResponse
+        /// </returns>
+        public async Task<SendPrintOrderNoticeMsgResponse> SendPrintOrderNoticeMsgWithOptionsAsync(SendPrintOrderNoticeMsgRequest request, SendPrintOrderNoticeMsgHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CreateOrderTime))
+            {
+                body["createOrderTime"] = request.CreateOrderTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeliveryCompanyName))
+            {
+                body["deliveryCompanyName"] = request.DeliveryCompanyName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeliveryNumber))
+            {
+                body["deliveryNumber"] = request.DeliveryNumber;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DeliveryTime))
+            {
+                body["deliveryTime"] = request.DeliveryTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PaymentTime))
+            {
+                body["paymentTime"] = request.PaymentTime;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Price))
+            {
+                body["price"] = request.Price;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SceneCode))
+            {
+                body["sceneCode"] = request.SceneCode;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SendPrintOrderNoticeMsg",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/files/printOrders/noticeMessages/send",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SendPrintOrderNoticeMsgResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送打印订单提醒消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendPrintOrderNoticeMsgRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendPrintOrderNoticeMsgResponse
+        /// </returns>
+        public SendPrintOrderNoticeMsgResponse SendPrintOrderNoticeMsg(SendPrintOrderNoticeMsgRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendPrintOrderNoticeMsgHeaders headers = new SendPrintOrderNoticeMsgHeaders();
+            return SendPrintOrderNoticeMsgWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发送打印订单提醒消息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SendPrintOrderNoticeMsgRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SendPrintOrderNoticeMsgResponse
+        /// </returns>
+        public async Task<SendPrintOrderNoticeMsgResponse> SendPrintOrderNoticeMsgAsync(SendPrintOrderNoticeMsgRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SendPrintOrderNoticeMsgHeaders headers = new SendPrintOrderNoticeMsgHeaders();
+            return await SendPrintOrderNoticeMsgWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

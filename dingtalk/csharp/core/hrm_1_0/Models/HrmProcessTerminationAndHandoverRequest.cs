@@ -44,8 +44,6 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         public string DismissionMemo { get; set; }
 
         /// <summary>
-        /// <para>This parameter is required.</para>
-        /// 
         /// <b>Example:</b>
         /// <para>1</para>
         /// </summary>
@@ -88,6 +86,14 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0.Models
         [NameInMap("permissionHandoverUserId")]
         [Validation(Required=false)]
         public string PermissionHandoverUserId { get; set; }
+
+        [NameInMap("terminationReasonPassive")]
+        [Validation(Required=false)]
+        public List<string> TerminationReasonPassive { get; set; }
+
+        [NameInMap("terminationReasonVoluntary")]
+        [Validation(Required=false)]
+        public List<string> TerminationReasonVoluntary { get; set; }
 
         /// <summary>
         /// <para>This parameter is required.</para>

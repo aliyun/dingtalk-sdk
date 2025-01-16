@@ -378,10 +378,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsSystem))
-            {
-                body["isSystem"] = request.IsSystem;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
                 body["opUserId"] = request.OpUserId;
@@ -441,10 +437,6 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
         {
             AlibabaCloud.TeaUtil.Common.ValidateModel(request);
             Dictionary<string, object> body = new Dictionary<string, object>(){};
-            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsSystem))
-            {
-                body["isSystem"] = request.IsSystem;
-            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpUserId))
             {
                 body["opUserId"] = request.OpUserId;
@@ -7354,6 +7346,162 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>获取流程表单字段操作权限(高级版专享接口)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PremiumGetInstFieldSettingRequest
+        /// </param>
+        /// <param name="headers">
+        /// PremiumGetInstFieldSettingHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PremiumGetInstFieldSettingResponse
+        /// </returns>
+        public PremiumGetInstFieldSettingResponse PremiumGetInstFieldSettingWithOptions(PremiumGetInstFieldSettingRequest request, PremiumGetInstFieldSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
+            {
+                body["processInstanceId"] = request.ProcessInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PremiumGetInstFieldSetting",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/premium/processes/fields/settings/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PremiumGetInstFieldSettingResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取流程表单字段操作权限(高级版专享接口)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PremiumGetInstFieldSettingRequest
+        /// </param>
+        /// <param name="headers">
+        /// PremiumGetInstFieldSettingHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PremiumGetInstFieldSettingResponse
+        /// </returns>
+        public async Task<PremiumGetInstFieldSettingResponse> PremiumGetInstFieldSettingWithOptionsAsync(PremiumGetInstFieldSettingRequest request, PremiumGetInstFieldSettingHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessInstanceId))
+            {
+                body["processInstanceId"] = request.ProcessInstanceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PremiumGetInstFieldSetting",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/premium/processes/fields/settings/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PremiumGetInstFieldSettingResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取流程表单字段操作权限(高级版专享接口)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PremiumGetInstFieldSettingRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PremiumGetInstFieldSettingResponse
+        /// </returns>
+        public PremiumGetInstFieldSettingResponse PremiumGetInstFieldSetting(PremiumGetInstFieldSettingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PremiumGetInstFieldSettingHeaders headers = new PremiumGetInstFieldSettingHeaders();
+            return PremiumGetInstFieldSettingWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取流程表单字段操作权限(高级版专享接口)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PremiumGetInstFieldSettingRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PremiumGetInstFieldSettingResponse
+        /// </returns>
+        public async Task<PremiumGetInstFieldSettingResponse> PremiumGetInstFieldSettingAsync(PremiumGetInstFieldSettingRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PremiumGetInstFieldSettingHeaders headers = new PremiumGetInstFieldSettingHeaders();
+            return await PremiumGetInstFieldSettingWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询审批中心我收到的实例列表(OA高级版专享接口)</para>
         /// </summary>
         /// 
@@ -8570,6 +8718,154 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             PremiumInsertOrUpdateDirHeaders headers = new PremiumInsertOrUpdateDirHeaders();
             return await PremiumInsertOrUpdateDirWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取审批模板信息（包含表单和流程配置信息）(高级版专享接口)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PremiumQuerySchemaAndProcessByCodeListRequest
+        /// </param>
+        /// <param name="headers">
+        /// PremiumQuerySchemaAndProcessByCodeListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PremiumQuerySchemaAndProcessByCodeListResponse
+        /// </returns>
+        public PremiumQuerySchemaAndProcessByCodeListResponse PremiumQuerySchemaAndProcessByCodeListWithOptions(PremiumQuerySchemaAndProcessByCodeListRequest request, PremiumQuerySchemaAndProcessByCodeListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessCodes))
+            {
+                body["processCodes"] = request.ProcessCodes;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PremiumQuerySchemaAndProcessByCodeList",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/premium/processes/schemas/batchQuery",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PremiumQuerySchemaAndProcessByCodeListResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取审批模板信息（包含表单和流程配置信息）(高级版专享接口)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PremiumQuerySchemaAndProcessByCodeListRequest
+        /// </param>
+        /// <param name="headers">
+        /// PremiumQuerySchemaAndProcessByCodeListHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PremiumQuerySchemaAndProcessByCodeListResponse
+        /// </returns>
+        public async Task<PremiumQuerySchemaAndProcessByCodeListResponse> PremiumQuerySchemaAndProcessByCodeListWithOptionsAsync(PremiumQuerySchemaAndProcessByCodeListRequest request, PremiumQuerySchemaAndProcessByCodeListHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ProcessCodes))
+            {
+                body["processCodes"] = request.ProcessCodes;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PremiumQuerySchemaAndProcessByCodeList",
+                Version = "workflow_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/workflow/premium/processes/schemas/batchQuery",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PremiumQuerySchemaAndProcessByCodeListResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取审批模板信息（包含表单和流程配置信息）(高级版专享接口)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PremiumQuerySchemaAndProcessByCodeListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PremiumQuerySchemaAndProcessByCodeListResponse
+        /// </returns>
+        public PremiumQuerySchemaAndProcessByCodeListResponse PremiumQuerySchemaAndProcessByCodeList(PremiumQuerySchemaAndProcessByCodeListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PremiumQuerySchemaAndProcessByCodeListHeaders headers = new PremiumQuerySchemaAndProcessByCodeListHeaders();
+            return PremiumQuerySchemaAndProcessByCodeListWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量获取审批模板信息（包含表单和流程配置信息）(高级版专享接口)</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PremiumQuerySchemaAndProcessByCodeListRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PremiumQuerySchemaAndProcessByCodeListResponse
+        /// </returns>
+        public async Task<PremiumQuerySchemaAndProcessByCodeListResponse> PremiumQuerySchemaAndProcessByCodeListAsync(PremiumQuerySchemaAndProcessByCodeListRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PremiumQuerySchemaAndProcessByCodeListHeaders headers = new PremiumQuerySchemaAndProcessByCodeListHeaders();
+            return await PremiumQuerySchemaAndProcessByCodeListWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

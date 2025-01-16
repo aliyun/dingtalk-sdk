@@ -6,49 +6,53 @@ using System.IO;
 
 using Tea;
 
-namespace AlibabaCloud.SDK.Dingtalkagoal_1_0.Models
+namespace AlibabaCloud.SDK.Dingtalkyida_1_0.Models
 {
-    public class OpenAgoalObjectiveDimensionDTO : TeaModel {
+    public class GetProcessDesignByCodeRequest : TeaModel {
+        /// <summary>
+        /// <para>This parameter is required.</para>
+        /// 
+        /// <b>Example:</b>
+        /// <para>APP_PBKT0MFBEBTDO8T7SLVP</para>
+        /// </summary>
+        [NameInMap("appType")]
+        [Validation(Required=false)]
+        public string AppType { get; set; }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>
-        [NameInMap("children")]
+        [NameInMap("processCode")]
         [Validation(Required=false)]
-        public List<OpenAgoalObjectiveDimensionDTO> Children { get; set; }
+        public string ProcessCode { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>36679675117</para>
+        /// </summary>
+        [NameInMap("processId")]
+        [Validation(Required=false)]
+        public long? ProcessId { get; set; }
 
         /// <summary>
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>
-        /// <para>662e006fe4b0f579bbcxxxxx</para>
+        /// <para>hexxx</para>
         /// </summary>
-        [NameInMap("dimensionId")]
+        [NameInMap("systemToken")]
         [Validation(Required=false)]
-        public string DimensionId { get; set; }
-
-        /// <summary>
-        /// <para>This parameter is required.</para>
-        /// </summary>
-        [NameInMap("fieldConfig")]
-        [Validation(Required=false)]
-        public List<OpenAgoalFieldMetaDTO> FieldConfig { get; set; }
-
-        /// <summary>
-        /// <para>This parameter is required.</para>
-        /// </summary>
-        [NameInMap("fieldValueMap")]
-        [Validation(Required=false)]
-        public Dictionary<string, object> FieldValueMap { get; set; }
+        public string SystemToken { get; set; }
 
         /// <summary>
         /// <para>This parameter is required.</para>
         /// 
         /// <b>Example:</b>
-        /// <para>这是维度标题</para>
+        /// <para>02465454670427591261</para>
         /// </summary>
-        [NameInMap("title")]
+        [NameInMap("userId")]
         [Validation(Required=false)]
-        public string Title { get; set; }
+        public string UserId { get; set; }
 
     }
 

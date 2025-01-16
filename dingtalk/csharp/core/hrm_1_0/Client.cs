@@ -3489,6 +3489,14 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             {
                 body["permissionHandoverUserId"] = request.PermissionHandoverUserId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TerminationReasonPassive))
+            {
+                body["terminationReasonPassive"] = request.TerminationReasonPassive;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TerminationReasonVoluntary))
+            {
+                body["terminationReasonVoluntary"] = request.TerminationReasonVoluntary;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
                 body["userId"] = request.UserId;
@@ -3579,6 +3587,14 @@ namespace AlibabaCloud.SDK.Dingtalkhrm_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PermissionHandoverUserId))
             {
                 body["permissionHandoverUserId"] = request.PermissionHandoverUserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TerminationReasonPassive))
+            {
+                body["terminationReasonPassive"] = request.TerminationReasonPassive;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TerminationReasonVoluntary))
+            {
+                body["terminationReasonVoluntary"] = request.TerminationReasonVoluntary;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
             {
