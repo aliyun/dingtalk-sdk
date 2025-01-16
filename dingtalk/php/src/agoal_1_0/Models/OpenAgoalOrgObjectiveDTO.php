@@ -62,6 +62,15 @@ class OpenAgoalOrgObjectiveDTO extends Model
     /**
      * @description This parameter is required.
      *
+     * @example formalEffective
+     *
+     * @var string
+     */
+    public $status;
+
+    /**
+     * @description This parameter is required.
+     *
      * @var OpenAgoalTeamDTO
      */
     public $team;
@@ -89,6 +98,7 @@ class OpenAgoalOrgObjectiveDTO extends Model
         'fieldValueMap'    => 'fieldValueMap',
         'objectiveId'      => 'objectiveId',
         'period'           => 'period',
+        'status'           => 'status',
         'team'             => 'team',
         'title'            => 'title',
         'upAlignObjects'   => 'upAlignObjects',
@@ -133,6 +143,9 @@ class OpenAgoalOrgObjectiveDTO extends Model
         }
         if (null !== $this->period) {
             $res['period'] = null !== $this->period ? $this->period->toMap() : null;
+        }
+        if (null !== $this->status) {
+            $res['status'] = $this->status;
         }
         if (null !== $this->team) {
             $res['team'] = null !== $this->team ? $this->team->toMap() : null;
@@ -193,6 +206,9 @@ class OpenAgoalOrgObjectiveDTO extends Model
         }
         if (isset($map['period'])) {
             $model->period = OpenObjectiveRulePeriodDTO::fromMap($map['period']);
+        }
+        if (isset($map['status'])) {
+            $model->status = $map['status'];
         }
         if (isset($map['team'])) {
             $model->team = OpenAgoalTeamDTO::fromMap($map['team']);

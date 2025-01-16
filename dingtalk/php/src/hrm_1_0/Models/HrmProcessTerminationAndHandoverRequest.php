@@ -39,8 +39,6 @@ class HrmProcessTerminationAndHandoverRequest extends Model
     public $dismissionMemo;
 
     /**
-     * @description This parameter is required.
-     *
      * @example 1
      *
      * @var int
@@ -80,6 +78,16 @@ class HrmProcessTerminationAndHandoverRequest extends Model
     public $permissionHandoverUserId;
 
     /**
+     * @var string[]
+     */
+    public $terminationReasonPassive;
+
+    /**
+     * @var string[]
+     */
+    public $terminationReasonVoluntary;
+
+    /**
      * @description This parameter is required.
      *
      * @example 2332
@@ -97,6 +105,8 @@ class HrmProcessTerminationAndHandoverRequest extends Model
         'lastWorkDate'                     => 'lastWorkDate',
         'optUserId'                        => 'optUserId',
         'permissionHandoverUserId'         => 'permissionHandoverUserId',
+        'terminationReasonPassive'         => 'terminationReasonPassive',
+        'terminationReasonVoluntary'       => 'terminationReasonVoluntary',
         'userId'                           => 'userId',
     ];
 
@@ -133,6 +143,12 @@ class HrmProcessTerminationAndHandoverRequest extends Model
         }
         if (null !== $this->permissionHandoverUserId) {
             $res['permissionHandoverUserId'] = $this->permissionHandoverUserId;
+        }
+        if (null !== $this->terminationReasonPassive) {
+            $res['terminationReasonPassive'] = $this->terminationReasonPassive;
+        }
+        if (null !== $this->terminationReasonVoluntary) {
+            $res['terminationReasonVoluntary'] = $this->terminationReasonVoluntary;
         }
         if (null !== $this->userId) {
             $res['userId'] = $this->userId;
@@ -175,6 +191,16 @@ class HrmProcessTerminationAndHandoverRequest extends Model
         }
         if (isset($map['permissionHandoverUserId'])) {
             $model->permissionHandoverUserId = $map['permissionHandoverUserId'];
+        }
+        if (isset($map['terminationReasonPassive'])) {
+            if (!empty($map['terminationReasonPassive'])) {
+                $model->terminationReasonPassive = $map['terminationReasonPassive'];
+            }
+        }
+        if (isset($map['terminationReasonVoluntary'])) {
+            if (!empty($map['terminationReasonVoluntary'])) {
+                $model->terminationReasonVoluntary = $map['terminationReasonVoluntary'];
+            }
         }
         if (isset($map['userId'])) {
             $model->userId = $map['userId'];

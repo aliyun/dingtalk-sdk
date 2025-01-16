@@ -140,6 +140,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetFormInstancesRespon
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetFormSchemaHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetFormSchemaRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetFormSchemaResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetInstFieldSettingHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetInstFieldSettingRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetInstFieldSettingResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetNoticedInstancesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetNoticedInstancesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGetNoticedInstancesResponse;
@@ -161,6 +164,9 @@ use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumGrantProcessInstanceFo
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumInsertOrUpdateDirHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumInsertOrUpdateDirRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumInsertOrUpdateDirResponse;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumQuerySchemaAndProcessByCodeListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumQuerySchemaAndProcessByCodeListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumQuerySchemaAndProcessByCodeListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumQueryTodoTasksByManagerHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumQueryTodoTasksByManagerRequest;
 use AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models\PremiumQueryTodoTasksByManagerResponse;
@@ -398,9 +404,6 @@ class Dingtalk extends OpenApiClient
     {
         Utils::validateModel($request);
         $body = [];
-        if (!Utils::isUnset($request->isSystem)) {
-            $body['isSystem'] = $request->isSystem;
-        }
         if (!Utils::isUnset($request->opUserId)) {
             $body['opUserId'] = $request->opUserId;
         }
@@ -3076,6 +3079,66 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 获取流程表单字段操作权限(高级版专享接口)
+     *  *
+     * @param PremiumGetInstFieldSettingRequest $request PremiumGetInstFieldSettingRequest
+     * @param PremiumGetInstFieldSettingHeaders $headers PremiumGetInstFieldSettingHeaders
+     * @param RuntimeOptions                    $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumGetInstFieldSettingResponse PremiumGetInstFieldSettingResponse
+     */
+    public function premiumGetInstFieldSettingWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->processInstanceId)) {
+            $body['processInstanceId'] = $request->processInstanceId;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumGetInstFieldSetting',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processes/fields/settings/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumGetInstFieldSettingResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取流程表单字段操作权限(高级版专享接口)
+     *  *
+     * @param PremiumGetInstFieldSettingRequest $request PremiumGetInstFieldSettingRequest
+     *
+     * @return PremiumGetInstFieldSettingResponse PremiumGetInstFieldSettingResponse
+     */
+    public function premiumGetInstFieldSetting($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumGetInstFieldSettingHeaders([]);
+
+        return $this->premiumGetInstFieldSettingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询审批中心我收到的实例列表(OA高级版专享接口)
      *  *
      * @param PremiumGetNoticedInstancesRequest $request PremiumGetNoticedInstancesRequest
@@ -3541,6 +3604,63 @@ class Dingtalk extends OpenApiClient
         $headers = new PremiumInsertOrUpdateDirHeaders([]);
 
         return $this->premiumInsertOrUpdateDirWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量获取审批模板信息（包含表单和流程配置信息）(高级版专享接口)
+     *  *
+     * @param PremiumQuerySchemaAndProcessByCodeListRequest $request PremiumQuerySchemaAndProcessByCodeListRequest
+     * @param PremiumQuerySchemaAndProcessByCodeListHeaders $headers PremiumQuerySchemaAndProcessByCodeListHeaders
+     * @param RuntimeOptions                                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PremiumQuerySchemaAndProcessByCodeListResponse PremiumQuerySchemaAndProcessByCodeListResponse
+     */
+    public function premiumQuerySchemaAndProcessByCodeListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->processCodes)) {
+            $body['processCodes'] = $request->processCodes;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PremiumQuerySchemaAndProcessByCodeList',
+            'version'     => 'workflow_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/workflow/premium/processes/schemas/batchQuery',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PremiumQuerySchemaAndProcessByCodeListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量获取审批模板信息（包含表单和流程配置信息）(高级版专享接口)
+     *  *
+     * @param PremiumQuerySchemaAndProcessByCodeListRequest $request PremiumQuerySchemaAndProcessByCodeListRequest
+     *
+     * @return PremiumQuerySchemaAndProcessByCodeListResponse PremiumQuerySchemaAndProcessByCodeListResponse
+     */
+    public function premiumQuerySchemaAndProcessByCodeList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PremiumQuerySchemaAndProcessByCodeListHeaders([]);
+
+        return $this->premiumQuerySchemaAndProcessByCodeListWithOptions($request, $headers, $runtime);
     }
 
     /**

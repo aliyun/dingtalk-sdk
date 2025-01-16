@@ -19,13 +19,25 @@ class subs extends Model
     public $reference;
 
     /**
+     * @var string[]
+     */
+    public $referenceFrame;
+
+    /**
      * @var string
      */
     public $subInfo;
+
+    /**
+     * @var string
+     */
+    public $subName;
     protected $_name = [
-        'point'     => 'point',
-        'reference' => 'reference',
-        'subInfo'   => 'subInfo',
+        'point'          => 'point',
+        'reference'      => 'reference',
+        'referenceFrame' => 'referenceFrame',
+        'subInfo'        => 'subInfo',
+        'subName'        => 'subName',
     ];
 
     public function validate()
@@ -41,8 +53,14 @@ class subs extends Model
         if (null !== $this->reference) {
             $res['reference'] = $this->reference;
         }
+        if (null !== $this->referenceFrame) {
+            $res['referenceFrame'] = $this->referenceFrame;
+        }
         if (null !== $this->subInfo) {
             $res['subInfo'] = $this->subInfo;
+        }
+        if (null !== $this->subName) {
+            $res['subName'] = $this->subName;
         }
 
         return $res;
@@ -62,8 +80,16 @@ class subs extends Model
         if (isset($map['reference'])) {
             $model->reference = $map['reference'];
         }
+        if (isset($map['referenceFrame'])) {
+            if (!empty($map['referenceFrame'])) {
+                $model->referenceFrame = $map['referenceFrame'];
+            }
+        }
         if (isset($map['subInfo'])) {
             $model->subInfo = $map['subInfo'];
+        }
+        if (isset($map['subName'])) {
+            $model->subName = $map['subName'];
         }
 
         return $model;

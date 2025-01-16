@@ -6,28 +6,28 @@ namespace AlibabaCloud\SDK\Dingtalk\Vworkflow_1_0\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class ArchiveProcessInstanceRequest extends Model
+class PremiumGetInstFieldSettingRequest extends Model
 {
     /**
      * @description This parameter is required.
      *
-     * @example 133743186427339452
-     *
-     * @var string
-     */
-    public $opUserId;
-
-    /**
-     * @description This parameter is required.
-     *
-     * @example a171de6c-8bxxxx
+     * @example proc-FF6Y2xxxx
      *
      * @var string
      */
     public $processInstanceId;
+
+    /**
+     * @description This parameter is required.
+     *
+     * @example userId123
+     *
+     * @var string
+     */
+    public $userId;
     protected $_name = [
-        'opUserId'          => 'opUserId',
         'processInstanceId' => 'processInstanceId',
+        'userId'            => 'userId',
     ];
 
     public function validate()
@@ -37,11 +37,11 @@ class ArchiveProcessInstanceRequest extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->opUserId) {
-            $res['opUserId'] = $this->opUserId;
-        }
         if (null !== $this->processInstanceId) {
             $res['processInstanceId'] = $this->processInstanceId;
+        }
+        if (null !== $this->userId) {
+            $res['userId'] = $this->userId;
         }
 
         return $res;
@@ -50,16 +50,16 @@ class ArchiveProcessInstanceRequest extends Model
     /**
      * @param array $map
      *
-     * @return ArchiveProcessInstanceRequest
+     * @return PremiumGetInstFieldSettingRequest
      */
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['opUserId'])) {
-            $model->opUserId = $map['opUserId'];
-        }
         if (isset($map['processInstanceId'])) {
             $model->processInstanceId = $map['processInstanceId'];
+        }
+        if (isset($map['userId'])) {
+            $model->userId = $map['userId'];
         }
 
         return $model;

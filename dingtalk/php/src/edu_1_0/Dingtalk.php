@@ -270,6 +270,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetDefaultChildResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetEduUserIdentityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetEduUserIdentityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetEduUserIdentityResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetFileDownloadInfoByPackageIdHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetFileDownloadInfoByPackageIdRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetFileDownloadInfoByPackageIdResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetFileDownloadInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetFileDownloadInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\GetFileDownloadInfoResponse;
@@ -494,6 +497,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendFileMessageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendMessageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendMessageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendPrintOrderNoticeMsgHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendPrintOrderNoticeMsgRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SendPrintOrderNoticeMsgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\StartCourseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\StartCoursePrepareHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\StartCoursePrepareRequest;
@@ -7018,6 +7024,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 查询文件和图片ID信息
+     *  *
+     * @param GetFileDownloadInfoByPackageIdRequest $request GetFileDownloadInfoByPackageIdRequest
+     * @param GetFileDownloadInfoByPackageIdHeaders $headers GetFileDownloadInfoByPackageIdHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetFileDownloadInfoByPackageIdResponse GetFileDownloadInfoByPackageIdResponse
+     */
+    public function getFileDownloadInfoByPackageIdWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->packageId)) {
+            $body['packageId'] = $request->packageId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetFileDownloadInfoByPackageId',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/fileAndImages/ids/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetFileDownloadInfoByPackageIdResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询文件和图片ID信息
+     *  *
+     * @param GetFileDownloadInfoByPackageIdRequest $request GetFileDownloadInfoByPackageIdRequest
+     *
+     * @return GetFileDownloadInfoByPackageIdResponse GetFileDownloadInfoByPackageIdResponse
+     */
+    public function getFileDownloadInfoByPackageId($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetFileDownloadInfoByPackageIdHeaders([]);
+
+        return $this->getFileDownloadInfoByPackageIdWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 获取图片下载信息
      *  *
      * @param GetImageTempDownloadUrlRequest $request GetImageTempDownloadUrlRequest
@@ -11722,6 +11785,81 @@ class Dingtalk extends OpenApiClient
         $headers = new SendMessageHeaders([]);
 
         return $this->sendMessageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 发送打印订单提醒消息
+     *  *
+     * @param SendPrintOrderNoticeMsgRequest $request SendPrintOrderNoticeMsgRequest
+     * @param SendPrintOrderNoticeMsgHeaders $headers SendPrintOrderNoticeMsgHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SendPrintOrderNoticeMsgResponse SendPrintOrderNoticeMsgResponse
+     */
+    public function sendPrintOrderNoticeMsgWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->createOrderTime)) {
+            $body['createOrderTime'] = $request->createOrderTime;
+        }
+        if (!Utils::isUnset($request->deliveryCompanyName)) {
+            $body['deliveryCompanyName'] = $request->deliveryCompanyName;
+        }
+        if (!Utils::isUnset($request->deliveryNumber)) {
+            $body['deliveryNumber'] = $request->deliveryNumber;
+        }
+        if (!Utils::isUnset($request->deliveryTime)) {
+            $body['deliveryTime'] = $request->deliveryTime;
+        }
+        if (!Utils::isUnset($request->paymentTime)) {
+            $body['paymentTime'] = $request->paymentTime;
+        }
+        if (!Utils::isUnset($request->price)) {
+            $body['price'] = $request->price;
+        }
+        if (!Utils::isUnset($request->sceneCode)) {
+            $body['sceneCode'] = $request->sceneCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SendPrintOrderNoticeMsg',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/files/printOrders/noticeMessages/send',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SendPrintOrderNoticeMsgResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 发送打印订单提醒消息
+     *  *
+     * @param SendPrintOrderNoticeMsgRequest $request SendPrintOrderNoticeMsgRequest
+     *
+     * @return SendPrintOrderNoticeMsgResponse SendPrintOrderNoticeMsgResponse
+     */
+    public function sendPrintOrderNoticeMsg($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SendPrintOrderNoticeMsgHeaders([]);
+
+        return $this->sendPrintOrderNoticeMsgWithOptions($request, $headers, $runtime);
     }
 
     /**

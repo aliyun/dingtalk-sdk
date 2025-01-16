@@ -36,15 +36,21 @@ class items extends Model
     public $reference;
 
     /**
+     * @var string[]
+     */
+    public $referenceFrame;
+
+    /**
      * @var subs[]
      */
     public $subs;
     protected $_name = [
-        'info'      => 'info',
-        'name'      => 'name',
-        'point'     => 'point',
-        'reference' => 'reference',
-        'subs'      => 'subs',
+        'info'           => 'info',
+        'name'           => 'name',
+        'point'          => 'point',
+        'reference'      => 'reference',
+        'referenceFrame' => 'referenceFrame',
+        'subs'           => 'subs',
     ];
 
     public function validate()
@@ -65,6 +71,9 @@ class items extends Model
         }
         if (null !== $this->reference) {
             $res['reference'] = $this->reference;
+        }
+        if (null !== $this->referenceFrame) {
+            $res['referenceFrame'] = $this->referenceFrame;
         }
         if (null !== $this->subs) {
             $res['subs'] = [];
@@ -98,6 +107,11 @@ class items extends Model
         }
         if (isset($map['reference'])) {
             $model->reference = $map['reference'];
+        }
+        if (isset($map['referenceFrame'])) {
+            if (!empty($map['referenceFrame'])) {
+                $model->referenceFrame = $map['referenceFrame'];
+            }
         }
         if (isset($map['subs'])) {
             if (!empty($map['subs'])) {

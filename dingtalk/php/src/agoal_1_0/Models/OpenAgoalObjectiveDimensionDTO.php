@@ -37,11 +37,21 @@ class OpenAgoalObjectiveDimensionDTO extends Model
      * @var mixed[]
      */
     public $fieldValueMap;
+
+    /**
+     * @description This parameter is required.
+     *
+     * @example 这是维度标题
+     *
+     * @var string
+     */
+    public $title;
     protected $_name = [
         'children'      => 'children',
         'dimensionId'   => 'dimensionId',
         'fieldConfig'   => 'fieldConfig',
         'fieldValueMap' => 'fieldValueMap',
+        'title'         => 'title',
     ];
 
     public function validate()
@@ -74,6 +84,9 @@ class OpenAgoalObjectiveDimensionDTO extends Model
         }
         if (null !== $this->fieldValueMap) {
             $res['fieldValueMap'] = $this->fieldValueMap;
+        }
+        if (null !== $this->title) {
+            $res['title'] = $this->title;
         }
 
         return $res;
@@ -110,6 +123,9 @@ class OpenAgoalObjectiveDimensionDTO extends Model
         }
         if (isset($map['fieldValueMap'])) {
             $model->fieldValueMap = $map['fieldValueMap'];
+        }
+        if (isset($map['title'])) {
+            $model->title = $map['title'];
         }
 
         return $model;

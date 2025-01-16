@@ -1542,6 +1542,12 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->permissionHandoverUserId)) {
             $body['permissionHandoverUserId'] = $request->permissionHandoverUserId;
         }
+        if (!Utils::isUnset($request->terminationReasonPassive)) {
+            $body['terminationReasonPassive'] = $request->terminationReasonPassive;
+        }
+        if (!Utils::isUnset($request->terminationReasonVoluntary)) {
+            $body['terminationReasonVoluntary'] = $request->terminationReasonVoluntary;
+        }
         if (!Utils::isUnset($request->userId)) {
             $body['userId'] = $request->userId;
         }

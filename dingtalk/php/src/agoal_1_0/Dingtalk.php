@@ -21,6 +21,9 @@ use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalObjectiveRulePeriodListResp
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveQueryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveQueryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveQueryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveRuleListHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalOrgObjectiveRuleListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vagoal_1_0\Models\AgoalPeriodListHeaders;
@@ -376,6 +379,63 @@ class Dingtalk extends OpenApiClient
         $headers = new AgoalOrgObjectiveListHeaders([]);
 
         return $this->agoalOrgObjectiveListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询组织目标详情
+     *  *
+     * @param AgoalOrgObjectiveQueryRequest $request AgoalOrgObjectiveQueryRequest
+     * @param AgoalOrgObjectiveQueryHeaders $headers AgoalOrgObjectiveQueryHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AgoalOrgObjectiveQueryResponse AgoalOrgObjectiveQueryResponse
+     */
+    public function agoalOrgObjectiveQueryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->objectiveId)) {
+            $query['objectiveId'] = $request->objectiveId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'AgoalOrgObjectiveQuery',
+            'version'     => 'agoal_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/agoal/orgObjectives',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AgoalOrgObjectiveQueryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询组织目标详情
+     *  *
+     * @param AgoalOrgObjectiveQueryRequest $request AgoalOrgObjectiveQueryRequest
+     *
+     * @return AgoalOrgObjectiveQueryResponse AgoalOrgObjectiveQueryResponse
+     */
+    public function agoalOrgObjectiveQuery($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AgoalOrgObjectiveQueryHeaders([]);
+
+        return $this->agoalOrgObjectiveQueryWithOptions($request, $headers, $runtime);
     }
 
     /**
