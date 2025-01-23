@@ -2,7 +2,7 @@
 
 // This file is auto-generated, don't edit it. Thanks.
 
-namespace AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\PublishTemplateResponseBody;
+namespace AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\ListTemplateResponseBody;
 
 use AlibabaCloud\Tea\Model;
 

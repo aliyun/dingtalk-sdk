@@ -99,6 +99,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserCardHolderListRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserCardHolderListResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\GetUserResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\InitVerifyEventHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\InitVerifyEventRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\InitVerifyEventResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\IsFriendHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\IsFriendRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontact_1_0\Models\IsFriendResponse;
@@ -2406,6 +2409,72 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 初始化核身事件
+     *  *
+     * @param InitVerifyEventRequest $request InitVerifyEventRequest
+     * @param InitVerifyEventHeaders $headers InitVerifyEventHeaders
+     * @param RuntimeOptions         $runtime runtime options for this request RuntimeOptions
+     *
+     * @return InitVerifyEventResponse InitVerifyEventResponse
+     */
+    public function initVerifyEventWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->callerDeviceId)) {
+            $body['callerDeviceId'] = $request->callerDeviceId;
+        }
+        if (!Utils::isUnset($request->factorCodeList)) {
+            $body['factorCodeList'] = $request->factorCodeList;
+        }
+        if (!Utils::isUnset($request->state)) {
+            $body['state'] = $request->state;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'InitVerifyEvent',
+            'version'     => 'contact_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contact/verifyIdentities/verifyEvents/init',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return InitVerifyEventResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 初始化核身事件
+     *  *
+     * @param InitVerifyEventRequest $request InitVerifyEventRequest
+     *
+     * @return InitVerifyEventResponse InitVerifyEventResponse
+     */
+    public function initVerifyEvent($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new InitVerifyEventHeaders([]);
+
+        return $this->initVerifyEventWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 判断某用户跟给定专属账号是否存在好友关系
      *  *
      * @param IsFriendRequest $request IsFriendRequest
@@ -3306,7 +3375,7 @@ class Dingtalk extends OpenApiClient
             'action'      => 'PushVerifyEvent',
             'version'     => 'contact_1.0',
             'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contact/verifyIdentitys/verifyEvents/push',
+            'pathname'    => '/v1.0/contact/verifyIdentities/verifyEvents/push',
             'method'      => 'POST',
             'authType'    => 'AK',
             'style'       => 'ROA',
@@ -3717,7 +3786,7 @@ class Dingtalk extends OpenApiClient
             'action'      => 'QueryVerifyResult',
             'version'     => 'contact_1.0',
             'protocol'    => 'HTTP',
-            'pathname'    => '/v1.0/contact/verifyIdentitys/verifyResults',
+            'pathname'    => '/v1.0/contact/verifyIdentities/verifyResults',
             'method'      => 'GET',
             'authType'    => 'AK',
             'style'       => 'ROA',

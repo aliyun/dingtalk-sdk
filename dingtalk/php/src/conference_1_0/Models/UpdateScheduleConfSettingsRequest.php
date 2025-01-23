@@ -10,6 +10,8 @@ use AlibabaCloud\Tea\Model;
 class UpdateScheduleConfSettingsRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example 2iPOLbpUNMLzB5LuwggiiqiPwiEiE
      *
      * @var string
@@ -22,6 +24,8 @@ class UpdateScheduleConfSettingsRequest extends Model
     public $scheduleConfSettingModel;
 
     /**
+     * @description This parameter is required.
+     *
      * @example f6fb627e-a7e8-403e-b1f8-26e85450f4a9
      *
      * @var string

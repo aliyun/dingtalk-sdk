@@ -9832,6 +9832,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->taskPackageName)) {
             $body['taskPackageName'] = $request->taskPackageName;
         }
+        if (!Utils::isUnset($request->unionId)) {
+            $body['unionId'] = $request->unionId;
+        }
         if (!Utils::isUnset($request->version)) {
             $body['version'] = $request->version;
         }

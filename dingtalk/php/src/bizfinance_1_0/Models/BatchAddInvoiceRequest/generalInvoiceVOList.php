@@ -50,6 +50,11 @@ class generalInvoiceVOList extends Model
     public $checkTime;
 
     /**
+     * @var string
+     */
+    public $domesticOrIntl;
+
+    /**
      * @example 张三
      *
      * @var string
@@ -67,6 +72,11 @@ class generalInvoiceVOList extends Model
      * @var eFlightItineraryDetailVOList[]
      */
     public $eFlightItineraryDetailVOList;
+
+    /**
+     * @var string
+     */
+    public $eTicketNo;
 
     /**
      * @var eTrainTicketDetailVOList[]
@@ -103,6 +113,11 @@ class generalInvoiceVOList extends Model
      * @var generalInvoiceDetailVOList[]
      */
     public $generalInvoiceDetailVOList;
+
+    /**
+     * @var string
+     */
+    public $gpNo;
 
     /**
      * @example http://XXX.jpg
@@ -157,6 +172,16 @@ class generalInvoiceVOList extends Model
      * @var string
      */
     public $oilFlag;
+
+    /**
+     * @var string
+     */
+    public $passenger;
+
+    /**
+     * @var string
+     */
+    public $passengerUserId;
 
     /**
      * @example abc
@@ -356,15 +381,18 @@ class generalInvoiceVOList extends Model
         'amountWithTax'                  => 'amountWithTax',
         'checkCode'                      => 'checkCode',
         'checkTime'                      => 'checkTime',
+        'domesticOrIntl'                 => 'domesticOrIntl',
         'drawerName'                     => 'drawerName',
         'drewDate'                       => 'drewDate',
         'eFlightItineraryDetailVOList'   => 'eFlightItineraryDetailVOList',
+        'eTicketNo'                      => 'eTicketNo',
         'eTrainTicketDetailVOList'       => 'eTrainTicketDetailVOList',
         'electronicUrl'                  => 'electronicUrl',
         'fileId'                         => 'fileId',
         'financeType'                    => 'financeType',
         'fundType'                       => 'fundType',
         'generalInvoiceDetailVOList'     => 'generalInvoiceDetailVOList',
+        'gpNo'                           => 'gpNo',
         'imageUrl'                       => 'imageUrl',
         'invoiceCode'                    => 'invoiceCode',
         'invoiceNo'                      => 'invoiceNo',
@@ -373,6 +401,8 @@ class generalInvoiceVOList extends Model
         'machineCode'                    => 'machineCode',
         'ofdUrl'                         => 'ofdUrl',
         'oilFlag'                        => 'oilFlag',
+        'passenger'                      => 'passenger',
+        'passengerUserId'                => 'passengerUserId',
         'payee'                          => 'payee',
         'pdfUrl'                         => 'pdfUrl',
         'processInstCode'                => 'processInstCode',
@@ -428,6 +458,9 @@ class generalInvoiceVOList extends Model
         if (null !== $this->checkTime) {
             $res['checkTime'] = $this->checkTime;
         }
+        if (null !== $this->domesticOrIntl) {
+            $res['domesticOrIntl'] = $this->domesticOrIntl;
+        }
         if (null !== $this->drawerName) {
             $res['drawerName'] = $this->drawerName;
         }
@@ -442,6 +475,9 @@ class generalInvoiceVOList extends Model
                     $res['eFlightItineraryDetailVOList'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->eTicketNo) {
+            $res['eTicketNo'] = $this->eTicketNo;
         }
         if (null !== $this->eTrainTicketDetailVOList) {
             $res['eTrainTicketDetailVOList'] = [];
@@ -473,6 +509,9 @@ class generalInvoiceVOList extends Model
                 }
             }
         }
+        if (null !== $this->gpNo) {
+            $res['gpNo'] = $this->gpNo;
+        }
         if (null !== $this->imageUrl) {
             $res['imageUrl'] = $this->imageUrl;
         }
@@ -496,6 +535,12 @@ class generalInvoiceVOList extends Model
         }
         if (null !== $this->oilFlag) {
             $res['oilFlag'] = $this->oilFlag;
+        }
+        if (null !== $this->passenger) {
+            $res['passenger'] = $this->passenger;
+        }
+        if (null !== $this->passengerUserId) {
+            $res['passengerUserId'] = $this->passengerUserId;
         }
         if (null !== $this->payee) {
             $res['payee'] = $this->payee;
@@ -635,6 +680,9 @@ class generalInvoiceVOList extends Model
         if (isset($map['checkTime'])) {
             $model->checkTime = $map['checkTime'];
         }
+        if (isset($map['domesticOrIntl'])) {
+            $model->domesticOrIntl = $map['domesticOrIntl'];
+        }
         if (isset($map['drawerName'])) {
             $model->drawerName = $map['drawerName'];
         }
@@ -649,6 +697,9 @@ class generalInvoiceVOList extends Model
                     $model->eFlightItineraryDetailVOList[$n++] = null !== $item ? eFlightItineraryDetailVOList::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['eTicketNo'])) {
+            $model->eTicketNo = $map['eTicketNo'];
         }
         if (isset($map['eTrainTicketDetailVOList'])) {
             if (!empty($map['eTrainTicketDetailVOList'])) {
@@ -680,6 +731,9 @@ class generalInvoiceVOList extends Model
                 }
             }
         }
+        if (isset($map['gpNo'])) {
+            $model->gpNo = $map['gpNo'];
+        }
         if (isset($map['imageUrl'])) {
             $model->imageUrl = $map['imageUrl'];
         }
@@ -703,6 +757,12 @@ class generalInvoiceVOList extends Model
         }
         if (isset($map['oilFlag'])) {
             $model->oilFlag = $map['oilFlag'];
+        }
+        if (isset($map['passenger'])) {
+            $model->passenger = $map['passenger'];
+        }
+        if (isset($map['passengerUserId'])) {
+            $model->passengerUserId = $map['passengerUserId'];
         }
         if (isset($map['payee'])) {
             $model->payee = $map['payee'];

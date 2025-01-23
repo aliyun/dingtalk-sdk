@@ -46,6 +46,11 @@ class data extends Model
     /**
      * @var string
      */
+    public $miniAppId;
+
+    /**
+     * @var string
+     */
     public $name;
 
     /**
@@ -75,6 +80,7 @@ class data extends Model
         'gmtCreate'          => 'gmtCreate',
         'gmtModified'        => 'gmtModified',
         'localVariableList'  => 'localVariableList',
+        'miniAppId'          => 'miniAppId',
         'name'               => 'name',
         'preview'            => 'preview',
         'status'             => 'status',
@@ -109,6 +115,9 @@ class data extends Model
         }
         if (null !== $this->localVariableList) {
             $res['localVariableList'] = $this->localVariableList;
+        }
+        if (null !== $this->miniAppId) {
+            $res['miniAppId'] = $this->miniAppId;
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
@@ -157,6 +166,9 @@ class data extends Model
         }
         if (isset($map['localVariableList'])) {
             $model->localVariableList = $map['localVariableList'];
+        }
+        if (isset($map['miniAppId'])) {
+            $model->miniAppId = $map['miniAppId'];
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];

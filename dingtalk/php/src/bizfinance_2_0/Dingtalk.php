@@ -26,6 +26,12 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CheckVoucherStatusResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetCategoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetCategoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetCategoryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetDefineDataHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetDefineDataRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetDefineDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetDefineHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetDefineRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetDefineResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetFinanceAccountHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetFinanceAccountRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetFinanceAccountResponse;
@@ -560,6 +566,138 @@ class Dingtalk extends OpenApiClient
         $headers = new GetCategoryHeaders([]);
 
         return $this->getCategoryWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询企业内自定义辅助档案信息
+     *  *
+     * @param GetDefineRequest $request GetDefineRequest
+     * @param GetDefineHeaders $headers GetDefineHeaders
+     * @param RuntimeOptions   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetDefineResponse GetDefineResponse
+     */
+    public function getDefineWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->code)) {
+            $body['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetDefine',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/customInfos/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetDefineResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询企业内自定义辅助档案信息
+     *  *
+     * @param GetDefineRequest $request GetDefineRequest
+     *
+     * @return GetDefineResponse GetDefineResponse
+     */
+    public function getDefine($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetDefineHeaders([]);
+
+        return $this->getDefineWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询企业内自定义辅助档案数据信息
+     *  *
+     * @param GetDefineDataRequest $request GetDefineDataRequest
+     * @param GetDefineDataHeaders $headers GetDefineDataHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetDefineDataResponse GetDefineDataResponse
+     */
+    public function getDefineDataWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->code)) {
+            $body['code'] = $request->code;
+        }
+        if (!Utils::isUnset($request->name)) {
+            $body['name'] = $request->name;
+        }
+        if (!Utils::isUnset($request->pageNumber)) {
+            $body['pageNumber'] = $request->pageNumber;
+        }
+        if (!Utils::isUnset($request->pageSize)) {
+            $body['pageSize'] = $request->pageSize;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetDefineData',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/customDatas/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetDefineDataResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询企业内自定义辅助档案数据信息
+     *  *
+     * @param GetDefineDataRequest $request GetDefineDataRequest
+     *
+     * @return GetDefineDataResponse GetDefineDataResponse
+     */
+    public function getDefineData($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetDefineDataHeaders([]);
+
+        return $this->getDefineDataWithOptions($request, $headers, $runtime);
     }
 
     /**

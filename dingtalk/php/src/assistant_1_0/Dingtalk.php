@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AddDomainWordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AddDomainWordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AddDomainWordsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AddToOrgSkillRepositoryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AddToOrgSkillRepositoryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\AddToOrgSkillRepositoryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\CreateAssistantHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\CreateAssistantMessageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\CreateAssistantMessageRequest;
@@ -36,6 +39,9 @@ use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\DeleteKnowledgeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetAskDetailHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetAskDetailRequest;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetAskDetailResponse;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetAssistantActionInfoHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetAssistantActionInfoRequest;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetAssistantActionInfoResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetDomainWordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetDomainWordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\GetDomainWordsResponse;
@@ -69,6 +75,9 @@ use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RelearnKnowledgeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RemoveAssistantHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RemoveAssistantRequest;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RemoveAssistantResponse;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RemoveFromOrgSkillRepositoryHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RemoveFromOrgSkillRepositoryRequest;
+use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RemoveFromOrgSkillRepositoryResponse;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RetrieveAssistantBasicInfoHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RetrieveAssistantBasicInfoRequest;
 use AlibabaCloud\SDK\Dingtalk\Vassistant_1_0\Models\RetrieveAssistantBasicInfoResponse;
@@ -165,6 +174,69 @@ class Dingtalk extends OpenApiClient
         $headers = new AddDomainWordsHeaders([]);
 
         return $this->addDomainWordsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 添加技能到组织技能库
+     *  *
+     * @param AddToOrgSkillRepositoryRequest $request AddToOrgSkillRepositoryRequest
+     * @param AddToOrgSkillRepositoryHeaders $headers AddToOrgSkillRepositoryHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddToOrgSkillRepositoryResponse AddToOrgSkillRepositoryResponse
+     */
+    public function addToOrgSkillRepositoryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actionId)) {
+            $body['actionId'] = $request->actionId;
+        }
+        if (!Utils::isUnset($request->actionVersion)) {
+            $body['actionVersion'] = $request->actionVersion;
+        }
+        if (!Utils::isUnset($request->operatorUnionId)) {
+            $body['operatorUnionId'] = $request->operatorUnionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddToOrgSkillRepository',
+            'version'     => 'assistant_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/assistant/orgActionRepositories',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddToOrgSkillRepositoryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 添加技能到组织技能库
+     *  *
+     * @param AddToOrgSkillRepositoryRequest $request AddToOrgSkillRepositoryRequest
+     *
+     * @return AddToOrgSkillRepositoryResponse AddToOrgSkillRepositoryResponse
+     */
+    public function addToOrgSkillRepository($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddToOrgSkillRepositoryHeaders([]);
+
+        return $this->addToOrgSkillRepositoryWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -786,6 +858,63 @@ class Dingtalk extends OpenApiClient
         $headers = new GetAskDetailHeaders([]);
 
         return $this->getAskDetailWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取AI助理技能列表信息
+     *  *
+     * @param GetAssistantActionInfoRequest $request GetAssistantActionInfoRequest
+     * @param GetAssistantActionInfoHeaders $headers GetAssistantActionInfoHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetAssistantActionInfoResponse GetAssistantActionInfoResponse
+     */
+    public function getAssistantActionInfoWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->assistantId)) {
+            $query['assistantId'] = $request->assistantId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'GetAssistantActionInfo',
+            'version'     => 'assistant_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/assistant/actionLists',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetAssistantActionInfoResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取AI助理技能列表信息
+     *  *
+     * @param GetAssistantActionInfoRequest $request GetAssistantActionInfoRequest
+     *
+     * @return GetAssistantActionInfoResponse GetAssistantActionInfoResponse
+     */
+    public function getAssistantActionInfo($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetAssistantActionInfoHeaders([]);
+
+        return $this->getAssistantActionInfoWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1462,6 +1591,66 @@ class Dingtalk extends OpenApiClient
         $headers = new RemoveAssistantHeaders([]);
 
         return $this->removeAssistantWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 移除组织技能库技能
+     *  *
+     * @param RemoveFromOrgSkillRepositoryRequest $request RemoveFromOrgSkillRepositoryRequest
+     * @param RemoveFromOrgSkillRepositoryHeaders $headers RemoveFromOrgSkillRepositoryHeaders
+     * @param RuntimeOptions                      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return RemoveFromOrgSkillRepositoryResponse RemoveFromOrgSkillRepositoryResponse
+     */
+    public function removeFromOrgSkillRepositoryWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->actionId)) {
+            $query['actionId'] = $request->actionId;
+        }
+        if (!Utils::isUnset($request->operatorUnionId)) {
+            $query['operatorUnionId'] = $request->operatorUnionId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'RemoveFromOrgSkillRepository',
+            'version'     => 'assistant_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/assistant/orgActionRepositories',
+            'method'      => 'DELETE',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return RemoveFromOrgSkillRepositoryResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 移除组织技能库技能
+     *  *
+     * @param RemoveFromOrgSkillRepositoryRequest $request RemoveFromOrgSkillRepositoryRequest
+     *
+     * @return RemoveFromOrgSkillRepositoryResponse RemoveFromOrgSkillRepositoryResponse
+     */
+    public function removeFromOrgSkillRepository($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new RemoveFromOrgSkillRepositoryHeaders([]);
+
+        return $this->removeFromOrgSkillRepositoryWithOptions($request, $headers, $runtime);
     }
 
     /**

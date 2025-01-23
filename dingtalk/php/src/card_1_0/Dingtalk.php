@@ -44,6 +44,9 @@ use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\DeliverCardWithDelegateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\GetTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\GetTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\GetTemplateResponse;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\ListTemplateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\ListTemplateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\ListTemplateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\PublishTemplateHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\PublishTemplateRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcard_1_0\Models\PublishTemplateResponse;
@@ -1109,6 +1112,63 @@ class Dingtalk extends OpenApiClient
         $headers = new GetTemplateHeaders([]);
 
         return $this->getTemplateWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取模板列表
+     *  *
+     * @param ListTemplateRequest $request ListTemplateRequest
+     * @param ListTemplateHeaders $headers ListTemplateHeaders
+     * @param RuntimeOptions      $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListTemplateResponse ListTemplateResponse
+     */
+    public function listTemplateWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->templateIds)) {
+            $body['templateIds'] = $request->templateIds;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ListTemplate',
+            'version'     => 'card_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/card/templates/lists/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListTemplateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取模板列表
+     *  *
+     * @param ListTemplateRequest $request ListTemplateRequest
+     *
+     * @return ListTemplateResponse ListTemplateResponse
+     */
+    public function listTemplate($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListTemplateHeaders([]);
+
+        return $this->listTemplateWithOptions($request, $headers, $runtime);
     }
 
     /**

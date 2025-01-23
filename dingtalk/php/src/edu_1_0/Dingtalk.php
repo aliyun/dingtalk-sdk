@@ -334,6 +334,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsvDataWriteResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsvMetadataQueryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsvMetadataQueryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsvMetadataQueryResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsYuwenCertifiedTeacherHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsYuwenCertifiedTeacherRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\IsYuwenCertifiedTeacherResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListCollegeContactDeptTypeConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListCollegeContactDeptTypeConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ListCollegeContactDeptTypeConfigResponse;
@@ -8195,6 +8198,66 @@ class Dingtalk extends OpenApiClient
         $headers = new InvalidTeacherCourseHeaders([]);
 
         return $this->invalidTeacherCourseWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查看用户是否是认证校的语文老师
+     *  *
+     * @param IsYuwenCertifiedTeacherRequest $request IsYuwenCertifiedTeacherRequest
+     * @param IsYuwenCertifiedTeacherHeaders $headers IsYuwenCertifiedTeacherHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return IsYuwenCertifiedTeacherResponse IsYuwenCertifiedTeacherResponse
+     */
+    public function isYuwenCertifiedTeacherWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            $body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'IsYuwenCertifiedTeacher',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/paas/certifiedTeachers/chineseTeachers/check',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return IsYuwenCertifiedTeacherResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查看用户是否是认证校的语文老师
+     *  *
+     * @param IsYuwenCertifiedTeacherRequest $request IsYuwenCertifiedTeacherRequest
+     *
+     * @return IsYuwenCertifiedTeacherResponse IsYuwenCertifiedTeacherResponse
+     */
+    public function isYuwenCertifiedTeacher($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new IsYuwenCertifiedTeacherHeaders([]);
+
+        return $this->isYuwenCertifiedTeacherWithOptions($request, $headers, $runtime);
     }
 
     /**

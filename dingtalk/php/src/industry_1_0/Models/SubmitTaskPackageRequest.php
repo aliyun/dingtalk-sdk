@@ -49,6 +49,11 @@ class SubmitTaskPackageRequest extends Model
     /**
      * @var string
      */
+    public $unionId;
+
+    /**
+     * @var string
+     */
     public $version;
     protected $_name = [
         'appId'           => 'appId',
@@ -58,6 +63,7 @@ class SubmitTaskPackageRequest extends Model
         'desc'            => 'desc',
         'fileType'        => 'fileType',
         'taskPackageName' => 'taskPackageName',
+        'unionId'         => 'unionId',
         'version'         => 'version',
     ];
 
@@ -94,6 +100,9 @@ class SubmitTaskPackageRequest extends Model
         }
         if (null !== $this->taskPackageName) {
             $res['taskPackageName'] = $this->taskPackageName;
+        }
+        if (null !== $this->unionId) {
+            $res['unionId'] = $this->unionId;
         }
         if (null !== $this->version) {
             $res['version'] = $this->version;
@@ -136,6 +145,9 @@ class SubmitTaskPackageRequest extends Model
         }
         if (isset($map['taskPackageName'])) {
             $model->taskPackageName = $map['taskPackageName'];
+        }
+        if (isset($map['unionId'])) {
+            $model->unionId = $map['unionId'];
         }
         if (isset($map['version'])) {
             $model->version = $map['version'];

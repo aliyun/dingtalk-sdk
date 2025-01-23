@@ -8,6 +8,9 @@ use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\CreateFlashMeetingHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\CreateFlashMeetingRequest;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\CreateFlashMeetingResponse;
+use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\ExportShanhuiToDocHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\ExportShanhuiToDocRequest;
+use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\ExportShanhuiToDocResponse;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetShanhuiByCalendarHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetShanhuiByCalendarRequest;
 use AlibabaCloud\SDK\Dingtalk\Vflashmeeting_1_0\Models\GetShanhuiByCalendarResponse;
@@ -97,6 +100,75 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateFlashMeetingHeaders([]);
 
         return $this->createFlashMeetingWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 将闪会导出到文档
+     *  *
+     * @param ExportShanhuiToDocRequest $request ExportShanhuiToDocRequest
+     * @param ExportShanhuiToDocHeaders $headers ExportShanhuiToDocHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ExportShanhuiToDocResponse ExportShanhuiToDocResponse
+     */
+    public function exportShanhuiToDocWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->contentEnums)) {
+            $body['contentEnums'] = $request->contentEnums;
+        }
+        if (!Utils::isUnset($request->parentNodeKey)) {
+            $body['parentNodeKey'] = $request->parentNodeKey;
+        }
+        if (!Utils::isUnset($request->shanhuiKey)) {
+            $body['shanhuiKey'] = $request->shanhuiKey;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        if (!Utils::isUnset($request->workspaceKey)) {
+            $body['workspaceKey'] = $request->workspaceKey;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ExportShanhuiToDoc',
+            'version'     => 'flashmeeting_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/flashmeeting/meetings/export',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ExportShanhuiToDocResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 将闪会导出到文档
+     *  *
+     * @param ExportShanhuiToDocRequest $request ExportShanhuiToDocRequest
+     *
+     * @return ExportShanhuiToDocResponse ExportShanhuiToDocResponse
+     */
+    public function exportShanhuiToDoc($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ExportShanhuiToDocHeaders([]);
+
+        return $this->exportShanhuiToDocWithOptions($request, $headers, $runtime);
     }
 
     /**
