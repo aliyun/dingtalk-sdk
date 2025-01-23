@@ -24130,6 +24130,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             {
                 body["taskPackageName"] = request.TaskPackageName;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Version))
             {
                 body["version"] = request.Version;
@@ -24212,6 +24216,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TaskPackageName))
             {
                 body["taskPackageName"] = request.TaskPackageName;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                body["unionId"] = request.UnionId;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Version))
             {

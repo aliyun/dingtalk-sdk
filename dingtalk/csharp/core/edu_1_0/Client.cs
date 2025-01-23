@@ -19814,6 +19814,162 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查看用户是否是认证校的语文老师</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IsYuwenCertifiedTeacherRequest
+        /// </param>
+        /// <param name="headers">
+        /// IsYuwenCertifiedTeacherHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IsYuwenCertifiedTeacherResponse
+        /// </returns>
+        public IsYuwenCertifiedTeacherResponse IsYuwenCertifiedTeacherWithOptions(IsYuwenCertifiedTeacherRequest request, IsYuwenCertifiedTeacherHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                body["bizCode"] = request.BizCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "IsYuwenCertifiedTeacher",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/paas/certifiedTeachers/chineseTeachers/check",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<IsYuwenCertifiedTeacherResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查看用户是否是认证校的语文老师</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IsYuwenCertifiedTeacherRequest
+        /// </param>
+        /// <param name="headers">
+        /// IsYuwenCertifiedTeacherHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// IsYuwenCertifiedTeacherResponse
+        /// </returns>
+        public async Task<IsYuwenCertifiedTeacherResponse> IsYuwenCertifiedTeacherWithOptionsAsync(IsYuwenCertifiedTeacherRequest request, IsYuwenCertifiedTeacherHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                body["bizCode"] = request.BizCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "IsYuwenCertifiedTeacher",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/paas/certifiedTeachers/chineseTeachers/check",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<IsYuwenCertifiedTeacherResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查看用户是否是认证校的语文老师</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IsYuwenCertifiedTeacherRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IsYuwenCertifiedTeacherResponse
+        /// </returns>
+        public IsYuwenCertifiedTeacherResponse IsYuwenCertifiedTeacher(IsYuwenCertifiedTeacherRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            IsYuwenCertifiedTeacherHeaders headers = new IsYuwenCertifiedTeacherHeaders();
+            return IsYuwenCertifiedTeacherWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查看用户是否是认证校的语文老师</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// IsYuwenCertifiedTeacherRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// IsYuwenCertifiedTeacherResponse
+        /// </returns>
+        public async Task<IsYuwenCertifiedTeacherResponse> IsYuwenCertifiedTeacherAsync(IsYuwenCertifiedTeacherRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            IsYuwenCertifiedTeacherHeaders headers = new IsYuwenCertifiedTeacherHeaders();
+            return await IsYuwenCertifiedTeacherWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>第三方数据写入</para>
         /// </summary>
         /// 

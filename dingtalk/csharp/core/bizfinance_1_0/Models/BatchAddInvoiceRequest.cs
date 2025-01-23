@@ -61,6 +61,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string CheckTime { get; set; }
 
+            [NameInMap("domesticOrIntl")]
+            [Validation(Required=false)]
+            public string DomesticOrIntl { get; set; }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>张三</para>
@@ -122,6 +126,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
                 public string Seat { get; set; }
 
             }
+
+            [NameInMap("eTicketNo")]
+            [Validation(Required=false)]
+            public string ETicketNo { get; set; }
 
             [NameInMap("eTrainTicketDetailVOList")]
             [Validation(Required=false)]
@@ -271,6 +279,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
 
             }
 
+            [NameInMap("gpNo")]
+            [Validation(Required=false)]
+            public string GpNo { get; set; }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para><a href="http://XXX.jpg">http://XXX.jpg</a></para>
@@ -330,6 +342,14 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [NameInMap("oilFlag")]
             [Validation(Required=false)]
             public string OilFlag { get; set; }
+
+            [NameInMap("passenger")]
+            [Validation(Required=false)]
+            public string Passenger { get; set; }
+
+            [NameInMap("passengerUserId")]
+            [Validation(Required=false)]
+            public string PassengerUserId { get; set; }
 
             /// <summary>
             /// <b>Example:</b>

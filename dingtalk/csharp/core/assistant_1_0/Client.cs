@@ -186,6 +186,170 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>添加技能到组织技能库</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddToOrgSkillRepositoryRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddToOrgSkillRepositoryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddToOrgSkillRepositoryResponse
+        /// </returns>
+        public AddToOrgSkillRepositoryResponse AddToOrgSkillRepositoryWithOptions(AddToOrgSkillRepositoryRequest request, AddToOrgSkillRepositoryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActionId))
+            {
+                body["actionId"] = request.ActionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActionVersion))
+            {
+                body["actionVersion"] = request.ActionVersion;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUnionId))
+            {
+                body["operatorUnionId"] = request.OperatorUnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddToOrgSkillRepository",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/orgActionRepositories",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddToOrgSkillRepositoryResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加技能到组织技能库</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddToOrgSkillRepositoryRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddToOrgSkillRepositoryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddToOrgSkillRepositoryResponse
+        /// </returns>
+        public async Task<AddToOrgSkillRepositoryResponse> AddToOrgSkillRepositoryWithOptionsAsync(AddToOrgSkillRepositoryRequest request, AddToOrgSkillRepositoryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActionId))
+            {
+                body["actionId"] = request.ActionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActionVersion))
+            {
+                body["actionVersion"] = request.ActionVersion;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUnionId))
+            {
+                body["operatorUnionId"] = request.OperatorUnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddToOrgSkillRepository",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/orgActionRepositories",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddToOrgSkillRepositoryResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加技能到组织技能库</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddToOrgSkillRepositoryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddToOrgSkillRepositoryResponse
+        /// </returns>
+        public AddToOrgSkillRepositoryResponse AddToOrgSkillRepository(AddToOrgSkillRepositoryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddToOrgSkillRepositoryHeaders headers = new AddToOrgSkillRepositoryHeaders();
+            return AddToOrgSkillRepositoryWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加技能到组织技能库</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddToOrgSkillRepositoryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddToOrgSkillRepositoryResponse
+        /// </returns>
+        public async Task<AddToOrgSkillRepositoryResponse> AddToOrgSkillRepositoryAsync(AddToOrgSkillRepositoryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddToOrgSkillRepositoryHeaders headers = new AddToOrgSkillRepositoryHeaders();
+            return await AddToOrgSkillRepositoryWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>创建AI助理</para>
         /// </summary>
         /// 
@@ -1758,6 +1922,154 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             GetAskDetailHeaders headers = new GetAskDetailHeaders();
             return await GetAskDetailWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取AI助理技能列表信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAssistantActionInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetAssistantActionInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAssistantActionInfoResponse
+        /// </returns>
+        public GetAssistantActionInfoResponse GetAssistantActionInfoWithOptions(GetAssistantActionInfoRequest request, GetAssistantActionInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssistantId))
+            {
+                query["assistantId"] = request.AssistantId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAssistantActionInfo",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/actionLists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetAssistantActionInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取AI助理技能列表信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAssistantActionInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetAssistantActionInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAssistantActionInfoResponse
+        /// </returns>
+        public async Task<GetAssistantActionInfoResponse> GetAssistantActionInfoWithOptionsAsync(GetAssistantActionInfoRequest request, GetAssistantActionInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.AssistantId))
+            {
+                query["assistantId"] = request.AssistantId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetAssistantActionInfo",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/actionLists",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetAssistantActionInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取AI助理技能列表信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAssistantActionInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAssistantActionInfoResponse
+        /// </returns>
+        public GetAssistantActionInfoResponse GetAssistantActionInfo(GetAssistantActionInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetAssistantActionInfoHeaders headers = new GetAssistantActionInfoHeaders();
+            return GetAssistantActionInfoWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取AI助理技能列表信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetAssistantActionInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetAssistantActionInfoResponse
+        /// </returns>
+        public async Task<GetAssistantActionInfoResponse> GetAssistantActionInfoAsync(GetAssistantActionInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetAssistantActionInfoHeaders headers = new GetAssistantActionInfoHeaders();
+            return await GetAssistantActionInfoWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -3506,6 +3818,162 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             RemoveAssistantHeaders headers = new RemoveAssistantHeaders();
             return await RemoveAssistantWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移除组织技能库技能</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RemoveFromOrgSkillRepositoryRequest
+        /// </param>
+        /// <param name="headers">
+        /// RemoveFromOrgSkillRepositoryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RemoveFromOrgSkillRepositoryResponse
+        /// </returns>
+        public RemoveFromOrgSkillRepositoryResponse RemoveFromOrgSkillRepositoryWithOptions(RemoveFromOrgSkillRepositoryRequest request, RemoveFromOrgSkillRepositoryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActionId))
+            {
+                query["actionId"] = request.ActionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUnionId))
+            {
+                query["operatorUnionId"] = request.OperatorUnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RemoveFromOrgSkillRepository",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/orgActionRepositories",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RemoveFromOrgSkillRepositoryResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移除组织技能库技能</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RemoveFromOrgSkillRepositoryRequest
+        /// </param>
+        /// <param name="headers">
+        /// RemoveFromOrgSkillRepositoryHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// RemoveFromOrgSkillRepositoryResponse
+        /// </returns>
+        public async Task<RemoveFromOrgSkillRepositoryResponse> RemoveFromOrgSkillRepositoryWithOptionsAsync(RemoveFromOrgSkillRepositoryRequest request, RemoveFromOrgSkillRepositoryHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ActionId))
+            {
+                query["actionId"] = request.ActionId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorUnionId))
+            {
+                query["operatorUnionId"] = request.OperatorUnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "RemoveFromOrgSkillRepository",
+                Version = "assistant_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/assistant/orgActionRepositories",
+                Method = "DELETE",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<RemoveFromOrgSkillRepositoryResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移除组织技能库技能</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RemoveFromOrgSkillRepositoryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RemoveFromOrgSkillRepositoryResponse
+        /// </returns>
+        public RemoveFromOrgSkillRepositoryResponse RemoveFromOrgSkillRepository(RemoveFromOrgSkillRepositoryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RemoveFromOrgSkillRepositoryHeaders headers = new RemoveFromOrgSkillRepositoryHeaders();
+            return RemoveFromOrgSkillRepositoryWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>移除组织技能库技能</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// RemoveFromOrgSkillRepositoryRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// RemoveFromOrgSkillRepositoryResponse
+        /// </returns>
+        public async Task<RemoveFromOrgSkillRepositoryResponse> RemoveFromOrgSkillRepositoryAsync(RemoveFromOrgSkillRepositoryRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            RemoveFromOrgSkillRepositoryHeaders headers = new RemoveFromOrgSkillRepositoryHeaders();
+            return await RemoveFromOrgSkillRepositoryWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

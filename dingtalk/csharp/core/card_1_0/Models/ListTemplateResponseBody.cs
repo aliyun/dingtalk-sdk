@@ -8,11 +8,11 @@ using Tea;
 
 namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
 {
-    public class PublishTemplateResponseBody : TeaModel {
+    public class ListTemplateResponseBody : TeaModel {
         [NameInMap("data")]
         [Validation(Required=false)]
-        public PublishTemplateResponseBodyData Data { get; set; }
-        public class PublishTemplateResponseBodyData : TeaModel {
+        public List<ListTemplateResponseBodyData> Data { get; set; }
+        public class ListTemplateResponseBodyData : TeaModel {
             [NameInMap("commonVariableList")]
             [Validation(Required=false)]
             public object CommonVariableList { get; set; }

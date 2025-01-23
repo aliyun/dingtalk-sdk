@@ -30,6 +30,154 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>查询闪记媒体播放信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMinutesPlayInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryMinutesPlayInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMinutesPlayInfoResponse
+        /// </returns>
+        public QueryMinutesPlayInfoResponse QueryMinutesPlayInfoWithOptions(string taskUuid, QueryMinutesPlayInfoRequest request, QueryMinutesPlayInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMinutesPlayInfo",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/flashMinutes/tasks/" + taskUuid + "/playInfos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMinutesPlayInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询闪记媒体播放信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMinutesPlayInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryMinutesPlayInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMinutesPlayInfoResponse
+        /// </returns>
+        public async Task<QueryMinutesPlayInfoResponse> QueryMinutesPlayInfoWithOptionsAsync(string taskUuid, QueryMinutesPlayInfoRequest request, QueryMinutesPlayInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryMinutesPlayInfo",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/flashMinutes/tasks/" + taskUuid + "/playInfos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryMinutesPlayInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询闪记媒体播放信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMinutesPlayInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMinutesPlayInfoResponse
+        /// </returns>
+        public QueryMinutesPlayInfoResponse QueryMinutesPlayInfo(string taskUuid, QueryMinutesPlayInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryMinutesPlayInfoHeaders headers = new QueryMinutesPlayInfoHeaders();
+            return QueryMinutesPlayInfoWithOptions(taskUuid, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询闪记媒体播放信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryMinutesPlayInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryMinutesPlayInfoResponse
+        /// </returns>
+        public async Task<QueryMinutesPlayInfoResponse> QueryMinutesPlayInfoAsync(string taskUuid, QueryMinutesPlayInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryMinutesPlayInfoHeaders headers = new QueryMinutesPlayInfoHeaders();
+            return await QueryMinutesPlayInfoWithOptionsAsync(taskUuid, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询闪记状态</para>
         /// </summary>
         /// 
@@ -346,6 +494,154 @@ namespace AlibabaCloud.SDK.Dingtalkminutes_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             QueryMinutesTextHeaders headers = new QueryMinutesTextHeaders();
             return await QueryMinutesTextWithOptionsAsync(taskUuid, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询上传视频播放信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUploadVideoPlayInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryUploadVideoPlayInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUploadVideoPlayInfoResponse
+        /// </returns>
+        public QueryUploadVideoPlayInfoResponse QueryUploadVideoPlayInfoWithOptions(string videoId, QueryUploadVideoPlayInfoRequest request, QueryUploadVideoPlayInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryUploadVideoPlayInfo",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/flashMinutes/uploadVideos/" + videoId + "/playInfos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryUploadVideoPlayInfoResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询上传视频播放信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUploadVideoPlayInfoRequest
+        /// </param>
+        /// <param name="headers">
+        /// QueryUploadVideoPlayInfoHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUploadVideoPlayInfoResponse
+        /// </returns>
+        public async Task<QueryUploadVideoPlayInfoResponse> QueryUploadVideoPlayInfoWithOptionsAsync(string videoId, QueryUploadVideoPlayInfoRequest request, QueryUploadVideoPlayInfoHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnionId))
+            {
+                query["unionId"] = request.UnionId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "QueryUploadVideoPlayInfo",
+                Version = "minutes_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/minutes/flashMinutes/uploadVideos/" + videoId + "/playInfos",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<QueryUploadVideoPlayInfoResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询上传视频播放信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUploadVideoPlayInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUploadVideoPlayInfoResponse
+        /// </returns>
+        public QueryUploadVideoPlayInfoResponse QueryUploadVideoPlayInfo(string videoId, QueryUploadVideoPlayInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryUploadVideoPlayInfoHeaders headers = new QueryUploadVideoPlayInfoHeaders();
+            return QueryUploadVideoPlayInfoWithOptions(videoId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>查询上传视频播放信息</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// QueryUploadVideoPlayInfoRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// QueryUploadVideoPlayInfoResponse
+        /// </returns>
+        public async Task<QueryUploadVideoPlayInfoResponse> QueryUploadVideoPlayInfoAsync(string videoId, QueryUploadVideoPlayInfoRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            QueryUploadVideoPlayInfoHeaders headers = new QueryUploadVideoPlayInfoHeaders();
+            return await QueryUploadVideoPlayInfoWithOptionsAsync(videoId, request, headers, runtime);
         }
 
     }

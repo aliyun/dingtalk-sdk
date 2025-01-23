@@ -66,6 +66,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
         [Validation(Required=false)]
         public string TaskPackageName { get; set; }
 
+        [NameInMap("unionId")]
+        [Validation(Required=false)]
+        public string UnionId { get; set; }
+
         [NameInMap("version")]
         [Validation(Required=false)]
         public string Version { get; set; }

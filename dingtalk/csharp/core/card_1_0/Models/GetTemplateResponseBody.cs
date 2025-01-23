@@ -41,6 +41,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
             [Validation(Required=false)]
             public object LocalVariableList { get; set; }
 
+            [NameInMap("miniAppId")]
+            [Validation(Required=false)]
+            public string MiniAppId { get; set; }
+
             [NameInMap("name")]
             [Validation(Required=false)]
             public string Name { get; set; }

@@ -10,6 +10,8 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
 {
     public class UpdateScheduleConfSettingsRequest : TeaModel {
         /// <summary>
+        /// <para>This parameter is required.</para>
+        /// 
         /// <b>Example:</b>
         /// <para>2iPOLbpUNMLzB5LuwggiiqiPwiEiE</para>
         /// </summary>
@@ -218,6 +220,8 @@ namespace AlibabaCloud.SDK.Dingtalkconference_1_0.Models
         }
 
         /// <summary>
+        /// <para>This parameter is required.</para>
+        /// 
         /// <b>Example:</b>
         /// <para>f6fb627e-a7e8-403e-b1f8-26e85450f4a9</para>
         /// </summary>

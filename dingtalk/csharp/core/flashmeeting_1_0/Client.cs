@@ -194,6 +194,186 @@ namespace AlibabaCloud.SDK.Dingtalkflashmeeting_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>将闪会导出到文档</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExportShanhuiToDocRequest
+        /// </param>
+        /// <param name="headers">
+        /// ExportShanhuiToDocHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExportShanhuiToDocResponse
+        /// </returns>
+        public ExportShanhuiToDocResponse ExportShanhuiToDocWithOptions(ExportShanhuiToDocRequest request, ExportShanhuiToDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentEnums))
+            {
+                body["contentEnums"] = request.ContentEnums;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentNodeKey))
+            {
+                body["parentNodeKey"] = request.ParentNodeKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShanhuiKey))
+            {
+                body["shanhuiKey"] = request.ShanhuiKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkspaceKey))
+            {
+                body["workspaceKey"] = request.WorkspaceKey;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ExportShanhuiToDoc",
+                Version = "flashmeeting_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/flashmeeting/meetings/export",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ExportShanhuiToDocResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>将闪会导出到文档</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExportShanhuiToDocRequest
+        /// </param>
+        /// <param name="headers">
+        /// ExportShanhuiToDocHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExportShanhuiToDocResponse
+        /// </returns>
+        public async Task<ExportShanhuiToDocResponse> ExportShanhuiToDocWithOptionsAsync(ExportShanhuiToDocRequest request, ExportShanhuiToDocHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ContentEnums))
+            {
+                body["contentEnums"] = request.ContentEnums;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ParentNodeKey))
+            {
+                body["parentNodeKey"] = request.ParentNodeKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShanhuiKey))
+            {
+                body["shanhuiKey"] = request.ShanhuiKey;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.WorkspaceKey))
+            {
+                body["workspaceKey"] = request.WorkspaceKey;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ExportShanhuiToDoc",
+                Version = "flashmeeting_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/flashmeeting/meetings/export",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ExportShanhuiToDocResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>将闪会导出到文档</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExportShanhuiToDocRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExportShanhuiToDocResponse
+        /// </returns>
+        public ExportShanhuiToDocResponse ExportShanhuiToDoc(ExportShanhuiToDocRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ExportShanhuiToDocHeaders headers = new ExportShanhuiToDocHeaders();
+            return ExportShanhuiToDocWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>将闪会导出到文档</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExportShanhuiToDocRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExportShanhuiToDocResponse
+        /// </returns>
+        public async Task<ExportShanhuiToDocResponse> ExportShanhuiToDocAsync(ExportShanhuiToDocRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ExportShanhuiToDocHeaders headers = new ExportShanhuiToDocHeaders();
+            return await ExportShanhuiToDocWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>根据日程获取闪会的信息</para>
         /// </summary>
         /// 

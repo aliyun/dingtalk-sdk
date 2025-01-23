@@ -5480,6 +5480,178 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>初始化核身事件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// InitVerifyEventRequest
+        /// </param>
+        /// <param name="headers">
+        /// InitVerifyEventHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// InitVerifyEventResponse
+        /// </returns>
+        public InitVerifyEventResponse InitVerifyEventWithOptions(InitVerifyEventRequest request, InitVerifyEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallerDeviceId))
+            {
+                body["callerDeviceId"] = request.CallerDeviceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FactorCodeList))
+            {
+                body["factorCodeList"] = request.FactorCodeList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.State))
+            {
+                body["state"] = request.State;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "InitVerifyEvent",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/verifyIdentities/verifyEvents/init",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<InitVerifyEventResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>初始化核身事件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// InitVerifyEventRequest
+        /// </param>
+        /// <param name="headers">
+        /// InitVerifyEventHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// InitVerifyEventResponse
+        /// </returns>
+        public async Task<InitVerifyEventResponse> InitVerifyEventWithOptionsAsync(InitVerifyEventRequest request, InitVerifyEventHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CallerDeviceId))
+            {
+                body["callerDeviceId"] = request.CallerDeviceId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.FactorCodeList))
+            {
+                body["factorCodeList"] = request.FactorCodeList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.State))
+            {
+                body["state"] = request.State;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "InitVerifyEvent",
+                Version = "contact_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/contact/verifyIdentities/verifyEvents/init",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<InitVerifyEventResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>初始化核身事件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// InitVerifyEventRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// InitVerifyEventResponse
+        /// </returns>
+        public InitVerifyEventResponse InitVerifyEvent(InitVerifyEventRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            InitVerifyEventHeaders headers = new InitVerifyEventHeaders();
+            return InitVerifyEventWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>初始化核身事件</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// InitVerifyEventRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// InitVerifyEventResponse
+        /// </returns>
+        public async Task<InitVerifyEventResponse> InitVerifyEventAsync(InitVerifyEventRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            InitVerifyEventHeaders headers = new InitVerifyEventHeaders();
+            return await InitVerifyEventWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>判断某用户跟给定专属账号是否存在好友关系</para>
         /// </summary>
         /// 
@@ -7773,7 +7945,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Action = "PushVerifyEvent",
                 Version = "contact_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/contact/verifyIdentitys/verifyEvents/push",
+                Pathname = "/v1.0/contact/verifyIdentities/verifyEvents/push",
                 Method = "POST",
                 AuthType = "AK",
                 Style = "ROA",
@@ -7840,7 +8012,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Action = "PushVerifyEvent",
                 Version = "contact_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/contact/verifyIdentitys/verifyEvents/push",
+                Pathname = "/v1.0/contact/verifyIdentities/verifyEvents/push",
                 Method = "POST",
                 AuthType = "AK",
                 Style = "ROA",
@@ -8829,7 +9001,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Action = "QueryVerifyResult",
                 Version = "contact_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/contact/verifyIdentitys/verifyResults",
+                Pathname = "/v1.0/contact/verifyIdentities/verifyResults",
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
@@ -8884,7 +9056,7 @@ namespace AlibabaCloud.SDK.Dingtalkcontact_1_0
                 Action = "QueryVerifyResult",
                 Version = "contact_1.0",
                 Protocol = "HTTP",
-                Pathname = "/v1.0/contact/verifyIdentitys/verifyResults",
+                Pathname = "/v1.0/contact/verifyIdentities/verifyResults",
                 Method = "GET",
                 AuthType = "AK",
                 Style = "ROA",
