@@ -144,6 +144,128 @@ class Client(OpenApiClient):
         headers = dingtalkassistant__1__0_models.AddDomainWordsHeaders()
         return await self.add_domain_words_with_options_async(request, headers, runtime)
 
+    def add_to_org_skill_repository_with_options(
+        self,
+        request: dingtalkassistant__1__0_models.AddToOrgSkillRepositoryRequest,
+        headers: dingtalkassistant__1__0_models.AddToOrgSkillRepositoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.AddToOrgSkillRepositoryResponse:
+        """
+        @summary 添加技能到组织技能库
+        
+        @param request: AddToOrgSkillRepositoryRequest
+        @param headers: AddToOrgSkillRepositoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddToOrgSkillRepositoryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_id):
+            body['actionId'] = request.action_id
+        if not UtilClient.is_unset(request.action_version):
+            body['actionVersion'] = request.action_version
+        if not UtilClient.is_unset(request.operator_union_id):
+            body['operatorUnionId'] = request.operator_union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddToOrgSkillRepository',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/orgActionRepositories',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.AddToOrgSkillRepositoryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_to_org_skill_repository_with_options_async(
+        self,
+        request: dingtalkassistant__1__0_models.AddToOrgSkillRepositoryRequest,
+        headers: dingtalkassistant__1__0_models.AddToOrgSkillRepositoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.AddToOrgSkillRepositoryResponse:
+        """
+        @summary 添加技能到组织技能库
+        
+        @param request: AddToOrgSkillRepositoryRequest
+        @param headers: AddToOrgSkillRepositoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddToOrgSkillRepositoryResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_id):
+            body['actionId'] = request.action_id
+        if not UtilClient.is_unset(request.action_version):
+            body['actionVersion'] = request.action_version
+        if not UtilClient.is_unset(request.operator_union_id):
+            body['operatorUnionId'] = request.operator_union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddToOrgSkillRepository',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/orgActionRepositories',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.AddToOrgSkillRepositoryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_to_org_skill_repository(
+        self,
+        request: dingtalkassistant__1__0_models.AddToOrgSkillRepositoryRequest,
+    ) -> dingtalkassistant__1__0_models.AddToOrgSkillRepositoryResponse:
+        """
+        @summary 添加技能到组织技能库
+        
+        @param request: AddToOrgSkillRepositoryRequest
+        @return: AddToOrgSkillRepositoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.AddToOrgSkillRepositoryHeaders()
+        return self.add_to_org_skill_repository_with_options(request, headers, runtime)
+
+    async def add_to_org_skill_repository_async(
+        self,
+        request: dingtalkassistant__1__0_models.AddToOrgSkillRepositoryRequest,
+    ) -> dingtalkassistant__1__0_models.AddToOrgSkillRepositoryResponse:
+        """
+        @summary 添加技能到组织技能库
+        
+        @param request: AddToOrgSkillRepositoryRequest
+        @return: AddToOrgSkillRepositoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.AddToOrgSkillRepositoryHeaders()
+        return await self.add_to_org_skill_repository_with_options_async(request, headers, runtime)
+
     def create_assistant_with_options(
         self,
         request: dingtalkassistant__1__0_models.CreateAssistantRequest,
@@ -1343,6 +1465,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkassistant__1__0_models.GetAskDetailHeaders()
         return await self.get_ask_detail_with_options_async(request, headers, runtime)
+
+    def get_assistant_action_info_with_options(
+        self,
+        request: dingtalkassistant__1__0_models.GetAssistantActionInfoRequest,
+        headers: dingtalkassistant__1__0_models.GetAssistantActionInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.GetAssistantActionInfoResponse:
+        """
+        @summary 获取AI助理技能列表信息
+        
+        @param request: GetAssistantActionInfoRequest
+        @param headers: GetAssistantActionInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAssistantActionInfoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.assistant_id):
+            query['assistantId'] = request.assistant_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetAssistantActionInfo',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/actionLists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.GetAssistantActionInfoResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_assistant_action_info_with_options_async(
+        self,
+        request: dingtalkassistant__1__0_models.GetAssistantActionInfoRequest,
+        headers: dingtalkassistant__1__0_models.GetAssistantActionInfoHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.GetAssistantActionInfoResponse:
+        """
+        @summary 获取AI助理技能列表信息
+        
+        @param request: GetAssistantActionInfoRequest
+        @param headers: GetAssistantActionInfoHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetAssistantActionInfoResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.assistant_id):
+            query['assistantId'] = request.assistant_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='GetAssistantActionInfo',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/actionLists',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.GetAssistantActionInfoResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_assistant_action_info(
+        self,
+        request: dingtalkassistant__1__0_models.GetAssistantActionInfoRequest,
+    ) -> dingtalkassistant__1__0_models.GetAssistantActionInfoResponse:
+        """
+        @summary 获取AI助理技能列表信息
+        
+        @param request: GetAssistantActionInfoRequest
+        @return: GetAssistantActionInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.GetAssistantActionInfoHeaders()
+        return self.get_assistant_action_info_with_options(request, headers, runtime)
+
+    async def get_assistant_action_info_async(
+        self,
+        request: dingtalkassistant__1__0_models.GetAssistantActionInfoRequest,
+    ) -> dingtalkassistant__1__0_models.GetAssistantActionInfoResponse:
+        """
+        @summary 获取AI助理技能列表信息
+        
+        @param request: GetAssistantActionInfoRequest
+        @return: GetAssistantActionInfoResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.GetAssistantActionInfoHeaders()
+        return await self.get_assistant_action_info_with_options_async(request, headers, runtime)
 
     def get_domain_words_with_options(
         self,
@@ -2665,6 +2901,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkassistant__1__0_models.RemoveAssistantHeaders()
         return await self.remove_assistant_with_options_async(request, headers, runtime)
+
+    def remove_from_org_skill_repository_with_options(
+        self,
+        request: dingtalkassistant__1__0_models.RemoveFromOrgSkillRepositoryRequest,
+        headers: dingtalkassistant__1__0_models.RemoveFromOrgSkillRepositoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.RemoveFromOrgSkillRepositoryResponse:
+        """
+        @summary 移除组织技能库技能
+        
+        @param request: RemoveFromOrgSkillRepositoryRequest
+        @param headers: RemoveFromOrgSkillRepositoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveFromOrgSkillRepositoryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.action_id):
+            query['actionId'] = request.action_id
+        if not UtilClient.is_unset(request.operator_union_id):
+            query['operatorUnionId'] = request.operator_union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='RemoveFromOrgSkillRepository',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/orgActionRepositories',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.RemoveFromOrgSkillRepositoryResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def remove_from_org_skill_repository_with_options_async(
+        self,
+        request: dingtalkassistant__1__0_models.RemoveFromOrgSkillRepositoryRequest,
+        headers: dingtalkassistant__1__0_models.RemoveFromOrgSkillRepositoryHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.RemoveFromOrgSkillRepositoryResponse:
+        """
+        @summary 移除组织技能库技能
+        
+        @param request: RemoveFromOrgSkillRepositoryRequest
+        @param headers: RemoveFromOrgSkillRepositoryHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: RemoveFromOrgSkillRepositoryResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.action_id):
+            query['actionId'] = request.action_id
+        if not UtilClient.is_unset(request.operator_union_id):
+            query['operatorUnionId'] = request.operator_union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='RemoveFromOrgSkillRepository',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/orgActionRepositories',
+            method='DELETE',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.RemoveFromOrgSkillRepositoryResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def remove_from_org_skill_repository(
+        self,
+        request: dingtalkassistant__1__0_models.RemoveFromOrgSkillRepositoryRequest,
+    ) -> dingtalkassistant__1__0_models.RemoveFromOrgSkillRepositoryResponse:
+        """
+        @summary 移除组织技能库技能
+        
+        @param request: RemoveFromOrgSkillRepositoryRequest
+        @return: RemoveFromOrgSkillRepositoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.RemoveFromOrgSkillRepositoryHeaders()
+        return self.remove_from_org_skill_repository_with_options(request, headers, runtime)
+
+    async def remove_from_org_skill_repository_async(
+        self,
+        request: dingtalkassistant__1__0_models.RemoveFromOrgSkillRepositoryRequest,
+    ) -> dingtalkassistant__1__0_models.RemoveFromOrgSkillRepositoryResponse:
+        """
+        @summary 移除组织技能库技能
+        
+        @param request: RemoveFromOrgSkillRepositoryRequest
+        @return: RemoveFromOrgSkillRepositoryResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.RemoveFromOrgSkillRepositoryHeaders()
+        return await self.remove_from_org_skill_repository_with_options_async(request, headers, runtime)
 
     def retrieve_assistant_basic_info_with_options(
         self,

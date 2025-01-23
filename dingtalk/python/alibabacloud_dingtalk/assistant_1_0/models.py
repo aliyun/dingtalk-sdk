@@ -187,6 +187,149 @@ class AddDomainWordsResponse(TeaModel):
         return self
 
 
+class AddToOrgSkillRepositoryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class AddToOrgSkillRepositoryRequest(TeaModel):
+    def __init__(
+        self,
+        action_id: str = None,
+        action_version: str = None,
+        operator_union_id: str = None,
+    ):
+        # This parameter is required.
+        self.action_id = action_id
+        # This parameter is required.
+        self.action_version = action_version
+        # This parameter is required.
+        self.operator_union_id = operator_union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_id is not None:
+            result['actionId'] = self.action_id
+        if self.action_version is not None:
+            result['actionVersion'] = self.action_version
+        if self.operator_union_id is not None:
+            result['operatorUnionId'] = self.operator_union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionId') is not None:
+            self.action_id = m.get('actionId')
+        if m.get('actionVersion') is not None:
+            self.action_version = m.get('actionVersion')
+        if m.get('operatorUnionId') is not None:
+            self.operator_union_id = m.get('operatorUnionId')
+        return self
+
+
+class AddToOrgSkillRepositoryResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class AddToOrgSkillRepositoryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: AddToOrgSkillRepositoryResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = AddToOrgSkillRepositoryResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateAssistantHeaders(TeaModel):
     def __init__(
         self,
@@ -2005,6 +2148,188 @@ class GetAskDetailResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = GetAskDetailResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class GetAssistantActionInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class GetAssistantActionInfoRequest(TeaModel):
+    def __init__(
+        self,
+        assistant_id: str = None,
+    ):
+        # This parameter is required.
+        self.assistant_id = assistant_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.assistant_id is not None:
+            result['assistantId'] = self.assistant_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('assistantId') is not None:
+            self.assistant_id = m.get('assistantId')
+        return self
+
+
+class GetAssistantActionInfoResponseBodyActionList(TeaModel):
+    def __init__(
+        self,
+        action_id: str = None,
+        action_version: str = None,
+    ):
+        self.action_id = action_id
+        self.action_version = action_version
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_id is not None:
+            result['actionId'] = self.action_id
+        if self.action_version is not None:
+            result['actionVersion'] = self.action_version
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionId') is not None:
+            self.action_id = m.get('actionId')
+        if m.get('actionVersion') is not None:
+            self.action_version = m.get('actionVersion')
+        return self
+
+
+class GetAssistantActionInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        action_list: List[GetAssistantActionInfoResponseBodyActionList] = None,
+        assistant_id: str = None,
+        corp_id: str = None,
+    ):
+        self.action_list = action_list
+        self.assistant_id = assistant_id
+        self.corp_id = corp_id
+
+    def validate(self):
+        if self.action_list:
+            for k in self.action_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['actionList'] = []
+        if self.action_list is not None:
+            for k in self.action_list:
+                result['actionList'].append(k.to_map() if k else None)
+        if self.assistant_id is not None:
+            result['assistantId'] = self.assistant_id
+        if self.corp_id is not None:
+            result['corpId'] = self.corp_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.action_list = []
+        if m.get('actionList') is not None:
+            for k in m.get('actionList'):
+                temp_model = GetAssistantActionInfoResponseBodyActionList()
+                self.action_list.append(temp_model.from_map(k))
+        if m.get('assistantId') is not None:
+            self.assistant_id = m.get('assistantId')
+        if m.get('corpId') is not None:
+            self.corp_id = m.get('corpId')
+        return self
+
+
+class GetAssistantActionInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: GetAssistantActionInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = GetAssistantActionInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -4085,6 +4410,142 @@ class RemoveAssistantResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = RemoveAssistantResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class RemoveFromOrgSkillRepositoryHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class RemoveFromOrgSkillRepositoryRequest(TeaModel):
+    def __init__(
+        self,
+        action_id: str = None,
+        operator_union_id: str = None,
+    ):
+        # This parameter is required.
+        self.action_id = action_id
+        # This parameter is required.
+        self.operator_union_id = operator_union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_id is not None:
+            result['actionId'] = self.action_id
+        if self.operator_union_id is not None:
+            result['operatorUnionId'] = self.operator_union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionId') is not None:
+            self.action_id = m.get('actionId')
+        if m.get('operatorUnionId') is not None:
+            self.operator_union_id = m.get('operatorUnionId')
+        return self
+
+
+class RemoveFromOrgSkillRepositoryResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class RemoveFromOrgSkillRepositoryResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: RemoveFromOrgSkillRepositoryResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = RemoveFromOrgSkillRepositoryResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

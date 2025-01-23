@@ -878,6 +878,258 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.GetCategoryHeaders()
         return await self.get_category_with_options_async(request, headers, runtime)
 
+    def get_define_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.GetDefineRequest,
+        headers: dingtalkbizfinance__2__0_models.GetDefineHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.GetDefineResponse:
+        """
+        @summary 查询企业内自定义辅助档案信息
+        
+        @param request: GetDefineRequest
+        @param headers: GetDefineHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDefineResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetDefine',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/customInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.GetDefineResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_define_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.GetDefineRequest,
+        headers: dingtalkbizfinance__2__0_models.GetDefineHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.GetDefineResponse:
+        """
+        @summary 查询企业内自定义辅助档案信息
+        
+        @param request: GetDefineRequest
+        @param headers: GetDefineHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDefineResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetDefine',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/customInfos/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.GetDefineResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_define(
+        self,
+        request: dingtalkbizfinance__2__0_models.GetDefineRequest,
+    ) -> dingtalkbizfinance__2__0_models.GetDefineResponse:
+        """
+        @summary 查询企业内自定义辅助档案信息
+        
+        @param request: GetDefineRequest
+        @return: GetDefineResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.GetDefineHeaders()
+        return self.get_define_with_options(request, headers, runtime)
+
+    async def get_define_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.GetDefineRequest,
+    ) -> dingtalkbizfinance__2__0_models.GetDefineResponse:
+        """
+        @summary 查询企业内自定义辅助档案信息
+        
+        @param request: GetDefineRequest
+        @return: GetDefineResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.GetDefineHeaders()
+        return await self.get_define_with_options_async(request, headers, runtime)
+
+    def get_define_data_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.GetDefineDataRequest,
+        headers: dingtalkbizfinance__2__0_models.GetDefineDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.GetDefineDataResponse:
+        """
+        @summary 查询企业内自定义辅助档案数据信息
+        
+        @param request: GetDefineDataRequest
+        @param headers: GetDefineDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDefineDataResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetDefineData',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/customDatas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.GetDefineDataResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_define_data_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.GetDefineDataRequest,
+        headers: dingtalkbizfinance__2__0_models.GetDefineDataHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.GetDefineDataResponse:
+        """
+        @summary 查询企业内自定义辅助档案数据信息
+        
+        @param request: GetDefineDataRequest
+        @param headers: GetDefineDataHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetDefineDataResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.code):
+            body['code'] = request.code
+        if not UtilClient.is_unset(request.name):
+            body['name'] = request.name
+        if not UtilClient.is_unset(request.page_number):
+            body['pageNumber'] = request.page_number
+        if not UtilClient.is_unset(request.page_size):
+            body['pageSize'] = request.page_size
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetDefineData',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/customDatas/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.GetDefineDataResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_define_data(
+        self,
+        request: dingtalkbizfinance__2__0_models.GetDefineDataRequest,
+    ) -> dingtalkbizfinance__2__0_models.GetDefineDataResponse:
+        """
+        @summary 查询企业内自定义辅助档案数据信息
+        
+        @param request: GetDefineDataRequest
+        @return: GetDefineDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.GetDefineDataHeaders()
+        return self.get_define_data_with_options(request, headers, runtime)
+
+    async def get_define_data_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.GetDefineDataRequest,
+    ) -> dingtalkbizfinance__2__0_models.GetDefineDataResponse:
+        """
+        @summary 查询企业内自定义辅助档案数据信息
+        
+        @param request: GetDefineDataRequest
+        @return: GetDefineDataResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.GetDefineDataHeaders()
+        return await self.get_define_data_with_options_async(request, headers, runtime)
+
     def get_finance_account_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.GetFinanceAccountRequest,

@@ -1888,6 +1888,120 @@ class Client(OpenApiClient):
         headers = dingtalkcard__1__0_models.GetTemplateHeaders()
         return await self.get_template_with_options_async(request, headers, runtime)
 
+    def list_template_with_options(
+        self,
+        request: dingtalkcard__1__0_models.ListTemplateRequest,
+        headers: dingtalkcard__1__0_models.ListTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.ListTemplateResponse:
+        """
+        @summary 获取模板列表
+        
+        @param request: ListTemplateRequest
+        @param headers: ListTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.template_ids):
+            body['templateIds'] = request.template_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ListTemplate',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/templates/lists/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.ListTemplateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_template_with_options_async(
+        self,
+        request: dingtalkcard__1__0_models.ListTemplateRequest,
+        headers: dingtalkcard__1__0_models.ListTemplateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcard__1__0_models.ListTemplateResponse:
+        """
+        @summary 获取模板列表
+        
+        @param request: ListTemplateRequest
+        @param headers: ListTemplateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListTemplateResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.template_ids):
+            body['templateIds'] = request.template_ids
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ListTemplate',
+            version='card_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/card/templates/lists/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcard__1__0_models.ListTemplateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_template(
+        self,
+        request: dingtalkcard__1__0_models.ListTemplateRequest,
+    ) -> dingtalkcard__1__0_models.ListTemplateResponse:
+        """
+        @summary 获取模板列表
+        
+        @param request: ListTemplateRequest
+        @return: ListTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.ListTemplateHeaders()
+        return self.list_template_with_options(request, headers, runtime)
+
+    async def list_template_async(
+        self,
+        request: dingtalkcard__1__0_models.ListTemplateRequest,
+    ) -> dingtalkcard__1__0_models.ListTemplateResponse:
+        """
+        @summary 获取模板列表
+        
+        @param request: ListTemplateRequest
+        @return: ListTemplateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcard__1__0_models.ListTemplateHeaders()
+        return await self.list_template_with_options_async(request, headers, runtime)
+
     def publish_template_with_options(
         self,
         request: dingtalkcard__1__0_models.PublishTemplateRequest,

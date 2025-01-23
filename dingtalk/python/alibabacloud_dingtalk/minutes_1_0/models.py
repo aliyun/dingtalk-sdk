@@ -4,6 +4,194 @@ from Tea.model import TeaModel
 from typing import Dict, List
 
 
+class QueryMinutesPlayInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryMinutesPlayInfoRequest(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class QueryMinutesPlayInfoResponseBodyPlayInfo(TeaModel):
+    def __init__(
+        self,
+        download_url: str = None,
+        duration: str = None,
+        media_type: str = None,
+        play_url: str = None,
+        size: str = None,
+        status: str = None,
+    ):
+        self.download_url = download_url
+        self.duration = duration
+        self.media_type = media_type
+        self.play_url = play_url
+        self.size = size
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.download_url is not None:
+            result['downloadUrl'] = self.download_url
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.media_type is not None:
+            result['mediaType'] = self.media_type
+        if self.play_url is not None:
+            result['playUrl'] = self.play_url
+        if self.size is not None:
+            result['size'] = self.size
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('downloadUrl') is not None:
+            self.download_url = m.get('downloadUrl')
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('mediaType') is not None:
+            self.media_type = m.get('mediaType')
+        if m.get('playUrl') is not None:
+            self.play_url = m.get('playUrl')
+        if m.get('size') is not None:
+            self.size = m.get('size')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class QueryMinutesPlayInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        play_info: QueryMinutesPlayInfoResponseBodyPlayInfo = None,
+    ):
+        self.play_info = play_info
+
+    def validate(self):
+        if self.play_info:
+            self.play_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.play_info is not None:
+            result['playInfo'] = self.play_info.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('playInfo') is not None:
+            temp_model = QueryMinutesPlayInfoResponseBodyPlayInfo()
+            self.play_info = temp_model.from_map(m['playInfo'])
+        return self
+
+
+class QueryMinutesPlayInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryMinutesPlayInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryMinutesPlayInfoResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class QueryMinutesStatusHeaders(TeaModel):
     def __init__(
         self,
@@ -471,6 +659,182 @@ class QueryMinutesTextResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryMinutesTextResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryUploadVideoPlayInfoHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryUploadVideoPlayInfoRequest(TeaModel):
+    def __init__(
+        self,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class QueryUploadVideoPlayInfoResponseBodyPlayInfo(TeaModel):
+    def __init__(
+        self,
+        duration: int = None,
+        play_url: str = None,
+        size: int = None,
+        status: str = None,
+    ):
+        self.duration = duration
+        self.play_url = play_url
+        self.size = size
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.duration is not None:
+            result['duration'] = self.duration
+        if self.play_url is not None:
+            result['playUrl'] = self.play_url
+        if self.size is not None:
+            result['size'] = self.size
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('duration') is not None:
+            self.duration = m.get('duration')
+        if m.get('playUrl') is not None:
+            self.play_url = m.get('playUrl')
+        if m.get('size') is not None:
+            self.size = m.get('size')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class QueryUploadVideoPlayInfoResponseBody(TeaModel):
+    def __init__(
+        self,
+        play_info: QueryUploadVideoPlayInfoResponseBodyPlayInfo = None,
+    ):
+        self.play_info = play_info
+
+    def validate(self):
+        if self.play_info:
+            self.play_info.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.play_info is not None:
+            result['playInfo'] = self.play_info.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('playInfo') is not None:
+            temp_model = QueryUploadVideoPlayInfoResponseBodyPlayInfo()
+            self.play_info = temp_model.from_map(m['playInfo'])
+        return self
+
+
+class QueryUploadVideoPlayInfoResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryUploadVideoPlayInfoResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryUploadVideoPlayInfoResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

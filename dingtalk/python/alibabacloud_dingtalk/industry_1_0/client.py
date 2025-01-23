@@ -17692,6 +17692,8 @@ class Client(OpenApiClient):
             body['fileType'] = request.file_type
         if not UtilClient.is_unset(request.task_package_name):
             body['taskPackageName'] = request.task_package_name
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
         if not UtilClient.is_unset(request.version):
             body['version'] = request.version
         real_headers = {}
@@ -17749,6 +17751,8 @@ class Client(OpenApiClient):
             body['fileType'] = request.file_type
         if not UtilClient.is_unset(request.task_package_name):
             body['taskPackageName'] = request.task_package_name
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
         if not UtilClient.is_unset(request.version):
             body['version'] = request.version
         real_headers = {}

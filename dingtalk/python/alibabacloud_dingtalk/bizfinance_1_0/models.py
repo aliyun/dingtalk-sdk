@@ -974,15 +974,18 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         amount_with_tax: str = None,
         check_code: str = None,
         check_time: str = None,
+        domestic_or_intl: str = None,
         drawer_name: str = None,
         drew_date: str = None,
         e_flight_itinerary_detail_volist: List[BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList] = None,
+        e_ticket_no: str = None,
         e_train_ticket_detail_volist: List[BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList] = None,
         electronic_url: str = None,
         file_id: str = None,
         finance_type: str = None,
         fund_type: str = None,
         general_invoice_detail_volist: List[BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList] = None,
+        gp_no: str = None,
         image_url: str = None,
         invoice_code: str = None,
         invoice_no: str = None,
@@ -991,6 +994,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         machine_code: str = None,
         ofd_url: str = None,
         oil_flag: str = None,
+        passenger: str = None,
+        passenger_user_id: str = None,
         payee: str = None,
         pdf_url: str = None,
         process_inst_code: str = None,
@@ -1028,15 +1033,18 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         self.amount_with_tax = amount_with_tax
         self.check_code = check_code
         self.check_time = check_time
+        self.domestic_or_intl = domestic_or_intl
         self.drawer_name = drawer_name
         self.drew_date = drew_date
         self.e_flight_itinerary_detail_volist = e_flight_itinerary_detail_volist
+        self.e_ticket_no = e_ticket_no
         self.e_train_ticket_detail_volist = e_train_ticket_detail_volist
         self.electronic_url = electronic_url
         self.file_id = file_id
         self.finance_type = finance_type
         self.fund_type = fund_type
         self.general_invoice_detail_volist = general_invoice_detail_volist
+        self.gp_no = gp_no
         self.image_url = image_url
         self.invoice_code = invoice_code
         self.invoice_no = invoice_no
@@ -1045,6 +1053,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         self.machine_code = machine_code
         self.ofd_url = ofd_url
         self.oil_flag = oil_flag
+        self.passenger = passenger
+        self.passenger_user_id = passenger_user_id
         self.payee = payee
         self.pdf_url = pdf_url
         self.process_inst_code = process_inst_code
@@ -1119,6 +1129,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             result['checkCode'] = self.check_code
         if self.check_time is not None:
             result['checkTime'] = self.check_time
+        if self.domestic_or_intl is not None:
+            result['domesticOrIntl'] = self.domestic_or_intl
         if self.drawer_name is not None:
             result['drawerName'] = self.drawer_name
         if self.drew_date is not None:
@@ -1127,6 +1139,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         if self.e_flight_itinerary_detail_volist is not None:
             for k in self.e_flight_itinerary_detail_volist:
                 result['eFlightItineraryDetailVOList'].append(k.to_map() if k else None)
+        if self.e_ticket_no is not None:
+            result['eTicketNo'] = self.e_ticket_no
         result['eTrainTicketDetailVOList'] = []
         if self.e_train_ticket_detail_volist is not None:
             for k in self.e_train_ticket_detail_volist:
@@ -1143,6 +1157,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
         if self.general_invoice_detail_volist is not None:
             for k in self.general_invoice_detail_volist:
                 result['generalInvoiceDetailVOList'].append(k.to_map() if k else None)
+        if self.gp_no is not None:
+            result['gpNo'] = self.gp_no
         if self.image_url is not None:
             result['imageUrl'] = self.image_url
         if self.invoice_code is not None:
@@ -1159,6 +1175,10 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             result['ofdUrl'] = self.ofd_url
         if self.oil_flag is not None:
             result['oilFlag'] = self.oil_flag
+        if self.passenger is not None:
+            result['passenger'] = self.passenger
+        if self.passenger_user_id is not None:
+            result['passengerUserId'] = self.passenger_user_id
         if self.payee is not None:
             result['payee'] = self.payee
         if self.pdf_url is not None:
@@ -1241,6 +1261,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             self.check_code = m.get('checkCode')
         if m.get('checkTime') is not None:
             self.check_time = m.get('checkTime')
+        if m.get('domesticOrIntl') is not None:
+            self.domestic_or_intl = m.get('domesticOrIntl')
         if m.get('drawerName') is not None:
             self.drawer_name = m.get('drawerName')
         if m.get('drewDate') is not None:
@@ -1250,6 +1272,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             for k in m.get('eFlightItineraryDetailVOList'):
                 temp_model = BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList()
                 self.e_flight_itinerary_detail_volist.append(temp_model.from_map(k))
+        if m.get('eTicketNo') is not None:
+            self.e_ticket_no = m.get('eTicketNo')
         self.e_train_ticket_detail_volist = []
         if m.get('eTrainTicketDetailVOList') is not None:
             for k in m.get('eTrainTicketDetailVOList'):
@@ -1268,6 +1292,8 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             for k in m.get('generalInvoiceDetailVOList'):
                 temp_model = BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList()
                 self.general_invoice_detail_volist.append(temp_model.from_map(k))
+        if m.get('gpNo') is not None:
+            self.gp_no = m.get('gpNo')
         if m.get('imageUrl') is not None:
             self.image_url = m.get('imageUrl')
         if m.get('invoiceCode') is not None:
@@ -1284,6 +1310,10 @@ class BatchAddInvoiceRequestGeneralInvoiceVOList(TeaModel):
             self.ofd_url = m.get('ofdUrl')
         if m.get('oilFlag') is not None:
             self.oil_flag = m.get('oilFlag')
+        if m.get('passenger') is not None:
+            self.passenger = m.get('passenger')
+        if m.get('passengerUserId') is not None:
+            self.passenger_user_id = m.get('passengerUserId')
         if m.get('payee') is not None:
             self.payee = m.get('payee')
         if m.get('pdfUrl') is not None:

@@ -14310,6 +14310,124 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.InvalidTeacherCourseHeaders()
         return await self.invalid_teacher_course_with_options_async(request, headers, runtime)
 
+    def is_yuwen_certified_teacher_with_options(
+        self,
+        request: dingtalkedu__1__0_models.IsYuwenCertifiedTeacherRequest,
+        headers: dingtalkedu__1__0_models.IsYuwenCertifiedTeacherHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.IsYuwenCertifiedTeacherResponse:
+        """
+        @summary 查看用户是否是认证校的语文老师
+        
+        @param request: IsYuwenCertifiedTeacherRequest
+        @param headers: IsYuwenCertifiedTeacherHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: IsYuwenCertifiedTeacherResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='IsYuwenCertifiedTeacher',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/paas/certifiedTeachers/chineseTeachers/check',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.IsYuwenCertifiedTeacherResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def is_yuwen_certified_teacher_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.IsYuwenCertifiedTeacherRequest,
+        headers: dingtalkedu__1__0_models.IsYuwenCertifiedTeacherHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.IsYuwenCertifiedTeacherResponse:
+        """
+        @summary 查看用户是否是认证校的语文老师
+        
+        @param request: IsYuwenCertifiedTeacherRequest
+        @param headers: IsYuwenCertifiedTeacherHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: IsYuwenCertifiedTeacherResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='IsYuwenCertifiedTeacher',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/paas/certifiedTeachers/chineseTeachers/check',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.IsYuwenCertifiedTeacherResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def is_yuwen_certified_teacher(
+        self,
+        request: dingtalkedu__1__0_models.IsYuwenCertifiedTeacherRequest,
+    ) -> dingtalkedu__1__0_models.IsYuwenCertifiedTeacherResponse:
+        """
+        @summary 查看用户是否是认证校的语文老师
+        
+        @param request: IsYuwenCertifiedTeacherRequest
+        @return: IsYuwenCertifiedTeacherResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.IsYuwenCertifiedTeacherHeaders()
+        return self.is_yuwen_certified_teacher_with_options(request, headers, runtime)
+
+    async def is_yuwen_certified_teacher_async(
+        self,
+        request: dingtalkedu__1__0_models.IsYuwenCertifiedTeacherRequest,
+    ) -> dingtalkedu__1__0_models.IsYuwenCertifiedTeacherResponse:
+        """
+        @summary 查看用户是否是认证校的语文老师
+        
+        @param request: IsYuwenCertifiedTeacherRequest
+        @return: IsYuwenCertifiedTeacherResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.IsYuwenCertifiedTeacherHeaders()
+        return await self.is_yuwen_certified_teacher_with_options_async(request, headers, runtime)
+
     def isv_data_write_with_options(
         self,
         request: dingtalkedu__1__0_models.IsvDataWriteRequest,

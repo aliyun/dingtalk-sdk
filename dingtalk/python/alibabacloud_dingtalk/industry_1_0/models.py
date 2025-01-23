@@ -29386,6 +29386,7 @@ class SubmitTaskPackageRequest(TeaModel):
         desc: str = None,
         file_type: str = None,
         task_package_name: str = None,
+        union_id: str = None,
         version: str = None,
     ):
         self.app_id = app_id
@@ -29396,6 +29397,7 @@ class SubmitTaskPackageRequest(TeaModel):
         self.desc = desc
         self.file_type = file_type
         self.task_package_name = task_package_name
+        self.union_id = union_id
         self.version = version
 
     def validate(self):
@@ -29426,6 +29428,8 @@ class SubmitTaskPackageRequest(TeaModel):
             result['fileType'] = self.file_type
         if self.task_package_name is not None:
             result['taskPackageName'] = self.task_package_name
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
         if self.version is not None:
             result['version'] = self.version
         return result
@@ -29449,6 +29453,8 @@ class SubmitTaskPackageRequest(TeaModel):
             self.file_type = m.get('fileType')
         if m.get('taskPackageName') is not None:
             self.task_package_name = m.get('taskPackageName')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
         if m.get('version') is not None:
             self.version = m.get('version')
         return self

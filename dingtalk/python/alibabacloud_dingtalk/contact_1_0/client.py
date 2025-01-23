@@ -4180,6 +4180,132 @@ class Client(OpenApiClient):
         headers = dingtalkcontact__1__0_models.GetUserCardHolderListHeaders()
         return await self.get_user_card_holder_list_with_options_async(request, headers, runtime)
 
+    def init_verify_event_with_options(
+        self,
+        request: dingtalkcontact__1__0_models.InitVerifyEventRequest,
+        headers: dingtalkcontact__1__0_models.InitVerifyEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.InitVerifyEventResponse:
+        """
+        @summary 初始化核身事件
+        
+        @param request: InitVerifyEventRequest
+        @param headers: InitVerifyEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InitVerifyEventResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.caller_device_id):
+            body['callerDeviceId'] = request.caller_device_id
+        if not UtilClient.is_unset(request.factor_code_list):
+            body['factorCodeList'] = request.factor_code_list
+        if not UtilClient.is_unset(request.state):
+            body['state'] = request.state
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='InitVerifyEvent',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/verifyIdentities/verifyEvents/init',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.InitVerifyEventResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def init_verify_event_with_options_async(
+        self,
+        request: dingtalkcontact__1__0_models.InitVerifyEventRequest,
+        headers: dingtalkcontact__1__0_models.InitVerifyEventHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkcontact__1__0_models.InitVerifyEventResponse:
+        """
+        @summary 初始化核身事件
+        
+        @param request: InitVerifyEventRequest
+        @param headers: InitVerifyEventHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: InitVerifyEventResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.caller_device_id):
+            body['callerDeviceId'] = request.caller_device_id
+        if not UtilClient.is_unset(request.factor_code_list):
+            body['factorCodeList'] = request.factor_code_list
+        if not UtilClient.is_unset(request.state):
+            body['state'] = request.state
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='InitVerifyEvent',
+            version='contact_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/contact/verifyIdentities/verifyEvents/init',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkcontact__1__0_models.InitVerifyEventResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def init_verify_event(
+        self,
+        request: dingtalkcontact__1__0_models.InitVerifyEventRequest,
+    ) -> dingtalkcontact__1__0_models.InitVerifyEventResponse:
+        """
+        @summary 初始化核身事件
+        
+        @param request: InitVerifyEventRequest
+        @return: InitVerifyEventResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.InitVerifyEventHeaders()
+        return self.init_verify_event_with_options(request, headers, runtime)
+
+    async def init_verify_event_async(
+        self,
+        request: dingtalkcontact__1__0_models.InitVerifyEventRequest,
+    ) -> dingtalkcontact__1__0_models.InitVerifyEventResponse:
+        """
+        @summary 初始化核身事件
+        
+        @param request: InitVerifyEventRequest
+        @return: InitVerifyEventResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkcontact__1__0_models.InitVerifyEventHeaders()
+        return await self.init_verify_event_with_options_async(request, headers, runtime)
+
     def is_friend_with_options(
         self,
         request: dingtalkcontact__1__0_models.IsFriendRequest,
@@ -5899,7 +6025,7 @@ class Client(OpenApiClient):
             action='PushVerifyEvent',
             version='contact_1.0',
             protocol='HTTP',
-            pathname=f'/v1.0/contact/verifyIdentitys/verifyEvents/push',
+            pathname=f'/v1.0/contact/verifyIdentities/verifyEvents/push',
             method='POST',
             auth_type='AK',
             style='ROA',
@@ -5948,7 +6074,7 @@ class Client(OpenApiClient):
             action='PushVerifyEvent',
             version='contact_1.0',
             protocol='HTTP',
-            pathname=f'/v1.0/contact/verifyIdentitys/verifyEvents/push',
+            pathname=f'/v1.0/contact/verifyIdentities/verifyEvents/push',
             method='POST',
             auth_type='AK',
             style='ROA',
@@ -6707,7 +6833,7 @@ class Client(OpenApiClient):
             action='QueryVerifyResult',
             version='contact_1.0',
             protocol='HTTP',
-            pathname=f'/v1.0/contact/verifyIdentitys/verifyResults',
+            pathname=f'/v1.0/contact/verifyIdentities/verifyResults',
             method='GET',
             auth_type='AK',
             style='ROA',
@@ -6750,7 +6876,7 @@ class Client(OpenApiClient):
             action='QueryVerifyResult',
             version='contact_1.0',
             protocol='HTTP',
-            pathname=f'/v1.0/contact/verifyIdentitys/verifyResults',
+            pathname=f'/v1.0/contact/verifyIdentities/verifyResults',
             method='GET',
             auth_type='AK',
             style='ROA',

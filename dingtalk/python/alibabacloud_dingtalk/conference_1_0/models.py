@@ -9374,8 +9374,10 @@ class UpdateScheduleConfSettingsRequest(TeaModel):
         schedule_conf_setting_model: UpdateScheduleConfSettingsRequestScheduleConfSettingModel = None,
         schedule_conference_id: str = None,
     ):
+        # This parameter is required.
         self.creator_union_id = creator_union_id
         self.schedule_conf_setting_model = schedule_conf_setting_model
+        # This parameter is required.
         self.schedule_conference_id = schedule_conference_id
 
     def validate(self):
