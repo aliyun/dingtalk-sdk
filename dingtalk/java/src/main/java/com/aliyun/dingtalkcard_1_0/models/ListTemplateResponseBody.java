@@ -3,27 +3,27 @@ package com.aliyun.dingtalkcard_1_0.models;
 
 import com.aliyun.tea.*;
 
-public class SaveTemplateResponseBody extends TeaModel {
+public class ListTemplateResponseBody extends TeaModel {
     @NameInMap("data")
-    public SaveTemplateResponseBodyData data;
+    public java.util.List<ListTemplateResponseBodyData> data;
 
     @NameInMap("success")
     public Boolean success;
 
-    public static SaveTemplateResponseBody build(java.util.Map<String, ?> map) throws Exception {
-        SaveTemplateResponseBody self = new SaveTemplateResponseBody();
+    public static ListTemplateResponseBody build(java.util.Map<String, ?> map) throws Exception {
+        ListTemplateResponseBody self = new ListTemplateResponseBody();
         return TeaModel.build(map, self);
     }
 
-    public SaveTemplateResponseBody setData(SaveTemplateResponseBodyData data) {
+    public ListTemplateResponseBody setData(java.util.List<ListTemplateResponseBodyData> data) {
         this.data = data;
         return this;
     }
-    public SaveTemplateResponseBodyData getData() {
+    public java.util.List<ListTemplateResponseBodyData> getData() {
         return this.data;
     }
 
-    public SaveTemplateResponseBody setSuccess(Boolean success) {
+    public ListTemplateResponseBody setSuccess(Boolean success) {
         this.success = success;
         return this;
     }
@@ -31,7 +31,7 @@ public class SaveTemplateResponseBody extends TeaModel {
         return this.success;
     }
 
-    public static class SaveTemplateResponseBodyData extends TeaModel {
+    public static class ListTemplateResponseBodyData extends TeaModel {
         @NameInMap("commonVariableList")
         public Object commonVariableList;
 
@@ -71,12 +71,12 @@ public class SaveTemplateResponseBody extends TeaModel {
         @NameInMap("type")
         public String type;
 
-        public static SaveTemplateResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
-            SaveTemplateResponseBodyData self = new SaveTemplateResponseBodyData();
+        public static ListTemplateResponseBodyData build(java.util.Map<String, ?> map) throws Exception {
+            ListTemplateResponseBodyData self = new ListTemplateResponseBodyData();
             return TeaModel.build(map, self);
         }
 
-        public SaveTemplateResponseBodyData setCommonVariableList(Object commonVariableList) {
+        public ListTemplateResponseBodyData setCommonVariableList(Object commonVariableList) {
             this.commonVariableList = commonVariableList;
             return this;
         }
@@ -84,7 +84,7 @@ public class SaveTemplateResponseBody extends TeaModel {
             return this.commonVariableList;
         }
 
-        public SaveTemplateResponseBodyData setCreatorId(String creatorId) {
+        public ListTemplateResponseBodyData setCreatorId(String creatorId) {
             this.creatorId = creatorId;
             return this;
         }
@@ -92,7 +92,7 @@ public class SaveTemplateResponseBody extends TeaModel {
             return this.creatorId;
         }
 
-        public SaveTemplateResponseBodyData setExpVariableList(Object expVariableList) {
+        public ListTemplateResponseBodyData setExpVariableList(Object expVariableList) {
             this.expVariableList = expVariableList;
             return this;
         }
@@ -100,7 +100,7 @@ public class SaveTemplateResponseBody extends TeaModel {
             return this.expVariableList;
         }
 
-        public SaveTemplateResponseBodyData setExtendType(String extendType) {
+        public ListTemplateResponseBodyData setExtendType(String extendType) {
             this.extendType = extendType;
             return this;
         }
@@ -108,7 +108,7 @@ public class SaveTemplateResponseBody extends TeaModel {
             return this.extendType;
         }
 
-        public SaveTemplateResponseBodyData setGmtCreate(String gmtCreate) {
+        public ListTemplateResponseBodyData setGmtCreate(String gmtCreate) {
             this.gmtCreate = gmtCreate;
             return this;
         }
@@ -116,7 +116,7 @@ public class SaveTemplateResponseBody extends TeaModel {
             return this.gmtCreate;
         }
 
-        public SaveTemplateResponseBodyData setGmtModified(String gmtModified) {
+        public ListTemplateResponseBodyData setGmtModified(String gmtModified) {
             this.gmtModified = gmtModified;
             return this;
         }
@@ -124,7 +124,7 @@ public class SaveTemplateResponseBody extends TeaModel {
             return this.gmtModified;
         }
 
-        public SaveTemplateResponseBodyData setLocalVariableList(Object localVariableList) {
+        public ListTemplateResponseBodyData setLocalVariableList(Object localVariableList) {
             this.localVariableList = localVariableList;
             return this;
         }
@@ -132,7 +132,7 @@ public class SaveTemplateResponseBody extends TeaModel {
             return this.localVariableList;
         }
 
-        public SaveTemplateResponseBodyData setMiniAppId(String miniAppId) {
+        public ListTemplateResponseBodyData setMiniAppId(String miniAppId) {
             this.miniAppId = miniAppId;
             return this;
         }
@@ -140,7 +140,7 @@ public class SaveTemplateResponseBody extends TeaModel {
             return this.miniAppId;
         }
 
-        public SaveTemplateResponseBodyData setName(String name) {
+        public ListTemplateResponseBodyData setName(String name) {
             this.name = name;
             return this;
         }
@@ -148,7 +148,7 @@ public class SaveTemplateResponseBody extends TeaModel {
             return this.name;
         }
 
-        public SaveTemplateResponseBodyData setPreview(String preview) {
+        public ListTemplateResponseBodyData setPreview(String preview) {
             this.preview = preview;
             return this;
         }
@@ -156,7 +156,7 @@ public class SaveTemplateResponseBody extends TeaModel {
             return this.preview;
         }
 
-        public SaveTemplateResponseBodyData setStatus(String status) {
+        public ListTemplateResponseBodyData setStatus(String status) {
             this.status = status;
             return this;
         }
@@ -164,7 +164,7 @@ public class SaveTemplateResponseBody extends TeaModel {
             return this.status;
         }
 
-        public SaveTemplateResponseBodyData setTemplateId(String templateId) {
+        public ListTemplateResponseBodyData setTemplateId(String templateId) {
             this.templateId = templateId;
             return this;
         }
@@ -172,7 +172,7 @@ public class SaveTemplateResponseBody extends TeaModel {
             return this.templateId;
         }
 
-        public SaveTemplateResponseBodyData setType(String type) {
+        public ListTemplateResponseBodyData setType(String type) {
             this.type = type;
             return this;
         }

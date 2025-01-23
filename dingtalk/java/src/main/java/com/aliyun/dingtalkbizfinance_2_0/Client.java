@@ -467,6 +467,142 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>查询企业内自定义辅助档案信息</p>
+     * 
+     * @param request GetDefineRequest
+     * @param headers GetDefineHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetDefineResponse
+     */
+    public GetDefineResponse getDefineWithOptions(GetDefineRequest request, GetDefineHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.code)) {
+            body.put("code", request.code);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            body.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetDefine"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/customInfos/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetDefineResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询企业内自定义辅助档案信息</p>
+     * 
+     * @param request GetDefineRequest
+     * @return GetDefineResponse
+     */
+    public GetDefineResponse getDefine(GetDefineRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetDefineHeaders headers = new GetDefineHeaders();
+        return this.getDefineWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询企业内自定义辅助档案数据信息</p>
+     * 
+     * @param request GetDefineDataRequest
+     * @param headers GetDefineDataHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetDefineDataResponse
+     */
+    public GetDefineDataResponse getDefineDataWithOptions(GetDefineDataRequest request, GetDefineDataHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.code)) {
+            body.put("code", request.code);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.name)) {
+            body.put("name", request.name);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageNumber)) {
+            body.put("pageNumber", request.pageNumber);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.pageSize)) {
+            body.put("pageSize", request.pageSize);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetDefineData"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/customDatas/query"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetDefineDataResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询企业内自定义辅助档案数据信息</p>
+     * 
+     * @param request GetDefineDataRequest
+     * @return GetDefineDataResponse
+     */
+    public GetDefineDataResponse getDefineData(GetDefineDataRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetDefineDataHeaders headers = new GetDefineDataHeaders();
+        return this.getDefineDataWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取企业账户</p>
      * 
      * @param request GetFinanceAccountRequest

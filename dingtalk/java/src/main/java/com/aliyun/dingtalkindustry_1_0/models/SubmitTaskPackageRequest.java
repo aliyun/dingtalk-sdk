@@ -32,6 +32,9 @@ public class SubmitTaskPackageRequest extends TeaModel {
     @NameInMap("taskPackageName")
     public String taskPackageName;
 
+    @NameInMap("unionId")
+    public String unionId;
+
     @NameInMap("version")
     public String version;
 
@@ -94,6 +97,14 @@ public class SubmitTaskPackageRequest extends TeaModel {
     }
     public String getTaskPackageName() {
         return this.taskPackageName;
+    }
+
+    public SubmitTaskPackageRequest setUnionId(String unionId) {
+        this.unionId = unionId;
+        return this;
+    }
+    public String getUnionId() {
+        return this.unionId;
     }
 
     public SubmitTaskPackageRequest setVersion(String version) {

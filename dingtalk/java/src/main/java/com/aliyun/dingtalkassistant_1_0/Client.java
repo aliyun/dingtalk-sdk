@@ -80,6 +80,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>添加技能到组织技能库</p>
+     * 
+     * @param request AddToOrgSkillRepositoryRequest
+     * @param headers AddToOrgSkillRepositoryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddToOrgSkillRepositoryResponse
+     */
+    public AddToOrgSkillRepositoryResponse addToOrgSkillRepositoryWithOptions(AddToOrgSkillRepositoryRequest request, AddToOrgSkillRepositoryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.actionId)) {
+            body.put("actionId", request.actionId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.actionVersion)) {
+            body.put("actionVersion", request.actionVersion);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUnionId)) {
+            body.put("operatorUnionId", request.operatorUnionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddToOrgSkillRepository"),
+            new TeaPair("version", "assistant_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/assistant/orgActionRepositories"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddToOrgSkillRepositoryResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>添加技能到组织技能库</p>
+     * 
+     * @param request AddToOrgSkillRepositoryRequest
+     * @return AddToOrgSkillRepositoryResponse
+     */
+    public AddToOrgSkillRepositoryResponse addToOrgSkillRepository(AddToOrgSkillRepositoryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AddToOrgSkillRepositoryHeaders headers = new AddToOrgSkillRepositoryHeaders();
+        return this.addToOrgSkillRepositoryWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>创建AI助理</p>
      * 
      * @param request CreateAssistantRequest
@@ -692,6 +756,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         GetAskDetailHeaders headers = new GetAskDetailHeaders();
         return this.getAskDetailWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取AI助理技能列表信息</p>
+     * 
+     * @param request GetAssistantActionInfoRequest
+     * @param headers GetAssistantActionInfoHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return GetAssistantActionInfoResponse
+     */
+    public GetAssistantActionInfoResponse getAssistantActionInfoWithOptions(GetAssistantActionInfoRequest request, GetAssistantActionInfoHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.assistantId)) {
+            query.put("assistantId", request.assistantId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "GetAssistantActionInfo"),
+            new TeaPair("version", "assistant_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/assistant/actionLists"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new GetAssistantActionInfoResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>获取AI助理技能列表信息</p>
+     * 
+     * @param request GetAssistantActionInfoRequest
+     * @return GetAssistantActionInfoResponse
+     */
+    public GetAssistantActionInfoResponse getAssistantActionInfo(GetAssistantActionInfoRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        GetAssistantActionInfoHeaders headers = new GetAssistantActionInfoHeaders();
+        return this.getAssistantActionInfoWithOptions(request, headers, runtime);
     }
 
     /**
@@ -1368,6 +1488,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         RemoveAssistantHeaders headers = new RemoveAssistantHeaders();
         return this.removeAssistantWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>移除组织技能库技能</p>
+     * 
+     * @param request RemoveFromOrgSkillRepositoryRequest
+     * @param headers RemoveFromOrgSkillRepositoryHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return RemoveFromOrgSkillRepositoryResponse
+     */
+    public RemoveFromOrgSkillRepositoryResponse removeFromOrgSkillRepositoryWithOptions(RemoveFromOrgSkillRepositoryRequest request, RemoveFromOrgSkillRepositoryHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.actionId)) {
+            query.put("actionId", request.actionId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorUnionId)) {
+            query.put("operatorUnionId", request.operatorUnionId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "RemoveFromOrgSkillRepository"),
+            new TeaPair("version", "assistant_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/assistant/orgActionRepositories"),
+            new TeaPair("method", "DELETE"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new RemoveFromOrgSkillRepositoryResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>移除组织技能库技能</p>
+     * 
+     * @param request RemoveFromOrgSkillRepositoryRequest
+     * @return RemoveFromOrgSkillRepositoryResponse
+     */
+    public RemoveFromOrgSkillRepositoryResponse removeFromOrgSkillRepository(RemoveFromOrgSkillRepositoryRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        RemoveFromOrgSkillRepositoryHeaders headers = new RemoveFromOrgSkillRepositoryHeaders();
+        return this.removeFromOrgSkillRepositoryWithOptions(request, headers, runtime);
     }
 
     /**

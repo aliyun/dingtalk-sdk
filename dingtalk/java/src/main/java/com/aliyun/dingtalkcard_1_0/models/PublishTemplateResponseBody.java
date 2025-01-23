@@ -53,6 +53,9 @@ public class PublishTemplateResponseBody extends TeaModel {
         @NameInMap("localVariableList")
         public Object localVariableList;
 
+        @NameInMap("miniAppId")
+        public String miniAppId;
+
         @NameInMap("name")
         public String name;
 
@@ -127,6 +130,14 @@ public class PublishTemplateResponseBody extends TeaModel {
         }
         public Object getLocalVariableList() {
             return this.localVariableList;
+        }
+
+        public PublishTemplateResponseBodyData setMiniAppId(String miniAppId) {
+            this.miniAppId = miniAppId;
+            return this;
+        }
+        public String getMiniAppId() {
+            return this.miniAppId;
         }
 
         public PublishTemplateResponseBodyData setName(String name) {

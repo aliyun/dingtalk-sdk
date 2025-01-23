@@ -9592,6 +9592,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("taskPackageName", request.taskPackageName);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.unionId)) {
+            body.put("unionId", request.unionId);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.version)) {
             body.put("version", request.version);
         }

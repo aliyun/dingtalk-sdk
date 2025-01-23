@@ -1022,6 +1022,9 @@ public class BatchAddInvoiceRequest extends TeaModel {
         @NameInMap("checkTime")
         public String checkTime;
 
+        @NameInMap("domesticOrIntl")
+        public String domesticOrIntl;
+
         /**
          * <strong>example:</strong>
          * <p>张三</p>
@@ -1038,6 +1041,9 @@ public class BatchAddInvoiceRequest extends TeaModel {
 
         @NameInMap("eFlightItineraryDetailVOList")
         public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList> eFlightItineraryDetailVOList;
+
+        @NameInMap("eTicketNo")
+        public String eTicketNo;
 
         @NameInMap("eTrainTicketDetailVOList")
         public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList> eTrainTicketDetailVOList;
@@ -1068,6 +1074,9 @@ public class BatchAddInvoiceRequest extends TeaModel {
 
         @NameInMap("generalInvoiceDetailVOList")
         public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList> generalInvoiceDetailVOList;
+
+        @NameInMap("gpNo")
+        public String gpNo;
 
         /**
          * <strong>example:</strong>
@@ -1120,6 +1129,12 @@ public class BatchAddInvoiceRequest extends TeaModel {
          */
         @NameInMap("oilFlag")
         public String oilFlag;
+
+        @NameInMap("passenger")
+        public String passenger;
+
+        @NameInMap("passengerUserId")
+        public String passengerUserId;
 
         /**
          * <strong>example:</strong>
@@ -1335,6 +1350,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
             return this.checkTime;
         }
 
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setDomesticOrIntl(String domesticOrIntl) {
+            this.domesticOrIntl = domesticOrIntl;
+            return this;
+        }
+        public String getDomesticOrIntl() {
+            return this.domesticOrIntl;
+        }
+
         public BatchAddInvoiceRequestGeneralInvoiceVOList setDrawerName(String drawerName) {
             this.drawerName = drawerName;
             return this;
@@ -1357,6 +1380,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
         }
         public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListEFlightItineraryDetailVOList> getEFlightItineraryDetailVOList() {
             return this.eFlightItineraryDetailVOList;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setETicketNo(String eTicketNo) {
+            this.eTicketNo = eTicketNo;
+            return this;
+        }
+        public String getETicketNo() {
+            return this.eTicketNo;
         }
 
         public BatchAddInvoiceRequestGeneralInvoiceVOList setETrainTicketDetailVOList(java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListETrainTicketDetailVOList> eTrainTicketDetailVOList) {
@@ -1405,6 +1436,14 @@ public class BatchAddInvoiceRequest extends TeaModel {
         }
         public java.util.List<BatchAddInvoiceRequestGeneralInvoiceVOListGeneralInvoiceDetailVOList> getGeneralInvoiceDetailVOList() {
             return this.generalInvoiceDetailVOList;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setGpNo(String gpNo) {
+            this.gpNo = gpNo;
+            return this;
+        }
+        public String getGpNo() {
+            return this.gpNo;
         }
 
         public BatchAddInvoiceRequestGeneralInvoiceVOList setImageUrl(String imageUrl) {
@@ -1469,6 +1508,22 @@ public class BatchAddInvoiceRequest extends TeaModel {
         }
         public String getOilFlag() {
             return this.oilFlag;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setPassenger(String passenger) {
+            this.passenger = passenger;
+            return this;
+        }
+        public String getPassenger() {
+            return this.passenger;
+        }
+
+        public BatchAddInvoiceRequestGeneralInvoiceVOList setPassengerUserId(String passengerUserId) {
+            this.passengerUserId = passengerUserId;
+            return this;
+        }
+        public String getPassengerUserId() {
+            return this.passengerUserId;
         }
 
         public BatchAddInvoiceRequestGeneralInvoiceVOList setPayee(String payee) {

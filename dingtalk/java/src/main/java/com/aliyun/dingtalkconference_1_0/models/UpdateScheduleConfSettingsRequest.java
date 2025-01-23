@@ -5,6 +5,8 @@ import com.aliyun.tea.*;
 
 public class UpdateScheduleConfSettingsRequest extends TeaModel {
     /**
+     * <p>This parameter is required.</p>
+     * 
      * <strong>example:</strong>
      * <p>2iPOLbpUNMLzB5LuwggiiqiPwiEiE</p>
      */
@@ -15,6 +17,8 @@ public class UpdateScheduleConfSettingsRequest extends TeaModel {
     public UpdateScheduleConfSettingsRequestScheduleConfSettingModel scheduleConfSettingModel;
 
     /**
+     * <p>This parameter is required.</p>
+     * 
      * <strong>example:</strong>
      * <p>f6fb627e-a7e8-403e-b1f8-26e85450f4a9</p>
      */
