@@ -2560,6 +2560,132 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.BatchOrgCreateHWHeaders()
         return await self.batch_org_create_hwwith_options_async(request, headers, runtime)
 
+    def cancel_kit_task_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CancelKitTaskRequest,
+        headers: dingtalkedu__1__0_models.CancelKitTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CancelKitTaskResponse:
+        """
+        @summary 套件-取消套件任务
+        
+        @param request: CancelKitTaskRequest
+        @param headers: CancelKitTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CancelKitTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.identifier):
+            body['identifier'] = request.identifier
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CancelKitTask',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/tasks/cancel',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CancelKitTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def cancel_kit_task_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CancelKitTaskRequest,
+        headers: dingtalkedu__1__0_models.CancelKitTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CancelKitTaskResponse:
+        """
+        @summary 套件-取消套件任务
+        
+        @param request: CancelKitTaskRequest
+        @param headers: CancelKitTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CancelKitTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.identifier):
+            body['identifier'] = request.identifier
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CancelKitTask',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/tasks/cancel',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CancelKitTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def cancel_kit_task(
+        self,
+        request: dingtalkedu__1__0_models.CancelKitTaskRequest,
+    ) -> dingtalkedu__1__0_models.CancelKitTaskResponse:
+        """
+        @summary 套件-取消套件任务
+        
+        @param request: CancelKitTaskRequest
+        @return: CancelKitTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CancelKitTaskHeaders()
+        return self.cancel_kit_task_with_options(request, headers, runtime)
+
+    async def cancel_kit_task_async(
+        self,
+        request: dingtalkedu__1__0_models.CancelKitTaskRequest,
+    ) -> dingtalkedu__1__0_models.CancelKitTaskResponse:
+        """
+        @summary 套件-取消套件任务
+        
+        @param request: CancelKitTaskRequest
+        @return: CancelKitTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CancelKitTaskHeaders()
+        return await self.cancel_kit_task_with_options_async(request, headers, runtime)
+
     def cancel_order_with_options(
         self,
         request: dingtalkedu__1__0_models.CancelOrderRequest,
@@ -5603,6 +5729,144 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.CreateItemHeaders()
         return await self.create_item_with_options_async(request, headers, runtime)
+
+    def create_kit_task_with_options(
+        self,
+        request: dingtalkedu__1__0_models.CreateKitTaskRequest,
+        headers: dingtalkedu__1__0_models.CreateKitTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateKitTaskResponse:
+        """
+        @summary 套件-创建定时任务
+        
+        @param request: CreateKitTaskRequest
+        @param headers: CreateKitTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateKitTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_time):
+            body['actionTime'] = request.action_time
+        if not UtilClient.is_unset(request.biz_data):
+            body['bizData'] = request.biz_data
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.identifier):
+            body['identifier'] = request.identifier
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.memo):
+            body['memo'] = request.memo
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateKitTask',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/timerTasks',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateKitTaskResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_kit_task_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateKitTaskRequest,
+        headers: dingtalkedu__1__0_models.CreateKitTaskHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.CreateKitTaskResponse:
+        """
+        @summary 套件-创建定时任务
+        
+        @param request: CreateKitTaskRequest
+        @param headers: CreateKitTaskHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateKitTaskResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.action_time):
+            body['actionTime'] = request.action_time
+        if not UtilClient.is_unset(request.biz_data):
+            body['bizData'] = request.biz_data
+        if not UtilClient.is_unset(request.biz_type):
+            body['bizType'] = request.biz_type
+        if not UtilClient.is_unset(request.corp_id):
+            body['corpId'] = request.corp_id
+        if not UtilClient.is_unset(request.identifier):
+            body['identifier'] = request.identifier
+        if not UtilClient.is_unset(request.isv_code):
+            body['isvCode'] = request.isv_code
+        if not UtilClient.is_unset(request.memo):
+            body['memo'] = request.memo
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateKitTask',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/kits/timerTasks',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.CreateKitTaskResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_kit_task(
+        self,
+        request: dingtalkedu__1__0_models.CreateKitTaskRequest,
+    ) -> dingtalkedu__1__0_models.CreateKitTaskResponse:
+        """
+        @summary 套件-创建定时任务
+        
+        @param request: CreateKitTaskRequest
+        @return: CreateKitTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateKitTaskHeaders()
+        return self.create_kit_task_with_options(request, headers, runtime)
+
+    async def create_kit_task_async(
+        self,
+        request: dingtalkedu__1__0_models.CreateKitTaskRequest,
+    ) -> dingtalkedu__1__0_models.CreateKitTaskResponse:
+        """
+        @summary 套件-创建定时任务
+        
+        @param request: CreateKitTaskRequest
+        @return: CreateKitTaskResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.CreateKitTaskHeaders()
+        return await self.create_kit_task_with_options_async(request, headers, runtime)
 
     def create_order_with_options(
         self,

@@ -2804,6 +2804,120 @@ class Client(OpenApiClient):
         headers = dingtalkim__1__0_models.DismissGroupConversationHeaders()
         return await self.dismiss_group_conversation_with_options_async(request, headers, runtime)
 
+    def freeze_group_with_options(
+        self,
+        request: dingtalkim__1__0_models.FreezeGroupRequest,
+        headers: dingtalkim__1__0_models.FreezeGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.FreezeGroupResponse:
+        """
+        @summary 冻结群
+        
+        @param request: FreezeGroupRequest
+        @param headers: FreezeGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: FreezeGroupResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='FreezeGroup',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/sceneGroups/freeze',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.FreezeGroupResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def freeze_group_with_options_async(
+        self,
+        request: dingtalkim__1__0_models.FreezeGroupRequest,
+        headers: dingtalkim__1__0_models.FreezeGroupHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkim__1__0_models.FreezeGroupResponse:
+        """
+        @summary 冻结群
+        
+        @param request: FreezeGroupRequest
+        @param headers: FreezeGroupHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: FreezeGroupResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.open_conversation_id):
+            query['openConversationId'] = request.open_conversation_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='FreezeGroup',
+            version='im_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/im/chats/sceneGroups/freeze',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkim__1__0_models.FreezeGroupResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def freeze_group(
+        self,
+        request: dingtalkim__1__0_models.FreezeGroupRequest,
+    ) -> dingtalkim__1__0_models.FreezeGroupResponse:
+        """
+        @summary 冻结群
+        
+        @param request: FreezeGroupRequest
+        @return: FreezeGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.FreezeGroupHeaders()
+        return self.freeze_group_with_options(request, headers, runtime)
+
+    async def freeze_group_async(
+        self,
+        request: dingtalkim__1__0_models.FreezeGroupRequest,
+    ) -> dingtalkim__1__0_models.FreezeGroupResponse:
+        """
+        @summary 冻结群
+        
+        @param request: FreezeGroupRequest
+        @return: FreezeGroupResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkim__1__0_models.FreezeGroupHeaders()
+        return await self.freeze_group_with_options_async(request, headers, runtime)
+
     def get_conversation_url_with_options(
         self,
         request: dingtalkim__1__0_models.GetConversationUrlRequest,
