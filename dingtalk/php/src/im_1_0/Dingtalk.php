@@ -73,6 +73,9 @@ use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DeleteOrgTextEmotionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DismissGroupConversationHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DismissGroupConversationRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\DismissGroupConversationResponse;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\FreezeGroupHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\FreezeGroupRequest;
+use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\FreezeGroupResponse;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetConversationUrlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetConversationUrlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vim_1_0\Models\GetConversationUrlResponse;
@@ -1766,6 +1769,63 @@ class Dingtalk extends OpenApiClient
         $headers = new DismissGroupConversationHeaders([]);
 
         return $this->dismissGroupConversationWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 冻结群
+     *  *
+     * @param FreezeGroupRequest $request FreezeGroupRequest
+     * @param FreezeGroupHeaders $headers FreezeGroupHeaders
+     * @param RuntimeOptions     $runtime runtime options for this request RuntimeOptions
+     *
+     * @return FreezeGroupResponse FreezeGroupResponse
+     */
+    public function freezeGroupWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->openConversationId)) {
+            $query['openConversationId'] = $request->openConversationId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'FreezeGroup',
+            'version'     => 'im_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/im/chats/sceneGroups/freeze',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return FreezeGroupResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 冻结群
+     *  *
+     * @param FreezeGroupRequest $request FreezeGroupRequest
+     *
+     * @return FreezeGroupResponse FreezeGroupResponse
+     */
+    public function freezeGroup($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new FreezeGroupHeaders([]);
+
+        return $this->freezeGroupWithOptions($request, $headers, $runtime);
     }
 
     /**

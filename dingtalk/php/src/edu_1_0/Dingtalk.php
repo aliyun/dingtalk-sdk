@@ -56,6 +56,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchInvalidCourseResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchOrgCreateHWHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchOrgCreateHWRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\BatchOrgCreateHWResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelKitTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelKitTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelKitTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelOrderHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelOrderRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CancelOrderResponse;
@@ -122,6 +125,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateInviteUrlResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateItemHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateItemRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateItemResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateKitTaskHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateKitTaskRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateKitTaskResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateOrderFlowHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateOrderFlowRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CreateOrderFlowResponse;
@@ -1997,6 +2003,72 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 套件-取消套件任务
+     *  *
+     * @param CancelKitTaskRequest $request CancelKitTaskRequest
+     * @param CancelKitTaskHeaders $headers CancelKitTaskHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CancelKitTaskResponse CancelKitTaskResponse
+     */
+    public function cancelKitTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizType)) {
+            $body['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->identifier)) {
+            $body['identifier'] = $request->identifier;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CancelKitTask',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/tasks/cancel',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CancelKitTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 套件-取消套件任务
+     *  *
+     * @param CancelKitTaskRequest $request CancelKitTaskRequest
+     *
+     * @return CancelKitTaskResponse CancelKitTaskResponse
+     */
+    public function cancelKitTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CancelKitTaskHeaders([]);
+
+        return $this->cancelKitTaskWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 撤销订单
      *  *
      * @param CancelOrderRequest $request CancelOrderRequest
@@ -3650,6 +3722,81 @@ class Dingtalk extends OpenApiClient
         $headers = new CreateItemHeaders([]);
 
         return $this->createItemWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 套件-创建定时任务
+     *  *
+     * @param CreateKitTaskRequest $request CreateKitTaskRequest
+     * @param CreateKitTaskHeaders $headers CreateKitTaskHeaders
+     * @param RuntimeOptions       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateKitTaskResponse CreateKitTaskResponse
+     */
+    public function createKitTaskWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->actionTime)) {
+            $body['actionTime'] = $request->actionTime;
+        }
+        if (!Utils::isUnset($request->bizData)) {
+            $body['bizData'] = $request->bizData;
+        }
+        if (!Utils::isUnset($request->bizType)) {
+            $body['bizType'] = $request->bizType;
+        }
+        if (!Utils::isUnset($request->corpId)) {
+            $body['corpId'] = $request->corpId;
+        }
+        if (!Utils::isUnset($request->identifier)) {
+            $body['identifier'] = $request->identifier;
+        }
+        if (!Utils::isUnset($request->isvCode)) {
+            $body['isvCode'] = $request->isvCode;
+        }
+        if (!Utils::isUnset($request->memo)) {
+            $body['memo'] = $request->memo;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateKitTask',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/kits/timerTasks',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateKitTaskResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 套件-创建定时任务
+     *  *
+     * @param CreateKitTaskRequest $request CreateKitTaskRequest
+     *
+     * @return CreateKitTaskResponse CreateKitTaskResponse
+     */
+    public function createKitTask($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateKitTaskHeaders([]);
+
+        return $this->createKitTaskWithOptions($request, $headers, $runtime);
     }
 
     /**
