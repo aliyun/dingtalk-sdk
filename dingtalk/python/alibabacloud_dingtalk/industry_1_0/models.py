@@ -268,10 +268,12 @@ class BatchGetTaskResultResponseBodyTasks(TeaModel):
         self,
         result: BatchGetTaskResultResponseBodyTasksResult = None,
         status: str = None,
+        status_info: str = None,
         task_id: str = None,
     ):
         self.result = result
         self.status = status
+        self.status_info = status_info
         self.task_id = task_id
 
     def validate(self):
@@ -288,6 +290,8 @@ class BatchGetTaskResultResponseBodyTasks(TeaModel):
             result['result'] = self.result.to_map()
         if self.status is not None:
             result['status'] = self.status
+        if self.status_info is not None:
+            result['statusInfo'] = self.status_info
         if self.task_id is not None:
             result['taskId'] = self.task_id
         return result
@@ -299,6 +303,8 @@ class BatchGetTaskResultResponseBodyTasks(TeaModel):
             self.result = temp_model.from_map(m['result'])
         if m.get('status') is not None:
             self.status = m.get('status')
+        if m.get('statusInfo') is not None:
+            self.status_info = m.get('statusInfo')
         if m.get('taskId') is not None:
             self.task_id = m.get('taskId')
         return self

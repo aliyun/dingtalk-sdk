@@ -6999,6 +6999,342 @@ class SearchAllTasksByTqlResponse(TeaModel):
         return self
 
 
+class SearchProjectCustomFiledsV3Headers(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SearchProjectCustomFiledsV3Request(TeaModel):
+    def __init__(
+        self,
+        cf_ids: str = None,
+        max_results: int = None,
+        next_token: str = None,
+        sfc_id: str = None,
+    ):
+        self.cf_ids = cf_ids
+        self.max_results = max_results
+        self.next_token = next_token
+        self.sfc_id = sfc_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.cf_ids is not None:
+            result['cfIds'] = self.cf_ids
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.sfc_id is not None:
+            result['sfcId'] = self.sfc_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('cfIds') is not None:
+            self.cf_ids = m.get('cfIds')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('sfcId') is not None:
+            self.sfc_id = m.get('sfcId')
+        return self
+
+
+class SearchProjectCustomFiledsV3ResponseBodyResultAdvancedCustomfield(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        name: str = None,
+        object_type: str = None,
+    ):
+        self.id = id
+        self.name = name
+        self.object_type = object_type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.object_type is not None:
+            result['objectType'] = self.object_type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('objectType') is not None:
+            self.object_type = m.get('objectType')
+        return self
+
+
+class SearchProjectCustomFiledsV3ResponseBodyResultChoices(TeaModel):
+    def __init__(
+        self,
+        id: str = None,
+        value: str = None,
+    ):
+        self.id = id
+        self.value = value
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.id is not None:
+            result['id'] = self.id
+        if self.value is not None:
+            result['value'] = self.value
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('value') is not None:
+            self.value = m.get('value')
+        return self
+
+
+class SearchProjectCustomFiledsV3ResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        advanced_customfield: SearchProjectCustomFiledsV3ResponseBodyResultAdvancedCustomfield = None,
+        bound_to_object_id: str = None,
+        bound_to_object_type: str = None,
+        choices: List[SearchProjectCustomFiledsV3ResponseBodyResultChoices] = None,
+        created: str = None,
+        creator_id: str = None,
+        id: str = None,
+        name: str = None,
+        original_id: str = None,
+        type: str = None,
+    ):
+        self.advanced_customfield = advanced_customfield
+        self.bound_to_object_id = bound_to_object_id
+        self.bound_to_object_type = bound_to_object_type
+        self.choices = choices
+        self.created = created
+        self.creator_id = creator_id
+        self.id = id
+        self.name = name
+        self.original_id = original_id
+        self.type = type
+
+    def validate(self):
+        if self.advanced_customfield:
+            self.advanced_customfield.validate()
+        if self.choices:
+            for k in self.choices:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.advanced_customfield is not None:
+            result['advancedCustomfield'] = self.advanced_customfield.to_map()
+        if self.bound_to_object_id is not None:
+            result['boundToObjectId'] = self.bound_to_object_id
+        if self.bound_to_object_type is not None:
+            result['boundToObjectType'] = self.bound_to_object_type
+        result['choices'] = []
+        if self.choices is not None:
+            for k in self.choices:
+                result['choices'].append(k.to_map() if k else None)
+        if self.created is not None:
+            result['created'] = self.created
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.id is not None:
+            result['id'] = self.id
+        if self.name is not None:
+            result['name'] = self.name
+        if self.original_id is not None:
+            result['originalId'] = self.original_id
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('advancedCustomfield') is not None:
+            temp_model = SearchProjectCustomFiledsV3ResponseBodyResultAdvancedCustomfield()
+            self.advanced_customfield = temp_model.from_map(m['advancedCustomfield'])
+        if m.get('boundToObjectId') is not None:
+            self.bound_to_object_id = m.get('boundToObjectId')
+        if m.get('boundToObjectType') is not None:
+            self.bound_to_object_type = m.get('boundToObjectType')
+        self.choices = []
+        if m.get('choices') is not None:
+            for k in m.get('choices'):
+                temp_model = SearchProjectCustomFiledsV3ResponseBodyResultChoices()
+                self.choices.append(temp_model.from_map(k))
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('originalId') is not None:
+            self.original_id = m.get('originalId')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class SearchProjectCustomFiledsV3ResponseBody(TeaModel):
+    def __init__(
+        self,
+        next_token: str = None,
+        request_id: str = None,
+        result: List[SearchProjectCustomFiledsV3ResponseBodyResult] = None,
+        total_count: int = None,
+    ):
+        self.next_token = next_token
+        self.request_id = request_id
+        self.result = result
+        self.total_count = total_count
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = SearchProjectCustomFiledsV3ResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class SearchProjectCustomFiledsV3Response(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SearchProjectCustomFiledsV3ResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SearchProjectCustomFiledsV3ResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SearchProjectsV3Headers(TeaModel):
     def __init__(
         self,

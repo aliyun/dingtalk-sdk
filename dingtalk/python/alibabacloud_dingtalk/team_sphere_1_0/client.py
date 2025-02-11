@@ -2576,6 +2576,140 @@ class Client(OpenApiClient):
         headers = dingtalkteam_sphere__1__0_models.SearchAllTasksByTqlHeaders()
         return await self.search_all_tasks_by_tql_with_options_async(request, headers, runtime)
 
+    def search_project_custom_fileds_v3with_options(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkteam_sphere__1__0_models.SearchProjectCustomFiledsV3Request,
+        headers: dingtalkteam_sphere__1__0_models.SearchProjectCustomFiledsV3Headers,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.SearchProjectCustomFiledsV3Response:
+        """
+        @summary 搜索项目自定义字段。
+        
+        @param request: SearchProjectCustomFiledsV3Request
+        @param headers: SearchProjectCustomFiledsV3Headers
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchProjectCustomFiledsV3Response
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.cf_ids):
+            query['cfIds'] = request.cf_ids
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.sfc_id):
+            query['sfcId'] = request.sfc_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SearchProjectCustomFiledsV3',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/projects/{project_id}/customFields',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.SearchProjectCustomFiledsV3Response(),
+            self.execute(params, req, runtime)
+        )
+
+    async def search_project_custom_fileds_v3with_options_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkteam_sphere__1__0_models.SearchProjectCustomFiledsV3Request,
+        headers: dingtalkteam_sphere__1__0_models.SearchProjectCustomFiledsV3Headers,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkteam_sphere__1__0_models.SearchProjectCustomFiledsV3Response:
+        """
+        @summary 搜索项目自定义字段。
+        
+        @param request: SearchProjectCustomFiledsV3Request
+        @param headers: SearchProjectCustomFiledsV3Headers
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SearchProjectCustomFiledsV3Response
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.cf_ids):
+            query['cfIds'] = request.cf_ids
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.sfc_id):
+            query['sfcId'] = request.sfc_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='SearchProjectCustomFiledsV3',
+            version='teamSphere_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/teamSphere/users/{user_id}/projects/{project_id}/customFields',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkteam_sphere__1__0_models.SearchProjectCustomFiledsV3Response(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def search_project_custom_fileds_v3(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkteam_sphere__1__0_models.SearchProjectCustomFiledsV3Request,
+    ) -> dingtalkteam_sphere__1__0_models.SearchProjectCustomFiledsV3Response:
+        """
+        @summary 搜索项目自定义字段。
+        
+        @param request: SearchProjectCustomFiledsV3Request
+        @return: SearchProjectCustomFiledsV3Response
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.SearchProjectCustomFiledsV3Headers()
+        return self.search_project_custom_fileds_v3with_options(user_id, project_id, request, headers, runtime)
+
+    async def search_project_custom_fileds_v3_async(
+        self,
+        user_id: str,
+        project_id: str,
+        request: dingtalkteam_sphere__1__0_models.SearchProjectCustomFiledsV3Request,
+    ) -> dingtalkteam_sphere__1__0_models.SearchProjectCustomFiledsV3Response:
+        """
+        @summary 搜索项目自定义字段。
+        
+        @param request: SearchProjectCustomFiledsV3Request
+        @return: SearchProjectCustomFiledsV3Response
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkteam_sphere__1__0_models.SearchProjectCustomFiledsV3Headers()
+        return await self.search_project_custom_fileds_v3with_options_async(user_id, project_id, request, headers, runtime)
+
     def search_projects_v3with_options(
         self,
         request: dingtalkteam_sphere__1__0_models.SearchProjectsV3Request,

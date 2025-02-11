@@ -474,6 +474,7 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
         memo: str = None,
         originator_id: str = None,
         originator_id_on_behalf: str = None,
+        process_biz_action: str = None,
         process_instance_id: str = None,
         process_result: str = None,
         process_status: str = None,
@@ -503,6 +504,7 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
         self.memo = memo
         self.originator_id = originator_id
         self.originator_id_on_behalf = originator_id_on_behalf
+        self.process_biz_action = process_biz_action
         self.process_instance_id = process_instance_id
         self.process_result = process_result
         self.process_status = process_status
@@ -576,6 +578,8 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
             result['originatorId'] = self.originator_id
         if self.originator_id_on_behalf is not None:
             result['originatorIdOnBehalf'] = self.originator_id_on_behalf
+        if self.process_biz_action is not None:
+            result['processBizAction'] = self.process_biz_action
         if self.process_instance_id is not None:
             result['processInstanceId'] = self.process_instance_id
         if self.process_result is not None:
@@ -644,6 +648,8 @@ class GetTravelProcessDetailResponseBodyResult(TeaModel):
             self.originator_id = m.get('originatorId')
         if m.get('originatorIdOnBehalf') is not None:
             self.originator_id_on_behalf = m.get('originatorIdOnBehalf')
+        if m.get('processBizAction') is not None:
+            self.process_biz_action = m.get('processBizAction')
         if m.get('processInstanceId') is not None:
             self.process_instance_id = m.get('processInstanceId')
         if m.get('processResult') is not None:

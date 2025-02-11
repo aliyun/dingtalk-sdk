@@ -1412,7 +1412,7 @@ class GetDefineRequest(TeaModel):
         return self
 
 
-class GetDefineResponseBodyResult(TeaModel):
+class GetDefineResponseBodyList(TeaModel):
     def __init__(
         self,
         code: str = None,
@@ -1448,15 +1448,17 @@ class GetDefineResponseBodyResult(TeaModel):
 class GetDefineResponseBody(TeaModel):
     def __init__(
         self,
-        result: List[GetDefineResponseBodyResult] = None,
+        has_more: bool = None,
+        list: List[GetDefineResponseBodyList] = None,
         total_count: int = None,
     ):
-        self.result = result
+        self.has_more = has_more
+        self.list = list
         self.total_count = total_count
 
     def validate(self):
-        if self.result:
-            for k in self.result:
+        if self.list:
+            for k in self.list:
                 if k:
                     k.validate()
 
@@ -1466,21 +1468,25 @@ class GetDefineResponseBody(TeaModel):
             return _map
 
         result = dict()
-        result['result'] = []
-        if self.result is not None:
-            for k in self.result:
-                result['result'].append(k.to_map() if k else None)
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
         if self.total_count is not None:
             result['totalCount'] = self.total_count
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.result = []
-        if m.get('result') is not None:
-            for k in m.get('result'):
-                temp_model = GetDefineResponseBodyResult()
-                self.result.append(temp_model.from_map(k))
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = GetDefineResponseBodyList()
+                self.list.append(temp_model.from_map(k))
         if m.get('totalCount') is not None:
             self.total_count = m.get('totalCount')
         return self
@@ -1605,7 +1611,7 @@ class GetDefineDataRequest(TeaModel):
         return self
 
 
-class GetDefineDataResponseBodyResult(TeaModel):
+class GetDefineDataResponseBodyList(TeaModel):
     def __init__(
         self,
         data_code: str = None,
@@ -1659,15 +1665,17 @@ class GetDefineDataResponseBodyResult(TeaModel):
 class GetDefineDataResponseBody(TeaModel):
     def __init__(
         self,
-        result: List[GetDefineDataResponseBodyResult] = None,
+        has_more: bool = None,
+        list: List[GetDefineDataResponseBodyList] = None,
         total_count: int = None,
     ):
-        self.result = result
+        self.has_more = has_more
+        self.list = list
         self.total_count = total_count
 
     def validate(self):
-        if self.result:
-            for k in self.result:
+        if self.list:
+            for k in self.list:
                 if k:
                     k.validate()
 
@@ -1677,21 +1685,25 @@ class GetDefineDataResponseBody(TeaModel):
             return _map
 
         result = dict()
-        result['result'] = []
-        if self.result is not None:
-            for k in self.result:
-                result['result'].append(k.to_map() if k else None)
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
         if self.total_count is not None:
             result['totalCount'] = self.total_count
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        self.result = []
-        if m.get('result') is not None:
-            for k in m.get('result'):
-                temp_model = GetDefineDataResponseBodyResult()
-                self.result.append(temp_model.from_map(k))
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = GetDefineDataResponseBodyList()
+                self.list.append(temp_model.from_map(k))
         if m.get('totalCount') is not None:
             self.total_count = m.get('totalCount')
         return self
