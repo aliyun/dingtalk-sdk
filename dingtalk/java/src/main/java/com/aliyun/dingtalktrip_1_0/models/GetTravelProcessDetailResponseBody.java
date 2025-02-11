@@ -873,6 +873,13 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
 
         /**
          * <strong>example:</strong>
+         * <p>NONE</p>
+         */
+        @NameInMap("processBizAction")
+        public String processBizAction;
+
+        /**
+         * <strong>example:</strong>
          * <p>AG3U12xWRFex63hxxxxx</p>
          */
         @NameInMap("processInstanceId")
@@ -1082,6 +1089,14 @@ public class GetTravelProcessDetailResponseBody extends TeaModel {
         }
         public String getOriginatorIdOnBehalf() {
             return this.originatorIdOnBehalf;
+        }
+
+        public GetTravelProcessDetailResponseBodyResult setProcessBizAction(String processBizAction) {
+            this.processBizAction = processBizAction;
+            return this;
+        }
+        public String getProcessBizAction() {
+            return this.processBizAction;
         }
 
         public GetTravelProcessDetailResponseBodyResult setProcessInstanceId(String processInstanceId) {

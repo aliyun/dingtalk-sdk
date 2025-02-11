@@ -4,8 +4,11 @@ package com.aliyun.dingtalkbizfinance_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetDefineResponseBody extends TeaModel {
-    @NameInMap("result")
-    public java.util.List<GetDefineResponseBodyResult> result;
+    @NameInMap("hasMore")
+    public Boolean hasMore;
+
+    @NameInMap("list")
+    public java.util.List<GetDefineResponseBodyList> list;
 
     @NameInMap("totalCount")
     public Long totalCount;
@@ -15,12 +18,20 @@ public class GetDefineResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public GetDefineResponseBody setResult(java.util.List<GetDefineResponseBodyResult> result) {
-        this.result = result;
+    public GetDefineResponseBody setHasMore(Boolean hasMore) {
+        this.hasMore = hasMore;
         return this;
     }
-    public java.util.List<GetDefineResponseBodyResult> getResult() {
-        return this.result;
+    public Boolean getHasMore() {
+        return this.hasMore;
+    }
+
+    public GetDefineResponseBody setList(java.util.List<GetDefineResponseBodyList> list) {
+        this.list = list;
+        return this;
+    }
+    public java.util.List<GetDefineResponseBodyList> getList() {
+        return this.list;
     }
 
     public GetDefineResponseBody setTotalCount(Long totalCount) {
@@ -31,19 +42,19 @@ public class GetDefineResponseBody extends TeaModel {
         return this.totalCount;
     }
 
-    public static class GetDefineResponseBodyResult extends TeaModel {
+    public static class GetDefineResponseBodyList extends TeaModel {
         @NameInMap("code")
         public String code;
 
         @NameInMap("name")
         public String name;
 
-        public static GetDefineResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
-            GetDefineResponseBodyResult self = new GetDefineResponseBodyResult();
+        public static GetDefineResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
+            GetDefineResponseBodyList self = new GetDefineResponseBodyList();
             return TeaModel.build(map, self);
         }
 
-        public GetDefineResponseBodyResult setCode(String code) {
+        public GetDefineResponseBodyList setCode(String code) {
             this.code = code;
             return this;
         }
@@ -51,7 +62,7 @@ public class GetDefineResponseBody extends TeaModel {
             return this.code;
         }
 
-        public GetDefineResponseBodyResult setName(String name) {
+        public GetDefineResponseBodyList setName(String name) {
             this.name = name;
             return this;
         }

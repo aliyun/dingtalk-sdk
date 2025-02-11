@@ -4,8 +4,11 @@ package com.aliyun.dingtalkbizfinance_2_0.models;
 import com.aliyun.tea.*;
 
 public class GetDefineDataResponseBody extends TeaModel {
-    @NameInMap("result")
-    public java.util.List<GetDefineDataResponseBodyResult> result;
+    @NameInMap("hasMore")
+    public Boolean hasMore;
+
+    @NameInMap("list")
+    public java.util.List<GetDefineDataResponseBodyList> list;
 
     @NameInMap("totalCount")
     public Long totalCount;
@@ -15,12 +18,20 @@ public class GetDefineDataResponseBody extends TeaModel {
         return TeaModel.build(map, self);
     }
 
-    public GetDefineDataResponseBody setResult(java.util.List<GetDefineDataResponseBodyResult> result) {
-        this.result = result;
+    public GetDefineDataResponseBody setHasMore(Boolean hasMore) {
+        this.hasMore = hasMore;
         return this;
     }
-    public java.util.List<GetDefineDataResponseBodyResult> getResult() {
-        return this.result;
+    public Boolean getHasMore() {
+        return this.hasMore;
+    }
+
+    public GetDefineDataResponseBody setList(java.util.List<GetDefineDataResponseBodyList> list) {
+        this.list = list;
+        return this;
+    }
+    public java.util.List<GetDefineDataResponseBodyList> getList() {
+        return this.list;
     }
 
     public GetDefineDataResponseBody setTotalCount(Long totalCount) {
@@ -31,7 +42,7 @@ public class GetDefineDataResponseBody extends TeaModel {
         return this.totalCount;
     }
 
-    public static class GetDefineDataResponseBodyResult extends TeaModel {
+    public static class GetDefineDataResponseBodyList extends TeaModel {
         /**
          * <strong>example:</strong>
          * <p>DA_123456</p>
@@ -67,12 +78,12 @@ public class GetDefineDataResponseBody extends TeaModel {
         @NameInMap("status")
         public String status;
 
-        public static GetDefineDataResponseBodyResult build(java.util.Map<String, ?> map) throws Exception {
-            GetDefineDataResponseBodyResult self = new GetDefineDataResponseBodyResult();
+        public static GetDefineDataResponseBodyList build(java.util.Map<String, ?> map) throws Exception {
+            GetDefineDataResponseBodyList self = new GetDefineDataResponseBodyList();
             return TeaModel.build(map, self);
         }
 
-        public GetDefineDataResponseBodyResult setDataCode(String dataCode) {
+        public GetDefineDataResponseBodyList setDataCode(String dataCode) {
             this.dataCode = dataCode;
             return this;
         }
@@ -80,7 +91,7 @@ public class GetDefineDataResponseBody extends TeaModel {
             return this.dataCode;
         }
 
-        public GetDefineDataResponseBodyResult setDefineCode(String defineCode) {
+        public GetDefineDataResponseBodyList setDefineCode(String defineCode) {
             this.defineCode = defineCode;
             return this;
         }
@@ -88,7 +99,7 @@ public class GetDefineDataResponseBody extends TeaModel {
             return this.defineCode;
         }
 
-        public GetDefineDataResponseBodyResult setName(String name) {
+        public GetDefineDataResponseBodyList setName(String name) {
             this.name = name;
             return this;
         }
@@ -96,7 +107,7 @@ public class GetDefineDataResponseBody extends TeaModel {
             return this.name;
         }
 
-        public GetDefineDataResponseBodyResult setParentDataCode(String parentDataCode) {
+        public GetDefineDataResponseBodyList setParentDataCode(String parentDataCode) {
             this.parentDataCode = parentDataCode;
             return this;
         }
@@ -104,7 +115,7 @@ public class GetDefineDataResponseBody extends TeaModel {
             return this.parentDataCode;
         }
 
-        public GetDefineDataResponseBodyResult setStatus(String status) {
+        public GetDefineDataResponseBodyList setStatus(String status) {
             this.status = status;
             return this;
         }

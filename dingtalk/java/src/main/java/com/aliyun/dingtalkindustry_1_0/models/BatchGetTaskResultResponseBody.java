@@ -311,6 +311,9 @@ public class BatchGetTaskResultResponseBody extends TeaModel {
         @NameInMap("status")
         public String status;
 
+        @NameInMap("statusInfo")
+        public String statusInfo;
+
         /**
          * <strong>example:</strong>
          * <p>4beae5155406457291fcbdd76c4e8da8</p>
@@ -337,6 +340,14 @@ public class BatchGetTaskResultResponseBody extends TeaModel {
         }
         public String getStatus() {
             return this.status;
+        }
+
+        public BatchGetTaskResultResponseBodyTasks setStatusInfo(String statusInfo) {
+            this.statusInfo = statusInfo;
+            return this;
+        }
+        public String getStatusInfo() {
+            return this.statusInfo;
         }
 
         public BatchGetTaskResultResponseBodyTasks setTaskId(String taskId) {
