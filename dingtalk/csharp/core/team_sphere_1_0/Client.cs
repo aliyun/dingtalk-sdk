@@ -3310,6 +3310,178 @@ namespace AlibabaCloud.SDK.Dingtalkteam_sphere_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>搜索项目自定义字段。</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchProjectCustomFiledsV3Request
+        /// </param>
+        /// <param name="headers">
+        /// SearchProjectCustomFiledsV3Headers
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchProjectCustomFiledsV3Response
+        /// </returns>
+        public SearchProjectCustomFiledsV3Response SearchProjectCustomFiledsV3WithOptions(string userId, string projectId, SearchProjectCustomFiledsV3Request request, SearchProjectCustomFiledsV3Headers headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CfIds))
+            {
+                query["cfIds"] = request.CfIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SfcId))
+            {
+                query["sfcId"] = request.SfcId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SearchProjectCustomFiledsV3",
+                Version = "teamSphere_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/teamSphere/users/" + userId + "/projects/" + projectId + "/customFields",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SearchProjectCustomFiledsV3Response>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>搜索项目自定义字段。</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchProjectCustomFiledsV3Request
+        /// </param>
+        /// <param name="headers">
+        /// SearchProjectCustomFiledsV3Headers
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchProjectCustomFiledsV3Response
+        /// </returns>
+        public async Task<SearchProjectCustomFiledsV3Response> SearchProjectCustomFiledsV3WithOptionsAsync(string userId, string projectId, SearchProjectCustomFiledsV3Request request, SearchProjectCustomFiledsV3Headers headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CfIds))
+            {
+                query["cfIds"] = request.CfIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxResults))
+            {
+                query["maxResults"] = request.MaxResults;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.NextToken))
+            {
+                query["nextToken"] = request.NextToken;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SfcId))
+            {
+                query["sfcId"] = request.SfcId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SearchProjectCustomFiledsV3",
+                Version = "teamSphere_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/teamSphere/users/" + userId + "/projects/" + projectId + "/customFields",
+                Method = "GET",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SearchProjectCustomFiledsV3Response>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>搜索项目自定义字段。</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchProjectCustomFiledsV3Request
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchProjectCustomFiledsV3Response
+        /// </returns>
+        public SearchProjectCustomFiledsV3Response SearchProjectCustomFiledsV3(string userId, string projectId, SearchProjectCustomFiledsV3Request request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SearchProjectCustomFiledsV3Headers headers = new SearchProjectCustomFiledsV3Headers();
+            return SearchProjectCustomFiledsV3WithOptions(userId, projectId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>搜索项目自定义字段。</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SearchProjectCustomFiledsV3Request
+        /// </param>
+        /// 
+        /// <returns>
+        /// SearchProjectCustomFiledsV3Response
+        /// </returns>
+        public async Task<SearchProjectCustomFiledsV3Response> SearchProjectCustomFiledsV3Async(string userId, string projectId, SearchProjectCustomFiledsV3Request request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SearchProjectCustomFiledsV3Headers headers = new SearchProjectCustomFiledsV3Headers();
+            return await SearchProjectCustomFiledsV3WithOptionsAsync(userId, projectId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询协作空间。</para>
         /// </summary>
         /// 

@@ -9,10 +9,14 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkbizfinance_2_0.Models
 {
     public class GetDefineDataResponseBody : TeaModel {
-        [NameInMap("result")]
+        [NameInMap("hasMore")]
         [Validation(Required=false)]
-        public List<GetDefineDataResponseBodyResult> Result { get; set; }
-        public class GetDefineDataResponseBodyResult : TeaModel {
+        public bool? HasMore { get; set; }
+
+        [NameInMap("list")]
+        [Validation(Required=false)]
+        public List<GetDefineDataResponseBodyList> List { get; set; }
+        public class GetDefineDataResponseBodyList : TeaModel {
             /// <summary>
             /// <b>Example:</b>
             /// <para>DA_123456</para>

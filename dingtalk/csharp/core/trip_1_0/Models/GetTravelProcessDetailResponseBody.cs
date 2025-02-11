@@ -447,6 +447,14 @@ namespace AlibabaCloud.SDK.Dingtalktrip_1_0.Models
 
             /// <summary>
             /// <b>Example:</b>
+            /// <para>NONE</para>
+            /// </summary>
+            [NameInMap("processBizAction")]
+            [Validation(Required=false)]
+            public string ProcessBizAction { get; set; }
+
+            /// <summary>
+            /// <b>Example:</b>
             /// <para>AG3U12xWRFex63hxxxxx</para>
             /// </summary>
             [NameInMap("processInstanceId")]

@@ -147,6 +147,10 @@ namespace AlibabaCloud.SDK.Dingtalkindustry_1_0.Models
             [Validation(Required=false)]
             public string Status { get; set; }
 
+            [NameInMap("statusInfo")]
+            [Validation(Required=false)]
+            public string StatusInfo { get; set; }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>4beae5155406457291fcbdd76c4e8da8</para>
