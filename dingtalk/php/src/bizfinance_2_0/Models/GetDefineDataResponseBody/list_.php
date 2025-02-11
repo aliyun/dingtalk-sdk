@@ -6,7 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetDefineDataResponse
 
 use AlibabaCloud\Tea\Model;
 
-class result extends Model
+class list_ extends Model
 {
     /**
      * @example DA_123456
@@ -79,7 +79,7 @@ class result extends Model
     /**
      * @param array $map
      *
-     * @return result
+     * @return list_
      */
     public static function fromMap($map = [])
     {

@@ -148,6 +148,13 @@ class result extends Model
     public $originatorIdOnBehalf;
 
     /**
+     * @example NONE
+     *
+     * @var string
+     */
+    public $processBizAction;
+
+    /**
      * @example AG3U12xWRFex63hxxxxx
      *
      * @var string
@@ -219,6 +226,7 @@ class result extends Model
         'memo'                         => 'memo',
         'originatorId'                 => 'originatorId',
         'originatorIdOnBehalf'         => 'originatorIdOnBehalf',
+        'processBizAction'             => 'processBizAction',
         'processInstanceId'            => 'processInstanceId',
         'processResult'                => 'processResult',
         'processStatus'                => 'processStatus',
@@ -307,6 +315,9 @@ class result extends Model
         }
         if (null !== $this->originatorIdOnBehalf) {
             $res['originatorIdOnBehalf'] = $this->originatorIdOnBehalf;
+        }
+        if (null !== $this->processBizAction) {
+            $res['processBizAction'] = $this->processBizAction;
         }
         if (null !== $this->processInstanceId) {
             $res['processInstanceId'] = $this->processInstanceId;
@@ -421,6 +432,9 @@ class result extends Model
         }
         if (isset($map['originatorIdOnBehalf'])) {
             $model->originatorIdOnBehalf = $map['originatorIdOnBehalf'];
+        }
+        if (isset($map['processBizAction'])) {
+            $model->processBizAction = $map['processBizAction'];
         }
         if (isset($map['processInstanceId'])) {
             $model->processInstanceId = $map['processInstanceId'];

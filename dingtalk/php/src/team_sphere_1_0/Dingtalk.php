@@ -64,6 +64,9 @@ use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\QueryTasksV3Response;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\SearchAllTasksByTqlHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\SearchAllTasksByTqlRequest;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\SearchAllTasksByTqlResponse;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\SearchProjectCustomFiledsV3Headers;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\SearchProjectCustomFiledsV3Request;
+use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\SearchProjectCustomFiledsV3Response;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\SearchProjectsV3Headers;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\SearchProjectsV3Request;
 use AlibabaCloud\SDK\Dingtalk\Vteam_sphere_1_0\Models\SearchProjectsV3Response;
@@ -1406,6 +1409,76 @@ class Dingtalk extends OpenApiClient
         $headers = new SearchAllTasksByTqlHeaders([]);
 
         return $this->searchAllTasksByTqlWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 搜索项目自定义字段。
+     *  *
+     * @param string                             $userId
+     * @param string                             $projectId
+     * @param SearchProjectCustomFiledsV3Request $request   SearchProjectCustomFiledsV3Request
+     * @param SearchProjectCustomFiledsV3Headers $headers   SearchProjectCustomFiledsV3Headers
+     * @param RuntimeOptions                     $runtime   runtime options for this request RuntimeOptions
+     *
+     * @return SearchProjectCustomFiledsV3Response SearchProjectCustomFiledsV3Response
+     */
+    public function searchProjectCustomFiledsV3WithOptions($userId, $projectId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->cfIds)) {
+            $query['cfIds'] = $request->cfIds;
+        }
+        if (!Utils::isUnset($request->maxResults)) {
+            $query['maxResults'] = $request->maxResults;
+        }
+        if (!Utils::isUnset($request->nextToken)) {
+            $query['nextToken'] = $request->nextToken;
+        }
+        if (!Utils::isUnset($request->sfcId)) {
+            $query['sfcId'] = $request->sfcId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'SearchProjectCustomFiledsV3',
+            'version'     => 'teamSphere_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/teamSphere/users/' . $userId . '/projects/' . $projectId . '/customFields',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SearchProjectCustomFiledsV3Response::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 搜索项目自定义字段。
+     *  *
+     * @param string                             $userId
+     * @param string                             $projectId
+     * @param SearchProjectCustomFiledsV3Request $request   SearchProjectCustomFiledsV3Request
+     *
+     * @return SearchProjectCustomFiledsV3Response SearchProjectCustomFiledsV3Response
+     */
+    public function searchProjectCustomFiledsV3($userId, $projectId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SearchProjectCustomFiledsV3Headers([]);
+
+        return $this->searchProjectCustomFiledsV3WithOptions($userId, $projectId, $request, $headers, $runtime);
     }
 
     /**

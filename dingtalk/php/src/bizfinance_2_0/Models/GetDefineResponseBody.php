@@ -4,22 +4,28 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models;
 
-use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetDefineResponseBody\result;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetDefineResponseBody\list_;
 use AlibabaCloud\Tea\Model;
 
 class GetDefineResponseBody extends Model
 {
     /**
-     * @var result[]
+     * @var bool
      */
-    public $result;
+    public $hasMore;
+
+    /**
+     * @var list_[]
+     */
+    public $list;
 
     /**
      * @var int
      */
     public $totalCount;
     protected $_name = [
-        'result'     => 'result',
+        'hasMore'    => 'hasMore',
+        'list'       => 'list',
         'totalCount' => 'totalCount',
     ];
 
@@ -30,12 +36,15 @@ class GetDefineResponseBody extends Model
     public function toMap()
     {
         $res = [];
-        if (null !== $this->result) {
-            $res['result'] = [];
-            if (null !== $this->result && \is_array($this->result)) {
+        if (null !== $this->hasMore) {
+            $res['hasMore'] = $this->hasMore;
+        }
+        if (null !== $this->list) {
+            $res['list'] = [];
+            if (null !== $this->list && \is_array($this->list)) {
                 $n = 0;
-                foreach ($this->result as $item) {
-                    $res['result'][$n++] = null !== $item ? $item->toMap() : $item;
+                foreach ($this->list as $item) {
+                    $res['list'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
         }
@@ -54,12 +63,15 @@ class GetDefineResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
-        if (isset($map['result'])) {
-            if (!empty($map['result'])) {
-                $model->result = [];
-                $n             = 0;
-                foreach ($map['result'] as $item) {
-                    $model->result[$n++] = null !== $item ? result::fromMap($item) : $item;
+        if (isset($map['hasMore'])) {
+            $model->hasMore = $map['hasMore'];
+        }
+        if (isset($map['list'])) {
+            if (!empty($map['list'])) {
+                $model->list = [];
+                $n           = 0;
+                foreach ($map['list'] as $item) {
+                    $model->list[$n++] = null !== $item ? list_::fromMap($item) : $item;
                 }
             }
         }

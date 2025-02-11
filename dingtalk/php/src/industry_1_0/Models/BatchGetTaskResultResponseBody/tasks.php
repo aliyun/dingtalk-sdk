@@ -22,15 +22,21 @@ class tasks extends Model
     public $status;
 
     /**
+     * @var string
+     */
+    public $statusInfo;
+
+    /**
      * @example 4beae5155406457291fcbdd76c4e8da8
      *
      * @var string
      */
     public $taskId;
     protected $_name = [
-        'result' => 'result',
-        'status' => 'status',
-        'taskId' => 'taskId',
+        'result'     => 'result',
+        'status'     => 'status',
+        'statusInfo' => 'statusInfo',
+        'taskId'     => 'taskId',
     ];
 
     public function validate()
@@ -45,6 +51,9 @@ class tasks extends Model
         }
         if (null !== $this->status) {
             $res['status'] = $this->status;
+        }
+        if (null !== $this->statusInfo) {
+            $res['statusInfo'] = $this->statusInfo;
         }
         if (null !== $this->taskId) {
             $res['taskId'] = $this->taskId;
@@ -66,6 +75,9 @@ class tasks extends Model
         }
         if (isset($map['status'])) {
             $model->status = $map['status'];
+        }
+        if (isset($map['statusInfo'])) {
+            $model->statusInfo = $map['statusInfo'];
         }
         if (isset($map['taskId'])) {
             $model->taskId = $map['taskId'];
