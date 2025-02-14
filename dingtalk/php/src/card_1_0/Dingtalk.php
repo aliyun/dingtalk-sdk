@@ -362,6 +362,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->callbackType)) {
             $body['callbackType'] = $request->callbackType;
         }
+        if (!Utils::isUnset($request->cardAtUserIds)) {
+            $body['cardAtUserIds'] = $request->cardAtUserIds;
+        }
         if (!Utils::isUnset($request->cardData)) {
             $body['cardData'] = $request->cardData;
         }
@@ -595,6 +598,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->callbackType)) {
             $body['callbackType'] = $request->callbackType;
+        }
+        if (!Utils::isUnset($request->cardAtUserIds)) {
+            $body['cardAtUserIds'] = $request->cardAtUserIds;
         }
         if (!Utils::isUnset($request->cardData)) {
             $body['cardData'] = $request->cardData;

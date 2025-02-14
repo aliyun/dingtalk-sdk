@@ -30,6 +30,11 @@ class CreateCardRequest extends Model
     public $callbackType;
 
     /**
+     * @var string[]
+     */
+    public $cardAtUserIds;
+
+    /**
      * @description This parameter is required.
      *
      * @var cardData
@@ -103,6 +108,7 @@ class CreateCardRequest extends Model
     protected $_name = [
         'callbackRouteKey'       => 'callbackRouteKey',
         'callbackType'           => 'callbackType',
+        'cardAtUserIds'          => 'cardAtUserIds',
         'cardData'               => 'cardData',
         'cardTemplateId'         => 'cardTemplateId',
         'coFeedOpenSpaceModel'   => 'coFeedOpenSpaceModel',
@@ -129,6 +135,9 @@ class CreateCardRequest extends Model
         }
         if (null !== $this->callbackType) {
             $res['callbackType'] = $this->callbackType;
+        }
+        if (null !== $this->cardAtUserIds) {
+            $res['cardAtUserIds'] = $this->cardAtUserIds;
         }
         if (null !== $this->cardData) {
             $res['cardData'] = null !== $this->cardData ? $this->cardData->toMap() : null;
@@ -188,6 +197,11 @@ class CreateCardRequest extends Model
         }
         if (isset($map['callbackType'])) {
             $model->callbackType = $map['callbackType'];
+        }
+        if (isset($map['cardAtUserIds'])) {
+            if (!empty($map['cardAtUserIds'])) {
+                $model->cardAtUserIds = $map['cardAtUserIds'];
+            }
         }
         if (isset($map['cardData'])) {
             $model->cardData = cardData::fromMap($map['cardData']);

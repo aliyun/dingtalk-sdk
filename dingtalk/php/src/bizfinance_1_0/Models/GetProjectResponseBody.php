@@ -51,6 +51,11 @@ class GetProjectResponseBody extends Model
     public $name;
 
     /**
+     * @var string
+     */
+    public $parentCode;
+
+    /**
      * @description This parameter is required.
      *
      * @example PROJ-XXX
@@ -88,6 +93,7 @@ class GetProjectResponseBody extends Model
         'creator'              => 'creator',
         'description'          => 'description',
         'name'                 => 'name',
+        'parentCode'           => 'parentCode',
         'projectCode'          => 'projectCode',
         'projectName'          => 'projectName',
         'status'               => 'status',
@@ -118,6 +124,9 @@ class GetProjectResponseBody extends Model
         }
         if (null !== $this->name) {
             $res['name'] = $this->name;
+        }
+        if (null !== $this->parentCode) {
+            $res['parentCode'] = $this->parentCode;
         }
         if (null !== $this->projectCode) {
             $res['projectCode'] = $this->projectCode;
@@ -162,6 +171,9 @@ class GetProjectResponseBody extends Model
         }
         if (isset($map['name'])) {
             $model->name = $map['name'];
+        }
+        if (isset($map['parentCode'])) {
+            $model->parentCode = $map['parentCode'];
         }
         if (isset($map['projectCode'])) {
             $model->projectCode = $map['projectCode'];
