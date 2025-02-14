@@ -46,8 +46,17 @@ public class GetAssistantActionInfoResponseBody extends TeaModel {
         @NameInMap("actionId")
         public String actionId;
 
+        @NameInMap("actionName")
+        public String actionName;
+
         @NameInMap("actionVersion")
         public String actionVersion;
+
+        @NameInMap("description")
+        public String description;
+
+        @NameInMap("icon")
+        public String icon;
 
         public static GetAssistantActionInfoResponseBodyActionList build(java.util.Map<String, ?> map) throws Exception {
             GetAssistantActionInfoResponseBodyActionList self = new GetAssistantActionInfoResponseBodyActionList();
@@ -62,12 +71,36 @@ public class GetAssistantActionInfoResponseBody extends TeaModel {
             return this.actionId;
         }
 
+        public GetAssistantActionInfoResponseBodyActionList setActionName(String actionName) {
+            this.actionName = actionName;
+            return this;
+        }
+        public String getActionName() {
+            return this.actionName;
+        }
+
         public GetAssistantActionInfoResponseBodyActionList setActionVersion(String actionVersion) {
             this.actionVersion = actionVersion;
             return this;
         }
         public String getActionVersion() {
             return this.actionVersion;
+        }
+
+        public GetAssistantActionInfoResponseBodyActionList setDescription(String description) {
+            this.description = description;
+            return this;
+        }
+        public String getDescription() {
+            return this.description;
+        }
+
+        public GetAssistantActionInfoResponseBodyActionList setIcon(String icon) {
+            this.icon = icon;
+            return this;
+        }
+        public String getIcon() {
+            return this.icon;
         }
 
     }

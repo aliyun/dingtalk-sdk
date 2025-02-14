@@ -40,6 +40,9 @@ public class GetProjectResponseBody extends TeaModel {
     @NameInMap("name")
     public String name;
 
+    @NameInMap("parentCode")
+    public String parentCode;
+
     /**
      * <p>This parameter is required.</p>
      * 
@@ -121,6 +124,14 @@ public class GetProjectResponseBody extends TeaModel {
     }
     public String getName() {
         return this.name;
+    }
+
+    public GetProjectResponseBody setParentCode(String parentCode) {
+        this.parentCode = parentCode;
+        return this;
+    }
+    public String getParentCode() {
+        return this.parentCode;
     }
 
     public GetProjectResponseBody setProjectCode(String projectCode) {

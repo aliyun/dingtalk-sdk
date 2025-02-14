@@ -298,6 +298,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("callbackType", request.callbackType);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.cardAtUserIds)) {
+            body.put("cardAtUserIds", request.cardAtUserIds);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.cardData)) {
             body.put("cardData", request.cardData);
         }
@@ -568,6 +572,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.callbackType)) {
             body.put("callbackType", request.callbackType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.cardAtUserIds)) {
+            body.put("cardAtUserIds", request.cardAtUserIds);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.cardData)) {

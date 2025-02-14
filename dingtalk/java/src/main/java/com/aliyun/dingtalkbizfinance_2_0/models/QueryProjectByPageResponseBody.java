@@ -75,6 +75,9 @@ public class QueryProjectByPageResponseBody extends TeaModel {
         @NameInMap("name")
         public String name;
 
+        @NameInMap("parentCode")
+        public String parentCode;
+
         /**
          * <p>This parameter is required.</p>
          * 
@@ -156,6 +159,14 @@ public class QueryProjectByPageResponseBody extends TeaModel {
         }
         public String getName() {
             return this.name;
+        }
+
+        public QueryProjectByPageResponseBodyList setParentCode(String parentCode) {
+            this.parentCode = parentCode;
+            return this;
+        }
+        public String getParentCode() {
+            return this.parentCode;
         }
 
         public QueryProjectByPageResponseBodyList setProjectCode(String projectCode) {

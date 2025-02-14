@@ -14,6 +14,9 @@ public class CreateAndDeliverRequest extends TeaModel {
     @NameInMap("callbackType")
     public String callbackType;
 
+    @NameInMap("cardAtUserIds")
+    public java.util.List<String> cardAtUserIds;
+
     /**
      * <p>This parameter is required.</p>
      */
@@ -105,6 +108,14 @@ public class CreateAndDeliverRequest extends TeaModel {
     }
     public String getCallbackType() {
         return this.callbackType;
+    }
+
+    public CreateAndDeliverRequest setCardAtUserIds(java.util.List<String> cardAtUserIds) {
+        this.cardAtUserIds = cardAtUserIds;
+        return this;
+    }
+    public java.util.List<String> getCardAtUserIds() {
+        return this.cardAtUserIds;
     }
 
     public CreateAndDeliverRequest setCardData(CreateAndDeliverRequestCardData cardData) {
