@@ -2014,6 +2014,7 @@ class GetProjectResponseBody(TeaModel):
         creator: str = None,
         description: str = None,
         name: str = None,
+        parent_code: str = None,
         project_code: str = None,
         project_name: str = None,
         status: str = None,
@@ -2028,6 +2029,7 @@ class GetProjectResponseBody(TeaModel):
         # This parameter is required.
         self.description = description
         self.name = name
+        self.parent_code = parent_code
         # This parameter is required.
         self.project_code = project_code
         # This parameter is required.
@@ -2057,6 +2059,8 @@ class GetProjectResponseBody(TeaModel):
             result['description'] = self.description
         if self.name is not None:
             result['name'] = self.name
+        if self.parent_code is not None:
+            result['parentCode'] = self.parent_code
         if self.project_code is not None:
             result['projectCode'] = self.project_code
         if self.project_name is not None:
@@ -2081,6 +2085,8 @@ class GetProjectResponseBody(TeaModel):
             self.description = m.get('description')
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('parentCode') is not None:
+            self.parent_code = m.get('parentCode')
         if m.get('projectCode') is not None:
             self.project_code = m.get('projectCode')
         if m.get('projectName') is not None:
@@ -5640,6 +5646,7 @@ class QueryProjectByPageResponseBodyList(TeaModel):
         creator: str = None,
         description: str = None,
         name: str = None,
+        parent_code: str = None,
         project_code: str = None,
         project_name: str = None,
         status: str = None,
@@ -5653,6 +5660,7 @@ class QueryProjectByPageResponseBodyList(TeaModel):
         self.creator = creator
         self.description = description
         self.name = name
+        self.parent_code = parent_code
         # This parameter is required.
         self.project_code = project_code
         # This parameter is required.
@@ -5682,6 +5690,8 @@ class QueryProjectByPageResponseBodyList(TeaModel):
             result['description'] = self.description
         if self.name is not None:
             result['name'] = self.name
+        if self.parent_code is not None:
+            result['parentCode'] = self.parent_code
         if self.project_code is not None:
             result['projectCode'] = self.project_code
         if self.project_name is not None:
@@ -5706,6 +5716,8 @@ class QueryProjectByPageResponseBodyList(TeaModel):
             self.description = m.get('description')
         if m.get('name') is not None:
             self.name = m.get('name')
+        if m.get('parentCode') is not None:
+            self.parent_code = m.get('parentCode')
         if m.get('projectCode') is not None:
             self.project_code = m.get('projectCode')
         if m.get('projectName') is not None:

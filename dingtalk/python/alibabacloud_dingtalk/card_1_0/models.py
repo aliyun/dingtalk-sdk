@@ -2095,6 +2095,7 @@ class CreateAndDeliverRequest(TeaModel):
         self,
         callback_route_key: str = None,
         callback_type: str = None,
+        card_at_user_ids: List[str] = None,
         card_data: CreateAndDeliverRequestCardData = None,
         card_template_id: str = None,
         co_feed_open_deliver_model: CreateAndDeliverRequestCoFeedOpenDeliverModel = None,
@@ -2117,6 +2118,7 @@ class CreateAndDeliverRequest(TeaModel):
     ):
         self.callback_route_key = callback_route_key
         self.callback_type = callback_type
+        self.card_at_user_ids = card_at_user_ids
         # This parameter is required.
         self.card_data = card_data
         # This parameter is required.
@@ -2183,6 +2185,8 @@ class CreateAndDeliverRequest(TeaModel):
             result['callbackRouteKey'] = self.callback_route_key
         if self.callback_type is not None:
             result['callbackType'] = self.callback_type
+        if self.card_at_user_ids is not None:
+            result['cardAtUserIds'] = self.card_at_user_ids
         if self.card_data is not None:
             result['cardData'] = self.card_data.to_map()
         if self.card_template_id is not None:
@@ -2231,6 +2235,8 @@ class CreateAndDeliverRequest(TeaModel):
             self.callback_route_key = m.get('callbackRouteKey')
         if m.get('callbackType') is not None:
             self.callback_type = m.get('callbackType')
+        if m.get('cardAtUserIds') is not None:
+            self.card_at_user_ids = m.get('cardAtUserIds')
         if m.get('cardData') is not None:
             temp_model = CreateAndDeliverRequestCardData()
             self.card_data = temp_model.from_map(m['cardData'])
@@ -4239,6 +4245,7 @@ class CreateCardRequest(TeaModel):
         self,
         callback_route_key: str = None,
         callback_type: str = None,
+        card_at_user_ids: List[str] = None,
         card_data: CreateCardRequestCardData = None,
         card_template_id: str = None,
         co_feed_open_space_model: CreateCardRequestCoFeedOpenSpaceModel = None,
@@ -4254,6 +4261,7 @@ class CreateCardRequest(TeaModel):
     ):
         self.callback_route_key = callback_route_key
         self.callback_type = callback_type
+        self.card_at_user_ids = card_at_user_ids
         # This parameter is required.
         self.card_data = card_data
         # This parameter is required.
@@ -4300,6 +4308,8 @@ class CreateCardRequest(TeaModel):
             result['callbackRouteKey'] = self.callback_route_key
         if self.callback_type is not None:
             result['callbackType'] = self.callback_type
+        if self.card_at_user_ids is not None:
+            result['cardAtUserIds'] = self.card_at_user_ids
         if self.card_data is not None:
             result['cardData'] = self.card_data.to_map()
         if self.card_template_id is not None:
@@ -4334,6 +4344,8 @@ class CreateCardRequest(TeaModel):
             self.callback_route_key = m.get('callbackRouteKey')
         if m.get('callbackType') is not None:
             self.callback_type = m.get('callbackType')
+        if m.get('cardAtUserIds') is not None:
+            self.card_at_user_ids = m.get('cardAtUserIds')
         if m.get('cardData') is not None:
             temp_model = CreateCardRequestCardData()
             self.card_data = temp_model.from_map(m['cardData'])

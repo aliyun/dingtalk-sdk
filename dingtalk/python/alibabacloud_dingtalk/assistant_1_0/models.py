@@ -2217,10 +2217,16 @@ class GetAssistantActionInfoResponseBodyActionList(TeaModel):
     def __init__(
         self,
         action_id: str = None,
+        action_name: str = None,
         action_version: str = None,
+        description: str = None,
+        icon: str = None,
     ):
         self.action_id = action_id
+        self.action_name = action_name
         self.action_version = action_version
+        self.description = description
+        self.icon = icon
 
     def validate(self):
         pass
@@ -2233,16 +2239,28 @@ class GetAssistantActionInfoResponseBodyActionList(TeaModel):
         result = dict()
         if self.action_id is not None:
             result['actionId'] = self.action_id
+        if self.action_name is not None:
+            result['actionName'] = self.action_name
         if self.action_version is not None:
             result['actionVersion'] = self.action_version
+        if self.description is not None:
+            result['description'] = self.description
+        if self.icon is not None:
+            result['icon'] = self.icon
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('actionId') is not None:
             self.action_id = m.get('actionId')
+        if m.get('actionName') is not None:
+            self.action_name = m.get('actionName')
         if m.get('actionVersion') is not None:
             self.action_version = m.get('actionVersion')
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
         return self
 
 
