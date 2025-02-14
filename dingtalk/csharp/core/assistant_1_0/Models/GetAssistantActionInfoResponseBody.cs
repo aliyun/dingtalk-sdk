@@ -17,9 +17,21 @@ namespace AlibabaCloud.SDK.Dingtalkassistant_1_0.Models
             [Validation(Required=false)]
             public string ActionId { get; set; }
 
+            [NameInMap("actionName")]
+            [Validation(Required=false)]
+            public string ActionName { get; set; }
+
             [NameInMap("actionVersion")]
             [Validation(Required=false)]
             public string ActionVersion { get; set; }
+
+            [NameInMap("description")]
+            [Validation(Required=false)]
+            public string Description { get; set; }
+
+            [NameInMap("icon")]
+            [Validation(Required=false)]
+            public string Icon { get; set; }
 
         }
 

@@ -66,6 +66,10 @@ namespace AlibabaCloud.SDK.Dingtalkbizfinance_1_0.Models
             [Validation(Required=false)]
             public string Name { get; set; }
 
+            [NameInMap("parentCode")]
+            [Validation(Required=false)]
+            public string ParentCode { get; set; }
+
             /// <summary>
             /// <para>This parameter is required.</para>
             /// 

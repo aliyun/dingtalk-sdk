@@ -21,6 +21,10 @@ namespace AlibabaCloud.SDK.Dingtalkcard_1_0.Models
         [Validation(Required=false)]
         public string CallbackType { get; set; }
 
+        [NameInMap("cardAtUserIds")]
+        [Validation(Required=false)]
+        public List<string> CardAtUserIds { get; set; }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>
