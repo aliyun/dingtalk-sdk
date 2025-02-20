@@ -10454,6 +10454,162 @@ class SetColumnsVisibilityResponse(TeaModel):
         return self
 
 
+class SetColumnsWidthHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SetColumnsWidthRequest(TeaModel):
+    def __init__(
+        self,
+        column: int = None,
+        column_count: int = None,
+        width: int = None,
+        operator_id: str = None,
+    ):
+        # This parameter is required.
+        self.column = column
+        # This parameter is required.
+        self.column_count = column_count
+        # This parameter is required.
+        self.width = width
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.column is not None:
+            result['column'] = self.column
+        if self.column_count is not None:
+            result['columnCount'] = self.column_count
+        if self.width is not None:
+            result['width'] = self.width
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('column') is not None:
+            self.column = m.get('column')
+        if m.get('columnCount') is not None:
+            self.column_count = m.get('columnCount')
+        if m.get('width') is not None:
+            self.width = m.get('width')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class SetColumnsWidthResponseBody(TeaModel):
+    def __init__(
+        self,
+        sheet_id: str = None,
+        sheet_name: str = None,
+    ):
+        self.sheet_id = sheet_id
+        self.sheet_name = sheet_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sheet_id is not None:
+            result['sheetId'] = self.sheet_id
+        if self.sheet_name is not None:
+            result['sheetName'] = self.sheet_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sheetId') is not None:
+            self.sheet_id = m.get('sheetId')
+        if m.get('sheetName') is not None:
+            self.sheet_name = m.get('sheetName')
+        return self
+
+
+class SetColumnsWidthResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SetColumnsWidthResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SetColumnsWidthResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SetRowHeightHeaders(TeaModel):
     def __init__(
         self,
@@ -10597,6 +10753,165 @@ class SetRowHeightResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SetRowHeightResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SetRowsHeightHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SetRowsHeightRequest(TeaModel):
+    def __init__(
+        self,
+        height: int = None,
+        row: int = None,
+        row_count: int = None,
+        ding_access_token_type: str = None,
+        operator_id: str = None,
+    ):
+        self.height = height
+        self.row = row
+        self.row_count = row_count
+        self.ding_access_token_type = ding_access_token_type
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.height is not None:
+            result['height'] = self.height
+        if self.row is not None:
+            result['row'] = self.row
+        if self.row_count is not None:
+            result['rowCount'] = self.row_count
+        if self.ding_access_token_type is not None:
+            result['dingAccessTokenType'] = self.ding_access_token_type
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('height') is not None:
+            self.height = m.get('height')
+        if m.get('row') is not None:
+            self.row = m.get('row')
+        if m.get('rowCount') is not None:
+            self.row_count = m.get('rowCount')
+        if m.get('dingAccessTokenType') is not None:
+            self.ding_access_token_type = m.get('dingAccessTokenType')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class SetRowsHeightResponseBody(TeaModel):
+    def __init__(
+        self,
+        sheet_id: str = None,
+        sheet_name: str = None,
+    ):
+        self.sheet_id = sheet_id
+        self.sheet_name = sheet_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.sheet_id is not None:
+            result['sheetId'] = self.sheet_id
+        if self.sheet_name is not None:
+            result['sheetName'] = self.sheet_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('sheetId') is not None:
+            self.sheet_id = m.get('sheetId')
+        if m.get('sheetName') is not None:
+            self.sheet_name = m.get('sheetName')
+        return self
+
+
+class SetRowsHeightResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SetRowsHeightResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SetRowsHeightResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

@@ -4948,6 +4948,98 @@ class Client(OpenApiClient):
         headers = dingtalkhrm__1__0_models.QueryMicroAppViewHeaders()
         return await self.query_micro_app_view_with_options_async(request, headers, runtime)
 
+    def query_position_version_with_options(
+        self,
+        headers: dingtalkhrm__1__0_models.QueryPositionVersionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.QueryPositionVersionResponse:
+        """
+        @summary 查询企业职位版本
+        
+        @param headers: QueryPositionVersionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPositionVersionResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryPositionVersion',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/positions/versions/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.QueryPositionVersionResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_position_version_with_options_async(
+        self,
+        headers: dingtalkhrm__1__0_models.QueryPositionVersionHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkhrm__1__0_models.QueryPositionVersionResponse:
+        """
+        @summary 查询企业职位版本
+        
+        @param headers: QueryPositionVersionHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryPositionVersionResponse
+        """
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers
+        )
+        params = open_api_models.Params(
+            action='QueryPositionVersion',
+            version='hrm_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/hrm/positions/versions/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkhrm__1__0_models.QueryPositionVersionResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_position_version(self) -> dingtalkhrm__1__0_models.QueryPositionVersionResponse:
+        """
+        @summary 查询企业职位版本
+        
+        @return: QueryPositionVersionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.QueryPositionVersionHeaders()
+        return self.query_position_version_with_options(headers, runtime)
+
+    async def query_position_version_async(self) -> dingtalkhrm__1__0_models.QueryPositionVersionResponse:
+        """
+        @summary 查询企业职位版本
+        
+        @return: QueryPositionVersionResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkhrm__1__0_models.QueryPositionVersionHeaders()
+        return await self.query_position_version_with_options_async(headers, runtime)
+
     def query_positions_with_options(
         self,
         request: dingtalkhrm__1__0_models.QueryPositionsRequest,
