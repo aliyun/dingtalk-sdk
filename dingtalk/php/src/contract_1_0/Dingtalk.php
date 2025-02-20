@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vcontract_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CancelReviewOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CancelReviewOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\CancelReviewOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractBenefitConsumeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractBenefitConsumeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vcontract_1_0\Models\ContractBenefitConsumeResponse;
@@ -68,6 +71,69 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 取消审查工单接口
+     *  *
+     * @param CancelReviewOrderRequest $request CancelReviewOrderRequest
+     * @param CancelReviewOrderHeaders $headers CancelReviewOrderHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CancelReviewOrderResponse CancelReviewOrderResponse
+     */
+    public function cancelReviewOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->endFiles)) {
+            $body['endFiles'] = $request->endFiles;
+        }
+        if (!Utils::isUnset($request->extension)) {
+            $body['extension'] = $request->extension;
+        }
+        if (!Utils::isUnset($request->orderId)) {
+            $body['orderId'] = $request->orderId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'CancelReviewOrder',
+            'version'     => 'contract_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/contract/reviews/cancel',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CancelReviewOrderResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 取消审查工单接口
+     *  *
+     * @param CancelReviewOrderRequest $request CancelReviewOrderRequest
+     *
+     * @return CancelReviewOrderResponse CancelReviewOrderResponse
+     */
+    public function cancelReviewOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CancelReviewOrderHeaders([]);
+
+        return $this->cancelReviewOrderWithOptions($request, $headers, $runtime);
     }
 
     /**

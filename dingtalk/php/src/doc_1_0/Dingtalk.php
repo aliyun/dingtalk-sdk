@@ -169,12 +169,18 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SearchWorkspaceDocsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnsVisibilityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnsVisibilityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnsVisibilityResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnsWidthHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnsWidthRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnsWidthResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnWidthHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnWidthRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnWidthResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowHeightHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowHeightRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowHeightResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowsHeightHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowsHeightRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowsHeightResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowsVisibilityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowsVisibilityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetRowsVisibilityResponse;
@@ -3869,6 +3875,78 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 批量设置列宽
+     *  *
+     * @param string                 $workbookId
+     * @param string                 $sheetId
+     * @param SetColumnsWidthRequest $request    SetColumnsWidthRequest
+     * @param SetColumnsWidthHeaders $headers    SetColumnsWidthHeaders
+     * @param RuntimeOptions         $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return SetColumnsWidthResponse SetColumnsWidthResponse
+     */
+    public function setColumnsWidthWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->column)) {
+            $body['column'] = $request->column;
+        }
+        if (!Utils::isUnset($request->columnCount)) {
+            $body['columnCount'] = $request->columnCount;
+        }
+        if (!Utils::isUnset($request->width)) {
+            $body['width'] = $request->width;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SetColumnsWidth',
+            'version'     => 'doc_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/setColumnsWidth',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SetColumnsWidthResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量设置列宽
+     *  *
+     * @param string                 $workbookId
+     * @param string                 $sheetId
+     * @param SetColumnsWidthRequest $request    SetColumnsWidthRequest
+     *
+     * @return SetColumnsWidthResponse SetColumnsWidthResponse
+     */
+    public function setColumnsWidth($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetColumnsWidthHeaders([]);
+
+        return $this->setColumnsWidthWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
      * @summary 设置行高
      *  *
      * @param string              $workbookId
@@ -3935,6 +4013,81 @@ class Dingtalk extends OpenApiClient
         $headers = new SetRowHeightHeaders([]);
 
         return $this->setRowHeightWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 批量设置行高
+     *  *
+     * @param string               $workbookId
+     * @param string               $sheetId
+     * @param SetRowsHeightRequest $request    SetRowsHeightRequest
+     * @param SetRowsHeightHeaders $headers    SetRowsHeightHeaders
+     * @param RuntimeOptions       $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return SetRowsHeightResponse SetRowsHeightResponse
+     */
+    public function setRowsHeightWithOptions($workbookId, $sheetId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->dingAccessTokenType)) {
+            $query['dingAccessTokenType'] = $request->dingAccessTokenType;
+        }
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->height)) {
+            $body['height'] = $request->height;
+        }
+        if (!Utils::isUnset($request->row)) {
+            $body['row'] = $request->row;
+        }
+        if (!Utils::isUnset($request->rowCount)) {
+            $body['rowCount'] = $request->rowCount;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SetRowsHeight',
+            'version'     => 'doc_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/setRowsHeight',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SetRowsHeightResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 批量设置行高
+     *  *
+     * @param string               $workbookId
+     * @param string               $sheetId
+     * @param SetRowsHeightRequest $request    SetRowsHeightRequest
+     *
+     * @return SetRowsHeightResponse SetRowsHeightResponse
+     */
+    public function setRowsHeight($workbookId, $sheetId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetRowsHeightHeaders([]);
+
+        return $this->setRowsHeightWithOptions($workbookId, $sheetId, $request, $headers, $runtime);
     }
 
     /**

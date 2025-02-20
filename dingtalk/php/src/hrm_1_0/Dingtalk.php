@@ -124,6 +124,8 @@ use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryMicroAppViewResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionVersionHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\QueryPositionVersionResponse;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RevokeSignRecordsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RevokeSignRecordsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vhrm_1_0\Models\RevokeSignRecordsResponse;
@@ -2758,6 +2760,54 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryMicroAppViewHeaders([]);
 
         return $this->queryMicroAppViewWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询企业职位版本
+     *  *
+     * @param QueryPositionVersionHeaders $headers QueryPositionVersionHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryPositionVersionResponse QueryPositionVersionResponse
+     */
+    public function queryPositionVersionWithOptions($headers, $runtime)
+    {
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+        ]);
+        $params = new Params([
+            'action'      => 'QueryPositionVersion',
+            'version'     => 'hrm_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/hrm/positions/versions/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryPositionVersionResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询企业职位版本
+     *  *
+     * @return QueryPositionVersionResponse QueryPositionVersionResponse
+     */
+    public function queryPositionVersion()
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryPositionVersionHeaders([]);
+
+        return $this->queryPositionVersionWithOptions($headers, $runtime);
     }
 
     /**
