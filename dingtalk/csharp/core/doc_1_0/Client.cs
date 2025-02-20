@@ -9046,6 +9046,182 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>批量设置列宽</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetColumnsWidthRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetColumnsWidthHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetColumnsWidthResponse
+        /// </returns>
+        public SetColumnsWidthResponse SetColumnsWidthWithOptions(string workbookId, string sheetId, SetColumnsWidthRequest request, SetColumnsWidthHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
+            {
+                body["column"] = request.Column;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ColumnCount))
+            {
+                body["columnCount"] = request.ColumnCount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Width))
+            {
+                body["width"] = request.Width;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetColumnsWidth",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/setColumnsWidth",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetColumnsWidthResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量设置列宽</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetColumnsWidthRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetColumnsWidthHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetColumnsWidthResponse
+        /// </returns>
+        public async Task<SetColumnsWidthResponse> SetColumnsWidthWithOptionsAsync(string workbookId, string sheetId, SetColumnsWidthRequest request, SetColumnsWidthHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Column))
+            {
+                body["column"] = request.Column;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ColumnCount))
+            {
+                body["columnCount"] = request.ColumnCount;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Width))
+            {
+                body["width"] = request.Width;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetColumnsWidth",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/setColumnsWidth",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetColumnsWidthResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量设置列宽</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetColumnsWidthRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetColumnsWidthResponse
+        /// </returns>
+        public SetColumnsWidthResponse SetColumnsWidth(string workbookId, string sheetId, SetColumnsWidthRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetColumnsWidthHeaders headers = new SetColumnsWidthHeaders();
+            return SetColumnsWidthWithOptions(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量设置列宽</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetColumnsWidthRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetColumnsWidthResponse
+        /// </returns>
+        public async Task<SetColumnsWidthResponse> SetColumnsWidthAsync(string workbookId, string sheetId, SetColumnsWidthRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetColumnsWidthHeaders headers = new SetColumnsWidthHeaders();
+            return await SetColumnsWidthWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>设置行高</para>
         /// </summary>
         /// 
@@ -9210,6 +9386,190 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             SetRowHeightHeaders headers = new SetRowHeightHeaders();
             return await SetRowHeightWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量设置行高</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetRowsHeightRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetRowsHeightHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetRowsHeightResponse
+        /// </returns>
+        public SetRowsHeightResponse SetRowsHeightWithOptions(string workbookId, string sheetId, SetRowsHeightRequest request, SetRowsHeightHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingAccessTokenType))
+            {
+                query["dingAccessTokenType"] = request.DingAccessTokenType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Height))
+            {
+                body["height"] = request.Height;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Row))
+            {
+                body["row"] = request.Row;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RowCount))
+            {
+                body["rowCount"] = request.RowCount;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetRowsHeight",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/setRowsHeight",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetRowsHeightResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量设置行高</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetRowsHeightRequest
+        /// </param>
+        /// <param name="headers">
+        /// SetRowsHeightHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetRowsHeightResponse
+        /// </returns>
+        public async Task<SetRowsHeightResponse> SetRowsHeightWithOptionsAsync(string workbookId, string sheetId, SetRowsHeightRequest request, SetRowsHeightHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> query = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DingAccessTokenType))
+            {
+                query["dingAccessTokenType"] = request.DingAccessTokenType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OperatorId))
+            {
+                query["operatorId"] = request.OperatorId;
+            }
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Height))
+            {
+                body["height"] = request.Height;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Row))
+            {
+                body["row"] = request.Row;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.RowCount))
+            {
+                body["rowCount"] = request.RowCount;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Query = AlibabaCloud.OpenApiUtil.Client.Query(query),
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SetRowsHeight",
+                Version = "doc_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/setRowsHeight",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SetRowsHeightResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量设置行高</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetRowsHeightRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetRowsHeightResponse
+        /// </returns>
+        public SetRowsHeightResponse SetRowsHeight(string workbookId, string sheetId, SetRowsHeightRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetRowsHeightHeaders headers = new SetRowsHeightHeaders();
+            return SetRowsHeightWithOptions(workbookId, sheetId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>批量设置行高</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SetRowsHeightRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SetRowsHeightResponse
+        /// </returns>
+        public async Task<SetRowsHeightResponse> SetRowsHeightAsync(string workbookId, string sheetId, SetRowsHeightRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SetRowsHeightHeaders headers = new SetRowsHeightHeaders();
+            return await SetRowsHeightWithOptionsAsync(workbookId, sheetId, request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
