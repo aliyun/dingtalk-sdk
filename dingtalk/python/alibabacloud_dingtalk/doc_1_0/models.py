@@ -1948,16 +1948,57 @@ class CreateConditionalFormattingRuleRequestDuplicateCondition(TeaModel):
         return self
 
 
+class CreateConditionalFormattingRuleRequestNumberCondition(TeaModel):
+    def __init__(
+        self,
+        operator: str = None,
+        value_1: Any = None,
+        value_2: Any = None,
+    ):
+        self.operator = operator
+        self.value_1 = value_1
+        self.value_2 = value_2
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.operator is not None:
+            result['operator'] = self.operator
+        if self.value_1 is not None:
+            result['value1'] = self.value_1
+        if self.value_2 is not None:
+            result['value2'] = self.value_2
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('operator') is not None:
+            self.operator = m.get('operator')
+        if m.get('value1') is not None:
+            self.value_1 = m.get('value1')
+        if m.get('value2') is not None:
+            self.value_2 = m.get('value2')
+        return self
+
+
 class CreateConditionalFormattingRuleRequest(TeaModel):
     def __init__(
         self,
         cell_style: CreateConditionalFormattingRuleRequestCellStyle = None,
         duplicate_condition: CreateConditionalFormattingRuleRequestDuplicateCondition = None,
+        number_condition: CreateConditionalFormattingRuleRequestNumberCondition = None,
         ranges: List[str] = None,
         operator_id: str = None,
     ):
         self.cell_style = cell_style
         self.duplicate_condition = duplicate_condition
+        self.number_condition = number_condition
         # This parameter is required.
         self.ranges = ranges
         # This parameter is required.
@@ -1968,6 +2009,8 @@ class CreateConditionalFormattingRuleRequest(TeaModel):
             self.cell_style.validate()
         if self.duplicate_condition:
             self.duplicate_condition.validate()
+        if self.number_condition:
+            self.number_condition.validate()
 
     def to_map(self):
         _map = super().to_map()
@@ -1979,6 +2022,8 @@ class CreateConditionalFormattingRuleRequest(TeaModel):
             result['cellStyle'] = self.cell_style.to_map()
         if self.duplicate_condition is not None:
             result['duplicateCondition'] = self.duplicate_condition.to_map()
+        if self.number_condition is not None:
+            result['numberCondition'] = self.number_condition.to_map()
         if self.ranges is not None:
             result['ranges'] = self.ranges
         if self.operator_id is not None:
@@ -1993,6 +2038,9 @@ class CreateConditionalFormattingRuleRequest(TeaModel):
         if m.get('duplicateCondition') is not None:
             temp_model = CreateConditionalFormattingRuleRequestDuplicateCondition()
             self.duplicate_condition = temp_model.from_map(m['duplicateCondition'])
+        if m.get('numberCondition') is not None:
+            temp_model = CreateConditionalFormattingRuleRequestNumberCondition()
+            self.number_condition = temp_model.from_map(m['numberCondition'])
         if m.get('ranges') is not None:
             self.ranges = m.get('ranges')
         if m.get('operatorId') is not None:
@@ -5621,12 +5669,12 @@ class DocUpdateContentRequest(TeaModel):
         return self
 
 
-class DocUpdateContentResponseBody(TeaModel):
+class DocUpdateContentResponseBodyResult(TeaModel):
     def __init__(
         self,
-        success: bool = None,
+        data: Dict[str, Any] = None,
     ):
-        self.success = success
+        self.data = data
 
     def validate(self):
         pass
@@ -5637,12 +5685,47 @@ class DocUpdateContentResponseBody(TeaModel):
             return _map
 
         result = dict()
+        if self.data is not None:
+            result['data'] = self.data
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        return self
+
+
+class DocUpdateContentResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: DocUpdateContentResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
         if self.success is not None:
             result['success'] = self.success
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('result') is not None:
+            temp_model = DocUpdateContentResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
         if m.get('success') is not None:
             self.success = m.get('success')
         return self
@@ -7631,6 +7714,8 @@ class GetSheetResponseBody(TeaModel):
     def __init__(
         self,
         column_count: int = None,
+        frozen_column_count: int = None,
+        frozen_row_count: int = None,
         id: str = None,
         last_non_empty_column: int = None,
         last_non_empty_row: int = None,
@@ -7639,6 +7724,8 @@ class GetSheetResponseBody(TeaModel):
         visibility: str = None,
     ):
         self.column_count = column_count
+        self.frozen_column_count = frozen_column_count
+        self.frozen_row_count = frozen_row_count
         self.id = id
         self.last_non_empty_column = last_non_empty_column
         self.last_non_empty_row = last_non_empty_row
@@ -7657,6 +7744,10 @@ class GetSheetResponseBody(TeaModel):
         result = dict()
         if self.column_count is not None:
             result['columnCount'] = self.column_count
+        if self.frozen_column_count is not None:
+            result['frozenColumnCount'] = self.frozen_column_count
+        if self.frozen_row_count is not None:
+            result['frozenRowCount'] = self.frozen_row_count
         if self.id is not None:
             result['id'] = self.id
         if self.last_non_empty_column is not None:
@@ -7675,6 +7766,10 @@ class GetSheetResponseBody(TeaModel):
         m = m or dict()
         if m.get('columnCount') is not None:
             self.column_count = m.get('columnCount')
+        if m.get('frozenColumnCount') is not None:
+            self.frozen_column_count = m.get('frozenColumnCount')
+        if m.get('frozenRowCount') is not None:
+            self.frozen_row_count = m.get('frozenRowCount')
         if m.get('id') is not None:
             self.id = m.get('id')
         if m.get('lastNonEmptyColumn') is not None:
@@ -9551,8 +9646,10 @@ class MergeRangeHeaders(TeaModel):
 class MergeRangeRequest(TeaModel):
     def __init__(
         self,
+        merge_type: str = None,
         operator_id: str = None,
     ):
+        self.merge_type = merge_type
         # This parameter is required.
         self.operator_id = operator_id
 
@@ -9565,12 +9662,16 @@ class MergeRangeRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.merge_type is not None:
+            result['mergeType'] = self.merge_type
         if self.operator_id is not None:
             result['operatorId'] = self.operator_id
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('mergeType') is not None:
+            self.merge_type = m.get('mergeType')
         if m.get('operatorId') is not None:
             self.operator_id = m.get('operatorId')
         return self
@@ -10151,6 +10252,212 @@ class SearchWorkspaceDocsResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = SearchWorkspaceDocsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class SetBorderHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SetBorderRequestType(TeaModel):
+    def __init__(
+        self,
+        bottom: bool = None,
+        horizontal: bool = None,
+        left: bool = None,
+        right: bool = None,
+        top: bool = None,
+        vertical: bool = None,
+    ):
+        self.bottom = bottom
+        self.horizontal = horizontal
+        self.left = left
+        self.right = right
+        self.top = top
+        self.vertical = vertical
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.bottom is not None:
+            result['bottom'] = self.bottom
+        if self.horizontal is not None:
+            result['horizontal'] = self.horizontal
+        if self.left is not None:
+            result['left'] = self.left
+        if self.right is not None:
+            result['right'] = self.right
+        if self.top is not None:
+            result['top'] = self.top
+        if self.vertical is not None:
+            result['vertical'] = self.vertical
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bottom') is not None:
+            self.bottom = m.get('bottom')
+        if m.get('horizontal') is not None:
+            self.horizontal = m.get('horizontal')
+        if m.get('left') is not None:
+            self.left = m.get('left')
+        if m.get('right') is not None:
+            self.right = m.get('right')
+        if m.get('top') is not None:
+            self.top = m.get('top')
+        if m.get('vertical') is not None:
+            self.vertical = m.get('vertical')
+        return self
+
+
+class SetBorderRequest(TeaModel):
+    def __init__(
+        self,
+        color: str = None,
+        style: str = None,
+        type: SetBorderRequestType = None,
+        operator_id: str = None,
+    ):
+        self.color = color
+        self.style = style
+        self.type = type
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        if self.type:
+            self.type.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.color is not None:
+            result['color'] = self.color
+        if self.style is not None:
+            result['style'] = self.style
+        if self.type is not None:
+            result['type'] = self.type.to_map()
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('color') is not None:
+            self.color = m.get('color')
+        if m.get('style') is not None:
+            self.style = m.get('style')
+        if m.get('type') is not None:
+            temp_model = SetBorderRequestType()
+            self.type = temp_model.from_map(m['type'])
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class SetBorderResponseBody(TeaModel):
+    def __init__(
+        self,
+        data: Any = None,
+    ):
+        self.data = data
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.data is not None:
+            result['data'] = self.data
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('data') is not None:
+            self.data = m.get('data')
+        return self
+
+
+class SetBorderResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SetBorderResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SetBorderResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -11684,6 +11991,7 @@ class UpdateRangeRequest(TeaModel):
     def __init__(
         self,
         background_colors: List[List[str]] = None,
+        complex_values: List[List[Any]] = None,
         font_sizes: List[List[int]] = None,
         font_weights: List[List[str]] = None,
         horizontal_alignments: List[List[str]] = None,
@@ -11691,9 +11999,11 @@ class UpdateRangeRequest(TeaModel):
         number_format: str = None,
         values: List[List[str]] = None,
         vertical_alignments: List[List[str]] = None,
+        word_wrap: str = None,
         operator_id: str = None,
     ):
         self.background_colors = background_colors
+        self.complex_values = complex_values
         self.font_sizes = font_sizes
         self.font_weights = font_weights
         self.horizontal_alignments = horizontal_alignments
@@ -11701,6 +12011,7 @@ class UpdateRangeRequest(TeaModel):
         self.number_format = number_format
         self.values = values
         self.vertical_alignments = vertical_alignments
+        self.word_wrap = word_wrap
         # This parameter is required.
         self.operator_id = operator_id
 
@@ -11719,6 +12030,8 @@ class UpdateRangeRequest(TeaModel):
         result = dict()
         if self.background_colors is not None:
             result['backgroundColors'] = self.background_colors
+        if self.complex_values is not None:
+            result['complexValues'] = self.complex_values
         if self.font_sizes is not None:
             result['fontSizes'] = self.font_sizes
         if self.font_weights is not None:
@@ -11738,6 +12051,8 @@ class UpdateRangeRequest(TeaModel):
             result['values'] = self.values
         if self.vertical_alignments is not None:
             result['verticalAlignments'] = self.vertical_alignments
+        if self.word_wrap is not None:
+            result['wordWrap'] = self.word_wrap
         if self.operator_id is not None:
             result['operatorId'] = self.operator_id
         return result
@@ -11746,6 +12061,8 @@ class UpdateRangeRequest(TeaModel):
         m = m or dict()
         if m.get('backgroundColors') is not None:
             self.background_colors = m.get('backgroundColors')
+        if m.get('complexValues') is not None:
+            self.complex_values = m.get('complexValues')
         if m.get('fontSizes') is not None:
             self.font_sizes = m.get('fontSizes')
         if m.get('fontWeights') is not None:
@@ -11766,6 +12083,8 @@ class UpdateRangeRequest(TeaModel):
             self.values = m.get('values')
         if m.get('verticalAlignments') is not None:
             self.vertical_alignments = m.get('verticalAlignments')
+        if m.get('wordWrap') is not None:
+            self.word_wrap = m.get('wordWrap')
         if m.get('operatorId') is not None:
             self.operator_id = m.get('operatorId')
         return self
@@ -11875,10 +12194,14 @@ class UpdateSheetHeaders(TeaModel):
 class UpdateSheetRequest(TeaModel):
     def __init__(
         self,
+        frozen_column_count: int = None,
+        frozen_row_count: int = None,
         name: str = None,
         visibility: str = None,
         operator_id: str = None,
     ):
+        self.frozen_column_count = frozen_column_count
+        self.frozen_row_count = frozen_row_count
         self.name = name
         self.visibility = visibility
         # This parameter is required.
@@ -11893,6 +12216,10 @@ class UpdateSheetRequest(TeaModel):
             return _map
 
         result = dict()
+        if self.frozen_column_count is not None:
+            result['frozenColumnCount'] = self.frozen_column_count
+        if self.frozen_row_count is not None:
+            result['frozenRowCount'] = self.frozen_row_count
         if self.name is not None:
             result['name'] = self.name
         if self.visibility is not None:
@@ -11903,6 +12230,10 @@ class UpdateSheetRequest(TeaModel):
 
     def from_map(self, m: dict = None):
         m = m or dict()
+        if m.get('frozenColumnCount') is not None:
+            self.frozen_column_count = m.get('frozenColumnCount')
+        if m.get('frozenRowCount') is not None:
+            self.frozen_row_count = m.get('frozenRowCount')
         if m.get('name') is not None:
             self.name = m.get('name')
         if m.get('visibility') is not None:

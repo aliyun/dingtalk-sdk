@@ -1307,6 +1307,8 @@ class Client(OpenApiClient):
             body['cellStyle'] = request.cell_style
         if not UtilClient.is_unset(request.duplicate_condition):
             body['duplicateCondition'] = request.duplicate_condition
+        if not UtilClient.is_unset(request.number_condition):
+            body['numberCondition'] = request.number_condition
         if not UtilClient.is_unset(request.ranges):
             body['ranges'] = request.ranges
         real_headers = {}
@@ -1360,6 +1362,8 @@ class Client(OpenApiClient):
             body['cellStyle'] = request.cell_style
         if not UtilClient.is_unset(request.duplicate_condition):
             body['duplicateCondition'] = request.duplicate_condition
+        if not UtilClient.is_unset(request.number_condition):
+            body['numberCondition'] = request.number_condition
         if not UtilClient.is_unset(request.ranges):
             body['ranges'] = request.ranges
         real_headers = {}
@@ -6511,6 +6515,9 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.merge_type):
+            body['mergeType'] = request.merge_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -6518,7 +6525,8 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         params = open_api_models.Params(
             action='MergeRange',
@@ -6557,6 +6565,9 @@ class Client(OpenApiClient):
         query = {}
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.merge_type):
+            body['mergeType'] = request.merge_type
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -6564,7 +6575,8 @@ class Client(OpenApiClient):
             real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
         req = open_api_models.OpenApiRequest(
             headers=real_headers,
-            query=OpenApiUtilClient.query(query)
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
         )
         params = open_api_models.Params(
             action='MergeRange',
@@ -6883,6 +6895,148 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkdoc__1__0_models.SearchWorkspaceDocsHeaders()
         return await self.search_workspace_docs_with_options_async(request, headers, runtime)
+
+    def set_border_with_options(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.SetBorderRequest,
+        headers: dingtalkdoc__1__0_models.SetBorderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.SetBorderResponse:
+        """
+        @summary 设置单元格边框
+        
+        @param request: SetBorderRequest
+        @param headers: SetBorderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetBorderResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.color):
+            body['color'] = request.color
+        if not UtilClient.is_unset(request.style):
+            body['style'] = request.style
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetBorder',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/ranges/{range_address}/setBorder',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.SetBorderResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def set_border_with_options_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.SetBorderRequest,
+        headers: dingtalkdoc__1__0_models.SetBorderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.SetBorderResponse:
+        """
+        @summary 设置单元格边框
+        
+        @param request: SetBorderRequest
+        @param headers: SetBorderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SetBorderResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.color):
+            body['color'] = request.color
+        if not UtilClient.is_unset(request.style):
+            body['style'] = request.style
+        if not UtilClient.is_unset(request.type):
+            body['type'] = request.type
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SetBorder',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/workbooks/{workbook_id}/sheets/{sheet_id}/ranges/{range_address}/setBorder',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.SetBorderResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def set_border(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.SetBorderRequest,
+    ) -> dingtalkdoc__1__0_models.SetBorderResponse:
+        """
+        @summary 设置单元格边框
+        
+        @param request: SetBorderRequest
+        @return: SetBorderResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.SetBorderHeaders()
+        return self.set_border_with_options(workbook_id, sheet_id, range_address, request, headers, runtime)
+
+    async def set_border_async(
+        self,
+        workbook_id: str,
+        sheet_id: str,
+        range_address: str,
+        request: dingtalkdoc__1__0_models.SetBorderRequest,
+    ) -> dingtalkdoc__1__0_models.SetBorderResponse:
+        """
+        @summary 设置单元格边框
+        
+        @param request: SetBorderRequest
+        @return: SetBorderResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.SetBorderHeaders()
+        return await self.set_border_with_options_async(workbook_id, sheet_id, range_address, request, headers, runtime)
 
     def set_column_width_with_options(
         self,
@@ -8130,6 +8284,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.background_colors):
             body['backgroundColors'] = request.background_colors
+        if not UtilClient.is_unset(request.complex_values):
+            body['complexValues'] = request.complex_values
         if not UtilClient.is_unset(request.font_sizes):
             body['fontSizes'] = request.font_sizes
         if not UtilClient.is_unset(request.font_weights):
@@ -8144,6 +8300,8 @@ class Client(OpenApiClient):
             body['values'] = request.values
         if not UtilClient.is_unset(request.vertical_alignments):
             body['verticalAlignments'] = request.vertical_alignments
+        if not UtilClient.is_unset(request.word_wrap):
+            body['wordWrap'] = request.word_wrap
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -8194,6 +8352,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.background_colors):
             body['backgroundColors'] = request.background_colors
+        if not UtilClient.is_unset(request.complex_values):
+            body['complexValues'] = request.complex_values
         if not UtilClient.is_unset(request.font_sizes):
             body['fontSizes'] = request.font_sizes
         if not UtilClient.is_unset(request.font_weights):
@@ -8208,6 +8368,8 @@ class Client(OpenApiClient):
             body['values'] = request.values
         if not UtilClient.is_unset(request.vertical_alignments):
             body['verticalAlignments'] = request.vertical_alignments
+        if not UtilClient.is_unset(request.word_wrap):
+            body['wordWrap'] = request.word_wrap
         real_headers = {}
         if not UtilClient.is_unset(headers.common_headers):
             real_headers = headers.common_headers
@@ -8289,6 +8451,10 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         body = {}
+        if not UtilClient.is_unset(request.frozen_column_count):
+            body['frozenColumnCount'] = request.frozen_column_count
+        if not UtilClient.is_unset(request.frozen_row_count):
+            body['frozenRowCount'] = request.frozen_row_count
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
         if not UtilClient.is_unset(request.visibility):
@@ -8340,6 +8506,10 @@ class Client(OpenApiClient):
         if not UtilClient.is_unset(request.operator_id):
             query['operatorId'] = request.operator_id
         body = {}
+        if not UtilClient.is_unset(request.frozen_column_count):
+            body['frozenColumnCount'] = request.frozen_column_count
+        if not UtilClient.is_unset(request.frozen_row_count):
+            body['frozenRowCount'] = request.frozen_row_count
         if not UtilClient.is_unset(request.name):
             body['name'] = request.name
         if not UtilClient.is_unset(request.visibility):
