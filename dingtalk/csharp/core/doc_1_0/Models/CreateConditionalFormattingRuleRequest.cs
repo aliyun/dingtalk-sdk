@@ -29,6 +29,24 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 
         }
 
+        [NameInMap("numberCondition")]
+        [Validation(Required=false)]
+        public CreateConditionalFormattingRuleRequestNumberCondition NumberCondition { get; set; }
+        public class CreateConditionalFormattingRuleRequestNumberCondition : TeaModel {
+            [NameInMap("operator")]
+            [Validation(Required=false)]
+            public string Operator { get; set; }
+
+            [NameInMap("value1")]
+            [Validation(Required=false)]
+            public object Value1 { get; set; }
+
+            [NameInMap("value2")]
+            [Validation(Required=false)]
+            public object Value2 { get; set; }
+
+        }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// </summary>

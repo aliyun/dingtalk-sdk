@@ -13,6 +13,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [Validation(Required=false)]
         public List<List<string>> BackgroundColors { get; set; }
 
+        [NameInMap("complexValues")]
+        [Validation(Required=false)]
+        public List<List<object>> ComplexValues { get; set; }
+
         [NameInMap("fontSizes")]
         [Validation(Required=false)]
         public List<List<int?>> FontSizes { get; set; }
@@ -70,6 +74,14 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
         [NameInMap("verticalAlignments")]
         [Validation(Required=false)]
         public List<List<string>> VerticalAlignments { get; set; }
+
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para>word_wrap</para>
+        /// </summary>
+        [NameInMap("wordWrap")]
+        [Validation(Required=false)]
+        public string WordWrap { get; set; }
 
         /// <summary>
         /// <para>This parameter is required.</para>

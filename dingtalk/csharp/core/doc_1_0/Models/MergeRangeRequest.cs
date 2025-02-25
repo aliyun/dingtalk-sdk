@@ -9,6 +9,10 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class MergeRangeRequest : TeaModel {
+        [NameInMap("mergeType")]
+        [Validation(Required=false)]
+        public string MergeType { get; set; }
+
         /// <summary>
         /// <para>This parameter is required.</para>
         /// 

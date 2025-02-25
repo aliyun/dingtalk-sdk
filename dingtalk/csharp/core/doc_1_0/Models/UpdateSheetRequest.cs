@@ -9,6 +9,14 @@ using Tea;
 namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
 {
     public class UpdateSheetRequest : TeaModel {
+        [NameInMap("frozenColumnCount")]
+        [Validation(Required=false)]
+        public long? FrozenColumnCount { get; set; }
+
+        [NameInMap("frozenRowCount")]
+        [Validation(Required=false)]
+        public long? FrozenRowCount { get; set; }
+
         /// <summary>
         /// <b>Example:</b>
         /// <para>sheet_name</para>
