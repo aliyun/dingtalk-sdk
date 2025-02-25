@@ -14,6 +14,11 @@ class UpdateRangeRequest extends Model
     public $backgroundColors;
 
     /**
+     * @var mixed[][]
+     */
+    public $complexValues;
+
+    /**
      * @var int[][]
      */
     public $fontSizes;
@@ -51,6 +56,13 @@ class UpdateRangeRequest extends Model
     public $verticalAlignments;
 
     /**
+     * @example word_wrap
+     *
+     * @var string
+     */
+    public $wordWrap;
+
+    /**
      * @description This parameter is required.
      *
      * @example union_id
@@ -60,6 +72,7 @@ class UpdateRangeRequest extends Model
     public $operatorId;
     protected $_name = [
         'backgroundColors'     => 'backgroundColors',
+        'complexValues'        => 'complexValues',
         'fontSizes'            => 'fontSizes',
         'fontWeights'          => 'fontWeights',
         'horizontalAlignments' => 'horizontalAlignments',
@@ -67,6 +80,7 @@ class UpdateRangeRequest extends Model
         'numberFormat'         => 'numberFormat',
         'values'               => 'values',
         'verticalAlignments'   => 'verticalAlignments',
+        'wordWrap'             => 'wordWrap',
         'operatorId'           => 'operatorId',
     ];
 
@@ -79,6 +93,9 @@ class UpdateRangeRequest extends Model
         $res = [];
         if (null !== $this->backgroundColors) {
             $res['backgroundColors'] = $this->backgroundColors;
+        }
+        if (null !== $this->complexValues) {
+            $res['complexValues'] = $this->complexValues;
         }
         if (null !== $this->fontSizes) {
             $res['fontSizes'] = $this->fontSizes;
@@ -101,6 +118,9 @@ class UpdateRangeRequest extends Model
         if (null !== $this->verticalAlignments) {
             $res['verticalAlignments'] = $this->verticalAlignments;
         }
+        if (null !== $this->wordWrap) {
+            $res['wordWrap'] = $this->wordWrap;
+        }
         if (null !== $this->operatorId) {
             $res['operatorId'] = $this->operatorId;
         }
@@ -119,6 +139,11 @@ class UpdateRangeRequest extends Model
         if (isset($map['backgroundColors'])) {
             if (!empty($map['backgroundColors'])) {
                 $model->backgroundColors = $map['backgroundColors'];
+            }
+        }
+        if (isset($map['complexValues'])) {
+            if (!empty($map['complexValues'])) {
+                $model->complexValues = $map['complexValues'];
             }
         }
         if (isset($map['fontSizes'])) {
@@ -153,6 +178,9 @@ class UpdateRangeRequest extends Model
             if (!empty($map['verticalAlignments'])) {
                 $model->verticalAlignments = $map['verticalAlignments'];
             }
+        }
+        if (isset($map['wordWrap'])) {
+            $model->wordWrap = $map['wordWrap'];
         }
         if (isset($map['operatorId'])) {
             $model->operatorId = $map['operatorId'];

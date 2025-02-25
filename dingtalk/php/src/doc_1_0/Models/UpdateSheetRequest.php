@@ -9,6 +9,16 @@ use AlibabaCloud\Tea\Model;
 class UpdateSheetRequest extends Model
 {
     /**
+     * @var int
+     */
+    public $frozenColumnCount;
+
+    /**
+     * @var int
+     */
+    public $frozenRowCount;
+
+    /**
      * @example sheet_name
      *
      * @var string
@@ -31,9 +41,11 @@ class UpdateSheetRequest extends Model
      */
     public $operatorId;
     protected $_name = [
-        'name'       => 'name',
-        'visibility' => 'visibility',
-        'operatorId' => 'operatorId',
+        'frozenColumnCount' => 'frozenColumnCount',
+        'frozenRowCount'    => 'frozenRowCount',
+        'name'              => 'name',
+        'visibility'        => 'visibility',
+        'operatorId'        => 'operatorId',
     ];
 
     public function validate()
@@ -43,6 +55,12 @@ class UpdateSheetRequest extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->frozenColumnCount) {
+            $res['frozenColumnCount'] = $this->frozenColumnCount;
+        }
+        if (null !== $this->frozenRowCount) {
+            $res['frozenRowCount'] = $this->frozenRowCount;
+        }
         if (null !== $this->name) {
             $res['name'] = $this->name;
         }
@@ -64,6 +82,12 @@ class UpdateSheetRequest extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['frozenColumnCount'])) {
+            $model->frozenColumnCount = $map['frozenColumnCount'];
+        }
+        if (isset($map['frozenRowCount'])) {
+            $model->frozenRowCount = $map['frozenRowCount'];
+        }
         if (isset($map['name'])) {
             $model->name = $map['name'];
         }

@@ -166,6 +166,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\RangeFindNextResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SearchWorkspaceDocsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SearchWorkspaceDocsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SearchWorkspaceDocsResponse;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetBorderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetBorderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetBorderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnsVisibilityHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnsVisibilityRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\SetColumnsVisibilityResponse;
@@ -888,6 +891,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->duplicateCondition)) {
             $body['duplicateCondition'] = $request->duplicateCondition;
+        }
+        if (!Utils::isUnset($request->numberCondition)) {
+            $body['numberCondition'] = $request->numberCondition;
         }
         if (!Utils::isUnset($request->ranges)) {
             $body['ranges'] = $request->ranges;
@@ -3549,6 +3555,10 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->operatorId)) {
             $query['operatorId'] = $request->operatorId;
         }
+        $body = [];
+        if (!Utils::isUnset($request->mergeType)) {
+            $body['mergeType'] = $request->mergeType;
+        }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
             $realHeaders = $headers->commonHeaders;
@@ -3559,6 +3569,7 @@ class Dingtalk extends OpenApiClient
         $req = new OpenApiRequest([
             'headers' => $realHeaders,
             'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
         ]);
         $params = new Params([
             'action'      => 'MergeRange',
@@ -3731,6 +3742,80 @@ class Dingtalk extends OpenApiClient
         $headers = new SearchWorkspaceDocsHeaders([]);
 
         return $this->searchWorkspaceDocsWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 设置单元格边框
+     *  *
+     * @param string           $workbookId
+     * @param string           $sheetId
+     * @param string           $rangeAddress
+     * @param SetBorderRequest $request      SetBorderRequest
+     * @param SetBorderHeaders $headers      SetBorderHeaders
+     * @param RuntimeOptions   $runtime      runtime options for this request RuntimeOptions
+     *
+     * @return SetBorderResponse SetBorderResponse
+     */
+    public function setBorderWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->color)) {
+            $body['color'] = $request->color;
+        }
+        if (!Utils::isUnset($request->style)) {
+            $body['style'] = $request->style;
+        }
+        if (!Utils::isUnset($request->type)) {
+            $body['type'] = $request->type;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SetBorder',
+            'version'     => 'doc_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/doc/workbooks/' . $workbookId . '/sheets/' . $sheetId . '/ranges/' . $rangeAddress . '/setBorder',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SetBorderResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 设置单元格边框
+     *  *
+     * @param string           $workbookId
+     * @param string           $sheetId
+     * @param string           $rangeAddress
+     * @param SetBorderRequest $request      SetBorderRequest
+     *
+     * @return SetBorderResponse SetBorderResponse
+     */
+    public function setBorder($workbookId, $sheetId, $rangeAddress, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SetBorderHeaders([]);
+
+        return $this->setBorderWithOptions($workbookId, $sheetId, $rangeAddress, $request, $headers, $runtime);
     }
 
     /**
@@ -4391,6 +4476,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->backgroundColors)) {
             $body['backgroundColors'] = $request->backgroundColors;
         }
+        if (!Utils::isUnset($request->complexValues)) {
+            $body['complexValues'] = $request->complexValues;
+        }
         if (!Utils::isUnset($request->fontSizes)) {
             $body['fontSizes'] = $request->fontSizes;
         }
@@ -4411,6 +4499,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->verticalAlignments)) {
             $body['verticalAlignments'] = $request->verticalAlignments;
+        }
+        if (!Utils::isUnset($request->wordWrap)) {
+            $body['wordWrap'] = $request->wordWrap;
         }
         $realHeaders = [];
         if (!Utils::isUnset($headers->commonHeaders)) {
@@ -4476,6 +4567,12 @@ class Dingtalk extends OpenApiClient
             $query['operatorId'] = $request->operatorId;
         }
         $body = [];
+        if (!Utils::isUnset($request->frozenColumnCount)) {
+            $body['frozenColumnCount'] = $request->frozenColumnCount;
+        }
+        if (!Utils::isUnset($request->frozenRowCount)) {
+            $body['frozenRowCount'] = $request->frozenRowCount;
+        }
         if (!Utils::isUnset($request->name)) {
             $body['name'] = $request->name;
         }

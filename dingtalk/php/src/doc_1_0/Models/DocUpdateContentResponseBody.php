@@ -4,15 +4,22 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models;
 
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\DocUpdateContentResponseBody\result;
 use AlibabaCloud\Tea\Model;
 
 class DocUpdateContentResponseBody extends Model
 {
     /**
+     * @var result
+     */
+    public $result;
+
+    /**
      * @var bool
      */
     public $success;
     protected $_name = [
+        'result'  => 'result',
         'success' => 'success',
     ];
 
@@ -23,6 +30,9 @@ class DocUpdateContentResponseBody extends Model
     public function toMap()
     {
         $res = [];
+        if (null !== $this->result) {
+            $res['result'] = null !== $this->result ? $this->result->toMap() : null;
+        }
         if (null !== $this->success) {
             $res['success'] = $this->success;
         }
@@ -38,6 +48,9 @@ class DocUpdateContentResponseBody extends Model
     public static function fromMap($map = [])
     {
         $model = new self();
+        if (isset($map['result'])) {
+            $model->result = result::fromMap($map['result']);
+        }
         if (isset($map['success'])) {
             $model->success = $map['success'];
         }

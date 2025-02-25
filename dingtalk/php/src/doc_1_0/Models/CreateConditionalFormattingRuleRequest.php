@@ -6,6 +6,7 @@ namespace AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models;
 
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateConditionalFormattingRuleRequest\cellStyle;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateConditionalFormattingRuleRequest\duplicateCondition;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\CreateConditionalFormattingRuleRequest\numberCondition;
 use AlibabaCloud\Tea\Model;
 
 class CreateConditionalFormattingRuleRequest extends Model
@@ -19,6 +20,11 @@ class CreateConditionalFormattingRuleRequest extends Model
      * @var duplicateCondition
      */
     public $duplicateCondition;
+
+    /**
+     * @var numberCondition
+     */
+    public $numberCondition;
 
     /**
      * @description This parameter is required.
@@ -38,6 +44,7 @@ class CreateConditionalFormattingRuleRequest extends Model
     protected $_name = [
         'cellStyle'          => 'cellStyle',
         'duplicateCondition' => 'duplicateCondition',
+        'numberCondition'    => 'numberCondition',
         'ranges'             => 'ranges',
         'operatorId'         => 'operatorId',
     ];
@@ -54,6 +61,9 @@ class CreateConditionalFormattingRuleRequest extends Model
         }
         if (null !== $this->duplicateCondition) {
             $res['duplicateCondition'] = null !== $this->duplicateCondition ? $this->duplicateCondition->toMap() : null;
+        }
+        if (null !== $this->numberCondition) {
+            $res['numberCondition'] = null !== $this->numberCondition ? $this->numberCondition->toMap() : null;
         }
         if (null !== $this->ranges) {
             $res['ranges'] = $this->ranges;
@@ -78,6 +88,9 @@ class CreateConditionalFormattingRuleRequest extends Model
         }
         if (isset($map['duplicateCondition'])) {
             $model->duplicateCondition = duplicateCondition::fromMap($map['duplicateCondition']);
+        }
+        if (isset($map['numberCondition'])) {
+            $model->numberCondition = numberCondition::fromMap($map['numberCondition']);
         }
         if (isset($map['ranges'])) {
             if (!empty($map['ranges'])) {

@@ -16,6 +16,16 @@ class GetSheetResponseBody extends Model
     public $columnCount;
 
     /**
+     * @var int
+     */
+    public $frozenColumnCount;
+
+    /**
+     * @var int
+     */
+    public $frozenRowCount;
+
+    /**
      * @example sheet_id
      *
      * @var string
@@ -58,6 +68,8 @@ class GetSheetResponseBody extends Model
     public $visibility;
     protected $_name = [
         'columnCount'        => 'columnCount',
+        'frozenColumnCount'  => 'frozenColumnCount',
+        'frozenRowCount'     => 'frozenRowCount',
         'id'                 => 'id',
         'lastNonEmptyColumn' => 'lastNonEmptyColumn',
         'lastNonEmptyRow'    => 'lastNonEmptyRow',
@@ -75,6 +87,12 @@ class GetSheetResponseBody extends Model
         $res = [];
         if (null !== $this->columnCount) {
             $res['columnCount'] = $this->columnCount;
+        }
+        if (null !== $this->frozenColumnCount) {
+            $res['frozenColumnCount'] = $this->frozenColumnCount;
+        }
+        if (null !== $this->frozenRowCount) {
+            $res['frozenRowCount'] = $this->frozenRowCount;
         }
         if (null !== $this->id) {
             $res['id'] = $this->id;
@@ -108,6 +126,12 @@ class GetSheetResponseBody extends Model
         $model = new self();
         if (isset($map['columnCount'])) {
             $model->columnCount = $map['columnCount'];
+        }
+        if (isset($map['frozenColumnCount'])) {
+            $model->frozenColumnCount = $map['frozenColumnCount'];
+        }
+        if (isset($map['frozenRowCount'])) {
+            $model->frozenRowCount = $map['frozenRowCount'];
         }
         if (isset($map['id'])) {
             $model->id = $map['id'];
