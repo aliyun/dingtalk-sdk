@@ -10,6 +10,9 @@ public class CreateConditionalFormattingRuleRequest extends TeaModel {
     @NameInMap("duplicateCondition")
     public CreateConditionalFormattingRuleRequestDuplicateCondition duplicateCondition;
 
+    @NameInMap("numberCondition")
+    public CreateConditionalFormattingRuleRequestNumberCondition numberCondition;
+
     /**
      * <p>This parameter is required.</p>
      */
@@ -44,6 +47,14 @@ public class CreateConditionalFormattingRuleRequest extends TeaModel {
     }
     public CreateConditionalFormattingRuleRequestDuplicateCondition getDuplicateCondition() {
         return this.duplicateCondition;
+    }
+
+    public CreateConditionalFormattingRuleRequest setNumberCondition(CreateConditionalFormattingRuleRequestNumberCondition numberCondition) {
+        this.numberCondition = numberCondition;
+        return this;
+    }
+    public CreateConditionalFormattingRuleRequestNumberCondition getNumberCondition() {
+        return this.numberCondition;
     }
 
     public CreateConditionalFormattingRuleRequest setRanges(java.util.List<String> ranges) {
@@ -96,6 +107,47 @@ public class CreateConditionalFormattingRuleRequest extends TeaModel {
         }
         public String getOperator() {
             return this.operator;
+        }
+
+    }
+
+    public static class CreateConditionalFormattingRuleRequestNumberCondition extends TeaModel {
+        @NameInMap("operator")
+        public String operator;
+
+        @NameInMap("value1")
+        public Object value1;
+
+        @NameInMap("value2")
+        public Object value2;
+
+        public static CreateConditionalFormattingRuleRequestNumberCondition build(java.util.Map<String, ?> map) throws Exception {
+            CreateConditionalFormattingRuleRequestNumberCondition self = new CreateConditionalFormattingRuleRequestNumberCondition();
+            return TeaModel.build(map, self);
+        }
+
+        public CreateConditionalFormattingRuleRequestNumberCondition setOperator(String operator) {
+            this.operator = operator;
+            return this;
+        }
+        public String getOperator() {
+            return this.operator;
+        }
+
+        public CreateConditionalFormattingRuleRequestNumberCondition setValue1(Object value1) {
+            this.value1 = value1;
+            return this;
+        }
+        public Object getValue1() {
+            return this.value1;
+        }
+
+        public CreateConditionalFormattingRuleRequestNumberCondition setValue2(Object value2) {
+            this.value2 = value2;
+            return this;
+        }
+        public Object getValue2() {
+            return this.value2;
         }
 
     }

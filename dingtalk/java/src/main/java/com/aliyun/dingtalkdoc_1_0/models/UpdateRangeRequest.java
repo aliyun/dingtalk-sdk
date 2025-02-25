@@ -7,6 +7,9 @@ public class UpdateRangeRequest extends TeaModel {
     @NameInMap("backgroundColors")
     public java.util.List<java.util.List<String>> backgroundColors;
 
+    @NameInMap("complexValues")
+    public java.util.List<java.util.List<?>> complexValues;
+
     @NameInMap("fontSizes")
     public java.util.List<java.util.List<Integer>> fontSizes;
 
@@ -33,6 +36,13 @@ public class UpdateRangeRequest extends TeaModel {
     public java.util.List<java.util.List<String>> verticalAlignments;
 
     /**
+     * <strong>example:</strong>
+     * <p>word_wrap</p>
+     */
+    @NameInMap("wordWrap")
+    public String wordWrap;
+
+    /**
      * <p>This parameter is required.</p>
      * 
      * <strong>example:</strong>
@@ -52,6 +62,14 @@ public class UpdateRangeRequest extends TeaModel {
     }
     public java.util.List<java.util.List<String>> getBackgroundColors() {
         return this.backgroundColors;
+    }
+
+    public UpdateRangeRequest setComplexValues(java.util.List<java.util.List<?>> complexValues) {
+        this.complexValues = complexValues;
+        return this;
+    }
+    public java.util.List<java.util.List<?>> getComplexValues() {
+        return this.complexValues;
     }
 
     public UpdateRangeRequest setFontSizes(java.util.List<java.util.List<Integer>> fontSizes) {
@@ -108,6 +126,14 @@ public class UpdateRangeRequest extends TeaModel {
     }
     public java.util.List<java.util.List<String>> getVerticalAlignments() {
         return this.verticalAlignments;
+    }
+
+    public UpdateRangeRequest setWordWrap(String wordWrap) {
+        this.wordWrap = wordWrap;
+        return this;
+    }
+    public String getWordWrap() {
+        return this.wordWrap;
     }
 
     public UpdateRangeRequest setOperatorId(String operatorId) {

@@ -11,6 +11,12 @@ public class GetSheetResponseBody extends TeaModel {
     @NameInMap("columnCount")
     public Long columnCount;
 
+    @NameInMap("frozenColumnCount")
+    public Long frozenColumnCount;
+
+    @NameInMap("frozenRowCount")
+    public Long frozenRowCount;
+
     /**
      * <strong>example:</strong>
      * <p>sheet_id</p>
@@ -64,6 +70,22 @@ public class GetSheetResponseBody extends TeaModel {
     }
     public Long getColumnCount() {
         return this.columnCount;
+    }
+
+    public GetSheetResponseBody setFrozenColumnCount(Long frozenColumnCount) {
+        this.frozenColumnCount = frozenColumnCount;
+        return this;
+    }
+    public Long getFrozenColumnCount() {
+        return this.frozenColumnCount;
+    }
+
+    public GetSheetResponseBody setFrozenRowCount(Long frozenRowCount) {
+        this.frozenRowCount = frozenRowCount;
+        return this;
+    }
+    public Long getFrozenRowCount() {
+        return this.frozenRowCount;
     }
 
     public GetSheetResponseBody setId(String id) {

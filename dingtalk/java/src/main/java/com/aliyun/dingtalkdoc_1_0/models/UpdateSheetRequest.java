@@ -4,6 +4,12 @@ package com.aliyun.dingtalkdoc_1_0.models;
 import com.aliyun.tea.*;
 
 public class UpdateSheetRequest extends TeaModel {
+    @NameInMap("frozenColumnCount")
+    public Long frozenColumnCount;
+
+    @NameInMap("frozenRowCount")
+    public Long frozenRowCount;
+
     /**
      * <strong>example:</strong>
      * <p>sheet_name</p>
@@ -30,6 +36,22 @@ public class UpdateSheetRequest extends TeaModel {
     public static UpdateSheetRequest build(java.util.Map<String, ?> map) throws Exception {
         UpdateSheetRequest self = new UpdateSheetRequest();
         return TeaModel.build(map, self);
+    }
+
+    public UpdateSheetRequest setFrozenColumnCount(Long frozenColumnCount) {
+        this.frozenColumnCount = frozenColumnCount;
+        return this;
+    }
+    public Long getFrozenColumnCount() {
+        return this.frozenColumnCount;
+    }
+
+    public UpdateSheetRequest setFrozenRowCount(Long frozenRowCount) {
+        this.frozenRowCount = frozenRowCount;
+        return this;
+    }
+    public Long getFrozenRowCount() {
+        return this.frozenRowCount;
     }
 
     public UpdateSheetRequest setName(String name) {

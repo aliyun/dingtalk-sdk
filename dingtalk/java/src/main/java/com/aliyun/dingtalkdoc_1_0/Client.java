@@ -655,6 +655,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("duplicateCondition", request.duplicateCondition);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.numberCondition)) {
+            body.put("numberCondition", request.numberCondition);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.ranges)) {
             body.put("ranges", request.ranges);
         }
@@ -3208,6 +3212,11 @@ public class Client extends com.aliyun.teaopenapi.Client {
             query.put("operatorId", request.operatorId);
         }
 
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.mergeType)) {
+            body.put("mergeType", request.mergeType);
+        }
+
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
         if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
             realHeaders = headers.commonHeaders;
@@ -3219,7 +3228,8 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
             new TeaPair("headers", realHeaders),
-            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
         ));
         com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
             new TeaPair("action", "MergeRange"),
@@ -3384,6 +3394,76 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         SearchWorkspaceDocsHeaders headers = new SearchWorkspaceDocsHeaders();
         return this.searchWorkspaceDocsWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>设置单元格边框</p>
+     * 
+     * @param request SetBorderRequest
+     * @param headers SetBorderHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SetBorderResponse
+     */
+    public SetBorderResponse setBorderWithOptions(String workbookId, String sheetId, String rangeAddress, SetBorderRequest request, SetBorderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.operatorId)) {
+            query.put("operatorId", request.operatorId);
+        }
+
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.color)) {
+            body.put("color", request.color);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.style)) {
+            body.put("style", request.style);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.type)) {
+            body.put("type", request.type);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query)),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SetBorder"),
+            new TeaPair("version", "doc_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/doc/workbooks/" + workbookId + "/sheets/" + sheetId + "/ranges/" + rangeAddress + "/setBorder"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SetBorderResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>设置单元格边框</p>
+     * 
+     * @param request SetBorderRequest
+     * @return SetBorderResponse
+     */
+    public SetBorderResponse setBorder(String workbookId, String sheetId, String rangeAddress, SetBorderRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SetBorderHeaders headers = new SetBorderHeaders();
+        return this.setBorderWithOptions(workbookId, sheetId, rangeAddress, request, headers, runtime);
     }
 
     /**
@@ -4023,6 +4103,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("backgroundColors", request.backgroundColors);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.complexValues)) {
+            body.put("complexValues", request.complexValues);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.fontSizes)) {
             body.put("fontSizes", request.fontSizes);
         }
@@ -4049,6 +4133,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.verticalAlignments)) {
             body.put("verticalAlignments", request.verticalAlignments);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.wordWrap)) {
+            body.put("wordWrap", request.wordWrap);
         }
 
         java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
@@ -4109,6 +4197,14 @@ public class Client extends com.aliyun.teaopenapi.Client {
         }
 
         java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.frozenColumnCount)) {
+            body.put("frozenColumnCount", request.frozenColumnCount);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.frozenRowCount)) {
+            body.put("frozenRowCount", request.frozenRowCount);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.name)) {
             body.put("name", request.name);
         }
