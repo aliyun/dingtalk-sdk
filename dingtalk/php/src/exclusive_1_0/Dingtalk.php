@@ -159,6 +159,9 @@ use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOutsideAuditGroupMessageB
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetOutsideAuditGroupMessageByPageResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPartnerTypeByParentIdHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPartnerTypeByParentIdResponse;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreFilePathHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreFilePathRequest;
+use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPrivateStoreFilePathResponse;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublicDevicesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublicDevicesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vexclusive_1_0\Models\GetPublicDevicesResponse;
@@ -3758,6 +3761,66 @@ class Dingtalk extends OpenApiClient
         $headers = new GetPartnerTypeByParentIdHeaders([]);
 
         return $this->getPartnerTypeByParentIdWithOptions($parentId, $headers, $runtime);
+    }
+
+    /**
+     * @summary 获取专属存储文件路径
+     *  *
+     * @param GetPrivateStoreFilePathRequest $request GetPrivateStoreFilePathRequest
+     * @param GetPrivateStoreFilePathHeaders $headers GetPrivateStoreFilePathHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return GetPrivateStoreFilePathResponse GetPrivateStoreFilePathResponse
+     */
+    public function getPrivateStoreFilePathWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->dentryId)) {
+            $body['dentryId'] = $request->dentryId;
+        }
+        if (!Utils::isUnset($request->spaceId)) {
+            $body['spaceId'] = $request->spaceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'GetPrivateStoreFilePath',
+            'version'     => 'exclusive_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/exclusive/privateStores/filePaths/query',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return GetPrivateStoreFilePathResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 获取专属存储文件路径
+     *  *
+     * @param GetPrivateStoreFilePathRequest $request GetPrivateStoreFilePathRequest
+     *
+     * @return GetPrivateStoreFilePathResponse GetPrivateStoreFilePathResponse
+     */
+    public function getPrivateStoreFilePath($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new GetPrivateStoreFilePathHeaders([]);
+
+        return $this->getPrivateStoreFilePathWithOptions($request, $headers, $runtime);
     }
 
     /**

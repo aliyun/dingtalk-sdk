@@ -23,6 +23,9 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\BatchSyncBankReceiptRespons
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CheckVoucherStatusHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CheckVoucherStatusRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CheckVoucherStatusResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreateCollectionOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreateCollectionOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\CreateCollectionOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetCategoryHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetCategoryRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\GetCategoryResponse;
@@ -59,6 +62,12 @@ use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryAccountTradeByPageResp
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCategoryByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCategoryByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCategoryByPageResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCollectionInfoListHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCollectionInfoListRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCollectionInfoListResponse;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCollectionOrderHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCollectionOrderRequest;
+use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCollectionOrderResponse;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCustomerByPageHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCustomerByPageRequest;
 use AlibabaCloud\SDK\Dingtalk\Vbizfinance_2_0\Models\QueryCustomerByPageResponse;
@@ -509,6 +518,72 @@ class Dingtalk extends OpenApiClient
         $headers = new CheckVoucherStatusHeaders([]);
 
         return $this->checkVoucherStatusWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 创建收款订单
+     *  *
+     * @param CreateCollectionOrderRequest $request CreateCollectionOrderRequest
+     * @param CreateCollectionOrderHeaders $headers CreateCollectionOrderHeaders
+     * @param RuntimeOptions               $runtime runtime options for this request RuntimeOptions
+     *
+     * @return CreateCollectionOrderResponse CreateCollectionOrderResponse
+     */
+    public function createCollectionOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->amount)) {
+            $query['amount'] = $request->amount;
+        }
+        if (!Utils::isUnset($request->collectionInfoId)) {
+            $query['collectionInfoId'] = $request->collectionInfoId;
+        }
+        if (!Utils::isUnset($request->instanceId)) {
+            $query['instanceId'] = $request->instanceId;
+        }
+        if (!Utils::isUnset($request->remark)) {
+            $query['remark'] = $request->remark;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'CreateCollectionOrder',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/me/collections/orders',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return CreateCollectionOrderResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 创建收款订单
+     *  *
+     * @param CreateCollectionOrderRequest $request CreateCollectionOrderRequest
+     *
+     * @return CreateCollectionOrderResponse CreateCollectionOrderResponse
+     */
+    public function createCollectionOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new CreateCollectionOrderHeaders([]);
+
+        return $this->createCollectionOrderWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -1316,6 +1391,120 @@ class Dingtalk extends OpenApiClient
         $headers = new QueryCategoryByPageHeaders([]);
 
         return $this->queryCategoryByPageWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询进件信息
+     *  *
+     * @param QueryCollectionInfoListRequest $request QueryCollectionInfoListRequest
+     * @param QueryCollectionInfoListHeaders $headers QueryCollectionInfoListHeaders
+     * @param RuntimeOptions                 $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryCollectionInfoListResponse QueryCollectionInfoListResponse
+     */
+    public function queryCollectionInfoListWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->status)) {
+            $query['status'] = $request->status;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryCollectionInfoList',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/me/collections/accounts',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryCollectionInfoListResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询进件信息
+     *  *
+     * @param QueryCollectionInfoListRequest $request QueryCollectionInfoListRequest
+     *
+     * @return QueryCollectionInfoListResponse QueryCollectionInfoListResponse
+     */
+    public function queryCollectionInfoList($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryCollectionInfoListHeaders([]);
+
+        return $this->queryCollectionInfoListWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询收款订单
+     *  *
+     * @param QueryCollectionOrderRequest $request QueryCollectionOrderRequest
+     * @param QueryCollectionOrderHeaders $headers QueryCollectionOrderHeaders
+     * @param RuntimeOptions              $runtime runtime options for this request RuntimeOptions
+     *
+     * @return QueryCollectionOrderResponse QueryCollectionOrderResponse
+     */
+    public function queryCollectionOrderWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->instanceId)) {
+            $query['instanceId'] = $request->instanceId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+        ]);
+        $params = new Params([
+            'action'      => 'QueryCollectionOrder',
+            'version'     => 'bizfinance_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/bizfinance/me/collections/orders',
+            'method'      => 'GET',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return QueryCollectionOrderResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询收款订单
+     *  *
+     * @param QueryCollectionOrderRequest $request QueryCollectionOrderRequest
+     *
+     * @return QueryCollectionOrderResponse QueryCollectionOrderResponse
+     */
+    public function queryCollectionOrder($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new QueryCollectionOrderHeaders([]);
+
+        return $this->queryCollectionOrderWithOptions($request, $headers, $runtime);
     }
 
     /**
