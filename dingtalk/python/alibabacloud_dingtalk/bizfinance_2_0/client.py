@@ -764,6 +764,132 @@ class Client(OpenApiClient):
         headers = dingtalkbizfinance__2__0_models.CheckVoucherStatusHeaders()
         return await self.check_voucher_status_with_options_async(request, headers, runtime)
 
+    def create_collection_order_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.CreateCollectionOrderRequest,
+        headers: dingtalkbizfinance__2__0_models.CreateCollectionOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.CreateCollectionOrderResponse:
+        """
+        @summary 创建收款订单
+        
+        @param request: CreateCollectionOrderRequest
+        @param headers: CreateCollectionOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCollectionOrderResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.amount):
+            query['amount'] = request.amount
+        if not UtilClient.is_unset(request.collection_info_id):
+            query['collectionInfoId'] = request.collection_info_id
+        if not UtilClient.is_unset(request.instance_id):
+            query['instanceId'] = request.instance_id
+        if not UtilClient.is_unset(request.remark):
+            query['remark'] = request.remark
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CreateCollectionOrder',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/me/collections/orders',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.CreateCollectionOrderResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_collection_order_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.CreateCollectionOrderRequest,
+        headers: dingtalkbizfinance__2__0_models.CreateCollectionOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.CreateCollectionOrderResponse:
+        """
+        @summary 创建收款订单
+        
+        @param request: CreateCollectionOrderRequest
+        @param headers: CreateCollectionOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateCollectionOrderResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.amount):
+            query['amount'] = request.amount
+        if not UtilClient.is_unset(request.collection_info_id):
+            query['collectionInfoId'] = request.collection_info_id
+        if not UtilClient.is_unset(request.instance_id):
+            query['instanceId'] = request.instance_id
+        if not UtilClient.is_unset(request.remark):
+            query['remark'] = request.remark
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CreateCollectionOrder',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/me/collections/orders',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.CreateCollectionOrderResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_collection_order(
+        self,
+        request: dingtalkbizfinance__2__0_models.CreateCollectionOrderRequest,
+    ) -> dingtalkbizfinance__2__0_models.CreateCollectionOrderResponse:
+        """
+        @summary 创建收款订单
+        
+        @param request: CreateCollectionOrderRequest
+        @return: CreateCollectionOrderResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.CreateCollectionOrderHeaders()
+        return self.create_collection_order_with_options(request, headers, runtime)
+
+    async def create_collection_order_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.CreateCollectionOrderRequest,
+    ) -> dingtalkbizfinance__2__0_models.CreateCollectionOrderResponse:
+        """
+        @summary 创建收款订单
+        
+        @param request: CreateCollectionOrderRequest
+        @return: CreateCollectionOrderResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.CreateCollectionOrderHeaders()
+        return await self.create_collection_order_with_options_async(request, headers, runtime)
+
     def get_category_with_options(
         self,
         request: dingtalkbizfinance__2__0_models.GetCategoryRequest,
@@ -2295,6 +2421,234 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkbizfinance__2__0_models.QueryCategoryByPageHeaders()
         return await self.query_category_by_page_with_options_async(request, headers, runtime)
+
+    def query_collection_info_list_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryCollectionInfoListRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryCollectionInfoListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryCollectionInfoListResponse:
+        """
+        @summary 查询进件信息
+        
+        @param request: QueryCollectionInfoListRequest
+        @param headers: QueryCollectionInfoListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCollectionInfoListResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.status):
+            query['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryCollectionInfoList',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/me/collections/accounts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryCollectionInfoListResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_collection_info_list_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryCollectionInfoListRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryCollectionInfoListHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryCollectionInfoListResponse:
+        """
+        @summary 查询进件信息
+        
+        @param request: QueryCollectionInfoListRequest
+        @param headers: QueryCollectionInfoListHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCollectionInfoListResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.status):
+            query['status'] = request.status
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryCollectionInfoList',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/me/collections/accounts',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryCollectionInfoListResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_collection_info_list(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryCollectionInfoListRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryCollectionInfoListResponse:
+        """
+        @summary 查询进件信息
+        
+        @param request: QueryCollectionInfoListRequest
+        @return: QueryCollectionInfoListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryCollectionInfoListHeaders()
+        return self.query_collection_info_list_with_options(request, headers, runtime)
+
+    async def query_collection_info_list_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryCollectionInfoListRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryCollectionInfoListResponse:
+        """
+        @summary 查询进件信息
+        
+        @param request: QueryCollectionInfoListRequest
+        @return: QueryCollectionInfoListResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryCollectionInfoListHeaders()
+        return await self.query_collection_info_list_with_options_async(request, headers, runtime)
+
+    def query_collection_order_with_options(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryCollectionOrderRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryCollectionOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryCollectionOrderResponse:
+        """
+        @summary 查询收款订单
+        
+        @param request: QueryCollectionOrderRequest
+        @param headers: QueryCollectionOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCollectionOrderResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.instance_id):
+            query['instanceId'] = request.instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryCollectionOrder',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/me/collections/orders',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryCollectionOrderResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def query_collection_order_with_options_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryCollectionOrderRequest,
+        headers: dingtalkbizfinance__2__0_models.QueryCollectionOrderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkbizfinance__2__0_models.QueryCollectionOrderResponse:
+        """
+        @summary 查询收款订单
+        
+        @param request: QueryCollectionOrderRequest
+        @param headers: QueryCollectionOrderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: QueryCollectionOrderResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.instance_id):
+            query['instanceId'] = request.instance_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='QueryCollectionOrder',
+            version='bizfinance_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/bizfinance/me/collections/orders',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkbizfinance__2__0_models.QueryCollectionOrderResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def query_collection_order(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryCollectionOrderRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryCollectionOrderResponse:
+        """
+        @summary 查询收款订单
+        
+        @param request: QueryCollectionOrderRequest
+        @return: QueryCollectionOrderResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryCollectionOrderHeaders()
+        return self.query_collection_order_with_options(request, headers, runtime)
+
+    async def query_collection_order_async(
+        self,
+        request: dingtalkbizfinance__2__0_models.QueryCollectionOrderRequest,
+    ) -> dingtalkbizfinance__2__0_models.QueryCollectionOrderResponse:
+        """
+        @summary 查询收款订单
+        
+        @param request: QueryCollectionOrderRequest
+        @return: QueryCollectionOrderResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkbizfinance__2__0_models.QueryCollectionOrderHeaders()
+        return await self.query_collection_order_with_options_async(request, headers, runtime)
 
     def query_customer_by_page_with_options(
         self,

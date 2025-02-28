@@ -1158,6 +1158,155 @@ class CheckVoucherStatusResponse(TeaModel):
         return self
 
 
+class CreateCollectionOrderHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class CreateCollectionOrderRequest(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        collection_info_id: str = None,
+        instance_id: str = None,
+        remark: str = None,
+    ):
+        # This parameter is required.
+        self.amount = amount
+        # This parameter is required.
+        self.collection_info_id = collection_info_id
+        # This parameter is required.
+        self.instance_id = instance_id
+        self.remark = remark
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.collection_info_id is not None:
+            result['collectionInfoId'] = self.collection_info_id
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        if self.remark is not None:
+            result['remark'] = self.remark
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('collectionInfoId') is not None:
+            self.collection_info_id = m.get('collectionInfoId')
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        return self
+
+
+class CreateCollectionOrderResponseBody(TeaModel):
+    def __init__(
+        self,
+        collection_url: str = None,
+    ):
+        self.collection_url = collection_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.collection_url is not None:
+            result['collectionUrl'] = self.collection_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('collectionUrl') is not None:
+            self.collection_url = m.get('collectionUrl')
+        return self
+
+
+class CreateCollectionOrderResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: CreateCollectionOrderResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = CreateCollectionOrderResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class GetCategoryHeaders(TeaModel):
     def __init__(
         self,
@@ -3988,6 +4137,364 @@ class QueryCategoryByPageResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = QueryCategoryByPageResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryCollectionInfoListHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryCollectionInfoListRequest(TeaModel):
+    def __init__(
+        self,
+        status: str = None,
+    ):
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class QueryCollectionInfoListResponseBodyCollectionInfoList(TeaModel):
+    def __init__(
+        self,
+        account_holder_name: str = None,
+        alipay_logon_id: str = None,
+        audit_status: str = None,
+        cert_no: str = None,
+        collection_info_id: str = None,
+        fail_reason: str = None,
+        gmt_audit: int = None,
+        merchant_name: str = None,
+        type: str = None,
+    ):
+        self.account_holder_name = account_holder_name
+        self.alipay_logon_id = alipay_logon_id
+        self.audit_status = audit_status
+        self.cert_no = cert_no
+        self.collection_info_id = collection_info_id
+        self.fail_reason = fail_reason
+        self.gmt_audit = gmt_audit
+        self.merchant_name = merchant_name
+        self.type = type
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.account_holder_name is not None:
+            result['accountHolderName'] = self.account_holder_name
+        if self.alipay_logon_id is not None:
+            result['alipayLogonId'] = self.alipay_logon_id
+        if self.audit_status is not None:
+            result['auditStatus'] = self.audit_status
+        if self.cert_no is not None:
+            result['certNo'] = self.cert_no
+        if self.collection_info_id is not None:
+            result['collectionInfoId'] = self.collection_info_id
+        if self.fail_reason is not None:
+            result['failReason'] = self.fail_reason
+        if self.gmt_audit is not None:
+            result['gmtAudit'] = self.gmt_audit
+        if self.merchant_name is not None:
+            result['merchantName'] = self.merchant_name
+        if self.type is not None:
+            result['type'] = self.type
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('accountHolderName') is not None:
+            self.account_holder_name = m.get('accountHolderName')
+        if m.get('alipayLogonId') is not None:
+            self.alipay_logon_id = m.get('alipayLogonId')
+        if m.get('auditStatus') is not None:
+            self.audit_status = m.get('auditStatus')
+        if m.get('certNo') is not None:
+            self.cert_no = m.get('certNo')
+        if m.get('collectionInfoId') is not None:
+            self.collection_info_id = m.get('collectionInfoId')
+        if m.get('failReason') is not None:
+            self.fail_reason = m.get('failReason')
+        if m.get('gmtAudit') is not None:
+            self.gmt_audit = m.get('gmtAudit')
+        if m.get('merchantName') is not None:
+            self.merchant_name = m.get('merchantName')
+        if m.get('type') is not None:
+            self.type = m.get('type')
+        return self
+
+
+class QueryCollectionInfoListResponseBody(TeaModel):
+    def __init__(
+        self,
+        collection_info_list: List[QueryCollectionInfoListResponseBodyCollectionInfoList] = None,
+    ):
+        self.collection_info_list = collection_info_list
+
+    def validate(self):
+        if self.collection_info_list:
+            for k in self.collection_info_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['collectionInfoList'] = []
+        if self.collection_info_list is not None:
+            for k in self.collection_info_list:
+                result['collectionInfoList'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.collection_info_list = []
+        if m.get('collectionInfoList') is not None:
+            for k in m.get('collectionInfoList'):
+                temp_model = QueryCollectionInfoListResponseBodyCollectionInfoList()
+                self.collection_info_list.append(temp_model.from_map(k))
+        return self
+
+
+class QueryCollectionInfoListResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryCollectionInfoListResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryCollectionInfoListResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class QueryCollectionOrderHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class QueryCollectionOrderRequest(TeaModel):
+    def __init__(
+        self,
+        instance_id: str = None,
+    ):
+        # This parameter is required.
+        self.instance_id = instance_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        return self
+
+
+class QueryCollectionOrderResponseBody(TeaModel):
+    def __init__(
+        self,
+        amount: str = None,
+        instance_id: str = None,
+        remark: str = None,
+        status: str = None,
+    ):
+        self.amount = amount
+        self.instance_id = instance_id
+        self.remark = remark
+        self.status = status
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.amount is not None:
+            result['amount'] = self.amount
+        if self.instance_id is not None:
+            result['instanceId'] = self.instance_id
+        if self.remark is not None:
+            result['remark'] = self.remark
+        if self.status is not None:
+            result['status'] = self.status
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('amount') is not None:
+            self.amount = m.get('amount')
+        if m.get('instanceId') is not None:
+            self.instance_id = m.get('instanceId')
+        if m.get('remark') is not None:
+            self.remark = m.get('remark')
+        if m.get('status') is not None:
+            self.status = m.get('status')
+        return self
+
+
+class QueryCollectionOrderResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: QueryCollectionOrderResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = QueryCollectionOrderResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

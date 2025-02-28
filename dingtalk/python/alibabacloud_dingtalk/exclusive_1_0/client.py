@@ -6538,6 +6538,124 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.GetPartnerTypeByParentIdHeaders()
         return await self.get_partner_type_by_parent_id_with_options_async(parent_id, headers, runtime)
 
+    def get_private_store_file_path_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPrivateStoreFilePathRequest,
+        headers: dingtalkexclusive__1__0_models.GetPrivateStoreFilePathHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetPrivateStoreFilePathResponse:
+        """
+        @summary 获取专属存储文件路径
+        
+        @param request: GetPrivateStoreFilePathRequest
+        @param headers: GetPrivateStoreFilePathHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPrivateStoreFilePathResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dentry_id):
+            body['dentryId'] = request.dentry_id
+        if not UtilClient.is_unset(request.space_id):
+            body['spaceId'] = request.space_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetPrivateStoreFilePath',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/privateStores/filePaths/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetPrivateStoreFilePathResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def get_private_store_file_path_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPrivateStoreFilePathRequest,
+        headers: dingtalkexclusive__1__0_models.GetPrivateStoreFilePathHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.GetPrivateStoreFilePathResponse:
+        """
+        @summary 获取专属存储文件路径
+        
+        @param request: GetPrivateStoreFilePathRequest
+        @param headers: GetPrivateStoreFilePathHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: GetPrivateStoreFilePathResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.dentry_id):
+            body['dentryId'] = request.dentry_id
+        if not UtilClient.is_unset(request.space_id):
+            body['spaceId'] = request.space_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='GetPrivateStoreFilePath',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/privateStores/filePaths/query',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.GetPrivateStoreFilePathResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def get_private_store_file_path(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPrivateStoreFilePathRequest,
+    ) -> dingtalkexclusive__1__0_models.GetPrivateStoreFilePathResponse:
+        """
+        @summary 获取专属存储文件路径
+        
+        @param request: GetPrivateStoreFilePathRequest
+        @return: GetPrivateStoreFilePathResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetPrivateStoreFilePathHeaders()
+        return self.get_private_store_file_path_with_options(request, headers, runtime)
+
+    async def get_private_store_file_path_async(
+        self,
+        request: dingtalkexclusive__1__0_models.GetPrivateStoreFilePathRequest,
+    ) -> dingtalkexclusive__1__0_models.GetPrivateStoreFilePathResponse:
+        """
+        @summary 获取专属存储文件路径
+        
+        @param request: GetPrivateStoreFilePathRequest
+        @return: GetPrivateStoreFilePathResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.GetPrivateStoreFilePathHeaders()
+        return await self.get_private_store_file_path_with_options_async(request, headers, runtime)
+
     def get_public_devices_with_options(
         self,
         request: dingtalkexclusive__1__0_models.GetPublicDevicesRequest,
