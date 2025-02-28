@@ -8646,6 +8646,162 @@ namespace AlibabaCloud.SDK.Dingtalkexclusive_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>获取专属存储文件路径</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetPrivateStoreFilePathRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetPrivateStoreFilePathHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPrivateStoreFilePathResponse
+        /// </returns>
+        public GetPrivateStoreFilePathResponse GetPrivateStoreFilePathWithOptions(GetPrivateStoreFilePathRequest request, GetPrivateStoreFilePathHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DentryId))
+            {
+                body["dentryId"] = request.DentryId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceId))
+            {
+                body["spaceId"] = request.SpaceId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetPrivateStoreFilePath",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/privateStores/filePaths/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetPrivateStoreFilePathResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取专属存储文件路径</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetPrivateStoreFilePathRequest
+        /// </param>
+        /// <param name="headers">
+        /// GetPrivateStoreFilePathHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPrivateStoreFilePathResponse
+        /// </returns>
+        public async Task<GetPrivateStoreFilePathResponse> GetPrivateStoreFilePathWithOptionsAsync(GetPrivateStoreFilePathRequest request, GetPrivateStoreFilePathHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.DentryId))
+            {
+                body["dentryId"] = request.DentryId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SpaceId))
+            {
+                body["spaceId"] = request.SpaceId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "GetPrivateStoreFilePath",
+                Version = "exclusive_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/exclusive/privateStores/filePaths/query",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<GetPrivateStoreFilePathResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取专属存储文件路径</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetPrivateStoreFilePathRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPrivateStoreFilePathResponse
+        /// </returns>
+        public GetPrivateStoreFilePathResponse GetPrivateStoreFilePath(GetPrivateStoreFilePathRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetPrivateStoreFilePathHeaders headers = new GetPrivateStoreFilePathHeaders();
+            return GetPrivateStoreFilePathWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>获取专属存储文件路径</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// GetPrivateStoreFilePathRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// GetPrivateStoreFilePathResponse
+        /// </returns>
+        public async Task<GetPrivateStoreFilePathResponse> GetPrivateStoreFilePathAsync(GetPrivateStoreFilePathRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            GetPrivateStoreFilePathHeaders headers = new GetPrivateStoreFilePathHeaders();
+            return await GetPrivateStoreFilePathWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>获取公共设备列表。</para>
         /// </summary>
         /// 
