@@ -411,6 +411,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>创建收款订单</p>
+     * 
+     * @param request CreateCollectionOrderRequest
+     * @param headers CreateCollectionOrderHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return CreateCollectionOrderResponse
+     */
+    public CreateCollectionOrderResponse createCollectionOrderWithOptions(CreateCollectionOrderRequest request, CreateCollectionOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.amount)) {
+            query.put("amount", request.amount);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.collectionInfoId)) {
+            query.put("collectionInfoId", request.collectionInfoId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.instanceId)) {
+            query.put("instanceId", request.instanceId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.remark)) {
+            query.put("remark", request.remark);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "CreateCollectionOrder"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/me/collections/orders"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new CreateCollectionOrderResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>创建收款订单</p>
+     * 
+     * @param request CreateCollectionOrderRequest
+     * @return CreateCollectionOrderResponse
+     */
+    public CreateCollectionOrderResponse createCollectionOrder(CreateCollectionOrderRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        CreateCollectionOrderHeaders headers = new CreateCollectionOrderHeaders();
+        return this.createCollectionOrderWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>获取费用类别</p>
      * 
      * @param request GetCategoryRequest
@@ -1243,6 +1311,118 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         QueryCategoryByPageHeaders headers = new QueryCategoryByPageHeaders();
         return this.queryCategoryByPageWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询进件信息</p>
+     * 
+     * @param request QueryCollectionInfoListRequest
+     * @param headers QueryCollectionInfoListHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryCollectionInfoListResponse
+     */
+    public QueryCollectionInfoListResponse queryCollectionInfoListWithOptions(QueryCollectionInfoListRequest request, QueryCollectionInfoListHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.status)) {
+            query.put("status", request.status);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryCollectionInfoList"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/me/collections/accounts"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryCollectionInfoListResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询进件信息</p>
+     * 
+     * @param request QueryCollectionInfoListRequest
+     * @return QueryCollectionInfoListResponse
+     */
+    public QueryCollectionInfoListResponse queryCollectionInfoList(QueryCollectionInfoListRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryCollectionInfoListHeaders headers = new QueryCollectionInfoListHeaders();
+        return this.queryCollectionInfoListWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询收款订单</p>
+     * 
+     * @param request QueryCollectionOrderRequest
+     * @param headers QueryCollectionOrderHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return QueryCollectionOrderResponse
+     */
+    public QueryCollectionOrderResponse queryCollectionOrderWithOptions(QueryCollectionOrderRequest request, QueryCollectionOrderHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> query = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.instanceId)) {
+            query.put("instanceId", request.instanceId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("query", com.aliyun.openapiutil.Client.query(query))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "QueryCollectionOrder"),
+            new TeaPair("version", "bizfinance_2.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v2.0/bizfinance/me/collections/orders"),
+            new TeaPair("method", "GET"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new QueryCollectionOrderResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>查询收款订单</p>
+     * 
+     * @param request QueryCollectionOrderRequest
+     * @return QueryCollectionOrderResponse
+     */
+    public QueryCollectionOrderResponse queryCollectionOrder(QueryCollectionOrderRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        QueryCollectionOrderHeaders headers = new QueryCollectionOrderHeaders();
+        return this.queryCollectionOrderWithOptions(request, headers, runtime);
     }
 
     /**
