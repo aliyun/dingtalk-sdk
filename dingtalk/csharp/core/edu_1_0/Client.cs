@@ -1650,6 +1650,154 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>添加评价表现数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddEvaluatePerformanceRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddEvaluatePerformanceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddEvaluatePerformanceResponse
+        /// </returns>
+        public AddEvaluatePerformanceResponse AddEvaluatePerformanceWithOptions(AddEvaluatePerformanceRequest request, AddEvaluatePerformanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EvaluationData))
+            {
+                body["evaluationData"] = request.EvaluationData;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddEvaluatePerformance",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/evaluations",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddEvaluatePerformanceResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加评价表现数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddEvaluatePerformanceRequest
+        /// </param>
+        /// <param name="headers">
+        /// AddEvaluatePerformanceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddEvaluatePerformanceResponse
+        /// </returns>
+        public async Task<AddEvaluatePerformanceResponse> AddEvaluatePerformanceWithOptionsAsync(AddEvaluatePerformanceRequest request, AddEvaluatePerformanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EvaluationData))
+            {
+                body["evaluationData"] = request.EvaluationData;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "AddEvaluatePerformance",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/evaluations",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<AddEvaluatePerformanceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加评价表现数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddEvaluatePerformanceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddEvaluatePerformanceResponse
+        /// </returns>
+        public AddEvaluatePerformanceResponse AddEvaluatePerformance(AddEvaluatePerformanceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddEvaluatePerformanceHeaders headers = new AddEvaluatePerformanceHeaders();
+            return AddEvaluatePerformanceWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>添加评价表现数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// AddEvaluatePerformanceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// AddEvaluatePerformanceResponse
+        /// </returns>
+        public async Task<AddEvaluatePerformanceResponse> AddEvaluatePerformanceAsync(AddEvaluatePerformanceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            AddEvaluatePerformanceHeaders headers = new AddEvaluatePerformanceHeaders();
+            return await AddEvaluatePerformanceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>添加学校配置</para>
         /// </summary>
         /// 
@@ -5746,6 +5894,154 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             CheckRestrictionHeaders headers = new CheckRestrictionHeaders();
             return await CheckRestrictionWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>清空评价表现未读数量</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ClearEvaluatePerformanceCountRequest
+        /// </param>
+        /// <param name="headers">
+        /// ClearEvaluatePerformanceCountHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ClearEvaluatePerformanceCountResponse
+        /// </returns>
+        public ClearEvaluatePerformanceCountResponse ClearEvaluatePerformanceCountWithOptions(ClearEvaluatePerformanceCountRequest request, ClearEvaluatePerformanceCountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StudentIdList))
+            {
+                body["studentIdList"] = request.StudentIdList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ClearEvaluatePerformanceCount",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/evaluations/unreadCounts/clear",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ClearEvaluatePerformanceCountResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>清空评价表现未读数量</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ClearEvaluatePerformanceCountRequest
+        /// </param>
+        /// <param name="headers">
+        /// ClearEvaluatePerformanceCountHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ClearEvaluatePerformanceCountResponse
+        /// </returns>
+        public async Task<ClearEvaluatePerformanceCountResponse> ClearEvaluatePerformanceCountWithOptionsAsync(ClearEvaluatePerformanceCountRequest request, ClearEvaluatePerformanceCountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StudentIdList))
+            {
+                body["studentIdList"] = request.StudentIdList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ClearEvaluatePerformanceCount",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/evaluations/unreadCounts/clear",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ClearEvaluatePerformanceCountResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>清空评价表现未读数量</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ClearEvaluatePerformanceCountRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ClearEvaluatePerformanceCountResponse
+        /// </returns>
+        public ClearEvaluatePerformanceCountResponse ClearEvaluatePerformanceCount(ClearEvaluatePerformanceCountRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ClearEvaluatePerformanceCountHeaders headers = new ClearEvaluatePerformanceCountHeaders();
+            return ClearEvaluatePerformanceCountWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>清空评价表现未读数量</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ClearEvaluatePerformanceCountRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ClearEvaluatePerformanceCountResponse
+        /// </returns>
+        public async Task<ClearEvaluatePerformanceCountResponse> ClearEvaluatePerformanceCountAsync(ClearEvaluatePerformanceCountRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ClearEvaluatePerformanceCountHeaders headers = new ClearEvaluatePerformanceCountHeaders();
+            return await ClearEvaluatePerformanceCountWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -12954,6 +13250,154 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>删除评价表现数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteEvaluatePerformanceRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteEvaluatePerformanceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteEvaluatePerformanceResponse
+        /// </returns>
+        public DeleteEvaluatePerformanceResponse DeleteEvaluatePerformanceWithOptions(DeleteEvaluatePerformanceRequest request, DeleteEvaluatePerformanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EvaluationIdList))
+            {
+                body["evaluationIdList"] = request.EvaluationIdList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteEvaluatePerformance",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/evaluations/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteEvaluatePerformanceResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除评价表现数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteEvaluatePerformanceRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteEvaluatePerformanceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteEvaluatePerformanceResponse
+        /// </returns>
+        public async Task<DeleteEvaluatePerformanceResponse> DeleteEvaluatePerformanceWithOptionsAsync(DeleteEvaluatePerformanceRequest request, DeleteEvaluatePerformanceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EvaluationIdList))
+            {
+                body["evaluationIdList"] = request.EvaluationIdList;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteEvaluatePerformance",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/evaluations/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteEvaluatePerformanceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除评价表现数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteEvaluatePerformanceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteEvaluatePerformanceResponse
+        /// </returns>
+        public DeleteEvaluatePerformanceResponse DeleteEvaluatePerformance(DeleteEvaluatePerformanceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteEvaluatePerformanceHeaders headers = new DeleteEvaluatePerformanceHeaders();
+            return DeleteEvaluatePerformanceWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除评价表现数据</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteEvaluatePerformanceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteEvaluatePerformanceResponse
+        /// </returns>
+        public async Task<DeleteEvaluatePerformanceResponse> DeleteEvaluatePerformanceAsync(DeleteEvaluatePerformanceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteEvaluatePerformanceHeaders headers = new DeleteEvaluatePerformanceHeaders();
+            return await DeleteEvaluatePerformanceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>删除家长</para>
         /// </summary>
         /// 
@@ -13566,6 +14010,170 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             DeleteRemoteClassCourseHeaders headers = new DeleteRemoteClassCourseHeaders();
             return await DeleteRemoteClassCourseWithOptionsAsync(courseCode, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除成绩单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteSchoolReportRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteSchoolReportHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteSchoolReportResponse
+        /// </returns>
+        public DeleteSchoolReportResponse DeleteSchoolReportWithOptions(DeleteSchoolReportRequest request, DeleteSchoolReportHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                body["bizCode"] = request.BizCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SchoolReportId))
+            {
+                body["schoolReportId"] = request.SchoolReportId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TeacherId))
+            {
+                body["teacherId"] = request.TeacherId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteSchoolReport",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/schools/reports/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteSchoolReportResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除成绩单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteSchoolReportRequest
+        /// </param>
+        /// <param name="headers">
+        /// DeleteSchoolReportHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteSchoolReportResponse
+        /// </returns>
+        public async Task<DeleteSchoolReportResponse> DeleteSchoolReportWithOptionsAsync(DeleteSchoolReportRequest request, DeleteSchoolReportHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                body["bizCode"] = request.BizCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SchoolReportId))
+            {
+                body["schoolReportId"] = request.SchoolReportId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TeacherId))
+            {
+                body["teacherId"] = request.TeacherId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "DeleteSchoolReport",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/schools/reports/remove",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<DeleteSchoolReportResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除成绩单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteSchoolReportRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteSchoolReportResponse
+        /// </returns>
+        public DeleteSchoolReportResponse DeleteSchoolReport(DeleteSchoolReportRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteSchoolReportHeaders headers = new DeleteSchoolReportHeaders();
+            return DeleteSchoolReportWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>删除成绩单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// DeleteSchoolReportRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// DeleteSchoolReportResponse
+        /// </returns>
+        public async Task<DeleteSchoolReportResponse> DeleteSchoolReportAsync(DeleteSchoolReportRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            DeleteSchoolReportHeaders headers = new DeleteSchoolReportHeaders();
+            return await DeleteSchoolReportWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>
@@ -23066,6 +23674,266 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>发布成绩单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PublishSchoolReportRequest
+        /// </param>
+        /// <param name="headers">
+        /// PublishSchoolReportHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PublishSchoolReportResponse
+        /// </returns>
+        public PublishSchoolReportResponse PublishSchoolReportWithOptions(PublishSchoolReportRequest request, PublishSchoolReportHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                body["bizCode"] = request.BizCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClassDetailItems))
+            {
+                body["classDetailItems"] = request.ClassDetailItems;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExamClass))
+            {
+                body["examClass"] = request.ExamClass;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExamTitle))
+            {
+                body["examTitle"] = request.ExamTitle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Identifier))
+            {
+                body["identifier"] = request.Identifier;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PublishScope))
+            {
+                body["publishScope"] = request.PublishScope;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScoreType))
+            {
+                body["scoreType"] = request.ScoreType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Share))
+            {
+                body["share"] = request.Share;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowRank))
+            {
+                body["showRank"] = request.ShowRank;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowStatisticsScore))
+            {
+                body["showStatisticsScore"] = request.ShowStatisticsScore;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubScoreType))
+            {
+                body["subScoreType"] = request.SubScoreType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubjectList))
+            {
+                body["subjectList"] = request.SubjectList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subjects))
+            {
+                body["subjects"] = request.Subjects;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TeacherId))
+            {
+                body["teacherId"] = request.TeacherId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TeacherName))
+            {
+                body["teacherName"] = request.TeacherName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PublishSchoolReport",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/schools/reports/publish",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PublishSchoolReportResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发布成绩单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PublishSchoolReportRequest
+        /// </param>
+        /// <param name="headers">
+        /// PublishSchoolReportHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// PublishSchoolReportResponse
+        /// </returns>
+        public async Task<PublishSchoolReportResponse> PublishSchoolReportWithOptionsAsync(PublishSchoolReportRequest request, PublishSchoolReportHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                body["bizCode"] = request.BizCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ClassDetailItems))
+            {
+                body["classDetailItems"] = request.ClassDetailItems;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExamClass))
+            {
+                body["examClass"] = request.ExamClass;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ExamTitle))
+            {
+                body["examTitle"] = request.ExamTitle;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Identifier))
+            {
+                body["identifier"] = request.Identifier;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.PublishScope))
+            {
+                body["publishScope"] = request.PublishScope;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ScoreType))
+            {
+                body["scoreType"] = request.ScoreType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Share))
+            {
+                body["share"] = request.Share;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowRank))
+            {
+                body["showRank"] = request.ShowRank;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ShowStatisticsScore))
+            {
+                body["showStatisticsScore"] = request.ShowStatisticsScore;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubScoreType))
+            {
+                body["subScoreType"] = request.SubScoreType;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SubjectList))
+            {
+                body["subjectList"] = request.SubjectList;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Subjects))
+            {
+                body["subjects"] = request.Subjects;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TeacherId))
+            {
+                body["teacherId"] = request.TeacherId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TeacherName))
+            {
+                body["teacherName"] = request.TeacherName;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "PublishSchoolReport",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/schools/reports/publish",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<PublishSchoolReportResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发布成绩单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PublishSchoolReportRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PublishSchoolReportResponse
+        /// </returns>
+        public PublishSchoolReportResponse PublishSchoolReport(PublishSchoolReportRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PublishSchoolReportHeaders headers = new PublishSchoolReportHeaders();
+            return PublishSchoolReportWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>发布成绩单</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// PublishSchoolReportRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// PublishSchoolReportResponse
+        /// </returns>
+        public async Task<PublishSchoolReportResponse> PublishSchoolReportAsync(PublishSchoolReportRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            PublishSchoolReportHeaders headers = new PublishSchoolReportHeaders();
+            return await PublishSchoolReportWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>查询全量学科实例列表</para>
         /// </summary>
         /// 
@@ -28978,6 +29846,178 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>成绩单详情已读状态设置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SchoolReportDetailReadedRequest
+        /// </param>
+        /// <param name="headers">
+        /// SchoolReportDetailReadedHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SchoolReportDetailReadedResponse
+        /// </returns>
+        public SchoolReportDetailReadedResponse SchoolReportDetailReadedWithOptions(SchoolReportDetailReadedRequest request, SchoolReportDetailReadedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                body["bizCode"] = request.BizCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SchoolReportId))
+            {
+                body["schoolReportId"] = request.SchoolReportId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StudentIds))
+            {
+                body["studentIds"] = request.StudentIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SchoolReportDetailReaded",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/schools/reportDetails/readStatuses/set",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SchoolReportDetailReadedResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>成绩单详情已读状态设置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SchoolReportDetailReadedRequest
+        /// </param>
+        /// <param name="headers">
+        /// SchoolReportDetailReadedHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// SchoolReportDetailReadedResponse
+        /// </returns>
+        public async Task<SchoolReportDetailReadedResponse> SchoolReportDetailReadedWithOptionsAsync(SchoolReportDetailReadedRequest request, SchoolReportDetailReadedHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizCode))
+            {
+                body["bizCode"] = request.BizCode;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.SchoolReportId))
+            {
+                body["schoolReportId"] = request.SchoolReportId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.StudentIds))
+            {
+                body["studentIds"] = request.StudentIds;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UserId))
+            {
+                body["userId"] = request.UserId;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "SchoolReportDetailReaded",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/schools/reportDetails/readStatuses/set",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<SchoolReportDetailReadedResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>成绩单详情已读状态设置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SchoolReportDetailReadedRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SchoolReportDetailReadedResponse
+        /// </returns>
+        public SchoolReportDetailReadedResponse SchoolReportDetailReaded(SchoolReportDetailReadedRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SchoolReportDetailReadedHeaders headers = new SchoolReportDetailReadedHeaders();
+            return SchoolReportDetailReadedWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>成绩单详情已读状态设置</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// SchoolReportDetailReadedRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// SchoolReportDetailReadedResponse
+        /// </returns>
+        public async Task<SchoolReportDetailReadedResponse> SchoolReportDetailReadedAsync(SchoolReportDetailReadedRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            SchoolReportDetailReadedHeaders headers = new SchoolReportDetailReadedHeaders();
+            return await SchoolReportDetailReadedWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>按关键字搜索老师</para>
         /// </summary>
         /// 
@@ -32386,6 +33426,162 @@ namespace AlibabaCloud.SDK.Dingtalkedu_1_0
             AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
             UpdateCoursesOfClassHeaders headers = new UpdateCoursesOfClassHeaders();
             return await UpdateCoursesOfClassWithOptionsAsync(classId, request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新评价表现未读数量</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateEvaluatePerformanceCountRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateEvaluatePerformanceCountHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateEvaluatePerformanceCountResponse
+        /// </returns>
+        public UpdateEvaluatePerformanceCountResponse UpdateEvaluatePerformanceCountWithOptions(UpdateEvaluatePerformanceCountRequest request, UpdateEvaluatePerformanceCountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TeacherId))
+            {
+                body["teacherId"] = request.TeacherId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnreadData))
+            {
+                body["unreadData"] = request.UnreadData;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateEvaluatePerformanceCount",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/evaluations/unreadCounts",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateEvaluatePerformanceCountResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新评价表现未读数量</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateEvaluatePerformanceCountRequest
+        /// </param>
+        /// <param name="headers">
+        /// UpdateEvaluatePerformanceCountHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateEvaluatePerformanceCountResponse
+        /// </returns>
+        public async Task<UpdateEvaluatePerformanceCountResponse> UpdateEvaluatePerformanceCountWithOptionsAsync(UpdateEvaluatePerformanceCountRequest request, UpdateEvaluatePerformanceCountHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TeacherId))
+            {
+                body["teacherId"] = request.TeacherId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.UnreadData))
+            {
+                body["unreadData"] = request.UnreadData;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "UpdateEvaluatePerformanceCount",
+                Version = "edu_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/edu/evaluations/unreadCounts",
+                Method = "PUT",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<UpdateEvaluatePerformanceCountResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新评价表现未读数量</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateEvaluatePerformanceCountRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateEvaluatePerformanceCountResponse
+        /// </returns>
+        public UpdateEvaluatePerformanceCountResponse UpdateEvaluatePerformanceCount(UpdateEvaluatePerformanceCountRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateEvaluatePerformanceCountHeaders headers = new UpdateEvaluatePerformanceCountHeaders();
+            return UpdateEvaluatePerformanceCountWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>更新评价表现未读数量</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// UpdateEvaluatePerformanceCountRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// UpdateEvaluatePerformanceCountResponse
+        /// </returns>
+        public async Task<UpdateEvaluatePerformanceCountResponse> UpdateEvaluatePerformanceCountAsync(UpdateEvaluatePerformanceCountRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            UpdateEvaluatePerformanceCountHeaders headers = new UpdateEvaluatePerformanceCountHeaders();
+            return await UpdateEvaluatePerformanceCountWithOptionsAsync(request, headers, runtime);
         }
 
         /// <term><b>Summary:</b></term>

@@ -10,6 +10,8 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class PremiumInsertOrUpdateDirRequest : TeaModel {
         /// <summary>
+        /// <para>This parameter is required.</para>
+        /// 
         /// <b>Example:</b>
         /// <para>administeration</para>
         /// </summary>
@@ -26,6 +28,8 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
         public string Description { get; set; }
 
         /// <summary>
+        /// <para>This parameter is required.</para>
+        /// 
         /// <b>Example:</b>
         /// <para>行政管理</para>
         /// </summary>

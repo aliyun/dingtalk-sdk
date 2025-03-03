@@ -17,6 +17,10 @@ namespace AlibabaCloud.SDK.Dingtalkdoc_1_0.Models
             [Validation(Required=false)]
             public string BackgroundColor { get; set; }
 
+            [NameInMap("fontColor")]
+            [Validation(Required=false)]
+            public string FontColor { get; set; }
+
         }
 
         [NameInMap("duplicateCondition")]

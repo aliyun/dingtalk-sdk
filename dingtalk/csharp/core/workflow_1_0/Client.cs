@@ -12562,6 +12562,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             {
                 body["approvers"] = request.Approvers;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizDetailPageUrl))
+            {
+                body["bizDetailPageUrl"] = request.BizDetailPageUrl;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CcList))
             {
                 body["ccList"] = request.CcList;
@@ -12648,6 +12652,10 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Approvers))
             {
                 body["approvers"] = request.Approvers;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.BizDetailPageUrl))
+            {
+                body["bizDetailPageUrl"] = request.BizDetailPageUrl;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.CcList))
             {

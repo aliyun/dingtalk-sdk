@@ -10,6 +10,8 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 {
     public class PremiumDelDirRequest : TeaModel {
         /// <summary>
+        /// <para>This parameter is required.</para>
+        /// 
         /// <b>Example:</b>
         /// <para>oaDirIdxxx</para>
         /// </summary>

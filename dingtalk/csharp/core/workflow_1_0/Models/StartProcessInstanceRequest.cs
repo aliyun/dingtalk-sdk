@@ -27,6 +27,14 @@ namespace AlibabaCloud.SDK.Dingtalkworkflow_1_0.Models
 
         }
 
+        /// <summary>
+        /// <b>Example:</b>
+        /// <para><a href="https://www.dingtalk.com/">https://www.dingtalk.com/</a></para>
+        /// </summary>
+        [NameInMap("bizDetailPageUrl")]
+        [Validation(Required=false)]
+        public string BizDetailPageUrl { get; set; }
+
         [NameInMap("ccList")]
         [Validation(Required=false)]
         public List<string> CcList { get; set; }
