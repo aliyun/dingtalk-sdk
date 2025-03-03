@@ -790,6 +790,128 @@ class Client(OpenApiClient):
         headers = dingtalkstorage__2__0_models.GetPermissionShareScopeHeaders()
         return await self.get_permission_share_scope_with_options_async(dentry_uuid, request, headers, runtime)
 
+    def list_operation_logs_with_options(
+        self,
+        request: dingtalkstorage__2__0_models.ListOperationLogsRequest,
+        headers: dingtalkstorage__2__0_models.ListOperationLogsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__2__0_models.ListOperationLogsResponse:
+        """
+        @summary 查询操作日志
+        
+        @param request: ListOperationLogsRequest
+        @param headers: ListOperationLogsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListOperationLogsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ListOperationLogs',
+            version='storage_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/storage/managements/operationLogs/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__2__0_models.ListOperationLogsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_operation_logs_with_options_async(
+        self,
+        request: dingtalkstorage__2__0_models.ListOperationLogsRequest,
+        headers: dingtalkstorage__2__0_models.ListOperationLogsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkstorage__2__0_models.ListOperationLogsResponse:
+        """
+        @summary 查询操作日志
+        
+        @param request: ListOperationLogsRequest
+        @param headers: ListOperationLogsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListOperationLogsResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.end_time):
+            body['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.option):
+            body['option'] = request.option
+        if not UtilClient.is_unset(request.start_time):
+            body['startTime'] = request.start_time
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ListOperationLogs',
+            version='storage_2.0',
+            protocol='HTTP',
+            pathname=f'/v2.0/storage/managements/operationLogs/list',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkstorage__2__0_models.ListOperationLogsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_operation_logs(
+        self,
+        request: dingtalkstorage__2__0_models.ListOperationLogsRequest,
+    ) -> dingtalkstorage__2__0_models.ListOperationLogsResponse:
+        """
+        @summary 查询操作日志
+        
+        @param request: ListOperationLogsRequest
+        @return: ListOperationLogsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__2__0_models.ListOperationLogsHeaders()
+        return self.list_operation_logs_with_options(request, headers, runtime)
+
+    async def list_operation_logs_async(
+        self,
+        request: dingtalkstorage__2__0_models.ListOperationLogsRequest,
+    ) -> dingtalkstorage__2__0_models.ListOperationLogsResponse:
+        """
+        @summary 查询操作日志
+        
+        @param request: ListOperationLogsRequest
+        @return: ListOperationLogsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkstorage__2__0_models.ListOperationLogsHeaders()
+        return await self.list_operation_logs_with_options_async(request, headers, runtime)
+
     def list_permissions_with_options(
         self,
         dentry_uuid: str,

@@ -9292,6 +9292,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.approvers):
             body['approvers'] = request.approvers
+        if not UtilClient.is_unset(request.biz_detail_page_url):
+            body['bizDetailPageUrl'] = request.biz_detail_page_url
         if not UtilClient.is_unset(request.cc_list):
             body['ccList'] = request.cc_list
         if not UtilClient.is_unset(request.cc_position):
@@ -9351,6 +9353,8 @@ class Client(OpenApiClient):
         body = {}
         if not UtilClient.is_unset(request.approvers):
             body['approvers'] = request.approvers
+        if not UtilClient.is_unset(request.biz_detail_page_url):
+            body['bizDetailPageUrl'] = request.biz_detail_page_url
         if not UtilClient.is_unset(request.cc_list):
             body['ccList'] = request.cc_list
         if not UtilClient.is_unset(request.cc_position):

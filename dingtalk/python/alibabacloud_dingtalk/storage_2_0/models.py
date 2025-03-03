@@ -1504,6 +1504,306 @@ class GetPermissionShareScopeResponse(TeaModel):
         return self
 
 
+class ListOperationLogsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListOperationLogsRequestOption(TeaModel):
+    def __init__(
+        self,
+        actions: List[str] = None,
+        max_results: int = None,
+        next_token: str = None,
+        operator_id: str = None,
+        scenes: List[str] = None,
+        subject_id: str = None,
+    ):
+        self.actions = actions
+        self.max_results = max_results
+        self.next_token = next_token
+        self.operator_id = operator_id
+        self.scenes = scenes
+        self.subject_id = subject_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.actions is not None:
+            result['actions'] = self.actions
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.scenes is not None:
+            result['scenes'] = self.scenes
+        if self.subject_id is not None:
+            result['subjectId'] = self.subject_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actions') is not None:
+            self.actions = m.get('actions')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('scenes') is not None:
+            self.scenes = m.get('scenes')
+        if m.get('subjectId') is not None:
+            self.subject_id = m.get('subjectId')
+        return self
+
+
+class ListOperationLogsRequest(TeaModel):
+    def __init__(
+        self,
+        end_time: int = None,
+        option: ListOperationLogsRequestOption = None,
+        start_time: int = None,
+    ):
+        self.end_time = end_time
+        self.option = option
+        self.start_time = start_time
+
+    def validate(self):
+        if self.option:
+            self.option.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.option is not None:
+            result['option'] = self.option.to_map()
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('option') is not None:
+            temp_model = ListOperationLogsRequestOption()
+            self.option = temp_model.from_map(m['option'])
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        return self
+
+
+class ListOperationLogsResponseBodyItems(TeaModel):
+    def __init__(
+        self,
+        action: str = None,
+        details: str = None,
+        id: str = None,
+        operate_time: int = None,
+        operator_id: str = None,
+        scene: str = None,
+        subject_id: str = None,
+        subject_name: str = None,
+        subject_type: str = None,
+        subject_url: str = None,
+    ):
+        self.action = action
+        self.details = details
+        self.id = id
+        self.operate_time = operate_time
+        self.operator_id = operator_id
+        self.scene = scene
+        self.subject_id = subject_id
+        self.subject_name = subject_name
+        self.subject_type = subject_type
+        self.subject_url = subject_url
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action is not None:
+            result['action'] = self.action
+        if self.details is not None:
+            result['details'] = self.details
+        if self.id is not None:
+            result['id'] = self.id
+        if self.operate_time is not None:
+            result['operateTime'] = self.operate_time
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        if self.scene is not None:
+            result['scene'] = self.scene
+        if self.subject_id is not None:
+            result['subjectId'] = self.subject_id
+        if self.subject_name is not None:
+            result['subjectName'] = self.subject_name
+        if self.subject_type is not None:
+            result['subjectType'] = self.subject_type
+        if self.subject_url is not None:
+            result['subjectUrl'] = self.subject_url
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('action') is not None:
+            self.action = m.get('action')
+        if m.get('details') is not None:
+            self.details = m.get('details')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('operateTime') is not None:
+            self.operate_time = m.get('operateTime')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        if m.get('scene') is not None:
+            self.scene = m.get('scene')
+        if m.get('subjectId') is not None:
+            self.subject_id = m.get('subjectId')
+        if m.get('subjectName') is not None:
+            self.subject_name = m.get('subjectName')
+        if m.get('subjectType') is not None:
+            self.subject_type = m.get('subjectType')
+        if m.get('subjectUrl') is not None:
+            self.subject_url = m.get('subjectUrl')
+        return self
+
+
+class ListOperationLogsResponseBody(TeaModel):
+    def __init__(
+        self,
+        items: List[ListOperationLogsResponseBodyItems] = None,
+        next_token: str = None,
+        total_count: int = None,
+    ):
+        self.items = items
+        self.next_token = next_token
+        self.total_count = total_count
+
+    def validate(self):
+        if self.items:
+            for k in self.items:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['items'] = []
+        if self.items is not None:
+            for k in self.items:
+                result['items'].append(k.to_map() if k else None)
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.items = []
+        if m.get('items') is not None:
+            for k in m.get('items'):
+                temp_model = ListOperationLogsResponseBodyItems()
+                self.items.append(temp_model.from_map(k))
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class ListOperationLogsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListOperationLogsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListOperationLogsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListPermissionsHeaders(TeaModel):
     def __init__(
         self,

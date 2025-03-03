@@ -9478,6 +9478,7 @@ class PremiumDelDirRequest(TeaModel):
         dir_id: str = None,
         operate_user_id: str = None,
     ):
+        # This parameter is required.
         self.dir_id = dir_id
         # This parameter is required.
         self.operate_user_id = operate_user_id
@@ -14063,8 +14064,10 @@ class PremiumInsertOrUpdateDirRequest(TeaModel):
         name_18n: str = None,
         operate_user_id: str = None,
     ):
+        # This parameter is required.
         self.biz_group = biz_group
         self.description = description
+        # This parameter is required.
         self.name = name
         # This parameter is required.
         self.name_18n = name_18n
@@ -22384,6 +22387,7 @@ class StartProcessInstanceRequest(TeaModel):
     def __init__(
         self,
         approvers: List[StartProcessInstanceRequestApprovers] = None,
+        biz_detail_page_url: str = None,
         cc_list: List[str] = None,
         cc_position: str = None,
         dept_id: int = None,
@@ -22394,6 +22398,7 @@ class StartProcessInstanceRequest(TeaModel):
         target_select_actioners: List[StartProcessInstanceRequestTargetSelectActioners] = None,
     ):
         self.approvers = approvers
+        self.biz_detail_page_url = biz_detail_page_url
         self.cc_list = cc_list
         self.cc_position = cc_position
         self.dept_id = dept_id
@@ -22430,6 +22435,8 @@ class StartProcessInstanceRequest(TeaModel):
         if self.approvers is not None:
             for k in self.approvers:
                 result['approvers'].append(k.to_map() if k else None)
+        if self.biz_detail_page_url is not None:
+            result['bizDetailPageUrl'] = self.biz_detail_page_url
         if self.cc_list is not None:
             result['ccList'] = self.cc_list
         if self.cc_position is not None:
@@ -22459,6 +22466,8 @@ class StartProcessInstanceRequest(TeaModel):
             for k in m.get('approvers'):
                 temp_model = StartProcessInstanceRequestApprovers()
                 self.approvers.append(temp_model.from_map(k))
+        if m.get('bizDetailPageUrl') is not None:
+            self.biz_detail_page_url = m.get('bizDetailPageUrl')
         if m.get('ccList') is not None:
             self.cc_list = m.get('ccList')
         if m.get('ccPosition') is not None:

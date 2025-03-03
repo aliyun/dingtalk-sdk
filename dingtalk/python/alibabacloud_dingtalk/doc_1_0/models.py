@@ -1898,8 +1898,10 @@ class CreateConditionalFormattingRuleRequestCellStyle(TeaModel):
     def __init__(
         self,
         background_color: str = None,
+        font_color: str = None,
     ):
         self.background_color = background_color
+        self.font_color = font_color
 
     def validate(self):
         pass
@@ -1912,12 +1914,16 @@ class CreateConditionalFormattingRuleRequestCellStyle(TeaModel):
         result = dict()
         if self.background_color is not None:
             result['backgroundColor'] = self.background_color
+        if self.font_color is not None:
+            result['fontColor'] = self.font_color
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
         if m.get('backgroundColor') is not None:
             self.background_color = m.get('backgroundColor')
+        if m.get('fontColor') is not None:
+            self.font_color = m.get('fontColor')
         return self
 
 

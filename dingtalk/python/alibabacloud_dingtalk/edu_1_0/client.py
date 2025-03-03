@@ -1116,6 +1116,120 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.AddDeviceHeaders()
         return await self.add_device_with_options_async(request, headers, runtime)
 
+    def add_evaluate_performance_with_options(
+        self,
+        request: dingtalkedu__1__0_models.AddEvaluatePerformanceRequest,
+        headers: dingtalkedu__1__0_models.AddEvaluatePerformanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AddEvaluatePerformanceResponse:
+        """
+        @summary 添加评价表现数据
+        
+        @param request: AddEvaluatePerformanceRequest
+        @param headers: AddEvaluatePerformanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddEvaluatePerformanceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.evaluation_data):
+            body['evaluationData'] = request.evaluation_data
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddEvaluatePerformance',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/evaluations',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AddEvaluatePerformanceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def add_evaluate_performance_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.AddEvaluatePerformanceRequest,
+        headers: dingtalkedu__1__0_models.AddEvaluatePerformanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.AddEvaluatePerformanceResponse:
+        """
+        @summary 添加评价表现数据
+        
+        @param request: AddEvaluatePerformanceRequest
+        @param headers: AddEvaluatePerformanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: AddEvaluatePerformanceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.evaluation_data):
+            body['evaluationData'] = request.evaluation_data
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='AddEvaluatePerformance',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/evaluations',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.AddEvaluatePerformanceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def add_evaluate_performance(
+        self,
+        request: dingtalkedu__1__0_models.AddEvaluatePerformanceRequest,
+    ) -> dingtalkedu__1__0_models.AddEvaluatePerformanceResponse:
+        """
+        @summary 添加评价表现数据
+        
+        @param request: AddEvaluatePerformanceRequest
+        @return: AddEvaluatePerformanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AddEvaluatePerformanceHeaders()
+        return self.add_evaluate_performance_with_options(request, headers, runtime)
+
+    async def add_evaluate_performance_async(
+        self,
+        request: dingtalkedu__1__0_models.AddEvaluatePerformanceRequest,
+    ) -> dingtalkedu__1__0_models.AddEvaluatePerformanceResponse:
+        """
+        @summary 添加评价表现数据
+        
+        @param request: AddEvaluatePerformanceRequest
+        @return: AddEvaluatePerformanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.AddEvaluatePerformanceHeaders()
+        return await self.add_evaluate_performance_with_options_async(request, headers, runtime)
+
     def add_school_config_with_options(
         self,
         request: dingtalkedu__1__0_models.AddSchoolConfigRequest,
@@ -4005,6 +4119,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.CheckRestrictionHeaders()
         return await self.check_restriction_with_options_async(request, headers, runtime)
+
+    def clear_evaluate_performance_count_with_options(
+        self,
+        request: dingtalkedu__1__0_models.ClearEvaluatePerformanceCountRequest,
+        headers: dingtalkedu__1__0_models.ClearEvaluatePerformanceCountHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.ClearEvaluatePerformanceCountResponse:
+        """
+        @summary 清空评价表现未读数量
+        
+        @param request: ClearEvaluatePerformanceCountRequest
+        @param headers: ClearEvaluatePerformanceCountHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ClearEvaluatePerformanceCountResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.student_id_list):
+            body['studentIdList'] = request.student_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ClearEvaluatePerformanceCount',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/evaluations/unreadCounts/clear',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.ClearEvaluatePerformanceCountResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def clear_evaluate_performance_count_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.ClearEvaluatePerformanceCountRequest,
+        headers: dingtalkedu__1__0_models.ClearEvaluatePerformanceCountHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.ClearEvaluatePerformanceCountResponse:
+        """
+        @summary 清空评价表现未读数量
+        
+        @param request: ClearEvaluatePerformanceCountRequest
+        @param headers: ClearEvaluatePerformanceCountHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ClearEvaluatePerformanceCountResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.student_id_list):
+            body['studentIdList'] = request.student_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ClearEvaluatePerformanceCount',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/evaluations/unreadCounts/clear',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.ClearEvaluatePerformanceCountResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def clear_evaluate_performance_count(
+        self,
+        request: dingtalkedu__1__0_models.ClearEvaluatePerformanceCountRequest,
+    ) -> dingtalkedu__1__0_models.ClearEvaluatePerformanceCountResponse:
+        """
+        @summary 清空评价表现未读数量
+        
+        @param request: ClearEvaluatePerformanceCountRequest
+        @return: ClearEvaluatePerformanceCountResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.ClearEvaluatePerformanceCountHeaders()
+        return self.clear_evaluate_performance_count_with_options(request, headers, runtime)
+
+    async def clear_evaluate_performance_count_async(
+        self,
+        request: dingtalkedu__1__0_models.ClearEvaluatePerformanceCountRequest,
+    ) -> dingtalkedu__1__0_models.ClearEvaluatePerformanceCountResponse:
+        """
+        @summary 清空评价表现未读数量
+        
+        @param request: ClearEvaluatePerformanceCountRequest
+        @return: ClearEvaluatePerformanceCountResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.ClearEvaluatePerformanceCountHeaders()
+        return await self.clear_evaluate_performance_count_with_options_async(request, headers, runtime)
 
     def consume_point_with_options(
         self,
@@ -9100,6 +9328,120 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.DeleteDeviceOrgHeaders()
         return await self.delete_device_org_with_options_async(request, headers, runtime)
 
+    def delete_evaluate_performance_with_options(
+        self,
+        request: dingtalkedu__1__0_models.DeleteEvaluatePerformanceRequest,
+        headers: dingtalkedu__1__0_models.DeleteEvaluatePerformanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeleteEvaluatePerformanceResponse:
+        """
+        @summary 删除评价表现数据
+        
+        @param request: DeleteEvaluatePerformanceRequest
+        @param headers: DeleteEvaluatePerformanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteEvaluatePerformanceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.evaluation_id_list):
+            body['evaluationIdList'] = request.evaluation_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteEvaluatePerformance',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/evaluations/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeleteEvaluatePerformanceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_evaluate_performance_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.DeleteEvaluatePerformanceRequest,
+        headers: dingtalkedu__1__0_models.DeleteEvaluatePerformanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeleteEvaluatePerformanceResponse:
+        """
+        @summary 删除评价表现数据
+        
+        @param request: DeleteEvaluatePerformanceRequest
+        @param headers: DeleteEvaluatePerformanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteEvaluatePerformanceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.evaluation_id_list):
+            body['evaluationIdList'] = request.evaluation_id_list
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteEvaluatePerformance',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/evaluations/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeleteEvaluatePerformanceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_evaluate_performance(
+        self,
+        request: dingtalkedu__1__0_models.DeleteEvaluatePerformanceRequest,
+    ) -> dingtalkedu__1__0_models.DeleteEvaluatePerformanceResponse:
+        """
+        @summary 删除评价表现数据
+        
+        @param request: DeleteEvaluatePerformanceRequest
+        @return: DeleteEvaluatePerformanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeleteEvaluatePerformanceHeaders()
+        return self.delete_evaluate_performance_with_options(request, headers, runtime)
+
+    async def delete_evaluate_performance_async(
+        self,
+        request: dingtalkedu__1__0_models.DeleteEvaluatePerformanceRequest,
+    ) -> dingtalkedu__1__0_models.DeleteEvaluatePerformanceResponse:
+        """
+        @summary 删除评价表现数据
+        
+        @param request: DeleteEvaluatePerformanceRequest
+        @return: DeleteEvaluatePerformanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeleteEvaluatePerformanceHeaders()
+        return await self.delete_evaluate_performance_with_options_async(request, headers, runtime)
+
     def delete_guardian_with_options(
         self,
         class_id: str,
@@ -9579,6 +9921,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.DeleteRemoteClassCourseHeaders()
         return await self.delete_remote_class_course_with_options_async(course_code, request, headers, runtime)
+
+    def delete_school_report_with_options(
+        self,
+        request: dingtalkedu__1__0_models.DeleteSchoolReportRequest,
+        headers: dingtalkedu__1__0_models.DeleteSchoolReportHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeleteSchoolReportResponse:
+        """
+        @summary 删除成绩单
+        
+        @param request: DeleteSchoolReportRequest
+        @param headers: DeleteSchoolReportHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteSchoolReportResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.school_report_id):
+            body['schoolReportId'] = request.school_report_id
+        if not UtilClient.is_unset(request.teacher_id):
+            body['teacherId'] = request.teacher_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteSchoolReport',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/schools/reports/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeleteSchoolReportResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def delete_school_report_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.DeleteSchoolReportRequest,
+        headers: dingtalkedu__1__0_models.DeleteSchoolReportHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.DeleteSchoolReportResponse:
+        """
+        @summary 删除成绩单
+        
+        @param request: DeleteSchoolReportRequest
+        @param headers: DeleteSchoolReportHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: DeleteSchoolReportResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.school_report_id):
+            body['schoolReportId'] = request.school_report_id
+        if not UtilClient.is_unset(request.teacher_id):
+            body['teacherId'] = request.teacher_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='DeleteSchoolReport',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/schools/reports/remove',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.DeleteSchoolReportResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def delete_school_report(
+        self,
+        request: dingtalkedu__1__0_models.DeleteSchoolReportRequest,
+    ) -> dingtalkedu__1__0_models.DeleteSchoolReportResponse:
+        """
+        @summary 删除成绩单
+        
+        @param request: DeleteSchoolReportRequest
+        @return: DeleteSchoolReportResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeleteSchoolReportHeaders()
+        return self.delete_school_report_with_options(request, headers, runtime)
+
+    async def delete_school_report_async(
+        self,
+        request: dingtalkedu__1__0_models.DeleteSchoolReportRequest,
+    ) -> dingtalkedu__1__0_models.DeleteSchoolReportResponse:
+        """
+        @summary 删除成绩单
+        
+        @param request: DeleteSchoolReportRequest
+        @return: DeleteSchoolReportResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.DeleteSchoolReportHeaders()
+        return await self.delete_school_report_with_options_async(request, headers, runtime)
 
     def delete_student_with_options(
         self,
@@ -16696,6 +17160,176 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.ProvidePointHeaders()
         return await self.provide_point_with_options_async(request, headers, runtime)
 
+    def publish_school_report_with_options(
+        self,
+        request: dingtalkedu__1__0_models.PublishSchoolReportRequest,
+        headers: dingtalkedu__1__0_models.PublishSchoolReportHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.PublishSchoolReportResponse:
+        """
+        @summary 发布成绩单
+        
+        @param request: PublishSchoolReportRequest
+        @param headers: PublishSchoolReportHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PublishSchoolReportResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.class_detail_items):
+            body['classDetailItems'] = request.class_detail_items
+        if not UtilClient.is_unset(request.exam_class):
+            body['examClass'] = request.exam_class
+        if not UtilClient.is_unset(request.exam_title):
+            body['examTitle'] = request.exam_title
+        if not UtilClient.is_unset(request.identifier):
+            body['identifier'] = request.identifier
+        if not UtilClient.is_unset(request.publish_scope):
+            body['publishScope'] = request.publish_scope
+        if not UtilClient.is_unset(request.score_type):
+            body['scoreType'] = request.score_type
+        if not UtilClient.is_unset(request.share):
+            body['share'] = request.share
+        if not UtilClient.is_unset(request.show_rank):
+            body['showRank'] = request.show_rank
+        if not UtilClient.is_unset(request.show_statistics_score):
+            body['showStatisticsScore'] = request.show_statistics_score
+        if not UtilClient.is_unset(request.sub_score_type):
+            body['subScoreType'] = request.sub_score_type
+        if not UtilClient.is_unset(request.subject_list):
+            body['subjectList'] = request.subject_list
+        if not UtilClient.is_unset(request.subjects):
+            body['subjects'] = request.subjects
+        if not UtilClient.is_unset(request.teacher_id):
+            body['teacherId'] = request.teacher_id
+        if not UtilClient.is_unset(request.teacher_name):
+            body['teacherName'] = request.teacher_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PublishSchoolReport',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/schools/reports/publish',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.PublishSchoolReportResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def publish_school_report_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.PublishSchoolReportRequest,
+        headers: dingtalkedu__1__0_models.PublishSchoolReportHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.PublishSchoolReportResponse:
+        """
+        @summary 发布成绩单
+        
+        @param request: PublishSchoolReportRequest
+        @param headers: PublishSchoolReportHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: PublishSchoolReportResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.class_detail_items):
+            body['classDetailItems'] = request.class_detail_items
+        if not UtilClient.is_unset(request.exam_class):
+            body['examClass'] = request.exam_class
+        if not UtilClient.is_unset(request.exam_title):
+            body['examTitle'] = request.exam_title
+        if not UtilClient.is_unset(request.identifier):
+            body['identifier'] = request.identifier
+        if not UtilClient.is_unset(request.publish_scope):
+            body['publishScope'] = request.publish_scope
+        if not UtilClient.is_unset(request.score_type):
+            body['scoreType'] = request.score_type
+        if not UtilClient.is_unset(request.share):
+            body['share'] = request.share
+        if not UtilClient.is_unset(request.show_rank):
+            body['showRank'] = request.show_rank
+        if not UtilClient.is_unset(request.show_statistics_score):
+            body['showStatisticsScore'] = request.show_statistics_score
+        if not UtilClient.is_unset(request.sub_score_type):
+            body['subScoreType'] = request.sub_score_type
+        if not UtilClient.is_unset(request.subject_list):
+            body['subjectList'] = request.subject_list
+        if not UtilClient.is_unset(request.subjects):
+            body['subjects'] = request.subjects
+        if not UtilClient.is_unset(request.teacher_id):
+            body['teacherId'] = request.teacher_id
+        if not UtilClient.is_unset(request.teacher_name):
+            body['teacherName'] = request.teacher_name
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='PublishSchoolReport',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/schools/reports/publish',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.PublishSchoolReportResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def publish_school_report(
+        self,
+        request: dingtalkedu__1__0_models.PublishSchoolReportRequest,
+    ) -> dingtalkedu__1__0_models.PublishSchoolReportResponse:
+        """
+        @summary 发布成绩单
+        
+        @param request: PublishSchoolReportRequest
+        @return: PublishSchoolReportResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.PublishSchoolReportHeaders()
+        return self.publish_school_report_with_options(request, headers, runtime)
+
+    async def publish_school_report_async(
+        self,
+        request: dingtalkedu__1__0_models.PublishSchoolReportRequest,
+    ) -> dingtalkedu__1__0_models.PublishSchoolReportResponse:
+        """
+        @summary 发布成绩单
+        
+        @param request: PublishSchoolReportRequest
+        @return: PublishSchoolReportResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.PublishSchoolReportHeaders()
+        return await self.publish_school_report_with_options_async(request, headers, runtime)
+
     def query_all_subjects_from_class_schedule_with_options(
         self,
         tmp_req: dingtalkedu__1__0_models.QueryAllSubjectsFromClassScheduleRequest,
@@ -21052,6 +21686,132 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.SaveStudentLearningDataHeaders()
         return await self.save_student_learning_data_with_options_async(request, headers, runtime)
 
+    def school_report_detail_readed_with_options(
+        self,
+        request: dingtalkedu__1__0_models.SchoolReportDetailReadedRequest,
+        headers: dingtalkedu__1__0_models.SchoolReportDetailReadedHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.SchoolReportDetailReadedResponse:
+        """
+        @summary 成绩单详情已读状态设置
+        
+        @param request: SchoolReportDetailReadedRequest
+        @param headers: SchoolReportDetailReadedHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SchoolReportDetailReadedResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.school_report_id):
+            body['schoolReportId'] = request.school_report_id
+        if not UtilClient.is_unset(request.student_ids):
+            body['studentIds'] = request.student_ids
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SchoolReportDetailReaded',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/schools/reportDetails/readStatuses/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.SchoolReportDetailReadedResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def school_report_detail_readed_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.SchoolReportDetailReadedRequest,
+        headers: dingtalkedu__1__0_models.SchoolReportDetailReadedHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.SchoolReportDetailReadedResponse:
+        """
+        @summary 成绩单详情已读状态设置
+        
+        @param request: SchoolReportDetailReadedRequest
+        @param headers: SchoolReportDetailReadedHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SchoolReportDetailReadedResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.school_report_id):
+            body['schoolReportId'] = request.school_report_id
+        if not UtilClient.is_unset(request.student_ids):
+            body['studentIds'] = request.student_ids
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SchoolReportDetailReaded',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/schools/reportDetails/readStatuses/set',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.SchoolReportDetailReadedResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def school_report_detail_readed(
+        self,
+        request: dingtalkedu__1__0_models.SchoolReportDetailReadedRequest,
+    ) -> dingtalkedu__1__0_models.SchoolReportDetailReadedResponse:
+        """
+        @summary 成绩单详情已读状态设置
+        
+        @param request: SchoolReportDetailReadedRequest
+        @return: SchoolReportDetailReadedResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.SchoolReportDetailReadedHeaders()
+        return self.school_report_detail_readed_with_options(request, headers, runtime)
+
+    async def school_report_detail_readed_async(
+        self,
+        request: dingtalkedu__1__0_models.SchoolReportDetailReadedRequest,
+    ) -> dingtalkedu__1__0_models.SchoolReportDetailReadedResponse:
+        """
+        @summary 成绩单详情已读状态设置
+        
+        @param request: SchoolReportDetailReadedRequest
+        @return: SchoolReportDetailReadedResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.SchoolReportDetailReadedHeaders()
+        return await self.school_report_detail_readed_with_options_async(request, headers, runtime)
+
     def search_teachers_with_options(
         self,
         request: dingtalkedu__1__0_models.SearchTeachersRequest,
@@ -23411,6 +24171,124 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.UpdateCoursesOfClassHeaders()
         return await self.update_courses_of_class_with_options_async(class_id, request, headers, runtime)
+
+    def update_evaluate_performance_count_with_options(
+        self,
+        request: dingtalkedu__1__0_models.UpdateEvaluatePerformanceCountRequest,
+        headers: dingtalkedu__1__0_models.UpdateEvaluatePerformanceCountHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateEvaluatePerformanceCountResponse:
+        """
+        @summary 更新评价表现未读数量
+        
+        @param request: UpdateEvaluatePerformanceCountRequest
+        @param headers: UpdateEvaluatePerformanceCountHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateEvaluatePerformanceCountResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.teacher_id):
+            body['teacherId'] = request.teacher_id
+        if not UtilClient.is_unset(request.unread_data):
+            body['unreadData'] = request.unread_data
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateEvaluatePerformanceCount',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/evaluations/unreadCounts',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateEvaluatePerformanceCountResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def update_evaluate_performance_count_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateEvaluatePerformanceCountRequest,
+        headers: dingtalkedu__1__0_models.UpdateEvaluatePerformanceCountHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.UpdateEvaluatePerformanceCountResponse:
+        """
+        @summary 更新评价表现未读数量
+        
+        @param request: UpdateEvaluatePerformanceCountRequest
+        @param headers: UpdateEvaluatePerformanceCountHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: UpdateEvaluatePerformanceCountResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.teacher_id):
+            body['teacherId'] = request.teacher_id
+        if not UtilClient.is_unset(request.unread_data):
+            body['unreadData'] = request.unread_data
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='UpdateEvaluatePerformanceCount',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/evaluations/unreadCounts',
+            method='PUT',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.UpdateEvaluatePerformanceCountResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def update_evaluate_performance_count(
+        self,
+        request: dingtalkedu__1__0_models.UpdateEvaluatePerformanceCountRequest,
+    ) -> dingtalkedu__1__0_models.UpdateEvaluatePerformanceCountResponse:
+        """
+        @summary 更新评价表现未读数量
+        
+        @param request: UpdateEvaluatePerformanceCountRequest
+        @return: UpdateEvaluatePerformanceCountResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateEvaluatePerformanceCountHeaders()
+        return self.update_evaluate_performance_count_with_options(request, headers, runtime)
+
+    async def update_evaluate_performance_count_async(
+        self,
+        request: dingtalkedu__1__0_models.UpdateEvaluatePerformanceCountRequest,
+    ) -> dingtalkedu__1__0_models.UpdateEvaluatePerformanceCountResponse:
+        """
+        @summary 更新评价表现未读数量
+        
+        @param request: UpdateEvaluatePerformanceCountRequest
+        @return: UpdateEvaluatePerformanceCountResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.UpdateEvaluatePerformanceCountHeaders()
+        return await self.update_evaluate_performance_count_with_options_async(request, headers, runtime)
 
     def update_physical_classroom_with_options(
         self,
