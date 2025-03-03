@@ -17,6 +17,13 @@ class StartProcessInstanceRequest extends Model
     public $approvers;
 
     /**
+     * @example https://www.dingtalk.com/
+     *
+     * @var string
+     */
+    public $bizDetailPageUrl;
+
+    /**
      * @var string[]
      */
     public $ccList;
@@ -73,6 +80,7 @@ class StartProcessInstanceRequest extends Model
     public $targetSelectActioners;
     protected $_name = [
         'approvers'             => 'approvers',
+        'bizDetailPageUrl'      => 'bizDetailPageUrl',
         'ccList'                => 'ccList',
         'ccPosition'            => 'ccPosition',
         'deptId'                => 'deptId',
@@ -98,6 +106,9 @@ class StartProcessInstanceRequest extends Model
                     $res['approvers'][$n++] = null !== $item ? $item->toMap() : $item;
                 }
             }
+        }
+        if (null !== $this->bizDetailPageUrl) {
+            $res['bizDetailPageUrl'] = $this->bizDetailPageUrl;
         }
         if (null !== $this->ccList) {
             $res['ccList'] = $this->ccList;
@@ -155,6 +166,9 @@ class StartProcessInstanceRequest extends Model
                     $model->approvers[$n++] = null !== $item ? approvers::fromMap($item) : $item;
                 }
             }
+        }
+        if (isset($map['bizDetailPageUrl'])) {
+            $model->bizDetailPageUrl = $map['bizDetailPageUrl'];
         }
         if (isset($map['ccList'])) {
             if (!empty($map['ccList'])) {

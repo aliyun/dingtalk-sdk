@@ -9,6 +9,8 @@ use AlibabaCloud\Tea\Model;
 class PremiumInsertOrUpdateDirRequest extends Model
 {
     /**
+     * @description This parameter is required.
+     *
      * @example administeration
      *
      * @var string
@@ -23,6 +25,8 @@ class PremiumInsertOrUpdateDirRequest extends Model
     public $description;
 
     /**
+     * @description This parameter is required.
+     *
      * @example 行政管理
      *
      * @var string

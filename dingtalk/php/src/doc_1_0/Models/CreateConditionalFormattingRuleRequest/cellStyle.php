@@ -12,8 +12,14 @@ class cellStyle extends Model
      * @var string
      */
     public $backgroundColor;
+
+    /**
+     * @var string
+     */
+    public $fontColor;
     protected $_name = [
         'backgroundColor' => 'backgroundColor',
+        'fontColor'       => 'fontColor',
     ];
 
     public function validate()
@@ -25,6 +31,9 @@ class cellStyle extends Model
         $res = [];
         if (null !== $this->backgroundColor) {
             $res['backgroundColor'] = $this->backgroundColor;
+        }
+        if (null !== $this->fontColor) {
+            $res['fontColor'] = $this->fontColor;
         }
 
         return $res;
@@ -40,6 +49,9 @@ class cellStyle extends Model
         $model = new self();
         if (isset($map['backgroundColor'])) {
             $model->backgroundColor = $map['backgroundColor'];
+        }
+        if (isset($map['fontColor'])) {
+            $model->fontColor = $map['fontColor'];
         }
 
         return $model;

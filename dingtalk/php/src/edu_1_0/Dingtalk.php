@@ -26,6 +26,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddCompetitionRecordResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddDeviceHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddEvaluatePerformanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddEvaluatePerformanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddEvaluatePerformanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddSchoolConfigHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddSchoolConfigRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\AddSchoolConfigResponse;
@@ -89,6 +92,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CardQueryCardFeedsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CheckRestrictionHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CheckRestrictionRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\CheckRestrictionResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ClearEvaluatePerformanceCountHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ClearEvaluatePerformanceCountRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ClearEvaluatePerformanceCountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ConsumePointHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ConsumePointRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ConsumePointResponse;
@@ -200,6 +206,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeviceOrgRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeviceOrgResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeviceRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteDeviceResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteEvaluatePerformanceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteEvaluatePerformanceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteEvaluatePerformanceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteGuardianHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteGuardianRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteGuardianResponse;
@@ -212,6 +221,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeletePhysicalClassroomResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteRemoteClassCourseHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteRemoteClassCourseRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteRemoteClassCourseResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteSchoolReportHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteSchoolReportRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteSchoolReportResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteStudentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteStudentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\DeleteStudentResponse;
@@ -385,6 +397,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PreDialResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ProvidePointHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ProvidePointRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ProvidePointResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PublishSchoolReportHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PublishSchoolReportRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\PublishSchoolReportResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\QueryAllSubjectsFromClassScheduleResponse;
@@ -494,6 +509,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SaveClassLearningDataResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SaveStudentLearningDataHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SaveStudentLearningDataRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SaveStudentLearningDataResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SchoolReportDetailReadedHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SchoolReportDetailReadedRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SchoolReportDetailReadedResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\SearchTeachersResponse;
@@ -542,6 +560,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCollegeUserEmpTypeResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateCoursesOfClassResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateEvaluatePerformanceCountHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateEvaluatePerformanceCountRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdateEvaluatePerformanceCountResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdatePhysicalClassroomHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdatePhysicalClassroomRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\UpdatePhysicalClassroomResponse;
@@ -1202,6 +1223,63 @@ class Dingtalk extends OpenApiClient
         $headers = new AddDeviceHeaders([]);
 
         return $this->addDeviceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 添加评价表现数据
+     *  *
+     * @param AddEvaluatePerformanceRequest $request AddEvaluatePerformanceRequest
+     * @param AddEvaluatePerformanceHeaders $headers AddEvaluatePerformanceHeaders
+     * @param RuntimeOptions                $runtime runtime options for this request RuntimeOptions
+     *
+     * @return AddEvaluatePerformanceResponse AddEvaluatePerformanceResponse
+     */
+    public function addEvaluatePerformanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->evaluationData)) {
+            $body['evaluationData'] = $request->evaluationData;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'AddEvaluatePerformance',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/evaluations',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return AddEvaluatePerformanceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 添加评价表现数据
+     *  *
+     * @param AddEvaluatePerformanceRequest $request AddEvaluatePerformanceRequest
+     *
+     * @return AddEvaluatePerformanceResponse AddEvaluatePerformanceResponse
+     */
+    public function addEvaluatePerformance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new AddEvaluatePerformanceHeaders([]);
+
+        return $this->addEvaluatePerformanceWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -2771,6 +2849,63 @@ class Dingtalk extends OpenApiClient
         $headers = new CheckRestrictionHeaders([]);
 
         return $this->checkRestrictionWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 清空评价表现未读数量
+     *  *
+     * @param ClearEvaluatePerformanceCountRequest $request ClearEvaluatePerformanceCountRequest
+     * @param ClearEvaluatePerformanceCountHeaders $headers ClearEvaluatePerformanceCountHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ClearEvaluatePerformanceCountResponse ClearEvaluatePerformanceCountResponse
+     */
+    public function clearEvaluatePerformanceCountWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->studentIdList)) {
+            $body['studentIdList'] = $request->studentIdList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ClearEvaluatePerformanceCount',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/evaluations/unreadCounts/clear',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ClearEvaluatePerformanceCountResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 清空评价表现未读数量
+     *  *
+     * @param ClearEvaluatePerformanceCountRequest $request ClearEvaluatePerformanceCountRequest
+     *
+     * @return ClearEvaluatePerformanceCountResponse ClearEvaluatePerformanceCountResponse
+     */
+    public function clearEvaluatePerformanceCount($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ClearEvaluatePerformanceCountHeaders([]);
+
+        return $this->clearEvaluatePerformanceCountWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -5535,6 +5670,63 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 删除评价表现数据
+     *  *
+     * @param DeleteEvaluatePerformanceRequest $request DeleteEvaluatePerformanceRequest
+     * @param DeleteEvaluatePerformanceHeaders $headers DeleteEvaluatePerformanceHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteEvaluatePerformanceResponse DeleteEvaluatePerformanceResponse
+     */
+    public function deleteEvaluatePerformanceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->evaluationIdList)) {
+            $body['evaluationIdList'] = $request->evaluationIdList;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteEvaluatePerformance',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/evaluations/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DeleteEvaluatePerformanceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除评价表现数据
+     *  *
+     * @param DeleteEvaluatePerformanceRequest $request DeleteEvaluatePerformanceRequest
+     *
+     * @return DeleteEvaluatePerformanceResponse DeleteEvaluatePerformanceResponse
+     */
+    public function deleteEvaluatePerformance($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteEvaluatePerformanceHeaders([]);
+
+        return $this->deleteEvaluatePerformanceWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 删除家长
      *  *
      * @param string                $classId
@@ -5775,6 +5967,69 @@ class Dingtalk extends OpenApiClient
         $headers = new DeleteRemoteClassCourseHeaders([]);
 
         return $this->deleteRemoteClassCourseWithOptions($courseCode, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 删除成绩单
+     *  *
+     * @param DeleteSchoolReportRequest $request DeleteSchoolReportRequest
+     * @param DeleteSchoolReportHeaders $headers DeleteSchoolReportHeaders
+     * @param RuntimeOptions            $runtime runtime options for this request RuntimeOptions
+     *
+     * @return DeleteSchoolReportResponse DeleteSchoolReportResponse
+     */
+    public function deleteSchoolReportWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            $body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->schoolReportId)) {
+            $body['schoolReportId'] = $request->schoolReportId;
+        }
+        if (!Utils::isUnset($request->teacherId)) {
+            $body['teacherId'] = $request->teacherId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'DeleteSchoolReport',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/schools/reports/remove',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return DeleteSchoolReportResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 删除成绩单
+     *  *
+     * @param DeleteSchoolReportRequest $request DeleteSchoolReportRequest
+     *
+     * @return DeleteSchoolReportResponse DeleteSchoolReportResponse
+     */
+    public function deleteSchoolReport($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new DeleteSchoolReportHeaders([]);
+
+        return $this->deleteSchoolReportWithOptions($request, $headers, $runtime);
     }
 
     /**
@@ -9455,6 +9710,105 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 发布成绩单
+     *  *
+     * @param PublishSchoolReportRequest $request PublishSchoolReportRequest
+     * @param PublishSchoolReportHeaders $headers PublishSchoolReportHeaders
+     * @param RuntimeOptions             $runtime runtime options for this request RuntimeOptions
+     *
+     * @return PublishSchoolReportResponse PublishSchoolReportResponse
+     */
+    public function publishSchoolReportWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            $body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->classDetailItems)) {
+            $body['classDetailItems'] = $request->classDetailItems;
+        }
+        if (!Utils::isUnset($request->examClass)) {
+            $body['examClass'] = $request->examClass;
+        }
+        if (!Utils::isUnset($request->examTitle)) {
+            $body['examTitle'] = $request->examTitle;
+        }
+        if (!Utils::isUnset($request->identifier)) {
+            $body['identifier'] = $request->identifier;
+        }
+        if (!Utils::isUnset($request->publishScope)) {
+            $body['publishScope'] = $request->publishScope;
+        }
+        if (!Utils::isUnset($request->scoreType)) {
+            $body['scoreType'] = $request->scoreType;
+        }
+        if (!Utils::isUnset($request->share)) {
+            $body['share'] = $request->share;
+        }
+        if (!Utils::isUnset($request->showRank)) {
+            $body['showRank'] = $request->showRank;
+        }
+        if (!Utils::isUnset($request->showStatisticsScore)) {
+            $body['showStatisticsScore'] = $request->showStatisticsScore;
+        }
+        if (!Utils::isUnset($request->subScoreType)) {
+            $body['subScoreType'] = $request->subScoreType;
+        }
+        if (!Utils::isUnset($request->subjectList)) {
+            $body['subjectList'] = $request->subjectList;
+        }
+        if (!Utils::isUnset($request->subjects)) {
+            $body['subjects'] = $request->subjects;
+        }
+        if (!Utils::isUnset($request->teacherId)) {
+            $body['teacherId'] = $request->teacherId;
+        }
+        if (!Utils::isUnset($request->teacherName)) {
+            $body['teacherName'] = $request->teacherName;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'PublishSchoolReport',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/schools/reports/publish',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return PublishSchoolReportResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 发布成绩单
+     *  *
+     * @param PublishSchoolReportRequest $request PublishSchoolReportRequest
+     *
+     * @return PublishSchoolReportResponse PublishSchoolReportResponse
+     */
+    public function publishSchoolReport($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new PublishSchoolReportHeaders([]);
+
+        return $this->publishSchoolReportWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 查询全量学科实例列表
      *  *
      * @param QueryAllSubjectsFromClassScheduleRequest $tmpReq  QueryAllSubjectsFromClassScheduleRequest
@@ -11728,6 +12082,72 @@ class Dingtalk extends OpenApiClient
     }
 
     /**
+     * @summary 成绩单详情已读状态设置
+     *  *
+     * @param SchoolReportDetailReadedRequest $request SchoolReportDetailReadedRequest
+     * @param SchoolReportDetailReadedHeaders $headers SchoolReportDetailReadedHeaders
+     * @param RuntimeOptions                  $runtime runtime options for this request RuntimeOptions
+     *
+     * @return SchoolReportDetailReadedResponse SchoolReportDetailReadedResponse
+     */
+    public function schoolReportDetailReadedWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            $body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->schoolReportId)) {
+            $body['schoolReportId'] = $request->schoolReportId;
+        }
+        if (!Utils::isUnset($request->studentIds)) {
+            $body['studentIds'] = $request->studentIds;
+        }
+        if (!Utils::isUnset($request->userId)) {
+            $body['userId'] = $request->userId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'SchoolReportDetailReaded',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/schools/reportDetails/readStatuses/set',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return SchoolReportDetailReadedResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 成绩单详情已读状态设置
+     *  *
+     * @param SchoolReportDetailReadedRequest $request SchoolReportDetailReadedRequest
+     *
+     * @return SchoolReportDetailReadedResponse SchoolReportDetailReadedResponse
+     */
+    public function schoolReportDetailReaded($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new SchoolReportDetailReadedHeaders([]);
+
+        return $this->schoolReportDetailReadedWithOptions($request, $headers, $runtime);
+    }
+
+    /**
      * @summary 按关键字搜索老师
      *  *
      * @param SearchTeachersRequest $request SearchTeachersRequest
@@ -13033,6 +13453,66 @@ class Dingtalk extends OpenApiClient
         $headers = new UpdateCoursesOfClassHeaders([]);
 
         return $this->updateCoursesOfClassWithOptions($classId, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 更新评价表现未读数量
+     *  *
+     * @param UpdateEvaluatePerformanceCountRequest $request UpdateEvaluatePerformanceCountRequest
+     * @param UpdateEvaluatePerformanceCountHeaders $headers UpdateEvaluatePerformanceCountHeaders
+     * @param RuntimeOptions                        $runtime runtime options for this request RuntimeOptions
+     *
+     * @return UpdateEvaluatePerformanceCountResponse UpdateEvaluatePerformanceCountResponse
+     */
+    public function updateEvaluatePerformanceCountWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->teacherId)) {
+            $body['teacherId'] = $request->teacherId;
+        }
+        if (!Utils::isUnset($request->unreadData)) {
+            $body['unreadData'] = $request->unreadData;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'UpdateEvaluatePerformanceCount',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/evaluations/unreadCounts',
+            'method'      => 'PUT',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return UpdateEvaluatePerformanceCountResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 更新评价表现未读数量
+     *  *
+     * @param UpdateEvaluatePerformanceCountRequest $request UpdateEvaluatePerformanceCountRequest
+     *
+     * @return UpdateEvaluatePerformanceCountResponse UpdateEvaluatePerformanceCountResponse
+     */
+    public function updateEvaluatePerformanceCount($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new UpdateEvaluatePerformanceCountHeaders([]);
+
+        return $this->updateEvaluatePerformanceCountWithOptions($request, $headers, $runtime);
     }
 
     /**

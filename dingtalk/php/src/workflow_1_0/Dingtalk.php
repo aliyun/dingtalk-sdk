@@ -5086,6 +5086,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->approvers)) {
             $body['approvers'] = $request->approvers;
         }
+        if (!Utils::isUnset($request->bizDetailPageUrl)) {
+            $body['bizDetailPageUrl'] = $request->bizDetailPageUrl;
+        }
         if (!Utils::isUnset($request->ccList)) {
             $body['ccList'] = $request->ccList;
         }

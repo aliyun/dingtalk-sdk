@@ -23,6 +23,9 @@ use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\GetPermissionInheritanceRespon
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\GetPermissionShareScopeHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\GetPermissionShareScopeRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\GetPermissionShareScopeResponse;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListOperationLogsHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListOperationLogsRequest;
+use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListOperationLogsResponse;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListPermissionsHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListPermissionsRequest;
 use AlibabaCloud\SDK\Dingtalk\Vstorage_2_0\Models\ListPermissionsResponse;
@@ -460,6 +463,69 @@ class Dingtalk extends OpenApiClient
         $headers = new GetPermissionShareScopeHeaders([]);
 
         return $this->getPermissionShareScopeWithOptions($dentryUuid, $request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 查询操作日志
+     *  *
+     * @param ListOperationLogsRequest $request ListOperationLogsRequest
+     * @param ListOperationLogsHeaders $headers ListOperationLogsHeaders
+     * @param RuntimeOptions           $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ListOperationLogsResponse ListOperationLogsResponse
+     */
+    public function listOperationLogsWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->endTime)) {
+            $body['endTime'] = $request->endTime;
+        }
+        if (!Utils::isUnset($request->option)) {
+            $body['option'] = $request->option;
+        }
+        if (!Utils::isUnset($request->startTime)) {
+            $body['startTime'] = $request->startTime;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ListOperationLogs',
+            'version'     => 'storage_2.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v2.0/storage/managements/operationLogs/list',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ListOperationLogsResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 查询操作日志
+     *  *
+     * @param ListOperationLogsRequest $request ListOperationLogsRequest
+     *
+     * @return ListOperationLogsResponse ListOperationLogsResponse
+     */
+    public function listOperationLogs($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ListOperationLogsHeaders([]);
+
+        return $this->listOperationLogsWithOptions($request, $headers, $runtime);
     }
 
     /**
