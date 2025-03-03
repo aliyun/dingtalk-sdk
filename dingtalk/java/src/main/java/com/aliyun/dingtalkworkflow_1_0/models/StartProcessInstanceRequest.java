@@ -7,6 +7,13 @@ public class StartProcessInstanceRequest extends TeaModel {
     @NameInMap("approvers")
     public java.util.List<StartProcessInstanceRequestApprovers> approvers;
 
+    /**
+     * <strong>example:</strong>
+     * <p><a href="https://www.dingtalk.com/">https://www.dingtalk.com/</a></p>
+     */
+    @NameInMap("bizDetailPageUrl")
+    public String bizDetailPageUrl;
+
     @NameInMap("ccList")
     public java.util.List<String> ccList;
 
@@ -69,6 +76,14 @@ public class StartProcessInstanceRequest extends TeaModel {
     }
     public java.util.List<StartProcessInstanceRequestApprovers> getApprovers() {
         return this.approvers;
+    }
+
+    public StartProcessInstanceRequest setBizDetailPageUrl(String bizDetailPageUrl) {
+        this.bizDetailPageUrl = bizDetailPageUrl;
+        return this;
+    }
+    public String getBizDetailPageUrl() {
+        return this.bizDetailPageUrl;
     }
 
     public StartProcessInstanceRequest setCcList(java.util.List<String> ccList) {

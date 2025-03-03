@@ -77,6 +77,9 @@ public class CreateConditionalFormattingRuleRequest extends TeaModel {
         @NameInMap("backgroundColor")
         public String backgroundColor;
 
+        @NameInMap("fontColor")
+        public String fontColor;
+
         public static CreateConditionalFormattingRuleRequestCellStyle build(java.util.Map<String, ?> map) throws Exception {
             CreateConditionalFormattingRuleRequestCellStyle self = new CreateConditionalFormattingRuleRequestCellStyle();
             return TeaModel.build(map, self);
@@ -88,6 +91,14 @@ public class CreateConditionalFormattingRuleRequest extends TeaModel {
         }
         public String getBackgroundColor() {
             return this.backgroundColor;
+        }
+
+        public CreateConditionalFormattingRuleRequestCellStyle setFontColor(String fontColor) {
+            this.fontColor = fontColor;
+            return this;
+        }
+        public String getFontColor() {
+            return this.fontColor;
         }
 
     }

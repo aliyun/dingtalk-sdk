@@ -4942,6 +4942,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("approvers", request.approvers);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.bizDetailPageUrl)) {
+            body.put("bizDetailPageUrl", request.bizDetailPageUrl);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.ccList)) {
             body.put("ccList", request.ccList);
         }

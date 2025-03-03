@@ -5,6 +5,8 @@ import com.aliyun.tea.*;
 
 public class PremiumInsertOrUpdateDirRequest extends TeaModel {
     /**
+     * <p>This parameter is required.</p>
+     * 
      * <strong>example:</strong>
      * <p>administeration</p>
      */
@@ -19,6 +21,8 @@ public class PremiumInsertOrUpdateDirRequest extends TeaModel {
     public String description;
 
     /**
+     * <p>This parameter is required.</p>
+     * 
      * <strong>example:</strong>
      * <p>行政管理</p>
      */

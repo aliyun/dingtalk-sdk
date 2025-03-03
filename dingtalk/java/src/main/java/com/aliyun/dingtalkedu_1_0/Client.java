@@ -704,6 +704,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>添加评价表现数据</p>
+     * 
+     * @param request AddEvaluatePerformanceRequest
+     * @param headers AddEvaluatePerformanceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return AddEvaluatePerformanceResponse
+     */
+    public AddEvaluatePerformanceResponse addEvaluatePerformanceWithOptions(AddEvaluatePerformanceRequest request, AddEvaluatePerformanceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.evaluationData)) {
+            body.put("evaluationData", request.evaluationData);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "AddEvaluatePerformance"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/evaluations"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new AddEvaluatePerformanceResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>添加评价表现数据</p>
+     * 
+     * @param request AddEvaluatePerformanceRequest
+     * @return AddEvaluatePerformanceResponse
+     */
+    public AddEvaluatePerformanceResponse addEvaluatePerformance(AddEvaluatePerformanceRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        AddEvaluatePerformanceHeaders headers = new AddEvaluatePerformanceHeaders();
+        return this.addEvaluatePerformanceWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>添加学校配置</p>
      * 
      * @param request AddSchoolConfigRequest
@@ -2372,6 +2428,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         CheckRestrictionHeaders headers = new CheckRestrictionHeaders();
         return this.checkRestrictionWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>清空评价表现未读数量</p>
+     * 
+     * @param request ClearEvaluatePerformanceCountRequest
+     * @param headers ClearEvaluatePerformanceCountHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return ClearEvaluatePerformanceCountResponse
+     */
+    public ClearEvaluatePerformanceCountResponse clearEvaluatePerformanceCountWithOptions(ClearEvaluatePerformanceCountRequest request, ClearEvaluatePerformanceCountHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.studentIdList)) {
+            body.put("studentIdList", request.studentIdList);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "ClearEvaluatePerformanceCount"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/evaluations/unreadCounts/clear"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new ClearEvaluatePerformanceCountResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>清空评价表现未读数量</p>
+     * 
+     * @param request ClearEvaluatePerformanceCountRequest
+     * @return ClearEvaluatePerformanceCountResponse
+     */
+    public ClearEvaluatePerformanceCountResponse clearEvaluatePerformanceCount(ClearEvaluatePerformanceCountRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        ClearEvaluatePerformanceCountHeaders headers = new ClearEvaluatePerformanceCountHeaders();
+        return this.clearEvaluatePerformanceCountWithOptions(request, headers, runtime);
     }
 
     /**
@@ -5312,6 +5424,62 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>删除评价表现数据</p>
+     * 
+     * @param request DeleteEvaluatePerformanceRequest
+     * @param headers DeleteEvaluatePerformanceHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteEvaluatePerformanceResponse
+     */
+    public DeleteEvaluatePerformanceResponse deleteEvaluatePerformanceWithOptions(DeleteEvaluatePerformanceRequest request, DeleteEvaluatePerformanceHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.evaluationIdList)) {
+            body.put("evaluationIdList", request.evaluationIdList);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteEvaluatePerformance"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/evaluations/remove"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteEvaluatePerformanceResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除评价表现数据</p>
+     * 
+     * @param request DeleteEvaluatePerformanceRequest
+     * @return DeleteEvaluatePerformanceResponse
+     */
+    public DeleteEvaluatePerformanceResponse deleteEvaluatePerformance(DeleteEvaluatePerformanceRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteEvaluatePerformanceHeaders headers = new DeleteEvaluatePerformanceHeaders();
+        return this.deleteEvaluatePerformanceWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>删除家长</p>
      * 
      * @param request DeleteGuardianRequest
@@ -5544,6 +5712,70 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         DeleteRemoteClassCourseHeaders headers = new DeleteRemoteClassCourseHeaders();
         return this.deleteRemoteClassCourseWithOptions(courseCode, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除成绩单</p>
+     * 
+     * @param request DeleteSchoolReportRequest
+     * @param headers DeleteSchoolReportHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return DeleteSchoolReportResponse
+     */
+    public DeleteSchoolReportResponse deleteSchoolReportWithOptions(DeleteSchoolReportRequest request, DeleteSchoolReportHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizCode)) {
+            body.put("bizCode", request.bizCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.schoolReportId)) {
+            body.put("schoolReportId", request.schoolReportId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.teacherId)) {
+            body.put("teacherId", request.teacherId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "DeleteSchoolReport"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/schools/reports/remove"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new DeleteSchoolReportResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>删除成绩单</p>
+     * 
+     * @param request DeleteSchoolReportRequest
+     * @return DeleteSchoolReportResponse
+     */
+    public DeleteSchoolReportResponse deleteSchoolReport(DeleteSchoolReportRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        DeleteSchoolReportHeaders headers = new DeleteSchoolReportHeaders();
+        return this.deleteSchoolReportWithOptions(request, headers, runtime);
     }
 
     /**
@@ -9254,6 +9486,118 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>发布成绩单</p>
+     * 
+     * @param request PublishSchoolReportRequest
+     * @param headers PublishSchoolReportHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return PublishSchoolReportResponse
+     */
+    public PublishSchoolReportResponse publishSchoolReportWithOptions(PublishSchoolReportRequest request, PublishSchoolReportHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizCode)) {
+            body.put("bizCode", request.bizCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.classDetailItems)) {
+            body.put("classDetailItems", request.classDetailItems);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.examClass)) {
+            body.put("examClass", request.examClass);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.examTitle)) {
+            body.put("examTitle", request.examTitle);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.identifier)) {
+            body.put("identifier", request.identifier);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.publishScope)) {
+            body.put("publishScope", request.publishScope);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.scoreType)) {
+            body.put("scoreType", request.scoreType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.share)) {
+            body.put("share", request.share);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.showRank)) {
+            body.put("showRank", request.showRank);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.showStatisticsScore)) {
+            body.put("showStatisticsScore", request.showStatisticsScore);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.subScoreType)) {
+            body.put("subScoreType", request.subScoreType);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.subjectList)) {
+            body.put("subjectList", request.subjectList);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.subjects)) {
+            body.put("subjects", request.subjects);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.teacherId)) {
+            body.put("teacherId", request.teacherId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.teacherName)) {
+            body.put("teacherName", request.teacherName);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "PublishSchoolReport"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/schools/reports/publish"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new PublishSchoolReportResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>发布成绩单</p>
+     * 
+     * @param request PublishSchoolReportRequest
+     * @return PublishSchoolReportResponse
+     */
+    public PublishSchoolReportResponse publishSchoolReport(PublishSchoolReportRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        PublishSchoolReportHeaders headers = new PublishSchoolReportHeaders();
+        return this.publishSchoolReportWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>查询全量学科实例列表</p>
      * 
      * @param tmpReq QueryAllSubjectsFromClassScheduleRequest
@@ -11584,6 +11928,74 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
     /**
      * <b>summary</b> : 
+     * <p>成绩单详情已读状态设置</p>
+     * 
+     * @param request SchoolReportDetailReadedRequest
+     * @param headers SchoolReportDetailReadedHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return SchoolReportDetailReadedResponse
+     */
+    public SchoolReportDetailReadedResponse schoolReportDetailReadedWithOptions(SchoolReportDetailReadedRequest request, SchoolReportDetailReadedHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.bizCode)) {
+            body.put("bizCode", request.bizCode);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.schoolReportId)) {
+            body.put("schoolReportId", request.schoolReportId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.studentIds)) {
+            body.put("studentIds", request.studentIds);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.userId)) {
+            body.put("userId", request.userId);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "SchoolReportDetailReaded"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/schools/reportDetails/readStatuses/set"),
+            new TeaPair("method", "POST"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new SchoolReportDetailReadedResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>成绩单详情已读状态设置</p>
+     * 
+     * @param request SchoolReportDetailReadedRequest
+     * @return SchoolReportDetailReadedResponse
+     */
+    public SchoolReportDetailReadedResponse schoolReportDetailReaded(SchoolReportDetailReadedRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        SchoolReportDetailReadedHeaders headers = new SchoolReportDetailReadedHeaders();
+        return this.schoolReportDetailReadedWithOptions(request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
      * <p>按关键字搜索老师</p>
      * 
      * @param request SearchTeachersRequest
@@ -12998,6 +13410,66 @@ public class Client extends com.aliyun.teaopenapi.Client {
         com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
         UpdateCoursesOfClassHeaders headers = new UpdateCoursesOfClassHeaders();
         return this.updateCoursesOfClassWithOptions(classId, request, headers, runtime);
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新评价表现未读数量</p>
+     * 
+     * @param request UpdateEvaluatePerformanceCountRequest
+     * @param headers UpdateEvaluatePerformanceCountHeaders
+     * @param runtime runtime options for this request RuntimeOptions
+     * @return UpdateEvaluatePerformanceCountResponse
+     */
+    public UpdateEvaluatePerformanceCountResponse updateEvaluatePerformanceCountWithOptions(UpdateEvaluatePerformanceCountRequest request, UpdateEvaluatePerformanceCountHeaders headers, com.aliyun.teautil.models.RuntimeOptions runtime) throws Exception {
+        com.aliyun.teautil.Common.validateModel(request);
+        java.util.Map<String, Object> body = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(request.teacherId)) {
+            body.put("teacherId", request.teacherId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.unreadData)) {
+            body.put("unreadData", request.unreadData);
+        }
+
+        java.util.Map<String, String> realHeaders = new java.util.HashMap<>();
+        if (!com.aliyun.teautil.Common.isUnset(headers.commonHeaders)) {
+            realHeaders = headers.commonHeaders;
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(headers.xAcsDingtalkAccessToken)) {
+            realHeaders.put("x-acs-dingtalk-access-token", com.aliyun.teautil.Common.toJSONString(headers.xAcsDingtalkAccessToken));
+        }
+
+        com.aliyun.teaopenapi.models.OpenApiRequest req = com.aliyun.teaopenapi.models.OpenApiRequest.build(TeaConverter.buildMap(
+            new TeaPair("headers", realHeaders),
+            new TeaPair("body", com.aliyun.openapiutil.Client.parseToMap(body))
+        ));
+        com.aliyun.teaopenapi.models.Params params = com.aliyun.teaopenapi.models.Params.build(TeaConverter.buildMap(
+            new TeaPair("action", "UpdateEvaluatePerformanceCount"),
+            new TeaPair("version", "edu_1.0"),
+            new TeaPair("protocol", "HTTP"),
+            new TeaPair("pathname", "/v1.0/edu/evaluations/unreadCounts"),
+            new TeaPair("method", "PUT"),
+            new TeaPair("authType", "AK"),
+            new TeaPair("style", "ROA"),
+            new TeaPair("reqBodyType", "none"),
+            new TeaPair("bodyType", "json")
+        ));
+        return TeaModel.toModel(this.execute(params, req, runtime), new UpdateEvaluatePerformanceCountResponse());
+    }
+
+    /**
+     * <b>summary</b> : 
+     * <p>更新评价表现未读数量</p>
+     * 
+     * @param request UpdateEvaluatePerformanceCountRequest
+     * @return UpdateEvaluatePerformanceCountResponse
+     */
+    public UpdateEvaluatePerformanceCountResponse updateEvaluatePerformanceCount(UpdateEvaluatePerformanceCountRequest request) throws Exception {
+        com.aliyun.teautil.models.RuntimeOptions runtime = new com.aliyun.teautil.models.RuntimeOptions();
+        UpdateEvaluatePerformanceCountHeaders headers = new UpdateEvaluatePerformanceCountHeaders();
+        return this.updateEvaluatePerformanceCountWithOptions(request, headers, runtime);
     }
 
     /**
