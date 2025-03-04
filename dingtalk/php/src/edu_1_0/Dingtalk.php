@@ -584,6 +584,9 @@ use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ValidateNewGradeManagerResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ValidateUserRoleHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ValidateUserRoleRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\ValidateUserRoleResponse;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\VerifyEduOrgCertificationHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\VerifyEduOrgCertificationRequest;
+use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\VerifyEduOrgCertificationResponse;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\VPaasProxyHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\VPaasProxyRequest;
 use AlibabaCloud\SDK\Dingtalk\Vedu_1_0\Models\VPaasProxyResponse;
@@ -14063,6 +14066,66 @@ class Dingtalk extends OpenApiClient
         $headers = new ValidateUserRoleHeaders([]);
 
         return $this->validateUserRoleWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 校验教育组织
+     *  *
+     * @param VerifyEduOrgCertificationRequest $request VerifyEduOrgCertificationRequest
+     * @param VerifyEduOrgCertificationHeaders $headers VerifyEduOrgCertificationHeaders
+     * @param RuntimeOptions                   $runtime runtime options for this request RuntimeOptions
+     *
+     * @return VerifyEduOrgCertificationResponse VerifyEduOrgCertificationResponse
+     */
+    public function verifyEduOrgCertificationWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->bizCode)) {
+            $body['bizCode'] = $request->bizCode;
+        }
+        if (!Utils::isUnset($request->targetCorpId)) {
+            $body['targetCorpId'] = $request->targetCorpId;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'VerifyEduOrgCertification',
+            'version'     => 'edu_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/edu/orgs/certifications/verify',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return VerifyEduOrgCertificationResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 校验教育组织
+     *  *
+     * @param VerifyEduOrgCertificationRequest $request VerifyEduOrgCertificationRequest
+     *
+     * @return VerifyEduOrgCertificationResponse VerifyEduOrgCertificationResponse
+     */
+    public function verifyEduOrgCertification($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new VerifyEduOrgCertificationHeaders([]);
+
+        return $this->verifyEduOrgCertificationWithOptions($request, $headers, $runtime);
     }
 
     /**

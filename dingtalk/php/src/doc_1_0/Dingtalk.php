@@ -24,6 +24,9 @@ use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchGetWorkspacesHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchGetWorkspacesRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchGetWorkspacesResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchOperateHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchOperateRequest;
+use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchOperateResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchRequest;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BatchResponse;
 use AlibabaCloud\SDK\Dingtalk\Vdoc_1_0\Models\BindCoolAppToSheetHeaders;
@@ -675,6 +678,70 @@ class Dingtalk extends OpenApiClient
         $headers = new BatchGetWorkspacesHeaders([]);
 
         return $this->batchGetWorkspacesWithOptions($request, $headers, $runtime);
+    }
+
+    /**
+     * @summary 根据入参批量调用多个文档API
+     *  *
+     * @param string              $documentId
+     * @param BatchOperateRequest $request    BatchOperateRequest
+     * @param BatchOperateHeaders $headers    BatchOperateHeaders
+     * @param RuntimeOptions      $runtime    runtime options for this request RuntimeOptions
+     *
+     * @return BatchOperateResponse BatchOperateResponse
+     */
+    public function batchOperateWithOptions($documentId, $request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $query = [];
+        if (!Utils::isUnset($request->operatorId)) {
+            $query['operatorId'] = $request->operatorId;
+        }
+        $body = [];
+        if (!Utils::isUnset($request->requests)) {
+            $body['requests'] = $request->requests;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'query'   => OpenApiUtilClient::query($query),
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'BatchOperate',
+            'version'     => 'doc_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/doc/suites/documents/' . $documentId . '/batch',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return BatchOperateResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 根据入参批量调用多个文档API
+     *  *
+     * @param string              $documentId
+     * @param BatchOperateRequest $request    BatchOperateRequest
+     *
+     * @return BatchOperateResponse BatchOperateResponse
+     */
+    public function batchOperate($documentId, $request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new BatchOperateHeaders([]);
+
+        return $this->batchOperateWithOptions($documentId, $request, $headers, $runtime);
     }
 
     /**
