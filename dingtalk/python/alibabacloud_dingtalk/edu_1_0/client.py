@@ -25330,6 +25330,124 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.ValidateUserRoleHeaders()
         return await self.validate_user_role_with_options_async(request, headers, runtime)
 
+    def verify_edu_org_certification_with_options(
+        self,
+        request: dingtalkedu__1__0_models.VerifyEduOrgCertificationRequest,
+        headers: dingtalkedu__1__0_models.VerifyEduOrgCertificationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.VerifyEduOrgCertificationResponse:
+        """
+        @summary 校验教育组织
+        
+        @param request: VerifyEduOrgCertificationRequest
+        @param headers: VerifyEduOrgCertificationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: VerifyEduOrgCertificationResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='VerifyEduOrgCertification',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/orgs/certifications/verify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.VerifyEduOrgCertificationResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def verify_edu_org_certification_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.VerifyEduOrgCertificationRequest,
+        headers: dingtalkedu__1__0_models.VerifyEduOrgCertificationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.VerifyEduOrgCertificationResponse:
+        """
+        @summary 校验教育组织
+        
+        @param request: VerifyEduOrgCertificationRequest
+        @param headers: VerifyEduOrgCertificationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: VerifyEduOrgCertificationResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='VerifyEduOrgCertification',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/orgs/certifications/verify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.VerifyEduOrgCertificationResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def verify_edu_org_certification(
+        self,
+        request: dingtalkedu__1__0_models.VerifyEduOrgCertificationRequest,
+    ) -> dingtalkedu__1__0_models.VerifyEduOrgCertificationResponse:
+        """
+        @summary 校验教育组织
+        
+        @param request: VerifyEduOrgCertificationRequest
+        @return: VerifyEduOrgCertificationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.VerifyEduOrgCertificationHeaders()
+        return self.verify_edu_org_certification_with_options(request, headers, runtime)
+
+    async def verify_edu_org_certification_async(
+        self,
+        request: dingtalkedu__1__0_models.VerifyEduOrgCertificationRequest,
+    ) -> dingtalkedu__1__0_models.VerifyEduOrgCertificationResponse:
+        """
+        @summary 校验教育组织
+        
+        @param request: VerifyEduOrgCertificationRequest
+        @return: VerifyEduOrgCertificationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.VerifyEduOrgCertificationHeaders()
+        return await self.verify_edu_org_certification_with_options_async(request, headers, runtime)
+
     def query_class_course_with_options(
         self,
         request: dingtalkedu__1__0_models.QueryClassCourseRequest,

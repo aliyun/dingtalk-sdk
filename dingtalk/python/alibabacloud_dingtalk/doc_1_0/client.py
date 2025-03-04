@@ -904,6 +904,132 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__1__0_models.BatchGetWorkspacesHeaders()
         return await self.batch_get_workspaces_with_options_async(request, headers, runtime)
 
+    def batch_operate_with_options(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.BatchOperateRequest,
+        headers: dingtalkdoc__1__0_models.BatchOperateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.BatchOperateResponse:
+        """
+        @summary 根据入参批量调用多个文档API
+        
+        @param request: BatchOperateRequest
+        @param headers: BatchOperateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchOperateResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.requests):
+            body['requests'] = request.requests
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchOperate',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{document_id}/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.BatchOperateResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_operate_with_options_async(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.BatchOperateRequest,
+        headers: dingtalkdoc__1__0_models.BatchOperateHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.BatchOperateResponse:
+        """
+        @summary 根据入参批量调用多个文档API
+        
+        @param request: BatchOperateRequest
+        @param headers: BatchOperateHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchOperateResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        body = {}
+        if not UtilClient.is_unset(request.requests):
+            body['requests'] = request.requests
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query),
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='BatchOperate',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/suites/documents/{document_id}/batch',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.BatchOperateResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_operate(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.BatchOperateRequest,
+    ) -> dingtalkdoc__1__0_models.BatchOperateResponse:
+        """
+        @summary 根据入参批量调用多个文档API
+        
+        @param request: BatchOperateRequest
+        @return: BatchOperateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.BatchOperateHeaders()
+        return self.batch_operate_with_options(document_id, request, headers, runtime)
+
+    async def batch_operate_async(
+        self,
+        document_id: str,
+        request: dingtalkdoc__1__0_models.BatchOperateRequest,
+    ) -> dingtalkdoc__1__0_models.BatchOperateResponse:
+        """
+        @summary 根据入参批量调用多个文档API
+        
+        @param request: BatchOperateRequest
+        @return: BatchOperateResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.BatchOperateHeaders()
+        return await self.batch_operate_with_options_async(document_id, request, headers, runtime)
+
     def bind_cool_app_to_sheet_with_options(
         self,
         workbook_id: str,
