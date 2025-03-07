@@ -32,6 +32,11 @@ class CreateMeetingRoomRequest extends Model
     public $isvRoomId;
 
     /**
+     * @var bool
+     */
+    public $openReservation;
+
+    /**
      * @var reservationAuthority
      */
     public $reservationAuthority;
@@ -90,6 +95,7 @@ class CreateMeetingRoomRequest extends Model
         'enableCycleReservation' => 'enableCycleReservation',
         'groupId'                => 'groupId',
         'isvRoomId'              => 'isvRoomId',
+        'openReservation'        => 'openReservation',
         'reservationAuthority'   => 'reservationAuthority',
         'roomCapacity'           => 'roomCapacity',
         'roomLabelIds'           => 'roomLabelIds',
@@ -115,6 +121,9 @@ class CreateMeetingRoomRequest extends Model
         }
         if (null !== $this->isvRoomId) {
             $res['isvRoomId'] = $this->isvRoomId;
+        }
+        if (null !== $this->openReservation) {
+            $res['openReservation'] = $this->openReservation;
         }
         if (null !== $this->reservationAuthority) {
             $res['reservationAuthority'] = null !== $this->reservationAuthority ? $this->reservationAuthority->toMap() : null;
@@ -160,6 +169,9 @@ class CreateMeetingRoomRequest extends Model
         }
         if (isset($map['isvRoomId'])) {
             $model->isvRoomId = $map['isvRoomId'];
+        }
+        if (isset($map['openReservation'])) {
+            $model->openReservation = $map['openReservation'];
         }
         if (isset($map['reservationAuthority'])) {
             $model->reservationAuthority = reservationAuthority::fromMap($map['reservationAuthority']);

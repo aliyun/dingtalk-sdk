@@ -4,6 +4,7 @@
 
 namespace AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomResponseBody;
 
+use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomResponseBody\result\extensionConfig;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomResponseBody\result\reservationAuthority;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomResponseBody\result\roomGroup;
 use AlibabaCloud\SDK\Dingtalk\Vrooms_1_0\Models\QueryMeetingRoomResponseBody\result\roomLabels;
@@ -28,6 +29,11 @@ class result extends Model
      * @var bool
      */
     public $enableCycleReservation;
+
+    /**
+     * @var extensionConfig
+     */
+    public $extensionConfig;
 
     /**
      * @example xxxIsvRoomId
@@ -108,6 +114,7 @@ class result extends Model
         'corpId'                 => 'corpId',
         'deviceUnionIds'         => 'deviceUnionIds',
         'enableCycleReservation' => 'enableCycleReservation',
+        'extensionConfig'        => 'extensionConfig',
         'isvRoomId'              => 'isvRoomId',
         'reservationAuthority'   => 'reservationAuthority',
         'roomCapacity'           => 'roomCapacity',
@@ -137,6 +144,9 @@ class result extends Model
         }
         if (null !== $this->enableCycleReservation) {
             $res['enableCycleReservation'] = $this->enableCycleReservation;
+        }
+        if (null !== $this->extensionConfig) {
+            $res['extensionConfig'] = null !== $this->extensionConfig ? $this->extensionConfig->toMap() : null;
         }
         if (null !== $this->isvRoomId) {
             $res['isvRoomId'] = $this->isvRoomId;
@@ -202,6 +212,9 @@ class result extends Model
         }
         if (isset($map['enableCycleReservation'])) {
             $model->enableCycleReservation = $map['enableCycleReservation'];
+        }
+        if (isset($map['extensionConfig'])) {
+            $model->extensionConfig = extensionConfig::fromMap($map['extensionConfig']);
         }
         if (isset($map['isvRoomId'])) {
             $model->isvRoomId = $map['isvRoomId'];

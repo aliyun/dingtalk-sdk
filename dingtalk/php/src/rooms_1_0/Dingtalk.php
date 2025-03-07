@@ -297,6 +297,9 @@ class Dingtalk extends OpenApiClient
         if (!Utils::isUnset($request->isvRoomId)) {
             $body['isvRoomId'] = $request->isvRoomId;
         }
+        if (!Utils::isUnset($request->openReservation)) {
+            $body['openReservation'] = $request->openReservation;
+        }
         if (!Utils::isUnset($request->reservationAuthority)) {
             $body['reservationAuthority'] = $request->reservationAuthority;
         }
@@ -1640,6 +1643,9 @@ class Dingtalk extends OpenApiClient
         }
         if (!Utils::isUnset($request->isvRoomId)) {
             $body['isvRoomId'] = $request->isvRoomId;
+        }
+        if (!Utils::isUnset($request->openReservation)) {
+            $body['openReservation'] = $request->openReservation;
         }
         if (!Utils::isUnset($request->reservationAuthority)) {
             $body['reservationAuthority'] = $request->reservationAuthority;

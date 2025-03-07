@@ -5,6 +5,9 @@
 namespace AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0;
 
 use AlibabaCloud\OpenApiUtil\OpenApiUtilClient;
+use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\ExclusiveModelCompleteServiceHeaders;
+use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\ExclusiveModelCompleteServiceRequest;
+use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\ExclusiveModelCompleteServiceResponse;
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\ExecuteAgentHeaders;
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\ExecuteAgentRequest;
 use AlibabaCloud\SDK\Dingtalk\Vai_paa_s_1_0\Models\ExecuteAgentResponse;
@@ -72,6 +75,78 @@ class Dingtalk extends OpenApiClient
         if (Utils::empty_($this->_endpoint)) {
             $this->_endpoint = 'api.dingtalk.com';
         }
+    }
+
+    /**
+     * @summary 炼丹炉专属模型推理服务
+     *  *
+     * @param ExclusiveModelCompleteServiceRequest $request ExclusiveModelCompleteServiceRequest
+     * @param ExclusiveModelCompleteServiceHeaders $headers ExclusiveModelCompleteServiceHeaders
+     * @param RuntimeOptions                       $runtime runtime options for this request RuntimeOptions
+     *
+     * @return ExclusiveModelCompleteServiceResponse ExclusiveModelCompleteServiceResponse
+     */
+    public function exclusiveModelCompleteServiceWithOptions($request, $headers, $runtime)
+    {
+        Utils::validateModel($request);
+        $body = [];
+        if (!Utils::isUnset($request->enableSearch)) {
+            $body['enable_search'] = $request->enableSearch;
+        }
+        if (!Utils::isUnset($request->maxTokens)) {
+            $body['max_tokens'] = $request->maxTokens;
+        }
+        if (!Utils::isUnset($request->messages)) {
+            $body['messages'] = $request->messages;
+        }
+        if (!Utils::isUnset($request->model)) {
+            $body['model'] = $request->model;
+        }
+        if (!Utils::isUnset($request->temperature)) {
+            $body['temperature'] = $request->temperature;
+        }
+        if (!Utils::isUnset($request->topP)) {
+            $body['top_p'] = $request->topP;
+        }
+        $realHeaders = [];
+        if (!Utils::isUnset($headers->commonHeaders)) {
+            $realHeaders = $headers->commonHeaders;
+        }
+        if (!Utils::isUnset($headers->xAcsDingtalkAccessToken)) {
+            $realHeaders['x-acs-dingtalk-access-token'] = Utils::toJSONString($headers->xAcsDingtalkAccessToken);
+        }
+        $req = new OpenApiRequest([
+            'headers' => $realHeaders,
+            'body'    => OpenApiUtilClient::parseToMap($body),
+        ]);
+        $params = new Params([
+            'action'      => 'ExclusiveModelCompleteService',
+            'version'     => 'aiPaaS_1.0',
+            'protocol'    => 'HTTP',
+            'pathname'    => '/v1.0/aiPaaS/ai/complete',
+            'method'      => 'POST',
+            'authType'    => 'AK',
+            'style'       => 'ROA',
+            'reqBodyType' => 'none',
+            'bodyType'    => 'json',
+        ]);
+
+        return ExclusiveModelCompleteServiceResponse::fromMap($this->execute($params, $req, $runtime));
+    }
+
+    /**
+     * @summary 炼丹炉专属模型推理服务
+     *  *
+     * @param ExclusiveModelCompleteServiceRequest $request ExclusiveModelCompleteServiceRequest
+     *
+     * @return ExclusiveModelCompleteServiceResponse ExclusiveModelCompleteServiceResponse
+     */
+    public function exclusiveModelCompleteService($request)
+    {
+        $runtime = new RuntimeOptions([]);
+        $headers = new ExclusiveModelCompleteServiceHeaders([]);
+
+        return $this->exclusiveModelCompleteServiceWithOptions($request, $headers, $runtime);
     }
 
     /**
