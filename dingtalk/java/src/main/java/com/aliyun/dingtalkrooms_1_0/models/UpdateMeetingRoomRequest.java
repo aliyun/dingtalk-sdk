@@ -21,6 +21,9 @@ public class UpdateMeetingRoomRequest extends TeaModel {
     @NameInMap("isvRoomId")
     public String isvRoomId;
 
+    @NameInMap("openReservation")
+    public Boolean openReservation;
+
     @NameInMap("reservationAuthority")
     public UpdateMeetingRoomRequestReservationAuthority reservationAuthority;
 
@@ -103,6 +106,14 @@ public class UpdateMeetingRoomRequest extends TeaModel {
     }
     public String getIsvRoomId() {
         return this.isvRoomId;
+    }
+
+    public UpdateMeetingRoomRequest setOpenReservation(Boolean openReservation) {
+        this.openReservation = openReservation;
+        return this;
+    }
+    public Boolean getOpenReservation() {
+        return this.openReservation;
     }
 
     public UpdateMeetingRoomRequest setReservationAuthority(UpdateMeetingRoomRequestReservationAuthority reservationAuthority) {

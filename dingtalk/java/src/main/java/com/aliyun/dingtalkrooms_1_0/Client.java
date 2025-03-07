@@ -238,6 +238,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
             body.put("isvRoomId", request.isvRoomId);
         }
 
+        if (!com.aliyun.teautil.Common.isUnset(request.openReservation)) {
+            body.put("openReservation", request.openReservation);
+        }
+
         if (!com.aliyun.teautil.Common.isUnset(request.reservationAuthority)) {
             body.put("reservationAuthority", request.reservationAuthority);
         }
@@ -1594,6 +1598,10 @@ public class Client extends com.aliyun.teaopenapi.Client {
 
         if (!com.aliyun.teautil.Common.isUnset(request.isvRoomId)) {
             body.put("isvRoomId", request.isvRoomId);
+        }
+
+        if (!com.aliyun.teautil.Common.isUnset(request.openReservation)) {
+            body.put("openReservation", request.openReservation);
         }
 
         if (!com.aliyun.teautil.Common.isUnset(request.reservationAuthority)) {

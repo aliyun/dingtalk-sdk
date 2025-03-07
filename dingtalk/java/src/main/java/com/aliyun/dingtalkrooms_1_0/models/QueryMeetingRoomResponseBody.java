@@ -20,6 +20,224 @@ public class QueryMeetingRoomResponseBody extends TeaModel {
         return this.result;
     }
 
+    public static class QueryMeetingRoomResponseBodyResultExtensionConfigAdvanceReservation extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>09:00</p>
+         */
+        @NameInMap("advanceBookTimeFormat")
+        public String advanceBookTimeFormat;
+
+        /**
+         * <strong>example:</strong>
+         * <p>3</p>
+         */
+        @NameInMap("advanceReservationTime")
+        public Integer advanceReservationTime;
+
+        /**
+         * <strong>example:</strong>
+         * <p>days</p>
+         */
+        @NameInMap("advanceReservationTimeUnit")
+        public String advanceReservationTimeUnit;
+
+        public static QueryMeetingRoomResponseBodyResultExtensionConfigAdvanceReservation build(java.util.Map<String, ?> map) throws Exception {
+            QueryMeetingRoomResponseBodyResultExtensionConfigAdvanceReservation self = new QueryMeetingRoomResponseBodyResultExtensionConfigAdvanceReservation();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryMeetingRoomResponseBodyResultExtensionConfigAdvanceReservation setAdvanceBookTimeFormat(String advanceBookTimeFormat) {
+            this.advanceBookTimeFormat = advanceBookTimeFormat;
+            return this;
+        }
+        public String getAdvanceBookTimeFormat() {
+            return this.advanceBookTimeFormat;
+        }
+
+        public QueryMeetingRoomResponseBodyResultExtensionConfigAdvanceReservation setAdvanceReservationTime(Integer advanceReservationTime) {
+            this.advanceReservationTime = advanceReservationTime;
+            return this;
+        }
+        public Integer getAdvanceReservationTime() {
+            return this.advanceReservationTime;
+        }
+
+        public QueryMeetingRoomResponseBodyResultExtensionConfigAdvanceReservation setAdvanceReservationTimeUnit(String advanceReservationTimeUnit) {
+            this.advanceReservationTimeUnit = advanceReservationTimeUnit;
+            return this;
+        }
+        public String getAdvanceReservationTimeUnit() {
+            return this.advanceReservationTimeUnit;
+        }
+
+    }
+
+    public static class QueryMeetingRoomResponseBodyResultExtensionConfigReservationCloseDetail extends TeaModel {
+        /**
+         * <strong>example:</strong>
+         * <p>因为装修临时关闭预定</p>
+         */
+        @NameInMap("closeReason")
+        public String closeReason;
+
+        /**
+         * <strong>example:</strong>
+         * <p>nick</p>
+         */
+        @NameInMap("contactNick")
+        public String contactNick;
+
+        /**
+         * <strong>example:</strong>
+         * <p>2iPOLbpxxxxuwggiiqiPwiEiF</p>
+         */
+        @NameInMap("contactUnionId")
+        public String contactUnionId;
+
+        @NameInMap("sendNotify")
+        public Boolean sendNotify;
+
+        /**
+         * <strong>example:</strong>
+         * <p>1740045030000</p>
+         */
+        @NameInMap("taskEndTime")
+        public Long taskEndTime;
+
+        /**
+         * <strong>example:</strong>
+         * <p>1740463800000</p>
+         */
+        @NameInMap("taskStartTime")
+        public Long taskStartTime;
+
+        public static QueryMeetingRoomResponseBodyResultExtensionConfigReservationCloseDetail build(java.util.Map<String, ?> map) throws Exception {
+            QueryMeetingRoomResponseBodyResultExtensionConfigReservationCloseDetail self = new QueryMeetingRoomResponseBodyResultExtensionConfigReservationCloseDetail();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryMeetingRoomResponseBodyResultExtensionConfigReservationCloseDetail setCloseReason(String closeReason) {
+            this.closeReason = closeReason;
+            return this;
+        }
+        public String getCloseReason() {
+            return this.closeReason;
+        }
+
+        public QueryMeetingRoomResponseBodyResultExtensionConfigReservationCloseDetail setContactNick(String contactNick) {
+            this.contactNick = contactNick;
+            return this;
+        }
+        public String getContactNick() {
+            return this.contactNick;
+        }
+
+        public QueryMeetingRoomResponseBodyResultExtensionConfigReservationCloseDetail setContactUnionId(String contactUnionId) {
+            this.contactUnionId = contactUnionId;
+            return this;
+        }
+        public String getContactUnionId() {
+            return this.contactUnionId;
+        }
+
+        public QueryMeetingRoomResponseBodyResultExtensionConfigReservationCloseDetail setSendNotify(Boolean sendNotify) {
+            this.sendNotify = sendNotify;
+            return this;
+        }
+        public Boolean getSendNotify() {
+            return this.sendNotify;
+        }
+
+        public QueryMeetingRoomResponseBodyResultExtensionConfigReservationCloseDetail setTaskEndTime(Long taskEndTime) {
+            this.taskEndTime = taskEndTime;
+            return this;
+        }
+        public Long getTaskEndTime() {
+            return this.taskEndTime;
+        }
+
+        public QueryMeetingRoomResponseBodyResultExtensionConfigReservationCloseDetail setTaskStartTime(Long taskStartTime) {
+            this.taskStartTime = taskStartTime;
+            return this;
+        }
+        public Long getTaskStartTime() {
+            return this.taskStartTime;
+        }
+
+    }
+
+    public static class QueryMeetingRoomResponseBodyResultExtensionConfig extends TeaModel {
+        @NameInMap("advanceReservation")
+        public QueryMeetingRoomResponseBodyResultExtensionConfigAdvanceReservation advanceReservation;
+
+        /**
+         * <strong>example:</strong>
+         * <p>60</p>
+         */
+        @NameInMap("maxReservationTimeInterval")
+        public Integer maxReservationTimeInterval;
+
+        /**
+         * <strong>example:</strong>
+         * <p>15</p>
+         */
+        @NameInMap("minReservationTimeInterval")
+        public Integer minReservationTimeInterval;
+
+        @NameInMap("openReservation")
+        public Boolean openReservation;
+
+        @NameInMap("reservationCloseDetail")
+        public QueryMeetingRoomResponseBodyResultExtensionConfigReservationCloseDetail reservationCloseDetail;
+
+        public static QueryMeetingRoomResponseBodyResultExtensionConfig build(java.util.Map<String, ?> map) throws Exception {
+            QueryMeetingRoomResponseBodyResultExtensionConfig self = new QueryMeetingRoomResponseBodyResultExtensionConfig();
+            return TeaModel.build(map, self);
+        }
+
+        public QueryMeetingRoomResponseBodyResultExtensionConfig setAdvanceReservation(QueryMeetingRoomResponseBodyResultExtensionConfigAdvanceReservation advanceReservation) {
+            this.advanceReservation = advanceReservation;
+            return this;
+        }
+        public QueryMeetingRoomResponseBodyResultExtensionConfigAdvanceReservation getAdvanceReservation() {
+            return this.advanceReservation;
+        }
+
+        public QueryMeetingRoomResponseBodyResultExtensionConfig setMaxReservationTimeInterval(Integer maxReservationTimeInterval) {
+            this.maxReservationTimeInterval = maxReservationTimeInterval;
+            return this;
+        }
+        public Integer getMaxReservationTimeInterval() {
+            return this.maxReservationTimeInterval;
+        }
+
+        public QueryMeetingRoomResponseBodyResultExtensionConfig setMinReservationTimeInterval(Integer minReservationTimeInterval) {
+            this.minReservationTimeInterval = minReservationTimeInterval;
+            return this;
+        }
+        public Integer getMinReservationTimeInterval() {
+            return this.minReservationTimeInterval;
+        }
+
+        public QueryMeetingRoomResponseBodyResultExtensionConfig setOpenReservation(Boolean openReservation) {
+            this.openReservation = openReservation;
+            return this;
+        }
+        public Boolean getOpenReservation() {
+            return this.openReservation;
+        }
+
+        public QueryMeetingRoomResponseBodyResultExtensionConfig setReservationCloseDetail(QueryMeetingRoomResponseBodyResultExtensionConfigReservationCloseDetail reservationCloseDetail) {
+            this.reservationCloseDetail = reservationCloseDetail;
+            return this;
+        }
+        public QueryMeetingRoomResponseBodyResultExtensionConfigReservationCloseDetail getReservationCloseDetail() {
+            return this.reservationCloseDetail;
+        }
+
+    }
+
     public static class QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers extends TeaModel {
         /**
          * <strong>example:</strong>
@@ -227,6 +445,9 @@ public class QueryMeetingRoomResponseBody extends TeaModel {
         @NameInMap("enableCycleReservation")
         public Boolean enableCycleReservation;
 
+        @NameInMap("extensionConfig")
+        public QueryMeetingRoomResponseBodyResultExtensionConfig extensionConfig;
+
         /**
          * <strong>example:</strong>
          * <p>xxxIsvRoomId</p>
@@ -322,6 +543,14 @@ public class QueryMeetingRoomResponseBody extends TeaModel {
         }
         public Boolean getEnableCycleReservation() {
             return this.enableCycleReservation;
+        }
+
+        public QueryMeetingRoomResponseBodyResult setExtensionConfig(QueryMeetingRoomResponseBodyResultExtensionConfig extensionConfig) {
+            this.extensionConfig = extensionConfig;
+            return this;
+        }
+        public QueryMeetingRoomResponseBodyResultExtensionConfig getExtensionConfig() {
+            return this.extensionConfig;
         }
 
         public QueryMeetingRoomResponseBodyResult setIsvRoomId(String isvRoomId) {
