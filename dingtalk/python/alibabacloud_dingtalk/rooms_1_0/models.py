@@ -536,6 +536,7 @@ class CreateMeetingRoomRequest(TeaModel):
         enable_cycle_reservation: bool = None,
         group_id: int = None,
         isv_room_id: str = None,
+        open_reservation: bool = None,
         reservation_authority: CreateMeetingRoomRequestReservationAuthority = None,
         room_capacity: int = None,
         room_label_ids: List[int] = None,
@@ -549,6 +550,7 @@ class CreateMeetingRoomRequest(TeaModel):
         self.group_id = group_id
         # This parameter is required.
         self.isv_room_id = isv_room_id
+        self.open_reservation = open_reservation
         self.reservation_authority = reservation_authority
         self.room_capacity = room_capacity
         self.room_label_ids = room_label_ids
@@ -579,6 +581,8 @@ class CreateMeetingRoomRequest(TeaModel):
             result['groupId'] = self.group_id
         if self.isv_room_id is not None:
             result['isvRoomId'] = self.isv_room_id
+        if self.open_reservation is not None:
+            result['openReservation'] = self.open_reservation
         if self.reservation_authority is not None:
             result['reservationAuthority'] = self.reservation_authority.to_map()
         if self.room_capacity is not None:
@@ -605,6 +609,8 @@ class CreateMeetingRoomRequest(TeaModel):
             self.group_id = m.get('groupId')
         if m.get('isvRoomId') is not None:
             self.isv_room_id = m.get('isvRoomId')
+        if m.get('openReservation') is not None:
+            self.open_reservation = m.get('openReservation')
         if m.get('reservationAuthority') is not None:
             temp_model = CreateMeetingRoomRequestReservationAuthority()
             self.reservation_authority = temp_model.from_map(m['reservationAuthority'])
@@ -2737,6 +2743,158 @@ class QueryMeetingRoomRequest(TeaModel):
         return self
 
 
+class QueryMeetingRoomResponseBodyResultExtensionConfigAdvanceReservation(TeaModel):
+    def __init__(
+        self,
+        advance_book_time_format: str = None,
+        advance_reservation_time: int = None,
+        advance_reservation_time_unit: str = None,
+    ):
+        self.advance_book_time_format = advance_book_time_format
+        self.advance_reservation_time = advance_reservation_time
+        self.advance_reservation_time_unit = advance_reservation_time_unit
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.advance_book_time_format is not None:
+            result['advanceBookTimeFormat'] = self.advance_book_time_format
+        if self.advance_reservation_time is not None:
+            result['advanceReservationTime'] = self.advance_reservation_time
+        if self.advance_reservation_time_unit is not None:
+            result['advanceReservationTimeUnit'] = self.advance_reservation_time_unit
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('advanceBookTimeFormat') is not None:
+            self.advance_book_time_format = m.get('advanceBookTimeFormat')
+        if m.get('advanceReservationTime') is not None:
+            self.advance_reservation_time = m.get('advanceReservationTime')
+        if m.get('advanceReservationTimeUnit') is not None:
+            self.advance_reservation_time_unit = m.get('advanceReservationTimeUnit')
+        return self
+
+
+class QueryMeetingRoomResponseBodyResultExtensionConfigReservationCloseDetail(TeaModel):
+    def __init__(
+        self,
+        close_reason: str = None,
+        contact_nick: str = None,
+        contact_union_id: str = None,
+        send_notify: bool = None,
+        task_end_time: int = None,
+        task_start_time: int = None,
+    ):
+        self.close_reason = close_reason
+        self.contact_nick = contact_nick
+        self.contact_union_id = contact_union_id
+        self.send_notify = send_notify
+        self.task_end_time = task_end_time
+        self.task_start_time = task_start_time
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.close_reason is not None:
+            result['closeReason'] = self.close_reason
+        if self.contact_nick is not None:
+            result['contactNick'] = self.contact_nick
+        if self.contact_union_id is not None:
+            result['contactUnionId'] = self.contact_union_id
+        if self.send_notify is not None:
+            result['sendNotify'] = self.send_notify
+        if self.task_end_time is not None:
+            result['taskEndTime'] = self.task_end_time
+        if self.task_start_time is not None:
+            result['taskStartTime'] = self.task_start_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('closeReason') is not None:
+            self.close_reason = m.get('closeReason')
+        if m.get('contactNick') is not None:
+            self.contact_nick = m.get('contactNick')
+        if m.get('contactUnionId') is not None:
+            self.contact_union_id = m.get('contactUnionId')
+        if m.get('sendNotify') is not None:
+            self.send_notify = m.get('sendNotify')
+        if m.get('taskEndTime') is not None:
+            self.task_end_time = m.get('taskEndTime')
+        if m.get('taskStartTime') is not None:
+            self.task_start_time = m.get('taskStartTime')
+        return self
+
+
+class QueryMeetingRoomResponseBodyResultExtensionConfig(TeaModel):
+    def __init__(
+        self,
+        advance_reservation: QueryMeetingRoomResponseBodyResultExtensionConfigAdvanceReservation = None,
+        max_reservation_time_interval: int = None,
+        min_reservation_time_interval: int = None,
+        open_reservation: bool = None,
+        reservation_close_detail: QueryMeetingRoomResponseBodyResultExtensionConfigReservationCloseDetail = None,
+    ):
+        self.advance_reservation = advance_reservation
+        self.max_reservation_time_interval = max_reservation_time_interval
+        self.min_reservation_time_interval = min_reservation_time_interval
+        self.open_reservation = open_reservation
+        self.reservation_close_detail = reservation_close_detail
+
+    def validate(self):
+        if self.advance_reservation:
+            self.advance_reservation.validate()
+        if self.reservation_close_detail:
+            self.reservation_close_detail.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.advance_reservation is not None:
+            result['advanceReservation'] = self.advance_reservation.to_map()
+        if self.max_reservation_time_interval is not None:
+            result['maxReservationTimeInterval'] = self.max_reservation_time_interval
+        if self.min_reservation_time_interval is not None:
+            result['minReservationTimeInterval'] = self.min_reservation_time_interval
+        if self.open_reservation is not None:
+            result['openReservation'] = self.open_reservation
+        if self.reservation_close_detail is not None:
+            result['reservationCloseDetail'] = self.reservation_close_detail.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('advanceReservation') is not None:
+            temp_model = QueryMeetingRoomResponseBodyResultExtensionConfigAdvanceReservation()
+            self.advance_reservation = temp_model.from_map(m['advanceReservation'])
+        if m.get('maxReservationTimeInterval') is not None:
+            self.max_reservation_time_interval = m.get('maxReservationTimeInterval')
+        if m.get('minReservationTimeInterval') is not None:
+            self.min_reservation_time_interval = m.get('minReservationTimeInterval')
+        if m.get('openReservation') is not None:
+            self.open_reservation = m.get('openReservation')
+        if m.get('reservationCloseDetail') is not None:
+            temp_model = QueryMeetingRoomResponseBodyResultExtensionConfigReservationCloseDetail()
+            self.reservation_close_detail = temp_model.from_map(m['reservationCloseDetail'])
+        return self
+
+
 class QueryMeetingRoomResponseBodyResultReservationAuthorityAuthorizedMembers(TeaModel):
     def __init__(
         self,
@@ -2922,6 +3080,7 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
         corp_id: str = None,
         device_union_ids: List[str] = None,
         enable_cycle_reservation: bool = None,
+        extension_config: QueryMeetingRoomResponseBodyResultExtensionConfig = None,
         isv_room_id: str = None,
         reservation_authority: QueryMeetingRoomResponseBodyResultReservationAuthority = None,
         room_capacity: int = None,
@@ -2938,6 +3097,7 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
         self.corp_id = corp_id
         self.device_union_ids = device_union_ids
         self.enable_cycle_reservation = enable_cycle_reservation
+        self.extension_config = extension_config
         self.isv_room_id = isv_room_id
         self.reservation_authority = reservation_authority
         self.room_capacity = room_capacity
@@ -2952,6 +3112,8 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
         self.room_union_id = room_union_id
 
     def validate(self):
+        if self.extension_config:
+            self.extension_config.validate()
         if self.reservation_authority:
             self.reservation_authority.validate()
         if self.room_group:
@@ -2975,6 +3137,8 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
             result['deviceUnionIds'] = self.device_union_ids
         if self.enable_cycle_reservation is not None:
             result['enableCycleReservation'] = self.enable_cycle_reservation
+        if self.extension_config is not None:
+            result['extensionConfig'] = self.extension_config.to_map()
         if self.isv_room_id is not None:
             result['isvRoomId'] = self.isv_room_id
         if self.reservation_authority is not None:
@@ -3011,6 +3175,9 @@ class QueryMeetingRoomResponseBodyResult(TeaModel):
             self.device_union_ids = m.get('deviceUnionIds')
         if m.get('enableCycleReservation') is not None:
             self.enable_cycle_reservation = m.get('enableCycleReservation')
+        if m.get('extensionConfig') is not None:
+            temp_model = QueryMeetingRoomResponseBodyResultExtensionConfig()
+            self.extension_config = temp_model.from_map(m['extensionConfig'])
         if m.get('isvRoomId') is not None:
             self.isv_room_id = m.get('isvRoomId')
         if m.get('reservationAuthority') is not None:
@@ -5169,6 +5336,7 @@ class UpdateMeetingRoomRequest(TeaModel):
         enable_cycle_reservation: bool = None,
         group_id: int = None,
         isv_room_id: str = None,
+        open_reservation: bool = None,
         reservation_authority: UpdateMeetingRoomRequestReservationAuthority = None,
         room_capacity: int = None,
         room_id: str = None,
@@ -5182,6 +5350,7 @@ class UpdateMeetingRoomRequest(TeaModel):
         self.enable_cycle_reservation = enable_cycle_reservation
         self.group_id = group_id
         self.isv_room_id = isv_room_id
+        self.open_reservation = open_reservation
         self.reservation_authority = reservation_authority
         self.room_capacity = room_capacity
         # This parameter is required.
@@ -5212,6 +5381,8 @@ class UpdateMeetingRoomRequest(TeaModel):
             result['groupId'] = self.group_id
         if self.isv_room_id is not None:
             result['isvRoomId'] = self.isv_room_id
+        if self.open_reservation is not None:
+            result['openReservation'] = self.open_reservation
         if self.reservation_authority is not None:
             result['reservationAuthority'] = self.reservation_authority.to_map()
         if self.room_capacity is not None:
@@ -5240,6 +5411,8 @@ class UpdateMeetingRoomRequest(TeaModel):
             self.group_id = m.get('groupId')
         if m.get('isvRoomId') is not None:
             self.isv_room_id = m.get('isvRoomId')
+        if m.get('openReservation') is not None:
+            self.open_reservation = m.get('openReservation')
         if m.get('reservationAuthority') is not None:
             temp_model = UpdateMeetingRoomRequestReservationAuthority()
             self.reservation_authority = temp_model.from_map(m['reservationAuthority'])

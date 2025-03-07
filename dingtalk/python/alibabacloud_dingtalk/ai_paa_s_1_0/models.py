@@ -1,7 +1,354 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, Any, List
+from typing import Dict, List, Any
+
+
+class ExclusiveModelCompleteServiceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ExclusiveModelCompleteServiceRequestMessages(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        role: str = None,
+    ):
+        self.content = content
+        self.role = role
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.role is not None:
+            result['role'] = self.role
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('role') is not None:
+            self.role = m.get('role')
+        return self
+
+
+class ExclusiveModelCompleteServiceRequest(TeaModel):
+    def __init__(
+        self,
+        enable_search: bool = None,
+        max_tokens: int = None,
+        messages: List[ExclusiveModelCompleteServiceRequestMessages] = None,
+        model: str = None,
+        temperature: float = None,
+        top_p: float = None,
+    ):
+        self.enable_search = enable_search
+        self.max_tokens = max_tokens
+        self.messages = messages
+        self.model = model
+        self.temperature = temperature
+        self.top_p = top_p
+
+    def validate(self):
+        if self.messages:
+            for k in self.messages:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.enable_search is not None:
+            result['enable_search'] = self.enable_search
+        if self.max_tokens is not None:
+            result['max_tokens'] = self.max_tokens
+        result['messages'] = []
+        if self.messages is not None:
+            for k in self.messages:
+                result['messages'].append(k.to_map() if k else None)
+        if self.model is not None:
+            result['model'] = self.model
+        if self.temperature is not None:
+            result['temperature'] = self.temperature
+        if self.top_p is not None:
+            result['top_p'] = self.top_p
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('enable_search') is not None:
+            self.enable_search = m.get('enable_search')
+        if m.get('max_tokens') is not None:
+            self.max_tokens = m.get('max_tokens')
+        self.messages = []
+        if m.get('messages') is not None:
+            for k in m.get('messages'):
+                temp_model = ExclusiveModelCompleteServiceRequestMessages()
+                self.messages.append(temp_model.from_map(k))
+        if m.get('model') is not None:
+            self.model = m.get('model')
+        if m.get('temperature') is not None:
+            self.temperature = m.get('temperature')
+        if m.get('top_p') is not None:
+            self.top_p = m.get('top_p')
+        return self
+
+
+class ExclusiveModelCompleteServiceResponseBodyChoicesMessage(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        reasoning_content: str = None,
+        role: str = None,
+    ):
+        self.content = content
+        self.reasoning_content = reasoning_content
+        self.role = role
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.reasoning_content is not None:
+            result['reasoning_content'] = self.reasoning_content
+        if self.role is not None:
+            result['role'] = self.role
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('reasoning_content') is not None:
+            self.reasoning_content = m.get('reasoning_content')
+        if m.get('role') is not None:
+            self.role = m.get('role')
+        return self
+
+
+class ExclusiveModelCompleteServiceResponseBodyChoices(TeaModel):
+    def __init__(
+        self,
+        finish_reason: str = None,
+        message: ExclusiveModelCompleteServiceResponseBodyChoicesMessage = None,
+    ):
+        self.finish_reason = finish_reason
+        self.message = message
+
+    def validate(self):
+        if self.message:
+            self.message.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.finish_reason is not None:
+            result['finishReason'] = self.finish_reason
+        if self.message is not None:
+            result['message'] = self.message.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('finishReason') is not None:
+            self.finish_reason = m.get('finishReason')
+        if m.get('message') is not None:
+            temp_model = ExclusiveModelCompleteServiceResponseBodyChoicesMessage()
+            self.message = temp_model.from_map(m['message'])
+        return self
+
+
+class ExclusiveModelCompleteServiceResponseBodyUsage(TeaModel):
+    def __init__(
+        self,
+        input_tokens: int = None,
+        output_tokens: int = None,
+        total_tokens: int = None,
+    ):
+        self.input_tokens = input_tokens
+        self.output_tokens = output_tokens
+        self.total_tokens = total_tokens
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.input_tokens is not None:
+            result['input_tokens'] = self.input_tokens
+        if self.output_tokens is not None:
+            result['output_tokens'] = self.output_tokens
+        if self.total_tokens is not None:
+            result['total_tokens'] = self.total_tokens
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('input_tokens') is not None:
+            self.input_tokens = m.get('input_tokens')
+        if m.get('output_tokens') is not None:
+            self.output_tokens = m.get('output_tokens')
+        if m.get('total_tokens') is not None:
+            self.total_tokens = m.get('total_tokens')
+        return self
+
+
+class ExclusiveModelCompleteServiceResponseBody(TeaModel):
+    def __init__(
+        self,
+        choices: List[ExclusiveModelCompleteServiceResponseBodyChoices] = None,
+        created: int = None,
+        id: str = None,
+        model: str = None,
+        usage: ExclusiveModelCompleteServiceResponseBodyUsage = None,
+    ):
+        self.choices = choices
+        self.created = created
+        self.id = id
+        self.model = model
+        self.usage = usage
+
+    def validate(self):
+        if self.choices:
+            for k in self.choices:
+                if k:
+                    k.validate()
+        if self.usage:
+            self.usage.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['choices'] = []
+        if self.choices is not None:
+            for k in self.choices:
+                result['choices'].append(k.to_map() if k else None)
+        if self.created is not None:
+            result['created'] = self.created
+        if self.id is not None:
+            result['id'] = self.id
+        if self.model is not None:
+            result['model'] = self.model
+        if self.usage is not None:
+            result['usage'] = self.usage.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.choices = []
+        if m.get('choices') is not None:
+            for k in m.get('choices'):
+                temp_model = ExclusiveModelCompleteServiceResponseBodyChoices()
+                self.choices.append(temp_model.from_map(k))
+        if m.get('created') is not None:
+            self.created = m.get('created')
+        if m.get('id') is not None:
+            self.id = m.get('id')
+        if m.get('model') is not None:
+            self.model = m.get('model')
+        if m.get('usage') is not None:
+            temp_model = ExclusiveModelCompleteServiceResponseBodyUsage()
+            self.usage = temp_model.from_map(m['usage'])
+        return self
+
+
+class ExclusiveModelCompleteServiceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ExclusiveModelCompleteServiceResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ExclusiveModelCompleteServiceResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
 
 
 class ExecuteAgentHeaders(TeaModel):

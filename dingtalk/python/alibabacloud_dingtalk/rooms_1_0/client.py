@@ -360,6 +360,8 @@ class Client(OpenApiClient):
             body['groupId'] = request.group_id
         if not UtilClient.is_unset(request.isv_room_id):
             body['isvRoomId'] = request.isv_room_id
+        if not UtilClient.is_unset(request.open_reservation):
+            body['openReservation'] = request.open_reservation
         if not UtilClient.is_unset(request.reservation_authority):
             body['reservationAuthority'] = request.reservation_authority
         if not UtilClient.is_unset(request.room_capacity):
@@ -423,6 +425,8 @@ class Client(OpenApiClient):
             body['groupId'] = request.group_id
         if not UtilClient.is_unset(request.isv_room_id):
             body['isvRoomId'] = request.isv_room_id
+        if not UtilClient.is_unset(request.open_reservation):
+            body['openReservation'] = request.open_reservation
         if not UtilClient.is_unset(request.reservation_authority):
             body['reservationAuthority'] = request.reservation_authority
         if not UtilClient.is_unset(request.room_capacity):
@@ -2942,6 +2946,8 @@ class Client(OpenApiClient):
             body['groupId'] = request.group_id
         if not UtilClient.is_unset(request.isv_room_id):
             body['isvRoomId'] = request.isv_room_id
+        if not UtilClient.is_unset(request.open_reservation):
+            body['openReservation'] = request.open_reservation
         if not UtilClient.is_unset(request.reservation_authority):
             body['reservationAuthority'] = request.reservation_authority
         if not UtilClient.is_unset(request.room_capacity):
@@ -3007,6 +3013,8 @@ class Client(OpenApiClient):
             body['groupId'] = request.group_id
         if not UtilClient.is_unset(request.isv_room_id):
             body['isvRoomId'] = request.isv_room_id
+        if not UtilClient.is_unset(request.open_reservation):
+            body['openReservation'] = request.open_reservation
         if not UtilClient.is_unset(request.reservation_authority):
             body['reservationAuthority'] = request.reservation_authority
         if not UtilClient.is_unset(request.room_capacity):

@@ -28,6 +28,140 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def exclusive_model_complete_service_with_options(
+        self,
+        request: dingtalkai_paa_s__1__0_models.ExclusiveModelCompleteServiceRequest,
+        headers: dingtalkai_paa_s__1__0_models.ExclusiveModelCompleteServiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_paa_s__1__0_models.ExclusiveModelCompleteServiceResponse:
+        """
+        @summary 炼丹炉专属模型推理服务
+        
+        @param request: ExclusiveModelCompleteServiceRequest
+        @param headers: ExclusiveModelCompleteServiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExclusiveModelCompleteServiceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.enable_search):
+            body['enable_search'] = request.enable_search
+        if not UtilClient.is_unset(request.max_tokens):
+            body['max_tokens'] = request.max_tokens
+        if not UtilClient.is_unset(request.messages):
+            body['messages'] = request.messages
+        if not UtilClient.is_unset(request.model):
+            body['model'] = request.model
+        if not UtilClient.is_unset(request.temperature):
+            body['temperature'] = request.temperature
+        if not UtilClient.is_unset(request.top_p):
+            body['top_p'] = request.top_p
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ExclusiveModelCompleteService',
+            version='aiPaaS_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiPaaS/ai/complete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_paa_s__1__0_models.ExclusiveModelCompleteServiceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def exclusive_model_complete_service_with_options_async(
+        self,
+        request: dingtalkai_paa_s__1__0_models.ExclusiveModelCompleteServiceRequest,
+        headers: dingtalkai_paa_s__1__0_models.ExclusiveModelCompleteServiceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkai_paa_s__1__0_models.ExclusiveModelCompleteServiceResponse:
+        """
+        @summary 炼丹炉专属模型推理服务
+        
+        @param request: ExclusiveModelCompleteServiceRequest
+        @param headers: ExclusiveModelCompleteServiceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ExclusiveModelCompleteServiceResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.enable_search):
+            body['enable_search'] = request.enable_search
+        if not UtilClient.is_unset(request.max_tokens):
+            body['max_tokens'] = request.max_tokens
+        if not UtilClient.is_unset(request.messages):
+            body['messages'] = request.messages
+        if not UtilClient.is_unset(request.model):
+            body['model'] = request.model
+        if not UtilClient.is_unset(request.temperature):
+            body['temperature'] = request.temperature
+        if not UtilClient.is_unset(request.top_p):
+            body['top_p'] = request.top_p
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='ExclusiveModelCompleteService',
+            version='aiPaaS_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/aiPaaS/ai/complete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkai_paa_s__1__0_models.ExclusiveModelCompleteServiceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def exclusive_model_complete_service(
+        self,
+        request: dingtalkai_paa_s__1__0_models.ExclusiveModelCompleteServiceRequest,
+    ) -> dingtalkai_paa_s__1__0_models.ExclusiveModelCompleteServiceResponse:
+        """
+        @summary 炼丹炉专属模型推理服务
+        
+        @param request: ExclusiveModelCompleteServiceRequest
+        @return: ExclusiveModelCompleteServiceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_paa_s__1__0_models.ExclusiveModelCompleteServiceHeaders()
+        return self.exclusive_model_complete_service_with_options(request, headers, runtime)
+
+    async def exclusive_model_complete_service_async(
+        self,
+        request: dingtalkai_paa_s__1__0_models.ExclusiveModelCompleteServiceRequest,
+    ) -> dingtalkai_paa_s__1__0_models.ExclusiveModelCompleteServiceResponse:
+        """
+        @summary 炼丹炉专属模型推理服务
+        
+        @param request: ExclusiveModelCompleteServiceRequest
+        @return: ExclusiveModelCompleteServiceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkai_paa_s__1__0_models.ExclusiveModelCompleteServiceHeaders()
+        return await self.exclusive_model_complete_service_with_options_async(request, headers, runtime)
+
     def execute_agent_with_options(
         self,
         request: dingtalkai_paa_s__1__0_models.ExecuteAgentRequest,
