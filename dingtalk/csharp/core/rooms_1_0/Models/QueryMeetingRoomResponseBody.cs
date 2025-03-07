@@ -29,6 +29,112 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
             [Validation(Required=false)]
             public bool? EnableCycleReservation { get; set; }
 
+            [NameInMap("extensionConfig")]
+            [Validation(Required=false)]
+            public QueryMeetingRoomResponseBodyResultExtensionConfig ExtensionConfig { get; set; }
+            public class QueryMeetingRoomResponseBodyResultExtensionConfig : TeaModel {
+                [NameInMap("advanceReservation")]
+                [Validation(Required=false)]
+                public QueryMeetingRoomResponseBodyResultExtensionConfigAdvanceReservation AdvanceReservation { get; set; }
+                public class QueryMeetingRoomResponseBodyResultExtensionConfigAdvanceReservation : TeaModel {
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>09:00</para>
+                    /// </summary>
+                    [NameInMap("advanceBookTimeFormat")]
+                    [Validation(Required=false)]
+                    public string AdvanceBookTimeFormat { get; set; }
+
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>3</para>
+                    /// </summary>
+                    [NameInMap("advanceReservationTime")]
+                    [Validation(Required=false)]
+                    public int? AdvanceReservationTime { get; set; }
+
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>days</para>
+                    /// </summary>
+                    [NameInMap("advanceReservationTimeUnit")]
+                    [Validation(Required=false)]
+                    public string AdvanceReservationTimeUnit { get; set; }
+
+                }
+
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>60</para>
+                /// </summary>
+                [NameInMap("maxReservationTimeInterval")]
+                [Validation(Required=false)]
+                public int? MaxReservationTimeInterval { get; set; }
+
+                /// <summary>
+                /// <b>Example:</b>
+                /// <para>15</para>
+                /// </summary>
+                [NameInMap("minReservationTimeInterval")]
+                [Validation(Required=false)]
+                public int? MinReservationTimeInterval { get; set; }
+
+                [NameInMap("openReservation")]
+                [Validation(Required=false)]
+                public bool? OpenReservation { get; set; }
+
+                [NameInMap("reservationCloseDetail")]
+                [Validation(Required=false)]
+                public QueryMeetingRoomResponseBodyResultExtensionConfigReservationCloseDetail ReservationCloseDetail { get; set; }
+                public class QueryMeetingRoomResponseBodyResultExtensionConfigReservationCloseDetail : TeaModel {
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>因为装修临时关闭预定</para>
+                    /// </summary>
+                    [NameInMap("closeReason")]
+                    [Validation(Required=false)]
+                    public string CloseReason { get; set; }
+
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>nick</para>
+                    /// </summary>
+                    [NameInMap("contactNick")]
+                    [Validation(Required=false)]
+                    public string ContactNick { get; set; }
+
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>2iPOLbpxxxxuwggiiqiPwiEiF</para>
+                    /// </summary>
+                    [NameInMap("contactUnionId")]
+                    [Validation(Required=false)]
+                    public string ContactUnionId { get; set; }
+
+                    [NameInMap("sendNotify")]
+                    [Validation(Required=false)]
+                    public bool? SendNotify { get; set; }
+
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>1740045030000</para>
+                    /// </summary>
+                    [NameInMap("taskEndTime")]
+                    [Validation(Required=false)]
+                    public long? TaskEndTime { get; set; }
+
+                    /// <summary>
+                    /// <b>Example:</b>
+                    /// <para>1740463800000</para>
+                    /// </summary>
+                    [NameInMap("taskStartTime")]
+                    [Validation(Required=false)]
+                    public long? TaskStartTime { get; set; }
+
+                }
+
+            }
+
             /// <summary>
             /// <b>Example:</b>
             /// <para>xxxIsvRoomId</para>

@@ -31,6 +31,194 @@ namespace AlibabaCloud.SDK.Dingtalkai_paa_s_1_0
 
         /// <term><b>Summary:</b></term>
         /// <summary>
+        /// <para>炼丹炉专属模型推理服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExclusiveModelCompleteServiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// ExclusiveModelCompleteServiceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExclusiveModelCompleteServiceResponse
+        /// </returns>
+        public ExclusiveModelCompleteServiceResponse ExclusiveModelCompleteServiceWithOptions(ExclusiveModelCompleteServiceRequest request, ExclusiveModelCompleteServiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableSearch))
+            {
+                body["enable_search"] = request.EnableSearch;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxTokens))
+            {
+                body["max_tokens"] = request.MaxTokens;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Messages))
+            {
+                body["messages"] = request.Messages;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Model))
+            {
+                body["model"] = request.Model;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Temperature))
+            {
+                body["temperature"] = request.Temperature;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopP))
+            {
+                body["top_p"] = request.TopP;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ExclusiveModelCompleteService",
+                Version = "aiPaaS_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiPaaS/ai/complete",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ExclusiveModelCompleteServiceResponse>(Execute(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>炼丹炉专属模型推理服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExclusiveModelCompleteServiceRequest
+        /// </param>
+        /// <param name="headers">
+        /// ExclusiveModelCompleteServiceHeaders
+        /// </param>
+        /// <param name="runtime">
+        /// runtime options for this request RuntimeOptions
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExclusiveModelCompleteServiceResponse
+        /// </returns>
+        public async Task<ExclusiveModelCompleteServiceResponse> ExclusiveModelCompleteServiceWithOptionsAsync(ExclusiveModelCompleteServiceRequest request, ExclusiveModelCompleteServiceHeaders headers, AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime)
+        {
+            AlibabaCloud.TeaUtil.Common.ValidateModel(request);
+            Dictionary<string, object> body = new Dictionary<string, object>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.EnableSearch))
+            {
+                body["enable_search"] = request.EnableSearch;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.MaxTokens))
+            {
+                body["max_tokens"] = request.MaxTokens;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Messages))
+            {
+                body["messages"] = request.Messages;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Model))
+            {
+                body["model"] = request.Model;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.Temperature))
+            {
+                body["temperature"] = request.Temperature;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.TopP))
+            {
+                body["top_p"] = request.TopP;
+            }
+            Dictionary<string, string> realHeaders = new Dictionary<string, string>(){};
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.CommonHeaders))
+            {
+                realHeaders = headers.CommonHeaders;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(headers.XAcsDingtalkAccessToken))
+            {
+                realHeaders["x-acs-dingtalk-access-token"] = AlibabaCloud.TeaUtil.Common.ToJSONString(headers.XAcsDingtalkAccessToken);
+            }
+            AlibabaCloud.OpenApiClient.Models.OpenApiRequest req = new AlibabaCloud.OpenApiClient.Models.OpenApiRequest
+            {
+                Headers = realHeaders,
+                Body = AlibabaCloud.OpenApiUtil.Client.ParseToMap(body),
+            };
+            AlibabaCloud.OpenApiClient.Models.Params params_ = new AlibabaCloud.OpenApiClient.Models.Params
+            {
+                Action = "ExclusiveModelCompleteService",
+                Version = "aiPaaS_1.0",
+                Protocol = "HTTP",
+                Pathname = "/v1.0/aiPaaS/ai/complete",
+                Method = "POST",
+                AuthType = "AK",
+                Style = "ROA",
+                ReqBodyType = "none",
+                BodyType = "json",
+            };
+            return TeaModel.ToObject<ExclusiveModelCompleteServiceResponse>(await ExecuteAsync(params_, req, runtime));
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>炼丹炉专属模型推理服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExclusiveModelCompleteServiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExclusiveModelCompleteServiceResponse
+        /// </returns>
+        public ExclusiveModelCompleteServiceResponse ExclusiveModelCompleteService(ExclusiveModelCompleteServiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ExclusiveModelCompleteServiceHeaders headers = new ExclusiveModelCompleteServiceHeaders();
+            return ExclusiveModelCompleteServiceWithOptions(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
+        /// <para>炼丹炉专属模型推理服务</para>
+        /// </summary>
+        /// 
+        /// <param name="request">
+        /// ExclusiveModelCompleteServiceRequest
+        /// </param>
+        /// 
+        /// <returns>
+        /// ExclusiveModelCompleteServiceResponse
+        /// </returns>
+        public async Task<ExclusiveModelCompleteServiceResponse> ExclusiveModelCompleteServiceAsync(ExclusiveModelCompleteServiceRequest request)
+        {
+            AlibabaCloud.TeaUtil.Models.RuntimeOptions runtime = new AlibabaCloud.TeaUtil.Models.RuntimeOptions();
+            ExclusiveModelCompleteServiceHeaders headers = new ExclusiveModelCompleteServiceHeaders();
+            return await ExclusiveModelCompleteServiceWithOptionsAsync(request, headers, runtime);
+        }
+
+        /// <term><b>Summary:</b></term>
+        /// <summary>
         /// <para>执行AI技能</para>
         /// </summary>
         /// 

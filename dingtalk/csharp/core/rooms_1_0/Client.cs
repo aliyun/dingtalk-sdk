@@ -526,6 +526,10 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             {
                 body["isvRoomId"] = request.IsvRoomId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenReservation))
+            {
+                body["openReservation"] = request.OpenReservation;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReservationAuthority))
             {
                 body["reservationAuthority"] = request.ReservationAuthority;
@@ -620,6 +624,10 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvRoomId))
             {
                 body["isvRoomId"] = request.IsvRoomId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenReservation))
+            {
+                body["openReservation"] = request.OpenReservation;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReservationAuthority))
             {
@@ -3982,6 +3990,10 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             {
                 body["isvRoomId"] = request.IsvRoomId;
             }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenReservation))
+            {
+                body["openReservation"] = request.OpenReservation;
+            }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReservationAuthority))
             {
                 body["reservationAuthority"] = request.ReservationAuthority;
@@ -4080,6 +4092,10 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.IsvRoomId))
             {
                 body["isvRoomId"] = request.IsvRoomId;
+            }
+            if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.OpenReservation))
+            {
+                body["openReservation"] = request.OpenReservation;
             }
             if (!AlibabaCloud.TeaUtil.Common.IsUnset(request.ReservationAuthority))
             {

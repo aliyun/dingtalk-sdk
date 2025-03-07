@@ -31,6 +31,10 @@ namespace AlibabaCloud.SDK.Dingtalkrooms_1_0.Models
         [Validation(Required=false)]
         public string IsvRoomId { get; set; }
 
+        [NameInMap("openReservation")]
+        [Validation(Required=false)]
+        public bool? OpenReservation { get; set; }
+
         [NameInMap("reservationAuthority")]
         [Validation(Required=false)]
         public CreateMeetingRoomRequestReservationAuthority ReservationAuthority { get; set; }
