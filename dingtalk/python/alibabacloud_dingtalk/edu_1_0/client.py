@@ -11032,6 +11032,144 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.EduAIGCCallbackHeaders()
         return await self.edu_aigccallback_with_options_async(request, headers, runtime)
 
+    def edu_aimodel_complete_with_options(
+        self,
+        request: dingtalkedu__1__0_models.EduAIModelCompleteRequest,
+        headers: dingtalkedu__1__0_models.EduAIModelCompleteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.EduAIModelCompleteResponse:
+        """
+        @summary 教育大模型开放接口
+        
+        @param request: EduAIModelCompleteRequest
+        @param headers: EduAIModelCompleteHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EduAIModelCompleteResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_tokens):
+            body['maxTokens'] = request.max_tokens
+        if not UtilClient.is_unset(request.model):
+            body['model'] = request.model
+        if not UtilClient.is_unset(request.prompt):
+            body['prompt'] = request.prompt
+        if not UtilClient.is_unset(request.scene):
+            body['scene'] = request.scene
+        if not UtilClient.is_unset(request.temperature):
+            body['temperature'] = request.temperature
+        if not UtilClient.is_unset(request.top_p):
+            body['top_p'] = request.top_p
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EduAIModelComplete',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/ai/models/complete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.EduAIModelCompleteResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def edu_aimodel_complete_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.EduAIModelCompleteRequest,
+        headers: dingtalkedu__1__0_models.EduAIModelCompleteHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.EduAIModelCompleteResponse:
+        """
+        @summary 教育大模型开放接口
+        
+        @param request: EduAIModelCompleteRequest
+        @param headers: EduAIModelCompleteHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: EduAIModelCompleteResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.max_tokens):
+            body['maxTokens'] = request.max_tokens
+        if not UtilClient.is_unset(request.model):
+            body['model'] = request.model
+        if not UtilClient.is_unset(request.prompt):
+            body['prompt'] = request.prompt
+        if not UtilClient.is_unset(request.scene):
+            body['scene'] = request.scene
+        if not UtilClient.is_unset(request.temperature):
+            body['temperature'] = request.temperature
+        if not UtilClient.is_unset(request.top_p):
+            body['top_p'] = request.top_p
+        if not UtilClient.is_unset(request.user_id):
+            body['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='EduAIModelComplete',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/ai/models/complete',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.EduAIModelCompleteResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def edu_aimodel_complete(
+        self,
+        request: dingtalkedu__1__0_models.EduAIModelCompleteRequest,
+    ) -> dingtalkedu__1__0_models.EduAIModelCompleteResponse:
+        """
+        @summary 教育大模型开放接口
+        
+        @param request: EduAIModelCompleteRequest
+        @return: EduAIModelCompleteResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.EduAIModelCompleteHeaders()
+        return self.edu_aimodel_complete_with_options(request, headers, runtime)
+
+    async def edu_aimodel_complete_async(
+        self,
+        request: dingtalkedu__1__0_models.EduAIModelCompleteRequest,
+    ) -> dingtalkedu__1__0_models.EduAIModelCompleteResponse:
+        """
+        @summary 教育大模型开放接口
+        
+        @param request: EduAIModelCompleteRequest
+        @return: EduAIModelCompleteResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.EduAIModelCompleteHeaders()
+        return await self.edu_aimodel_complete_with_options_async(request, headers, runtime)
+
     def edu_find_user_roles_by_user_id_with_options(
         self,
         request: dingtalkedu__1__0_models.EduFindUserRolesByUserIdRequest,
@@ -22060,6 +22198,132 @@ class Client(OpenApiClient):
         headers = dingtalkedu__1__0_models.SendAiCardHeaders()
         return await self.send_ai_card_with_options_async(request, headers, runtime)
 
+    def send_college_ai_assistant_msg_with_options(
+        self,
+        request: dingtalkedu__1__0_models.SendCollegeAiAssistantMsgRequest,
+        headers: dingtalkedu__1__0_models.SendCollegeAiAssistantMsgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.SendCollegeAiAssistantMsgResponse:
+        """
+        @summary 高校AI助理主动发送消息
+        
+        @param request: SendCollegeAiAssistantMsgRequest
+        @param headers: SendCollegeAiAssistantMsgHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendCollegeAiAssistantMsgResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.content_type):
+            body['contentType'] = request.content_type
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SendCollegeAiAssistantMsg',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/colleges/aiAssistants/messages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.SendCollegeAiAssistantMsgResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def send_college_ai_assistant_msg_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.SendCollegeAiAssistantMsgRequest,
+        headers: dingtalkedu__1__0_models.SendCollegeAiAssistantMsgHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.SendCollegeAiAssistantMsgResponse:
+        """
+        @summary 高校AI助理主动发送消息
+        
+        @param request: SendCollegeAiAssistantMsgRequest
+        @param headers: SendCollegeAiAssistantMsgHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: SendCollegeAiAssistantMsgResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.content):
+            body['content'] = request.content
+        if not UtilClient.is_unset(request.content_type):
+            body['contentType'] = request.content_type
+        if not UtilClient.is_unset(request.open_conversation_id):
+            body['openConversationId'] = request.open_conversation_id
+        if not UtilClient.is_unset(request.union_id):
+            body['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='SendCollegeAiAssistantMsg',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/colleges/aiAssistants/messages/send',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.SendCollegeAiAssistantMsgResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def send_college_ai_assistant_msg(
+        self,
+        request: dingtalkedu__1__0_models.SendCollegeAiAssistantMsgRequest,
+    ) -> dingtalkedu__1__0_models.SendCollegeAiAssistantMsgResponse:
+        """
+        @summary 高校AI助理主动发送消息
+        
+        @param request: SendCollegeAiAssistantMsgRequest
+        @return: SendCollegeAiAssistantMsgResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.SendCollegeAiAssistantMsgHeaders()
+        return self.send_college_ai_assistant_msg_with_options(request, headers, runtime)
+
+    async def send_college_ai_assistant_msg_async(
+        self,
+        request: dingtalkedu__1__0_models.SendCollegeAiAssistantMsgRequest,
+    ) -> dingtalkedu__1__0_models.SendCollegeAiAssistantMsgResponse:
+        """
+        @summary 高校AI助理主动发送消息
+        
+        @param request: SendCollegeAiAssistantMsgRequest
+        @return: SendCollegeAiAssistantMsgResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.SendCollegeAiAssistantMsgHeaders()
+        return await self.send_college_ai_assistant_msg_with_options_async(request, headers, runtime)
+
     def send_file_message_with_options(
         self,
         request: dingtalkedu__1__0_models.SendFileMessageRequest,
@@ -25447,6 +25711,128 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkedu__1__0_models.VerifyEduOrgCertificationHeaders()
         return await self.verify_edu_org_certification_with_options_async(request, headers, runtime)
+
+    def verify_edu_user_certification_with_options(
+        self,
+        request: dingtalkedu__1__0_models.VerifyEduUserCertificationRequest,
+        headers: dingtalkedu__1__0_models.VerifyEduUserCertificationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.VerifyEduUserCertificationResponse:
+        """
+        @summary 校验教育用户特殊身份权限
+        
+        @param request: VerifyEduUserCertificationRequest
+        @param headers: VerifyEduUserCertificationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: VerifyEduUserCertificationResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        if not UtilClient.is_unset(request.target_user_id):
+            body['targetUserId'] = request.target_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='VerifyEduUserCertification',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/users/certifications/verify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.VerifyEduUserCertificationResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def verify_edu_user_certification_with_options_async(
+        self,
+        request: dingtalkedu__1__0_models.VerifyEduUserCertificationRequest,
+        headers: dingtalkedu__1__0_models.VerifyEduUserCertificationHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkedu__1__0_models.VerifyEduUserCertificationResponse:
+        """
+        @summary 校验教育用户特殊身份权限
+        
+        @param request: VerifyEduUserCertificationRequest
+        @param headers: VerifyEduUserCertificationHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: VerifyEduUserCertificationResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.biz_code):
+            body['bizCode'] = request.biz_code
+        if not UtilClient.is_unset(request.target_corp_id):
+            body['targetCorpId'] = request.target_corp_id
+        if not UtilClient.is_unset(request.target_user_id):
+            body['targetUserId'] = request.target_user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='VerifyEduUserCertification',
+            version='edu_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/edu/users/certifications/verify',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkedu__1__0_models.VerifyEduUserCertificationResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def verify_edu_user_certification(
+        self,
+        request: dingtalkedu__1__0_models.VerifyEduUserCertificationRequest,
+    ) -> dingtalkedu__1__0_models.VerifyEduUserCertificationResponse:
+        """
+        @summary 校验教育用户特殊身份权限
+        
+        @param request: VerifyEduUserCertificationRequest
+        @return: VerifyEduUserCertificationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.VerifyEduUserCertificationHeaders()
+        return self.verify_edu_user_certification_with_options(request, headers, runtime)
+
+    async def verify_edu_user_certification_async(
+        self,
+        request: dingtalkedu__1__0_models.VerifyEduUserCertificationRequest,
+    ) -> dingtalkedu__1__0_models.VerifyEduUserCertificationResponse:
+        """
+        @summary 校验教育用户特殊身份权限
+        
+        @param request: VerifyEduUserCertificationRequest
+        @return: VerifyEduUserCertificationResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkedu__1__0_models.VerifyEduUserCertificationHeaders()
+        return await self.verify_edu_user_certification_with_options_async(request, headers, runtime)
 
     def query_class_course_with_options(
         self,

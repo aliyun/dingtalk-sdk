@@ -550,6 +550,124 @@ class Client(OpenApiClient):
         headers = dingtalkexclusive__1__0_models.BanOrOpenGroupWordsHeaders()
         return await self.ban_or_open_group_words_with_options_async(request, headers, runtime)
 
+    def check_control_hit_status_with_options(
+        self,
+        request: dingtalkexclusive__1__0_models.CheckControlHitStatusRequest,
+        headers: dingtalkexclusive__1__0_models.CheckControlHitStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.CheckControlHitStatusResponse:
+        """
+        @summary 检测安全管控功能命中状态
+        
+        @param request: CheckControlHitStatusRequest
+        @param headers: CheckControlHitStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CheckControlHitStatusResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.need_missed_function):
+            query['needMissedFunction'] = request.need_missed_function
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CheckControlHitStatus',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/soc/functionHitStatuses/check',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.CheckControlHitStatusResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def check_control_hit_status_with_options_async(
+        self,
+        request: dingtalkexclusive__1__0_models.CheckControlHitStatusRequest,
+        headers: dingtalkexclusive__1__0_models.CheckControlHitStatusHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkexclusive__1__0_models.CheckControlHitStatusResponse:
+        """
+        @summary 检测安全管控功能命中状态
+        
+        @param request: CheckControlHitStatusRequest
+        @param headers: CheckControlHitStatusHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CheckControlHitStatusResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.need_missed_function):
+            query['needMissedFunction'] = request.need_missed_function
+        if not UtilClient.is_unset(request.user_id):
+            query['userId'] = request.user_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='CheckControlHitStatus',
+            version='exclusive_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/exclusive/soc/functionHitStatuses/check',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkexclusive__1__0_models.CheckControlHitStatusResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def check_control_hit_status(
+        self,
+        request: dingtalkexclusive__1__0_models.CheckControlHitStatusRequest,
+    ) -> dingtalkexclusive__1__0_models.CheckControlHitStatusResponse:
+        """
+        @summary 检测安全管控功能命中状态
+        
+        @param request: CheckControlHitStatusRequest
+        @return: CheckControlHitStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.CheckControlHitStatusHeaders()
+        return self.check_control_hit_status_with_options(request, headers, runtime)
+
+    async def check_control_hit_status_async(
+        self,
+        request: dingtalkexclusive__1__0_models.CheckControlHitStatusRequest,
+    ) -> dingtalkexclusive__1__0_models.CheckControlHitStatusResponse:
+        """
+        @summary 检测安全管控功能命中状态
+        
+        @param request: CheckControlHitStatusRequest
+        @return: CheckControlHitStatusResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkexclusive__1__0_models.CheckControlHitStatusHeaders()
+        return await self.check_control_hit_status_with_options_async(request, headers, runtime)
+
     def create_category_and_binding_groups_with_options(
         self,
         request: dingtalkexclusive__1__0_models.CreateCategoryAndBindingGroupsRequest,

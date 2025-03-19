@@ -266,6 +266,140 @@ class Client(OpenApiClient):
         headers = dingtalkassistant__1__0_models.AddToOrgSkillRepositoryHeaders()
         return await self.add_to_org_skill_repository_with_options_async(request, headers, runtime)
 
+    def batch_get_aicredits_record_with_options(
+        self,
+        request: dingtalkassistant__1__0_models.BatchGetAICreditsRecordRequest,
+        headers: dingtalkassistant__1__0_models.BatchGetAICreditsRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.BatchGetAICreditsRecordResponse:
+        """
+        @summary 分页查询算粒的使用记录
+        
+        @param request: BatchGetAICreditsRecordRequest
+        @param headers: BatchGetAICreditsRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchGetAICreditsRecordResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.assistant_id):
+            query['assistantId'] = request.assistant_id
+        if not UtilClient.is_unset(request.cursor):
+            query['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='BatchGetAICreditsRecord',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/aiCredits/list',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.BatchGetAICreditsRecordResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def batch_get_aicredits_record_with_options_async(
+        self,
+        request: dingtalkassistant__1__0_models.BatchGetAICreditsRecordRequest,
+        headers: dingtalkassistant__1__0_models.BatchGetAICreditsRecordHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.BatchGetAICreditsRecordResponse:
+        """
+        @summary 分页查询算粒的使用记录
+        
+        @param request: BatchGetAICreditsRecordRequest
+        @param headers: BatchGetAICreditsRecordHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: BatchGetAICreditsRecordResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.assistant_id):
+            query['assistantId'] = request.assistant_id
+        if not UtilClient.is_unset(request.cursor):
+            query['cursor'] = request.cursor
+        if not UtilClient.is_unset(request.end_time):
+            query['endTime'] = request.end_time
+        if not UtilClient.is_unset(request.page_size):
+            query['pageSize'] = request.page_size
+        if not UtilClient.is_unset(request.start_time):
+            query['startTime'] = request.start_time
+        if not UtilClient.is_unset(request.union_id):
+            query['unionId'] = request.union_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='BatchGetAICreditsRecord',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/aiCredits/list',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.BatchGetAICreditsRecordResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def batch_get_aicredits_record(
+        self,
+        request: dingtalkassistant__1__0_models.BatchGetAICreditsRecordRequest,
+    ) -> dingtalkassistant__1__0_models.BatchGetAICreditsRecordResponse:
+        """
+        @summary 分页查询算粒的使用记录
+        
+        @param request: BatchGetAICreditsRecordRequest
+        @return: BatchGetAICreditsRecordResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.BatchGetAICreditsRecordHeaders()
+        return self.batch_get_aicredits_record_with_options(request, headers, runtime)
+
+    async def batch_get_aicredits_record_async(
+        self,
+        request: dingtalkassistant__1__0_models.BatchGetAICreditsRecordRequest,
+    ) -> dingtalkassistant__1__0_models.BatchGetAICreditsRecordResponse:
+        """
+        @summary 分页查询算粒的使用记录
+        
+        @param request: BatchGetAICreditsRecordRequest
+        @return: BatchGetAICreditsRecordResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.BatchGetAICreditsRecordHeaders()
+        return await self.batch_get_aicredits_record_with_options_async(request, headers, runtime)
+
     def create_assistant_with_options(
         self,
         request: dingtalkassistant__1__0_models.CreateAssistantRequest,
@@ -2413,6 +2547,120 @@ class Client(OpenApiClient):
         runtime = util_models.RuntimeOptions()
         headers = dingtalkassistant__1__0_models.ListAssistantRunHeaders()
         return await self.list_assistant_run_with_options_async(thread_id, request, headers, runtime)
+
+    def list_instance_with_options(
+        self,
+        request: dingtalkassistant__1__0_models.ListInstanceRequest,
+        headers: dingtalkassistant__1__0_models.ListInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.ListInstanceResponse:
+        """
+        @summary 获取指定助理在组织下已安装的实例信息列表
+        
+        @param request: ListInstanceRequest
+        @param headers: ListInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListInstanceResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.prototype_assistant_id):
+            query['prototypeAssistantId'] = request.prototype_assistant_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListInstance',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/instances/list',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.ListInstanceResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_instance_with_options_async(
+        self,
+        request: dingtalkassistant__1__0_models.ListInstanceRequest,
+        headers: dingtalkassistant__1__0_models.ListInstanceHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkassistant__1__0_models.ListInstanceResponse:
+        """
+        @summary 获取指定助理在组织下已安装的实例信息列表
+        
+        @param request: ListInstanceRequest
+        @param headers: ListInstanceHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListInstanceResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.prototype_assistant_id):
+            query['prototypeAssistantId'] = request.prototype_assistant_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListInstance',
+            version='assistant_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/assistant/instances/list',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkassistant__1__0_models.ListInstanceResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_instance(
+        self,
+        request: dingtalkassistant__1__0_models.ListInstanceRequest,
+    ) -> dingtalkassistant__1__0_models.ListInstanceResponse:
+        """
+        @summary 获取指定助理在组织下已安装的实例信息列表
+        
+        @param request: ListInstanceRequest
+        @return: ListInstanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.ListInstanceHeaders()
+        return self.list_instance_with_options(request, headers, runtime)
+
+    async def list_instance_async(
+        self,
+        request: dingtalkassistant__1__0_models.ListInstanceRequest,
+    ) -> dingtalkassistant__1__0_models.ListInstanceResponse:
+        """
+        @summary 获取指定助理在组织下已安装的实例信息列表
+        
+        @param request: ListInstanceRequest
+        @return: ListInstanceResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkassistant__1__0_models.ListInstanceHeaders()
+        return await self.list_instance_with_options_async(request, headers, runtime)
 
     def list_visible_assistant_with_options(
         self,

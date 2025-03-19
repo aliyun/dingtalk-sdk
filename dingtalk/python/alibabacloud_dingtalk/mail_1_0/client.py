@@ -26,6 +26,132 @@ class Client(OpenApiClient):
         if UtilClient.empty(self._endpoint):
             self._endpoint = 'api.dingtalk.com'
 
+    def create_mail_folder_with_options(
+        self,
+        email: str,
+        request: dingtalkmail__1__0_models.CreateMailFolderRequest,
+        headers: dingtalkmail__1__0_models.CreateMailFolderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmail__1__0_models.CreateMailFolderResponse:
+        """
+        @summary 创建邮件文件夹
+        
+        @param request: CreateMailFolderRequest
+        @param headers: CreateMailFolderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateMailFolderResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.display_name):
+            body['displayName'] = request.display_name
+        if not UtilClient.is_unset(request.extensions):
+            body['extensions'] = request.extensions
+        if not UtilClient.is_unset(request.foler_id):
+            body['folerId'] = request.foler_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateMailFolder',
+            version='mail_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/mail/users/{email}/mailFolders',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmail__1__0_models.CreateMailFolderResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def create_mail_folder_with_options_async(
+        self,
+        email: str,
+        request: dingtalkmail__1__0_models.CreateMailFolderRequest,
+        headers: dingtalkmail__1__0_models.CreateMailFolderHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkmail__1__0_models.CreateMailFolderResponse:
+        """
+        @summary 创建邮件文件夹
+        
+        @param request: CreateMailFolderRequest
+        @param headers: CreateMailFolderHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: CreateMailFolderResponse
+        """
+        UtilClient.validate_model(request)
+        body = {}
+        if not UtilClient.is_unset(request.display_name):
+            body['displayName'] = request.display_name
+        if not UtilClient.is_unset(request.extensions):
+            body['extensions'] = request.extensions
+        if not UtilClient.is_unset(request.foler_id):
+            body['folerId'] = request.foler_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            body=OpenApiUtilClient.parse_to_map(body)
+        )
+        params = open_api_models.Params(
+            action='CreateMailFolder',
+            version='mail_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/mail/users/{email}/mailFolders',
+            method='POST',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkmail__1__0_models.CreateMailFolderResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def create_mail_folder(
+        self,
+        email: str,
+        request: dingtalkmail__1__0_models.CreateMailFolderRequest,
+    ) -> dingtalkmail__1__0_models.CreateMailFolderResponse:
+        """
+        @summary 创建邮件文件夹
+        
+        @param request: CreateMailFolderRequest
+        @return: CreateMailFolderResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmail__1__0_models.CreateMailFolderHeaders()
+        return self.create_mail_folder_with_options(email, request, headers, runtime)
+
+    async def create_mail_folder_async(
+        self,
+        email: str,
+        request: dingtalkmail__1__0_models.CreateMailFolderRequest,
+    ) -> dingtalkmail__1__0_models.CreateMailFolderResponse:
+        """
+        @summary 创建邮件文件夹
+        
+        @param request: CreateMailFolderRequest
+        @return: CreateMailFolderResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkmail__1__0_models.CreateMailFolderHeaders()
+        return await self.create_mail_folder_with_options_async(email, request, headers, runtime)
+
     def create_user_with_options(
         self,
         request: dingtalkmail__1__0_models.CreateUserRequest,

@@ -9583,6 +9583,318 @@ class InsertRowsBeforeResponse(TeaModel):
         return self
 
 
+class ListCommentsHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListCommentsRequest(TeaModel):
+    def __init__(
+        self,
+        is_global: bool = None,
+        is_solved: bool = None,
+        max_results: int = None,
+        next_token: str = None,
+        operator_id: str = None,
+    ):
+        self.is_global = is_global
+        self.is_solved = is_solved
+        self.max_results = max_results
+        self.next_token = next_token
+        # This parameter is required.
+        self.operator_id = operator_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.is_global is not None:
+            result['isGlobal'] = self.is_global
+        if self.is_solved is not None:
+            result['isSolved'] = self.is_solved
+        if self.max_results is not None:
+            result['maxResults'] = self.max_results
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        if self.operator_id is not None:
+            result['operatorId'] = self.operator_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('isGlobal') is not None:
+            self.is_global = m.get('isGlobal')
+        if m.get('isSolved') is not None:
+            self.is_solved = m.get('isSolved')
+        if m.get('maxResults') is not None:
+            self.max_results = m.get('maxResults')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        if m.get('operatorId') is not None:
+            self.operator_id = m.get('operatorId')
+        return self
+
+
+class ListCommentsResponseBodyResultCommentListContent(TeaModel):
+    def __init__(
+        self,
+        elements: List[Any] = None,
+    ):
+        self.elements = elements
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.elements is not None:
+            result['elements'] = self.elements
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('elements') is not None:
+            self.elements = m.get('elements')
+        return self
+
+
+class ListCommentsResponseBodyResultCommentList(TeaModel):
+    def __init__(
+        self,
+        comment_id: str = None,
+        content: ListCommentsResponseBodyResultCommentListContent = None,
+        create_time: int = None,
+        creator_id: str = None,
+        is_global: bool = None,
+        is_solved: bool = None,
+        quote: str = None,
+        topic_id: str = None,
+        update_time: int = None,
+    ):
+        self.comment_id = comment_id
+        self.content = content
+        self.create_time = create_time
+        self.creator_id = creator_id
+        self.is_global = is_global
+        self.is_solved = is_solved
+        self.quote = quote
+        self.topic_id = topic_id
+        self.update_time = update_time
+
+    def validate(self):
+        if self.content:
+            self.content.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.comment_id is not None:
+            result['commentId'] = self.comment_id
+        if self.content is not None:
+            result['content'] = self.content.to_map()
+        if self.create_time is not None:
+            result['createTime'] = self.create_time
+        if self.creator_id is not None:
+            result['creatorId'] = self.creator_id
+        if self.is_global is not None:
+            result['isGlobal'] = self.is_global
+        if self.is_solved is not None:
+            result['isSolved'] = self.is_solved
+        if self.quote is not None:
+            result['quote'] = self.quote
+        if self.topic_id is not None:
+            result['topicId'] = self.topic_id
+        if self.update_time is not None:
+            result['updateTime'] = self.update_time
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commentId') is not None:
+            self.comment_id = m.get('commentId')
+        if m.get('content') is not None:
+            temp_model = ListCommentsResponseBodyResultCommentListContent()
+            self.content = temp_model.from_map(m['content'])
+        if m.get('createTime') is not None:
+            self.create_time = m.get('createTime')
+        if m.get('creatorId') is not None:
+            self.creator_id = m.get('creatorId')
+        if m.get('isGlobal') is not None:
+            self.is_global = m.get('isGlobal')
+        if m.get('isSolved') is not None:
+            self.is_solved = m.get('isSolved')
+        if m.get('quote') is not None:
+            self.quote = m.get('quote')
+        if m.get('topicId') is not None:
+            self.topic_id = m.get('topicId')
+        if m.get('updateTime') is not None:
+            self.update_time = m.get('updateTime')
+        return self
+
+
+class ListCommentsResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        comment_list: List[ListCommentsResponseBodyResultCommentList] = None,
+        has_more: bool = None,
+        next_token: str = None,
+    ):
+        self.comment_list = comment_list
+        self.has_more = has_more
+        self.next_token = next_token
+
+    def validate(self):
+        if self.comment_list:
+            for k in self.comment_list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['commentList'] = []
+        if self.comment_list is not None:
+            for k in self.comment_list:
+                result['commentList'].append(k.to_map() if k else None)
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        if self.next_token is not None:
+            result['nextToken'] = self.next_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.comment_list = []
+        if m.get('commentList') is not None:
+            for k in m.get('commentList'):
+                temp_model = ListCommentsResponseBodyResultCommentList()
+                self.comment_list.append(temp_model.from_map(k))
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        if m.get('nextToken') is not None:
+            self.next_token = m.get('nextToken')
+        return self
+
+
+class ListCommentsResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: ListCommentsResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = ListCommentsResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class ListCommentsResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListCommentsResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListCommentsResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class ListTemplateHeaders(TeaModel):
     def __init__(
         self,
@@ -12216,6 +12528,7 @@ class UpdateRangeRequest(TeaModel):
         self,
         background_colors: List[List[str]] = None,
         complex_values: List[List[Any]] = None,
+        font_colors: List[List[str]] = None,
         font_sizes: List[List[int]] = None,
         font_weights: List[List[str]] = None,
         horizontal_alignments: List[List[str]] = None,
@@ -12228,6 +12541,7 @@ class UpdateRangeRequest(TeaModel):
     ):
         self.background_colors = background_colors
         self.complex_values = complex_values
+        self.font_colors = font_colors
         self.font_sizes = font_sizes
         self.font_weights = font_weights
         self.horizontal_alignments = horizontal_alignments
@@ -12256,6 +12570,8 @@ class UpdateRangeRequest(TeaModel):
             result['backgroundColors'] = self.background_colors
         if self.complex_values is not None:
             result['complexValues'] = self.complex_values
+        if self.font_colors is not None:
+            result['fontColors'] = self.font_colors
         if self.font_sizes is not None:
             result['fontSizes'] = self.font_sizes
         if self.font_weights is not None:
@@ -12287,6 +12603,8 @@ class UpdateRangeRequest(TeaModel):
             self.background_colors = m.get('backgroundColors')
         if m.get('complexValues') is not None:
             self.complex_values = m.get('complexValues')
+        if m.get('fontColors') is not None:
+            self.font_colors = m.get('fontColors')
         if m.get('fontSizes') is not None:
             self.font_sizes = m.get('fontSizes')
         if m.get('fontWeights') is not None:

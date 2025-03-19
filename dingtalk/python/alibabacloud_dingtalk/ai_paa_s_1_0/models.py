@@ -43,7 +43,9 @@ class ExclusiveModelCompleteServiceRequestMessages(TeaModel):
         content: str = None,
         role: str = None,
     ):
+        # This parameter is required.
         self.content = content
+        # This parameter is required.
         self.role = role
 
     def validate(self):
@@ -77,13 +79,17 @@ class ExclusiveModelCompleteServiceRequest(TeaModel):
         max_tokens: int = None,
         messages: List[ExclusiveModelCompleteServiceRequestMessages] = None,
         model: str = None,
+        stream: bool = None,
         temperature: float = None,
         top_p: float = None,
     ):
         self.enable_search = enable_search
         self.max_tokens = max_tokens
+        # This parameter is required.
         self.messages = messages
+        # This parameter is required.
         self.model = model
+        self.stream = stream
         self.temperature = temperature
         self.top_p = top_p
 
@@ -109,6 +115,8 @@ class ExclusiveModelCompleteServiceRequest(TeaModel):
                 result['messages'].append(k.to_map() if k else None)
         if self.model is not None:
             result['model'] = self.model
+        if self.stream is not None:
+            result['stream'] = self.stream
         if self.temperature is not None:
             result['temperature'] = self.temperature
         if self.top_p is not None:
@@ -128,6 +136,8 @@ class ExclusiveModelCompleteServiceRequest(TeaModel):
                 self.messages.append(temp_model.from_map(k))
         if m.get('model') is not None:
             self.model = m.get('model')
+        if m.get('stream') is not None:
+            self.stream = m.get('stream')
         if m.get('temperature') is not None:
             self.temperature = m.get('temperature')
         if m.get('top_p') is not None:
@@ -212,12 +222,12 @@ class ExclusiveModelCompleteServiceResponseBodyChoices(TeaModel):
 class ExclusiveModelCompleteServiceResponseBodyUsage(TeaModel):
     def __init__(
         self,
-        input_tokens: int = None,
-        output_tokens: int = None,
+        completion_tokens: int = None,
+        prompt_tokens: int = None,
         total_tokens: int = None,
     ):
-        self.input_tokens = input_tokens
-        self.output_tokens = output_tokens
+        self.completion_tokens = completion_tokens
+        self.prompt_tokens = prompt_tokens
         self.total_tokens = total_tokens
 
     def validate(self):
@@ -229,20 +239,20 @@ class ExclusiveModelCompleteServiceResponseBodyUsage(TeaModel):
             return _map
 
         result = dict()
-        if self.input_tokens is not None:
-            result['input_tokens'] = self.input_tokens
-        if self.output_tokens is not None:
-            result['output_tokens'] = self.output_tokens
+        if self.completion_tokens is not None:
+            result['completion_tokens'] = self.completion_tokens
+        if self.prompt_tokens is not None:
+            result['prompt_tokens'] = self.prompt_tokens
         if self.total_tokens is not None:
             result['total_tokens'] = self.total_tokens
         return result
 
     def from_map(self, m: dict = None):
         m = m or dict()
-        if m.get('input_tokens') is not None:
-            self.input_tokens = m.get('input_tokens')
-        if m.get('output_tokens') is not None:
-            self.output_tokens = m.get('output_tokens')
+        if m.get('completion_tokens') is not None:
+            self.completion_tokens = m.get('completion_tokens')
+        if m.get('prompt_tokens') is not None:
+            self.prompt_tokens = m.get('prompt_tokens')
         if m.get('total_tokens') is not None:
             self.total_tokens = m.get('total_tokens')
         return self

@@ -52,6 +52,8 @@ class Client(OpenApiClient):
             body['messages'] = request.messages
         if not UtilClient.is_unset(request.model):
             body['model'] = request.model
+        if not UtilClient.is_unset(request.stream):
+            body['stream'] = request.stream
         if not UtilClient.is_unset(request.temperature):
             body['temperature'] = request.temperature
         if not UtilClient.is_unset(request.top_p):
@@ -105,6 +107,8 @@ class Client(OpenApiClient):
             body['messages'] = request.messages
         if not UtilClient.is_unset(request.model):
             body['model'] = request.model
+        if not UtilClient.is_unset(request.stream):
+            body['stream'] = request.stream
         if not UtilClient.is_unset(request.temperature):
             body['temperature'] = request.temperature
         if not UtilClient.is_unset(request.top_p):

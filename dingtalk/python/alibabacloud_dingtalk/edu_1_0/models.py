@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # This file is auto-generated, don't edit it. Thanks.
 from Tea.model import TeaModel
-from typing import Dict, List
+from typing import Dict, List, Any
 
 
 class ResultValue(TeaModel):
@@ -17389,6 +17389,215 @@ class EduAIGCCallbackResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = EduAIGCCallbackResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class EduAIModelCompleteHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class EduAIModelCompleteRequest(TeaModel):
+    def __init__(
+        self,
+        max_tokens: int = None,
+        model: str = None,
+        prompt: str = None,
+        scene: str = None,
+        temperature: float = None,
+        top_p: float = None,
+        user_id: str = None,
+    ):
+        self.max_tokens = max_tokens
+        # This parameter is required.
+        self.model = model
+        # This parameter is required.
+        self.prompt = prompt
+        # This parameter is required.
+        self.scene = scene
+        self.temperature = temperature
+        self.top_p = top_p
+        # This parameter is required.
+        self.user_id = user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.max_tokens is not None:
+            result['maxTokens'] = self.max_tokens
+        if self.model is not None:
+            result['model'] = self.model
+        if self.prompt is not None:
+            result['prompt'] = self.prompt
+        if self.scene is not None:
+            result['scene'] = self.scene
+        if self.temperature is not None:
+            result['temperature'] = self.temperature
+        if self.top_p is not None:
+            result['top_p'] = self.top_p
+        if self.user_id is not None:
+            result['userId'] = self.user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('maxTokens') is not None:
+            self.max_tokens = m.get('maxTokens')
+        if m.get('model') is not None:
+            self.model = m.get('model')
+        if m.get('prompt') is not None:
+            self.prompt = m.get('prompt')
+        if m.get('scene') is not None:
+            self.scene = m.get('scene')
+        if m.get('temperature') is not None:
+            self.temperature = m.get('temperature')
+        if m.get('top_p') is not None:
+            self.top_p = m.get('top_p')
+        if m.get('userId') is not None:
+            self.user_id = m.get('userId')
+        return self
+
+
+class EduAIModelCompleteResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        request_id: str = None,
+        result: Dict[str, Any] = None,
+    ):
+        self.request_id = request_id
+        self.result = result
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.result is not None:
+            result['result'] = self.result
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('result') is not None:
+            self.result = m.get('result')
+        return self
+
+
+class EduAIModelCompleteResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: EduAIModelCompleteResponseBodyResult = None,
+        success: bool = None,
+    ):
+        self.result = result
+        self.success = success
+
+    def validate(self):
+        if self.result:
+            self.result.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.result is not None:
+            result['result'] = self.result.to_map()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('result') is not None:
+            temp_model = EduAIModelCompleteResponseBodyResult()
+            self.result = temp_model.from_map(m['result'])
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class EduAIModelCompleteResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: EduAIModelCompleteResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = EduAIModelCompleteResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
@@ -38336,6 +38545,155 @@ class SendAiCardResponse(TeaModel):
         return self
 
 
+class SendCollegeAiAssistantMsgHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class SendCollegeAiAssistantMsgRequest(TeaModel):
+    def __init__(
+        self,
+        content: str = None,
+        content_type: str = None,
+        open_conversation_id: str = None,
+        union_id: str = None,
+    ):
+        # This parameter is required.
+        self.content = content
+        # This parameter is required.
+        self.content_type = content_type
+        self.open_conversation_id = open_conversation_id
+        # This parameter is required.
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.content is not None:
+            result['content'] = self.content
+        if self.content_type is not None:
+            result['contentType'] = self.content_type
+        if self.open_conversation_id is not None:
+            result['openConversationId'] = self.open_conversation_id
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('content') is not None:
+            self.content = m.get('content')
+        if m.get('contentType') is not None:
+            self.content_type = m.get('contentType')
+        if m.get('openConversationId') is not None:
+            self.open_conversation_id = m.get('openConversationId')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class SendCollegeAiAssistantMsgResponseBody(TeaModel):
+    def __init__(
+        self,
+        success: bool = None,
+    ):
+        self.success = success
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.success is not None:
+            result['success'] = self.success
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('success') is not None:
+            self.success = m.get('success')
+        return self
+
+
+class SendCollegeAiAssistantMsgResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: SendCollegeAiAssistantMsgResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = SendCollegeAiAssistantMsgResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class SendFileMessageHeaders(TeaModel):
     def __init__(
         self,
@@ -43569,6 +43927,167 @@ class VerifyEduOrgCertificationResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = VerifyEduOrgCertificationResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class VerifyEduUserCertificationHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class VerifyEduUserCertificationRequest(TeaModel):
+    def __init__(
+        self,
+        biz_code: str = None,
+        target_corp_id: str = None,
+        target_user_id: str = None,
+    ):
+        # This parameter is required.
+        self.biz_code = biz_code
+        # This parameter is required.
+        self.target_corp_id = target_corp_id
+        # This parameter is required.
+        self.target_user_id = target_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.biz_code is not None:
+            result['bizCode'] = self.biz_code
+        if self.target_corp_id is not None:
+            result['targetCorpId'] = self.target_corp_id
+        if self.target_user_id is not None:
+            result['targetUserId'] = self.target_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('bizCode') is not None:
+            self.biz_code = m.get('bizCode')
+        if m.get('targetCorpId') is not None:
+            self.target_corp_id = m.get('targetCorpId')
+        if m.get('targetUserId') is not None:
+            self.target_user_id = m.get('targetUserId')
+        return self
+
+
+class VerifyEduUserCertificationResponseBody(TeaModel):
+    def __init__(
+        self,
+        certificated: bool = None,
+        certificated_corp_id: str = None,
+        certificated_org_name: str = None,
+        certificated_user_id: str = None,
+    ):
+        self.certificated = certificated
+        self.certificated_corp_id = certificated_corp_id
+        self.certificated_org_name = certificated_org_name
+        self.certificated_user_id = certificated_user_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.certificated is not None:
+            result['certificated'] = self.certificated
+        if self.certificated_corp_id is not None:
+            result['certificatedCorpId'] = self.certificated_corp_id
+        if self.certificated_org_name is not None:
+            result['certificatedOrgName'] = self.certificated_org_name
+        if self.certificated_user_id is not None:
+            result['certificatedUserId'] = self.certificated_user_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('certificated') is not None:
+            self.certificated = m.get('certificated')
+        if m.get('certificatedCorpId') is not None:
+            self.certificated_corp_id = m.get('certificatedCorpId')
+        if m.get('certificatedOrgName') is not None:
+            self.certificated_org_name = m.get('certificatedOrgName')
+        if m.get('certificatedUserId') is not None:
+            self.certificated_user_id = m.get('certificatedUserId')
+        return self
+
+
+class VerifyEduUserCertificationResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: VerifyEduUserCertificationResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = VerifyEduUserCertificationResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 

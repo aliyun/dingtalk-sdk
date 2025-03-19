@@ -6490,6 +6490,140 @@ class Client(OpenApiClient):
         headers = dingtalkdoc__1__0_models.InsertRowsBeforeHeaders()
         return await self.insert_rows_before_with_options_async(workbook_id, sheet_id, request, headers, runtime)
 
+    def list_comments_with_options(
+        self,
+        doc_id: str,
+        request: dingtalkdoc__1__0_models.ListCommentsRequest,
+        headers: dingtalkdoc__1__0_models.ListCommentsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.ListCommentsResponse:
+        """
+        @summary 获取文档所有评论
+        
+        @param request: ListCommentsRequest
+        @param headers: ListCommentsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListCommentsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.is_global):
+            query['isGlobal'] = request.is_global
+        if not UtilClient.is_unset(request.is_solved):
+            query['isSolved'] = request.is_solved
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListComments',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/docs/{doc_id}/comments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.ListCommentsResponse(),
+            self.execute(params, req, runtime)
+        )
+
+    async def list_comments_with_options_async(
+        self,
+        doc_id: str,
+        request: dingtalkdoc__1__0_models.ListCommentsRequest,
+        headers: dingtalkdoc__1__0_models.ListCommentsHeaders,
+        runtime: util_models.RuntimeOptions,
+    ) -> dingtalkdoc__1__0_models.ListCommentsResponse:
+        """
+        @summary 获取文档所有评论
+        
+        @param request: ListCommentsRequest
+        @param headers: ListCommentsHeaders
+        @param runtime: runtime options for this request RuntimeOptions
+        @return: ListCommentsResponse
+        """
+        UtilClient.validate_model(request)
+        query = {}
+        if not UtilClient.is_unset(request.is_global):
+            query['isGlobal'] = request.is_global
+        if not UtilClient.is_unset(request.is_solved):
+            query['isSolved'] = request.is_solved
+        if not UtilClient.is_unset(request.max_results):
+            query['maxResults'] = request.max_results
+        if not UtilClient.is_unset(request.next_token):
+            query['nextToken'] = request.next_token
+        if not UtilClient.is_unset(request.operator_id):
+            query['operatorId'] = request.operator_id
+        real_headers = {}
+        if not UtilClient.is_unset(headers.common_headers):
+            real_headers = headers.common_headers
+        if not UtilClient.is_unset(headers.x_acs_dingtalk_access_token):
+            real_headers['x-acs-dingtalk-access-token'] = UtilClient.to_jsonstring(headers.x_acs_dingtalk_access_token)
+        req = open_api_models.OpenApiRequest(
+            headers=real_headers,
+            query=OpenApiUtilClient.query(query)
+        )
+        params = open_api_models.Params(
+            action='ListComments',
+            version='doc_1.0',
+            protocol='HTTP',
+            pathname=f'/v1.0/doc/docs/{doc_id}/comments',
+            method='GET',
+            auth_type='AK',
+            style='ROA',
+            req_body_type='none',
+            body_type='json'
+        )
+        return TeaCore.from_map(
+            dingtalkdoc__1__0_models.ListCommentsResponse(),
+            await self.execute_async(params, req, runtime)
+        )
+
+    def list_comments(
+        self,
+        doc_id: str,
+        request: dingtalkdoc__1__0_models.ListCommentsRequest,
+    ) -> dingtalkdoc__1__0_models.ListCommentsResponse:
+        """
+        @summary 获取文档所有评论
+        
+        @param request: ListCommentsRequest
+        @return: ListCommentsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.ListCommentsHeaders()
+        return self.list_comments_with_options(doc_id, request, headers, runtime)
+
+    async def list_comments_async(
+        self,
+        doc_id: str,
+        request: dingtalkdoc__1__0_models.ListCommentsRequest,
+    ) -> dingtalkdoc__1__0_models.ListCommentsResponse:
+        """
+        @summary 获取文档所有评论
+        
+        @param request: ListCommentsRequest
+        @return: ListCommentsResponse
+        """
+        runtime = util_models.RuntimeOptions()
+        headers = dingtalkdoc__1__0_models.ListCommentsHeaders()
+        return await self.list_comments_with_options_async(doc_id, request, headers, runtime)
+
     def list_template_with_options(
         self,
         request: dingtalkdoc__1__0_models.ListTemplateRequest,
@@ -8412,6 +8546,8 @@ class Client(OpenApiClient):
             body['backgroundColors'] = request.background_colors
         if not UtilClient.is_unset(request.complex_values):
             body['complexValues'] = request.complex_values
+        if not UtilClient.is_unset(request.font_colors):
+            body['fontColors'] = request.font_colors
         if not UtilClient.is_unset(request.font_sizes):
             body['fontSizes'] = request.font_sizes
         if not UtilClient.is_unset(request.font_weights):
@@ -8480,6 +8616,8 @@ class Client(OpenApiClient):
             body['backgroundColors'] = request.background_colors
         if not UtilClient.is_unset(request.complex_values):
             body['complexValues'] = request.complex_values
+        if not UtilClient.is_unset(request.font_colors):
+            body['fontColors'] = request.font_colors
         if not UtilClient.is_unset(request.font_sizes):
             body['fontSizes'] = request.font_sizes
         if not UtilClient.is_unset(request.font_weights):

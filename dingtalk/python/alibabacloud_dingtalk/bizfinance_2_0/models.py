@@ -6620,6 +6620,7 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
         drawer_email: str = None,
         drawer_telephone: str = None,
         invoice_type: str = None,
+        jump_url: str = None,
         model_id: str = None,
         product_info_list: List[QueryReceiptForInvoiceResponseBodyListProductInfoList] = None,
         purchaser_account: str = None,
@@ -6647,6 +6648,7 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
         self.drawer_email = drawer_email
         self.drawer_telephone = drawer_telephone
         self.invoice_type = invoice_type
+        self.jump_url = jump_url
         self.model_id = model_id
         self.product_info_list = product_info_list
         self.purchaser_account = purchaser_account
@@ -6702,6 +6704,8 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
             result['drawerTelephone'] = self.drawer_telephone
         if self.invoice_type is not None:
             result['invoiceType'] = self.invoice_type
+        if self.jump_url is not None:
+            result['jumpUrl'] = self.jump_url
         if self.model_id is not None:
             result['modelId'] = self.model_id
         result['productInfoList'] = []
@@ -6762,6 +6766,8 @@ class QueryReceiptForInvoiceResponseBodyList(TeaModel):
             self.drawer_telephone = m.get('drawerTelephone')
         if m.get('invoiceType') is not None:
             self.invoice_type = m.get('invoiceType')
+        if m.get('jumpUrl') is not None:
+            self.jump_url = m.get('jumpUrl')
         if m.get('modelId') is not None:
             self.model_id = m.get('modelId')
         self.product_info_list = []

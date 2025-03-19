@@ -330,6 +330,271 @@ class AddToOrgSkillRepositoryResponse(TeaModel):
         return self
 
 
+class BatchGetAICreditsRecordHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class BatchGetAICreditsRecordRequest(TeaModel):
+    def __init__(
+        self,
+        assistant_id: str = None,
+        cursor: int = None,
+        end_time: str = None,
+        page_size: int = None,
+        start_time: str = None,
+        union_id: str = None,
+    ):
+        self.assistant_id = assistant_id
+        self.cursor = cursor
+        self.end_time = end_time
+        self.page_size = page_size
+        self.start_time = start_time
+        self.union_id = union_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.assistant_id is not None:
+            result['assistantId'] = self.assistant_id
+        if self.cursor is not None:
+            result['cursor'] = self.cursor
+        if self.end_time is not None:
+            result['endTime'] = self.end_time
+        if self.page_size is not None:
+            result['pageSize'] = self.page_size
+        if self.start_time is not None:
+            result['startTime'] = self.start_time
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('assistantId') is not None:
+            self.assistant_id = m.get('assistantId')
+        if m.get('cursor') is not None:
+            self.cursor = m.get('cursor')
+        if m.get('endTime') is not None:
+            self.end_time = m.get('endTime')
+        if m.get('pageSize') is not None:
+            self.page_size = m.get('pageSize')
+        if m.get('startTime') is not None:
+            self.start_time = m.get('startTime')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        return self
+
+
+class BatchGetAICreditsRecordResponseBodyList(TeaModel):
+    def __init__(
+        self,
+        action_names: str = None,
+        assistant_id: str = None,
+        assistant_name: str = None,
+        dept_id: int = None,
+        dept_name: str = None,
+        request_id: str = None,
+        time: str = None,
+        union_id: str = None,
+        used_num: float = None,
+        user_name: str = None,
+    ):
+        self.action_names = action_names
+        self.assistant_id = assistant_id
+        self.assistant_name = assistant_name
+        self.dept_id = dept_id
+        self.dept_name = dept_name
+        self.request_id = request_id
+        self.time = time
+        self.union_id = union_id
+        self.used_num = used_num
+        self.user_name = user_name
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.action_names is not None:
+            result['actionNames'] = self.action_names
+        if self.assistant_id is not None:
+            result['assistantId'] = self.assistant_id
+        if self.assistant_name is not None:
+            result['assistantName'] = self.assistant_name
+        if self.dept_id is not None:
+            result['deptId'] = self.dept_id
+        if self.dept_name is not None:
+            result['deptName'] = self.dept_name
+        if self.request_id is not None:
+            result['requestId'] = self.request_id
+        if self.time is not None:
+            result['time'] = self.time
+        if self.union_id is not None:
+            result['unionId'] = self.union_id
+        if self.used_num is not None:
+            result['usedNum'] = self.used_num
+        if self.user_name is not None:
+            result['userName'] = self.user_name
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('actionNames') is not None:
+            self.action_names = m.get('actionNames')
+        if m.get('assistantId') is not None:
+            self.assistant_id = m.get('assistantId')
+        if m.get('assistantName') is not None:
+            self.assistant_name = m.get('assistantName')
+        if m.get('deptId') is not None:
+            self.dept_id = m.get('deptId')
+        if m.get('deptName') is not None:
+            self.dept_name = m.get('deptName')
+        if m.get('requestId') is not None:
+            self.request_id = m.get('requestId')
+        if m.get('time') is not None:
+            self.time = m.get('time')
+        if m.get('unionId') is not None:
+            self.union_id = m.get('unionId')
+        if m.get('usedNum') is not None:
+            self.used_num = m.get('usedNum')
+        if m.get('userName') is not None:
+            self.user_name = m.get('userName')
+        return self
+
+
+class BatchGetAICreditsRecordResponseBody(TeaModel):
+    def __init__(
+        self,
+        has_more: bool = None,
+        list: List[BatchGetAICreditsRecordResponseBodyList] = None,
+        next_cursor: int = None,
+        total_count: int = None,
+    ):
+        self.has_more = has_more
+        self.list = list
+        self.next_cursor = next_cursor
+        self.total_count = total_count
+
+    def validate(self):
+        if self.list:
+            for k in self.list:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.has_more is not None:
+            result['hasMore'] = self.has_more
+        result['list'] = []
+        if self.list is not None:
+            for k in self.list:
+                result['list'].append(k.to_map() if k else None)
+        if self.next_cursor is not None:
+            result['nextCursor'] = self.next_cursor
+        if self.total_count is not None:
+            result['totalCount'] = self.total_count
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('hasMore') is not None:
+            self.has_more = m.get('hasMore')
+        self.list = []
+        if m.get('list') is not None:
+            for k in m.get('list'):
+                temp_model = BatchGetAICreditsRecordResponseBodyList()
+                self.list.append(temp_model.from_map(k))
+        if m.get('nextCursor') is not None:
+            self.next_cursor = m.get('nextCursor')
+        if m.get('totalCount') is not None:
+            self.total_count = m.get('totalCount')
+        return self
+
+
+class BatchGetAICreditsRecordResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: BatchGetAICreditsRecordResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = BatchGetAICreditsRecordResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
 class CreateAssistantHeaders(TeaModel):
     def __init__(
         self,
@@ -3645,6 +3910,194 @@ class ListAssistantRunResponse(TeaModel):
             self.status_code = m.get('statusCode')
         if m.get('body') is not None:
             temp_model = ListAssistantRunResponseBody()
+            self.body = temp_model.from_map(m['body'])
+        return self
+
+
+class ListInstanceHeaders(TeaModel):
+    def __init__(
+        self,
+        common_headers: Dict[str, str] = None,
+        x_acs_dingtalk_access_token: str = None,
+    ):
+        self.common_headers = common_headers
+        self.x_acs_dingtalk_access_token = x_acs_dingtalk_access_token
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.common_headers is not None:
+            result['commonHeaders'] = self.common_headers
+        if self.x_acs_dingtalk_access_token is not None:
+            result['x-acs-dingtalk-access-token'] = self.x_acs_dingtalk_access_token
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('commonHeaders') is not None:
+            self.common_headers = m.get('commonHeaders')
+        if m.get('x-acs-dingtalk-access-token') is not None:
+            self.x_acs_dingtalk_access_token = m.get('x-acs-dingtalk-access-token')
+        return self
+
+
+class ListInstanceRequest(TeaModel):
+    def __init__(
+        self,
+        prototype_assistant_id: str = None,
+    ):
+        # This parameter is required.
+        self.prototype_assistant_id = prototype_assistant_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.prototype_assistant_id is not None:
+            result['prototypeAssistantId'] = self.prototype_assistant_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('prototypeAssistantId') is not None:
+            self.prototype_assistant_id = m.get('prototypeAssistantId')
+        return self
+
+
+class ListInstanceResponseBodyResult(TeaModel):
+    def __init__(
+        self,
+        description: str = None,
+        icon: str = None,
+        name: str = None,
+        prototype_assistant_id: str = None,
+        tenant_assistant_id: str = None,
+    ):
+        self.description = description
+        self.icon = icon
+        self.name = name
+        self.prototype_assistant_id = prototype_assistant_id
+        self.tenant_assistant_id = tenant_assistant_id
+
+    def validate(self):
+        pass
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.description is not None:
+            result['description'] = self.description
+        if self.icon is not None:
+            result['icon'] = self.icon
+        if self.name is not None:
+            result['name'] = self.name
+        if self.prototype_assistant_id is not None:
+            result['prototypeAssistantId'] = self.prototype_assistant_id
+        if self.tenant_assistant_id is not None:
+            result['tenantAssistantId'] = self.tenant_assistant_id
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('description') is not None:
+            self.description = m.get('description')
+        if m.get('icon') is not None:
+            self.icon = m.get('icon')
+        if m.get('name') is not None:
+            self.name = m.get('name')
+        if m.get('prototypeAssistantId') is not None:
+            self.prototype_assistant_id = m.get('prototypeAssistantId')
+        if m.get('tenantAssistantId') is not None:
+            self.tenant_assistant_id = m.get('tenantAssistantId')
+        return self
+
+
+class ListInstanceResponseBody(TeaModel):
+    def __init__(
+        self,
+        result: List[ListInstanceResponseBodyResult] = None,
+    ):
+        self.result = result
+
+    def validate(self):
+        if self.result:
+            for k in self.result:
+                if k:
+                    k.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        result['result'] = []
+        if self.result is not None:
+            for k in self.result:
+                result['result'].append(k.to_map() if k else None)
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        self.result = []
+        if m.get('result') is not None:
+            for k in m.get('result'):
+                temp_model = ListInstanceResponseBodyResult()
+                self.result.append(temp_model.from_map(k))
+        return self
+
+
+class ListInstanceResponse(TeaModel):
+    def __init__(
+        self,
+        headers: Dict[str, str] = None,
+        status_code: int = None,
+        body: ListInstanceResponseBody = None,
+    ):
+        self.headers = headers
+        self.status_code = status_code
+        self.body = body
+
+    def validate(self):
+        if self.body:
+            self.body.validate()
+
+    def to_map(self):
+        _map = super().to_map()
+        if _map is not None:
+            return _map
+
+        result = dict()
+        if self.headers is not None:
+            result['headers'] = self.headers
+        if self.status_code is not None:
+            result['statusCode'] = self.status_code
+        if self.body is not None:
+            result['body'] = self.body.to_map()
+        return result
+
+    def from_map(self, m: dict = None):
+        m = m or dict()
+        if m.get('headers') is not None:
+            self.headers = m.get('headers')
+        if m.get('statusCode') is not None:
+            self.status_code = m.get('statusCode')
+        if m.get('body') is not None:
+            temp_model = ListInstanceResponseBody()
             self.body = temp_model.from_map(m['body'])
         return self
 
